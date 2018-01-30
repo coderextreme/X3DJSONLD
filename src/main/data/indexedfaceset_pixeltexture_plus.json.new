@@ -190,14 +190,18 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
-                      "Material": {}
+                      "Material": {
+                        "@containerField": "material"
+                      }
                     }
                   ],
                   "-texture": [
                     {
                       "PixelTexture": {
+                        "@containerField": "texture",
                         "@image": [
                           2,
                           2,
@@ -216,6 +220,7 @@
             "-geometry": [
               {
                 "IndexedFaceSet": {
+                  "@containerField": "geometry",
                   "@colorPerVertex": true,
                   "@coordIndex": [
                     0,
@@ -285,6 +290,7 @@
                   "-color": [
                     {
                       "Color": {
+                        "@containerField": "color",
                         "@color": [
                           0,
                           1,
@@ -311,6 +317,7 @@
                   "-coord": [
                     {
                       "Coordinate": {
+                        "@containerField": "coord",
                         "@point": [
                           -2,
                           1,
@@ -343,6 +350,7 @@
                   "-texCoord": [
                     {
                       "TextureCoordinate": {
+                        "@containerField": "texCoord",
                         "@point": [
                           -1,
                           2,

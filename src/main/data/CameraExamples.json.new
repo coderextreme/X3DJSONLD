@@ -16,7 +16,7 @@
         },
         {
           "@name": "documentation",
-          "@content": "Two demos are found in the scene, click the \\\"red text\\\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."
+          "@content": "Two demos are found in the scene, click the \\\"red text\\\"on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."
         },
         {
           "@name": "creator",
@@ -1199,6 +1199,7 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "Click to animate",
                                 "SimpleShotsTest"
@@ -1206,6 +1207,7 @@
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@justify": [
                                       "MIDDLE",
                                       "MIDDLE"
@@ -1219,9 +1221,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@DEF": "ArtDeco5",
                                     "@ambientIntensity": 0.24,
                                     "@diffuseColor": [
@@ -1250,9 +1254,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@transparency": 1
                                   }
                                 }
@@ -1263,6 +1269,7 @@
                         "-geometry": [
                           {
                             "Box": {
+                              "@containerField": "geometry",
                               "@size": [
                                 6,
                                 2,
@@ -1332,20 +1339,26 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/CameraMoveZoom.png",
                                       "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"
@@ -1371,12 +1384,14 @@
                               "-geometry": [
                                 {
                                   "Text": {
+                                    "@containerField": "geometry",
                                     "@string": [
                                       "Zoom in, out"
                                     ],
                                     "-fontStyle": [
                                       {
                                         "FontStyle": {
+                                          "@containerField": "fontStyle",
                                           "@justify": [
                                             "MIDDLE",
                                             "MIDDLE"
@@ -1390,9 +1405,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
-                                        "Material": {}
+                                        "Material": {
+                                          "@containerField": "material"
+                                        }
                                       }
                                     ]
                                   }
@@ -1419,20 +1437,26 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/CameraMoveDolly.png",
                                       "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"
@@ -1458,12 +1482,14 @@
                               "-geometry": [
                                 {
                                   "Text": {
+                                    "@containerField": "geometry",
                                     "@string": [
                                       "Dolly left, right"
                                     ],
                                     "-fontStyle": [
                                       {
                                         "FontStyle": {
+                                          "@containerField": "fontStyle",
                                           "@justify": [
                                             "MIDDLE",
                                             "MIDDLE"
@@ -1477,9 +1503,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
-                                        "Material": {}
+                                        "Material": {
+                                          "@containerField": "material"
+                                        }
                                       }
                                     ]
                                   }
@@ -1506,20 +1535,26 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/CameraMovePan.png",
                                       "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"
@@ -1545,12 +1580,14 @@
                               "-geometry": [
                                 {
                                   "Text": {
+                                    "@containerField": "geometry",
                                     "@string": [
                                       "Pan left, right"
                                     ],
                                     "-fontStyle": [
                                       {
                                         "FontStyle": {
+                                          "@containerField": "fontStyle",
                                           "@justify": [
                                             "MIDDLE",
                                             "MIDDLE"
@@ -1564,9 +1601,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
-                                        "Material": {}
+                                        "Material": {
+                                          "@containerField": "material"
+                                        }
                                       }
                                     ]
                                   }
@@ -1593,20 +1633,26 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/CameraMoveBoom.png",
                                       "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"
@@ -1632,12 +1678,14 @@
                               "-geometry": [
                                 {
                                   "Text": {
+                                    "@containerField": "geometry",
                                     "@string": [
                                       "Boom up, down"
                                     ],
                                     "-fontStyle": [
                                       {
                                         "FontStyle": {
+                                          "@containerField": "fontStyle",
                                           "@justify": [
                                             "MIDDLE",
                                             "MIDDLE"
@@ -1651,9 +1699,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
-                                        "Material": {}
+                                        "Material": {
+                                          "@containerField": "material"
+                                        }
                                       }
                                     ]
                                   }
@@ -1680,20 +1731,26 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/CameraMoveTilt.png",
                                       "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"
@@ -1719,12 +1776,14 @@
                               "-geometry": [
                                 {
                                   "Text": {
+                                    "@containerField": "geometry",
                                     "@string": [
                                       "Tilt left, right"
                                     ],
                                     "-fontStyle": [
                                       {
                                         "FontStyle": {
+                                          "@containerField": "fontStyle",
                                           "@justify": [
                                             "MIDDLE",
                                             "MIDDLE"
@@ -1738,9 +1797,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
-                                        "Material": {}
+                                        "Material": {
+                                          "@containerField": "material"
+                                        }
                                       }
                                     ]
                                   }
@@ -1945,6 +2007,7 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "Click to animate",
                                 "AimPointTest"
@@ -1952,6 +2015,7 @@
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@justify": [
                                       "MIDDLE",
                                       "MIDDLE"
@@ -1965,9 +2029,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@USE": "ArtDeco5"
                                   }
                                 }
@@ -2105,6 +2171,7 @@
                         "-geometry": [
                           {
                             "IndexedLineSet": {
+                              "@containerField": "geometry",
                               "@coordIndex": [
                                 0,
                                 1
@@ -2112,6 +2179,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@point": [
                                       0,
                                       0,
@@ -2129,9 +2197,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@emissiveColor": [
                                       0,
                                       0,
@@ -2300,9 +2370,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@ambientIntensity": 0.01,
                               "@diffuseColor": [
                                 1,
@@ -2319,6 +2391,7 @@
                   "-geometry": [
                     {
                       "IndexedFaceSet": {
+                        "@containerField": "geometry",
                         "@colorIndex": [
                           0,
                           1,
@@ -2623,6 +2696,7 @@
                         "-coord": [
                           {
                             "Coordinate": {
+                              "@containerField": "coord",
                               "@point": [
                                 -5.25,
                                 5.25,
@@ -2823,6 +2897,7 @@
                         "-color": [
                           {
                             "Color": {
+                              "@containerField": "color",
                               "@color": [
                                 0,
                                 0,
@@ -2917,20 +2992,26 @@
                 "Shape": {
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ],
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
-                            "Material": {}
+                            "Material": {
+                              "@containerField": "material"
+                            }
                           }
                         ],
                         "-texture": [
                           {
                             "ImageTexture": {
+                              "@containerField": "texture",
                               "@url": [
                                 "../earth-topo.png",
                                 "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"
@@ -3072,6 +3153,7 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "CameraPrototype",
                                 "defines a prototype",
@@ -3082,6 +3164,7 @@
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@justify": [
                                       "MIDDLE",
                                       "MIDDLE"
@@ -3096,9 +3179,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@diffuseColor": [
                                       1,
                                       1,

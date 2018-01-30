@@ -30,16 +30,16 @@
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
-<ComposedShader DEF="cobweb" language="GLSL"><!--http://hypertextbook.com/facts/2005/JustinChe.shtml--><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
+<ComposedShader DEF="x_ite" language="GLSL"><!--http://hypertextbook.com/facts/2005/JustinChe.shtml--><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
 <field name="cube" accessType="inputOutput" type="SFInt32" value="0"></field>
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;../shaders/cobweb.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>
@@ -58,23 +58,7 @@
 <field name="bottom_changed" type="MFString" accessType="outputOnly"></field>
 <field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
 <field name="old" type="SFInt32" accessType="inputOutput" value="-1"></field>
-<![CDATA[ecmascript:
-        function set_fraction( f, tm ) {
-	    var side = Math.floor(f*frontUrls.length);
-	    if (side > frontUrls.length-1) {
-	    	side = 0;
-	    }
-	    if (side != old) {
-	    	    Browser.print(f+" "+side);
-	    	    old = side;
-		    front_changed[0] = frontUrls[side];
-		    back_changed[0] = backUrls[side];
-		    left_changed[0] = leftUrls[side];
-		    right_changed[0] = rightUrls[side];
-		    top_changed[0] = topUrls[side];
-		    bottom_changed[0] = bottomUrls[side];
-            }
-        }
+<![CDATA[ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { Browser.print(f+""+side); old = side; front_changed[0] = frontUrls[side]; back_changed[0] = backUrls[side]; left_changed[0] = leftUrls[side]; right_changed[0] = rightUrls[side]; top_changed[0] = topUrls[side]; bottom_changed[0] = bottomUrls[side]; } }
 ]]></Script>
 <TimeSensor DEF="Clock" cycleInterval="45" loop="true"></TimeSensor>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="UrlSelector" toField="set_fraction"></ROUTE>

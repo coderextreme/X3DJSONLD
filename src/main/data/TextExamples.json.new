@@ -63,12 +63,14 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "Compare special character escaping"
                         ],
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@DEF": "testFontStyle",
                               "@justify": [
                                 "MIDDLE",
@@ -84,10 +86,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@DEF": "LightBlueAppearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -117,6 +121,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "I don't think so",
                           "",
@@ -125,6 +130,7 @@
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@USE": "testFontStyle"
                             }
                           }
@@ -135,6 +141,7 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@USE": "LightBlueAppearance"
                       }
                     }
@@ -157,6 +164,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "I don't think so",
                           "",
@@ -165,6 +173,7 @@
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@USE": "testFontStyle"
                             }
                           }
@@ -175,6 +184,7 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@USE": "LightBlueAppearance"
                       }
                     }

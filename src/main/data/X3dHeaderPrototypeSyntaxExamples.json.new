@@ -269,15 +269,19 @@
                 "Shape": {
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ],
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -322,10 +326,12 @@
             "-proxy": [
               {
                 "Shape": {
+                  "@containerField": "proxy",
                   "#comment": "alternative: Text string='\\\"He said, \\\\&quot;Immel did it!\\\\&quot;\\\"'",
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "He said, \\\"Immel did it!\\\""
                         ]
@@ -335,9 +341,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
-                            "Material": {}
+                            "Material": {
+                              "@containerField": "material"
+                            }
                           }
                         ]
                       }
@@ -368,9 +377,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "ProtoInstance": {
+                              "@containerField": "material",
                               "@name": "EmissiveMaterial",
                               "fieldValue": [
                                 {
@@ -387,6 +398,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "X3D Header Prototype syntax examples",
                           "(view console for EXTERNPROTO output)"
@@ -394,6 +406,7 @@
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@justify": [
                                 "MIDDLE",
                                 "MIDDLE"

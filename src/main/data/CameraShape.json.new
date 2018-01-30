@@ -153,10 +153,12 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@DEF": "CameraAppearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@DEF": "lambert1_0",
                                     "@ambientIntensity": 0.25,
                                     "@diffuseColor": [
@@ -184,6 +186,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@DEF": "pCylinder1_0Geo",
                               "@convex": true,
                               "@coordIndex": [
@@ -348,6 +351,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@DEF": "pCylinder1GeoPoints",
                                     "@point": [
                                       -0.36,
@@ -438,6 +442,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "CameraAppearance"
                             }
                           }
@@ -449,6 +454,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@DEF": "pCube1_0Geo",
                               "@convex": true,
                               "@coordIndex": [
@@ -607,6 +613,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@DEF": "pCube1GeoPoints",
                                     "@point": [
                                       -1.03,
@@ -715,6 +722,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "CameraAppearance"
                             }
                           }
@@ -726,6 +734,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@DEF": "pPipe1_0Geo",
                               "@convex": true,
                               "@coordIndex": [
@@ -1694,6 +1703,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@DEF": "pPipe1GeoPoints",
                                     "@point": [
                                       0.58,
@@ -2282,6 +2292,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "CameraAppearance"
                             }
                           }
@@ -2293,6 +2304,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@DEF": "pSphere1_0Geo",
                               "@convex": true,
                               "@coordIndex": [
@@ -3265,6 +3277,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@DEF": "pSphere1GeoPoints",
                                     "@point": [
                                       0.06,
@@ -3910,6 +3923,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "CameraAppearance"
                             }
                           }
@@ -3942,6 +3956,7 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "@USE": "CameraAppearance"
                                   }
                                 }
@@ -3949,6 +3964,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@USE": "pCylinder1_0Geo"
                                   }
                                 }
@@ -3977,6 +3993,7 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "@USE": "CameraAppearance"
                                   }
                                 }
@@ -3984,6 +4001,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@USE": "pCube1_0Geo"
                                   }
                                 }
@@ -4012,6 +4030,7 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "@USE": "CameraAppearance"
                                   }
                                 }
@@ -4019,6 +4038,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@USE": "pPipe1_0Geo"
                                   }
                                 }
@@ -4047,6 +4067,7 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "@USE": "CameraAppearance"
                                   }
                                 }
@@ -4054,6 +4075,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@USE": "pSphere1_0Geo"
                                   }
                                 }

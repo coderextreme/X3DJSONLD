@@ -90,6 +90,7 @@
             "-geometry": [
               {
                 "Text": {
+                  "@containerField": "geometry",
                   "@string": [
                     "One, Two, Three",
                     "",
@@ -99,6 +100,7 @@
                   "-fontStyle": [
                     {
                       "FontStyle": {
+                        "@containerField": "fontStyle",
                         "@justify": [
                           "MIDDLE",
                           "MIDDLE"
@@ -113,9 +115,11 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
                       "Material": {
+                        "@containerField": "material",
                         "@diffuseColor": [
                           0,
                           0,

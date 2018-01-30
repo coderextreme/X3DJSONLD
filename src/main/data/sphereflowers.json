@@ -91,7 +91,7 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["../shaders/cobweb_flowers_chromatic.vs"]
+                                        "@value":["../shaders/x_ite_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
