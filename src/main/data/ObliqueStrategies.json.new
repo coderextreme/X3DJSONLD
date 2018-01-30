@@ -96,7 +96,7 @@
         },
         {
           "@name": "warning",
-          "@content": "BSContact error: Script node TextScript: parse error: line 15 \\\" var strategy = [];"
+          "@content": "BSContact error: Script node TextScript: parse error: line 15 \\\"var strategy = [];"
         },
         {
           "@name": "identifier",
@@ -150,6 +150,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "Oblique Strategies",
                           "",
@@ -160,6 +161,7 @@
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@DEF": "MessageFont",
                               "@family": [
                                 "SANS"
@@ -178,9 +180,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 1,
                                 1,
@@ -208,6 +212,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@coordIndex": [
                                 0,
                                 1,
@@ -219,6 +224,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@point": [
                                       1,
                                       1,
@@ -242,9 +248,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@ambientIntensity": 0.245763,
                                     "@diffuseColor": [
                                       0,
@@ -349,10 +357,12 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@DEF": "CardText",
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@family": [
                                 "SANS"
                               ],
@@ -370,9 +380,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 1,
                                 1,
@@ -397,6 +409,7 @@
                   "-source": [
                     {
                       "AudioClip": {
+                        "@containerField": "source",
                         "@DEF": "TextToSpeechAudioClip",
                         "@description": "sends strategy text google translate",
                         "@url": [
@@ -455,12 +468,14 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "previous"
                         ],
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@USE": "MessageFont"
                             }
                           }
@@ -471,10 +486,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@DEF": "InterfaceAppearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 1,
                                 0,
@@ -503,6 +520,7 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
+                              "@containerField": "geometry",
                               "@coordIndex": [
                                 0,
                                 1,
@@ -514,6 +532,7 @@
                               "-coord": [
                                 {
                                   "Coordinate": {
+                                    "@containerField": "coord",
                                     "@point": [
                                       1,
                                       1,
@@ -537,9 +556,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@transparency": 1
                                   }
                                 }
@@ -587,12 +608,14 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "next"
                         ],
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@USE": "MessageFont"
                             }
                           }
@@ -603,6 +626,7 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@USE": "InterfaceAppearance"
                       }
                     }
@@ -659,12 +683,14 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "random"
                         ],
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@USE": "MessageFont"
                             }
                           }
@@ -675,6 +701,7 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@USE": "InterfaceAppearance"
                       }
                     }
@@ -745,12 +772,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "speech"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@USE": "MessageFont"
                                   }
                                 }
@@ -761,6 +790,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "InterfaceAppearance"
                             }
                           }

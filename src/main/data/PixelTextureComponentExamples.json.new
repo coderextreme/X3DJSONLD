@@ -94,9 +94,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@DEF": "ZeroComponents"
                             }
                           }
@@ -106,7 +108,9 @@
                   ],
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ]
                 }
@@ -124,12 +128,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "0"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@DEF": "CenterJustify",
                                     "@justify": [
                                       "MIDDLE",
@@ -144,10 +150,12 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@DEF": "TextMaterial",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@diffuseColor": [
                                       1,
                                       1,
@@ -180,9 +188,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@DEF": "OneComponent",
                               "@image": [
                                 1,
@@ -199,7 +209,9 @@
                   ],
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ]
                 }
@@ -217,12 +229,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "1"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@USE": "CenterJustify"
                                   }
                                 }
@@ -233,6 +247,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "TextMaterial"
                             }
                           }
@@ -253,9 +268,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@DEF": "TwoComponents",
                               "@image": [
                                 2,
@@ -272,7 +289,9 @@
                   ],
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ]
                 }
@@ -290,12 +309,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "2"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@USE": "CenterJustify"
                                   }
                                 }
@@ -306,6 +327,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "TextMaterial"
                             }
                           }
@@ -331,10 +353,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "#comment": "note 0x000000 = 0",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@DEF": "ThreeComponents",
                               "@image": [
                                 2,
@@ -357,7 +381,9 @@
                   ],
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ]
                 }
@@ -375,12 +401,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "3"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@USE": "CenterJustify"
                                   }
                                 }
@@ -391,6 +419,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "TextMaterial"
                             }
                           }
@@ -416,10 +445,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "#comment": "Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@DEF": "FourComponents",
                               "@image": [
                                 3,
@@ -440,7 +471,9 @@
                   ],
                   "-geometry": [
                     {
-                      "Box": {}
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ]
                 }
@@ -458,12 +491,14 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "4"
                               ],
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@USE": "CenterJustify"
                                   }
                                 }
@@ -474,6 +509,7 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "@USE": "TextMaterial"
                             }
                           }
@@ -499,9 +535,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 8,
                                 8,
@@ -580,6 +618,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@size": [
                           16,
                           16,

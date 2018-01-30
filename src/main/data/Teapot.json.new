@@ -71,9 +71,11 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@DEF": "Black_mat",
                                           "@diffuseColor": [
                                             0,
@@ -89,6 +91,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@coordIndex": [
                                       0,
                                       1,
@@ -1599,6 +1602,7 @@
                                     "-coord": [
                                       {
                                         "Coordinate": {
+                                          "@containerField": "coord",
                                           "@point": [
                                             -0.07,
                                             0.57,
@@ -2197,9 +2201,11 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@DEF": "default_mat",
                                           "@ambientIntensity": 1,
                                           "@diffuseColor": [
@@ -2214,6 +2220,7 @@
                                     "-texture": [
                                       {
                                         "ImageTexture": {
+                                          "@containerField": "texture",
                                           "@url": [
                                             "examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"
                                           ]
@@ -2226,6 +2233,7 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@coordIndex": [
                                       0,
                                       1,
@@ -6810,6 +6818,7 @@
                                     "-coord": [
                                       {
                                         "Coordinate": {
+                                          "@containerField": "coord",
                                           "@point": [
                                             1,
                                             0.276,
@@ -7682,6 +7691,7 @@
                                     "-texCoord": [
                                       {
                                         "TextureCoordinate": {
+                                          "@containerField": "texCoord",
                                           "@point": [
                                             0.75,
                                             0.873,

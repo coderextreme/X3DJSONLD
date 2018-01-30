@@ -46,6 +46,7 @@
                   "-geometry": [
                     {
                       "IndexedFaceSet": {
+                        "@containerField": "geometry",
                         "@DEF": "IndexedFaceSet",
                         "@coordIndex": [
                           0,
@@ -5697,6 +5698,7 @@
                         "-coord": [
                           {
                             "Coordinate": {
+                              "@containerField": "coord",
                               "@point": [
                                 -23.495,
                                 90.55,
@@ -6560,6 +6562,7 @@
                         "-normal": [
                           {
                             "Normal": {
+                              "@containerField": "normal",
                               "@vector": [
                                 0.5968871433635611,
                                 -0.6620639605522747,
@@ -8260,6 +8263,7 @@
                         "-color": [
                           {
                             "Color": {
+                              "@containerField": "color",
                               "@color": [
                                 0,
                                 1,

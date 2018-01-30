@@ -25,8 +25,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/common.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/common.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/gl_flowers_chromatic.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/common.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/gl_flowers_chromatic.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
@@ -35,8 +35,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="shader" language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
@@ -45,8 +45,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="10"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="10"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/cobweb.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <!--<Sphere></Sphere>--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
@@ -64,109 +64,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[ecmascript:
-			function newBubble() {
-			    translation = new SFVec3f(0, 0, 0);
-			    velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			function set_fraction() {
-			    translation = new SFVec3f(
-			    	translation.x + velocity.x,
-				translation.y + velocity.y,
-				translation.z + velocity.z);
-			    if (Math.abs(translation.x) > 10) {
-					newBubble();
-			    } else if (Math.abs(translation.y) > 10) {
-					newBubble();
-			    } else if (Math.abs(translation.z) > 10) {
-					newBubble();
-			    } else {
-					velocity = new SFVec3f(
-						velocity.x + Math.random() * 0.2 - 0.1,
-						velocity.y + Math.random() * 0.2 - 0.1,
-						velocity.z + Math.random() * 0.2 - 0.1
-					);
-			    }
-			    animate_flowers();
-			}
-
-			function initialize() {
-			     var cis = [];
-			     newBubble();
-			     resolution = 100;
-			     updateCoordinates(resolution);
-			     for ( i = 0; i < resolution-1; i++) {
-				for ( j = 0; j < resolution-1; j++) {
-				     cis.push(i*resolution+j);
-				     cis.push(i*resolution+j+1);
-				     cis.push((i+1)*resolution+j+1);
-				     cis.push((i+1)*resolution+j);
-				     cis.push(-1);
-				}
-			    }
-			     coordIndexes = new MFInt32(cis);
-			}
-
-			function updateCoordinates(resolution) {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (resolution-1);
-			     var crds = [];
-			     for ( i = 0; i < resolution; i++) {
-				for ( j = 0; j < resolution; j++) {
-					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);
-					crds.push(new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					));
-					theta += delta;
-				}
-				phi += delta;
-				coordinates = new MFVec3f(crds);
-			     }
-			}
-
-			function animate_flowers(fraction, eventTime) {
-				choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					a += Math.random() * 0.2 - 0.1;
-					break;
-				case 1:
-					b += Math.random() * 0.2 - 0.1;
-					break;
-				case 2:
-					c += Math.random() * 2 - 1;
-					break;
-				case 3:
-					d += Math.random() * 2 - 1;
-					break;
-				}
-				if (a > 1) {
-					a =  0.5;
-				}
-				if (b > 1) {
-					b =  0.5;
-				}
-				if (c < 1) {
-					c =  4;
-				}
-				if (d < 1) {
-					d =  4;
-				}
-				if (c > 10) {
-					c = 4;
-				}
-				if (d > 10) {
-					d = 4;
-				}
-				resolution = 100;
-				updateCoordinates(resolution);
-			}
+<![CDATA[ecmascript: function newBubble() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { newBubble(); } else if (Math.abs(translation.y) > 10) { newBubble(); } else if (Math.abs(translation.z) > 10) { newBubble(); } else { velocity = new SFVec3f( velocity.x + Math.random() * 0.2 - 0.1, velocity.y + Math.random() * 0.2 - 0.1, velocity.z + Math.random() * 0.2 - 0.1 ); } animate_flowers(); } function initialize() { var cis = []; newBubble(); resolution = 100; updateCoordinates(resolution); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = new MFInt32(cis); } function updateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var crds = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = a + b * Math.cos(c * theta) * Math.cos(d * phi); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; coordinates = new MFVec3f(crds); } } function animate_flowers(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: a += Math.random() * 0.2 - 0.1; break; case 1: b += Math.random() * 0.2 - 0.1; break; case 2: c += Math.random() * 2 - 1; break; case 3: d += Math.random() * 2 - 1; break; } if (a > 1) { a = 0.5; } if (b > 1) { b = 0.5; } if (c < 1) { c = 4; } if (d < 1) { d = 4; } if (c > 10) { c = 4; } if (d > 10) { d = 4; } resolution = 100; updateCoordinates(resolution); }
 ]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>
 <TimeSensor DEF="SongTime" loop="true"></TimeSensor>
@@ -175,7 +73,7 @@
 <ROUTE fromField="cycleTime" fromNode="SongTime" toField="startTime" toNode="AudioClip"></ROUTE>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Bounce" fromField="translation" toNode="transform" toField="set_translation"></ROUTE>
-<!--<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>--></ProtoBody>
+<!--<ROUTE fromField="coordIndexes"fromNode="Bounce"toField="set_coordIndex"toNode="Orbit"></ROUTE> <ROUTE fromField="coordinates"fromNode="Bounce"toField="set_point"toNode="OrbitCoordinates"></ROUTE>--></ProtoBody>
 </ProtoDeclare>
 <Transform><ProtoInstance name="flower"></ProtoInstance>
 <!--<ProtoInstance name="flower"></ProtoInstance> <ProtoInstance name="flower"></ProtoInstance>--></Transform>

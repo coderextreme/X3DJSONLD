@@ -59,9 +59,11 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
                       "Material": {
+                        "@containerField": "material",
                         "@ambientIntensity": 0.01,
                         "@diffuseColor": [
                           1,
@@ -78,6 +80,7 @@
             "-geometry": [
               {
                 "IndexedFaceSet": {
+                  "@containerField": "geometry",
                   "@colorIndex": [
                     0,
                     1,
@@ -381,6 +384,7 @@
                   "-coord": [
                     {
                       "Coordinate": {
+                        "@containerField": "coord",
                         "@point": [
                           -5.25,
                           5.25,
@@ -581,6 +585,7 @@
                   "-color": [
                     {
                       "Color": {
+                        "@containerField": "color",
                         "@color": [
                           0,
                           0,

@@ -221,13 +221,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"],
+                                      "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"],
+                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
@@ -236,7 +236,7 @@
                             },
                             { "ComposedShader":
                               {
-                                "@DEF":"cobweb",
+                                "@DEF":"x_ite",
                                 "@language":"GLSL",
                                 "field": [
                                   {
@@ -315,13 +315,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/cobweb_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"],
+                                      "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"],
+                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
@@ -504,7 +504,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"a",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"a"
             }
           },
@@ -512,7 +512,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"b",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"b"
             }
           },
@@ -520,7 +520,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"c",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"c"
             }
           },
@@ -528,7 +528,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"d",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"d"
             }
           },
@@ -536,7 +536,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"pdelta",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"pdelta"
             }
           },
@@ -544,7 +544,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"tdelta",
-              "@toNode":"cobweb",
+              "@toNode":"x_ite",
               "@toField":"tdelta"
             }
           },

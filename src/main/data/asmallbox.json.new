@@ -46,7 +46,9 @@
                           "Shape": {
                             "-geometry": [
                               {
-                                "Sphere": {}
+                                "Sphere": {
+                                  "@containerField": "geometry"
+                                }
                               }
                             ]
                           }
@@ -97,7 +99,9 @@
                           "Shape": {
                             "-geometry": [
                               {
-                                "Cylinder": {}
+                                "Cylinder": {
+                                  "@containerField": "geometry"
+                                }
                               }
                             ]
                           }
@@ -151,6 +155,7 @@
                       "-geometry": [
                         {
                           "Box": {
+                            "@containerField": "geometry",
                             "@size": [
                               0.125,
                               0.125,

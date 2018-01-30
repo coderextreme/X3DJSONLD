@@ -108,14 +108,18 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "PixelTexture": {
+                                    "@containerField": "texture",
                                     "@DEF": "RgbOpacityCheckerboard",
                                     "@image": [
                                       2,
@@ -134,7 +138,9 @@
                         ],
                         "-geometry": [
                           {
-                            "Box": {}
+                            "Box": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ]
                       }
@@ -155,14 +161,18 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "PixelTexture": {
+                                    "@containerField": "texture",
                                     "@USE": "RgbOpacityCheckerboard"
                                   }
                                 }
@@ -172,7 +182,9 @@
                         ],
                         "-geometry": [
                           {
-                            "Sphere": {}
+                            "Sphere": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ]
                       }
@@ -193,14 +205,18 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "PixelTexture": {
+                                    "@containerField": "texture",
                                     "@USE": "RgbOpacityCheckerboard"
                                   }
                                 }
@@ -210,7 +226,9 @@
                         ],
                         "-geometry": [
                           {
-                            "Cone": {}
+                            "Cone": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ]
                       }
@@ -231,14 +249,18 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
-                                  "Material": {}
+                                  "Material": {
+                                    "@containerField": "material"
+                                  }
                                 }
                               ],
                               "-texture": [
                                 {
                                   "PixelTexture": {
+                                    "@containerField": "texture",
                                     "@USE": "RgbOpacityCheckerboard"
                                   }
                                 }
@@ -248,7 +270,9 @@
                         ],
                         "-geometry": [
                           {
-                            "Cylinder": {}
+                            "Cylinder": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ]
                       }

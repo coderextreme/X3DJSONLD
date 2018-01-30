@@ -98,15 +98,19 @@
                 "Shape": {
                   "-geometry": [
                     {
-                      "Sphere": {}
+                      "Sphere": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ],
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -123,10 +127,12 @@
                         "-texture": [
                           {
                             "ComposedCubeMapTexture": {
+                              "@containerField": "texture",
                               "@DEF": "texture",
                               "-back": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "back",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
@@ -137,6 +143,7 @@
                               "-bottom": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "bottom",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
@@ -147,6 +154,7 @@
                               "-front": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "front",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
@@ -157,6 +165,7 @@
                               "-left": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "left",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
@@ -167,6 +176,7 @@
                               "-right": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "right",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
@@ -177,6 +187,7 @@
                               "-top": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "top",
                                     "@url": [
                                       "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
@@ -235,7 +246,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
@@ -245,7 +256,7 @@
                                     "@DEF": "common",
                                     "@url": [
                                       "../shaders/common.fs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/common.fs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
                                     ],
                                     "@type": "FRAGMENT"
                                   }
@@ -298,8 +309,8 @@
                                 {
                                   "ShaderPart": {
                                     "@url": [
-                                      "../shaders/cobweb.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                      "../shaders/x_ite.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
