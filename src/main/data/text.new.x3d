@@ -15,7 +15,7 @@
                 <Appearance>
                     <Material/>
                 </Appearance>
-                <Text string='"Node\"\"\""'>
+                <Text string='"Node\\"\\"\\""'>
                     <FontStyle family='"SERIF"' justify='"BEGIN"'/>
                 </Text>
             </Shape>
@@ -31,7 +31,7 @@
                 <Appearance>
                     <Material/>
                 </Appearance>
-                <Text string='"Node3 \\ \" "Node3\"\"\""'>
+                <Text string='"Node3 \\ \" "Node3\\"\\"\\""'>
                     <FontStyle family='"SERIF"' justify='"BEGIN"'/>
                 </Text>
             </Shape>
