@@ -20,6 +20,7 @@
                 <Appearance class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
                     <ComposedShader DEF='x3dom' language='GLSL' class=''>
+                        <!-- field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field -->
                         <ShaderPart type='VERTEX' url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"' class=''/>
                         <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' class=''/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
@@ -33,7 +34,6 @@
                         <field name='d' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='20.0'/>
                         <field name='tdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.0'/>
                         <field name='pdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.0'/>
-                        <!-- field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field -->
                     </ComposedShader>
                     <ComposedShader DEF='cobweb' language='GLSL' class=''>
                         <ShaderPart type='VERTEX' url='"../shaders/cobweb_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"' class=''/>

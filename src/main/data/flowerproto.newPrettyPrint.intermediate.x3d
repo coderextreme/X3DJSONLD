@@ -22,6 +22,7 @@
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                             <ComposedShader DEF='shader' language='GLSL' class=''>
+                                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                                 <ShaderPart type='VERTEX' url='' class=''>
                                     <IS>
                                         <connect nodeField='url' protoField='vertex'/>
@@ -49,7 +50,6 @@
                                 <field name='d' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='3.0'/>
                                 <field name='tdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                                 <field name='pdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture' class=''>
                                 <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
