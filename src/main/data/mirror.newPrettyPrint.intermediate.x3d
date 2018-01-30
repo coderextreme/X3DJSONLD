@@ -26,6 +26,7 @@
                 <Appearance class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
                     <ComposedShader DEF='x3dom' language='GLSL' class=''>
+                        <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                         <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' class=''/>
                         <ShaderPart type='FRAGMENT' url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' class=''/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
@@ -33,9 +34,9 @@
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                        <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                     </ComposedShader>
                     <ComposedShader DEF='cobweb' language='GLSL' class=''>
+                        <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                         <ShaderPart type='VERTEX' url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' class=''/>
                         <ShaderPart type='FRAGMENT' url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' class=''/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
@@ -43,7 +44,6 @@
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                        <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                     </ComposedShader>
                     <ComposedCubeMapTexture class=''>
                         <ImageTexture DEF='backShader' containerField='back' repeatS='true' repeatT='true' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' class=''/>

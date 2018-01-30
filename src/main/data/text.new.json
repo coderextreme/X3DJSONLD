@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 December 2017"
+            "@content":"30 January 2018"
           },
           {
             "@name":"generator",
@@ -89,7 +89,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["Node2","\"\\"," Node2"," ],
+                          "@string":["Node2","\""\\","Node2"],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -114,7 +114,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["Node3 \\ \"Node3\"," \"\""],
+                          "@string":["Node3 \\\""Node3\"\"\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -135,8 +135,7 @@
                       }
                     ],
                     "#sourceText":[
-"ecmascript:",
-"\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';"
+"ecmascript: var me = '\"1\""",2\"\"\n3\"';"
 ]
                   }
                 }
