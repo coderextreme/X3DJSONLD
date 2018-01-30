@@ -12,8 +12,8 @@ python ../python/classes.py
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
-EXTOJAVA='s/\/Examples\//\/java\/net\/coderextreme\/Examples\//' 
-EXTONASH='s/\/Examples\//\/nashorn\/net\/coderextreme\/Examples\//' 
+EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
+EXTONASH='s/\/Library\//\/nashorn\/net\/coderextreme\/Library\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/nashorn\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
