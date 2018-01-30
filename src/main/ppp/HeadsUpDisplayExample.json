@@ -61,7 +61,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 August 2017"
+          "@content": "30 January 2018"
         },
         {
           "@name": "generator",
@@ -140,7 +140,7 @@
           }
         },
         {
-          "#comment": "ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"
+          "#comment": "ProtoDeclare is the \"cookie cutter\"template, ProtoInstance creates an actual occurrence"
         },
         {},
         {

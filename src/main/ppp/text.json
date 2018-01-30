@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 August 2017"
+          "@content": "30 January 2018"
         },
         {
           "@name": "generator",
@@ -100,7 +100,7 @@
                   "-geometry": {
                     "Text": {
                       "@string": [
-                        "Node3 \\\\ \\",
+                        "Node3 \\\\\\",
                         "Node3\"\"\""
                       ],
                       "-fontStyle": {
@@ -131,8 +131,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';"
+                    "ecmascript: var me = '\"1\"\"\"2\"\"\n3\"';"
                   ]
                 }
               }

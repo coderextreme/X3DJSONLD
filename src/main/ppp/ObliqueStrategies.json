@@ -97,7 +97,7 @@
         },
         {
           "@name": "warning",
-          "@content": "BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];"
+          "@content": "BSContact error: Script node TextScript: parse error: line 15 \"var strategy = [];"
         },
         {
           "@name": "identifier",
@@ -113,7 +113,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 August 2017"
+          "@content": "30 January 2018"
         },
         {
           "@name": "generator",
