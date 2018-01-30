@@ -20,7 +20,7 @@ uniform mat4 modelViewProjectionMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 
-varying vec3 r;
+varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
 varying vec3 tb;
@@ -38,7 +38,7 @@ void main()
     vec3 fragEyeVector = position - eye.xyz;
                             
     vec3 i = normalize(fragEyeVector);
-    r = reflect(i, normal);
+    t = reflect(i, normal);
     tr = refract(i, normal, chromaticDispertion.x);
     tg = refract(i, normal, chromaticDispertion.y);
     tb = refract(i, normal, chromaticDispertion.z);

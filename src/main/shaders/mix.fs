@@ -14,7 +14,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 */
 uniform samplerCube cube;
 
-varying vec3 r;
+varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
 varying vec3 tb;
@@ -24,7 +24,7 @@ void main()
 {
     vec4 tcol = vec4(1.0);
 
-    vec4 rcol = textureCube(cube, r);
+    vec4 rcol = textureCube(cube, t);
     tcol.r = textureCube(cube, tr).r;
     tcol.g = textureCube(cube, tg).g;
     tcol.b = textureCube(cube, tb).b;
