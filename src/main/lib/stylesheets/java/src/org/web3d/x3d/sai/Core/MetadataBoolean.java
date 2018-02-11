@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -40,12 +40,12 @@ import org.web3d.x3d.sai.Core.*;
  * The metadata provided by this node is contained in the Boolean values of the value field.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: (X3D version 3.3 or later) MetadataBoolean contains a typed list of values providing metadata information about its parent node. Further information about this specific Metadata node may be provided by a single child Metadata node with containerField="metadata".
+ * <i>X3D node tooltip</i>: (X3D version 3.3 or later) MetadataBoolean contains a typed list of values providing metadata information about its parent node. Further information about this specific Metadata* node may be provided by a single child Metadata* node with containerField="metadata".
  * <ul>
  *  <li> <i>Hint:</i> use containerField="value" if the parent node is MetadataSet. </li> 
  *  <li> <i>Hint:</i> if a metadata node is needed as a top-level root node for the scene, first insert a parent WorldInfo (or WorldInfo/MetadataSet) to contain it. </li> 
- *  <li> <i>Hint:</i> an IS statement precedes any sibling Metadata node, which in turn precedes any other sibling nodes. </li> 
- *  <li> <i>Hint:</i> comments are not readable when a model file is loaded for viewing, but WorldInfo and Metadata nodes are persistent and inspectable at run time. </li> 
+ *  <li> <i>Hint:</i> an IS statement precedes any sibling Metadata* node, which in turn precedes any other sibling nodes. </li> 
+ *  <li> <i>Hint:</i> comments are not readable when a model file is loaded for viewing, but WorldInfo and Metadata* nodes are persistent and inspectable at run time. </li> 
  *  <li> <i>Hint:</i>  X3D for Web Authors, Chapter 15, Metadata Information <br> <a href="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter15-Metadata/Chapter15-MetadataInformation.html" target="_blank">http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter15-Metadata/Chapter15-MetadataInformation.html</a> </li> 
  * </ul>
  * <br>
@@ -64,7 +64,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -72,7 +72,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -96,6 +96,8 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 	 * Assign String value to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Depending on the metadata vocabulary, the attribute name is usually required for metadata nodes. Warning: name is not included if this instance is a USE node. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -114,6 +116,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 	 * Assign String value to inputOutput SFString field named <i>reference</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Reference to the metadata standard or definition defining this particular metadata value.
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the reference field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -134,6 +137,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 	 * Assign boolean array to inputOutput MFBool field named <i>value</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The value attribute is a strictly typed data array providing relevant metadata information. Warning: use lower-case values ("true false") for .x3d XML encoding, and upper-case values ("TRUE FALSE") for .x3dv ClassicVRML encoding.
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the value field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -146,6 +150,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 	 * <i>Tooltip:</i> DEF defines a unique ID name for this node, referenceable by other nodes. Hint: descriptive DEF names improve clarity and help document a model. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
 	 * <br><br>
 	 *  Note that setting the DEF value clears the USE value.
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the DEF field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -162,6 +167,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 	 * <br><br>
 	 * <i>Warning:</i> invoking the <code>setUSE()</code> method on this node resets all other fields to their default values (except for containerField) and also releases all child nodes.<br><br>
 	 * <i>Warning:</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the USE field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -171,6 +177,7 @@ public interface MetadataBoolean extends X3DMetadataObject, X3DNode
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>class</i>.
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the class field.
 	 * @return {@link MetadataBoolean} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

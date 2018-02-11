@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
@@ -40,9 +41,10 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to MFRotation X3D field type.
  * 
  * <br><br>
- * MFRotation is an array of SFRotation values. Individual SFRotation array values are optionally separated by commas.
+ * MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas.
 <br><br>
 Related field object: {@link SFRotationObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFRotation">X3D Tooltips: type MFRotation</a>
 
  * 
 
@@ -217,7 +219,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFRotation">X3D Tooltips: type MFRotation</a>
 	 * @see org.web3d.x3d.jsail.fields.SFFloatObject#stripTrailingZeroes(float)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

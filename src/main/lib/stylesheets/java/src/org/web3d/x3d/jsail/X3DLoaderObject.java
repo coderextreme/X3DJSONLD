@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -237,6 +237,8 @@ public class X3DLoaderObject
 	 * Convenience method, use DOM to create X3D string from a previously loaded document with default zero indent.
 	 * X3D output is XML encoding.
 	 * @param node DOM Node to process
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
 	 * @return the loaded X3D document of interest, starting with regular <i>X3D</i> element headers or possibly a scene fragment
 	 */
 	public String toStringX3D(org.w3c.dom.Node node) {
@@ -317,7 +319,17 @@ public class X3DLoaderObject
 				for (int i = 0; i < attributes.getLength(); i++)
 				{
 					org.w3c.dom.Node current = attributes.item(i);
-					result.append(" ").append(current.getNodeName()).append("=\'").append(current.getNodeValue()).append("\'");
+					String attributeValue = new String();
+					if (current.getNodeValue() != null)
+						attributeValue = current.getNodeValue();
+					// looks like no conversion needed when reading from DOM!
+//					if (attributeValue.contains("\\"))
+//						attributeValue = attributeValue.replaceAll("\\\\","\\\\"); // replace literal \ with \\
+//					if (attributeValue.contains("\""))
+//						attributeValue = attributeValue.replaceAll("\"","\\\"");   // replace literal " with \"
+//					if (attributeValue.contains("Immel")) // trace
+//						System.out.println (attributeValue);
+					result.append(" ").append(current.getNodeName()).append("=\'").append(attributeValue).append("\'");
 				}
 
 				// determine if any actual element child nodes are present
@@ -516,8 +528,10 @@ public class X3DLoaderObject
 					// n.b. assumes X3D scene is valid!
 					for (int i = 0; i < children.getLength(); i++)
 					{
-						if (children.item(i).getNodeType() == org.w3c.dom.Node.TEXT_NODE)
-							continue;
+						if ((children.item(i) == null) || (elementObject == null) ||
+						    (children.item(i).getNodeType() == org.w3c.dom.Node.TEXT_NODE))
+							continue; // break to end of loop, continue with next Node children.item(i)
+
 						// recurse on children having elementObject as parent
 						X3DConcreteElement childX3dElement = toX3dObjectTree(children.item(i), elementObject);
 						if ((childX3dElement == null) || (childX3dElement.getElementName() == null))
@@ -526,6 +540,13 @@ public class X3DLoaderObject
 						String childProtoInstanceName = new String();
 						String childProtoInstanceUSE  = new String();
 						String         containerField = new String();
+						if (children.item(i).getAttributes().getNamedItem("containerField") != null)
+						{
+							containerField =
+							children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
+							if ((childX3dElement instanceof X3DConcreteNode) && !(containerField == null) && !containerField.isEmpty())
+								 ((X3DConcreteNode)childX3dElement).setContainerFieldOverride(containerField);
+						}
 						String  protoInstanceNodeType = new String();
 						String                    DEF = new String();
 						
@@ -546,7 +567,7 @@ public class X3DLoaderObject
 								// use DOM to find name for this element
 								if (children.item(i).getAttributes().getNamedItem("name") != null)
 									childProtoInstanceName = children.item(i).getAttributes().getNamedItem("name").getNodeValue();
-						        containerField = children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
+						        // containerField already found
 								protoInstanceNodeType = protoNameToNodeTypesHashMap.get(currentProtoNameValue);
 				
 								if (children.item(i).getAttributes().getNamedItem("DEF") != null)			// DOM
@@ -566,37 +587,44 @@ public class X3DLoaderObject
 								if (!containerField.equals("children"))
 									((ProtoInstanceObject) childX3dElement).setContainerField(containerField);
 								// diagnostics
-								if (!childProtoInstanceUSE.isEmpty() && protoInstanceNodeType.isEmpty())
+								if ((childProtoInstanceUSE != null) && !childProtoInstanceUSE.isEmpty() &&
+								    ((protoInstanceNodeType == null) ||  protoInstanceNodeType.isEmpty()))
 								{
+						
 									// TODO logging
-									errorNotice = "[X3DLoaderObject error] ProtoInstance found with USE " + childProtoInstanceUSE + " but unable to find original ProtoInstance DEF node type, thus unable to add to scene graph";
+									errorNotice = "[X3DLoaderObject error] ProtoInstance " + childProtoInstanceName +
+										" found with USE " + childProtoInstanceUSE + " but unable to find original ProtoInstance DEF node type, thus unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
 									continue;
 								}
-								else if (protoInstanceNodeType.isEmpty() && containerField.isEmpty())
+								else if (((protoInstanceNodeType == null) || protoInstanceNodeType.isEmpty()) &&
+								         ((       containerField == null) ||        containerField.isEmpty()))
 								{
 									// TODO logging
-									errorNotice = "[X3DLoaderObject error] ProtoInstance found but node type is unknown and " +
-												  "containerField is missing, unable to add to scene graph";
+									errorNotice = "[X3DLoaderObject error] ProtoInstance " + childProtoInstanceName +
+										" found but node type is unknown and " +
+										"containerField is missing, unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
 									continue;
 								}
-								else if (protoInstanceNodeType.isEmpty())
+								else if ((protoInstanceNodeType == null) || protoInstanceNodeType.isEmpty())
 								{
 									// TODO logging
-									errorNotice = "[X3DLoaderObject error] ProtoInstance found but node type is unknown and " +
-												  "containerField is " + containerField + ", unable to add to scene graph";
+									errorNotice = "[X3DLoaderObject error] ProtoInstance " + childProtoInstanceName +
+										" found but node type is unknown and " +
+										"containerField is " + containerField + ", unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
 									continue;
 								}
-								else if (containerField.isEmpty())
+								else if ((containerField == null) || containerField.isEmpty())
 								{
 									// TODO logging
-									errorNotice = "[X3DLoaderObject error] ProtoInstance found and node type is " + protoInstanceNodeType + " but " +
-												  "containerField is missing, unable to add to scene graph";
+									errorNotice = "[X3DLoaderObject error] ProtoInstance " + childProtoInstanceName +
+										" found and node type is " + protoInstanceNodeType + " but " +
+										"containerField is missing, unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
 									continue;
@@ -628,7 +656,7 @@ public class X3DLoaderObject
 							else if (childElementName.equals("Scene"))
 									((X3DObject)elementObject).setScene ((SceneObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.startsWith("Metadata"))
-									((SceneObject)elementObject).addMetadata ((X3DMetadataObject) childX3dElement);
+									((SceneObject)elementObject).addChild ((X3DMetadataObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
 									((SceneObject)elementObject).addChild ((LayerSetObject) childX3dElement);
 							else if (nodeName.equals("Scene"))
@@ -661,10 +689,17 @@ public class X3DLoaderObject
 							else if (nodeName.equals("PackagedShader") && childElementName.equals("field"))
 									((PackagedShaderObject)elementObject).addField((fieldObject) childX3dElement);
 					
+							else if (nodeName.equals("Collision") && (containerField.equals("proxy")))
+									((CollisionObject)elementObject).setProxy ((X3DChildNode) childX3dElement);
+				// TODO what about ProtoInstance proxy?  unnecessary?
+							else if (nodeName.equals("Collision") && (protoInstanceNodeType.equals("proxy")))
+									((CollisionObject)elementObject).setProxy ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("MetadataSet") && childElementName.startsWith("Metadata") && (!containerField.equals("metadata")))
+									((MetadataSetObject)elementObject).addValue ((X3DMetadataObject) childX3dElement);
 							else if (childElementName.startsWith("Metadata"))
 									((X3DConcreteNode)elementObject).setMetadata ((X3DMetadataObject) childX3dElement);
-				// TODO		else if (protoInstanceNodeType.equals("Metadata"))
-				//					((X3DConcreteNode)elementObject).setMetadata ((ProtoInstanceObject) childX3dElement);
+							else if (protoInstanceNodeType.equals("Metadata"))
+									((X3DConcreteNode)elementObject).setMetadata ((ProtoInstanceObject) childX3dElement);
 					
 							else if (childElementName.equals("Appearance"))
 									((ShapeObject)elementObject).setAppearance ((X3DAppearanceNode) childX3dElement);
@@ -822,7 +857,15 @@ public class X3DLoaderObject
 					String attributeName  = currentAttributeNode.getNodeName();
 					String attributeValue = currentAttributeNode.getNodeValue();
 					// http://www.regexplanet.com/advanced/java/index.html
-					attributeValue = attributeValue.replaceAll("\\\\\"","\""); // unescape XML quotes
+					// https://www.regular-expressions.info/java.html see "backslash-mess"
+					// https://docs.oracle.com/javase/tutorial/java/data/characters.html
+					// looks like no conversion needed when reading from DOM!
+//					if (attributeValue.contains("\\"))
+//						attributeValue = attributeValue.replaceAll("\\\\","\\\\"); // replace literal \ with \\
+//					if (attributeValue.contains("\""))
+//						attributeValue = attributeValue.replaceAll("\"","\\\"");   // replace literal " with \"
+//					if (attributeValue.contains("Immel")) // trace
+//						System.out.println (attributeValue);
 
 					// errorNotice prelude now gets predefined (in case needed later)
 					errorNotice = "[X3DLoaderObject error] <" + nodeName + " " + attributeName + "='" + attributeValue + "'/> exception: ";
@@ -849,11 +892,20 @@ public class X3DLoaderObject
 					elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
 											attributeName.substring(1); // setCamelCase
 
+					// check for proper handling of SFString/MFString escape characters, particularly backslashed quotes
+					String unescapedAttributeValue = attributeValue.replace("\\\\\"", "\\\""); // TODO regex needed for other cases of special character inputss?
+					if   (!unescapedAttributeValue.equals(attributeValue))
+					{
+						// trace statement for debug use
+						System.out.println ("*trace of X3DLoaderObject DOM import: attributeValue='" + attributeValue + 
+								"', unescapedAttributeValue='" + unescapedAttributeValue + 
+								"', attributeName='" + attributeName + 
+								"', attributeType='" + attributeType + "'");
+						attributeValue = unescapedAttributeValue;
+					}
 					// now add each attribute to element
 					try // to first create corresponding field object, then invoke set method on parent node object
 					{
-						// first create field object, e.g. org.web3d.x3d.jsail.fields.SFFloatObject
-					
 						// first create field object, e.g. org.web3d.x3d.jsail.fields.SFFloatObject
 						if   (attributeType.equals(SFStringObject.NAME))
 						{
@@ -861,7 +913,6 @@ public class X3DLoaderObject
 							elementSetMethod  = elementClass.getMethod(elementSetMethodName, new Class[] { String.class });
 							elementSetMethod.invoke (elementObject, new Object[] { attributeValue });
 						}
-						// no SFNode/MFNode types are expected for an attribute, if found then report error and skip
 						else if (attributeType.equals(SFNodeObject.NAME) || attributeType.equals(MFNodeObject.NAME))
 						{
 							// TODO logging
@@ -987,7 +1038,7 @@ public class X3DLoaderObject
 					validationResult.append(errorNotice).append("\n");
 					System.err.println(errorNotice);
 				}
-				// TODO sort out Object Model for X3D (OMX3D) to support
+				// TODO sort out X3D Unified Object Model (X3DUOM) to support
 				else parentElement.addComments(commentsBlock);
 				break;
 

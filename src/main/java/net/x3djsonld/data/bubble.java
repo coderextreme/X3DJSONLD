@@ -58,15 +58,15 @@ import org.web3d.x3d.jsail.Time.*;
 
 public class bubble
 {
-  /** Default constructor to create this object. */
-  public bubble ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public bubble ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("bubble.x3d"))
@@ -84,9 +84,7 @@ public class bubble
             .setGeometry(new SphereObject().setRadius(0.25f))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
-          .addChild(new ScriptObject("bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
@@ -131,8 +129,7 @@ public class bubble
 "		translation.z = 0;" + "\n" + 
 "		initialize();" + "\n" + 
 "	}" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
@@ -144,34 +141,49 @@ public class bubble
           .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
     .addChild(new ProtoInstanceObject("bubbleA", "Bubble").setDEF("bubbleA").setName("Bubble")));
   }
-  // end of initialize() method
+	// end of initialize() method
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return bubble model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return bubble model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new bubble().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("bubble self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("bubble self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

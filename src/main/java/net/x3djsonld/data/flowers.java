@@ -64,15 +64,15 @@ import org.web3d.x3d.jsail.Time.*;
 
 public class flowers
 {
-  /** Default constructor to create this object. */
-  public flowers ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public flowers ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addComponent(new componentObject().setName("Shaders").setLevel(1))
@@ -106,8 +106,8 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/common.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.vs\"")))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/gl_flowers_chromatic.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs\""))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/common.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/gl_flowers_chromatic.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs\""))))
               .addShaders(new ComposedShaderObject().setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -116,8 +116,8 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\""))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -126,15 +126,13 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("10"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("10"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))
             .addComments(new String[] {"",
 "			<Sphere></Sphere>"})
             .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
               .setCoord(new CoordinateObject("OrbitCoordinates")))))
-        .addChild(new ScriptObject("Bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -237,8 +235,7 @@ public class flowers
 "				}" + "\n" + 
 "				resolution = 100;" + "\n" + 
 "				updateCoordinates(resolution);" + "\n" + 
-"			}" + "\n" + "]]>"
-)
+"			}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))
@@ -266,34 +263,49 @@ public class flowers
 "            <ProtoInstance name=\"flower\"/>",
 "            <ProtoInstance name=\"flower\"/>"})));
   }
-  // end of initialize() method
+	// end of initialize() method
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return flowers model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return flowers model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new flowers().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("flowers self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("flowers self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

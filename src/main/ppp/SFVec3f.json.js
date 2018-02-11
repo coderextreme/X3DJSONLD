@@ -155,42 +155,12 @@ X3DJSON['Script']['Bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-ecmascript:
-			
-	this.newBubble = function () {
-			    this.proxy.translation = new SFVec3f(0, 0, 0);
-			    this.proxy.velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			;
+ecmascript: 
+	this.newBubble = function () { this.proxy.translation = new SFVec3f(0, 0, 0); this.proxy.velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } ;
 
-	this.set_fraction = function () {
-			    this.proxy.translation = new SFVec3f(
-			    	this.proxy.translation.x + this.proxy.velocity.x,
-				this.proxy.translation.y + this.proxy.velocity.y,
-				this.proxy.translation.z + this.proxy.velocity.z);
-				if (Math.abs(this.proxy.translation.x) > 10) {
-					this.newBubble();
-				} else if (Math.abs(this.proxy.translation.y) > 10) {
-					this.newBubble();
-				} else if (Math.abs(this.proxy.translation.z) > 10) {
-					this.newBubble();
-				} else {
-					this.proxy.velocity = new SFVec3f(
-						this.proxy.velocity.x + Math.random() * 0.2 - 0.1,
-						this.proxy.velocity.y + Math.random() * 0.2 - 0.1,
-						this.proxy.velocity.z + Math.random() * 0.2 - 0.1
-					);
-				}
-			}
+	this.set_fraction = function () { this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); if (Math.abs(this.proxy.translation.x) > 10) { this.newBubble(); } else if (Math.abs(this.proxy.translation.y) > 10) { this.newBubble(); } else if (Math.abs(this.proxy.translation.z) > 10) { this.newBubble(); } else { this.proxy.velocity = new SFVec3f( this.proxy.velocity.x + Math.random() * 0.2 - 0.1, this.proxy.velocity.y + Math.random() * 0.2 - 0.1, this.proxy.velocity.z + Math.random() * 0.2 - 0.1 ); } } ;
 
-			;
-
-	this.initialize = function () {
-			     this.newBubble();
-			};
+	this.initialize = function () { this.newBubble(); };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

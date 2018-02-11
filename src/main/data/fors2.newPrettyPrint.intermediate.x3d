@@ -21,15 +21,15 @@
                         <connect nodeField='translation' protoField='position'/>
                     </IS>
                     <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                        <Appearance class=''>
-                            <Material ambientIntensity='0.2' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
-                            <!-- comment before Material -->
-                            <!-- comment after Material -->
-                        </Appearance>
-                        <Sphere radius='1.0' solid='true' class=''/>
                         <!-- comment before Sphere -->
                         <!-- comment after Sphere -->
                         <!-- comment after Appearance -->
+                        <Appearance class=''>
+                            <!-- comment before Material -->
+                            <!-- comment after Material -->
+                            <Material ambientIntensity='0.2' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        </Appearance>
+                        <Sphere radius='1.0' solid='true' class=''/>
                     </Shape>
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0' class=''/>

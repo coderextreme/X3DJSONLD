@@ -20,6 +20,7 @@
                 <Appearance>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                     <ComposedShader DEF='x3dom' language='GLSL'>
+                        <!-- field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field -->
                         <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"'/>
                         <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"'/>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
@@ -33,7 +34,6 @@
                         <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
                         <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
                         <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-                        <!-- field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field -->
                     </ComposedShader>
                     <ComposedShader DEF='cobweb' language='GLSL'>
                         <ShaderPart url='"../shaders/cobweb_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"'/>

@@ -82,18 +82,18 @@
         <Collision bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' class=''>
             <Group USE='ExampleChildElement'/>
             <Shape containerField='proxy' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <!-- note that Collision proxy Shape is not rendered -->
+                <!-- alternative: Text string='"He said, \&quot;Immel did it!\&quot;"' -->
                 <Appearance class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                 </Appearance>
                 <Text length='' maxExtent='0.0' solid='false' string='"He said, \"Immel did it!\""' class=''/>
-                <!-- note that Collision proxy Shape is not rendered -->
-                <!-- alternative: Text string='"He said, \&quot;Immel did it!\&quot;"' -->
             </Shape>
         </Collision>
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
-                    <ProtoInstance name='EmissiveMaterial' class=''>
+                    <ProtoInstance name='EmissiveMaterial' containerField='material' class=''>
                         <fieldValue name='onlyColor' value='0.2 0.6 0.6'/>
                     </ProtoInstance>
                 </Appearance>

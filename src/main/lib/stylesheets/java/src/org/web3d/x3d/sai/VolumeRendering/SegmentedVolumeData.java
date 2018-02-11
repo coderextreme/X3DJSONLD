@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -130,7 +130,7 @@ public interface SegmentedVolumeData extends X3DVolumeDataNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -138,7 +138,7 @@ public interface SegmentedVolumeData extends X3DVolumeDataNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link SegmentedVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -148,7 +148,8 @@ public interface SegmentedVolumeData extends X3DVolumeDataNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>renderStyle</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVolumeRenderStyleNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVolumeRenderStyleNode.
+	 * @see org.web3d.x3d.sai.VolumeRendering.X3DVolumeRenderStyleNode
 	 * @return value of renderStyle field
 	 */
 	public X3DNode[] getRenderStyle(); // acceptable node types: X3DVolumeRenderStyleNode
@@ -156,7 +157,7 @@ public interface SegmentedVolumeData extends X3DVolumeDataNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>renderStyle</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVolumeRenderStyleNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVolumeRenderStyleNode.
 	 * @param newValue is new value for the renderStyle field.
 	 * @return {@link SegmentedVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -165,13 +166,13 @@ public interface SegmentedVolumeData extends X3DVolumeDataNode
 	/**
 	 * Add array of child renderStyle nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVolumeRenderStyleNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVolumeRenderStyleNode.
 	 * @param newValue is new value array to be appended the renderStyle field.
 	 */
 	public void addRenderStyle(X3DNode[] newValue); // acceptable node types: X3DVolumeRenderStyleNode
 	/**
 	 * Set single child renderStyle node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the renderStyle field.
+	 * @param newValue is new node for the renderStyle field
 	 */
 	public void setRenderStyle(X3DNode newValue); // acceptable node types: X3DVolumeRenderStyleNode
 	/**

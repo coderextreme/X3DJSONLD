@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -34,7 +34,7 @@ package org.web3d.x3d.sai;
 
 
 /**
- * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: X3D SFBool values are lower case (true|false) in order to maintain compatibility with other XML documents.
+ * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
  * 
  * <br><br>
 

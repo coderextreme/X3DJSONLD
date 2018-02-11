@@ -44,4 +44,4 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 
 Some JSON and X3D and images examples licensed via LICENSE.html
 
-If you want to use cobweb.*.js from src/main/node, be aware that it is a 'non-military use only' component.  The license for cobweb is in those files.
+If you want to use x_ite*.js from src/main/node, and x_ite.css, it's GPL'ed.

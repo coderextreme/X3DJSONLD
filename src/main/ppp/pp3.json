@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 August 2017"
+          "@content": "30 January 2018"
         },
         {
           "@name": "generator",
@@ -165,7 +165,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\"string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\"enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -504,7 +504,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\"string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\"enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -603,15 +603,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\trightlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_rightstring(rightstr) {",
-                    "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "ecmascript: function initialize() { rightlines = new MFString(\"\"); } function set_rightstring(rightstr) { rightlines = new MFString(rightstr); }"
                   ]
                 }
               },
@@ -631,15 +623,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tuplines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_upstring(upstr) {",
-                    "\tuplines = new MFString(upstr);",
-                    "}"
+                    "ecmascript: function initialize() { uplines = new MFString(\"\"); } function set_upstring(upstr) { uplines = new MFString(upstr); }"
                   ]
                 }
               },
@@ -659,15 +643,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tcenterlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_centerstring(centerstr) {",
-                    "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "ecmascript: function initialize() { centerlines = new MFString(\"\"); } function set_centerstring(centerstr) { centerlines = new MFString(centerstr); }"
                   ]
                 }
               },
@@ -831,7 +807,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\"string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\"enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -1170,7 +1146,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\"string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\"enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -1269,15 +1245,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\trightlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_rightstring(rightstr) {",
-                    "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "ecmascript: function initialize() { rightlines = new MFString(\"\"); } function set_rightstring(rightstr) { rightlines = new MFString(rightstr); }"
                   ]
                 }
               },
@@ -1297,15 +1265,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tuplines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_upstring(upstr) {",
-                    "\tuplines = new MFString(upstr);",
-                    "}"
+                    "ecmascript: function initialize() { uplines = new MFString(\"\"); } function set_upstring(upstr) { uplines = new MFString(upstr); }"
                   ]
                 }
               },
@@ -1325,15 +1285,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tcenterlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_centerstring(centerstr) {",
-                    "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "ecmascript: function initialize() { centerlines = new MFString(\"\"); } function set_centerstring(centerstr) { centerlines = new MFString(centerstr); }"
                   ]
                 }
               },
@@ -1502,7 +1454,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\"string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\"enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -1841,7 +1793,7 @@
                             }
                           },
                           {
-                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\"string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\"enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\"enabled=\"true\"/>"
                           }
                         ]
                       }
@@ -1940,15 +1892,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\trightlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_rightstring(rightstr) {",
-                    "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "ecmascript: function initialize() { rightlines = new MFString(\"\"); } function set_rightstring(rightstr) { rightlines = new MFString(rightstr); }"
                   ]
                 }
               },
@@ -1968,15 +1912,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tuplines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_upstring(upstr) {",
-                    "\tuplines = new MFString(upstr);",
-                    "}"
+                    "ecmascript: function initialize() { uplines = new MFString(\"\"); } function set_upstring(upstr) { uplines = new MFString(upstr); }"
                   ]
                 }
               },
@@ -1996,15 +1932,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "",
-                    "function initialize() {",
-                    "\tcenterlines = new MFString(\"\");",
-                    "}",
-                    "",
-                    "function set_centerstring(centerstr) {",
-                    "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "ecmascript: function initialize() { centerlines = new MFString(\"\"); } function set_centerstring(centerstr) { centerlines = new MFString(centerstr); }"
                   ]
                 }
               },

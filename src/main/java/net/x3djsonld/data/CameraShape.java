@@ -81,15 +81,15 @@ import org.web3d.x3d.jsail.Shape.*;
 
 public class CameraShape
 {
-  /** Default constructor to create this object. */
-  public CameraShape ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public CameraShape ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Interactive").setVersion("3.1")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("SimpleCamera.x3d"))
@@ -150,7 +150,7 @@ public class CameraShape
             .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
             .setGeometry(new IndexedFaceSetObject().setUSE("pSphere1_0Geo")))))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
 	/** Large attribute array: IndexedFaceSet DEF='pCylinder1_0Geo' coordIndex field, scene-graph level=6, element #22, 156 total numbers */
 	private MFInt32Object pCylinder1_0Geo_6_22_coordIndex = new MFInt32Object(new int[] {0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15,-1,4,5,17,16,-1,5,6,18,17,-1,6,7,19,18,-1,7,8,20,19,-1,8,9,21,20,-1,9,10,22,21,-1,10,11,23,22,-1,11,0,12,23,-1,1,0,24,-1,2,1,24,-1,3,2,24,-1,4,3,24,-1,5,4,24,-1,6,5,24,-1,7,6,24,-1,8,7,24,-1,9,8,24,-1,10,9,24,-1,11,10,24,-1,0,11,24,-1,12,13,25,-1,13,14,25,-1,14,15,25,-1,15,16,25,-1,16,17,25,-1,17,18,25,-1,18,19,25,-1,19,20,25,-1,20,21,25,-1,21,22,25,-1,22,23,25,-1,23,12,25,-1});
@@ -225,32 +225,47 @@ public class CameraShape
 	.append(new MFVec3fObject(new float[] {0.04f,0.43f,-0.05f,0.02f,0.43f,-0.06f,0.0f,0.43f,-0.07f,-0.02f,0.43f,-0.06f,-0.04f,0.43f,-0.05f,-0.05f,0.43f,-0.04f,-0.06f,0.43f,-0.02f,-0.07f,0.43f,0.0f,0.07f,0.43f,0.0f,0.0f,-0.43f,0.0f}))
 	.append(new MFVec3fObject(new float[] {0.0f,0.43f,0.0f}));
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return CameraShape model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return CameraShape model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new CameraShape().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("CameraShape self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("CameraShape self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

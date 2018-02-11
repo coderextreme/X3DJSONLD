@@ -21,6 +21,7 @@
         <!-- =============== Camera ============== -->
         <ProtoDeclare name='Camera' appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.'>
             <ProtoInterface>
+                <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
                 <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
                 <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFVec3f' value='0 0 10'/>
                 <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFRotation' value='0 0 1 0'/>
@@ -48,7 +49,6 @@
                     <!-- initialization node (if any) goes here -->
                 </field>
                 <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool' value='false'/>
-                <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
             </ProtoInterface>
             <ProtoBody>
                 <Viewpoint DEF='CameraViewpoint'>
@@ -65,10 +65,10 @@
                 <!-- NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation -->
                 <NavigationInfo DEF='CameraNavInfo' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'>
                     <IS>
+                        <!-- No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. -->
                         <connect nodeField='set_bind' protoField='set_bind'/>
                         <connect nodeField='headlight' protoField='headlight'/>
                         <connect nodeField='visibilityLimit' protoField='farClipPlane'/>
-                        <!-- No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. -->
                     </IS>
                 </NavigationInfo>
                 <!-- this DirectionalLight replaces NavigationInfo headlight in order to add color capability -->
@@ -93,6 +93,7 @@
                 <ROUTE fromField='value_changed' fromNode='CameraPositionInterpolator' toField='position' toNode='CameraViewpoint'/>
                 <ROUTE fromField='value_changed' fromNode='CameraOrientationInterpolator' toField='orientation' toNode='CameraViewpoint'/>
                 <Script DEF='CameraScript' directOutput='true' mustEvaluate='true'>
+                    <!-- binding is controlled externally, all camera operations proceed the same regardless of whether bound or not -->
                     <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
                     <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame' type='SFVec3f'/>
                     <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame' type='SFRotation'/>
@@ -500,7 +501,6 @@ function alwaysPrint (outputValue)
 }
 
 ]]>
-                    <!-- binding is controlled externally, all camera operations proceed the same regardless of whether bound or not -->
                 </Script>
                 <ROUTE fromField='position' fromNode='CameraScript' toField='position' toNode='CameraViewpoint'/>
                 <ROUTE fromField='orientation' fromNode='CameraScript' toField='orientation' toNode='CameraViewpoint'/>
@@ -807,6 +807,7 @@ function alwaysPrint (outputValue)
         <!-- =============== OfflineRender ============== -->
         <ProtoDeclare name='OfflineRender' appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).'>
             <ProtoInterface>
+                <!-- TODO non-photorealistic rendering (NPR) parameters -->
                 <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' type='SFString'/>
                 <field name='enabled' accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' type='SFBool' value='true'/>
                 <field name='frameRate' accessType='inputOutput' appinfo='Frames per second recorded for this rendering' type='SFFloat' value='30.0'/>
@@ -818,7 +819,6 @@ function alwaysPrint (outputValue)
                 <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' type='MFString' value='"mpeg"'/>
                 <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' type='MFString' value='"png"'/>
                 <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool' value='false'/>
-                <!-- TODO non-photorealistic rendering (NPR) parameters -->
             </ProtoInterface>
             <ProtoBody>
                 <!-- First node determines node type of this prototype -->

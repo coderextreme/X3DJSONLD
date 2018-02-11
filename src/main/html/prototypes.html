@@ -4,9 +4,9 @@
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.min.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.css"/>
+   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <style type="text/css">
@@ -27,11 +27,11 @@
 	<table>
 		<tr>
 			<td>
-				Cobweb
+				X_ITE
 			</td>
 			<td>
-			    <X3DCanvas cache='false'>
-				   <p>Your browser may not support all features required by Cobweb!</p>
+			    <X3DCanvas id="x_itedom" cache='false'>
+				   <p>Your browser may not support all features required by X_ITE!</p>
 				   <X3D>
 				   <Scene>
 				   </Scene>
@@ -48,11 +48,11 @@
 		<tr>
 		</tr>
 </body>
-    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="node/Script.js"></script>
-    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
 	function loadX3DJSON(selector, url, callback) {
@@ -63,7 +63,7 @@
 			var element = ConvertToX3DOM(json, "X3D", parent, url); // returns an element
 			$(selector+" X3D").remove();
 			$(selector).append(element); // add to X3DOM
-			loadCobwebDOM(element, 0); // loads into cobweb element 0 on page.
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
@@ -75,11 +75,11 @@
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			subjson = flattener(subjson);
 			var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector(selector), url);  // returns Scene element
-			loadCobwebDOM(element, 0); // loads into cobweb element 0 on page.
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','data/cobweb.json', function(element) {
+		loadX3DJSON('#x3domjson','../data/bubs.json', function(element) {
 			loadSubscene("Scene", 'data/asmallbox.json', element);
 		});
 	});

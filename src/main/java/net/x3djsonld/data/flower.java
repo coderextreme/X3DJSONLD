@@ -29,15 +29,15 @@ import org.web3d.x3d.jsail.Time.*;
 
 public class flower
 {
-  /** Default constructor to create this object. */
-  public flower ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public flower ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
@@ -50,9 +50,7 @@ public class flower
           .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setDiffuseColor(0.9f,0.3f,0.3f)))
         .setGeometry(new IndexedFaceSetObject("ifs").setDEF("ifs").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new CoordinateObject("crd").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
-    .addChild(new ScriptObject("FlowerScript").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("FlowerScript").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "    " + "\n" + 
 "var e = 5;" + "\n" + 
@@ -139,8 +137,7 @@ public class flower
 "		h = 4;" + "\n" + 
 "	}" + "\n" + 
 "	updateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32")))
@@ -149,34 +146,49 @@ public class flower
     .addChild(new ROUTEObject().setFromNode("FlowerScript").setFromField("coordinates").setToNode("crd").setToField("point"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("FlowerScript").setToField("set_fraction")));
   }
-  // end of initialize() method
+	// end of initialize() method
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return flower model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return flower model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new flower().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("flower self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("flower self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

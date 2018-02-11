@@ -48,6 +48,7 @@
                               "-geometry": [
                                 {
                                   "Cylinder": {
+                                    "@containerField": "geometry",
                                     "@DEF": "ArrowCylinder",
                                     "@radius": 0.025,
                                     "@top": true
@@ -57,10 +58,12 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "@DEF": "Green",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@diffuseColor": [
                                             0,
                                             0,
@@ -92,6 +95,7 @@
                                     "-geometry": [
                                       {
                                         "Cone": {
+                                          "@containerField": "geometry",
                                           "@DEF": "ArrowCone",
                                           "@bottomRadius": 0.05,
                                           "@height": 0.1
@@ -101,6 +105,7 @@
                                     "-appearance": [
                                       {
                                         "Appearance": {
+                                          "@containerField": "appearance",
                                           "@USE": "Green"
                                         }
                                       }
@@ -129,10 +134,12 @@
                                     "-appearance": [
                                       {
                                         "Appearance": {
+                                          "@containerField": "appearance",
                                           "@DEF": "LABEL_APPEARANCE",
                                           "-material": [
                                             {
                                               "Material": {
+                                                "@containerField": "material",
                                                 "@diffuseColor": [
                                                   1,
                                                   1,
@@ -152,12 +159,14 @@
                                     "-geometry": [
                                       {
                                         "Text": {
+                                          "@containerField": "geometry",
                                           "@string": [
                                             "Y"
                                           ],
                                           "-fontStyle": [
                                             {
                                               "FontStyle": {
+                                                "@containerField": "fontStyle",
                                                 "@DEF": "LABEL_FONT",
                                                 "@family": [
                                                   "SANS"
@@ -206,6 +215,7 @@
                                     "-geometry": [
                                       {
                                         "Cylinder": {
+                                          "@containerField": "geometry",
                                           "@USE": "ArrowCylinder"
                                         }
                                       }
@@ -213,10 +223,12 @@
                                     "-appearance": [
                                       {
                                         "Appearance": {
+                                          "@containerField": "appearance",
                                           "@DEF": "Red",
                                           "-material": [
                                             {
                                               "Material": {
+                                                "@containerField": "material",
                                                 "@diffuseColor": [
                                                   0,
                                                   0,
@@ -248,6 +260,7 @@
                                           "-geometry": [
                                             {
                                               "Cone": {
+                                                "@containerField": "geometry",
                                                 "@USE": "ArrowCone"
                                               }
                                             }
@@ -255,6 +268,7 @@
                                           "-appearance": [
                                             {
                                               "Appearance": {
+                                                "@containerField": "appearance",
                                                 "@USE": "Red"
                                               }
                                             }
@@ -290,6 +304,7 @@
                                           "-appearance": [
                                             {
                                               "Appearance": {
+                                                "@containerField": "appearance",
                                                 "@USE": "LABEL_APPEARANCE"
                                               }
                                             }
@@ -297,12 +312,14 @@
                                           "-geometry": [
                                             {
                                               "Text": {
+                                                "@containerField": "geometry",
                                                 "@string": [
                                                   "X"
                                                 ],
                                                 "-fontStyle": [
                                                   {
                                                     "FontStyle": {
+                                                      "@containerField": "fontStyle",
                                                       "@USE": "LABEL_FONT"
                                                     }
                                                   }
@@ -346,6 +363,7 @@
                                     "-geometry": [
                                       {
                                         "Cylinder": {
+                                          "@containerField": "geometry",
                                           "@USE": "ArrowCylinder"
                                         }
                                       }
@@ -353,10 +371,12 @@
                                     "-appearance": [
                                       {
                                         "Appearance": {
+                                          "@containerField": "appearance",
                                           "@DEF": "Blue",
                                           "-material": [
                                             {
                                               "Material": {
+                                                "@containerField": "material",
                                                 "@diffuseColor": [
                                                   0,
                                                   0,
@@ -388,6 +408,7 @@
                                           "-geometry": [
                                             {
                                               "Cone": {
+                                                "@containerField": "geometry",
                                                 "@USE": "ArrowCone"
                                               }
                                             }
@@ -395,6 +416,7 @@
                                           "-appearance": [
                                             {
                                               "Appearance": {
+                                                "@containerField": "appearance",
                                                 "@USE": "Blue"
                                               }
                                             }
@@ -430,6 +452,7 @@
                                           "-appearance": [
                                             {
                                               "Appearance": {
+                                                "@containerField": "appearance",
                                                 "@USE": "LABEL_APPEARANCE"
                                               }
                                             }
@@ -437,12 +460,14 @@
                                           "-geometry": [
                                             {
                                               "Text": {
+                                                "@containerField": "geometry",
                                                 "@string": [
                                                   "Z"
                                                 ],
                                                 "-fontStyle": [
                                                   {
                                                     "FontStyle": {
+                                                      "@containerField": "fontStyle",
                                                       "@USE": "LABEL_FONT"
                                                     }
                                                   }

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.*;
 
@@ -41,9 +42,10 @@ import org.web3d.x3d.sai.*;
  * This utility class provides a concrete implementation corresponding to MFMatrix3d X3D field type.
  * 
  * <br><br>
- * MFMatrix3d specifies zero or more 3x3 matrices of double-precision floating point numbers, organized in row-major fashion.
+ * MFMatrix3d specifies zero or more 3x3 matrices of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 9-tuple values.
 <br><br>
 Related field object: {@link SFMatrix3dObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix3d">X3D Tooltips: type MFMatrix3d</a>
 
  * 
 
@@ -199,7 +201,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix3d">X3D Tooltips: type MFMatrix3d</a>
 	 * @see org.web3d.x3d.jsail.fields.SFDoubleObject#stripTrailingZeroes(double)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

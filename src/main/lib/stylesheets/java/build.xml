@@ -8,11 +8,76 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 
+<!--
+  Copyright (c) 2000-2018 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the names of the Naval Postgraduate School (NPS)
+      Modeling Virtual Environments and Simulation (MOVES) Institute
+      (http://www.nps.edu and http://www.MovesInstitute.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+
 <project name="X3D Java SAI Library" default="default" basedir=".">
     <description>Builds, tests, and runs the X3D Java SAI Library project.</description>
-    <property name="fork"                value="true"/>
 	
     <property name="javac.verbose"            value="-verbose"/>
+    <property name="fork"                     value="true"/>
+
+    <!-- java jvmarg parameters ignored on server unless forked -->
+    <property name="fork"                value="true"/>    <!-- note that Netbeans default path is built in and has to be overridden by going to     -->
+    
+	<!-- Netbeans > Tools > Options > Java > Ant                                              -->
+    <!-- and then pointing to C:\apache-ant-1.9.3 (or somesuch locally installed directory)   -->
+
+    <!-- ANT Contrib archive at http://sourceforge.net/projects/ant-contrib/files    (v1.0b3) -->
+    <!-- must have ant-contrib-1.0b3.jar in ANT_HOME/lib (or else specify path)               -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+    
+    <!-- jslint4java: a Java wrapper around Douglas Crockford's jslint tool. -->
+    <!-- https://code.google.com/p/jslint4java -->
+    <!-- http://docs.jslint4java.googlecode.com/git/2.0.5/ant.html -->
+	<!-- http://happygiraffe.github.io/jslint4java/cli.html -->
+    <!-- http://kaatz-media.com/2011/10/06/uberprufen-von-javascript-dateien-ant-und-jslint-jenkins-using-ant-on-jenkins-for-jslint -->
+    <!-- TODO bug report: https://code.google.com/p/jslint4java/issues/detail?id=101 -->
+    <property name="jslint.jar"     value="../lib/jslint4java-2.0.5.jar"/>
+    <taskdef name="jslint" 
+        classname="com.googlecode.jslint4java.ant.JSLintTask"
+        classpath="${jslint.jar}" />
+    <property name="jslint.options" value="white"/>
+    <!-- unused options: ass,bitwise,browser,closure,continue,debug,devel,eqeq,es5,evil,forin,indent,maxerr,maxlen,newcap,node,nomen,passfail,plusplus,predef,properties,regexp,rhino,sloppy,stupid,sub,todo,unparam,vars,warnings, -->
+
+	<!-- https://github.com/fge/json-schema-validator -->
+	<!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
+	<!-- fix double-hyphen switch when running on command line: -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
+    <property name="json-schema-validator.jar"     value="../lib/json-schema-validator-2.2.6-lib.jar"/>
 
     <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
     <property name="saxon.dir"               value="lib" description="relative path"/>
@@ -26,7 +91,7 @@
     <!-- https://exificient.github.io/java -->
     <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
     <property name="exificient.dir"          value="lib" description="relative path"/>
-	<property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
+    <property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
 
     <property name="javac.verbose"           value="-verbose"/>
     <property name="java.dir"                value="."/>
@@ -38,24 +103,25 @@
     <property name="nashorn.dir"             value="nashorn"/>
     <property name="src.org.web3d.x3d.jsail" value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
     <property name="src.org.web3d.x3d.sai"   value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
-	<property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
-	<property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
+    <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
+    <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
 	
     <target name="all" depends="compile.examples,run.examples"/>
 
     <target name="build" depends="">
-            <ant antfile="../build.xml" target="CreateX3dSceneAccessInterfaceJava"/>
-            <antcall target="compile.examples"/>
-            <antcall target="run.examples"/>
+		<!-- TODO fix or omit -->
+		<ant antfile="../build.xml" target="create.X3DJSAIL"/>
+		<antcall target="compile.examples"/>
+		<antcall target="run.examples"/>
     </target>
 
     <target name="compile.examples">
             <javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
-                   classpath="jars/X3DJSAIL.3.3.full.jar" includeantruntime="false"/>
+                   classpath="jars/X3DJSAIL.3.3.full.jar" includeantruntime="false" fork="${fork}"/>
     </target>
 
     <target name="run.examples">
-            <java classname="HelloWorldProgram" dir="classes">
+            <java classname="HelloWorldProgram" dir="classes" fork="${fork}">
                  <classpath>
 					<pathelement location="jars/X3DJSAIL.3.3.full.jar"/>
 					<pathelement path="classes"/>
@@ -71,61 +137,4 @@
     <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
         <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
     </target>
-
-    <target name="test.HelloWorldProgramOutput" description="Test Java output from X3DJSAIL">
-		<echo message="Compile:"/>
-		<javac srcdir ="${java.examples.dir}"
-			   classpath=""
-			   destdir="${java.classes.dir}"
-			   debug="on"
-			   verbose="${javac.verbose}"
-			   includeantruntime="false">
-		</javac>
-		<echo message="Run:"/>
-		<java classname="HelloWorldProgramOutput" fork="${fork}" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}">
-			<arg value="x3d"/>
-			<arg value="nashorn/examples/HelloWorldProgramOutputOutput.x3d"/>
-		</java>
-		<java classname="HelloWorldProgramOutput" fork="${fork}" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}">
-			<arg value="json"/>
-			<arg value="nashorn/examples/HelloWorldProgramOutputOutput.json"/>
-		</java>
-    </target>
-
-    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
-		<javac srcdir ="${java.examples.dir}"
-			   classpath=""
-			   destdir="${java.classes.dir}"
-			   debug="on"
-			   verbose="${javac.verbose}"
-			   includeantruntime="false">
-		</javac>
-		<java classname="HelloWorldProgramOutput" fork="${fork}" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}">
-			<arg value="js"/>
-			<arg value="nashorn/examples/HelloWorldProgramOutput.js"/>
-		</java>
- 		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
- 		    <arg value="json"/>
- 		    <arg value="nashorn/examples/HelloWorldProgramOutput.json"/>
- 		</java>
- 		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
- 		    <arg value="x3d"/>
- 		    <arg value="nashorn/examples/HelloWorldProgramOutput.x3d"/>
- 		</java>
-		<echo message="script:"/>
-<!--    <script language="nashorn"> TODO debugging -->
-		<script language="javascript" manager="javax">
-			<classpath>
-				<fileset dir="${saxon.dir}"      includes="${saxon.jar}"/>
-				<fileset dir="${exificient.dir}" includes="${exificient.jar}"/>
-				<fileset dir="${openexi.dir}"    includes="${openexi.jar}"/>
-				<fileset dir="${java.jars.dir}"  includes="${jsai.classes.archive.jar.name}"/>
-			</classpath>
-			load('nashorn/jvm-npm.js');
-			load('nashorn/repeatPolyfill.js');
-			load('nashorn/examples/HelloWorldProgramOutput.js.intermediate.js');
-			load('nashorn/examples/HelloWorldProgramOutput.js');
-		</script>
-    </target>
-	
 </project>

@@ -9,7 +9,7 @@ test_json =
         "meta": [
           {
             "@name":"title",
-            "@content":"cobweb.x3d"
+            "@content":"bubs.x3d"
           },
           {
             "@name":"creator",
@@ -25,7 +25,7 @@ test_json =
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/cobweb.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"
           },
           {
             "@name":"translated",

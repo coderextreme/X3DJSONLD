@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
@@ -40,9 +41,10 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to MFBool X3D field type.
  * 
  * <br><br>
- * MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype.
+ * MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
 <br><br>
 Related field object: {@link SFBoolObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFBool">X3D Tooltips: type MFBool</a>
 
  * 
 
@@ -199,7 +201,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFBool">X3D Tooltips: type MFBool</a>
 	 * @return String version of the provided value
 	 */
 	@Override

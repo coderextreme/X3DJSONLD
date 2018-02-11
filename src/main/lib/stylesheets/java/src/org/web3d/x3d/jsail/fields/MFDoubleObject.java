@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
@@ -43,6 +44,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * MFDouble is an array of Double values, i.e. a double-precision floating-point array type. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale. SFDouble/MFDouble are analagous to SFDouble/MFDouble. Array values are optionally separated by commas.
 <br><br>
 Related field object: {@link SFDoubleObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFDouble">X3D Tooltips: type MFDouble</a>
 
  * 
 
@@ -225,7 +227,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFDouble">X3D Tooltips: type MFDouble</a>
 	 * @see org.web3d.x3d.jsail.fields.SFDoubleObject#stripTrailingZeroes(double)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

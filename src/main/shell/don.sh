@@ -21,10 +21,10 @@ find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xs
 echo running java
 for i in `find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//'`
 do
+	echo $i
 	# java -d64 -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
-	mkdir ../data/`dirname $i`
-	java $i x3d ../data/$i.don.x3d # sh runToError.sh
-	${NODE} ${NODEDIR}/xmldiff.js ../data/`basename`$i ../data/$i.don.x3d 
+	mkdir -p ../data/`dirname $i`
+	java -cp "${CLASSPATH}" $i -validate
 done
 popd
 echo running jjs

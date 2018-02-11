@@ -24,7 +24,7 @@ Recommended tools:
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -84,7 +84,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                           
     <xsl:variable name="licenseText">
 		<xsl:text>
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -205,22 +205,22 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:value-of select="$newClassName"/>
 		<xsl:text><![CDATA[
 {
-  /** Default constructor to create this object. */
-  public ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text><![CDATA[ ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text><![CDATA[ ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
 ]]></xsl:text>
 
         <!-- xsl:call-template name="X3dDocument"/ -->
 		<xsl:apply-templates select="*"/>
 		
 		<xsl:text><![CDATA[  }
-  // end of initialize() method
+	// end of initialize() method
 ]]></xsl:text>
 		
 		<!-- capture large attributes (if any) as data structures -->
@@ -231,35 +231,50 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:call-template>
 
 		<xsl:text><![CDATA[
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
-   <xsl:text disable-output-escaping="yes"><![CDATA[ model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
+	 <xsl:text disable-output-escaping="yes"><![CDATA[ model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
-        <xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
+			<xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }
 ]]></xsl:text><!-- class complete -->
@@ -676,6 +691,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:if test="((local-name() = 'Script') or (local-name() = 'ShaderPart') or (local-name() = 'ShaderProgram')) and
 					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
 			<xsl:text>.setSourceCode(</xsl:text>
+			<xsl:if test="not(starts-with(normalize-space(text()),'ecmascript:'))">
+				<xsl:text>"ecmascript: " + </xsl:text><!-- necessary to avoid validation error -->
+			</xsl:if>
 			<xsl:call-template name="stringify-text-lines">
 			  <xsl:with-param name="inputString" select="text()"/>
 			  <!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
@@ -815,8 +833,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>)</xsl:text>
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(), 'Metadata')">
-					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
-					<xsl:text>.addMetadata(</xsl:text>
+					<!-- addChild() utility method supports consistent root-node support for X3DChildNode, X3DMetadataNode and LayerSet -->
+					<xsl:text>.addChild(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>

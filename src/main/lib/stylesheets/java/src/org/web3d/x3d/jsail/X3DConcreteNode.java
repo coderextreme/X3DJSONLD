@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -55,20 +55,13 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	private ISObject IS;
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, found either as this node or in a contained node (if any).
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	abstract public X3DConcreteNode getNodeByDEF(String DEFname); // required interface
-
-	/**
 	 * Utility method to indicate whether this element is an X3D Graphics node (implementing X3DConcreteNode), returns <i>true</i>.
 	 * <br><br>
 	 * @see X3DConcreteNode
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
 	 * @return whether this element is an X3D Graphics node: true
 	 */
-	public static boolean isNode()
+	public static final boolean isNode()
 	{
             // (this instanceof org.web3d.x3d.jsail.X3DConcreteNode)
             return true;
@@ -81,7 +74,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
 	 * @return whether this element is an X3D Graphics statement: false
 	 */
-	public static boolean isStatement()
+	public static final boolean isStatement()
 	{
             //  (this instanceof org.web3d.x3d.jsail.X3DConcreteStatement) && 
             // !(this instanceof org.web3d.x3d.jsail.Core.CommentsBlock)
@@ -95,7 +88,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
 	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
 	 * </ul>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String DEF = DEF_DEFAULT_VALUE;
 
@@ -104,7 +97,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
 	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
 	 * </ul>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
 
@@ -146,7 +139,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
 	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
 	 * </ul>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return value of DEF field
 	 */
 	public String getDEF()
@@ -162,7 +155,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
 	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
 	 * </ul>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return value of USE field
 	 */
 	public String getUSE()
@@ -177,7 +170,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
 	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
 	 * </ul>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return whether this node is a USE reference
 	 */
 	public boolean isUSE()
@@ -201,7 +194,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	
 	/** Protected internal superclass method to keep DEF private, scene authors should use method setDEF(newValue) instead.
 	 * @param newValue is new value for the DEF field.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#type">X3D Resources: type NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 * @see <a href="http://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
 	 */
 	protected void setConcreteDEF(String newValue)
@@ -213,14 +206,19 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 		// Check that newValue parameter meets naming requirements before assigning to scene graph
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
 		{
-			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " DEF newValue=\"" + newValue +
+			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " DEF=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
+		}
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println ("Warning: " + getElementName() + " DEF=\"" + newValue +
+					"\" does not meet X3D naming conventions.");
 		}
 		DEF = newValue;
 	}
 	/** Protected internal superclass method to keep USE private, scene authors should use method setUse(newValue) instead.
 	 * @param newValue is new value for the USE field.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#type">X3D Resources: type NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 */
 	protected final void setConcreteUSE(String newValue)
 	{
@@ -231,8 +229,13 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 		// Check that newValue parameter meets naming requirements before assigning to scene graph
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
 		{
-			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " USE newValue=\"" + newValue +
+			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " USE=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
+		}
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println ("Warning: " + getElementName() + " USE=\"" + newValue +
+					"\" does not meet X3D naming conventions.");
 		}
 		USE = newValue;
 	}
@@ -250,9 +253,9 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 		cssClass = newValue;
 	}
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
-	 * @param DEFname is new value for the DEF field.
+	 * @param DEFlabel is new value for the DEF field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object). */
-	abstract public X3DConcreteNode setDEF(String DEFname);
+	abstract public X3DConcreteNode setDEF(String DEFlabel);
 
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * <ul>
@@ -277,7 +280,7 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
 	abstract public X3DConcreteNode setMetadata (X3DMetadataObject newValue);
 
@@ -285,9 +288,9 @@ public abstract class X3DConcreteNode extends org.web3d.x3d.jsail.X3DConcreteEle
 	 * Assign X3DMetadataObject instance (using a properly typed ProtoInstanceObject) to inputOutput SFNode field <i>metadata</i>.
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
-////abstract public X3DConcreteNode setMetadata (ProtoInstanceObject newValue); // TODO
+	abstract public X3DConcreteNode setMetadata (ProtoInstanceObject newValue); // TODO
 				
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal
@@ -314,13 +317,13 @@ ProtoBody nodes.
 	/** containerField describes the field relationship of a node to its parent.
 	 * Modification of this value is not ordinarily needed when using this API, since alternative values are provided for informational purposes.
 	 * Each concrete class must independently override this array.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">X3D Scene Authoring Hints: containerField</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 */
 	public String[] containerField_ALTERNATE_VALUES = { };
 				
 	/** containerField describes the field relationship of a node to its parent.
 	 * Modification of this value is not ordinarily needed when using this API, since alternative values are provided for informational purposes.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">X3D Scene Authoring Hints: containerField</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 * @return array of allowed String values
 	 */
 	public String[] getContainerFieldAlternateValues()
@@ -331,7 +334,7 @@ ProtoBody nodes.
 	/** containerField describes current field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API.
 	 * @return containerFieldOverride value, if any
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">X3D Scene Authoring Hints: containerField</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 */
 	public String getContainerFieldOverride()
 	{
@@ -341,7 +344,7 @@ ProtoBody nodes.
 	 * Usage is not ordinarily needed when using this API.
 	 * TODO make this unnecessary for ProtoInstance usage
 	 * @param value to set containerFieldOverride, must be allowed in containerField_ALTERNATE_VALUES
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">X3D Scene Authoring Hints: containerField</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 * @return object reference to node
 	 */
 	public X3DConcreteNode setContainerFieldOverride(String value)

@@ -107,16 +107,20 @@
                 "Shape": {
                   "-geometry": [
                     {
-                      "Sphere": {}
+                      "Sphere": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ],
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@DEF": "_01_-_Default",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -133,9 +137,11 @@
                         "-texture": [
                           {
                             "ComposedCubeMapTexture": {
+                              "@containerField": "texture",
                               "-back": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "back",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"
@@ -146,6 +152,7 @@
                               "-bottom": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "bottom",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"
@@ -156,6 +163,7 @@
                               "-front": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "front",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"
@@ -166,6 +174,7 @@
                               "-left": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "left",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"
@@ -176,6 +185,7 @@
                               "-right": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "right",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"
@@ -186,6 +196,7 @@
                               "-top": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "top",
                                     "@url": [
                                       "../resources/images/all_probes/uffizi_cross/uffizi_top.png",
                                       "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"
@@ -199,7 +210,7 @@
                         "-children": [
                           {
                             "ComposedShader": {
-                              "@DEF": "cobweb",
+                              "@DEF": "x_ite",
                               "@language": "GLSL",
                               "field": [
                                 {
@@ -237,8 +248,8 @@
                                 {
                                   "ShaderPart": {
                                     "@url": [
-                                      "../shaders/cobweb.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                      "../shaders/x_ite.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
@@ -247,7 +258,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/pc_bubbles.fs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                     ],
                                     "@type": "FRAGMENT"
                                   }
@@ -296,7 +307,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
@@ -305,7 +316,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/pc_bubbles.fs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                     ],
                                     "@type": "FRAGMENT"
                                   }
@@ -409,22 +420,7 @@
               }
             ],
             "#sourceText": [
-              "ecmascript:",
-              "               function set_cycle(value) {",
-              "                        var ov = lastKey;",
-              "                        do {",
-              "                            lastKey = Math.round(Math.random()*(positions.length-1));",
-              "                        } while (lastKey === ov);",
-              "                        var vc = lastKey;",
-              "                        ",
-              "                        orientation_changed = new MFRotation();",
-              "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
-              "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
-              "                        position_changed = new MFVec3f();",
-              "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
-              "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
-              "                    // }",
-              "               }",
+              "ecmascript: function set_cycle(value) { var ov = lastKey; do { lastKey = Math.round(Math.random()*(positions.length-1)); } while (lastKey === ov); var vc = lastKey; orientation_changed = new MFRotation(); orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w); orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w); position_changed = new MFVec3f(); position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z); position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z); // } }",
               ""
             ]
           }

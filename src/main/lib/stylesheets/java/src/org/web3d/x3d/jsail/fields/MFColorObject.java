@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
@@ -43,6 +44,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * MFColor specifies zero or more SFColor RGB triples. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized MFColor field is the empty list. Individual SFColor array values are optionally separated by commas.
 <br><br>
 Related field object: {@link SFColorObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFColor">X3D Tooltips: type MFColor</a>
 
  * 
 
@@ -180,7 +182,7 @@ method invocations on the same node object).
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param index is position of selected value in current array
 	 * @param hexColorValue HTML color value (such as 0xAA2288) to apply
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color">X3D Scene Authoring Hints: Color</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color" target="_blank">X3D Scene Authoring Hints: Color</a>
 	 * @return {@link MFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public MFColorObject set1Value(int index, int hexColorValue) throws ArrayIndexOutOfBoundsException
@@ -219,7 +221,7 @@ method invocations on the same node object).
 	 * Complement all color values in RGB space (i.e. subtract each component from 1).
 	 * @see <a href="https://en.wikipedia.org/wiki/Negative_(photography)">Wikipedia: Negative (photography)</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/Complementary_colors">Wikipedia: Complementary colors</a>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color">X3D Scene Authoring Hints: Color</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color" target="_blank">X3D Scene Authoring Hints: Color</a>
 	 * @return {@link MFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public MFColorObject complementRGB ()
@@ -234,7 +236,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Ensure all component color values are within range [0-1] by clipping as necessary.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color">X3D Scene Authoring Hints: Color</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color" target="_blank">X3D Scene Authoring Hints: Color</a>
 	 * @return {@link MFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public MFColorObject normalizeClip ()
@@ -299,7 +301,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFColor">X3D Tooltips: type MFColor</a>
 	 * @see org.web3d.x3d.jsail.fields.SFFloatObject#stripTrailingZeroes(float)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

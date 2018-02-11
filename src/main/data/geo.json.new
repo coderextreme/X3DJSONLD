@@ -91,15 +91,19 @@
                 "Shape": {
                   "-geometry": [
                     {
-                      "Sphere": {}
+                      "Sphere": {
+                        "@containerField": "geometry"
+                      }
                     }
                   ],
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -116,10 +120,12 @@
                         "-texture": [
                           {
                             "ComposedCubeMapTexture": {
+                              "@containerField": "texture",
                               "@DEF": "texture",
                               "-back": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "back",
                                     "@url": [
                                       "resources/images/bBK.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"
@@ -130,6 +136,7 @@
                               "-bottom": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "bottom",
                                     "@url": [
                                       "resources/images/bBT.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"
@@ -140,6 +147,7 @@
                               "-front": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "front",
                                     "@url": [
                                       "resources/images/bFR.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"
@@ -150,6 +158,7 @@
                               "-left": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "left",
                                     "@url": [
                                       "resources/images/bLF.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"
@@ -160,6 +169,7 @@
                               "-right": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "right",
                                     "@url": [
                                       "resources/images/bRT.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"
@@ -170,6 +180,7 @@
                               "-top": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "top",
                                     "@url": [
                                       "resources/images/bTP.png",
                                       "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"
@@ -290,8 +301,8 @@
                                 {
                                   "ShaderPart": {
                                     "@url": [
-                                      "../shaders/cobweb.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                      "../shaders/x_ite.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }

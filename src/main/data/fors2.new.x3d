@@ -21,15 +21,15 @@
                         <connect nodeField='translation' protoField='position'/>
                     </IS>
                     <Shape>
-                        <Appearance>
-                            <Material diffuseColor='1 0 0'/>
-                            <!-- comment before Material -->
-                            <!-- comment after Material -->
-                        </Appearance>
-                        <Sphere/>
                         <!-- comment before Sphere -->
                         <!-- comment after Sphere -->
                         <!-- comment after Appearance -->
+                        <Appearance>
+                            <!-- comment before Material -->
+                            <!-- comment after Material -->
+                            <Material diffuseColor='1 0 0'/>
+                        </Appearance>
+                        <Sphere/>
                     </Shape>
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>

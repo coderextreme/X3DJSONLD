@@ -35,7 +35,7 @@
 <field name="bias" accessType="initializeOnly" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="initializeOnly" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="initializeOnly" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;../shaders/cobweb.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart USE="common"></ShaderPart>
 </ComposedShader>
 </Appearance>

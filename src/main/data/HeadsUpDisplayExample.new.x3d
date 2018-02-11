@@ -17,18 +17,7 @@
         <meta name='license' content='../license.html'/>
     </head>
     <Scene>
-        <!-- Simple Heads-Up Display (HUD) Prototype
- 
- Manages the display of a HUD and maintains its position on the screen.
- Changes to fieldOfView (in Viewpoint node) will change screen position
- 
- Fields:
- hudSize Size of HUD (initializeOnly - SFVec3f) default="1 1 .01"
- hudColor Color of HUD (inputOutput - SFColor) default="1 1 1"
- screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default="0 0 0"
- hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []
- position_changed Current viewer location (outputOnly - SFVec3f)
- orientation_changed Current viewer orientation (outputOnly - SFRotation) -->
+        <!-- Simple Heads-Up Display (HUD) Prototype Manages the display of a HUD and maintains its position on the screen. Changes to fieldOfView (in Viewpoint node) will change screen position Fields: hudSize Size of HUD (initializeOnly - SFVec3f) default="1 1 .01" hudColor Color of HUD (inputOutput - SFColor) default="1 1 1" screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default="0 0 0" hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = [] position_changed Current viewer location (outputOnly - SFVec3f) orientation_changed Current viewer orientation (outputOnly - SFRotation) -->
         <ExternProtoDeclare name='HeadsUpDisplay' appinfo='Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location' url='"HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "HeadsUpDisplayPrototype.wrl#HeadsUpDisplay" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"'>
             <field name='screenOffset' accessType='inputOutput' appinfo='offset position for HUD relative to current view location, default 0 0 -5' type='SFVec3f'/>
             <field name='children' accessType='inputOutput' appinfo='X3D content positioned at HUD offset' type='MFNode'/>
@@ -39,6 +28,7 @@
         <Viewpoint description='Heads-up display (HUD)'/>
         <!-- ProtoDeclare is the "cookie cutter" template, ProtoInstance creates an actual occurrence -->
         <ProtoInstance DEF='HeadsUpDisplayInstance' name='HeadsUpDisplay'>
+            <!-- example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view -->
             <fieldValue name='screenOffset' value='-0.75 1 -5'/>
             <fieldValue name='children'>
                 <Shape>
@@ -50,7 +40,6 @@
                     </Text>
                 </Shape>
             </fieldValue>
-            <!-- example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view -->
         </ProtoInstance>
         <Inline url='"../HelloWorld.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d" "../HelloWorld.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"'/>
     </Scene>

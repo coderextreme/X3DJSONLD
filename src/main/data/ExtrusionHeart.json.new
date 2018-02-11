@@ -71,6 +71,7 @@
                   "-geometry": [
                     {
                       "Extrusion": {
+                        "@containerField": "geometry",
                         "@creaseAngle": 3.14159,
                         "@crossSection": [
                           0,
@@ -136,9 +137,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,

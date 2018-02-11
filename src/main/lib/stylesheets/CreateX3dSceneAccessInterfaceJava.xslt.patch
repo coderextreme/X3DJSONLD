@@ -1,0 +1,16 @@
+Index: CreateX3dSceneAccessInterfaceJava.xslt
+===================================================================
+--- CreateX3dSceneAccessInterfaceJava.xslt	(revision 26417)
++++ CreateX3dSceneAccessInterfaceJava.xslt	(working copy)
+@@ -3851,9 +3851,9 @@
+                 try
+                 {
+                        bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
+-                       String tmpStr = "load('nashorn/jvm-npm.js');\nload('nashorn/repeatPolyfill.js');\nvar xmldom = require('nashorn/node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
++                       String tmpStr = "load('jvm-npm.js');\nload('repeatPolyfill.js');\nvar xmldom = require('node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+-                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('nashorn/node/mapToMethod.js');\n var mapToMethod2 = require('nashorn/node/mapToMethod2.js');\n var fieldTypes = require('nashorn/node/fieldTypes.js');\n load('nashorn/node/X3DJSONLD.js');\n load('nashorn/node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
++                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('node/mapToMethod.js');\n var mapToMethod2 = require('node/mapToMethod2.js');\n var fieldTypes = require('node/fieldTypes.js');\n load('node/X3DJSONLD.js');\n load('node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+                        bufferedWriter.close(); // ensure file writing is complete
+                 }

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,15 +33,17 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
 /**
  * This utility class provides a concrete implementation corresponding to SFBool X3D field type.
  * 
  * <br><br>
- * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: X3D SFBool values are lower case (true|false) in order to maintain compatibility with other XML documents.
+ * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
 <br><br>
 Related field object: {@link MFBoolObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFBool">X3D Tooltips: type SFBool</a>
 
  * 
 
@@ -178,7 +180,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFBool">X3D Tooltips: type SFBool</a>
 	 * @return String version of the provided value
 	 */
 	@Override

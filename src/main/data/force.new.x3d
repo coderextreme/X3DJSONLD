@@ -140,6 +140,7 @@ ecmascript:
             </ProtoInstance>
         </Transform>
         <Script DEF='clickHandler'>
+            <!-- <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> -->
             <field name='counter' accessType='inputOutput' type='SFInt32' value='0'/>
             <field name='node_changed' accessType='outputOnly' type='SFNode'/>
             <field name='add_node' accessType='inputOnly' type='SFBool' value='false'/>
@@ -164,7 +165,6 @@ ecmascript:
         }
 
 ]]>
-            <!-- <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> -->
         </Script>
         <ROUTE fromField='isActive' fromNode='clickGenerator' toField='add_node' toNode='clickHandler'/>
         <ROUTE fromField='position' fromNode='nodeA' toField='set_positionA' toNode='linkA'/>

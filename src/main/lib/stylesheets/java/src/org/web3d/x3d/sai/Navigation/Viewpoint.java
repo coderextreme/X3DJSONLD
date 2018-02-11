@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -49,6 +49,7 @@ import org.web3d.x3d.sai.Core.*;
  *  <li> <i>Hint:</i> NavigationInfo, Background, TextureBackground, Fog, GeoViewpoint, OrthoViewpoint and Viewpoint are bindable nodes, meaning that no more than one of each node type can be active at a given time. </li> 
  *  <li> <i>Hint:</i> GeoViewpoint OrthoViewpoint and Viewpoint share the same binding stack, so no more than one of these nodes can be bound and active at a given time. </li> 
  *  <li> <i>Warning:</i> do not include GeoViewpoint OrthoViewpoint or Viewpoint as a child of LOD or Switch, instead use ViewpointGroup as parent to constrain location proximity where the viewpoint is available to user. </li> 
+ *  <li> <i>Hint:</i> Regardless of viewpoint jump value at bind time, the relative viewing transformation between user's view and defined position/orientation is stored for later use when un-jumping (returning to the viewpoint when subsequent viewpoint is unbound). </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Viewpoints <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints</a> </li> 
  * </ul>
  * <br>
@@ -125,7 +126,8 @@ public interface Viewpoint extends X3DViewpointNode
 	 * <i>Tooltip:</i> Preferred minimum viewing angle from this viewpoint in radians. Small field of view roughly corresponds to a telephoto lens, large field of view roughly corresponds to a wide-angle lens.
  * <ul>
  *  <li> <i>Hint:</i> modifying Viewpoint distance to object may be better for zooming. </li> 
- *  <li> <i>Warning:</i>  fieldOfView may not be correct for different window sizes and aspect ratios. Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
+ *  <li> <i>Warning:</i> fieldOfView may not be correct for different window sizes and aspect ratios. </li> 
+ *  <li> <i>Warning:</i>  for VR/AR/MAR users wearing a head-mounted display (HMD), animating this field may induce motion sickness. Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
 	 * @return value of fieldOfView field
 	 */
@@ -134,7 +136,7 @@ public interface Viewpoint extends X3DViewpointNode
 	/**
 	 * Assign float value within allowed range of (0,3.1416) to inputOutput SFFloat field named <i>fieldOfView</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Preferred minimum viewing angle from this viewpoint in radians. Small field of view roughly corresponds to a telephoto lens, large field of view roughly corresponds to a wide-angle lens. Hint: modifying Viewpoint distance to object may be better for zooming. Warning: fieldOfView may not be correct for different window sizes and aspect ratios. Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> Preferred minimum viewing angle from this viewpoint in radians. Small field of view roughly corresponds to a telephoto lens, large field of view roughly corresponds to a wide-angle lens. Hint: modifying Viewpoint distance to object may be better for zooming. Warning: fieldOfView may not be correct for different window sizes and aspect ratios. Warning: for VR/AR/MAR users wearing a head-mounted display (HMD), animating this field may induce motion sickness. Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the fieldOfView field.
 	 * @return {@link Viewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -154,9 +156,11 @@ public interface Viewpoint extends X3DViewpointNode
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>jump</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Transition instantly by jumping, or smoothly adjust offsets in place when changing to this Viewpoint.
+	 * <i>Tooltip:</i> Transition instantly by jumping, otherwise smoothly adjust offsets in place when changing to this Viewpoint.
  * <ul>
- *  <li> <i> Hint:</i>  set jump=true for smooth camera motion when going to this viewpoint. </li> 
+ *  <li> <i>Hint:</i> see NavigationInfo.transitionType for the manner in which animated Viewpoint transistions occur. </li> 
+ *  <li> <i>Hint:</i> set jump=true for instantaneous camera motion when going to this viewpoint. </li> 
+ *  <li> <i>Warning:</i>  for VR/AR/MAR users wearing head-mounted displays, animating transitions between viewpoints may induce motion sickness. </li> 
  * </ul>
 	 * @return value of jump field
 	 */
@@ -166,7 +170,7 @@ public interface Viewpoint extends X3DViewpointNode
 	/**
 	 * Assign boolean value to inputOutput SFBool field named <i>jump</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Transition instantly by jumping, or smoothly adjust offsets in place when changing to this Viewpoint. Hint: set jump=true for smooth camera motion when going to this viewpoint.
+	 * <i>Tooltip:</i> Transition instantly by jumping, otherwise smoothly adjust offsets in place when changing to this Viewpoint. Hint: see NavigationInfo.transitionType for the manner in which animated Viewpoint transistions occur. Hint: set jump=true for instantaneous camera motion when going to this viewpoint. Warning: for VR/AR/MAR users wearing head-mounted displays, animating transitions between viewpoints may induce motion sickness.
 	 * @param newValue is new value for the jump field.
 	 * @return {@link Viewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -175,7 +179,7 @@ public interface Viewpoint extends X3DViewpointNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -183,7 +187,7 @@ public interface Viewpoint extends X3DViewpointNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link Viewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -195,6 +199,7 @@ public interface Viewpoint extends X3DViewpointNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Rotation (axis, angle in radians) of Viewpoint, relative to default -Z axis direction in local coordinate system.
  * <ul>
+ *  <li> <i>Warning:</i> for VR/AR/MAR users wearing a head-mounted display (HMD), animating this field may induce motion sickness. </li> 
  *  <li> <i>Hint:</i> this is orientation _change_ from default direction (0 0 -1). </li> 
  *  <li> <i>Hint:</i>  complex rotations can be accomplished axis-by-axis using parent Transforms. </li> 
  * </ul>
@@ -206,7 +211,7 @@ public interface Viewpoint extends X3DViewpointNode
 	/**
 	 * Assign 4-tuple float array unit axis, angle (in radians) to inputOutput SFRotation field named <i>orientation</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Rotation (axis, angle in radians) of Viewpoint, relative to default -Z axis direction in local coordinate system. Hint: this is orientation _change_ from default direction (0 0 -1). Hint: complex rotations can be accomplished axis-by-axis using parent Transforms.
+	 * <i>Tooltip:</i> Rotation (axis, angle in radians) of Viewpoint, relative to default -Z axis direction in local coordinate system. Warning: for VR/AR/MAR users wearing a head-mounted display (HMD), animating this field may induce motion sickness. Hint: this is orientation _change_ from default direction (0 0 -1). Hint: complex rotations can be accomplished axis-by-axis using parent Transforms.
 	 * @param newValue is new value for the orientation field.
 	 * @return {@link Viewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

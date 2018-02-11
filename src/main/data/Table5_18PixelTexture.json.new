@@ -81,9 +81,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-textureTransform": [
                           {
                             "TextureTransform": {
+                              "@containerField": "textureTransform",
                               "@scale": [
                                 500,
                                 500
@@ -94,6 +96,7 @@
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 2,
                                 2,
@@ -112,6 +115,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@size": [
                           1000,
                           1000,
@@ -165,9 +169,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
-                            "PixelTexture": {}
+                            "PixelTexture": {
+                              "@containerField": "texture"
+                            }
                           }
                         ]
                       }
@@ -176,6 +183,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@DEF": "StandardBox"
                       }
                     }
@@ -215,9 +223,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 1,
                                 2,
@@ -234,6 +244,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@USE": "StandardBox"
                       }
                     }
@@ -273,9 +284,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 2,
                                 1,
@@ -292,6 +305,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@USE": "StandardBox"
                       }
                     }
@@ -331,9 +345,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 2,
                                 4,
@@ -356,6 +372,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@USE": "StandardBox"
                       }
                     }
@@ -395,9 +412,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-texture": [
                           {
                             "PixelTexture": {
+                              "@containerField": "texture",
                               "@image": [
                                 3,
                                 2,
@@ -418,6 +437,7 @@
                   "-geometry": [
                     {
                       "Box": {
+                        "@containerField": "geometry",
                         "@USE": "StandardBox"
                       }
                     }

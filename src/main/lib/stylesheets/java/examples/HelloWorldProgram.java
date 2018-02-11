@@ -2,8 +2,9 @@
  * HelloWorldProgram.java
  *
  * Filename:     HelloWorldProgram.java
- * Description:  Example test program to create an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL).
+ * Description:  Example "smoke test" program to create an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL).
  * Identifier:   http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java
+ * Reference:    https://en.wikipedia.org/wiki/Smoke_testing_(software)
  * @author       Don Brutzman
  * Created:      6 September 2016
  * Revised:      see version control
@@ -26,6 +27,7 @@ import org.w3c.dom.Document;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
+import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
@@ -36,13 +38,11 @@ import org.web3d.x3d.jsail.PointingDeviceSensor.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
-import org.web3d.x3d.jsail.Sound.AudioClipObject;
-import org.web3d.x3d.jsail.Sound.SoundObject;
+import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.X3DConcreteElement;
-import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.X3DLoaderObject;
 
 public class HelloWorldProgram
@@ -90,6 +90,9 @@ public class HelloWorldProgram
 	
 	private void showSceneResults()
 	{
+		ConfigurationProperties.setPropertiesFileName(ConfigurationProperties.PROPERTIES_FILENAME_DEFAULT);
+		System.out.println ("ConfigurationProperties.getPropertiesFileName()=" + ConfigurationProperties.getPropertiesFileName());
+		ConfigurationProperties.loadProperties();
 		ConfigurationProperties.setShowDefaultAttributes(true); // tested satisfactorily
 		ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);
 		ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);
@@ -120,13 +123,17 @@ public class HelloWorldProgram
 				System.exit(1);
 		}
 		System.out.println ("===========================================");
-		System.out.println (x3dModel.toStringX3D());
+		System.out.println ("x3dModel.toStringX3D()\n");
+		System.out.println ( x3dModel.toStringX3D());
 		System.out.println ("===========================================");
-//		System.out.println (x3dModel.toStringXML()); // TODO
-//		System.out.println ("===========================================");
-		System.out.println (x3dModel.toStringClassicVRML());
+		System.out.println ("x3dModel.toStringXML()\n");//utility constructor
+		System.out.println ( x3dModel.toStringXML());
 		System.out.println ("===========================================");
-		System.out.println (x3dModel.toStringVRML97());
+		System.out.println ("x3dModel.toStringClassicVRML()\n");
+		System.out.println ( x3dModel.toStringClassicVRML());
+		System.out.println ("===========================================");
+		System.out.println ("x3dModel.toStringVRML97()\n");
+		System.out.println ( x3dModel.toStringVRML97());
 		System.out.println ("===========================================");
 		
 		System.out.println ("Create .x3d (X3D XML Encoding) version of model");
@@ -139,9 +146,9 @@ public class HelloWorldProgram
 		System.out.println ("===========================================");
 		System.out.println ("Create .xml (X3D XML Encoding) version of model");
 		savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_XML;
-		savedFile        = x3dModel.toFileX3D(savedFileName);
+		savedFile        = x3dModel.toFileXML(savedFileName);
 		savedFileExists = !(savedFile == null);
-		System.out.println ("helloWorldObject.toFileX3D(\"" + savedFileName + "\") success: " + savedFileExists);
+		System.out.println ("helloWorldObject.toFileXML(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
@@ -243,7 +250,7 @@ public class HelloWorldProgram
 		if (validationResult.isEmpty())
 			validationResult = "success";
 		System.out.println ("newX3DModel loadSuccess=" + loadSuccess + ", isEmpty()=" + newX3DModel.isEmpty() + ", validate()=" + validationResult);
-		
+
 		System.out.println ("===========================================");
 		System.out.println ("===========================================");
 		System.out.println ("Check file sizes for various forms of compression");
@@ -296,36 +303,36 @@ public class HelloWorldProgram
 		System.out.println ("Test CommandLine invocations");
 		String[] args = {"-help" };
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
-		args = new String[] {"HelloWorldProgramOutput.x3d", "-toX3D", "-file", "HelloWorldProgramOutput.CommandLine.x3d" };
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toX3D", "-toFile", "HelloWorldProgramOutput.CommandLine.x3d" };
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
-		args = new String[] {"HelloWorldProgramOutput.x3d", "-EXIFICIENT", "-toEXI", "-file", "HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi"};
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-EXIFICIENT", "-toEXI", "-toFile", "HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
 		args = new String[] {"HelloWorldProgramOutput.x3d", "-OpenEXI" };
-		// TODO continue testing when ready:  , "-toEXI" , "-file", "HelloWorldProgramOutput.CommandLine.OPENEXI.exi"};
+		// TODO continue testing when ready:  , "-toEXI" , "-toFile", "HelloWorldProgramOutput.CommandLine.OPENEXI.exi"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
-		args = new String[] {"HelloWorldProgramOutput.x3d", "-toGZIP", "-file", "HelloWorldProgramOutput.CommandLine.x3d.gz"};
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toGZIP", "-toFile", "HelloWorldProgramOutput.CommandLine.x3d.gz"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
 		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.gz", "-fromGZIP"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
-		args = new String[] {"HelloWorldProgramOutput.x3d", "-toZIP",  "-file", "HelloWorldProgramOutput.CommandLine.x3d.zip"};
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toZIP", "-toFile", "HelloWorldProgramOutput.CommandLine.x3d.zip"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
-		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.zip", "-fromZIP"};
+		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.zip", "-fromZIP", "-toFile", "HelloWorldProgramOutput.CommandLine.unzipped.x3d"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
-		CommandLine.main (args); // run these commands
+		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
 		System.out.println ("HelloWorldProgram complete.");
 	}
@@ -365,6 +372,7 @@ public class HelloWorldProgram
 		x3dModel.setHead(head);
 		// http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaTags
 		
+		component1 = new componentObject(componentObject.NAME_NAVIGATION,3); // utility constructor
 		component1.setName(componentObject.NAME_NAVIGATION).setLevel(3);
 		head.addComponent(component1);
 		head.addComponent(new componentObject().setName("Layering").setLevel(1)); // TODO add utility methods to headObject
@@ -378,6 +386,7 @@ public class HelloWorldProgram
 		
 		meta0.setName(metaObject.NAME_INFO);
 		meta0.setContent("continued development and testing in progress");
+		meta0 = new metaObject(metaObject.NAME_INFO, "continued development and testing in progress"); // utility constructor
 //		head.addMeta(meta0);
 		
 		// demonstrate method pipelining for X3D statements when adding multiple meta statements
@@ -468,10 +477,10 @@ public class HelloWorldProgram
 		scene.addChildren(viewpointGroup); // utility method to set single X3DNode
 		
 		// test utility methods
-		if (defaultViewpoint.getNodeByDEF(defaultViewpointDEF) == null) // tested satisfactorily
-			System.out.println ("*** unit test: defaultViewpoint.getNodeByDEF() method failed...");
-		if (scene.getNodeByDEF(defaultViewpointDEF) == null) // tested satisfactorily
-			System.out.println ("*** unit test: scene.getNodeByDEF() method failed...");
+		if (defaultViewpoint.findNodeByDEF(defaultViewpointDEF) == null) // tested satisfactorily
+			System.out.println ("*** unit test: defaultViewpoint.findNodeByDEF() method failed...");
+		if (scene.findNodeByDEF(defaultViewpointDEF) == null) // tested satisfactorily
+			System.out.println ("*** unit test: scene.findNodeByDEF() method failed...");
 		if (defaultViewpoint.findAncestorSceneObject()== null) // tested satisfactorily
 			System.out.println ("*** unit test: defaultViewpoint.findAncestorScene() method failed...");
 		if (defaultViewpoint.findAncestorX3DObject()== null) // tested satisfactorily
@@ -484,8 +493,9 @@ public class HelloWorldProgram
 		scene.addChildren(worldInfoNode);
 		scene.addChildren(worldInfoCopy1);
 		scene.addChildren(worldInfoCopy2);
-		scene.addMetadata(new MetadataStringObject("scene.addChildMetadataObject").setName("test"));
-		scene.addChild(new       LayerSetObject("scene.addChildLayerSetObjectTest")); // TODO check output default value of order
+                // utility methods for SceneObject
+		scene.addChild   (new MetadataStringObject("scene.addChildMetadataObject").setName("test").setValue("Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"));
+		scene.addChild   (new       LayerSetObject("scene.addChildLayerSetObjectTest"));
 		
 		scene.addChildren(logoTransform);
 		float[] rootTranslationOffset = {0.0f, 1.5f, 0.0f};
@@ -517,7 +527,7 @@ public class HelloWorldProgram
 		  boxMaterial.setTransparency((new SFFloatObject(0.1 )).getValue()); // equivalent utility method also allowing double-precision downcasting
 		
 		float[] boxSize = {2.0f, 2.0f, 2.0f};
-		box.setSize(boxSize).setCssClass("textured").setDEF("test-NMTOKEN_regex.0123456789");
+		box.setSize(boxSize).setCssClass("untextured").setDEF("test-NMTOKEN_regex.0123456789");
 		boxShape.setDEF("BoxShape").setGeometry(box);
 		
 		scene.addChildren(lineShape);
@@ -603,14 +613,17 @@ public class HelloWorldProgram
 		              .setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE)  // preferred form, error checking at compile time
 		              .setTopToBottom(FontStyleObject.TOPTOBOTTOM_DEFAULT_VALUE);
 		   // backslash is Java String escape character, &quot; is equivalent XML character entity for " quotation mark
+		   // Within a Java String, literal \" is read as " when parsed
+		   messageText.addComments("Comment example A, plain quotation marks:  He said, \"Immel did it!\"");  
+		   messageText.addComments("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;");
 		   MetadataSetObject metadataStringsSet = new MetadataSetObject().setName("EscapedQuotationMarksMetadataSet");
-		   metadataStringsSet.addValue(new MetadataStringObject().setName("escapedQuotesTest1").setValue(
-								   "escaped quotation marks example 1: He said, \"Immel did it!\""));
-		   metadataStringsSet.addValue(new MetadataStringObject().setName("escapedQuotesTest2").setValue(
-								   "escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"));
+		   metadataStringsSet.addValue(new MetadataStringObject("quotesTestC", // note use of utility constructor
+								   "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""));
+//		   no need to use &quot; inside a Java String
+//		   metadataStringsSet.addValue(new MetadataStringObject().setName("quotesTestD").setValue(
+//								   "MFString example D, XML character entities:   He said, \\&quot;Immel did it!\\&quot;"));
+		   metadataStringsSet.addValue(new MetadataStringObject("extraChildTest","checks MetadataSetObject addValue() method"));
 		   messageText.setMetadata(metadataStringsSet);
-		   messageText.addComments("escaped quotation marks example 3: He said, \"Immel did it!\"");  
-		   messageText.addComments("escaped quotation marks example 4: He said, &quot;Immel did it!&quot;");
 			 
 		scene.addChildren(textTransform);
 //		scene.addChildren(new MFNode(shape1, textTransform)); // TODO alternate invocation syntax
@@ -858,6 +871,10 @@ public class HelloWorldProgram
 					 internalIS.addConnect(new connectObject().setProtoField("enabled").setNodeField(TimeSensorObject.toField_ENABLED));
 					 
 		scene.addChildren(ArtDeco01ProtoDeclare);
+		
+		// Test WARNING_PROTOINSTANCE_NOT_FOUND works satisfactorily
+//		ProtoDeclareObject ArtDeco03ProtoDeclare = new ProtoDeclareObject().setName("ArtDeco03");
+//		scene.addChildren (ArtDeco03ProtoDeclare);
 
 		float[] diffuseColor    = {0.282435f, 0.085159f, 0.134462f};
 		ArtDeco01Material.setAmbientIntensity(0.25f).setShininess(0.127273f)
@@ -916,8 +933,8 @@ public class HelloWorldProgram
 		AppearanceObject testAppearance1 = (new AppearanceObject("TestAppearance1")).setMaterial(new MaterialObject("TestToBeOverridden1"));
 		AppearanceObject testAppearance2 = (new AppearanceObject("TestAppearance2")).setMaterial(new MaterialObject("TestToBeOverridden2"));
 		AppearanceObject testAppearance3 = (new AppearanceObject("TestAppearance3")).setMaterial(new MaterialObject("TestToBeOverridden3"));
-		testAppearance1.addComments("ArtDeco01Material prototype goes here...").setMaterial(ArtDeco01ProtoInstance); // successful use of overloaded, specially typed method
-		testAppearance2.addComments("ArtDeco02Material prototype goes here...").setMaterial(ArtDeco02ProtoInstance); // successful use of overloaded, specially typed method
+		testAppearance1.addComments("ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java").setMaterial(ArtDeco01ProtoInstance); // successful use of overloaded, specially typed method
+		testAppearance2.addComments("ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java").setMaterial(ArtDeco02ProtoInstance); // successful use of overloaded, specially typed method
 		// test ProtoInstance USE
 		testAppearance3.addComments("ArtDeco02Material ProtoInstance USE goes here...");
 		testAppearance3.setMaterial(new ProtoInstanceObject().setUSE(ArtDeco02ProtoInstance.getDEF())
@@ -931,7 +948,7 @@ public class HelloWorldProgram
 		scene.addChildren(testShape1);
 		scene.addChildren(testShape2);
 		scene.addChildren(testShape3);
-		
+
 		// prerequisite met: must first be fully connected to scene graph for function getNodeType() to find predecessor declaration
 		ArtDeco01ProtoInstance.addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"" + ArtDeco01ProtoInstance.getNodeType() + "\""));
 		ArtDeco02ProtoInstance.addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"" + ArtDeco02ProtoInstance.getNodeType() + "\""));
@@ -1062,21 +1079,21 @@ public class HelloWorldProgram
                 CommentsBlock testComments = new CommentsBlock ();
                 String result;
                 result = ((AnchorObject.isNode() == true) && (siteAnchor.isNode() == true)) ? "success" : "failure";
-                testComments.addComments("Test " + result + ":  AnchorObject.isNode()="      +  AnchorObject.isNode()      + ",              siteAnchor.isNode()="         + siteAnchor.isNode());
+                testComments.addComments("Test " + result + ":  AnchorObject.isNode()="      +  AnchorObject.isNode()      + ",              siteAnchor.isNode()=" + siteAnchor.isNode());
                 
                 result = ((AnchorObject.isStatement() == false) && (siteAnchor.isStatement() == false)) ? "success" : "failure";
-                testComments.addComments("Test " + result + ":  AnchorObject.isStatement()=" +  AnchorObject.isStatement() + ",        siteAnchor.isStatement()="    + siteAnchor.isStatement());
+                testComments.addComments("Test " + result + ":  AnchorObject.isStatement()=" +  AnchorObject.isStatement() + ",        siteAnchor.isStatement()="  + siteAnchor.isStatement());
 		
                 result = ((ROUTEObject.isNode() == false) && (orbitPositionROUTE.isNode() == false)) ? "success" : "failure";
-                testComments.addComments("Test " + result + ":   ROUTEObject.isNode()="      +   ROUTEObject.isNode()      + ",     orbitPositionROUTE.isNode()=" + orbitPositionROUTE.isNode());
+                testComments.addComments("Test " + result + ":   ROUTEObject.isNode()="      +   ROUTEObject.isNode()      + ",     orbitPositionROUTE.isNode()="  + orbitPositionROUTE.isNode());
 		
                 result = ((ROUTEObject.isStatement() == true) && (orbitPositionROUTE.isStatement() == true)) ? "success" : "failure";
                 testComments.addComments("Test " + result + ":   ROUTEObject.isStatement()=" +   ROUTEObject.isStatement() + ", orbitPositionROUTE.isStatement()=" + orbitPositionROUTE.isStatement());
                 
                 result = ((CommentsBlock.isNode() == false) && (CommentsBlock.isNode() == false)) ? "success" : "failure";
-                testComments.addComments("Test " + result + ": CommentsBlock.isNode()="      + CommentsBlock.isNode()      + ",           testComments.isNode()="       + testComments.isNode());
+                testComments.addComments("Test " + result + ": CommentsBlock.isNode()="      + CommentsBlock.isNode()      + ",           testComments.isNode()="  + testComments.isNode());
 		
-                result = ((CommentsBlock.isStatement() == false) && (CommentsBlock.isStatement() == false)) ? "success" : "failure";
+                result = ((CommentsBlock.isStatement() == false) && (testComments.isStatement() == false)) ? "success" : "failure";
                 testComments.addComments("Test " + result + ": CommentsBlock.isStatement()=" + CommentsBlock.isStatement() + ",      testComments.isStatement()="  + testComments.isStatement());
                 scene.addComments (testComments);
                 
@@ -1268,27 +1285,25 @@ public class HelloWorldProgram
 				System.out.println ("===========================================");
 			}
 			else System.out.println("Test failure: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
-                                                             "x3dLoader.getgetX3dObjectTree()");
+                                                  "x3dLoader.getX3dObjectTree()");
             // alternative approach to loading:
 			domDocument       = x3dLoader.getDomDocument();
 			domImplementation = domDocument.getImplementation(); // debug use only
 			domDocumentToStringX3D = x3dLoader.toStringX3D(domDocument);
 			System.out.println (domDocumentToStringX3D.trim()); // may include partial results if settings permit
 			System.out.println ("===========================================");
-			System.out.println("Test success: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
-							 "x3dLoader.getDomDocument() and x3dLoader.toStringX3D(domDocument)");
-
-			System.out.println ("===========================================");
+			System.out.println("Test success: x3dLoader.getDomDocument() and x3dLoader.toStringX3D(domDocument)");
+			System.out.println ("Now test x3dLoader.toX3dObjectTree(domDocument)");
 			x3dLoader.toX3dObjectTree(domDocument); 
-			// TODO problem (still? confirm) garbled scene tree has good structure but not returning correct attribute values
 			reloadedX3dObjectTree = (X3DObject) x3dLoader.getX3dObjectTree();
-			x3dLoader.getValidationResult(); // debug inspection
-			String reloadedFileName = thisSceneName + ".Reloaded" + X3DObject.FILE_EXTENSION_X3D;
+			x3dLoader.getValidationResult();  // debug inspection
+			String reloadedFileName = thisSceneName + ".ReloadedDOM" + X3DObject.FILE_EXTENSION_X3D;
 			if (reloadedX3dObjectTree != null)
 			{
-				 reloadedFile = reloadedX3dObjectTree.toFileX3D(reloadedFileName);
-				 // X3D scene has already been produced at this point, no point in adding further comments
-				 System.out.println("Test success: x3dLoader.toX3dObjectTree(domDocument), save " + reloadedFileName);
+				reloadedX3dObjectTree.validate(); // debug inspection
+				reloadedFile = reloadedX3dObjectTree.toFileX3D(reloadedFileName);
+				// X3D scene has already been produced at this point, no point in adding further comments
+				System.out.println("Test success: x3dLoader.toX3dObjectTree(domDocument), save " + reloadedFileName);
 			}
 			else System.out.println("Test failure: x3dLoader.toX3dObjectTree(domDocument), save " + reloadedFileName);
 		}

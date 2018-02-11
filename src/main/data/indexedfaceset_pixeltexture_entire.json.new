@@ -166,14 +166,18 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
-                      "Material": {}
+                      "Material": {
+                        "@containerField": "material"
+                      }
                     }
                   ],
                   "-texture": [
                     {
                       "PixelTexture": {
+                        "@containerField": "texture",
                         "@image": [
                           2,
                           2,
@@ -194,6 +198,7 @@
             "-geometry": [
               {
                 "IndexedFaceSet": {
+                  "@containerField": "geometry",
                   "@coordIndex": [
                     0,
                     1,
@@ -229,6 +234,7 @@
                   "-coord": [
                     {
                       "Coordinate": {
+                        "@containerField": "coord",
                         "@point": [
                           -2,
                           1.5,

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,15 +33,17 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
 /**
  * This utility class provides a concrete implementation corresponding to SFColorRGBA X3D field type.
  * 
  * <br><br>
- * The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0).
+ * The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.
 <br><br>
 Related field object: {@link MFColorRGBAObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColorRGBA">X3D Tooltips: type SFColorRGBA</a>
 
  * 
 
@@ -293,7 +295,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Ensure all component color values are within range [0-1] by clipping as necessary.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color">X3D Scene Authoring Hints: Color</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Color" target="_blank">X3D Scene Authoring Hints: Color</a>
 	 * @return {@link SFColorRGBAObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public SFColorRGBAObject normalizeClip ()
@@ -371,7 +373,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColorRGBA">X3D Tooltips: type SFColorRGBA</a>
 	 * @see org.web3d.x3d.jsail.fields.SFFloatObject#stripTrailingZeroes(float)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

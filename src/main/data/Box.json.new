@@ -69,15 +69,19 @@
                           "Shape": {
                             "-geometry": [
                               {
-                                "Sphere": {}
+                                "Sphere": {
+                                  "@containerField": "geometry"
+                                }
                               }
                             ],
                             "-appearance": [
                               {
                                 "Appearance": {
+                                  "@containerField": "appearance",
                                   "-material": [
                                     {
                                       "Material": {
+                                        "@containerField": "material",
                                         "@diffuseColor": [
                                           1,
                                           1,
@@ -147,15 +151,19 @@
                           "Shape": {
                             "-geometry": [
                               {
-                                "Cylinder": {}
+                                "Cylinder": {
+                                  "@containerField": "geometry"
+                                }
                               }
                             ],
                             "-appearance": [
                               {
                                 "Appearance": {
+                                  "@containerField": "appearance",
                                   "-material": [
                                     {
                                       "Material": {
+                                        "@containerField": "material",
                                         "@diffuseColor": [
                                           1,
                                           1,
@@ -284,6 +292,7 @@
                       "-geometry": [
                         {
                           "Box": {
+                            "@containerField": "geometry",
                             "@size": [
                               1,
                               1,
@@ -295,9 +304,11 @@
                       "-appearance": [
                         {
                           "Appearance": {
+                            "@containerField": "appearance",
                             "-material": [
                               {
                                 "Material": {
+                                  "@containerField": "material",
                                   "@diffuseColor": [
                                     0,
                                     1,

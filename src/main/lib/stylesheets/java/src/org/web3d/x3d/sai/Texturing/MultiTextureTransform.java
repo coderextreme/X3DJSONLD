@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -67,7 +67,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -75,7 +75,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link MultiTextureTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -85,7 +85,8 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>textureTransform</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureTransformNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureTransformNode.
+	 * @see org.web3d.x3d.sai.Texturing.X3DTextureTransformNode
 	 * @return value of textureTransform field
 	 */
 	public X3DNode[] getTextureTransform(); // acceptable node types: X3DTextureTransformNode
@@ -93,7 +94,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>textureTransform</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureTransformNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureTransformNode.
 	 * @param newValue is new value for the textureTransform field.
 	 * @return {@link MultiTextureTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -102,13 +103,13 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	/**
 	 * Add array of child textureTransform nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureTransformNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureTransformNode.
 	 * @param newValue is new value array to be appended the textureTransform field.
 	 */
 	public void addTextureTransform(X3DNode[] newValue); // acceptable node types: X3DTextureTransformNode
 	/**
 	 * Set single child textureTransform node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the textureTransform field.
+	 * @param newValue is new node for the textureTransform field
 	 */
 	public void setTextureTransform(X3DNode newValue); // acceptable node types: X3DTextureTransformNode
 

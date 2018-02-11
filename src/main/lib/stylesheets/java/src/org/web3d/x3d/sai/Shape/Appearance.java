@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -108,7 +108,7 @@ public interface Appearance extends X3DAppearanceNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -116,7 +116,7 @@ public interface Appearance extends X3DAppearanceNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link Appearance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -126,7 +126,8 @@ public interface Appearance extends X3DAppearanceNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>shaders</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DShaderNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DShaderNode.
+	 * @see org.web3d.x3d.sai.Shaders.X3DShaderNode
 	 * @return value of shaders field
 	 */
 	public X3DNode[] getShaders(); // acceptable node types: X3DShaderNode
@@ -134,7 +135,7 @@ public interface Appearance extends X3DAppearanceNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>shaders</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DShaderNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DShaderNode.
 	 * @param newValue is new value for the shaders field.
 	 * @return {@link Appearance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -143,13 +144,13 @@ public interface Appearance extends X3DAppearanceNode
 	/**
 	 * Add array of child shaders nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DShaderNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DShaderNode.
 	 * @param newValue is new value array to be appended the shaders field.
 	 */
 	public void addShaders(X3DNode[] newValue); // acceptable node types: X3DShaderNode
 	/**
 	 * Set single child shaders node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the shaders field.
+	 * @param newValue is new node for the shaders field
 	 */
 	public void setShaders(X3DNode newValue); // acceptable node types: X3DShaderNode
 	/**

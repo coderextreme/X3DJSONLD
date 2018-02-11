@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -34,7 +34,7 @@ package org.web3d.x3d.sai;
 
 
 /**
- * MFVec3f is an array of SFVec3f values. Individual SFVec3f array values are optionally separated by commas.
+ * MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas.
  * 
  * <br><br>
 

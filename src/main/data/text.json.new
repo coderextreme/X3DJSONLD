@@ -42,12 +42,15 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "Node\\\"\\\"\\\""
                         ],
                         "-fontStyle": [
                           {
-                            "FontStyle": {}
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
                           }
                         ]
                       }
@@ -56,9 +59,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
-                            "Material": {}
+                            "Material": {
+                              "@containerField": "material"
+                            }
                           }
                         ]
                       }
@@ -71,6 +77,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "Node2",
                           "\\\\\\",
@@ -79,7 +86,9 @@
                         ],
                         "-fontStyle": [
                           {
-                            "FontStyle": {}
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
                           }
                         ]
                       }
@@ -88,9 +97,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
-                            "Material": {}
+                            "Material": {
+                              "@containerField": "material"
+                            }
                           }
                         ]
                       }
@@ -103,13 +115,16 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
-                          "Node3 \\\\\\\\\\\\\\\\ \\\\\\",
+                          "Node3 \\\\\\\\\\",
                           "Node3\\\"\\\"\\\""
                         ],
                         "-fontStyle": [
                           {
-                            "FontStyle": {}
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
                           }
                         ]
                       }
@@ -118,9 +133,12 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
-                            "Material": {}
+                            "Material": {
+                              "@containerField": "material"
+                            }
                           }
                         ]
                       }
@@ -139,8 +157,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "\t\t\t    var me = '\\\"1\\\" \\\"\\\"2\\\" \\\"\\\\n3\\\"';",
+                    "ecmascript: var me = '\\\"1\\\"\\\"\\\"2\\\"\\\"\\\\n3\\\"';",
                     ""
                   ]
                 }
