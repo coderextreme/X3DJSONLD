@@ -12,7 +12,7 @@ cd X3DJSONLD
 
 * If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
 
-* Edit src/main/node/config.js for node.js, put maven in your path, and start a web server
+* Edit src/main/node/config.js for node.js, put maven in your path, install X3DJSAIL in your maven repository per the pom.xml (it's different than the X3DJSAIL distribution) and start a web server
 ```
 npm install
 node app.js
