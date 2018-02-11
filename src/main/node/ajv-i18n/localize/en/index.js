@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_en(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -24,9 +23,6 @@ module.exports = function localize_en(errors) {
         out = 'should match some schema in "anyOf"';
         break;
       case 'const':
-        out = 'should be equal to constant';
-        break;
-      case 'constant':
         out = 'should be equal to constant';
         break;
       case 'contains':
@@ -80,6 +76,9 @@ module.exports = function localize_en(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'should be ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -154,17 +153,6 @@ module.exports = function localize_en(errors) {
         break;
       case 'pattern':
         out = 'should match pattern "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'should have ' + (e.params.reason) + ' ' + (n) + ' propert';
-        if (n == 1) {
-          out += 'y';
-        } else {
-          out += 'ies';
-        }
-        out += ' matching pattern "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'should have property matching pattern "' + (e.params.missingPattern) + '"';

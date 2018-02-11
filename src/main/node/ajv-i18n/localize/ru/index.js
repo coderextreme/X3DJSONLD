@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_ru(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -26,9 +25,6 @@ module.exports = function localize_ru(errors) {
         out = 'должно соответствовать одной их схем в "anyOf"';
         break;
       case 'const':
-        out = 'должно быть равно заданному значению';
-        break;
-      case 'constant':
         out = 'должно быть равно заданному значению';
         break;
       case 'contains':
@@ -82,6 +78,9 @@ module.exports = function localize_ru(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'должно быть ' + (cond);
+        break;
+      case 'if':
+        out = 'должно соответствовать схемe "' + (e.params.failingKeyword) + '"';
         break;
       case 'maximum':
         out = '';
@@ -168,19 +167,6 @@ module.exports = function localize_ru(errors) {
         break;
       case 'pattern':
         out = 'должно соответствовать образцу "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'должно иметь ' + (e.params.reason) + ' ' + (n) + ' пол';
-        if (n == 1) {
-          out += 'е';
-        } else if (n >= 2 && n <= 4) {
-          out += 'я';
-        } else {
-          out += 'ей';
-        }
-        out += ', соответствующих образцу "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'должно иметь поле, соответствующее образцу "' + (e.params.missingPattern) + '"';

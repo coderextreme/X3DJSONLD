@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_hu(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -21,9 +20,6 @@ module.exports = function localize_hu(errors) {
         out = 'meg kell feleljen legalább egy "anyOf" alaknak';
         break;
       case 'const':
-        out = 'should be equal to constant';
-        break;
-      case 'constant':
         out = 'should be equal to constant';
         break;
       case 'contains':
@@ -80,6 +76,9 @@ module.exports = function localize_hu(errors) {
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'should be ' + (cond);
         break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
+        break;
       case 'maximum':
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
@@ -131,17 +130,6 @@ module.exports = function localize_hu(errors) {
         break;
       case 'pattern':
         out = 'meg kell feleljen a következő mintának: "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'should have ' + (e.params.reason) + ' ' + (n) + ' propert';
-        if (n == 1) {
-          out += 'y';
-        } else {
-          out += 'ies';
-        }
-        out += ' matching pattern "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'should have property matching pattern "' + (e.params.missingPattern) + '"';

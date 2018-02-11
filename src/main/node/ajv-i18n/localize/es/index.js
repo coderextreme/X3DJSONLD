@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_es(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -24,9 +23,6 @@ module.exports = function localize_es(errors) {
         out = 'debe coincidir con algún esquema en "anyOf"';
         break;
       case 'const':
-        out = 'debe ser igual a la constante';
-        break;
-      case 'constant':
         out = 'debe ser igual a la constante';
         break;
       case 'contains':
@@ -82,6 +78,9 @@ module.exports = function localize_es(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'debe ser ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -152,19 +151,6 @@ module.exports = function localize_es(errors) {
         break;
       case 'pattern':
         out = 'debe coincidir con el patron "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'debe tener ' + (e.params.reason) + ' ' + (n) + ' propiedad';
-        if (n != 1) {
-          out += 'es';
-        }
-        out += ' coincidente';
-        if (n != 1) {
-          out += 's';
-        }
-        out += ' con el patrón "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'la propiedad debe coincidir con el patrón "' + (e.params.missingPattern) + '"';

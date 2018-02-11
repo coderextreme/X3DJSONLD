@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_cz(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -23,12 +22,9 @@ module.exports = function localize_cz(errors) {
         out = 'nemůže mít další položky';
         break;
       case 'anyOf':
-        out = 'musí vyhovět alespoň jednému schématu v "anyOf"';
+        out = 'musí vyhovět alespoň jednomu schématu v "anyOf"';
         break;
       case 'const':
-        out = 'musí být konstantní';
-        break;
-      case 'constant':
         out = 'musí být konstantní';
         break;
       case 'contains':
@@ -85,6 +81,9 @@ module.exports = function localize_cz(errors) {
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'musí být ' + (cond);
         break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
+        break;
       case 'maximum':
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
@@ -93,7 +92,7 @@ module.exports = function localize_cz(errors) {
       case 'maxItems':
         out = '';
         var n = e.params.limit;
-        out += 'nesmí mýt víc než ' + (n) + ' prv';
+        out += 'nesmí obsahovat víc než ' + (n) + ' prv';
         if (n == 1) {
           out += 'ek';
         } else {
@@ -128,7 +127,7 @@ module.exports = function localize_cz(errors) {
       case 'minItems':
         out = '';
         var n = e.params.limit;
-        out += 'nesmí mýt méně než ' + (n) + ' prv';
+        out += 'nesmí obsahovat méně než ' + (n) + ' prv';
         if (n == 1) {
           out += 'ek';
         } else {
@@ -162,32 +161,19 @@ module.exports = function localize_cz(errors) {
         out = 'nesmí vyhovět schématu v "not"';
         break;
       case 'oneOf':
-        out = 'musí vyhovět právě jednému schématu v "oneOf"';
+        out = 'musí vyhovět právě jednomu schématu v "oneOf"';
         break;
       case 'pattern':
         out = 'musí vyhovět regulárnímu výrazu "' + (e.params.pattern) + '"';
         break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'musí mýt ' + (e.params.reason) + ' ' + (n) + ' polož';
-        if (n >= 2 && n <= 4) {
-          out += 'ky';
-        } else if (n != 1) {
-          out += 'ek';
-        } else {
-          out += 'ka';
-        }
-        out += ' vyhovující regulárnímu výrazu "' + (e.params.pattern) + '"';
-        break;
       case 'patternRequired':
-        out = 'musí mýt položku vyhovující regulárnímu výrazu "' + (e.params.missingPattern) + '"';
+        out = 'musí obsahovat položku vyhovující regulárnímu výrazu "' + (e.params.missingPattern) + '"';
         break;
       case 'propertyNames':
         out = 'název položky \'' + (e.params.propertyName) + '\' neodpovídá schématu';
         break;
       case 'required':
-        out = 'musí mýt požadovanou položku ' + (e.params.missingProperty);
+        out = 'musí obsahovat požadovanou položku ' + (e.params.missingProperty);
         break;
       case 'switch':
         out = 'musí projít validácí "switch", případ ' + (e.params.caseIndex) + ' je neúspěšný';
@@ -196,7 +182,7 @@ module.exports = function localize_cz(errors) {
         out = 'musí být ' + (e.params.type);
         break;
       case 'uniqueItems':
-        out = 'nesmí mýt duplicitní prvky (prvky ## ' + (e.params.j) + ' a ' + (e.params.i) + ' jsou stejné)';
+        out = 'nesmí obsahovat duplicitní prvky (prvky ## ' + (e.params.j) + ' a ' + (e.params.i) + ' jsou stejné)';
         break;
       default:
         continue;
