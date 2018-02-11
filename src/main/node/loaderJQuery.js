@@ -202,7 +202,7 @@ function load_X_ITE_XML(content) {
 function load_X_ITE_DOM(element, browserSelector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser("#x_itejson");
+			var browser = X3D.getBrowser("#x_itedom");
 			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 				var importedScene = browser.importDocument(element);
 				browser.replaceWorld(importedScene);
