@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_zh(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -21,9 +20,6 @@ module.exports = function localize_zh(errors) {
         out = '数据应为 anyOf 所指定的其中一个';
         break;
       case 'const':
-        out = '应当等于常量';
-        break;
-      case 'constant':
         out = '应当等于常量';
         break;
       case 'contains':
@@ -71,6 +67,9 @@ module.exports = function localize_zh(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += '应当是 ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -123,11 +122,6 @@ module.exports = function localize_zh(errors) {
         break;
       case 'pattern':
         out = '应当匹配模式 "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += '应当有 ' + (n) + ' 个 ' + (e.params.reason) + ' 属性满足模式 ' + (e.params.pattern);
         break;
       case 'patternRequired':
         out = '应当有属性匹配模式 ' + (e.params.missingPattern);

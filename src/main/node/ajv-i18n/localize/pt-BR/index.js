@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_pt_BR(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -20,9 +19,6 @@ module.exports = function localize_pt_BR(errors) {
         break;
       case 'const':
         out = 'should be equal to constant';
-        break;
-      case 'constant':
-        out = 'deve ser igual à constante';
         break;
       case 'contains':
         out = 'deve conter um item válido';
@@ -73,6 +69,9 @@ module.exports = function localize_pt_BR(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'deve ser ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -143,15 +142,6 @@ module.exports = function localize_pt_BR(errors) {
         break;
       case 'pattern':
         out = 'deve corresponder ao padrão "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'deve ter ' + (e.params.reason) + ' ' + (n) + ' propriedade';
-        if (n != 1) {
-          out += 's';
-        }
-        out += ' padrão de correspondência "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'deve ter a propriedade de padrão de correspondência "' + (e.params.missingPattern) + '"';

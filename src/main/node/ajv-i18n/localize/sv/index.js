@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_sv(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -24,9 +23,6 @@ module.exports = function localize_sv(errors) {
         out = 'borde matcha något schema i "anyOf"';
         break;
       case 'const':
-        out = 'bör vara en konstant';
-        break;
-      case 'constant':
         out = 'bör vara en konstant';
         break;
       case 'contains':
@@ -78,6 +74,9 @@ module.exports = function localize_sv(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'bör vara ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -142,15 +141,6 @@ module.exports = function localize_sv(errors) {
         break;
       case 'pattern':
         out = 'borde matcha mönstret "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'bör ha ' + (e.params.reason) + ' ' + (n) + ' egenskap';
-        if (n != 1) {
-          out += 'er';
-        }
-        out += ' som matchar mönstret "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'bör ha en egenskap som matchar mönstret "' + (e.params.missingPattern) + '"';

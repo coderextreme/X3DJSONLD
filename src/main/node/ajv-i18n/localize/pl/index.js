@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_pl(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -26,9 +25,6 @@ module.exports = function localize_pl(errors) {
         out = 'powinien pasować do wzoru z sekcji "anyOf"';
         break;
       case 'const':
-        out = 'powinien być równy stałej';
-        break;
-      case 'constant':
         out = 'powinien być równy stałej';
         break;
       case 'contains':
@@ -82,6 +78,9 @@ module.exports = function localize_pl(errors) {
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'powinien być ' + (cond);
+        break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
         break;
       case 'maximum':
         out = '';
@@ -160,17 +159,6 @@ module.exports = function localize_pl(errors) {
         break;
       case 'pattern':
         out = 'powinien zgadzać się ze wzorem "' + (e.params.pattern) + '"';
-        break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'powinien mieć ' + (e.params.reason) + ' ' + (n) + ' pol';
-        if (n == 1) {
-          out += 'e';
-        } else {
-          out += 'a';
-        }
-        out += ' pasujące do wzorca "' + (e.params.pattern) + '"';
         break;
       case 'patternRequired':
         out = 'powinien mieć pole pasujące do wzorca "' + (e.params.missingPattern) + '"';

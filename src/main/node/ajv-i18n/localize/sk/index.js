@@ -1,5 +1,4 @@
 'use strict';
-var module = {};
 module.exports = function localize_sk(errors) {
   if (!(errors && errors.length)) return;
   for (var i = 0; i < errors.length; i++) {
@@ -12,7 +11,7 @@ module.exports = function localize_sk(errors) {
       case 'additionalItems':
         out = '';
         var n = e.params.limit;
-        out += 'nemôže mať viac, než ' + (n) + ' prv';
+        out += 'nemôže obsahovať viac, než ' + (n) + ' prv';
         if (n == 1) {
           out += 'ok';
         } else {
@@ -20,15 +19,12 @@ module.exports = function localize_sk(errors) {
         }
         break;
       case 'additionalProperties':
-        out = 'nemôže mať ďalšie položky';
+        out = 'nemôže obsahovať ďalšie položky';
         break;
       case 'anyOf':
         out = 'musí splňovať aspoň jednu zo schém v "anyOf"';
         break;
       case 'const':
-        out = 'musí byť konštanta';
-        break;
-      case 'constant':
         out = 'musí byť konštanta';
         break;
       case 'contains':
@@ -40,7 +36,7 @@ module.exports = function localize_sk(errors) {
       case 'dependencies':
         out = '';
         var n = e.params.depsCount;
-        out += ' musí mať polož';
+        out += ' musí obsahovať polož';
         if (n >= 2 && n <= 4) {
           out += 'ky';
         } else if (n != 1) {
@@ -67,7 +63,7 @@ module.exports = function localize_sk(errors) {
         out = 'schéma je false';
         break;
       case 'format':
-        out = 'musí mať formát "' + (e.params.format) + '"';
+        out = 'musí obsahovať formát "' + (e.params.format) + '"';
         break;
       case 'formatExclusiveMaximum':
         out = 'formatExclusiveMaximum musí byť boolean';
@@ -85,6 +81,9 @@ module.exports = function localize_sk(errors) {
         var cond = e.params.comparison + " " + e.params.limit;
         out += 'musí byť ' + (cond);
         break;
+      case 'if':
+        out = 'should match "' + (e.params.failingKeyword) + '" schema';
+        break;
       case 'maximum':
         out = '';
         var cond = e.params.comparison + " " + e.params.limit;
@@ -93,7 +92,7 @@ module.exports = function localize_sk(errors) {
       case 'maxItems':
         out = '';
         var n = e.params.limit;
-        out += 'nesmie mať viac než ' + (n) + ' prv';
+        out += 'nesmie obsahovať viac než ' + (n) + ' prv';
         if (n == 1) {
           out += 'ok';
         } else {
@@ -111,7 +110,7 @@ module.exports = function localize_sk(errors) {
       case 'maxProperties':
         out = '';
         var n = e.params.limit;
-        out += 'nesmie mať viac než ' + (n) + ' polož';
+        out += 'nesmie obsahovať viac než ' + (n) + ' polož';
         if (n >= 2 && n <= 4) {
           out += 'ky';
         } else if (n != 1) {
@@ -128,7 +127,7 @@ module.exports = function localize_sk(errors) {
       case 'minItems':
         out = '';
         var n = e.params.limit;
-        out += 'nesmie mať menej než ' + (n) + ' prv';
+        out += 'nesmie obsahovať menej než ' + (n) + ' prv';
         if (n == 1) {
           out += 'ok';
         } else {
@@ -146,7 +145,7 @@ module.exports = function localize_sk(errors) {
       case 'minProperties':
         out = '';
         var n = e.params.limit;
-        out += 'nesmie mať menej než ' + (n) + ' polož';
+        out += 'nesmie obsahovať menej než ' + (n) + ' polož';
         if (n >= 2 && n <= 4) {
           out += 'ky';
         } else if (n != 1) {
@@ -167,27 +166,14 @@ module.exports = function localize_sk(errors) {
       case 'pattern':
         out = 'musí splňovať regulárny výraz "' + (e.params.pattern) + '"';
         break;
-      case 'patternGroups':
-        out = '';
-        var n = e.params.limit;
-        out += 'musí mať ' + (e.params.reason) + ' ' + (n) + ' polož';
-        if (n >= 2 && n <= 4) {
-          out += 'ky';
-        } else if (n != 1) {
-          out += 'iek';
-        } else {
-          out += 'ka';
-        }
-        out += ' splňjúcu regulárny výraz "' + (e.params.pattern) + '"';
-        break;
       case 'patternRequired':
-        out = 'musí mať položku splňjúcu regulárny výraz "' + (e.params.missingPattern) + '"';
+        out = 'musí obsahovať položku splňjúcu regulárny výraz "' + (e.params.missingPattern) + '"';
         break;
       case 'propertyNames':
         out = 'názov položky \'' + (e.params.propertyName) + '\' nezodpovedá schéme';
         break;
       case 'required':
-        out = 'musí mať požadovanú položku ' + (e.params.missingProperty);
+        out = 'musí obsahovať požadovanú položku ' + (e.params.missingProperty);
         break;
       case 'switch':
         out = 'musí prejsť validáciou "switch", prípad ' + (e.params.caseIndex) + ' je neúspešný';
@@ -196,7 +182,7 @@ module.exports = function localize_sk(errors) {
         out = 'musí byť ' + (e.params.type);
         break;
       case 'uniqueItems':
-        out = 'nesmie mať duplicitné prvky (prvky ## ' + (e.params.j) + ' a ' + (e.params.i) + ' sú rovnaké)';
+        out = 'nesmie obsahovať duplicitné prvky (prvky ## ' + (e.params.j) + ' a ' + (e.params.i) + ' sú rovnaké)';
         break;
       default:
         continue;
