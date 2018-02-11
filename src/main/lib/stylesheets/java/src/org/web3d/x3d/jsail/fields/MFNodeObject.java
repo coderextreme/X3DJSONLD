@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 import org.web3d.x3d.sai.Core.*;  // making sure #0
@@ -44,6 +45,7 @@ import org.web3d.x3d.sai.Core.*;  // making sure #0
  * The MFNode field specifies zero or more nodes; the default value of an MFNode field is the empty list.
 <br><br>
 Related field object: {@link SFNodeObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFNode">X3D Tooltips: type MFNode</a>
 
  * 
 
@@ -176,7 +178,7 @@ public class MFNodeObject extends X3DConcreteField implements org.web3d.x3d.sai.
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFNode">X3D Tooltips: type MFNode</a>
 	 * @return String version of the provided value
 	 */
 	@Override

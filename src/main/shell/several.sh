@@ -12,8 +12,8 @@ python ../python/classes.py
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
-EXTOJAVA='s/\/Examples\//\/java\/net\/coderextreme\/Examples\//' 
-EXTONASH='s/\/Examples\//\/nashorn\/net\/coderextreme\/Examples\//' 
+EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
+EXTONASH='s/\/Library\//\/nashorn\/net\/coderextreme\/Library\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/nashorn\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
@@ -51,17 +51,17 @@ do
 	${NODE} ${NODEDIR}/jsondiff.js $JSON $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.new.json.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
-do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.json.intermediate.x3d`.x3d 
-	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
-done
+#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+#do
+#	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
+#	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
+#done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH| xargs ls -d`
 do
 	pushd ../nashorn
 	echo $i
-	jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" $i
+	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
 	popd
 done
 

@@ -72,15 +72,15 @@ import org.web3d.x3d.jsail.Text.*;
 
 public class pp3
 {
-  /** Default constructor to create this object. */
-  public pp3 ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public pp3 ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("pp3.x3d"))
@@ -148,9 +148,7 @@ public class pp3
                 .setGeometry(new TextObject("CenterString"))))
             .addChild(new StringSensorObject("CenterSensor").setEnabled(false))
             .addChild(new TouchSensorObject("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new ScriptObject("RightSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("RightSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -159,13 +157,10 @@ public class pp3
 "\n" + 
 "function set_rightstring(rightstr) {" + "\n" + 
 "	rightlines = new MFString(rightstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
-        .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -174,13 +169,10 @@ public class pp3
 "\n" + 
 "function set_upstring(upstr) {" + "\n" + 
 "	uplines = new MFString(upstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("uplines").setType("MFString")))
-        .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -189,8 +181,7 @@ public class pp3
 "\n" + 
 "function set_centerstring(centerstr) {" + "\n" + 
 "	centerlines = new MFString(centerstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
         .addChild(new ROUTEObject().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
@@ -211,7 +202,7 @@ public class pp3
     .addChild(new TransformObject().setTranslation(0.0f,2.5f,0.0f)
       .addChild(new ProtoInstanceObject().setName("Process"))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #12, 34 total numbers made up of 17 2-tuple values */
 	private MFVec2fObject Extrusion_8_12_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
@@ -233,32 +224,47 @@ public class pp3
 	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
 	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return pp3 model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return pp3 model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new pp3().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("pp3 self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("pp3 self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

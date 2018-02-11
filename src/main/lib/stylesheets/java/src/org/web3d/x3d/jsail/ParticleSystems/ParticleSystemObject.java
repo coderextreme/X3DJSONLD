@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -597,8 +597,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>appearance</i> field;
-
+	 * Assign ProtoInstance to <i>appearance</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DAppearanceNode.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the appearance field
 	 * @see #setAppearance(X3DAppearanceNode)
@@ -938,8 +937,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>colorRamp</i> field;
-
+	 * Assign ProtoInstance to <i>colorRamp</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DColorNode.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the colorRamp field
 	 * @see #setColorRamp(X3DColorNode)
@@ -1069,8 +1067,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>emitter</i> field;
-
+	 * Assign ProtoInstance to <i>emitter</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DParticleEmitterNode.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the emitter field
 	 * @see #setEmitter(X3DParticleEmitterNode)
@@ -1154,7 +1151,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY.
  * <ul>
- *  <li> <i> Hint:</i>  include &amp;lt;component name='Geospatial' level='1'/&amp;gt;. </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
  * </ul>
 	 * @return value of geometry field
 	 */
@@ -1168,7 +1166,7 @@ setAttribute method invocations).
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
 	 * @see #setGeometry(ProtoInstanceObject)
 	 * <br><br>
-	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY. Hint: include &lt;component name='Geospatial' level='1'/&gt;.
+	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY. Hint: X3D for Advanced Modeling (X3D4AM) slideset http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf Warning: requires X3D profile='Full' or else include &lt;component name='Geospatial' level='1'/&gt;
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1200,8 +1198,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>geometry</i> field;
-
+	 * Assign ProtoInstance to <i>geometry</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DGeometryNode.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the geometry field
 	 * @see #setGeometry(X3DGeometryNode)
@@ -1245,6 +1242,19 @@ setAttribute method invocations).
 	/**
 	 * Provide String enumeration value ['LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY'] from initializeOnly SFString field named <i>geometryType</i>.
 	 * <br><br>
+	 * <i>Tooltip:</i> specifies type of geometry used to represent individual particles. Typically, a particle is calculated as point in space at which the geometry is placed. Changing the value of the geometry field or the definition of the geometry node shall be applied during current computation of the next frame to be rendered.
+ * <ul>
+ *  <li> <i>Hint:</i> LINE means that a line is drawn along the particle's current velocity vector, for this frame, centered about the particle's position. The length of the line is specified by the particle's height from the particleSize field value. </li> 
+ *  <li> <i>Hint:</i> POINT means that a point geometry is rendered at the particle's position. </li> 
+ *  <li> <i>Hint:</i> QUAD means that a 2D quad is rendered aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual quads are not aligned to the user's eye position but are affected in depth by the physics model. The particle's position is at the center of the quad. </li> 
+ *  <li> <i>Hint:</i> SPRITE means that a point sprite that uses a 2D point position to locate a screen-aligned quad at the center of the particle's location is rendered. </li> 
+ *  <li> <i>Hint:</i> TRIANGLE means that a 2D quad is rendered using a pair of triangles aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual triangles are not aligned to the user's eye position, but are affected in depth by the physics model. The particle's position is at the center of the triangle. </li> 
+ *  <li> <i>Hint:</i> GEOMETRY means that the geometry specified by the geometry field is rendered for each particle using the local coordinate system. </li> 
+ *  <li> <i>Warning:</i> do not wrap extra quotation marks around these SFString enumeration values, since "quotation" "marks" are only used for MFString values. </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
+ * </ul>
+	 * <br><br>
 	 * Available enumeration values for string comparison: {@link #GEOMETRYTYPE_LINE LINE}, {@link #GEOMETRYTYPE_POINT POINT}, {@link #GEOMETRYTYPE_QUAD QUAD}, {@link #GEOMETRYTYPE_SPRITE SPRITE}, {@link #GEOMETRYTYPE_TRIANGLE TRIANGLE}, {@link #GEOMETRYTYPE_GEOMETRY GEOMETRY}.
 	 * @return value of geometryType field
 	 */
@@ -1258,6 +1268,8 @@ setAttribute method invocations).
 	 * Assign String enumeration value ("LINE"|"POINT"|"QUAD"|"SPRITE"|"TRIANGLE"|"GEOMETRY") ['LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY'] to initializeOnly SFString field named <i>geometryType</i>.
 	 * <br><br>
 	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ({@link #GEOMETRYTYPE_LINE LINE}, {@link #GEOMETRYTYPE_POINT POINT}, {@link #GEOMETRYTYPE_QUAD QUAD}, {@link #GEOMETRYTYPE_SPRITE SPRITE}, {@link #GEOMETRYTYPE_TRIANGLE TRIANGLE}, {@link #GEOMETRYTYPE_GEOMETRY GEOMETRY}).
+	 * <br><br>
+	 * <i>Tooltip:</i> specifies type of geometry used to represent individual particles. Typically, a particle is calculated as point in space at which the geometry is placed. Changing the value of the geometry field or the definition of the geometry node shall be applied during current computation of the next frame to be rendered. Hint: LINE means that a line is drawn along the particle's current velocity vector, for this frame, centered about the particle's position. The length of the line is specified by the particle's height from the particleSize field value. Hint: POINT means that a point geometry is rendered at the particle's position. Hint: QUAD means that a 2D quad is rendered aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual quads are not aligned to the user's eye position but are affected in depth by the physics model. The particle's position is at the center of the quad. Hint: SPRITE means that a point sprite that uses a 2D point position to locate a screen-aligned quad at the center of the particle's location is rendered. Hint: TRIANGLE means that a 2D quad is rendered using a pair of triangles aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual triangles are not aligned to the user's eye position, but are affected in depth by the physics model. The particle's position is at the center of the triangle. Hint: GEOMETRY means that the geometry specified by the geometry field is rendered for each particle using the local coordinate system. Warning: do not wrap extra quotation marks around these SFString enumeration values, since "quotation" "marks" are only used for MFString values. Hint: X3D for Advanced Modeling (X3D4AM) slideset http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf Warning: requires X3D profile='Full' or else include &lt;component name='Geospatial' level='1'/&gt;
 	 * @param newValue is new value for the geometryType field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1278,7 +1290,7 @@ setAttribute method invocations).
 			newValue.equals(GEOMETRYTYPE_GEOMETRY))) {
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem geometryType newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		geometryType = newValue;
@@ -1397,7 +1409,7 @@ setAttribute method invocations).
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -1409,7 +1421,7 @@ setAttribute method invocations).
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
 	 * @see #setMetadata(ProtoInstanceObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1441,12 +1453,11 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>metadata</i> field;
-
+	 * Assign ProtoInstance to <i>metadata</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DMetadataObject.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the metadata field
 	 * @see #setMetadata(X3DMetadataObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -1467,7 +1478,7 @@ setAttribute method invocations).
 	/**
 	 * Provide properly typed ProtoInstance for inputOutput SFNode field <i>metadata</i>, if available.
 	 * @see #getMetadata()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return ProtoInstance value of geometry field
 	 */
 	public ProtoInstanceObject getMetadataProtoInstance()
@@ -1480,7 +1491,7 @@ setAttribute method invocations).
 	 * @return whether a properly typed node or ProtoInstance or CommentsBlock is available.
 	 * @see #getMetadata()
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
 	public boolean hasMetadata()
 	{
@@ -1598,7 +1609,8 @@ setAttribute method invocations).
 	 * <i>Tooltip:</i>  [X3DParticlePhysicsModelNode] After being created, the individual particles are then manipulated according to the physics model(s) specified in the physics field.  * <br>
 
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * @see org.web3d.x3d.sai.ParticleSystems.X3DParticlePhysicsModelNode
 	 * @return value of physics field
 	 */
 	@Override
@@ -1626,7 +1638,7 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DParticlePhysicsModelNode] After being created, the individual particles are then manipulated according to the physics model(s) specified in the physics field.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value for the physics field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1673,7 +1685,7 @@ setAttribute method invocations).
 	/**
 	 * Add single child physics node to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value to be appended the physics field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).	 */
 	public ParticleSystemObject addPhysics(X3DParticlePhysicsModelNode newValue)
@@ -1687,7 +1699,7 @@ setAttribute method invocations).
 	/**
 	 * Add array of child physics nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value array to be appended the physics field.
 	 */
 	@Override
@@ -1708,8 +1720,8 @@ setAttribute method invocations).
 	/**
 	 * Set single child physics node, replacing prior array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
-	 * @param newValue is new node for the physics field.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are restricted to X3DParticlePhysicsModelNode.
+	 * @param newValue is new node for the physics field (restricted to X3DParticlePhysicsModelNode)
 	 */
 	@Override
 	public void setPhysics(X3DNode newValue)
@@ -1920,8 +1932,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>texCoordRamp</i> field;
-
+	 * Assign ProtoInstance to <i>texCoordRamp</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type TextureCoordinate.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the texCoordRamp field
 	 * @see #setTexCoordRamp(TextureCoordinate)
@@ -1975,8 +1986,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setDEF(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ParticleSystem
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -1984,6 +1994,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem DEF newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("ParticleSystem DEF newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		setConcreteUSE(""); // ensure that no previous USE value remains
 		setConcreteDEF(newValue); // private superclass methods
@@ -2016,8 +2032,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setUSE(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ParticleSystem
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -2025,6 +2040,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem USE newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("ParticleSystem USE newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		initialize(); // reset all other field values to default (equivalent to empty)
 		setConcreteUSE(newValue); // private superclass method
@@ -2052,7 +2073,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setCssClass(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		setConcreteCssClass(newValue); // private superclass method
@@ -2071,16 +2092,6 @@ setAttribute method invocations).
 	}
 
 	// Additional utility methods for this class ==============================
-
-	/**
-	 * Utility constructor that assigns DEF name after initializing member variables with default values
-	 * @param DEFname unique DEF name for this X3D node
-	 */
-	public ParticleSystemObject (String DEFname)
-	{
-		initialize();
-		setDEF(DEFname); // apply checks
-	}
 
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal ProtoBody nodes.
@@ -2132,6 +2143,16 @@ setAttribute method invocations).
 		setUSE(DEFnode.getDEF());
 		return this;
 	}
+	/**
+	 * Utility constructor that assigns DEF label after initializing member variables with default values.
+	 * @param DEFlabel unique DEF name for this X3D node
+	 */
+	public ParticleSystemObject (String DEFlabel)
+	{
+		initialize();
+		setDEF(DEFlabel); // apply checks
+	}
+
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
@@ -2194,8 +2215,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -2227,11 +2255,11 @@ setAttribute method invocations).
 				stringX3D.append(" USE='").append(SFStringObject.toString(getUSE())).append("'");
 			}
 			
-			if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
-			{
-				stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
-			}
-			
+                            if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
+                            {
+                                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+                            }
+                            
 			if ((!Arrays.equals(getBboxCenter(), BBOXCENTER_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes()) && !isUSE())
 			{
 				stringX3D.append(" bboxCenter='").append(SFVec3fObject.toString(getBboxCenter())).append("'");
@@ -2366,7 +2394,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -2705,6 +2735,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -2717,84 +2748,17 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	@Override
-	public X3DConcreteNode getNodeByDEF(String DEFname)
-	{
-		X3DConcreteNode referenceNode;
-
-		if (getDEF().equals(DEFname))
-			return this;
-
-		if (appearance != null)
-		{
-			referenceNode = ((X3DConcreteNode) appearance).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (colorRamp != null)
-		{
-			referenceNode = ((X3DConcreteNode) colorRamp).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (emitter != null)
-		{
-			referenceNode = ((X3DConcreteNode) emitter).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (geometry != null)
-		{
-			referenceNode = ((X3DConcreteNode) geometry).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (geometry != null)
-		{
-			referenceNode = ((X3DConcreteNode) geometry).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (metadata != null)
-		{
-			referenceNode = ((X3DConcreteNode) metadata).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		for (X3DParticlePhysicsModelNode element : physics) // MFNode
-		{
-			if (element instanceof org.web3d.x3d.jsail.X3DConcreteNode)
-			{
-				if (((X3DConcreteNode) element).getDEF().equals(DEFname))
-					return (X3DConcreteNode) element; // found, this node
-			
-				// not yet found, continue with depth-first search of current child element
-				referenceNode = ((X3DConcreteNode) element).getNodeByDEF(DEFname);
-				if (referenceNode != null)
-					return referenceNode; // found in child
-			}
-		}
-		if (texCoordRamp != null)
-		{
-			referenceNode = ((X3DConcreteNode) texCoordRamp).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		return null; // not found, in this node or in children nodes
-	}
-
-	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -2806,11 +2770,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -2933,10 +2901,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
@@ -3332,7 +3304,7 @@ setAttribute method invocations).
 				!modelProfile.equals("Full"))
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
-					" invalid X3D profile='" + getContainerFieldOverride() +
+					" invalid X3D profile='" + modelProfile +
 					"' for parent X3D model, add element <componentInfo name='ParticleSystems' level='2'/>\n" +
 					"or source-code assignment: " +
 					" findAncestorX3DObject().getHead().addComponentInfo(\"ParticleSystems\").setLevel(2);";

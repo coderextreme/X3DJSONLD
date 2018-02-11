@@ -96,7 +96,7 @@
           },
           {
             "@name":"warning",
-            "@content":"BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];"
+            "@content":"BSContact error: Script node TextScript: parse error: line 15 \"var strategy = [];"
           },
           {
             "@name":"identifier",
@@ -112,7 +112,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2017"
+            "@content":"31 January 2018"
           },
           {
             "@name":"generator",
@@ -223,6 +223,14 @@
             {
               "@DEF":"TextScript",
               "@url":["./ObliqueStrategiesScript.js"],
+              "-children":[
+                {
+                  "#comment":"initialize() method includes unit test to printAllStrategies() to console"
+                },
+                {
+                  "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
+                }
+              ],
               "field": [
                 {
                   "@name":"index",
@@ -270,14 +278,6 @@
                   "@appinfo":"controls console tracing",
                   "@type":"SFBool",
                   "@value":true
-                }
-              ],
-              "-children":[
-                {
-                  "#comment":"initialize() method includes unit test to printAllStrategies() to console"
-                },
-                {
-                  "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
                 }
               ]
             }
@@ -332,14 +332,6 @@
                     "@maxFront":100.0,
                     "@minBack":20.0,
                     "@minFront":20.0,
-                    "-source":
-                      { "AudioClip":
-                        {
-                          "@DEF":"TextToSpeechAudioClip",
-                          "@description":"sends strategy text google translate",
-                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"]
-                        }
-                      },
                     "-children":[
                       {
                         "#comment":"Make sure the sound source AudioClip is audible at the user location"
@@ -353,7 +345,15 @@
                       {
                         "#comment":"%20 is space character used in uri/url encoding"
                       }
-                    ]
+                    ],
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"TextToSpeechAudioClip",
+                          "@description":"sends strategy text google translate",
+                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"]
+                        }
+                      }
                   }
                 },
                 { "ROUTE":
@@ -429,6 +429,11 @@
                       { "Shape":
                         {
                           "@DEF":"TransparentClickSurface",
+                          "-children":[
+                            {
+                              "#comment":"support Selectable Text with a scalable IFS"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -452,12 +457,7 @@
                                     }
                                   }
                               }
-                            },
-                          "-children":[
-                            {
-                              "#comment":"support Selectable Text with a scalable IFS"
                             }
-                          ]
                         }
                       }
                     ]

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -52,6 +52,8 @@ import java.util.Arrays;
  * <br><br>
  * <i>X3D statement tooltip</i>: Scene is the root element that contains an X3D scene graph. Add nodes and children to build an X3D model. Only one Scene root element is allowed per X3D file.
  * <ul>
+ *  <li> <i>Hint:</i> Scene can contain regular children nodes, Metadata* nodes and LayerSet as top-level root nodes. </li> 
+ *  <li> <i>Hint:</i> Scene is implicit, and not explicitly defined, in VRML97 and ClassicVRML encodings. </li> 
  *  <li> <i>Hint:</i> Scene nodes within Inlined worlds report identical values as top-most root Scene node. </li> 
  *  <li> <i>Warning:</i>  player support for attribute fields in this node is not defined. </li> 
  * </ul>
@@ -189,9 +191,12 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	// ==== Accessor methods: strongly typed get/set methods for compile-time strictness
 
 	/**
-	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DChildNode|X3DMetadataObject|LayerSet, from inputOutput MFNode field <i>children</i>.
+	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DChildNode|X3DMetadataObject|LayerSet, from inputOutput MFNode field <i>children</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
+	 * @see org.web3d.x3d.sai.Core.X3DMetadataObject
+	 * @see org.web3d.x3d.jsail.Layering.LayerSetObject
 	 * @return value of children field
 	 */
 	public ArrayList<X3DNode> getChildren()
@@ -200,9 +205,9 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	}
 
 	/**
-	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DChildNode|X3DMetadataObject|LayerSet, to inputOutput MFNode field <i>children</i>.
+	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DChildNode|X3DMetadataObject|LayerSet, to inputOutput MFNode field <i>children</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
 	 * @param newValue is new value for the children field.
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -219,13 +224,13 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	/**
 	 * Add single children node to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
 	 * @param newValue is new value to be appended the children field.	 */
 	public void addChildren(X3DNode newValue)
 	{
 		if (newValue == null) return; // newValueNullReturnVoid
 
-		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
 				(newValue instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
 				(newValue instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
@@ -247,7 +252,7 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 
 
 	/**
-	 * Utility method to add single child element to contained array of existing children nodes (if any).
+	 * Utility method to add single child element to contained list of existing children nodes (if any).
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	*/
@@ -259,7 +264,7 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 			return this;
 		}
 
-		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
 				(newValue instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
 				(newValue instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
@@ -283,14 +288,14 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	public void addChildren(X3DNode[] newValue)
 	{
 		if (newValue == null) return; // newValueNullReturnVoid
 
-		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #2
 		for (int i = 0; i < newValue.length; i++)
 		{
 			boolean isNodeTypeAllowed = 
@@ -323,8 +328,8 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode|X3DMetadataObject|LayerSet.
-	 * @param newValue is new node for the children field.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are restricted to X3DChildNode|X3DMetadataObject|LayerSet.
+	 * @param newValue is new node for the children field (restricted to X3DChildNode|X3DMetadataObject|LayerSet)
 	 */
 	public void setChildren(X3DNode newValue)
 	{
@@ -334,7 +339,7 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 			return;
 		}
 
-		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
 				(newValue instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
 				(newValue instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
@@ -428,8 +433,15 @@ setAttribute method invocations).
 
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -472,7 +484,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -501,6 +515,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -513,38 +528,17 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	public X3DConcreteNode getNodeByDEF(String DEFname)
-	{
-		X3DConcreteNode referenceNode;
-
-		for (X3DNode element : children) // MFNode
-		{
-			if (element instanceof org.web3d.x3d.jsail.X3DConcreteNode)
-			{
-				if (((X3DConcreteNode) element).getDEF().equals(DEFname))
-					return (X3DConcreteNode) element; // found, this node
-			
-				// not yet found, continue with depth-first search of current child element
-				referenceNode = ((X3DConcreteNode) element).getNodeByDEF(DEFname);
-				if (referenceNode != null)
-					return referenceNode; // found in child
-			}
-		}
-		return null; // not found, in this node or in children nodes
-	}
-
-	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -556,11 +550,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -599,10 +597,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
@@ -657,22 +659,24 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Utility method to add single X3DMetadataNode to contained array of existing Scene root nodes (if any).
+	 * Utility method to add single X3DMetadataNode to contained list of existing Scene root nodes (if any).
+         * <i>WARNING</i>: Scene is a statement that is implicit in several encodings and has no <i>metadata</i> field, so top-level metadata nodes are kept together with other top-level root nodes as Scene children.
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	*/
-	public SceneObject addMetadata(X3DMetadataObject newValue)
+	public SceneObject addChild(X3DMetadataObject newValue)
 	{
 		if (newValue == null)
 		{
 			return this;
 		}
+                // note Scene has no metadata field, add to children instead
 		children.add((X3DNode)newValue);
 		((X3DConcreteElement) newValue).setParentObject(this);
 		return this;
 	}
 	/**
-	 * Utility method to add single LayerSetObject to contained array of existing Scene root nodes (if any).
+	 * Utility method to add single LayerSetObject to contained list of existing Scene root nodes (if any).
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	*/

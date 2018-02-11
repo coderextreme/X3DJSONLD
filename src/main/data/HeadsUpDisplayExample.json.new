@@ -61,7 +61,7 @@
       ]
     },
     "Scene": {
-      "#comment": "ProtoDeclare is the \\\"cookie cutter\\\" template, ProtoInstance creates an actual occurrence",
+      "#comment": "ProtoDeclare is the \\\"cookie cutter\\\"template, ProtoInstance creates an actual occurrence",
       "-children": [
         {
           "ExternProtoDeclare": {
@@ -179,6 +179,7 @@
                       "-geometry": [
                         {
                           "Text": {
+                            "@containerField": "geometry",
                             "@string": [
                               "HUD text stays fixed",
                               "while user navigates"
@@ -186,6 +187,7 @@
                             "-fontStyle": [
                               {
                                 "FontStyle": {
+                                  "@containerField": "fontStyle",
                                   "@justify": [
                                     "MIDDLE",
                                     "MIDDLE"
@@ -200,9 +202,11 @@
                       "-appearance": [
                         {
                           "Appearance": {
+                            "@containerField": "appearance",
                             "-material": [
                               {
                                 "Material": {
+                                  "@containerField": "material",
                                   "@diffuseColor": [
                                     0,
                                     0,

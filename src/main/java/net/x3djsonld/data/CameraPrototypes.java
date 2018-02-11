@@ -97,15 +97,15 @@ import org.web3d.x3d.jsail.Text.*;
 
 public class CameraPrototypes
 {
-  /** Default constructor to create this object. */
-  public CameraPrototypes ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public CameraPrototypes ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.2")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("CameraPrototypes.x3d"))
@@ -184,9 +184,7 @@ public class CameraPrototypes
             .addConnect(new connectObject().setNodeField("set_fraction").setProtoField("set_fraction"))))
         .addChild(new ROUTEObject().setFromNode("CameraPositionInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("position"))
         .addChild(new ROUTEObject().setFromNode("CameraOrientationInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("orientation"))
-        .addChild(new ScriptObject("CameraScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraScript" + "\n" + 
@@ -527,8 +525,7 @@ public class CameraPrototypes
 "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[Camera] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addComments(" binding is controlled externally, all camera operations proceed the same regardless of whether bound or not ")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this Camera"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setAppinfo("Camera position in local transformation frame"))
@@ -609,9 +606,7 @@ public class CameraPrototypes
         .addField(new fieldObject().setAccessType("outputOnly").setName("isActive").setType("SFBool").setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("enable console output to trace script computations and prototype progress")))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new ScriptObject("CameraShotScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraShotScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraShotScript" + "\n" + 
@@ -705,8 +700,7 @@ public class CameraPrototypes
 "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraShot"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraShot can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("moves").setType("MFNode").setAppinfo("Set of CameraMovement nodes")
@@ -756,9 +750,7 @@ public class CameraPrototypes
         .addComments(" First node determines node type of this prototype ")
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events ")
-        .addChild(new ScriptObject("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraMovementScript" + "\n" + 
@@ -849,8 +841,7 @@ public class CameraPrototypes
 "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraMovement"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraMovement can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("duration").setType("SFFloat").setAppinfo("Duration in seconds for this move"))
@@ -895,9 +886,7 @@ public class CameraPrototypes
       .setProtoBody(new ProtoBodyObject()
         .addComments(" First node determines node type of this prototype ")
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
-        .addChild(new ScriptObject("OfflineRenderScript").setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("OfflineRenderScript").setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // OfflineRenderScript" + "\n" + 
@@ -952,8 +941,7 @@ public class CameraPrototypes
 "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this OfflineRender"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this OfflineRender can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("frameRate").setType("SFFloat").setAppinfo("Frames per second recorded for this rendering"))
@@ -988,7 +976,7 @@ public class CameraPrototypes
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,0.2f)))))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
 	/** Large attribute array: ProtoDeclare appinfo field, scene-graph level=3, element #16, 31 total values */
 	private SFStringObject ProtoDeclare_Camera_3_16_appinfo = new SFStringObject("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.");
@@ -1008,32 +996,47 @@ public class CameraPrototypes
 	/** Large attribute array: Text string field, scene-graph level=6, element #254, 14 total values */
 	private MFStringObject Text_6_254_string = new MFStringObject(new MFStringObject("\"CameraPrototypes.x3d\" \"defines multiple prototype nodes\" \"\" \"Click on this text to see\" \"CameraExamples.x3d scene\""));
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return CameraPrototypes model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return CameraPrototypes model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new CameraPrototypes().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("CameraPrototypes self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("CameraPrototypes self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

@@ -98,9 +98,11 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@diffuseColor": [
                                             0,
                                             0,
@@ -117,10 +119,12 @@
                                     "-texture": [
                                       {
                                         "ComposedCubeMapTexture": {
+                                          "@containerField": "texture",
                                           "@DEF": "texture",
                                           "-back": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "back",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
@@ -131,6 +135,7 @@
                                           "-bottom": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "bottom",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
@@ -141,6 +146,7 @@
                                           "-front": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "front",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
@@ -151,6 +157,7 @@
                                           "-left": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "left",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
@@ -161,6 +168,7 @@
                                           "-right": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "right",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
@@ -171,6 +179,7 @@
                                           "-top": [
                                             {
                                               "ImageTexture": {
+                                                "@containerField": "top",
                                                 "@url": [
                                                   "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
                                                   "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
@@ -181,7 +190,7 @@
                                         }
                                       }
                                     ],
-                                    "#comment": "<ComposedShader DEF='instant' language=\\\"GLSL\\\"> <field name='cube' type='SFInt32' accessType=\\\"inputOutput\\\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\\\"inputOutput\\\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\\\"inputOutput\\\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\\\"inputOutput\\\" value='0.5'/> <field name='power' type='SFFloat' accessType=\\\"inputOutput\\\" value='2.0'/> <ShaderPart url='\\\"../shaders/instant.vs\\\" \\\"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\\\"' type='VERTEX'></ShaderPart> <ShaderPart url='\\\"../shaders/pc_bubbles.fs\\\" \\\"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\\\"' type='FRAGMENT'></ShaderPart> </ComposedShader>",
+                                    "#comment": "<ComposedShader DEF='instant' language=\\\"GLSL\\\"> <field name='cube' type='SFInt32' accessType=\\\"inputOutput\\\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\\\"inputOutput\\\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\\\"inputOutput\\\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\\\"inputOutput\\\"value='0.5'/> <field name='power' type='SFFloat' accessType=\\\"inputOutput\\\"value='2.0'/> <ShaderPart url='\\\"../shaders/instant.vs\\\"\\\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\\\"' type='VERTEX'></ShaderPart> <ShaderPart url='\\\"../shaders/pc_bubbles.fs\\\"\\\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\\\"' type='FRAGMENT'></ShaderPart> </ComposedShader>",
                                     "-children": [
                                       {
                                         "ComposedShader": {
@@ -224,7 +233,7 @@
                                               "ShaderPart": {
                                                 "@url": [
                                                   "../shaders/x3dom.vs",
-                                                  "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                                  "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
                                                 ],
                                                 "@type": "VERTEX"
                                               }
@@ -233,7 +242,7 @@
                                               "ShaderPart": {
                                                 "@url": [
                                                   "../shaders/pc_bubbles.fs",
-                                                  "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                                  "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                                 ],
                                                 "@type": "FRAGMENT"
                                               }
@@ -243,7 +252,7 @@
                                       },
                                       {
                                         "ComposedShader": {
-                                          "@DEF": "cobweb",
+                                          "@DEF": "x_ite",
                                           "@language": "GLSL",
                                           "field": [
                                             {
@@ -287,8 +296,8 @@
                                             {
                                               "ShaderPart": {
                                                 "@url": [
-                                                  "../shaders/cobweb.vs",
-                                                  "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                                  "../shaders/x_ite.vs",
+                                                  "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
                                                 ],
                                                 "@type": "VERTEX"
                                               }
@@ -297,7 +306,7 @@
                                               "ShaderPart": {
                                                 "@url": [
                                                   "../shaders/pc_bubbles.fs",
-                                                  "https://coderextreme.net/X3DJSONLD/shaders/pc.fs"
+                                                  "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
                                                 ],
                                                 "@type": "FRAGMENT"
                                               }
@@ -311,7 +320,9 @@
                               ],
                               "-geometry": [
                                 {
-                                  "Sphere": {}
+                                  "Sphere": {
+                                    "@containerField": "geometry"
+                                  }
                                 }
                               ]
                             }
@@ -342,31 +353,7 @@
                           }
                         ],
                         "#sourceText": [
-                          "ecmascript:",
-                          "\t\t\tfunction initialize() {",
-                          "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-                          "\t\t\t    velocity = new SFVec3f(",
-                          "\t\t\t    \tMath.random() - 0.5,",
-                          "\t\t\t\tMath.random() - 0.5,",
-                          "\t\t\t\tMath.random() - 0.5);",
-                          "\t\t\t}",
-                          "\t\t\tfunction set_fraction() {",
-                          "\t\t\t    translation = new SFVec3f(",
-                          "\t\t\t    \ttranslation.x + velocity.x,",
-                          "\t\t\t\ttranslation.y + velocity.y,",
-                          "\t\t\t\ttranslation.z + velocity.z);",
-                          "\t\t\t    if (Math.abs(translation.x) > 10) {",
-                          "\t\t\t\tinitialize();",
-                          "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-                          "\t\t\t\tinitialize();",
-                          "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-                          "\t\t\t\tinitialize();",
-                          "\t\t\t    } else {",
-                          "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-                          "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-                          "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-                          "\t\t\t    }",
-                          "\t\t\t}",
+                          "ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } }",
                           ""
                         ]
                       }

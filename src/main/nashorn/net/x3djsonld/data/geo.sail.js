@@ -101,7 +101,7 @@ geo_sail.prototype = {
             .addField(new fieldObject().setAccessType("initializeOnly").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
             .addParts(new ShaderPartObject().setUSE("common")))))));
   },
   // end of initialize() method

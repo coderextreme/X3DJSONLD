@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -50,7 +50,7 @@ import org.web3d.x3d.sai.X3DException;
 // import org.web3d.x3d.sai.InvalidFieldValueException;
 
 /**
- * Concrete class that provides command-line JAR access to various X3DJSAIL capabilities. TODO more to follow!
+ * Concrete class that provides command-line JAR access to various X3DJSAIL capabilities.
  * 
  * <br><br>
 
@@ -64,21 +64,40 @@ import org.web3d.x3d.sai.X3DException;
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
 public class CommandLine
-{	
-// TODO singleton pattern?
+{
+				
 // TODO JAR configuration
+
+// ==========================================================================================
+
+	/** Loaded X3D model of interest, useful for initialization and use of CommandLine by other X3D Java programs. */
+	private static X3DObject loadedX3dModel;
+
+	/** Set already-loaded X3D model of interest, useful for initialization and use of CommandLine by other X3D Java programs. 
+	 * @param newX3dModel already-loaded X3D model of interest
+	*/
+	public static void setLoadedX3dModel (X3DObject newX3dModel)
+	{
+		loadedX3dModel = newX3dModel;
+	}
+				
+	/** Reset already-loaded X3D model of interest to empty model */
+	public static void clearLoadedX3dModel ()
+	{
+		loadedX3dModel = new X3DObject();
+	}
 
 // ==========================================================================================
 	
     /** Initialize this CommandLine instance to default values. */
     public static final void initialize()
     {
-            // so far so good
+        clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
@@ -125,11 +144,24 @@ public class CommandLine
     /** @see https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles */
     private static BufferedWriter bufferedWriter;
 
-    /** Default main() method provided for test purposes, when invoked reports results of validate() self-checks to system output.
+    /** Default main() method provided for test purposes, invoking run() method.
      * @param args the command line arguments
-     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+     * @see #run(String[])
+     * @see X3DObject#handleArguments(String[])
      */
     public static void main(String[] args)
+    {
+		run(args);
+	}
+
+    /** Default run() method provided for test purposes, first initializing ConfigurationProperties then reading properties file (if any) and processing arguments.
+	 * When invoked without parameters then reports results of validate() self-checks to system output.
+     * @param args the command line arguments
+     * @see #main(String[])
+     * @see ConfigurationProperties
+     * @see X3DObject#handleArguments(String[])
+     */
+    public static void run(String[] args)
     {
         File    sourceFile;
         long    sourceFileLength     = 0;
@@ -137,12 +169,15 @@ public class CommandLine
         String  sourceFileNameRoot   = "";
    final String tempFileName         = "temp9876543210.txt";
 		File    resultFile           = new File(tempFileName); // overwritten or deleted
-        String  resultFileName       = "";
-        String  resultFileNameRoot   = "";
         boolean convertToFile        = false;
+        boolean loadProperties       = false;
+        String     resultFileName    = "";
+        String     resultFileNameRoot= "";
+        String propertiesFileName    = "";
+        String propertiesFileNameRoot= "";
   DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
 		String  compressionRatio;
-				
+				 
 		initializeSwitches ();
 
 		if ((args== null) || (args.length < 1))
@@ -180,7 +215,7 @@ public class CommandLine
 						}
 					}
 				}
-				else if (args[i].equalsIgnoreCase("-f") || args[i].equalsIgnoreCase("-file") || args[i].equalsIgnoreCase("-tofile")) // optionally followed by resultFileName
+				else if (args[i].equalsIgnoreCase("-tofile")) // followed by resultFileName
 				{
 					if ((args.length > i + 1) && !(args[i+1] == null) && !args[i+1].isEmpty() && !args[i+1].startsWith("-"))
 					{
@@ -192,6 +227,19 @@ public class CommandLine
 					else System.out.println ("parameter: \"" + args[i] + "\" for result file name root "+ resultFileNameRoot);
 					convertToFile = true;
 				}
+				else if (args[i].equalsIgnoreCase("-properties") || args[i].equalsIgnoreCase("-propertiesFile")) // optionally followed by propertiesFileName
+				{
+					if ((args.length > i + 1) && !(args[i+1] == null) && !args[i+1].isEmpty() && !args[i+1].startsWith("-"))
+					{
+						 propertiesFileName     = args[i+1];
+						 propertiesFileNameRoot = propertiesFileName.substring(0,propertiesFileName.lastIndexOf("."));
+						 System.out.println ("parameter: \"" + args[i] + "\" \"" + args[i+1] + "\" for properties file name root " + propertiesFileNameRoot);
+						 i++; // increment index, carefully!
+					}
+					else System.out.println ("parameter: \"" + args[i] + "\" for properties file name root "+ propertiesFileNameRoot);
+					loadProperties = true;
+				}
+
 				else if (args[i].equalsIgnoreCase("-x3d") || args[i].equalsIgnoreCase("-tox3d"))
 				{
 					clearPriorConversionSwitches(args[i]);
@@ -226,7 +274,7 @@ public class CommandLine
  					clearPriorConversionSwitches(args[i]);
  					convertToJS = true;
  					conversionExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
- 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding");
+ 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to X3DJSONLD JavaScript source");
  				}
 				else  if (args[i].equalsIgnoreCase(  "-vrml") || args[i].equalsIgnoreCase(  "-vrml97") ||args[i].equalsIgnoreCase( "-wrl") || 
 						  args[i].equalsIgnoreCase("-tovrml") || args[i].equalsIgnoreCase("-tovrml97"))
@@ -415,6 +463,12 @@ public class CommandLine
 		{
 			System.out.println(WARNING+" [org.web3d.x3d.jsail.CommandLine] mismatched file extension \"" + conversionExtension + "\" for conversion");
 		}
+		if (loadProperties)
+		{
+			if (!propertiesFileName.isEmpty())
+				ConfigurationProperties.setPropertiesFileName (propertiesFileName);
+			ConfigurationProperties.loadProperties();
+		}
 				
 		// ===================================================================================
         if (!sourceFileName.isEmpty()) // fully prepared, now get source file and proceed
@@ -427,8 +481,7 @@ public class CommandLine
 						System.out.println(USAGE);
 						return;
 				}
-				X3DObject newX3dModel = new X3DObject();
-				boolean result = newX3dModel.fromFileGZIP(sourceFileName);
+				boolean result = loadedX3dModel.fromFileGZIP(sourceFileName);
 				System.out.println("load success: " + result);
 				return;
 			}
@@ -440,8 +493,8 @@ public class CommandLine
 						System.out.println(USAGE);
 						return;
 				}
-				X3DObject newX3dModel = new X3DObject();
-				boolean result = newX3dModel.fromFileZIP(sourceFileName,""); // pick first available .x3d file
+				// if output resultFileName not specified, pick first available .x3d file
+				boolean result = loadedX3dModel.fromFileZIP(sourceFileName,resultFileName); 
 				System.out.println("load success: " + result);
 				return;
 			}
@@ -453,18 +506,18 @@ public class CommandLine
             if (successfulLoad && x3dLoader.isLoadSuccessful()) // two equivalent ways to check
             {
 				ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version
-                X3DObject x3dModel;
                 resultFile = new File(tempFileName); // unsaved
-                try {
-//                  x3dModel = new X3DObject();
-//                  System.out.println("x3dModel initialization:");
-//                  System.out.println(x3dModel.toStringX3D());
+                try
+				{
+                    //debug
+//                  System.out.println("loadedX3dModel initialization:");
+//                  System.out.println(loadedX3dModel.toStringX3D());
                     
                     X3DConcreteElement x3dConcreteElement = x3dLoader.getX3dObjectTree();
 
                     if (x3dConcreteElement instanceof X3DObject)
                     {
-                        x3dModel = (X3DObject)x3dConcreteElement;
+                        loadedX3dModel = (X3DObject)x3dConcreteElement;
                     }
                     else if (x3dConcreteElement == null)
                     {
@@ -482,63 +535,75 @@ public class CommandLine
                         System.out.println("convert to VRML97:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileVRML97 (resultFileName);
-                        else System.out.println(x3dModel.toStringVRML97());
+                                   resultFile = loadedX3dModel.toFileVRML97 (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringVRML97());
                     }
                     else if (convertToJSON)
                     {
+                        String presetXsltEngine = ConfigurationProperties.getXsltEngine();
+                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
                         System.out.println("convert to JSON:");
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileJSON (resultFileName);
-                        else System.out.println(x3dModel.toStringJSON());
+                                   resultFile = loadedX3dModel.toFileJSON (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringJSON());
+                	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
                     else if (convertToJS)
                     {
+                        String presetXsltEngine = ConfigurationProperties.getXsltEngine();
+                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
                         System.out.println("convert to JS JavaScript:");
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileJavaScript (resultFileName);
-                        else System.out.println(x3dModel.toStringJavaScript());
+                                   resultFile = loadedX3dModel.toFileJavaScript (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringJavaScript());
+                	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
                     else if (convertToClassicVRML)
                     {
                         System.out.println("convert to ClassicVRML:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileClassicVRML (resultFileName);
-                        else System.out.println(x3dModel.toStringClassicVRML());
+                                   resultFile = loadedX3dModel.toFileClassicVRML (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringClassicVRML());
                     }
-                    else if (convertToX3D || convertToXML)
+                    else if (convertToX3D)
                     {
-                        if (convertToX3D)
-                             System.out.println("convert to X3D:");
-                        else System.out.println("convert to XML:");
+                        System.out.println("convert to X3D:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileX3D (resultFileName);
-                        else System.out.println(x3dModel.toStringX3D());
+                                   resultFile = loadedX3dModel.toFileX3D (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringX3D());
+                    }
+                    else if (convertToXML)
+                    {
+                        System.out.println("convert to XML:");
+                        if (!convertToFile) System.out.println(); 
+                        if  (convertToFile)
+                                   resultFile = loadedX3dModel.toFileXML (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringXML());
                     }
                     else if (convertToX3DOM)
                     {
                         System.out.println("convert to X3DOM:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileX3DOM (resultFileName);
-                        else System.out.println(x3dModel.toStringX3DOM());
+                                   resultFile = loadedX3dModel.toFileX3DOM (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringX3DOM());
                     }
                     else if (convertToX_ITE)
                     {
                         System.out.println("convert to X_ITE:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileX_ITE  (sourceFileName, resultFileName);
-                        else System.out.println(x3dModel.toStringX_ITE(sourceFileName));
+                                   resultFile = loadedX3dModel.toFileX_ITE  (sourceFileName, resultFileName);
+                        else System.out.println(loadedX3dModel.toStringX_ITE(sourceFileName));
                     }
                     else if (convertToEXI)
                     {
                         System.out.println("convert to EXI using " + ConfigurationProperties.getExiEngine() + ":");
                         System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
 //						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
-                        resultFile = x3dModel.toFileEXI (resultFileName);
+                        resultFile = loadedX3dModel.toFileEXI (resultFileName);
 						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
 						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
                     }
@@ -547,7 +612,7 @@ public class CommandLine
                         System.out.println("convert to GZIP:");
                         System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
 //						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
-                        resultFile = x3dModel.toFileGZIP (resultFileName);
+                        resultFile = loadedX3dModel.toFileGZIP (resultFileName);
 						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
 						System.out.println("result: " + resultFile.getName() + "  filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
                     }
@@ -556,14 +621,14 @@ public class CommandLine
                         System.out.println("convert to ZIP:");
                         System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
 //						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
-                        resultFile = x3dModel.toFileZIP (resultFileName, sourceFileName);
+                        resultFile = loadedX3dModel.toFileZIP (resultFileName, sourceFileName);
 						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
 						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
                     }
                     else if (validateSwitch && !convertToEXI && !convertToGZIP && !convertToZIP)
                     {
 						// note that validation already performed as part of prior conversions
-                        String outputValidationText = x3dModel.validate();
+                        String outputValidationText = loadedX3dModel.validate();
                             
                         System.out.println("validate results:");
                         if (!convertToFile)
@@ -635,7 +700,7 @@ public class CommandLine
             //  return;
             }
 		}
-		else
+		else if (!loadProperties) // allow testing of properties without file operations
         {
             System.out.println(ERROR+"Source model file name is empty, therefore file loading not possible.");
         //  return;

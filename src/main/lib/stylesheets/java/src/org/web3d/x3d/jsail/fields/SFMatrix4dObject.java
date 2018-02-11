@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.*;
 
 
@@ -40,9 +41,10 @@ import org.web3d.x3d.sai.*;
  * This utility class provides a concrete implementation corresponding to SFMatrix4d X3D field type.
  * 
  * <br><br>
- * SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion.
+ * SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation.
 <br><br>
 Related field object: {@link MFMatrix4dObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix4d">X3D Tooltips: type SFMatrix4d</a>
 
  * 
 
@@ -208,7 +210,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix4d">X3D Tooltips: type SFMatrix4d</a>
 	 * @see org.web3d.x3d.jsail.fields.SFDoubleObject#stripTrailingZeroes(double)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.
 	 */

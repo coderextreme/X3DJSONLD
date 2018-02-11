@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 December 2017"
+            "@content":"31 January 2018"
           },
           {
             "@name":"generator",
@@ -298,6 +298,14 @@
               "-proxy":
                 { "Shape":
                   {
+                    "-children":[
+                      {
+                        "#comment":"note that Collision proxy Shape is not rendered"
+                      },
+                      {
+                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {
@@ -313,15 +321,7 @@
                         {
                           "@string":["He said, \"Immel did it!\""]
                         }
-                      },
-                    "-children":[
-                      {
-                        "#comment":"note that Collision proxy Shape is not rendered"
-                      },
-                      {
-                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
                       }
-                    ]
                   }
                 }
             }
@@ -335,7 +335,7 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "-children":[
+                          "-material":
                             { "ProtoInstance":
                               {
                                 "@name":"EmissiveMaterial",
@@ -347,7 +347,6 @@
                                 ]
                               }
                             }
-                          ]
                         }
                       },
                     "-geometry":

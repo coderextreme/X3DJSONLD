@@ -106,9 +106,11 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@diffuseColor": [
                                             1,
                                             1,

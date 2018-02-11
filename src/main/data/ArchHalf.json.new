@@ -57,6 +57,7 @@
             "-geometry": [
               {
                 "IndexedFaceSet": {
+                  "@containerField": "geometry",
                   "@DEF": "ArchIndex",
                   "@convex": true,
                   "@coordIndex": [
@@ -383,6 +384,7 @@
                   "-coord": [
                     {
                       "Coordinate": {
+                        "@containerField": "coord",
                         "@DEF": "ArchChord",
                         "@point": [
                           2,
@@ -863,9 +865,11 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
                       "Material": {
+                        "@containerField": "material",
                         "@DEF": "MaterialNode",
                         "@diffuseColor": [
                           1,

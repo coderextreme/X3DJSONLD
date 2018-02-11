@@ -2,481 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a748b4-da94-43f9-8c4d-c2e5301b9bfc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.new.json.intermediate.x3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.sail.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.x3d.new" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpecialCharacters.new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpecialCharacters.new.json.intermediate.x3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.new.json.intermediate.x3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/geobubbles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.sail.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.x3d.new" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.new.json.intermediate.x3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.sail.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/text.x3d.new" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www.x3dom.org/download/1.7.1/x3dom-full.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www.x3dom.org/download/1.7.1/x3dom.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.java" afterPath="$PROJECT_DIR$/ArchHalf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.new.json" afterPath="$PROJECT_DIR$/ArchHalf.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/ArchHalf.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.new.x3d" afterPath="$PROJECT_DIR$/ArchHalf.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.py" afterPath="$PROJECT_DIR$/ArchHalf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.sail.js" afterPath="$PROJECT_DIR$/ArchHalf.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchHalf.x3d.new" afterPath="$PROJECT_DIR$/ArchHalf.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.java" afterPath="$PROJECT_DIR$/ArchPrototype.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.new.json" afterPath="$PROJECT_DIR$/ArchPrototype.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/ArchPrototype.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.new.x3d" afterPath="$PROJECT_DIR$/ArchPrototype.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.py" afterPath="$PROJECT_DIR$/ArchPrototype.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.sail.js" afterPath="$PROJECT_DIR$/ArchPrototype.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArchPrototype.x3d.new" afterPath="$PROJECT_DIR$/ArchPrototype.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.java" afterPath="$PROJECT_DIR$/Box.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.new.json" afterPath="$PROJECT_DIR$/Box.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/Box.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.new.x3d" afterPath="$PROJECT_DIR$/Box.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.py" afterPath="$PROJECT_DIR$/Box.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.sail.js" afterPath="$PROJECT_DIR$/Box.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Box.x3d.new" afterPath="$PROJECT_DIR$/Box.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BoxManAnimationPanel.java" afterPath="$PROJECT_DIR$/BoxManAnimationPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BoxManAnimationPanel.py" afterPath="$PROJECT_DIR$/BoxManAnimationPanel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BoxManAnimationPanel.sail.js" afterPath="$PROJECT_DIR$/BoxManAnimationPanel.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BoxManAnimationPanel.x3d.new" afterPath="$PROJECT_DIR$/BoxManAnimationPanel.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CarDemoMain.java" afterPath="$PROJECT_DIR$/CarDemoMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CarDemoMain.py" afterPath="$PROJECT_DIR$/CarDemoMain.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CarDemoMain.sail.js" afterPath="$PROJECT_DIR$/CarDemoMain.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CarDemoMain.x3d" afterPath="$PROJECT_DIR$/CarDemoMain.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CarDemoMain.x3d.new" afterPath="$PROJECT_DIR$/CarDemoMain.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.java" afterPath="$PROJECT_DIR$/CloudsProcedural4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.json" afterPath="$PROJECT_DIR$/CloudsProcedural4.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/CloudsProcedural4.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.x3d" afterPath="$PROJECT_DIR$/CloudsProcedural4.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.py" afterPath="$PROJECT_DIR$/CloudsProcedural4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.sail.js" afterPath="$PROJECT_DIR$/CloudsProcedural4.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CloudsProcedural4.x3d.new" afterPath="$PROJECT_DIR$/CloudsProcedural4.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.java" afterPath="$PROJECT_DIR$/CoordinateAxes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.new.json" afterPath="$PROJECT_DIR$/CoordinateAxes.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/CoordinateAxes.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.new.x3d" afterPath="$PROJECT_DIR$/CoordinateAxes.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.py" afterPath="$PROJECT_DIR$/CoordinateAxes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.sail.js" afterPath="$PROJECT_DIR$/CoordinateAxes.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoordinateAxes.x3d.new" afterPath="$PROJECT_DIR$/CoordinateAxes.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.java" afterPath="$PROJECT_DIR$/ExtrusionHeart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.json" afterPath="$PROJECT_DIR$/ExtrusionHeart.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/ExtrusionHeart.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.x3d" afterPath="$PROJECT_DIR$/ExtrusionHeart.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.py" afterPath="$PROJECT_DIR$/ExtrusionHeart.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.sail.js" afterPath="$PROJECT_DIR$/ExtrusionHeart.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExtrusionHeart.x3d.new" afterPath="$PROJECT_DIR$/ExtrusionHeart.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.java" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.x3d" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.py" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.sail.js" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.x3d.new" afterPath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.java" afterPath="$PROJECT_DIR$/MFString.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.new.json" afterPath="$PROJECT_DIR$/MFString.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/MFString.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.new.x3d" afterPath="$PROJECT_DIR$/MFString.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.py" afterPath="$PROJECT_DIR$/MFString.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.sail.js" afterPath="$PROJECT_DIR$/MFString.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MFString.x3d.new" afterPath="$PROJECT_DIR$/MFString.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyNativeTags.java" afterPath="$PROJECT_DIR$/NancyNativeTags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyNativeTags.py" afterPath="$PROJECT_DIR$/NancyNativeTags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyNativeTags.sail.js" afterPath="$PROJECT_DIR$/NancyNativeTags.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyNativeTags.x3d.new" afterPath="$PROJECT_DIR$/NancyNativeTags.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyPrototypes.java" afterPath="$PROJECT_DIR$/NancyPrototypes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyPrototypes.py" afterPath="$PROJECT_DIR$/NancyPrototypes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyPrototypes.sail.js" afterPath="$PROJECT_DIR$/NancyPrototypes.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NancyPrototypes.x3d.new" afterPath="$PROJECT_DIR$/NancyPrototypes.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.java" afterPath="$PROJECT_DIR$/ObliqueStrategies.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.json" afterPath="$PROJECT_DIR$/ObliqueStrategies.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/ObliqueStrategies.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.x3d" afterPath="$PROJECT_DIR$/ObliqueStrategies.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.py" afterPath="$PROJECT_DIR$/ObliqueStrategies.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.sail.js" afterPath="$PROJECT_DIR$/ObliqueStrategies.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObliqueStrategies.x3d.new" afterPath="$PROJECT_DIR$/ObliqueStrategies.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.java" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.x3d" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.py" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.sail.js" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.x3d.new" afterPath="$PROJECT_DIR$/PixelTextureComponentExamples.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.java" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.json" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.x3d" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.py" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.sail.js" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.x3d.new" afterPath="$PROJECT_DIR$/Table5_18PixelTexture.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.java" afterPath="$PROJECT_DIR$/Teapot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.new.json" afterPath="$PROJECT_DIR$/Teapot.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/Teapot.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.new.x3d" afterPath="$PROJECT_DIR$/Teapot.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.py" afterPath="$PROJECT_DIR$/Teapot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.sail.js" afterPath="$PROJECT_DIR$/Teapot.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Teapot.x3d.new" afterPath="$PROJECT_DIR$/Teapot.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpecialCharacters.java" afterPath="$PROJECT_DIR$/TextSpecialCharacters.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpecialCharacters.py" afterPath="$PROJECT_DIR$/TextSpecialCharacters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpecialCharacters.sail.js" afterPath="$PROJECT_DIR$/TextSpecialCharacters.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpecialCharacters.x3d.new" afterPath="$PROJECT_DIR$/TextSpecialCharacters.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/X3DJSONLD.js" afterPath="$PROJECT_DIR$/X3DJSONLD.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.java" afterPath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.py" afterPath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.sail.js" afterPath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.x3d.new" afterPath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.java" afterPath="$PROJECT_DIR$/abox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.new.json" afterPath="$PROJECT_DIR$/abox.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/abox.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.new.x3d" afterPath="$PROJECT_DIR$/abox.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.py" afterPath="$PROJECT_DIR$/abox.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.sail.js" afterPath="$PROJECT_DIR$/abox.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abox.x3d.new" afterPath="$PROJECT_DIR$/abox.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arc.java" afterPath="$PROJECT_DIR$/arc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arc.py" afterPath="$PROJECT_DIR$/arc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arc.sail.js" afterPath="$PROJECT_DIR$/arc.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arc.x3d.new" afterPath="$PROJECT_DIR$/arc.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.java" afterPath="$PROJECT_DIR$/ball.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.new.json" afterPath="$PROJECT_DIR$/ball.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/ball.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.new.x3d" afterPath="$PROJECT_DIR$/ball.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.py" afterPath="$PROJECT_DIR$/ball.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.sail.js" afterPath="$PROJECT_DIR$/ball.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ball.x3d.new" afterPath="$PROJECT_DIR$/ball.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.java" afterPath="$PROJECT_DIR$/browser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.new.json" afterPath="$PROJECT_DIR$/browser.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/browser.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.new.x3d" afterPath="$PROJECT_DIR$/browser.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.py" afterPath="$PROJECT_DIR$/browser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.sail.js" afterPath="$PROJECT_DIR$/browser.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browser.x3d.new" afterPath="$PROJECT_DIR$/browser.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.java" afterPath="$PROJECT_DIR$/bub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.new.json" afterPath="$PROJECT_DIR$/bub.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/bub.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.new.x3d" afterPath="$PROJECT_DIR$/bub.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.py" afterPath="$PROJECT_DIR$/bub.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.sail.js" afterPath="$PROJECT_DIR$/bub.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bub.x3d.new" afterPath="$PROJECT_DIR$/bub.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.java" afterPath="$PROJECT_DIR$/bubble.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.new.json" afterPath="$PROJECT_DIR$/bubble.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/bubble.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.new.x3d" afterPath="$PROJECT_DIR$/bubble.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.py" afterPath="$PROJECT_DIR$/bubble.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.sail.js" afterPath="$PROJECT_DIR$/bubble.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubble.x3d.new" afterPath="$PROJECT_DIR$/bubble.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.java" afterPath="$PROJECT_DIR$/bubbles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.new.json" afterPath="$PROJECT_DIR$/bubbles.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/bubbles.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.new.x3d" afterPath="$PROJECT_DIR$/bubbles.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.py" afterPath="$PROJECT_DIR$/bubbles.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.sail.js" afterPath="$PROJECT_DIR$/bubbles.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bubbles.x3d.new" afterPath="$PROJECT_DIR$/bubbles.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.java" afterPath="$PROJECT_DIR$/cobweb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.new.json" afterPath="$PROJECT_DIR$/cobweb.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/cobweb.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.new.x3d" afterPath="$PROJECT_DIR$/cobweb.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.py" afterPath="$PROJECT_DIR$/cobweb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.sail.js" afterPath="$PROJECT_DIR$/cobweb.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb.x3d.new" afterPath="$PROJECT_DIR$/cobweb.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.java" afterPath="$PROJECT_DIR$/cobweb2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.new.json" afterPath="$PROJECT_DIR$/cobweb2.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/cobweb2.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.new.x3d" afterPath="$PROJECT_DIR$/cobweb2.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.py" afterPath="$PROJECT_DIR$/cobweb2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.sail.js" afterPath="$PROJECT_DIR$/cobweb2.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cobweb2.x3d.new" afterPath="$PROJECT_DIR$/cobweb2.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.java" afterPath="$PROJECT_DIR$/cube.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.new.json" afterPath="$PROJECT_DIR$/cube.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/cube.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.new.x3d" afterPath="$PROJECT_DIR$/cube.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.py" afterPath="$PROJECT_DIR$/cube.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.sail.js" afterPath="$PROJECT_DIR$/cube.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cube.x3d.new" afterPath="$PROJECT_DIR$/cube.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.java" afterPath="$PROJECT_DIR$/extrusion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.new.json" afterPath="$PROJECT_DIR$/extrusion.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/extrusion.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.new.x3d" afterPath="$PROJECT_DIR$/extrusion.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.py" afterPath="$PROJECT_DIR$/extrusion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.sail.js" afterPath="$PROJECT_DIR$/extrusion.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrusion.x3d.new" afterPath="$PROJECT_DIR$/extrusion.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.java" afterPath="$PROJECT_DIR$/flipp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.new.json" afterPath="$PROJECT_DIR$/flipp.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flipp.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.new.x3d" afterPath="$PROJECT_DIR$/flipp.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.py" afterPath="$PROJECT_DIR$/flipp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.sail.js" afterPath="$PROJECT_DIR$/flipp.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipp.x3d.new" afterPath="$PROJECT_DIR$/flipp.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.java" afterPath="$PROJECT_DIR$/flipper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.new.json" afterPath="$PROJECT_DIR$/flipper.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flipper.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.new.x3d" afterPath="$PROJECT_DIR$/flipper.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.py" afterPath="$PROJECT_DIR$/flipper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.sail.js" afterPath="$PROJECT_DIR$/flipper.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flipper.x3d.new" afterPath="$PROJECT_DIR$/flipper.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.java" afterPath="$PROJECT_DIR$/flowerproto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.new.json" afterPath="$PROJECT_DIR$/flowerproto.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flowerproto.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.new.x3d" afterPath="$PROJECT_DIR$/flowerproto.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.py" afterPath="$PROJECT_DIR$/flowerproto.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.sail.js" afterPath="$PROJECT_DIR$/flowerproto.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowerproto.x3d.new" afterPath="$PROJECT_DIR$/flowerproto.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.java" afterPath="$PROJECT_DIR$/flowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.new.json" afterPath="$PROJECT_DIR$/flowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.new.x3d" afterPath="$PROJECT_DIR$/flowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.py" afterPath="$PROJECT_DIR$/flowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.sail.js" afterPath="$PROJECT_DIR$/flowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers.x3d.new" afterPath="$PROJECT_DIR$/flowers.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.java" afterPath="$PROJECT_DIR$/flowers2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.new.json" afterPath="$PROJECT_DIR$/flowers2.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flowers2.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.new.x3d" afterPath="$PROJECT_DIR$/flowers2.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.py" afterPath="$PROJECT_DIR$/flowers2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.sail.js" afterPath="$PROJECT_DIR$/flowers2.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers2.x3d.new" afterPath="$PROJECT_DIR$/flowers2.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.java" afterPath="$PROJECT_DIR$/flowers4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.new.json" afterPath="$PROJECT_DIR$/flowers4.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flowers4.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.new.x3d" afterPath="$PROJECT_DIR$/flowers4.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.py" afterPath="$PROJECT_DIR$/flowers4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.sail.js" afterPath="$PROJECT_DIR$/flowers4.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers4.x3d.new" afterPath="$PROJECT_DIR$/flowers4.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.java" afterPath="$PROJECT_DIR$/flowers7.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.new.json" afterPath="$PROJECT_DIR$/flowers7.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/flowers7.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.new.x3d" afterPath="$PROJECT_DIR$/flowers7.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.py" afterPath="$PROJECT_DIR$/flowers7.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.sail.js" afterPath="$PROJECT_DIR$/flowers7.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowers7.x3d.new" afterPath="$PROJECT_DIR$/flowers7.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.java" afterPath="$PROJECT_DIR$/force.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.new.json" afterPath="$PROJECT_DIR$/force.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/force.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.new.x3d" afterPath="$PROJECT_DIR$/force.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.py" afterPath="$PROJECT_DIR$/force.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.sail.js" afterPath="$PROJECT_DIR$/force.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/force.x3d.new" afterPath="$PROJECT_DIR$/force.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.java" afterPath="$PROJECT_DIR$/fors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.new.json" afterPath="$PROJECT_DIR$/fors.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/fors.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.new.x3d" afterPath="$PROJECT_DIR$/fors.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.py" afterPath="$PROJECT_DIR$/fors.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.sail.js" afterPath="$PROJECT_DIR$/fors.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors.x3d.new" afterPath="$PROJECT_DIR$/fors.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.java" afterPath="$PROJECT_DIR$/fors2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.new.json" afterPath="$PROJECT_DIR$/fors2.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/fors2.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.new.x3d" afterPath="$PROJECT_DIR$/fors2.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.py" afterPath="$PROJECT_DIR$/fors2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.sail.js" afterPath="$PROJECT_DIR$/fors2.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fors2.x3d.new" afterPath="$PROJECT_DIR$/fors2.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.java" afterPath="$PROJECT_DIR$/freewrlflowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.new.json" afterPath="$PROJECT_DIR$/freewrlflowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/freewrlflowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.new.x3d" afterPath="$PROJECT_DIR$/freewrlflowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.py" afterPath="$PROJECT_DIR$/freewrlflowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.sail.js" afterPath="$PROJECT_DIR$/freewrlflowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freewrlflowers.x3d.new" afterPath="$PROJECT_DIR$/freewrlflowers.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.java" afterPath="$PROJECT_DIR$/gears.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.new.json" afterPath="$PROJECT_DIR$/gears.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/gears.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.new.x3d" afterPath="$PROJECT_DIR$/gears.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.py" afterPath="$PROJECT_DIR$/gears.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.sail.js" afterPath="$PROJECT_DIR$/gears.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gears.x3d.new" afterPath="$PROJECT_DIR$/gears.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.java" afterPath="$PROJECT_DIR$/geo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.new.json" afterPath="$PROJECT_DIR$/geo.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/geo.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.new.x3d" afterPath="$PROJECT_DIR$/geo.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.py" afterPath="$PROJECT_DIR$/geo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.sail.js" afterPath="$PROJECT_DIR$/geo.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geo.x3d.new" afterPath="$PROJECT_DIR$/geo.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.java" afterPath="$PROJECT_DIR$/geobubbles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.new.json" afterPath="$PROJECT_DIR$/geobubbles.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/geobubbles.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.new.x3d" afterPath="$PROJECT_DIR$/geobubbles.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.py" afterPath="$PROJECT_DIR$/geobubbles.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.sail.js" afterPath="$PROJECT_DIR$/geobubbles.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geobubbles.x3d.new" afterPath="$PROJECT_DIR$/geobubbles.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.java" afterPath="$PROJECT_DIR$/glflowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.new.json" afterPath="$PROJECT_DIR$/glflowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/glflowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.new.x3d" afterPath="$PROJECT_DIR$/glflowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.py" afterPath="$PROJECT_DIR$/glflowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.sail.js" afterPath="$PROJECT_DIR$/glflowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glflowers.x3d.new" afterPath="$PROJECT_DIR$/glflowers.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.java" afterPath="$PROJECT_DIR$/gridBack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.new.json" afterPath="$PROJECT_DIR$/gridBack.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/gridBack.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.new.x3d" afterPath="$PROJECT_DIR$/gridBack.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.py" afterPath="$PROJECT_DIR$/gridBack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.sail.js" afterPath="$PROJECT_DIR$/gridBack.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gridBack.x3d.new" afterPath="$PROJECT_DIR$/gridBack.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.java" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.py" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.sail.js" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.x3d.new" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.java" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.py" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.sail.js" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.x3d.new" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.java" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.py" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.sail.js" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.x3d.new" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.java" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.x3d" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.py" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.sail.js" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.x3d.new" afterPath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.java" afterPath="$PROJECT_DIR$/john.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.new.json" afterPath="$PROJECT_DIR$/john.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/john.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.new.x3d" afterPath="$PROJECT_DIR$/john.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.py" afterPath="$PROJECT_DIR$/john.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.sail.js" afterPath="$PROJECT_DIR$/john.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john.x3d.new" afterPath="$PROJECT_DIR$/john.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.java" afterPath="$PROJECT_DIR$/john2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.new.json" afterPath="$PROJECT_DIR$/john2.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/john2.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.new.x3d" afterPath="$PROJECT_DIR$/john2.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.py" afterPath="$PROJECT_DIR$/john2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.sail.js" afterPath="$PROJECT_DIR$/john2.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john2.x3d.new" afterPath="$PROJECT_DIR$/john2.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.java" afterPath="$PROJECT_DIR$/john3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.new.json" afterPath="$PROJECT_DIR$/john3.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/john3.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.new.x3d" afterPath="$PROJECT_DIR$/john3.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.py" afterPath="$PROJECT_DIR$/john3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.sail.js" afterPath="$PROJECT_DIR$/john3.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/john3.x3d.new" afterPath="$PROJECT_DIR$/john3.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.java" afterPath="$PROJECT_DIR$/mirror.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.new.json" afterPath="$PROJECT_DIR$/mirror.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/mirror.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.new.x3d" afterPath="$PROJECT_DIR$/mirror.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.py" afterPath="$PROJECT_DIR$/mirror.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.sail.js" afterPath="$PROJECT_DIR$/mirror.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror.x3d.new" afterPath="$PROJECT_DIR$/mirror.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.java" afterPath="$PROJECT_DIR$/mirror2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.new.json" afterPath="$PROJECT_DIR$/mirror2.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/mirror2.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.new.x3d" afterPath="$PROJECT_DIR$/mirror2.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.py" afterPath="$PROJECT_DIR$/mirror2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.sail.js" afterPath="$PROJECT_DIR$/mirror2.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirror2.x3d.new" afterPath="$PROJECT_DIR$/mirror2.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.java" afterPath="$PROJECT_DIR$/plainflowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.new.json" afterPath="$PROJECT_DIR$/plainflowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/plainflowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.new.x3d" afterPath="$PROJECT_DIR$/plainflowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.py" afterPath="$PROJECT_DIR$/plainflowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.sail.js" afterPath="$PROJECT_DIR$/plainflowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plainflowers.x3d.new" afterPath="$PROJECT_DIR$/plainflowers.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.java" afterPath="$PROJECT_DIR$/pp3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.new.json" afterPath="$PROJECT_DIR$/pp3.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/pp3.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.new.x3d" afterPath="$PROJECT_DIR$/pp3.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.py" afterPath="$PROJECT_DIR$/pp3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.sail.js" afterPath="$PROJECT_DIR$/pp3.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pp3.x3d.new" afterPath="$PROJECT_DIR$/pp3.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.java" afterPath="$PROJECT_DIR$/qq3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.new.json" afterPath="$PROJECT_DIR$/qq3.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/qq3.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.new.x3d" afterPath="$PROJECT_DIR$/qq3.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.py" afterPath="$PROJECT_DIR$/qq3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.sail.js" afterPath="$PROJECT_DIR$/qq3.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qq3.x3d.new" afterPath="$PROJECT_DIR$/qq3.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.java" afterPath="$PROJECT_DIR$/rgb_alpha.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.new.json" afterPath="$PROJECT_DIR$/rgb_alpha.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/rgb_alpha.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.new.x3d" afterPath="$PROJECT_DIR$/rgb_alpha.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.py" afterPath="$PROJECT_DIR$/rgb_alpha.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.sail.js" afterPath="$PROJECT_DIR$/rgb_alpha.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgb_alpha.x3d.new" afterPath="$PROJECT_DIR$/rgb_alpha.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.java" afterPath="$PROJECT_DIR$/rubik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.new.json" afterPath="$PROJECT_DIR$/rubik.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/rubik.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.new.x3d" afterPath="$PROJECT_DIR$/rubik.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.py" afterPath="$PROJECT_DIR$/rubik.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.sail.js" afterPath="$PROJECT_DIR$/rubik.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubik.x3d.new" afterPath="$PROJECT_DIR$/rubik.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.java" afterPath="$PROJECT_DIR$/rubikFurnace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.new.json" afterPath="$PROJECT_DIR$/rubikFurnace.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/rubikFurnace.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.new.x3d" afterPath="$PROJECT_DIR$/rubikFurnace.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.py" afterPath="$PROJECT_DIR$/rubikFurnace.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.sail.js" afterPath="$PROJECT_DIR$/rubikFurnace.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikFurnace.x3d.new" afterPath="$PROJECT_DIR$/rubikFurnace.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.java" afterPath="$PROJECT_DIR$/rubikOnFire.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.new.json" afterPath="$PROJECT_DIR$/rubikOnFire.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/rubikOnFire.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.new.x3d" afterPath="$PROJECT_DIR$/rubikOnFire.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.py" afterPath="$PROJECT_DIR$/rubikOnFire.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.sail.js" afterPath="$PROJECT_DIR$/rubikOnFire.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubikOnFire.x3d.new" afterPath="$PROJECT_DIR$/rubikOnFire.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.java" afterPath="$PROJECT_DIR$/sphere.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.new.json" afterPath="$PROJECT_DIR$/sphere.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/sphere.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.new.x3d" afterPath="$PROJECT_DIR$/sphere.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.py" afterPath="$PROJECT_DIR$/sphere.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.sail.js" afterPath="$PROJECT_DIR$/sphere.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphere.x3d.new" afterPath="$PROJECT_DIR$/sphere.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.java" afterPath="$PROJECT_DIR$/sphereflowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.new.json" afterPath="$PROJECT_DIR$/sphereflowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/sphereflowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.new.x3d" afterPath="$PROJECT_DIR$/sphereflowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.py" afterPath="$PROJECT_DIR$/sphereflowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.sail.js" afterPath="$PROJECT_DIR$/sphereflowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sphereflowers.x3d.new" afterPath="$PROJECT_DIR$/sphereflowers.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unknown.sh" afterPath="$PROJECT_DIR$/unknown.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.java" afterPath="$PROJECT_DIR$/x3dconnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.new.json" afterPath="$PROJECT_DIR$/x3dconnector.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/x3dconnector.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.new.x3d" afterPath="$PROJECT_DIR$/x3dconnector.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.py" afterPath="$PROJECT_DIR$/x3dconnector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.sail.js" afterPath="$PROJECT_DIR$/x3dconnector.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnector.x3d.new" afterPath="$PROJECT_DIR$/x3dconnector.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.java" afterPath="$PROJECT_DIR$/x3dconnectorProto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.new.json" afterPath="$PROJECT_DIR$/x3dconnectorProto.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/x3dconnectorProto.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.new.x3d" afterPath="$PROJECT_DIR$/x3dconnectorProto.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.py" afterPath="$PROJECT_DIR$/x3dconnectorProto.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.sail.js" afterPath="$PROJECT_DIR$/x3dconnectorProto.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3dconnectorProto.x3d.new" afterPath="$PROJECT_DIR$/x3dconnectorProto.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.java" afterPath="$PROJECT_DIR$/x3domflower.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.new.json" afterPath="$PROJECT_DIR$/x3domflower.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/x3domflower.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.new.x3d" afterPath="$PROJECT_DIR$/x3domflower.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.py" afterPath="$PROJECT_DIR$/x3domflower.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.sail.js" afterPath="$PROJECT_DIR$/x3domflower.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflower.x3d.new" afterPath="$PROJECT_DIR$/x3domflower.x3d.new" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.java" afterPath="$PROJECT_DIR$/x3domflowers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.new.json" afterPath="$PROJECT_DIR$/x3domflowers.new.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.new.json.intermediate.x3d" afterPath="$PROJECT_DIR$/x3domflowers.new.json.intermediate.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.new.x3d" afterPath="$PROJECT_DIR$/x3domflowers.new.x3d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.py" afterPath="$PROJECT_DIR$/x3domflowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.sail.js" afterPath="$PROJECT_DIR$/x3domflowers.sail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3domflowers.x3d.new" afterPath="$PROJECT_DIR$/x3domflowers.x3d.new" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/ArchPrototype.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/ArchPrototype.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/extrusion.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/extrusion.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers2.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers2.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers4.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/data/flowers4.new.x3d" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/node/DOM2JSONSerializer.js" afterPath="$PROJECT_DIR$/src/main/node/DOM2JSONSerializer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/schema/x3d-3.3-JSONSchema.json" afterPath="$PROJECT_DIR$/src/main/schema/x3d-3.3-JSONSchema.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/shell/several.sh" afterPath="$PROJECT_DIR$/src/main/shell/several.sh" />
     </list>
     <ignored path="X3DJSONLD.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -495,7 +34,30 @@
     <favorites_list name="X3DJSONLD" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dom2json.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/python/dom2json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelloWorldProgramOutput.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/python/net/coderextreme/data/HelloWorldProgramOutput.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="876" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -504,12 +66,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/etgenerateJSONschema.py" />
+        <option value="$PROJECT_DIR$/src/main/python/net/coderextreme/data/HelloWorldProgramOutput.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-34" />
-    <option name="y" value="159" />
+    <option name="x" value="154" />
+    <option name="y" value="29" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -529,7 +92,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -544,6 +106,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -578,18 +141,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-34" y="159" width="1400" height="1000" extended-state="0" />
+    <frame x="154" y="29" width="1400" height="1000" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -616,24 +179,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+    <entry file="file://$PROJECT_DIR$/src/main/python/dom2json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+    <entry file="file://$PROJECT_DIR$/src/main/python/dom2json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py" />
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py" />
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py" />
+    <entry file="file://$PROJECT_DIR$/src/main/python/dom2json.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/python/net/coderextreme/data/HelloWorldProgramOutput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="876" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

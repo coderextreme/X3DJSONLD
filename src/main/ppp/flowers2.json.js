@@ -139,82 +139,12 @@ X3DJSON['Script']['OrbitScript'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-ecmascript:
+ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; 
+	this.initialize = function () { resolution = 100; this.generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } this.proxy.coordIndexes = new MFInt32(localci); } ;
 
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
+	this.generateCoordinates = function (resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } this.proxy.coordinates = new MFVec3f(localc); } ;
 
-
-	this.initialize = function () {
-     resolution = 100;
-     this.generateCoordinates(resolution);
-     var localci = [];
-     for ( i = 0; i < resolution-1; i++) {
-     	for ( j = 0; j < resolution-1; j++) {
-	     localci.push(i*resolution+j);
-	     localci.push(i*resolution+j+1);
-	     localci.push((i+1)*resolution+j+1);
-	     localci.push((i+1)*resolution+j);
-	     localci.push(-1);
-	}
-    }
-    this.proxy.coordIndexes = new MFInt32(localci);
-}
-
-;
-
-	this.generateCoordinates = function (resolution) {
-     theta = 0.0;
-     phi = 0.0;
-     delta = (2 * 3.141592653) / (resolution-1);
-     var localc = [];
-     for ( i = 0; i < resolution; i++) {
-     	for ( j = 0; j < resolution; j++) {
-		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc.push(new SFVec3f(
-			rho * Math.cos(phi) * Math.cos(theta),
-			rho * Math.cos(phi) * Math.sin(theta),
-			rho * Math.sin(phi)
-		));
-		theta += delta;
-	}
-	phi += delta;
-     }
-     this.proxy.coordinates = new MFVec3f(localc);
-}
-
-;
-
-	this.set_fraction = function (fraction, eventTime) {
-	choice = Math.floor(Math.random() * 4);
-	switch (choice) {
-	case 0:
-		e += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 1:
-		f += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 2:
-		g += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 3:
-		h += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	}
-	if (f < 1) {
-		f = 10;
-	}
-	if (g < 1) {
-		g = 4;
-	}
-	if (h < 1) {
-		h = 4;
-	}
-	resolution = 100;
-	this.generateCoordinates(resolution);
-};
+	this.set_fraction = function (fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; this.generateCoordinates(resolution); };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -263,83 +193,12 @@ X3DJSON['Script']['OrbitScript2'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-ecmascript:
+ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; 
+	this.initialize = function () { resolution = 100; this.generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } this.proxy.coordIndexes = new MFInt32(localci); } ;
 
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
+	this.generateCoordinates = function (resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } this.proxy.coordinates = new MFVec3f(localc); } ;
 
-
-	this.initialize = function () {
-     resolution = 100;
-     this.generateCoordinates(resolution);
-     var localci = [];
-     for ( i = 0; i < resolution-1; i++) {
-     	for ( j = 0; j < resolution-1; j++) {
-	     localci.push(i*resolution+j);
-	     localci.push(i*resolution+j+1);
-	     localci.push((i+1)*resolution+j+1);
-	     localci.push((i+1)*resolution+j);
-	     localci.push(-1);
-	}
-    }
-    this.proxy.coordIndexes = new MFInt32(localci);
-}
-
-;
-
-	this.generateCoordinates = function (resolution) {
-     theta = 0.0;
-     phi = 0.0;
-     delta = (2 * 3.141592653) / (resolution-1);
-     var localc = [];
-     for ( i = 0; i < resolution; i++) {
-     	for ( j = 0; j < resolution; j++) {
-		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc.push(new SFVec3f(
-			rho * Math.cos(phi) * Math.cos(theta),
-			rho * Math.cos(phi) * Math.sin(theta),
-			rho * Math.sin(phi)
-		));
-		theta += delta;
-	}
-	phi += delta;
-     }
-     
-     this.proxy.coordinates = new MFVec3f(localc);
-}
-
-;
-
-	this.set_fraction = function (fraction, eventTime) {
-	choice = Math.floor(Math.random() * 4);
-	switch (choice) {
-	case 0:
-		e += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 1:
-		f += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 2:
-		g += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 3:
-		h += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	}
-	if (f < 1) {
-		f = 10;
-	}
-	if (g < 1) {
-		g = 4;
-	}
-	if (h < 1) {
-		h = 4;
-	}
-	resolution = 100;
-	this.generateCoordinates(resolution);
-};
+	this.set_fraction = function (fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; this.generateCoordinates(resolution); };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

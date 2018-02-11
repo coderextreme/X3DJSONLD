@@ -77,15 +77,15 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 public class Teapot
 {
-  /** Default constructor to create this object. */
-  public Teapot ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public Teapot ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
@@ -116,7 +116,7 @@ public class Teapot
               .setCoord(new CoordinateObject().setPoint(Coordinate_8_21_point))
               .setTexCoord(new TextureCoordinateObject().setPoint(TextureCoordinate_8_22_point))))))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
 	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=7, element #14, 1504 total numbers */
 	private MFInt32Object IndexedFaceSet_7_14_coordIndex = new MFInt32Object(new int[] {0,1,2,-1,0,2,3,-1,0,4,5,-1,0,5,6,-1,0,3,7,-1,0,7,4,-1,0,6,8,-1,0,8,1,-1,1,9,10,-1,1,10,2,-1,1,8,11,-1,1,11,9,-1,9,12,13,-1,9,13,10,-1,9,11,14,-1,9,14,12,-1,12,15,16,-1,12,16,13,-1,12,14,17,-1,12,17,15,-1,15,18,19,-1,15,19,16,-1,15,17,20,-1,15,20,18,-1,18,21,22,-1,18,22,19,-1,18,20,23,-1,18,23,21,-1,21,24,25,-1,21,25,22,-1,21,23,26,-1,21,26,24,-1,24,27,28,-1,24,28,25,-1,24,26,29,-1,24,29,27,-1,27,30,31,-1,27,31,28,-1,27,29,32,-1,27,32,30,-1,30,33,34,-1,30,34,31,-1,30,32,35,-1,30,35,33,-1,33,36,37,-1,33,37,34,-1,33,35,38,-1,33,38,36,-1,36,39,40,-1,36,40,37,-1,36,38,41,-1,36,41,39,-1,39,42,43,-1,39,43,40,-1,39,41,44,-1,39,44,42,-1,42,45,46,-1,42,46,43,-1,42,44,47,-1,42,47,45,-1,45,4,7,-1,45,7,46,-1,45,47,5,-1,45,5,4,-1,3,2,10,-1,3,10,13,-1,3,13,16,-1,3,16,19,-1,3,19,22,-1,3,22,25,-1,3,25,28,-1,3,28,31,-1,3,31,34,-1,3,34,37,-1,3,37,40,-1,3,40,43,-1,3,43,46,-1,3,46,7,-1,8,6,48,-1,8,48,49,-1,8,49,50,-1,8,50,11,-1,6,5,51,-1,6,51,48,-1,5,47,52,-1,5,52,51,-1,47,44,53,-1,47,53,52,-1,44,41,54,-1,44,54,53,-1,41,38,55,-1,41,55,54,-1,38,35,56,-1,38,56,55,-1,35,32,57,-1,35,57,56,-1,32,29,58,-1,32,58,57,-1,29,26,59,-1,29,59,58,-1,26,23,60,-1,26,60,59,-1,23,20,61,-1,23,61,60,-1,20,17,62,-1,20,62,61,-1,17,14,63,-1,17,63,62,-1,14,11,50,-1,14,50,63,-1,49,48,64,-1,49,64,65,-1,49,65,66,-1,49,66,50,-1,48,51,67,-1,48,67,64,-1,51,52,68,-1,51,68,67,-1,52,53,69,-1,52,69,68,-1,53,54,70,-1,53,70,69,-1,54,55,71,-1,54,71,70,-1,55,56,72,-1,55,72,71,-1,56,57,73,-1,56,73,72,-1,57,58,74,-1,57,74,73,-1,58,59,75,-1,58,75,74,-1,59,60,76,-1,59,76,75,-1,60,61,77,-1,60,77,76,-1,61,62,78,-1,61,78,77,-1,62,63,79,-1,62,79,78,-1,63,50,66,-1,63,66,79,-1,65,64,80,-1,65,80,81,-1,65,81,82,-1,65,82,66,-1,64,67,83,-1,64,83,80,-1,67,68,84,-1,67,84,83,-1,68,69,85,-1,68,85,84,-1,69,70,86,-1,69,86,85,-1,70,71,87,-1,70,87,86,-1,71,72,88,-1,71,88,87,-1,72,73,89,-1,72,89,88,-1,73,74,90,-1,73,90,89,-1,74,75,91,-1,74,91,90,-1,75,76,92,-1,75,92,91,-1,76,77,93,-1,76,93,92,-1,77,78,94,-1,77,94,93,-1,78,79,95,-1,78,95,94,-1,79,66,82,-1,79,82,95,-1,81,80,83,-1,81,83,84,-1,81,84,85,-1,81,85,86,-1,81,86,87,-1,81,87,88,-1,81,88,89,-1,81,89,90,-1,81,90,91,-1,81,91,92,-1,81,92,93,-1,81,93,94,-1,81,94,95,-1,81,95,82,-1,96,97,98,-1,96,98,99,-1,96,100,101,-1,96,101,102,-1,96,102,103,-1,96,103,97,-1,96,99,104,-1,96,104,100,-1,97,105,106,-1,97,106,98,-1,97,103,107,-1,97,107,105,-1,105,108,109,-1,105,109,106,-1,105,107,110,-1,105,110,108,-1,108,111,112,-1,108,112,109,-1,108,110,113,-1,108,113,111,-1,111,114,115,-1,111,115,112,-1,111,113,116,-1,111,116,114,-1,114,117,118,-1,114,118,115,-1,114,116,119,-1,114,119,117,-1,117,120,121,-1,117,121,118,-1,117,119,122,-1,117,122,120,-1,120,123,124,-1,120,124,121,-1,120,122,125,-1,120,125,123,-1,123,126,127,-1,123,127,124,-1,123,125,128,-1,123,128,126,-1,126,129,130,-1,126,130,127,-1,126,128,131,-1,126,131,129,-1,129,132,133,-1,129,133,130,-1,129,131,134,-1,129,134,132,-1,132,135,136,-1,132,136,133,-1,132,134,137,-1,132,137,135,-1,135,138,139,-1,135,139,136,-1,135,137,140,-1,135,140,138,-1,138,141,142,-1,138,142,139,-1,138,140,143,-1,138,143,141,-1,141,100,104,-1,141,104,142,-1,141,143,101,-1,141,101,100,-1,102,101,143,-1,102,143,140,-1,102,140,137,-1,102,137,134,-1,102,134,131,-1,102,131,128,-1,102,128,125,-1,102,125,122,-1,102,122,119,-1,102,119,116,-1,102,116,113,-1,102,113,110,-1,102,110,107,-1,102,107,103,-1,98,106,144,-1,98,144,145,-1,98,145,146,-1,98,146,99,-1,99,146,147,-1,99,147,104,-1,104,147,148,-1,104,148,142,-1,142,148,149,-1,142,149,139,-1,139,149,150,-1,139,150,136,-1,136,150,151,-1,136,151,133,-1,133,151,152,-1,133,152,130,-1,130,152,153,-1,130,153,127,-1,127,153,154,-1,127,154,124,-1,124,154,155,-1,124,155,121,-1,121,155,156,-1,121,156,118,-1,118,156,157,-1,118,157,115,-1,115,157,158,-1,115,158,112,-1,112,158,159,-1,112,159,109,-1,109,159,144,-1,109,144,106,-1,145,144,160,-1,145,160,161,-1,145,161,162,-1,145,162,146,-1,146,162,163,-1,146,163,147,-1,147,163,164,-1,147,164,148,-1,148,164,165,-1,148,165,149,-1,149,165,166,-1,149,166,150,-1,150,166,167,-1,150,167,151,-1,151,167,168,-1,151,168,152,-1,152,168,169,-1,152,169,153,-1,153,169,170,-1,153,170,154,-1,154,170,171,-1,154,171,155,-1,155,171,172,-1,155,172,156,-1,156,172,173,-1,156,173,157,-1,157,173,174,-1,157,174,158,-1,158,174,175,-1,158,175,159,-1,159,175,160,-1,159,160,144,-1,161,160,176,-1,161,176,177,-1,161,177,178,-1,161,178,162,-1,162,178,179,-1,162,179,163,-1,163,179,180,-1,163,180,164,-1,164,180,181,-1,164,181,165,-1,165,181,182,-1,165,182,166,-1,166,182,183,-1,166,183,167,-1,167,183,184,-1,167,184,168,-1,168,184,185,-1,168,185,169,-1,169,185,186,-1,169,186,170,-1,170,186,187,-1,170,187,171,-1,171,187,188,-1,171,188,172,-1,172,188,189,-1,172,189,173,-1,173,189,190,-1,173,190,174,-1,174,190,191,-1,174,191,175,-1,175,191,176,-1,175,176,160,-1,177,176,191,-1,177,191,190,-1,177,190,189,-1,177,189,188,-1,177,188,187,-1,177,187,186,-1,177,186,185,-1,177,185,184,-1,177,184,183,-1,177,183,182,-1,177,182,181,-1,177,181,180,-1,177,180,179,-1,177,179,178,-1});
@@ -214,32 +214,47 @@ public class Teapot
 	.append(new MFVec2fObject(new float[] {0.125f,0.987f,0.156f,0.987f,0.187f,0.987f,0.219f,0.987f,0.25f,0.987f,0.281f,0.987f,0.313f,0.987f,0.344f,0.987f,0.375f,0.987f,0.406f,0.987f}))
 	.append(new MFVec2fObject(new float[] {0.437f,0.987f,0.469f,0.987f,0.5f,0.987f,0.531f,0.987f,0.563f,0.987f,0.594f,0.987f,0.625f,0.987f,0.656f,0.987f}));
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return Teapot model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return Teapot model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new Teapot().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("Teapot self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("Teapot self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

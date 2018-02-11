@@ -1,0 +1,1335 @@
+*** /c/x3d-code/www.web3d.org/specifications/x3d-3.3-JSONSchema.json	2017-10-26 01:36:08.296063200 -0400
+--- x3d-6.0-JSONSchema.json	2017-10-26 09:01:24.784304800 -0400
+***************
+*** 1,5 ****
+  {
+! 	"$schema": "http://json-schema.org/draft-04/schema#",
+  	"title": "JSON Schema X3D V3.3",
+  	"description": "Experimental JSON Schema for X3D V3.3 ",
+  	"type": "object",
+--- 1,5 ----
+  {
+! 	"$schema": "http://json-schema.org/draft-06/schema#",
+  	"title": "JSON Schema X3D V3.3",
+  	"description": "Experimental JSON Schema for X3D V3.3 ",
+  	"type": "object",
+***************
+*** 58,64 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				}
+  			},
+--- 58,64 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				}
+  			},
+***************
+*** 135,158 ****
+  				},
+  				"@endAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": 1.570796
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@startAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"-metadata": {
+--- 135,153 ----
+  				},
+  				"@endAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": 1.570796
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@startAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": 0
+  				},
+  				"-metadata": {
+***************
+*** 186,209 ****
+  				},
+  				"@endAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": 1.570796
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@startAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"@solid": {
+--- 181,199 ----
+  				},
+  				"@endAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": 1.570796
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@startAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": 0
+  				},
+  				"@solid": {
+***************
+*** 244,251 ****
+  				},
+  				"@pitch": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@resumeTime": {
+--- 234,240 ----
+  				},
+  				"@pitch": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@resumeTime": {
+***************
+*** 264,270 ****
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 253,259 ----
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 293,299 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@bottomUrl": {
+--- 282,288 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@bottomUrl": {
+***************
+*** 301,307 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@frontUrl": {
+--- 290,296 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@frontUrl": {
+***************
+*** 309,315 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@groundAngle": {
+--- 298,304 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@groundAngle": {
+***************
+*** 335,341 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@rightUrl": {
+--- 324,330 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@rightUrl": {
+***************
+*** 343,349 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@skyAngle": {
+--- 332,338 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@skyAngle": {
+***************
+*** 369,375 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@transparency": {
+--- 358,364 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@transparency": {
+***************
+*** 1080,1087 ****
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"-metadata": {
+--- 1069,1075 ----
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"-metadata": {
+***************
+*** 1813,1826 ****
+  				},
+  				"@bottomRadius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@height": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 2
+  				},
+  				"@side": {
+--- 1801,1812 ----
+  				},
+  				"@bottomRadius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@height": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 2
+  				},
+  				"@side": {
+***************
+*** 2382,2395 ****
+  				},
+  				"@height": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 2
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@side": {
+--- 2368,2379 ----
+  				},
+  				"@height": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 2
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@side": {
+***************
+*** 2474,2491 ****
+  				},
+  				"@maxAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": -1
+  				},
+  				"@minAngle": {
+  					"type": "number",
+! 					"minimum": -6.2832,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 6.2832,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"@offset": {
+--- 2458,2471 ----
+  				},
+  				"@maxAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": -1
+  				},
+  				"@minAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -6.2832,
+! 					"exclusiveMaximum": 6.2832,
+  					"default": 0
+  				},
+  				"@offset": {
+***************
+*** 2678,2684 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 2658,2664 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 2709,2716 ****
+  				},
+  				"@outerRadius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@solid": {
+--- 2689,2695 ----
+  				},
+  				"@outerRadius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@solid": {
+***************
+*** 2822,2831 ****
+  				},
+  				"@maxAngle1": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 3.141592653
+  				},
+  				"@maxTorque1": {
+--- 2801,2808 ----
+  				},
+  				"@maxAngle1": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 3.141592653
+  				},
+  				"@maxTorque1": {
+***************
+*** 2838,2847 ****
+  				},
+  				"@minAngle1": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": -3.141592653
+  				},
+  				"@stop1Bounce": {
+--- 2815,2822 ----
+  				},
+  				"@minAngle1": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": -3.141592653
+  				},
+  				"@stop1Bounce": {
+***************
+*** 3568,3574 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@appinfo": {
+--- 3543,3549 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@appinfo": {
+***************
+*** 3955,3962 ****
+  				},
+  				"@size": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@spacing": {
+--- 3930,3936 ----
+  				},
+  				"@size": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@spacing": {
+***************
+*** 4047,4054 ****
+  				},
+  				"@size": {
+  					"type": "integer",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 128
+  				},
+  				"@update": {
+--- 4021,4027 ----
+  				},
+  				"@size": {
+  					"type": "integer",
+! 					"exclusiveMinimum": 0,
+  					"default": 128
+  				},
+  				"@update": {
+***************
+*** 4168,4175 ****
+  				},
+  				"@xSpacing": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@yScale": {
+--- 4141,4147 ----
+  				},
+  				"@xSpacing": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@yScale": {
+***************
+*** 4184,4191 ****
+  				},
+  				"@zSpacing": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"-color": {
+--- 4156,4162 ----
+  				},
+  				"@zSpacing": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"-color": {
+***************
+*** 4295,4301 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@child2Url": {
+--- 4266,4272 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@child2Url": {
+***************
+*** 4303,4309 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@child3Url": {
+--- 4274,4280 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@child3Url": {
+***************
+*** 4311,4317 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@child4Url": {
+--- 4282,4288 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@child4Url": {
+***************
+*** 4319,4325 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"@geoSystem": {
+--- 4290,4296 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"@geoSystem": {
+***************
+*** 4335,4341 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-children": {
+--- 4306,4312 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-children": {
+***************
+*** 4377,4383 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-data": {
+--- 4348,4354 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-data": {
+***************
+*** 4651,4658 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 1
+  					}
+  				},
+--- 4622,4628 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 1
+  					}
+  				},
+***************
+*** 4703,4712 ****
+  				},
+  				"@fieldOfView": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 0.7854
+  				},
+  				"@geoSystem": {
+--- 4673,4680 ----
+  				},
+  				"@fieldOfView": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 0.7854
+  				},
+  				"@geoSystem": {
+***************
+*** 4888,4895 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true
+  					}
+  				},
+  				"@scaleOrientation": {
+--- 4856,4862 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0
+  					}
+  				},
+  				"@scaleOrientation": {
+***************
+*** 5162,5169 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 1
+  					}
+  				},
+--- 5129,5135 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 1
+  					}
+  				},
+***************
+*** 5205,5211 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 5171,5177 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 5245,5251 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 5211,5217 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 5289,5295 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 5255,5261 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 5602,5608 ****
+  			},
+  			"additionalProperties": false
+  		},
+! 		"IndexedTrangleSet": {
+  			"type": "object",
+  			"properties": {
+  				"@DEF": {
+--- 5568,5574 ----
+  			},
+  			"additionalProperties": false
+  		},
+! 		"IndexedTriangleSet": {
+  			"type": "object",
+  			"properties": {
+  				"@DEF": {
+***************
+*** 5760,5766 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 5726,5732 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 5905,5912 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 1
+  					}
+  				},
+--- 5871,5877 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 1
+  					}
+  				},
+***************
+*** 6326,6333 ****
+  				},
+  				"@linetype": {
+  					"type": "integer",
+! 					"minimum": 1,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@linewidthScaleFactor": {
+--- 6291,6297 ----
+  				},
+  				"@linetype": {
+  					"type": "integer",
+! 					"exclusiveMinimum": 1,
+  					"default": 1
+  				},
+  				"@linewidthScaleFactor": {
+***************
+*** 6935,6944 ****
+  				},
+  				"@axis1Angle": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"@axis1Torque": {
+--- 6899,6906 ----
+  				},
+  				"@axis1Angle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 0
+  				},
+  				"@axis1Torque": {
+***************
+*** 6947,6956 ****
+  				},
+  				"@axis2Angle": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"@axis2Torque": {
+--- 6909,6916 ----
+  				},
+  				"@axis2Angle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 0
+  				},
+  				"@axis2Torque": {
+***************
+*** 6959,6968 ****
+  				},
+  				"@axis3Angle": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 0
+  				},
+  				"@axis3Torque": {
+--- 6919,6926 ----
+  				},
+  				"@axis3Angle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 0
+  				},
+  				"@axis3Torque": {
+***************
+*** 7094,7101 ****
+  				},
+  				"@pitch": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@repeatS": {
+--- 7052,7058 ----
+  				},
+  				"@pitch": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@repeatS": {
+***************
+*** 7127,7133 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"-metadata": {
+--- 7084,7090 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 7480,7487 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true
+  					}
+  				},
+  				"-controlPoint": {
+--- 7437,7443 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0
+  					}
+  				},
+  				"-controlPoint": {
+***************
+*** 7540,7547 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true
+  					}
+  				},
+  				"-metadata": {
+--- 7496,7502 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0
+  					}
+  				},
+  				"-metadata": {
+***************
+*** 7667,7674 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true
+  					}
+  				},
+  				"-controlPoint": {
+--- 7622,7628 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0
+  					}
+  				},
+  				"-controlPoint": {
+***************
+*** 7755,7762 ****
+  				},
+  				"@tesselationScale": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"-geometry": {
+--- 7709,7715 ----
+  				},
+  				"@tesselationScale": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"-geometry": {
+***************
+*** 8046,8053 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true
+  					}
+  				},
+  				"-controlPoint": {
+--- 7999,8005 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0
+  					}
+  				},
+  				"-controlPoint": {
+***************
+*** 8313,8319 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"#sourceText": {
+--- 8265,8271 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"#sourceText": {
+***************
+*** 9888,9895 ****
+  					"maxItems": 2,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 2
+  					}
+  				},
+--- 9840,9846 ----
+  					"maxItems": 2,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 2
+  					}
+  				},
+***************
+*** 10026,10033 ****
+  				},
+  				"@mass": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@orientation": {
+--- 9977,9983 ----
+  				},
+  				"@mass": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@orientation": {
+***************
+*** 10750,10757 ****
+  				},
+  				"@pointSize": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 12
+  				},
+  				"@spacing": {
+--- 10700,10706 ----
+  				},
+  				"@pointSize": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 12
+  				},
+  				"@spacing": {
+***************
+*** 10844,10850 ****
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"#sourceText": {
+--- 10793,10799 ----
+  					"minItems": 1,
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"#sourceText": {
+***************
+*** 10892,10899 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 1
+  					}
+  				},
+--- 10841,10847 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 1
+  					}
+  				},
+***************
+*** 10985,10991 ****
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"#sourceText": {
+--- 10933,10939 ----
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"#sourceText": {
+***************
+*** 11024,11030 ****
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri"
+  					}
+  				},
+  				"#sourceText": {
+--- 10972,10978 ----
+  					"type": "array",
+  					"items": {
+  						"type": "string",
+! 						"format": "uri-reference"
+  					}
+  				},
+  				"#sourceText": {
+***************
+*** 11351,11368 ****
+  				},
+  				"@maxAngle": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": 3.141592653
+  				},
+  				"@minAngle": {
+  					"type": "number",
+! 					"minimum": -3.1416,
+! 					"exclusiveMinimum": true,
+! 					"maximum": 3.1416,
+! 					"exclusiveMaximum": true,
+  					"default": -3.141592653
+  				},
+  				"@stopBounce": {
+--- 11299,11312 ----
+  				},
+  				"@maxAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": 3.141592653
+  				},
+  				"@minAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": -3.1416,
+! 					"exclusiveMaximum": 3.1416,
+  					"default": -3.141592653
+  				},
+  				"@stopBounce": {
+***************
+*** 11593,11600 ****
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@solid": {
+--- 11537,11543 ----
+  				},
+  				"@radius": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@solid": {
+***************
+*** 11865,11872 ****
+  				},
+  				"@beamWidth": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"maximum": 1.5708,
+  					"default": 0.7854
+  				},
+--- 11808,11814 ----
+  				},
+  				"@beamWidth": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"maximum": 1.5708,
+  					"default": 0.7854
+  				},
+***************
+*** 11883,11890 ****
+  				},
+  				"@cutOffAngle": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"maximum": 1.5708,
+  					"default": 1.570796
+  				},
+--- 11825,11831 ----
+  				},
+  				"@cutOffAngle": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"maximum": 1.5708,
+  					"default": 1.570796
+  				},
+***************
+*** 12767,12774 ****
+  				},
+  				"@cycleInterval": {
+  					"type": "number",
+! 					"minimum": 0,
+! 					"exclusiveMinimum": true,
+  					"default": 1
+  				},
+  				"@enabled": {
+--- 12708,12714 ----
+  				},
+  				"@cycleInterval": {
+  					"type": "number",
+! 					"exclusiveMinimum": 0,
+  					"default": 1
+  				},
+  				"@enabled": {
+***************
+*** 14157,14164 ****
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"minimum": 0,
+! 						"exclusiveMinimum": true,
+  						"default": 1
+  					}
+  				},
+--- 14097,14103 ----
+  					"maxItems": 3,
+  					"items": {
+  						"type": "number",
+! 						"exclusiveMinimum": 0,
+  						"default": 1
+  					}
+  				},
+***************
+*** 16085,16091 ****
+  						"$ref": "#/definitions/IndexedTriangleFanSet"
+  					},
+  					"IndexedTriangleSet": {
+! 						"$ref": "#/definitions/IndexedTrangleSet"
+  					},
+  					"IndexedTriangleStripSet": {
+  						"$ref": "#/definitions/IndexedTriangleStripSet"
+--- 16024,16030 ----
+  						"$ref": "#/definitions/IndexedTriangleFanSet"
+  					},
+  					"IndexedTriangleSet": {
+! 						"$ref": "#/definitions/IndexedTriangleSet"
+  					},
+  					"IndexedTriangleStripSet": {
+  						"$ref": "#/definitions/IndexedTriangleStripSet"
+***************
+*** 17608,17614 ****
+  					"$ref": "#/definitions/IndexedTriangleFanSet"
+  				},
+  				"IndexedTriangleSet": {
+! 					"$ref": "#/definitions/IndexedTrangleSet"
+  				},
+  				"IndexedTriangleStripSet": {
+  					"$ref": "#/definitions/IndexedTriangleStripSet"
+--- 17547,17553 ----
+  					"$ref": "#/definitions/IndexedTriangleFanSet"
+  				},
+  				"IndexedTriangleSet": {
+! 					"$ref": "#/definitions/IndexedTriangleSet"
+  				},
+  				"IndexedTriangleStripSet": {
+  					"$ref": "#/definitions/IndexedTriangleStripSet"
+***************
+*** 18681,18684 ****
+  			}
+  		}
+  	}
+! }
+\ No newline at end of file
+--- 18620,18623 ----
+  			}
+  		}
+  	}
+! }

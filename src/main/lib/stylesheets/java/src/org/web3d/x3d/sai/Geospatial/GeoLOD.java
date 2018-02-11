@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -53,7 +53,8 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> children nodes expose the scene graph for the currently loaded set of nodes. </li> 
  *  <li> <i>Hint:</i> rootNode specifies the geometry of the root tile. </li> 
  *  <li> <i>Warning:</i> do not use rootUrl and rootNode simultaneously, since each specifies the root tile. </li> 
- *  <li> <i>Hint:</i> include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i> requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
  *  <li> <i>Warning:</i>  nested LOD (and/or GeoLOD) nodes with overlapping range intervals can lead to unexpected or undefined behavior. </li> 
  * </ul>
  * <br>
@@ -208,7 +209,8 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>children</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of children field
 	 */
 	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
@@ -255,7 +257,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	public int getLevel();
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -263,7 +265,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -293,7 +295,8 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from initializeOnly MFNode field <i>rootNode</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of rootNode field
 	 */
 	public X3DNode[] getRootNode(); // acceptable node types: X3DChildNode
@@ -301,7 +304,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to initializeOnly MFNode field <i>rootNode</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @param newValue is new value for the rootNode field.
 	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -310,13 +313,13 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child rootNode nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @param newValue is new value array to be appended the rootNode field.
 	 */
 	public void addRootNode(X3DNode[] newValue); // acceptable node types: X3DChildNode
 	/**
 	 * Set single child rootNode node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the rootNode field.
+	 * @param newValue is new node for the rootNode field
 	 */
 	public void setRootNode(X3DNode newValue); // acceptable node types: X3DChildNode
 	/**

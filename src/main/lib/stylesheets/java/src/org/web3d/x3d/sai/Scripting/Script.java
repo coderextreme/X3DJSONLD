@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -85,7 +85,7 @@ public interface Script extends X3DScriptNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -93,7 +93,7 @@ public interface Script extends X3DScriptNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link Script} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -122,6 +122,21 @@ public interface Script extends X3DScriptNode
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> List of address links for runnable script files.
+ * <ul>
+ *  <li> <i>Hint:</i> browsers are not required to support any particular scripting language, but ECMAScript (JavaScript) is widely supported. </li> 
+ *  <li> <i>Hint:</i> equivalent script code written in multiple programming languages can be provided for portability, the first runnable version is chosen at run time. </li> 
+ *  <li> <i>Hint:</i> X3D Scene Authoring Hints, Scripts <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts</a> </li> 
+ *  <li> <i>Warning:</i> source code can be placed in url attribute but may be unparsable due to escaping of special characters and elimination of line breaks (causing comments to nullify follow-on code). Use contained CDATA section instead for embedding source code. </li> 
+ *  <li> <i>Hint:</i> if both url field and CDATA section are provided simultaneously, the url field is processed first. This approach allows utilization of update modifications or live queries in external scripts, while still providing reliable script source as a fallback alternative within the model itself. </li> 
+ *  <li> <i>Hint:</i> X3D XML Encoding, 4.3.13 Encapsulating Script node code <br> <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#EncapsulatingScriptNodeCode" target="_blank">http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#EncapsulatingScriptNodeCode</a> </li> 
+ *  <li> <i>Hint:</i> MFString arrays can have multiple values, so separate each individual string by quote marks <br> "<a href="http://www.web3d.org" target="_blank">http://www.web3d.org</a>" <br> "<a href="http://www.web3d.org/about" target="_blank">http://www.web3d.org/about</a>" "etc." </li> 
+ *  <li> <i>Hint:</i> alternative XML encoding for quotation mark " is &amp;quot; (which is an example of a character entity). </li> 
+ *  <li> <i>Warning:</i> strictly match directory and filename capitalization for http links! This is important for portability. Some operating systems are forgiving of capitalization mismatches, but http/https url addresses and paths in Unix-based operating systems are all case sensitive and intolerant of uppercase/lowercase mismatches. </li> 
+ *  <li> <i>Hint:</i> can replace embedded blank(s) in url queries with %20 for each blank character. </li> 
+ *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, urls <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#urls" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#urls</a> </li> 
+ * </ul>
 	 * @return value of url field
 	 */
 	@Override
@@ -129,6 +144,8 @@ public interface Script extends X3DScriptNode
 
 	/**
 	 * Assign String array to inputOutput MFString field named <i>url</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> List of address links for runnable script files. Hint: browsers are not required to support any particular scripting language, but ECMAScript (JavaScript) is widely supported. Hint: equivalent script code written in multiple programming languages can be provided for portability, the first runnable version is chosen at run time. Hint: X3D Scene Authoring Hints, Scripts http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts Warning: source code can be placed in url attribute but may be unparsable due to escaping of special characters and elimination of line breaks (causing comments to nullify follow-on code). Use contained CDATA section instead for embedding source code. Hint: if both url field and CDATA section are provided simultaneously, the url field is processed first. This approach allows utilization of update modifications or live queries in external scripts, while still providing reliable script source as a fallback alternative within the model itself. Hint: X3D XML Encoding, 4.3.13 Encapsulating Script node code http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#EncapsulatingScriptNodeCode Hint: MFString arrays can have multiple values, so separate each individual string by quote marks "http://www.web3d.org" "http://www.web3d.org/about" "etc." Hint: alternative XML encoding for quotation mark " is &amp;quot; (which is an example of a character entity). Warning: strictly match directory and filename capitalization for http links! This is important for portability. Some operating systems are forgiving of capitalization mismatches, but http/https url addresses and paths in Unix-based operating systems are all case sensitive and intolerant of uppercase/lowercase mismatches. Hint: can replace embedded blank(s) in url queries with %20 for each blank character. Hint: X3D Scene Authoring Hints, urls http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#urls
 	 * @param newValue is new value for the url field.
 	 * @return {@link Script} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

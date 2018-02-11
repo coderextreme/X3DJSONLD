@@ -30,7 +30,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/mirro2.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"
         },
         {
           "@name": "description",
@@ -55,27 +55,27 @@
             "@DEF": "cube",
             "@leftUrl": [
               "../resources/images/all_probes/beach_cross/beach_left.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
             ],
             "@rightUrl": [
               "../resources/images/all_probes/beach_cross/beach_right.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
             ],
             "@frontUrl": [
               "../resources/images/all_probes/beach_cross/beach_front.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
             ],
             "@backUrl": [
               "../resources/images/all_probes/beach_cross/beach_back.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
             ],
             "@topUrl": [
               "../resources/images/all_probes/beach_cross/beach_top.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
             ],
             "@bottomUrl": [
               "../resources/images/all_probes/beach_cross/beach_bottom.png",
-              "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
             ]
           }
         },
@@ -87,9 +87,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@diffuseColor": [
                                 0,
                                 0,
@@ -106,13 +108,15 @@
                         "-texture": [
                           {
                             "ComposedCubeMapTexture": {
+                              "@containerField": "texture",
                               "-back": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "back",
                                     "@DEF": "backShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_back.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                                     ]
                                   }
                                 }
@@ -120,10 +124,11 @@
                               "-bottom": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "bottom",
                                     "@DEF": "bottomShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
                                     ]
                                   }
                                 }
@@ -131,10 +136,11 @@
                               "-front": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "front",
                                     "@DEF": "frontShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_front.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                                     ]
                                   }
                                 }
@@ -142,10 +148,11 @@
                               "-left": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "left",
                                     "@DEF": "leftShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_left.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                                     ]
                                   }
                                 }
@@ -153,10 +160,11 @@
                               "-right": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "right",
                                     "@DEF": "rightShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_right.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                                     ]
                                   }
                                 }
@@ -164,10 +172,11 @@
                               "-top": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "top",
                                     "@DEF": "topShader",
                                     "@url": [
                                       "../resources/images/all_probes/beach_cross/beach_top.png",
-                                      "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                                     ]
                                   }
                                 }
@@ -178,7 +187,7 @@
                         "-children": [
                           {
                             "ComposedShader": {
-                              "@DEF": "cobweb",
+                              "@DEF": "x_ite",
                               "@language": "GLSL",
                               "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml",
                               "field": [
@@ -217,8 +226,8 @@
                                 {
                                   "ShaderPart": {
                                     "@url": [
-                                      "../shaders/cobweb.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                      "../shaders/x_ite.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
@@ -227,7 +236,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/mix.fs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
                                     ],
                                     "@type": "FRAGMENT"
                                   }
@@ -277,7 +286,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
                                     ],
                                     "@type": "VERTEX"
                                   }
@@ -286,7 +295,7 @@
                                   "ShaderPart": {
                                     "@url": [
                                       "../shaders/mix.fs",
-                                      "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
                                     ],
                                     "@type": "FRAGMENT"
                                   }
@@ -301,6 +310,7 @@
                   "-geometry": [
                     {
                       "Sphere": {
+                        "@containerField": "geometry",
                         "@radius": 30
                       }
                     }
@@ -391,23 +401,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
-                    "        function set_fraction( f, tm ) {",
-                    "\t    var side = Math.floor(f*frontUrls.length);",
-                    "\t    if (side > frontUrls.length-1) {",
-                    "\t    \tside = 0;",
-                    "\t    }",
-                    "\t    if (side != old) {",
-                    "\t    \t    // Browser.print(f+\\\" \\\"+side);",
-                    "\t    \t    old = side;",
-                    "\t\t    front_changed[0] = frontUrls[side];",
-                    "\t\t    back_changed[0] = backUrls[side];",
-                    "\t\t    left_changed[0] = leftUrls[side];",
-                    "\t\t    right_changed[0] = rightUrls[side];",
-                    "\t\t    top_changed[0] = topUrls[side];",
-                    "\t\t    bottom_changed[0] = bottomUrls[side];",
-                    "            }",
-                    "        }",
+                    "ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { // Browser.print(f+\\\"\\\"+side); old = side; front_changed[0] = frontUrls[side]; back_changed[0] = backUrls[side]; left_changed[0] = leftUrls[side]; right_changed[0] = rightUrls[side]; top_changed[0] = topUrls[side]; bottom_changed[0] = bottomUrls[side]; } }",
                     ""
                   ]
                 }

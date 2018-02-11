@@ -179,12 +179,14 @@
                               "-geometry": [
                                 {
                                   "IndexedFaceSet": {
+                                    "@containerField": "geometry",
                                     "@DEF": "ArchIndex",
                                     "@convex": true,
                                     "@solid": true,
                                     "-coord": [
                                       {
                                         "Coordinate": {
+                                          "@containerField": "coord",
                                           "@DEF": "ArchChord"
                                         }
                                       }
@@ -195,9 +197,11 @@
                               "-appearance": [
                                 {
                                   "Appearance": {
+                                    "@containerField": "appearance",
                                     "-material": [
                                       {
                                         "Material": {
+                                          "@containerField": "material",
                                           "@DEF": "MaterialNode",
                                           "-children": [
                                             {

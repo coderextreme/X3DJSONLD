@@ -141,15 +141,19 @@
                       "Shape": {
                         "-geometry": [
                           {
-                            "Sphere": {}
+                            "Sphere": {
+                              "@containerField": "geometry"
+                            }
                           }
                         ],
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@DEF": "MaterialLightBlue",
                                     "@diffuseColor": [
                                       0,
@@ -162,6 +166,7 @@
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@DEF": "ImageCloudlessEarth",
                                     "@url": [
                                       "earth-topo.png",
@@ -195,6 +200,7 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@DEF": "TextMessage",
                               "@string": [
                                 "Hello",
@@ -203,6 +209,7 @@
                               "-fontStyle": [
                                 {
                                   "FontStyle": {
+                                    "@containerField": "fontStyle",
                                     "@justify": [
                                       "MIDDLE",
                                       "MIDDLE"
@@ -216,9 +223,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@USE": "MaterialLightBlue"
                                   }
                                 }

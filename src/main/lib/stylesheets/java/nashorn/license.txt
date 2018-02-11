@@ -26,10 +26,9 @@ Package: node_modules/xmldom
 Licensed under MIT license see: node_modules/xmldom/LICENSE
 No changes made.
 
-Other files in this folder and subfolders are written by John Carlson or derived from files written by authors
-at the Web3D consortium.
+Other files in this folder and subfolders are written by John Carlson
 
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
  
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

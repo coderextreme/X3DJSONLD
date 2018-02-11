@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -85,7 +85,8 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>bodies</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to RigidBody.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to RigidBody.
+	 * @see org.web3d.x3d.jsail.RigidBodyPhysics.RigidBodyObject
 	 * @return value of bodies field
 	 */
 	public X3DNode[] getBodies(); // acceptable node types: RigidBody
@@ -93,7 +94,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>bodies</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to RigidBody.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to RigidBody.
 	 * @param newValue is new value for the bodies field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -102,13 +103,13 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Add array of child bodies nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to RigidBody.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to RigidBody.
 	 * @param newValue is new value array to be appended the bodies field.
 	 */
 	public void addBodies(X3DNode[] newValue); // acceptable node types: RigidBody
 	/**
 	 * Set single child bodies node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the bodies field.
+	 * @param newValue is new node for the bodies field
 	 */
 	public void setBodies(X3DNode newValue); // acceptable node types: RigidBody
 	/**
@@ -298,7 +299,8 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>joints</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DRigidJointNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DRigidJointNode.
+	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DRigidJointNode
 	 * @return value of joints field
 	 */
 	public X3DNode[] getJoints(); // acceptable node types: X3DRigidJointNode
@@ -306,7 +308,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>joints</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DRigidJointNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DRigidJointNode.
 	 * @param newValue is new value for the joints field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -315,13 +317,13 @@ public interface RigidBodyCollection extends X3DChildNode
 	/**
 	 * Add array of child joints nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DRigidJointNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DRigidJointNode.
 	 * @param newValue is new value array to be appended the joints field.
 	 */
 	public void addJoints(X3DNode[] newValue); // acceptable node types: X3DRigidJointNode
 	/**
 	 * Set single child joints node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the joints field.
+	 * @param newValue is new node for the joints field
 	 */
 	public void setJoints(X3DNode newValue); // acceptable node types: X3DRigidJointNode
 	/**
@@ -344,7 +346,7 @@ public interface RigidBodyCollection extends X3DChildNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -352,7 +354,7 @@ public interface RigidBodyCollection extends X3DChildNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

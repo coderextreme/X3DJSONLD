@@ -72,8 +72,8 @@
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='3 0 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
-                    <PixelTexture DEF='ThreeComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204' repeatS='true' repeatT='true' class=''/>
                     <!-- note 0x000000 = 0 -->
+                    <PixelTexture DEF='ThreeComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204' repeatS='true' repeatT='true' class=''/>
                 </Appearance>
                 <Box size='2 2 2' solid='true' class=''/>
             </Shape>
@@ -89,8 +89,8 @@
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='6 0 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
-                    <PixelTexture DEF='FourComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204' repeatS='true' repeatT='true' class=''/>
                     <!-- Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 -->
+                    <PixelTexture DEF='FourComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204' repeatS='true' repeatT='true' class=''/>
                 </Appearance>
                 <Box size='2 2 2' solid='true' class=''/>
             </Shape>

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -42,7 +42,6 @@ import org.web3d.x3d.sai.HAnim.*;
 import org.web3d.x3d.sai.Core.*;
 import org.web3d.x3d.sai.HAnim.*;
 import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Core.*;
 import org.web3d.x3d.sai.Rendering.*;
 import org.web3d.x3d.sai.Rendering.*;
 import org.web3d.x3d.sai.HAnim.*;
@@ -52,13 +51,13 @@ import java.util.Arrays;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: The HAnimHumanoid node is used to: (a) store references to the joints, segments, sites, skin and viewpoints, (b) serve as a container for the entire humanoid, (c) provide a convenient way of moving the humanoid through its environment, and (d) store human-readable data such as author and copyright information. HAnimHumanoid contains HAnimJoint, HAnimSegment and HAnimSite nodes, plus a single optional Coordinate|CoordinateDouble mesh with a single corresponding Normal node.
+ * <i>X3D node tooltip</i>: The HAnimHumanoid node is used to: (a) store references to the joints, segments, sites, skeleton, optional skin, and fixed viewpoints, (b) serve as a container for the entire humanoid, (c) provide a convenient way of moving the humanoid through its environment, and (d) store human-readable metadata such as name, version, author, copyright, age, gender and other information. HAnimHumanoid contains a skeleton consisting of HAnimJoint, HAnimSegment and HAnimSite nodes. HAnimHumanoid can also contain an optional skin consisting of an IndexedFaceSet mesh with corresponding skinCoord Coordinate|CoordinateDouble vertices and skinNormal Normal vectors.
  * <ul>
- *  <li> <i>Hint:</i> MFNode arrays for joints, segments, sites, skin and viewpoints usually follow the human body definition and contain USE node references. </li> 
+ *  <li> <i>Hint:</i> MFNode arrays for the joints, segments, sites, and viewpoints fields provide lists for all HAnim nodes found in the skeleton hierarchy and thus only contain USE node references. </li> 
  *  <li> <i>Hint:</i> H-Anim Specification <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Humanoid <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Humanoid" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Humanoid</a> </li> 
- *  <li> <i>Hint:</i> the viewpoints field connects internal Site nodes that in turn hold relative Viewpoint nodes, such as HAnimSite USE='ObserveFace_viewSite' containerField='viewpoints'/&amp;gt; which has a corresponding &amp;lt;HAnimSite DEF='ObserveFace_viewSite' name='ObserveFace_view' containerField='children' description='look at me!'/&amp;gt; node. </li> 
- *  <li> <i>Hint:</i>  include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
@@ -140,8 +139,10 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>info</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Contains metadata keyword=value pairs, where approved keyword terms are humanoidVersion authorName authorEmail copyright creationDate usageRestrictions age gender height and weight.  * <br>
-
+	 * <i>Tooltip:</i> Contains metadata keyword=value pairs, where approved keyword terms are humanoidVersion authorName authorEmail copyright creationDate usageRestrictions age gender height and weight.
+ * <ul>
+ *  <li> <i> Hint:</i>  alternate metadata keywords are also allowed. </li> 
+ * </ul>
 	 * @return value of info field
 	 */
 	public String[] getInfo();
@@ -149,7 +150,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign String array to inputOutput MFString field named <i>info</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Contains metadata keyword=value pairs, where approved keyword terms are humanoidVersion authorName authorEmail copyright creationDate usageRestrictions age gender height and weight.
+	 * <i>Tooltip:</i> Contains metadata keyword=value pairs, where approved keyword terms are humanoidVersion authorName authorEmail copyright creationDate usageRestrictions age gender height and weight. Hint: alternate metadata keywords are also allowed.
 	 * @param newValue is new value for the info field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -158,7 +159,16 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>joints</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint.
+	 * <i>Tooltip:</i> [HAnimJoint] joints field contains a list of USE references for all HAnimJoint node instances found within the skeleton hierarchy.
+ * <ul>
+ *  <li> <i>Hint:</i> order is irrelevant since names are contained in the original DEF objects. </li> 
+ *  <li> <i>Hint:</i> these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. </li> 
+ *  <li> <i>Warning:</i> the number of contained &amp;lt;HAnimJoint USE='*' containerField='joints'/&amp;gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimJoint node instances found within the skeleton hierarchy. </li> 
+ *  <li> <i>Warning:</i>  top-level HAnimJoint USE nodes must include containerField='joints' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimJointObject
 	 * @return value of joints field
 	 */
 	public X3DNode[] getJoints(); // acceptable node types: HAnimJoint
@@ -166,7 +176,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>joints</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint.
+	 * <i>Tooltip:</i> [HAnimJoint] joints field contains a list of USE references for all HAnimJoint node instances found within the skeleton hierarchy. Hint: order is irrelevant since names are contained in the original DEF objects. Hint: these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. Warning: the number of contained &lt;HAnimJoint USE='*' containerField='joints'/&gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimJoint node instances found within the skeleton hierarchy. Warning: top-level HAnimJoint USE nodes must include containerField='joints' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint.
 	 * @param newValue is new value for the joints field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -175,18 +187,18 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child joints nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint.
 	 * @param newValue is new value array to be appended the joints field.
 	 */
 	public void addJoints(X3DNode[] newValue); // acceptable node types: HAnimJoint
 	/**
 	 * Set single child joints node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the joints field.
+	 * @param newValue is new node for the joints field
 	 */
 	public void setJoints(X3DNode newValue); // acceptable node types: HAnimJoint
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -194,7 +206,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -204,8 +216,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimHumanoid node can be identified at run time for animation purposes.
+	 * <i>Tooltip:</i> Unique name attribute must be defined so that each HAnimHumanoid node in a scene can be identified at run time for animation purposes.
  * <ul>
+ *  <li> <i>Hint:</i> this same name is a required name prefix for all other HAnim nodes within the HAnimHumanoid. </li> 
  *  <li> <i>Warning:</i> name is not included if this instance is a USE node. </li> 
  *  <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Naming Conventions <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions</a> </li> 
@@ -217,8 +230,8 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign String value to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimHumanoid node can be identified at run time for animation purposes. Warning: name is not included if this instance is a USE node. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <i>Tooltip:</i> Unique name attribute must be defined so that each HAnimHumanoid node in a scene can be identified at run time for animation purposes. Hint: this same name is a required name prefix for all other HAnim nodes within the HAnimHumanoid. Warning: name is not included if this instance is a USE node. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -227,8 +240,10 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Orientation of children relative to local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Orientation of children relative to local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  default pose is typically empty (or an identity rotation) to avoid distorted body animations. </li> 
+ * </ul>
 	 * @return value of rotation field
 	 */
 	public float[] getRotation();
@@ -236,7 +251,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign 4-tuple float array unit axis, angle (in radians) to inputOutput SFRotation field named <i>rotation</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Orientation of children relative to local coordinate system.
+	 * <i>Tooltip:</i> Orientation of children relative to local coordinate system. Warning: default pose is typically empty (or an identity rotation) to avoid distorted body animations.
 	 * @param newValue is new value for the rotation field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -281,7 +296,16 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>segments</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSegment.
+	 * <i>Tooltip:</i> [HAnimSegment] segments field contains a list of USE references for all HAnimSegment node instances found within the skeleton hierarchy.
+ * <ul>
+ *  <li> <i>Hint:</i> order is irrelevant since names are contained in the original DEF objects. </li> 
+ *  <li> <i>Hint:</i> these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. </li> 
+ *  <li> <i>Warning:</i> the number of contained &amp;lt;HAnimSegment USE='*' containerField='segments'/&amp;gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimSegment node instances found within the skeleton hierarchy. </li> 
+ *  <li> <i>Warning:</i>  top-level HAnimSegment USE nodes must include containerField='segments' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSegment.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimSegmentObject
 	 * @return value of segments field
 	 */
 	public X3DNode[] getSegments(); // acceptable node types: HAnimSegment
@@ -289,7 +313,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>segments</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSegment.
+	 * <i>Tooltip:</i> [HAnimSegment] segments field contains a list of USE references for all HAnimSegment node instances found within the skeleton hierarchy. Hint: order is irrelevant since names are contained in the original DEF objects. Hint: these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. Warning: the number of contained &lt;HAnimSegment USE='*' containerField='segments'/&gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimSegment node instances found within the skeleton hierarchy. Warning: top-level HAnimSegment USE nodes must include containerField='segments' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSegment.
 	 * @param newValue is new value for the segments field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -298,19 +324,28 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child segments nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSegment.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSegment.
 	 * @param newValue is new value array to be appended the segments field.
 	 */
 	public void addSegments(X3DNode[] newValue); // acceptable node types: HAnimSegment
 	/**
 	 * Set single child segments node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the segments field.
+	 * @param newValue is new node for the segments field
 	 */
 	public void setSegments(X3DNode newValue); // acceptable node types: HAnimSegment
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>sites</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Tooltip:</i> [HAnimSite] sites field contains a list of USE references for all HAnimSite node instances found within the skeleton hierarchy.
+ * <ul>
+ *  <li> <i>Hint:</i> order is irrelevant since names are contained in the original DEF objects. </li> 
+ *  <li> <i>Hint:</i> these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. </li> 
+ *  <li> <i>Warning:</i> the number of contained &amp;lt;HAnimSite USE='*' containerField='sites'/&amp;gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimSite node instances found within the skeleton hierarchy. </li> 
+ *  <li> <i>Warning:</i>  top-level HAnimSite USE nodes must include containerField='sites' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of sites field
 	 */
 	public X3DNode[] getSites(); // acceptable node types: HAnimSite
@@ -318,7 +353,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>sites</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Tooltip:</i> [HAnimSite] sites field contains a list of USE references for all HAnimSite node instances found within the skeleton hierarchy. Hint: order is irrelevant since names are contained in the original DEF objects. Hint: these USE nodes can be utilitized by inverse kinematics (IK) and animation engines. Warning: the number of contained &lt;HAnimSite USE='*' containerField='sites'/&gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimSite node instances found within the skeleton hierarchy. Warning: top-level HAnimSite USE nodes must include containerField='sites' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value for the sites field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -327,27 +364,37 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child sites nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value array to be appended the sites field.
 	 */
 	public void addSites(X3DNode[] newValue); // acceptable node types: HAnimSite
 	/**
 	 * Set single child sites node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the sites field.
+	 * @param newValue is new node for the sites field
 	 */
 	public void setSites(X3DNode newValue); // acceptable node types: HAnimSite
 	/**
-	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types HAnimJoint|HAnimSite, from inputOutput MFNode field <i>skeleton</i>.
+	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to HAnimJoint|HAnimSite, from inputOutput MFNode field <i>skeleton</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint|HAnimSite.
+	 * <i>Tooltip:</i> [HAnimJoint, HAnimSite] skeleton field contains the HumanoidRoot Joint object and the entire hierarchy of HAnimJoint/HAnimSegment nodes making up the articulated skeleton.
+ * <ul>
+ *  <li> <i>Hint:</i> immediate children in the skeleton field can also include top-level HAnimSite node declarations, which are landmarks for the overall humanoid figure that are not affected by HAnimJoint movement. </li> 
+ *  <li> <i>Warning:</i>  top-level HAnimJoint and HAnimSite nodes must include containerField='skeleton' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint|HAnimSite.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimJointObject
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of skeleton field
 	 */
 	public X3DNode[] getSkeleton(); // acceptable node types: HAnimJoint|HAnimSite
 
 	/**
-	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types HAnimJoint|HAnimSite, to inputOutput MFNode field <i>skeleton</i>.
+	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to HAnimJoint|HAnimSite, to inputOutput MFNode field <i>skeleton</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint|HAnimSite.
+	 * <i>Tooltip:</i> [HAnimJoint, HAnimSite] skeleton field contains the HumanoidRoot Joint object and the entire hierarchy of HAnimJoint/HAnimSegment nodes making up the articulated skeleton. Hint: immediate children in the skeleton field can also include top-level HAnimSite node declarations, which are landmarks for the overall humanoid figure that are not affected by HAnimJoint movement. Warning: top-level HAnimJoint and HAnimSite nodes must include containerField='skeleton' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint|HAnimSite.
 	 * @param newValue is new value for the skeleton field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -356,52 +403,73 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child skeleton nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimJoint|HAnimSite.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint|HAnimSite.
 	 * @param newValue is new value array to be appended the skeleton field.
 	 */
 	public void addSkeleton(X3DNode[] newValue); // acceptable node types: HAnimJoint|HAnimSite
 	/**
 	 * Set single child skeleton node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the skeleton field.
+	 * @param newValue is new node for the skeleton field
 	 */
 	public void setSkeleton(X3DNode newValue); // acceptable node types: HAnimJoint|HAnimSite
 	/**
-	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>skin</i>.
+	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to Group|Transform|Shape|IndexedFaceSet, from inputOutput MFNode field <i>skin</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Tooltip:</i> [IndexedFaceSet|Group|Transform|Shape] skin field contains one or more IndexedFaceSet definitions. Those IndexedFaceSet definitions utilize the point and normal data that is defined within the skinCoord and skinNormal fields, respectively, of the Humanoid object.
+ * <ul>
+ *  <li> <i>Warning:</i> index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
+ *  <li> <i>Warning:</i>  top-level node must include containerField='skin' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to Group|Transform|Shape|IndexedFaceSet.
+	 * @see org.web3d.x3d.jsail.Grouping.GroupObject
+	 * @see org.web3d.x3d.jsail.Grouping.TransformObject
+	 * @see org.web3d.x3d.jsail.Shape.ShapeObject
+	 * @see org.web3d.x3d.jsail.Geometry3D.IndexedFaceSetObject
 	 * @return value of skin field
 	 */
-	public X3DNode[] getSkin(); // acceptable node types: X3DChildNode
+	public X3DNode[] getSkin(); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
 
 	/**
-	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>skin</i>.
+	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to Group|Transform|Shape|IndexedFaceSet, to inputOutput MFNode field <i>skin</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Tooltip:</i> [IndexedFaceSet|Group|Transform|Shape] skin field contains one or more IndexedFaceSet definitions. Those IndexedFaceSet definitions utilize the point and normal data that is defined within the skinCoord and skinNormal fields, respectively, of the Humanoid object. Warning: index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. Warning: top-level node must include containerField='skin' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to Group|Transform|Shape|IndexedFaceSet.
 	 * @param newValue is new value for the skin field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSkin(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public HAnimHumanoid setSkin(X3DNode[] newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
 
 	/**
 	 * Add array of child skin nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to Group|Transform|Shape|IndexedFaceSet.
 	 * @param newValue is new value array to be appended the skin field.
 	 */
-	public void addSkin(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addSkin(X3DNode[] newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
 	/**
 	 * Set single child skin node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the skin field.
+	 * @param newValue is new node for the skin field
 	 */
-	public void setSkin(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setSkin(X3DNode newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>skinCoord</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DCoordinateNode] skinCoord field contains a single sequence of points, used by internal HAnimHumanoid mechanisms to create appropriate surface deformations as well as by the indexed face set definitions within the skin field that perform the actual rendering of surface geometry.
+ * <ul>
+ *  <li> <i>Warning:</i> index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
+ *  <li> <i>Warning:</i> top-level Coordinate or CoordinateDouble node must include containerField='skinCoord' for proper validation and operation. </li> 
+ *  <li> <i>Hint:</i>  a single node is used so that coordIndex references are consistent for all references to these coordinates. </li> 
+ * </ul>
 	 * @return value of skinCoord field
 	 */
 	public X3DCoordinateNode getSkinCoord(); // acceptable node types: X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>skinCoord</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DCoordinateNode] skinCoord field contains a single sequence of points, used by internal HAnimHumanoid mechanisms to create appropriate surface deformations as well as by the indexed face set definitions within the skin field that perform the actual rendering of surface geometry. Warning: index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. Warning: top-level Coordinate or CoordinateDouble node must include containerField='skinCoord' for proper validation and operation. Hint: a single node is used so that coordIndex references are consistent for all references to these coordinates.
 	 * @param newValue is new value for the skinCoord field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -409,12 +477,20 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 
 	/**
 	 * Provide X3DNormalNode instance (using a properly typed node) from inputOutput SFNode field <i>skinNormal</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DNormalNode] skinNormal field contains a single sequence of normal values, used by internal HAnimHumanoid mechanisms to create appropriate surface deformations as well as by the indexed face set definitions within the skin field that perform the actual rendering of surface geometry.
+ * <ul>
+ *  <li> <i>Warning:</i> index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
+ *  <li> <i>Warning:</i>  top-level Normal node must include containerField='skinNormal' for proper validation and operation. </li> 
+ * </ul>
 	 * @return value of skinNormal field
 	 */
 	public X3DNormalNode getSkinNormal(); // acceptable node types: X3DNormalNode
 
 	/**
 	 * Assign X3DNormalNode instance (using a properly typed node) to inputOutput SFNode field <i>skinNormal</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DNormalNode] skinNormal field contains a single sequence of normal values, used by internal HAnimHumanoid mechanisms to create appropriate surface deformations as well as by the indexed face set definitions within the skin field that perform the actual rendering of surface geometry. Warning: index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. Warning: top-level Normal node must include containerField='skinNormal' for proper validation and operation.
 	 * @param newValue is new value for the skinNormal field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -423,8 +499,10 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>translation</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Position of children relative to local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Position of children relative to local coordinate system.
+ * <ul>
+ *  <li> <i> Hint:</i>  since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid. </li> 
+ * </ul>
 	 * @return value of translation field
 	 */
 	public float[] getTranslation();
@@ -432,7 +510,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign 3-tuple float array to inputOutput SFVec3f field named <i>translation</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Position of children relative to local coordinate system.
+	 * <i>Tooltip:</i> Position of children relative to local coordinate system. Hint: since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid.
 	 * @param newValue is new value for the translation field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -441,9 +519,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide String enumeration value ['2.0'|'2.2'|'etc.'] from inputOutput SFString field named <i>version</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> HAnimHumanoid version, where standardized ISO 19774 value is 2.0.
+	 * <i>Tooltip:</i> HAnimHumanoid version, where value is 2.0 for standardized ISO 19774 initial version from 2006, and value is 2.2 for draft ISO 19774 version from 2018.
  * <ul>
- *  <li> <i> Warning:</i>  prior versions of HAnim nodes might not validate correctly. </li> 
+ *  <li> <i> Warning:</i>  prior versions of HAnim nodes might not validate correctly due to small changes in the contained-node content model. </li> 
  * </ul>
 	 * @return value of version field
 	 */
@@ -452,7 +530,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign String enumeration value ("2.0"|"2.2") ['2.0'|'2.2'|'etc.'] to inputOutput SFString field named <i>version</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> HAnimHumanoid version, where standardized ISO 19774 value is 2.0. Warning: prior versions of HAnim nodes might not validate correctly.
+	 * <i>Tooltip:</i> HAnimHumanoid version, where value is 2.0 for standardized ISO 19774 initial version from 2006, and value is 2.2 for draft ISO 19774 version from 2018. Warning: prior versions of HAnim nodes might not validate correctly due to small changes in the contained-node content model.
 	 * @param newValue is new value for the version field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -461,7 +539,16 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>viewpoints</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Tooltip:</i> [HAnimSite] The viewpoints field contains zero or more special HAnimSite nodes that are only affected by HAnimHumanoid transformations (and no HAnimJoint transformations). Each HAnimSite can contain a Viewpoint as virtual camera in the HAnimHumanoid reference frame (such as viewing the face or profile of the human figure).
+ * <ul>
+ *  <li> <i>Warning:</i> these are actual node declarations, not USE nodes. </li> 
+ *  <li> <i>Hint:</i> the viewpoint field has different functionality than the joints, segments and sites fields. </li> 
+ *  <li> <i>Hint:</i> the viewpoints field connects internal Site nodes that in turn hold relative Viewpoint nodes, such as &amp;lt;HAnimSite USE='ObserveFaceSite_view' containerField='viewpoints'/&amp;gt; which has corresponding counterpart nodes &amp;lt;HAnimSite DEF='ObserveFaceSite_view' name='ObserveFaceSite_view' containerField='children'&amp;gt; &amp;lt;Viewpoint description='look at me!'/&amp;gt; &amp;lt;/HAnimSite&amp;gt;. </li> 
+ *  <li> <i>Warning:</i>  top-level HAnimSite nodes (in turn containing Viewpoint nodes) must include containerField='viewpoints' for proper validation and operation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of viewpoints field
 	 */
 	public X3DNode[] getViewpoints(); // acceptable node types: HAnimSite
@@ -469,7 +556,9 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>viewpoints</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Tooltip:</i> [HAnimSite] The viewpoints field contains zero or more special HAnimSite nodes that are only affected by HAnimHumanoid transformations (and no HAnimJoint transformations). Each HAnimSite can contain a Viewpoint as virtual camera in the HAnimHumanoid reference frame (such as viewing the face or profile of the human figure). Warning: these are actual node declarations, not USE nodes. Hint: the viewpoint field has different functionality than the joints, segments and sites fields. Hint: the viewpoints field connects internal Site nodes that in turn hold relative Viewpoint nodes, such as &lt;HAnimSite USE='ObserveFaceSite_view' containerField='viewpoints'/&gt; which has corresponding counterpart nodes &lt;HAnimSite DEF='ObserveFaceSite_view' name='ObserveFaceSite_view' containerField='children'&gt; &lt;Viewpoint description='look at me!'/&gt; &lt;/HAnimSite&gt;. Warning: top-level HAnimSite nodes (in turn containing Viewpoint nodes) must include containerField='viewpoints' for proper validation and operation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value for the viewpoints field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -478,13 +567,13 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	/**
 	 * Add array of child viewpoints nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimSite.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value array to be appended the viewpoints field.
 	 */
 	public void addViewpoints(X3DNode[] newValue); // acceptable node types: HAnimSite
 	/**
 	 * Set single child viewpoints node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the viewpoints field.
+	 * @param newValue is new node for the viewpoints field
 	 */
 	public void setViewpoints(X3DNode newValue); // acceptable node types: HAnimSite
 

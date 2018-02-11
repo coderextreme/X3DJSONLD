@@ -4,12 +4,12 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
     <!--
     <script type="text/javascript" src="x3dom-full.debug.js"></script>
     -->
+   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
+   <script type="text/javascript" src="../node/x_ite.js"></script>
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
@@ -50,13 +50,13 @@ a:active {
 <tr>
 <td>
 <select id="file">
-<option>data/force.json</option>
-<option>data/ArchHalf.json</option>
-<option>data/bubbles.json</option>
-<option>data/geobubbles.json</option>
-<option>data/ObliqueStrategies.json</option>
-<option>data/ExtrusionHeart.json</option>
-<option>data/cobweb.json</option>
+<option>../data/force.json</option>
+<option>../data/ArchHalf.json</option>
+<option>../data/bubbles.json</option>
+<option>../data/geobubbles.json</option>
+<option>../data/ObliqueStrategies.json</option>
+<option>../data/ExtrusionHeart.json</option>
+<option>../data/bubs.json</option>
 <option>www.web3d.org/x3d/content/examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
 <option>www.web3d.org/x3d/content/examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
 <option>www.web3d.org/x3d/content/examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
@@ -15691,7 +15691,7 @@ Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
 <option>https://www.x3dom.org/x3dom</option>
-<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
 <option>none</option> <!-- X3DOM HTML -->
 </select>
 </td>
@@ -15701,7 +15701,7 @@ Use Namespace: <select id="namespace">
 		Click <a onclick='updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
 	</td>
 	<td>
-		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
+		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into x_ITE and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
 	</td>
 	<td>
 		Click <a onclick='decodeEXI4JSON();updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
@@ -15711,8 +15711,8 @@ Use Namespace: <select id="namespace">
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
     	<div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false'>
-           <p>Your browser may not support all features required by Cobweb!</p>
+    <X3DCanvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by x_ITE!</p>
 	   <X3D>
 	   <Scene>
 	   </Scene>
@@ -15722,8 +15722,8 @@ Use Namespace: <select id="namespace">
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
 	<div id="x3domxml"></div>
-    <X3DCanvas id='cobwebxml' cache='false'>
-           <p>Your browser may not support all features required by Cobweb!</p>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by x_ITE!</p>
 	   <X3D>
 	   <Scene>
 	   </Scene>
@@ -15755,23 +15755,23 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 </tr>
 </table>
 </body>
-    <script type="text/javascript" src="node/JavaScriptSerializer.js"></script>
-    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/Script.js"></script>
-    <script type="text/javascript" src="node/mapToMethod.js"></script>
-    <script type="text/javascript" src="node/mapToMethod2.js"></script>
-    <script type="text/javascript" src="node/fieldTypes.js"></script>
-    <script type="text/javascript" src="node/matrix.js"></script>
-    <script type="text/javascript" src="node/convertPlyToJson.js"></script>
-    <script type="text/javascript" src="node/convertStlToJson.js"></script>
-    <script type="text/javascript" src="node/convertJsonToStl.js"></script>
-    <script type="text/javascript" src="node/loaderJQuery.js"></script>
-    <script type="text/javascript" src="node/exi.js"></script>
+    <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod2.js"></script>
+    <script type="text/javascript" src="../node/fieldTypes.js"></script>
+    <script type="text/javascript" src="../node/matrix.js"></script>
+    <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
+    <script type="text/javascript" src="../node/convertStlToJson.js"></script>
+    <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/exi.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
-		loadJson('data/ball.json'); // does load ball.json
+		loadJson('../data/ball.json'); // does load ball.json
 	});
     </script>
 </html>

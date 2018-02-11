@@ -17,14 +17,13 @@
 <Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
 </Shape>
-<Shape><Text containerField="geometry" string="&quot;Node3 \\\\ \\&quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+<Shape><Text containerField="geometry" string="&quot;Node3 \\\\\\&quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
 </Text>
 <Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
 </Shape>
 <Script><field name="frontUrls" type="MFString" accessType="initializeOnly" value="&quot;rnl_front.png&quot; &quot;uffizi_front.png&quot;"></field>
-<![CDATA[ecmascript:
-			    var me = '"1" ""2" "\n3"';
+<![CDATA[ecmascript: var me = '"1"""2""\n3"';
 ]]></Script>
 </Transform>
 </Scene>

@@ -8,7 +8,6 @@
     "xml2js": "*",
     "java": "*",
     "xmldom": "*",
-    "three": "*",
     "mutation-observer": "*",
     "ajv": "*",
     "ajv-i18n": "*",

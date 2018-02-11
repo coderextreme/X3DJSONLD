@@ -76,13 +76,13 @@ function loadXmlBrowsers(xml) {
 	xml = $('#xml').val();
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-		$('#x3domxml').get()[0].innerHTML = xml;
 		try {
-			loadCobwebXML(xml, 1);
+			load_X_ITE_XML(xml);
 		} catch (e) {
-			alert("Problems with cobweb xml", e);
+			alert("Problems with X_ITE xml", e);
 			console.error(e);
 		}
+		$('#x3domxml').get()[0].innerHTML = xml;
 		x3dom.reload();
 	}
 }
@@ -190,34 +190,40 @@ function loadScripts(json, selector) {
     }
 }
 
-function loadCobwebXML(content, browserNumber) {
-	X3D(function(el) {
-		var browser = X3D.getBrowser(el[browserNumber]);
+function load_X_ITE_XML(content) {
+	X3D(function() {
+		var browser = X3D.getBrowser("#x_itexml");
 		browser.replaceWorld(browser.createX3DFromString(content));
+	}, function() {
+		alert("Failed to render XML to X_ITE");
 	});
 }
 
-function loadCobwebDOM(element, browserNumber) {
-	X3D(function(el) {
+function load_X_ITE_DOM(element, browserSelector) {
+	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser(el[browserNumber]);
+			var browser = X3D.getBrowser("#x_itejson");
 			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 				var importedScene = browser.importDocument(element);
 				browser.replaceWorld(importedScene);
 			}
 		}
+	}, function() {
+		alert("Failed to render DOM to X_ITE");
 	});
 }
 
-function loadCobwebJS(jsobj, browserNumber) {
-	X3D(function(el) {
+function load_X_ITE_JS(jsobj, browserSelector) {
+	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser(el[browserNumber]);
-			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
+			var browser = X3D.getBrowser("#x_itejson");
+			if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 				var importedScene = browser.importJS(jsobj);
 				browser.replaceWorld(importedScene);
 			}
 		}
+	}, function() {
+		alert("Failed to render JSON to X_ITE");
 	});
 }
 
@@ -267,9 +273,9 @@ function loadX3D(selector, json, url) {
     replaceX3DJSON(selector, json, url, xml, NS, function(child) {
 	    if (child != null) {
 		        try {
-			    loadCobwebJS(json, 0);
+			    load_X_ITE_JS(json);
 			} catch (e) {
-				alert("Problems with cobweb JSON", e);
+				alert("Problems with X_ITE DOM", e);
 				console.error(e);
 			}
 		        try {
@@ -358,7 +364,7 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
 		next(element);
 	}, function(err) {
 		alert(err);
-	});  // Cobweb if not XHTML NS
+	});  // X_ITE if not XHTML NS
 }
 
 /*
