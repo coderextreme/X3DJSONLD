@@ -1,4 +1,4 @@
-/* X_ITE v4.0.7-145 */
+/* X_ITE v4.1.3-191 */
 
 (function () {
 
@@ -12925,6 +12925,14 @@ function ()
 			for (var key in interests)
 				interests [key] ();
 		},
+		toString: function ()
+		{
+			var stream = { string: "" };
+
+			this .toStream (stream);
+
+			return stream .string;
+		},
 		toVRMLString: function ()
 		{ },
 		toXMLString: function ()
@@ -13491,6 +13499,10 @@ define ('x_ite/Bits/X3DConstants',[],function ()
 		X3DProtoDeclarationNode:   nodeType ++,
 		X3DProtoDeclaration:       nodeType ++,
 		X3DExternProtoDeclaration: nodeType ++,
+
+		// Non standard
+
+		BlendMode: nodeType ++,
 	};
 
 	Object .preventExtensions (X3DConstants);
@@ -13699,6 +13711,7 @@ function ($,
 		_inputRoutes: { },
 		_outputRoutes: { },
 		_accessType: X3DConstants .initializeOnly,
+		_unit: null,
 		_set: false,
 		_uniformLocation: null,
 		clone: function ()
@@ -13758,6 +13771,14 @@ function ($,
 		{
 			return this .getAccessType () !== X3DConstants .initializeOnly;
 		},
+		setUnit: function (value)
+		{
+			return this ._unit = value;
+		},
+		getUnit: function ()
+		{
+			return this ._unit;
+		},
 		setSet: function (value)
 		{
 			// Boolean indication whether the value is set during parse, or undefined.
@@ -13792,6 +13813,7 @@ function ($,
 			switch (this .getAccessType () & reference .getAccessType ())
 			{
 				case X3DConstants .initializeOnly:
+					reference .addFieldInterest (this);
 					this .set (reference .getValue ());
 					return;
 				case X3DConstants .inputOnly:
@@ -14006,20 +14028,28 @@ function ($,
 {
 "use strict";
 
-	return {
-		indent: "",
-		indentChar: "  ",
-		executionContextStack: [ null ],
-		importedNodesIndex: { },
-		exportedNodesIndex: { },
-		nodes: { },
-		names: { },
-		namesByNode: { },
-		importedNames: { },
-		routeNodes: { },
-		level: 0,
-		newName: 0,
-		containerFields: [ ],
+	function Generator ()
+	{
+		this .indent                = "";
+		this .indentChar            = "  ";
+		this .executionContextStack = [ null ];
+		this .importedNodesIndex    = { };
+		this .exportedNodesIndex    = { };
+		this .nodes                 = { };
+		this .names                 = { };
+		this .namesByNode           = { };
+		this .importedNames         = { };
+		this .routeNodes            = { };
+		this .level                 = 0;
+		this .newName               = 0;
+		this .containerFields       = [ ];
+		this .units                 = true;
+		this .unitCategories        = [ ];
+	}
+
+	Generator .prototype =
+	{
+		constructor: Generator,
 		Indent: function ()
 		{
 			return this .indent;
@@ -14264,6 +14294,43 @@ function ($,
 					return "inputOutput";
 			}
 		},
+		SetUnits: function (value)
+		{
+			this .units = value;
+		},
+		GetUnits: function ()
+		{
+			return this .units;
+		},
+		PushUnitCategory: function (category)
+		{
+			this .unitCategories .push (category);
+		},
+		PopUnitCategory: function ()
+		{
+			this .unitCategories .pop ();
+		},
+		Unit: function (category)
+		{
+			var length = this .unitCategories .length;
+
+			if (length == 0)
+				return category;
+
+			return this .unitCategories [length - 1];
+		},
+		ToUnit: function (category, value)
+		{
+			if (this .units)
+			{
+				var executionContext = this .ExecutionContext ();
+			
+				if (executionContext)
+					return executionContext .toUnit (category, value);
+			}
+
+			return value;
+		},
 		XMLEncode: function (string)
 		{
 			return string
@@ -14282,6 +14349,16 @@ function ($,
 			return string .replace (/\]\]\>/g, "\\]\\]\\>");
 		},
 	};
+
+	Generator .Get = function (stream)
+	{
+		if (! stream .generator)
+			stream .generator = new Generator ();
+
+		return stream .generator;
+	};
+
+	return Generator;
 });
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
@@ -14485,7 +14562,7 @@ function ($,
 
 				field .setValue (arguments [i]);
 	
-				this .addChildObject (field);
+				this .addChild (field);
 
 				array .unshift (field);
 			}
@@ -14516,7 +14593,7 @@ function ($,
 
 				field .setValue (arguments [i]);
 
-				this .addChildObject (field);
+				this .addChild (field);
 
 				array .push (field);
 			}
@@ -14564,7 +14641,7 @@ function ($,
 
 				field .setValue (array [i]);
 
-				this .addChildObject (field);
+				this .addChild (field);
 				args .push (field);
 			}
 
@@ -14686,7 +14763,7 @@ function ($,
 					if (value !== undefined)
 						field .setValue (value);
 
-					this .addChildObject (field);
+					this .addChild (field);
 					array .push (field);
 				}
 
@@ -14694,7 +14771,7 @@ function ($,
 					this .addEvent ();
 			}
 		},
-		addChildObject: function (value)
+		addChild: function (value)
 		{
 			value .addParent (this);
 		},
@@ -14702,48 +14779,54 @@ function ($,
 		{
 			value .removeParent (this);
 		},
-		toString: function ()
+		toStream: function (stream)
 		{
 			var
-				array  = this .getValue (),
-				string = "";
+				generator = Generator .Get (stream),
+				array     = this .getValue ();
 
 			switch (array .length)
 			{
 				case 0:
 				{
-					string += "[ ]";
+					stream .string += "[ ]";
 					break;
 				}
 				case 1:
 				{
-					string += array [0] .toString ();
+					generator .PushUnitCategory (this .getUnit ());
+
+					array [0] .toStream (stream);
+
+					generator .PopUnitCategory ();
 					break;
 				}
 				default:
 				{
-					string += "[\n";
-					Generator .IncIndent ();
+					generator .PushUnitCategory (this .getUnit ());
+
+					stream .string += "[\n";
+					generator .IncIndent ();
 				
 					for (var i = 0, length = array .length - 1; i < length; ++ i)
 					{
-						string += Generator .Indent ();
-						string += array [i] .toString ();
-						string += ",\n"
+						stream .string += generator .Indent ();
+						array [i] .toStream (stream);
+						stream .string += ",\n"
 					}
 
-					string += Generator .Indent ();
-					string += array [length] .toString ();
-					string += "\n";
+					stream .string += generator .Indent ();
+					array [length] .toStream (stream);
+					stream .string += "\n";
 
-					Generator .DecIndent ();
-					string += Generator .Indent ();
-					string += "]";
+					generator .DecIndent ();
+					stream .string += generator .Indent ();
+					stream .string += "]";
+
+					generator .PopUnitCategory ();
 					break;
 				}
 			}
-
-			return string;
 		},
 		toXMLStream: function (stream)
 		{
@@ -14751,15 +14834,21 @@ function ($,
 
 			if (length)
 			{
-				var value = this .getValue ();
+				var
+					generator = Generator .Get (stream),
+					array     = this .getValue ();
+
+				generator .PushUnitCategory (this .getUnit ());
 
 				for (var i = 0, n = length - 1; i < n; ++ i)
 				{
-					value [i] .toXMLStream (stream);
+					array [i] .toXMLStream (stream);
 					stream .string += ", ";
 				}
 
-				value [n] .toXMLStream (stream);
+				array [n] .toXMLStream (stream);
+
+				generator .PopUnitCategory ();
 			}
 		},
 		dispose: function ()
@@ -14873,9 +14962,9 @@ function ($, X3DField, X3DConstants)
 		{
 			return this .getValue ();
 		},
-		toString: function ()
+		toStream: function (stream)
 		{
-			return this .getValue () ? "TRUE" : "FALSE";
+			stream .string += this .getValue () ? "TRUE" : "FALSE";
 		},
 		toXMLStream: function (stream)
 		{
@@ -15515,13 +15604,13 @@ function ($, Color3, X3DField, X3DConstants)
 			this .getValue () .setHSV (h, s, v);
 			this .addEvent ();
 		},
-		toString: function ()
+		toStream: function (stream)
 		{
-			return this .getValue () .toString ();
+			stream .string += this .getValue () .toString ();
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += this .getValue () .toString ();
+			this .toStream (stream);
 		},
 	});
 
@@ -15882,7 +15971,7 @@ function ($, X3DField, SFColor, X3DConstants, Color4)
 			this .getValue () .setHSVA (h, s, v, a);
 			this .addEvent ();
 		},
-		toString: SFColor .prototype .toString,
+		toStream: SFColor .prototype .toStream,
 		toXMLStream: SFColor .prototype .toXMLStream,
 	});
 
@@ -16013,8 +16102,9 @@ define ('x_ite/Fields/SFDouble',[
 	"jquery",
 	"x_ite/Basic/X3DField",
 	"x_ite/Bits/X3DConstants",
+	"x_ite/InputOutput/Generator",
 ],
-function ($, X3DField, X3DConstants)
+function ($, X3DField, X3DConstants, Generator)
 {
 "use strict";
 
@@ -16050,13 +16140,17 @@ function ($, X3DField, X3DConstants)
 			X3DField .prototype .set .call (this, +value);
 		},
 		valueOf: X3DField .prototype .getValue,
-		toString: function ()
+		toStream: function (stream)
 		{
-			return String (this .getValue ());
+			var
+				generator = Generator .Get (stream),
+				category  = generator .Unit (this .getUnit ());
+
+			stream .string += String (generator .ToUnit (category, this .getValue ()));
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += String (this .getValue ());
+			this .toStream (stream);
 		},
 	});
 
@@ -16116,8 +16210,9 @@ define ('x_ite/Fields/SFFloat',[
 	"jquery",
 	"x_ite/Basic/X3DField",
 	"x_ite/Bits/X3DConstants",
+	"x_ite/InputOutput/Generator",
 ],
-function ($, X3DField, X3DConstants)
+function ($, X3DField, X3DConstants, Generator)
 {
 "use strict";
 
@@ -16153,17 +16248,305 @@ function ($, X3DField, X3DConstants)
 			X3DField .prototype .set .call (this, +value);
 		},
 		valueOf: X3DField .prototype .getValue,
-		toString: function ()
+		toStream: function (stream)
 		{
-			return String (this .getValue ());
+			var
+				generator = Generator .Get (stream),
+				category  = generator .Unit (this .getUnit ());
+
+			stream .string += String (generator .ToUnit (category, this .getValue ()));
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += String (this .getValue ());
+			this .toStream (stream);
 		},
 	});
 
 	return SFFloat;
+});
+
+/* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
+ *******************************************************************************
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright create3000, Scheffelstraße 31a, Leipzig, Germany 2011.
+ *
+ * All rights reserved. Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * The copyright notice above does not evidence any actual of intended
+ * publication of such source code, and is an unpublished work by create3000.
+ * This material contains CONFIDENTIAL INFORMATION that is the property of
+ * create3000.
+ *
+ * No permission is granted to copy, distribute, or create derivative works from
+ * the contents of this software, in whole or in part, without the prior written
+ * permission of create3000.
+ *
+ * NON-MILITARY USE ONLY
+ *
+ * All create3000 software are effectively free software with a non-military use
+ * restriction. It is free. Well commented source is provided. You may reuse the
+ * source in any way you please with the exception anything that uses it must be
+ * marked to indicate is contains 'non-military use only' components.
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright 2015, 2016 Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * This file is part of the X_ITE Project.
+ *
+ * X_ITE is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License version 3 only, as published by the
+ * Free Software Foundation.
+ *
+ * X_ITE is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License version 3 for more
+ * details (a copy is included in the LICENSE file that accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version 3
+ * along with X_ITE.  If not, see <http://www.gnu.org/licenses/gpl.html> for a
+ * copy of the GPLv3 License.
+ *
+ * For Silvio, Joy and Adi.
+ *
+ ******************************************************************************/
+
+
+define ('x_ite/Fields/SFImage',[
+	"jquery",
+	"x_ite/Basic/X3DField",
+	"x_ite/Bits/X3DConstants",
+],
+function ($, X3DField, X3DConstants)
+{
+"use strict";
+
+	/*
+	 *  Image
+	 */
+
+	function Image (width, height, comp, array)
+	{
+	   var MFInt32 = require ("x_ite/Fields/ArrayFields") .MFInt32;
+	   
+		this .width  = width;
+		this .height = height;
+		this .comp   = comp;
+		this .array  = new MFInt32 ();
+		this .array .setValue (array);
+		this .array .length = width * height;
+	}
+	
+	Image .prototype =
+	{
+		constructor: Image,
+		copy: function ()
+		{
+			return new Image (this .width, this .height, this .comp, this .array);
+		},
+		equals: function (image)
+		{
+			return this .width  === image .width &&
+			       this .height === image .height &&
+			       this .comp   === image .comp &&
+			       this .array .equals (image .array);
+		},
+		assign: function (image)
+		{
+			this .width  = image .width;
+			this .height = image .height;
+			this .comp   = image .comp;
+			this .array .set (image .array .getValue ());
+		},
+		set: function (width, height, comp, array)
+		{
+			this .width  = width;
+			this .height = height;
+			this .comp   = comp;
+			this .array .set (array);
+		},
+		setWidth: function (value)
+		{
+			this .width = value;
+			this .array .length = this .width  * this .height;	
+		},
+		getWidth: function ()
+		{
+			return this .width;
+		},
+		setHeight: function (value)
+		{
+			this .height = value;
+			this .array .length = this .width  * this .height;	
+		},
+		getHeight: function ()
+		{
+			return this .height;
+		},
+		setComp: function (value)
+		{
+			this .comp = value;
+		},
+		getComp: function ()
+		{
+			return this .comp;
+		},
+		setArray: function (value)
+		{
+			this .array .setValue (value);
+			this .array .length = this .width  * this .height;	
+		},
+		getArray: function ()
+		{
+			return this .array;
+		},
+	};
+
+	/*
+	 *  SFImage
+	 */
+
+	function SFImage (width, height, comp, array)
+	{
+	   if (this instanceof SFImage)
+	   {
+	   	var MFInt32 = require ("x_ite/Fields/ArrayFields") .MFInt32;
+	   
+			if (arguments .length === 4)
+				X3DField .call (this, new Image (+width, +height, +comp, array));
+			else
+				X3DField .call (this, new Image (0, 0, 0, new MFInt32 ()));
+
+			this .getValue () .getArray () .addParent (this);
+			this .addInterest ("set_size__", this);
+			return this;
+		}
+
+		return SFImage .apply (Object .create (SFImage .prototype), arguments);
+	}
+
+	SFImage .prototype = $.extend (Object .create (X3DField .prototype),
+	{
+		constructor: SFImage,
+		set_size__: function ()
+		{
+			this .getValue () .getArray () .length = this .width * this .height;
+		},
+		copy: function ()
+		{
+			return new SFImage (this .getValue ());
+		},
+		equals: function (image)
+		{
+			return this .getValue () .equals (image .getValue ());
+		},
+		isDefaultValue: function ()
+		{
+			return (
+				this .width  === 0 &&
+				this .height === 0 &&
+				this .comp   === 0);
+		},
+		set: function (image)
+		{
+			this .getValue () .assign (image);
+		},
+		getTypeName: function ()
+		{
+			return "SFImage";
+		},
+		getType: function ()
+		{
+			return X3DConstants .SFImage;
+		},
+		toStream: function (stream)
+		{
+		   var array = this .array .getValue ();
+
+			stream .string += this .width + " " + this .height + " " + this .comp;
+
+			for (var i = 0, length = this .width * this .height; i < length; ++ i)
+			{
+				stream .string += " 0x";
+				array [i] .toStream (stream, 16);
+			}
+		},
+		toXMLStream: function (stream)
+		{
+			this .toStream (stream);
+		},
+	});
+
+	var width = {
+		get: function ()
+		{
+			return this .getValue () .getWidth ();
+		},
+		set: function (value)
+		{
+			this .getValue () .setWidth (value);
+			this .addEvent ();
+		},
+		enumerable: true,
+		configurable: false
+	};
+
+	var height = {
+		get: function ()
+		{
+			return this .getValue () .getHeight ();
+		},
+		set: function (value)
+		{
+			this .getValue () .setHeight (value);
+			this .addEvent ();
+		},
+		enumerable: true,
+		configurable: false
+	};
+
+	var comp = {
+		get: function ()
+		{
+			return this .getValue () .getComp ();
+		},
+		set: function (value)
+		{
+			this .getValue () .setComp (value);
+			this .addEvent ();
+		},
+		enumerable: true,
+		configurable: false
+	};
+
+	var array = {
+		get: function ()
+		{
+			return this .getValue () .getArray ();
+		},
+		set: function (value)
+		{
+			this .getValue () .setArray (value);
+			this .addEvent ();
+		},
+		enumerable: true,
+		configurable: false
+	};
+
+	Object .defineProperty (SFImage .prototype, "width",  width);
+	Object .defineProperty (SFImage .prototype, "height", height);
+	Object .defineProperty (SFImage .prototype, "comp",   comp);
+	Object .defineProperty (SFImage .prototype, "array",  array);
+
+	width  .enumerable = false;
+	height .enumerable = false;
+
+	Object .defineProperty (SFImage .prototype, "x", width);
+	Object .defineProperty (SFImage .prototype, "y", height);
+
+	return SFImage;
 });
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
@@ -16256,9 +16639,9 @@ function ($, X3DField, X3DConstants)
 			X3DField .prototype .set .call (this, ~~value);
 		},
 		valueOf: X3DField .prototype .getValue,
-		toString: function (base)
+		toStream: function (stream, base)
 		{
-			return this .getValue () .toString (base);
+			stream .string += this .getValue () .toString (base);
 		},
 		toXMLStream: function (stream)
 		{
@@ -16398,13 +16781,13 @@ function ($, X3DField)
 			{
 				return new SFVec (this .getValue () .multMatrixDir (vector .getValue () .copy ()));
 			},
-			toString: function ()
+			toStream: function (stream)
 			{
-				return this .getValue () .toString ();
+				stream .string += this .getValue () .toString ();
 			},
 			toXMLStream: function (stream)
 			{
-				stream .string += this .getValue () .toString ();
+				this .toStream (stream);
 			},
 		});
 	};
@@ -16462,8 +16845,9 @@ function ($, X3DField)
 define ('x_ite/Fields/SFVecPrototypeTemplate',[
 	"jquery",
 	"x_ite/Basic/X3DField",
+	"x_ite/InputOutput/Generator",
 ],
-function ($, X3DField)
+function ($, X3DField, Generator)
 {
 "use strict";
 
@@ -16527,13 +16911,24 @@ function ($, X3DField)
 			{
 				return this .getValue () .abs ();
 			},
-			toString: function ()
+			toStream: function (stream)
 			{
-				return this .getValue () .toString ();
+				var
+					generator = Generator .Get (stream),
+					value     = this .getValue (),
+					category  = generator .Unit (this .getUnit ());
+
+				for (var i = 0, l = value .length - 1; i < l; ++ i)
+				{
+					stream .string += String (generator .ToUnit (category, value [i]));
+					stream .string += " ";
+				}
+
+				stream .string += String (generator .ToUnit (category, value [i]));
 			},
 			toXMLStream: function (stream)
 			{
-				stream .string += this .getValue () .toString ();
+				this .toStream (stream);
 			},
 		});
 	};
@@ -21599,8 +21994,9 @@ define ('x_ite/Fields/SFNode',[
 	"jquery",
 	"x_ite/Basic/X3DField",
 	"x_ite/Bits/X3DConstants",
+	"x_ite/InputOutput/Generator",
 ],
-function ($, X3DField, X3DConstants)
+function ($, X3DField, X3DConstants, Generator)
 {
 "use strict";
 
@@ -21792,23 +22188,51 @@ function ($, X3DField, X3DConstants)
 
 			return null;	
 		},
-		toString: function ()
+		toStream: function (stream)
 		{
 			var node = this .getValue ();
 
-			return node ? node .toString () : "NULL";
+			if (node)
+				node .toStream (stream);
+			else
+				stream .string += "NULL";
 		},
 		toVRMLString: function ()
 		{
+			
+		},
+		toVRMLStream: function (stream)
+		{
 			var node = this .getValue ();
 
-			return node ? node .toVRMLString () : "NULL";
+			if (node)
+				node .toVRMLStream (stream);
+			else
+				stream .string += "NULL";
+		},
+		toXMLString: function ()
+		{
+			var
+				stream    = { string: "" },
+				generator = Generator .Get (stream),
+				node      = this .getValue ();
+
+			generator .PushExecutionContext (node .getExecutionContext ());
+
+			this .toXMLStream (stream);
+
+			generator .PopExecutionContext ();
+
+			return stream .string;
 		},
 		toXMLStream: function (stream)
 		{
 			var node = this .getValue ();
 
-			stream .string += node ? node .toXMLString () : "NULL";
+			if (node)
+				node .toXMLStream (stream);
+			else
+				stream .string += "NULL";
 		},
 		dispose: function ()
 		{
@@ -21875,9 +22299,10 @@ define ('x_ite/Fields/SFRotation',[
 	"x_ite/Fields/SFVec3",
 	"x_ite/Basic/X3DField",
 	"x_ite/Bits/X3DConstants",
+	"x_ite/InputOutput/Generator",
 	"standard/Math/Numbers/Rotation4",
 ],
-function ($, SFVec3, X3DField, X3DConstants, Rotation4)
+function ($, SFVec3, X3DField, X3DConstants, Generator, Rotation4)
 {
 "use strict";
 
@@ -21958,13 +22383,20 @@ function ($, SFVec3, X3DField, X3DConstants, Rotation4)
 		{
 			return new SFRotation (Rotation4 .slerp (this .getValue (), rotation .getValue (), t));
 		},
-		toString: function ()
+		toStream: function (stream)
 		{
-			return this .getValue () .toString ();
+			var
+				generator = Generator .Get (stream),
+				r         = this .getValue () .get ();
+
+			stream .string +=  r .x + " " +
+			                   r .y + " " +
+			                   r .z + " " +
+			                   generator .ToUnit ("angle", r .w);
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += this .getValue () .toString ();
+			this .toStream (stream);
 		},
 	});
 
@@ -22152,13 +22584,13 @@ function ($,
 			X3DField .prototype .set .call (this, String (value));
 		},
 		valueOf: X3DField .prototype .getValue,
-		toString: function ()
+		toStream: function (stream)
 		{
-			return '"'+ SFString .escape (this .getValue ()) + '"';
+			stream .string += '"'+ SFString .escape (this .getValue ()) + '"';
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += Generator .XMLEncode (this .getValue ());
+			stream .string += Generator .Get (stream) .XMLEncode (this .getValue ());
 		},
 	});
 
@@ -22265,13 +22697,13 @@ function ($, X3DField, X3DConstants)
 			X3DField .prototype .set .call (this, +value);
 		},
 		valueOf: X3DField .prototype .getValue,
-		toString: function ()
+		toStream: function (stream)
 		{
-			return String (this .getValue ());
+			stream .string += String (this .getValue ());
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += String (this .getValue ());
+			this .toStream (stream);
 		},
 	});
 
@@ -22632,11 +23064,13 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			var length = this .length;
+			var
+				generator = Generator .Get (stream),
+				length    = this .length;
 
 			if (length)
 			{
-				Generator .EnterScope ();
+				generator .EnterScope ();
 
 				var value = this .getValue ();
 
@@ -22651,7 +23085,7 @@ function ($,
 					}
 					else
 					{
-						stream .string += Generator .Indent ();
+						stream .string += generator .Indent ();
 						stream .string += "<!-- NULL -->\n";
 					}
 				}
@@ -22664,11 +23098,11 @@ function ($,
 				}
 				else
 				{
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<!-- NULL -->";
 				}
 
-				Generator .LeaveScope ();
+				generator .LeaveScope ();
 			}
 		},
 	});
@@ -22773,287 +23207,6 @@ function ($,
 	Object .seal (ArrayFields);
 
 	return ArrayFields;
-});
-/* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
- *******************************************************************************
- *
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
- *
- * Copyright create3000, Scheffelstraße 31a, Leipzig, Germany 2011.
- *
- * All rights reserved. Holger Seelig <holger.seelig@yahoo.de>.
- *
- * The copyright notice above does not evidence any actual of intended
- * publication of such source code, and is an unpublished work by create3000.
- * This material contains CONFIDENTIAL INFORMATION that is the property of
- * create3000.
- *
- * No permission is granted to copy, distribute, or create derivative works from
- * the contents of this software, in whole or in part, without the prior written
- * permission of create3000.
- *
- * NON-MILITARY USE ONLY
- *
- * All create3000 software are effectively free software with a non-military use
- * restriction. It is free. Well commented source is provided. You may reuse the
- * source in any way you please with the exception anything that uses it must be
- * marked to indicate is contains 'non-military use only' components.
- *
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
- *
- * Copyright 2015, 2016 Holger Seelig <holger.seelig@yahoo.de>.
- *
- * This file is part of the X_ITE Project.
- *
- * X_ITE is free software: you can redistribute it and/or modify it under the
- * terms of the GNU General Public License version 3 only, as published by the
- * Free Software Foundation.
- *
- * X_ITE is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License version 3 for more
- * details (a copy is included in the LICENSE file that accompanied this code).
- *
- * You should have received a copy of the GNU General Public License version 3
- * along with X_ITE.  If not, see <http://www.gnu.org/licenses/gpl.html> for a
- * copy of the GPLv3 License.
- *
- * For Silvio, Joy and Adi.
- *
- ******************************************************************************/
-
-
-define ('x_ite/Fields/SFImage',[
-	"jquery",
-	"x_ite/Basic/X3DField",
-	"x_ite/Fields/ArrayFields",
-	"x_ite/Bits/X3DConstants",
-],
-function ($, X3DField, ArrayFields, X3DConstants)
-{
-"use strict";
-
-	var MFInt32 = ArrayFields .MFInt32;
-
-	/*
-	 *  Image
-	 */
-
-	function Image (width, height, comp, array)
-	{
-		this .width  = width;
-		this .height = height;
-		this .comp   = comp;
-		this .array  = new MFInt32 ();
-		this .array .setValue (array);
-		this .array .length = width * height;
-	}
-	
-	Image .prototype =
-	{
-		constructor: Image,
-		copy: function ()
-		{
-			return new Image (this .width, this .height, this .comp, this .array);
-		},
-		equals: function (image)
-		{
-			return this .width  === image .width &&
-			       this .height === image .height &&
-			       this .comp   === image .comp &&
-			       this .array .equals (image .array);
-		},
-		assign: function (image)
-		{
-			this .width  = image .width;
-			this .height = image .height;
-			this .comp   = image .comp;
-			this .array .set (image .array .getValue ());
-		},
-		set: function (width, height, comp, array)
-		{
-			this .width  = width;
-			this .height = height;
-			this .comp   = comp;
-			this .array .set (array);
-		},
-		setWidth: function (value)
-		{
-			this .width = value;
-			this .array .length = this .width  * this .height;	
-		},
-		getWidth: function ()
-		{
-			return this .width;
-		},
-		setHeight: function (value)
-		{
-			this .height = value;
-			this .array .length = this .width  * this .height;	
-		},
-		getHeight: function ()
-		{
-			return this .height;
-		},
-		setComp: function (value)
-		{
-			this .comp = value;
-		},
-		getComp: function ()
-		{
-			return this .comp;
-		},
-		setArray: function (value)
-		{
-			this .array .setValue (value);
-			this .array .length = this .width  * this .height;	
-		},
-		getArray: function ()
-		{
-			return this .array;
-		},
-	};
-
-	/*
-	 *  SFImage
-	 */
-
-	function SFImage (width, height, comp, array)
-	{
-	   if (this instanceof SFImage)
-	   {
-			if (arguments .length === 4)
-				X3DField .call (this, new Image (+width, +height, +comp, array));
-			else
-				X3DField .call (this, new Image (0, 0, 0, new MFInt32 ()));
-
-			this .getValue () .getArray () .addParent (this);
-			this .addInterest ("set_size__", this);
-			return this;
-		}
-
-		return SFImage .apply (Object .create (SFImage .prototype), arguments);
-	}
-
-	SFImage .prototype = $.extend (Object .create (X3DField .prototype),
-	{
-		constructor: SFImage,
-		set_size__: function ()
-		{
-			this .getValue () .getArray () .length = this .width * this .height;
-		},
-		copy: function ()
-		{
-			return new SFImage (this .getValue ());
-		},
-		equals: function (image)
-		{
-			return this .getValue () .equals (image .getValue ());
-		},
-		isDefaultValue: function ()
-		{
-			return (
-				this .width  === 0 &&
-				this .height === 0 &&
-				this .comp   === 0);
-		},
-		set: function (image)
-		{
-			this .getValue () .assign (image);
-		},
-		getTypeName: function ()
-		{
-			return "SFImage";
-		},
-		getType: function ()
-		{
-			return X3DConstants .SFImage;
-		},
-		toString: function ()
-		{
-		   var
-				string = this .width + " " + this .height + " " + this .comp,
-				array  = this .array .getValue ();
-
-			for (var i = 0, length = this .width * this .height; i < length; ++ i)
-				string += " 0x" + array [i] .toString (16);
-
-			return string;
-		},
-		toXMLStream: function (stream)
-		{
-			stream .string += this .toString ();
-		},
-	});
-
-	var width = {
-		get: function ()
-		{
-			return this .getValue () .getWidth ();
-		},
-		set: function (value)
-		{
-			this .getValue () .setWidth (value);
-			this .addEvent ();
-		},
-		enumerable: true,
-		configurable: false
-	};
-
-	var height = {
-		get: function ()
-		{
-			return this .getValue () .getHeight ();
-		},
-		set: function (value)
-		{
-			this .getValue () .setHeight (value);
-			this .addEvent ();
-		},
-		enumerable: true,
-		configurable: false
-	};
-
-	var comp = {
-		get: function ()
-		{
-			return this .getValue () .getComp ();
-		},
-		set: function (value)
-		{
-			this .getValue () .setComp (value);
-			this .addEvent ();
-		},
-		enumerable: true,
-		configurable: false
-	};
-
-	var array = {
-		get: function ()
-		{
-			return this .getValue () .getArray ();
-		},
-		set: function (value)
-		{
-			this .getValue () .setArray (value);
-			this .addEvent ();
-		},
-		enumerable: true,
-		configurable: false
-	};
-
-	Object .defineProperty (SFImage .prototype, "width",  width);
-	Object .defineProperty (SFImage .prototype, "height", height);
-	Object .defineProperty (SFImage .prototype, "comp",   comp);
-	Object .defineProperty (SFImage .prototype, "array",  array);
-
-	width  .enumerable = false;
-	height .enumerable = false;
-
-	Object .defineProperty (SFImage .prototype, "x", width);
-	Object .defineProperty (SFImage .prototype, "y", height);
-
-	return SFImage;
 });
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
@@ -23230,7 +23383,7 @@ function ($,
 ﻿
 define ('x_ite/Browser/VERSION',[],function ()
 {
-	return "4.0.7";
+	return "4.1.3";
 });
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
@@ -23951,36 +24104,38 @@ function ($,
 			this ._cloneCount -= count;
 		},
 		traverse: function () { },
-		toString: function ()
+		toStream: function (stream)
 		{
-			return this .getTypeName () + " { }";
+			stream .string += this .getTypeName () + " { }";
 		},
 		toXMLStream: function (stream)
 		{
-			if (Generator .IsSharedNode (this))
+			var generator = Generator .Get (stream);
+
+			if (generator .IsSharedNode (this))
 			{
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<!-- NULL -->";		
 				return;
 			}
 
-			Generator .EnterScope ();
+			generator .EnterScope ();
 
-			var name = Generator .Name (this);
+			var name = generator .Name (this);
 
 			if (name .length)
 			{
-				if (Generator .ExistsNode (this))
+				if (generator .ExistsNode (this))
 				{
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<";
 					stream .string += this .getTypeName ();
 					stream .string += " ";
 					stream .string += "USE='";
-					stream .string += Generator .XMLEncode (name);
+					stream .string += generator .XMLEncode (name);
 					stream .string += "'";
 
-					var containerField = Generator .ContainerField ();
+					var containerField = generator .ContainerField ();
 
 					if (containerField)
 					{
@@ -23988,33 +24143,33 @@ function ($,
 						{
 							stream .string += " ";
 							stream .string += "containerField='";
-							stream .string += Generator .XMLEncode (containerField .getName ());
+							stream .string += generator .XMLEncode (containerField .getName ());
 							stream .string += "'";
 						}
 					}
 
 					stream .string += "/>";
 
-					Generator .LeaveScope ();
+					generator .LeaveScope ();
 					return;
 				}
 			}
 		
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<";
 			stream .string += this .getTypeName ();
 
 			if (name .length)
 			{
-				Generator .AddNode (this);
+				generator .AddNode (this);
 
 				stream .string += " ";
 				stream .string += "DEF='";
-				stream .string += Generator .XMLEncode (name);
+				stream .string += generator .XMLEncode (name);
 				stream .string += "'";
 			}
 
-			var containerField = Generator .ContainerField ();
+			var containerField = generator .ContainerField ();
 
 			if (containerField)
 			{
@@ -24022,7 +24177,7 @@ function ($,
 				{
 					stream .string += " ";
 					stream .string += "containerField='";
-					stream .string += Generator .XMLEncode (containerField .getName ());
+					stream .string += generator .XMLEncode (containerField .getName ());
 					stream .string += "'";
 				}
 			}
@@ -24040,8 +24195,8 @@ function ($,
 			if (cdata && cdata .length === 0)
 				cdata = null;
 
-			Generator .IncIndent ();
-			Generator .IncIndent ();
+			generator .IncIndent ();
+			generator .IncIndent ();
 
 			for (var i = 0, length = fields .length; i < length; ++ i)
 			{
@@ -24052,7 +24207,7 @@ function ($,
 
 				var mustOutputValue = false;
 
-				if (Generator .ExecutionContext ())
+				if (generator .ExecutionContext ())
 				{
 					if (field .getAccessType () === X3DConstants .inputOutput && ! $.isEmptyObject (field .getReferences ()))
 					{
@@ -24073,7 +24228,7 @@ function ($,
 				// If we have no execution context we are not in a proto and must not generate IS references the same is true
 				// if the node is a shared node as the node does not belong to the execution context.
 
-				if ($.isEmptyObject (field .getReferences ()) || ! Generator .ExecutionContext () || mustOutputValue)
+				if ($.isEmptyObject (field .getReferences ()) || ! generator .ExecutionContext () || mustOutputValue)
 				{
 					if (mustOutputValue)
 						references .push (field);
@@ -24094,7 +24249,7 @@ function ($,
 									break;
 
 								stream .string += "\n";
-								stream .string += Generator .Indent ();
+								stream .string += generator .Indent ();
 								stream .string += field .getName ();
 								stream .string += "='";
 
@@ -24112,8 +24267,8 @@ function ($,
 				}
 			}
 
-			Generator .DecIndent ();
-			Generator .DecIndent ();
+			generator .DecIndent ();
+			generator .DecIndent ();
 	
 			if ((! this .hasUserDefinedFields () || userDefinedFields .length === 0) && references .length === 0 && childNodes .length === 0 && ! cdata)
 			{
@@ -24123,7 +24278,7 @@ function ($,
 			{
 				stream .string += ">\n";
 
-				Generator .IncIndent ();
+				generator .IncIndent ();
 
 				if (this .hasUserDefinedFields ())
 				{
@@ -24131,11 +24286,11 @@ function ($,
 					{
 						var field = userDefinedFields [name];
 
-						stream .string += Generator .Indent ();
+						stream .string += generator .Indent ();
 						stream .string += "<field";
 						stream .string += " ";
 						stream .string += "accessType='";
-						stream .string += Generator .AccessType (field .getAccessType ());
+						stream .string += generator .AccessType (field .getAccessType ());
 						stream .string += "'";
 						stream .string += " ";
 						stream .string += "type='";
@@ -24143,7 +24298,7 @@ function ($,
 						stream .string += "'";
 						stream .string += " ";
 						stream .string += "name='";
-						stream .string += Generator .XMLEncode (field .getName ());
+						stream .string += generator .XMLEncode (field .getName ());
 						stream .string += "'";
 
 						// If the field is a inputOutput and we have as reference only inputOnly or outputOnly we must output the value
@@ -24166,9 +24321,9 @@ function ($,
 								mustOutputValue = true;
 						}
 
-						if (($.isEmptyObject (field .getReferences ()) || ! Generator .ExecutionContext ()) || mustOutputValue)
+						if (($.isEmptyObject (field .getReferences ()) || ! generator .ExecutionContext ()) || mustOutputValue)
 						{
-							if (mustOutputValue && Generator .ExecutionContext ())
+							if (mustOutputValue && generator .ExecutionContext ())
 								references .push (field);
 		
 							if (! field .isInitializable () || field .isDefaultValue ())
@@ -24184,22 +24339,22 @@ function ($,
 									case X3DConstants .SFNode:
 									case X3DConstants .MFNode:
 									{
-										Generator .PushContainerField (null);
+										generator .PushContainerField (null);
 
 										stream .string += ">\n";
 
-										Generator .IncIndent ();
+										generator .IncIndent ();
 
 										field .toXMLStream (stream);
 
 										stream .string += "\n";
 
-										Generator .DecIndent ();
+										generator .DecIndent ();
 
-										stream .string += Generator .Indent ();
+										stream .string += generator .Indent ();
 										stream .string += "</field>\n";
 
-										Generator .PopContainerField ();
+										generator .PopContainerField ();
 										break;
 									}
 									default:
@@ -24218,7 +24373,7 @@ function ($,
 						}
 						else
 						{
-							if (Generator .ExecutionContext ())
+							if (generator .ExecutionContext ())
 								references .push (field);
 
 							stream .string += "/>\n";
@@ -24228,11 +24383,11 @@ function ($,
 		
 				if (references .length)
 				{
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<IS>";
 					stream .string += "\n";
 
-					Generator .IncIndent ();
+					generator .IncIndent ();
 		
 					for (var i = 0, length = references .length; i < length; ++ i)
 					{
@@ -24244,23 +24399,23 @@ function ($,
 						{
 							var protoField = protoFields [id];
 
-							stream .string += Generator .Indent ();
+							stream .string += generator .Indent ();
 							stream .string += "<connect";
 							stream .string += " ";
 							stream .string += "nodeField='";
-							stream .string += Generator .XMLEncode (field .getName ());
+							stream .string += generator .XMLEncode (field .getName ());
 							stream .string += "'";
 							stream .string += " ";
 							stream .string += "protoField='";
-							stream .string += Generator .XMLEncode (protoField .getName ());
+							stream .string += generator .XMLEncode (protoField .getName ());
 							stream .string += "'";
 							stream .string += "/>\n";
 						}
 					}
 
-					Generator .DecIndent ();
+					generator .DecIndent ();
 
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "</IS>\n";
 				}
 
@@ -24268,13 +24423,13 @@ function ($,
 				{
 					var field = childNodes [i];
 
-					Generator .PushContainerField (field);
+					generator .PushContainerField (field);
 
 					field .toXMLStream (stream);
 
 					stream .string += "\n";
 
-					Generator .PopContainerField ();
+					generator .PopContainerField ();
 				}
 
 				if (cdata)
@@ -24284,20 +24439,20 @@ function ($,
 						var value = cdata [i];
 
 						stream .string += "<![CDATA[";
-						stream .string += Generator .escapeCDATA (value);
+						stream .string += generator .escapeCDATA (value);
 						stream .string += "]]>\n";
 					}
 				}
 
-				Generator .DecIndent ();
+				generator .DecIndent ();
 
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "</";
 				stream .string += this .getTypeName ();
 				stream .string += ">";
 			}
 
-			Generator .LeaveScope ();
+			generator .LeaveScope ();
 		},
 		dispose: function ()
 		{
@@ -28380,7 +28535,9 @@ function ($,
 		constructor: ComponentInfo,
 		toXMLStream: function (stream)
 		{
-			stream .string += Generator .Indent ();
+			var generator = Generator .Get (stream);
+
+			stream .string += generator .Indent ();
 			stream .string += "<component";
 			stream .string += " ";
 			stream .string += "name='";
@@ -28631,7 +28788,7 @@ function ($,
 				if (destinationNode instanceof ImportedNode)
 					destinationNode = destinationNode .getExportedNode () .getValue ();
 
-				route ._route = this .getExecutionContext () .addSimpleRoute (new Fields .SFNode (sourceNode), sourceField, new Fields .SFNode (destinationNode), destinationField);
+				route ._route = this .getExecutionContext () .addSimpleRoute (sourceNode, sourceField, destinationNode, destinationField);
 			}
 			catch (error)
 			{
@@ -28678,24 +28835,26 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			if (Generator .ExistsNode (this .getInlineNode ()))
+			var generator = Generator .Get (stream);
+
+			if (generator .ExistsNode (this .getInlineNode ()))
 			{
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<IMPORT";
 				stream .string += " ";
 				stream .string += "inlineDEF='";
-				stream .string += Generator .XMLEncode (Generator .Name (this .getInlineNode ()));
+				stream .string += generator .XMLEncode (generator .Name (this .getInlineNode ()));
 				stream .string += "'";
 				stream .string += " ";
 				stream .string += "exportedDEF='";
-				stream .string += Generator .XMLEncode (this .getExportedName ());
+				stream .string += generator .XMLEncode (this .getExportedName ());
 				stream .string += "'";
 
 				if (this .getImportedName () !== this .getExportedName ())
 				{
 					stream .string += " ";
 					stream .string += "AS='";
-					stream .string += Generator .XMLEncode (this .getImportedName ());
+					stream .string += generator .XMLEncode (this .getImportedName ());
 					stream .string += "'";
 				}
 
@@ -28703,8 +28862,8 @@ function ($,
 
 				try
 				{
-					Generator .AddRouteNode (this);
-					Generator .AddImportedNode (this .getExportedNode (), this .getImportedName ());
+					generator .AddRouteNode (this);
+					generator .AddImportedNode (this .getExportedNode (), this .getImportedName ());
 				}
 				catch (error)
 				{
@@ -28721,37 +28880,37 @@ function ($,
 							destinationNode  = route .destinationNode,
 							destinationField = route .destinationField;
 
-						if (Generator .ExistsRouteNode (sourceNode) && Generator .ExistsRouteNode (destinationNode))
+						if (generator .ExistsRouteNode (sourceNode) && generator .ExistsRouteNode (destinationNode))
 						{
 							if (sourceNode instanceof ImportedNode)
 								var sourceNodeName = sourceNode .getImportedName ();
 							else
-								var sourceNodeName = Generator .Name (sourceNode);
+								var sourceNodeName = generator .Name (sourceNode);
 	
 							if (destinationNode instanceof ImportedNode)
 								var destinationNodeName = destinationNode .getImportedName ();
 							else
-								var destinationNodeName = Generator .Name (destinationNode);
+								var destinationNodeName = generator .Name (destinationNode);
 	
 							stream .string += "\n";
 							stream .string += "\n";
-							stream .string += Generator .Indent ();
+							stream .string += generator .Indent ();
 							stream .string += "<ROUTE";
 							stream .string += " ";
 							stream .string += "fromNode='";
-							stream .string += Generator .XMLEncode (sourceNodeName);
+							stream .string += generator .XMLEncode (sourceNodeName);
 							stream .string += "'";
 							stream .string += " ";
 							stream .string += "fromField='";
-							stream .string += Generator .XMLEncode (sourceField);
+							stream .string += generator .XMLEncode (sourceField);
 							stream .string += "'";
 							stream .string += " ";
 							stream .string += "toNode='";
-							stream .string += Generator .XMLEncode (destinationNodeName);
+							stream .string += generator .XMLEncode (destinationNodeName);
 							stream .string += "'";
 							stream .string += " ";
 							stream .string += "toField='";
-							stream .string += Generator .XMLEncode (destinationField);
+							stream .string += generator .XMLEncode (destinationField);
 							stream .string += "'";
 							stream .string += "/>";
 						}
@@ -29173,18 +29332,19 @@ function ($,
 		toXMLStream: function (stream)
 		{
 			var
-				sourceNodeName      = Generator .LocalName (this .getSourceNode ()),
-				destinationNodeName = Generator .LocalName (this .getDestinationNode ());
+				generator           = Generator .Get (stream),
+				sourceNodeName      = generator .LocalName (this .getSourceNode ()),
+				destinationNodeName = generator .LocalName (this .getDestinationNode ());
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<ROUTE";
 			stream .string += " ";
 			stream .string += "fromNode='";
-			stream .string += Generator .XMLEncode (sourceNodeName);
+			stream .string += generator .XMLEncode (sourceNodeName);
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "fromField='";
-			stream .string += Generator .XMLEncode (this ._sourceField .getName ());
+			stream .string += generator .XMLEncode (this ._sourceField .getName ());
 
 			if (this ._sourceField .getAccessType () === X3DConstants .inputOutput)
 				stream .string += "_changed";
@@ -29192,7 +29352,7 @@ function ($,
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "toNode='";
-			stream .string += Generator .XMLEncode (destinationNodeName);
+			stream .string += generator .XMLEncode (destinationNodeName);
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "toField='";
@@ -29200,7 +29360,7 @@ function ($,
 			if (this ._destinationField .getAccessType () === X3DConstants .inputOutput)
 				stream .string += "set_";
 
-			stream .string += Generator .XMLEncode (this ._destinationField .getName ());
+			stream .string += generator .XMLEncode (this ._destinationField .getName ());
 			stream .string += "'";
 			stream .string += "/>";
 		},
@@ -30630,9 +30790,11 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			Generator .PushExecutionContext (this);
-			Generator. EnterScope ();
-			Generator .ImportedNodes (this .getImportedNodes ());
+			var generator = Generator .Get (stream);
+
+			generator .PushExecutionContext (this);
+			generator .EnterScope ();
+			generator .ImportedNodes (this .getImportedNodes ());
 
 			// Output extern protos
 
@@ -30673,8 +30835,8 @@ function ($,
 
 			this .getRoutes () .toXMLStream (stream);
 
-			Generator .LeaveScope ();
-			Generator .PopExecutionContext ();
+			generator .LeaveScope ();
+			generator .PopExecutionContext ();
 		},
 	});
 
@@ -30763,7 +30925,11 @@ function ($,
 
 	function UnitInfo (category, name, conversionFactor)
 	{
-		this .category         = category;
+		Object .defineProperty (this, "category", {
+		    value: category,
+		    writable: false,
+		});
+
 		this .name             = name;
 		this .conversionFactor = conversionFactor;
 	}
@@ -30773,7 +30939,9 @@ function ($,
 		constructor: UnitInfo,
 		toXMLStream: function (stream)
 		{
-			stream .string += Generator .Indent ();
+			var generator = Generator .Get (stream);
+
+			stream .string += generator .Indent ();
 			stream .string += "<unit";
 			stream .string += " ";
 			stream .string += "category='";
@@ -30781,7 +30949,7 @@ function ($,
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "name='";
-			stream .string += Generator .XMLEncode (this .name);
+			stream .string += generator .XMLEncode (this .name);
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "conversionFactor='";
@@ -30953,20 +31121,22 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			var localName = Generator .LocalName (this .localNode);
+			var
+				generator = Generator .Get (stream),
+				localName = generator .LocalName (this .localNode);
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<EXPORT";
 			stream .string += " ";
 			stream .string += "localDEF='";
-			stream .string += Generator .XMLEncode (localName);
+			stream .string += generator .XMLEncode (localName);
 			stream .string += "'";
 
 			if (this .exportedName !== localName)
 			{
 				stream .string += " ";
 				stream .string += "AS='";
-				stream .string += Generator .XMLEncode (this .exportedName);
+				stream .string += generator .XMLEncode (this .exportedName);
 				stream .string += "'";
 			}
 
@@ -31086,6 +31256,8 @@ function ($,
 		},
 		updateUnit: function (category, name, conversionFactor)
 		{
+			// Private function.
+
 			var unit = this .unitArray .get (category);
 
 			if (! unit)
@@ -31097,6 +31269,62 @@ function ($,
 		getUnits: function ()
 		{
 			return this .unitArray;
+		},
+		fromUnit: function (category, value)
+		{
+			switch (category)
+			{
+				// Base units
+
+			   case "angle":
+			   case "force":
+			   case "length":
+			   case "mass":
+					return value * this .getUnits () .get (category) .conversionFactor;
+
+				// Derived units
+
+				case "acceleration:":
+					return value * this .getUnits () .get ("length") .conversionFactor;
+				case "angularRate":
+					return value * this .getUnits () .get ("angle") .conversionFactor;
+				case "area":
+					return value * Math .pow (this .getUnits () .get ("length") .conversionFactor, 2);
+				case "speed":
+					return value * this .getUnits () .get ("length") .conversionFactor;
+				case "volume":
+					return value * Math .pow (this .getUnits () .get ("length") .conversionFactor, 3);
+			}
+
+			return value;
+		},
+		toUnit: function (category, value)
+		{
+			switch (category)
+			{
+				// Base units
+
+			   case "angle":
+			   case "force":
+			   case "length":
+			   case "mass":
+					return value / this .getUnits () .get (category) .conversionFactor;
+			
+				// Derived units
+
+				case "acceleration:":
+					return value / this .getUnits () .get ("length") .conversionFactor;
+				case "angularRate":
+					return value / this .getUnits () .get ("angle") .conversionFactor;
+				case "area":
+					return value / Math .pow (this .getUnits () .get ("length") .conversionFactor, 2);
+				case "speed":
+					return value / this .getUnits () .get ("length") .conversionFactor;
+				case "volume":
+					return value / Math .pow (this .getUnits () .get ("length") .conversionFactor, 3);
+			}
+
+			return value;
 		},
 		setMetaData: function (name, value)
 		{
@@ -31186,7 +31414,9 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			var specificationVersion = this .getSpecificationVersion ();
+			var
+				generator            = Generator .Get (stream),
+				specificationVersion = this .getSpecificationVersion ();
 
 			if (specificationVersion === "2.0")
 				specificationVersion = "3.3";
@@ -31214,12 +31444,12 @@ function ($,
 			stream .string += specificationVersion;
 			stream .string += ".xsd'>\n";
 
-			Generator .IncIndent ();
+			generator .IncIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<head>\n";
 
-			Generator .IncIndent ();
+			generator .IncIndent ();
 		
 			// <head>
 
@@ -31243,37 +31473,37 @@ function ($,
 
 			for (var key in metaDatas)
 			{
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<meta";
 				stream .string += " ";
 				stream .string += "name='";
-				stream .string += Generator .XMLEncode (key);
+				stream .string += generator .XMLEncode (key);
 				stream .string += "'";
 				stream .string += " ";
 				stream .string += "content='";
-				stream .string += Generator .XMLEncode (metaDatas [key]);
+				stream .string += generator .XMLEncode (metaDatas [key]);
 				stream .string += "'";
 				stream .string += "/>\n";
 			}
 		
 			// </head>
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "</head>\n";
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<Scene>\n";
 
-			Generator .IncIndent ();
+			generator .IncIndent ();
 		
 			// <Scene>
 
 			var exportedNodes = this .getExportedNodes ();
 
-			Generator .PushExecutionContext (this);
-			Generator .EnterScope ();
-			Generator .ExportedNodes (exportedNodes);
+			generator .PushExecutionContext (this);
+			generator .EnterScope ();
+			generator .ExportedNodes (exportedNodes);
 
 			X3DExecutionContext .prototype .toXMLStream .call (this, stream);
 		
@@ -31289,17 +31519,17 @@ function ($,
 				{ }
 			}
 
-			Generator .LeaveScope ();
-			Generator .PopExecutionContext ();
+			generator .LeaveScope ();
+			generator .PopExecutionContext ();
 
 			// </Scene>
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "</Scene>\n";
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 
 			stream .string += "</X3D>\n";
 		},
@@ -31460,6 +31690,138 @@ function ($,
 	});
 
 	return Scene;
+});
+
+/* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
+ *******************************************************************************
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright create3000, Scheffelstraße 31a, Leipzig, Germany 2011.
+ *
+ * All rights reserved. Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * The copyright notice above does not evidence any actual of intended
+ * publication of such source code, and is an unpublished work by create3000.
+ * This material contains CONFIDENTIAL INFORMATION that is the property of
+ * create3000.
+ *
+ * No permission is granted to copy, distribute, or create derivative works from
+ * the contents of this software, in whole or in part, without the prior written
+ * permission of create3000.
+ *
+ * NON-MILITARY USE ONLY
+ *
+ * All create3000 software are effectively free software with a non-military use
+ * restriction. It is free. Well commented source is provided. You may reuse the
+ * source in any way you please with the exception anything that uses it must be
+ * marked to indicate is contains 'non-military use only' components.
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright 2015, 2016 Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * This file is part of the X_ITE Project.
+ *
+ * X_ITE is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License version 3 only, as published by the
+ * Free Software Foundation.
+ *
+ * X_ITE is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License version 3 for more
+ * details (a copy is included in the LICENSE file that accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version 3
+ * along with X_ITE.  If not, see <http://www.gnu.org/licenses/gpl.html> for a
+ * copy of the GPLv3 License.
+ *
+ * For Silvio, Joy and Adi.
+ *
+ ******************************************************************************/
+
+
+define ('x_ite/Parser/X3DParser',[],function ()
+{
+"use strict";
+
+	function X3DParser (scene)
+	{
+		this .scene             = scene;
+		this .executionContexts = [ scene ];
+		this .units             = true;
+	}
+
+	X3DParser .prototype = {
+		constructor: X3DParser,
+		getScene: function ()
+		{
+			return this .scene;
+		},
+		getBrowser: function ()
+		{
+			return this .scene .getBrowser ();
+		},
+		getExecutionContext: function ()
+		{
+			return this .executionContexts [this .executionContexts .length - 1];
+		},
+		pushExecutionContext: function (executionContext)
+		{
+			return this .executionContexts .push (executionContext);
+		},
+		popExecutionContext: function ()
+		{
+			this .executionContexts .pop ();
+		},
+		isInsideProtoDefinition: function ()
+		{
+			return this .executionContexts .length > 1;
+		},
+		addRootNode: function (node)
+		{
+			this .getExecutionContext () .rootNodes .push (node);
+		},
+		setUnits: function (generator)
+		{
+			if ((typeof arguments [0]) == "boolean")
+			{
+				this .units = arguments [0];
+				return;
+			}
+
+			var
+				version = /Titania\s+V(\d+).*/,
+				match   = generator .match (version);
+
+			if (match)
+			{
+				var major = parseInt (match [1]);
+
+				// Before version 4 units are wrongly implemented.
+				if (major < 4)
+				{
+					this .units = false;
+					return;
+				}
+			}
+		
+			this .units = true;
+		},
+		getUnits: function ()
+		{
+			return this .units;
+		},
+		fromUnit: function (category, value)
+		{
+			if (this .units)
+				return this .getExecutionContext () .fromUnit (category, value);
+
+			return value;
+		},
+	};
+
+	return X3DParser;
 });
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
@@ -31899,10 +32261,6 @@ function ($,
 				console .error (error .message);
 			}
 		},
-		getExtendedEventHandling: function ()
-		{
-			return false;
-		},
 		getInnerNode: function ()
 		{
 			var rootNodes = this .getRootNodes () .getValue ();
@@ -31916,6 +32274,18 @@ function ($,
 			}
 
 			throw new Error ("Root node not available.");
+		},
+		fromUnit: function (category, value)
+		{
+			return this .protoNode .getProtoDeclaration () .fromUnit (category, value);
+		},
+		toUnit: function (category, value)
+		{
+			return this .protoNode .getProtoDeclaration () .toUnit (category, value);
+		},
+		getExtendedEventHandling: function ()
+		{
+			return false;
 		},
 		importExternProtos: function (externprotos)
 		{
@@ -31982,33 +32352,35 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			if (Generator .IsSharedNode (this))
+			var generator = Generator .Get (stream);
+
+			if (generator .IsSharedNode (this))
 			{
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<!-- NULL -->";		
 				return;
 			}
 
-			Generator .EnterScope ();
+			generator .EnterScope ();
 
-			var name = Generator .Name (this);
+			var name = generator .Name (this);
 
 			if (name .length)
 			{
-				if (Generator .ExistsNode (this))
+				if (generator .ExistsNode (this))
 				{
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<ProtoInstance";
 					stream .string += " ";
 					stream .string += "name='";
-					stream .string += Generator .XMLEncode (this .getTypeName ());
+					stream .string += generator .XMLEncode (this .getTypeName ());
 					stream .string += "'";
 					stream .string += " ";
 					stream .string += "USE='";
-					stream .string += Generator .XMLEncode (name);
+					stream .string += generator .XMLEncode (name);
 					stream .string += "'";
 
-					var containerField = Generator .ContainerField ();
+					var containerField = generator .ContainerField ();
 
 					if (containerField)
 					{
@@ -32016,36 +32388,36 @@ function ($,
 						{
 							stream .string += " ";
 							stream .string += "containerField='";
-							stream .string += Generator .XMLEncode (containerField .getName ());
+							stream .string += generator .XMLEncode (containerField .getName ());
 							stream .string += "'";
 						}
 					}
 
 					stream .string += "/>";
 
-					Generator .LeaveScope ();
+					generator .LeaveScope ();
 					return;
 				}
 			}
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<ProtoInstance";
 			stream .string += " ";
 			stream .string += "name='";
-			stream .string += Generator .XMLEncode (this .getTypeName ());
+			stream .string += generator .XMLEncode (this .getTypeName ());
 			stream .string += "'";
 
 			if (name .length)
 			{
-				Generator .AddNode (this);
+				generator .AddNode (this);
 
 				stream .string += " ";
 				stream .string += "DEF='";
-				stream .string += Generator .XMLEncode (name);
+				stream .string += generator .XMLEncode (name);
 				stream .string += "'";
 			}
 
-			var containerField = Generator .ContainerField ();
+			var containerField = generator .ContainerField ();
 
 			if (containerField)
 			{
@@ -32053,28 +32425,14 @@ function ($,
 				{
 					stream .string += " ";
 					stream .string += "containerField='";
-					stream .string += Generator .XMLEncode (containerField .getName ());
+					stream .string += generator .XMLEncode (containerField .getName ());
 					stream .string += "'";
 				}
 			}
 		
-			var
-				fields   = this .getChangedFields (),
-				metadata = this .metadata_;
+			var fields = this .getChangedFields ();
 
-			try
-			{
-				metadata = this .getField ("metadata");
-			}
-			catch (error)
-			{ }
-
-			if (metadata === this .metadata_)
-			{
-				fields = fields .filter (function (value) { return value !== this .metadata_; } .bind (this));
-			}
-
-			if (fields .length === 0 && (metadata === this .metadata_ ? true || ! metadata .getValue () : true))
+			if (fields .length === 0)
 			{
 				stream .string += "/>";
 			}
@@ -32082,7 +32440,7 @@ function ($,
 			{
 				stream .string += ">\n";
 
-				Generator .IncIndent ();
+				generator .IncIndent ();
 
 				var references = [ ];
 
@@ -32095,7 +32453,7 @@ function ($,
 
 					var mustOutputValue = false;
 
-					if (Generator .ExecutionContext ())
+					if (generator .ExecutionContext ())
 					{
 						if (field .getAccessType () === X3DConstants .inputOutput && ! $.isEmptyObject (field .getReferences ()))
 						{
@@ -32116,7 +32474,7 @@ function ($,
 					// If we have no execution context we are not in a proto and must not generate IS references the same is true
 					// if the node is a shared node as the node does not belong to the execution context.
 
-					if ($.isEmptyObject (field .getReferences ()) || ! Generator .ExecutionContext () || mustOutputValue)
+					if ($.isEmptyObject (field .getReferences ()) || ! generator .ExecutionContext () || mustOutputValue)
 					{
 						if (mustOutputValue)
 							references .push (field);
@@ -32125,11 +32483,11 @@ function ($,
 						{
 							case X3DConstants .MFNode:
 							{
-								stream .string += Generator .Indent ();
+								stream .string += generator .Indent ();
 								stream .string += "<fieldValue";
 								stream .string += " ";
 								stream .string += "name='";
-								stream .string += Generator .XMLEncode (field .getName ());
+								stream .string += generator .XMLEncode (field .getName ());
 								stream .string += "'";
 
 								if (field .length === 0)
@@ -32140,15 +32498,15 @@ function ($,
 								{
 									stream .string += ">\n";
 
-									Generator .IncIndent ();
+									generator .IncIndent ();
 
 									field .toXMLStream (stream);
 
 									stream .string += "\n";
 
-									Generator .DecIndent ();
+									generator .DecIndent ();
 
-									stream .string += Generator .Indent ();
+									stream .string += generator .Indent ();
 									stream .string += "</fieldValue>\n";
 								}
 
@@ -32158,23 +32516,23 @@ function ($,
 							{
 								if (field .getValue () !== null)
 								{
-									stream .string += Generator .Indent ();
+									stream .string += generator .Indent ();
 									stream .string += "<fieldValue";
 									stream .string += " ";
 									stream .string += "name='";
-									stream .string += Generator .XMLEncode (field .getName ())
+									stream .string += generator .XMLEncode (field .getName ())
 									stream .string += "'";
 									stream .string += ">\n";
 									
-									Generator .IncIndent ();
+									generator .IncIndent ();
 
 									field .toXMLStream (stream);
 
 									stream .string += "\n";
 
-									Generator .DecIndent ();
+									generator .DecIndent ();
 
-									stream .string += Generator .Indent ();
+									stream .string += generator .Indent ();
 									stream .string += "</fieldValue>\n";		
 									break;
 								}
@@ -32183,11 +32541,11 @@ function ($,
 							}
 							default:
 							{
-								stream .string += Generator .Indent ();
+								stream .string += generator .Indent ();
 								stream .string += "<fieldValue";
 								stream .string += " ";
 								stream .string += "name='";
-								stream .string += Generator .XMLEncode (field .getName ())
+								stream .string += generator .XMLEncode (field .getName ())
 								stream .string += "'";
 								stream .string += " ";
 								stream .string += "value='";
@@ -32208,11 +32566,11 @@ function ($,
 
 				if (references .length)
 				{
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<IS>";
 					stream .string += "\n";
 
-					Generator .IncIndent ();
+					generator .IncIndent ();
 		
 					for (var i = 0, length = references .length; i < length; ++ i)
 					{
@@ -32224,43 +32582,33 @@ function ($,
 						{
 							var protoField = protoFields [id];
 
-							stream .string += Generator .Indent ();
+							stream .string += generator .Indent ();
 							stream .string += "<connect";
 							stream .string += " ";
 							stream .string += "nodeField='";
-							stream .string += Generator .XMLEncode (field .getName ());
+							stream .string += generator .XMLEncode (field .getName ());
 							stream .string += "'";
 							stream .string += " ";
 							stream .string += "protoField='";
-							stream .string += Generator .XMLEncode (protoField .getName ());
+							stream .string += generator .XMLEncode (protoField .getName ());
 							stream .string += "'";
 							stream .string += "/>\n";
 						}
 					}
 
-					Generator .DecIndent ();
+					generator .DecIndent ();
 
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "</IS>\n";
 				}
 
-				if (metadata === this .metadata_)
-				{
-					if (metadata .getValue ())
-					{
-						metadata .toXMLStream (stream);
+				generator .DecIndent ();
 
-						stream .string += "\n";
-					}
-				}
-
-				Generator .DecIndent ();
-
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "</ProtoInstance>";
 			}
 
-			Generator .LeaveScope ();
+			generator .LeaveScope ();
 		},
 	});
 
@@ -32584,11 +32932,13 @@ function ($,
 		},
 		toXMLStream: function (stream)
 		{
-			stream .string += Generator .Indent ();
+			var generator = Generator .Get (stream);
+
+			stream .string += generator .Indent ();
 			stream .string += "<ExternProtoDeclare";
 			stream .string += " ";
 			stream .string += "name='";
-			stream .string += Generator .XMLEncode (this .getName ());
+			stream .string += generator .XMLEncode (this .getName ());
 			stream .string += "'";
 			stream .string += " ";
 			stream .string += "url='";
@@ -32598,7 +32948,7 @@ function ($,
 			stream .string += "'";
 			stream .string += ">\n";
 
-			Generator .IncIndent ();
+			generator .IncIndent ();
 
 			var fields = this .getUserDefinedFields ();
 
@@ -32606,11 +32956,11 @@ function ($,
 			{
 				var field = fields [name];
 
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<field";
 				stream .string += " ";
 				stream .string += "accessType='";
-				stream .string += Generator .AccessType (field .getAccessType ());
+				stream .string += generator .AccessType (field .getAccessType ());
 				stream .string += "'";
 				stream .string += " ";
 				stream .string += "type='";
@@ -32618,14 +32968,14 @@ function ($,
 				stream .string += "'";
 				stream .string += " ";
 				stream .string += "name='";
-				stream .string += Generator .XMLEncode (field .getName ());
+				stream .string += generator .XMLEncode (field .getName ());
 				stream .string += "'";
 				stream .string += "/>\n";
 			}
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "</ExternProtoDeclare>";
 		},
 	});
@@ -32774,10 +33124,6 @@ function ($,
 
 			this .loadState_ = X3DConstants .COMPLETE_STATE;
 		},
-		hasUserDefinedFields: function ()
-		{
-			return true;
-		},
 		getURL: function ()
 		{
 			return this .getExecutionContext () .getURL ();
@@ -32790,41 +33136,55 @@ function ($,
 		{
 			return this .loadState_ .getValue ();
 		},
+		fromUnit: function (category, value)
+		{
+			return this .getExecutionContext () .fromUnit (category, value);
+		},
+		toUnit: function (category, value)
+		{
+			return this .getExecutionContext () .toUnit (category, value);
+		},
+		hasUserDefinedFields: function ()
+		{
+			return true;
+		},
 		toXMLStream: function (stream)
 		{
-			stream .string += Generator .Indent ();
+			var generator = Generator .Get (stream);
+
+			stream .string += generator .Indent ();
 			stream .string += "<ProtoDeclare";
 			stream .string += " ";
 			stream .string += "name='";
-			stream .string += Generator .XMLEncode (this .getName ());
+			stream .string += generator .XMLEncode (this .getName ());
 			stream .string += "'";
 			stream .string += ">";
 			stream .string += "\n";
 		
 			// <ProtoInterface>
 
-			Generator .EnterScope ();
+			generator .EnterScope ();
 		
 			var userDefinedFields = this .getUserDefinedFields ();
 
 			if (! $.isEmptyObject (userDefinedFields))
 			{
-				Generator .IncIndent ();
+				generator .IncIndent ();
 
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "<ProtoInterface>\n";
 
-				Generator .IncIndent ();
+				generator .IncIndent ();
 
 				for (var name in userDefinedFields)
 				{
 					var field = userDefinedFields [name];
 
-					stream .string += Generator .Indent ();
+					stream .string += generator .Indent ();
 					stream .string += "<field";
 					stream .string += " ";
 					stream .string += "accessType='";
-					stream .string += Generator .AccessType (field .getAccessType ());
+					stream .string += generator .AccessType (field .getAccessType ());
 					stream .string += "'";
 					stream .string += " ";
 					stream .string += "type='";
@@ -32832,7 +33192,7 @@ function ($,
 					stream .string += "'";
 					stream .string += " ";
 					stream .string += "name='";
-					stream .string += Generator .XMLEncode (field .getName ());
+					stream .string += generator .XMLEncode (field .getName ());
 					stream .string += "'";
 
 					if (field .isDefaultValue ())
@@ -32846,22 +33206,22 @@ function ($,
 							case X3DConstants .SFNode:
 							case X3DConstants .MFNode:
 							{
-								Generator .PushContainerField (null);
+								generator .PushContainerField (null);
 		
 								stream .string += ">\n";
 
-								Generator .IncIndent ();
+								generator .IncIndent ();
 
 								field .toXMLStream (stream);
 
 								stream .string += "\n";
 
-								Generator .DecIndent ();
+								generator .DecIndent ();
 
-								stream .string += Generator .Indent ();
+								stream .string += generator .Indent ();
 								stream .string += "</field>\n";
 
-								Generator .PopContainerField ();
+								generator .PopContainerField ();
 								break;
 							}
 							default:
@@ -32879,39 +33239,39 @@ function ($,
 					}
 				}
 		
-				Generator .DecIndent ();
+				generator .DecIndent ();
 
-				stream .string += Generator .Indent ();
+				stream .string += generator .Indent ();
 				stream .string += "</ProtoInterface>\n";
 
-				Generator .DecIndent ();
+				generator .DecIndent ();
 			}
 		
-			Generator .LeaveScope ();
+			generator .LeaveScope ();
 		
 			// </ProtoInterface>
 
 			// <ProtoBody>
 		
-			Generator .IncIndent ();
+			generator .IncIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "<ProtoBody>\n";
 
-			Generator .IncIndent ();
+			generator .IncIndent ();
 
 			X3DExecutionContext .prototype .toXMLStream .call (this, stream);
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "</ProtoBody>\n";
 
-			Generator .DecIndent ();
+			generator .DecIndent ();
 		
 			// </ProtoBody>
 
-			stream .string += Generator .Indent ();
+			stream .string += generator .Indent ();
 			stream .string += "</ProtoDeclare>";
 		},
 	});
@@ -32993,12 +33353,14 @@ function ($,
 define ('x_ite/Parser/Parser',[
 	"jquery",
 	"x_ite/Fields",
+	"x_ite/Parser/X3DParser",
 	"x_ite/Prototype/X3DExternProtoDeclaration",
 	"x_ite/Prototype/X3DProtoDeclaration",
 	"x_ite/Bits/X3DConstants",
 ],
 function ($,
           Fields,
+          X3DParser,
           X3DExternProtoDeclaration,
           X3DProtoDeclaration,
           X3DConstants)
@@ -33203,12 +33565,12 @@ function ($,
 
 	function Parser (scene, isXML)
 	{
-		this .scene             = scene;
-		this .isXML             = isXML;
-		this .executionContexts = [ ];
+		X3DParser .call (this, scene);
+
+		this .isXML = isXML;
 	}
 
-	Parser .prototype =
+	Parser .prototype = $.extend (Object .create (X3DParser .prototype),
 	{
 		accessTypes:
 		{
@@ -33269,30 +33631,6 @@ function ($,
 			this .lineNumber = 1;
 			this .lastIndex  = 0;
 		},
-		getBrowser: function ()
-		{
-			return this .scene .getBrowser ();
-		},
-		getExecutionContext: function ()
-		{
-			return this .executionContexts [this .executionContexts .length - 1];
-		},
-		pushExecutionContext: function (executionContext)
-		{
-			return this .executionContexts .push (executionContext);
-		},
-		popExecutionContext: function ()
-		{
-			this .executionContexts .pop ();
-		},
-		isInsideProtoDefinition: function ()
-		{
-			return this .executionContexts .length > 1;
-		},
-		addRootNode: function (node)
-		{
-			this .getExecutionContext () .rootNodes .push (node);
-		},
 		exception: function (string)
 		{
 			if (this .getBrowser () .isStrict ())
@@ -33304,8 +33642,8 @@ function ($,
 		{
 			try
 			{
-				this .scene .setEncoding ("VRML");
-				this .scene .setProfile (this .getBrowser () .getProfile ("Full"));
+				this .getScene () .setEncoding ("VRML");
+				this .getScene () .setProfile (this .getBrowser () .getProfile ("Full"));
 
 				this .setInput (input);
 				this .x3dScene ();
@@ -33340,7 +33678,7 @@ function ($,
 			var message = "\n"
 				+ "********************************************************************************" + "\n"
 				+ "Parser error at line " + this .lineNumber + ":" + linePos  + "\n"
-				+ "in '" + this .scene .getURL () + "'" + "\n"
+				+ "in '" + this .getScene () .getURL () + "'" + "\n"
 				+ "\n"
 				+ lastLine + "\n"
 				+ line + "\n"
@@ -33416,16 +33754,24 @@ function ($,
 		},
 		x3dScene: function ()
 		{
-			this .pushExecutionContext (this .scene);
+			this .pushExecutionContext (this .getScene ());
 
 			this .headerStatement ();
 			this .profileStatement ();
 			this .componentStatements ();
 			this .unitStatements ();
 			this .metaStatements ();
+
+			try
+			{
+				this .setUnits (this .getScene () .getMetaData ("generator"));
+			}
+			catch (error)
+			{ }
+
 			this .statements ();
 
-			this .popExecutionContext (this .scene);
+			this .popExecutionContext (this .getScene ());
 
 			if (this .lastIndex < this .input .length)
 				throw new Error ("Unknown statement.");
@@ -33436,8 +33782,8 @@ function ($,
 
 			if (result)
 			{
-				this .scene .specificationVersion = result [2];
-				this .scene .encoding             = "VRML";
+				this .getScene () .specificationVersion = result [2];
+				this .getScene () .encoding             = "VRML";
 				return true;
 			}
 
@@ -33453,7 +33799,7 @@ function ($,
 				{
 					var profile = this .getBrowser () .getProfile (this .result [1]);
 
-					this .scene .setProfile (profile);
+					this .getScene () .setProfile (profile);
 					return;
 				}
 
@@ -33466,7 +33812,7 @@ function ($,
 
 			while (component)
 			{
-				this .scene .addComponent (component);
+				this .getScene () .addComponent (component);
 
 				component = this .componentStatement ();
 			}
@@ -33532,7 +33878,7 @@ function ($,
 
 						   try
 						   {
-								this .scene .updateUnit (categoryNameId, unitNameId, unitConversionFactor);
+								this .getScene () .updateUnit (categoryNameId, unitNameId, unitConversionFactor);
 								return true;
 							}
 							catch (error)
@@ -33576,7 +33922,7 @@ function ($,
 					{
 						var metavalue = this .value;
 
-						this .scene .setMetaData (metakey, metavalue);
+						this .getScene () .setMetaData (metakey, metavalue);
 						return true;
 					}
 		
@@ -33610,7 +33956,7 @@ function ($,
 		
 					this .comments ();
 		
-					var node = this .scene .getLocalNode (localNodeNameId);
+					var node = this .getScene () .getLocalNode (localNodeNameId);
 		
 					if (Grammar .AS .parse (this))
 					{
@@ -33622,7 +33968,7 @@ function ($,
 					else
 						exportedNodeNameId = localNodeNameId;
 		
-					this .scene .updateExportedNode (exportedNodeNameId, node);
+					this .getScene () .updateExportedNode (exportedNodeNameId, node);
 					return true;
 				}
 		
@@ -34751,15 +35097,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFColor ();
-
-			while (this .sfcolorValue (value))
+			while (this .sfcolorValue (this .SFColor))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFColor ();
+				field .push (this .SFColor);
 			}
 		},
 		sfcolorrgbaValue: function (field)
@@ -34817,22 +35157,16 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFColorRGBA ();
-
-			while (this .sfcolorrgbaValue (value))
+			while (this .sfcolorrgbaValue (this .SFColorRGBA))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFColorRGBA ();
+				field .push (this .SFColorRGBA);
 			}
 		},
 		sfdoubleValue: function (field)
 		{
 			if (this .double ())
 			{
-				field .set (this .value);
+				field .set (this .fromUnit (field .getUnit (), this .value));
 				return true;
 			}
 
@@ -34841,6 +35175,8 @@ function ($,
 		mfdoubleValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFDouble .setUnit (field .getUnit ());
 
 			if (this .sfdoubleValue (this .SFDouble))
 			{
@@ -34866,15 +35202,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFDouble ();
+			this .SFDouble .setUnit (field .getUnit ());
 
-			while (this .sfdoubleValue (value))
+			while (this .sfdoubleValue (this .SFDouble))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFDouble ();
+				field .push (this .SFDouble);
 			}
 		},
 		sffloatValue: function (field)
@@ -34884,6 +35216,8 @@ function ($,
 		mffloatValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFFloat .setUnit (field .getUnit ());
 
 			if (this .sffloatValue (this .SFFloat))
 			{
@@ -34909,15 +35243,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFFloat ();
+			this .SFFloat .setUnit (field .getUnit ());
 
-			while (this .sffloatValue (value))
+			while (this .sffloatValue (this .SFFloat))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFFloat ();
+				field .push (this .SFFloat);
 			}
 		},
 		sfimageValue: function (field)
@@ -34984,15 +35314,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFImage ();
-
-			while (this .sfimageValue (value))
+			while (this .sfimageValue (this .SFImage))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFImage ();
+				field .push (this .SFImage);
 			}
 		},
 		sfint32Value: function (field)
@@ -35033,15 +35357,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFInt32 ();
-
-			while (this .sfint32Value (value))
+			while (this .sfint32Value (this .SFInt32))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFInt32 ();
+				field .push (this .SFInt32);
 			}
 		},			
 		sfmatrix3dValue: function (field)
@@ -35126,15 +35444,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFMatrix3d ();
-
-			while (this .sfmatrix3dValue (value))
+			while (this .sfmatrix3dValue (this .SFMatrix3d))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFMatrix3d ();
+				field .push (this .SFMatrix3d);
 			}
 		},
 		sfmatrix3fValue: function (field)
@@ -35169,15 +35481,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFMatrix3f ();
-
-			while (this .sfmatrix3fValue (value))
+			while (this .sfmatrix3fValue (this .SFMatrix3f))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFMatrix3f ();
+				field .push (this .SFMatrix3f);
 			}
 		},
 		sfmatrix4dValue: function (field)
@@ -35298,15 +35604,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFMatrix4d ();
-
-			while (this .sfmatrix4dValue (value))
+			while (this .sfmatrix4dValue (this .SFMatrix4d))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFMatrix4d ();
+				field .push (this .SFMatrix4d);
 			}
 		},
 		sfmatrix4fValue: function (field)
@@ -35341,15 +35641,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFMatrix4f ();
-
-			while (this .sfmatrix4fValue (value))
+			while (this .sfmatrix4fValue (this .SFMatrix4f))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFMatrix4f ();
+				field .push (this .SFMatrix4f);
 			}
 		},
 		sfnodeValue: function (field)
@@ -35419,7 +35713,7 @@ function ($,
 						{
 							var angle = this .value;
 
-							field .getValue () .set (x, y, z, angle);
+							field .getValue () .set (x, y, z, this .fromUnit ("angle", angle));
 							return true;
 						}
 					}
@@ -35456,15 +35750,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFRotation ();
-
-			while (this .sfrotationValue (value))
+			while (this .sfrotationValue (this .SFRotation))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFRotation ();
+				field .push (this .SFRotation);
 			}
 		},
 		sfstringValue: function (field)
@@ -35505,15 +35793,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFString ();
-
-			while (this .sfstringValue (value))
+			while (this .sfstringValue (this .SFString))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFString ();
+				field .push (this .SFString);
 			}
 		},
 		sftimeValue: function (field)
@@ -35548,15 +35830,9 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFTime ();
-
-			while (this .sftimeValue (value))
+			while (this .sftimeValue (this .SFTime))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFTime ();
+				field .push (this .SFTime);
 			}
 		},
 		sfvec2dValue: function (field)
@@ -35567,9 +35843,12 @@ function ($,
 				
 				if (this .double ())
 				{
-					var y = this .value;
-					
-					field .getValue () .set (x, y);
+					var
+						y        = this .value,
+						category = field .getUnit ();
+
+					field .getValue () .set (this .fromUnit (category, x),
+					                         this .fromUnit (category, y));
 					return true;
 				}
 			}
@@ -35579,6 +35858,8 @@ function ($,
 		mfvec2dValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec2d .setUnit (field .getUnit ());
 
 			if (this .sfvec2dValue (this .SFVec2d))
 			{
@@ -35604,15 +35885,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec2d ();
+			this .SFVec2d .setUnit (field .getUnit ());
 
-			while (this .sfvec2dValue (value))
+			while (this .sfvec2dValue (this .SFVec2d))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec2d ();
+				field .push (this .SFVec2d);
 			}
 		},
 		sfvec2fValue: function (field)
@@ -35622,6 +35899,8 @@ function ($,
 		mfvec2fValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec2f .setUnit (field .getUnit ());
 
 			if (this .sfvec2fValue (this .SFVec2f))
 			{
@@ -35647,15 +35926,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec2f ();
+			this .SFVec2f .setUnit (field .getUnit ());
 
-			while (this .sfvec2fValue (value))
+			while (this .sfvec2fValue (this .SFVec2f))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec2f ();
+				field .push (this .SFVec2f);
 			}
 		},
 		sfvec3dValue: function (field)
@@ -35670,9 +35945,13 @@ function ($,
 					
 					if (this .double ())
 					{
-						var z = this .value;
+						var
+							z        = this .value,
+							category = field .getUnit ();
 
-						field .getValue () .set (x, y, z);
+						field .getValue () .set (this .fromUnit (category, x),
+						                         this .fromUnit (category, y),
+						                         this .fromUnit (category, z));
 						return true;
 					}
 				}
@@ -35683,6 +35962,8 @@ function ($,
 		mfvec3dValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec3d .setUnit (field .getUnit ());
 
 			if (this .sfvec3dValue (this .SFVec3d))
 			{
@@ -35708,15 +35989,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec3d ();
+			this .SFVec3d .setUnit (field .getUnit ());
 
-			while (this .sfvec3dValue (value))
+			while (this .sfvec3dValue (this .SFVec3d))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec3d ();
+				field .push (this .SFVec3d);
 			}
 		},
 		sfvec3fValue: function (field)
@@ -35726,6 +36003,8 @@ function ($,
 		mfvec3fValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec3f .setUnit (field .getUnit ());
 
 			if (this .sfvec3fValue (this .SFVec3f))
 			{
@@ -35751,15 +36030,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec3f ();
+			this .SFVec3f .setUnit (field .getUnit ());
 
-			while (this .sfvec3fValue (value))
+			while (this .sfvec3fValue (this .SFVec3f))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec3f ();
+				field .push (this .SFVec3f);
 			}
 		},
 		sfvec4dValue: function (field)
@@ -35778,9 +36053,14 @@ function ($,
 
 						if (this .double ())
 						{
-							var w = this .value;
+							var
+								w        = this .value,
+								category = field .getUnit ();
 
-							field .getValue () .set (x, y, z, w);
+							field .getValue () .set (this .fromUnit (category, x),
+							                         this .fromUnit (category, y),
+							                         this .fromUnit (category, z),
+							                         this .fromUnit (category, w));
 							return true;
 						}
 					}
@@ -35792,6 +36072,8 @@ function ($,
 		mfvec4dValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec4d .setUnit (field .getUnit ());
 
 			if (this .sfvec4dValue (this .SFVec4d))
 			{
@@ -35817,15 +36099,11 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec4d ();
+			this .SFVec4d .setUnit (field .getUnit ());
 
-			while (this .sfvec4dValue (value))
+			while (this .sfvec4dValue (this .SFVec4d))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec4d ();
+				field .push (this .SFVec4d);
 			}
 		},
 		sfvec4fValue: function (field)
@@ -35835,6 +36113,8 @@ function ($,
 		mfvec4fValue: function (field)
 		{
 			field .length = 0;
+
+			this .SFVec4f .setUnit (field .getUnit ());
 
 			if (this .sfvec4fValue (this .SFVec4f))
 			{
@@ -35860,18 +36140,14 @@ function ($,
 		{
 			field .length = 0;
 
-			var
-				array = field .getValue (),
-				value = new Fields .SFVec4f ();
+			this .SFVec4f .setUnit (field .getUnit ());
 
-			while (this .sfvec4fValue (value))
+			while (this .sfvec4fValue (this .SFVec4f))
 			{
-				value .addParent (field);
-				array .push (value);
-				value = new Fields .SFVec4f ();
+				field .push (this .SFVec4f);
 			}
 		},
-	};
+	});
 
 	Parser .prototype .fieldTypes = [ ];
 	Parser .prototype .fieldTypes [X3DConstants .SFBool]      = Parser .prototype .sfboolValue;
@@ -37547,6 +37823,7 @@ function ($,
 		this .textureTransformNode = null;
 		this .shaderNodes          = [ ];
 		this .shaderNode           = null;
+		this .blendModeNode        = null;
 	}
 
 	Appearance .prototype = $.extend (Object .create (X3DAppearanceNode .prototype),
@@ -37560,6 +37837,7 @@ function ($,
 			new X3DFieldDefinition (X3DConstants .inputOutput, "texture",          new Fields .SFNode ()),
 			new X3DFieldDefinition (X3DConstants .inputOutput, "textureTransform", new Fields .SFNode ()),
 			new X3DFieldDefinition (X3DConstants .inputOutput, "shaders",          new Fields .MFNode ()),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "blendMode",        new Fields .SFNode ()),
 		]),
 		getTypeName: function ()
 		{
@@ -37579,17 +37857,19 @@ function ($,
 
 			this .isLive () .addInterest ("set_live__", this);
 
-			this .lineProperties_   .addInterest ("set_lineProperties__", this);
-			this .material_         .addInterest ("set_material__", this);
-			this .texture_          .addInterest ("set_texture__", this);
+			this .lineProperties_   .addInterest ("set_lineProperties__",   this);
+			this .material_         .addInterest ("set_material__",         this);
+			this .texture_          .addInterest ("set_texture__",          this);
 			this .textureTransform_ .addInterest ("set_textureTransform__", this);
-			this .shaders_          .addInterest ("set_shaders__", this);
+			this .shaders_          .addInterest ("set_shaders__",          this);
+			this .blendMode_        .addInterest ("set_blendMode__",        this);
 
 			this .set_lineProperties__ ();
 			this .set_material__ ();
 			this .set_texture__ ();
 			this .set_textureTransform__ ();
 			this .set_shaders__ ();
+			this .set_blendMode__ ();
 		},
 		getLineProperties: function ()
 		{
@@ -37607,10 +37887,6 @@ function ($,
 		{
 			return this .textureTransformNode;
 		},
-		set_lineProperties__: function ()
-		{
-			this .linePropertiesNode = X3DCast (X3DConstants .LineProperties, this .lineProperties_);
-		},
 		set_live__: function ()
 		{
 			if (this .isLive () .getValue ())
@@ -37623,6 +37899,10 @@ function ($,
 				if (this .shaderNode)
 				this .getBrowser () .removeShader (this .shaderNode);
 			}
+		},
+		set_lineProperties__: function ()
+		{
+			this .linePropertiesNode = X3DCast (X3DConstants .LineProperties, this .lineProperties_);
 		},
 		set_material__: function ()
 		{
@@ -37709,10 +37989,17 @@ function ($,
 
 			this .set_transparent__ ();
 		},
+		set_blendMode__: function ()
+		{
+			this .blendModeNode = X3DCast (X3DConstants .BlendMode, this .blendMode_);
+
+			this .set_transparent__ ();
+		},
 		set_transparent__: function ()
 		{
 			this .transparent_ = (this .materialNode && this .materialNode .transparent_ .getValue ()) ||
-			                     (this .textureNode  && this .textureNode  .transparent_ .getValue ());
+			                     (this .textureNode  && this .textureNode  .transparent_ .getValue () ||
+			                      this .blendModeNode);
 		},
 		traverse: function (type, renderObject)
 		{
@@ -37722,13 +38009,21 @@ function ($,
 			if (this .shaderNode)
 				this .shaderNode .traverse (type, renderObject);
 		},
-		display: function (context)
+		enable: function (context)
 		{
 			context .linePropertiesNode   = this .linePropertiesNode;
 			context .materialNode         = this .materialNode;
 			context .textureNode          = this .textureNode;
 			context .textureTransformNode = this .textureTransformNode;
 			context .shaderNode           = this .shaderNode || context .renderer .getBrowser () .getDefaultShader ();
+
+			if (this .blendModeNode)
+				this .blendModeNode .enable (context .renderer .getBrowser () .getContext ());
+		},
+		disable: function (context)
+		{
+			if (this .blendModeNode)
+				this .blendModeNode .disable (context .renderer .getBrowser () .getContext ());
 		},
 	});
 
@@ -38255,13 +38550,16 @@ function ($,
 		this .x3d_ShadowColor           = [ ];
 		this .x3d_ShadowMatrix          = [ ];
 		this .x3d_ShadowMap             = [ ];
+
+		this .numClipPlanes   = 0;
+		this .numGlobalLights = 0;
+		this .numLights       = 0;
 	}
 
 	X3DProgrammableShaderObject .prototype =
 	{
 		constructor: X3DProgrammableShaderObject,
 		x3d_NoneClipPlane: new Float32Array ([ 88, 51, 68, 33 ]), // X3D!
-		numGlobalLights: 0,
 		normalMatrixArray: new Float32Array (9),
 		initialize: function ()
 		{
@@ -38348,12 +38646,13 @@ function ($,
 
 			this .x3d_Texture = gl .getUniformLocation (program, "x3d_Texture"); // depreciated
 
-			this .x3d_Viewport         = gl .getUniformLocation (program, "x3d_Viewport");
-			this .x3d_ProjectionMatrix = gl .getUniformLocation (program, "x3d_ProjectionMatrix");
-			this .x3d_ModelViewMatrix  = gl .getUniformLocation (program, "x3d_ModelViewMatrix");
-			this .x3d_NormalMatrix     = gl .getUniformLocation (program, "x3d_NormalMatrix");
-			this .x3d_TextureMatrix    = gl .getUniformLocation (program, "x3d_TextureMatrix");
-			
+			this .x3d_Viewport          = gl .getUniformLocation (program, "x3d_Viewport");
+			this .x3d_ProjectionMatrix  = gl .getUniformLocation (program, "x3d_ProjectionMatrix");
+			this .x3d_ModelViewMatrix   = gl .getUniformLocation (program, "x3d_ModelViewMatrix");
+			this .x3d_NormalMatrix      = gl .getUniformLocation (program, "x3d_NormalMatrix");
+			this .x3d_TextureMatrix     = gl .getUniformLocation (program, "x3d_TextureMatrix");
+			this .x3d_CameraSpaceMatrix = gl .getUniformLocation (program, "x3d_CameraSpaceMatrix");
+		
 			this .x3d_Color    = gl .getAttribLocation (program, "x3d_Color");
 			this .x3d_TexCoord = gl .getAttribLocation (program, "x3d_TexCoord");
 			this .x3d_Normal   = gl .getAttribLocation (program, "x3d_Normal");
@@ -39016,20 +39315,23 @@ function ($,
 
 			return i;
 		},
-		setClipPlanes: function (gl, clipPlanes)
+		setShaderObjects: function (gl, shaderObjects)
 		{
-			if (clipPlanes .length)
-			{
-				for (var i = 0, numClipPlanes = Math .min (this .x3d_MaxClipPlanes, clipPlanes .length); i < numClipPlanes; ++ i)
-					clipPlanes [i] .setShaderUniforms (gl, this, i);
-	
-				if (i < this .x3d_MaxClipPlanes)
-					gl .uniform4fv (this .x3d_ClipPlane [i], this .x3d_NoneClipPlane);
-			}
-			else
-				gl .uniform4fv (this .x3d_ClipPlane [0], this .x3d_NoneClipPlane);
+			// Clip planes and local lights
+
+			this .numClipPlanes = 0;
+			this .numLights     = 0;
+
+			for (var i = 0, length = shaderObjects .length; i < length; ++ i)
+				shaderObjects [i] .setShaderUniforms (gl, this);
+
+			if (this .numClipPlanes < this .x3d_MaxClipPlanes)
+				gl .uniform4fv (this .x3d_ClipPlane [this .numClipPlanes], this .x3d_NoneClipPlane);
+
+			if (this .numLights < this .x3d_MaxLights)
+				gl .uniform1i (this .x3d_LightType [this .numLights], 0);
 		},
-		setGlobalUniforms: function (renderObject, gl, projectionMatrixArray, viewportArray)
+		setGlobalUniforms: function (renderObject, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray)
 		{
 			var globalLights = renderObject .getGlobalLights ();
 
@@ -39039,14 +39341,16 @@ function ($,
 
 			// Set projection matrix
 
-			gl .uniformMatrix4fv (this .x3d_ProjectionMatrix, false, projectionMatrixArray);
+			gl .uniformMatrix4fv (this .x3d_ProjectionMatrix,  false, projectionMatrixArray);
+			gl .uniformMatrix4fv (this .x3d_CameraSpaceMatrix, false, cameraSpaceMatrixArray);
 
 			// Set global lights
 
-			this .numGlobalLights = Math .min (this .x3d_MaxLights, globalLights .length);
+			this .numGlobalLights = globalLights .length;
+			this .numLights       = 0;
 
-			for (var i = 0, length = this .numGlobalLights; i < length; ++ i)
-				globalLights [i] .setShaderUniforms (gl, this, i);
+			for (var i = 0, length = globalLights .length; i < length; ++ i)
+				globalLights [i] .setShaderUniforms (gl, this);
 		},
 		setLocalUniforms: function (gl, context)
 		{
@@ -39056,26 +39360,25 @@ function ($,
 				textureNode          = context .textureNode,
 				textureTransformNode = context .textureTransformNode,
 				modelViewMatrix      = context .modelViewMatrix,
-				clipPlaneNodes       = context .clipPlanes;
+				shaderObjects        = context .shaderObjects;
 
 			// Geometry type
 
 			gl .uniform1i (this .x3d_GeometryType, context .geometryType);
 
-			// Clip planes
+			// Clip planes and local lights
 
-			if (clipPlaneNodes .length)
-			{
-				for (var i = 0, numClipPlanes = Math .min (this .x3d_MaxClipPlanes, clipPlaneNodes .length); i < numClipPlanes; ++ i)
-					clipPlaneNodes [i] .setShaderUniforms (gl, this, i);
-	
-				if (i < this .x3d_MaxClipPlanes)
-					gl .uniform4fv (this .x3d_ClipPlane [i], this .x3d_NoneClipPlane);
-			}
-			else
-			{
-				gl .uniform4fv (this .x3d_ClipPlane [0], this .x3d_NoneClipPlane);
-			}
+			this .numClipPlanes = 0;
+			this .numLights     = this .numGlobalLights;
+
+			for (var i = 0, length = shaderObjects .length; i < length; ++ i)
+				shaderObjects [i] .setShaderUniforms (gl, this);
+
+			if (this .numClipPlanes < this .x3d_MaxClipPlanes)
+				gl .uniform4fv (this .x3d_ClipPlane [this .numClipPlanes], this .x3d_NoneClipPlane);
+
+			if (this .numLights < this .x3d_MaxLights)
+				gl .uniform1i (this .x3d_LightType [this .numLights], 0);
 
 			// Fog, there is always one
 
@@ -39105,16 +39408,6 @@ function ($,
 				// Lights
 
 				gl .uniform1i  (this .x3d_Lighting, true);
-
-				var
-					localLights = context .localLights,
-					numLights   = Math .min (this .x3d_MaxLights, this .numGlobalLights + localLights .length);
-
-				for (var i = this .numGlobalLights, l = 0; i < numLights; ++ i, ++ l)
-					localLights [l] .setShaderUniforms (gl, this, i);
-
-				if (numLights < this .x3d_MaxLights)
-					gl .uniform1i (this .x3d_LightType [numLights], 0);
 
 				// Material
 
@@ -39603,7 +39896,7 @@ function ($,
 					this .isValid_ = false;
 			}
 		},
-		setGlobalUniforms: function (renderObject, gl, projectionMatrixArray, viewportArray)
+		setGlobalUniforms: function (renderObject, gl,cameraSpaceMatrixArray, projectionMatrixArray, viewportArray)
 		{
 			if (currentShaderNode !== this)
 			{
@@ -39612,7 +39905,7 @@ function ($,
 				gl .useProgram (this .program);
 			}
 			
-			X3DProgrammableShaderObject .prototype .setGlobalUniforms .call (this, renderObject, gl, projectionMatrixArray, viewportArray);
+			X3DProgrammableShaderObject .prototype .setGlobalUniforms .call (this, renderObject, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray);
 		},
 		setLocalUniforms: function (gl, context)
 		{
@@ -40466,6 +40759,7 @@ define ('x_ite/Parser/XMLParser',[
 	"x_ite/Components/Core/X3DPrototypeInstance",
 	"x_ite/Fields",
 	"x_ite/Parser/Parser",
+	"x_ite/Parser/X3DParser",
 	"x_ite/Parser/HTMLSupport",
 	"x_ite/Prototype/X3DExternProtoDeclaration",
 	"x_ite/Prototype/X3DProtoDeclaration",
@@ -40478,6 +40772,7 @@ function ($,
           X3DPrototypeInstance,
           Fields,
           Parser,
+          X3DParser,
           HTMLSupport,   
           X3DExternProtoDeclaration,
           X3DProtoDeclaration,
@@ -40495,21 +40790,29 @@ function ($,
 
 	function XMLParser (scene)
 	{
-		this .scene             = scene;
-		this .executionContexts = [ scene ];
+		X3DParser .call (this, scene);
+
 		this .protoDeclarations = [ ];
 		this .parents           = [ ];
-		this .parser            = new Parser (this .scene, true);
+		this .parser            = new Parser (scene, true);
 		this .url               = new Fields .MFString ();
+
+		try
+		{
+			this .setUnits (this .getScene () .getMetaData ("generator"));
+			this .parser .setUnits (this .getUnits ());
+		}
+		catch (error)
+		{ }
 	}
 
-	XMLParser .prototype =
+	XMLParser .prototype = $.extend (Object .create (X3DParser .prototype),
 	{
 		constructor: XMLParser,
 		parseIntoScene: function (xmlElement)
 		{
-			this .scene .setEncoding ("XML");
-			this .scene .setProfile (this .getBrowser () .getProfile ("Full"));
+			this .getScene () .setEncoding ("XML");
+			this .getScene () .setProfile (this .getBrowser () .getProfile ("Full"));
 
 			this .xmlElement (xmlElement);
 		},
@@ -40563,7 +40866,7 @@ function ($,
 					profileNameId = xmlElement .getAttribute ("profile"),
 					profile       = this .getBrowser () .getProfile (profileNameId || "Full");
 
-				this .scene .setProfile (profile);
+				this .getScene () .setProfile (profile);
 			}
 			catch (error)
 			{
@@ -40575,7 +40878,7 @@ function ($,
 			var specificationVersion = xmlElement .getAttribute ("version");
 
 			if (specificationVersion)
-				this .scene .specificationVersion = specificationVersion;
+				this .getScene () .specificationVersion = specificationVersion;
 
 			// Process child nodes
 
@@ -40604,6 +40907,14 @@ function ($,
 	
 			for (var i = 0; i < childNodes .length; ++ i)
 				this .headElementChild (childNodes [i]);
+
+			try
+			{
+				this .setUnits (this .getScene () .getMetaData ("generator"));
+				this .parser .setUnits (this .getUnits ());
+			}
+			catch (error)
+			{ }
 		},
 		headElementChild: function (xmlElement)
 		{
@@ -40639,7 +40950,7 @@ function ($,
 
 				var component = this .getBrowser () .getComponent (componentNameIdCharacters, componentSupportLevel);
 	
-				this .scene .addComponent (component);
+				this .getScene () .addComponent (component);
 			}
 			catch (error)
 			{
@@ -40662,7 +40973,7 @@ function ($,
 			if (conversionFactor === null)
 				return console .warn ("XML Parser Error: Bad unit statement: Expected conversionFactor attribute.");
 
-			this .scene .updateUnit (category, name, parseFloat (conversionFactor));
+			this .getScene () .updateUnit (category, name, parseFloat (conversionFactor));
 		},
 		metaElement: function (xmlElement)
 		{
@@ -40676,7 +40987,7 @@ function ($,
 			if (metavalue === null)
 				return console .warn ("XML Parser Error: Bad meta statement: Expected content attribute.");
 
-			this .scene .setMetaData (metakey, metavalue);
+			this .getScene () .setMetaData (metakey, metavalue);
 		},
 		sceneElement: function (xmlElement)
 		{
@@ -41124,7 +41435,7 @@ function ($,
 		{
 			try
 			{
-				if (this .scene !== this .getExecutionContext ())
+				if (this .getScene () !== this .getExecutionContext ())
 					return;
 
 				var
@@ -41139,7 +41450,7 @@ function ($,
 
 				var localNode = this .getExecutionContext () .getLocalNode (localNodeName);
 
-				this .scene .updateExportedNode (exportedNodeName, localNode);
+				this .getScene () .updateExportedNode (exportedNodeName, localNode);
 			}
 			catch (error)
 			{
@@ -41237,8 +41548,12 @@ function ($,
 
 			field .setSet (true);
 
+			this .parser .pushExecutionContext (this .getExecutionContext ());
+
 			this .parser .setInput (value);
 			this .fieldTypes [field .getType ()] .call (this .parser, field);
+
+			this .parser .popExecutionContext ();
 		},
 		addNode: function (xmlElement, node)
 		{
@@ -41297,22 +41612,6 @@ function ($,
 				//console .warn (error .message);
 			}
 		},
-		getBrowser: function ()
-		{
-			return this .scene .getBrowser ();
-		},
-		getExecutionContext: function ()
-		{
-			return this .executionContexts [this .executionContexts .length - 1];
-		},
-		pushExecutionContext: function (executionContext)
-		{
-			return this .executionContexts .push (executionContext);
-		},
-		popExecutionContext: function ()
-		{
-			this .executionContexts .pop ();
-		},
 		getParents: function ()
 		{
 			return this .parents;
@@ -41346,7 +41645,7 @@ function ($,
 			
 			return HTMLSupport .attributeLowerCaseToCamelCase [name] ;
 		},
-	};
+	});
 
 	XMLParser .prototype .fieldTypes = [ ];
 	XMLParser .prototype .fieldTypes [X3DConstants .SFBool]      = Parser .prototype .sfboolValue;
@@ -45283,7 +45582,7 @@ function ($,
           urls,
           Parser,
           XMLParser,
-          JSONParser,
+	  JSONParser,
           URI,
           BinaryTransport,
           pako,
@@ -45891,10 +46190,6 @@ function ($,
 		},
 		set_url__: function ()
 		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
-		{
 			this .setLoadState (X3DConstants .NOT_STARTED_STATE);
 
 			this .requestAsyncLoad ();
@@ -45927,6 +46222,10 @@ function ($,
 	
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
 			
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			this .valid = false;
 
 			new FileLoader (this) .loadDocument (this .url_, null,
@@ -45970,16 +46269,16 @@ define('text!x_ite/Browser/Shaders/Wireframe.vs',[],function () { return '// -*-
 define('text!x_ite/Browser/Shaders/Wireframe.fs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform float x3d_LinewidthScaleFactor;\n\nuniform vec4 x3d_ClipPlane [x3d_MaxClipPlanes];\n\nuniform int   x3d_FogType;\nuniform vec3  x3d_FogColor;\nuniform float x3d_FogVisibilityRange;\n\nvarying vec4 C; // color\nvarying vec3 v; // point on geometry\n\nvoid\nclip ()\n{\n\tfor (int i = 0; i < x3d_MaxClipPlanes; ++ i)\n\t{\n\t\tif (x3d_ClipPlane [i] == x3d_NoneClipPlane)\n\t\t\tbreak;\n\n\t\tif (dot (v, x3d_ClipPlane [i] .xyz) - x3d_ClipPlane [i] .w < 0.0)\n\t\t\tdiscard;\n\t}\n}\n\nfloat\ngetFogInterpolant ()\n{\n\t// Returns 0.0 for fog color and 1.0 for material color.\n\n\tif (x3d_FogType == x3d_NoneFog)\n\t\treturn 1.0;\n\n\tif (x3d_FogVisibilityRange <= 0.0)\n\t\treturn 0.0;\n\n\tfloat dV = length (v);\n\n\tif (dV >= x3d_FogVisibilityRange)\n\t\treturn 0.0;\n\n\tif (x3d_FogType == x3d_LinearFog)\n\t\treturn (x3d_FogVisibilityRange - dV) / x3d_FogVisibilityRange;\n\n\tif (x3d_FogType == x3d_ExponentialFog)\n\t\treturn exp (-dV / (x3d_FogVisibilityRange - dV));\n\n\treturn 1.0;\n}\n\nvoid\nmain ()\n{\n\tclip ();\n\t\n\tgl_FragColor .rgb = mix (x3d_FogColor, C .rgb, getFogInterpolant ());\n\tgl_FragColor .a   = C .a;\n}\n';});
 
 
-define('text!x_ite/Browser/Shaders/Gouraud.vs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform mat4 x3d_TextureMatrix [1];\nuniform mat3 x3d_NormalMatrix;\nuniform mat4 x3d_ProjectionMatrix;\nuniform mat4 x3d_ModelViewMatrix;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;      // true if a X3DMaterialNode is attached, otherwise false\nuniform bool  x3d_ColorMaterial; // true if a X3DColorNode is attached, otherwise false\n\nuniform int   x3d_LightType [x3d_MaxLights];\nuniform bool  x3d_LightOn [x3d_MaxLights];\nuniform vec3  x3d_LightColor [x3d_MaxLights];\nuniform float x3d_LightIntensity [x3d_MaxLights];\nuniform float x3d_LightAmbientIntensity [x3d_MaxLights];\nuniform vec3  x3d_LightAttenuation [x3d_MaxLights];\nuniform vec3  x3d_LightLocation [x3d_MaxLights];\nuniform vec3  x3d_LightDirection [x3d_MaxLights];\nuniform float x3d_LightRadius [x3d_MaxLights];\nuniform float x3d_LightBeamWidth [x3d_MaxLights];\nuniform float x3d_LightCutOffAngle [x3d_MaxLights];\n\nuniform bool x3d_SeparateBackColor;\n\nuniform float x3d_AmbientIntensity;\nuniform vec3  x3d_DiffuseColor;\nuniform vec3  x3d_SpecularColor;\nuniform vec3  x3d_EmissiveColor;\nuniform float x3d_Shininess;\nuniform float x3d_Transparency;\n\nuniform float x3d_BackAmbientIntensity;\nuniform vec3  x3d_BackDiffuseColor;\nuniform vec3  x3d_BackSpecularColor;\nuniform vec3  x3d_BackEmissiveColor;\nuniform float x3d_BackShininess;\nuniform float x3d_BackTransparency;\n\nattribute vec4 x3d_Color;\nattribute vec4 x3d_TexCoord;\nattribute vec3 x3d_Normal;\nattribute vec4 x3d_Vertex;\n\nvarying vec4  frontColor; // color\nvarying vec4  backColor;  // color\nvarying vec4  t;          // texCoord\nvarying vec3  v;          // point on geometry\n\nvec4\ngetMaterialColor (in vec3 N,\n                  in vec3 v,\n                  in float x3d_AmbientIntensity,\n                  in vec3  x3d_DiffuseColor,\n                  in vec3  x3d_SpecularColor,\n                  in vec3  x3d_EmissiveColor,\n                  in float x3d_Shininess,\n                  in float x3d_Transparency)\n{\n\tvec3 V = normalize (-v); // normalized vector from point on geometry to viewer\'s position\n\n\t// Calculate diffuseFactor & alpha\n\n\tvec3  diffuseFactor = vec3 (1.0, 1.0, 1.0);\n\tfloat alpha         = 1.0 - x3d_Transparency;\n\n\tif (x3d_ColorMaterial)\n\t{\n\t\tdiffuseFactor  = x3d_Color .rgb;\n\t\talpha         *= x3d_Color .a;\n\t}\n\telse\n\t\tdiffuseFactor = x3d_DiffuseColor;\n\n\tvec3 ambientTerm = diffuseFactor * x3d_AmbientIntensity;\n\n\t// Apply light sources\n\n\tvec3 finalColor = vec3 (0.0, 0.0, 0.0);\n\n\tfor (int i = 0; i < x3d_MaxLights; ++ i)\n\t{\n\t\tint lightType = x3d_LightType [i];\n\n\t\tif (lightType == x3d_NoneLight)\n\t\t\tbreak;\n\n\t\tvec3  vL = x3d_LightLocation [i] - v;\n\t\tfloat dL = length (vL);\n\t\tbool  di = lightType == x3d_DirectionalLight;\n\n\t\tif (di || dL <= x3d_LightRadius [i])\n\t\t{\n\t\t\tvec3 d = x3d_LightDirection [i];\n\t\t\tvec3 c = x3d_LightAttenuation [i];\n\t\t\tvec3 L = di ? -d : normalize (vL);\n\t\t\tvec3 H = normalize (L + V); // specular term\n\n\t\t\tvec3  diffuseTerm    = diffuseFactor * max (dot (N, L), 0.0);\n\t\t\tfloat specularFactor = x3d_Shininess > 0.0 ? pow (max (dot (N, H), 0.0), x3d_Shininess * 128.0) : 1.0;\n\t\t\tvec3  specularTerm   = x3d_SpecularColor * specularFactor;\n\n\t\t\tfloat attenuation = di ? 1.0 : 1.0 / max (c [0] + c [1] * dL + c [2] * (dL * dL), 1.0);\n\t\t\tfloat spot        = 1.0;\n\n\t\t\tif (lightType == x3d_SpotLight)\n\t\t\t{\n\t\t\t\tfloat spotAngle   = acos (clamp (dot (-L, d), -1.0, 1.0));\n\t\t\t\tfloat cutOffAngle = x3d_LightCutOffAngle [i];\n\t\t\t\tfloat beamWidth   = x3d_LightBeamWidth [i];\n\t\t\t\t\n\t\t\t\tif (spotAngle >= cutOffAngle)\n\t\t\t\t\tspot = 0.0;\n\t\t\t\telse if (spotAngle <= beamWidth)\n\t\t\t\t\tspot = 1.0;\n\t\t\t\telse\n\t\t\t\t\tspot = (spotAngle - cutOffAngle) / (beamWidth - cutOffAngle);\n\t\t\t}\n\t\t\n\t\t\tvec3 lightFactor  = (attenuation * spot) * x3d_LightColor [i];\n\t\t\tvec3 ambientLight = (lightFactor * x3d_LightAmbientIntensity [i]) * ambientTerm;\n\n\t\t\tlightFactor *= x3d_LightIntensity [i];\n\t\t\tfinalColor  += ambientLight + lightFactor * (diffuseTerm + specularTerm);\n\t\t}\n\t}\n\n\tfinalColor += x3d_EmissiveColor;\n\n\treturn vec4 (clamp (finalColor, 0.0, 1.0), alpha);\n}\n\nvoid\nmain ()\n{\n\tgl_PointSize = x3d_LinewidthScaleFactor;\n\n\tvec4 p = x3d_ModelViewMatrix * x3d_Vertex;\n\n\tt = x3d_TextureMatrix [0] * x3d_TexCoord;\n\tv = p .xyz;\n\n\tgl_Position = x3d_ProjectionMatrix * p;\n\n\tif (x3d_Lighting)\n\t{\n\t\tvec3 N = normalize (x3d_NormalMatrix * x3d_Normal);\n\n\t\tfloat ambientIntensity = x3d_AmbientIntensity;\n\t\tvec3  diffuseColor     = x3d_DiffuseColor;\n\t\tvec3  specularColor    = x3d_SpecularColor;\n\t\tvec3  emissiveColor    = x3d_EmissiveColor;\n\t\tfloat shininess        = x3d_Shininess;\n\t\tfloat transparency     = x3d_Transparency;\n\n\t\tfrontColor = getMaterialColor (N, v,\n\t\t                               ambientIntensity,\n\t\t                               diffuseColor,\n\t\t                               specularColor,\n\t\t                               emissiveColor,\n\t\t                               shininess,\n\t\t                               transparency);\n\n\t\tif (x3d_SeparateBackColor)\n\t\t{\n\t\t\tambientIntensity = x3d_BackAmbientIntensity;\n\t\t\tdiffuseColor     = x3d_BackDiffuseColor;\n\t\t\tspecularColor    = x3d_BackSpecularColor;\n\t\t\temissiveColor    = x3d_BackEmissiveColor;\n\t\t\tshininess        = x3d_BackShininess;\n\t\t\ttransparency     = x3d_BackTransparency;\n\t\t}\n\n\t\tbackColor = getMaterialColor (-N, v,\n\t\t                              ambientIntensity,\n\t\t                              diffuseColor,\n\t\t                              specularColor,\n\t\t                              emissiveColor,\n\t\t                              shininess,\n\t\t                              transparency);\n\t}\n\telse\n\t{\n\t   frontColor = backColor = x3d_ColorMaterial ? x3d_Color : vec4 (1.0, 1.0, 1.0, 1.0);\n\t}\n}\n';});
+define('text!x_ite/Browser/Shaders/Gouraud.vs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform mat4 x3d_TextureMatrix [1];\nuniform mat3 x3d_NormalMatrix;\nuniform mat4 x3d_ProjectionMatrix;\nuniform mat4 x3d_ModelViewMatrix;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;      // true if a X3DMaterialNode is attached, otherwise false\nuniform bool  x3d_ColorMaterial; // true if a X3DColorNode is attached, otherwise false\n\nuniform int   x3d_LightType [x3d_MaxLights];\nuniform vec3  x3d_LightColor [x3d_MaxLights];\nuniform float x3d_LightIntensity [x3d_MaxLights];\nuniform float x3d_LightAmbientIntensity [x3d_MaxLights];\nuniform vec3  x3d_LightAttenuation [x3d_MaxLights];\nuniform vec3  x3d_LightLocation [x3d_MaxLights];\nuniform vec3  x3d_LightDirection [x3d_MaxLights];\nuniform float x3d_LightRadius [x3d_MaxLights];\nuniform float x3d_LightBeamWidth [x3d_MaxLights];\nuniform float x3d_LightCutOffAngle [x3d_MaxLights];\n\nuniform bool x3d_SeparateBackColor;\n\nuniform float x3d_AmbientIntensity;\nuniform vec3  x3d_DiffuseColor;\nuniform vec3  x3d_SpecularColor;\nuniform vec3  x3d_EmissiveColor;\nuniform float x3d_Shininess;\nuniform float x3d_Transparency;\n\nuniform float x3d_BackAmbientIntensity;\nuniform vec3  x3d_BackDiffuseColor;\nuniform vec3  x3d_BackSpecularColor;\nuniform vec3  x3d_BackEmissiveColor;\nuniform float x3d_BackShininess;\nuniform float x3d_BackTransparency;\n\nattribute vec4 x3d_Color;\nattribute vec4 x3d_TexCoord;\nattribute vec3 x3d_Normal;\nattribute vec4 x3d_Vertex;\n\nvarying vec4  frontColor; // color\nvarying vec4  backColor;  // color\nvarying vec4  t;          // texCoord\nvarying vec3  v;          // point on geometry\n\nvec4\ngetMaterialColor (in vec3 N,\n                  in vec3 v,\n                  in float x3d_AmbientIntensity,\n                  in vec3  x3d_DiffuseColor,\n                  in vec3  x3d_SpecularColor,\n                  in vec3  x3d_EmissiveColor,\n                  in float x3d_Shininess,\n                  in float x3d_Transparency)\n{\n\tvec3 V = normalize (-v); // normalized vector from point on geometry to viewer\'s position\n\n\t// Calculate diffuseFactor & alpha\n\n\tvec3  diffuseFactor = vec3 (1.0, 1.0, 1.0);\n\tfloat alpha         = 1.0 - x3d_Transparency;\n\n\tif (x3d_ColorMaterial)\n\t{\n\t\tdiffuseFactor  = x3d_Color .rgb;\n\t\talpha         *= x3d_Color .a;\n\t}\n\telse\n\t\tdiffuseFactor = x3d_DiffuseColor;\n\n\tvec3 ambientTerm = diffuseFactor * x3d_AmbientIntensity;\n\n\t// Apply light sources\n\n\tvec3 finalColor = vec3 (0.0, 0.0, 0.0);\n\n\tfor (int i = 0; i < x3d_MaxLights; ++ i)\n\t{\n\t\tint lightType = x3d_LightType [i];\n\n\t\tif (lightType == x3d_NoneLight)\n\t\t\tbreak;\n\n\t\tvec3  vL = x3d_LightLocation [i] - v;\n\t\tfloat dL = length (vL);\n\t\tbool  di = lightType == x3d_DirectionalLight;\n\n\t\tif (di || dL <= x3d_LightRadius [i])\n\t\t{\n\t\t\tvec3 d = x3d_LightDirection [i];\n\t\t\tvec3 c = x3d_LightAttenuation [i];\n\t\t\tvec3 L = di ? -d : normalize (vL);\n\t\t\tvec3 H = normalize (L + V); // specular term\n\n\t\t\tvec3  diffuseTerm    = diffuseFactor * max (dot (N, L), 0.0);\n\t\t\tfloat specularFactor = x3d_Shininess > 0.0 ? pow (max (dot (N, H), 0.0), x3d_Shininess * 128.0) : 1.0;\n\t\t\tvec3  specularTerm   = x3d_SpecularColor * specularFactor;\n\n\t\t\tfloat attenuation = di ? 1.0 : 1.0 / max (c [0] + c [1] * dL + c [2] * (dL * dL), 1.0);\n\t\t\tfloat spot        = 1.0;\n\n\t\t\tif (lightType == x3d_SpotLight)\n\t\t\t{\n\t\t\t\tfloat spotAngle   = acos (clamp (dot (-L, d), -1.0, 1.0));\n\t\t\t\tfloat cutOffAngle = x3d_LightCutOffAngle [i];\n\t\t\t\tfloat beamWidth   = x3d_LightBeamWidth [i];\n\t\t\t\t\n\t\t\t\tif (spotAngle >= cutOffAngle)\n\t\t\t\t\tspot = 0.0;\n\t\t\t\telse if (spotAngle <= beamWidth)\n\t\t\t\t\tspot = 1.0;\n\t\t\t\telse\n\t\t\t\t\tspot = (spotAngle - cutOffAngle) / (beamWidth - cutOffAngle);\n\t\t\t}\n\t\t\n\t\t\tvec3 lightFactor  = (attenuation * spot) * x3d_LightColor [i];\n\t\t\tvec3 ambientLight = (lightFactor * x3d_LightAmbientIntensity [i]) * ambientTerm;\n\n\t\t\tlightFactor *= x3d_LightIntensity [i];\n\t\t\tfinalColor  += ambientLight + lightFactor * (diffuseTerm + specularTerm);\n\t\t}\n\t}\n\n\tfinalColor += x3d_EmissiveColor;\n\n\treturn vec4 (clamp (finalColor, 0.0, 1.0), alpha);\n}\n\nvoid\nmain ()\n{\n\tgl_PointSize = x3d_LinewidthScaleFactor;\n\n\tvec4 p = x3d_ModelViewMatrix * x3d_Vertex;\n\n\tt = x3d_TextureMatrix [0] * x3d_TexCoord;\n\tv = p .xyz;\n\n\tgl_Position = x3d_ProjectionMatrix * p;\n\n\tif (x3d_Lighting)\n\t{\n\t\tvec3 N = normalize (x3d_NormalMatrix * x3d_Normal);\n\n\t\tfloat ambientIntensity = x3d_AmbientIntensity;\n\t\tvec3  diffuseColor     = x3d_DiffuseColor;\n\t\tvec3  specularColor    = x3d_SpecularColor;\n\t\tvec3  emissiveColor    = x3d_EmissiveColor;\n\t\tfloat shininess        = x3d_Shininess;\n\t\tfloat transparency     = x3d_Transparency;\n\n\t\tfrontColor = getMaterialColor (N, v,\n\t\t                               ambientIntensity,\n\t\t                               diffuseColor,\n\t\t                               specularColor,\n\t\t                               emissiveColor,\n\t\t                               shininess,\n\t\t                               transparency);\n\n\t\tif (x3d_SeparateBackColor)\n\t\t{\n\t\t\tambientIntensity = x3d_BackAmbientIntensity;\n\t\t\tdiffuseColor     = x3d_BackDiffuseColor;\n\t\t\tspecularColor    = x3d_BackSpecularColor;\n\t\t\temissiveColor    = x3d_BackEmissiveColor;\n\t\t\tshininess        = x3d_BackShininess;\n\t\t\ttransparency     = x3d_BackTransparency;\n\t\t}\n\n\t\tbackColor = getMaterialColor (-N, v,\n\t\t                              ambientIntensity,\n\t\t                              diffuseColor,\n\t\t                              specularColor,\n\t\t                              emissiveColor,\n\t\t                              shininess,\n\t\t                              transparency);\n\t}\n\telse\n\t{\n\t   frontColor = backColor = x3d_ColorMaterial ? x3d_Color : vec4 (1.0, 1.0, 1.0, 1.0);\n\t}\n}\n';});
 
 
 define('text!x_ite/Browser/Shaders/Gouraud.fs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform int x3d_GeometryType;\n\nuniform vec4 x3d_ClipPlane [x3d_MaxClipPlanes];\n\nuniform int   x3d_FogType;\nuniform vec3  x3d_FogColor;\nuniform float x3d_FogVisibilityRange;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;      // true if a X3DMaterialNode is attached, otherwise false\nuniform bool  x3d_ColorMaterial; // true if a X3DColorNode is attached, otherwise false\n\nuniform int         x3d_TextureType [x3d_MaxTextures]; // x3d_NoneTexture, x3d_TextureType2D or x3d_TextureTypeCubeMapTexture\nuniform sampler2D   x3d_Texture2D [x3d_MaxTextures];\nuniform samplerCube x3d_CubeMapTexture [x3d_MaxTextures];\n\nvarying vec4 frontColor; // color\nvarying vec4 backColor;  // color\nvarying vec4 t;          // texCoord\nvarying vec3 v;          // point on geometry\n\nvoid\nclip ()\n{\n\tfor (int i = 0; i < x3d_MaxClipPlanes; ++ i)\n\t{\n\t\tif (x3d_ClipPlane [i] == x3d_NoneClipPlane)\n\t\t\tbreak;\n\n\t\tif (dot (v, x3d_ClipPlane [i] .xyz) - x3d_ClipPlane [i] .w < 0.0)\n\t\t\tdiscard;\n\t}\n}\n\nvec4\ngetTextureColor ()\n{\n\tif (x3d_TextureType [0] == x3d_TextureType2D)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn texture2D (x3d_Texture2D [0], vec2 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn texture2D (x3d_Texture2D [0], vec2 (1.0 - t .s, t .t));\n\t}\n\n \tif (x3d_TextureType [0] == x3d_TextureTypeCubeMapTexture)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (1.0 - t .s, t .t, t .z));\n\t}\n \n\treturn vec4 (1.0, 1.0, 1.0, 1.0);\n}\n\nfloat\ngetFogInterpolant ()\n{\n\t// Returns 0.0 for fog color and 1.0 for material color.\n\n\tif (x3d_FogType == x3d_NoneFog)\n\t\treturn 1.0;\n\n\tif (x3d_FogVisibilityRange <= 0.0)\n\t\treturn 0.0;\n\n\tfloat dV = length (v);\n\n\tif (dV >= x3d_FogVisibilityRange)\n\t\treturn 0.0;\n\n\tif (x3d_FogType == x3d_LinearFog)\n\t\treturn (x3d_FogVisibilityRange - dV) / x3d_FogVisibilityRange;\n\n\tif (x3d_FogType == x3d_ExponentialFog)\n\t\treturn exp (-dV / (x3d_FogVisibilityRange - dV));\n\n\treturn 1.0;\n}\n\nvoid\nmain ()\n{\n \tclip ();\n\n\tvec4 finalColor = gl_FrontFacing ? frontColor : backColor;\n\n\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t{\n\t\tif (x3d_Lighting)\n\t\t\tfinalColor *= getTextureColor ();\n\t\telse\n\t\t{\n\t\t\tif (x3d_ColorMaterial)\n\t\t\t\tfinalColor *= getTextureColor ();\n\t\t\telse\n\t\t\t\tfinalColor = getTextureColor ();\n\t\t}\n\t}\n\n\tgl_FragColor .rgb = mix (x3d_FogColor, finalColor .rgb, getFogInterpolant ());\n\tgl_FragColor .a   = finalColor .a;\n}\n';});
 
 
-define('text!x_ite/Browser/Shaders/Phong.vs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform mat4 x3d_TextureMatrix [x3d_MaxTextures];\nuniform mat3 x3d_NormalMatrix;\nuniform mat4 x3d_ProjectionMatrix;\nuniform mat4 x3d_ModelViewMatrix;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;  // true if a X3DMaterialNode is attached, otherwise false\n\nattribute vec4 x3d_Color;\nattribute vec4 x3d_TexCoord;\nattribute vec3 x3d_Normal;\nattribute vec4 x3d_Vertex;\n\nvarying vec4 C;  // color\nvarying vec4 t;  // texCoord\nvarying vec3 vN; // normalized normal vector at this point on geometry\nvarying vec3 v;  // point on geometry\n\nvoid\nmain ()\n{\n\tgl_PointSize = x3d_LinewidthScaleFactor;\n\n\tvec4 p = x3d_ModelViewMatrix * x3d_Vertex;\n\n\tif (x3d_Lighting)\n\t\tvN = normalize (x3d_NormalMatrix * x3d_Normal);\n\n\tt = x3d_TextureMatrix [0] * x3d_TexCoord;\n\tC = x3d_Color;\n\tv = p .xyz;\n\n\tgl_Position = x3d_ProjectionMatrix * p;\n}\n';});
+define('text!x_ite/Browser/Shaders/Phong.vs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform mat4 x3d_TextureMatrix [x3d_MaxTextures];\nuniform mat3 x3d_NormalMatrix;\nuniform mat4 x3d_ProjectionMatrix;\nuniform mat4 x3d_ModelViewMatrix;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;  // true if a X3DMaterialNode is attached, otherwise false\n\nattribute vec4 x3d_Color;\nattribute vec4 x3d_TexCoord;\nattribute vec3 x3d_Normal;\nattribute vec4 x3d_Vertex;\n\nvarying vec4 C;  // color\nvarying vec4 t;  // texCoord\nvarying vec3 vN; // normalized normal vector at this point on geometry\nvarying vec3 v;  // point on geometry\n\nvoid\nmain ()\n{\n\tgl_PointSize = x3d_LinewidthScaleFactor;\n\n\tvec4 p = x3d_ModelViewMatrix * x3d_Vertex;\n\n\tif (x3d_Lighting)\n\t\tvN = x3d_NormalMatrix * x3d_Normal;\n\n\tt = x3d_TextureMatrix [0] * x3d_TexCoord;\n\tC = x3d_Color;\n\tv = p .xyz;\n\n\tgl_Position = x3d_ProjectionMatrix * p;\n}\n';});
 
 
-define('text!x_ite/Browser/Shaders/Phong.fs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform int x3d_GeometryType;\n\nuniform vec4 x3d_ClipPlane [x3d_MaxClipPlanes];\n\nuniform int   x3d_FogType;\nuniform vec3  x3d_FogColor;\nuniform float x3d_FogVisibilityRange;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;      // true if a X3DMaterialNode is attached, otherwise false\nuniform bool  x3d_ColorMaterial; // true if a X3DColorNode is attached, otherwise false\n\nuniform int   x3d_LightType [x3d_MaxLights];\nuniform bool  x3d_LightOn [x3d_MaxLights];\nuniform vec3  x3d_LightColor [x3d_MaxLights];\nuniform float x3d_LightIntensity [x3d_MaxLights];\nuniform float x3d_LightAmbientIntensity [x3d_MaxLights];\nuniform vec3  x3d_LightAttenuation [x3d_MaxLights];\nuniform vec3  x3d_LightLocation [x3d_MaxLights];\nuniform vec3  x3d_LightDirection [x3d_MaxLights];\nuniform float x3d_LightRadius [x3d_MaxLights];\nuniform float x3d_LightBeamWidth [x3d_MaxLights];\nuniform float x3d_LightCutOffAngle [x3d_MaxLights];\n\nuniform bool x3d_SeparateBackColor;\n\nuniform float x3d_AmbientIntensity;\nuniform vec3  x3d_DiffuseColor;\nuniform vec3  x3d_SpecularColor;\nuniform vec3  x3d_EmissiveColor;\nuniform float x3d_Shininess;\nuniform float x3d_Transparency;\n\nuniform float x3d_BackAmbientIntensity;\nuniform vec3  x3d_BackDiffuseColor;\nuniform vec3  x3d_BackSpecularColor;\nuniform vec3  x3d_BackEmissiveColor;\nuniform float x3d_BackShininess;\nuniform float x3d_BackTransparency;\n\nuniform int         x3d_TextureType [x3d_MaxTextures]; // true if a X3DTexture2DNode is attached, otherwise false\nuniform sampler2D   x3d_Texture2D [x3d_MaxTextures];\nuniform samplerCube x3d_CubeMapTexture [x3d_MaxTextures];\n\nvarying vec4 C;  // color\nvarying vec4 t;  // texCoord\nvarying vec3 vN; // normalized normal vector at this point on geometry\nvarying vec3 v;  // point on geometry\n\nvoid\nclip ()\n{\n\tfor (int i = 0; i < x3d_MaxClipPlanes; ++ i)\n\t{\n\t\tif (x3d_ClipPlane [i] == x3d_NoneClipPlane)\n\t\t\tbreak;\n\n\t\tif (dot (v, x3d_ClipPlane [i] .xyz) - x3d_ClipPlane [i] .w < 0.0)\n\t\t\tdiscard;\n\t}\n}\n\nvec4\ngetTextureColor ()\n{\n\tif (x3d_TextureType [0] == x3d_TextureType2D)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn texture2D (x3d_Texture2D [0], vec2 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn texture2D (x3d_Texture2D [0], vec2 (1.0 - t .s, t .t));\n\t}\n\n\tif (x3d_TextureType [0] == x3d_TextureTypeCubeMapTexture)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (1.0 - t .s, t .t, t .z));\n\t}\n\n\treturn vec4 (1.0, 1.0, 1.0, 1.0);\n}\n\nfloat\ngetSpotFactor (in float cutOffAngle, in float beamWidth, in vec3 L, in vec3 d)\n{\n\tfloat spotAngle = acos (clamp (dot (-L, d), -1.0, 1.0));\n\t\n\tif (spotAngle >= cutOffAngle)\n\t\treturn 0.0;\n\telse if (spotAngle <= beamWidth)\n\t\treturn 1.0;\n\n\treturn (spotAngle - cutOffAngle) / (beamWidth - cutOffAngle);\n}\n\nvec4\ngetMaterialColor ()\n{\n\tif (x3d_Lighting)\n\t{\n\t\tvec3  N  = normalize (gl_FrontFacing ? vN : -vN);\n\t\tvec3  V  = normalize (-v); // normalized vector from point on geometry to viewer\'s position\n\t\tfloat dV = length (v);\n\n\t\t// Calculate diffuseFactor & alpha\n\n\t\tbool frontColor = gl_FrontFacing || ! x3d_SeparateBackColor;\n\n\t\tfloat ambientIntensity = frontColor ? x3d_AmbientIntensity : x3d_BackAmbientIntensity;\n\t\tvec3  diffuseColor     = frontColor ? x3d_DiffuseColor     : x3d_BackDiffuseColor;\n\t\tvec3  specularColor    = frontColor ? x3d_SpecularColor    : x3d_BackSpecularColor;\n\t\tvec3  emissiveColor    = frontColor ? x3d_EmissiveColor    : x3d_BackEmissiveColor;\n\t\tfloat shininess        = frontColor ? x3d_Shininess        : x3d_BackShininess;\n\t\tfloat transparency     = frontColor ? x3d_Transparency     : x3d_BackTransparency;\n\n\t\tvec3  diffuseFactor = vec3 (1.0, 1.0, 1.0);\n\t\tfloat alpha         = 1.0 - transparency;\n\n\t\tif (x3d_ColorMaterial)\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tdiffuseFactor  = T .rgb * C .rgb;\n\t\t\t\talpha         *= T .a;\n\t\t\t}\n\t\t\telse\n\t\t\t\tdiffuseFactor = C .rgb;\n\n\t\t\talpha *= C .a;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tdiffuseFactor  = T .rgb * diffuseColor;\n\t\t\t\talpha         *= T .a;\n\t\t\t}\n\t\t\telse\n\t\t\t\tdiffuseFactor = diffuseColor;\n\t\t}\n\n\t\tvec3 ambientTerm = diffuseFactor * ambientIntensity;\n\n\t\t// Apply light sources\n\n\t\tvec3 finalColor = vec3 (0.0, 0.0, 0.0);\n\n\t\tfor (int i = 0; i < x3d_MaxLights; ++ i)\n\t\t{\n\t\t\tint lightType = x3d_LightType [i];\n\n\t\t\tif (lightType == x3d_NoneLight)\n\t\t\t\tbreak;\n\n\t\t\tvec3  vL = x3d_LightLocation [i] - v;\n\t\t\tfloat dL = length (vL);\n\t\t\tbool  di = lightType == x3d_DirectionalLight;\n\n\t\t\tif (di || dL <= x3d_LightRadius [i])\n\t\t\t{\n\t\t\t\tvec3 d = x3d_LightDirection [i];\n\t\t\t\tvec3 c = x3d_LightAttenuation [i];\n\t\t\t\tvec3 L = di ? -d : normalize (vL);      // Normalized vector from point on geometry to light source i position.\n\t\t\t\tvec3 H = normalize (L + V);             // Specular term\n\n\t\t\t\tfloat lightAngle     = dot (N, L);      // Angle between normal and light ray.\n\t\t\t\tvec3  diffuseTerm    = diffuseFactor * clamp (lightAngle, 0.0, 1.0);\n\t\t\t\tfloat specularFactor = shininess > 0.0 ? pow (max (dot (N, H), 0.0), shininess * 128.0) : 1.0;\n\t\t\t\tvec3  specularTerm   = specularColor * specularFactor;\n\n\t\t\t\tfloat attenuationFactor           = di ? 1.0 : 1.0 / max (c [0] + c [1] * dL + c [2] * (dL * dL), 1.0);\n\t\t\t\tfloat spotFactor                  = lightType == x3d_SpotLight ? getSpotFactor (x3d_LightCutOffAngle [i], x3d_LightBeamWidth [i], L, d) : 1.0;\n\t\t\t\tfloat attenuationSpotFactor       = attenuationFactor * spotFactor;\n\t\t\t\tvec3  ambientColor                = x3d_LightAmbientIntensity [i] * ambientTerm;\n\t\t\t\tvec3  ambientDiffuseSpecularColor = ambientColor + x3d_LightIntensity [i] * (diffuseTerm + specularTerm);\n\n\t\t\t\tfinalColor += attenuationSpotFactor * (x3d_LightColor [i] * ambientDiffuseSpecularColor);\n\t\t\t}\n\t\t}\n\n\t\tfinalColor += emissiveColor;\n\n\t\treturn vec4 (finalColor, alpha);\n\t}\n\telse\n\t{\n\t\tvec4 finalColor = vec4 (1.0, 1.0, 1.0, 1.0);\n\t\n\t\tif (x3d_ColorMaterial)\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tfinalColor = T * C;\n\t\t\t}\n\t\t\telse\n\t\t\t\tfinalColor = C;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t\tfinalColor = getTextureColor ();\n\t\t}\n\n\t\treturn finalColor;\n\t}\n}\n\nfloat\ngetFogInterpolant ()\n{\n\t// Returns 0.0 for fog color and 1.0 for material color.\n\n\tif (x3d_FogType == x3d_NoneFog)\n\t\treturn 1.0;\n\n\tif (x3d_FogVisibilityRange <= 0.0)\n\t\treturn 0.0;\n\n\tfloat dV = length (v);\n\n\tif (dV >= x3d_FogVisibilityRange)\n\t\treturn 0.0;\n\n\tif (x3d_FogType == x3d_LinearFog)\n\t\treturn (x3d_FogVisibilityRange - dV) / x3d_FogVisibilityRange;\n\n\tif (x3d_FogType == x3d_ExponentialFog)\n\t\treturn exp (-dV / (x3d_FogVisibilityRange - dV));\n\n\treturn 1.0;\n}\n\nvoid\nmain ()\n{\n\tclip ();\n\n\tgl_FragColor = getMaterialColor ();\n\n\tgl_FragColor .rgb = mix (x3d_FogColor, gl_FragColor .rgb, getFogInterpolant ());\n}\n';});
+define('text!x_ite/Browser/Shaders/Phong.fs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform int x3d_GeometryType;\n\nuniform vec4 x3d_ClipPlane [x3d_MaxClipPlanes];\n\nuniform int   x3d_FogType;\nuniform vec3  x3d_FogColor;\nuniform float x3d_FogVisibilityRange;\n\nuniform float x3d_LinewidthScaleFactor;\nuniform bool  x3d_Lighting;      // true if a X3DMaterialNode is attached, otherwise false\nuniform bool  x3d_ColorMaterial; // true if a X3DColorNode is attached, otherwise false\n\nuniform int   x3d_LightType [x3d_MaxLights];\nuniform vec3  x3d_LightColor [x3d_MaxLights];\nuniform float x3d_LightIntensity [x3d_MaxLights];\nuniform float x3d_LightAmbientIntensity [x3d_MaxLights];\nuniform vec3  x3d_LightAttenuation [x3d_MaxLights];\nuniform vec3  x3d_LightLocation [x3d_MaxLights];\nuniform vec3  x3d_LightDirection [x3d_MaxLights];\nuniform float x3d_LightRadius [x3d_MaxLights];\nuniform float x3d_LightBeamWidth [x3d_MaxLights];\nuniform float x3d_LightCutOffAngle [x3d_MaxLights];\n\nuniform bool x3d_SeparateBackColor;\n\nuniform float x3d_AmbientIntensity;\nuniform vec3  x3d_DiffuseColor;\nuniform vec3  x3d_SpecularColor;\nuniform vec3  x3d_EmissiveColor;\nuniform float x3d_Shininess;\nuniform float x3d_Transparency;\n\nuniform float x3d_BackAmbientIntensity;\nuniform vec3  x3d_BackDiffuseColor;\nuniform vec3  x3d_BackSpecularColor;\nuniform vec3  x3d_BackEmissiveColor;\nuniform float x3d_BackShininess;\nuniform float x3d_BackTransparency;\n\nuniform int         x3d_TextureType [x3d_MaxTextures]; // true if a X3DTexture2DNode is attached, otherwise false\nuniform sampler2D   x3d_Texture2D [x3d_MaxTextures];\nuniform samplerCube x3d_CubeMapTexture [x3d_MaxTextures];\n\nvarying vec4 C;  // color\nvarying vec4 t;  // texCoord\nvarying vec3 vN; // normalized normal vector at this point on geometry\nvarying vec3 v;  // point on geometry\n\nvoid\nclip ()\n{\n\tfor (int i = 0; i < x3d_MaxClipPlanes; ++ i)\n\t{\n\t\tif (x3d_ClipPlane [i] == x3d_NoneClipPlane)\n\t\t\tbreak;\n\n\t\tif (dot (v, x3d_ClipPlane [i] .xyz) - x3d_ClipPlane [i] .w < 0.0)\n\t\t\tdiscard;\n\t}\n}\n\nvec4\ngetTextureColor ()\n{\n\tif (x3d_TextureType [0] == x3d_TextureType2D)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn texture2D (x3d_Texture2D [0], vec2 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn texture2D (x3d_Texture2D [0], vec2 (1.0 - t .s, t .t));\n\t}\n\n\tif (x3d_TextureType [0] == x3d_TextureTypeCubeMapTexture)\n\t{\n\t\tif (x3d_GeometryType == x3d_Geometry3D || gl_FrontFacing)\n\t\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (t));\n\t\t\n\t\t// If dimension is x3d_Geometry2D the texCoords must be flipped.\n\t\treturn textureCube (x3d_CubeMapTexture [0], vec3 (1.0 - t .s, t .t, t .z));\n\t}\n\n\treturn vec4 (1.0, 1.0, 1.0, 1.0);\n}\n\nfloat\ngetSpotFactor (in float cutOffAngle, in float beamWidth, in vec3 L, in vec3 d)\n{\n\tfloat spotAngle = acos (clamp (dot (-L, d), -1.0, 1.0));\n\t\n\tif (spotAngle >= cutOffAngle)\n\t\treturn 0.0;\n\telse if (spotAngle <= beamWidth)\n\t\treturn 1.0;\n\n\treturn (spotAngle - cutOffAngle) / (beamWidth - cutOffAngle);\n}\n\nvec4\ngetMaterialColor ()\n{\n\tif (x3d_Lighting)\n\t{\n\t\tvec3  N  = normalize (gl_FrontFacing ? vN : -vN);\n\t\tvec3  V  = normalize (-v); // normalized vector from point on geometry to viewer\'s position\n\t\tfloat dV = length (v);\n\n\t\t// Calculate diffuseFactor & alpha\n\n\t\tbool frontColor = gl_FrontFacing || ! x3d_SeparateBackColor;\n\n\t\tfloat ambientIntensity = frontColor ? x3d_AmbientIntensity : x3d_BackAmbientIntensity;\n\t\tvec3  diffuseColor     = frontColor ? x3d_DiffuseColor     : x3d_BackDiffuseColor;\n\t\tvec3  specularColor    = frontColor ? x3d_SpecularColor    : x3d_BackSpecularColor;\n\t\tvec3  emissiveColor    = frontColor ? x3d_EmissiveColor    : x3d_BackEmissiveColor;\n\t\tfloat shininess        = frontColor ? x3d_Shininess        : x3d_BackShininess;\n\t\tfloat transparency     = frontColor ? x3d_Transparency     : x3d_BackTransparency;\n\n\t\tvec3  diffuseFactor = vec3 (1.0, 1.0, 1.0);\n\t\tfloat alpha         = 1.0 - transparency;\n\n\t\tif (x3d_ColorMaterial)\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tdiffuseFactor  = T .rgb * C .rgb;\n\t\t\t\talpha         *= T .a;\n\t\t\t}\n\t\t\telse\n\t\t\t\tdiffuseFactor = C .rgb;\n\n\t\t\talpha *= C .a;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tdiffuseFactor  = T .rgb * diffuseColor;\n\t\t\t\talpha         *= T .a;\n\t\t\t}\n\t\t\telse\n\t\t\t\tdiffuseFactor = diffuseColor;\n\t\t}\n\n\t\tvec3 ambientTerm = diffuseFactor * ambientIntensity;\n\n\t\t// Apply light sources\n\n\t\tvec3 finalColor = vec3 (0.0, 0.0, 0.0);\n\n\t\tfor (int i = 0; i < x3d_MaxLights; ++ i)\n\t\t{\n\t\t\tint lightType = x3d_LightType [i];\n\n\t\t\tif (lightType == x3d_NoneLight)\n\t\t\t\tbreak;\n\n\t\t\tvec3  vL = x3d_LightLocation [i] - v;\n\t\t\tfloat dL = length (vL);\n\t\t\tbool  di = lightType == x3d_DirectionalLight;\n\n\t\t\tif (di || dL <= x3d_LightRadius [i])\n\t\t\t{\n\t\t\t\tvec3 d = x3d_LightDirection [i];\n\t\t\t\tvec3 c = x3d_LightAttenuation [i];\n\t\t\t\tvec3 L = di ? -d : normalize (vL);      // Normalized vector from point on geometry to light source i position.\n\t\t\t\tvec3 H = normalize (L + V);             // Specular term\n\n\t\t\t\tfloat lightAngle     = dot (N, L);      // Angle between normal and light ray.\n\t\t\t\tvec3  diffuseTerm    = diffuseFactor * clamp (lightAngle, 0.0, 1.0);\n\t\t\t\tfloat specularFactor = shininess > 0.0 ? pow (max (dot (N, H), 0.0), shininess * 128.0) : 1.0;\n\t\t\t\tvec3  specularTerm   = specularColor * specularFactor;\n\n\t\t\t\tfloat attenuationFactor           = di ? 1.0 : 1.0 / max (c [0] + c [1] * dL + c [2] * (dL * dL), 1.0);\n\t\t\t\tfloat spotFactor                  = lightType == x3d_SpotLight ? getSpotFactor (x3d_LightCutOffAngle [i], x3d_LightBeamWidth [i], L, d) : 1.0;\n\t\t\t\tfloat attenuationSpotFactor       = attenuationFactor * spotFactor;\n\t\t\t\tvec3  ambientColor                = x3d_LightAmbientIntensity [i] * ambientTerm;\n\t\t\t\tvec3  ambientDiffuseSpecularColor = ambientColor + x3d_LightIntensity [i] * (diffuseTerm + specularTerm);\n\n\t\t\t\tfinalColor += attenuationSpotFactor * (x3d_LightColor [i] * ambientDiffuseSpecularColor);\n\t\t\t}\n\t\t}\n\n\t\tfinalColor += emissiveColor;\n\n\t\treturn vec4 (finalColor, alpha);\n\t}\n\telse\n\t{\n\t\tvec4 finalColor = vec4 (1.0, 1.0, 1.0, 1.0);\n\t\n\t\tif (x3d_ColorMaterial)\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t{\n\t\t\t\tvec4 T = getTextureColor ();\n\n\t\t\t\tfinalColor = T * C;\n\t\t\t}\n\t\t\telse\n\t\t\t\tfinalColor = C;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (x3d_TextureType [0] != x3d_NoneTexture)\n\t\t\t\tfinalColor = getTextureColor ();\n\t\t}\n\n\t\treturn finalColor;\n\t}\n}\n\nfloat\ngetFogInterpolant ()\n{\n\t// Returns 0.0 for fog color and 1.0 for material color.\n\n\tif (x3d_FogType == x3d_NoneFog)\n\t\treturn 1.0;\n\n\tif (x3d_FogVisibilityRange <= 0.0)\n\t\treturn 0.0;\n\n\tfloat dV = length (v);\n\n\tif (dV >= x3d_FogVisibilityRange)\n\t\treturn 0.0;\n\n\tif (x3d_FogType == x3d_LinearFog)\n\t\treturn (x3d_FogVisibilityRange - dV) / x3d_FogVisibilityRange;\n\n\tif (x3d_FogType == x3d_ExponentialFog)\n\t\treturn exp (-dV / (x3d_FogVisibilityRange - dV));\n\n\treturn 1.0;\n}\n\nvoid\nmain ()\n{\n\tclip ();\n\n\tgl_FragColor = getMaterialColor ();\n\n\tgl_FragColor .rgb = mix (x3d_FogColor, gl_FragColor .rgb, getFogInterpolant ());\n}\n';});
 
 
 define('text!x_ite/Browser/Shaders/Depth.vs',[],function () { return '// -*- Mode: C++; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-\n\nprecision mediump float;\n\nuniform mat4 x3d_ProjectionMatrix;\nuniform mat4 x3d_ModelViewMatrix;\n\nattribute vec4 x3d_Vertex;\n\nvarying vec3 v; // point on geometry\n\nvoid\nmain ()\n{\n\tvec4 p = x3d_ModelViewMatrix * x3d_Vertex;\n\n\tv = p .xyz;\n\n\tgl_Position = x3d_ProjectionMatrix * p;\n}\n';});
@@ -50068,7 +50367,7 @@ function (DepthBuffer,
 		gl .bindBuffer (gl .ARRAY_BUFFER, normalBuffer);
 		gl .bufferData (gl .ARRAY_BUFFER, new Float32Array (normals), gl .STATIC_DRAW);
 
-		shaderNode .setClipPlanes (gl, [ ]);
+		shaderNode .setShaderObjects (gl, [ ]);
 
 		gl .uniform1i (shaderNode .x3d_FogType,       0);
 		gl .uniform1i (shaderNode .x3d_ColorMaterial, false);
@@ -50218,6 +50517,7 @@ function ($,
 			gl .clearDepth (1);
 
 			gl .blendFuncSeparate (gl .SRC_ALPHA, gl .ONE_MINUS_SRC_ALPHA, gl .ONE, gl .ONE_MINUS_SRC_ALPHA);
+			gl .blendEquationSeparate (gl .FUNC_ADD, gl .FUNC_ADD);
 			gl .enable (gl .BLEND);
 
 			// Configure viewport.
@@ -52785,7 +53085,7 @@ function ($,
 	
 							Matrix4 .prototype .translate .call (modelViewMatrix, particles [p] .position);
 	
-							if (materialNode || shaderNode .getCustom ())
+							if (lighting)
 							{
 								// Set normal matrix.
 								normalMatrix [0] = modelViewMatrix [0]; normalMatrix [1] = modelViewMatrix [4]; normalMatrix [2] = modelViewMatrix [ 8];
@@ -53248,6 +53548,8 @@ function ($,
 		X3DComposedGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .IndexedFaceSet);
+
+		this .creaseAngle_ .setUnit ("angle");
 	}
 
 	IndexedFaceSet .prototype = $.extend (Object .create (X3DComposedGeometryNode .prototype),
@@ -53923,6 +54225,8 @@ function ($,
 		X3DCoordinateNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Coordinate);
+
+		this .point_ .setUnit ("length");
 	}
 
 	Coordinate .prototype = $.extend (Object .create (X3DCoordinateNode .prototype),
@@ -56689,11 +56993,11 @@ function ($,
 					if (this .interval)
 					{
 						this .cycle += this .interval * Math .floor ((time - this .cycle) / this .interval);
-
-						this .fraction_changed_ = this .fraction = this .last;
 						
 						this .elapsedTime_ = this .getElapsedTime ();
 						this .cycleTime_   = time;
+
+						this .set_fraction (time);
 					}
 				}
 				else
@@ -56704,9 +57008,9 @@ function ($,
 			}
 			else
 			{
-				this .set_fraction (time);
-
 				this .elapsedTime_ = this .getElapsedTime ();
+
+				this .set_fraction (time);
 			}
 
 			this .time_ = time;
@@ -57364,7 +57668,7 @@ function ($,
 	   this .userPosition             = new Vector3 (0, 1, 0);
 	   this .userOrientation          = new Rotation4 (0, 0, 1, 0);
 	   this .userCenterOfRotation     = new Vector3 (0, 0, 0);
-		this .transformationMatrix     = new Matrix4 ();
+		this .modelMatrix              = new Matrix4 ();
 		this .cameraSpaceMatrix        = new Matrix4 (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0,  10, 1);
 		this .inverseCameraSpaceMatrix = new Matrix4 (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -10, 1);
 
@@ -57480,9 +57784,9 @@ function ($,
 		{
 			return this .inverseCameraSpaceMatrix;
 		},
-		getTransformationMatrix: function ()
+		getModelMatrix: function ()
 		{
-			return this .transformationMatrix;
+			return this .modelMatrix;
 		},
 		getUpVector: function ()
 		{
@@ -57595,7 +57899,7 @@ function ($,
 		getRelativeTransformation: function (fromViewpoint, relativePosition, relativeOrientation, relativeScale, relativeScaleOrientation)
 		// throw
 		{
-			var differenceMatrix = this .transformationMatrix .copy () .multRight (fromViewpoint .getInverseCameraSpaceMatrix ()) .inverse ();
+			var differenceMatrix = this .modelMatrix .copy () .multRight (fromViewpoint .getInverseCameraSpaceMatrix ()) .inverse ();
 
 			differenceMatrix .get (relativePosition, relativeOrientation, relativeScale, relativeScaleOrientation);
 
@@ -57625,7 +57929,7 @@ function ($,
 			{
 				this .getCameraSpaceMatrix () .multVecMatrix (point);
 
-				Matrix4 .inverse (this .getTransformationMatrix ()) .multVecMatrix (point);
+				Matrix4 .inverse (this .getModelMatrix ()) .multVecMatrix (point);
 
 				var minDistance = this .getBrowser () .getActiveLayer () .getNavigationInfo () .getNearValue () * 2;
 		
@@ -57693,7 +57997,7 @@ function ($,
 		{
 			renderObject .getLayer () .getViewpoints () .push (this);
 
-			this .transformationMatrix .assign (renderObject .getModelViewMatrix () .get ());
+			this .modelMatrix .assign (renderObject .getModelViewMatrix () .get ());
 		},
 		update: function ()
 		{
@@ -57704,7 +58008,7 @@ function ($,
 				                              this .scaleOffset_ .getValue (),
 				                              this .scaleOrientationOffset_ .getValue ());
 
-				this .cameraSpaceMatrix .multRight (this .transformationMatrix);
+				this .cameraSpaceMatrix .multRight (this .modelMatrix);
 
 				this .inverseCameraSpaceMatrix .assign (this .cameraSpaceMatrix) .inverse ();
 			}
@@ -57803,6 +58107,10 @@ function ($,
 		X3DViewpointNode .call (this, executionContext);
 
 		this .addType (X3DConstants .OrthoViewpoint);
+
+		this .position_         .setUnit ("length");
+		this .centerOfRotation_ .setUnit ("length");
+		this .fieldOfView_      .setUnit ("length");
 
 		this .projectionMatrix = new Matrix4 ();
 	}
@@ -59664,6 +59972,10 @@ function ($,
 
 		this .addType (X3DConstants .Viewpoint);
 
+		this .position_         .setUnit ("length");
+		this .centerOfRotation_ .setUnit ("length");
+		this .fieldOfView_      .setUnit ("angle");
+
 		this .projectionMatrix        = new Matrix4 ();
 		this .fieldOfViewInterpolator = new ScalarInterpolator (this .getBrowser () .getPrivateScene ());
 	}
@@ -61110,6 +61422,10 @@ function ($,
 				
 		this .addChildObjects ("availableViewers", new Fields .MFString (),
 		                       "viewer",           new Fields .SFString ("EXAMINE"));
+
+		this .avatarSize_      .setUnit ("length");
+		this .speed_           .setUnit ("speed");
+		this .visibilityLimit_ .setUnit ("speed");
 	}
 
 	NavigationInfo .prototype = $.extend (Object .create (X3DBindableNode .prototype),
@@ -61471,6 +61787,9 @@ function ($,
 		X3DGeospatialObject .call (this, executionContext);
 
 		this .addType (X3DConstants .GeoViewpoint);
+
+		this .centerOfRotation_ .setUnit ("length");
+		this .fieldOfView_      .setUnit ("angle");
 
 		this .navigationInfoNode      = new NavigationInfo (executionContext);
 		this .fieldOfViewInterpolator = new ScalarInterpolator (this .getBrowser () .getPrivateScene ());
@@ -62182,6 +62501,8 @@ function ($,
 		X3DChildNode .call (this, executionContext);
 
 		this .addType (X3DConstants .X3DLightNode);
+
+		this .shadowDiffusion_ .setUnit ("length");
 	}
 
 	X3DLightNode .prototype = $.extend (Object .create (X3DChildNode .prototype),
@@ -62252,8 +62573,8 @@ function ($,
 						                     group,
 						                     renderObject .getModelViewMatrix () .get ());
 
-						renderObject .getLocalLights () .push (lightContainer);
-						renderObject .getLights ()      .push (lightContainer);
+						renderObject .getShaderObjects () .push (lightContainer);
+						renderObject .getLights ()        .push (lightContainer);
 					}
 				}
 				else
@@ -62271,8 +62592,8 @@ function ($,
 					{
 						lightContainer .getModelViewMatrix () .pushMatrix (renderObject .getModelViewMatrix () .get ());
 	
-						renderObject .getLocalLights () .push (lightContainer);
-						renderObject .getLights ()      .push (lightContainer);
+						renderObject .getShaderObjects () .push (lightContainer);
+						renderObject .getLights ()        .push (lightContainer);
 					}
 				}
 			}
@@ -62285,9 +62606,9 @@ function ($,
 				   return;
 
 				if (renderObject .isIndependent ())
-					renderObject .getBrowser () .getLocalLights () .push (renderObject .getLocalLights () .pop ());
+					renderObject .getBrowser () .getLocalLights () .push (renderObject .getShaderObjects () .pop ());
 				else
-					renderObject .getLocalLights () .pop ();
+					renderObject .getShaderObjects () .pop ();
 			}
 		},
 	});
@@ -62364,6 +62685,9 @@ function ($,
 	function X3DBoundedObject (executionContext)
 	{
 		this .addType (X3DConstants .X3DBoundedObject);
+
+		this .bboxSize_   .setUnit ("length");
+		this .bboxCenter_ .setUnit ("length");
 
 		this .childBBox = new Box3 ();
 	}
@@ -62495,6 +62819,7 @@ function ($,
 		this .clipPlanes            = [ ];
 		this .localFogs             = [ ];
 		this .lights                = [ ];
+		this .displayNodes          = [ ];
 		this .childNodes            = [ ];
 	}
 
@@ -62572,8 +62897,10 @@ function ($,
 				this .children_ .addInterest ("connectChildren", this);
 			}
 
+			var first = this .children_ .length;
+
 			this .children_ .insert (this .children_ .length, this .addChildren_, 0, this .addChildren_ .length);
-			this .add (this .addChildren_);
+			this .add (first, this .addChildren_);
 
 			this .addChildren_ .set ([ ]);
 			this .addChildren_ .setTainted (false);
@@ -62596,21 +62923,21 @@ function ($,
 			                                this .removeChildren_, 0, this .removeChildren_ .length),
 			                        this .children_ .length);
 
+			this .remove (this .removeChildren_);
+
 			this .removeChildren_ .set ([ ]);
-			
-			this .set_children__ ();
 		},
 		set_children__: function ()
 		{
 			this .clear ();
-			this .add (this .children_);
+			this .add (0, this .children_);
 		},
 		connectChildren: function ()
 		{
 			this .children_ .removeInterest ("connectChildren", this);
 			this .children_ .addInterest ("set_children__", this);
 		},
-		add: function (children)
+		add: function (first, children)
 		{
 			if (this .hidden)
 				return;
@@ -62619,11 +62946,11 @@ function ($,
 				visible    = this .getVisible (),
 				numVisible = visible .length;
 
-			for (var i = 0, length = children .length; i < length; ++ i)
+			for (var i = 0, v = first, length = children .length; i < length; ++ i, ++ v)
 			{
 				var child = children [i];
 
-				if (child && (i >= numVisible || visible [i]))
+				if (child && (v >= numVisible || visible [v]))
 				{
 					try
 					{
@@ -62696,6 +63023,116 @@ function ($,
 			}
 
 			this .set_cameraObjects__ ();
+			this .set_display_nodes ();
+		},
+		remove: function (children)
+		{
+			for (var i = 0, length = children .length; i < length; ++ i)
+			{
+				var child = children [i];
+
+				if (child)
+				{
+					try
+					{
+						var
+							innerNode = child .getValue () .getInnerNode (),
+							type      = innerNode .getType ();
+
+						for (var t = type .length - 1; t >= 0; -- t)
+						{
+							switch (type [t])
+							{
+								case X3DConstants .X3DPointingDeviceSensorNode:
+								{
+									var index = this .pointingDeviceSensors .indexOf (innerNode);
+
+									if (index >= 0)
+										this .pointingDeviceSensors .splice (index, 1);
+
+									break;
+								}
+								case X3DConstants .ClipPlane:
+								{
+									var index = this .clipPlanes .indexOf (innerNode);
+
+									if (index >= 0)
+										this .clipPlanes .splice (index, 1);
+
+									break;
+								}
+								case X3DConstants .LocalFog:
+								{
+									var index = this .localFogs .indexOf (innerNode);
+
+									if (index >= 0)
+										this .localFogs .splice (index, 1);
+
+									break;
+								}
+								case X3DConstants .X3DLightNode:
+								{
+									var index = this .lights .indexOf (innerNode);
+
+									if (index >= 0)
+										this .lights .splice (index, 1);
+
+									break;
+								}
+								case X3DConstants .X3DBindableNode:
+								{
+									var index = this .maybeCameraObjects .indexOf (innerNode);
+
+									if (index >= 0)
+										this .maybeCameraObjects .splice (index, 1);
+
+									break;				
+								}
+								case X3DConstants .X3DBackgroundNode:
+								case X3DConstants .X3DChildNode:
+								{
+									innerNode .isCameraObject_ .removeInterest ("set_cameraObjects__", this);
+
+									var index = this .maybeCameraObjects .indexOf (innerNode);
+
+									if (index >= 0)
+										this .maybeCameraObjects .splice (index, 1);
+
+									var index = this .childNodes .indexOf (innerNode);
+
+									if (index >= 0)
+										this .childNodes .splice (index, 1);
+
+									break;
+								}
+								case X3DConstants .BooleanFilter:
+								case X3DConstants .BooleanToggle:
+								case X3DConstants .NurbsOrientationInterpolator:
+								case X3DConstants .NurbsPositionInterpolator:
+								case X3DConstants .NurbsSurfaceInterpolator:
+								case X3DConstants .TimeSensor:
+								case X3DConstants .X3DFollowerNode:
+								case X3DConstants .X3DInfoNode:
+								case X3DConstants .X3DInterpolatorNode:
+								case X3DConstants .X3DLayoutNode:
+								case X3DConstants .X3DScriptNode:
+								case X3DConstants .X3DSequencerNode:
+								case X3DConstants .X3DTriggerNode:
+									break;
+								default:
+									continue;
+							}
+
+							break;
+						}
+					}
+					catch (error)
+					{ }
+				}
+			}
+
+			this .set_cameraObjects__ ();
+			this .set_display_nodes ();
 		},
 		clear: function ()
 		{
@@ -62724,6 +63161,25 @@ function ($,
 
 			this .setCameraObject (this .cameraObjects .length);
 		},
+		set_display_nodes: function ()
+		{
+			var
+				clipPlanes   = this .clipPlanes,
+				localFogs    = this .localFogs,
+				lights       = this .lights,
+				displayNodes = this .displayNodes;
+
+			displayNodes .length = 0;
+
+			for (var i = 0, length = clipPlanes .length; i < length; ++ i)
+				displayNodes .push (clipPlanes [i]);
+
+			for (var i = 0, length = localFogs .length; i < length; ++ i)
+				displayNodes .push (localFogs [i]);
+
+			for (var i = 0, length = lights .length; i < length; ++ i)
+				displayNodes .push (lights [i]);
+		},
 		traverse: function (type, renderObject)
 		{
 			switch (type)
@@ -62751,7 +63207,7 @@ function ($,
 					for (var i = 0, length = childNodes .length; i < length; ++ i)
 						childNodes [i] .traverse (type, renderObject);
 
-					for (var i = 0, length = clipPlanes .length; i < length; ++ i)
+					for (var i = clipPlanes .length - 1; i >= 0; -- i)
 						clipPlanes [i] .pop (renderObject);
 
 					if (pointingDeviceSensors .length)
@@ -62781,7 +63237,7 @@ function ($,
 					for (var i = 0, length = childNodes .length; i < length; ++ i)
 						childNodes [i] .traverse (type, renderObject);
 
-					for (var i = 0, length = clipPlanes .length; i < length; ++ i)
+					for (var i = clipPlanes .length - 1; i >= 0; -- i)
 						clipPlanes [i] .pop (renderObject);
 					
 					return;
@@ -62789,31 +63245,17 @@ function ($,
 				case TraverseType .DISPLAY:
 				{
 					var
-						clipPlanes = this .clipPlanes,
-						localFogs  = this .localFogs,
-						lights     = this .lights,
-						childNodes = this .childNodes;
+						displayNodes = this .displayNodes,
+						childNodes   = this .childNodes;
 
-					for (var i = 0, length = clipPlanes .length; i < length; ++ i)
-						clipPlanes [i] .push (renderObject);
-
-					for (var i = 0, length = localFogs .length; i < length; ++ i)
-						localFogs [i] .push (renderObject);
-
-					for (var i = 0, length = lights .length; i < length; ++ i)
-						lights [i] .push (renderObject, this);
+					for (var i = 0, length = displayNodes .length; i < length; ++ i)
+						displayNodes [i] .push (renderObject, this);
 
 					for (var i = 0, length = childNodes .length; i < length; ++ i)
 						childNodes [i] .traverse (type, renderObject);
-					
-					for (var i = 0, length = lights .length; i < length; ++ i)
-						lights [i] .pop (renderObject);
 
-					for (var i = 0, length = localFogs .length; i < length; ++ i)
-						localFogs [i] .pop (renderObject);
-
-					for (var i = 0, length = clipPlanes .length; i < length; ++ i)
-						clipPlanes [i] .pop (renderObject);
+					for (var i = displayNodes .length - 1; i >= 0; -- i)
+						displayNodes [i] .pop (renderObject);
 
 					return;
 				}
@@ -63136,7 +63578,7 @@ function ($,
 		this .viewport                      = new Vector4 (0, 0, 0, 0);
 		this .projectionMatrix              = new Matrix4 ();
 		this .modelViewMatrix               = new MatrixStack (Matrix4);
-		this .transformationMatrix          = new Matrix4 ();
+		this .modelMatrix                   = new Matrix4 ();
 		this .invLightSpaceMatrix           = new Matrix4 ();
 		this .invLightSpaceProjectionMatrix = new Matrix4 ();
 		this .shadowMatrix                  = new Matrix4 ();
@@ -63202,8 +63644,8 @@ function ($,
 				var
 					lightNode            = this .lightNode,
 					cameraSpaceMatrix    = renderObject .getCameraSpaceMatrix () .get (),
-					transformationMatrix = this .transformationMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
-					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? transformationMatrix : Matrix4 .Identity);
+					modelMatrix          = this .modelMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
+					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? modelMatrix : Matrix4 .Identity);
 
 				invLightSpaceMatrix .rotate (this .rotation .setFromToVec (Vector3 .zAxis, this .direction .assign (lightNode .getDirection ()) .negate ()));
 				invLightSpaceMatrix .inverse ();
@@ -63232,7 +63674,7 @@ function ($,
 				this .shadowBuffer .unbind ();
 	
 				if (! lightNode .getGlobal ())
-					invLightSpaceMatrix .multLeft (transformationMatrix .inverse ());
+					invLightSpaceMatrix .multLeft (modelMatrix .inverse ());
 
 				this .invLightSpaceProjectionMatrix .assign (invLightSpaceMatrix) .multRight (projectionMatrix) .multRight (lightNode .getBiasMatrix ());
 			}
@@ -63249,13 +63691,14 @@ function ($,
 			this .shadowMatrix .assign (renderObject .getCameraSpaceMatrix () .get ()) .multRight (this .invLightSpaceProjectionMatrix);
 			this .shadowMatrixArray .set (this .shadowMatrix);
 		},
-		setShaderUniforms: function (gl, shaderObject, i)
+		setShaderUniforms: function (gl, shaderObject)
 		{
 			var
 				lightNode   = this .lightNode,
 				color       = lightNode .getColor (),
 				direction   = this .direction,
-				shadowColor = lightNode .getShadowColor ();
+				shadowColor = lightNode .getShadowColor (),
+				i           = shaderObject .numLights ++;
 
 			gl .uniform1i (shaderObject .x3d_LightType [i],             1);
 			gl .uniform3f (shaderObject .x3d_LightColor [i],            color .r, color .g, color .b);
@@ -63648,8 +64091,6 @@ function ($,
 
 	return X3DViewportNode;
 });
-
-
 
 /* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
  *******************************************************************************
@@ -67245,6 +67686,8 @@ function ($,
 		X3DFontStyleNode .call (this, executionContext);
 
 		this .addType (X3DConstants .FontStyle);
+
+		this .size_ .setUnit ("length");
 	}
 
 	FontStyle .prototype = $.extend (Object .create (X3DFontStyleNode .prototype),
@@ -72515,6 +72958,8 @@ function ($,
 
 		this .addType (X3DConstants .TextureTransform);
 
+		this .rotation_ .setUnit ("angle");
+
 		this .matrix3 = new Matrix3 ();
 	}
 
@@ -73077,6 +73522,10 @@ function ($,
 
 		this .addType (X3DConstants .X3DParticleEmitterNode);
 
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
+
 		this .rotations           = [ ];
 		this .intersections       = [ ];
 		this .intersectionNormals = [ ];
@@ -73173,7 +73622,7 @@ function ($,
 		{
 			rotation .setFromToVec (Vector3 .zAxis, direction);
 
-			return rotation .multVecRot (this .getRandomNormalAngle (angle, normal));
+			return rotation .multVecRot (this .getRandomNormalWithAngle (angle, normal));
 		},
 		getRandomSurfaceNormal: function (normal)
 		{
@@ -73224,7 +73673,8 @@ function ($,
 
 					if (createParticles)
 					{
-						this .getRandomPosition (particle .position)
+						++ particle .life;
+						this .getRandomPosition (particle .position);
 						this .getRandomVelocity (particle .velocity);
 					}
 					else
@@ -73466,6 +73916,11 @@ function ($,
 
 		this .addType (X3DConstants .PointEmitter);
 
+		this .position_    .setUnit ("length");
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
+
 		this .direction = new Vector3 (0, 0, 0);
 	}
 
@@ -73703,6 +74158,7 @@ function ($,
 		projectionMatrixArray       = new Float32Array (16),
 		modelViewMatrix             = new Matrix4 (),
 		cameraSpaceProjectionMatrix = new Matrix4 (),
+		cameraSpaceMatrixArray      = new Float32Array (16),
 		localOrientation            = new Rotation4 (0, 0, 1, 0),
 		yAxis                       = new Vector3 (0, 1, 0),
 		zAxis                       = new Vector3 (0, 0, 1),
@@ -73724,9 +74180,8 @@ function ($,
 		this .projectionMatrix         = new MatrixStack (Matrix4);
 		this .modelViewMatrix          = new MatrixStack (Matrix4);
 		this .viewVolumes              = [ ];
-		this .clipPlanes               = [ ];
+		this .shaderObjects            = [ ];
 		this .globalLights             = [ ];
-		this .localLights              = [ ];
 		this .lights                   = [ ];
 		this .localFogs                = [ ];
 		this .layouts                  = [ ];
@@ -73794,17 +74249,13 @@ function ($,
 		{
 			return this .viewVolumes [this .viewVolumes .length - 1];
 		},
-		getClipPlanes: function ()
+		getShaderObjects: function ()
 		{
-			return this .clipPlanes;
+			return this .shaderObjects;
 		},
 		getGlobalLights: function ()
 		{
 			return this .globalLights;
-		},
-		getLocalLights: function ()
-		{
-			return this .localLights;
 		},
 		getLights: function ()
 		{
@@ -73917,7 +74368,7 @@ function ($,
 				rotation .setFromToVec (zAxis, vector .assign (direction) .negate ()) .multRight (localOrientation);
 				viewpoint .straightenHorizon (rotation);
 
-				cameraSpaceProjectionMatrix .assign (viewpoint .getTransformationMatrix ());
+				cameraSpaceProjectionMatrix .assign (viewpoint .getModelMatrix ());
 				cameraSpaceProjectionMatrix .translate (viewpoint .getUserPosition ());
 				cameraSpaceProjectionMatrix .rotate (rotation);
 				cameraSpaceProjectionMatrix .inverse ();
@@ -74014,27 +74465,19 @@ function ($,
 				context .scissor   = viewVolume .getScissor ();
 	
 				// Collisions
-	
-				var
-					sourceCollisions = this .getCollisions (),
-					destCollisions   = context .collisions;
-	
-				for (var i = 0, length = sourceCollisions .length; i < length; ++ i)
-				   destCollisions [i] = sourceCollisions [i];
-				
-				destCollisions .length = sourceCollisions .length;
-	
+
+				var collisions = context .collisions;
+
+				collisions .length = 0;
+				collisions .push .apply (collisions, this .collisions);
+
 				// Clip planes
-	
-				var
-					sourcePlanes = this .getClipPlanes (),
-					destPlanes   = context .clipPlanes;
-	
-				for (var i = 0, length = sourcePlanes .length; i < length; ++ i)
-					destPlanes [i] = sourcePlanes [i];
-				
-				destPlanes .length = sourcePlanes .length;
-	
+
+				var clipPlanes = context .clipPlanes;
+
+				clipPlanes .length = 0;
+				clipPlanes .push .apply (clipPlanes, this .shaderObjects);
+
 				return true;
 			}
 
@@ -74064,15 +74507,11 @@ function ($,
 	
 				// Clip planes
 	
-				var
-					sourcePlanes = this .getClipPlanes (),
-					destPlanes   = context .clipPlanes;
-	
-				for (var i = 0, length = sourcePlanes .length; i < length; ++ i)
-					destPlanes [i] = sourcePlanes [i];
-				
-				destPlanes .length = sourcePlanes .length;
-	
+				var clipPlanes = context .clipPlanes;
+
+				clipPlanes .length = 0;
+				clipPlanes .push .apply (clipPlanes, this .shaderObjects);
+
 				return true;
 			}
 
@@ -74085,7 +74524,6 @@ function ($,
 				bboxSize        = modelViewMatrix .multDirMatrix (this .bboxSize   .assign (shapeNode .getBBoxSize ())),
 				bboxCenter      = modelViewMatrix .multVecMatrix (this .bboxCenter .assign (shapeNode .getBBoxCenter ())),
 				radius          = bboxSize .abs () / 2,
-				distance        = bboxCenter .z,
 				viewVolume      = this .viewVolumes [this .viewVolumes .length - 1];
 
 			if (viewVolume .intersectsSphere (radius, bboxCenter))
@@ -74116,30 +74554,15 @@ function ($,
 				context .modelViewMatrix .set (modelViewMatrix);
 				context .scissor .assign (viewVolume .getScissor ());
 				context .shapeNode = shapeNode;
-				context .distance  = distance - radius;
+				context .distance  = bboxCenter .z - radius;
 				context .fogNode   = this .localFog;
 
-				// Clip planes
+				// Clip planes and local lights
 
-				var
-					sourcePlanes = this .getClipPlanes (),
-					destPlanes   = context .clipPlanes;
+				var shaderObjects = context .shaderObjects;
 
-				for (var i = 0, length = sourcePlanes .length; i < length; ++ i)
-					destPlanes [i] = sourcePlanes [i];
-				
-				destPlanes .length = sourcePlanes .length;
-
-				// Local lights
-
-				var
-					sourceLights = this .getLocalLights (),
-					destLights   = context .localLights;
-
-				for (var i = 0, length = sourceLights .length; i < length; ++ i)
-					destLights [i] = sourceLights [i];
-				
-				destLights .length = sourceLights .length;
+				shaderObjects .length = 0;
+				shaderObjects .push .apply (shaderObjects, this .shaderObjects);
 
 				return true;
 			}
@@ -74155,8 +74578,7 @@ function ($,
 				colorMaterial: false,
 				modelViewMatrix: new Float32Array (16),
 				scissor: new Vector4 (0, 0, 0, 0),
-				clipPlanes: [ ],
-				localLights: [ ],
+				shaderObjects: [ ],
 				linePropertiesNode: null,
 				materialNode: null,
 				textureNode: null,
@@ -74259,7 +74681,7 @@ function ($,
 					upVector = viewpoint .getUpVector (),
 					down     = rotation .setFromToVec (zAxis, upVector);
 
-				cameraSpaceProjectionMatrix .assign (viewpoint .getTransformationMatrix ());
+				cameraSpaceProjectionMatrix .assign (viewpoint .getModelMatrix ());
 				cameraSpaceProjectionMatrix .translate (viewpoint .getUserPosition ());
 				cameraSpaceProjectionMatrix .rotate (down);
 				cameraSpaceProjectionMatrix .inverse ();
@@ -74383,7 +74805,7 @@ function ($,
 
 				// Clip planes
 
-				shaderNode .setClipPlanes (gl, context .clipPlanes);
+				shaderNode .setShaderObjects (gl, context .clipPlanes);
 
 				// modelViewMatrix
 	
@@ -74450,15 +74872,16 @@ function ($,
 
 			// Sorted blend
 
-			viewportArray         .set (viewport);
-			projectionMatrixArray .set (this .getProjectionMatrix () .get ());
+			viewportArray          .set (viewport);
+			cameraSpaceMatrixArray .set (this .getCameraSpaceMatrix () .get ());
+			projectionMatrixArray  .set (this .getProjectionMatrix () .get ());
 
-			browser .getPointShader   () .setGlobalUniforms (this, gl, projectionMatrixArray, viewportArray);
-			browser .getLineShader    () .setGlobalUniforms (this, gl, projectionMatrixArray, viewportArray);
-			browser .getDefaultShader () .setGlobalUniforms (this, gl, projectionMatrixArray, viewportArray);
+			browser .getPointShader   () .setGlobalUniforms (this, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray);
+			browser .getLineShader    () .setGlobalUniforms (this, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray);
+			browser .getDefaultShader () .setGlobalUniforms (this, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray);
 
 			for (var id in shaders)
-				shaders [id] .setGlobalUniforms (this, gl, projectionMatrixArray, viewportArray);
+				shaders [id] .setGlobalUniforms (this, gl, cameraSpaceMatrixArray, projectionMatrixArray, viewportArray);
 
 			// Render opaque objects first
 
@@ -74510,22 +74933,21 @@ function ($,
 
 			gl .activeTexture (gl .TEXTURE0);
 
-			// Recycle clip planes.
-
-			var clipPlanes = this .getBrowser () .getClipPlanes ();
-
-			for (var i = 0, length = clipPlanes .length; i < length; ++ i)
-			   clipPlanes [i] .dispose ();
-
-			clipPlanes .length = 0;
-
 			// Reset GeneratedCubeMapTextures.
 
 			generatedCubeMapTextures .length = 0;
 
-
 			if (this .isIndependent ())
 			{
+				// Recycle clip planes.
+
+				var clipPlanes = this .getBrowser () .getClipPlanes ();
+	
+				for (var i = 0, length = clipPlanes .length; i < length; ++ i)
+				   clipPlanes [i] .dispose ();
+	
+				clipPlanes .length = 0;
+
 				// Recycle global lights.
 	
 				var lights = this .globalLights;
@@ -74961,6 +75383,8 @@ function ($,
 	{
 		this .addType (X3DConstants .X3DFogObject);
 
+		this .visibilityRange_ .setUnit ("length");
+
 		this .hidden = false;
 	}
 
@@ -75316,11 +75740,14 @@ function ($,
 
 		this .addType (X3DConstants .X3DBackgroundNode);
 
+		this .skyAngle_    .setUnit ("angle");
+		this .groundAngle_ .setUnit ("angle");
+
 		this .hidden                = false;
 		this .projectionMatrixArray = new Float32Array (16);
-		this .transformationMatrix  = new Matrix4 ();
+		this .modelMatrix           = new Matrix4 ();
 		this .modelViewMatrixArray  = new Float32Array (16);
-		this .clipPlanes            = [ ];
+		this .shaderObjects         = [ ];
 		this .colors                = [ ];
 		this .sphere                = [ ];
 		this .textures              = 0;
@@ -75660,19 +76087,19 @@ function ($,
 				{
 					renderObject .getLayer () .getBackgrounds () .push (this);
 
-					this .transformationMatrix .assign (renderObject .getModelViewMatrix () .get ());
+					this .modelMatrix .assign (renderObject .getModelViewMatrix () .get ());
 					break;
 				}
 				case TraverseType .DISPLAY:
 				{
 					var
-						sourcePlanes = renderObject .getClipPlanes (),
-						destPlanes   = this .clipPlanes;
+						sourceObjects = renderObject .getShaderObjects (),
+						destObjects   = this .shaderObjects;
 
-					for (var i = 0, length = sourcePlanes .length; i < length; ++ i)
-						destPlanes [i] = sourcePlanes [i];
+					for (var i = 0, length = sourceObjects .length; i < length; ++ i)
+						destObjects [i] = sourceObjects [i];
 
-					destPlanes .length = sourcePlanes .length;
+					destObjects .length = sourceObjects .length;
 					break;
 				}
 			}
@@ -75698,14 +76125,13 @@ function ($,
 				// Get background scale.
 
 				var
-					nearValue       = renderObject .getNavigationInfo () .getNearValue (),
-					farValue        = renderObject .getNavigationInfo () .getFarValue (renderObject .getViewpoint ()),
+					farValue        = -ViewVolume .unProjectPointMatrix (0, 0, 1, projectionMatrix .assign (renderObject .getProjectionMatrix () .get ()) .inverse (), viewport, farVector) .z * 0.8,
 					rotation        = this .rotation,
-					modelViewMatrix = this .modelViewMatrix .assign (this .transformationMatrix);
+					modelViewMatrix = this .modelViewMatrix .assign (this .modelMatrix);
 
 				// Get projection matrix.
 
-				this .projectionMatrixArray .set (renderObject .getViewpoint () .getProjectionMatrixWithLimits (nearValue, farValue * 1.3, viewport, true));
+				this .projectionMatrixArray .set (renderObject .getProjectionMatrix () .get ());	
 
 				// Rotate and scale background.
 
@@ -75743,7 +76169,7 @@ function ($,
 
 			// Clip planes
 
-			shaderNode .setClipPlanes (gl, this .clipPlanes);
+			shaderNode .setShaderObjects (gl, this .shaderObjects);
 
 			// Enable vertex attribute arrays.
 
@@ -75781,7 +76207,7 @@ function ($,
 
 			// Clip planes
 
-			shaderNode .setClipPlanes (gl, this .clipPlanes);
+			shaderNode .setShaderObjects (gl, this .shaderObjects);
 
 			// Enable vertex attribute arrays.
 
@@ -76337,7 +76763,7 @@ function ($,
 			X3DTexture2DNode .prototype .initialize .call (this);
 			X3DUrlObject     .prototype .initialize .call (this);
 
-			this .url_     .addInterest ("set_url__",   this);
+			this .url_    .addInterest ("set_url__",   this);
 			this .buffer_ .addInterest ("set_buffer__", this);
 
 			this .canvas = $("<canvas></canvas>");
@@ -76353,10 +76779,6 @@ function ($,
 		},
 		set_url__: function ()
 		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
-		{
 			this .setLoadState (X3DConstants .NOT_STARTED_STATE);
 
 			this .requestAsyncLoad ();
@@ -76368,6 +76790,10 @@ function ($,
 
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
 
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			this .urlStack .setValue (this .url_);
 			this .loadNext ();
 		},
@@ -78010,8 +78436,7 @@ function ($)
 	{
 		constructor: ProfileInfo,
 		toXMLStream: function (stream)
-		{
-		},
+		{ },
 	});
 
 	return ProfileInfo;
@@ -79059,6 +79484,8 @@ function ($,
 		X3DTouchSensorNode .call (this, executionContext);
 
 		this .addType (X3DConstants .TouchSensor);
+
+		this .hitPoint_changed_ .setUnit ("length");
 	}
 
 	TouchSensor .prototype = $.extend (Object .create (X3DTouchSensorNode .prototype),
@@ -79591,6 +80018,10 @@ function ($,
 		this .addType (X3DConstants .Arc2D);
 
 		this .setGeometryType (1);
+
+		this .startAngle_ .setUnit ("angle");
+		this .endAngle_   .setUnit ("angle");
+		this .radius_     .setUnit ("length");
 	}
 
 	Arc2D .prototype = $.extend (Object .create (X3DLineGeometryNode .prototype),
@@ -79771,6 +80202,10 @@ function ($,
 		this .addType (X3DConstants .ArcClose2D);
 
 		this .setGeometryType (2);
+
+		this .startAngle_ .setUnit ("angle");
+		this .endAngle_   .setUnit ("angle");
+		this .radius_     .setUnit ("length");
 	}
 
 	ArcClose2D .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -80283,10 +80718,6 @@ function ($,
 		},
 		set_url__: function ()
 		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
-		{
 			this .setLoadState (X3DConstants .NOT_STARTED_STATE);
 
 			this .requestAsyncLoad ();
@@ -80298,6 +80729,10 @@ function ($,
 
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
 
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			this .setMedia (null);
 			this .urlStack .setValue (this .url_);
 			this .audio .bind ("canplaythrough", this .setAudio .bind (this));
@@ -81535,6 +81970,8 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Box);
+
+		this .size_ .setUnit ("length");
 	}
 
 	Box .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -82077,6 +82514,10 @@ function ($,
 		{
 			return this .visible_;
 		},
+		remove: function ()
+		{
+			this .set_children__ ();
+		},
 	});
 
 	return CADLayer;
@@ -82285,6 +82726,9 @@ function ($,
 		X3DTransformMatrix3DNode .call (this, executionContext);
 
 		this .addType (X3DConstants .X3DTransformNode);
+
+		this .translation_ .setUnit ("length");
+		this .center_      .setUnit ("length");
 	}
 
 	X3DTransformNode .prototype = $.extend (Object .create (X3DTransformMatrix3DNode .prototype),
@@ -82509,6 +82953,8 @@ function ($,
 		this .addType (X3DConstants .Circle2D);
 
 		this .setGeometryType (1);
+
+		this .radius_ .setUnit ("length");
 	}
 
 	Circle2D .prototype = $.extend (Object .create (X3DLineGeometryNode .prototype),
@@ -82678,13 +83124,13 @@ function ($,
 				plane .distanceFromOrigin = 0;
 			}
 		},
-		setShaderUniforms: function (gl, shaderObject, i)
+		setShaderUniforms: function (gl, shaderObject)
 		{
 			var
 				plane  = this .plane,
 				normal = plane .normal;
 
-			gl .uniform4f (shaderObject .x3d_ClipPlane [i], normal .x, normal .y, normal .z, plane .distanceFromOrigin);
+			gl .uniform4f (shaderObject .x3d_ClipPlane [shaderObject .numClipPlanes ++], normal .x, normal .y, normal .z, plane .distanceFromOrigin);
 		},
 		dispose: function ()
 		{
@@ -82745,13 +83191,13 @@ function ($,
 
 				clipPlaneContainer .set (this, renderObject .getModelViewMatrix () .get ());
 
-				renderObject .getClipPlanes () .push (clipPlaneContainer);
+				renderObject .getShaderObjects () .push (clipPlaneContainer);
 			}
 		},
 		pop: function (renderObject)
 		{
 			if (this .enabled)
-				renderObject .getBrowser () .getClipPlanes () .push (renderObject .getClipPlanes () .pop ());
+				renderObject .getBrowser () .getClipPlanes () .push (renderObject .getShaderObjects () .pop ());
 		},
 	});
 
@@ -84771,6 +85217,9 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Cone);
+
+		this .height_       .setUnit ("length");
+		this .bottomRadius_ .setUnit ("length");
 	}
 
 	Cone .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -85022,6 +85471,12 @@ function ($,
 		X3DParticleEmitterNode .call (this, executionContext);
 
 		this .addType (X3DConstants .ConeEmitter);
+
+		this .position_    .setUnit ("length");
+		this .angle_       .setUnit ("angle");
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
 
 		this .rotation = new Rotation4 (0, 0, 1, 0);
 	}
@@ -85991,6 +86446,9 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Cylinder);
+
+		this .height_ .setUnit ("length");
+		this .radius_ .setUnit ("length");
 	}
 
 	Cylinder .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -86291,6 +86749,8 @@ function ($,
 		X3DPointingDeviceSensorNode .call (this, executionContext);
 
 		this .addType (X3DConstants .X3DDragSensorNode);
+
+		this .trackPoint_changed_ .setUnit ("length");
 	}
 
 	X3DDragSensorNode .prototype = $.extend (Object .create (X3DPointingDeviceSensorNode .prototype),
@@ -86560,6 +87020,11 @@ function ($,
 		X3DDragSensorNode .call (this, executionContext);
 
 		this .addType (X3DConstants .CylinderSensor);
+
+		this .diskAngle_ .setUnit ("angle");
+		this .minAngle_  .setUnit ("angle");
+		this .maxAngle_  .setUnit ("angle");
+		this .offset_    .setUnit ("angle");
 	}
 
 	CylinderSensor .prototype = $.extend (Object .create (X3DDragSensorNode .prototype),
@@ -86859,6 +87324,9 @@ function ($,
 		X3DLineGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Disk2D);
+
+		this .innerRadius_ .setUnit ("length");
+		this .outerRadius_ .setUnit ("length");
 	}
 
 	Disk2D .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -87146,6 +87614,11 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .ElevationGrid);
+
+		this .xSpacing_    .setUnit ("length");
+		this .zSpacing_    .setUnit ("length");
+		this .creaseAngle_ .setUnit ("angle");
+		this .height_      .setUnit ("length");
 
 		this .colorNode    = null;
 		this .texCoordNode = null;
@@ -87550,6 +88023,11 @@ function ($,
 
 		this .addType (X3DConstants .ExplosionEmitter);
 
+		this .position_    .setUnit ("length");
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
+
 		this .getRandomVelocity = this .getSphericalRandomVelocity;
 	}
 
@@ -87688,6 +88166,10 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Extrusion);
+
+		this .creaseAngle_  .setUnit ("angle");
+		this .crossSection_ .setUnit ("length");
+		this .spine_        .setUnit ("length");
 	}
 
 	Extrusion .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -88509,6 +88991,8 @@ function ($,
 		X3DParticlePhysicsModelNode .call (this, executionContext);
 
 		this .addType (X3DConstants .ForcePhysicsModel);
+
+		this .force_ .setUnit ("force");
 	}
 
 	ForcePhysicsModel .prototype = $.extend (Object .create (X3DParticlePhysicsModelNode .prototype),
@@ -88813,10 +89297,10 @@ function ($,
 
 		this .addType (X3DConstants .GeneratedCubeMapTexture);
 
-		this .renderer             = new DependentRenderer (executionContext);
-		this .projectionMatrix     = new Matrix4 ();
-		this .transformationMatrix = new Matrix4 ();
-		this .viewVolume           = new ViewVolume ();
+		this .renderer         = new DependentRenderer (executionContext);
+		this .projectionMatrix = new Matrix4 ();
+		this .modelMatrix      = new Matrix4 ();
+		this .viewVolume       = new ViewVolume ();
 	}
 
 	GeneratedCubeMapTexture .prototype = $.extend (Object .create (X3DEnvironmentTextureNode .prototype),
@@ -88896,7 +89380,7 @@ function ($,
 
 			renderObject .getGeneratedCubeMapTextures () .push (this);
 
-			this .transformationMatrix .assign (renderObject .getModelViewMatrix () .get ()) .multRight (renderObject .getCameraSpaceMatrix () .get ());
+			this .modelMatrix .assign (renderObject .getModelViewMatrix () .get ()) .multRight (renderObject .getCameraSpaceMatrix () .get ());
 		},
 		renderTexture: function (renderObject, group)
 		{
@@ -88934,7 +89418,7 @@ function ($,
 
 				// Setup inverse texture space matrix.
 
-				renderer .getCameraSpaceMatrix () .pushMatrix (this .transformationMatrix);
+				renderer .getCameraSpaceMatrix () .pushMatrix (this .modelMatrix);
 				renderer .getCameraSpaceMatrix () .rotate (rotations [i]);
 				renderer .getCameraSpaceMatrix () .scale (scales [i]);
 
@@ -89271,6 +89755,9 @@ function ($,
 		X3DGeospatialObject .call (this, executionContext);
 
 		this .addType (X3DConstants .GeoElevationGrid);
+
+		this .creaseAngle_ .setUnit ("angle");
+		this .height_      .setUnit ("length");
 
 		this .colorNode    = null;
 		this .texCoordNode = null;
@@ -89761,16 +90248,15 @@ function ($,
 		set_load__: function ()
 		{
 			if (this .load_ .getValue ())
-				this .buffer_ .addEvent ();
-
+			{
+				this .setLoadState (X3DConstants .NOT_STARTED_STATE);
+	
+				this .requestAsyncLoad ();
+			}
 			else
 				this .requestUnload ();
 		},
 		set_url__: function ()
-		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
 		{
 			if (! this .load_ .getValue ())
 				return;
@@ -89803,6 +90289,11 @@ function ($,
 
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
 
+			// buffer prevents double load of the scene if load and url field are set at the same time.
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			new FileLoader (this) .createX3DFromURL (this .url_, null, this .setInternalSceneAsync .bind (this));
 		},
 		requestUnload: function ()
@@ -89954,6 +90445,8 @@ function ($,
 		X3DGeospatialObject .call (this, executionContext);
 
 		this .addType (X3DConstants .GeoLOD);
+
+		this .range_ .setUnit ("length");
 
 		this .rootGroup        = new Group (this .getBrowser () .getPrivateScene ());
 		this .rootInline       = new Inline (executionContext);
@@ -90742,6 +91235,8 @@ function ($,
 
 		this .addType (X3DConstants .GeoPositionInterpolator);
 
+		this .value_changed_ .setUnit ("length");
+
 		this .geocentric = new Geocentric ();
 	}
 
@@ -90890,6 +91385,9 @@ function ($,
 
 		this .addChildObjects ("traversed", new Fields .SFBool (true));
 
+		this .size_   .setUnit ("length");
+		this .center_ .setUnit ("length");
+
 		this .currentTraversed = true;
 	}
 
@@ -91036,6 +91534,9 @@ function ($,
 
 		this .setCameraObject (true);
 
+		this .centerOfRotation_changed_ .setUnit ("length");
+		this .position_changed_         .setUnit ("length");
+
 		this .viewpoint              = null;
 		this .modelViewMatrix        = new Matrix4 ();
 		this .invModelViewMatrix     = new Matrix4 ();
@@ -91124,7 +91625,7 @@ function ($,
 				      modelViewMatrix        = this .modelViewMatrix,
 				      centerOfRotationMatrix = this .centerOfRotationMatrix;
 
-					centerOfRotationMatrix .assign (this .viewpoint .getTransformationMatrix ());
+					centerOfRotationMatrix .assign (this .viewpoint .getModelMatrix ());
 					centerOfRotationMatrix .translate (this .viewpoint .getUserCenterOfRotation ());
 					centerOfRotationMatrix .multRight (this .invModelViewMatrix .assign (modelViewMatrix) .inverse ());
 
@@ -91327,6 +91828,9 @@ function ($,
 
 		this .addType (X3DConstants .GeoProximitySensor);
 
+		this .position_changed_         .setUnit ("length");
+		this .centerOfRotation_changed_ .setUnit ("length");
+
 		this .proximitySensor = new ProximitySensor (executionContext);
 
 		this .setCameraObject (this .proximitySensor .getCameraObject ());
@@ -91486,6 +91990,8 @@ function ($,
 		X3DGeospatialObject .call (this, executionContext);
 
 		this .addType (X3DConstants .GeoTouchSensor);
+
+		this .hitPoint_changed_ .setUnit ("length");
 	}
 
 	GeoTouchSensor .prototype = $.extend (Object .create (X3DTouchSensorNode .prototype),
@@ -91633,6 +92139,8 @@ function ($,
 		X3DGeospatialObject      .call (this, executionContext);
 
 		this .addType (X3DConstants .GeoTransform);
+
+		this .translation_ .setUnit ("length");
 	}
 
 	GeoTransform .prototype = $.extend (Object .create (X3DTransformMatrix3DNode .prototype),
@@ -93700,6 +94208,9 @@ function ($,
 		this .addType (X3DConstants .LOD);
 
 		this .addAlias ("level", this .children_); // VRML2
+
+		this .center_ .setUnit ("length");
+		this .range_  .setUnit ("length");
 
 		this .frameRate        = 60;
 		this .keepCurrentLevel = false;
@@ -96713,10 +97224,6 @@ function ($,
 		},
 		set_url__: function ()
 		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
-		{
 			this .setLoadState (X3DConstants .NOT_STARTED_STATE);
 
 			this .requestAsyncLoad ();
@@ -96728,6 +97235,10 @@ function ($,
 
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
 
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			this .setMedia (null);
 			this .urlStack .setValue (this .url_);
 			this .video .bind ("canplaythrough", this .setVideo .bind (this));
@@ -97728,19 +98239,21 @@ function (Vector3,
 				var i = intersections .size ++;
 
 				if (i >= intersections .length)
-				{
-					intersections       .push (new Vector3 (0, 0, 0));
-					intersectionNormals .push (new Vector3 (0, 0, 0));
-				}
+					intersections .push (new Vector3 (0, 0, 0));
 
 				intersections [i] .set (t * vertices [i4 + 0] + u * vertices [i4 + 4] + v * vertices [i4 +  8],
 				                        t * vertices [i4 + 1] + u * vertices [i4 + 5] + v * vertices [i4 +  9],
 				                        t * vertices [i4 + 2] + u * vertices [i4 + 6] + v * vertices [i4 + 10]);
 
+				if (intersectionNormals)
+				{
+					if (i >= intersectionNormals .length)
+						intersectionNormals .push (new Vector3 (0, 0, 0));
 
-				intersectionNormals [i] .set (t * normals [i3 + 0] + u * normals [i3 + 3] + v * normals [i3 + 6],
-				                              t * normals [i3 + 1] + u * normals [i3 + 4] + v * normals [i3 + 7],
-				                              t * normals [i3 + 2] + u * normals [i3 + 5] + v * normals [i3 + 8]);
+					intersectionNormals [i] .set (t * normals [i3 + 0] + u * normals [i3 + 3] + v * normals [i3 + 6],
+					                              t * normals [i3 + 1] + u * normals [i3 + 4] + v * normals [i3 + 7],
+					                              t * normals [i3 + 2] + u * normals [i3 + 5] + v * normals [i3 + 8]);
+				}
 			}
 		},
 	};
@@ -98080,6 +98593,8 @@ function ($,
 
 		this .addType (X3DConstants .ParticleSystem);
 
+		this .particleSize_ .setUnit ("length");
+
 		this .createParticles          = true;
 		this .particles                = [ ];
 		this .velocities               = [ ];
@@ -98162,28 +98677,38 @@ function ($,
 			this .getBrowser () .getBrowserOptions () .Shading_ .addInterest ("set_shader__", this);
 			//this .getBrowser () .getDefaultShader () .addInterest ("set_shader__", this);
 
-			this .enabled_           .addInterest ("set_enabled__", this);
-			this .createParticles_   .addInterest ("set_createParticles__", this);
-			this .geometryType_      .addInterest ("set_geometryType__", this);
-			this .maxParticles_      .addInterest ("set_enabled__", this);
-			this .particleLifetime_  .addInterest ("set_particleLifetime__", this);
+			this .enabled_           .addInterest ("set_enabled__",           this);
+			this .createParticles_   .addInterest ("set_createParticles__",   this);
+			this .geometryType_      .addInterest ("set_geometryType__",      this);
+			this .maxParticles_      .addInterest ("set_enabled__",           this);
+			this .particleLifetime_  .addInterest ("set_particleLifetime__",  this);
 			this .lifetimeVariation_ .addInterest ("set_lifetimeVariation__", this);
-			this .emitter_           .addInterest ("set_emitter__", this);
-			this .physics_           .addInterest ("set_physics__", this);
-			this .colorKey_          .addInterest ("set_color__", this);
-			this .colorRamp_         .addInterest ("set_colorRamp__", this);
-			this .texCoordKey_       .addInterest ("set_texCoord__", this);
-			this .texCoordRamp_      .addInterest ("set_texCoordRamp__", this);
+			this .emitter_           .addInterest ("set_emitter__",           this);
+			this .physics_           .addInterest ("set_physics__",           this);
+			this .colorKey_          .addInterest ("set_color__",             this);
+			this .colorRamp_         .addInterest ("set_colorRamp__",         this);
+			this .texCoordKey_       .addInterest ("set_texCoord__",          this);
+			this .texCoordRamp_      .addInterest ("set_texCoordRamp__",      this);
 
-			this .colorBuffer     = gl .createBuffer ();
-			this .texCoordBuffers = [ gl .createBuffer () ];
-			this .normalBuffer    = gl .createBuffer ();
-			this .vertexBuffer    = gl .createBuffer ();
+			this .idBuffer           = gl .createBuffer ();
+			this .positionBuffer     = gl .createBuffer ();
+			this .elapsedTimeBuffer  = gl .createBuffer ();
+			this .lifeBuffer         = gl .createBuffer ();
+			this .colorBuffer        = gl .createBuffer ();
+			this .texCoordBuffers    = [ gl .createBuffer () ];
+			this .normalBuffer       = gl .createBuffer ();
+			this .vertexBuffer       = gl .createBuffer ();
 
-			this .colorArray    = new Float32Array ();
-			this .texCoordArray = new Float32Array ();
-			this .normalArray   = new Float32Array ();
-			this .vertexArray   = new Float32Array ();
+			this .idArray          = new Float32Array ();
+			this .positionArray    = new Float32Array ();
+			this .elapsedTimeArray = new Float32Array ();
+			this .lifeArray        = new Float32Array ();
+			this .colorArray       = new Float32Array ();
+			this .texCoordArray    = new Float32Array ();
+			this .normalArray      = new Float32Array ();
+			this .vertexArray      = new Float32Array ();
+
+			this .primitiveMode = gl .TRIANGLES;
 
 			// Call order is higly important at startup.
 			this .set_emitter__ ();
@@ -98210,8 +98735,10 @@ function ($,
 			switch (this .geometryType)
 			{
 				case POINT:
+				{
 					this .setTransparent (true);
 					break;
+				}
 				default:
 				{
 					this .setTransparent ((this .getAppearance () && this .getAppearance () .transparent_ .getValue ()) ||
@@ -98275,6 +98802,8 @@ function ($,
 					}
 	
 					this .isActive_ = false;
+					
+					this .numParticles = 0;
 				}
 			}
 
@@ -98292,7 +98821,7 @@ function ($,
 
 			// geometryType
 
-			this .geometryType = GeometryTypes [this .geometryType_ .getValue ()]
+			this .geometryType = GeometryTypes [this .geometryType_ .getValue ()];
 
 			if (! this .geometryType)
 				this .geometryType = POINT;
@@ -98303,41 +98832,63 @@ function ($,
 			{
 				case POINT:
 				{
-					this .colorArray    = new Float32Array (4 * maxParticles);
-					this .texCoordArray = new Float32Array ();
-					this .normalArray   = new Float32Array ();
-					this .vertexArray   = new Float32Array (4 * maxParticles);
+					this .idArray          = new Float32Array (maxParticles);
+					this .positionArray    = new Float32Array (3 * maxParticles);
+					this .elapsedTimeArray = new Float32Array (maxParticles);
+					this .lifeArray        = new Float32Array (maxParticles);
+					this .colorArray       = new Float32Array (4 * maxParticles);
+					this .texCoordArray    = new Float32Array ();
+					this .normalArray      = new Float32Array ();
+					this .vertexArray      = new Float32Array (4 * maxParticles);
+
+					for (var i = 0, a = this .idArray, l = a .length; i < l; ++ i)
+						a [i] = i;
 
 					this .colorArray  .fill (1);
 					this .vertexArray .fill (1);
 
+					this .primitiveMode = gl .POINTS;
 					this .texCoordCount = 0;
 					this .vertexCount   = 1;
 					break;
 				}
 				case LINE:
 				{
-					this .colorArray    = new Float32Array (2 * 4 * maxParticles);
-					this .texCoordArray = new Float32Array ();
-					this .normalArray   = new Float32Array ();
-					this .vertexArray   = new Float32Array (2 * 4 * maxParticles);
+					this .idArray          = new Float32Array (2 * maxParticles);
+					this .positionArray    = new Float32Array (2 * 3 * maxParticles);
+					this .elapsedTimeArray = new Float32Array (2 * maxParticles);
+					this .lifeArray        = new Float32Array (2 * maxParticles);
+					this .colorArray       = new Float32Array (2 * 4 * maxParticles);
+					this .texCoordArray    = new Float32Array ();
+					this .normalArray      = new Float32Array ();
+					this .vertexArray      = new Float32Array (2 * 4 * maxParticles);
+
+					for (var i = 0, a = this .idArray, l = a .length; i < l; ++ i)
+						a [i] = Math .floor (i / 2);
 
 					this .colorArray  .fill (1);
 					this .vertexArray .fill (1);
 
+					this .primitiveMode = gl .LINES;
 					this .texCoordCount = 2;
 					this .vertexCount   = 2;
-					this .shaderNode    = this .getBrowser () .getLineShader ()
 					break;
 				}
 				case TRIANGLE:
 				case QUAD:
 				case SPRITE:
 				{
-					this .colorArray    = new Float32Array (6 * 4 * maxParticles);
-					this .texCoordArray = new Float32Array (6 * 4 * maxParticles);
-					this .normalArray   = new Float32Array (6 * 3 * maxParticles);
-					this .vertexArray   = new Float32Array (6 * 4 * maxParticles);
+					this .idArray          = new Float32Array (6 * maxParticles);
+					this .positionArray    = new Float32Array (6 * 3 * maxParticles);
+					this .elapsedTimeArray = new Float32Array (6 * maxParticles);
+					this .lifeArray        = new Float32Array (6 * maxParticles);
+					this .colorArray       = new Float32Array (6 * 4 * maxParticles);
+					this .texCoordArray    = new Float32Array (6 * 4 * maxParticles);
+					this .normalArray      = new Float32Array (6 * 3 * maxParticles);
+					this .vertexArray      = new Float32Array (6 * 4 * maxParticles);
+
+					for (var i = 0, a = this .idArray, l = a .length; i < l; ++ i)
+						a [i] = Math .floor (i / 6);
 
 					this .colorArray  .fill (1);
 					this .vertexArray .fill (1);
@@ -98395,6 +98946,7 @@ function ($,
 					gl .bindBuffer (gl .ARRAY_BUFFER, this .texCoordBuffers [0]);
 					gl .bufferData (gl .ARRAY_BUFFER, this .texCoordArray, gl .STATIC_DRAW);
 
+					this .primitiveMode = gl .TRIANGLES;
 					this .texCoordCount = 4;
 					this .vertexCount   = 6;
 					break;
@@ -98407,6 +98959,9 @@ function ($,
 				}
 			}
 
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .idBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .idArray, gl .STATIC_DRAW);
+
 			this .set_shader__ ();
 			this .set_transparent__ ();
 		},
@@ -98417,13 +98972,13 @@ function ($,
 				case POINT:
 				{
 					this .shaderGeometryType = 0;
-					this .shaderNode         = this .getBrowser () .getPointShader ()
+					this .shaderNode         = this .getBrowser () .getPointShader ();
 					break;
 				}
 				case LINE:
 				{
 					this .shaderGeometryType = 1;
-					this .shaderNode         = this .getBrowser () .getLineShader ()
+					this .shaderNode         = this .getBrowser () .getLineShader ();
 					break;
 				}
 				case TRIANGLE:
@@ -98431,13 +98986,13 @@ function ($,
 				case SPRITE:
 				{
 					this .shaderGeometryType = 3;
-					this .shaderNode         = this .getBrowser () .getDefaultShader ()
+					this .shaderNode         = this .getBrowser () .getDefaultShader ();
 					break;
 				}
 				case GEOMETRY:
 				{
 					this .shaderGeometryType = 3; // determine from geometry node.
-					this .shaderNode         = this .getBrowser () .getDefaultShader ()
+					this .shaderNode         = this .getBrowser () .getDefaultShader ();
 					break;
 				}
 			}
@@ -98449,11 +99004,15 @@ function ($,
 				maxParticles = Math .max (0, this .maxParticles_ .getValue ());
 
 			for (var i = this .numParticles, length = Math .min (particles .length, maxParticles); i < length; ++ i)
+			{
+				particles [i] .life     = 1;
 				particles [i] .lifetime = -1;
+			}
 
 			for (var i = particles .length, length = maxParticles; i < length; ++ i)
 			{
 				particles [i] = {
+					life: 1,
 					lifetime: -1,
 					elapsedTime: 0,
 					position: new Vector3 (0, 0, 0),
@@ -98485,6 +99044,8 @@ function ($,
 
 			if (! this .emitterNode)
 				this .emitterNode = this .getBrowser () .getDefaultEmitter ();
+				
+			this .createParticles = this .createParticles_ .getValue ();
 		},
 		set_physics__: function ()
 		{
@@ -98634,7 +99195,7 @@ function ($,
 
 			var
 				DELAY = 15, // Delay in frames when dt full applys.
-				dt    = 1 / this .getBrowser () .getCurrentFrameRate ();
+				dt    = 1 / Math .max (10, this .getBrowser () .getCurrentFrameRate ());
 
 			// var deltaTime is only for the emitter, this.deltaTime is for the forces.
 			var deltaTime = this .deltaTime = ((DELAY - 1) * this .deltaTime + dt) / DELAY; // Moving average about DELAY frames.
@@ -98664,7 +99225,7 @@ function ($,
 				{
 					var
 						now          = performance .now () / 1000,
-						newParticles = Math .max (0, Math .ceil ((now - this .creationTime) * this .maxParticles / this .particleLifetime));
+						newParticles = Math .max (0, Math .floor ((now - this .creationTime) * this .maxParticles / this .particleLifetime));
 	
 					if (newParticles)
 						this .creationTime = now;
@@ -98713,7 +99274,7 @@ function ($,
 
 			this .updateGeometry (null);
 
-			this .getBrowser () .addBrowserEvent (this);
+			this .getBrowser () .addBrowserEvent ();
 		},
 		updateGeometry: function (modelViewMatrix)
 		{
@@ -98739,11 +99300,14 @@ function ($,
 		updatePoint: function ()
 		{
 			var
-				gl           = this .getBrowser () .getContext (),
-				particles    = this .particles,
-				numParticles = this .numParticles,
-				colorArray   = this .colorArray,
-				vertexArray  = this .vertexArray;
+				gl               = this .getBrowser () .getContext (),
+				particles        = this .particles,
+				numParticles     = this .numParticles,
+				positionArray    = this .positionArray,
+				elapsedTimeArray = this .elapsedTimeArray,
+				lifeArray        = this .lifeArray,
+				colorArray       = this .colorArray,
+				vertexArray      = this .vertexArray;
 
 			// Colors
 
@@ -98770,26 +99334,44 @@ function ($,
 			for (var i = 0; i < numParticles; ++ i)
 			{
 				var
-					position = particles [i] .position,
-					i4       = i * 4;
+					position    = particles [i] .position,
+					elapsedTime = particles [i] .elapsedTime / particles [i] .lifetime,
+					i3          = i * 3,
+					i4          = i * 4;
+
+				positionArray [i3]     = position .x;
+				positionArray [i3 + 1] = position .y;
+				positionArray [i3 + 2] = position .z;
+
+				elapsedTimeArray [i] = elapsedTime;
+				lifeArray [i]        = particles [i] .life;
 
 				vertexArray [i4]     = position .x;
 				vertexArray [i4 + 1] = position .y;
 				vertexArray [i4 + 2] = position .z;
 			}
 
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .positionBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .positionArray, gl .STATIC_DRAW);
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .elapsedTimeBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .elapsedTimeArray, gl .STATIC_DRAW);
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .lifeBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .lifeArray, gl .STATIC_DRAW);
 			gl .bindBuffer (gl .ARRAY_BUFFER, this .vertexBuffer);
 			gl .bufferData (gl .ARRAY_BUFFER, this .vertexArray, gl .STATIC_DRAW);
 		},
 		updateLine: function ()
 		{
 			var
-				gl           = this .getBrowser () .getContext (),
-				particles    = this .particles,
-				numParticles = this .numParticles,
-				colorArray   = this .colorArray,
-				vertexArray  = this .vertexArray,
-				sy1_2        = this .particleSize_ .y / 2;
+				gl               = this .getBrowser () .getContext (),
+				particles        = this .particles,
+				numParticles     = this .numParticles,
+				positionArray    = this .positionArray,
+				elapsedTimeArray = this .elapsedTimeArray,
+				lifeArray        = this .lifeArray,
+				colorArray       = this .colorArray,
+				vertexArray      = this .vertexArray,
+				sy1_2            = this .particleSize_ .y / 2;
 
 			// Colors
 
@@ -98821,21 +99403,48 @@ function ($,
 			for (var i = 0; i < numParticles; ++ i)
 			{
 				var
-					particle = particles [i],
-					position = particle .position,
-					i8       = i * 8;
+					particle    = particles [i],
+					position    = particle .position,
+					elapsedTime = particles [i] .elapsedTime / particles [i] .lifetime,
+					life        = particles [i] .life,
+					x           = position .x,
+					y           = position .y,
+					z           = position .z,
+					i2          = i * 2,
+					i6          = i * 6,
+					i8          = i * 8;
 
-				normal .assign (particle .velocity) .normalize ();
+				positionArray [i6]     = x;
+				positionArray [i6 + 1] = y;
+				positionArray [i6 + 2] = z;
+				positionArray [i6 + 3] = x;
+				positionArray [i6 + 4] = y;
+				positionArray [i6 + 5] = z;
 
-				vertexArray [i8]     = position .x - normal .x * sy1_2;
-				vertexArray [i8 + 1] = position .y - normal .y * sy1_2;
-				vertexArray [i8 + 2] = position .z - normal .z * sy1_2;
+				elapsedTimeArray [i2]     = elapsedTime;
+				elapsedTimeArray [i2 + 1] = elapsedTime;
 
-				vertexArray [i8 + 4] = position .x + normal .x * sy1_2;
-				vertexArray [i8 + 5] = position .y + normal .y * sy1_2;
-				vertexArray [i8 + 6] = position .z + normal .z * sy1_2;
+				lifeArray [i2]     = life;
+				lifeArray [i2 + 1] = life;
+
+				// Length of line / 2.
+				normal .assign (particle .velocity) .normalize () .multiply (sy1_2);
+
+				vertexArray [i8]     = x - normal .x;
+				vertexArray [i8 + 1] = y - normal .y;
+				vertexArray [i8 + 2] = z - normal .z;
+											  
+				vertexArray [i8 + 4] = x + normal .x;
+				vertexArray [i8 + 5] = y + normal .y;
+				vertexArray [i8 + 6] = z + normal .z;
 			}
 
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .positionBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .positionArray, gl .STATIC_DRAW);
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .elapsedTimeBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .elapsedTimeArray, gl .STATIC_DRAW);
+			gl .bindBuffer (gl .ARRAY_BUFFER, this .lifeBuffer);
+			gl .bufferData (gl .ARRAY_BUFFER, this .lifeArray, gl .STATIC_DRAW);
 			gl .bindBuffer (gl .ARRAY_BUFFER, this .vertexBuffer);
 			gl .bufferData (gl .ARRAY_BUFFER, this .vertexArray, gl .STATIC_DRAW);
 		},
@@ -98844,16 +99453,19 @@ function ($,
 			try
 			{
 				var
-					gl              = this .getBrowser () .getContext (),
-					particles       = this .particles,
-					maxParticles    = this .maxParticles,
-				   numParticles    = this .numParticles,
-					colorArray      = this .colorArray,
-					texCoordArray   = this .texCoordArray,
-					normalArray     = this .normalArray,
-					vertexArray     = this .vertexArray,
-					sx1_2           = this .particleSize_ .x / 2,
-					sy1_2           = this .particleSize_ .y / 2;
+					gl               = this .getBrowser () .getContext (),
+					particles        = this .particles,
+					maxParticles     = this .maxParticles,
+				   numParticles     = this .numParticles,
+					positionArray    = this .positionArray,
+					elapsedTimeArray = this .elapsedTimeArray,
+					lifeArray        = this .lifeArray,
+					colorArray       = this .colorArray,
+					texCoordArray    = this .texCoordArray,
+					normalArray      = this .normalArray,
+					vertexArray      = this .vertexArray,
+					sx1_2            = this .particleSize_ .x / 2,
+					sy1_2            = this .particleSize_ .y / 2;
 	
 				// Sort particles
 	
@@ -98995,7 +99607,7 @@ function ($,
 		
 						normal
 							.set (rotation [0], rotation [1], rotation [2])
-							.cross (vector .set (rotation [4], rotation [5], rotation [6]))
+							.cross (vector .set (rotation [3], rotation [4], rotation [5]))
 							.normalize ();
 		
 						var
@@ -99028,11 +99640,14 @@ function ($,
 						for (var i = 0; i < numParticles; ++ i)
 						{
 							var
-								position = particles [i] .position,
-								x        = position .x,
-								y        = position .y,
-								z        = position .z,
-								i24      = i * 24;
+								position    = particles [i] .position,
+								elapsedTime = particles [i] .elapsedTime / particles [i] .lifetime,
+								x           = position .x,
+								y           = position .y,
+								z           = position .z,
+								i6          = i * 6,
+								i18         = i * 18,
+								i24         = i * 24;
 			
 							// p4 ------ p3
 							// |       / |
@@ -99040,8 +99655,15 @@ function ($,
 							// |   /     |
 							// | /       |
 							// p1 ------ p2
-			
-		
+
+
+							positionArray [i18 + 0] = positionArray [i18 + 3] = positionArray [i18 + 6] = positionArray [i18 +  9] = positionArray [i18 + 12] = positionArray [i18 + 15] = x;
+							positionArray [i18 + 1] = positionArray [i18 + 4] = positionArray [i18 + 7] = positionArray [i18 + 10] = positionArray [i18 + 13] = positionArray [i18 + 16] = y;
+							positionArray [i18 + 2] = positionArray [i18 + 5] = positionArray [i18 + 8] = positionArray [i18 + 11] = positionArray [i18 + 14] = positionArray [i18 + 17] = z;
+
+							elapsedTimeArray [i6 + 0] = elapsedTimeArray [i6 + 1] = elapsedTimeArray [i6 + 2] = elapsedTimeArray [i6 + 3] = elapsedTimeArray [i6 + 4] = elapsedTimeArray [i6 + 5] = elapsedTime;
+							lifeArray [i6 + 0]        = lifeArray [i6 + 1]        = lifeArray [i6 + 2]        = lifeArray [i6 + 3]        = lifeArray [i6 + 4]        = lifeArray [i6 + 5]        = particles [i] .life;
+
 							// p1
 							vertexArray [i24]     = vertexArray [i24 + 12] = x + s1 .x;
 							vertexArray [i24 + 1] = vertexArray [i24 + 13] = y + s1 .y;
@@ -99063,6 +99685,12 @@ function ($,
 							vertexArray [i24 + 22] = z + s4 .z;
 						}
 	
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .positionBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .positionArray, gl .STATIC_DRAW);
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .elapsedTimeBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .elapsedTimeArray, gl .STATIC_DRAW);
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .lifeBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .lifeArray, gl .STATIC_DRAW);
 						gl .bindBuffer (gl .ARRAY_BUFFER, this .vertexBuffer);
 						gl .bufferData (gl .ARRAY_BUFFER, this .vertexArray, gl .STATIC_DRAW);
 					}
@@ -99074,11 +99702,14 @@ function ($,
 						for (var i = 0; i < numParticles; ++ i)
 						{
 							var
-								position = particles [i] .position,
-								x        = position .x,
-								y        = position .y,
-								z        = position .z,
-								i24      = i * 24;
+								position    = particles [i] .position,
+								elapsedTime = particles [i] .elapsedTime / particles [i] .lifetime,
+								x           = position .x,
+								y           = position .y,
+								z           = position .z,
+								i6          = i * 6,
+								i18         = i * 18,
+								i24         = i * 24;
 			
 							// p4 ------ p3
 							// |       / |
@@ -99086,6 +99717,13 @@ function ($,
 							// |   /     |
 							// | /       |
 							// p1 ------ p2
+
+							positionArray [i18 + 0] = positionArray [i18 + 3] = positionArray [i18 + 6] = positionArray [i18 +  9] = positionArray [i18 + 12] = positionArray [i18 + 15] = x;
+							positionArray [i18 + 1] = positionArray [i18 + 4] = positionArray [i18 + 7] = positionArray [i18 + 10] = positionArray [i18 + 13] = positionArray [i18 + 16] = y;
+							positionArray [i18 + 2] = positionArray [i18 + 5] = positionArray [i18 + 8] = positionArray [i18 + 11] = positionArray [i18 + 14] = positionArray [i18 + 17] = z;
+
+							elapsedTimeArray [i6 + 0] = elapsedTimeArray [i6 + 1] = elapsedTimeArray [i6 + 2] = elapsedTimeArray [i6 + 3] = elapsedTimeArray [i6 + 4] = elapsedTimeArray [i6 + 5] = elapsedTime;
+							lifeArray [i6 + 0]        = lifeArray [i6 + 1]        = lifeArray [i6 + 2]        = lifeArray [i6 + 3]        = lifeArray [i6 + 4]        = lifeArray [i6 + 5]        = particles [i] .life;
 			
 							// p1
 							vertexArray [i24]     = vertexArray [i24 + 12] = x - sx1_2;
@@ -99108,6 +99746,12 @@ function ($,
 							vertexArray [i24 + 22] = z;
 						}
 			
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .positionBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .positionArray, gl .STATIC_DRAW);
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .elapsedTimeBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .elapsedTimeArray, gl .STATIC_DRAW);
+						gl .bindBuffer (gl .ARRAY_BUFFER, this .lifeBuffer);
+						gl .bufferData (gl .ARRAY_BUFFER, this .lifeArray, gl .STATIC_DRAW);
 						gl .bindBuffer (gl .ARRAY_BUFFER, this .vertexBuffer);
 						gl .bufferData (gl .ARRAY_BUFFER, this .vertexArray, gl .STATIC_DRAW);
 					}
@@ -99152,8 +99796,6 @@ function ($,
 			{
 				if (this .getGeometry ())
 					this .getGeometry () .traverse (type, renderObject); // Currently used for ScreenText.
-				else
-					return;
 			}
 		},
 		depth: function (context, shaderNode)
@@ -99180,29 +99822,41 @@ function ($,
 
 				// Setup vertex attributes.
 
+				shaderNode .enableFloatAttrib (gl, "x3d_ParticleId",          this .idBuffer,          1);
+				shaderNode .enableFloatAttrib (gl, "x3d_ParticlePosition",    this .positionBuffer,    3);
+				shaderNode .enableFloatAttrib (gl, "x3d_ParticleElapsedTime", this .elapsedTimeBuffer, 1);
+				shaderNode .enableFloatAttrib (gl, "x3d_ParticleLife",        this .lifeBuffer,        1);
 				shaderNode .enableVertexAttribute (gl, this .vertexBuffer);
 
-				gl .drawArrays (this .shaderNode .primitiveMode, 0, this .numParticles * this .vertexCount);
+				gl .drawArrays (this .primitiveMode, 0, this .numParticles * this .vertexCount);
+
+				shaderNode .disableFloatAttrib (gl, "x3d_ParticleId");
+				shaderNode .disableFloatAttrib (gl, "x3d_ParticlePosition");
+				shaderNode .disableFloatAttrib (gl, "x3d_ParticleElapsedTime");
+				shaderNode .disableFloatAttrib (gl, "x3d_ParticleLife");
 			}
 		},
 		display: function (context)
 		{
 			try
 			{
+				if (this .numParticles <= 0)
+					return;
+
 				// Traverse appearance before everything.
-	
-				this .getAppearance () .display (context);
-	
+
+				this .getAppearance () .enable (context);
+
 				// Update geometry if SPRITE.
-	
+
 				this .updateGeometry (context .modelViewMatrix);
-	
+
 				// Display geometry.
-	
+
 				if (this .geometryType === GEOMETRY)
 				{
 					var geometryNode = this .getGeometry ();
-	
+
 					if (geometryNode)
 						geometryNode .displayParticles (context, this .particles, this .numParticles);
 				}
@@ -99216,9 +99870,6 @@ function ($,
 					if (shaderNode === browser .getDefaultShader ())
 						shaderNode = this .shaderNode;
 		
-					if (this .numParticles <= 0)
-						return;
-	
 					// Setup shader.
 	
 					context .geometryType  = this .shaderGeometryType;
@@ -99226,7 +99877,12 @@ function ($,
 					shaderNode .setLocalUniforms (gl, context);
 		
 					// Setup vertex attributes.
-		
+
+					shaderNode .enableFloatAttrib (gl, "x3d_ParticleId",          this .idBuffer,          1);
+					shaderNode .enableFloatAttrib (gl, "x3d_ParticlePosition",    this .positionBuffer,    3);
+					shaderNode .enableFloatAttrib (gl, "x3d_ParticleElapsedTime", this .elapsedTimeBuffer, 1);
+					shaderNode .enableFloatAttrib (gl, "x3d_ParticleLife",        this .lifeBuffer,        1);
+
 					if (this .colorMaterial)
 						shaderNode .enableColorAttribute (gl, this .colorBuffer);
 	
@@ -99269,13 +99925,20 @@ function ($,
 						gl .enable (gl .CULL_FACE);
 						gl .cullFace (gl .BACK);
 
-						gl .drawArrays (this .shaderNode .primitiveMode, 0, this .numParticles * this .vertexCount);
+						gl .drawArrays (this .primitiveMode, 0, this .numParticles * this .vertexCount);
 					}
 		
+					shaderNode .disableFloatAttrib (gl, "x3d_ParticleId");
+					shaderNode .disableFloatAttrib (gl, "x3d_ParticlePosition");
+					shaderNode .disableFloatAttrib (gl, "x3d_ParticleElapsedTime");
+					shaderNode .disableFloatAttrib (gl, "x3d_ParticleLife");
+
 					shaderNode .disableColorAttribute    (gl);
 					shaderNode .disableTexCoordAttribute (gl);
 					shaderNode .disableNormalAttribute   (gl);
 				}
+
+				this .getAppearance () .disable (context);
 			}
 			catch (error)
 			{
@@ -99653,6 +100316,11 @@ function ($,
 		X3DDragSensorNode .call (this, executionContext);
 
 		this .addType (X3DConstants .PlaneSensor);
+
+		this .offset_              .setUnit ("length");
+		this .minPosition_         .setUnit ("length");
+		this .maxPosition_         .setUnit ("length");
+		this .translation_changed_ .setUnit ("length");
 	}
 
 	PlaneSensor .prototype = $.extend (Object .create (X3DDragSensorNode .prototype),
@@ -99996,7 +100664,7 @@ function ($,
 		this .viewport             = new Vector4 (0, 0, 0, 0);
 		this .projectionMatrix     = projectionMatrix;
 		this .modelViewMatrix      = new MatrixStack (Matrix4);
-		this .transformationMatrix = new Matrix4 ();
+		this .modelMatrix          = new Matrix4 ();
 		this .invLightSpaceMatrix  = new Matrix4 ();
 		this .shadowMatrix         = new Matrix4 ();
 		this .shadowMatrixArray    = new Float32Array (16);
@@ -100062,8 +100730,8 @@ function ($,
 				var
 					lightNode            = this .lightNode,
 					cameraSpaceMatrix    = renderObject .getCameraSpaceMatrix () .get (),
-					transformationMatrix = this .transformationMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
-					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? transformationMatrix : Matrix4 .Identity);
+					modelMatrix          = this .modelMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
+					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? modelMatrix : Matrix4 .Identity);
 
 				invLightSpaceMatrix .translate (lightNode .getLocation ());
 				invLightSpaceMatrix .inverse ();
@@ -100104,7 +100772,7 @@ function ($,
 				this .shadowBuffer .unbind ();
 	
 				if (! lightNode .getGlobal ())
-					invLightSpaceMatrix .multLeft (transformationMatrix .inverse ());
+					invLightSpaceMatrix .multLeft (modelMatrix .inverse ());
 			}
 			catch (error)
 			{
@@ -100119,7 +100787,7 @@ function ($,
 			this .shadowMatrix .assign (renderObject .getCameraSpaceMatrix () .get ()) .multRight (this .invLightSpaceMatrix);
 			this .shadowMatrixArray .set (this .shadowMatrix);
 		},
-		setShaderUniforms: function (gl, shaderObject, i)
+		setShaderUniforms: function (gl, shaderObject)
 		{
 			// For correct results the radius must be transform by the modelViewMatrix. This can only be done in the shader.
 			// distanceOfLightToFragmentInLightSpace = |(FragmentPosition - LightPosition) * inverseModelViewMatrixOfLight|
@@ -100130,7 +100798,8 @@ function ($,
 				color       = lightNode .getColor (),
 				attenuation = lightNode .getAttenuation (),
 				location    = this .location,
-				shadowColor = lightNode .getShadowColor ();
+				shadowColor = lightNode .getShadowColor (),
+				i           = shaderObject .numLights ++;
 
 			gl .uniform1i (shaderObject .x3d_LightType [i],             2);
 			gl .uniform3f (shaderObject .x3d_LightColor [i],            color .r, color .g, color .b);
@@ -100178,6 +100847,9 @@ function ($,
 		X3DLightNode .call (this, executionContext);
 
 		this .addType (X3DConstants .PointLight);
+
+		this .location_ .setUnit ("length");
+		this .radius_   .setUnit ("length");
 	}
 
 	PointLight .prototype = $.extend (Object .create (X3DLightNode .prototype),
@@ -100511,6 +101183,8 @@ function ($,
 		this .addType (X3DConstants .Polyline2D);
 
 		this .setGeometryType (1);
+
+		this .lineSegments_ .setUnit ("length");
 	}
 
 	Polyline2D .prototype = $.extend (Object .create (X3DLineGeometryNode .prototype),
@@ -100637,6 +101311,10 @@ function ($,
 		X3DParticleEmitterNode .call (this, executionContext);
 
 		this .addType (X3DConstants .PolylineEmitter);
+
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
 
 		this .direction        = new Vector3 (0, 0, 0);
 		this .polylineNode     = new IndexedLineSet (executionContext);
@@ -100882,6 +101560,8 @@ function ($,
 		this .addType (X3DConstants .Polypoint2D);
 
 		this .setGeometryType (0);
+
+		this .point_ .setUnit ("length");
 
 		this .transparent_ = true;
 	}
@@ -101730,6 +102410,8 @@ function ($,
 		this .addType (X3DConstants .Rectangle2D);
 
 		this .setGeometryType (2);
+
+		this .size_ .setUnit ("length");
 	}
 
 	Rectangle2D .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -103137,10 +103819,6 @@ function ($,
 		},
 		set_url__: function ()
 		{
-			this .buffer_ .addEvent ();
-		},
-		set_buffer__: function ()
-		{
 			this .setLoadState (X3DConstants .NOT_STARTED_STATE);
 
 			this .requestAsyncLoad ();
@@ -103166,6 +103844,11 @@ function ($,
 				return;
 
 			this .setLoadState (X3DConstants .IN_PROGRESS_STATE);
+
+			this .buffer_ .addEvent ();
+		},
+		set_buffer__: function ()
+		{
 			this .getScene () .addInitLoadCount (this);
 
 			new FileLoader (this) .loadScript (this .url_,
@@ -103701,7 +104384,7 @@ function ($,
 
 				this .hitRay .assign (browser .getHitRay ()) .multLineMatrix (invModelViewMatrix);
 
-				if (geometry .intersectsLine (this .hitRay, renderObject .getClipPlanes (), modelViewMatrix, intersections))
+				if (geometry .intersectsLine (this .hitRay, renderObject .getShaderObjects (), modelViewMatrix, intersections))
 				{
 					// Finally we have intersections and must now find the closest hit in front of the camera.
 
@@ -103741,8 +104424,9 @@ function ($,
 		},
 		display: function (context)
 		{
-			this .getAppearance () .display (context);
+			this .getAppearance () .enable  (context);
 			this .getGeometry ()   .display (context);
+			this .getAppearance () .disable (context);
 		},
 	});
 
@@ -103912,6 +104596,12 @@ function ($,
 
 		this .addType (X3DConstants .Sound);
 
+		this .location_ .setUnit ("length");
+		this .minBack_  .setUnit ("length");
+		this .minFront_ .setUnit ("length");
+		this .maxBack_  .setUnit ("length");
+		this .maxFront_ .setUnit ("length");
+
 		this .min = { radius: 0, distance: 0 };
 		this .max = { radius: 0, distance: 0 };
 	}
@@ -103932,7 +104622,7 @@ function ($,
 			new X3DFieldDefinition (X3DConstants .inputOutput,    "priority",   new Fields .SFFloat ()),
 			new X3DFieldDefinition (X3DConstants .inputOutput,    "source",     new Fields .SFNode ()),
 		]),
-		transformationMatrix: new Matrix4 (),
+		modelMatrix: new Matrix4 (),
 		translation: new Vector3 (0, 0, 0),
 		rotation: new Rotation4 (),
 		scale: new Vector3 (1, 1, 1),
@@ -104024,20 +104714,20 @@ function ($,
 			this .rotation .setFromToVec (this .zAxis, this .direction_ .getValue ());
 			this .scale .z = a / b;
 
-			var transformationMatrix = this .transformationMatrix;
+			var modelMatrix = this .modelMatrix;
 
-			transformationMatrix .assign (modelViewMatrix);
-			transformationMatrix .translate (this .location_ .getValue ());
-			transformationMatrix .rotate (this .rotation);
+			modelMatrix .assign (modelViewMatrix);
+			modelMatrix .translate (this .location_ .getValue ());
+			modelMatrix .rotate (this .rotation);
 
-			transformationMatrix .translate (this .translation);
-			transformationMatrix .scale (this .scale);
+			modelMatrix .translate (this .translation);
+			modelMatrix .scale (this .scale);
 
-			transformationMatrix .inverse ();
+			modelMatrix .inverse ();
 
-			this .viewer .set (transformationMatrix [12],
-			                   transformationMatrix [13],
-			                   transformationMatrix [14]);
+			this .viewer .set (modelMatrix [12],
+			                   modelMatrix [13],
+			                   modelMatrix [14]);
 
 			value .radius   = b;
 			value .distance = this .viewer .abs ();
@@ -104120,6 +104810,8 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Sphere);
+
+		this .radius_ .setUnit ("length");
 	}
 
 	Sphere .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -105715,7 +106407,7 @@ function ($,
 		this .viewport                      = new Vector4 (0, 0, 0, 0);
 		this .projectionMatrix              = new Matrix4 ();
 		this .modelViewMatrix               = new MatrixStack (Matrix4);
-		this .transformationMatrix          = new Matrix4 ();
+		this .modelMatrix                   = new Matrix4 ();
 		this .invLightSpaceMatrix           = new Matrix4 ();
 		this .invLightSpaceProjectionMatrix = new Matrix4 ();
 		this .shadowMatrix                  = new Matrix4 ();
@@ -105783,8 +106475,8 @@ function ($,
 				var
 					lightNode            = this .lightNode,
 					cameraSpaceMatrix    = renderObject .getCameraSpaceMatrix () .get (),
-					transformationMatrix = this .transformationMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
-					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? transformationMatrix : Matrix4 .Identity);
+					modelMatrix          = this .modelMatrix .assign (this .modelViewMatrix .get ()) .multRight (cameraSpaceMatrix),
+					invLightSpaceMatrix  = this .invLightSpaceMatrix  .assign (lightNode .getGlobal () ? modelMatrix : Matrix4 .Identity);
 
 				invLightSpaceMatrix .translate (lightNode .getLocation ());
 				invLightSpaceMatrix .rotate (this .rotation .setFromToVec (Vector3 .zAxis, this .direction .assign (lightNode .getDirection ()) .negate ()));
@@ -105818,7 +106510,7 @@ function ($,
 				this .shadowBuffer .unbind ();
 	
 				if (! lightNode .getGlobal ())
-					invLightSpaceMatrix .multLeft (transformationMatrix .inverse ());
+					invLightSpaceMatrix .multLeft (modelMatrix .inverse ());
 
 				this .invLightSpaceProjectionMatrix .assign (invLightSpaceMatrix) .multRight (projectionMatrix) .multRight (lightNode .getBiasMatrix ());
 			}
@@ -105840,7 +106532,7 @@ function ($,
 			this .shadowMatrix .assign (renderObject .getCameraSpaceMatrix () .get ()) .multRight (this .invLightSpaceProjectionMatrix);
 			this .shadowMatrixArray .set (this .shadowMatrix);
 		},
-		setShaderUniforms: function (gl, shaderObject, i)
+		setShaderUniforms: function (gl, shaderObject)
 		{
 			var 
 				lightNode       = this .lightNode,
@@ -105849,7 +106541,8 @@ function ($,
 				modelViewMatrix = this .modelViewMatrix .get (),
 				location        = this .location,
 				direction       = this .direction,
-				shadowColor     = lightNode .getShadowColor ();
+				shadowColor     = lightNode .getShadowColor (),
+				i               = shaderObject .numLights ++;
 
 			gl .uniform1i (shaderObject .x3d_LightType [i],             3);
 			gl .uniform3f (shaderObject .x3d_LightColor [i],            color .r, color .g, color .b);
@@ -105902,6 +106595,11 @@ function ($,
 		X3DLightNode .call (this, executionContext);
 
 		this .addType (X3DConstants .SpotLight);
+
+		this .location_    .setUnit ("length");
+		this .radius_      .setUnit ("length");
+		this .beamWidth_   .setUnit ("angle");
+		this .cutOffAngle_ .setUnit ("angle");
 	}
 
 	SpotLight .prototype = $.extend (Object .create (X3DLightNode .prototype),
@@ -106465,6 +107163,10 @@ function ($,
 
 		this .addType (X3DConstants .SurfaceEmitter);
 
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
+
 		this .surfaceNode    = null;
 		this .areaSoFarArray = [ 0 ];
 	}
@@ -106552,7 +107254,7 @@ function ($,
 				areaSoFarArray = this .areaSoFarArray,
 				length         = areaSoFarArray .length,
 				fraction       = Math .random () * areaSoFarArray [length - 1],
-				index0         = 0
+				index0         = 0;
 
 			if (length == 1 || fraction <= areaSoFarArray [0])
 			{
@@ -107097,6 +107799,12 @@ function ($,
 		X3DGeometryNode .call (this, executionContext);
 
 		this .addType (X3DConstants .Text);
+
+		this .length_     .setUnit ("length");
+		this .maxExtent_  .setUnit ("length");
+		this .origin_     .setUnit ("length");
+		this .textBounds_ .setUnit ("length");
+		this .lineBounds_ .setUnit ("length");
 	}
 
 	Text .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -108189,6 +108897,8 @@ function ($,
 
 		this .addType (X3DConstants .TransformSensor);
 
+		this .position_changed_ .setUnit ("length");
+
 		this .bbox             = new Box3 ();
 		this .targetObjectNode = null;
 	}
@@ -108652,6 +109362,8 @@ function ($,
 		this .addType (X3DConstants .TriangleSet2D);
 
 		this .setGeometryType (2);
+
+		this .vertices_ .setUnit ("length");
 	}
 
 	TriangleSet2D .prototype = $.extend (Object .create (X3DGeometryNode .prototype),
@@ -109239,7 +109951,10 @@ function ($,
 		X3DChildNode .call (this, executionContext);
 
 		this .addType (X3DConstants .ViewpointGroup);
-	   
+
+		this .size_   .setUnit ("length");
+		this .center_ .setUnit ("length");
+
 		this .proximitySensor  = new ProximitySensor (executionContext);
 		this .cameraObjects    = [ ];
 		this .viewpointGroups  = [ ];
@@ -109695,12 +110410,15 @@ function ($,
 
 		this .addType (X3DConstants .VolumeEmitter);
 
-		this .direction           = new Vector3 (0, 0, 0);
-		this .volumeNode          = new IndexedFaceSet (executionContext);
-		this .areaSoFarArray      = [ 0 ];
-		this .intersections       = [ ];
-		this .intersectionNormals = [ ];
-		this .sorter              = new QuickSort (this .intersections, PlaneCompare);
+		this .speed_       .setUnit ("speed");
+		this .mass_        .setUnit ("mass");
+		this .surfaceArea_ .setUnit ("area");
+
+		this .direction      = new Vector3 (0, 0, 0);
+		this .volumeNode     = new IndexedFaceSet (executionContext);
+		this .areaSoFarArray = [ 0 ];
+		this .intersections  = [ ];
+		this .sorter         = new QuickSort (this .intersections, PlaneCompare);
 	}
 
 	VolumeEmitter .prototype = $.extend (Object .create (X3DParticleEmitterNode .prototype),
@@ -109747,6 +110465,7 @@ function ($,
 			this .volumeNode .setPrivate (true);
 			this .volumeNode .setup ();
 
+			this .set_direction__ ();
 			this .set_geometry__ ();
 		},
 		set_direction__: function ()
@@ -109859,7 +110578,7 @@ function ($,
 
 			var
 				intersections    = this .intersections,
-				numIntersections = this .bvh .intersectsLine (line, intersections, this .intersectionNormals);
+				numIntersections = this .bvh .intersectsLine (line, intersections);
 
 			numIntersections -= numIntersections % 2; // We need an even count of intersections.
 
@@ -109877,6 +110596,7 @@ function ($,
 					point1 = intersections [index + 1],
 					t      = Math .random ();
 	
+				// lerp
 				position .x = point0 .x + (point1 .x - point0 .x) * t;
 				position .y = point0 .y + (point1 .y - point0 .y) * t;
 				position .z = point0 .z + (point1 .z - point0 .z) * t;
@@ -109984,6 +110704,8 @@ function ($,
 		X3DParticlePhysicsModelNode .call (this, executionContext);
 
 		this .addType (X3DConstants .WindPhysicsModel);
+
+		this .speed_ .setUnit ("speed");
 	}
 
 	WindPhysicsModel .prototype = $.extend (Object .create (X3DParticlePhysicsModelNode .prototype),
@@ -110139,6 +110861,215 @@ function ($,
 	});
 
 	return WorldInfo;
+});
+
+
+
+/* -*- Mode: JavaScript; coding: utf-8; tab-width: 3; indent-tabs-mode: tab; c-basic-offset: 3 -*-
+ *******************************************************************************
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright create3000, Scheffelstraße 31a, Leipzig, Germany 2011.
+ *
+ * All rights reserved. Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * The copyright notice above does not evidence any actual of intended
+ * publication of such source code, and is an unpublished work by create3000.
+ * This material contains CONFIDENTIAL INFORMATION that is the property of
+ * create3000.
+ *
+ * No permission is granted to copy, distribute, or create derivative works from
+ * the contents of this software, in whole or in part, without the prior written
+ * permission of create3000.
+ *
+ * NON-MILITARY USE ONLY
+ *
+ * All create3000 software are effectively free software with a non-military use
+ * restriction. It is free. Well commented source is provided. You may reuse the
+ * source in any way you please with the exception anything that uses it must be
+ * marked to indicate is contains 'non-military use only' components.
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * Copyright 2015, 2016 Holger Seelig <holger.seelig@yahoo.de>.
+ *
+ * This file is part of the X_ITE Project.
+ *
+ * X_ITE is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License version 3 only, as published by the
+ * Free Software Foundation.
+ *
+ * X_ITE is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License version 3 for more
+ * details (a copy is included in the LICENSE file that accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version 3
+ * along with X_ITE.  If not, see <http://www.gnu.org/licenses/gpl.html> for a
+ * copy of the GPLv3 License.
+ *
+ * For Silvio, Joy and Adi.
+ *
+ ******************************************************************************/
+
+
+define ('x_ite/Components/X_ITE/BlendMode',[
+	"jquery",
+	"x_ite/Fields",
+	"x_ite/Basic/X3DFieldDefinition",
+	"x_ite/Basic/FieldDefinitionArray",
+	"x_ite/Components/Shape/X3DAppearanceChildNode",
+	"x_ite/Bits/TraverseType",
+	"x_ite/Bits/X3DConstants",
+],
+function ($,
+          Fields,
+          X3DFieldDefinition,
+          FieldDefinitionArray,
+          X3DAppearanceChildNode,
+          TraverseType,
+          X3DConstants)
+{
+"use strict";
+
+	function BlendMode (executionContext)
+	{
+		X3DAppearanceChildNode .call (this, executionContext);
+
+		this .addType (X3DConstants .BlendMode);
+
+		this .blendTypes = { };
+		this .blendModes = { };
+	}
+
+	BlendMode .prototype = $.extend (Object .create (X3DAppearanceChildNode .prototype),
+	{
+		constructor: BlendMode,
+		fieldDefinitions: new FieldDefinitionArray ([
+			new X3DFieldDefinition (X3DConstants .inputOutput, "metadata",                new Fields .SFNode ()),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "blendColor",              new Fields .SFColorRGBA ()),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "sourceColorFactor",       new Fields .SFString ("SRC_ALPHA")),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "sourceAlphaFactor",       new Fields .SFString ("ONE_MINUS_SRC_ALPHA")),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "destinationColorFactor",  new Fields .SFString ("ONE")),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "destinationAlphaFactor",  new Fields .SFString ("ONE_MINUS_SRC_ALPHA")),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "colorEquation",           new Fields .SFString ("FUNC_ADD")),
+			new X3DFieldDefinition (X3DConstants .inputOutput, "alphaEquation",           new Fields .SFString ("FUNC_ADD")),
+		]),
+		getTypeName: function ()
+		{
+			return "BlendMode";
+		},
+		getComponentName: function ()
+		{
+			return "X_ITE";
+		},
+		getContainerField: function ()
+		{
+			return "blendMode";
+		},
+		initialize: function ()
+		{
+			X3DAppearanceChildNode .prototype .initialize .call (this);
+	
+			var
+				gl  = this .getBrowser () .getContext (),
+				ext = gl .getExtension ('EXT_blend_minmax');
+
+			this .blendTypes ["ZERO"]                     = gl .ZERO;
+			this .blendTypes ["ONE"]                      = gl .ONE;
+			this .blendTypes ["SRC_COLOR"]                = gl .SRC_COLOR;
+			this .blendTypes ["ONE_MINUS_SRC_COLOR"]      = gl .ONE_MINUS_SRC_COLOR;
+			this .blendTypes ["DST_COLOR"]                = gl .DST_COLOR;
+			this .blendTypes ["ONE_MINUS_DST_COLOR"]      = gl .ONE_MINUS_DST_COLOR;
+			this .blendTypes ["SRC_ALPHA"]                = gl .SRC_ALPHA;
+			this .blendTypes ["ONE_MINUS_SRC_ALPHA"]      = gl .ONE_MINUS_SRC_ALPHA;
+			this .blendTypes ["DST_ALPHA"]                = gl .DST_ALPHA;
+			this .blendTypes ["ONE_MINUS_DST_ALPHA"]      = gl .ONE_MINUS_DST_ALPHA;
+			this .blendTypes ["SRC_ALPHA_SATURATE"]       = gl .SRC_ALPHA_SATURATE;
+			this .blendTypes ["CONSTANT_COLOR"]           = gl .CONSTANT_COLOR;
+			this .blendTypes ["ONE_MINUS_CONSTANT_COLOR"] = gl .ONE_MINUS_CONSTANT_COLOR;
+			this .blendTypes ["CONSTANT_ALPHA"]           = gl .CONSTANT_ALPHA;
+			this .blendTypes ["ONE_MINUS_CONSTANT_ALPHA"] = gl .ONE_MINUS_CONSTANT_ALPHA;
+
+			this .blendModes ["FUNC_ADD"]              = gl .FUNC_ADD;
+			this .blendModes ["FUNC_SUBTRACT"]         = gl .FUNC_SUBTRACT;
+			this .blendModes ["FUNC_REVERSE_SUBTRACT"] = gl .FUNC_REVERSE_SUBTRACT;
+			this .blendModes ["MIN"]                   = gl .MIN || ext .MIN_EXT;
+			this .blendModes ["MAX"]                   = gl .MAX || ext .MAX_EXT;
+
+			this .sourceColorFactor_      .addInterest ("set_sourceColorFactor__", this);
+			this .sourceAlphaFactor_      .addInterest ("set_sourceAlphaFactor__", this);
+			this .destinationColorFactor_ .addInterest ("set_destinationColorFactor__",  this);
+			this .destinationAlphaFactor_ .addInterest ("set_destinationAlphaFactor__",  this);
+			this .colorEquation_          .addInterest ("set_colorEquation__",     this);
+			this .alphaEquation_          .addInterest ("set_alphaEquation__",     this);
+
+			this .set_sourceColorFactor__ ();
+			this .set_sourceAlphaFactor__ ();
+			this .set_destinationColorFactor__ ();
+			this .set_destinationAlphaFactor__ ();
+			this .set_colorEquation__ ();
+			this .set_alphaEquation__ ();
+		},
+		set_sourceColorFactor__: function ()
+		{
+			this .sourceColorFactorType = this .blendTypes [this .sourceColorFactor_ .getValue ()];
+
+			if (! this .sourceColorFactorType)
+				this .sourceColorFactorType = this .blendTypes ["SRC_ALPHA"];
+		},
+		set_sourceAlphaFactor__: function ()
+		{
+			this .sourceAlphaFactorType = this .blendTypes [this .sourceAlphaFactor_ .getValue ()];
+
+			if (! this .sourceAlphaFactorType)
+				this .sourceAlphaFactorType = this .blendTypes ["ONE_MINUS_SRC_ALPHA"];
+		},
+		set_destinationColorFactor__: function ()
+		{
+			this .destinationColorFactorType = this .blendTypes [this .destinationColorFactor_ .getValue ()];
+
+			if (! this .destinationColorFactorType)
+				this .destinationColorFactorType = this .blendTypes ["ONE"];
+		},
+		set_destinationAlphaFactor__: function ()
+		{
+			this .destinationAlphaFactorType = this .blendTypes [this .destinationAlphaFactor_ .getValue ()];
+
+			if (! this .destinationAlphaFactorType)
+				this .destinationAlphaFactorType = this .blendTypes ["ONE_MINUS_SRC_ALPHA"];
+		},
+		set_colorEquation__: function ()
+		{
+			this .colorEquationType = this .blendModes [this .colorEquation_ .getValue ()];
+
+			if (! this .colorEquationType)
+				this .colorEquationType = this .blendModes ["FUNC_ADD"];
+		},
+		set_alphaEquation__: function ()
+		{
+			this .alphaEquationType = this .blendModes [this .alphaEquation_ .getValue ()];
+
+			if (! this .alphaEquationType)
+				this .alphaEquationType = this .blendModes ["FUNC_ADD"];
+		},
+		enable: function (gl)
+		{
+			var color = this .blendColor_ .getValue ();
+
+			gl .blendColor (color .r, color .g, color .b, color .a);
+			gl .blendFuncSeparate (this .sourceColorFactorType, this .sourceAlphaFactorType, this .destinationColorFactorType, this .destinationAlphaFactorType);
+			gl .blendEquationSeparate (this .colorEquationType, this .alphaEquationType);
+		},
+		disable: function (gl)
+		{
+			gl .blendFuncSeparate (gl .SRC_ALPHA, gl .ONE_MINUS_SRC_ALPHA, gl .ONE, gl .ONE_MINUS_SRC_ALPHA);
+			gl .blendEquationSeparate (gl .FUNC_ADD, gl .FUNC_ADD);
+		},
+	});
+
+	return BlendMode;
 });
 
 
@@ -110427,6 +111358,7 @@ define ('x_ite/Configuration/SupportedNodes',[
 	//"x_ite/Components/Picking/VolumePickSensor",
 	"x_ite/Components/ParticleSystems/WindPhysicsModel",
 	"x_ite/Components/Core/WorldInfo", // VRML
+	"x_ite/Components/X_ITE/BlendMode",
 ],
 function (Anchor,
           Appearance,
@@ -110661,7 +111593,8 @@ function (Anchor,
           VolumeEmitter,
           //VolumePickSensor,
           WindPhysicsModel,
-          WorldInfo)
+          WorldInfo,
+          BlendMode)
 {
 "use strict";
 
@@ -110904,6 +111837,8 @@ function (Anchor,
 		//VolumePickSensor:             VolumePickSensor,
 		WindPhysicsModel:             WindPhysicsModel,
 		WorldInfo:                    WorldInfo,
+
+		BlendMode:                    BlendMode,
 	};
 
 	function createInstance (executionContext) { return new this (executionContext); }
@@ -111197,6 +112132,7 @@ function ($,
 
 			scene .setLive (this .isLive () .getValue ())
 
+			// Scene.setup is done in World.inititalize.
 			this .setExecutionContext (scene);
 
 			if (this .initialized () .getValue ())
