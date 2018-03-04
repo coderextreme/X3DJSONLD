@@ -4,17 +4,17 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "express": "*",
-    "xml2js": "*",
-    "java": "*",
-    "xmldom": "*",
-    "mutation-observer": "*",
     "ajv": "*",
     "ajv-i18n": "*",
-    "jsonlint": "*",
-    "node-mkdirp": "*",
+    "express": "*",
     "glob": "*",
-    "jvm-npm": "0.1.1"
+    "java": "*",
+    "jsonlint": "^1.6.3",
+    "jvm-npm": "0.1.1",
+    "mutation-observer": "*",
+    "node-mkdirp": "*",
+    "xml2js": "*",
+    "xmldom": "*"
   },
   "devDependencies": {
     "jsdoc": "*"
