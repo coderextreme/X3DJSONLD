@@ -199,7 +199,7 @@ function load_X_ITE_XML(content) {
 	});
 }
 
-function load_X_ITE_DOM(element, browserSelector) {
+function load_X_ITE_DOM(element) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
 			var browser = X3D.getBrowser("#x_itedom");
@@ -213,7 +213,7 @@ function load_X_ITE_DOM(element, browserSelector) {
 	});
 }
 
-function load_X_ITE_JS(jsobj, browserSelector) {
+function load_X_ITE_JS(jsobj) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
 			var browser = X3D.getBrowser("#x_itejson");
