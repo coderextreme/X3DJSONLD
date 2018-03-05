@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\apidocs.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\applications.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\bug-report.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\build.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\charter.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\createdoc.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\domcount.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\domprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\download.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\enumval.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-build.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-contributing.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-distrib.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-other.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-parse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\feedback.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\install.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\mailing-lists.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\memparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\migration.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\migration_archive.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\pparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-dom.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-others.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-sax.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-sax2.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\psviwriter.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\readme.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\redirect.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases_archive.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases_plan.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\samples.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\sax2count.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\sax2print.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\saxcount.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\saxprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\schema.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\scmprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\secadv.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\senumval.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\source-repository.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\stdinparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\xerces-c_book.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\xinclude.xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

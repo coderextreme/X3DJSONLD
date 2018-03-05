@@ -1,0 +1,11 @@
+To install, run
+./reconf
+./configure
+make
+
+in
+
+xerces-3.2.0
+and this folder (second).
+
+This currently has dlls stored in src for windows.  You will have to do something else for other platforms.

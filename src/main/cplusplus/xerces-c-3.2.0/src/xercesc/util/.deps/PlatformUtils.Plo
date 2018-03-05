@@ -1,0 +1,524 @@
+xercesc/util/PlatformUtils.lo: xercesc/util/PlatformUtils.cpp ../config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/syslimits.h \
+ /usr/include/limits.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/machine/_default_types.h /usr/include/sys/features.h \
+ /usr/include/_newlib_version.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h \
+ /usr/include/bits/wordsize.h /usr/include/sys/time.h \
+ /usr/include/_ansi.h /usr/include/newlib.h /usr/include/sys/config.h \
+ /usr/include/machine/ieeefp.h /usr/include/cygwin/config.h \
+ /usr/include/sys/_timeval.h /usr/include/sys/_types.h \
+ /usr/include/machine/_types.h /usr/include/sys/lock.h \
+ /usr/include/sys/types.h /usr/include/sys/_stdint.h \
+ /usr/include/machine/endian.h /usr/include/machine/_endian.h \
+ /usr/include/bits/endian.h /usr/include/sys/select.h \
+ /usr/include/sys/_sigset.h /usr/include/sys/timespec.h \
+ /usr/include/sys/_timespec.h /usr/include/sys/_pthreadtypes.h \
+ /usr/include/machine/types.h /usr/include/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/sys/sysmacros.h \
+ /usr/include/time.h /usr/include/_ansi.h /usr/include/sys/reent.h \
+ /usr/include/machine/time.h /usr/include/xlocale.h \
+ /usr/include/cygwin/time.h /usr/include/signal.h \
+ /usr/include/sys/signal.h /usr/include/cygwin/signal.h \
+ /usr/include/sys/ucontext.h /usr/include/machine/_time.h \
+ xercesc/util/Mutexes.hpp xercesc/util/XMemory.hpp \
+ xercesc/util/XercesDefs.hpp xercesc/util/Xerces_autoconf_config.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/sys/_intsup.h /usr/include/inttypes.h \
+ xercesc/util/XercesVersion.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib \
+ /usr/include/stdlib.h /usr/include/machine/stdlib.h \
+ /usr/include/alloca.h /usr/include/cygwin/stdlib.h \
+ /usr/include/cygwin/wait.h xercesc/util/PlatformUtils.hpp \
+ xercesc/util/XMLException.hpp xercesc/util/XMLExceptMsgs.hpp \
+ xercesc/dom/DOMError.hpp xercesc/util/XMLUni.hpp \
+ xercesc/framework/XMLErrorReporter.hpp xercesc/util/PanicHandler.hpp \
+ xercesc/util/XMLFileMgr.hpp xercesc/util/XMLMutexMgr.hpp \
+ xercesc/util/RefVectorOf.hpp xercesc/util/BaseRefVectorOf.hpp \
+ xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+ xercesc/util/XMLEnumerator.hpp xercesc/framework/MemoryManager.hpp \
+ xercesc/util/BaseRefVectorOf.c xercesc/util/RefVectorOf.c \
+ xercesc/util/XMLString.hpp xercesc/framework/XMLBuffer.hpp \
+ /usr/include/string.h /usr/include/strings.h /usr/include/sys/string.h \
+ /usr/include/assert.h xercesc/internal/XMLReader.hpp \
+ xercesc/util/XMLChar.hpp xercesc/util/XMLUniDefs.hpp \
+ xercesc/framework/XMLRecognizer.hpp \
+ xercesc/util/TranscodingException.hpp xercesc/util/RuntimeException.hpp \
+ xercesc/util/OutOfMemoryException.hpp \
+ xercesc/util/DefaultPanicHandler.hpp xercesc/util/XMLInitializer.hpp \
+ xercesc/internal/MemoryManagerImpl.hpp /usr/include/w32api/intrin.h \
+ /usr/include/w32api/crtdefs.h /usr/include/w32api/_mingw.h \
+ /usr/include/w32api/_mingw_mac.h /usr/include/w32api/_mingw_secapi.h \
+ /usr/include/w32api/_cygwin.h /usr/include/w32api/vadefs.h \
+ /usr/include/w32api/sdks/_mingw_directx.h \
+ /usr/include/w32api/sdks/_mingw_ddk.h \
+ /usr/include/w32api/psdk_inc/intrin-impl.h /usr/include/errno.h \
+ /usr/include/sys/errno.h /usr/include/malloc.h \
+ /usr/include/machine/malloc.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/ia32intrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/ammintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/wmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/immintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avxintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx2intrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512fintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512erintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512pfintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512cdintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vlintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512bwintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512dqintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vlbwintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vldqintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512ifmaintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512ifmavlintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vbmiintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vbmivlintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/shaintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/lzcntintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/bmiintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/bmi2intrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fmaintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/f16cintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/rtmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xtestintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mm3dnow.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/prfchwintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fma4intrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xopintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/lwpintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/tbmintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/rdseedintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fxsrintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsaveintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsaveoptintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/adxintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clwbintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clflushoptintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsavesintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsavecintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mwaitxintrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clzerointrin.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/pkuintrin.h \
+ xercesc/util/FileManagers/PosixFileMgr.hpp \
+ xercesc/util/MutexManagers/WindowsMutexMgr.hpp \
+ xercesc/util/XMLNetAccessor.hpp xercesc/util/XMLURL.hpp \
+ xercesc/util/NetAccessors/Socket/SocketNetAccessor.hpp \
+ xercesc/util/BinInputStream.hpp xercesc/util/XMLMsgLoader.hpp \
+ xercesc/util/MsgLoaders/InMemory/InMemMsgLoader.hpp \
+ xercesc/util/TransService.hpp xercesc/util/RefHashTableOf.hpp \
+ xercesc/util/Hashers.hpp xercesc/util/IllegalArgumentException.hpp \
+ xercesc/util/NoSuchElementException.hpp xercesc/util/RefHashTableOf.c \
+ xercesc/util/Janitor.hpp xercesc/util/Janitor.c \
+ xercesc/util/NullPointerException.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/new \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/exception \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_ptr.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/type_traits \
+ xercesc/util/Transcoders/Iconv/IconvTransService.hpp
+
+../config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/limits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/_newlib_version.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/newlib.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/include/sys/_timeval.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/_stdint.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/machine/_endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/_sigset.h:
+
+/usr/include/sys/timespec.h:
+
+/usr/include/sys/_timespec.h:
+
+/usr/include/sys/_pthreadtypes.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/time.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/machine/time.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/cygwin/time.h:
+
+/usr/include/signal.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/cygwin/signal.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/machine/_time.h:
+
+xercesc/util/Mutexes.hpp:
+
+xercesc/util/XMemory.hpp:
+
+xercesc/util/XercesDefs.hpp:
+
+xercesc/util/Xerces_autoconf_config.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/_intsup.h:
+
+/usr/include/inttypes.h:
+
+xercesc/util/XercesVersion.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+xercesc/util/PlatformUtils.hpp:
+
+xercesc/util/XMLException.hpp:
+
+xercesc/util/XMLExceptMsgs.hpp:
+
+xercesc/dom/DOMError.hpp:
+
+xercesc/util/XMLUni.hpp:
+
+xercesc/framework/XMLErrorReporter.hpp:
+
+xercesc/util/PanicHandler.hpp:
+
+xercesc/util/XMLFileMgr.hpp:
+
+xercesc/util/XMLMutexMgr.hpp:
+
+xercesc/util/RefVectorOf.hpp:
+
+xercesc/util/BaseRefVectorOf.hpp:
+
+xercesc/util/ArrayIndexOutOfBoundsException.hpp:
+
+xercesc/util/XMLEnumerator.hpp:
+
+xercesc/framework/MemoryManager.hpp:
+
+xercesc/util/BaseRefVectorOf.c:
+
+xercesc/util/RefVectorOf.c:
+
+xercesc/util/XMLString.hpp:
+
+xercesc/framework/XMLBuffer.hpp:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/include/sys/string.h:
+
+/usr/include/assert.h:
+
+xercesc/internal/XMLReader.hpp:
+
+xercesc/util/XMLChar.hpp:
+
+xercesc/util/XMLUniDefs.hpp:
+
+xercesc/framework/XMLRecognizer.hpp:
+
+xercesc/util/TranscodingException.hpp:
+
+xercesc/util/RuntimeException.hpp:
+
+xercesc/util/OutOfMemoryException.hpp:
+
+xercesc/util/DefaultPanicHandler.hpp:
+
+xercesc/util/XMLInitializer.hpp:
+
+xercesc/internal/MemoryManagerImpl.hpp:
+
+/usr/include/w32api/intrin.h:
+
+/usr/include/w32api/crtdefs.h:
+
+/usr/include/w32api/_mingw.h:
+
+/usr/include/w32api/_mingw_mac.h:
+
+/usr/include/w32api/_mingw_secapi.h:
+
+/usr/include/w32api/_cygwin.h:
+
+/usr/include/w32api/vadefs.h:
+
+/usr/include/w32api/sdks/_mingw_directx.h:
+
+/usr/include/w32api/sdks/_mingw_ddk.h:
+
+/usr/include/w32api/psdk_inc/intrin-impl.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/include/malloc.h:
+
+/usr/include/machine/malloc.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/x86intrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mm_malloc.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/emmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/pmmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/tmmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/ammintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/smmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/popcntintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/wmmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/immintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avxintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx2intrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512fintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512erintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512pfintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512cdintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vlintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512bwintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512dqintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vlbwintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vldqintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512ifmaintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512ifmavlintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vbmiintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/avx512vbmivlintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/shaintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/lzcntintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/bmiintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/bmi2intrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fmaintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/f16cintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/rtmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xtestintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mm3dnow.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/prfchwintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fma4intrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xopintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/lwpintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/tbmintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/rdseedintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsaveintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsaveoptintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/adxintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clwbintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clflushoptintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsavesintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/xsavecintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/mwaitxintrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/clzerointrin.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/pkuintrin.h:
+
+xercesc/util/FileManagers/PosixFileMgr.hpp:
+
+xercesc/util/MutexManagers/WindowsMutexMgr.hpp:
+
+xercesc/util/XMLNetAccessor.hpp:
+
+xercesc/util/XMLURL.hpp:
+
+xercesc/util/NetAccessors/Socket/SocketNetAccessor.hpp:
+
+xercesc/util/BinInputStream.hpp:
+
+xercesc/util/XMLMsgLoader.hpp:
+
+xercesc/util/MsgLoaders/InMemory/InMemMsgLoader.hpp:
+
+xercesc/util/TransService.hpp:
+
+xercesc/util/RefHashTableOf.hpp:
+
+xercesc/util/Hashers.hpp:
+
+xercesc/util/IllegalArgumentException.hpp:
+
+xercesc/util/NoSuchElementException.hpp:
+
+xercesc/util/RefHashTableOf.c:
+
+xercesc/util/Janitor.hpp:
+
+xercesc/util/Janitor.c:
+
+xercesc/util/NullPointerException.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/new:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/exception:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_ptr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/type_traits:
+
+xercesc/util/Transcoders/Iconv/IconvTransService.hpp:

@@ -1,0 +1,904 @@
+The system is: Windows - 10.0.16299 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:23 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "Debug\".
+  Creating directory "Debug\CompilerIdC.tlog\".
+InitializeBuildStatus:
+  Creating "Debug\CompilerIdC.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  Deleting file "Debug\CompilerIdC.tlog\unsuccessfulbuild".
+  Touching "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdC\CompilerIdC.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.50
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/3.9.0/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:24 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "Debug\".
+  Creating directory "Debug\CompilerIdCXX.tlog\".
+InitializeBuildStatus:
+  Creating "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  Deleting file "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
+  Touching "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\3.9.0\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.52
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/3.9.0/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_a5a4d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:25 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_a5a4d.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_a5a4d.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_a5a4d.dir\Debug\cmTC_a5a4d.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_a5a4d.dir\Debug\cmTC_a5a4d.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a5a4d.dir\Debug\\" /Fd"cmTC_a5a4d.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\testCCompiler.c
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a5a4d.dir\Debug\\" /Fd"cmTC_a5a4d.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\testCCompiler.c
+  
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_a5a4d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_a5a4d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_a5a4d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_a5a4d.dir\Debug\testCCompiler.obj
+  cmTC_a5a4d.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_a5a4d.exe
+  cmTC_a5a4d.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_a5a4d.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_a5a4d.dir\Debug\cmTC_a5a4d.tlog\unsuccessfulbuild".
+  Touching "cmTC_a5a4d.dir\Debug\cmTC_a5a4d.tlog\cmTC_a5a4d.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_a5a4d.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.80
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_3702a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:25 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_3702a.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_3702a.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_3702a.dir\Debug\cmTC_3702a.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_3702a.dir\Debug\cmTC_3702a.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3702a.dir\Debug\\" /Fd"cmTC_3702a.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3702a.dir\Debug\\" /Fd"cmTC_3702a.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_3702a.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_3702a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_3702a.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_3702a.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_3702a.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_3702a.exe
+  cmTC_3702a.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_3702a.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_3702a.dir\Debug\cmTC_3702a.tlog\unsuccessfulbuild".
+  Touching "cmTC_3702a.dir\Debug\cmTC_3702a.tlog\cmTC_3702a.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_3702a.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.54
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4b582.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:26 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_4b582.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_4b582.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_4b582.dir\Debug\cmTC_4b582.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_4b582.dir\Debug\cmTC_4b582.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4b582.dir\Debug\\" /Fd"cmTC_4b582.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4b582.dir\Debug\\" /Fd"cmTC_4b582.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  
+  testCXXCompiler.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_4b582.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b582.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b582.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_4b582.dir\Debug\testCXXCompiler.obj
+  cmTC_4b582.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_4b582.exe
+  cmTC_4b582.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b582.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_4b582.dir\Debug\cmTC_4b582.tlog\unsuccessfulbuild".
+  Touching "cmTC_4b582.dir\Debug\cmTC_4b582.tlog\cmTC_4b582.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_4b582.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.55
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4b6e9.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:27 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_4b6e9.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_4b6e9.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_4b6e9.dir\Debug\cmTC_4b6e9.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_4b6e9.dir\Debug\cmTC_4b6e9.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4b6e9.dir\Debug\\" /Fd"cmTC_4b6e9.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4b6e9.dir\Debug\\" /Fd"cmTC_4b6e9.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_4b6e9.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b6e9.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b6e9.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_4b6e9.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_4b6e9.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_4b6e9.exe
+  cmTC_4b6e9.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_4b6e9.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_4b6e9.dir\Debug\cmTC_4b6e9.tlog\unsuccessfulbuild".
+  Touching "cmTC_4b6e9.dir\Debug\cmTC_4b6e9.tlog\cmTC_4b6e9.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_4b6e9.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.56
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_daa85.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:28 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_daa85.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_daa85.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_daa85.dir\Debug\cmTC_daa85.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_daa85.dir\Debug\cmTC_daa85.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_daa85.dir\Debug\\" /Fd"cmTC_daa85.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_daa85.dir\Debug\\" /Fd"cmTC_daa85.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_daa85.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_daa85.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_daa85.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_daa85.dir\Debug\feature_tests.obj
+  cmTC_daa85.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_daa85.exe
+  cmTC_daa85.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_daa85.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_daa85.dir\Debug\cmTC_daa85.tlog\unsuccessfulbuild".
+  Touching "cmTC_daa85.dir\Debug\cmTC_daa85.tlog\cmTC_daa85.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_daa85.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.56
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_f16ee.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:29 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_f16ee.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_f16ee.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_f16ee.dir\Debug\cmTC_f16ee.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_f16ee.dir\Debug\cmTC_f16ee.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f16ee.dir\Debug\\" /Fd"cmTC_f16ee.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f16ee.dir\Debug\\" /Fd"cmTC_f16ee.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_f16ee.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f16ee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f16ee.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f16ee.dir\Debug\feature_tests.obj
+  cmTC_f16ee.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_f16ee.exe
+  cmTC_f16ee.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f16ee.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_f16ee.dir\Debug\cmTC_f16ee.tlog\unsuccessfulbuild".
+  Touching "cmTC_f16ee.dir\Debug\cmTC_f16ee.tlog\cmTC_f16ee.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_f16ee.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.55
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_6038e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:30 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_6038e.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_6038e.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_6038e.dir\Debug\cmTC_6038e.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_6038e.dir\Debug\cmTC_6038e.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6038e.dir\Debug\\" /Fd"cmTC_6038e.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6038e.dir\Debug\\" /Fd"cmTC_6038e.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_6038e.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6038e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6038e.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_6038e.dir\Debug\feature_tests.obj
+  cmTC_6038e.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_6038e.exe
+  cmTC_6038e.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6038e.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_6038e.dir\Debug\cmTC_6038e.tlog\unsuccessfulbuild".
+  Touching "cmTC_6038e.dir\Debug\cmTC_6038e.tlog\cmTC_6038e.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_6038e.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.55
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_9d77b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:31 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_9d77b.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_9d77b.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_9d77b.dir\Debug\cmTC_9d77b.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_9d77b.dir\Debug\cmTC_9d77b.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9d77b.dir\Debug\\" /Fd"cmTC_9d77b.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9d77b.dir\Debug\\" /Fd"cmTC_9d77b.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_9d77b.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_9d77b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_9d77b.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_9d77b.dir\Debug\feature_tests.obj
+  cmTC_9d77b.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_9d77b.exe
+  cmTC_9d77b.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_9d77b.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_9d77b.dir\Debug\cmTC_9d77b.tlog\unsuccessfulbuild".
+  Touching "cmTC_9d77b.dir\Debug\cmTC_9d77b.tlog\cmTC_9d77b.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_9d77b.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.55
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+Determining if the include file assert.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_6e256.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:31 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_6e256.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_6e256.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_6e256.dir\Debug\cmTC_6e256.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_6e256.dir\Debug\cmTC_6e256.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6e256.dir\Debug\\" /Fd"cmTC_6e256.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6e256.dir\Debug\\" /Fd"cmTC_6e256.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_6e256.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6e256.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6e256.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_6e256.dir\Debug\CheckIncludeFile.obj
+  cmTC_6e256.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_6e256.exe
+  cmTC_6e256.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_6e256.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_6e256.dir\Debug\cmTC_6e256.tlog\unsuccessfulbuild".
+  Touching "cmTC_6e256.dir\Debug\cmTC_6e256.tlog\cmTC_6e256.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_6e256.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.55
+
+
+Determining if the include file errno.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_f8a2c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:32 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_f8a2c.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_f8a2c.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_f8a2c.dir\Debug\cmTC_f8a2c.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_f8a2c.dir\Debug\cmTC_f8a2c.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f8a2c.dir\Debug\\" /Fd"cmTC_f8a2c.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f8a2c.dir\Debug\\" /Fd"cmTC_f8a2c.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_f8a2c.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f8a2c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f8a2c.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f8a2c.dir\Debug\CheckIncludeFile.obj
+  cmTC_f8a2c.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_f8a2c.exe
+  cmTC_f8a2c.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_f8a2c.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_f8a2c.dir\Debug\cmTC_f8a2c.tlog\unsuccessfulbuild".
+  Touching "cmTC_f8a2c.dir\Debug\cmTC_f8a2c.tlog\cmTC_f8a2c.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_f8a2c.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.56
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_2fa3f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:33 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_2fa3f.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_2fa3f.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_2fa3f.dir\Debug\cmTC_2fa3f.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_2fa3f.dir\Debug\cmTC_2fa3f.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2fa3f.dir\Debug\\" /Fd"cmTC_2fa3f.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2fa3f.dir\Debug\\" /Fd"cmTC_2fa3f.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_2fa3f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_2fa3f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_2fa3f.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_2fa3f.dir\Debug\CheckIncludeFile.obj
+  cmTC_2fa3f.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_2fa3f.exe
+  cmTC_2fa3f.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_2fa3f.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_2fa3f.dir\Debug\cmTC_2fa3f.tlog\unsuccessfulbuild".
+  Touching "cmTC_2fa3f.dir\Debug\cmTC_2fa3f.tlog\cmTC_2fa3f.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_2fa3f.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.57
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_eaa8e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:33 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_eaa8e.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_eaa8e.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_eaa8e.dir\Debug\cmTC_eaa8e.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_eaa8e.dir\Debug\cmTC_eaa8e.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_eaa8e.dir\Debug\\" /Fd"cmTC_eaa8e.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_eaa8e.dir\Debug\\" /Fd"cmTC_eaa8e.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_eaa8e.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_eaa8e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_eaa8e.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_eaa8e.dir\Debug\CheckIncludeFile.obj
+  cmTC_eaa8e.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_eaa8e.exe
+  cmTC_eaa8e.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_eaa8e.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_eaa8e.dir\Debug\cmTC_eaa8e.tlog\unsuccessfulbuild".
+  Touching "cmTC_eaa8e.dir\Debug\cmTC_eaa8e.tlog\cmTC_eaa8e.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_eaa8e.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.56
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_d1ca5.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:34 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_d1ca5.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_d1ca5.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_d1ca5.dir\Debug\cmTC_d1ca5.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_d1ca5.dir\Debug\cmTC_d1ca5.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d1ca5.dir\Debug\\" /Fd"cmTC_d1ca5.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d1ca5.dir\Debug\\" /Fd"cmTC_d1ca5.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_d1ca5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_d1ca5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_d1ca5.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d1ca5.dir\Debug\CheckIncludeFile.obj
+  cmTC_d1ca5.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_d1ca5.exe
+  cmTC_d1ca5.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_d1ca5.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_d1ca5.dir\Debug\cmTC_d1ca5.tlog\unsuccessfulbuild".
+  Touching "cmTC_d1ca5.dir\Debug\cmTC_d1ca5.tlog\cmTC_d1ca5.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_d1ca5.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.57
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_caaa1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:35 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_caaa1.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_caaa1.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_caaa1.dir\Debug\cmTC_caaa1.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_caaa1.dir\Debug\cmTC_caaa1.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_caaa1.dir\Debug\\" /Fd"cmTC_caaa1.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_caaa1.dir\Debug\\" /Fd"cmTC_caaa1.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_caaa1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_caaa1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_caaa1.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_caaa1.dir\Debug\CheckIncludeFile.obj
+  cmTC_caaa1.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_caaa1.exe
+  cmTC_caaa1.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_caaa1.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_caaa1.dir\Debug\cmTC_caaa1.tlog\unsuccessfulbuild".
+  Touching "cmTC_caaa1.dir\Debug\cmTC_caaa1.tlog\cmTC_caaa1.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_caaa1.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.57
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_7a6b0.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/26/2018 11:26:36 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_7a6b0.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_7a6b0.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_7a6b0.dir\Debug\cmTC_7a6b0.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_7a6b0.dir\Debug\cmTC_7a6b0.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7a6b0.dir\Debug\\" /Fd"cmTC_7a6b0.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7a6b0.dir\Debug\\" /Fd"cmTC_7a6b0.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_7a6b0.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_7a6b0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_7a6b0.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7a6b0.dir\Debug\CheckIncludeFile.obj
+  cmTC_7a6b0.vcxproj -> C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\Debug\cmTC_7a6b0.exe
+  cmTC_7a6b0.vcxproj -> C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/cmake/CMakeFiles/CMakeTmp/Debug/cmTC_7a6b0.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_7a6b0.dir\Debug\cmTC_7a6b0.tlog\unsuccessfulbuild".
+  Touching "cmTC_7a6b0.dir\Debug\cmTC_7a6b0.tlog\cmTC_7a6b0.lastbuildstate".
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\cmake\CMakeFiles\CMakeTmp\cmTC_7a6b0.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.56
+
+

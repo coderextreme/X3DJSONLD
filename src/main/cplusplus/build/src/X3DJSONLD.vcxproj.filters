@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\X3DJSONLD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\gason.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\DOMPrint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\pretty-print.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintErrorHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\X3DJSONLD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\gason.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\DOMPrint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMTreeErrorReporter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintFilter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintErrorHandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5000E43E-9E81-335D-AE5A-CA196416A6B7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8F023860-4322-3CCB-8BE9-CC71D686E4B1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

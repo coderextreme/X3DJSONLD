@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6861E0F8-3723-3E54-8F5C-98C302224CE2}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>doc-xml</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\bin\cmake.exe -HC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0 -BC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build --check-stamp-file C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/doc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindJava.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeFindJavaCommon.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\bin\cmake.exe -HC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0 -BC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build --check-stamp-file C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/doc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindJava.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeFindJavaCommon.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\bin\cmake.exe -HC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0 -BC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build --check-stamp-file C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/doc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindJava.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeFindJavaCommon.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\bin\cmake.exe -HC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0 -BC:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build --check-stamp-file C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/doc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/doc/CMakeLists.txt;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindJava.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CMakeFindJavaCommon.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\apidocs.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\applications.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\bug-report.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\build.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\charter.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\createdoc.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\domcount.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\domprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\download.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\enumval.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-build.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-contributing.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-distrib.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-other.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\faq-parse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\feedback.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\install.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\mailing-lists.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\memparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\migration.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\migration_archive.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\pparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-dom.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-others.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-sax.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program-sax2.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\program.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\psviwriter.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\readme.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\redirect.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases_archive.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\releases_plan.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\samples.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\sax2count.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\sax2print.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\saxcount.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\saxprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\schema.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\scmprint.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\secadv.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\senumval.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\source-repository.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\stdinparse.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\xerces-c_book.xml" />
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\xinclude.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\ZERO_CHECK.vcxproj">
+      <Project>{B3E16F2C-4E86-3909-922D-87F630350473}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

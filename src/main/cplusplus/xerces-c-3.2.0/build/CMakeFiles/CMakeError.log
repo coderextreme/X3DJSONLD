@@ -1,0 +1,1759 @@
+Determining if the include file arpa/inet.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_14f6e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:45 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_14f6e.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_14f6e.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_14f6e.dir\Debug\cmTC_14f6e.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_14f6e.dir\Debug\cmTC_14f6e.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_14f6e.dir\Debug\\" /Fd"cmTC_14f6e.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_14f6e.dir\Debug\\" /Fd"cmTC_14f6e.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'arpa/inet.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_14f6e.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_14f6e.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_14f6e.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'arpa/inet.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_14f6e.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file dlfcn.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_daa1b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:46 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_daa1b.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_daa1b.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_daa1b.dir\Debug\cmTC_daa1b.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_daa1b.dir\Debug\cmTC_daa1b.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_daa1b.dir\Debug\\" /Fd"cmTC_daa1b.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_daa1b.dir\Debug\\" /Fd"cmTC_daa1b.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'dlfcn.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_daa1b.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_daa1b.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_daa1b.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'dlfcn.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_daa1b.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file langinfo.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_2be6f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:50 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_2be6f.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_2be6f.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_2be6f.dir\Debug\cmTC_2be6f.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_2be6f.dir\Debug\cmTC_2be6f.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2be6f.dir\Debug\\" /Fd"cmTC_2be6f.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2be6f.dir\Debug\\" /Fd"cmTC_2be6f.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'langinfo.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_2be6f.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_2be6f.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_2be6f.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'langinfo.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_2be6f.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file netdb.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_02418.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:55 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_02418.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_02418.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_02418.dir\Debug\cmTC_02418.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_02418.dir\Debug\cmTC_02418.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_02418.dir\Debug\\" /Fd"cmTC_02418.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_02418.dir\Debug\\" /Fd"cmTC_02418.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'netdb.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_02418.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_02418.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_02418.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'netdb.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_02418.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file netinet/in.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_61914.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:56 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_61914.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_61914.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_61914.dir\Debug\cmTC_61914.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_61914.dir\Debug\cmTC_61914.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_61914.dir\Debug\\" /Fd"cmTC_61914.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_61914.dir\Debug\\" /Fd"cmTC_61914.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'netinet/in.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_61914.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_61914.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_61914.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'netinet/in.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_61914.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.78
+
+
+Determining if the include file nl_types.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_1c8a0.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:18:57 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_1c8a0.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_1c8a0.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_1c8a0.dir\Debug\cmTC_1c8a0.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_1c8a0.dir\Debug\cmTC_1c8a0.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1c8a0.dir\Debug\\" /Fd"cmTC_1c8a0.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1c8a0.dir\Debug\\" /Fd"cmTC_1c8a0.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'nl_types.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_1c8a0.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_1c8a0.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_1c8a0.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'nl_types.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_1c8a0.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file strings.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_a13e1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:04 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_a13e1.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_a13e1.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_a13e1.dir\Debug\cmTC_a13e1.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_a13e1.dir\Debug\cmTC_a13e1.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a13e1.dir\Debug\\" /Fd"cmTC_a13e1.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a13e1.dir\Debug\\" /Fd"cmTC_a13e1.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'strings.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_a13e1.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_a13e1.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_a13e1.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'strings.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_a13e1.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file sys/param.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_8b12b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:05 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8b12b.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_8b12b.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_8b12b.dir\Debug\cmTC_8b12b.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_8b12b.dir\Debug\cmTC_8b12b.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8b12b.dir\Debug\\" /Fd"cmTC_8b12b.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8b12b.dir\Debug\\" /Fd"cmTC_8b12b.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/param.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8b12b.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8b12b.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8b12b.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/param.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8b12b.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file sys/socket.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_579e1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:06 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_579e1.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_579e1.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_579e1.dir\Debug\cmTC_579e1.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_579e1.dir\Debug\cmTC_579e1.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_579e1.dir\Debug\\" /Fd"cmTC_579e1.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_579e1.dir\Debug\\" /Fd"cmTC_579e1.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/socket.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_579e1.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_579e1.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_579e1.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/socket.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_579e1.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.78
+
+
+Determining if the include file sys/time.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_83889.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:09 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_83889.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_83889.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_83889.dir\Debug\cmTC_83889.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_83889.dir\Debug\cmTC_83889.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_83889.dir\Debug\\" /Fd"cmTC_83889.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_83889.dir\Debug\\" /Fd"cmTC_83889.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/time.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_83889.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_83889.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_83889.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'sys/time.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_83889.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file unistd.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_4e44e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:12 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_4e44e.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_4e44e.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_4e44e.dir\Debug\cmTC_4e44e.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_4e44e.dir\Debug\cmTC_4e44e.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4e44e.dir\Debug\\" /Fd"cmTC_4e44e.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4e44e.dir\Debug\\" /Fd"cmTC_4e44e.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_4e44e.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_4e44e.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_4e44e.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_4e44e.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.81
+
+
+Determining if the include file endian.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_318cb.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:16 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_318cb.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_318cb.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_318cb.dir\Debug\cmTC_318cb.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_318cb.dir\Debug\cmTC_318cb.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_318cb.dir\Debug\\" /Fd"cmTC_318cb.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_318cb.dir\Debug\\" /Fd"cmTC_318cb.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'endian.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_318cb.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_318cb.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_318cb.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'endian.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_318cb.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.80
+
+
+Determining if the include file machine/endian.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7309c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:17 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7309c.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_7309c.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_7309c.dir\Debug\cmTC_7309c.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_7309c.dir\Debug\cmTC_7309c.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7309c.dir\Debug\\" /Fd"cmTC_7309c.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7309c.dir\Debug\\" /Fd"cmTC_7309c.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'machine/endian.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7309c.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7309c.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7309c.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'machine/endian.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7309c.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the include file arpa/nameser_compat.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c35a0.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:18 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c35a0.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_c35a0.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_c35a0.dir\Debug\cmTC_c35a0.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_c35a0.dir\Debug\cmTC_c35a0.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c35a0.dir\Debug\\" /Fd"cmTC_c35a0.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c35a0.dir\Debug\\" /Fd"cmTC_c35a0.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'arpa/nameser_compat.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c35a0.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c35a0.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c35a0.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'arpa/nameser_compat.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c35a0.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.78
+
+
+Determining if the function pathconf exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_8a6ec.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:21 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_8a6ec.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_8a6ec.dir\Debug\cmTC_8a6ec.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_8a6ec.dir\Debug\cmTC_8a6ec.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pathconf /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8a6ec.dir\Debug\\" /Fd"cmTC_8a6ec.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pathconf /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8a6ec.dir\Debug\\" /Fd"cmTC_8a6ec.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_8a6ec.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_8a6ec.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_8a6ec.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_8a6ec.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _pathconf referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_8a6ec.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _pathconf referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_8a6ec.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_8a6ec.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function realpath exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_5a806.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:22 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_5a806.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_5a806.dir\Debug\cmTC_5a806.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_5a806.dir\Debug\cmTC_5a806.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=realpath /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5a806.dir\Debug\\" /Fd"cmTC_5a806.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=realpath /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5a806.dir\Debug\\" /Fd"cmTC_5a806.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_5a806.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_5a806.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_5a806.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_5a806.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _realpath referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_5a806.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _realpath referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_5a806.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_5a806.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.99
+
+
+Determining if the function getaddrinfo exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_b589d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:23 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_b589d.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_b589d.dir\Debug\cmTC_b589d.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_b589d.dir\Debug\cmTC_b589d.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=getaddrinfo /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b589d.dir\Debug\\" /Fd"cmTC_b589d.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=getaddrinfo /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b589d.dir\Debug\\" /Fd"cmTC_b589d.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_b589d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_b589d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_b589d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_b589d.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _getaddrinfo referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_b589d.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _getaddrinfo referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_b589d.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b589d.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function gethostbyaddr exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_dfd66.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:25 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_dfd66.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_dfd66.dir\Debug\cmTC_dfd66.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_dfd66.dir\Debug\cmTC_dfd66.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyaddr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dfd66.dir\Debug\\" /Fd"cmTC_dfd66.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyaddr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dfd66.dir\Debug\\" /Fd"cmTC_dfd66.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_dfd66.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_dfd66.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_dfd66.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_dfd66.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gethostbyaddr referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_dfd66.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gethostbyaddr referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_dfd66.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_dfd66.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.97
+
+
+Determining if the function gethostbyname exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_38036.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:26 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_38036.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_38036.dir\Debug\cmTC_38036.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_38036.dir\Debug\cmTC_38036.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyname /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_38036.dir\Debug\\" /Fd"cmTC_38036.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyname /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_38036.dir\Debug\\" /Fd"cmTC_38036.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_38036.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_38036.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_38036.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_38036.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gethostbyname referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_38036.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gethostbyname referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_38036.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_38036.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function socket exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_208e3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:27 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_208e3.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_208e3.dir\Debug\cmTC_208e3.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_208e3.dir\Debug\cmTC_208e3.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=socket /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_208e3.dir\Debug\\" /Fd"cmTC_208e3.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=socket /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_208e3.dir\Debug\\" /Fd"cmTC_208e3.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_208e3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_208e3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_208e3.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_208e3.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _socket referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_208e3.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _socket referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_208e3.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_208e3.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function clock_gettime exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_831be.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:28 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_831be.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_831be.dir\Debug\cmTC_831be.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_831be.dir\Debug\cmTC_831be.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=clock_gettime /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_831be.dir\Debug\\" /Fd"cmTC_831be.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=clock_gettime /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_831be.dir\Debug\\" /Fd"cmTC_831be.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_831be.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_831be.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_831be.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_831be.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _clock_gettime referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_831be.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _clock_gettime referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_831be.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_831be.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining if the function gettimeofday exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_f3f71.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:31 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_f3f71.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_f3f71.dir\Debug\cmTC_f3f71.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_f3f71.dir\Debug\cmTC_f3f71.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gettimeofday /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3f71.dir\Debug\\" /Fd"cmTC_f3f71.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gettimeofday /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3f71.dir\Debug\\" /Fd"cmTC_f3f71.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_f3f71.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_f3f71.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_f3f71.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f3f71.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gettimeofday referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_f3f71.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gettimeofday referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_f3f71.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_f3f71.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining if the function gmtime_r exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7b589.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:32 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_7b589.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_7b589.dir\Debug\cmTC_7b589.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_7b589.dir\Debug\cmTC_7b589.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gmtime_r /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7b589.dir\Debug\\" /Fd"cmTC_7b589.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gmtime_r /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7b589.dir\Debug\\" /Fd"cmTC_7b589.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7b589.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_7b589.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_7b589.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7b589.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gmtime_r referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7b589.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _gmtime_r referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7b589.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7b589.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.96
+
+
+Determining if the function timegm exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_ae37c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:33 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_ae37c.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_ae37c.dir\Debug\cmTC_ae37c.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_ae37c.dir\Debug\cmTC_ae37c.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=timegm /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae37c.dir\Debug\\" /Fd"cmTC_ae37c.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=timegm /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae37c.dir\Debug\\" /Fd"cmTC_ae37c.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ae37c.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_ae37c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_ae37c.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_ae37c.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _timegm referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ae37c.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _timegm referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ae37c.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ae37c.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.97
+
+
+Determining if the function nl_langinfo exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_68082.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:37 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_68082.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_68082.dir\Debug\cmTC_68082.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_68082.dir\Debug\cmTC_68082.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=nl_langinfo /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_68082.dir\Debug\\" /Fd"cmTC_68082.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=nl_langinfo /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_68082.dir\Debug\\" /Fd"cmTC_68082.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_68082.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_68082.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_68082.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_68082.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _nl_langinfo referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_68082.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _nl_langinfo referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_68082.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_68082.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining if the function snprintf exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_380ab.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:41 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_380ab.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_380ab.dir\Debug\cmTC_380ab.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_380ab.dir\Debug\cmTC_380ab.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=snprintf /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_380ab.dir\Debug\\" /Fd"cmTC_380ab.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=snprintf /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_380ab.dir\Debug\\" /Fd"cmTC_380ab.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_380ab.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_380ab.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_380ab.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_380ab.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _snprintf referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_380ab.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _snprintf referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_380ab.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_380ab.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function strcasecmp exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_9fbff.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:43 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_9fbff.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_9fbff.dir\Debug\cmTC_9fbff.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_9fbff.dir\Debug\cmTC_9fbff.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strcasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9fbff.dir\Debug\\" /Fd"cmTC_9fbff.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strcasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9fbff.dir\Debug\\" /Fd"cmTC_9fbff.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_9fbff.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_9fbff.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_9fbff.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_9fbff.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strcasecmp referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_9fbff.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strcasecmp referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_9fbff.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_9fbff.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function strncasecmp exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_55b21.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:19:44 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_55b21.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_55b21.dir\Debug\cmTC_55b21.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_55b21.dir\Debug\cmTC_55b21.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strncasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_55b21.dir\Debug\\" /Fd"cmTC_55b21.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strncasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_55b21.dir\Debug\\" /Fd"cmTC_55b21.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_55b21.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_55b21.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_55b21.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_55b21.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strncasecmp referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_55b21.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strncasecmp referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_55b21.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_55b21.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining size of ssize_t failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_70051.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:14 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_70051.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_70051.dir\Debug\cmTC_70051.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_70051.dir\Debug\cmTC_70051.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70051.dir\Debug\\" /Fd"cmTC_70051.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  SIZEOF_SSIZE_T.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70051.dir\Debug\\" /Fd"cmTC_70051.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(20): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(21): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(22): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(23): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(24): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(20): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(21): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(22): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(23): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c(24): error C2065: 'ssize_t': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_70051.vcxproj]
+
+    0 Warning(s)
+    5 Error(s)
+
+Time Elapsed 00:00:00.78
+
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CheckTypeSize/SIZEOF_SSIZE_T.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+#include "stddef.h"
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(ssize_t))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c9c5e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:33 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9c5e.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_c9c5e.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_c9c5e.dir\Debug\cmTC_c9c5e.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_c9c5e.dir\Debug\cmTC_c9c5e.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9c5e.dir\Debug\\" /Fd"cmTC_c9c5e.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9c5e.dir\Debug\\" /Fd"cmTC_c9c5e.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9c5e.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9c5e.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9c5e.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9c5e.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.83
+
+
+Determining if the include file nl_types.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_04382.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:35 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_04382.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_04382.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_04382.dir\Debug\cmTC_04382.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_04382.dir\Debug\cmTC_04382.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_04382.dir\Debug\\" /Fd"cmTC_04382.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_04382.dir\Debug\\" /Fd"cmTC_04382.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'nl_types.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_04382.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_04382.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_04382.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'nl_types.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_04382.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.81
+
+
+Determining if the function catopen exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7de03.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:37 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_7de03.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_7de03.dir\Debug\cmTC_7de03.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_7de03.dir\Debug\cmTC_7de03.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catopen /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7de03.dir\Debug\\" /Fd"cmTC_7de03.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catopen /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7de03.dir\Debug\\" /Fd"cmTC_7de03.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7de03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_7de03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_7de03.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7de03.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catopen referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7de03.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catopen referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_7de03.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_7de03.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.99
+
+
+Determining if the function catclose exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_0d3f5.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:38 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_0d3f5.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_0d3f5.dir\Debug\cmTC_0d3f5.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_0d3f5.dir\Debug\cmTC_0d3f5.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catclose /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0d3f5.dir\Debug\\" /Fd"cmTC_0d3f5.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catclose /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0d3f5.dir\Debug\\" /Fd"cmTC_0d3f5.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_0d3f5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_0d3f5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_0d3f5.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_0d3f5.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catclose referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_0d3f5.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catclose referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_0d3f5.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_0d3f5.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the function catgets exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c9eac.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:39 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_c9eac.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_c9eac.dir\Debug\cmTC_c9eac.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_c9eac.dir\Debug\cmTC_c9eac.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catgets /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9eac.dir\Debug\\" /Fd"cmTC_c9eac.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=catgets /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9eac.dir\Debug\\" /Fd"cmTC_c9eac.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c9eac.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_c9eac.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_c9eac.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_c9eac.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catgets referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c9eac.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _catgets referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c9eac.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c9eac.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Determining if the include file iconv.h exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_b4de3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:40 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b4de3.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_b4de3.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_b4de3.dir\Debug\cmTC_b4de3.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_b4de3.dir\Debug\cmTC_b4de3.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b4de3.dir\Debug\\" /Fd"cmTC_b4de3.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckIncludeFile.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b4de3.dir\Debug\\" /Fd"cmTC_b4de3.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'iconv.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b4de3.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b4de3.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b4de3.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'iconv.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b4de3.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+
+Determining if the function iconv_open exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c4497.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:46 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_c4497.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_c4497.dir\Debug\cmTC_c4497.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_c4497.dir\Debug\cmTC_c4497.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv_open /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4497.dir\Debug\\" /Fd"cmTC_c4497.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv_open /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4497.dir\Debug\\" /Fd"cmTC_c4497.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c4497.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_c4497.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_c4497.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_c4497.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv_open referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c4497.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv_open referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_c4497.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_c4497.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining if the function iconv_close exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_88b03.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:47 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_88b03.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_88b03.dir\Debug\cmTC_88b03.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_88b03.dir\Debug\cmTC_88b03.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv_close /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_88b03.dir\Debug\\" /Fd"cmTC_88b03.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv_close /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_88b03.dir\Debug\\" /Fd"cmTC_88b03.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_88b03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_88b03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_88b03.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_88b03.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv_close referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_88b03.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv_close referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_88b03.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_88b03.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.94
+
+
+Determining if the function iconv exists failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_ac172.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:20:48 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_ac172.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_ac172.dir\Debug\cmTC_ac172.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_ac172.dir\Debug\cmTC_ac172.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac172.dir\Debug\\" /Fd"cmTC_ac172.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=iconv /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac172.dir\Debug\\" /Fd"cmTC_ac172.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\coderextreme\AppData\Local\Programs\Python\Python36\Lib\site-packages\cmake\data\share\cmake-3.9\Modules\CheckFunctionExists.c"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ac172.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_ac172.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp/Debug/cmTC_ac172.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_ac172.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj]
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ac172.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj" (default target) (1) ->
+(Link target) -> 
+  CheckFunctionExists.obj : error LNK2019: unresolved external symbol _iconv referenced in function _main [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj]
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\cmTC_ac172.exe : fatal error LNK1120: 1 unresolved externals [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_ac172.vcxproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.95
+
+
+Performing C++ SOURCE FILE Test HAVE_CPUID_H failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_b8e13.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:21:11 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b8e13.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_b8e13.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_b8e13.dir\Debug\cmTC_b8e13.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_b8e13.dir\Debug\cmTC_b8e13.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D HAVE_CPUID_H /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b8e13.dir\Debug\\" /Fd"cmTC_b8e13.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  src.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D HAVE_CPUID_H /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b8e13.dir\Debug\\" /Fd"cmTC_b8e13.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b8e13.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b8e13.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b8e13.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_b8e13.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+Source file was:
+
+#include <cpuid.h>
+
+int main() {
+  return 0;
+}
+Performing C++ SOURCE FILE Test XERCES_HAVE_GETCPUID failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_30d16.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:21:14 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_30d16.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_30d16.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_30d16.dir\Debug\cmTC_30d16.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_30d16.dir\Debug\cmTC_30d16.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D XERCES_HAVE_GETCPUID /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_30d16.dir\Debug\\" /Fd"cmTC_30d16.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  src.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D XERCES_HAVE_GETCPUID /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_30d16.dir\Debug\\" /Fd"cmTC_30d16.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_30d16.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_30d16.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_30d16.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_30d16.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.81
+
+Source file was:
+
+#include <cpuid.h>
+
+int main() {
+  unsigned int eax, ebx, ecx, edx;
+  __get_cpuid (1, &eax, &ebx, &ecx, &edx);
+  return 0;
+}
+Performing C++ SOURCE FILE Test HAVE_PATH_MAX failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_933d3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:21:16 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_933d3.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_933d3.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_933d3.dir\Debug\cmTC_933d3.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_933d3.dir\Debug\cmTC_933d3.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D HAVE_PATH_MAX /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_933d3.dir\Debug\\" /Fd"cmTC_933d3.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  src.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D HAVE_PATH_MAX /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_933d3.dir\Debug\\" /Fd"cmTC_933d3.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(4): error C2065: 'PATH_MAX': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_933d3.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_933d3.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_933d3.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(4): error C2065: 'PATH_MAX': undeclared identifier [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_933d3.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.79
+
+Source file was:
+
+#include <limits.h>
+int main(void) {
+  char dummy[PATH_MAX];
+  return 0;
+}
+Performing C++ SOURCE FILE Test ICONV_USES_CONST_POINTER failed with the following output:
+Change Dir: C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_058fb.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 2/27/2018 4:21:21 AM.
+Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_058fb.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_058fb.dir\Debug\".
+  Creating directory "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_058fb.dir\Debug\cmTC_058fb.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_058fb.dir\Debug\cmTC_058fb.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D ICONV_USES_CONST_POINTER /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_058fb.dir\Debug\\" /Fd"cmTC_058fb.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25835 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  src.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D ICONV_USES_CONST_POINTER /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_058fb.dir\Debug\\" /Fd"cmTC_058fb.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx"
+  
+C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'iconv.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_058fb.vcxproj]
+Done Building Project "C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_058fb.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_058fb.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\src.cxx(2): fatal error C1083: Cannot open include file: 'iconv.h': No such file or directory [C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\build\CMakeFiles\CMakeTmp\cmTC_058fb.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.80
+
+Source file was:
+
+#include <iconv.h>
+
+int main(void) {
+  const char *fromPtr=0;
+  size_t     fromLen=0;
+  char       *toPtr=0;
+  size_t     toLen=0;
+  iconv_t    cv=0;
+  iconv(cv, &fromPtr, &fromLen, &toPtr, &toLen);
+  return 0;
+}

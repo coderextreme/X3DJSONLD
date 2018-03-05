@@ -1,0 +1,25 @@
+# CMake generation dependency list for this directory.
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/CMakeLists.txt
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/build/CMakeFiles/3.9.0/CMakeSystem.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/build/CMakeFiles/3.9.0/CMakeCCompiler.cmake
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/build/CMakeFiles/3.9.0/CMakeCXXCompiler.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeSystemSpecificInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeGenericSystem.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/Windows.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/WindowsPaths.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeCInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeLanguageInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/Windows-MSVC-C.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/Windows-MSVC.cmake
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/build/CMakeFiles/3.9.0/CMakeRCCompiler.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeRCInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeCXXInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeLanguageInformation.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Compiler/MSVC-CXX.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/Platform/Windows-MSVC.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/x3djsonld.pc.in

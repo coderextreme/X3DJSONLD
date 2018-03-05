@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: X3djsonld-C++
+Description: X3D JSON To XML converter for C++
+Version: 3.2.0
+Libs: -L${libdir} -lx3djsonld
+Libs.private: -lcurl
+Cflags: -I${includedir}

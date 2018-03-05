@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\dtd\blocks.ent">
+      <Filter>style/dtd</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\dtd\characters.ent">
+      <Filter>style/dtd</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\dtd\entities.ent">
+      <Filter>style/dtd</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\dtd\links.ent">
+      <Filter>style/dtd</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\dtd\markup.ent">
+      <Filter>style/dtd</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\graphics\button-a.gif">
+      <Filter>style/graphics</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\graphics\button-b.gif">
+      <Filter>style/graphics</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\graphics\section.gif">
+      <Filter>style/graphics</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\bottom.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-asf-hi.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-asf-lo.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-w3c-hi.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-w3c-lo.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-xml-hi.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\button-xml-lo.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\close.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\dot.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\join.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\line.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\logo.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\note.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\right.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\separator-space.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\separator.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\resources\void.gif">
+      <Filter>style/resources</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\any2header.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\any2project.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\book2group.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\book2project.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\changes2document.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\context2footer.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\context2label.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\context2section.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\directory2project.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\document2html.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\faqs2document.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+    <None Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\stylesheets\group2document.xsl">
+      <Filter>style/stylesheets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XML Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\doc\style\loader.xml">
+      <Filter>style</Filter>
+    </XML>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="style/dtd">
+      <UniqueIdentifier>{FFE7F3D7-6203-3B01-BCD3-D102D829381F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="style/graphics">
+      <UniqueIdentifier>{F865FDA9-4025-3A0E-8EF7-B16A147A15E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="style">
+      <UniqueIdentifier>{CC407B89-6411-3160-91AB-92EB9C279347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="style/resources">
+      <UniqueIdentifier>{82CB209B-B5C1-3ACF-8FC0-D3CE7D86B23A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="style/stylesheets">
+      <UniqueIdentifier>{D5CEA4AE-A39C-3A4C-BD48-4C0408BE1BAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

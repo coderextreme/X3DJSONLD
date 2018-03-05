@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/src/CMakeLists.txt
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/src/xercesc/util/MsgLoaders/Win32/Version.rc.cmake.in
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/CMakePackageConfigHelpers.cmake
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/src/XercesCConfig.cmake.in
+C:/Users/coderextreme/AppData/Local/Programs/Python/Python36/Lib/site-packages/cmake/data/share/cmake-3.9/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
