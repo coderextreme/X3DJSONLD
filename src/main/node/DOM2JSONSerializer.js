@@ -81,9 +81,12 @@ DOM2JSONSerializer.prototype = {
 					   (fieldAttrType === "SFNode"  ||
 					    fieldAttrType === "MFNode")) {
 						method = "-children";
+					} else if (fieldAttrType !== "" && attr === "value") {
+						attrType = fieldAttrType;
 					}
 					var attrmethod = method;
 					var attrval = "";
+					console.log(attr, attrType, attrs[a].nodeValue);
 					if (attrs[a].nodeValue === 'NULL') {
 						attrval = "null";
 					} else if (attrType === "SFString") {
@@ -112,12 +115,12 @@ DOM2JSONSerializer.prototype = {
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage"||
-						attrType === "SFColor"||
-						attrType === "MFColor"||
 						attrType === "SFColorRGBA"||
 						attrType === "MFColorRGBA") {
 						attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseInt);
 					} else if (
+						attrType === "SFColor"||
+						attrType === "MFColor"||
 						attrType === "SFVec2f"||
 						attrType === "SFVec3f"||
 						attrType === "SFVec4f"||
@@ -212,12 +215,18 @@ DOM2JSONSerializer.prototype = {
 				fieldName = '-'+attrName;
 				var attrType = fieldTypes[node.nodeName][attrName];
 				if (attrType === "SFNode") {
-					fields[fieldName] = [subobject];
+					fields[fieldName] = subobject;
 				} else {
 					if (typeof fields[fieldName] === 'undefined') {
-						fields[fieldName] = [];
+						fields[fieldName] = subobject;
+					} else if (Array.isArray(fields[fieldName])) {
+						fields[fieldName].push(subobject);
+					} else {
+						// copy object into new array
+						let temp = fields[fieldName];
+						fields[fieldName] = [temp]
+						fields[fieldName].push(subobject);
 					}
-					fields[fieldName].push(subobject);
 				}
 			}
 		} else if (node.nodeType === 8) {
