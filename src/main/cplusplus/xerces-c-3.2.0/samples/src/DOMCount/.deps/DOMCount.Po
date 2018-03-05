@@ -1,0 +1,733 @@
+src/DOMCount/DOMCount.o: src/DOMCount/DOMCount.cpp \
+ ../src/xercesc/util/PlatformUtils.hpp ../src/xercesc/util/XercesDefs.hpp \
+ ../src/xercesc/util/Xerces_autoconf_config.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/machine/_default_types.h \
+ /usr/include/sys/features.h /usr/include/_newlib_version.h \
+ /usr/include/sys/_intsup.h /usr/include/sys/_stdint.h \
+ /usr/include/inttypes.h /usr/include/newlib.h /usr/include/sys/config.h \
+ /usr/include/machine/ieeefp.h /usr/include/cygwin/config.h \
+ /usr/include/_ansi.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/_ansi.h \
+ /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+ /usr/include/sys/_types.h /usr/include/sys/lock.h \
+ /usr/include/machine/endian.h /usr/include/machine/_endian.h \
+ /usr/include/bits/endian.h /usr/include/sys/select.h \
+ /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+ /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+ /usr/include/sys/_pthreadtypes.h /usr/include/machine/types.h \
+ /usr/include/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/wordsize.h /usr/include/sys/sysmacros.h \
+ ../src/xercesc/util/XercesVersion.hpp \
+ ../src/xercesc/util/XMLException.hpp ../src/xercesc/util/XMemory.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib \
+ /usr/include/stdlib.h /usr/include/sys/reent.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ ../src/xercesc/util/XMLExceptMsgs.hpp ../src/xercesc/dom/DOMError.hpp \
+ ../src/xercesc/util/XMLUni.hpp \
+ ../src/xercesc/framework/XMLErrorReporter.hpp \
+ ../src/xercesc/util/PanicHandler.hpp ../src/xercesc/util/XMLFileMgr.hpp \
+ ../src/xercesc/util/XMLMutexMgr.hpp \
+ ../src/xercesc/parsers/AbstractDOMParser.hpp \
+ ../src/xercesc/dom/DOMDocument.hpp ../src/xercesc/dom/DOMNode.hpp \
+ ../src/xercesc/dom/DOMDocumentRange.hpp \
+ ../src/xercesc/dom/DOMDocumentTraversal.hpp \
+ ../src/xercesc/dom/DOMNodeFilter.hpp \
+ ../src/xercesc/dom/DOMXPathEvaluator.hpp \
+ ../src/xercesc/dom/DOMXPathResult.hpp \
+ ../src/xercesc/framework/XMLDocumentHandler.hpp \
+ ../src/xercesc/util/RefVectorOf.hpp \
+ ../src/xercesc/util/BaseRefVectorOf.hpp \
+ ../src/xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+ ../src/xercesc/util/XMLEnumerator.hpp \
+ ../src/xercesc/framework/MemoryManager.hpp \
+ ../src/xercesc/util/BaseRefVectorOf.c ../src/xercesc/util/RefVectorOf.c \
+ ../src/xercesc/framework/XMLAttr.hpp ../src/xercesc/util/QName.hpp \
+ ../src/xercesc/util/XMLString.hpp ../src/xercesc/framework/XMLBuffer.hpp \
+ /usr/include/string.h /usr/include/strings.h /usr/include/sys/string.h \
+ /usr/include/assert.h ../src/xercesc/util/XMLUniDefs.hpp \
+ ../src/xercesc/internal/XSerializable.hpp \
+ ../src/xercesc/internal/XSerializeEngine.hpp \
+ ../src/xercesc/util/RefHashTableOf.hpp ../src/xercesc/util/Hashers.hpp \
+ ../src/xercesc/util/IllegalArgumentException.hpp \
+ ../src/xercesc/util/NoSuchElementException.hpp \
+ ../src/xercesc/util/RuntimeException.hpp \
+ ../src/xercesc/util/RefHashTableOf.c ../src/xercesc/util/Janitor.hpp \
+ ../src/xercesc/util/Janitor.c \
+ ../src/xercesc/util/NullPointerException.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/new \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/exception \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_ptr.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/type_traits \
+ ../src/xercesc/util/ValueVectorOf.hpp \
+ ../src/xercesc/util/ValueVectorOf.c \
+ ../src/xercesc/internal/XSerializationException.hpp \
+ ../src/xercesc/internal/XProtoType.hpp \
+ ../src/xercesc/framework/XMLAttDef.hpp \
+ ../src/xercesc/validators/datatype/DatatypeValidator.hpp \
+ ../src/xercesc/util/KVStringPair.hpp \
+ ../src/xercesc/util/regx/RegularExpression.hpp \
+ ../src/xercesc/util/RefArrayVectorOf.hpp \
+ ../src/xercesc/util/RefArrayVectorOf.c ../src/xercesc/util/regx/Op.hpp \
+ ../src/xercesc/util/regx/TokenFactory.hpp \
+ ../src/xercesc/util/regx/Token.hpp ../src/xercesc/util/Mutexes.hpp \
+ ../src/xercesc/util/regx/BMPattern.hpp \
+ ../src/xercesc/util/regx/OpFactory.hpp \
+ ../src/xercesc/util/regx/RegxUtil.hpp \
+ ../src/xercesc/validators/schema/SchemaSymbols.hpp \
+ ../src/xercesc/framework/psvi/XSSimpleTypeDefinition.hpp \
+ ../src/xercesc/framework/psvi/XSTypeDefinition.hpp \
+ ../src/xercesc/framework/psvi/XSObject.hpp \
+ ../src/xercesc/framework/psvi/XSConstants.hpp \
+ ../src/xercesc/framework/ValidationContext.hpp \
+ ../src/xercesc/util/NameIdPool.hpp ../src/xercesc/util/NameIdPool.c \
+ ../src/xercesc/framework/XMLEntityHandler.hpp \
+ ../src/xercesc/util/SecurityManager.hpp \
+ ../src/xercesc/util/ValueStackOf.hpp \
+ ../src/xercesc/util/EmptyStackException.hpp \
+ ../src/xercesc/util/ValueStackOf.c \
+ ../src/xercesc/validators/DTD/DocTypeHandler.hpp \
+ ../src/xercesc/framework/XMLNotationDecl.hpp \
+ ../src/xercesc/validators/DTD/DTDAttDef.hpp \
+ ../src/xercesc/validators/DTD/DTDElementDecl.hpp \
+ ../src/xercesc/framework/XMLElementDecl.hpp \
+ ../src/xercesc/framework/XMLAttDefList.hpp \
+ ../src/xercesc/framework/XMLContentModel.hpp \
+ ../src/xercesc/validators/DTD/DTDEntityDecl.hpp \
+ ../src/xercesc/framework/XMLEntityDecl.hpp \
+ ../src/xercesc/dom/DOMDocumentType.hpp \
+ ../src/xercesc/framework/XMLBufferMgr.hpp \
+ ../src/xercesc/framework/psvi/PSVIHandler.hpp \
+ ../src/xercesc/dom/DOMImplementation.hpp \
+ ../src/xercesc/dom/DOMImplementationLS.hpp \
+ ../src/xercesc/dom/DOMException.hpp \
+ ../src/xercesc/dom/DOMLSException.hpp \
+ ../src/xercesc/dom/DOMRangeException.hpp \
+ ../src/xercesc/dom/DOMImplementationRegistry.hpp \
+ ../src/xercesc/dom/DOMLSParser.hpp \
+ ../src/xercesc/dom/DOMConfiguration.hpp \
+ ../src/xercesc/dom/DOMStringList.hpp \
+ ../src/xercesc/dom/DOMLSParserFilter.hpp \
+ ../src/xercesc/validators/common/Grammar.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/syslimits.h \
+ /usr/include/limits.h /usr/include/features.h \
+ ../src/xercesc/dom/DOMNodeList.hpp ../src/xercesc/dom/DOMLocator.hpp \
+ ../src/xercesc/dom/DOMNamedNodeMap.hpp ../src/xercesc/dom/DOMAttr.hpp \
+ src/DOMCount/DOMCount.hpp ../src/xercesc/dom/DOMErrorHandler.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ostream \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ios \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iosfwd \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stringfwd.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/memoryfwd.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/postypes.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cwchar \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/char_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_algobase.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functexcept.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cpp_type_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/type_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/numeric_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_pair.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_types.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_funcs.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/assertions.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ptr_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/debug.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/predefined_ops.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/localefwd.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++locale.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/clocale \
+ /usr/include/locale.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cctype \
+ /usr/include/ctype.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ios_base.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/atomicity.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/gthr.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/signal.h /usr/include/sys/signal.h \
+ /usr/include/cygwin/signal.h /usr/include/sys/ucontext.h \
+ /usr/include/sched.h /usr/include/sys/sched.h /usr/include/time.h \
+ /usr/include/machine/time.h /usr/include/cygwin/time.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/atomic_word.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_classes.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/string \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/allocator.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++allocator.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/new_allocator.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ostream_insert.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cxxabi_forced.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_function.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward/binders.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/range_access.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/initializer_list \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_string.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/alloc_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/alloc_traits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/string_conversions.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdio \
+ /usr/include/stdio.h /usr/include/sys/stdio.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cerrno \
+ /usr/include/errno.h /usr/include/sys/errno.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functional_hash.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/hash_bytes.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_string.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_classes.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/system_error \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/error_constants.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdexcept \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/streambuf \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/streambuf.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_ios.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_facets.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cwctype \
+ /usr/include/wctype.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/ctype_base.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/streambuf_iterator.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/ctype_inline.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_facets.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_ios.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ostream.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/istream \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/istream.tcc \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/fstream \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/codecvt.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/basic_file.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++io.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/fstream.tcc
+
+../src/xercesc/util/PlatformUtils.hpp:
+
+../src/xercesc/util/XercesDefs.hpp:
+
+../src/xercesc/util/Xerces_autoconf_config.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/_newlib_version.h:
+
+/usr/include/sys/_intsup.h:
+
+/usr/include/sys/_stdint.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/newlib.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/include/_ansi.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/machine/_endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/_sigset.h:
+
+/usr/include/sys/_timeval.h:
+
+/usr/include/sys/timespec.h:
+
+/usr/include/sys/_timespec.h:
+
+/usr/include/sys/_pthreadtypes.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/sys/sysmacros.h:
+
+../src/xercesc/util/XercesVersion.hpp:
+
+../src/xercesc/util/XMLException.hpp:
+
+../src/xercesc/util/XMemory.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+../src/xercesc/util/XMLExceptMsgs.hpp:
+
+../src/xercesc/dom/DOMError.hpp:
+
+../src/xercesc/util/XMLUni.hpp:
+
+../src/xercesc/framework/XMLErrorReporter.hpp:
+
+../src/xercesc/util/PanicHandler.hpp:
+
+../src/xercesc/util/XMLFileMgr.hpp:
+
+../src/xercesc/util/XMLMutexMgr.hpp:
+
+../src/xercesc/parsers/AbstractDOMParser.hpp:
+
+../src/xercesc/dom/DOMDocument.hpp:
+
+../src/xercesc/dom/DOMNode.hpp:
+
+../src/xercesc/dom/DOMDocumentRange.hpp:
+
+../src/xercesc/dom/DOMDocumentTraversal.hpp:
+
+../src/xercesc/dom/DOMNodeFilter.hpp:
+
+../src/xercesc/dom/DOMXPathEvaluator.hpp:
+
+../src/xercesc/dom/DOMXPathResult.hpp:
+
+../src/xercesc/framework/XMLDocumentHandler.hpp:
+
+../src/xercesc/util/RefVectorOf.hpp:
+
+../src/xercesc/util/BaseRefVectorOf.hpp:
+
+../src/xercesc/util/ArrayIndexOutOfBoundsException.hpp:
+
+../src/xercesc/util/XMLEnumerator.hpp:
+
+../src/xercesc/framework/MemoryManager.hpp:
+
+../src/xercesc/util/BaseRefVectorOf.c:
+
+../src/xercesc/util/RefVectorOf.c:
+
+../src/xercesc/framework/XMLAttr.hpp:
+
+../src/xercesc/util/QName.hpp:
+
+../src/xercesc/util/XMLString.hpp:
+
+../src/xercesc/framework/XMLBuffer.hpp:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/include/sys/string.h:
+
+/usr/include/assert.h:
+
+../src/xercesc/util/XMLUniDefs.hpp:
+
+../src/xercesc/internal/XSerializable.hpp:
+
+../src/xercesc/internal/XSerializeEngine.hpp:
+
+../src/xercesc/util/RefHashTableOf.hpp:
+
+../src/xercesc/util/Hashers.hpp:
+
+../src/xercesc/util/IllegalArgumentException.hpp:
+
+../src/xercesc/util/NoSuchElementException.hpp:
+
+../src/xercesc/util/RuntimeException.hpp:
+
+../src/xercesc/util/RefHashTableOf.c:
+
+../src/xercesc/util/Janitor.hpp:
+
+../src/xercesc/util/Janitor.c:
+
+../src/xercesc/util/NullPointerException.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/new:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/exception:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_ptr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/type_traits:
+
+../src/xercesc/util/ValueVectorOf.hpp:
+
+../src/xercesc/util/ValueVectorOf.c:
+
+../src/xercesc/internal/XSerializationException.hpp:
+
+../src/xercesc/internal/XProtoType.hpp:
+
+../src/xercesc/framework/XMLAttDef.hpp:
+
+../src/xercesc/validators/datatype/DatatypeValidator.hpp:
+
+../src/xercesc/util/KVStringPair.hpp:
+
+../src/xercesc/util/regx/RegularExpression.hpp:
+
+../src/xercesc/util/RefArrayVectorOf.hpp:
+
+../src/xercesc/util/RefArrayVectorOf.c:
+
+../src/xercesc/util/regx/Op.hpp:
+
+../src/xercesc/util/regx/TokenFactory.hpp:
+
+../src/xercesc/util/regx/Token.hpp:
+
+../src/xercesc/util/Mutexes.hpp:
+
+../src/xercesc/util/regx/BMPattern.hpp:
+
+../src/xercesc/util/regx/OpFactory.hpp:
+
+../src/xercesc/util/regx/RegxUtil.hpp:
+
+../src/xercesc/validators/schema/SchemaSymbols.hpp:
+
+../src/xercesc/framework/psvi/XSSimpleTypeDefinition.hpp:
+
+../src/xercesc/framework/psvi/XSTypeDefinition.hpp:
+
+../src/xercesc/framework/psvi/XSObject.hpp:
+
+../src/xercesc/framework/psvi/XSConstants.hpp:
+
+../src/xercesc/framework/ValidationContext.hpp:
+
+../src/xercesc/util/NameIdPool.hpp:
+
+../src/xercesc/util/NameIdPool.c:
+
+../src/xercesc/framework/XMLEntityHandler.hpp:
+
+../src/xercesc/util/SecurityManager.hpp:
+
+../src/xercesc/util/ValueStackOf.hpp:
+
+../src/xercesc/util/EmptyStackException.hpp:
+
+../src/xercesc/util/ValueStackOf.c:
+
+../src/xercesc/validators/DTD/DocTypeHandler.hpp:
+
+../src/xercesc/framework/XMLNotationDecl.hpp:
+
+../src/xercesc/validators/DTD/DTDAttDef.hpp:
+
+../src/xercesc/validators/DTD/DTDElementDecl.hpp:
+
+../src/xercesc/framework/XMLElementDecl.hpp:
+
+../src/xercesc/framework/XMLAttDefList.hpp:
+
+../src/xercesc/framework/XMLContentModel.hpp:
+
+../src/xercesc/validators/DTD/DTDEntityDecl.hpp:
+
+../src/xercesc/framework/XMLEntityDecl.hpp:
+
+../src/xercesc/dom/DOMDocumentType.hpp:
+
+../src/xercesc/framework/XMLBufferMgr.hpp:
+
+../src/xercesc/framework/psvi/PSVIHandler.hpp:
+
+../src/xercesc/dom/DOMImplementation.hpp:
+
+../src/xercesc/dom/DOMImplementationLS.hpp:
+
+../src/xercesc/dom/DOMException.hpp:
+
+../src/xercesc/dom/DOMLSException.hpp:
+
+../src/xercesc/dom/DOMRangeException.hpp:
+
+../src/xercesc/dom/DOMImplementationRegistry.hpp:
+
+../src/xercesc/dom/DOMLSParser.hpp:
+
+../src/xercesc/dom/DOMConfiguration.hpp:
+
+../src/xercesc/dom/DOMStringList.hpp:
+
+../src/xercesc/dom/DOMLSParserFilter.hpp:
+
+../src/xercesc/validators/common/Grammar.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/limits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+../src/xercesc/dom/DOMNodeList.hpp:
+
+../src/xercesc/dom/DOMLocator.hpp:
+
+../src/xercesc/dom/DOMNamedNodeMap.hpp:
+
+../src/xercesc/dom/DOMAttr.hpp:
+
+src/DOMCount/DOMCount.hpp:
+
+../src/xercesc/dom/DOMErrorHandler.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ostream:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ios:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iosfwd:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stringfwd.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/memoryfwd.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/postypes.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cwchar:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdarg.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/char_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_algobase.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functexcept.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cpp_type_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/type_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/numeric_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_pair.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_types.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_funcs.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/assertions.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ptr_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/debug.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/predefined_ops.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/localefwd.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++locale.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/clocale:
+
+/usr/include/locale.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cctype:
+
+/usr/include/ctype.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ios_base.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/atomicity.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/gthr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/gthr-default.h:
+
+/usr/include/pthread.h:
+
+/usr/include/signal.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/cygwin/signal.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/sched.h:
+
+/usr/include/sys/sched.h:
+
+/usr/include/time.h:
+
+/usr/include/machine/time.h:
+
+/usr/include/cygwin/time.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/atomic_word.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_classes.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/string:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/allocator.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++allocator.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/new_allocator.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ostream_insert.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cxxabi_forced.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_function.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward/binders.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/range_access.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/initializer_list:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_string.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/alloc_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/alloc_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/string_conversions.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdio:
+
+/usr/include/stdio.h:
+
+/usr/include/sys/stdio.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functional_hash.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/hash_bytes.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_string.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_classes.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/system_error:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/error_constants.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdexcept:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/streambuf:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/streambuf.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_ios.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_facets.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/ctype_base.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/streambuf_iterator.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/ctype_inline.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/locale_facets.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/basic_ios.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ostream.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/istream:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/istream.tcc:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/fstream:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/codecvt.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/basic_file.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++io.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/fstream.tcc:

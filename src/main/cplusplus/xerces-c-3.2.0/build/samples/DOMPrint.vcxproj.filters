@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintErrorHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMTreeErrorReporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintErrorHandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMPrintFilter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\src\DOMPrint\DOMTreeErrorReporter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coderextreme\X3DJSONLD\src\main\cplusplus\xerces-c-3.2.0\samples\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9E2B5427-53A1-3ED2-B9BB-6B6A52F12657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{091B9735-8C4A-32AF-B71E-C44DF76F9562}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+. ../scripts/run-test
+
+run_test X3DJSONLD pass "" samples/X3DJSONLD data/bubs2.json

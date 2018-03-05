@@ -1,0 +1,186 @@
+xercesc/sax/SAXException.lo: xercesc/sax/SAXException.cpp \
+ xercesc/sax/SAXException.hpp xercesc/util/XMLString.hpp \
+ xercesc/util/BaseRefVectorOf.hpp \
+ xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+ xercesc/util/XMLException.hpp xercesc/util/XercesDefs.hpp \
+ xercesc/util/Xerces_autoconf_config.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/machine/_default_types.h \
+ /usr/include/sys/features.h /usr/include/_newlib_version.h \
+ /usr/include/sys/_intsup.h /usr/include/sys/_stdint.h \
+ /usr/include/inttypes.h /usr/include/newlib.h /usr/include/sys/config.h \
+ /usr/include/machine/ieeefp.h /usr/include/cygwin/config.h \
+ /usr/include/_ansi.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/_ansi.h \
+ /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+ /usr/include/sys/_types.h /usr/include/sys/lock.h \
+ /usr/include/machine/endian.h /usr/include/machine/_endian.h \
+ /usr/include/bits/endian.h /usr/include/sys/select.h \
+ /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+ /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+ /usr/include/sys/_pthreadtypes.h /usr/include/machine/types.h \
+ /usr/include/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/wordsize.h /usr/include/sys/sysmacros.h \
+ xercesc/util/XercesVersion.hpp xercesc/util/XMemory.hpp \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib \
+ /usr/include/stdlib.h /usr/include/sys/reent.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ xercesc/util/XMLExceptMsgs.hpp xercesc/dom/DOMError.hpp \
+ xercesc/util/XMLUni.hpp xercesc/framework/XMLErrorReporter.hpp \
+ xercesc/util/XMLEnumerator.hpp xercesc/util/PlatformUtils.hpp \
+ xercesc/util/PanicHandler.hpp xercesc/util/XMLFileMgr.hpp \
+ xercesc/util/XMLMutexMgr.hpp xercesc/framework/MemoryManager.hpp \
+ xercesc/util/BaseRefVectorOf.c xercesc/framework/XMLBuffer.hpp \
+ /usr/include/string.h /usr/include/strings.h /usr/include/sys/string.h \
+ /usr/include/assert.h
+
+xercesc/sax/SAXException.hpp:
+
+xercesc/util/XMLString.hpp:
+
+xercesc/util/BaseRefVectorOf.hpp:
+
+xercesc/util/ArrayIndexOutOfBoundsException.hpp:
+
+xercesc/util/XMLException.hpp:
+
+xercesc/util/XercesDefs.hpp:
+
+xercesc/util/Xerces_autoconf_config.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/_newlib_version.h:
+
+/usr/include/sys/_intsup.h:
+
+/usr/include/sys/_stdint.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/newlib.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/include/_ansi.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/machine/_endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/_sigset.h:
+
+/usr/include/sys/_timeval.h:
+
+/usr/include/sys/timespec.h:
+
+/usr/include/sys/_timespec.h:
+
+/usr/include/sys/_pthreadtypes.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/sys/sysmacros.h:
+
+xercesc/util/XercesVersion.hpp:
+
+xercesc/util/XMemory.hpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/stdlib.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+xercesc/util/XMLExceptMsgs.hpp:
+
+xercesc/dom/DOMError.hpp:
+
+xercesc/util/XMLUni.hpp:
+
+xercesc/framework/XMLErrorReporter.hpp:
+
+xercesc/util/XMLEnumerator.hpp:
+
+xercesc/util/PlatformUtils.hpp:
+
+xercesc/util/PanicHandler.hpp:
+
+xercesc/util/XMLFileMgr.hpp:
+
+xercesc/util/XMLMutexMgr.hpp:
+
+xercesc/framework/MemoryManager.hpp:
+
+xercesc/util/BaseRefVectorOf.c:
+
+xercesc/framework/XMLBuffer.hpp:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/include/sys/string.h:
+
+/usr/include/assert.h:

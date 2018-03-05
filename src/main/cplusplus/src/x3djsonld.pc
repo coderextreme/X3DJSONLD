@@ -1,0 +1,11 @@
+prefix=
+exec_prefix=
+libdir=
+includedir=
+
+Name: X3djsonld-C++
+Description: X3D JSON To XML converter for C++
+Version: 
+Libs: -L -lx3djsonld
+Libs.private: 
+Cflags: -I
