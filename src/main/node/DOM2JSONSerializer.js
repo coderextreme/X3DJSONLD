@@ -9,6 +9,15 @@ function DOM2JSONSerializer() {
 DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		var obj = this.subSerializeToString(element, fieldTypes, 0, mapToMethod);
+		obj['X3D']['encoding'] = 'UTF-8';
+		obj['X3D']['JSON schema'] = 'http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json';
+		var date = new Date();
+		var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ][date.getMonth()];
+		obj['X3D']['head']['meta'].push({ "@name":"translated", "@content":date.getDate()+" "+month+" "+date.getFullYear()});
+		obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html" });
+		obj['X3D']['head']['meta'].push( { "@name":"reference", "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" });
+		delete obj['X3D']['@xmlns:xsd'];
+
 
 		try {
 			var st = JSON.stringify(obj, null, 2);
