@@ -85,6 +85,9 @@ DOM2JSONSerializer.prototype = {
 						attrType = fieldAttrType;
 					}
 					var attrmethod = method;
+					if (attrmethod === 'containerField') {
+						continue;
+					}
 					var attrval = "";
 					if (attrs[a].nodeValue === 'NULL') {
 						attrval = "null";
@@ -222,7 +225,12 @@ DOM2JSONSerializer.prototype = {
 				if (attrType === "SFNode") {
 					fields[fieldName] = subobject;
 				} else {
-					if (typeof fields[fieldName] === 'undefined') {
+					if (attrName === 'children') {
+						if (typeof fields[fieldName] === 'undefined') {
+							fields[fieldName] = []
+						}
+						fields[fieldName].push(subobject);
+					} else if (typeof fields[fieldName] === 'undefined') {
 						fields[fieldName] = subobject;
 					} else if (Array.isArray(fields[fieldName])) {
 						fields[fieldName].push(subobject);
