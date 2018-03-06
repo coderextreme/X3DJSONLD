@@ -8,7 +8,7 @@ function DOM2JSONSerializer() {
 
 DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		var obj = this.subSerializeToString(element, fieldTypes, 0);
+		var obj = this.subSerializeToString(element, fieldTypes, 0, mapToMethod);
 
 		try {
 			var st = JSON.stringify(obj, null, 2);
@@ -86,7 +86,6 @@ DOM2JSONSerializer.prototype = {
 					}
 					var attrmethod = method;
 					var attrval = "";
-					console.log(attr, attrType, attrs[a].nodeValue);
 					if (attrs[a].nodeValue === 'NULL') {
 						attrval = "null";
 					} else if (attrType === "SFString") {
@@ -162,7 +161,7 @@ DOM2JSONSerializer.prototype = {
 		return fields;
 	},
 
-	descendAttribute: function(element, at) {
+	descendAttribute: function(element, at, parent, mapToMethod) {
 		var value = "";
 		if (at === "containerField") {
 			value = "children";
@@ -181,15 +180,21 @@ DOM2JSONSerializer.prototype = {
 				console.error(e);
 			}
 		}
+		if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
+			if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
+				value = mapToMethod[parent.nodeName][element.nodeName].substr(3).toLowerCase();
+			}
+		}
 		return value;
 	},
 
-	descendNode: function(node, fieldTypes, n, fields) {
+	descendNode: function(node, fieldTypes, n, fields, element, mapToMethod) {
 		var fieldName = "";
 		var subobject = {};
 		if (node.nodeType === 1) {
-			var attrName = this.descendAttribute(node, "containerField");
-			subobject = this.subSerializeToString(node, fieldTypes, n);
+			var attrName = this.descendAttribute(node, "containerField", element, mapToMethod);
+			subobject = this.subSerializeToString(node, fieldTypes, n, mapToMethod);
+			console.log(attrName);
 			if (node.nodeName === "meta" ||
 				node.nodeName === "unit" ||
 				node.nodeName === "component" ||
@@ -240,12 +245,12 @@ DOM2JSONSerializer.prototype = {
 		}
 	},
 
-	subSerializeToString : function(element, fieldTypes, n) {
+	subSerializeToString : function(element, fieldTypes, n, mapToMethod) {
 		var fields = this.descendFields(element, fieldTypes);
 		for (var cn in element.childNodes) {
 			if (element.childNodes.hasOwnProperty(cn)) {
 				var node = element.childNodes[cn];
-				this.descendNode(node, fieldTypes, n+1, fields);
+				this.descendNode(node, fieldTypes, n+1, fields, element, mapToMethod);
 
 			}
 		}
