@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -29,6 +28,18 @@
         {
           "@name": "generator",
           "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -39,111 +50,69 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Node\\\"\\\"\\\""
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Node\\\"\\\"\\\""
+                      ],
+                      "-fontstyle": {
+                        "FontStyle": {}
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material"
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {}
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Node2",
-                          "\\\\\\",
-                          "\\\\\\",
-                          "Node2"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Node2",
+                        "\\\\\\",
+                        "\\\\\\",
+                        "Node2"
+                      ],
+                      "-fontstyle": {
+                        "FontStyle": {}
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material"
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {}
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Node3 \\\\\\\\\\",
-                          "Node3\\\"\\\"\\\""
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Node3 \\\\\\\\\\\\\\\\ \\\\ ",
+                        "Node3\\\"\\\"\\\""
+                      ],
+                      "-fontstyle": {
+                        "FontStyle": {}
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material"
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {}
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -153,12 +122,16 @@
                       "@name": "frontUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"rnl_front.png\\\" \\\"uffizi_front.png\\\""
+                      "@value": [
+                        "rnl_front.png",
+                        "uffizi_front.png"
+                      ]
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript: var me = '\\\"1\\\"\\\"\\\"2\\\"\\\"\\\\n3\\\"';",
-                    ""
+                    "ecmascript:",
+                    "\t\t\t    var me = '\\\"1\\\" \\\"\\\\\\\"2\\\" \\\"\\\\n3\\\"';",
+                    "\t\t\t    "
                   ]
                 }
               }
@@ -166,6 +139,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

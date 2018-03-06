@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -29,6 +28,18 @@
         {
           "@name": "generator",
           "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -39,78 +50,69 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Extrusion": {
-                        "@containerField": "geometry",
-                        "@DEF": "extrusion",
-                        "@spine": [
-                          -50,
-                          -50,
-                          0,
-                          50,
-                          50,
-                          0
-                        ],
-                        "@creaseAngle": 0.785,
-                        "@crossSection": [
-                          1,
-                          0,
-                          0.92,
-                          -0.38,
-                          0.71,
-                          -0.71,
-                          0.38,
-                          -0.92,
-                          0,
-                          -1,
-                          -0.38,
-                          -0.92,
-                          -0.71,
-                          -0.71,
-                          -0.92,
-                          -0.38,
-                          -1,
-                          0,
-                          -0.92,
-                          0.38,
-                          -0.71,
-                          0.71,
-                          -0.38,
-                          0.92,
-                          0,
-                          1,
-                          0.38,
-                          0.92,
-                          0.71,
-                          0.71,
-                          0.92,
-                          0.38,
-                          1,
-                          0
-                        ]
+                  "-geometry": {
+                    "Extrusion": {
+                      "@DEF": "extrusion",
+                      "@spine": [
+                        -50,
+                        -50,
+                        0,
+                        50,
+                        50,
+                        0
+                      ],
+                      "@creaseAngle": 0.785,
+                      "@crossSection": [
+                        1,
+                        0,
+                        0.92,
+                        -0.38,
+                        0.71,
+                        -0.71,
+                        0.38,
+                        -0.92,
+                        0,
+                        -1,
+                        -0.38,
+                        -0.92,
+                        -0.71,
+                        -0.71,
+                        -0.92,
+                        -0.38,
+                        -1,
+                        0,
+                        -0.92,
+                        0.38,
+                        -0.71,
+                        0.71,
+                        -0.38,
+                        0.92,
+                        0,
+                        1,
+                        0.38,
+                        0.92,
+                        0.71,
+                        0.71,
+                        0.92,
+                        0.38,
+                        1,
+                        0
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0,
+                            1,
+                            0
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                1,
-                                0
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               },
               {
@@ -132,7 +134,14 @@
                       "@name": "spine",
                       "@accessType": "inputOutput",
                       "@type": "MFVec3f",
-                      "@value": "-50 -50 0 50 50 0"
+                      "@value": [
+                        -50,
+                        -50,
+                        0,
+                        50,
+                        50,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -159,6 +168,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

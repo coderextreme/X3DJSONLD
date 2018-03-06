@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -45,6 +44,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -60,49 +71,37 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Compare special character escaping"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@DEF": "testFontStyle",
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@size": 0.8
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Compare special character escaping"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@DEF": "testFontStyle",
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@size": 0.8
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@DEF": "LightBlueAppearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "LightBlueAppearance",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.1,
+                            0.7,
+                            0.7
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               }
             ]
@@ -118,34 +117,25 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "I don't think so",
-                          "",
-                          "he said \\\"Hi\\\""
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@USE": "testFontStyle"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "I don't think so",
+                        "",
+                        "he said \\\"Hi\\\""
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "testFontStyle"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@USE": "LightBlueAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "LightBlueAppearance"
                     }
-                  ]
+                  }
                 }
               }
             ]
@@ -161,40 +151,33 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "I don't think so",
-                          "",
-                          "he said \\\"Hi\\\""
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@USE": "testFontStyle"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "I don't think so",
+                        "",
+                        "he said \\\"Hi\\\""
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "testFontStyle"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@USE": "LightBlueAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "LightBlueAppearance"
                     }
-                  ]
+                  }
                 }
               }
             ]
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

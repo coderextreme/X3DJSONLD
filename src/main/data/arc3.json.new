@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -25,6 +24,18 @@
         {
           "@name": "description",
           "@content": "a generic proto to connect two objects"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -43,9 +54,9 @@
         {
           "Background": {
             "@skyColor": [
-              0,
-              0,
-              0
+              0.4,
+              0.4,
+              0.4
             ]
           }
         },
@@ -55,33 +66,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                1,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               },
               {
@@ -109,13 +111,21 @@
                       "@name": "translation",
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "old",
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "set_location",
@@ -126,7 +136,14 @@
                       "@name": "keyValue",
                       "@accessType": "inputOutput",
                       "@type": "MFVec3f",
-                      "@value": "0 0 0 0 5 0"
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -177,33 +194,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                1,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               },
               {
@@ -231,13 +239,21 @@
                       "@name": "translation",
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "old",
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "set_location",
@@ -248,7 +264,14 @@
                       "@name": "keyValue",
                       "@accessType": "inputOutput",
                       "@type": "MFVec3f",
-                      "@value": "0 0 0 0 5 0"
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -306,34 +329,25 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-appearance": [
-                                {
-                                  "Appearance": {
-                                    "@containerField": "appearance",
-                                    "-material": [
-                                      {
-                                        "Material": {
-                                          "@containerField": "material",
-                                          "@diffuseColor": [
-                                            0,
-                                            0,
-                                            0
-                                          ],
-                                          "@transparency": 0.5
-                                        }
-                                      }
-                                    ]
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.2,
+                                        0.7,
+                                        0.7
+                                      ],
+                                      "@transparency": 0.5
+                                    }
                                   }
                                 }
-                              ],
-                              "-geometry": [
-                                {
-                                  "Cylinder": {
-                                    "@containerField": "geometry",
-                                    "@radius": 0.05
-                                  }
+                              },
+                              "-geometry": {
+                                "Cylinder": {
+                                  "@radius": 0.05
                                 }
-                              ]
+                              }
                             }
                           }
                         ]
@@ -429,6 +443,8 @@
           "@toField": "set_endpoint"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

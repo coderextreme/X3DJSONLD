@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -65,6 +64,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -135,6 +146,9 @@
           }
         },
         {
+          "#comment": "Script initialization ought to first bind view5 below."
+        },
+        {
           "Group": {
             "-children": [
               {
@@ -148,48 +162,36 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@containerField": "geometry",
-                              "@string": [
-                                "View",
-                                "# 1"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@containerField": "fontStyle",
-                                    "@DEF": "CenterJustify",
-                                    "@justify": [
-                                      "MIDDLE",
-                                      "MIDDLE"
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "View",
+                              "# 1"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@DEF": "CenterJustify",
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      1,
-                                      0,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  0,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -206,44 +208,32 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@containerField": "geometry",
-                              "@string": [
-                                "View",
-                                "# 2"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@containerField": "fontStyle",
-                                    "@USE": "CenterJustify"
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "View",
+                              "# 2"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "CenterJustify"
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -260,44 +250,32 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@containerField": "geometry",
-                              "@string": [
-                                "View",
-                                "# 3"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@containerField": "fontStyle",
-                                    "@USE": "CenterJustify"
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "View",
+                              "# 3"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "CenterJustify"
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      1
-                                    ]
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -314,39 +292,26 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@containerField": "geometry",
-                              "@string": [
-                                "View",
-                                "# 4"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@containerField": "fontStyle",
-                                    "@USE": "CenterJustify"
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "View",
+                              "# 4"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "CenterJustify"
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material"
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {}
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -356,14 +321,22 @@
           }
         },
         {
+          "#comment": "The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9."
+        },
+        {
+          "#comment": "It does not need to be studied in this chapter."
+        },
+        {
           "Transform": {
             "@translation": [
               0,
               -3,
               8
             ],
-            "#comment": "Viewpoint nodes report bind and unbind events",
             "-children": [
+              {
+                "#comment": "notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."
+              },
               {
                 "Viewpoint": {
                   "@DEF": "ClickToAnimateView",
@@ -377,77 +350,56 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Click here to animate"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@justify": [
-                                "MIDDLE",
-                                "BEGIN"
-                              ]
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Click here to animate"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@justify": [
+                            "MIDDLE",
+                            "BEGIN"
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.8,
+                            0.4,
+                            0
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Box": {
-                        "@containerField": "geometry",
-                        "@size": [
-                          7,
-                          1,
-                          0.02
-                        ]
+                  "-geometry": {
+                    "Box": {
+                      "@size": [
+                        7,
+                        1,
+                        0.02
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@transparency": 1
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@transparency": 1
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               },
               {
@@ -549,7 +501,7 @@
                       "@name": "priorInputvalue",
                       "@accessType": "initializeOnly",
                       "@type": "SFInt32",
-                      "@value": "-1"
+                      "@value": -1
                     }
                   ],
                   "#sourceText": [
@@ -557,6 +509,15 @@
                     ""
                   ]
                 }
+              },
+              {
+                "#comment": "drive Script with TimeSensor clock"
+              },
+              {
+                "#comment": "Script will bind and unbind Viewpoint nodes"
+              },
+              {
+                "#comment": "Viewpoint nodes report bind and unbind events"
               }
             ],
             "ROUTE": [
@@ -635,8 +596,9 @@
             ]
           }
         }
-      ],
-      "#comment": "It does not need to be studied in this chapter."
-    }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

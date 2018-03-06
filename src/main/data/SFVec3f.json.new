@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -21,6 +20,18 @@
         {
           "@name": "identifier",
           "@content": "https://coderextreme.net/X3DJSONLD/SFVec3f.x3d"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -35,37 +46,27 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@specularColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry"
-                      }
-                    }
-                  ]
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
                 }
               }
             ]
@@ -79,25 +80,41 @@
                 "@name": "set_translation",
                 "@accessType": "inputOnly",
                 "@type": "SFVec3f",
-                "@value": "0 0 0"
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               },
               {
                 "@name": "translation_changed",
                 "@accessType": "outputOnly",
                 "@type": "SFVec3f",
-                "@value": "0 0 0"
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               },
               {
                 "@name": "translation",
                 "@accessType": "inputOutput",
                 "@type": "SFVec3f",
-                "@value": "0 0 0"
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               },
               {
                 "@name": "velocity",
                 "@accessType": "inputOutput",
                 "@type": "SFVec3f",
-                "@value": "0 0 0"
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               },
               {
                 "@name": "set_fraction",
@@ -133,6 +150,8 @@
           "@toField": "set_translation"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

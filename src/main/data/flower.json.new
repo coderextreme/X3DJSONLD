@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -59,67 +58,55 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@transparency": 0.1,
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@specularColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@shininess": 0.145
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@transparency": 0.1,
+                          "@diffuseColor": [
+                            0.9,
+                            0.3,
+                            0.3
+                          ],
+                          "@specularColor": [
+                            0.8,
+                            0.8,
+                            0.8
+                          ],
+                          "@shininess": 0.145
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "IndexedFaceSet": {
-                        "@containerField": "geometry",
-                        "@ccw": true,
-                        "@convex": true,
-                        "@coordIndex": [
-                          0,
-                          1,
-                          2,
-                          -1
-                        ],
-                        "@DEF": "ifs",
-                        "-coord": [
-                          {
-                            "Coordinate": {
-                              "@containerField": "coord",
-                              "@DEF": "crd",
-                              "@point": [
-                                0,
-                                0,
-                                1,
-                                0,
-                                1,
-                                0,
-                                1,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-geometry": {
+                    "IndexedFaceSet": {
+                      "@ccw": true,
+                      "@convex": true,
+                      "@coordIndex": [
+                        0,
+                        1,
+                        2,
+                        -1
+                      ],
+                      "@DEF": "ifs",
+                      "-coord": {
+                        "Coordinate": {
+                          "@DEF": "crd",
+                          "@point": [
+                            0,
+                            0,
+                            1,
+                            0,
+                            1,
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               }
             ]
@@ -179,6 +166,8 @@
           "@toField": "set_fraction"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }
