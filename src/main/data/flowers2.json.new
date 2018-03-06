@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -37,6 +36,18 @@
         {
           "@name": "generator",
           "@content": "manually written"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -78,47 +89,35 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      1
-                                    ],
-                                    "@specularColor": [
-                                      0,
-                                      0,
-                                      1
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ],
+                                "@specularColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@containerField": "geometry",
-                              "@convex": true,
-                              "@DEF": "Orbit",
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@containerField": "coord",
-                                    "@DEF": "OrbitCoordinates"
-                                  }
-                                }
-                              ]
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@convex": true,
+                            "@DEF": "Orbit",
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates"
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -135,47 +134,35 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      1,
-                                      0,
-                                      0
-                                    ],
-                                    "@specularColor": [
-                                      1,
-                                      0,
-                                      0
-                                    ],
-                                    "@transparency": 0.75
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@specularColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@transparency": 0.75
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@containerField": "geometry",
-                              "@DEF": "Orbit2",
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@containerField": "coord",
-                                    "@DEF": "OrbitCoordinates2"
-                                  }
-                                }
-                              ]
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@DEF": "Orbit2",
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates2"
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -324,6 +311,8 @@
           "@toNode": "OrbitTransform2"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

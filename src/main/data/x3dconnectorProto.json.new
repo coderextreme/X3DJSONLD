@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -25,6 +24,18 @@
         {
           "@name": "description",
           "@content": "a generic proto to connect two objects"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -43,9 +54,9 @@
         {
           "Background": {
             "@skyColor": [
-              0,
-              0,
-              0
+              0.4,
+              0.4,
+              0.4
             ]
           }
         },
@@ -55,33 +66,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.2,
+                            0.2
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
-                      }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -112,33 +114,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.2
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
-                      }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -174,33 +167,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.2
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
-                      }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -236,33 +220,24 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.2
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 0.1
-                      }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -297,34 +272,25 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      0
-                                    ],
-                                    "@transparency": 0.5
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0.2,
+                                  0.7,
+                                  0.7
+                                ],
+                                "@transparency": 0.5
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Cylinder": {
-                              "@containerField": "geometry",
-                              "@radius": 0.05
-                            }
+                        },
+                        "-geometry": {
+                          "Cylinder": {
+                            "@radius": 0.05
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -343,34 +309,25 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      0
-                                    ],
-                                    "@transparency": 0.5
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0.2,
+                                  0.7,
+                                  0.7
+                                ],
+                                "@transparency": 0.5
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Cylinder": {
-                              "@containerField": "geometry",
-                              "@radius": 0.05
-                            }
+                        },
+                        "-geometry": {
+                          "Cylinder": {
+                            "@radius": 0.05
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -389,34 +346,25 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      0
-                                    ],
-                                    "@transparency": 0.5
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0.2,
+                                  0.7,
+                                  0.7
+                                ],
+                                "@transparency": 0.5
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Cylinder": {
-                              "@containerField": "geometry",
-                              "@radius": 0.05
-                            }
+                        },
+                        "-geometry": {
+                          "Cylinder": {
+                            "@radius": 0.05
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -428,123 +376,121 @@
         {
           "ProtoDeclare": {
             "@name": "x3dconnector",
-            "-children": [
-              {
-                "ProtoInterface": {
-                  "field": [
-                    {
-                      "@name": "startnode",
-                      "@accessType": "initializeOnly",
-                      "@type": "SFNode"
-                    },
-                    {
-                      "@name": "endnode",
-                      "@accessType": "initializeOnly",
-                      "@type": "SFNode"
-                    },
-                    {
-                      "@name": "transnode",
-                      "@accessType": "initializeOnly",
-                      "@type": "SFNode"
-                    },
-                    {
-                      "@name": "rotscalenode",
-                      "@accessType": "initializeOnly",
-                      "@type": "SFNode"
-                    },
-                    {
-                      "@name": "set_startpoint",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f"
-                    },
-                    {
-                      "@name": "set_endpoint",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f"
-                    }
-                  ]
-                }
-              },
-              {
-                "ProtoBody": {
-                  "-children": [
-                    {
-                      "Script": {
-                        "@DEF": "S1",
-                        "field": [
-                          {
-                            "@name": "startnode",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFNode"
-                          },
-                          {
-                            "@name": "endnode",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFNode"
-                          },
-                          {
-                            "@name": "transnode",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFNode"
-                          },
-                          {
-                            "@name": "rotscalenode",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFNode"
-                          },
-                          {
-                            "@name": "set_startpoint",
-                            "@accessType": "inputOnly",
-                            "@type": "SFVec3f"
-                          },
-                          {
-                            "@name": "set_endpoint",
-                            "@accessType": "inputOnly",
-                            "@type": "SFVec3f"
-                          }
-                        ],
-                        "-children": [
-                          {
-                            "IS": {
-                              "connect": [
-                                {
-                                  "@nodeField": "startnode",
-                                  "@protoField": "startnode"
-                                },
-                                {
-                                  "@nodeField": "endnode",
-                                  "@protoField": "endnode"
-                                },
-                                {
-                                  "@nodeField": "transnode",
-                                  "@protoField": "transnode"
-                                },
-                                {
-                                  "@nodeField": "rotscalenode",
-                                  "@protoField": "rotscalenode"
-                                },
-                                {
-                                  "@nodeField": "set_startpoint",
-                                  "@protoField": "set_startpoint"
-                                },
-                                {
-                                  "@nodeField": "set_endpoint",
-                                  "@protoField": "set_endpoint"
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript: function recompute(startpoint,endpoint){ if (typeof endpoint === 'undefined') { return; } var dif = endpoint.subtract(startpoint); var dist = dif.length()*0.5; var dif2 = dif.multiply(0.5); var norm = dif.normalize(); var transl = startpoint.add(dif2); if (typeof Quaternion !== 'undefined') { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm) }; } else { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm) }; } } function recompute_and_route(startpoint, endpoint) { var trafo = recompute(startpoint, endpoint); transnode.translation = trafo.translation; rotscalenode.rotation = trafo.rotation; rotscalenode.scale = trafo.scale; } function initialize(){ recompute_and_route(startnode.translation,endnode.translation); } function set_startpoint(val,t){ recompute_and_route(val,endnode.translation); } function set_endpoint(val,t){ recompute_and_route(startnode.translation,val); }",
-                          ""
-                        ]
-                      }
-                    }
-                  ]
-                }
+            "-protointerface": {
+              "ProtoInterface": {
+                "field": [
+                  {
+                    "@name": "startnode",
+                    "@accessType": "initializeOnly",
+                    "@type": "SFNode"
+                  },
+                  {
+                    "@name": "endnode",
+                    "@accessType": "initializeOnly",
+                    "@type": "SFNode"
+                  },
+                  {
+                    "@name": "transnode",
+                    "@accessType": "initializeOnly",
+                    "@type": "SFNode"
+                  },
+                  {
+                    "@name": "rotscalenode",
+                    "@accessType": "initializeOnly",
+                    "@type": "SFNode"
+                  },
+                  {
+                    "@name": "set_startpoint",
+                    "@accessType": "inputOnly",
+                    "@type": "SFVec3f"
+                  },
+                  {
+                    "@name": "set_endpoint",
+                    "@accessType": "inputOnly",
+                    "@type": "SFVec3f"
+                  }
+                ]
               }
-            ]
+            },
+            "-protobody": {
+              "ProtoBody": {
+                "-children": [
+                  {
+                    "Script": {
+                      "@DEF": "S1",
+                      "field": [
+                        {
+                          "@name": "startnode",
+                          "@accessType": "initializeOnly",
+                          "@type": "SFNode"
+                        },
+                        {
+                          "@name": "endnode",
+                          "@accessType": "initializeOnly",
+                          "@type": "SFNode"
+                        },
+                        {
+                          "@name": "transnode",
+                          "@accessType": "initializeOnly",
+                          "@type": "SFNode"
+                        },
+                        {
+                          "@name": "rotscalenode",
+                          "@accessType": "initializeOnly",
+                          "@type": "SFNode"
+                        },
+                        {
+                          "@name": "set_startpoint",
+                          "@accessType": "inputOnly",
+                          "@type": "SFVec3f"
+                        },
+                        {
+                          "@name": "set_endpoint",
+                          "@accessType": "inputOnly",
+                          "@type": "SFVec3f"
+                        }
+                      ],
+                      "-children": [
+                        {
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "startnode",
+                                "@protoField": "startnode"
+                              },
+                              {
+                                "@nodeField": "endnode",
+                                "@protoField": "endnode"
+                              },
+                              {
+                                "@nodeField": "transnode",
+                                "@protoField": "transnode"
+                              },
+                              {
+                                "@nodeField": "rotscalenode",
+                                "@protoField": "rotscalenode"
+                              },
+                              {
+                                "@nodeField": "set_startpoint",
+                                "@protoField": "set_startpoint"
+                              },
+                              {
+                                "@nodeField": "set_endpoint",
+                                "@protoField": "set_endpoint"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "#sourceText": [
+                        "ecmascript: function recompute(startpoint,endpoint){ if (typeof endpoint === 'undefined') { return; } var dif = endpoint.subtract(startpoint); var dist = dif.length()*0.5; var dif2 = dif.multiply(0.5); var norm = dif.normalize(); var transl = startpoint.add(dif2); if (typeof Quaternion !== 'undefined') { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm) }; } else { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm) }; } } function recompute_and_route(startpoint, endpoint) { var trafo = recompute(startpoint, endpoint); transnode.translation = trafo.translation; rotscalenode.rotation = trafo.rotation; rotscalenode.scale = trafo.scale; } function initialize(){ recompute_and_route(startnode.translation,endnode.translation); } function set_startpoint(val,t){ recompute_and_route(val,endnode.translation); } function set_endpoint(val,t){ recompute_and_route(startnode.translation,val); }",
+                        ""
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         {
@@ -748,6 +694,8 @@
           "@toField": "set_endpoint"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

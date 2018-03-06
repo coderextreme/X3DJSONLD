@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -96,7 +95,7 @@
         },
         {
           "@name": "warning",
-          "@content": "BSContact error: Script node TextScript: parse error: line 15 \\\"var strategy = [];"
+          "@content": "BSContact error: Script node TextScript: parse error: line 15 \"var strategy = [];"
         },
         {
           "@name": "identifier",
@@ -109,6 +108,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -120,8 +131,8 @@
         {
           "Background": {
             "@skyColor": [
-              0,
-              0,
+              0.419608,
+              0.427451,
               1
             ]
           }
@@ -147,55 +158,43 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "Oblique Strategies",
-                          "",
-                          "(Over One Hundred Worthwhile Dilemmas)",
-                          "",
-                          "by Brian Eno and Peter Schmidt"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@DEF": "MessageFont",
-                              "@family": [
-                                "SANS"
-                              ],
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@style": "BOLD"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Oblique Strategies",
+                        "",
+                        "(Over One Hundred Worthwhile Dilemmas)",
+                        "",
+                        "by Brian Eno and Peter Schmidt"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@DEF": "MessageFont",
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@style": "BOLD"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                1,
-                                1,
-                                1
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -209,69 +208,57 @@
                     {
                       "Shape": {
                         "@DEF": "HeadlineClickSurface",
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@containerField": "geometry",
-                              "@coordIndex": [
-                                0,
-                                1,
-                                2,
-                                3,
-                                -1
-                              ],
-                              "@solid": true,
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@containerField": "coord",
-                                    "@point": [
-                                      1,
-                                      1,
-                                      0,
-                                      1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "@solid": true,
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@ambientIntensity": 0.245763,
-                                    "@diffuseColor": [
-                                      0,
-                                      0,
-                                      0
-                                    ],
-                                    "@shininess": 0.07,
-                                    "@specularColor": [
-                                      0,
-                                      0,
-                                      0
-                                    ],
-                                    "@transparency": 0.8
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@ambientIntensity": 0.245763,
+                                "@diffuseColor": [
+                                  0.34773,
+                                  0.090909,
+                                  0.005289
+                                ],
+                                "@shininess": 0.07,
+                                "@specularColor": [
+                                  0.336735,
+                                  0.051091,
+                                  0.051091
+                                ],
+                                "@transparency": 0.8
+                              }
                             }
                           }
-                        ]
+                        }
                       }
                     }
                   ]
@@ -286,14 +273,21 @@
             "@url": [
               "./ObliqueStrategiesScript.js"
             ],
-            "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!",
+            "-children": [
+              {
+                "#comment": "initialize() method includes unit test to printAllStrategies() to console"
+              },
+              {
+                "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!"
+              }
+            ],
             "field": [
               {
                 "@name": "index",
                 "@accessType": "initializeOnly",
                 "@appinfo": "index for active strategy card, -1 means no selection",
                 "@type": "SFInt32",
-                "@value": "0"
+                "@value": 0
               },
               {
                 "@name": "string_changed",
@@ -333,7 +327,7 @@
                 "@accessType": "initializeOnly",
                 "@appinfo": "controls console tracing",
                 "@type": "SFBool",
-                "@value": "true"
+                "@value": true
               }
             ]
           }
@@ -354,48 +348,36 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@DEF": "CardText",
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@family": [
-                                "SANS"
-                              ],
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@style": "BOLD"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@DEF": "CardText",
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@style": "BOLD"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                1,
-                                1,
-                                1
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -405,20 +387,30 @@
                   "@maxFront": 100,
                   "@minBack": 20,
                   "@minFront": 20,
-                  "#comment": "%20 is space character used in uri/url encoding",
-                  "-source": [
+                  "-children": [
                     {
-                      "AudioClip": {
-                        "@containerField": "source",
-                        "@DEF": "TextToSpeechAudioClip",
-                        "@description": "sends strategy text google translate",
-                        "@url": [
-                          "http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
-                          "translate_tts_mp3FileFormatNotSupported.wav"
-                        ]
-                      }
+                      "#comment": "Make sure the sound source AudioClip is audible at the user location"
+                    },
+                    {
+                      "#comment": "Not all X3D players seem to use the .mp3"
+                    },
+                    {
+                      "#comment": "&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
+                    },
+                    {
+                      "#comment": "%20 is space character used in uri/url encoding"
                     }
-                  ]
+                  ],
+                  "-source": {
+                    "AudioClip": {
+                      "@DEF": "TextToSpeechAudioClip",
+                      "@description": "sends strategy text google translate",
+                      "@url": [
+                        "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
+                        "translate_tts_mp3FileFormatNotSupported.wav"
+                      ]
+                    }
+                  }
                 }
               }
             ],
@@ -465,44 +457,32 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "previous"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "previous"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@DEF": "InterfaceAppearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                1,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "InterfaceAppearance",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0.6
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -516,58 +496,50 @@
                     {
                       "Shape": {
                         "@DEF": "TransparentClickSurface",
-                        "#comment": "support Selectable Text with a scalable IFS",
-                        "-geometry": [
+                        "-children": [
                           {
-                            "IndexedFaceSet": {
-                              "@containerField": "geometry",
-                              "@coordIndex": [
-                                0,
-                                1,
-                                2,
-                                3,
-                                -1
-                              ],
-                              "@solid": true,
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@containerField": "coord",
-                                    "@point": [
-                                      1,
-                                      1,
-                                      0,
-                                      1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
+                            "#comment": "support Selectable Text with a scalable IFS"
                           }
                         ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material",
-                                    "@transparency": 1
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "@solid": true,
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@transparency": 1
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   ]
@@ -605,32 +577,23 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "next"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "next"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@USE": "InterfaceAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -680,32 +643,23 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@containerField": "geometry",
-                        "@string": [
-                          "random"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@containerField": "fontStyle",
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "random"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@USE": "InterfaceAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -756,7 +710,7 @@
                     "target=_blank"
                   ],
                   "@url": [
-                    "http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"
+                    "http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"
                   ],
                   "ROUTE": [
                     {
@@ -769,32 +723,23 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@containerField": "geometry",
-                              "@string": [
-                                "speech"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@containerField": "fontStyle",
-                                    "@USE": "MessageFont"
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "speech"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "MessageFont"
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "@USE": "InterfaceAppearance"
-                            }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "@USE": "InterfaceAppearance"
                           }
-                        ]
+                        }
                       }
                     },
                     {
@@ -820,6 +765,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

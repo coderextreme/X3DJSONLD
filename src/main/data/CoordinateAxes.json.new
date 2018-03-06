@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -25,6 +24,18 @@
         {
           "@name": "description",
           "@content": "a box"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -33,53 +44,59 @@
         {
           "Collision": {
             "@DEF": "DoNotCollideWithVisualizationWidget",
-            "#comment": "Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user",
             "-children": [
               {
+                "#comment": "Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
+              },
+              {
+                "#comment": "This NavigationInfo allows examine mode and will be overridden by any parent scene."
+              },
+              {
+                "#comment": "Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"
+              },
+              {
+                "#comment": "Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"
+              }
+            ],
+            "-proxy": [
+              {
                 "Group": {
-                  "#comment": "Vertical Y arrow and label",
                   "-children": [
+                    {
+                      "#comment": "Vertical Y arrow and label"
+                    },
                     {
                       "Group": {
                         "@DEF": "ArrowGreen",
                         "-children": [
                           {
                             "Shape": {
-                              "-geometry": [
-                                {
-                                  "Cylinder": {
-                                    "@containerField": "geometry",
-                                    "@DEF": "ArrowCylinder",
-                                    "@radius": 0.025,
-                                    "@top": true
+                              "-geometry": {
+                                "Cylinder": {
+                                  "@DEF": "ArrowCylinder",
+                                  "@radius": 0.025,
+                                  "@top": true
+                                }
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "@DEF": "Green",
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.1,
+                                        0.6,
+                                        0.1
+                                      ],
+                                      "@emissiveColor": [
+                                        0.05,
+                                        0.2,
+                                        0.05
+                                      ]
+                                    }
                                   }
                                 }
-                              ],
-                              "-appearance": [
-                                {
-                                  "Appearance": {
-                                    "@containerField": "appearance",
-                                    "@DEF": "Green",
-                                    "-material": [
-                                      {
-                                        "Material": {
-                                          "@containerField": "material",
-                                          "@diffuseColor": [
-                                            0,
-                                            0,
-                                            0
-                                          ],
-                                          "@emissiveColor": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ]
-                                  }
-                                }
-                              ]
+                              }
                             }
                           },
                           {
@@ -92,24 +109,18 @@
                               "-children": [
                                 {
                                   "Shape": {
-                                    "-geometry": [
-                                      {
-                                        "Cone": {
-                                          "@containerField": "geometry",
-                                          "@DEF": "ArrowCone",
-                                          "@bottomRadius": 0.05,
-                                          "@height": 0.1
-                                        }
+                                    "-geometry": {
+                                      "Cone": {
+                                        "@DEF": "ArrowCone",
+                                        "@bottomRadius": 0.05,
+                                        "@height": 0.1
                                       }
-                                    ],
-                                    "-appearance": [
-                                      {
-                                        "Appearance": {
-                                          "@containerField": "appearance",
-                                          "@USE": "Green"
-                                        }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "@USE": "Green"
                                       }
-                                    ]
+                                    }
                                   }
                                 }
                               ]
@@ -131,57 +142,45 @@
                               "-children": [
                                 {
                                   "Shape": {
-                                    "-appearance": [
-                                      {
-                                        "Appearance": {
-                                          "@containerField": "appearance",
-                                          "@DEF": "LABEL_APPEARANCE",
-                                          "-material": [
-                                            {
-                                              "Material": {
-                                                "@containerField": "material",
-                                                "@diffuseColor": [
-                                                  1,
-                                                  1,
-                                                  0
-                                                ],
-                                                "@emissiveColor": [
-                                                  0,
-                                                  0,
-                                                  0
-                                                ]
-                                              }
-                                            }
-                                          ]
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "@DEF": "LABEL_APPEARANCE",
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              0.3
+                                            ],
+                                            "@emissiveColor": [
+                                              0.33,
+                                              0.33,
+                                              0.1
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "-geometry": [
-                                      {
-                                        "Text": {
-                                          "@containerField": "geometry",
-                                          "@string": [
-                                            "Y"
-                                          ],
-                                          "-fontStyle": [
-                                            {
-                                              "FontStyle": {
-                                                "@containerField": "fontStyle",
-                                                "@DEF": "LABEL_FONT",
-                                                "@family": [
-                                                  "SANS"
-                                                ],
-                                                "@justify": [
-                                                  "MIDDLE",
-                                                  "MIDDLE"
-                                                ],
-                                                "@size": 0.2
-                                              }
-                                            }
-                                          ]
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Y"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@DEF": "LABEL_FONT",
+                                            "@family": [
+                                              "SANS"
+                                            ],
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 0.2
+                                          }
                                         }
                                       }
-                                    ]
+                                    }
                                   }
                                 }
                               ]
@@ -201,8 +200,10 @@
                     1,
                     -1.57079
                   ],
-                  "#comment": "Horizontal X arrow and label",
                   "-children": [
+                    {
+                      "#comment": "Horizontal X arrow and label"
+                    },
                     {
                       "Group": {
                         "-children": [
@@ -212,39 +213,30 @@
                               "-children": [
                                 {
                                   "Shape": {
-                                    "-geometry": [
-                                      {
-                                        "Cylinder": {
-                                          "@containerField": "geometry",
-                                          "@USE": "ArrowCylinder"
+                                    "-geometry": {
+                                      "Cylinder": {
+                                        "@USE": "ArrowCylinder"
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "@DEF": "Red",
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0.7,
+                                              0.1,
+                                              0.1
+                                            ],
+                                            "@emissiveColor": [
+                                              0.33,
+                                              0,
+                                              0
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "-appearance": [
-                                      {
-                                        "Appearance": {
-                                          "@containerField": "appearance",
-                                          "@DEF": "Red",
-                                          "-material": [
-                                            {
-                                              "Material": {
-                                                "@containerField": "material",
-                                                "@diffuseColor": [
-                                                  0,
-                                                  0,
-                                                  0
-                                                ],
-                                                "@emissiveColor": [
-                                                  0,
-                                                  0,
-                                                  0
-                                                ]
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ]
+                                    }
                                   }
                                 },
                                 {
@@ -257,22 +249,16 @@
                                     "-children": [
                                       {
                                         "Shape": {
-                                          "-geometry": [
-                                            {
-                                              "Cone": {
-                                                "@containerField": "geometry",
-                                                "@USE": "ArrowCone"
-                                              }
+                                          "-geometry": {
+                                            "Cone": {
+                                              "@USE": "ArrowCone"
                                             }
-                                          ],
-                                          "-appearance": [
-                                            {
-                                              "Appearance": {
-                                                "@containerField": "appearance",
-                                                "@USE": "Red"
-                                              }
+                                          },
+                                          "-appearance": {
+                                            "Appearance": {
+                                              "@USE": "Red"
                                             }
-                                          ]
+                                          }
                                         }
                                       }
                                     ]
@@ -294,39 +280,32 @@
                                 1.1,
                                 0
                               ],
-                              "#comment": "note label rotated back to original coordinate frame",
                               "-children": [
+                                {
+                                  "#comment": "note label rotated back to original coordinate frame"
+                                },
                                 {
                                   "Billboard": {
                                     "-children": [
                                       {
                                         "Shape": {
-                                          "-appearance": [
-                                            {
-                                              "Appearance": {
-                                                "@containerField": "appearance",
-                                                "@USE": "LABEL_APPEARANCE"
+                                          "-appearance": {
+                                            "Appearance": {
+                                              "@USE": "LABEL_APPEARANCE"
+                                            }
+                                          },
+                                          "-geometry": {
+                                            "Text": {
+                                              "@string": [
+                                                "X"
+                                              ],
+                                              "-fontStyle": {
+                                                "FontStyle": {
+                                                  "@USE": "LABEL_FONT"
+                                                }
                                               }
                                             }
-                                          ],
-                                          "-geometry": [
-                                            {
-                                              "Text": {
-                                                "@containerField": "geometry",
-                                                "@string": [
-                                                  "X"
-                                                ],
-                                                "-fontStyle": [
-                                                  {
-                                                    "FontStyle": {
-                                                      "@containerField": "fontStyle",
-                                                      "@USE": "LABEL_FONT"
-                                                    }
-                                                  }
-                                                ]
-                                              }
-                                            }
-                                          ]
+                                          }
                                         }
                                       }
                                     ]
@@ -349,8 +328,10 @@
                     0,
                     1.57079
                   ],
-                  "#comment": "Perpendicular Z arrow and label, note right-hand rule",
                   "-children": [
+                    {
+                      "#comment": "Perpendicular Z arrow and label, note right-hand rule"
+                    },
                     {
                       "Group": {
                         "-children": [
@@ -360,39 +341,30 @@
                               "-children": [
                                 {
                                   "Shape": {
-                                    "-geometry": [
-                                      {
-                                        "Cylinder": {
-                                          "@containerField": "geometry",
-                                          "@USE": "ArrowCylinder"
+                                    "-geometry": {
+                                      "Cylinder": {
+                                        "@USE": "ArrowCylinder"
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "@DEF": "Blue",
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0.3,
+                                              0.3,
+                                              1
+                                            ],
+                                            "@emissiveColor": [
+                                              0.1,
+                                              0.1,
+                                              0.33
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "-appearance": [
-                                      {
-                                        "Appearance": {
-                                          "@containerField": "appearance",
-                                          "@DEF": "Blue",
-                                          "-material": [
-                                            {
-                                              "Material": {
-                                                "@containerField": "material",
-                                                "@diffuseColor": [
-                                                  0,
-                                                  0,
-                                                  1
-                                                ],
-                                                "@emissiveColor": [
-                                                  0,
-                                                  0,
-                                                  0
-                                                ]
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ]
+                                    }
                                   }
                                 },
                                 {
@@ -405,22 +377,16 @@
                                     "-children": [
                                       {
                                         "Shape": {
-                                          "-geometry": [
-                                            {
-                                              "Cone": {
-                                                "@containerField": "geometry",
-                                                "@USE": "ArrowCone"
-                                              }
+                                          "-geometry": {
+                                            "Cone": {
+                                              "@USE": "ArrowCone"
                                             }
-                                          ],
-                                          "-appearance": [
-                                            {
-                                              "Appearance": {
-                                                "@containerField": "appearance",
-                                                "@USE": "Blue"
-                                              }
+                                          },
+                                          "-appearance": {
+                                            "Appearance": {
+                                              "@USE": "Blue"
                                             }
-                                          ]
+                                          }
                                         }
                                       }
                                     ]
@@ -442,39 +408,32 @@
                                 1.1,
                                 0.072
                               ],
-                              "#comment": "note label rotated back to original coordinate frame",
                               "-children": [
+                                {
+                                  "#comment": "note label rotated back to original coordinate frame"
+                                },
                                 {
                                   "Billboard": {
                                     "-children": [
                                       {
                                         "Shape": {
-                                          "-appearance": [
-                                            {
-                                              "Appearance": {
-                                                "@containerField": "appearance",
-                                                "@USE": "LABEL_APPEARANCE"
+                                          "-appearance": {
+                                            "Appearance": {
+                                              "@USE": "LABEL_APPEARANCE"
+                                            }
+                                          },
+                                          "-geometry": {
+                                            "Text": {
+                                              "@string": [
+                                                "Z"
+                                              ],
+                                              "-fontStyle": {
+                                                "FontStyle": {
+                                                  "@USE": "LABEL_FONT"
+                                                }
                                               }
                                             }
-                                          ],
-                                          "-geometry": [
-                                            {
-                                              "Text": {
-                                                "@containerField": "geometry",
-                                                "@string": [
-                                                  "Z"
-                                                ],
-                                                "-fontStyle": [
-                                                  {
-                                                    "FontStyle": {
-                                                      "@containerField": "fontStyle",
-                                                      "@USE": "LABEL_FONT"
-                                                    }
-                                                  }
-                                                ]
-                                              }
-                                            }
-                                          ]
+                                          }
                                         }
                                       }
                                     ]
@@ -493,6 +452,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

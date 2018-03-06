@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -43,6 +42,18 @@
         {
           "@name": "description",
           "@content": "not sure what this is"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -105,229 +116,206 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry"
-                      }
-                    }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "@DEF": "_01_-_Default",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@specularColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "-texture": [
-                          {
-                            "ComposedCubeMapTexture": {
-                              "@containerField": "texture",
-                              "-back": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "back",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-bottom": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "bottom",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-front": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "front",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-left": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "left",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-right": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "right",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-top": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "top",
-                                    "@url": [
-                                      "../resources/images/all_probes/uffizi_cross/uffizi_top.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "-children": [
-                          {
-                            "ComposedShader": {
-                              "@DEF": "x_ite",
-                              "@language": "GLSL",
-                              "field": [
-                                {
-                                  "@name": "cube",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFInt32",
-                                  "@value": "0"
-                                },
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x_ite.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/pc_bubbles.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
-                                }
+                  "-geometry": {
+                    "Sphere": {}
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "_01_-_Default",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"
                               ]
                             }
                           },
-                          {
-                            "ComposedShader": {
-                              "@DEF": "x3dom",
-                              "@language": "GLSL",
-                              "field": [
-                                {
-                                  "@name": "cube",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFInt32",
-                                  "@value": "0"
-                                },
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/pc_bubbles.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
-                                }
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/uffizi_cross/uffizi_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"
                               ]
                             }
                           }
-                        ]
-                      }
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x_ite",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
                     }
-                  ]
+                  }
                 }
               }
             ]
@@ -389,19 +377,84 @@
                 "@name": "lastKey",
                 "@accessType": "inputOutput",
                 "@type": "SFFloat",
-                "@value": "0"
+                "@value": 0
               },
               {
                 "@name": "orientations",
                 "@accessType": "inputOutput",
                 "@type": "MFRotation",
-                "@value": "0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"
+                "@value": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -1.57,
+                  0,
+                  1,
+                  0,
+                  3.14,
+                  0,
+                  1,
+                  0,
+                  1.57,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  -1.57,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1.57,
+                  0,
+                  1,
+                  0,
+                  0
+                ]
               },
               {
                 "@name": "positions",
                 "@accessType": "inputOutput",
                 "@type": "MFVec3f",
-                "@value": "0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10"
+                "@value": [
+                  0,
+                  0,
+                  10,
+                  -10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -10,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  10,
+                  0,
+                  10,
+                  0,
+                  0,
+                  0,
+                  10,
+                  0,
+                  -10,
+                  0,
+                  0,
+                  0,
+                  10
+                ]
               },
               {
                 "@name": "position_changed",
@@ -470,6 +523,8 @@
           "@toField": "set_position"
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

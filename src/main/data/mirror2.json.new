@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -35,6 +34,18 @@
         {
           "@name": "description",
           "@content": "a mirrored sphere"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -84,237 +95,223 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@specularColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "-texture": [
-                          {
-                            "ComposedCubeMapTexture": {
-                              "@containerField": "texture",
-                              "-back": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "back",
-                                    "@DEF": "backShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_back.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-bottom": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "bottom",
-                                    "@DEF": "bottomShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-front": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "front",
-                                    "@DEF": "frontShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_front.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-left": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "left",
-                                    "@DEF": "leftShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_left.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-right": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "right",
-                                    "@DEF": "rightShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_right.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-top": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "top",
-                                    "@DEF": "topShader",
-                                    "@url": [
-                                      "../resources/images/all_probes/beach_cross/beach_top.png",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "-children": [
-                          {
-                            "ComposedShader": {
-                              "@DEF": "x_ite",
-                              "@language": "GLSL",
-                              "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml",
-                              "field": [
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "cube",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFInt32",
-                                  "@value": "0"
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x_ite.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/mix.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
-                                }
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "-back": {
+                            "ImageTexture": {
+                              "@DEF": "backShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_back.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                               ]
                             }
                           },
-                          {
-                            "ComposedShader": {
-                              "@DEF": "x3dom",
-                              "@language": "GLSL",
-                              "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml",
-                              "field": [
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "cube",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFInt32",
-                                  "@value": "0"
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/mix.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
-                                }
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@DEF": "bottomShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@DEF": "frontShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_front.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@DEF": "leftShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_left.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@DEF": "rightShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_right.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@DEF": "topShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_top.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                               ]
                             }
                           }
-                        ]
-                      }
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x_ite",
+                            "@language": "GLSL",
+                            "-children": [
+                              {
+                                "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml"
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "cube",
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/mix.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x3dom",
+                            "@language": "GLSL",
+                            "-children": [
+                              {
+                                "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml"
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "cube",
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/mix.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
                     }
-                  ],
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry",
-                        "@radius": 30
-                      }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 30
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -326,37 +323,97 @@
                       "@name": "frontUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_front.png\\\" \\\"../resources/images/all_probes/building_cross/building_front.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_front.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_front.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_front.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_front.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_front.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_front.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_front.png",
+                        "../resources/images/all_probes/building_cross/building_front.png",
+                        "../resources/images/all_probes/campus_cross/campus_front.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_front.png",
+                        "../resources/images/all_probes/grace_cross/grace_front.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_front.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_front.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_front.png"
+                      ]
                     },
                     {
                       "@name": "backUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_back.png\\\" \\\"../resources/images/all_probes/building_cross/building_back.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_back.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_back.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_back.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_back.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_back.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_back.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_back.png",
+                        "../resources/images/all_probes/building_cross/building_back.png",
+                        "../resources/images/all_probes/campus_cross/campus_back.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_back.png",
+                        "../resources/images/all_probes/grace_cross/grace_back.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_back.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_back.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_back.png"
+                      ]
                     },
                     {
                       "@name": "leftUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_left.png\\\" \\\"../resources/images/all_probes/building_cross/building_left.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_left.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_left.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_left.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_left.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_left.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_left.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_left.png",
+                        "../resources/images/all_probes/building_cross/building_left.png",
+                        "../resources/images/all_probes/campus_cross/campus_left.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_left.png",
+                        "../resources/images/all_probes/grace_cross/grace_left.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_left.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_left.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_left.png"
+                      ]
                     },
                     {
                       "@name": "rightUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_right.png\\\" \\\"../resources/images/all_probes/building_cross/building_right.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_right.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_right.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_right.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_right.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_right.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_right.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_right.png",
+                        "../resources/images/all_probes/building_cross/building_right.png",
+                        "../resources/images/all_probes/campus_cross/campus_right.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_right.png",
+                        "../resources/images/all_probes/grace_cross/grace_right.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_right.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_right.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_right.png"
+                      ]
                     },
                     {
                       "@name": "topUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_top.png\\\" \\\"../resources/images/all_probes/building_cross/building_top.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_top.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_top.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_top.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_top.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_top.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_top.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_top.png",
+                        "../resources/images/all_probes/building_cross/building_top.png",
+                        "../resources/images/all_probes/campus_cross/campus_top.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_top.png",
+                        "../resources/images/all_probes/grace_cross/grace_top.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_top.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_top.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_top.png"
+                      ]
                     },
                     {
                       "@name": "bottomUrls",
                       "@type": "MFString",
                       "@accessType": "initializeOnly",
-                      "@value": "\\\"../resources/images/all_probes/beach_cross/beach_bottom.png\\\" \\\"../resources/images/all_probes/building_cross/building_bottom.png\\\" \\\"../resources/images/all_probes/campus_cross/campus_bottom.png\\\" \\\"../resources/images/all_probes/galileo_cross/galileo_bottom.png\\\" \\\"../resources/images/all_probes/grace_cross/grace_bottom.png\\\" \\\"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\\\" \\\"../resources/images/all_probes/rnl_cross/rnl_bottom.png\\\" \\\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\\\" \\\"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\\\""
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_bottom.png",
+                        "../resources/images/all_probes/building_cross/building_bottom.png",
+                        "../resources/images/all_probes/campus_cross/campus_bottom.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_bottom.png",
+                        "../resources/images/all_probes/grace_cross/grace_bottom.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_bottom.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_bottom.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
+                      ]
                     },
                     {
                       "@name": "front_changed",
@@ -397,7 +454,7 @@
                       "@name": "old",
                       "@type": "SFInt32",
                       "@accessType": "inputOutput",
-                      "@value": "-1"
+                      "@value": -1
                     }
                   ],
                   "#sourceText": [
@@ -497,6 +554,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

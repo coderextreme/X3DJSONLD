@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -43,6 +42,18 @@
         {
           "@name": "description",
           "@content": "a prismatic sphere"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -96,243 +107,238 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Sphere": {
-                        "@containerField": "geometry"
-                      }
-                    }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@specularColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "-texture": [
-                          {
-                            "ComposedCubeMapTexture": {
-                              "@containerField": "texture",
-                              "@DEF": "texture",
-                              "-back": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "back",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-bottom": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "bottom",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-front": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "front",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-left": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "left",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-right": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "right",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "-top": [
-                                {
-                                  "ImageTexture": {
-                                    "@containerField": "top",
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "#comment": "",
-                        "-children": [
-                          {
-                            "ComposedShader": {
-                              "@language": "GLSL",
-                              "field": [
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "cube",
-                                  "@type": "SFNode",
-                                  "@accessType": "inputOutput",
-                                  "-children": [
-                                    {
-                                      "ComposedCubeMapTexture": {
-                                        "@USE": "texture"
-                                      }
-                                    }
-                                  ]
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "inputOutput",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@DEF": "common",
-                                    "@url": [
-                                      "../shaders/common.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
-                                }
+                  "-geometry": {
+                    "Sphere": {}
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "texture",
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
                               ]
                             }
                           },
-                          {
-                            "ComposedShader": {
-                              "@language": "GLSL",
-                              "field": [
-                                {
-                                  "@name": "chromaticDispertion",
-                                  "@accessType": "initializeOnly",
-                                  "@type": "SFVec3f",
-                                  "@value": "0.98 1 1.033"
-                                },
-                                {
-                                  "@name": "cube",
-                                  "@type": "SFNode",
-                                  "@accessType": "initializeOnly",
-                                  "-children": [
-                                    {
-                                      "ComposedCubeMapTexture": {
-                                        "@USE": "texture"
-                                      }
-                                    }
-                                  ]
-                                },
-                                {
-                                  "@name": "bias",
-                                  "@accessType": "initializeOnly",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "scale",
-                                  "@accessType": "initializeOnly",
-                                  "@type": "SFFloat",
-                                  "@value": "0.5"
-                                },
-                                {
-                                  "@name": "power",
-                                  "@accessType": "initializeOnly",
-                                  "@type": "SFFloat",
-                                  "@value": "2"
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x_ite.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@USE": "common"
-                                  }
-                                }
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
                               ]
                             }
                           }
-                        ]
-                      }
+                        }
+                      },
+                      "-children": [
+                        {
+                          "#comment": "<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"../shaders/freewrl.vs\"\"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"../shaders/freewrl.fs\"\"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/contact.vs\"\"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/octaga.vs\"\"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/instant.vs\"\"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": ""
+                        }
+                      ],
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "cube",
+                                "@type": "SFNode",
+                                "@accessType": "inputOutput",
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@DEF": "common",
+                                  "@url": [
+                                    "../shaders/common.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "initializeOnly",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "cube",
+                                "@type": "SFNode",
+                                "@accessType": "initializeOnly",
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@USE": "common"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
                     }
-                  ]
+                  }
                 }
               }
             ]
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

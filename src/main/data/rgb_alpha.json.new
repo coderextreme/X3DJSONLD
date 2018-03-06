@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Interchange",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -77,6 +76,18 @@
         {
           "@name": "license",
           "@content": "../../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -105,44 +116,30 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material"
-                                  }
-                                }
-                              ],
-                              "-texture": [
-                                {
-                                  "PixelTexture": {
-                                    "@containerField": "texture",
-                                    "@DEF": "RgbOpacityCheckerboard",
-                                    "@image": [
-                                      2,
-                                      2,
-                                      4,
-                                      4278190335,
-                                      4294901760,
-                                      4294901760,
-                                      4278190335
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {}
+                            },
+                            "-texture": {
+                              "PixelTexture": {
+                                "@DEF": "RgbOpacityCheckerboard",
+                                "@image": [
+                                  2,
+                                  2,
+                                  4,
+                                  4278190335,
+                                  4294901760,
+                                  4294901760,
+                                  4278190335
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Box": {
-                              "@containerField": "geometry"
-                            }
-                          }
-                        ]
+                        },
+                        "-geometry": {
+                          "Box": {}
+                        }
                       }
                     }
                   ]
@@ -158,35 +155,21 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material"
-                                  }
-                                }
-                              ],
-                              "-texture": [
-                                {
-                                  "PixelTexture": {
-                                    "@containerField": "texture",
-                                    "@USE": "RgbOpacityCheckerboard"
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {}
+                            },
+                            "-texture": {
+                              "PixelTexture": {
+                                "@USE": "RgbOpacityCheckerboard"
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Sphere": {
-                              "@containerField": "geometry"
-                            }
-                          }
-                        ]
+                        },
+                        "-geometry": {
+                          "Sphere": {}
+                        }
                       }
                     }
                   ]
@@ -202,35 +185,21 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material"
-                                  }
-                                }
-                              ],
-                              "-texture": [
-                                {
-                                  "PixelTexture": {
-                                    "@containerField": "texture",
-                                    "@USE": "RgbOpacityCheckerboard"
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {}
+                            },
+                            "-texture": {
+                              "PixelTexture": {
+                                "@USE": "RgbOpacityCheckerboard"
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Cone": {
-                              "@containerField": "geometry"
-                            }
-                          }
-                        ]
+                        },
+                        "-geometry": {
+                          "Cone": {}
+                        }
                       }
                     }
                   ]
@@ -246,35 +215,21 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@containerField": "appearance",
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@containerField": "material"
-                                  }
-                                }
-                              ],
-                              "-texture": [
-                                {
-                                  "PixelTexture": {
-                                    "@containerField": "texture",
-                                    "@USE": "RgbOpacityCheckerboard"
-                                  }
-                                }
-                              ]
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {}
+                            },
+                            "-texture": {
+                              "PixelTexture": {
+                                "@USE": "RgbOpacityCheckerboard"
+                              }
                             }
                           }
-                        ],
-                        "-geometry": [
-                          {
-                            "Cylinder": {
-                              "@containerField": "geometry"
-                            }
-                          }
-                        ]
+                        },
+                        "-geometry": {
+                          "Cylinder": {}
+                        }
                       }
                     }
                   ]
@@ -284,6 +239,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -37,6 +36,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -68,97 +79,90 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Extrusion": {
-                        "@containerField": "geometry",
-                        "@creaseAngle": 3.14159,
-                        "@crossSection": [
-                          0,
-                          0.8,
-                          0.2,
-                          1,
-                          0.7,
-                          0.95,
-                          1,
-                          0.5,
-                          0.8,
-                          0,
-                          0.5,
-                          -0.3,
-                          0,
-                          -0.7,
-                          -0.5,
-                          -0.3,
-                          -0.8,
-                          0,
-                          -1,
-                          0.5,
-                          -0.7,
-                          0.95,
-                          -0.2,
-                          1,
-                          0,
-                          0.8
-                        ],
-                        "@scale": [
-                          0.01,
-                          0.01,
-                          0.8,
-                          0.8,
-                          1,
-                          1,
-                          0.8,
-                          0.8,
-                          0.01,
-                          0.01
-                        ],
-                        "@solid": true,
-                        "@spine": [
-                          0,
-                          0,
-                          0,
-                          0,
-                          0.1,
-                          0,
-                          0,
-                          0.5,
-                          0,
-                          0,
-                          0.9,
-                          0,
-                          0,
-                          1,
-                          0
-                        ]
+                  "-geometry": {
+                    "Extrusion": {
+                      "@creaseAngle": 3.14159,
+                      "@crossSection": [
+                        0,
+                        0.8,
+                        0.2,
+                        1,
+                        0.7,
+                        0.95,
+                        1,
+                        0.5,
+                        0.8,
+                        0,
+                        0.5,
+                        -0.3,
+                        0,
+                        -0.7,
+                        -0.5,
+                        -0.3,
+                        -0.8,
+                        0,
+                        -1,
+                        0.5,
+                        -0.7,
+                        0.95,
+                        -0.2,
+                        1,
+                        0,
+                        0.8
+                      ],
+                      "@scale": [
+                        0.01,
+                        0.01,
+                        0.8,
+                        0.8,
+                        1,
+                        1,
+                        0.8,
+                        0.8,
+                        0.01,
+                        0.01
+                      ],
+                      "@solid": true,
+                      "@spine": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0.1,
+                        0,
+                        0,
+                        0.5,
+                        0,
+                        0,
+                        0.9,
+                        0,
+                        0,
+                        1,
+                        0
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.8,
+                            0.3,
+                            0.3
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@containerField": "appearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@containerField": "material",
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               }
             ]
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

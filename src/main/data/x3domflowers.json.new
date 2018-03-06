@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -25,6 +24,18 @@
         {
           "@name": "identifier",
           "@content": "https://coderextreme.net/X3DJSONLD/sphereflowers.x3d"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -87,35 +98,33 @@
               {
                 "ProtoDeclare": {
                   "@name": "flower",
-                  "-children": [
-                    {
-                      "ProtoBody": {
-                        "-children": [
-                          {
-                            "Group": {
-                              "-children": [
-                                {
-                                  "ProtoInstance": {
-                                    "@name": "FlowerProto",
-                                    "fieldValue": [
-                                      {
-                                        "@name": "vertex",
-                                        "@value": "\\\"../shaders/x3dom_flowers_chromatic.vs\\\""
-                                      },
-                                      {
-                                        "@name": "fragment",
-                                        "@value": "\\\"../shaders/common.fs\\\""
-                                      }
-                                    ]
-                                  }
+                  "-protobody": {
+                    "ProtoBody": {
+                      "-children": [
+                        {
+                          "Group": {
+                            "-children": [
+                              {
+                                "ProtoInstance": {
+                                  "@name": "FlowerProto",
+                                  "fieldValue": [
+                                    {
+                                      "@name": "vertex",
+                                      "@value": "\"../shaders/x3dom_flowers_chromatic.vs\""
+                                    },
+                                    {
+                                      "@name": "fragment",
+                                      "@value": "\"../shaders/common.fs\""
+                                    }
+                                  ]
                                 }
-                              ]
-                            }
+                              }
+                            ]
                           }
-                        ]
-                      }
+                        }
+                      ]
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -152,6 +161,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

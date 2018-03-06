@@ -1,6 +1,5 @@
 {
   "X3D": {
-    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
     "@profile": "Interchange",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -85,6 +84,18 @@
         {
           "@name": "license",
           "@content": "../../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "6 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -187,189 +198,169 @@
         },
         {
           "Shape": {
-            "-appearance": [
-              {
-                "Appearance": {
-                  "@containerField": "appearance",
-                  "-material": [
-                    {
-                      "Material": {
-                        "@containerField": "material"
-                      }
-                    }
-                  ],
-                  "-texture": [
-                    {
-                      "PixelTexture": {
-                        "@containerField": "texture",
-                        "@image": [
-                          2,
-                          2,
-                          4,
-                          4278190335,
-                          16711935,
-                          4294967295,
-                          4294902015
-                        ]
-                      }
-                    }
-                  ]
+            "-appearance": {
+              "Appearance": {
+                "-material": {
+                  "Material": {}
+                },
+                "-texture": {
+                  "PixelTexture": {
+                    "@image": [
+                      2,
+                      2,
+                      4,
+                      4278190335,
+                      16711935,
+                      4294967295,
+                      4294902015
+                    ]
+                  }
                 }
               }
-            ],
-            "-geometry": [
-              {
-                "IndexedFaceSet": {
-                  "@containerField": "geometry",
-                  "@colorPerVertex": true,
-                  "@coordIndex": [
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    4,
-                    5,
-                    7,
-                    6,
-                    -1,
-                    6,
-                    7,
-                    1,
-                    0,
-                    -1,
-                    2,
-                    3,
-                    5,
-                    4,
-                    -1,
-                    6,
-                    0,
-                    2,
-                    4,
-                    -1,
-                    1,
-                    7,
-                    5,
-                    3,
-                    -1
-                  ],
-                  "@creaseAngle": 0.5,
-                  "@texCoordIndex": [
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1,
-                    0,
-                    1,
-                    3,
-                    2,
-                    -1
-                  ],
-                  "-color": [
-                    {
-                      "Color": {
-                        "@containerField": "color",
-                        "@color": [
-                          0,
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          1,
-                          0
-                        ]
-                      }
-                    }
-                  ],
-                  "-coord": [
-                    {
-                      "Coordinate": {
-                        "@containerField": "coord",
-                        "@point": [
-                          -2,
-                          1,
-                          1,
-                          -2,
-                          -1,
-                          1,
-                          2,
-                          1,
-                          1,
-                          2,
-                          -1,
-                          1,
-                          2,
-                          1,
-                          -1,
-                          2,
-                          -1,
-                          -1,
-                          -2,
-                          1,
-                          -1,
-                          -2,
-                          -1,
-                          -1
-                        ]
-                      }
-                    }
-                  ],
-                  "-texCoord": [
-                    {
-                      "TextureCoordinate": {
-                        "@containerField": "texCoord",
-                        "@point": [
-                          0.5,
-                          1,
-                          0.5,
-                          0.5,
-                          1,
-                          1,
-                          1,
-                          0.5
-                        ]
-                      }
-                    }
-                  ]
+            },
+            "-geometry": {
+              "IndexedFaceSet": {
+                "@colorPerVertex": true,
+                "@coordIndex": [
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  4,
+                  5,
+                  7,
+                  6,
+                  -1,
+                  6,
+                  7,
+                  1,
+                  0,
+                  -1,
+                  2,
+                  3,
+                  5,
+                  4,
+                  -1,
+                  6,
+                  0,
+                  2,
+                  4,
+                  -1,
+                  1,
+                  7,
+                  5,
+                  3,
+                  -1
+                ],
+                "@creaseAngle": 0.5,
+                "@texCoordIndex": [
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1,
+                  0,
+                  1,
+                  3,
+                  2,
+                  -1
+                ],
+                "-color": {
+                  "Color": {
+                    "@color": [
+                      0,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0
+                    ]
+                  }
+                },
+                "-coord": {
+                  "Coordinate": {
+                    "@point": [
+                      -2,
+                      1,
+                      1,
+                      -2,
+                      -1,
+                      1,
+                      2,
+                      1,
+                      1,
+                      2,
+                      -1,
+                      1,
+                      2,
+                      1,
+                      -1,
+                      2,
+                      -1,
+                      -1,
+                      -2,
+                      1,
+                      -1,
+                      -2,
+                      -1,
+                      -1
+                    ]
+                  }
+                },
+                "-texCoord": {
+                  "TextureCoordinate": {
+                    "@point": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5,
+                      1,
+                      1,
+                      1,
+                      0.5
+                    ]
+                  }
                 }
               }
-            ]
+            }
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }
