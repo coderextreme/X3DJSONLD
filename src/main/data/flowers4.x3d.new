@@ -23,8 +23,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <!----><!--                <Sphere>--><!--		--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>

@@ -20,8 +20,8 @@
                 <Appearance>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                     <ComposedShader language='GLSL'>
-                        <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"'/>
-                        <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"'/>
+                        <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
+                        <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
                         <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='cube' accessType='inputOutput' type='SFNode'>
                             <ComposedCubeMapTexture USE='texture'/>
