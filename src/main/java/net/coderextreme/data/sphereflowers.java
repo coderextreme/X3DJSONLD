@@ -116,7 +116,7 @@ ProtoInstanceObject ProtoInstance6 = null;
             .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString7().getArray()))))
           .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/cobweb_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"../shaders/common.fs\""));
     return X3D0;

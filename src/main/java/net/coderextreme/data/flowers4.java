@@ -118,77 +118,7 @@ public class flowers4 {
           .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
           .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
-"function initialize() {\n"+
-"     resolution = 100;\n"+
-"     updateCoordinates(resolution);\n"+
-"     var cis = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     cis.push(i*resolution+j);\n"+
-"	     cis.push(i*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j);\n"+
-"	     cis.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
-"}\n"+
-"\n"+
-"function updateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var crds = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		crds.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	resolution = 100;\n"+
-"	updateCoordinates(resolution);\n"+
-"}\n"+
+          .setSourceCode("ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; updateCoordinates(resolution); var cis = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = new MFInt32(cis); } function updateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var crds = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(crds); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; updateCoordinates(resolution); }\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
         .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))

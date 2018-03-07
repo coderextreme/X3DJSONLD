@@ -112,7 +112,7 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/cobweb_flowers_plain.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/x_ite_flowers_plain.vs\""));
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"../shaders/plain.fs\""));
     return X3D0;

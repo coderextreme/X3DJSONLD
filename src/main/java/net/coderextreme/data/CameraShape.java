@@ -105,7 +105,7 @@ public class CameraShape {
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject().setDEF("CameraAppearance")
                 .setMaterial(new MaterialObject().setDEF("lambert1_0").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.372322f,0.371574f,0.373173f}).setShininess(0.02f).setSpecularColor(new float[] {0.890909f,0.887832f,0.890909f})
-                  .addComments(new CommentsBlock("Universal Media Library: Metals 30")))))
+                  .addComments(new CommentsBlock(" Universal Media Library: Metals 30 ")))))
             .addChild(new ShapeObject()
               .setGeometry(new IndexedFaceSetObject().setDEF("pCylinder1_0Geo").setConvex(false).setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setCreaseAngle(0.7854f)
                 .setCoord(new CoordinateObject().setDEF("pCylinder1GeoPoints").setPoint(new MFVec3fObject(new MFVec3f2().getArray()))))

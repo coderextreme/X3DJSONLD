@@ -136,72 +136,7 @@ public class flowerproto {
                 .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                 .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .setSourceCode("ecmascript:\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}\n"+
+                .setSourceCode("ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); for (var j = 0; j <= 2; j++) { if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } } animate_flowers(); } function animate_flowers(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: a += Math.random() * 0.2 - 0.1; break; case 1: b += Math.random() * 0.2 - 0.1; break; case 2: c += Math.random() * 2 - 1; break; case 3: d += Math.random() * 2 - 1; break; } tdelta += 0.5; pdelta += 0.5; if (a > 1) { a = 0.5; } if (b > 1) { b = 0.5; } if (c < 1) { c = 4; } if (d < 1) { d = 4; } if (c > 10) { c = 4; } if (d > 10) { d = 4; } }\n"+
 ""))
               .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
               .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))

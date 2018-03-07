@@ -97,7 +97,7 @@ ProtoInstanceObject ProtoInstance0 = null;
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
-        .addComments(new CommentsBlock("Simple Heads-Up Display (HUD) Prototype\n"+
+        .addComments(new CommentsBlock(" Simple Heads-Up Display (HUD) Prototype\n"+
 " \n"+
 " Manages the display of a HUD and maintains its position on the screen.\n"+
 " Changes to fieldOfView (in Viewpoint node) will change screen position\n"+
@@ -111,7 +111,7 @@ ProtoInstanceObject ProtoInstance0 = null;
 " orientation_changed Current viewer orientation (outputOnly - SFRotation)\n"+
 " \n"+
 " \n"+
-""))
+" "))
         .addChild(new ExternProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(new MFStringObject(new MFString0().getArray()))
           .addField(new fieldObject().setType("SFVec3f").setName("screenOffset").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("offset position for HUD relative to current view location, default 0 0 -5"))
           .addField(new fieldObject().setType("MFNode").setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
@@ -119,9 +119,9 @@ ProtoInstanceObject ProtoInstance0 = null;
           .addField(new fieldObject().setType("SFRotation").setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD orientation update relative to original location")))
         .addChild(new BackgroundObject().setDEF("SandyShallowBottom").setGroundAngle(new MFFloatObject(new MFFloat1().getArray())).setGroundColor(new MFColorObject(new MFColor2().getArray())).setSkyAngle(new MFFloatObject(new MFFloat3().getArray())).setSkyColor(new MFColorObject(new MFColor4().getArray())))
         .addChild(new ViewpointObject().setDescription("Heads-up display (HUD)"))
-        .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
+        .addComments(new CommentsBlock(" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence "))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
-          .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
+          .addComments(new CommentsBlock(" example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view ")))
         .addChild(new InlineObject().setUrl(new MFStringObject(new MFString7().getArray()))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("screenOffset").setValue("-0.75 1 -5"));

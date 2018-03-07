@@ -108,7 +108,45 @@ ProtoInstanceObject ProtoInstance3 = null;
                 .addField(new fieldObject().setType("SFVec3f").setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType("SFVec3f").setName("scalvel").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                .setSourceCode("ecmascript: function initialize() { velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125); scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4); } function set_fraction(value) { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z); // if you get to far away or too big, explode if ( Math.abs(translation.x) > 256) { translation.x = 0; initialize(); } if ( Math.abs(translation.y) > 256) { translation.y = 0; initialize(); } if ( Math.abs(translation.z) > 256) { translation.z = 0; initialize(); } if (Math.abs(scale.x) > 20) { scale.x = scale.x/20; translation.x = 0; initialize(); } if (Math.abs(scale.y) > 20) { scale.y = scale.y/20; translation.y = 0; initialize(); } if (Math.abs(scale.z) > 20) { scale.z = scale.z/20; translation.z = 0; initialize(); } }\n"+
+                .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}\n"+
 ""))
               .addChild(new TimeSensorObject().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
               .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))

@@ -108,7 +108,7 @@ public class bubbles {
                 .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                 .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-              .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
+              .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
                 .addField(new fieldObject().setType("SFInt32").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
@@ -223,22 +223,22 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x_ite.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat16 {
