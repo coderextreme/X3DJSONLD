@@ -1,5 +1,6 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -24,11 +25,11 @@ var ProtoInstance12 = null;
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new SceneObject()
-        .addChild(new ViewpointObject().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("Only Viewpoint"))
+        .addChild(new ViewpointObject().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("Only Viewpoint").setOrientation(Java.to([0,0,1,0], Java.type("float[]"))))
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("float[]"))))
         .addChild(new ProtoDeclareObject().setName("point")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("node")
               .setIS(new ISObject()
@@ -43,7 +44,8 @@ var ProtoInstance12 = null;
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                 .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-                .setSourceCode("ecmascript:\n"+
+                .setSourceCode("\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
@@ -58,27 +60,27 @@ var ProtoInstance12 = null;
               .addChild(new ROUTEObject().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
         .addChild(new ProtoDeclareObject().setName("x3dconnector")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("startnode"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("endnode"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_startpoint"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_endpoint")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new GroupObject()
-              .addChild(new TransformObject().setDEF("trans")
+              .addChild(new TransformObject().setDEF("trans").setTranslation(Java.to([0,0,0], Java.type("float[]")))
                 .addChild(new TransformObject().setDEF("rotscale")
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("float[]"))).setTransparency(0.5)))
                     .setGeometry(new CylinderObject().setRadius(0.05)))))
               .addChild(new ScriptObject().setDEF("S1")
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("startnode"))
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("endnode"))
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("position")
                   .addChild(new TransformObject().setUSE("trans")))
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("rotscale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("rotscale")
                   .addChild(new TransformObject().setUSE("rotscale")))
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_startpoint"))
+                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_endpoint"))
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
                   .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
@@ -128,11 +130,12 @@ var ProtoInstance12 = null;
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
+"            \n"+
 "")))))
-        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("point").setDEF("G1"))
-        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("point").setDEF("G2"))
-        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("point").setDEF("G3"))
-        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("point").setDEF("G4"))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setDEF("G1").setName("point"))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setDEF("G2").setName("point"))
+        .addChild(ProtoInstance2 = new ProtoInstanceObject().setDEF("G3").setName("point"))
+        .addChild(ProtoInstance3 = new ProtoInstanceObject().setDEF("G4").setName("point"))
         .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
         .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))
         .addChild(ProtoInstance10 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3"))

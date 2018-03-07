@@ -1,5 +1,6 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -12,10 +13,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
         .addMeta(new metaObject().setName("description").setContent("geo bubbles")))
       .setScene(new SceneObject()
-        .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
-        .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
+        .addComments(new CommentsBlock('Viewpoint DEF=\'Tour\' position=\'0 0 4\' orientation=\'1 0 0 0\' description=\'Tour Views\'/'))
+        .addComments(new CommentsBlock('PositionInterpolator DEF=\'TourPosition\' key=\'0 1\' keyValue=\'-0.5 -0.5 4 -0.5 0.5 4\'/'))
         .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Tour Views"))
-        .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/BK.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/BK.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/BT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/FR.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/LF.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/RT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/images/TP.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+        .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"], Java.type("java.lang.String[]"))))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
