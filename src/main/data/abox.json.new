@@ -44,101 +44,85 @@
         {
           "ProtoDeclare": {
             "@name": "anyShape",
-            "-protointerface": {
-              "ProtoInterface": {
-                "field": [
-                  {
-                    "@name": "myShape",
-                    "@accessType": "inputOutput",
-                    "@type": "MFNode",
-                    "-children": [
-                      {
-                        "Shape": {
-                          "-geometry": {
-                            "Sphere": {}
-                          }
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Sphere": {}
                         }
                       }
-                    ]
-                  }
-                ]
-              }
+                    }
+                  ]
+                }
+              ]
             },
-            "-protobody": {
-              "ProtoBody": {
-                "-children": [
-                  {
-                    "Transform": {
-                      "-children": [
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
                         {
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "children",
-                                "@protoField": "myShape"
-                              }
-                            ]
-                          }
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
                         }
                       ]
                     }
                   }
-                ]
-              }
+                }
+              ]
             }
           }
         },
         {
           "ProtoDeclare": {
             "@name": "one",
-            "-protointerface": {
-              "ProtoInterface": {
-                "field": [
-                  {
-                    "@name": "myShape",
-                    "@accessType": "inputOutput",
-                    "@type": "MFNode",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
                     "-children": [
                       {
-                        "Shape": {
-                          "-geometry": {
-                            "Cylinder": {}
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
                           }
                         }
                       }
                     ]
                   }
-                ]
-              }
-            },
-            "-protobody": {
-              "ProtoBody": {
-                "-children": [
-                  {
-                    "Transform": {
-                      "-children": [
-                        {
-                          "ProtoInstance": {
-                            "@name": "anyShape",
-                            "-children": [
-                              {
-                                "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField": "myShape",
-                                      "@protoField": "myShape"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
+                }
+              ]
             }
           }
         },

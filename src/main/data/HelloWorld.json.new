@@ -6,96 +6,96 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "HelloWorld.x3d"
+          "@content": "HelloWorld.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Simple X3D scene example: Hello World!"
+          "@content": "Simple X3D scene example: Hello World!",
+          "@name": "description"
         },
         {
-          "@name": "created",
-          "@content": "30 October 2000"
+          "@content": "30 October 2000",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "14 April 2017"
+          "@content": "14 April 2017",
+          "@name": "modified"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "Image",
-          "@content": "HelloWorld.tall.png"
+          "@content": "HelloWorld.tall.png",
+          "@name": "Image"
         },
         {
-          "@name": "reference",
-          "@content": "http://en.wikipedia.org/wiki/Hello_world"
+          "@content": "http://en.wikipedia.org/wiki/Hello_world",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"
+          "@content": "https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"
+          "@content": "https://en.wikipedia.org/wiki/\"Hello,_World!\"_program",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+          "@content": "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.HelloWorldExample.net"
+          "@content": "http://www.HelloWorldExample.net",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3D.org"
+          "@content": "http://www.web3D.org",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/realtime-3d/news/internationalization-x3d"
+          "@content": "http://www.web3d.org/realtime-3d/news/internationalization-x3d",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/HelloWorld.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "license",
-          "@content": "http://www.web3d.org/x3d/content/examples/license.html"
+          "@content": "http://www.web3d.org/x3d/content/examples/license.html",
+          "@name": "license"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorld.wrl"
+          "@content": "HelloWorld.wrl",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorld.x3dv"
+          "@content": "HelloWorld.x3dv",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorld.x3db"
+          "@content": "HelloWorld.x3db",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorld.xhtml"
+          "@content": "HelloWorld.xhtml",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorld.json"
+          "@content": "HelloWorld.json",
+          "@name": "reference"
         },
         {
           "@name": "translated",
@@ -112,14 +112,14 @@
       ],
       "-children": [
         {
-          "#comment": "Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"
+          "#comment": " Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON "
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": "Example scene to illustrate X3D nodes and fields (XML elements and attributes)"
+          "#comment": " Example scene to illustrate X3D nodes and fields (XML elements and attributes) "
         },
         {
           "WorldInfo": {

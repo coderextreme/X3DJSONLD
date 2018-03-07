@@ -491,7 +491,24 @@
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { Browser.print(f+\\\"\\\"+side); old = side; front_changed[0] = frontUrls[side]; back_changed[0] = backUrls[side]; left_changed[0] = leftUrls[side]; right_changed[0] = rightUrls[side]; top_changed[0] = topUrls[side]; bottom_changed[0] = bottomUrls[side]; } }",
+                    "",
+                    "ecmascript:",
+                    "        function set_fraction( f, tm ) {",
+                    "\t    var side = Math.floor(f*frontUrls.length);",
+                    "\t    if (side > frontUrls.length-1) {",
+                    "\t    \tside = 0;",
+                    "\t    }",
+                    "\t    if (side != old) {",
+                    "\t    \t    Browser.print(f+\\\" \\\"+side);",
+                    "\t    \t    old = side;",
+                    "\t\t    front_changed[0] = frontUrls[side];",
+                    "\t\t    back_changed[0] = backUrls[side];",
+                    "\t\t    left_changed[0] = leftUrls[side];",
+                    "\t\t    right_changed[0] = rightUrls[side];",
+                    "\t\t    top_changed[0] = topUrls[side];",
+                    "\t\t    bottom_changed[0] = bottomUrls[side];",
+                    "            }",
+                    "        }",
                     ""
                   ]
                 }
@@ -502,86 +519,110 @@
                   "@cycleInterval": 45,
                   "@loop": true
                 }
-              }
-            ],
-            "ROUTE": [
-              {
-                "@fromNode": "Clock",
-                "@fromField": "fraction_changed",
-                "@toNode": "UrlSelector",
-                "@toField": "set_fraction"
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "front_changed",
-                "@toNode": "frontBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "Clock",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "UrlSelector",
+                  "@toField": "set_fraction"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "back_changed",
-                "@toNode": "backBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "front_changed",
+                  "@toNode": "frontBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "left_changed",
-                "@toNode": "leftBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "back_changed",
+                  "@toNode": "backBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "right_changed",
-                "@toNode": "rightBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "left_changed",
+                  "@toNode": "leftBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "top_changed",
-                "@toNode": "topBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "right_changed",
+                  "@toNode": "rightBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "bottom_changed",
-                "@toNode": "bottomBack",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "top_changed",
+                  "@toNode": "topBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "front_changed",
-                "@toNode": "frontShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "bottom_changed",
+                  "@toNode": "bottomBack",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "back_changed",
-                "@toNode": "backShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "front_changed",
+                  "@toNode": "frontShader",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "left_changed",
-                "@toNode": "leftShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "back_changed",
+                  "@toNode": "backShader",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "right_changed",
-                "@toNode": "rightShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "left_changed",
+                  "@toNode": "leftShader",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "top_changed",
-                "@toNode": "topShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "right_changed",
+                  "@toNode": "rightShader",
+                  "@toField": "url"
+                }
               },
               {
-                "@fromNode": "UrlSelector",
-                "@fromField": "bottom_changed",
-                "@toNode": "bottomShader",
-                "@toField": "url"
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "top_changed",
+                  "@toNode": "topShader",
+                  "@toField": "url"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "UrlSelector",
+                  "@fromField": "bottom_changed",
+                  "@toNode": "bottomShader",
+                  "@toField": "url"
+                }
               }
             ]
           }

@@ -6,44 +6,44 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "ArchHalf.x3d"
+          "@content": "ArchHalf.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."
+          "@content": "Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Michele Foti, Don Brutzman"
+          "@content": "Michele Foti, Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "15 December 2014"
+          "@content": "15 December 2014",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "16 February 2016"
+          "@content": "16 February 2016",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "ArchModelingDiagrams.pdf"
+          "@content": "ArchModelingDiagrams.pdf",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Arch"
+          "@content": "https://en.wikipedia.org/wiki/Arch",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
@@ -66,13 +66,13 @@
             "@DEF": "Arch",
             "-children": [
               {
-                "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
+                "#comment": " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
               }
             ],
             "-geometry": {
               "IndexedFaceSet": {
                 "@DEF": "ArchIndex",
-                "@convex": true,
+                "@convex": false,
                 "@coordIndex": [
                   31,
                   32,
@@ -393,7 +393,8 @@
                   149,
                   -1
                 ],
-                "@solid": true,
+                "@creaseAngle": 0,
+                "@solid": false,
                 "-coord": {
                   "Coordinate": {
                     "@DEF": "ArchChord",

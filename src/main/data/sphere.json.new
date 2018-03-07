@@ -60,7 +60,9 @@
                     }
                   },
                   "-geometry": {
-                    "Sphere": {}
+                    "Sphere": {
+                      "@radius": 1
+                    }
                   }
                 }
               }

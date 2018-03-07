@@ -116,9 +116,17 @@
               "Text": {
                 "@DEF": "DefaultText",
                 "@string": [
-                  "Character entity substitutions:\"\n        \"empty string \\\"\\\" skips a line:\"\n        \"\"\n        \"apostrophe  '  is &amp;apos;\" \n        \"ampersand &amp; is &amp;amp;\"\n        \"quote mark  \\\"  is &amp;quot;\"\n        \"backslash \\\\ is X3D escape character\"\n        \"double backslash \\\\\\\\\\\\\\\\ is X3D backslash \\\\ character\"\n        \"Pi Π is &amp;#928; XML character entity"
+                  "Character entity substitutions:",
+                  "empty string \"\" skips a line:",
+                  "",
+                  "apostrophe  '  is &apos;",
+                  "ampersand & is &amp;",
+                  "quote mark  \"  is &quot;",
+                  "backslash \\ is X3D escape character",
+                  "double backslash \\\\ is X3D backslash \\ character",
+                  "Pi Π is &#928; XML character entity"
                 ],
-                "-fontstyle": {
+                "-fontStyle": {
                   "FontStyle": {
                     "@DEF": "CenteredFontStyle",
                     "@justify": [
