@@ -56,6 +56,7 @@ ecmascript:
 			     newBubble();
 			}
 
+
 ]]>
         </Script>
         <TimeSensor DEF='TourTime' cycleInterval='0.15' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
