@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="PixelTextureComponentExamples.x3d"></meta>
-<meta name="description" content="This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."></meta>
-<meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
-<meta name="created" content="25 August 2008"></meta>
-<meta name="modified" content="7 January 2014"></meta>
-<meta name="reference" content="http://X3dGraphics.com"></meta>
-<meta name="reference" content="X3D for Web Authors, Table 5.18"></meta>
-<meta name="reference" content="http://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
-<meta name="rights" content="Copyright (c) 2006, Daly Realism and Don Brutzman"></meta>
-<meta name="subject" content="X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"></meta>
-<meta name="identifier" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../license.html"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta content="PixelTextureComponentExamples.x3d" name="title"></meta>
+<meta content="This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18." name="description"></meta>
+<meta content="Leonard Daly and Don Brutzman" name="creator"></meta>
+<meta content="25 August 2008" name="created"></meta>
+<meta content="7 January 2014" name="modified"></meta>
+<meta content="http://X3dGraphics.com" name="reference"></meta>
+<meta content="X3D for Web Authors, Table 5.18" name="reference"></meta>
+<meta content="http://www.web3d.org/x3d/content/examples/X3dResources.html" name="reference"></meta>
+<meta content="Copyright (c) 2006, Daly Realism and Don Brutzman" name="rights"></meta>
+<meta content="X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com" name="subject"></meta>
+<meta content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d" name="identifier"></meta>
+<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+<meta content="../license.html" name="license"></meta>
 </head>
 <Scene><Background skyColor="0.1 0.1 0.4"></Background>
 <Viewpoint description="Table 5.18 SFImage component examples" position="0 0 14"></Viewpoint>

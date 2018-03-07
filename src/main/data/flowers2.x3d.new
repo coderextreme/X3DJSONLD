@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="flowers2.x3d" content="title"></meta>
-<meta name="author" content="John Carlson"></meta>
-<meta name="transcriber" content="John Carlson"></meta>
-<meta name="created" content="23 January 2005"></meta>
-<meta name="modified" content="05 May 2017"></meta>
-<meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
-<meta name="url" content="https://coderextreme.net/x3d/flowers2.x3d"></meta>
-<meta name="generator" content="manually written"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta content="title" name="flowers2.x3d"></meta>
+<meta content="John Carlson" name="author"></meta>
+<meta content="John Carlson" name="transcriber"></meta>
+<meta content="23 January 2005" name="created"></meta>
+<meta content="05 May 2017" name="modified"></meta>
+<meta content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)" name="description"></meta>
+<meta content="https://coderextreme.net/x3d/flowers2.x3d" name="url"></meta>
+<meta content="manually written" name="generator"></meta>
 </head>
-<Scene><NavigationInfo></NavigationInfo>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 <Viewpoint description="Two mathematical orbitals" position="0 0 50"></Viewpoint>
 <Group><DirectionalLight direction="1 1 1"></DirectionalLight>
 <Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
 <Transform DEF="OrbitTransform2" translation="-8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0.5 0" specularColor="1 0.5 0" transparency="0.75"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" DEF="Orbit2"><Coordinate containerField="coord" DEF="OrbitCoordinates2"></Coordinate>
+<IndexedFaceSet containerField="geometry" DEF="Orbit2" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates2"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
 <TimeSensor DEF="Clock" cycleInterval="16" loop="true"></TimeSensor>
 <OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28"></OrientationInterpolator>
-<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<![CDATA[ecmascript:
+<Script DEF="OrbitScript"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+<field accessType="outputOnly" name="coordinates" type="MFVec3f"></field>
+<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
+<![CDATA[
+
+ecmascript:
 
 var e = 5;
 var f = 5;
@@ -100,11 +102,14 @@ function set_fraction(fraction, eventTime) {
 	resolution = 100;
 	generateCoordinates(resolution);
 }
+      
 ]]></Script>
-<Script DEF="OrbitScript2"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<![CDATA[ecmascript:
+<Script DEF="OrbitScript2"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+<field accessType="outputOnly" name="coordinates" type="MFVec3f"></field>
+<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
+<![CDATA[
+
+ecmascript:
 
 var e = 5;
 var f = 5;
@@ -176,6 +181,7 @@ function set_fraction(fraction, eventTime) {
 	resolution = 100;
 	generateCoordinates(resolution);
 }
+      
 ]]></Script>
 </Group>
 <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="coordIndex" toNode="Orbit"></ROUTE>

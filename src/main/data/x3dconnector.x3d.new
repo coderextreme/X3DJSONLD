@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"></meta>
 <meta name="description" content="a generic proto to connect two objects"></meta>
 </head>
-<Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
+<Scene><Viewpoint position="0 0 5" description="Only Viewpoint" orientation="0 0 1 0"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="G1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.2 0.2"></Material>
 </Appearance>
@@ -28,19 +28,19 @@
 </Shape>
 </Transform>
 </Transform>
-<ProtoDeclare name="x3dconnector"><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="x3dconnector"><ProtoInterface><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="transnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="rotscalenode" type="SFNode"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoBody><Script DEF="S1"><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="transnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="rotscalenode" type="SFNode"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 <IS><connect nodeField="startnode" protoField="startnode"></connect>
 <connect nodeField="endnode" protoField="endnode"></connect>
 <connect nodeField="transnode" protoField="transnode"></connect>
@@ -87,6 +87,7 @@
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
+            
 ]]></Script>
 </ProtoBody>
 </ProtoDeclare>

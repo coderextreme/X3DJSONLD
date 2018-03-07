@@ -14,7 +14,8 @@
 <TimeSensor DEF="TourTime" loop="true"></TimeSensor>
 <Script DEF="MoveCylinder"><field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="spine" accessType="inputOutput" type="MFVec3f" value="-50 -50 0 50 50 0"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 
                 function set_cycle(value) {
                         Browser.print(value);

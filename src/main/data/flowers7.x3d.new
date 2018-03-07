@@ -8,8 +8,8 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowers7.x3d"></meta>
 <meta name="description" content="a flower"></meta>
 </head>
-<Scene><NavigationInfo></NavigationInfo>
-<!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background DEF="background" backUrl="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></Background>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery --><Background DEF="background" backUrl="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></Background>
 <Viewpoint position="0 0 40" description="Transparent rose"></Viewpoint>
 <Transform DEF="Rose01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
@@ -30,7 +30,9 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!--field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field--><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
+<!--field name='cube' type='SFNode' accessType="inputOutput">
+			  <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+		  </field--><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="x_ite" language="GLSL"><field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
@@ -49,7 +51,7 @@
 <ShaderPart url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere containerField="geometry" solid="false"></Sphere>
+<Sphere containerField="geometry" solid="false" radius="1"></Sphere>
 </Shape>
 </Transform>
 <Script DEF="UrlSelector" directOutput="true"><field name="frontUrls" type="MFString" accessType="initializeOnly" value="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;../resources/images/all_probes/building_cross/building_front.png&quot; &quot;../resources/images/all_probes/campus_cross/campus_front.png&quot; &quot;../resources/images/all_probes/galileo_cross/galileo_front.png&quot; &quot;../resources/images/all_probes/grace_cross/grace_front.png&quot; &quot;../resources/images/all_probes/kitchen_cross/kitchen_front.png&quot; &quot;../resources/images/all_probes/rnl_cross/rnl_front.png&quot; &quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;../resources/images/all_probes/uffizi_cross/uffizi_front.png&quot;"></field>
@@ -66,16 +68,81 @@
 <field name="bottom" type="MFString" accessType="inputOutput"></field>
 <field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
 <field name="old" type="SFInt32" accessType="inputOutput" value="-1"></field>
-<![CDATA[ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { old = side; front[0] = frontUrls[side]; back[0] = backUrls[side]; left[0] = leftUrls[side]; right[0] = rightUrls[side]; top[0] = topUrls[side]; bottom[0] = bottomUrls[side]; } }
+<![CDATA[
+ecmascript:
+        function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }
 ]]></Script>
-<!--<TimeSensor DEF="Clock"cycleInterval="45"loop='true'></TimeSensor> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'></ROUTE> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'></ROUTE>--><Script DEF="Animate" directOutput="true"><field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
+<!--
+            <TimeSensor DEF="Clock" cycleInterval="45" loop='true'></TimeSensor>
+            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'></ROUTE>
+            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'></ROUTE>
+	    --><Script DEF="Animate" directOutput="true"><field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
 <field name="a" type="SFFloat" accessType="inputOutput" value="10"></field>
 <field name="b" type="SFFloat" accessType="inputOutput" value="1"></field>
 <field name="c" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<![CDATA[ecmascript: function set_fraction() { var choice = Math.floor(Math.random() * 4); if (choice == 0) { a = a + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 1) { b = b + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 2) { c = c + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 3) { d = d + Math.floor(Math.random() * 2) * 2 - 1; } tdelta = tdelta + 0.5; pdelta = pdelta + 0.5; if (a < 1) { a = 10; } if (b < 1) { b = 10; } if (c < 1) { c = 4; } if (c > 20) { c = 4; } if (d < 1) { d = 4; } if (d > 20) { d = 4; } }
+<![CDATA[
+ecmascript:
+
+function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	if (choice == 0) {
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 1) {
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 2) {
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 3) {
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}
 ]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
