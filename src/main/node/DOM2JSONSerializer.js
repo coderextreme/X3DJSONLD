@@ -133,7 +133,7 @@ DOM2JSONSerializer.prototype = {
 							replace(/\\n/g, "\n").
 							replace(/\\\\/g, "\\");
 						if (attrs[a].nodeValue !== attrval) {
-							console.log("Replacing", attrs[a].nodeValue, attrval);
+							// console.log("Replacing", attrs[a].nodeValue, attrval);
 						}
 					} else if (attrType === "SFInt32") {
 						attrval = parseInt(attrs[a].nodeValue);
