@@ -229,7 +229,19 @@
                   },
                   "-children": [
                     {
-                      "#comment": "\r\n                <Sphere>\r\n\t\t"
+                      "#comment": [
+                        ""
+                      ]
+                    },
+                    {
+                      "#comment": [
+                        "                <Sphere>"
+                      ]
+                    },
+                    {
+                      "#comment": [
+                        "\t\t"
+                      ]
                     }
                   ],
                   "-geometry": {

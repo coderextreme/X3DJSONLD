@@ -420,11 +420,15 @@ field78.setValue("false")
 
 Script75.addField(field78)
 
-Script75.addComments(CommentsBlock("""
-            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">
-                <Transform USE=\"HoldsContent\"/>
-            </field>
-	    """))
+Script75.addComments(CommentsBlock(""""""))
+
+Script75.addComments(CommentsBlock("""            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"""))
+
+Script75.addComments(CommentsBlock("""                <Transform USE=\"HoldsContent\"/>"""))
+
+Script75.addComments(CommentsBlock("""            </field>"""))
+
+Script75.addComments(CommentsBlock("""	    """))
 
 Script75.setSourceCode("\n"+
 "ecmascript:\n"+

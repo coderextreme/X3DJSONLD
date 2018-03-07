@@ -62,7 +62,9 @@
                   "Group": {
                     "-children": [
                       {
-                        "#comment": "left"
+                        "#comment": [
+                          "left"
+                        ]
                       },
                       {
                         "Transform": {
@@ -140,13 +142,17 @@
                               }
                             },
                             {
-                              "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                              "#comment": [
+                                "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                              ]
                             }
                           ]
                         }
                       },
                       {
-                        "#comment": "right"
+                        "#comment": [
+                          "right"
+                        ]
                       },
                       {
                         "Transform": {
@@ -277,7 +283,9 @@
                         }
                       },
                       {
-                        "#comment": "up"
+                        "#comment": [
+                          "up"
+                        ]
                       },
                       {
                         "Transform": {
@@ -403,7 +411,9 @@
                         }
                       },
                       {
-                        "#comment": "down"
+                        "#comment": [
+                          "down"
+                        ]
                       },
                       {
                         "Transform": {
@@ -481,13 +491,17 @@
                               }
                             },
                             {
-                              "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                              "#comment": [
+                                "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                              ]
                             }
                           ]
                         }
                       },
                       {
-                        "#comment": "center"
+                        "#comment": [
+                          "center"
+                        ]
                       },
                       {
                         "Transform": {

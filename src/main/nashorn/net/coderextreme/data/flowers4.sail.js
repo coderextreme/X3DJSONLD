@@ -35,9 +35,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]"))))))
-            .addComments(new CommentsBlock('\n'+
-'                <Sphere>\n'+
-'		'))
+            .addComments(new CommentsBlock(''))
+            .addComments(new CommentsBlock('                <Sphere>'))
+            .addComments(new CommentsBlock('		'))
             .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0)
               .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
         .addChild(new ScriptObject().setDEF("OrbitScript")

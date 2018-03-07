@@ -96,14 +96,18 @@
       ],
       "-children": [
         {
-          "#comment": " TODO warn if more than one identifier present "
+          "#comment": [
+            " TODO warn if more than one identifier present "
+          ]
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": " =============== Camera ============== "
+          "#comment": [
+            " =============== Camera ============== "
+          ]
         },
         {
           "ExternProtoDeclare": {
@@ -117,7 +121,9 @@
             ],
             "-children": [
               {
-                "#comment": " Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "
+                "#comment": [
+                  " Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "
+                ]
               }
             ],
             "field": [
@@ -263,7 +269,9 @@
           }
         },
         {
-          "#comment": " =============== CameraShot ============== "
+          "#comment": [
+            " =============== CameraShot ============== "
+          ]
         },
         {
           "ExternProtoDeclare": {
@@ -295,7 +303,9 @@
                 "@type": "MFNode",
                 "-children": [
                   {
-                    "#comment": " initializing CameraMovement nodes are inserted here by scene author using ProtoInstance "
+                    "#comment": [
+                      " initializing CameraMovement nodes are inserted here by scene author using ProtoInstance "
+                    ]
                   }
                 ]
               },
@@ -357,7 +367,9 @@
           }
         },
         {
-          "#comment": " =============== CameraMovement ============== "
+          "#comment": [
+            " =============== CameraMovement ============== "
+          ]
         },
         {
           "ExternProtoDeclare": {
@@ -446,7 +458,9 @@
           }
         },
         {
-          "#comment": " =============== OfflineRender ============== "
+          "#comment": [
+            " =============== OfflineRender ============== "
+          ]
         },
         {
           "ExternProtoDeclare": {
@@ -460,7 +474,9 @@
             ],
             "-children": [
               {
-                "#comment": " TODO non-photorealistic rendering (NPR) parameters "
+                "#comment": [
+                  " TODO non-photorealistic rendering (NPR) parameters "
+                ]
               }
             ],
             "field": [
@@ -534,7 +550,9 @@
           }
         },
         {
-          "#comment": " =============== Lights, camera, action! ============== "
+          "#comment": [
+            " =============== Lights, camera, action! ============== "
+          ]
         },
         {
           "DirectionalLight": {
@@ -583,13 +601,19 @@
           }
         },
         {
-          "#comment": " Keep prototype instances in same file while developing, then move later "
+          "#comment": [
+            " Keep prototype instances in same file while developing, then move later "
+          ]
         },
         {
-          "#comment": " We will create examples matching those in the paper "
+          "#comment": [
+            " We will create examples matching those in the paper "
+          ]
         },
         {
-          "#comment": " =============== Camera.SimpleShotsTest ============== "
+          "#comment": [
+            " =============== Camera.SimpleShotsTest ============== "
+          ]
         },
         {
           "ProtoInstance": {
@@ -1225,7 +1249,9 @@
                 }
               },
               {
-                "#comment": " initialize clock to match totalDuration of combined Shot Moves "
+                "#comment": [
+                  " initialize clock to match totalDuration of combined Shot Moves "
+                ]
               },
               {
                 "ROUTE": {
@@ -1236,7 +1262,9 @@
                 }
               },
               {
-                "#comment": " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
+                "#comment": [
+                  " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
+                ]
               },
               {
                 "ROUTE": {
@@ -1327,7 +1355,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " Universal Media Library: ArtDeco 5 "
+                                    "#comment": [
+                                      " Universal Media Library: ArtDeco 5 "
+                                    ]
                                   }
                                 ]
                               }
@@ -1337,7 +1367,9 @@
                       }
                     },
                     {
-                      "#comment": " Simplify intersection test for user selecting text "
+                      "#comment": [
+                        " Simplify intersection test for user selecting text "
+                      ]
                     },
                     {
                       "Shape": {
@@ -1731,7 +1763,9 @@
           }
         },
         {
-          "#comment": " =============== Camera.AimPointTest ============== "
+          "#comment": [
+            " =============== Camera.AimPointTest ============== "
+          ]
         },
         {
           "ProtoInstance": {
@@ -1793,7 +1827,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " goalAimPoint modified by ROUTE to match moving Box "
+                                    "#comment": [
+                                      " goalAimPoint modified by ROUTE to match moving Box "
+                                    ]
                                   }
                                 ]
                               }
@@ -1822,7 +1858,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " goalAimPoint modified by ROUTE to match moving Box "
+                                    "#comment": [
+                                      " goalAimPoint modified by ROUTE to match moving Box "
+                                    ]
                                   }
                                 ]
                               }
@@ -1851,7 +1889,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " goalAimPoint modified by ROUTE to match moving Box "
+                                    "#comment": [
+                                      " goalAimPoint modified by ROUTE to match moving Box "
+                                    ]
                                   }
                                 ]
                               }
@@ -1888,7 +1928,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " can test tracking or not using following values "
+                                    "#comment": [
+                                      " can test tracking or not using following values "
+                                    ]
                                   }
                                 ]
                               }
@@ -1913,7 +1955,9 @@
                 }
               },
               {
-                "#comment": " initialize clock to match totalDuration of combined Shot Moves "
+                "#comment": [
+                  " initialize clock to match totalDuration of combined Shot Moves "
+                ]
               },
               {
                 "ROUTE": {
@@ -1924,7 +1968,9 @@
                 }
               },
               {
-                "#comment": " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
+                "#comment": [
+                  " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
+                ]
               },
               {
                 "ROUTE": {
@@ -2019,7 +2065,9 @@
           }
         },
         {
-          "#comment": " TODO build a test once implemented "
+          "#comment": [
+            " TODO build a test once implemented "
+          ]
         },
         {
           "ProtoInstance": {
@@ -2027,7 +2075,9 @@
           }
         },
         {
-          "#comment": " =============== animate a camera shape to visualize view changes ============== "
+          "#comment": [
+            " =============== animate a camera shape to visualize view changes ============== "
+          ]
         },
         {
           "Transform": {
@@ -2039,7 +2089,9 @@
             ],
             "-children": [
               {
-                "#comment": " move CameraShape using active Camera "
+                "#comment": [
+                  " move CameraShape using active Camera "
+                ]
               },
               {
                 "ROUTE": {
@@ -2138,7 +2190,9 @@
                 }
               },
               {
-                "#comment": " Display frustum to show camera view within the scene, toggled by user selecting CameraShape "
+                "#comment": [
+                  " Display frustum to show camera view within the scene, toggled by user selecting CameraShape "
+                ]
               },
               {
                 "ExternProtoDeclare": {
@@ -2281,7 +2335,9 @@
           }
         },
         {
-          "#comment": " =============== add checkerboard, axes and other things to look at while animating ============== "
+          "#comment": [
+            " =============== add checkerboard, axes and other things to look at while animating ============== "
+          ]
         },
         {
           "Background": {
@@ -2980,7 +3036,9 @@
           }
         },
         {
-          "#comment": " ================ CrossHair visualization for center of screen ================ "
+          "#comment": [
+            " ================ CrossHair visualization for center of screen ================ "
+          ]
         },
         {
           "ExternProtoDeclare": {
@@ -3051,7 +3109,9 @@
           }
         },
         {
-          "#comment": " turn on CrossHairInstance when animated camera viewpoints are bound "
+          "#comment": [
+            " turn on CrossHairInstance when animated camera viewpoints are bound "
+          ]
         },
         {
           "ROUTE": {
@@ -3070,10 +3130,14 @@
           }
         },
         {
-          "#comment": " turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> "
+          "#comment": [
+            " turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> "
+          ]
         },
         {
-          "#comment": " =============== TODO Launch Prototype Example ============== "
+          "#comment": [
+            " =============== TODO Launch Prototype Example ============== "
+          ]
         },
         {
           "Anchor": {

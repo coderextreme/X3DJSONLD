@@ -181,7 +181,9 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " Universal Media Library: Metals 30 "
+                                    "#comment": [
+                                      " Universal Media Library: Metals 30 "
+                                    ]
                                   }
                                 ]
                               }

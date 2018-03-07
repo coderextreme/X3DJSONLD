@@ -97,21 +97,7 @@ ProtoInstanceObject ProtoInstance0 = null;
         .addMeta(new metaObject().setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit").setName("generator"))
         .addMeta(new metaObject().setContent("../license.html").setName("license")))
       .setScene(new SceneObject()
-        .addComments(new CommentsBlock(" Simple Heads-Up Display (HUD) Prototype\n"+
-" \n"+
-" Manages the display of a HUD and maintains its position on the screen.\n"+
-" Changes to fieldOfView (in Viewpoint node) will change screen position\n"+
-" \n"+
-" Fields:\n"+
-" hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\n"+
-" hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\n"+
-" screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\n"+
-" hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\n"+
-" position_changed Current viewer location (outputOnly - SFVec3f)\n"+
-" orientation_changed Current viewer orientation (outputOnly - SFRotation)\n"+
-" \n"+
-" \n"+
-" "))
+        .addComments(new CommentsBlock(" Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n "))
         .addChild(new ExternProtoDeclareObject().setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setName("HeadsUpDisplay").setUrl(new MFStringObject(new MFString0().getArray()))
           .addField(new fieldObject().setType("SFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("offset position for HUD relative to current view location, default 0 0 -5").setName("screenOffset"))
           .addField(new fieldObject().setType("MFNode").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset").setName("children"))

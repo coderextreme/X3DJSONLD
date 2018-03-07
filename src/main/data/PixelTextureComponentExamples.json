@@ -305,7 +305,9 @@
                     "Appearance": {
                       "-children": [
                         {
-                          "#comment": " note 0x000000 = 0 "
+                          "#comment": [
+                            " note 0x000000 = 0 "
+                          ]
                         }
                       ],
                       "-texture": {
@@ -382,7 +384,9 @@
                     "Appearance": {
                       "-children": [
                         {
-                          "#comment": " Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 "
+                          "#comment": [
+                            " Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 "
+                          ]
                         }
                       ],
                       "-texture": {
@@ -444,7 +448,9 @@
           }
         },
         {
-          "#comment": " Background from PixelTextureBW.x3d "
+          "#comment": [
+            " Background from PixelTextureBW.x3d "
+          ]
         },
         {
           "Transform": {

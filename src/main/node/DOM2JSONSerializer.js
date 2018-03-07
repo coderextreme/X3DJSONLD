@@ -70,21 +70,24 @@ DOM2JSONSerializer.prototype = {
 
 
 	descendComment: function (node) {
-		var st = node.nodeValue.
-			replace(/\\n/g, "\n");
-			/*
-			replace(/\\/g, '\\\\').
-			replace(/"/g, '\\"').
-			replace(/\n/g, '\\n');
-			*/
+		var st =  node.nodeValue.split(/\r?\n/).map(
+			function(x) { return x;
+				/*
+				replace(/\\n/g, "\n");
+				replace(/\\/g, '\\\\').
+				replace(/"/g, '\\"').
+				replace(/\n/g, '\\n');
+				*/
+			});
 		return st;
 	},
 
 	descendSourceText: function (node) {
-		var st =  node.nodeValue.split("\r\n").map(
+		var st =  node.nodeValue.split(/\r?\n/).map(
 			function(x) { return x.
-						replace(/\t/g, '\t').
-						replace(/\\n/g, "\n");
+				replace(/\t/g, '\t').
+				replace(/\\n/g, "\n");
+				replace(/.*/g, '"$1"');
 			});
 		return st;
 	},

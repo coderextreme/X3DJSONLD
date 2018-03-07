@@ -109,40 +109,40 @@ ProtoInstanceObject ProtoInstance2 = null;
                     .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                     .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                     .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-                  .addComments(new CommentsBlock("\n"+
-"					<ComposedShader DEF='gl' language=\"GLSL\">\n"+
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>\n"+
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>\n"+
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>\n"+
-"\n"+
-"					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>\n"+
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>\n"+
-"					</ComposedShader>\n"+
-"					<ComposedShader DEF='freewrl' language=\"GLSL\">\n"+
-"					  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>\n"+
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>\n"+
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>\n"+
-"\n"+
-"					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>\n"+
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>\n"+
-"					</ComposedShader>\n"+
-"					"))
-                  .addComments(new CommentsBlock("\n"+
-"					<ComposedShader DEF='instant' language=\"GLSL\">\n"+
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>\n"+
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>\n"+
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>\n"+
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>\n"+
-"\n"+
-"			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>\n"+
-"			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>\n"+
-"                            </ComposedShader>\n"+
-"                            "))
+                  .addComments(new CommentsBlock(""))
+                  .addComments(new CommentsBlock("					<ComposedShader DEF='gl' language=\"GLSL\">"))
+                  .addComments(new CommentsBlock("					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"))
+                  .addComments(new CommentsBlock("					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"))
+                  .addComments(new CommentsBlock("					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"))
+                  .addComments(new CommentsBlock(""))
+                  .addComments(new CommentsBlock("					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>"))
+                  .addComments(new CommentsBlock("					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"))
+                  .addComments(new CommentsBlock("					</ComposedShader>"))
+                  .addComments(new CommentsBlock("					<ComposedShader DEF='freewrl' language=\"GLSL\">"))
+                  .addComments(new CommentsBlock("					  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>"))
+                  .addComments(new CommentsBlock("					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"))
+                  .addComments(new CommentsBlock("					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"))
+                  .addComments(new CommentsBlock(""))
+                  .addComments(new CommentsBlock("					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>"))
+                  .addComments(new CommentsBlock("					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"))
+                  .addComments(new CommentsBlock("					</ComposedShader>"))
+                  .addComments(new CommentsBlock("					"))
+                  .addComments(new CommentsBlock(""))
+                  .addComments(new CommentsBlock("					<ComposedShader DEF='instant' language=\"GLSL\">"))
+                  .addComments(new CommentsBlock("					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"))
+                  .addComments(new CommentsBlock("					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"))
+                  .addComments(new CommentsBlock("					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"))
+                  .addComments(new CommentsBlock("					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"))
+                  .addComments(new CommentsBlock(""))
+                  .addComments(new CommentsBlock("			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>"))
+                  .addComments(new CommentsBlock("			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"))
+                  .addComments(new CommentsBlock("                            </ComposedShader>"))
+                  .addComments(new CommentsBlock("                            "))
                   .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
                     .addField(new fieldObject().setType("SFInt32").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))

@@ -576,7 +576,29 @@
             ],
             "-children": [
               {
-                "#comment": "\r\n            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">\r\n                <Transform USE=\"HoldsContent\"/>\r\n            </field>\r\n\t    "
+                "#comment": [
+                  ""
+                ]
+              },
+              {
+                "#comment": [
+                  "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+                ]
+              },
+              {
+                "#comment": [
+                  "                <Transform USE=\"HoldsContent\"/>"
+                ]
+              },
+              {
+                "#comment": [
+                  "            </field>"
+                ]
+              },
+              {
+                "#comment": [
+                  "\t    "
+                ]
               }
             ],
             "#sourceText": [

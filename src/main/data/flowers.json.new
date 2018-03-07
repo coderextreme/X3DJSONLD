@@ -398,7 +398,19 @@
                           },
                           "-children": [
                             {
-                              "#comment": "\r\n\t\t\t<Sphere></Sphere>\r\n\t\t\t"
+                              "#comment": [
+                                ""
+                              ]
+                            },
+                            {
+                              "#comment": [
+                                "\t\t\t<Sphere></Sphere>"
+                              ]
+                            },
+                            {
+                              "#comment": [
+                                "\t\t\t"
+                              ]
                             }
                           ],
                           "-geometry": {
@@ -657,7 +669,24 @@
                   }
                 },
                 {
-                  "#comment": "\r\n\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>\r\n\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>\r\n\t\t"
+                  "#comment": [
+                    ""
+                  ]
+                },
+                {
+                  "#comment": [
+                    "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"
+                  ]
+                },
+                {
+                  "#comment": [
+                    "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
+                  ]
+                },
+                {
+                  "#comment": [
+                    "\t\t"
+                  ]
                 }
               ]
             }
@@ -672,7 +701,24 @@
                 }
               },
               {
-                "#comment": "\r\n            <ProtoInstance name=\"flower\"/>\r\n            <ProtoInstance name=\"flower\"/>\r\n\t    "
+                "#comment": [
+                  ""
+                ]
+              },
+              {
+                "#comment": [
+                  "            <ProtoInstance name=\"flower\"/>"
+                ]
+              },
+              {
+                "#comment": [
+                  "            <ProtoInstance name=\"flower\"/>"
+                ]
+              },
+              {
+                "#comment": [
+                  "\t    "
+                ]
               }
             ]
           }

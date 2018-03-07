@@ -111,9 +111,9 @@ public class flowers4 {
                 .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray())))))
-            .addComments(new CommentsBlock("\n"+
-"                <Sphere>\n"+
-"		"))
+            .addComments(new CommentsBlock(""))
+            .addComments(new CommentsBlock("                <Sphere>"))
+            .addComments(new CommentsBlock("		"))
             .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0f)
               .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
         .addChild(new ScriptObject().setDEF("OrbitScript")
