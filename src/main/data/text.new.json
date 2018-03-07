@@ -114,7 +114,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["Node3 \\\\""Node3\"\\"\\""],
+                          "@string":["Node3 \\\\","Node3\"\\"\\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -135,7 +135,7 @@
                       }
                     ],
                     "#sourceText":[
-"ecmascript: var me = '\"1\", \"\", 2\"\"\n3\"';"
+"ecmascript: var me = '\"1\"\"\\"2\"\"\n3\"';"
 ]
                   }
                 }

@@ -60,9 +60,9 @@ var ProtoInstance0 = null;
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], Java.type("java.lang.String[]"))))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]"))))))
-                .addComments(new CommentsBlock('\n'+
-'			<Sphere></Sphere>\n'+
-'			'))
+                .addComments(new CommentsBlock(''))
+                .addComments(new CommentsBlock('			<Sphere></Sphere>'))
+                .addComments(new CommentsBlock('			'))
                 .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0)
                   .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
             .addChild(new ScriptObject().setDEF("Bounce")
@@ -189,14 +189,14 @@ var ProtoInstance0 = null;
             .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
-            .addComments(new CommentsBlock('\n'+
-'		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/>\n'+
-'		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/>\n'+
-'		'))))
+            .addComments(new CommentsBlock(''))
+            .addComments(new CommentsBlock('		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/>'))
+            .addComments(new CommentsBlock('		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/>'))
+            .addComments(new CommentsBlock('		'))))
         .addChild(new TransformObject()
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
-          .addComments(new CommentsBlock('\n'+
-'            <ProtoInstance name="flower"/>\n'+
-'            <ProtoInstance name="flower"/>\n'+
-'	    '))))      ;
+          .addComments(new CommentsBlock(''))
+          .addComments(new CommentsBlock('            <ProtoInstance name="flower"/>'))
+          .addComments(new CommentsBlock('            <ProtoInstance name="flower"/>'))
+          .addComments(new CommentsBlock('	    '))))      ;
     X3D0.toFileX3D("../data/flowers.new.x3d");

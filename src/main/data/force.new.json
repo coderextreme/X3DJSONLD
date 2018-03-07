@@ -435,7 +435,19 @@
               "@DEF":"clickHandler",
               "-children":[
                 {
-                  "#comment":"<field name=\"ModifiableNode\"type=\"SFNode\"accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":""
+                },
+                {
+                  "#comment":"<field name=\"ModifiableNode\"type=\"SFNode\"accessType=\"inputOutput\">"
+                },
+                {
+                  "#comment":"<Transform USE=\"HoldsContent\"/>"
+                },
+                {
+                  "#comment":"</field>"
+                },
+                {
+                  "#comment":""
                 }
               ],
               "field": [

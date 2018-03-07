@@ -117,9 +117,9 @@ public class flowers7 {
                 .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
                 .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addComments(new CommentsBlock("field name='cube' type='SFNode' accessType=\"inputOutput\">\n"+
-"			  <ComposedCubeMapTexture USE=\"texture\"/>\n"+
-"		  </field"))
+                .addComments(new CommentsBlock("field name='cube' type='SFNode' accessType=\"inputOutput\">"))
+                .addComments(new CommentsBlock("			  <ComposedCubeMapTexture USE=\"texture\"/>"))
+                .addComments(new CommentsBlock("		  </field"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray()))))
               .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
@@ -171,22 +171,22 @@ public class flowers7 {
 "            }\n"+
 "        }\n"+
 ""))
-        .addComments(new CommentsBlock("\n"+
-"            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>\n"+
-"            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>\n"+
-"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>\n"+
-"	    "))
+        .addComments(new CommentsBlock(""))
+        .addComments(new CommentsBlock("            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>"))
+        .addComments(new CommentsBlock("            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"))
+        .addComments(new CommentsBlock("	    "))
         .addChild(new ScriptObject().setDEF("Animate").setDirectOutput(true)
           .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("SFFloat").setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))

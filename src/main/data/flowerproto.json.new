@@ -230,7 +230,29 @@
                                     ],
                                     "-children": [
                                       {
-                                        "#comment": "\r\n                                <field name='cube' type='SFNode' accessType=\"inputOutput\">\r\n                                    <ComposedCubeMapTexture USE=\"texture\"/>\r\n                                </field>\r\n\t\t\t\t"
+                                        "#comment": [
+                                          ""
+                                        ]
+                                      },
+                                      {
+                                        "#comment": [
+                                          "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                                        ]
+                                      },
+                                      {
+                                        "#comment": [
+                                          "                                    <ComposedCubeMapTexture USE=\"texture\"/>"
+                                        ]
+                                      },
+                                      {
+                                        "#comment": [
+                                          "                                </field>"
+                                        ]
+                                      },
+                                      {
+                                        "#comment": [
+                                          "\t\t\t\t"
+                                        ]
                                       }
                                     ],
                                     "-parts": [

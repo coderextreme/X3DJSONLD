@@ -49,9 +49,7 @@
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<!--
-			<Sphere></Sphere>
-			--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<!----><!--			<Sphere></Sphere>--><!--			--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -178,15 +176,9 @@
 <ROUTE fromField="cycleTime" fromNode="SongTime" toField="startTime" toNode="AudioClip"></ROUTE>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Bounce" fromField="translation" toNode="transform" toField="set_translation"></ROUTE>
-<!--
-		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE>
-		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>
-		--></ProtoBody>
+<!----><!--		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE>--><!--		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>--><!--		--></ProtoBody>
 </ProtoDeclare>
 <Transform><ProtoInstance name="flower"></ProtoInstance>
-<!--
-            <ProtoInstance name="flower"></ProtoInstance>
-            <ProtoInstance name="flower"></ProtoInstance>
-	    --></Transform>
+<!----><!--            <ProtoInstance name="flower"></ProtoInstance>--><!--            <ProtoInstance name="flower"></ProtoInstance>--><!--	    --></Transform>
 </Scene>
 </X3D>

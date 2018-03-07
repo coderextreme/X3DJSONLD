@@ -149,9 +149,11 @@ ComposedShader23.addParts(ShaderPart30)
 Appearance14.addShaders(ComposedShader23)
 Shape13.setAppearance(Appearance14)
 
-Shape13.addComments(CommentsBlock("""
-                <Sphere>
-		"""))
+Shape13.addComments(CommentsBlock(""""""))
+
+Shape13.addComments(CommentsBlock("""                <Sphere>"""))
+
+Shape13.addComments(CommentsBlock("""		"""))
 IndexedFaceSet31 = IndexedFaceSetObject()
 IndexedFaceSet31.setConvex(False)
 IndexedFaceSet31.setDEF("Orbit")

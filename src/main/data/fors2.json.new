@@ -83,13 +83,19 @@
                         "Shape": {
                           "-children": [
                             {
-                              "#comment": "comment before Sphere"
+                              "#comment": [
+                                "comment before Sphere"
+                              ]
                             },
                             {
-                              "#comment": "comment after Sphere"
+                              "#comment": [
+                                "comment after Sphere"
+                              ]
                             },
                             {
-                              "#comment": "comment after Appearance"
+                              "#comment": [
+                                "comment after Appearance"
+                              ]
                             }
                           ],
                           "-geometry": {
@@ -99,10 +105,14 @@
                             "Appearance": {
                               "-children": [
                                 {
-                                  "#comment": "comment before Material"
+                                  "#comment": [
+                                    "comment before Material"
+                                  ]
                                 },
                                 {
-                                  "#comment": "comment after Material"
+                                  "#comment": [
+                                    "comment after Material"
+                                  ]
                                 }
                               ],
                               "-material": {

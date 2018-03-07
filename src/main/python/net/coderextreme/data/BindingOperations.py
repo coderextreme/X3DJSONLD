@@ -358,14 +358,94 @@ field74.setValue("-1")
 
 Script63.addField(field74)
 
-Script63.setSourceCode("\n"+
-"ecmascript:
-
-function initialize ()
-{
-    bindView5 = true;
-    Browser.print ('Timing script initialized and ready for activation');\\n}\\nfunction set_timeEvent (inputValue)\\n{\\n    if (inputValue == priorInputvalue)\\n    {\\n        return; // ignore repeated inputs\\n    }\\n    // new value provided\\n    priorInputvalue = inputValue;\\n    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\\n        \\n    // mimics user execution of Figure 4.1 steps t_0 through t_8\\n    if (inputValue == 0)\\n    {\\n        Browser.print ('\\n===========\\n time t0');\\n        bindView1 = true;\\n    }\\n    else if (inputValue == 1)\\n    {\\n        Browser.print ('\\n===========\\n time t1');\\n        bindView2 = true;\\n    }\\n    else if (inputValue == 2)\\n    {\\n        Browser.print ('\\n===========\\n time t2');\\n        bindView3 = true;\\n    }\\n    else if (inputValue == 3)\\n    {\\n        Browser.print ('\\n===========\\n time t3');\\n        bindView3 = false;\\n    }\\n    else if (inputValue == 4)\\n    {\\n        Browser.print ('\\n===========\\n time t4');\\n        bindView1 = true;\\n    }\\n    else if (inputValue == 5)\\n    {\\n        Browser.print ('\\n===========\\n time t5');\\n        bindView2 = false;\\n    }\\n    else if (inputValue == 6)\\n    {\\n        Browser.print ('\\n===========\\n time t6');\\n        bindView1 = false;\\n    }\\n    else if (inputValue == 7)\\n    {\\n        Browser.print ('\\n===========\\n time t7');\\n        bindView4 = true;\\n\\n    }\\n    else if (inputValue == 8)\\n    {\\n        Browser.print ('\\n===========\\n time t8');\\n        Browser.print (', no action, all done');\\n        Browser.print ('\\n\\n');\\n    }\\n}\\n\\nfunction view1Bound (inputValue)\\n{\\n    Browser.print (', view1Bound ' + (inputValue));\\n    if (priorInputvalue == -1) Browser.print ('\\n');\\n}\\nfunction view2Bound (inputValue)\\n{\\n    Browser.print (', view2Bound ' + (inputValue));\\n}\\nfunction view3Bound (inputValue)\\n{\\n    Browser.print (', view3Bound ' + (inputValue));\\n}\\nfunction view4Bound (inputValue)\\n{\\n    Browser.print (', view4Bound ' + (inputValue));\\n}\\nfunction view5Bound (inputValue)\\n{\\n    Browser.print (', view5Bound ' + (inputValue));
-}\n"+
+Script63.setSourceCode("ecmascript:\n"+
+"\n"+
+"function initialize ()\n"+
+"{\n"+
+"    bindView5 = true;\n"+
+"    Browser.print ('Timing script initialized and ready for activation');\n"+
+"}\n"+
+"function set_timeEvent (inputValue)\n"+
+"{\n"+
+"    if (inputValue == priorInputvalue)\n"+
+"    {\n"+
+"        return; // ignore repeated inputs\n"+
+"    }\n"+
+"    // new value provided\n"+
+"    priorInputvalue = inputValue;\n"+
+"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
+"        \n"+
+"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
+"    if (inputValue == 0)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t0');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 1)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t1');\n"+
+"        bindView2 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 2)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t2');\n"+
+"        bindView3 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 3)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t3');\n"+
+"        bindView3 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 4)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t4');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 5)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t5');\n"+
+"        bindView2 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 6)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t6');\n"+
+"        bindView1 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 7)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t7');\n"+
+"        bindView4 = true;\n"+
+"\n"+
+"    }\n"+
+"    else if (inputValue == 8)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t8');\n"+
+"        Browser.print (', no action, all done');\n"+
+"        Browser.print ('\\n\\n');\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"function view1Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view1Bound ' + (inputValue));\n"+
+"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
+"}\n"+
+"function view2Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view2Bound ' + (inputValue));\n"+
+"}\n"+
+"function view3Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view3Bound ' + (inputValue));\n"+
+"}\n"+
+"function view4Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view4Bound ' + (inputValue));\n"+
+"}\n"+
+"function view5Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view5Bound ' + (inputValue));\n"+
+"}\n"+
 "")
 Transform47.addChild(Script63)
 

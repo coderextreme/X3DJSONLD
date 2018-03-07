@@ -398,7 +398,11 @@
                           },
                           "-children": [
                             {
-                              "#comment": "\r\n\t\t\t<Sphere></Sphere>\r\n\t\t\t"
+                              "#comment": [
+                                "",
+                                "\t\t\t<Sphere></Sphere>",
+                                "\t\t\t"
+                              ]
                             }
                           ],
                           "-geometry": {
@@ -657,7 +661,12 @@
                   }
                 },
                 {
-                  "#comment": "\r\n\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>\r\n\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>\r\n\t\t"
+                  "#comment": [
+                    "",
+                    "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>",
+                    "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>",
+                    "\t\t"
+                  ]
                 }
               ]
             }
@@ -672,7 +681,12 @@
                 }
               },
               {
-                "#comment": "\r\n            <ProtoInstance name=\"flower\"/>\r\n            <ProtoInstance name=\"flower\"/>\r\n\t    "
+                "#comment": [
+                  "",
+                  "            <ProtoInstance name=\"flower\"/>",
+                  "            <ProtoInstance name=\"flower\"/>",
+                  "\t    "
+                ]
               }
             ]
           }

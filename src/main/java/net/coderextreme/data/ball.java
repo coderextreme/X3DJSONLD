@@ -107,56 +107,56 @@ public class ball {
                 .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                 .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-              .addComments(new CommentsBlock("\n"+
-"                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>\n"+
-"                        <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>\n"+
-"                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>\n"+
-"                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>\n"+
-"                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>\n"+
-"                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>\n"+
-"                        </ShaderProgram>\n"+
-"                        <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>\n"+
-"		    </ProgramShader>\n"+
-"		"))
-              .addComments(new CommentsBlock("\n"+
-"                <ComposedShader language='GLSL'>\n"+
-"		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>\n"+
-"		  <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">\n"+
-"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>\n"+
-"		  </field>\n"+
-"		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>\n"+
-"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>\n"+
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>\n"+
-"                </ComposedShader>\n"+
-"		"))
-              .addComments(new CommentsBlock("\n"+
-"                <ComposedShader language='GLSL'>\n"+
-"		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>\n"+
-"		  <field name='cube' type='SFNode' accessType=\"inputOutput\">\n"+
-"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>\n"+
-"		  </field>\n"+
-"		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>\n"+
-"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>\n"+
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>\n"+
-"                </ComposedShader>\n"+
-"		"))
-              .addComments(new CommentsBlock("\n"+
-"                <ComposedShader language='GLSL'>\n"+
-"		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>\n"+
-"		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>\n"+
-"		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>\n"+
-"		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>\n"+
-"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>\n"+
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>\n"+
-"                </ComposedShader>\n"+
-"		"))
-              .addComments(new CommentsBlock("\n"+
-"		"))
+              .addComments(new CommentsBlock(""))
+              .addComments(new CommentsBlock("                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>"))
+              .addComments(new CommentsBlock("                        <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"))
+              .addComments(new CommentsBlock("                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>"))
+              .addComments(new CommentsBlock("                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>"))
+              .addComments(new CommentsBlock("                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>"))
+              .addComments(new CommentsBlock("                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>"))
+              .addComments(new CommentsBlock("                        </ShaderProgram>"))
+              .addComments(new CommentsBlock("                        <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"))
+              .addComments(new CommentsBlock("		    </ProgramShader>"))
+              .addComments(new CommentsBlock("		"))
+              .addComments(new CommentsBlock(""))
+              .addComments(new CommentsBlock("                <ComposedShader language='GLSL'>"))
+              .addComments(new CommentsBlock("		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>"))
+              .addComments(new CommentsBlock("		  <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">"))
+              .addComments(new CommentsBlock("			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"))
+              .addComments(new CommentsBlock("		  </field>"))
+              .addComments(new CommentsBlock("		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("                </ComposedShader>"))
+              .addComments(new CommentsBlock("		"))
+              .addComments(new CommentsBlock(""))
+              .addComments(new CommentsBlock("                <ComposedShader language='GLSL'>"))
+              .addComments(new CommentsBlock("		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"))
+              .addComments(new CommentsBlock("		  <field name='cube' type='SFNode' accessType=\"inputOutput\">"))
+              .addComments(new CommentsBlock("			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"))
+              .addComments(new CommentsBlock("		  </field>"))
+              .addComments(new CommentsBlock("		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("                </ComposedShader>"))
+              .addComments(new CommentsBlock("		"))
+              .addComments(new CommentsBlock(""))
+              .addComments(new CommentsBlock("                <ComposedShader language='GLSL'>"))
+              .addComments(new CommentsBlock("		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>"))
+              .addComments(new CommentsBlock("		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>"))
+              .addComments(new CommentsBlock("		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
+              .addComments(new CommentsBlock("		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("                </ComposedShader>"))
+              .addComments(new CommentsBlock("		"))
+              .addComments(new CommentsBlock(""))
+              .addComments(new CommentsBlock("		"))
               .addShaders(new ComposedShaderObject().setLanguage("GLSL")
                 .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)

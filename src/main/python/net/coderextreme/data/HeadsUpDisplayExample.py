@@ -76,21 +76,7 @@ X3D0.setHead(head1)
 Scene15 = SceneObject()
 
 
-Scene15.addComments(CommentsBlock(""" Simple Heads-Up Display (HUD) Prototype
- 
- Manages the display of a HUD and maintains its position on the screen.
- Changes to fieldOfView (in Viewpoint node) will change screen position
- 
- Fields:
- hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"
- hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"
- screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"
- hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []
- position_changed Current viewer location (outputOnly - SFVec3f)
- orientation_changed Current viewer orientation (outputOnly - SFRotation)
- 
- 
- """))
+Scene15.addComments(CommentsBlock(""" Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n """))
 ExternProtoDeclare16 = ExternProtoDeclareObject()
 ExternProtoDeclare16.setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location")
 ExternProtoDeclare16.setName("HeadsUpDisplay")

@@ -62,7 +62,9 @@
                   "Group": {
                     "-children": [
                       {
-                        "#comment": " left "
+                        "#comment": [
+                          " left "
+                        ]
                       },
                       {
                         "Transform": {
@@ -143,7 +145,9 @@
                         }
                       },
                       {
-                        "#comment": " right "
+                        "#comment": [
+                          " right "
+                        ]
                       },
                       {
                         "Transform": {
@@ -224,7 +228,9 @@
                         }
                       },
                       {
-                        "#comment": " up "
+                        "#comment": [
+                          " up "
+                        ]
                       },
                       {
                         "Transform": {
@@ -243,7 +249,9 @@
                         }
                       },
                       {
-                        "#comment": " down "
+                        "#comment": [
+                          " down "
+                        ]
                       },
                       {
                         "Transform": {

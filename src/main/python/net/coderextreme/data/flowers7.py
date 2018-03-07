@@ -194,9 +194,11 @@ field35.setValue("0")
 
 ComposedShader24.addField(field35)
 
-ComposedShader24.addComments(CommentsBlock("""field name='cube' type='SFNode' accessType=\"inputOutput\">
-			  <ComposedCubeMapTexture USE=\"texture\"/>
-		  </field"""))
+ComposedShader24.addComments(CommentsBlock("""field name='cube' type='SFNode' accessType=\"inputOutput\">"""))
+
+ComposedShader24.addComments(CommentsBlock("""			  <ComposedCubeMapTexture USE=\"texture\"/>"""))
+
+ComposedShader24.addComments(CommentsBlock("""		  </field"""))
 ShaderPart36 = ShaderPartObject()
 ShaderPart36.setType("VERTEX")
 ShaderPart36.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])
@@ -427,22 +429,37 @@ Script54.setSourceCode("\n"+
 "")
 Scene9.addChild(Script54)
 
-Scene9.addComments(CommentsBlock("""
-            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>
-            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
-            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
-	    """))
+Scene9.addComments(CommentsBlock(""""""))
+
+Scene9.addComments(CommentsBlock("""            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"""))
+
+Scene9.addComments(CommentsBlock("""	    """))
 Script69 = ScriptObject()
 Script69.setDEF("Animate")
 Script69.setDirectOutput(True)

@@ -165,7 +165,9 @@
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": " Override default diffuseColor value 0.8 0.8 0.8 "
+                  "#comment": [
+                    " Override default diffuseColor value 0.8 0.8 0.8 "
+                  ]
                 },
                 {
                   "Material": {
@@ -176,7 +178,9 @@
                     ],
                     "-children": [
                       {
-                        "#comment": " Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. "
+                        "#comment": [
+                          " Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. "
+                        ]
                       }
                     ],
                     "IS": {
@@ -213,7 +217,9 @@
                         ],
                         "-children": [
                           {
-                            "#comment": " Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" "
+                            "#comment": [
+                              " Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" "
+                            ]
                           }
                         ]
                       }
@@ -257,7 +263,9 @@
           }
         },
         {
-          "#comment": " ==================== "
+          "#comment": [
+            " ==================== "
+          ]
         },
         {
           "Viewpoint": {
@@ -321,10 +329,14 @@
               "Shape": {
                 "-children": [
                   {
-                    "#comment": " note that Collision proxy Shape is not rendered "
+                    "#comment": [
+                      " note that Collision proxy Shape is not rendered "
+                    ]
                   },
                   {
-                    "#comment": " alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"' "
+                    "#comment": [
+                      " alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"' "
+                    ]
                   }
                 ],
                 "-geometry": {

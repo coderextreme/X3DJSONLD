@@ -107,10 +107,14 @@
                 ],
                 "-children": [
                   {
-                    "#comment": " alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' "
+                    "#comment": [
+                      " alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' "
+                    ]
                   },
                   {
-                    "#comment": " alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
+                    "#comment": [
+                      " alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
+                    ]
                   }
                 ],
                 "-fontStyle": {

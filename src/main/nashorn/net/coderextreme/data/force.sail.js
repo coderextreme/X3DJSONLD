@@ -112,11 +112,11 @@ var ProtoInstance6 = null;
           .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("counter").setValue("0"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("node_changed"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("add_node").setValue("false"))
-          .addComments(new CommentsBlock('\n'+
-'            <field name="ModifiableNode" type="SFNode" accessType="inputOutput">\n'+
-'                <Transform USE="HoldsContent"/>\n'+
-'            </field>\n'+
-'	    '))
+          .addComments(new CommentsBlock(''))
+          .addComments(new CommentsBlock('            <field name="ModifiableNode" type="SFNode" accessType="inputOutput">'))
+          .addComments(new CommentsBlock('                <Transform USE="HoldsContent"/>'))
+          .addComments(new CommentsBlock('            </field>'))
+          .addComments(new CommentsBlock('	    '))
           .setSourceCode("\n"+
 "ecmascript:\n"+
 "	function add_node(value) {\n"+
