@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -598,7 +598,6 @@
                       "\t\t\t\tresolution = 100;",
                       "\t\t\t\tupdateCoordinates(resolution);",
                       "\t\t\t}",
-                      "",
                       ""
                     ]
                   }

@@ -1,291 +1,486 @@
-{ "X3D": {
-    "encoding":"UTF-8",
-    "@profile":"Immersive",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "3.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
     "head": {
-        "meta": [
-          {
-            "@name":"flowers2.x3d",
-            "@content":"title"
-          },
-          {
-            "@name":"author",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"transcriber",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"created",
-            "@content":"23 January 2005"
-          },
-          {
-            "@name":"modified",
-            "@content":"05 May 2017"
-          },
-          {
-            "@name":"description",
-            "@content":"2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
-          },
-          {
-            "@name":"url",
-            "@content":"https://coderextreme.net/x3d/flowers2.x3d"
-          },
-          {
-            "@name":"generator",
-            "@content":"manually written"
-          },
-          {
-            "@name":"translated",
-            "@content":"11 February 2018"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ]
+      "meta": [
+        {
+          "@content": "title",
+          "@name": "flowers2.x3d"
+        },
+        {
+          "@content": "John Carlson",
+          "@name": "author"
+        },
+        {
+          "@content": "John Carlson",
+          "@name": "transcriber"
+        },
+        {
+          "@content": "23 January 2005",
+          "@name": "created"
+        },
+        {
+          "@content": "05 May 2017",
+          "@name": "modified"
+        },
+        {
+          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)",
+          "@name": "description"
+        },
+        {
+          "@content": "https://coderextreme.net/x3d/flowers2.x3d",
+          "@name": "url"
+        },
+        {
+          "@content": "manually written",
+          "@name": "generator"
+        },
+        {
+          "@name": "translated",
+          "@content": "7 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
     },
     "Scene": {
-        "-children":[
-          { "NavigationInfo":
-            {
-            }
-          },
-          { "Viewpoint":
-            {
-              "@description":"Two mathematical orbitals",
-              "@position":[0,0,50]
-            }
-          },
-          { "Group":
-            {
-              "-children":[
-                { "DirectionalLight":
-                  {
-                    "@direction":[1,1,1]
-                  }
-                },
-                { "Transform":
-                  {
-                    "@DEF":"OrbitTransform",
-                    "@translation":[8,0,0],
-                    "-children":[
-                      { "Shape":
-                        {
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@diffuseColor":[0,0.5,1],
-                                      "@specularColor":[0,0.5,1]
-                                    }
-                                  }
-                              }
-                            },
-                          "-geometry":
-                            { "IndexedFaceSet":
-                              {
-                                "@convex":false,
-                                "@DEF":"Orbit",
-                                "-coord":
-                                  { "Coordinate":
-                                    {
-                                      "@DEF":"OrbitCoordinates"
-                                    }
-                                  }
-                              }
-                            }
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Transform":
-                  {
-                    "@DEF":"OrbitTransform2",
-                    "@translation":[-8,0,0],
-                    "-children":[
-                      { "Shape":
-                        {
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@diffuseColor":[1,0.5,0],
-                                      "@specularColor":[1,0.5,0],
-                                      "@transparency":0.75
-                                    }
-                                  }
-                              }
-                            },
-                          "-geometry":
-                            { "IndexedFaceSet":
-                              {
-                                "@DEF":"Orbit2",
-                                "-coord":
-                                  { "Coordinate":
-                                    {
-                                      "@DEF":"OrbitCoordinates2"
-                                    }
-                                  }
-                              }
-                            }
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "TimeSensor":
-                  {
-                    "@DEF":"Clock",
-                    "@cycleInterval":16,
-                    "@loop":true
-                  }
-                },
-                { "OrientationInterpolator":
-                  {
-                    "@DEF":"OrbitPath",
-                    "@key":[0.0,0.50,1.0],
-                    "@keyValue":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28]
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"OrbitScript",
-                    "field": [
-                      {
-                        "@name":"set_fraction",
-                        "@accessType":"inputOnly",
-                        "@type":"SFFloat"
-                      },
-                      {
-                        "@name":"coordinates",
-                        "@accessType":"outputOnly",
-                        "@type":"MFVec3f"
-                      },
-                      {
-                        "@name":"coordIndexes",
-                        "@accessType":"outputOnly",
-                        "@type":"MFInt32"
-                      }
-                    ],
-                    "#sourceText":[
-"ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }"
-]
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"OrbitScript2",
-                    "field": [
-                      {
-                        "@name":"set_fraction",
-                        "@accessType":"inputOnly",
-                        "@type":"SFFloat"
-                      },
-                      {
-                        "@name":"coordinates",
-                        "@accessType":"outputOnly",
-                        "@type":"MFVec3f"
-                      },
-                      {
-                        "@name":"coordIndexes",
-                        "@accessType":"outputOnly",
-                        "@type":"MFInt32"
-                      }
-                    ],
-                    "#sourceText":[
-"ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }"
-]
-                  }
-                }
-              ]
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordIndexes",
-              "@fromNode":"OrbitScript",
-              "@toField":"coordIndex",
-              "@toNode":"Orbit"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordinates",
-              "@fromNode":"OrbitScript",
-              "@toField":"point",
-              "@toNode":"OrbitCoordinates"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"Clock",
-              "@toField":"set_fraction",
-              "@toNode":"OrbitScript"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordIndexes",
-              "@fromNode":"OrbitScript2",
-              "@toField":"coordIndex",
-              "@toNode":"Orbit2"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordinates",
-              "@fromNode":"OrbitScript2",
-              "@toField":"point",
-              "@toNode":"OrbitCoordinates2"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"Clock",
-              "@toField":"set_fraction",
-              "@toNode":"OrbitScript2"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"Clock",
-              "@toField":"set_fraction",
-              "@toNode":"OrbitPath"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"value_changed",
-              "@fromNode":"OrbitPath",
-              "@toField":"rotation",
-              "@toNode":"OrbitTransform"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"value_changed",
-              "@fromNode":"OrbitPath",
-              "@toField":"rotation",
-              "@toNode":"OrbitTransform2"
-            }
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
           }
-        ]
-    }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Two mathematical orbitals",
+            "@position": [
+              0,
+              0,
+              50
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
+              {
+                "DirectionalLight": {
+                  "@direction": [
+                    1,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@DEF": "OrbitTransform",
+                  "@translation": [
+                    8,
+                    0,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ],
+                                "@specularColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@convex": false,
+                            "@DEF": "Orbit",
+                            "@creaseAngle": 0,
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@DEF": "OrbitTransform2",
+                  "@translation": [
+                    -8,
+                    0,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@specularColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@transparency": 0.75
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@DEF": "Orbit2",
+                            "@creaseAngle": 0,
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates2"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "Clock",
+                  "@cycleInterval": 16,
+                  "@loop": true
+                }
+              },
+              {
+                "OrientationInterpolator": {
+                  "@DEF": "OrbitPath",
+                  "@key": [
+                    0,
+                    0.5,
+                    1
+                  ],
+                  "@keyValue": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    3.14,
+                    1,
+                    0,
+                    0,
+                    6.28
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "OrbitScript",
+                  "field": [
+                    {
+                      "@accessType": "inputOnly",
+                      "@name": "set_fraction",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@name": "coordinates",
+                      "@type": "MFVec3f"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@name": "coordIndexes",
+                      "@type": "MFInt32"
+                    }
+                  ],
+                  "#sourceText": [
+                    "",
+                    "",
+                    "ecmascript:",
+                    "",
+                    "var e = 5;",
+                    "var f = 5;",
+                    "var g = 5;",
+                    "var h = 5;",
+                    "",
+                    "function initialize() {",
+                    "     resolution = 100;",
+                    "     generateCoordinates(resolution);",
+                    "     var localci = [];",
+                    "     for ( i = 0; i < resolution-1; i++) {",
+                    "     \tfor ( j = 0; j < resolution-1; j++) {",
+                    "\t     localci.push(i*resolution+j);",
+                    "\t     localci.push(i*resolution+j+1);",
+                    "\t     localci.push((i+1)*resolution+j+1);",
+                    "\t     localci.push((i+1)*resolution+j);",
+                    "\t     localci.push(-1);",
+                    "\t}",
+                    "    }",
+                    "    coordIndexes = new MFInt32(localci);",
+                    "}",
+                    "",
+                    "function generateCoordinates(resolution) {",
+                    "     theta = 0.0;",
+                    "     phi = 0.0;",
+                    "     delta = (2 * 3.141592653) / (resolution-1);",
+                    "     var localc = [];",
+                    "     for ( i = 0; i < resolution; i++) {",
+                    "     \tfor ( j = 0; j < resolution; j++) {",
+                    "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+                    "\t\tlocalc.push(new SFVec3f(",
+                    "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+                    "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+                    "\t\t\trho * Math.sin(phi)",
+                    "\t\t));",
+                    "\t\ttheta += delta;",
+                    "\t}",
+                    "\tphi += delta;",
+                    "     }",
+                    "     coordinates = new MFVec3f(localc);",
+                    "}",
+                    "",
+                    "function set_fraction(fraction, eventTime) {",
+                    "\tchoice = Math.floor(Math.random() * 4);",
+                    "\tswitch (choice) {",
+                    "\tcase 0:",
+                    "\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 1:",
+                    "\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 2:",
+                    "\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 3:",
+                    "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\t}",
+                    "\tif (f < 1) {",
+                    "\t\tf = 10;",
+                    "\t}",
+                    "\tif (g < 1) {",
+                    "\t\tg = 4;",
+                    "\t}",
+                    "\tif (h < 1) {",
+                    "\t\th = 4;",
+                    "\t}",
+                    "\tresolution = 100;",
+                    "\tgenerateCoordinates(resolution);",
+                    "}",
+                    "      "
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "OrbitScript2",
+                  "field": [
+                    {
+                      "@accessType": "inputOnly",
+                      "@name": "set_fraction",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@name": "coordinates",
+                      "@type": "MFVec3f"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@name": "coordIndexes",
+                      "@type": "MFInt32"
+                    }
+                  ],
+                  "#sourceText": [
+                    "",
+                    "",
+                    "ecmascript:",
+                    "",
+                    "var e = 5;",
+                    "var f = 5;",
+                    "var g = 5;",
+                    "var h = 5;",
+                    "",
+                    "function initialize() {",
+                    "     resolution = 100;",
+                    "     generateCoordinates(resolution);",
+                    "     var localci = [];",
+                    "     for ( i = 0; i < resolution-1; i++) {",
+                    "     \tfor ( j = 0; j < resolution-1; j++) {",
+                    "\t     localci.push(i*resolution+j);",
+                    "\t     localci.push(i*resolution+j+1);",
+                    "\t     localci.push((i+1)*resolution+j+1);",
+                    "\t     localci.push((i+1)*resolution+j);",
+                    "\t     localci.push(-1);",
+                    "\t}",
+                    "    }",
+                    "    coordIndexes = new MFInt32(localci);",
+                    "}",
+                    "",
+                    "function generateCoordinates(resolution) {",
+                    "     theta = 0.0;",
+                    "     phi = 0.0;",
+                    "     delta = (2 * 3.141592653) / (resolution-1);",
+                    "     var localc = [];",
+                    "     for ( i = 0; i < resolution; i++) {",
+                    "     \tfor ( j = 0; j < resolution; j++) {",
+                    "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+                    "\t\tlocalc.push(new SFVec3f(",
+                    "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+                    "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+                    "\t\t\trho * Math.sin(phi)",
+                    "\t\t));",
+                    "\t\ttheta += delta;",
+                    "\t}",
+                    "\tphi += delta;",
+                    "     }",
+                    "     ",
+                    "     coordinates = new MFVec3f(localc);",
+                    "}",
+                    "",
+                    "function set_fraction(fraction, eventTime) {",
+                    "\tchoice = Math.floor(Math.random() * 4);",
+                    "\tswitch (choice) {",
+                    "\tcase 0:",
+                    "\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 1:",
+                    "\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 2:",
+                    "\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\tcase 3:",
+                    "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
+                    "\t\tbreak;",
+                    "\t}",
+                    "\tif (f < 1) {",
+                    "\t\tf = 10;",
+                    "\t}",
+                    "\tif (g < 1) {",
+                    "\t\tg = 4;",
+                    "\t}",
+                    "\tif (h < 1) {",
+                    "\t\th = 4;",
+                    "\t}",
+                    "\tresolution = 100;",
+                    "\tgenerateCoordinates(resolution);",
+                    "}",
+                    "      "
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "coordIndexes",
+            "@fromNode": "OrbitScript",
+            "@toField": "coordIndex",
+            "@toNode": "Orbit"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "coordinates",
+            "@fromNode": "OrbitScript",
+            "@toField": "point",
+            "@toNode": "OrbitCoordinates"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "fraction_changed",
+            "@fromNode": "Clock",
+            "@toField": "set_fraction",
+            "@toNode": "OrbitScript"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "coordIndexes",
+            "@fromNode": "OrbitScript2",
+            "@toField": "coordIndex",
+            "@toNode": "Orbit2"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "coordinates",
+            "@fromNode": "OrbitScript2",
+            "@toField": "point",
+            "@toNode": "OrbitCoordinates2"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "fraction_changed",
+            "@fromNode": "Clock",
+            "@toField": "set_fraction",
+            "@toNode": "OrbitScript2"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "fraction_changed",
+            "@fromNode": "Clock",
+            "@toField": "set_fraction",
+            "@toNode": "OrbitPath"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "value_changed",
+            "@fromNode": "OrbitPath",
+            "@toField": "rotation",
+            "@toNode": "OrbitTransform"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromField": "value_changed",
+            "@fromNode": "OrbitPath",
+            "@toField": "rotation",
+            "@toNode": "OrbitTransform2"
+          }
+        }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

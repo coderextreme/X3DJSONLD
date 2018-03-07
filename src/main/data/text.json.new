@@ -23,7 +23,7 @@
         },
         {
           "@name": "description",
-          "@content": "test \\n text"
+          "@content": "test \n text"
         },
         {
           "@name": "generator",
@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -130,7 +130,7 @@
                   ],
                   "#sourceText": [
                     "ecmascript:",
-                    "\t\t\t    var me = '\\\"1\\\" \\\"\\\\\\\"2\\\" \\\"\\\\n3\\\"';",
+                    "\t\t\t    var me = '\"1\" \"\\\"2\" \"\n3\"';",
                     "\t\t\t    "
                   ]
                 }

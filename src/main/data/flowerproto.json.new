@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -404,7 +404,6 @@
                             "\t\t\t\t\td = 4;",
                             "\t\t\t\t}",
                             "\t\t\t}",
-                            "",
                             ""
                           ]
                         }

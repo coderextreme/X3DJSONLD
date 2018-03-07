@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -187,8 +187,7 @@
                             "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                             "                    keyValue = new MFVec3f([old, translation]);",
                             "\t\t    // Browser.println(keyValue);",
-                            "\t\t}",
-                            ""
+                            "\t\t}"
                           ]
                         }
                       },

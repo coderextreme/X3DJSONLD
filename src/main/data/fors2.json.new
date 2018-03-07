@@ -34,7 +34,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -364,7 +364,7 @@
                       " ecmascript:",
                       "",
                       "                function set_endA(value) {",
-                      "\t\t    if (typeof spine === \\\"undefined\\\") {",
+                      "\t\t    if (typeof spine === \"undefined\") {",
                       "\t\t        spine = new MFVec3f([value, value]);",
                       "\t\t    } else {",
                       "\t\t        spine = new MFVec3f([value, spine[1]]);",
@@ -372,7 +372,7 @@
                       "                }",
                       "                ",
                       "                function set_endB(value) {",
-                      "\t\t    if (typeof spine === \\\"undefined\\\") {",
+                      "\t\t    if (typeof spine === \"undefined\") {",
                       "\t\t        spine = new MFVec3f([value, value]);",
                       "\t\t    } else {",
                       "\t\t        spine = new MFVec3f([spine[0], value]);",
@@ -380,7 +380,7 @@
                       "                }",
                       "                ",
                       "                function set_spine(value) {",
-                      "\t\t    Browser.print('\\\\n'+'\\\"');",
+                      "\t\t    Browser.print('\n'+'\"');",
                       "                    spine = value;",
                       "                }",
                       " "

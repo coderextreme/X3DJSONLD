@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"31 January 2018"
+            "@content":"06 March 2018"
           },
           {
             "@name":"generator",
@@ -91,7 +91,7 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["../shaders/cobweb_flowers_chromatic.vs"]
+                                        "@value":["../shaders/x_ite_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",

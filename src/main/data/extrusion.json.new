@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -153,8 +153,7 @@
                     "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);",
                     "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);",
                     "\t\t        spine = new MFVec3f([endA, endB]);",
-                    "                }",
-                    ""
+                    "                }"
                   ]
                 }
               },
