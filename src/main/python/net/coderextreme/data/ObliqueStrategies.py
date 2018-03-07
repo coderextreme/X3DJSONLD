@@ -211,9 +211,9 @@ Script44.setDEF("TextScript")
 Script44.setUrl(["./ObliqueStrategiesScript.js"])
 
 
-Script44.addComments(CommentsBlock("""initialize() method includes unit test to printAllStrategies() to console"""))
+Script44.addComments(CommentsBlock(""" initialize() method includes unit test to printAllStrategies() to console """))
 
-Script44.addComments(CommentsBlock("""TODO insert field definitions here (index string_changed previous next random) and then animate!"""))
+Script44.addComments(CommentsBlock(""" TODO insert field definitions here (index string_changed previous next random) and then animate! """))
 field45 = fieldObject()
 field45.setType(fieldObject.TYPE_SFINT32)
 field45.setName("index")
@@ -310,13 +310,13 @@ Sound60.setMinBack(20)
 Sound60.setMinFront(20)
 
 
-Sound60.addComments(CommentsBlock("""Make sure the sound source AudioClip is audible at the user location"""))
+Sound60.addComments(CommentsBlock(""" Make sure the sound source AudioClip is audible at the user location """))
 
-Sound60.addComments(CommentsBlock("""Not all X3D players seem to use the .mp3"""))
+Sound60.addComments(CommentsBlock(""" Not all X3D players seem to use the .mp3 """))
 
-Sound60.addComments(CommentsBlock("""&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"""))
+Sound60.addComments(CommentsBlock(""" &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players """))
 
-Sound60.addComments(CommentsBlock("""%20 is space character used in uri/url encoding"""))
+Sound60.addComments(CommentsBlock(""" %20 is space character used in uri/url encoding """))
 AudioClip61 = AudioClipObject()
 AudioClip61.setDEF("TextToSpeechAudioClip")
 AudioClip61.setDescription("sends strategy text google translate")
@@ -381,7 +381,7 @@ Shape73 = ShapeObject()
 Shape73.setDEF("TransparentClickSurface")
 
 
-Shape73.addComments(CommentsBlock("""support Selectable Text with a scalable IFS"""))
+Shape73.addComments(CommentsBlock(""" support Selectable Text with a scalable IFS """))
 IndexedFaceSet74 = IndexedFaceSetObject()
 IndexedFaceSet74.setCoordIndex([0,1,2,3,-1])
 IndexedFaceSet74.setSolid(False)

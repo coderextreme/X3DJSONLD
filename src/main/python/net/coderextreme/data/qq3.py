@@ -58,7 +58,7 @@ ProtoBody12 = ProtoBodyObject()
 Group13 = GroupObject()
 
 
-Group13.addComments(CommentsBlock("""left"""))
+Group13.addComments(CommentsBlock(""" left """))
 Transform14 = TransformObject()
 Transform14.setScale([0.5,0.5,0.5])
 
@@ -81,7 +81,7 @@ Shape15.setGeometry(Extrusion18)
 Transform14.addChild(Shape15)
 Group13.addChild(Transform14)
 
-Group13.addComments(CommentsBlock("""right"""))
+Group13.addComments(CommentsBlock(""" right """))
 Transform19 = TransformObject()
 Transform19.setScale([0.5,0.5,0.5])
 
@@ -104,7 +104,7 @@ Shape20.setGeometry(Extrusion23)
 Transform19.addChild(Shape20)
 Group13.addChild(Transform19)
 
-Group13.addComments(CommentsBlock("""up"""))
+Group13.addComments(CommentsBlock(""" up """))
 Transform24 = TransformObject()
 Transform24.setScale([0.5,0.5,0.5])
 
@@ -114,7 +114,7 @@ Shape25.setUSE("ShapeUpRight")
 Transform24.addChild(Shape25)
 Group13.addChild(Transform24)
 
-Group13.addComments(CommentsBlock("""down"""))
+Group13.addComments(CommentsBlock(""" down """))
 Transform26 = TransformObject()
 Transform26.setScale([0.5,0.5,0.5])
 

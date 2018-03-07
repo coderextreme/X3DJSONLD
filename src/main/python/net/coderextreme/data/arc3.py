@@ -46,6 +46,7 @@ Background9.setSkyColor([0.4,0.4,0.4])
 Scene7.addChild(Background9)
 Transform10 = TransformObject()
 Transform10.setDEF("DECLpoint_G1_node")
+Transform10.setTranslation([0,0,0])
 
 Shape11 = ShapeObject()
 
@@ -144,6 +145,7 @@ Transform10.addChild(ROUTE25)
 Scene7.addChild(Transform10)
 Transform26 = TransformObject()
 Transform26.setDEF("DECLpoint_G2_node")
+Transform26.setTranslation([0,0,0])
 
 Shape27 = ShapeObject()
 

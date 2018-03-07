@@ -157,12 +157,12 @@ ProtoDeclare29.setProtoInterface(ProtoInterface30)
 ProtoBody32 = ProtoBodyObject()
 
 
-ProtoBody32.addComments(CommentsBlock("""Override default diffuseColor value 0.8 0.8 0.8"""))
+ProtoBody32.addComments(CommentsBlock(""" Override default diffuseColor value 0.8 0.8 0.8 """))
 Material33 = MaterialObject()
 Material33.setDiffuseColor([0,0,0])
 
 
-Material33.addComments(CommentsBlock("""Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare."""))
+Material33.addComments(CommentsBlock(""" Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. """))
 IS34 = ISObject()
 
 connect35 = connectObject()
@@ -189,7 +189,7 @@ Group39.setDEF("DefaultNodeValue")
 Group39.setBboxSize([2,2,2])
 
 
-Group39.addComments(CommentsBlock("""Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\""""))
+Group39.addComments(CommentsBlock(""" Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" """))
 field38.addChild(Group39)
 ProtoInterface37.addField(field38)
 ProtoDeclare36.setProtoInterface(ProtoInterface37)
@@ -217,7 +217,7 @@ ProtoInstance45.setName("ShiftGroupUp2m")
 
 Scene17.addChild(ProtoInstance45)
 
-Scene17.addComments(CommentsBlock("""===================="""))
+Scene17.addComments(CommentsBlock(""" ==================== """))
 Viewpoint46 = ViewpointObject()
 Viewpoint46.setDEF("ExampleSingleElement")
 Viewpoint46.setDescription("Hello syntax")
@@ -255,9 +255,9 @@ Collision54 = CollisionObject()
 Shape55 = ShapeObject()
 
 
-Shape55.addComments(CommentsBlock("""note that Collision proxy Shape is not rendered"""))
+Shape55.addComments(CommentsBlock(""" note that Collision proxy Shape is not rendered """))
 
-Shape55.addComments(CommentsBlock("""alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"""))
+Shape55.addComments(CommentsBlock(""" alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"' """))
 Text56 = TextObject()
 Text56.setString(["He said, \"Immel did it!\""])
 

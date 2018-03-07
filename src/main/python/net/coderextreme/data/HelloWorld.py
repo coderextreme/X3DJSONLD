@@ -123,12 +123,12 @@ meta24.setContent("HelloWorld.json")
 
 head1.addMeta(meta24)
 
-head1.addComments(CommentsBlock("""Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"""))
+head1.addComments(CommentsBlock(""" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON """))
 X3D0.setHead(head1)
 Scene25 = SceneObject()
 
 
-Scene25.addComments(CommentsBlock("""Example scene to illustrate X3D nodes and fields (XML elements and attributes)"""))
+Scene25.addComments(CommentsBlock(""" Example scene to illustrate X3D nodes and fields (XML elements and attributes) """))
 WorldInfo26 = WorldInfoObject()
 WorldInfo26.setTitle("Hello world!")
 

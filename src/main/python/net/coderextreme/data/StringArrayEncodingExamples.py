@@ -100,9 +100,9 @@ Text21 = TextObject()
 Text21.setString(["One, Two, Three","","He said, \"Immel did it!\""])
 
 
-Text21.addComments(CommentsBlock("""alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"""))
+Text21.addComments(CommentsBlock(""" alternative XML encoding: Text string='\"One, Two, Three\" , \"\",  \"He said, \\&quot;Immel did it!\\&quot;\"' """))
 
-Text21.addComments(CommentsBlock("""alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"""))
+Text21.addComments(CommentsBlock(""" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) """))
 FontStyle22 = FontStyleObject()
 FontStyle22.setJustify(["MIDDLE","MIDDLE"])
 FontStyle22.setStyle("BOLD")

@@ -141,13 +141,7 @@ field32.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script28.addField(field32)
 
-Script28.setSourceCode("ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}\n"+
+Script28.setSourceCode("ecmascript: function set_cycle(value) { old = translation; translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50); keyValue = new MFVec3f([old, translation]); // Browser.println(translation); }\n"+
 "")
 Group13.addChild(Script28)
 TimeSensor33 = TimeSensorObject()
@@ -262,27 +256,7 @@ connect54.setProtoField("set_positionB")
 IS52.addConnect(connect54)
 Script48.setIS(IS52)
 
-Script48.setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"                \n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"                \n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
-"                }\n"+
+Script48.setSourceCode("ecmascript: function set_endA(value) { if (typeof spine === 'undefined') { spine = new MFVec3f([value, value]); } else { spine = new MFVec3f([value, spine[1]]); } } function set_endB(value) { if (typeof spine === 'undefined') { spine = new MFVec3f([value, value]); } else { spine = new MFVec3f([spine[0], value]); } } function set_spine(value) { spine = value; }\n"+
 "")
 Group43.addChild(Script48)
 ROUTE55 = ROUTEObject()
@@ -416,26 +390,9 @@ field78.setValue("false")
 
 Script75.addField(field78)
 
-Script75.addComments(CommentsBlock("""<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
+Script75.addComments(CommentsBlock("""<field name=\"ModifiableNode\"type=\"SFNode\"accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
 
-Script75.setSourceCode("ecmascript:\n"+
-"	function add_node(value) {\n"+
-"                // Browser.print('hey ', counter);\n"+
-"                counter = counter++;\n"+
-"		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\n"+
-"			{ \"ProtoInstance\":\n"+
-"				{ \"@name\":\"node\",\n"+
-"				  \"@DEF\":\"node'+counter+'\",\n"+
-"				  \"fieldValue\": [\n"+
-"					{\n"+
-"						 \"@name\":\"position\",\n"+
-"						 \"@value\":[0.0,0.0,0.0]\n"+
-"					}\n"+
-"				  ]\n"+
-"				}\n"+
-"			});\n"+
-"                \n"+
-"        }\n"+
+Script75.setSourceCode("ecmascript: function add_node(value) { // Browser.print('hey ', counter); counter = counter++; Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"), { \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0] } ] } }); }\n"+
 "")
 Scene8.addChild(Script75)
 ROUTE79 = ROUTEObject()

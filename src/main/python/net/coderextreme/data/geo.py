@@ -203,7 +203,7 @@ field40.setValue("2")
 ComposedShader34.addField(field40)
 ShaderPart41 = ShaderPartObject()
 ShaderPart41.setType("VERTEX")
-ShaderPart41.setUrl(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"])
+ShaderPart41.setUrl(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])
 
 ComposedShader34.addParts(ShaderPart41)
 ShaderPart42 = ShaderPartObject()
