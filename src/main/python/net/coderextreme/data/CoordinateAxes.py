@@ -37,6 +37,7 @@ Scene7 = SceneObject()
 
 Collision8 = CollisionObject()
 Collision8.setDEF("DoNotCollideWithVisualizationWidget")
+Collision8.setEnabled(True)
 
 
 Collision8.addComments(CommentsBlock(""" Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. """))

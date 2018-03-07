@@ -98,7 +98,8 @@ public class extrusion {
           .addChild(new ScriptObject().setDEF("MoveCylinder")
             .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("MFVec3f").setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
-            .setSourceCode("ecmascript:\n"+
+            .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+

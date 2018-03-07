@@ -81,7 +81,8 @@ field17.setValue("-50 -50 0 50 50 0")
 
 Script15.addField(field17)
 
-Script15.setSourceCode("ecmascript:\n"+
+Script15.setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+

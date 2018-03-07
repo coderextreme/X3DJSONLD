@@ -17,12 +17,12 @@ var ProtoInstance2 = null;
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bub.x3d")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
+        .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setPosition(Java.to([0,0,20], Java.type("float[]"))).setDescription("Look at the bubbles flying"))
         .addChild(new ProtoDeclareObject().setName("Bubble")
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform")
+            .addChild(new TransformObject().setDEF("transform").setTranslation(Java.to([0,0,0], Java.type("float[]")))
               .addChild(new ShapeObject().setDEF("myShape")
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]"))))
@@ -33,8 +33,40 @@ var ProtoInstance2 = null;
                     .setLeft(new ImageTextureObject().setUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))))
                     .setRight(new ImageTextureObject().setUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))))
                     .setTop(new ImageTextureObject().setUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]")))))
-                  .addComments(new CommentsBlock('<ComposedShader DEF=\'gl\' language="GLSL"> <field name=\'cube\' type=\'SFInt32\' accessType="inputOutput"value=\'0\'/> <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput"value=\'0.98 1.0 1.033\'/> <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'power\' type=\'SFFloat\' accessType="inputOutput"value=\'2.0\'/> <ShaderPart url=\'"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"\' type=\'VERTEX\'></ShaderPart> <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart> </ComposedShader> <ComposedShader DEF=\'freewrl\' language="GLSL"> <field name=\'fw_textureCoodGenType\' type=\'SFInt32\' accessType="inputOutput"value=\'0\'/> <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput"value=\'0.98 1.0 1.033\'/> <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'power\' type=\'SFFloat\' accessType="inputOutput"value=\'2.0\'/> <ShaderPart url=\'"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"\' type=\'VERTEX\'></ShaderPart> <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart> </ComposedShader>'))
-                  .addComments(new CommentsBlock('<ComposedShader DEF=\'instant\' language="GLSL"> <field name=\'cube\' type=\'SFInt32\' accessType="inputOutput"value=\'0\'/> <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput"value=\'0.98 1.0 1.033\'/> <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput"value=\'0.5\'/> <field name=\'power\' type=\'SFFloat\' accessType="inputOutput"value=\'2.0\'/> <ShaderPart url=\'"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"\' type=\'VERTEX\'></ShaderPart> <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart> </ComposedShader>'))
+                  .addComments(new CommentsBlock('\n'+
+'					<ComposedShader DEF=\'gl\' language="GLSL">\n'+
+'					  <field name=\'cube\' type=\'SFInt32\' accessType="inputOutput" value=\'0\'/>\n'+
+'					  <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput" value=\'0.98 1.0 1.033\'/>\n'+
+'					  <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'power\' type=\'SFFloat\' accessType="inputOutput" value=\'2.0\'/>\n'+
+'\n'+
+'					  <ShaderPart url=\'"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"\' type=\'VERTEX\'></ShaderPart>\n'+
+'					  <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart>\n'+
+'					</ComposedShader>\n'+
+'					<ComposedShader DEF=\'freewrl\' language="GLSL">\n'+
+'					  <field name=\'fw_textureCoodGenType\' type=\'SFInt32\' accessType="inputOutput" value=\'0\'/>\n'+
+'					  <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput" value=\'0.98 1.0 1.033\'/>\n'+
+'					  <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'power\' type=\'SFFloat\' accessType="inputOutput" value=\'2.0\'/>\n'+
+'\n'+
+'					  <ShaderPart url=\'"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"\' type=\'VERTEX\'></ShaderPart>\n'+
+'					  <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart>\n'+
+'					</ComposedShader>\n'+
+'					'))
+                  .addComments(new CommentsBlock('\n'+
+'					<ComposedShader DEF=\'instant\' language="GLSL">\n'+
+'					  <field name=\'cube\' type=\'SFInt32\' accessType="inputOutput" value=\'0\'/>\n'+
+'					  <field name=\'chromaticDispertion\' type=\'SFVec3f\' accessType="inputOutput" value=\'0.98 1.0 1.033\'/>\n'+
+'					  <field name=\'bias\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'scale\' type=\'SFFloat\' accessType="inputOutput" value=\'0.5\'/>\n'+
+'					  <field name=\'power\' type=\'SFFloat\' accessType="inputOutput" value=\'2.0\'/>\n'+
+'\n'+
+'			      <ShaderPart url=\'"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"\' type=\'VERTEX\'></ShaderPart>\n'+
+'			      <ShaderPart url=\'"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"\' type=\'FRAGMENT\'></ShaderPart>\n'+
+'                            </ComposedShader>\n'+
+'                            '))
                   .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
@@ -57,7 +89,32 @@ var ProtoInstance2 = null;
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .setSourceCode("ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } }\n"+
+              .setSourceCode("ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    if (Math.abs(translation.x) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.y) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.z) > 10) {\n"+
+"				initialize();\n"+
+"			    } else {\n"+
+"				velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"			    }\n"+
+"			}\n"+
+"               \n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))

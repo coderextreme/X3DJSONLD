@@ -25,12 +25,14 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["Node3 \\\\\\","Node3\"\"\""], Java.type("java.lang.String[]")))
+            .setGeometry(new TextObject().setString(Java.to(["Node3 \\\\ \\ ","Node3\"\"\""], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyleObject()))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new ScriptObject()
             .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
-            .setSourceCode("ecmascript: var me = '\"1\"\"\"2\"\"\\n3\"';\n"+
+            .setSourceCode("ecmascript:\n"+
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';\n"+
+"			    \n"+
 ""))))      ;
     X3D0.toFileX3D("../data/text.new.x3d");

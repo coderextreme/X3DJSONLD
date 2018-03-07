@@ -49,7 +49,8 @@ Script9 = ScriptObject()
 Script9.setDEF("Clouds")
 
 
-Script9.setSourceCode("ecmascript:\n"+
+Script9.setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

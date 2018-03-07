@@ -88,7 +88,7 @@ public class CoordinateAxes {
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a box")))
       .setScene(new SceneObject()
-        .addChild(new CollisionObject().setDEF("DoNotCollideWithVisualizationWidget")
+        .addChild(new CollisionObject().setDEF("DoNotCollideWithVisualizationWidget").setEnabled(true)
           .addComments(new CommentsBlock(" Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. "))
           .addComments(new CommentsBlock(" This NavigationInfo allows examine mode and will be overridden by any parent scene. "))
           .addComments(new CommentsBlock(" Each arrow goes from +1m to -1m to allow linear scaling to fit a scene "))

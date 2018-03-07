@@ -6,16 +6,16 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("flowers2.x3d").setContent("title"))
-        .addMeta(new metaObject().setName("author").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
-        .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-        .addMeta(new metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new metaObject().setName("url").setContent("https://coderextreme.net/x3d/flowers2.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("manually written")))
+        .addMeta(new metaObject().setContent("title").setName("flowers2.x3d"))
+        .addMeta(new metaObject().setContent("John Carlson").setName("author"))
+        .addMeta(new metaObject().setContent("John Carlson").setName("transcriber"))
+        .addMeta(new metaObject().setContent("23 January 2005").setName("created"))
+        .addMeta(new metaObject().setContent("05 May 2017").setName("modified"))
+        .addMeta(new metaObject().setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)").setName("description"))
+        .addMeta(new metaObject().setContent("https://coderextreme.net/x3d/flowers2.x3d").setName("url"))
+        .addMeta(new metaObject().setContent("manually written").setName("generator")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
+        .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(Java.to([0,0,50], Java.type("float[]"))))
         .addChild(new GroupObject()
           .addChild(new DirectionalLightObject().setDirection(Java.to([1,1,1], Java.type("float[]"))))
@@ -23,21 +23,23 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0.5,1], Java.type("float[]"))).setSpecularColor(Java.to([0,0.5,1], Java.type("float[]")))))
-              .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
+              .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
           .addChild(new TransformObject().setDEF("OrbitTransform2").setTranslation(Java.to([-8,0,0], Java.type("float[]")))
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,0.5,0], Java.type("float[]"))).setSpecularColor(Java.to([1,0.5,0], Java.type("float[]"))).setTransparency(0.75)))
-              .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2")
+              .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2").setCreaseAngle(0)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates2")))))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(true))
           .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(Java.to([0,0.5,1], Java.type("float[]"))).setKeyValue(Java.to([1,0,0,0,1,0,0,3.14,1,0,0,6.28], Java.type("float[]"))))
           .addChild(new ScriptObject().setDEF("OrbitScript")
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+            .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -108,12 +110,15 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	resolution = 100;\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"      \n"+
 ""))
           .addChild(new ScriptObject().setDEF("OrbitScript2")
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+            .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -185,6 +190,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	resolution = 100;\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"      \n"+
 "")))
         .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit"))
         .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates"))

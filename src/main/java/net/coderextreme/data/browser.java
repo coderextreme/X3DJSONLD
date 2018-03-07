@@ -95,7 +95,8 @@ public class browser {
 "                }\n"+
 ""))
         .addChild(new ScriptObject().setDEF("Clouds")
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

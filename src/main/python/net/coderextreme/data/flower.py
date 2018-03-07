@@ -8,6 +8,7 @@ X3D0.setVersion("3.3")
 Scene1 = SceneObject()
 
 NavigationInfo2 = NavigationInfoObject()
+NavigationInfo2.setType(["EXAMINE","ANY"])
 
 Scene1.addChild(NavigationInfo2)
 DirectionalLight3 = DirectionalLightObject()
@@ -45,7 +46,9 @@ IndexedFaceSet10 = IndexedFaceSetObject()
 IndexedFaceSet10.setCcw(False)
 IndexedFaceSet10.setConvex(False)
 IndexedFaceSet10.setCoordIndex([0,1,2,-1])
+IndexedFaceSet10.setCreaseAngle(0)
 IndexedFaceSet10.setDEF("ifs")
+IndexedFaceSet10.setSolid(True)
 
 Coordinate11 = CoordinateObject()
 Coordinate11.setDEF("crd")
@@ -60,110 +63,111 @@ Script12.setDEF("FlowerScript")
 
 field13 = fieldObject()
 field13.setType(fieldObject.TYPE_SFFLOAT)
-field13.setName("set_fraction")
 field13.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field13.setName("set_fraction")
 
 Script12.addField(field13)
 field14 = fieldObject()
 field14.setType(fieldObject.TYPE_MFVEC3F)
-field14.setName("coordinates")
 field14.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field14.setName("coordinates")
 
 Script12.addField(field14)
 field15 = fieldObject()
 field15.setType(fieldObject.TYPE_MFINT32)
-field15.setName("coordIndexes")
 field15.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field15.setName("coordIndexes")
 
 Script12.addField(field15)
 
-Script12.setSourceCode("ecmascript:\n"+
-"    \n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"var resolution = 150;\n"+
-"var t = 0;\n"+
-"var p = 0;\n"+
-"\n"+
-"function initialize() {\n"+
-"     var localci = new Array();\n"+
-"     var ci = 0;\n"+
-"     var buf = [];\n"+
-"     for (var i = 0; i < resolution-1; i++) {\n"+
-"     	for (var j = 0; j < resolution-1; j++) {\n"+
-"	     localci[ci] = i*resolution+j;\n"+
-"	     localci[ci+1] = i*resolution+j+1;\n"+
-"	     localci[ci+2] = (i+1)*resolution+j+1;\n"+
-"	     localci[ci+3] = (i+1)*resolution+j;\n"+
-"	     localci[ci+4] = -1;\n"+
-"	     buf.push(localci[ci]);\n"+
-"	     buf.push(localci[ci+1]);\n"+
-"	     buf.push(localci[ci+3]);\n"+
-"	     buf.push(localci[ci+4]);\n"+
-"\n"+
-"	     buf.push(localci[ci+1]);\n"+
-"	     buf.push(localci[ci+2]);\n"+
-"	     buf.push(localci[ci+3]);\n"+
-"	     buf.push(localci[ci+4]);\n"+
-"	     ci += 5;\n"+
-"	}\n"+
-"    }\n"+
-"    updateCoordinates(resolution);\n"+
-"    coordIndexes = new x3dom.fields.MFInt32(buf);\n"+
-"}\n"+
-"\n"+
-"function updateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var buf = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta + t) * Math.cos(h * phi + p);\n"+
-"		var coord = new x3dom.fields.SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		);\n"+
-"	     	buf.push(coord);\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new x3dom.fields.MFVec3f(buf);\n"+
-"}\n"+
-"\n"+
-"function set_fraction() {\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	t += 0.5;\n"+
-"	p += 0.5;\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	updateCoordinates(resolution);\n"+
-"}\n"+
+Script12.setSourceCode("ecmascript:
+    
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 150;
+var t = 0;
+var p = 0;
+
+function initialize() {
+     var localci = new Array();
+     var ci = 0;
+     var buf = [];
+     for (var i = 0; i < resolution-1; i++) {
+     	for (var j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     buf.push(localci[ci]);
+	     buf.push(localci[ci+1]);
+	     buf.push(localci[ci+3]);
+	     buf.push(localci[ci+4]);
+
+	     buf.push(localci[ci+1]);
+	     buf.push(localci[ci+2]);
+	     buf.push(localci[ci+3]);
+	     buf.push(localci[ci+4]);
+	     ci += 5;
+	}
+    }
+    updateCoordinates(resolution);
+    coordIndexes = new x3dom.fields.MFInt32(buf);
+}
+
+function updateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var buf = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta + t) * Math.cos(h * phi + p);
+		var coord = new x3dom.fields.SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		);
+	     	buf.push(coord);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new x3dom.fields.MFVec3f(buf);
+}
+
+function set_fraction() {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	t += 0.5;
+	p += 0.5;
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	updateCoordinates(resolution);
+}
+\n"+
 "")
 Scene1.addChild(Script12)
 TimeSensor16 = TimeSensorObject()

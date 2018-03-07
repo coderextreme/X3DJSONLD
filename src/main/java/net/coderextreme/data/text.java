@@ -107,7 +107,9 @@ public class text {
               .setMaterial(new MaterialObject())))
           .addChild(new ScriptObject()
             .addField(new fieldObject().setType("MFString").setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
-            .setSourceCode("ecmascript: var me = '\"1\"\"\"2\"\"\\n3\"';\n"+
+            .setSourceCode("ecmascript:\n"+
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';\n"+
+"			    \n"+
 ""))))      ;
     return X3D0;
     }
@@ -123,7 +125,7 @@ protected class MFString1 {
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node3 \\\\\\".replaceAll("\"", "\\\""),"Node3\"\"\"".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Node3 \\\\ \\ ".replaceAll("\"", "\\\""),"Node3\"\"\"".replaceAll("\"", "\\\"")});
   }
 }
 }
