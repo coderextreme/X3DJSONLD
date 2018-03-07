@@ -31,15 +31,14 @@
                 <Appearance class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                 </Appearance>
-                <Text length='' maxExtent='0.0' solid='false' string='"Node3 \\ \" "Node3\"\"\""' class=''>
+                <Text length='' maxExtent='0.0' solid='false' string='"Node3 \\\" "Node3\"\"\""' class=''>
                     <FontStyle family='"SERIF"' horizontal='true' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
                 </Text>
             </Shape>
             <Script directOutput='false' mustEvaluate='false' url='' class=''>
                 <field name='frontUrls' accessType='initializeOnly' appinfo='' documentation='' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
-ecmascript:
-			    var me = '"1" ""2" "\n3"';
+ecmascript: var me = '"1"""2""\n3"';
 
 ]]>
             </Script>

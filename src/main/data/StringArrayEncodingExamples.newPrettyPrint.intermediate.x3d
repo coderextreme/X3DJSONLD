@@ -26,7 +26,7 @@
                 <Material ambientIntensity='0.2' diffuseColor='0.6 0.4 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
             </Appearance>
             <Text length='' maxExtent='0.0' solid='false' string='"One, Two, Three" "" "He said, \"Immel did it!\""' class=''>
-                <!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' -->
+                <!-- alternative XML encoding: Text string='"One, Two, Three" , "", "He said, \&quot;Immel did it!\&quot;"' -->
                 <!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) -->
                 <FontStyle family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='1.0' spacing='1.0' style='BOLD' topToBottom='true' class=''/>
             </Text>
