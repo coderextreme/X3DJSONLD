@@ -20,8 +20,6 @@ function serializeXML(str, serializer, co, mapToMethod, fieldTypes) {
 		doc = domParser.parseFromString (str, 'application/xml');
 
 	} catch (e) {
-		console.error("================================================================================");
-		console.error("Error:", e);
 		throw e;
 	}
 	var element = doc.documentElement;
@@ -53,7 +51,9 @@ function convertXML(options) {
 			try {
 				str = serializeXML(str, serializer, basefile, mapToMethod, fieldTypes);
 			} catch (e) {
+				console.error("================================================================================");
 				console.error("File:", file);
+				console.error("Error:", e);
 			}
 			if (typeof str !== 'undefined') {
 				var outfile = options[ser].folder+basefile+options[ser].extension
