@@ -159,13 +159,13 @@ public class MFString {
           .addChild(new TransformObject().setDEF("SeatTransform").setRotation(new float[] {-1f,0f,0f,-0.1f}).setScale(new float[] {0.9f,0.9f,0.9f}).setTranslation(new float[] {0f,0f,-8.3f})
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString21().getArray()))))
           .addChild(new TransformObject().setDEF("FrontWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,0f,1.92f}).setTranslation(new float[] {0.7f,-5.2f,-6.5f})
-            .addComments(new CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"))
+            .addComments(new CommentsBlock(" Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) "))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString22().getArray()))))
           .addChild(new TransformObject().setDEF("RearLeftWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {1f,0f,1f,1.92f}).setTranslation(new float[] {-2.95f,-5f,7f})
-            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+            .addComments(new CommentsBlock(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString23().getArray()))))
           .addChild(new TransformObject().setDEF("RearRightWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,-1f,1.92f}).setTranslation(new float[] {2.95f,-5f,7f})
-            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+            .addComments(new CommentsBlock(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString24().getArray()))))
           .addChild(new TransformObject().setDEF("CockpitButtonsTransform")
             .addChild(new TransformObject().setDEF("UpButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {-0.95f,1.05f,-10f})
@@ -222,7 +222,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorDown").setToField("set_startTime").setToNode("WheelDown"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("WheelDown").setToField("set_fraction").setToNode("GearDownInterpolator"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("GearDownInterpolator").setToField("set_rotation").setToNode("FrontWheelTransform"))
-        .addComments(new CommentsBlock("Animation commands for Rear Right Wheel Starts"))
+        .addComments(new CommentsBlock(" Animation commands for Rear Right Wheel Starts "))
         .addChild(new TimeSensorObject().setDEF("RRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("RRearDown1").setCycleInterval(8d))
         .addChild(new OrientationInterpolatorObject().setDEF("RRearInterUp1").setKey(new MFFloatObject(new MFFloat33().getArray())).setKeyValue(new MFRotationObject(new MFRotation34().getArray())))
@@ -233,7 +233,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("RRearUp1").setToField("set_fraction").setToNode("RRearInterUp1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("RRearInterDown1").setToField("set_rotation").setToNode("RearRightWheelTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("RRearInterUp1").setToField("set_rotation").setToNode("RearRightWheelTransform"))
-        .addComments(new CommentsBlock("Animation commands for Rear Left Wheel"))
+        .addComments(new CommentsBlock(" Animation commands for Rear Left Wheel "))
         .addChild(new TimeSensorObject().setDEF("LRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("LRearDown1").setCycleInterval(8d))
         .addChild(new OrientationInterpolatorObject().setDEF("LRearInterUp1").setKey(new MFFloatObject(new MFFloat37().getArray())).setKeyValue(new MFRotationObject(new MFRotation38().getArray())))
@@ -291,7 +291,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("MissilePath").setToField("set_translation").setToNode("LeftmostAmraamTransform"))
         .addChild(new ViewpointObject().setDEF("MissileLaunchView").setDescription("Missile Fire View").setOrientation(new float[] {0.094f,-0.994f,0.057f,1.1716f}).setPosition(new float[] {-344.3f,-142.8f,-27.7f}))
         .addChild(new ROUTEObject().setFromField("isActive").setFromNode("FireSensor").setToField("set_bind").setToNode("MissileLaunchView"))
-        .addComments(new CommentsBlock("TODO fix type, add filter")))      ;
+        .addComments(new CommentsBlock(" TODO fix type, add filter ")))      ;
     return X3D0;
     }
 protected class MFInt320 {

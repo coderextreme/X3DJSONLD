@@ -151,109 +151,7 @@ ProtoInstanceObject ProtoInstance0 = null;
               .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .setSourceCode("ecmascript:\n"+
-"			function newBubble() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    if (Math.abs(translation.x) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.y) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.z) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else {\n"+
-"					velocity = new SFVec3f(\n"+
-"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.z + Math.random() * 0.2 - 0.1\n"+
-"					);\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     var cis = [];\n"+
-"			     newBubble();\n"+
-"			     resolution = 100;\n"+
-"			     updateCoordinates(resolution);\n"+
-"			     for ( i = 0; i < resolution-1; i++) {\n"+
-"				for ( j = 0; j < resolution-1; j++) {\n"+
-"				     cis.push(i*resolution+j);\n"+
-"				     cis.push(i*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j);\n"+
-"				     cis.push(-1);\n"+
-"				}\n"+
-"			    }\n"+
-"			     coordIndexes = new MFInt32(cis);\n"+
-"			}\n"+
-"\n"+
-"			function updateCoordinates(resolution) {\n"+
-"			     theta = 0.0;\n"+
-"			     phi = 0.0;\n"+
-"			     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var crds = [];\n"+
-"			     for ( i = 0; i < resolution; i++) {\n"+
-"				for ( j = 0; j < resolution; j++) {\n"+
-"					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);\n"+
-"					crds.push(new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					));\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"				coordinates = new MFVec3f(crds);\n"+
-"			     }\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"				resolution = 100;\n"+
-"				updateCoordinates(resolution);\n"+
-"			}\n"+
+              .setSourceCode("ecmascript: function newBubble() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { newBubble(); } else if (Math.abs(translation.y) > 10) { newBubble(); } else if (Math.abs(translation.z) > 10) { newBubble(); } else { velocity = new SFVec3f( velocity.x + Math.random() * 0.2 - 0.1, velocity.y + Math.random() * 0.2 - 0.1, velocity.z + Math.random() * 0.2 - 0.1 ); } animate_flowers(); } function initialize() { var cis = []; newBubble(); resolution = 100; updateCoordinates(resolution); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = new MFInt32(cis); } function updateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var crds = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = a + b * Math.cos(c * theta) * Math.cos(d * phi); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; coordinates = new MFVec3f(crds); } } function animate_flowers(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: a += Math.random() * 0.2 - 0.1; break; case 1: b += Math.random() * 0.2 - 0.1; break; case 2: c += Math.random() * 2 - 1; break; case 3: d += Math.random() * 2 - 1; break; } if (a > 1) { a = 0.5; } if (b > 1) { b = 0.5; } if (c < 1) { c = 4; } if (d < 1) { d = 4; } if (c > 10) { c = 4; } if (d > 10) { d = 4; } resolution = 100; updateCoordinates(resolution); }\n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
             .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
@@ -262,7 +160,7 @@ ProtoInstanceObject ProtoInstance0 = null;
             .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
-            .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))))
+            .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\"fromNode=\"Bounce\"toField=\"set_coordIndex\"toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\"fromNode=\"Bounce\"toField=\"set_point\"toNode=\"OrbitCoordinates\"/>"))))
         .addChild(new TransformObject()
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
           .addComments(new CommentsBlock("<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"))))      ;
@@ -330,32 +228,32 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/common.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/common.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/common.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/gl_flowers_chromatic.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/gl_flowers_chromatic.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x_ite.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString18 {

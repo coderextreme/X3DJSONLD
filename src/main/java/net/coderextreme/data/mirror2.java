@@ -87,7 +87,7 @@ public class mirror2 {
         .addMeta(new metaObject().setName("title").setContent("mirro2.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/mirro2.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a mirrored sphere")))
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setPosition(new float[] {0f,5f,100f}).setDescription("Switch background and images texture"))
@@ -103,7 +103,7 @@ public class mirror2 {
                 .setLeft(new ImageTextureObject().setDEF("leftShader").setUrl(new MFStringObject(new MFString9().getArray())))
                 .setRight(new ImageTextureObject().setDEF("rightShader").setUrl(new MFStringObject(new MFString10().getArray())))
                 .setTop(new ImageTextureObject().setDEF("topShader").setUrl(new MFStringObject(new MFString11().getArray()))))
-              .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
+              .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
                 .addComments(new CommentsBlock("http://hypertextbook.com/facts/2005/JustinChe.shtml"))
                 .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType("SFInt32").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
@@ -173,82 +173,82 @@ public class mirror2 {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x_ite.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/mix.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/mix.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/mix.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/mix.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/mix.fs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/mix.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs".replaceAll("\"", "\\\"")});
   }
 }
 }

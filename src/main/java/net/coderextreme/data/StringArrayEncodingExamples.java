@@ -102,8 +102,8 @@ public class StringArrayEncodingExamples {
         .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray()))
-            .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
-            .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"))
+            .addComments(new CommentsBlock(" alternative XML encoding: Text string='\"One, Two, Three\" , \"\",  \"He said, \\&quot;Immel did it!\\&quot;\"' "))
+            .addComments(new CommentsBlock(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "))
             .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString2().getArray())).setStyle("BOLD")))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.6f,0.4f,0.2f})))))      ;
