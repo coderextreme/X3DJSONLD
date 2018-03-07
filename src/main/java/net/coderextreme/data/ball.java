@@ -109,13 +109,13 @@ public class ball {
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
               .addComments(new CommentsBlock(""))
               .addComments(new CommentsBlock("                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>"))
-              .addComments(new CommentsBlock("                        <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"))
+              .addComments(new CommentsBlock("			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"))
               .addComments(new CommentsBlock("                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>"))
               .addComments(new CommentsBlock("                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>"))
               .addComments(new CommentsBlock("                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>"))
               .addComments(new CommentsBlock("                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>"))
               .addComments(new CommentsBlock("                        </ShaderProgram>"))
-              .addComments(new CommentsBlock("                        <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"))
+              .addComments(new CommentsBlock("			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"))
               .addComments(new CommentsBlock("		    </ProgramShader>"))
               .addComments(new CommentsBlock("		"))
               .addComments(new CommentsBlock(""))
@@ -127,8 +127,8 @@ public class ball {
               .addComments(new CommentsBlock("		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
               .addComments(new CommentsBlock("                </ComposedShader>"))
               .addComments(new CommentsBlock("		"))
               .addComments(new CommentsBlock(""))
@@ -140,8 +140,8 @@ public class ball {
               .addComments(new CommentsBlock("		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
               .addComments(new CommentsBlock("                </ComposedShader>"))
               .addComments(new CommentsBlock("		"))
               .addComments(new CommentsBlock(""))
@@ -151,8 +151,8 @@ public class ball {
               .addComments(new CommentsBlock("		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"))
               .addComments(new CommentsBlock("		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
-              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+              .addComments(new CommentsBlock("		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))
               .addComments(new CommentsBlock("                </ComposedShader>"))
               .addComments(new CommentsBlock("		"))
               .addComments(new CommentsBlock(""))
@@ -239,7 +239,7 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString13 {

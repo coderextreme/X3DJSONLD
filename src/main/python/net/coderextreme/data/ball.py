@@ -119,7 +119,7 @@ Appearance18.addComments(CommentsBlock(""""""))
 
 Appearance18.addComments(CommentsBlock("""                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>"""))
 
-Appearance18.addComments(CommentsBlock("""                        <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"""))
+Appearance18.addComments(CommentsBlock("""			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"""))
 
 Appearance18.addComments(CommentsBlock("""                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>"""))
 
@@ -131,7 +131,7 @@ Appearance18.addComments(CommentsBlock("""                        <field name='p
 
 Appearance18.addComments(CommentsBlock("""                        </ShaderProgram>"""))
 
-Appearance18.addComments(CommentsBlock("""                        <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"""))
+Appearance18.addComments(CommentsBlock("""			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"""))
 
 Appearance18.addComments(CommentsBlock("""		    </ProgramShader>"""))
 
@@ -155,9 +155,9 @@ Appearance18.addComments(CommentsBlock("""		  <field name='scale' accessType='in
 
 Appearance18.addComments(CommentsBlock("""		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance18.addComments(CommentsBlock("""                </ComposedShader>"""))
 
@@ -181,9 +181,9 @@ Appearance18.addComments(CommentsBlock("""		  <field name='scale' accessType='in
 
 Appearance18.addComments(CommentsBlock("""		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance18.addComments(CommentsBlock("""                </ComposedShader>"""))
 
@@ -203,9 +203,9 @@ Appearance18.addComments(CommentsBlock("""		  <field name='scale' accessType='in
 
 Appearance18.addComments(CommentsBlock("""		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
 
-Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
+Appearance18.addComments(CommentsBlock("""		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance18.addComments(CommentsBlock("""                </ComposedShader>"""))
 
@@ -257,7 +257,7 @@ field33.setValue("2")
 ComposedShader27.addField(field33)
 ShaderPart34 = ShaderPartObject()
 ShaderPart34.setType("VERTEX")
-ShaderPart34.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])
+ShaderPart34.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"])
 
 ComposedShader27.addParts(ShaderPart34)
 ShaderPart35 = ShaderPartObject()
