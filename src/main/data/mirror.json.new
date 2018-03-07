@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -499,7 +499,7 @@
                     "\t    \tside = 0;",
                     "\t    }",
                     "\t    if (side != old) {",
-                    "\t    \t    Browser.print(f+\\\" \\\"+side);",
+                    "\t    \t    Browser.print(f+\" \"+side);",
                     "\t    \t    old = side;",
                     "\t\t    front_changed[0] = frontUrls[side];",
                     "\t\t    back_changed[0] = backUrls[side];",
@@ -508,8 +508,7 @@
                     "\t\t    top_changed[0] = topUrls[side];",
                     "\t\t    bottom_changed[0] = bottomUrls[side];",
                     "            }",
-                    "        }",
-                    ""
+                    "        }"
                   ]
                 }
               },

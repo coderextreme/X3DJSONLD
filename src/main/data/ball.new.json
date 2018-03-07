@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"31 January 2018"
+            "@content":"06 March 2018"
           },
           {
             "@name":"generator",
@@ -120,14 +120,14 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"]
+                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@DEF":"common",
                                       "@type":"FRAGMENT",
-                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"]
+                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
                                     }
                                   }
                                 ],
@@ -178,7 +178,7 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"]
+                                      "@url":["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
                                     }
                                   },
                                   { "ShaderPart":

@@ -1,159 +1,315 @@
-{ "X3D": {
-    "encoding":"UTF-8",
-    "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"abox.x3d"
-          },
-          {
-            "@name":"creator",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"generator",
-            "@content":"manual"
-          },
-          {
-            "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/abox.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"a box"
-          },
-          {
-            "@name":"translated",
-            "@content":"11 February 2018"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ]
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "abox.x3d",
+          "@dir": "",
+          "@http_equiv": "",
+          "@lang": "",
+          "@scheme": ""
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson",
+          "@dir": "",
+          "@http_equiv": "",
+          "@lang": "",
+          "@scheme": ""
+        },
+        {
+          "@name": "generator",
+          "@content": "manual",
+          "@dir": "",
+          "@http_equiv": "",
+          "@lang": "",
+          "@scheme": ""
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/abox.x3d",
+          "@dir": "",
+          "@http_equiv": "",
+          "@lang": "",
+          "@scheme": ""
+        },
+        {
+          "@name": "description",
+          "@content": "a box",
+          "@dir": "",
+          "@http_equiv": "",
+          "@lang": "",
+          "@scheme": ""
+        },
+        {
+          "@name": "translated",
+          "@content": "7 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
     },
     "Scene": {
-        "-children":[
-          { "ProtoDeclare":
-            {
-              "@name":"anyShape",
-              "ProtoInterface": {
-                  "field": [
-                    {
-                      "@name":"myShape",
-                      "@accessType":"inputOutput",
-                      "@type":"MFNode",
-                      "-children":[
-                        { "Shape":
-                          {
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
-                          }
-                        }
-                      ]
-                    }
-                  ]
-              },
-              "ProtoBody": {
-                  "-children":[
-                    { "Transform":
-                      {
-                        "IS": {
-                            "connect": [
-                              {
-                                "@nodeField":"children",
-                                "@protoField":"myShape"
-                              }
-                            ]
-                        }
-                      }
-                    }
-                  ]
-              }
-            }
-          },
-          { "ProtoDeclare":
-            {
-              "@name":"one",
-              "ProtoInterface": {
-                  "field": [
-                    {
-                      "@name":"myShape",
-                      "@accessType":"inputOutput",
-                      "@type":"MFNode",
-                      "-children":[
-                        { "Shape":
-                          {
-                            "-geometry":
-                              { "Cylinder":
-                                {
-                                }
-                              }
-                          }
-                        }
-                      ]
-                    }
-                  ]
-              },
-              "ProtoBody": {
-                  "-children":[
-                    { "Transform":
-                      {
-                        "-children":[
-                          { "ProtoInstance":
-                            {
-                              "@name":"anyShape",
-                              "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField":"myShape",
-                                      "@protoField":"myShape"
-                                    }
-                                  ]
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-              }
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"one",
-              "fieldValue": [
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "@appinfo": "",
+            "@documentation": "",
+            "ProtoInterface": {
+              "field": [
                 {
-                  "@name":"myShape",
-                  "-children":[
-                    { "Shape":
-                      {
-                        "-geometry":
-                          { "Box":
-                            {
-                              "@size":[0.125,0.125,0.125]
-                            }
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@appinfo": "",
+                  "@documentation": "",
+                  "@type": "MFNode",
+                  "@value": "",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@bboxCenter": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@bboxSize": [
+                          -1,
+                          -1,
+                          -1
+                        ],
+                        "@class": "",
+                        "-geometry": {
+                          "Sphere": {
+                            "@radius": 1,
+                            "@solid": true,
+                            "@class": ""
                           }
+                        }
                       }
                     }
                   ]
                 }
               ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@bboxCenter": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@bboxSize": [
+                      -1,
+                      -1,
+                      -1
+                    ],
+                    "@center": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@rotation": [
+                      0,
+                      0,
+                      1,
+                      0
+                    ],
+                    "@scale": [
+                      1,
+                      1,
+                      1
+                    ],
+                    "@scaleOrientation": [
+                      0,
+                      0,
+                      1,
+                      0
+                    ],
+                    "@translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@class": "",
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           }
-        ]
-    }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "one",
+            "@appinfo": "",
+            "@documentation": "",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@appinfo": "",
+                  "@documentation": "",
+                  "@type": "MFNode",
+                  "@value": "",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@bboxCenter": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@bboxSize": [
+                          -1,
+                          -1,
+                          -1
+                        ],
+                        "@class": "",
+                        "-geometry": {
+                          "Cylinder": {
+                            "@bottom": true,
+                            "@height": 2,
+                            "@radius": 1,
+                            "@side": true,
+                            "@solid": true,
+                            "@top": true,
+                            "@class": ""
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@bboxCenter": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@bboxSize": [
+                      -1,
+                      -1,
+                      -1
+                    ],
+                    "@center": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@rotation": [
+                      0,
+                      0,
+                      1,
+                      0
+                    ],
+                    "@scale": [
+                      1,
+                      1,
+                      1
+                    ],
+                    "@scaleOrientation": [
+                      0,
+                      0,
+                      1,
+                      0
+                    ],
+                    "@translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@class": "",
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "@class": "",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "one",
+            "@class": "",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "@value": "",
+                "-children": [
+                  {
+                    "Shape": {
+                      "@bboxCenter": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "@bboxSize": [
+                        -1,
+                        -1,
+                        -1
+                      ],
+                      "@class": "",
+                      "-geometry": {
+                        "Box": {
+                          "@size": [
+                            0.125,
+                            0.125,
+                            0.125
+                          ],
+                          "@solid": true,
+                          "@class": ""
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

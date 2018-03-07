@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -584,7 +584,7 @@
                       "ecmascript:",
                       "",
                       "function initialize() {",
-                      "\trightlines = new MFString(\\\"\\\");",
+                      "\trightlines = new MFString(\"\");",
                       "}",
                       "",
                       "function set_rightstring(rightstr) {",
@@ -612,7 +612,7 @@
                       "ecmascript:",
                       "",
                       "function initialize() {",
-                      "\tuplines = new MFString(\\\"\\\");",
+                      "\tuplines = new MFString(\"\");",
                       "}",
                       "",
                       "function set_upstring(upstr) {",
@@ -640,7 +640,7 @@
                       "ecmascript:",
                       "",
                       "function initialize() {",
-                      "\tcenterlines = new MFString(\\\"\\\");",
+                      "\tcenterlines = new MFString(\"\");",
                       "}",
                       "",
                       "function set_centerstring(centerstr) {",

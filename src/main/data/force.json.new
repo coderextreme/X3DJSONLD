@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -209,8 +209,7 @@
                             "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                             "                                                keyValue = new MFVec3f([old, translation]);",
                             "\t\t\t\t\t\t// Browser.println(translation);",
-                            "\t\t\t\t\t}",
-                            ""
+                            "\t\t\t\t\t}"
                           ]
                         }
                       },
@@ -411,8 +410,7 @@
                             "                ",
                             "                function set_spine(value) {",
                             "                    spine = value;",
-                            "                }",
-                            ""
+                            "                }"
                           ]
                         }
                       },
@@ -587,14 +585,14 @@
               "\tfunction add_node(value) {",
               "                // Browser.print('hey ', counter);",
               "                counter = counter++;",
-              "\t\tBrowser.appendTo(Browser.getDocument().querySelector(\\\"field [name=ModifiableNode]\\\"),",
-              "\t\t\t{ \\\"ProtoInstance\\\":",
-              "\t\t\t\t{ \\\"@name\\\":\\\"node\\\",",
-              "\t\t\t\t  \\\"@DEF\\\":\\\"node'+counter+'\\\",",
-              "\t\t\t\t  \\\"fieldValue\\\": [",
+              "\t\tBrowser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),",
+              "\t\t\t{ \"ProtoInstance\":",
+              "\t\t\t\t{ \"@name\":\"node\",",
+              "\t\t\t\t  \"@DEF\":\"node'+counter+'\",",
+              "\t\t\t\t  \"fieldValue\": [",
               "\t\t\t\t\t{",
-              "\t\t\t\t\t\t \\\"@name\\\":\\\"position\\\",",
-              "\t\t\t\t\t\t \\\"@value\\\":[0.0,0.0,0.0]",
+              "\t\t\t\t\t\t \"@name\":\"position\",",
+              "\t\t\t\t\t\t \"@value\":[0.0,0.0,0.0]",
               "\t\t\t\t\t}",
               "\t\t\t\t  ]",
               "\t\t\t\t}",

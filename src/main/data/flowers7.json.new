@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -564,8 +564,7 @@
               "                    top[0] = topUrls[side];",
               "                    bottom[0] = bottomUrls[side];",
               "            }",
-              "        }",
-              ""
+              "        }"
             ]
           }
         },
@@ -654,8 +653,7 @@
               "\tif (d > 20) {",
               "\t\td = 4;",
               "\t}",
-              "}",
-              ""
+              "}"
             ]
           }
         },

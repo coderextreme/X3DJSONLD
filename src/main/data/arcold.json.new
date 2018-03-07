@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 March 2018"
+          "@content": "7 March 2018"
         },
         {
           "@name": "generator",
@@ -287,8 +287,7 @@
                             "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                             "                    keyValue = new MFVec3f([old, translation]);",
                             "\t\t    // Browser.println(translation);",
-                            "\t\t}",
-                            ""
+                            "\t\t}"
                           ]
                         }
                       },
@@ -475,7 +474,7 @@
                       "\t\t\trotscalenode.rotation = trafo.rotation;",
                       "\t\t\trotscalenode.scale = trafo.scale;",
                       "\t\t} else {",
-                      "\t\t\tBrowser.print(\\\"recompute returned undefined\\\");",
+                      "\t\t\tBrowser.print(\"recompute returned undefined\");",
                       "\t\t}",
                       "\t}",
                       "        function initialize(){",
@@ -486,8 +485,7 @@
                       "        }",
                       "        function set_endpoint(val,t){",
                       "            recompute_and_route(startnode.translation,val || endnode.translation);",
-                      "        }",
-                      ""
+                      "        }"
                     ]
                   }
                 }
