@@ -8,58 +8,58 @@ X3D0.setVersion("3.3")
 head1 = headObject()
 
 meta2 = metaObject()
-meta2.setName("title")
 meta2.setContent("TextSpecialCharacters.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
-meta3.setName("description")
 meta3.setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities")
+meta3.setName("description")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
-meta4.setName("creator")
 meta4.setContent("Don Brutzman")
+meta4.setName("creator")
 
 head1.addMeta(meta4)
 meta5 = metaObject()
-meta5.setName("created")
 meta5.setContent("12 July 2008")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setName("modified")
 meta6.setContent("2 April 2017")
+meta6.setName("modified")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
-meta7.setName("reference")
 meta7.setContent("Character entity references in HTML 4")
+meta7.setName("reference")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setName("reference")
 meta8.setContent("http://www.w3.org/TR/REC-html40/sgml/entities.html")
+meta8.setName("reference")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
-meta9.setName("rights")
 meta9.setContent("Copyright (c) Don Brutzman and Leonard Daly, 2008")
+meta9.setName("rights")
 
 head1.addMeta(meta9)
 meta10 = metaObject()
-meta10.setName("identifier")
 meta10.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d")
+meta10.setName("identifier")
 
 head1.addMeta(meta10)
 meta11 = metaObject()
-meta11.setName("generator")
 meta11.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta11.setName("generator")
 
 head1.addMeta(meta11)
 meta12 = metaObject()
-meta12.setName("license")
 meta12.setContent("../license.html")
+meta12.setName("license")
 
 head1.addMeta(meta12)
 X3D0.setHead(head1)
@@ -77,24 +77,24 @@ Scene13.addChild(Viewpoint15)
 Shape16 = ShapeObject()
 
 
-Shape16.addComments(CommentsBlock("""Empty string \"\"means to skip a line"""))
+Shape16.addComments(CommentsBlock(""" Empty string \"\" means to skip a line """))
 
-Shape16.addComments(CommentsBlock("""The ampersand escape characters are based on XML rules"""))
+Shape16.addComments(CommentsBlock(""" The ampersand escape characters are based on XML rules """))
 
-Shape16.addComments(CommentsBlock("""apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"""))
+Shape16.addComments(CommentsBlock(""" apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute """))
 
-Shape16.addComments(CommentsBlock("""ampersand & is &amp; and needs to be escaped"""))
+Shape16.addComments(CommentsBlock(""" ampersand & is &amp; and needs to be escaped """))
 
-Shape16.addComments(CommentsBlock("""quotation \"is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"""))
+Shape16.addComments(CommentsBlock(""" quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute """))
 
-Shape16.addComments(CommentsBlock("""quotation \"can be used within an X3D string if escaped with backslash \\as \\\""""))
+Shape16.addComments(CommentsBlock(""" quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" """))
 
-Shape16.addComments(CommentsBlock("""backslash \\is used as escape character for \"(and itself) in X3D"""))
+Shape16.addComments(CommentsBlock(""" backslash \\ is used as escape character for \" (and itself) in X3D """))
 
-Shape16.addComments(CommentsBlock("""character entities are listed in HTML specification and are good for any XML"""))
+Shape16.addComments(CommentsBlock(""" character entities are listed in HTML specification and are good for any XML """))
 Text17 = TextObject()
 Text17.setDEF("DefaultText")
-Text17.setString(["Character entity substitutions:","empty string \"\"skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \"is &quot;","backslash \\is X3D escape character","double backslash \\\\is X3D backslash \\character","Pi Π is &#928; XML character entity"])
+Text17.setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe  '  is &apos;","ampersand & is &amp;","quote mark  \"  is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"])
 
 FontStyle18 = FontStyleObject()
 FontStyle18.setDEF("CenteredFontStyle")

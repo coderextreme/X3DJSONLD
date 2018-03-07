@@ -36,6 +36,7 @@ X3D0.setHead(head1)
 Scene7 = SceneObject()
 
 NavigationInfo8 = NavigationInfoObject()
+NavigationInfo8.setType(["EXAMINE","ANY"])
 
 Scene7.addChild(NavigationInfo8)
 Background9 = BackgroundObject()
@@ -55,14 +56,14 @@ ExternProtoDeclare11.setUrl(["../data/flowerproto.x3d#FlowerProto"])
 
 field12 = fieldObject()
 field12.setType(fieldObject.TYPE_MFSTRING)
-field12.setName("vertex")
 field12.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field12.setName("vertex")
 
 ExternProtoDeclare11.addField(field12)
 field13 = fieldObject()
 field13.setType(fieldObject.TYPE_MFSTRING)
-field13.setName("fragment")
 field13.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field13.setName("fragment")
 
 ExternProtoDeclare11.addField(field13)
 Group10.addChild(ExternProtoDeclare11)

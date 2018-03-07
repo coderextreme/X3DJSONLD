@@ -131,13 +131,14 @@ field26.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script22.addField(field26)
 
-Script22.setSourceCode("ecmascript:\n"+
+Script22.setSourceCode(" ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}\n"+
+" \n"+
 "")
 ProtoBody13.addChild(Script22)
 TimeSensor27 = TimeSensorObject()
@@ -249,7 +250,7 @@ connect47.setProtoField("positionB")
 IS45.addConnect(connect47)
 Script41.setIS(IS45)
 
-Script41.setSourceCode("ecmascript:\n"+
+Script41.setSourceCode(" ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
@@ -271,6 +272,7 @@ Script41.setSourceCode("ecmascript:\n"+
 "		    Browser.print('\\n'+'\"');\n"+
 "                    spine = value;\n"+
 "                }\n"+
+" \n"+
 "")
 ProtoBody36.addChild(Script41)
 ROUTE48 = ROUTEObject()

@@ -310,7 +310,8 @@ field54.setValue("-1")
 
 Script40.addField(field54)
 
-Script40.setSourceCode("ecmascript:\n"+
+Script40.setSourceCode("\n"+
+"ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+

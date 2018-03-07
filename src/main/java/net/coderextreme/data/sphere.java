@@ -92,7 +92,7 @@ public class sphere {
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f})))
-            .setGeometry(new SphereObject()))))      ;
+            .setGeometry(new SphereObject().setRadius(1f)))))      ;
     return X3D0;
     }
 }

@@ -338,7 +338,8 @@ field61.setValue("-1")
 
 Script47.addField(field61)
 
-Script47.setSourceCode("ecmascript:\n"+
+Script47.setSourceCode("\n"+
+"ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+

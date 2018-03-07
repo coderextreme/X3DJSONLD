@@ -82,16 +82,16 @@ public class flowers2 {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("flowers2.x3d").setContent("title"))
-        .addMeta(new metaObject().setName("author").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
-        .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-        .addMeta(new metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new metaObject().setName("url").setContent("https://coderextreme.net/x3d/flowers2.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("manually written")))
+        .addMeta(new metaObject().setContent("title").setName("flowers2.x3d"))
+        .addMeta(new metaObject().setContent("John Carlson").setName("author"))
+        .addMeta(new metaObject().setContent("John Carlson").setName("transcriber"))
+        .addMeta(new metaObject().setContent("23 January 2005").setName("created"))
+        .addMeta(new metaObject().setContent("05 May 2017").setName("modified"))
+        .addMeta(new metaObject().setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)").setName("description"))
+        .addMeta(new metaObject().setContent("https://coderextreme.net/x3d/flowers2.x3d").setName("url"))
+        .addMeta(new metaObject().setContent("manually written").setName("generator")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","ANY"}))
         .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))
         .addChild(new GroupObject()
           .addChild(new DirectionalLightObject().setDirection(new float[] {1f,1f,1f}))
@@ -99,21 +99,23 @@ public class flowers2 {
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.5f,1f}).setSpecularColor(new float[] {0f,0.5f,1f})))
-              .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
+              .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0f)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
           .addChild(new TransformObject().setDEF("OrbitTransform2").setTranslation(new float[] {-8f,0f,0f})
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0.5f,0f}).setSpecularColor(new float[] {1f,0.5f,0f}).setTransparency(0.75f)))
-              .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2")
+              .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2").setCreaseAngle(0f)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates2")))))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
           .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
           .addChild(new ScriptObject().setDEF("OrbitScript")
-            .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+            .addField(new fieldObject().setType("SFFloat").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+            .addField(new fieldObject().setType("MFVec3f").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
+            .addField(new fieldObject().setType("MFInt32").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+            .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -184,12 +186,15 @@ public class flowers2 {
 "	resolution = 100;\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"      \n"+
 ""))
           .addChild(new ScriptObject().setDEF("OrbitScript2")
-            .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+            .addField(new fieldObject().setType("SFFloat").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+            .addField(new fieldObject().setType("MFVec3f").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
+            .addField(new fieldObject().setType("MFInt32").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+            .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -261,6 +266,7 @@ public class flowers2 {
 "	resolution = 100;\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"      \n"+
 "")))
         .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit"))
         .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates"))

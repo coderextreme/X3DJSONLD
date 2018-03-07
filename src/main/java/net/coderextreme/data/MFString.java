@@ -82,21 +82,21 @@ public class MFString {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("F16.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
-        .addMeta(new metaObject().setName("creator").setContent("Murat ONDER, LTJG, Turkish Navy"))
-        .addMeta(new metaObject().setName("creator").setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))
-        .addMeta(new metaObject().setName("created").setContent("13 July 2003"))
-        .addMeta(new metaObject().setName("modified").setContent("27 November 2015"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.fas.org/man/dod-101/sys/ac/f-16.htm"))
-        .addMeta(new metaObject().setName("permission").setContent("Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY"))
-        .addMeta(new metaObject().setName("reference").setContent("The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated."))
-        .addMeta(new metaObject().setName("drawing").setContent("\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\""))
-        .addMeta(new metaObject().setName("Image").setContent("\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\""))
-        .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d"))
-        .addMeta(new metaObject().setName("subject").setContent("F16, F-16, Fighting Falcon"))
-        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("license").setContent("../../license.html")))
+        .addMeta(new metaObject().setContent("F16.x3d").setName("title"))
+        .addMeta(new metaObject().setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey").setName("description"))
+        .addMeta(new metaObject().setContent("Murat ONDER, LTJG, Turkish Navy").setName("creator"))
+        .addMeta(new metaObject().setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission.").setName("creator"))
+        .addMeta(new metaObject().setContent("13 July 2003").setName("created"))
+        .addMeta(new metaObject().setContent("27 November 2015").setName("modified"))
+        .addMeta(new metaObject().setContent("http://www.fas.org/man/dod-101/sys/ac/f-16.htm").setName("reference"))
+        .addMeta(new metaObject().setContent("Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY").setName("permission"))
+        .addMeta(new metaObject().setContent("The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated.").setName("reference"))
+        .addMeta(new metaObject().setContent("\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\"").setName("drawing"))
+        .addMeta(new metaObject().setContent("\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\"").setName("Image"))
+        .addMeta(new metaObject().setContent("https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d").setName("identifier"))
+        .addMeta(new metaObject().setContent("F16, F-16, Fighting Falcon").setName("subject"))
+        .addMeta(new metaObject().setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit").setName("generator"))
+        .addMeta(new metaObject().setContent("../../license.html").setName("license")))
       .setScene(new SceneObject()
         .addChild(new TransformObject().setDEF("F16Transform")
           .addChild(new TransformObject().setDEF("MainFrameTransform").setScale(new float[] {3f,3f,3f})
@@ -436,7 +436,7 @@ protected class MFString27 {
 }
 protected class MFString28 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target Locked".replaceAll("\"", "\\\"")," FIRE!..".replaceAll("\"", "\\\""),"(Green Button)".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Target Locked".replaceAll("\"", "\\\""),"      FIRE!..".replaceAll("\"", "\\\""),"(Green Button)".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat29 {

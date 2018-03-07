@@ -31,10 +31,12 @@ X3D0.setHead(head1)
 Scene6 = SceneObject()
 
 NavigationInfo7 = NavigationInfoObject()
+NavigationInfo7.setType(["EXAMINE","ANY"])
 
 Scene6.addChild(NavigationInfo7)
 Transform8 = TransformObject()
 Transform8.setDEF("transform")
+Transform8.setTranslation([0,0,0])
 
 Shape9 = ShapeObject()
 
@@ -120,6 +122,7 @@ Script13.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}\n"+
+"\n"+
 "")
 Scene6.addChild(Script13)
 TimeSensor19 = TimeSensorObject()
