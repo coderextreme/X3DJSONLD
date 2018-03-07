@@ -103,19 +103,19 @@ meta20.setContent("../license.html")
 
 head1.addMeta(meta20)
 
-head1.addComments(CommentsBlock("""TODO warn if more than one identifier present"""))
+head1.addComments(CommentsBlock(""" TODO warn if more than one identifier present """))
 X3D0.setHead(head1)
 Scene21 = SceneObject()
 
 
-Scene21.addComments(CommentsBlock("""=============== Camera =============="""))
+Scene21.addComments(CommentsBlock(""" =============== Camera ============== """))
 ExternProtoDeclare22 = ExternProtoDeclareObject()
 ExternProtoDeclare22.setName("Camera")
 ExternProtoDeclare22.setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images")
 ExternProtoDeclare22.setUrl(["CameraPrototypes.x3d#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"])
 
 
-ExternProtoDeclare22.addComments(CommentsBlock("""Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"""))
+ExternProtoDeclare22.addComments(CommentsBlock(""" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields """))
 field23 = fieldObject()
 field23.setType(fieldObject.TYPE_SFSTRING)
 field23.setName("description")
@@ -279,7 +279,7 @@ field45.setAppinfo("enable console output to trace script computations and proto
 ExternProtoDeclare22.addField(field45)
 Scene21.addChild(ExternProtoDeclare22)
 
-Scene21.addComments(CommentsBlock("""=============== CameraShot =============="""))
+Scene21.addComments(CommentsBlock(""" =============== CameraShot ============== """))
 ExternProtoDeclare46 = ExternProtoDeclareObject()
 ExternProtoDeclare46.setName("CameraShot")
 ExternProtoDeclare46.setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot")
@@ -306,7 +306,7 @@ field49.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field49.setAppinfo("Set of CameraMovement nodes")
 
 
-field49.addComments(CommentsBlock("""initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"""))
+field49.addComments(CommentsBlock(""" initializing CameraMovement nodes are inserted here by scene author using ProtoInstance """))
 ExternProtoDeclare46.addField(field49)
 field50 = fieldObject()
 field50.setType(fieldObject.TYPE_SFVEC3F)
@@ -373,7 +373,7 @@ field58.setAppinfo("enable console output to trace script computations and proto
 ExternProtoDeclare46.addField(field58)
 Scene21.addChild(ExternProtoDeclare46)
 
-Scene21.addComments(CommentsBlock("""=============== CameraMovement =============="""))
+Scene21.addComments(CommentsBlock(""" =============== CameraMovement ============== """))
 ExternProtoDeclare59 = ExternProtoDeclareObject()
 ExternProtoDeclare59.setName("CameraMovement")
 ExternProtoDeclare59.setAppinfo("CameraMovement defines a single camera movement animation")
@@ -465,14 +465,14 @@ field71.setAppinfo("enable console output to trace script computations and proto
 ExternProtoDeclare59.addField(field71)
 Scene21.addChild(ExternProtoDeclare59)
 
-Scene21.addComments(CommentsBlock("""=============== OfflineRender =============="""))
+Scene21.addComments(CommentsBlock(""" =============== OfflineRender ============== """))
 ExternProtoDeclare72 = ExternProtoDeclareObject()
 ExternProtoDeclare72.setName("OfflineRender")
 ExternProtoDeclare72.setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)")
 ExternProtoDeclare72.setUrl(["CameraPrototypes.x3d#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"])
 
 
-ExternProtoDeclare72.addComments(CommentsBlock("""TODO non-photorealistic rendering (NPR) parameters"""))
+ExternProtoDeclare72.addComments(CommentsBlock(""" TODO non-photorealistic rendering (NPR) parameters """))
 field73 = fieldObject()
 field73.setType(fieldObject.TYPE_SFSTRING)
 field73.setName("description")
@@ -552,7 +552,7 @@ field83.setAppinfo("enable console output to trace script computations and proto
 ExternProtoDeclare72.addField(field83)
 Scene21.addChild(ExternProtoDeclare72)
 
-Scene21.addComments(CommentsBlock("""=============== Lights, camera, action! =============="""))
+Scene21.addComments(CommentsBlock(""" =============== Lights, camera, action! ============== """))
 DirectionalLight84 = DirectionalLightObject()
 DirectionalLight84.setDirection([0,-1,0])
 DirectionalLight84.setGlobal(True)
@@ -575,11 +575,11 @@ Viewpoint87.setPosition([0,150,0])
 
 Scene21.addChild(Viewpoint87)
 
-Scene21.addComments(CommentsBlock("""Keep prototype instances in same file while developing, then move later"""))
+Scene21.addComments(CommentsBlock(""" Keep prototype instances in same file while developing, then move later """))
 
-Scene21.addComments(CommentsBlock("""We will create examples matching those in the paper"""))
+Scene21.addComments(CommentsBlock(""" We will create examples matching those in the paper """))
 
-Scene21.addComments(CommentsBlock("""=============== Camera.SimpleShotsTest =============="""))
+Scene21.addComments(CommentsBlock(""" =============== Camera.SimpleShotsTest ============== """))
 ProtoInstance88 = ProtoInstanceObject()
 ProtoInstance88.setName("Camera")
 ProtoInstance88.setDEF("Camera.SimpleShotsTest")
@@ -1227,7 +1227,7 @@ TimeSensor220.setDEF("CameraTimer.SimpleShots")
 
 Group219.addChild(TimeSensor220)
 
-Group219.addComments(CommentsBlock("""initialize clock to match totalDuration of combined Shot Moves"""))
+Group219.addComments(CommentsBlock(""" initialize clock to match totalDuration of combined Shot Moves """))
 ROUTE221 = ROUTEObject()
 ROUTE221.setFromField("totalDuration")
 ROUTE221.setFromNode("Camera.SimpleShotsTest")
@@ -1236,7 +1236,7 @@ ROUTE221.setToNode("CameraTimer.SimpleShots")
 
 Group219.addChild(ROUTE221)
 
-Group219.addComments(CommentsBlock("""TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator"""))
+Group219.addComments(CommentsBlock(""" TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator """))
 ROUTE222 = ROUTEObject()
 ROUTE222.setFromField("fraction_changed")
 ROUTE222.setFromNode("CameraTimer.SimpleShots")
@@ -1298,12 +1298,12 @@ Material233.setShininess(0.01)
 Material233.setSpecularColor([0.072727,0.021705,0.010732])
 
 
-Material233.addComments(CommentsBlock("""Universal Media Library: ArtDeco 5"""))
+Material233.addComments(CommentsBlock(""" Universal Media Library: ArtDeco 5 """))
 Appearance232.setMaterial(Material233)
 Shape229.setAppearance(Appearance232)
 Transform223.addChild(Shape229)
 
-Transform223.addComments(CommentsBlock("""Simplify intersection test for user selecting text"""))
+Transform223.addComments(CommentsBlock(""" Simplify intersection test for user selecting text """))
 Shape234 = ShapeObject()
 Shape234.setDEF("TransparentBox")
 
@@ -1536,7 +1536,7 @@ Transform287.addChild(Transform293)
 Group238.addChild(Transform287)
 Scene21.addChild(Group238)
 
-Scene21.addComments(CommentsBlock("""=============== Camera.AimPointTest =============="""))
+Scene21.addComments(CommentsBlock(""" =============== Camera.AimPointTest ============== """))
 ProtoInstance299 = ProtoInstanceObject()
 ProtoInstance299.setName("Camera")
 ProtoInstance299.setDEF("Camera.AimPointTest")
@@ -1601,7 +1601,7 @@ fieldValue312.setValue("6 6 10")
 
 ProtoInstance308.addFieldValue(fieldValue312)
 
-ProtoInstance308.addComments(CommentsBlock("""goalAimPoint modified by ROUTE to match moving Box"""))
+ProtoInstance308.addComments(CommentsBlock(""" goalAimPoint modified by ROUTE to match moving Box """))
 fieldValue307.addChild(ProtoInstance308)
 ProtoInstance313 = ProtoInstanceObject()
 ProtoInstance313.setName("CameraMovement")
@@ -1628,7 +1628,7 @@ fieldValue317.setValue("40 6 12")
 
 ProtoInstance313.addFieldValue(fieldValue317)
 
-ProtoInstance313.addComments(CommentsBlock("""goalAimPoint modified by ROUTE to match moving Box"""))
+ProtoInstance313.addComments(CommentsBlock(""" goalAimPoint modified by ROUTE to match moving Box """))
 fieldValue307.addChild(ProtoInstance313)
 ProtoInstance318 = ProtoInstanceObject()
 ProtoInstance318.setName("CameraMovement")
@@ -1655,7 +1655,7 @@ fieldValue322.setValue("40 20 13")
 
 ProtoInstance318.addFieldValue(fieldValue322)
 
-ProtoInstance318.addComments(CommentsBlock("""goalAimPoint modified by ROUTE to match moving Box"""))
+ProtoInstance318.addComments(CommentsBlock(""" goalAimPoint modified by ROUTE to match moving Box """))
 fieldValue307.addChild(ProtoInstance318)
 ProtoInstance323 = ProtoInstanceObject()
 ProtoInstance323.setName("CameraMovement")
@@ -1692,7 +1692,7 @@ fieldValue329.setValue("0 1 0 0")
 
 ProtoInstance323.addFieldValue(fieldValue329)
 
-ProtoInstance323.addComments(CommentsBlock("""can test tracking or not using following values"""))
+ProtoInstance323.addComments(CommentsBlock(""" can test tracking or not using following values """))
 fieldValue307.addChild(ProtoInstance323)
 ProtoInstance303.addFieldValue(fieldValue307)
 fieldValue302.addChild(ProtoInstance303)
@@ -1706,7 +1706,7 @@ TimeSensor331.setDEF("CameraTimer.AimPointTest")
 
 Group330.addChild(TimeSensor331)
 
-Group330.addComments(CommentsBlock("""initialize clock to match totalDuration of combined Shot Moves"""))
+Group330.addComments(CommentsBlock(""" initialize clock to match totalDuration of combined Shot Moves """))
 ROUTE332 = ROUTEObject()
 ROUTE332.setFromField("totalDuration")
 ROUTE332.setFromNode("Camera.AimPointTest")
@@ -1715,7 +1715,7 @@ ROUTE332.setToNode("CameraTimer.AimPointTest")
 
 Group330.addChild(ROUTE332)
 
-Group330.addComments(CommentsBlock("""TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator"""))
+Group330.addComments(CommentsBlock(""" TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator """))
 ROUTE333 = ROUTEObject()
 ROUTE333.setFromField("fraction_changed")
 ROUTE333.setFromNode("CameraTimer.AimPointTest")
@@ -1782,19 +1782,19 @@ Transform334.addChild(Shape345)
 Group330.addChild(Transform334)
 Scene21.addChild(Group330)
 
-Scene21.addComments(CommentsBlock("""TODO build a test once implemented"""))
+Scene21.addComments(CommentsBlock(""" TODO build a test once implemented """))
 ProtoInstance346 = ProtoInstanceObject()
 ProtoInstance346.setName("OfflineRender")
 
 Scene21.addChild(ProtoInstance346)
 
-Scene21.addComments(CommentsBlock("""=============== animate a camera shape to visualize view changes =============="""))
+Scene21.addComments(CommentsBlock(""" =============== animate a camera shape to visualize view changes ============== """))
 Transform347 = TransformObject()
 Transform347.setDEF("CameraShapeTransform")
 Transform347.setTranslation([0,0.5,0])
 
 
-Transform347.addComments(CommentsBlock("""move CameraShape using active Camera"""))
+Transform347.addComments(CommentsBlock(""" move CameraShape using active Camera """))
 ROUTE348 = ROUTEObject()
 ROUTE348.setFromField("position_changed")
 ROUTE348.setFromNode("Camera.SimpleShotsTest")
@@ -1857,7 +1857,7 @@ Shape355.setAppearance(Appearance358)
 Transform352.addChild(Shape355)
 Transform347.addChild(Transform352)
 
-Transform347.addComments(CommentsBlock("""Display frustum to show camera view within the scene, toggled by user selecting CameraShape"""))
+Transform347.addComments(CommentsBlock(""" Display frustum to show camera view within the scene, toggled by user selecting CameraShape """))
 ExternProtoDeclare360 = ExternProtoDeclareObject()
 ExternProtoDeclare360.setName("ViewFrustum")
 ExternProtoDeclare360.setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes")
@@ -1985,7 +1985,7 @@ ROUTE380.setToNode("ViewFrustumNode")
 Transform347.addChild(ROUTE380)
 Scene21.addChild(Transform347)
 
-Scene21.addComments(CommentsBlock("""=============== add checkerboard, axes and other things to look at while animating =============="""))
+Scene21.addComments(CommentsBlock(""" =============== add checkerboard, axes and other things to look at while animating ============== """))
 Background381 = BackgroundObject()
 Background381.setSkyColor([0.282353,0.380392,0.470588])
 
@@ -2101,7 +2101,7 @@ Shape399.setAppearance(Appearance401)
 Transform391.addChild(Shape399)
 Scene21.addChild(Transform391)
 
-Scene21.addComments(CommentsBlock("""================ CrossHair visualization for center of screen ================"""))
+Scene21.addComments(CommentsBlock(""" ================ CrossHair visualization for center of screen ================ """))
 ExternProtoDeclare404 = ExternProtoDeclareObject()
 ExternProtoDeclare404.setName("CrossHair")
 ExternProtoDeclare404.setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point")
@@ -2169,7 +2169,7 @@ fieldValue414.setValue("0 0 -6")
 ProtoInstance410.addFieldValue(fieldValue414)
 Scene21.addChild(ProtoInstance410)
 
-Scene21.addComments(CommentsBlock("""turn on CrossHairInstance when animated camera viewpoints are bound"""))
+Scene21.addComments(CommentsBlock(""" turn on CrossHairInstance when animated camera viewpoints are bound """))
 ROUTE415 = ROUTEObject()
 ROUTE415.setFromField("isBound")
 ROUTE415.setFromNode("Camera.SimpleShotsTest")
@@ -2185,9 +2185,9 @@ ROUTE416.setToNode("CrossHairInstance")
 
 Scene21.addChild(ROUTE416)
 
-Scene21.addComments(CommentsBlock("""turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/>"""))
+Scene21.addComments(CommentsBlock(""" turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> """))
 
-Scene21.addComments(CommentsBlock("""=============== TODO Launch Prototype Example =============="""))
+Scene21.addComments(CommentsBlock(""" =============== TODO Launch Prototype Example ============== """))
 Anchor417 = AnchorObject()
 Anchor417.setDescription("launch CameraExample scene")
 Anchor417.setParameter(["target=_blank"])

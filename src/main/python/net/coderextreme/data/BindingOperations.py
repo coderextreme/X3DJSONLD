@@ -8,78 +8,78 @@ X3D0.setVersion("3.3")
 head1 = headObject()
 
 meta2 = metaObject()
-meta2.setName("title")
 meta2.setContent("BindingOperations.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
-meta3.setName("description")
 meta3.setContent("Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event.")
+meta3.setName("description")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
-meta4.setName("creator")
 meta4.setContent("Don Brutzman")
+meta4.setName("creator")
 
 head1.addMeta(meta4)
 meta5 = metaObject()
-meta5.setName("created")
 meta5.setContent("5 January 2008")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setName("modified")
 meta6.setContent("22 July 2013")
+meta6.setName("modified")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
-meta7.setName("reference")
 meta7.setContent("BindingOperations.console.txt")
+meta7.setName("reference")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setName("reference")
 meta8.setContent("BindingStackOperations.png")
+meta8.setName("reference")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
-meta9.setName("reference")
 meta9.setContent("X3D for Web Authors, Section 2.5.1, Figure 4.1")
+meta9.setName("reference")
 
 head1.addMeta(meta9)
 meta10 = metaObject()
-meta10.setName("reference")
 meta10.setContent("http://X3dGraphics.com")
+meta10.setName("reference")
 
 head1.addMeta(meta10)
 meta11 = metaObject()
-meta11.setName("reference")
 meta11.setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html")
+meta11.setName("reference")
 
 head1.addMeta(meta11)
 meta12 = metaObject()
-meta12.setName("rights")
 meta12.setContent("Copyright Don Brutzman and Leonard Daly 2007")
+meta12.setName("rights")
 
 head1.addMeta(meta12)
 meta13 = metaObject()
-meta13.setName("subject")
 meta13.setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com")
+meta13.setName("subject")
 
 head1.addMeta(meta13)
 meta14 = metaObject()
-meta14.setName("identifier")
 meta14.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d")
+meta14.setName("identifier")
 
 head1.addMeta(meta14)
 meta15 = metaObject()
-meta15.setName("generator")
 meta15.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta15.setName("generator")
 
 head1.addMeta(meta15)
 meta16 = metaObject()
-meta16.setName("license")
 meta16.setContent("../license.html")
+meta16.setName("license")
 
 head1.addMeta(meta16)
 X3D0.setHead(head1)
@@ -114,7 +114,7 @@ Viewpoint21.setPosition([6,0,5])
 
 Scene17.addChild(Viewpoint21)
 
-Scene17.addComments(CommentsBlock("""Script initialization ought to first bind view5 below."""))
+Scene17.addComments(CommentsBlock(""" Script initialization ought to first bind view5 below. """))
 Group22 = GroupObject()
 
 Transform23 = TransformObject()
@@ -211,14 +211,14 @@ Transform41.addChild(Shape42)
 Group22.addChild(Transform41)
 Scene17.addChild(Group22)
 
-Scene17.addComments(CommentsBlock("""The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9."""))
+Scene17.addComments(CommentsBlock(""" The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. """))
 
-Scene17.addComments(CommentsBlock("""It does not need to be studied in this chapter."""))
+Scene17.addComments(CommentsBlock(""" It does not need to be studied in this chapter. """))
 Transform47 = TransformObject()
 Transform47.setTranslation([0,-3,8])
 
 
-Transform47.addComments(CommentsBlock("""notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."""))
+Transform47.addComments(CommentsBlock(""" notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. """))
 Viewpoint48 = ViewpointObject()
 Viewpoint48.setDEF("ClickToAnimateView")
 Viewpoint48.setDescription("Select animation sequence")
@@ -292,164 +292,84 @@ Script63.setDEF("BindingSequencerEngine")
 
 field64 = fieldObject()
 field64.setType(fieldObject.TYPE_SFINT32)
-field64.setName("set_timeEvent")
 field64.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field64.setName("set_timeEvent")
 
 Script63.addField(field64)
 field65 = fieldObject()
 field65.setType(fieldObject.TYPE_SFBOOL)
-field65.setName("bindView1")
 field65.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field65.setName("bindView1")
 
 Script63.addField(field65)
 field66 = fieldObject()
 field66.setType(fieldObject.TYPE_SFBOOL)
-field66.setName("bindView2")
 field66.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field66.setName("bindView2")
 
 Script63.addField(field66)
 field67 = fieldObject()
 field67.setType(fieldObject.TYPE_SFBOOL)
-field67.setName("bindView3")
 field67.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field67.setName("bindView3")
 
 Script63.addField(field67)
 field68 = fieldObject()
 field68.setType(fieldObject.TYPE_SFBOOL)
-field68.setName("bindView4")
 field68.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field68.setName("bindView4")
 
 Script63.addField(field68)
 field69 = fieldObject()
 field69.setType(fieldObject.TYPE_SFBOOL)
-field69.setName("bindView5")
 field69.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field69.setName("bindView5")
 
 Script63.addField(field69)
 field70 = fieldObject()
 field70.setType(fieldObject.TYPE_SFBOOL)
-field70.setName("view1Bound")
 field70.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field70.setName("view1Bound")
 
 Script63.addField(field70)
 field71 = fieldObject()
 field71.setType(fieldObject.TYPE_SFBOOL)
-field71.setName("view2Bound")
 field71.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field71.setName("view2Bound")
 
 Script63.addField(field71)
 field72 = fieldObject()
 field72.setType(fieldObject.TYPE_SFBOOL)
-field72.setName("view3Bound")
 field72.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field72.setName("view3Bound")
 
 Script63.addField(field72)
 field73 = fieldObject()
 field73.setType(fieldObject.TYPE_SFBOOL)
-field73.setName("view4Bound")
 field73.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field73.setName("view4Bound")
 
 Script63.addField(field73)
 field74 = fieldObject()
 field74.setType(fieldObject.TYPE_SFINT32)
-field74.setName("priorInputvalue")
 field74.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field74.setName("priorInputvalue")
 field74.setValue("-1")
 
 Script63.addField(field74)
 
-Script63.setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"    bindView5 = true;\n"+
-"    Browser.print ('Timing script initialized and ready for activation');\n"+
-"}\n"+
-"function set_timeEvent (inputValue)\n"+
-"{\n"+
-"    if (inputValue == priorInputvalue)\n"+
-"    {\n"+
-"        return; // ignore repeated inputs\n"+
-"    }\n"+
-"    // new value provided\n"+
-"    priorInputvalue = inputValue;\n"+
-"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
-"        \n"+
-"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
-"    if (inputValue == 0)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t0');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 1)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t1');\n"+
-"        bindView2 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 2)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t2');\n"+
-"        bindView3 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 3)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t3');\n"+
-"        bindView3 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 4)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t4');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 5)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t5');\n"+
-"        bindView2 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 6)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t6');\n"+
-"        bindView1 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 7)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t7');\n"+
-"        bindView4 = true;\n"+
-"\n"+
-"    }\n"+
-"    else if (inputValue == 8)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t8');\n"+
-"        Browser.print (', no action, all done');\n"+
-"        Browser.print ('\\n\\n');\n"+
-"    }\n"+
-"}\n"+
-"\n"+
-"function view1Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view1Bound ' + (inputValue));\n"+
-"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
-"}\n"+
-"function view2Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view2Bound ' + (inputValue));\n"+
-"}\n"+
-"function view3Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view3Bound ' + (inputValue));\n"+
-"}\n"+
-"function view4Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view4Bound ' + (inputValue));\n"+
-"}\n"+
-"function view5Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}\n"+
+Script63.setSourceCode("\n"+
+"ecmascript:
+
+function initialize ()
+{
+    bindView5 = true;
+    Browser.print ('Timing script initialized and ready for activation');\\n}\\nfunction set_timeEvent (inputValue)\\n{\\n    if (inputValue == priorInputvalue)\\n    {\\n        return; // ignore repeated inputs\\n    }\\n    // new value provided\\n    priorInputvalue = inputValue;\\n    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\\n        \\n    // mimics user execution of Figure 4.1 steps t_0 through t_8\\n    if (inputValue == 0)\\n    {\\n        Browser.print ('\\n===========\\n time t0');\\n        bindView1 = true;\\n    }\\n    else if (inputValue == 1)\\n    {\\n        Browser.print ('\\n===========\\n time t1');\\n        bindView2 = true;\\n    }\\n    else if (inputValue == 2)\\n    {\\n        Browser.print ('\\n===========\\n time t2');\\n        bindView3 = true;\\n    }\\n    else if (inputValue == 3)\\n    {\\n        Browser.print ('\\n===========\\n time t3');\\n        bindView3 = false;\\n    }\\n    else if (inputValue == 4)\\n    {\\n        Browser.print ('\\n===========\\n time t4');\\n        bindView1 = true;\\n    }\\n    else if (inputValue == 5)\\n    {\\n        Browser.print ('\\n===========\\n time t5');\\n        bindView2 = false;\\n    }\\n    else if (inputValue == 6)\\n    {\\n        Browser.print ('\\n===========\\n time t6');\\n        bindView1 = false;\\n    }\\n    else if (inputValue == 7)\\n    {\\n        Browser.print ('\\n===========\\n time t7');\\n        bindView4 = true;\\n\\n    }\\n    else if (inputValue == 8)\\n    {\\n        Browser.print ('\\n===========\\n time t8');\\n        Browser.print (', no action, all done');\\n        Browser.print ('\\n\\n');\\n    }\\n}\\n\\nfunction view1Bound (inputValue)\\n{\\n    Browser.print (', view1Bound ' + (inputValue));\\n    if (priorInputvalue == -1) Browser.print ('\\n');\\n}\\nfunction view2Bound (inputValue)\\n{\\n    Browser.print (', view2Bound ' + (inputValue));\\n}\\nfunction view3Bound (inputValue)\\n{\\n    Browser.print (', view3Bound ' + (inputValue));\\n}\\nfunction view4Bound (inputValue)\\n{\\n    Browser.print (', view4Bound ' + (inputValue));\\n}\\nfunction view5Bound (inputValue)\\n{\\n    Browser.print (', view5Bound ' + (inputValue));
+}\n"+
 "")
 Transform47.addChild(Script63)
 
-Transform47.addComments(CommentsBlock("""drive Script with TimeSensor clock"""))
+Transform47.addComments(CommentsBlock(""" drive Script with TimeSensor clock """))
 ROUTE75 = ROUTEObject()
 ROUTE75.setFromField("value_changed")
 ROUTE75.setFromNode("TimingSequencer")
@@ -458,7 +378,7 @@ ROUTE75.setToNode("BindingSequencerEngine")
 
 Transform47.addChild(ROUTE75)
 
-Transform47.addComments(CommentsBlock("""Script will bind and unbind Viewpoint nodes"""))
+Transform47.addComments(CommentsBlock(""" Script will bind and unbind Viewpoint nodes """))
 ROUTE76 = ROUTEObject()
 ROUTE76.setFromField("bindView1")
 ROUTE76.setFromNode("BindingSequencerEngine")
@@ -495,7 +415,7 @@ ROUTE80.setToNode("ClickToAnimateView")
 
 Transform47.addChild(ROUTE80)
 
-Transform47.addComments(CommentsBlock("""Viewpoint nodes report bind and unbind events"""))
+Transform47.addComments(CommentsBlock(""" Viewpoint nodes report bind and unbind events """))
 ROUTE81 = ROUTEObject()
 ROUTE81.setFromField("isBound")
 ROUTE81.setFromNode("View1")

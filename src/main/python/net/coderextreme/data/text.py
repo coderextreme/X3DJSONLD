@@ -77,7 +77,7 @@ Transform9.addChild(Shape15)
 Shape20 = ShapeObject()
 
 Text21 = TextObject()
-Text21.setString(["Node3 \\\\ \\","Node3\"\"\""])
+Text21.setString(["Node3 \\\\\\","Node3\"\"\""])
 
 FontStyle22 = FontStyleObject()
 
@@ -100,8 +100,7 @@ field26.setValue("\"rnl_front.png\" \"uffizi_front.png\"")
 
 Script25.addField(field26)
 
-Script25.setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';\n"+
+Script25.setSourceCode("ecmascript: var me = '\"1\"\"\"2\"\"\\n3\"';\n"+
 "")
 Transform9.addChild(Script25)
 Scene8.addChild(Transform9)

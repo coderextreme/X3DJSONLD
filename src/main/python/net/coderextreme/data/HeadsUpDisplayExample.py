@@ -76,7 +76,7 @@ X3D0.setHead(head1)
 Scene15 = SceneObject()
 
 
-Scene15.addComments(CommentsBlock("""Simple Heads-Up Display (HUD) Prototype
+Scene15.addComments(CommentsBlock(""" Simple Heads-Up Display (HUD) Prototype
  
  Manages the display of a HUD and maintains its position on the screen.
  Changes to fieldOfView (in Viewpoint node) will change screen position
@@ -90,7 +90,7 @@ Scene15.addComments(CommentsBlock("""Simple Heads-Up Display (HUD) Prototype
  orientation_changed Current viewer orientation (outputOnly - SFRotation)
  
  
-"""))
+ """))
 ExternProtoDeclare16 = ExternProtoDeclareObject()
 ExternProtoDeclare16.setName("HeadsUpDisplay")
 ExternProtoDeclare16.setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location")
@@ -138,13 +138,13 @@ Viewpoint22.setDescription("Heads-up display (HUD)")
 
 Scene15.addChild(Viewpoint22)
 
-Scene15.addComments(CommentsBlock("""ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"""))
+Scene15.addComments(CommentsBlock(""" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence """))
 ProtoInstance23 = ProtoInstanceObject()
 ProtoInstance23.setName("HeadsUpDisplay")
 ProtoInstance23.setDEF("HeadsUpDisplayInstance")
 
 
-ProtoInstance23.addComments(CommentsBlock("""example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view"""))
+ProtoInstance23.addComments(CommentsBlock(""" example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view """))
 fieldValue24 = fieldValueObject()
 fieldValue24.setName("screenOffset")
 fieldValue24.setValue("-0.75 1 -5")

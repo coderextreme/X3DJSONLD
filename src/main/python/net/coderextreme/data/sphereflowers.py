@@ -78,7 +78,7 @@ ProtoInstance17.setName("FlowerProto")
 
 fieldValue18 = fieldValueObject()
 fieldValue18.setName("vertex")
-fieldValue18.setValue("\"../shaders/cobweb_flowers_chromatic.vs\"")
+fieldValue18.setValue("\"../shaders/x_ite_flowers_chromatic.vs\"")
 
 ProtoInstance17.addFieldValue(fieldValue18)
 fieldValue19 = fieldValueObject()

@@ -196,17 +196,17 @@ ComposedShader24.addField(field35)
 ComposedShader24.addComments(CommentsBlock("""field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"""))
 ShaderPart36 = ShaderPartObject()
 ShaderPart36.setType("VERTEX")
-ShaderPart36.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"])
+ShaderPart36.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])
 
 ComposedShader24.addParts(ShaderPart36)
 ShaderPart37 = ShaderPartObject()
 ShaderPart37.setType("FRAGMENT")
-ShaderPart37.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"])
+ShaderPart37.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
 
 ComposedShader24.addParts(ShaderPart37)
 Appearance15.addShaders(ComposedShader24)
 ComposedShader38 = ComposedShaderObject()
-ComposedShader38.setDEF("cobweb")
+ComposedShader38.setDEF("x_ite")
 ComposedShader38.setLanguage("GLSL")
 
 field39 = fieldObject()
@@ -291,12 +291,12 @@ field50.setValue("0")
 ComposedShader38.addField(field50)
 ShaderPart51 = ShaderPartObject()
 ShaderPart51.setType("VERTEX")
-ShaderPart51.setUrl(["../shaders/cobweb_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"])
+ShaderPart51.setUrl(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])
 
 ComposedShader38.addParts(ShaderPart51)
 ShaderPart52 = ShaderPartObject()
 ShaderPart52.setType("FRAGMENT")
-ShaderPart52.setUrl(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"])
+ShaderPart52.setUrl(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
 
 ComposedShader38.addParts(ShaderPart52)
 Appearance15.addShaders(ComposedShader38)
@@ -403,26 +403,11 @@ field68.setValue("-1")
 
 Script54.addField(field68)
 
-Script54.setSourceCode("ecmascript:\n"+
-"        function set_fraction( f, tm ) {\n"+
-"            var side = Math.floor(f*frontUrls.length);\n"+
-"            if (side > frontUrls.length-1) {\n"+
-"                side = 0;\n"+
-"            }\n"+
-"            if (side != old) {\n"+
-"                    old = side;\n"+
-"                    front[0] = frontUrls[side];\n"+
-"                    back[0] = backUrls[side];\n"+
-"                    left[0] = leftUrls[side];\n"+
-"                    right[0] = rightUrls[side];\n"+
-"                    top[0] = topUrls[side];\n"+
-"                    bottom[0] = bottomUrls[side];\n"+
-"            }\n"+
-"        }\n"+
+Script54.setSourceCode("ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { old = side; front[0] = frontUrls[side]; back[0] = backUrls[side]; left[0] = leftUrls[side]; right[0] = rightUrls[side]; top[0] = topUrls[side]; bottom[0] = bottomUrls[side]; } }\n"+
 "")
 Scene9.addChild(Script54)
 
-Scene9.addComments(CommentsBlock("""<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"""))
+Scene9.addComments(CommentsBlock("""<TimeSensor DEF=\"Clock\"cycleInterval=\"45\"loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"""))
 Script69 = ScriptObject()
 Script69.setDEF("Animate")
 Script69.setDirectOutput(True)
@@ -476,40 +461,7 @@ field76.setValue("0")
 
 Script69.addField(field76)
 
-Script69.setSourceCode("ecmascript:\n"+
-"\n"+
-"function set_fraction() {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	if (choice == 0) {\n"+
-"		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 1) {\n"+
-"		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 2) {\n"+
-"		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 3) {\n"+
-"		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	}\n"+
-"	tdelta = tdelta + 0.5;\n"+
-"	pdelta = pdelta + 0.5;\n"+
-"	if (a < 1) {\n"+
-"		a = 10;\n"+
-"	}\n"+
-"	if (b < 1) {\n"+
-"		b = 10;\n"+
-"	}\n"+
-"	if (c < 1) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (c > 20) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (d < 1) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"	if (d > 20) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"}\n"+
+Script69.setSourceCode("ecmascript: function set_fraction() { var choice = Math.floor(Math.random() * 4); if (choice == 0) { a = a + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 1) { b = b + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 2) { c = c + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 3) { d = d + Math.floor(Math.random() * 2) * 2 - 1; } tdelta = tdelta + 0.5; pdelta = pdelta + 0.5; if (a < 1) { a = 10; } if (b < 1) { b = 10; } if (c < 1) { c = 4; } if (c > 20) { c = 4; } if (d < 1) { d = 4; } if (d > 20) { d = 4; } }\n"+
 "")
 Scene9.addChild(Script69)
 TimeSensor77 = TimeSensorObject()
@@ -528,42 +480,42 @@ Scene9.addChild(ROUTE78)
 ROUTE79 = ROUTEObject()
 ROUTE79.setFromNode("Animate")
 ROUTE79.setFromField("a")
-ROUTE79.setToNode("cobweb")
+ROUTE79.setToNode("x_ite")
 ROUTE79.setToField("a")
 
 Scene9.addChild(ROUTE79)
 ROUTE80 = ROUTEObject()
 ROUTE80.setFromNode("Animate")
 ROUTE80.setFromField("b")
-ROUTE80.setToNode("cobweb")
+ROUTE80.setToNode("x_ite")
 ROUTE80.setToField("b")
 
 Scene9.addChild(ROUTE80)
 ROUTE81 = ROUTEObject()
 ROUTE81.setFromNode("Animate")
 ROUTE81.setFromField("c")
-ROUTE81.setToNode("cobweb")
+ROUTE81.setToNode("x_ite")
 ROUTE81.setToField("c")
 
 Scene9.addChild(ROUTE81)
 ROUTE82 = ROUTEObject()
 ROUTE82.setFromNode("Animate")
 ROUTE82.setFromField("d")
-ROUTE82.setToNode("cobweb")
+ROUTE82.setToNode("x_ite")
 ROUTE82.setToField("d")
 
 Scene9.addChild(ROUTE82)
 ROUTE83 = ROUTEObject()
 ROUTE83.setFromNode("Animate")
 ROUTE83.setFromField("pdelta")
-ROUTE83.setToNode("cobweb")
+ROUTE83.setToNode("x_ite")
 ROUTE83.setToField("pdelta")
 
 Scene9.addChild(ROUTE83)
 ROUTE84 = ROUTEObject()
 ROUTE84.setFromNode("Animate")
 ROUTE84.setFromField("tdelta")
-ROUTE84.setToNode("cobweb")
+ROUTE84.setToNode("x_ite")
 ROUTE84.setToField("tdelta")
 
 Scene9.addChild(ROUTE84)

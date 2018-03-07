@@ -152,12 +152,12 @@ field32.setValue("2")
 ComposedShader25.addField(field32)
 ShaderPart33 = ShaderPartObject()
 ShaderPart33.setType("VERTEX")
-ShaderPart33.setUrl(["../shaders/common.vs","https://coderextreme.net/X3DJSONLD/shaders/common.vs"])
+ShaderPart33.setUrl(["../shaders/common.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs"])
 
 ComposedShader25.addParts(ShaderPart33)
 ShaderPart34 = ShaderPartObject()
 ShaderPart34.setType("FRAGMENT")
-ShaderPart34.setUrl(["../shaders/gl_flowers_chromatic.fs","https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs"])
+ShaderPart34.setUrl(["../shaders/gl_flowers_chromatic.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs"])
 
 ComposedShader25.addParts(ShaderPart34)
 Appearance16.addShaders(ComposedShader25)
@@ -211,12 +211,12 @@ field42.setValue("2")
 ComposedShader35.addField(field42)
 ShaderPart43 = ShaderPartObject()
 ShaderPart43.setType("VERTEX")
-ShaderPart43.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"])
+ShaderPart43.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])
 
 ComposedShader35.addParts(ShaderPart43)
 ShaderPart44 = ShaderPartObject()
 ShaderPart44.setType("FRAGMENT")
-ShaderPart44.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"])
+ShaderPart44.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])
 
 ComposedShader35.addParts(ShaderPart44)
 Appearance16.addShaders(ComposedShader35)
@@ -271,12 +271,12 @@ field52.setValue("2")
 ComposedShader45.addField(field52)
 ShaderPart53 = ShaderPartObject()
 ShaderPart53.setType("VERTEX")
-ShaderPart53.setUrl(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"])
+ShaderPart53.setUrl(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])
 
 ComposedShader45.addParts(ShaderPart53)
 ShaderPart54 = ShaderPartObject()
 ShaderPart54.setType("FRAGMENT")
-ShaderPart54.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"])
+ShaderPart54.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])
 
 ComposedShader45.addParts(ShaderPart54)
 Appearance16.addShaders(ComposedShader45)
@@ -372,109 +372,7 @@ field68.setValue("0.5")
 
 Script57.addField(field68)
 
-Script57.setSourceCode("ecmascript:\n"+
-"			function newBubble() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    if (Math.abs(translation.x) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.y) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.z) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else {\n"+
-"					velocity = new SFVec3f(\n"+
-"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.z + Math.random() * 0.2 - 0.1\n"+
-"					);\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     var cis = [];\n"+
-"			     newBubble();\n"+
-"			     resolution = 100;\n"+
-"			     updateCoordinates(resolution);\n"+
-"			     for ( i = 0; i < resolution-1; i++) {\n"+
-"				for ( j = 0; j < resolution-1; j++) {\n"+
-"				     cis.push(i*resolution+j);\n"+
-"				     cis.push(i*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j);\n"+
-"				     cis.push(-1);\n"+
-"				}\n"+
-"			    }\n"+
-"			     coordIndexes = new MFInt32(cis);\n"+
-"			}\n"+
-"\n"+
-"			function updateCoordinates(resolution) {\n"+
-"			     theta = 0.0;\n"+
-"			     phi = 0.0;\n"+
-"			     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var crds = [];\n"+
-"			     for ( i = 0; i < resolution; i++) {\n"+
-"				for ( j = 0; j < resolution; j++) {\n"+
-"					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);\n"+
-"					crds.push(new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					));\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"				coordinates = new MFVec3f(crds);\n"+
-"			     }\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"				resolution = 100;\n"+
-"				updateCoordinates(resolution);\n"+
-"			}\n"+
+Script57.setSourceCode("ecmascript: function newBubble() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { newBubble(); } else if (Math.abs(translation.y) > 10) { newBubble(); } else if (Math.abs(translation.z) > 10) { newBubble(); } else { velocity = new SFVec3f( velocity.x + Math.random() * 0.2 - 0.1, velocity.y + Math.random() * 0.2 - 0.1, velocity.z + Math.random() * 0.2 - 0.1 ); } animate_flowers(); } function initialize() { var cis = []; newBubble(); resolution = 100; updateCoordinates(resolution); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = new MFInt32(cis); } function updateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var crds = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = a + b * Math.cos(c * theta) * Math.cos(d * phi); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; coordinates = new MFVec3f(crds); } } function animate_flowers(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: a += Math.random() * 0.2 - 0.1; break; case 1: b += Math.random() * 0.2 - 0.1; break; case 2: c += Math.random() * 2 - 1; break; case 3: d += Math.random() * 2 - 1; break; } if (a > 1) { a = 0.5; } if (b > 1) { b = 0.5; } if (c < 1) { c = 4; } if (d < 1) { d = 4; } if (c > 10) { c = 4; } if (d > 10) { d = 4; } resolution = 100; updateCoordinates(resolution); }\n"+
 "")
 ProtoBody13.addChild(Script57)
 TimeSensor69 = TimeSensorObject()
@@ -523,7 +421,7 @@ ROUTE75.setToField("set_translation")
 
 ProtoBody13.addChild(ROUTE75)
 
-ProtoBody13.addComments(CommentsBlock("""<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
+ProtoBody13.addComments(CommentsBlock("""<ROUTE fromField=\"coordIndexes\"fromNode=\"Bounce\"toField=\"set_coordIndex\"toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\"fromNode=\"Bounce\"toField=\"set_point\"toNode=\"OrbitCoordinates\"/>"""))
 ProtoDeclare12.setProtoBody(ProtoBody13)
 Scene9.addChild(ProtoDeclare12)
 Transform76 = TransformObject()
