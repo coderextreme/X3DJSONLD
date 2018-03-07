@@ -146,6 +146,7 @@ ecmascript:
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
+            
 
 ]]>
                 </Script>
