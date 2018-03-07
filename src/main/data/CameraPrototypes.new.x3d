@@ -159,6 +159,7 @@
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
+
 ecmascript:
 function initialize () // CameraScript
 {
@@ -561,6 +562,7 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
+
 ecmascript:
 function initialize () // CameraShotScript
 {
@@ -708,6 +710,7 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
+
 ecmascript:
 function initialize () // CameraMovementScript
 {
@@ -849,6 +852,7 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
+
 ecmascript:
 function initialize () // OfflineRenderScript
 {
