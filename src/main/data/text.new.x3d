@@ -31,14 +31,16 @@
                 <Appearance>
                     <Material/>
                 </Appearance>
-                <Text string='"Node3 \\\" "Node3\"\"\""'>
+                <Text string='"Node3 \\ \ " "Node3\"\"\""'>
                     <FontStyle family='"SERIF"' justify='"BEGIN"'/>
                 </Text>
             </Shape>
             <Script>
                 <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
-ecmascript: var me = '"1"""2""\n3"';
+ecmascript:
+			    var me = '"1" "\"2" "\n3"';
+			    
 
 ]]>
             </Script>
