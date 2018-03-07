@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
-<Scene><Collision DEF="DoNotCollideWithVisualizationWidget"><!-- Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. --><!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. --><!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene --><!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user --><Group><!-- Vertical Y arrow and label --><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
+<Scene><Collision DEF="DoNotCollideWithVisualizationWidget" enabled="true"><!-- Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. --><!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. --><!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene --><!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user --><Group><!-- Vertical Y arrow and label --><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
 <Appearance containerField="appearance" DEF="Green"><Material containerField="material" diffuseColor="0.1 0.6 0.1" emissiveColor="0.05 0.2 0.05"></Material>
 </Appearance>
 </Shape>

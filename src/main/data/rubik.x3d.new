@@ -10,7 +10,7 @@
 <Viewpoint description="Rubiks Cube" position="0 0 12"></Viewpoint>
 <ProtoDeclare name="sphere"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 </IS>
 <Shape><Sphere containerField="geometry"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
@@ -21,7 +21,7 @@
 </ProtoDeclare>
 <ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
 <ProtoInstance name="sphere"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
@@ -34,7 +34,7 @@
 </ProtoDeclare>
 <ProtoDeclare name="nine"><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ztranslation"></connect>
 </IS>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
@@ -47,7 +47,7 @@
 </ProtoDeclare>
 <ProtoDeclare name="twentyseven"><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ttranslation"></connect>
 </IS>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
