@@ -59,6 +59,7 @@ function convertXML(options) {
 				var outfile = options[ser].folder+basefile+options[ser].extension
 				mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 				fs.writeFileSync(outfile, str);
+				console.log(outfile);
 			} else {
 				throw("Wrote nothing, serializer returned nothing");
 			}
