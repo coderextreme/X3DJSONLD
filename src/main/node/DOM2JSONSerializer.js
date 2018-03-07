@@ -40,10 +40,20 @@ DOM2JSONSerializer.prototype = {
 			return false;
 		} else if (value === "false") {
 			return false;
+		} else if (value === false) {
+			return false;
 		} else if (value === "FALSE") {
 			return false;
-		} else {
+		} else if (value === "True") {
 			return true;
+		} else if (value === "true") {
+			return true;
+		} else if (value === true) {
+			return true;
+		} else if (value === "TRUE") {
+			return true;
+		} else {
+			return "UNKNOWN BOOLEAN "+value+", Fix parseBool in DOM2JSONSerializer.js";
 		}
 	},
 
@@ -72,9 +82,8 @@ DOM2JSONSerializer.prototype = {
 	descendSourceText: function (node) {
 		var st =  node.nodeValue.split("\r\n").map(
 			function(x) { return x.
-					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"').
-						replace(/\t/g, '\t');
+						replace(/\t/g, '\t').
+						replace(/\\n/g, "\n");
 			});
 		return st;
 	},
@@ -105,6 +114,11 @@ DOM2JSONSerializer.prototype = {
 						method = "-children";
 					} else if (fieldAttrType !== "" && attr === "value") {
 						attrType = fieldAttrType;
+					} else if (attr === "value") {
+						// coercions, not checking type
+						if (attrs[a].nodeValue[0] === '"' && attrs[a].nodeValue[attrs[a].nodeValue.length-1] === '"') {
+							attrType = "MFString";
+						}
 					}
 					var attrmethod = method;
 					if (attrmethod === 'containerField') {
@@ -114,7 +128,12 @@ DOM2JSONSerializer.prototype = {
 					if (attrs[a].nodeValue === 'NULL') {
 						attrval = "null";
 					} else if (attrType === "SFString") {
-						attrval = attrs[a].nodeValue; // .replace(/\\?"/g, "\\\"");
+						attrval = attrs[a].nodeValue.
+							replace(/\\n/g, "\n").
+							replace(/\\\\/g, "\\");
+						if (attrs[a].nodeValue !== attrval) {
+							console.log("Replacing", attrs[a].nodeValue, attrval);
+						}
 					} else if (attrType === "SFInt32") {
 						attrval = parseInt(attrs[a].nodeValue);
 					} else if (attrType === "SFFloat") {
@@ -129,6 +148,7 @@ DOM2JSONSerializer.prototype = {
 							attrs[a].nodeValue.
 								substr(1, attrs[a].nodeValue.length-2).
 								replace(/\\"/g, '"').
+								replace(/\\\\/g, "\\").
 							/*
 								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
@@ -137,7 +157,7 @@ DOM2JSONSerializer.prototype = {
 								replace(/\t/g, '\\t').
 								replace(/&/g, "&amp;").
 								*/
-								split(/"[ ,]+"/), this.echo);
+								split(/"[\n\r\t ,]+"/), this.echo);
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
@@ -290,6 +310,9 @@ DOM2JSONSerializer.prototype = {
 		} else if (node.nodeType === 4) {
 			fieldName = "#sourceText";
 			subobject = this.descendSourceText(node);
+			if (subobject[subobject.length-1] === "") {
+				subobject.pop();
+			}
 			fields[fieldName] = subobject;
 		}
 	},
