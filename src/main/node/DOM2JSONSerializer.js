@@ -70,7 +70,8 @@ DOM2JSONSerializer.prototype = {
 
 
 	descendComment: function (node) {
-		var st = node.nodeValue;
+		var st = node.nodeValue.
+			replace(/\\n/g, "\n");
 			/*
 			replace(/\\/g, '\\\\').
 			replace(/"/g, '\\"').
