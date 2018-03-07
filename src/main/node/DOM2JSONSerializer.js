@@ -18,7 +18,9 @@ DOM2JSONSerializer.prototype = {
 				obj['X3D']['head']['meta'] === [];
 			}
 			obj['X3D']['head']['meta'].push({ "@name":"translated", "@content":date.getDate()+" "+month+" "+date.getFullYear()});
-			obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js" });
+ 			obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js" });
+			//  fake X3dToJson.xslt
+  			// obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html" });
 			obj['X3D']['head']['meta'].push( { "@name":"reference", "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" });
 		}
 		delete obj['X3D']['@xmlns:xsd'];
@@ -208,7 +210,10 @@ DOM2JSONSerializer.prototype = {
 		}
 		if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
 			if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
-				value = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
+				var tmpvalue = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
+				if (tmpvalue !== 'proxy') { // must be set with containerField attribute
+					value = tmpvalue;
+				}
 			}
 		}
 		return value;
@@ -244,7 +249,7 @@ DOM2JSONSerializer.prototype = {
 			} else {
 				fieldName = '-'+attrName;
 				var attrType = fieldTypes[element.nodeName][attrName];
-				console.log(element.nodeName, fieldName, node.nodeName, attrType);
+				// console.log(element.nodeName, fieldName, node.nodeName, attrType);
 				if (attrType === "SFNode") {
 					if (typeof fields[fieldName] === 'undefined') {
 						fields[fieldName] = subobject;
@@ -257,7 +262,7 @@ DOM2JSONSerializer.prototype = {
 						fields[fieldName].push(subobject);
 					}
 				} else {
-					if (attrName === 'children') {
+					if (attrName === 'children' || attrName === 'shaders') {
 						if (typeof fields[fieldName] === 'undefined') {
 							fields[fieldName] = []
 						}

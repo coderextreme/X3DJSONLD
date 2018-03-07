@@ -147,7 +147,7 @@ var glob = require('glob');
 try {
 	var right = fs.readFileSync(files[1]);
 	parseString(right, function(err, resultright) {
-		if (err) throw "RIGHT FILE "+err;
+		if (err) throw "RIGHT FILE "+files[1]+" "+err;
 		glob(files[0], function(err, filesglobs) {
 			if (err) {
 				console.error(err);
@@ -155,7 +155,7 @@ try {
 			filesglobs.forEach(function(file) {
 				var left = fs.readFileSync(file);
 				parseString(left, function(err, resultleft) {
-					if (err) throw "LEFT FILE "+err;
+					if (err) throw "LEFT FILE "+file+" "+err;
 					var ret;
 					var str;
 					[ ret, str ] = compare(resultleft, '', resultright, '');
