@@ -6,9 +6,9 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"></meta>
 <meta name="description" content="a generic proto to connect two objects"></meta>
 </head>
-<Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
+<Scene><Viewpoint position="0 0 5" description="Only Viewpoint" orientation="0 0 1 0"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<ProtoDeclare name="point"><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="point"><ProtoInterface><field accessType="inputOutput" name="translation" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
@@ -21,7 +21,8 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -37,25 +38,25 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="x3dconnector"><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="x3dconnector"><ProtoInterface><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<ProtoBody><Group><Transform DEF="trans" translation="0 0 0"><Transform DEF="rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
-<Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="position" accessType="inputOutput" type="SFNode"><Transform USE="trans"></Transform>
+<Script DEF="S1"><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="inputOutput" name="position" type="SFNode"><Transform USE="trans"></Transform>
 </field>
-<field name="rotscale" accessType="inputOutput" type="SFNode"><Transform USE="rotscale"></Transform>
+<field accessType="inputOutput" name="rotscale" type="SFNode"><Transform USE="rotscale"></Transform>
 </field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 <IS><connect nodeField="startnode" protoField="startnode"></connect>
 <connect nodeField="endnode" protoField="endnode"></connect>
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
@@ -105,14 +106,15 @@
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
+            
 ]]></Script>
 </Group>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="point" DEF="G1"></ProtoInstance>
-<ProtoInstance name="point" DEF="G2"></ProtoInstance>
-<ProtoInstance name="point" DEF="G3"></ProtoInstance>
-<ProtoInstance name="point" DEF="G4"></ProtoInstance>
+<ProtoInstance DEF="G1" name="point"></ProtoInstance>
+<ProtoInstance DEF="G2" name="point"></ProtoInstance>
+<ProtoInstance DEF="G3" name="point"></ProtoInstance>
+<ProtoInstance DEF="G4" name="point"></ProtoInstance>
 <ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><ProtoInstance USE="G1"></ProtoInstance>
 </fieldValue>
 <fieldValue name="endnode"><ProtoInstance USE="G2"></ProtoInstance>
