@@ -21,13 +21,13 @@
                 <Appearance class=''>
                     <!--  -->
                     <!-- <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> -->
-                    <!-- <ShaderProgram url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs"' containerField='programs' type='VERTEX'> -->
+                    <!-- <ShaderProgram url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' containerField='programs' type='VERTEX'> -->
                     <!-- <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> -->
                     <!-- <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> -->
                     <!-- <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> -->
                     <!-- <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> -->
                     <!-- </ShaderProgram> -->
-                    <!-- <ShaderProgram url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/> -->
+                    <!-- <ShaderProgram url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/> -->
                     <!-- </ProgramShader> -->
                     <!--  -->
                     <!--  -->
@@ -39,8 +39,8 @@
                     <!-- <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> -->
-                    <!-- <ShaderPart url='"../shaders/contact.vs" "https://coderextreme.net/X3DJSONLD/shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
-                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/contact.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
                     <!-- </ComposedShader> -->
                     <!--  -->
                     <!--  -->
@@ -52,8 +52,8 @@
                     <!-- <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> -->
-                    <!-- <ShaderPart url='"../shaders/octaga.vs" "https://coderextreme.net/X3DJSONLD/shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
-                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/octaga.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
                     <!-- </ComposedShader> -->
                     <!--  -->
                     <!--  -->
@@ -63,15 +63,15 @@
                     <!-- <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> -->
                     <!-- <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> -->
-                    <!-- <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
-                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart> -->
+                    <!-- <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
                     <!-- </ComposedShader> -->
                     <!--  -->
                     <!--  -->
                     <!--  -->
                     <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
                     <ComposedShader language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' class=''/>
+                        <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"' class=''/>
                         <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' class=''/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>

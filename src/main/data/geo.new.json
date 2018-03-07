@@ -99,14 +99,14 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"]
+                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@DEF":"common",
                                       "@type":"FRAGMENT",
-                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"]
+                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
                                     }
                                   }
                                 ],
