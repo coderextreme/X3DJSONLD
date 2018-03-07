@@ -1,5 +1,6 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -17,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html")))
       .setScene(new SceneObject()
-        .addChild(new WorldInfoObject().setInfo(Java.to(["VRML2.0 created with Version 1.3, from Alias Maya 2008".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setTitle("SimpleCamera.x3d"))
+        .addChild(new WorldInfoObject().setInfo(Java.to(["VRML2.0 created with Version 1.3, from Alias Maya 2008"], Java.type("java.lang.String[]"))).setTitle("SimpleCamera.x3d"))
         .addChild(new ViewpointObject().setDEF("CameraShapeView").setDescription("Camera view, over the shoulder").setPosition(Java.to([0,0.75,3], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("Camera view through lens").setPosition(Java.to([0,0,0], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("Camera view from right side").setOrientation(Java.to([0,1,0,1.5708], Java.type("float[]"))).setPosition(Java.to([12,0,-4], Java.type("float[]"))))
@@ -28,7 +29,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject().setDEF("CameraAppearance")
                 .setMaterial(new MaterialObject().setDEF("lambert1_0").setAmbientIntensity(0.25).setDiffuseColor(Java.to([0.372322,0.371574,0.373173], Java.type("float[]"))).setShininess(0.02).setSpecularColor(Java.to([0.890909,0.887832,0.890909], Java.type("float[]")))
-                  .addComments(new CommentsBlock("Universal Media Library: Metals 30")))))
+                  .addComments(new CommentsBlock(' Universal Media Library: Metals 30 ')))))
             .addChild(new ShapeObject()
               .setGeometry(new IndexedFaceSetObject().setDEF("pCylinder1_0Geo").setConvex(false).setCoordIndex(Java.to([0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15,-1,4,5,17,16,-1,5,6,18,17,-1,6,7,19,18,-1,7,8,20,19,-1,8,9,21,20,-1,9,10,22,21,-1,10,11,23,22,-1,11,0,12,23,-1,1,0,24,-1,2,1,24,-1,3,2,24,-1,4,3,24,-1,5,4,24,-1,6,5,24,-1,7,6,24,-1,8,7,24,-1,9,8,24,-1,10,9,24,-1,11,10,24,-1,0,11,24,-1,12,13,25,-1,13,14,25,-1,14,15,25,-1,15,16,25,-1,16,17,25,-1,17,18,25,-1,18,19,25,-1,19,20,25,-1,20,21,25,-1,21,22,25,-1,22,23,25,-1,23,12,25,-1], Java.type("int[]"))).setCreaseAngle(0.7854)
                 .setCoord(new CoordinateObject().setDEF("pCylinder1GeoPoints").setPoint(Java.to([-0.36,-2.39,-0.26,-0.36,-1.77,-0.89,-0.36,0,-1.7,-0.36,0.85,-1.47,-0.36,1.47,-0.85,-0.36,1.7,0,-0.36,1.47,0.85,-0.36,-0.07,2.05,-0.36,-0.92,2.28,-0.36,-1.77,2.05,-0.36,-2.39,1.43,-0.36,-2.62,0.58,0.36,-2.39,-0.26,0.36,-1.77,-0.89,0.36,0,-1.7,0.36,0.85,-1.47,0.36,1.47,-0.85,0.36,1.7,0,0.36,1.47,0.85,0.36,-0.07,2.05,0.36,-0.92,2.28,0.36,-1.77,2.05,0.36,-2.39,1.43,0.36,-2.62,0.58,-0.36,-0.46,0.31,0.36,-0.46,0.31], Java.type("float[]")))))

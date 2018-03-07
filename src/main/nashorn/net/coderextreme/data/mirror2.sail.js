@@ -61,7 +61,23 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("bottom_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
-            .setSourceCode("ecmascript: function set_fraction( f, tm ) { var side = Math.floor(f*frontUrls.length); if (side > frontUrls.length-1) { side = 0; } if (side != old) { // Browser.print(f+\"\"+side); old = side; front_changed[0] = frontUrls[side]; back_changed[0] = backUrls[side]; left_changed[0] = leftUrls[side]; right_changed[0] = rightUrls[side]; top_changed[0] = topUrls[side]; bottom_changed[0] = bottomUrls[side]; } }\n"+
+            .setSourceCode("ecmascript:\n"+
+"        function set_fraction( f, tm ) {\n"+
+"	    var side = Math.floor(f*frontUrls.length);\n"+
+"	    if (side > frontUrls.length-1) {\n"+
+"	    	side = 0;\n"+
+"	    }\n"+
+"	    if (side != old) {\n"+
+"	    	    // Browser.print(f+\" \"+side);\n"+
+"	    	    old = side;\n"+
+"		    front_changed[0] = frontUrls[side];\n"+
+"		    back_changed[0] = backUrls[side];\n"+
+"		    left_changed[0] = leftUrls[side];\n"+
+"		    right_changed[0] = rightUrls[side];\n"+
+"		    top_changed[0] = topUrls[side];\n"+
+"		    bottom_changed[0] = bottomUrls[side];\n"+
+"            }\n"+
+"        }\n"+
 ""))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(45).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
