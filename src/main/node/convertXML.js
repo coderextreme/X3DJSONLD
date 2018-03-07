@@ -13,6 +13,22 @@ for (var par in mapToMethod2) {
 	}
 }
 
+function serializeXML(str, serializer, co, mapToMethod, fieldTypes) {
+	var doc = null;
+	try {  
+		var domParser = new DOMParser();
+		doc = domParser.parseFromString (str, 'application/xml');
+
+	} catch (e) {
+		console.error("================================================================================");
+		console.error("Error:", e);
+		throw e;
+	}
+	var element = doc.documentElement;
+	str = new serializer().serializeToString(null, element, co, mapToMethod, fieldTypes)
+	return str;
+}
+
 function convertXML(options) {
 
 	var files = process.argv;
@@ -27,18 +43,6 @@ function convertXML(options) {
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
 		}
-		var doc = null;
-		try {  
-			var domParser = new DOMParser();
-			doc = domParser.parseFromString (str, 'application/xml');
-
-		} catch (e) {
-			console.error("================================================================================");
-			console.error("File:", file);
-			console.error("Error:", e);
-			continue;
-		}
-		var element = doc.documentElement;
 		basefile = basefile.replace(/^C:\//, "")
 		basefile = basefile.replace(/^\.\.\//, "")
 		basefile = basefile.replace(/-|\.| /g, "_")
@@ -46,8 +50,11 @@ function convertXML(options) {
 
 		for (var ser in options) {
 			var serializer = require(options[ser].serializer);
-			var co = options[ser].codeOutput+basefile;
-			str = new serializer().serializeToString(null, element, co, mapToMethod, fieldTypes)
+			try {
+				str = serializeXML(str, serializer, basefile, mapToMethod, fieldTypes);
+			} catch (e) {
+				console.error("File:", file);
+			}
 			if (typeof str !== 'undefined') {
 				var outfile = options[ser].folder+basefile+options[ser].extension
 				mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
