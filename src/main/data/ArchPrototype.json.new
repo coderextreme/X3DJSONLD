@@ -6,48 +6,48 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "ArchPrototype.x3d"
+          "@content": "ArchPrototype.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."
+          "@content": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.",
+          "@name": "description"
         },
         {
-          "@name": "description",
-          "@content": "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."
+          "@content": "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Michele Foti, Don Brutzman"
+          "@content": "Michele Foti, Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "15 December 2014"
+          "@content": "15 December 2014",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "27 November 2015"
+          "@content": "27 November 2015",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "ArchModelingDiagrams.pdf"
+          "@content": "ArchModelingDiagrams.pdf",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Arch"
+          "@content": "https://en.wikipedia.org/wiki/Arch",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
@@ -67,186 +67,179 @@
       "-children": [
         {
           "ProtoDeclare": {
-            "@name": "ArchPrototype",
             "@appinfo": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.",
-            "-protointerface": {
-              "ProtoInterface": {
-                "-children": [
-                  {
-                    "#comment": "COLOR OF ARCH"
-                  },
-                  {
-                    "#comment": "INPUT PARAMETERS"
-                  },
-                  {
-                    "#comment": "General parameters: measures in meters"
-                  },
-                  {
-                    "#comment": "Parameters to create to create shapes related to arch: put true to apply"
-                  }
-                ],
-                "field": [
-                  {
-                    "@name": "diffuseColor",
-                    "@accessType": "inputOutput",
-                    "@appinfo": "color of arch",
-                    "@type": "SFColor",
-                    "@value": [
-                      0.2,
-                      0.8,
-                      0.8
-                    ]
-                  },
-                  {
-                    "@name": "emissiveColor",
-                    "@accessType": "inputOutput",
-                    "@appinfo": "color of arch",
-                    "@type": "SFColor",
-                    "@value": [
-                      0.2,
-                      0.8,
-                      0.8
-                    ]
-                  },
-                  {
-                    "@name": "clearSpanWidth",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference",
-                    "@type": "SFFloat",
-                    "@value": 4
-                  },
-                  {
-                    "@name": "riseHeight",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference",
-                    "@type": "SFFloat",
-                    "@value": 2
-                  },
-                  {
-                    "@name": "depth",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "depth",
-                    "@type": "SFFloat",
-                    "@value": 3
-                  },
-                  {
-                    "@name": "topAbutmentHeight",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment",
-                    "@type": "SFFloat",
-                    "@value": 0.5
-                  },
-                  {
-                    "@name": "pierWidth",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "pierWidth:pierWidtht=0 means no pierWidth",
-                    "@type": "SFFloat",
-                    "@value": 0.5
-                  },
-                  {
-                    "@name": "pierHeight",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "pierHeight: pierHeight=0 means no pierHeight",
-                    "@type": "SFFloat",
-                    "@value": 1
-                  },
-                  {
-                    "@name": "archHalf",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width",
-                    "@type": "SFBool",
-                    "@value": true
-                  },
-                  {
-                    "@name": "archHalfExtensionWidth",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.",
-                    "@type": "SFFloat",
-                    "@value": 0
-                  },
-                  {
-                    "@name": "onlyIntrados",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.",
-                    "@type": "SFBool",
-                    "@value": true
-                  },
-                  {
-                    "@name": "archFilled",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.",
-                    "@type": "SFBool",
-                    "@value": true
-                  },
-                  {
-                    "@name": "archHalfFilled",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.",
-                    "@type": "SFBool",
-                    "@value": true
-                  },
-                  {
-                    "@name": "lintel",
-                    "@accessType": "initializeOnly",
-                    "@appinfo": "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.",
-                    "@type": "SFBool",
-                    "@value": true
-                  }
-                ]
-              }
+            "@name": "ArchPrototype",
+            "ProtoInterface": {
+              "-children": [
+                {
+                  "#comment": " COLOR OF ARCH "
+                },
+                {
+                  "#comment": " INPUT PARAMETERS "
+                },
+                {
+                  "#comment": " General parameters: measures in meters "
+                },
+                {
+                  "#comment": " Parameters to create to create shapes related to arch: put true to apply "
+                }
+              ],
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@appinfo": "color of arch",
+                  "@name": "diffuseColor",
+                  "@type": "SFColor",
+                  "@value": [
+                    0.2,
+                    0.8,
+                    0.8
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@appinfo": "color of arch",
+                  "@name": "emissiveColor",
+                  "@type": "SFColor",
+                  "@value": [
+                    0.2,
+                    0.8,
+                    0.8
+                  ]
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference",
+                  "@name": "clearSpanWidth",
+                  "@type": "SFFloat",
+                  "@value": 4
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference",
+                  "@name": "riseHeight",
+                  "@type": "SFFloat",
+                  "@value": 2
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "depth",
+                  "@name": "depth",
+                  "@type": "SFFloat",
+                  "@value": 3
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment",
+                  "@name": "topAbutmentHeight",
+                  "@type": "SFFloat",
+                  "@value": 0.5
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "pierWidth:pierWidtht=0 means no pierWidth",
+                  "@name": "pierWidth",
+                  "@type": "SFFloat",
+                  "@value": 0.5
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "pierHeight: pierHeight=0 means no pierHeight",
+                  "@name": "pierHeight",
+                  "@type": "SFFloat",
+                  "@value": 1
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width",
+                  "@name": "archHalf",
+                  "@type": "SFBool",
+                  "@value": false
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.",
+                  "@name": "archHalfExtensionWidth",
+                  "@type": "SFFloat",
+                  "@value": 0
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.",
+                  "@name": "onlyIntrados",
+                  "@type": "SFBool",
+                  "@value": false
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.",
+                  "@name": "archFilled",
+                  "@type": "SFBool",
+                  "@value": false
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.",
+                  "@name": "archHalfFilled",
+                  "@type": "SFBool",
+                  "@value": false
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.",
+                  "@name": "lintel",
+                  "@type": "SFBool",
+                  "@value": false
+                }
+              ]
             },
-            "-protobody": {
-              "ProtoBody": {
-                "-children": [
-                  {
-                    "#comment": "First node determines node type of this prototype"
-                  },
-                  {
-                    "#comment": "IndexedFaceset creates arch"
-                  },
-                  {
-                    "Transform": {
-                      "@DEF": "ArchTransform",
-                      "-children": [
-                        {
-                          "Shape": {
-                            "@DEF": "Arch",
-                            "-children": [
-                              {
-                                "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
-                              }
-                            ],
-                            "-geometry": {
-                              "IndexedFaceSet": {
-                                "@DEF": "ArchIndex",
-                                "@convex": true,
-                                "@solid": true,
-                                "-coord": {
-                                  "Coordinate": {
-                                    "@DEF": "ArchChord"
-                                  }
+            "ProtoBody": {
+              "-children": [
+                {
+                  "#comment": " First node determines node type of this prototype "
+                },
+                {
+                  "#comment": " IndexedFaceset creates arch "
+                },
+                {
+                  "Transform": {
+                    "@DEF": "ArchTransform",
+                    "-children": [
+                      {
+                        "Shape": {
+                          "@DEF": "Arch",
+                          "-children": [
+                            {
+                              "#comment": " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
+                            }
+                          ],
+                          "-geometry": {
+                            "IndexedFaceSet": {
+                              "@DEF": "ArchIndex",
+                              "@convex": false,
+                              "@creaseAngle": 0,
+                              "@solid": false,
+                              "-coord": {
+                                "Coordinate": {
+                                  "@DEF": "ArchChord"
                                 }
                               }
-                            },
-                            "-appearance": {
-                              "Appearance": {
-                                "-material": {
-                                  "Material": {
-                                    "@DEF": "MaterialNode",
-                                    "-children": [
+                            }
+                          },
+                          "-appearance": {
+                            "Appearance": {
+                              "-material": {
+                                "Material": {
+                                  "@DEF": "MaterialNode",
+                                  "IS": {
+                                    "connect": [
                                       {
-                                        "IS": {
-                                          "connect": [
-                                            {
-                                              "@nodeField": "emissiveColor",
-                                              "@protoField": "emissiveColor"
-                                            },
-                                            {
-                                              "@nodeField": "diffuseColor",
-                                              "@protoField": "diffuseColor"
-                                            }
-                                          ]
-                                        }
+                                        "@nodeField": "emissiveColor",
+                                        "@protoField": "emissiveColor"
+                                      },
+                                      {
+                                        "@nodeField": "diffuseColor",
+                                        "@protoField": "diffuseColor"
                                       }
                                     ]
                                   }
@@ -255,212 +248,214 @@
                             }
                           }
                         }
-                      ]
-                    }
-                  },
-                  {
-                    "#comment": "Subsequent nodes do not render, but still must be a valid X3D subgraph"
-                  },
-                  {
-                    "#comment": "This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"
-                  },
-                  {
-                    "Script": {
-                      "@DEF": "ArchPrototypeScript",
-                      "@url": [
-                        "../node/ArchPrototypeScript.js"
-                      ],
-                      "-children": [
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment": " Subsequent nodes do not render, but still must be a valid X3D subgraph "
+                },
+                {
+                  "#comment": " This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs "
+                },
+                {
+                  "Script": {
+                    "@DEF": "ArchPrototypeScript",
+                    "@url": [
+                      "../node/ArchPrototypeScript.js"
+                    ],
+                    "-children": [
+                      {
+                        "#comment": " INPUT PARAMETERS "
+                      },
+                      {
+                        "#comment": " General parameters "
+                      },
+                      {
+                        "#comment": " Parameters to create to create shapes related to arch: put true to apply "
+                      },
+                      {
+                        "#comment": " OUTPUT PARAMETERS "
+                      }
+                    ],
+                    "field": [
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for clearSpanWidth parameter",
+                        "@name": "clearSpanWidth",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for riseHeight parameter",
+                        "@name": "riseHeight",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for depth parameter",
+                        "@name": "depth",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for topAbutmentHeight parameter",
+                        "@name": "topAbutmentHeight",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for pierWidth parameter",
+                        "@name": "pierWidth",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for pierHeight parameter",
+                        "@name": "pierHeight",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for archHalf parameter",
+                        "@name": "archHalf",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for archHalfExtensionWidth parameter",
+                        "@name": "archHalfExtensionWidth",
+                        "@type": "SFFloat"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for onlyIntrados parameter",
+                        "@name": "onlyIntrados",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for archFilled parameter",
+                        "@name": "archFilled",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for archHalfFilled parameter",
+                        "@name": "archHalfFilled",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@accessType": "initializeOnly",
+                        "@appinfo": "user or default input for lintel parameter",
+                        "@name": "lintel",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@accessType": "outputOnly",
+                        "@appinfo": "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth",
+                        "@name": "computedScale",
+                        "@type": "SFVec3f"
+                      },
+                      {
+                        "@accessType": "outputOnly",
+                        "@appinfo": "send computed points to the Coordinate node",
+                        "@name": "pointOut",
+                        "@type": "MFVec3f"
+                      },
+                      {
+                        "@accessType": "outputOnly",
+                        "@appinfo": "send computed indices to the IndexedFaceSet node",
+                        "@name": "indexOut",
+                        "@type": "MFInt32"
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
                         {
-                          "#comment": "INPUT PARAMETERS"
+                          "@nodeField": "clearSpanWidth",
+                          "@protoField": "clearSpanWidth"
                         },
                         {
-                          "#comment": "General parameters"
+                          "@nodeField": "riseHeight",
+                          "@protoField": "riseHeight"
                         },
                         {
-                          "#comment": "Parameters to create to create shapes related to arch: put true to apply"
+                          "@nodeField": "depth",
+                          "@protoField": "depth"
                         },
                         {
-                          "#comment": "OUTPUT PARAMETERS"
+                          "@nodeField": "pierWidth",
+                          "@protoField": "pierWidth"
                         },
                         {
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "clearSpanWidth",
-                                "@protoField": "clearSpanWidth"
-                              },
-                              {
-                                "@nodeField": "riseHeight",
-                                "@protoField": "riseHeight"
-                              },
-                              {
-                                "@nodeField": "depth",
-                                "@protoField": "depth"
-                              },
-                              {
-                                "@nodeField": "pierWidth",
-                                "@protoField": "pierWidth"
-                              },
-                              {
-                                "@nodeField": "topAbutmentHeight",
-                                "@protoField": "topAbutmentHeight"
-                              },
-                              {
-                                "@nodeField": "pierHeight",
-                                "@protoField": "pierHeight"
-                              },
-                              {
-                                "@nodeField": "archHalf",
-                                "@protoField": "archHalf"
-                              },
-                              {
-                                "@nodeField": "archHalfExtensionWidth",
-                                "@protoField": "archHalfExtensionWidth"
-                              },
-                              {
-                                "@nodeField": "onlyIntrados",
-                                "@protoField": "onlyIntrados"
-                              },
-                              {
-                                "@nodeField": "archFilled",
-                                "@protoField": "archFilled"
-                              },
-                              {
-                                "@nodeField": "archHalfFilled",
-                                "@protoField": "archHalfFilled"
-                              },
-                              {
-                                "@nodeField": "lintel",
-                                "@protoField": "lintel"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "field": [
-                        {
-                          "@name": "clearSpanWidth",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for clearSpanWidth parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "topAbutmentHeight",
+                          "@protoField": "topAbutmentHeight"
                         },
                         {
-                          "@name": "riseHeight",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for riseHeight parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "pierHeight",
+                          "@protoField": "pierHeight"
                         },
                         {
-                          "@name": "depth",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for depth parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "archHalf",
+                          "@protoField": "archHalf"
                         },
                         {
-                          "@name": "topAbutmentHeight",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for topAbutmentHeight parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "archHalfExtensionWidth",
+                          "@protoField": "archHalfExtensionWidth"
                         },
                         {
-                          "@name": "pierWidth",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for pierWidth parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "onlyIntrados",
+                          "@protoField": "onlyIntrados"
                         },
                         {
-                          "@name": "pierHeight",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for pierHeight parameter",
-                          "@type": "SFFloat"
+                          "@nodeField": "archFilled",
+                          "@protoField": "archFilled"
                         },
                         {
-                          "@name": "archHalf",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for archHalf parameter",
-                          "@type": "SFBool"
+                          "@nodeField": "archHalfFilled",
+                          "@protoField": "archHalfFilled"
                         },
                         {
-                          "@name": "archHalfExtensionWidth",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for archHalfExtensionWidth parameter",
-                          "@type": "SFFloat"
-                        },
-                        {
-                          "@name": "onlyIntrados",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for onlyIntrados parameter",
-                          "@type": "SFBool"
-                        },
-                        {
-                          "@name": "archFilled",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for archFilled parameter",
-                          "@type": "SFBool"
-                        },
-                        {
-                          "@name": "archHalfFilled",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for archHalfFilled parameter",
-                          "@type": "SFBool"
-                        },
-                        {
-                          "@name": "lintel",
-                          "@accessType": "initializeOnly",
-                          "@appinfo": "user or default input for lintel parameter",
-                          "@type": "SFBool"
-                        },
-                        {
-                          "@name": "computedScale",
-                          "@accessType": "outputOnly",
-                          "@appinfo": "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth",
-                          "@type": "SFVec3f"
-                        },
-                        {
-                          "@name": "pointOut",
-                          "@accessType": "outputOnly",
-                          "@appinfo": "send computed points to the Coordinate node",
-                          "@type": "MFVec3f"
-                        },
-                        {
-                          "@name": "indexOut",
-                          "@accessType": "outputOnly",
-                          "@appinfo": "send computed indices to the IndexedFaceSet node",
-                          "@type": "MFInt32"
+                          "@nodeField": "lintel",
+                          "@protoField": "lintel"
                         }
                       ]
                     }
                   }
-                ],
-                "ROUTE": [
-                  {
+                },
+                {
+                  "ROUTE": {
                     "@fromField": "computedScale",
                     "@fromNode": "ArchPrototypeScript",
                     "@toField": "scale",
                     "@toNode": "ArchTransform"
-                  },
-                  {
+                  }
+                },
+                {
+                  "ROUTE": {
                     "@fromField": "pointOut",
                     "@fromNode": "ArchPrototypeScript",
                     "@toField": "point",
                     "@toNode": "ArchChord"
-                  },
-                  {
+                  }
+                },
+                {
+                  "ROUTE": {
                     "@fromField": "indexOut",
                     "@fromNode": "ArchPrototypeScript",
                     "@toField": "set_coordIndex",
                     "@toNode": "ArchIndex"
                   }
-                ]
-              }
+                }
+              ]
             }
           }
         },
         {
           "ProtoInstance": {
-            "@name": "ArchPrototype",
             "@DEF": "ArchInstance",
+            "@name": "ArchPrototype",
             "fieldValue": [
               {
                 "@name": "diffuseColor",
@@ -498,7 +493,7 @@
           }
         },
         {
-          "#comment": "Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"
+          "#comment": " Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) "
         },
         {
           "Inline": {

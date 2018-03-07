@@ -53,9 +53,9 @@
                   "-geometry": {
                     "Text": {
                       "@string": [
-                        "Node\\\"\\\"\\\""
+                        "Node\"\"\""
                       ],
-                      "-fontstyle": {
+                      "-fontStyle": {
                         "FontStyle": {}
                       }
                     }
@@ -75,11 +75,11 @@
                     "Text": {
                       "@string": [
                         "Node2",
-                        "\\\\\\",
-                        "\\\\\\",
+                        "\\",
+                        "\\\\",
                         "Node2"
                       ],
-                      "-fontstyle": {
+                      "-fontStyle": {
                         "FontStyle": {}
                       }
                     }
@@ -98,10 +98,10 @@
                   "-geometry": {
                     "Text": {
                       "@string": [
-                        "Node3 \\\\\\\\\\\\\\\\ \\\\ ",
-                        "Node3\\\"\\\"\\\""
+                        "Node3 \\\\ \\ ",
+                        "Node3\"\"\""
                       ],
-                      "-fontstyle": {
+                      "-fontStyle": {
                         "FontStyle": {}
                       }
                     }

@@ -42,7 +42,12 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Background": {
@@ -83,13 +88,13 @@
                   ],
                   "field": [
                     {
-                      "@name": "vertex",
                       "@accessType": "inputOutput",
+                      "@name": "vertex",
                       "@type": "MFString"
                     },
                     {
-                      "@name": "fragment",
                       "@accessType": "inputOutput",
+                      "@name": "fragment",
                       "@type": "MFString"
                     }
                   ]
@@ -98,32 +103,30 @@
               {
                 "ProtoDeclare": {
                   "@name": "flower",
-                  "-protobody": {
-                    "ProtoBody": {
-                      "-children": [
-                        {
-                          "Group": {
-                            "-children": [
-                              {
-                                "ProtoInstance": {
-                                  "@name": "FlowerProto",
-                                  "fieldValue": [
-                                    {
-                                      "@name": "vertex",
-                                      "@value": "\"../shaders/x_ite_flowers_plain.vs\""
-                                    },
-                                    {
-                                      "@name": "fragment",
-                                      "@value": "\"../shaders/plain.fs\""
-                                    }
-                                  ]
-                                }
+                  "ProtoBody": {
+                    "-children": [
+                      {
+                        "Group": {
+                          "-children": [
+                            {
+                              "ProtoInstance": {
+                                "@name": "FlowerProto",
+                                "fieldValue": [
+                                  {
+                                    "@name": "vertex",
+                                    "@value": "\"../shaders/x_ite_flowers_plain.vs\""
+                                  },
+                                  {
+                                    "@name": "fragment",
+                                    "@value": "\"../shaders/plain.fs\""
+                                  }
+                                ]
                               }
-                            ]
-                          }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      }
+                    ]
                   }
                 }
               },

@@ -473,54 +473,80 @@
               }
             ],
             "#sourceText": [
-              "ecmascript: function set_cycle(value) { var ov = lastKey; do { lastKey = Math.round(Math.random()*(positions.length-1)); } while (lastKey === ov); var vc = lastKey; orientation_changed = new MFRotation(); orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w); orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w); position_changed = new MFVec3f(); position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z); position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z); // } }",
-              ""
+              "ecmascript:",
+              "               function set_cycle(value) {",
+              "                        var ov = lastKey;",
+              "                        do {",
+              "                            lastKey = Math.round(Math.random()*(positions.length-1));",
+              "                        } while (lastKey === ov);",
+              "                        var vc = lastKey;",
+              "                        ",
+              "                        orientation_changed = new MFRotation();",
+              "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
+              "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+              "                        position_changed = new MFVec3f();",
+              "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
+              "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
+              "                    // }",
+              "               }"
             ]
           }
-        }
-      ],
-      "ROUTE": [
-        {
-          "@fromNode": "TourTime",
-          "@fromField": "cycleTime_changed",
-          "@toNode": "RandomTourTime",
-          "@toField": "set_cycle"
         },
         {
-          "@fromNode": "RandomTourTime",
-          "@fromField": "orientation_changed",
-          "@toNode": "TourOrientation",
-          "@toField": "set_keyValue"
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "cycleTime_changed",
+            "@toNode": "RandomTourTime",
+            "@toField": "set_cycle"
+          }
         },
         {
-          "@fromNode": "RandomTourTime",
-          "@fromField": "position_changed",
-          "@toNode": "TourPosition",
-          "@toField": "set_keyValue"
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "orientation_changed",
+            "@toNode": "TourOrientation",
+            "@toField": "set_keyValue"
+          }
         },
         {
-          "@fromNode": "TourTime",
-          "@fromField": "fraction_changed",
-          "@toNode": "TourOrientation",
-          "@toField": "set_fraction"
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "position_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_keyValue"
+          }
         },
         {
-          "@fromNode": "TourOrientation",
-          "@fromField": "value_changed",
-          "@toNode": "Tour",
-          "@toField": "set_orientation"
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourOrientation",
+            "@toField": "set_fraction"
+          }
         },
         {
-          "@fromNode": "TourTime",
-          "@fromField": "fraction_changed",
-          "@toNode": "TourPosition",
-          "@toField": "set_fraction"
+          "ROUTE": {
+            "@fromNode": "TourOrientation",
+            "@fromField": "value_changed",
+            "@toNode": "Tour",
+            "@toField": "set_orientation"
+          }
         },
         {
-          "@fromNode": "TourPosition",
-          "@fromField": "value_changed",
-          "@toNode": "Tour",
-          "@toField": "set_position"
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourPosition",
+            "@fromField": "value_changed",
+            "@toNode": "Tour",
+            "@toField": "set_position"
+          }
         }
       ]
     },

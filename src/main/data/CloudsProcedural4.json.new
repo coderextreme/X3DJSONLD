@@ -63,7 +63,7 @@
         {
           "Viewpoint": {
             "@description": "Main",
-            "@jump": true,
+            "@jump": false,
             "@orientation": [
               0,
               1,
@@ -80,7 +80,7 @@
         {
           "Viewpoint": {
             "@description": "Light House Tower",
-            "@jump": true,
+            "@jump": false,
             "@orientation": [
               0,
               1,
@@ -97,7 +97,7 @@
         {
           "Viewpoint": {
             "@description": "centerWest",
-            "@jump": true,
+            "@jump": false,
             "@orientation": [
               0,
               1,

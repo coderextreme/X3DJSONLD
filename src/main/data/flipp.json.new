@@ -5893,26 +5893,30 @@
               21.59
             ]
           }
-        }
-      ],
-      "ROUTE": [
-        {
-          "@fromNode": "ci",
-          "@fromField": "value_changed",
-          "@toNode": "pointList",
-          "@toField": "set_point"
         },
         {
-          "@fromNode": "si",
-          "@fromField": "value_changed",
-          "@toNode": "ci",
-          "@toField": "set_fraction"
+          "ROUTE": {
+            "@fromNode": "ci",
+            "@fromField": "value_changed",
+            "@toNode": "pointList",
+            "@toField": "set_point"
+          }
         },
         {
-          "@fromNode": "ts",
-          "@fromField": "fraction_changed",
-          "@toNode": "si",
-          "@toField": "set_fraction"
+          "ROUTE": {
+            "@fromNode": "si",
+            "@fromField": "value_changed",
+            "@toNode": "ci",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "ts",
+            "@fromField": "fraction_changed",
+            "@toNode": "si",
+            "@toField": "set_fraction"
+          }
         }
       ]
     },

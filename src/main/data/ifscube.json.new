@@ -2,7 +2,6 @@
   "X3D": {
     "@profile": "Interchange",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "meta": [
         {
@@ -101,7 +100,7 @@
                         5,
                         -1
                       ],
-                      "@normalPerVertex": true,
+                      "@normalPerVertex": false,
                       "@colorIndex": [
                         0,
                         0,
