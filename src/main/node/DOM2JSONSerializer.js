@@ -36,6 +36,10 @@ DOM2JSONSerializer.prototype = {
 	parseBool: function(value) {
 		if (value === "False") {
 			return false;
+		} else if (value === "false") {
+			return false;
+		} else if (value === "FALSE") {
+			return false;
 		} else {
 			return true;
 		}
@@ -122,6 +126,7 @@ DOM2JSONSerializer.prototype = {
 						attrval = this.descendSubArray(
 							attrs[a].nodeValue.
 								substr(1, attrs[a].nodeValue.length-2).
+								replace(/\\"/g, '"').
 							/*
 								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
@@ -203,7 +208,7 @@ DOM2JSONSerializer.prototype = {
 		}
 		if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
 			if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
-				value = mapToMethod[parent.nodeName][element.nodeName].substr(3).toLowerCase();
+				value = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
 			}
 		}
 		return value;
@@ -220,27 +225,37 @@ DOM2JSONSerializer.prototype = {
 				node.nodeName === "component" ||
 				node.nodeName === "field" ||
 				node.nodeName === "fieldValue" ||
-				node.nodeName === "connect" ||
-				node.nodeName === "ROUTE" ||
-				node.nodeName === "head" ||
-				node.nodeName === "Scene") {
+				node.nodeName === "connect") {
 
 				fieldName = node.nodeName;
-				if (node.nodeName === "head" ||
-					node.nodeName === "Scene") {
-					fields[fieldName] = subobject;
-				} else {
-
-					if (typeof fields[fieldName] === 'undefined') {
-						fields[fieldName] = [];
-					}
-					fields[fieldName].push(subobject);
+				if (typeof fields[fieldName] === 'undefined') {
+					fields[fieldName] = [];
 				}
+				fields[fieldName].push(subobject);
+			} else if (node.nodeName === "head" ||
+				node.nodeName === "Scene") {
+				fieldName = node.nodeName;
+				fields[fieldName] = subobject;
+			} else if (node.nodeName === "ProtoInterface" ||
+				node.nodeName === "ProtoBody" ||
+				node.nodeName === "IS") {
+				fieldName = node.nodeName;
+				fields[fieldName] = subobject[fieldName];
 			} else {
 				fieldName = '-'+attrName;
-				var attrType = fieldTypes[node.nodeName][attrName];
+				var attrType = fieldTypes[element.nodeName][attrName];
+				console.log(element.nodeName, fieldName, node.nodeName, attrType);
 				if (attrType === "SFNode") {
-					fields[fieldName] = subobject;
+					if (typeof fields[fieldName] === 'undefined') {
+						fields[fieldName] = subobject;
+					} else {
+						// overflow from SFNode, place in children
+						fieldName = "-children";
+						if (typeof fields[fieldName] === 'undefined') {
+							fields[fieldName] = []
+						}
+						fields[fieldName].push(subobject);
+					}
 				} else {
 					if (attrName === 'children') {
 						if (typeof fields[fieldName] === 'undefined') {
@@ -291,9 +306,7 @@ DOM2JSONSerializer.prototype = {
 			element.nodeName === "field" ||
 			element.nodeName === "fieldValue" ||
 			element.nodeName === "connect" ||
-			element.nodeName === "ROUTE") {
-			object = fields;
-		} else if (element.nodeName == "Scene" ||
+			element.nodeName == "Scene" ||
 			element.nodeName == "head") {
 			object = fields;
 		} else {

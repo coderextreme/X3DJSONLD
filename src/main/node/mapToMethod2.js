@@ -109,7 +109,8 @@ var mapToMethod2 = {
 		"IS" : "setIS"
 	},
 	"Collision" : {
-		"IS" : "setIS"
+		"IS" : "setIS",
+		"Group" : "addChildren"
 	},
 	"PrimitivePickSensor" : {
 		"IS" : "addPickedGeometry"
