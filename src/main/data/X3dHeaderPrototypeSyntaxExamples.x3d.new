@@ -29,12 +29,12 @@
 <ProtoInstance name="NewWorldInfoNode"></ProtoInstance>
 <ProtoDeclare name="EmissiveMaterial"><ProtoInterface><field name="onlyColor" accessType="inputOutput" type="SFColor" value="1 0 0"></field>
 </ProtoInterface>
-<ProtoBody><!--Override default diffuseColor value 0.8 0.8 0.8--><Material diffuseColor="0 0 0"><!--Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.--><IS><connect nodeField="emissiveColor" protoField="onlyColor"></connect>
+<ProtoBody><!-- Override default diffuseColor value 0.8 0.8 0.8 --><Material diffuseColor="0 0 0"><!-- Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. --><IS><connect nodeField="emissiveColor" protoField="onlyColor"></connect>
 </IS>
 </Material>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="ShiftGroupUp2m"><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
+<ProtoDeclare name="ShiftGroupUp2m"><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!-- Authors need to override this node when creating the ProtoInstance fieldValue name="children" --></Group>
 </field>
 </ProtoInterface>
 <ProtoBody><Transform translation="0 2 0"><Group><IS><connect nodeField="children" protoField="children"></connect>
@@ -44,7 +44,7 @@
 </ProtoBody>
 </ProtoDeclare>
 <ProtoInstance name="ShiftGroupUp2m"></ProtoInstance>
-<!--====================--><Viewpoint DEF="ExampleSingleElement" description="Hello syntax"></Viewpoint>
+<!-- ==================== --><Viewpoint DEF="ExampleSingleElement" description="Hello syntax"></Viewpoint>
 <Group DEF="ExampleChildElement"><Shape><Box containerField="geometry"></Box>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.6 0.4 0.2"></Material>
 </Appearance>
@@ -52,7 +52,7 @@
 </Group>
 <Transform DEF="TransformExampleUSE" rotation="0 1 0 0.78" translation="0 2.5 0"><Group USE="ExampleChildElement"></Group>
 </Transform>
-<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><!--alternative: Text string='"He said, \&quot;Immel did it!\&quot;"'--><Text containerField="geometry" string="&quot;He said, \&quot;Immel did it!\&quot;&quot;"></Text>
+<Collision><Shape containerField="proxy"><!-- note that Collision proxy Shape is not rendered --><!-- alternative: Text string='"He said, \&quot;Immel did it!\&quot;"' --><Text containerField="geometry" string="&quot;He said, \&quot;Immel did it!\&quot;&quot;"></Text>
 <Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
 </Shape>

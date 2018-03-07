@@ -31,7 +31,7 @@
                         <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
                     </ComposedShader>
                     <ComposedShader language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' class=''/>
+                        <ShaderPart type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' class=''/>
                         <ShaderPart USE='common'/>
                         <field name='chromaticDispertion' accessType='initializeOnly' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='cube' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>

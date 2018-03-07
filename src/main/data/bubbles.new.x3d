@@ -21,9 +21,9 @@
             <Shape>
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                    <ComposedShader DEF='cobweb' language='GLSL'>
-                        <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
+                    <ComposedShader DEF='x_ite' language='GLSL'>
+                        <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                         <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -31,8 +31,8 @@
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
                     </ComposedShader>
                     <ComposedShader DEF='x3dom' language='GLSL'>
-                        <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
+                        <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                         <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>

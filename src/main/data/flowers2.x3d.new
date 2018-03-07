@@ -29,12 +29,153 @@
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<![CDATA[ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }
+<![CDATA[ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     generateCoordinates(resolution);
+     var localci = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(localci);
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(localc);
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
 ]]></Script>
 <Script DEF="OrbitScript2"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<![CDATA[ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }
+<![CDATA[ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     generateCoordinates(resolution);
+     var localci = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(localci);
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     
+     coordinates = new MFVec3f(localc);
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
 ]]></Script>
 </Group>
 <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="coordIndex" toNode="Orbit"></ROUTE>

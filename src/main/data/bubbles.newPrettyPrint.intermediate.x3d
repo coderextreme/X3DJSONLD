@@ -21,9 +21,9 @@
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance DEF='_01_-_Default' class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
-                    <ComposedShader DEF='cobweb' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' class=''/>
+                    <ComposedShader DEF='x_ite' language='GLSL' class=''>
+                        <ShaderPart type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' class=''/>
+                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
@@ -31,8 +31,8 @@
                         <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
                     </ComposedShader>
                     <ComposedShader DEF='x3dom' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' class=''/>
+                        <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' class=''/>
+                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>

@@ -87,7 +87,7 @@
                 <Appearance>
                     <Material/>
                 </Appearance>
-                <Text string='"He said, \\"Immel did it!\\""'/>
+                <Text string='"He said, \"Immel did it!\""'/>
             </Shape>
         </Collision>
         <Transform translation='0 -2.5 0'>

@@ -47,7 +47,7 @@
 </Shape>
 </Transform>
 </Transform>
-<Transform translation="3 0 0"><Shape><Appearance containerField="appearance"><!--note 0x000000 = 0--><PixelTexture containerField="texture" DEF="ThreeComponents" image="2 4 3 16711680 65280 0 0 0 0 16777215 16776960"></PixelTexture>
+<Transform translation="3 0 0"><Shape><Appearance containerField="appearance"><!-- note 0x000000 = 0 --><PixelTexture containerField="texture" DEF="ThreeComponents" image="2 4 3 16711680 65280 0 0 0 0 16777215 16776960"></PixelTexture>
 </Appearance>
 <Box containerField="geometry"></Box>
 </Shape>
@@ -57,7 +57,7 @@
 </Shape>
 </Transform>
 </Transform>
-<Transform translation="6 0 0"><Shape><Appearance containerField="appearance"><!--Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127--><PixelTexture containerField="texture" DEF="FourComponents" image="3 2 4 4278190335 16711935 65535 4278190207 16711807 65407"></PixelTexture>
+<Transform translation="6 0 0"><Shape><Appearance containerField="appearance"><!-- Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 --><PixelTexture containerField="texture" DEF="FourComponents" image="3 2 4 4278190335 16711935 65535 4278190207 16711807 65407"></PixelTexture>
 </Appearance>
 <Box containerField="geometry"></Box>
 </Shape>
@@ -67,7 +67,7 @@
 </Shape>
 </Transform>
 </Transform>
-<!--Background from PixelTextureBW.x3d--><Transform translation="0 6 -2"><Shape><Appearance containerField="appearance"><PixelTexture containerField="texture" image="8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204"></PixelTexture>
+<!-- Background from PixelTextureBW.x3d --><Transform translation="0 6 -2"><Shape><Appearance containerField="appearance"><PixelTexture containerField="texture" image="8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204"></PixelTexture>
 </Appearance>
 <Box containerField="geometry" size="16 16 0.1"></Box>
 </Shape>

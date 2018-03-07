@@ -12,7 +12,7 @@
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
-<Scene><ProtoDeclare name="ArchPrototype" appinfo="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."><ProtoInterface><!--COLOR OF ARCH--><!--INPUT PARAMETERS--><!--General parameters: measures in meters--><!--Parameters to create to create shapes related to arch: put true to apply--><field name="diffuseColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>
+<Scene><ProtoDeclare name="ArchPrototype" appinfo="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."><ProtoInterface><!-- COLOR OF ARCH --><!-- INPUT PARAMETERS --><!-- General parameters: measures in meters --><!-- Parameters to create to create shapes related to arch: put true to apply --><field name="diffuseColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>
 <field name="emissiveColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>
 <field name="clearSpanWidth" accessType="initializeOnly" appinfo="clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference" type="SFFloat" value="4"></field>
 <field name="riseHeight" accessType="initializeOnly" appinfo="riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference" type="SFFloat" value="2"></field>
@@ -27,7 +27,7 @@
 <field name="archHalfFilled" accessType="initializeOnly" appinfo="archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." type="SFBool" value="false"></field>
 <field name="lintel" accessType="initializeOnly" appinfo="lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
+<ProtoBody><!-- First node determines node type of this prototype --><!-- IndexedFaceset creates arch --><Transform DEF="ArchTransform"><Shape DEF="Arch"><!-- note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly --><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
 </IndexedFaceSet>
 <Appearance containerField="appearance"><Material containerField="material" DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
@@ -36,7 +36,7 @@
 </Appearance>
 </Shape>
 </Transform>
-<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs--><Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
+<!-- Subsequent nodes do not render, but still must be a valid X3D subgraph --><!-- This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs --><Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot;"><!-- INPUT PARAMETERS --><!-- General parameters --><!-- Parameters to create to create shapes related to arch: put true to apply --><!-- OUTPUT PARAMETERS --><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
 <field name="riseHeight" accessType="initializeOnly" appinfo="user or default input for riseHeight parameter" type="SFFloat"></field>
 <field name="depth" accessType="initializeOnly" appinfo="user or default input for depth parameter" type="SFFloat"></field>
 <field name="topAbutmentHeight" accessType="initializeOnly" appinfo="user or default input for topAbutmentHeight parameter" type="SFFloat"></field>
@@ -79,6 +79,6 @@
 <fieldValue name="pierWidth" value="1"></fieldValue>
 <fieldValue name="pierHeight" value="2"></fieldValue>
 </ProtoInstance>
-<!--Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)--><Inline DEF="CoordinateAxes" url="&quot;../data/CoordinateAxes.x3d&quot;"></Inline>
+<!-- Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) --><Inline DEF="CoordinateAxes" url="&quot;../data/CoordinateAxes.x3d&quot;"></Inline>
 </Scene>
 </X3D>

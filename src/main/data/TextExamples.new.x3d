@@ -27,7 +27,7 @@
         <Transform translation='-3 0 0'>
             <Shape>
                 <Appearance USE='LightBlueAppearance'/>
-                <Text string='"I don&apos;t think so" "" "he said \\"Hi\\""'>
+                <Text string='"I don&apos;t think so" "" "he said \"Hi\""'>
                     <FontStyle USE='testFontStyle'/>
                 </Text>
             </Shape>
@@ -35,7 +35,7 @@
         <Transform translation='3 0 0'>
             <Shape>
                 <Appearance USE='LightBlueAppearance'/>
-                <Text string='"I don&apos;t think so" "" "he said \\"Hi\\""'>
+                <Text string='"I don&apos;t think so" "" "he said \"Hi\""'>
                     <FontStyle USE='testFontStyle'/>
                 </Text>
             </Shape>

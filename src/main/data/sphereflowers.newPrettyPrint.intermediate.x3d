@@ -20,7 +20,7 @@
                 <ProtoBody>
                     <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                         <ProtoInstance name='FlowerProto' class=''>
-                            <fieldValue name='vertex' value='"../shaders/cobweb_flowers_chromatic.vs"'/>
+                            <fieldValue name='vertex' value='"../shaders/x_ite_flowers_chromatic.vs"'/>
                             <fieldValue name='fragment' value='"../shaders/common.fs"'/>
                         </ProtoInstance>
                     </Group>
