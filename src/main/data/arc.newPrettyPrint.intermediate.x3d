@@ -33,6 +33,7 @@
                         <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                         <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
+
 ecmascript:
 		function set_location(value) {
                     old = translation;
@@ -132,6 +133,7 @@ ecmascript:
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
+            
 
 ]]>
                     </Script>

@@ -63,6 +63,7 @@
                         <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                         <field name='keyValue' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
 <![CDATA[
+
 ecmascript:
 		function set_location(value) {
                     old = translation;
