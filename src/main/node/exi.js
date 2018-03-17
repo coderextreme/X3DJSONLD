@@ -7,9 +7,11 @@ function writeUint18ArrayBufferToEXIEditor(uint8Array, uint8ArrayLength) {
 		}
 		// hex +=	"0x" + sh + " ";
 		hex +=	sh + " ";			
+		/*
 		if((i+1) % 16 == 0) {
 			hex += "\n"
 		}
+		*/
 	}
 	// editorEXI.setValue("len = " + uint8ArrayLength + "\n" + hex);
 	$("#exi").val(hex);
@@ -22,7 +24,7 @@ function encodeJSON() {
 	} else {
 		try {
 			var exiEncoder = new EXI4JSONEncoder();	
-			exiEncoder.encodeJsonText(textJSON);
+			exiEncoder.encodeJsonObject(JSON.parse(textJSON));
 			var uint8ArrayLength = exiEncoder.getUint8ArrayLength();
 			var uint8Array = exiEncoder.getUint8Array();
 			writeUint18ArrayBufferToEXIEditor(uint8Array, uint8ArrayLength);
@@ -41,19 +43,20 @@ function decodeEXI4JSON() {
 		alert("No EXI provided");
 	} else {
 		try {
-			var sp = textEXI.split(/[ \n\r\t]+/); 
+			var sp = textEXI.split(" "); 
 			var arrayBuffer = new ArrayBuffer(sp.length);
-			var arrayBufferView = new Uint8Array(arrayBuffer);
+			var uint8Array = new Uint8Array(arrayBuffer);
+			// alert("TODO EXI " + sp.length + ": " + sp);
 			for(var i=0; i<sp.length; i++) {
-				arrayBufferView[i] = parseInt(sp[i], 16);
+				uint8Array[i] = parseInt(sp[i], 16);
 			}
-			
+
 			var exiDecoder = new EXI4JSONDecoder();
 			
 			// register JSON handler
 			var jsonHandler = new JSONEventHandler();
 			exiDecoder.registerEventHandler(jsonHandler);
-			exiDecoder.decode(arrayBuffer);
+			exiDecoder.decode(uint8Array);
 			var jsonText = JSON.stringify(jsonHandler.getJSON(), null, 2);
 			$("#json").val(jsonText);
 		} catch(err) {
