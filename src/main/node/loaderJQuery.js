@@ -575,6 +575,29 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, callback, path) {
+    if (typeof DOM2JSONSerializer !== 'undefined') {
+	try {
+		var doc = null;
+		try {  
+			var domParser = new DOMParser();
+			doc = domParser.parseFromString (xmlString, 'application/xml');
+	
+		} catch (e) {
+			throw e;
+		}
+		var element = doc.documentElement;
+		var serializer = new DOM2JSONSerializer();
+		var json = serializer.serializeToString(null, element, path, mapToMethod, fieldTypes);
+		$('#json').val(json);
+	        callback(JSON.parse(json), path);
+		// skip rest, we have our results
+    		return;
+callback(json, path);
+	} catch (e) {
+		alert("Problems serializing to JSON", e);
+		console.error(e);
+	}
+    }
     $.post("/convert", xmlString, function(json) {
 	    callback(json, path);
     }, "json")

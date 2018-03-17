@@ -1,6 +1,6 @@
 "use strict";
 
-var jsonlint = require("jsonlint");
+// var jsonlint = require("jsonlint");
 
 function DOM2JSONSerializer() {
 }
