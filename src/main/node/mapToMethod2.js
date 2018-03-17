@@ -143,7 +143,8 @@ var mapToMethod2 = {
 		"LayerSet" : "addLayerSet"
 	},
 	"HAnimHumanoid" : {
-		"HAnimJoint" : "addJoints"
+		"HAnimJoint" : "addJoints",
+		"HAnimSegment" : "addSegments"
 	}
 };
 
