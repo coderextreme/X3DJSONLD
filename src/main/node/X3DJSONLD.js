@@ -27,6 +27,12 @@ if (typeof Browser === 'undefined') {
 	};
 }
 
+if (typeof console !== 'undefined') {
+	if (typeof console.warning === 'undefined') {
+		console.warning = console.warn;
+	}
+}
+
 /**
  * processURLs and make them more kosher for the X3DJSONLD user inteferface to
  * deal with.  Pass an array of URLs and a path for the main JSON file you are
