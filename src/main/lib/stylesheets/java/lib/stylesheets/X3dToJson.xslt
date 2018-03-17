@@ -73,7 +73,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="stripComments"><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="stripDefaultAttributes"><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="indentEnabled"><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="normalizeCommentWhitespace"><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="normalizeCommentWhitespace"><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="sourceText"><xsl:text>strings</xsl:text></xsl:param> <!-- escaped | strings | plaintext -->
     <xsl:param name="traceEnabled" ><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="traceScripts" ><xsl:text>false</xsl:text></xsl:param>
@@ -1439,9 +1439,34 @@ POSSIBILITY OF SUCH DAMAGE.
       <!--  escaped quote " within an SFString value requires a preceding backslash \ in JSON encoding. -->
       <!--  must be careful not to escape "delimiting" "quotes" in MFString array. -->
       <xsl:choose>
-        <!-- no quote, all done -->
+        <!-- starts with space, pass it along -->
+        <xsl:when test="starts-with($inputString,' ')">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0a]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:text> </xsl:text><!-- pass initial whitespace -->
+          <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="inputText" select="substring($inputString,2)"/><!-- initial character index is 1 -->
+              <xsl:with-param name="inputType" select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="starts-with($inputString,'&quot;&quot;')">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0b]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:text>, \"\", </xsl:text><!-- pass initial "" empty string -->
+          <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="inputText" select="substring($inputString,3)"/>
+              <xsl:with-param name="inputType" select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="starts-with($inputString,'\&quot;')">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0c]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:text>\\&quot;</xsl:text><!-- pass initial \" string as \\\" (note that one \ was passed already) -->
+          <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="inputText" select="substring($inputString,3)"/>
+              <xsl:with-param name="inputType" select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
         <xsl:when test="not(contains($inputString,'&quot;')) and not(contains($inputString,'\'))">
-          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+		  <!-- all done, no further processing -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0d]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="$inputString"/>
         </xsl:when>
         <!-- comment: \ literal is same for X3D and JSON, read by XPath as \ and needs to be re-escaped as \\ -->
