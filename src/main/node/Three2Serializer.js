@@ -15,8 +15,7 @@ ThreeSerializer.prototype = {
 		// dump after we find first scene
 		return JSON.stringify(obj, null, 2);
 	},
-	parseFromString : function(data) {
-		var fieldTypes = require('./fieldTypes.js');
+	parseFromString : function(data, fieldTypes) {
 		var parentobj = {};
 		parentobj.children = [];
 		parentobj.string = "X3D";

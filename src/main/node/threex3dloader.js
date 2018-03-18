@@ -1,47 +1,81 @@
-var THREE = require('three');
-var loader = require('./index.js');
-loader.x3dLoader(THREE);
+var file = "../data/sphere.json";
 
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-
-camera.position.z = 3;
-camera.position.x = 3;
-camera.position.y = 3;
-camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-const httpRequest = new XMLHttpRequest();
-
-var file = "sphere.json";
-
-
-
-
-
-if (file.endsWith(".xml")) {
-	httpRequest.overrideMimeType('text/xml');
-} else {
-	httpRequest.overrideMimeType('text/json');
+function empty(elem) {
+    while (elem.lastChild) elem.removeChild(elem.lastChild);
 }
 
-httpRequest.onreadystatechange = () => {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        if (httpRequest.status === 200) {
-            var text = httpRequest.responseText;
+var scene = null;
+var projector = null;
+var camera = null;
+var controls = null;
+var renderer = new THREE.WebGLRenderer();
 
-            var loader = new THREE.X3DLoader();
-            const scene = loader.parse(text);
-            var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-            scene.add( light );
-            renderer.render(scene, camera);
-        } else {
-            alert('There was a problem with the request.');
-        }
-    }
-};
+function threeLoadFile(file) {
+	x3dLoader(THREE);
+	renderer.domElement.addEventListener('dblclick', null, false);
+	scene = null;
+	projector = null;
+	camera = null;
+	controls = null;
+	$("#threejs").empty();
 
-httpRequest.open("GET", file);
-httpRequest.send(null);
+	renderer.setSize( 150, 75 );
+	$("#threejs").append( renderer.domElement );
+	camera = new THREE.PerspectiveCamera( 75, 2 /* W/H */, 0.1, 1000 );
+	camera.position.z = 2;
+	camera.position.x = 2;
+	camera.position.y = 2;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+	const httpRequest = new XMLHttpRequest();
+
+	if (file.endsWith(".xml")) {
+		httpRequest.overrideMimeType('text/xml');
+	} else if (file.endsWith(".x3d")) {
+		httpRequest.overrideMimeType('text/xml');
+	} else if (file.endsWith(".json")) {
+		httpRequest.overrideMimeType('text/json');
+	} else if (file.endsWith(".wrl")) {
+		httpRequest.overrideMimeType('model/vrml');
+	}
+
+	httpRequest.onreadystatechange = () => {
+	    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+		if (httpRequest.status === 200) {
+		    var text = httpRequest.responseText;
+
+		    var loader;
+
+		    if (file.endsWith(".wrl")) {
+			scene = new THREE.Scene();
+			scene.add( camera );
+			loader = new THREE.VRMLLoader();
+			loader.load( file, function ( object ) {
+				scene.add( object );
+				var light = new THREE.AmbientLight( 0xFFFFFF );
+				scene.add( light );
+				renderer.render( scene, camera );
+			});
+	            } else {
+			loader = new THREE.X3DLoader();
+			scene = loader.parse(text, null, fieldTypes);
+			var light = new THREE.AmbientLight( 0xFFFFFF );
+			scene.add( light );
+			renderer.render( scene, camera );
+	            }
+		} else {
+		    alert('There was a problem with the request.  '+httpRequest.status+" "+file);
+		
+		}
+	    }
+	};
+
+	httpRequest.open("GET", file);
+	httpRequest.send(null);
+}
+
+threeLoadFile(file);
+
+if (typeof module === 'object')  {
+	module.exports = threeLoadFile;
+}

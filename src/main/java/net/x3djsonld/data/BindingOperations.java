@@ -178,8 +178,7 @@ public class BindingOperations
       .addChild(new IntegerSequencerObject("TimingSequencer").setKey(new float[] {0.0f,0.1f,0.2f,0.3f,0.4f,0.5f,0.6f,0.7f,0.8f,1.0f}).setKeyValue(new int[] {0,1,2,3,4,5,6,7,8,10}))
       .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("TimingSequencer").setToField("set_fraction"))
       .addChild(new ScriptObject("BindingSequencerEngine").setSourceCode("\n" + 
-"        " + "\n" + 
-"ecmascript:" + "\n" + 
+"        ecmascript:" + "\n" + 
 "\n" + 
 "function initialize ()" + "\n" + 
 "{" + "\n" + 

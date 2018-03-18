@@ -553,10 +553,15 @@ $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
 		loadJson(url);
+		threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
+		threeLoadFile(url);
 	} else if (url.endsWith(".xml")) {
 		loadXml(url);
+		threeLoadFile(url);
+	} else if (url.endsWith(".wrl")) {
+		threeLoadFile(url);
 	} else if (url.endsWith(".ply")) {
 		loadPly(url);
 	} else if (url.endsWith(".stl")) {

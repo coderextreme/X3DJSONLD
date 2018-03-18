@@ -63,6 +63,7 @@ function sendNoNext(res, data, type) {
 }
 
 var filecount = 0;
+/*
 app.post("/convert", function(req, res, next) {
 	var buf = '';
 	req.on('data', function(chunk){ buf += chunk; });
@@ -83,9 +84,10 @@ app.post("/convert", function(req, res, next) {
 		});
 	});
 });
+*/
 
 
-app.get("/X3dGraphics.com/*.x3d*", function(req, res, next) {
+app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;
@@ -98,7 +100,7 @@ app.get("/X3dGraphics.com/*.x3d*", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
-app.get("/www.web3d.org/*.x3d*", function(req, res, next) {
+app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;
@@ -128,7 +130,32 @@ app.get("/data/*.x3d*", function(req, res, next) {
 app.get("/files", function(req, res, next) {
 	var test = req._parsedUrl.query;
 	var json = [];
+	var wrl = [];
 
+	glob(www+'/**/*.wrl', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				wrl.push(file.substr(www.length, file.length-www.length));
+				console.error(file);
+			}
+
+		});
+		glob(www+'src/main/wrl/*.wrl', function( err, files ) {
+			if (err) return;
+			files.forEach(function(file) {
+				if (new RegExp(test).test(file)) {
+					wrl.push(file.substr(www.length, file.length-www.length));
+					console.error(file);
+				}
+
+			});
+			if (wrl.length > 0) {
+				send(res, wrl, "model/vrml", next);
+			}
+			console.log("Got "+wrl+" wrl files");
+		});
+	});
 	glob('src/main/ply/*.ply', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
@@ -166,7 +193,9 @@ app.get("/files", function(req, res, next) {
 						}
 
 					});
-					send(res, json, "text/json", next);
+					if (wrl.length === 0) {
+						send(res, json, "text/json", next);
+					}
 				});
 			});
 		});
@@ -232,6 +261,7 @@ magic("*.css", "text/css");
 magic("*.swf", "application/x-shockwave-flash");
 magic("/**/schema/*.json", "text/json");
 magic("*.x3d", "model/x3d+xml");
+magic("*.wrl", "model/vrml");
 /*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
