@@ -5,10 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+    <!--
+    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
+    -->
    <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
    <script type="text/javascript" src="../node/x_ite.js"></script>
+    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
     X3DCanvas {
         background:#000;
@@ -51,12 +56,26 @@
 </tr>
 </table>
 </body>
-    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
+    <script src="../node/Three2Serializer.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
     <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod2.js"></script>
+    <script type="text/javascript" src="../node/fieldTypes.js"></script>
     <script type="text/javascript" src="../node/matrix.js"></script>
+    <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
+    <script type="text/javascript" src="../node/convertStlToJson.js"></script>
     <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
+    <script type="text/javascript" src="../node/exi.js"></script>
+    <script src="../../../node_modules/three/build/three.js"></script>
+    <script src="../node/x3d-parser.js"></script>
+    <script src="../node/x3d-loader.js"></script>
+    <script src="../node/threex3dloader.js"></script>
+    <script src="../../../node_modules/three/examples/js/loaders/VRMLLoader.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
