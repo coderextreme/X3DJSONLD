@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://code.create3000.de/x_ite/latest/dist/x_ite.css"/>
+<script type="text/javascript" src="http://code.create3000.de/x_ite/latest/dist/x_ite.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
+    <style type="text/css">
+    X3DCanvas {
+        background:#000;
+	width: 300px;
+	height:150px;
+    }
+    X3D {
+        background:#000;
+	width: 300px;
+	height:150px;
+    }
+    </style>
+</head>
+<body>
+    <button onclick="load('../data/flipp.json'); return false">Load</button>
+<table>
+<tr>
+<td>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    	<div id="x3domjson"></div>
+    <X3DCanvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+<td>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+	<div id="x3domxml"></div>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+</tr>
+</table>
+</body>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript">
+// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+
+function load(url) {
+	getJSON(url).then(function(json) {
+		loadX3D('#x3domjson', json, url);
+	}).catch(function(err) {
+		alert("Scene Load failed");
+		console.log(err);
+	});
+}
+$(document).ready(function() {
+	load('../data/flipp.json');
+});
+
+    </script>
+</html>
