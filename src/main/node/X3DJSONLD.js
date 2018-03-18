@@ -538,7 +538,6 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
  * to append or insert into the DOM.
  */
 function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
-	console.error("Invoking client side loader");
 	loadSchema(jsobj, path, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
@@ -546,7 +545,6 @@ function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 			xml.push(serializeDOM(jsobj, child, true));
 		}
-		console.error("Returning with", child);
 		callback(child);
 	}, function(e) {
 		console.error(e);
