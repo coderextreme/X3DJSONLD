@@ -240,7 +240,7 @@ if (typeof mapToMethod !== 'undefined') {
 
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	var xml = new LOG();
+	var xml = [];
 	loadX3DJS(json, path, xml, NS, loadSchema, doValidate, function(element) {
 		if (element != null) {
 			next(xml);
@@ -251,7 +251,6 @@ function convertJsonToXml(json, next, path) {
 }
 
 function loadX3D(selector, json, url) {
-    var xml = new LOG();
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
@@ -270,6 +269,7 @@ function loadX3D(selector, json, url) {
 	}
     }
     var NS = $('#namespace option:selected').text();
+    var xml = [];
     replaceX3DJSON(selector, json, url, xml, NS, function(child) {
 	    if (child != null) {
 		        try {
