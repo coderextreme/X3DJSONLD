@@ -196,6 +196,7 @@ ProtoDeclare23.setProtoBody(ProtoBody31)
 Scene7.addChild(ProtoDeclare23)
 ProtoInstance47 = ProtoInstanceObject()
 ProtoInstance47.setName("three")
+ProtoInstance47.setDEF("threepi")
 
 fieldValue48 = fieldValueObject()
 fieldValue48.setName("ytranslation")
@@ -206,6 +207,7 @@ fieldValue49 = fieldValueObject()
 fieldValue49.setName("myShape")
 
 Shape50 = ShapeObject()
+Shape50.setDEF("box")
 
 Box51 = BoxObject()
 Box51.setSize([1,1,1])
@@ -221,6 +223,14 @@ Shape50.setAppearance(Appearance52)
 fieldValue49.addChild(Shape50)
 ProtoInstance47.addFieldValue(fieldValue49)
 Scene7.addChild(ProtoInstance47)
+Transform54 = TransformObject()
+Transform54.setTranslation([0,2,0])
+
+Shape55 = ShapeObject()
+Shape55.setUSE("box")
+
+Transform54.addChild(Shape55)
+Scene7.addChild(Transform54)
 X3D0.setScene(Scene7)
 
 X3D0.toFileX3D("../data/Box.new.x3d")

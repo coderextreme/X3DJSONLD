@@ -52,7 +52,9 @@ var ProtoInstance3 = null;
               .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("three")))      ;
+        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("three").setDEF("threepi"))
+        .addChild(new TransformObject().setTranslation(Java.to([0,2,0], Java.type("float[]")))
+          .addChild(new ShapeObject().setUSE("box"))))      ;
 ProtoInstance0
                 .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance1
@@ -63,7 +65,7 @@ ProtoInstance3
           .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance3
           .addFieldValue(new fieldValueObject().setName("myShape")
-            .addChild(new ShapeObject()
+            .addChild(new ShapeObject().setDEF("box")
               .setGeometry(new BoxObject().setSize(Java.to([1,1,1], Java.type("float[]"))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,1,0], Java.type("float[]")))))));
