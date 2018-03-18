@@ -29233,12 +29233,12 @@ x3dom.gfx_webgl = (function () {
         }
 
         var bgnd = scene.getBackground();
-        if (bgnd._webgl.position !== undefined) {
+        if (bgnd._webgl !== undefined && bgnd._webgl.position !== undefined) {
             gl.deleteBuffer(bgnd._webgl.buffers[1]);
             gl.deleteBuffer(bgnd._webgl.buffers[0]);
         }
         var fgnd = scene._fgnd;
-        if (fgnd._webgl.position !== undefined) {
+        if (fgnd._webgl !== undefined && fgnd._webgl.position !== undefined) {
             gl.deleteBuffer(fgnd._webgl.buffers[1]);
             gl.deleteBuffer(fgnd._webgl.buffers[0]);
         }

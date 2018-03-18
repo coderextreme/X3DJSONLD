@@ -727,17 +727,12 @@ function loadSchema(json, file, doValidate, success, failure) {
 		$.getJSON('../schema/draft-06-JSONSchema.json', function(metaschemajson) {
 		    // try {
 		      ajv.addMetaSchema(metaschemajson);
-		      console.error("MetaSchema added");
 		      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 			   // try {
-			      console.error("Schema received");
 			      ajv.addSchema(schemajson);
-			      console.error("Schema", version, "added");
 			      validated_version = ajv.compile(schemajson);
 			      validate[version] = validated_version;
-			      if (typeof validated_version !== 'undefined') {
-				      console.error("Schema compiled");
-			      } else {
+			      if (typeof validated_version === 'undefined') {
 				      console.error("Schema not compiled");
 			      }
 			      doValidate(json, validated_version, file, success, undefined);
