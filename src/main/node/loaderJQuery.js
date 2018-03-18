@@ -542,7 +542,7 @@ function updateStl(json) {
 			var stl = convertJsonToStl(json);
 			$('#stl').val(stl);
 		} else {
-			alert("Perhaps you need to include convertJsonToStl.js?");
+			console.log("Perhaps you need to include convertJsonToStl.js if you want STL output?");
 		}
 	} catch (e) {
 		console.error(e);
