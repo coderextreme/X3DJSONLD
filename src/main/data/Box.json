@@ -247,6 +247,7 @@
         {
           "ProtoInstance": {
             "@name": "three",
+            "@DEF": "threepi",
             "fieldValue": [
               {
                 "@name": "ytranslation",
@@ -257,6 +258,7 @@
                 "-children": [
                   {
                     "Shape": {
+                      "@DEF": "box",
                       "-geometry": {
                         "Box": {
                           "@size": [
@@ -282,6 +284,22 @@
                     }
                   }
                 ]
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              2,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "@USE": "box"
+                }
               }
             ]
           }

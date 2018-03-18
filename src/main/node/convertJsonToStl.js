@@ -42,6 +42,12 @@ function toNormals(json, LDNodeList, ParentNode) {
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
+		Group : function(obj, LDNode) {
+			LDNode.kid = true;
+		},
+		Shape : function(obj, LDNode) {
+			LDNode.kid = true;
+		},
 		Box : function(obj, LDNode) {
 			LDNode.kid = true;
 			LDNode.geometry = true;

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"07 March 2018"
+            "@content":"18 March 2018"
           },
           {
             "@name":"generator",
@@ -235,6 +235,7 @@
           { "ProtoInstance":
             {
               "@name":"three",
+              "@DEF":"threepi",
               "fieldValue": [
                 {
                   "@name":"ytranslation",
@@ -245,6 +246,7 @@
                   "-children":[
                     { "Shape":
                       {
+                        "@DEF":"box",
                         "-appearance":
                           { "Appearance":
                             {
@@ -265,6 +267,18 @@
                       }
                     }
                   ]
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"box"
+                  }
                 }
               ]
             }
