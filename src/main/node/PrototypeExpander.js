@@ -574,6 +574,7 @@ PROTOS.prototype = {
 		} else {
 			// console.error("Copying ProtoBody", name);
 			var children = this.protos[name]['ProtoBody']['-children'];
+			//  bodydef = this.protos[name]['ProtoBody']["@DEF"];
 			for (var child in children) {
 				var ch = children[child];
 				for (var objkey in ch) {
@@ -601,18 +602,20 @@ PROTOS.prototype = {
 			}
 			firstobj = firstobj[0];
 		}
+		firstobj["@DEF"] = this.getScope();
 
 
 		if (typeof use !== 'undefined' && typeof firstobj === 'object') {
+			/*
 			if (typeof bodydef !== 'undefined') {
 				var bdef = this.saveDef(bodydef);
 				this.pushScope(bodydef);
 			}
-			var newobject = {
-				"Group": {  // replace ProtoInstance with Group
-					"@USE" : this.getScope()
-				}
-			};
+			*/
+			var newobject = {}
+			newobject[objkey] = {};
+			// replace ProtoInstance with the first item from the ProtoBody
+			newobject[objkey]["@USE"] = this.getScope();
 			if (typeof bodydef !== 'undefined') {
 				this.popScope();
 			}

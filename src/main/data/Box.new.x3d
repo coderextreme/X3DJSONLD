@@ -70,10 +70,10 @@
                 </Transform>
             </ProtoBody>
         </ProtoDeclare>
-        <ProtoInstance name='three'>
+        <ProtoInstance DEF='threepi' name='three'>
             <fieldValue name='ytranslation' value='0 0 0'/>
             <fieldValue name='myShape'>
-                <Shape>
+                <Shape DEF='box'>
                     <Appearance>
                         <Material diffuseColor='0 1 0'/>
                     </Appearance>
@@ -81,5 +81,8 @@
                 </Shape>
             </fieldValue>
         </ProtoInstance>
+        <Transform translation='0 2 0'>
+            <Shape USE='box'/>
+        </Transform>
     </Scene>
 </X3D>

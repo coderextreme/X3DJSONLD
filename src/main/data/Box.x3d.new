@@ -45,12 +45,14 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
-<fieldValue name="myShape"><Shape><Box containerField="geometry" size="1 1 1"></Box>
+<ProtoInstance name="three" DEF="threepi"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
+<fieldValue name="myShape"><Shape DEF="box"><Box containerField="geometry" size="1 1 1"></Box>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 </fieldValue>
 </ProtoInstance>
+<Transform translation="0 2 0"><Shape USE="box"></Shape>
+</Transform>
 </Scene>
 </X3D>
