@@ -58,6 +58,10 @@ class Matrix extends Array {
 			new Matrix(this[3][0], this[3][1], this[3][2], this[3][3]));
 	}
 	static quaternion(x, y, z, r) {
+		x = parseFloat(x);
+		y = parseFloat(y);
+		z = parseFloat(z);
+		r = parseFloat(r);
 		return new Matrix(
 			new Matrix(x, -y, -z, -r),
 		  	new Matrix(y,  x, -r,  z),
@@ -65,6 +69,9 @@ class Matrix extends Array {
 		  	new Matrix(r, -z,  y,  x));
 	}
 	static translation(x, y, z) {
+		x = parseFloat(x);
+		y = parseFloat(y);
+		z = parseFloat(z);
 		return  new Matrix(
 			new Matrix(1, 0, 0, x),
 			new Matrix(0, 1, 0, y),
@@ -72,6 +79,9 @@ class Matrix extends Array {
 			new Matrix(0, 0, 0, 1));
 	}
 	static scale(x, y, z) {
+		x = parseFloat(x);
+		y = parseFloat(y);
+		z = parseFloat(z);
 		return new Matrix(
 			new Matrix(x, 0, 0, 0),
 			new Matrix(0, y, 0, 0),

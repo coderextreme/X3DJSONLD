@@ -296,7 +296,15 @@ function loadX3D(selector, json, url) {
 	    } else {
 		    alert("Unknown error returning no child element!");
 	    }
+	    // do this afterwards to take advantage of prototype expander
+	    try {
+	    	updateStl(json);
+	    } catch (e) {
+	    	alert("Problems updating Stl");
+	    	console.error(e);
+	    }
     });
+    return json;
 }
 
 /**
@@ -431,13 +439,7 @@ function updateFromJson(json, path) {
 		console.error(e);
 	}
 	try {
-		updateStl(json);
-	} catch (e) {
-		alert("Problems updating Stl");
-		console.error(e);
-	}
-	try {
-		loadX3D("#x3domjson", json, path); // does not load path
+		json = loadX3D("#x3domjson", json, path); // does not load path
 	} catch (e) {
 		alert("Problems converting and loading JSON", e);
 		console.error(e);
@@ -540,7 +542,7 @@ function updateStl(json) {
 			var stl = convertJsonToStl(json);
 			$('#stl').val(stl);
 		} else {
-			console.error("Perhaps you need to include convertJsonToStl.js?");
+			alert("Perhaps you need to include convertJsonToStl.js?");
 		}
 	} catch (e) {
 		console.error(e);
