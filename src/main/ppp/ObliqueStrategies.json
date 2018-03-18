@@ -1,123 +1,121 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "ObliqueStrategies.x3d"
+          "@content": "ObliqueStrategies.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Text scripting and animation example using Oblique Strategies card set by Brian Eno."
+          "@content": "Text scripting and animation example using Oblique Strategies card set by Brian Eno.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman, John Kelly, Ben Cheng"
+          "@content": "Don Brutzman, John Kelly, Ben Cheng",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "3 November 2013"
+          "@content": "3 November 2013",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "18 October 2015"
+          "@content": "18 October 2015",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "oblique.html"
+          "@content": "oblique.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "ObliqueStrategies.txt"
+          "@content": "ObliqueStrategies.txt",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "ObliqueStrategiesScript.js"
+          "@content": "ObliqueStrategiesScript.js",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html"
+          "@content": "http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.eno-web.co.uk/obliques.html"
+          "@content": "http://www.eno-web.co.uk/obliques.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://gothpunk.com/haiku-intro.html"
+          "@content": "http://gothpunk.com/haiku-intro.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.rtqe.net/ObliqueStrategies/OSintro.html"
+          "@content": "http://www.rtqe.net/ObliqueStrategies/OSintro.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Oblique_Strategies"
+          "@content": "https://en.wikipedia.org/wiki/Oblique_Strategies",
+          "@name": "reference"
         },
         {
-          "@name": "subject",
-          "@content": "Brian Eno, Oblique Strategies"
+          "@content": "Brian Eno, Oblique Strategies",
+          "@name": "subject"
         },
         {
-          "@name": "Image",
-          "@content": "images/ObliqueStrategiesEntryScreen.png"
+          "@content": "images/ObliqueStrategiesEntryScreen.png",
+          "@name": "Image"
         },
         {
-          "@name": "audio",
-          "@content": "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
+          "@content": "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D",
+          "@name": "audio"
         },
         {
-          "@name": "audio",
-          "@content": "translate_tts_HelloX3D.mp3"
+          "@content": "translate_tts_HelloX3D.mp3",
+          "@name": "audio"
         },
         {
-          "@name": "audio",
-          "@content": "translate_tts_HelloX3D.wav"
+          "@content": "translate_tts_HelloX3D.wav",
+          "@name": "audio"
         },
         {
-          "@name": "TODO",
-          "@content": "multiliingual translation parameter"
+          "@content": "multiliingual translation parameter",
+          "@name": "TODO"
         },
         {
-          "@name": "reference",
-          "@content": "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"
+          "@content": "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"
+          "@content": "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html",
+          "@name": "reference"
         },
         {
-          "@name": "warning",
-          "@content": "under development, scene Sound/AudioClip triggering (or retrieved file format) not working"
+          "@content": "under development, scene Sound/AudioClip triggering (or retrieved file format) not working",
+          "@name": "warning"
         },
         {
-          "@name": "warning",
-          "@content": "BSContact error: Script node TextScript: parse error: line 15 \"var strategy = [];"
+          "@content": "BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];",
+          "@name": "warning"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "30 January 2018"
+          "@content": "18 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
@@ -128,7 +126,12 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Background": {
@@ -277,57 +280,61 @@
             ],
             "-children": [
               {
-                "#comment": "initialize() method includes unit test to printAllStrategies() to console"
+                "#comment": [
+                  " initialize() method includes unit test to printAllStrategies() to console "
+                ]
               },
               {
-                "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!"
+                "#comment": [
+                  " TODO insert field definitions here (index string_changed previous next random) and then animate! "
+                ]
               }
             ],
             "field": [
               {
-                "@name": "index",
                 "@accessType": "initializeOnly",
                 "@appinfo": "index for active strategy card, -1 means no selection",
+                "@name": "index",
                 "@type": "SFInt32",
                 "@value": 0
               },
               {
-                "@name": "string_changed",
                 "@accessType": "outputOnly",
                 "@appinfo": "latest strategy card value",
+                "@name": "string_changed",
                 "@type": "MFString"
               },
               {
-                "@name": "textToSpeechUrl",
                 "@accessType": "outputOnly",
                 "@appinfo": "url to invoke Google Translate",
+                "@name": "textToSpeechUrl",
                 "@type": "MFString"
               },
               {
-                "@name": "newCardTime",
                 "@accessType": "outputOnly",
                 "@appinfo": "activate Sound node",
+                "@name": "newCardTime",
                 "@type": "SFTime"
               },
               {
+                "@accessType": "inputOnly",
                 "@name": "selectPreviousCard",
-                "@accessType": "inputOnly",
                 "@type": "SFBool"
               },
               {
+                "@accessType": "inputOnly",
                 "@name": "selectNextCard",
-                "@accessType": "inputOnly",
                 "@type": "SFBool"
               },
               {
+                "@accessType": "inputOnly",
                 "@name": "selectRandomCard",
-                "@accessType": "inputOnly",
                 "@type": "SFBool"
               },
               {
-                "@name": "traceEnabled",
                 "@accessType": "initializeOnly",
                 "@appinfo": "controls console tracing",
+                "@name": "traceEnabled",
                 "@type": "SFBool",
                 "@value": true
               }
@@ -399,16 +406,24 @@
                   "@minFront": 20,
                   "-children": [
                     {
-                      "#comment": "Make sure the sound source AudioClip is audible at the user location"
+                      "#comment": [
+                        " Make sure the sound source AudioClip is audible at the user location "
+                      ]
                     },
                     {
-                      "#comment": "Not all X3D players seem to use the .mp3"
+                      "#comment": [
+                        " Not all X3D players seem to use the .mp3 "
+                      ]
                     },
                     {
-                      "#comment": "&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
+                      "#comment": [
+                        " &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players "
+                      ]
                     },
                     {
-                      "#comment": "%20 is space character used in uri/url encoding"
+                      "#comment": [
+                        " %20 is space character used in uri/url encoding "
+                      ]
                     }
                   ],
                   "-source": {
@@ -512,7 +527,9 @@
                         "@DEF": "TransparentClickSurface",
                         "-children": [
                           {
-                            "#comment": "support Selectable Text with a scalable IFS"
+                            "#comment": [
+                              " support Selectable Text with a scalable IFS "
+                            ]
                           }
                         ],
                         "-geometry": {
@@ -771,6 +788,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

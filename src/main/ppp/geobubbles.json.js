@@ -147,8 +147,24 @@ X3DJSON['Script']['RandomTourTime'] = function() {
 		return value;
 	};
 	this.position = new MFVec3d([new SFVec3d ( 0.0015708 , 0 , 4 ),new SFVec3d ( 0 , 0.0015708 , 4 )]);
-ecmascript: 
-	this.set_cycle = function (value) { var cartesianMult = -150; // -150 if cartesian, 1 if geo var ov = this.proxy.val; // console.error('old '+ov); do { this.proxy.val = Math.floor(Math.random()*2); var vc = this.proxy.val; this.proxy.positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4); } while ( this.proxy.positions[ov][0] === this.proxy.positions[vc][0] && this.proxy.positions[ov][1] === this.proxy.positions[vc][1] && this.proxy.positions[ov][2] === this.proxy.positions[vc][2]); // console.error(this.proxy.positions[ov]); // console.error(this.proxy.positions[vc]); this.proxy.position = new MFVec3d(); this.proxy.position[0] = new SFVec3d(this.proxy.positions[ov][0],this.proxy.positions[ov][1],this.proxy.positions[ov][2]); this.proxy.position[1] = new SFVec3d(this.proxy.positions[vc][0],this.proxy.positions[vc][1],this.proxy.positions[vc][2]); };
+ecmascript:
+
+               
+	this.set_cycle = function (value) {
+                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
+                        var ov = this.proxy.val;
+			// console.error('old '+ov);
+                        do {
+                                this.proxy.val = Math.floor(Math.random()*2);
+                                var vc = this.proxy.val;
+                                this.proxy.positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
+                        } while ( this.proxy.positions[ov][0] === this.proxy.positions[vc][0] && this.proxy.positions[ov][1] === this.proxy.positions[vc][1] && this.proxy.positions[ov][2] === this.proxy.positions[vc][2]);
+			// console.error(this.proxy.positions[ov]);
+			// console.error(this.proxy.positions[vc]);
+                        this.proxy.position = new MFVec3d();
+                        this.proxy.position[0] = new SFVec3d(this.proxy.positions[ov][0],this.proxy.positions[ov][1],this.proxy.positions[ov][2]);
+                        this.proxy.position[1] = new SFVec3d(this.proxy.positions[vc][0],this.proxy.positions[vc][1],this.proxy.positions[vc][2]);
+               };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

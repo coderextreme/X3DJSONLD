@@ -144,6 +144,7 @@ X3DJSON['Script'] = {};
 }
 
 X3DJSON['Script']['Clouds'] = function() {
+
 ecmascript:
 
 

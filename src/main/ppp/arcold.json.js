@@ -147,8 +147,15 @@ X3DJSON['Script']['DECLpoint_G1_MB1'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-ecmascript: 
-	this.set_location = function (value) { this.proxy.old = this.proxy.translation; this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5); this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]); // console.error(this.proxy.translation); };
+
+ecmascript:
+		
+	this.set_location = function (value) {
+                    this.proxy.old = this.proxy.translation;
+		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
+		    // console.error(this.proxy.translation);
+		};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -205,8 +212,15 @@ X3DJSON['Script']['DECLpoint_G2_MB1'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-ecmascript: 
-	this.set_location = function (value) { this.proxy.old = this.proxy.translation; this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5); this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]); // console.error(this.proxy.translation); };
+
+ecmascript:
+		
+	this.set_location = function (value) {
+                    this.proxy.old = this.proxy.translation;
+		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
+		    // console.error(this.proxy.translation);
+		};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -263,8 +277,15 @@ X3DJSON['Script']['DECLpoint_G3_MB1'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-ecmascript: 
-	this.set_location = function (value) { this.proxy.old = this.proxy.translation; this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5); this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]); // console.error(this.proxy.translation); };
+
+ecmascript:
+		
+	this.set_location = function (value) {
+                    this.proxy.old = this.proxy.translation;
+		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
+		    // console.error(this.proxy.translation);
+		};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -321,8 +342,15 @@ X3DJSON['Script']['DECLpoint_G4_MB1'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-ecmascript: 
-	this.set_location = function (value) { this.proxy.old = this.proxy.translation; this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5); this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]); // console.error(this.proxy.translation); };
+
+ecmascript:
+		
+	this.set_location = function (value) {
+                    this.proxy.old = this.proxy.translation;
+		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
+		    // console.error(this.proxy.translation);
+		};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -395,16 +423,58 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript: 
-	this.recompute = function (startpoint,endpoint){ if (typeof endpoint === 'undefined') { return; } var dif = endpoint.subtract(startpoint); var dist = dif.length()*0.5; var dif2 = dif.multiply(0.5); var norm = dif.normalize(); var transl = startpoint.add(dif2); if (typeof Quaternion !== 'undefined') { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm) }; } else { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm) }; } } ;
+ecmascript:
+        
+	this.recompute = function (startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
 
-	this.recompute_and_route = function (startpoint, endpoint) { var trafo = this.recompute(startpoint, endpoint); if (typeof trafo !== 'undefined') { X3DJSON.nodeUtil('trans1', 'translation',  trafo.translation); X3DJSON.nodeUtil('rotscale1', 'rotation',  trafo.rotation); X3DJSON.nodeUtil('rotscale1', 'scale',  trafo.scale); } else { console.error("this.recompute returned undefined"); } } ;
+	this.recompute_and_route = function (startpoint, endpoint) {
+		var trafo = this.recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			X3DJSON.nodeUtil('trans1', 'translation',  trafo.translation);
+			X3DJSON.nodeUtil('rotscale1', 'rotation',  trafo.rotation);
+			X3DJSON.nodeUtil('rotscale1', 'scale',  trafo.scale);
+		} else {
+			console.error("this.recompute returned undefined");
+		}
+	}
+        ;
 
-	this.initialize = function (){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation')); } ;
+	this.initialize = function (){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+        }
+        ;
 
-	this.set_startpoint = function (val,t){ this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation')); } ;
+	this.set_startpoint = function (val,t){
+            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+        }
+        ;
 
-	this.set_endpoint = function (val,t){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation')); };
+	this.set_endpoint = function (val,t){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -477,16 +547,58 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript: 
-	this.recompute = function (startpoint,endpoint){ if (typeof endpoint === 'undefined') { return; } var dif = endpoint.subtract(startpoint); var dist = dif.length()*0.5; var dif2 = dif.multiply(0.5); var norm = dif.normalize(); var transl = startpoint.add(dif2); if (typeof Quaternion !== 'undefined') { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm) }; } else { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm) }; } } ;
+ecmascript:
+        
+	this.recompute = function (startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
 
-	this.recompute_and_route = function (startpoint, endpoint) { var trafo = this.recompute(startpoint, endpoint); if (typeof trafo !== 'undefined') { X3DJSON.nodeUtil('trans2', 'translation',  trafo.translation); X3DJSON.nodeUtil('rotscale2', 'rotation',  trafo.rotation); X3DJSON.nodeUtil('rotscale2', 'scale',  trafo.scale); } else { console.error("this.recompute returned undefined"); } } ;
+	this.recompute_and_route = function (startpoint, endpoint) {
+		var trafo = this.recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			X3DJSON.nodeUtil('trans2', 'translation',  trafo.translation);
+			X3DJSON.nodeUtil('rotscale2', 'rotation',  trafo.rotation);
+			X3DJSON.nodeUtil('rotscale2', 'scale',  trafo.scale);
+		} else {
+			console.error("this.recompute returned undefined");
+		}
+	}
+        ;
 
-	this.initialize = function (){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation')); } ;
+	this.initialize = function (){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
+        }
+        ;
 
-	this.set_startpoint = function (val,t){ this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation')); } ;
+	this.set_startpoint = function (val,t){
+            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
+        }
+        ;
 
-	this.set_endpoint = function (val,t){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation')); };
+	this.set_endpoint = function (val,t){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -559,16 +671,58 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript: 
-	this.recompute = function (startpoint,endpoint){ if (typeof endpoint === 'undefined') { return; } var dif = endpoint.subtract(startpoint); var dist = dif.length()*0.5; var dif2 = dif.multiply(0.5); var norm = dif.normalize(); var transl = startpoint.add(dif2); if (typeof Quaternion !== 'undefined') { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm) }; } else { return { scale : new SFVec3f(1.0,dist,1.0), translation : transl, rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm) }; } } ;
+ecmascript:
+        
+	this.recompute = function (startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
 
-	this.recompute_and_route = function (startpoint, endpoint) { var trafo = this.recompute(startpoint, endpoint); if (typeof trafo !== 'undefined') { X3DJSON.nodeUtil('trans3', 'translation',  trafo.translation); X3DJSON.nodeUtil('rotscale3', 'rotation',  trafo.rotation); X3DJSON.nodeUtil('rotscale3', 'scale',  trafo.scale); } else { console.error("this.recompute returned undefined"); } } ;
+	this.recompute_and_route = function (startpoint, endpoint) {
+		var trafo = this.recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			X3DJSON.nodeUtil('trans3', 'translation',  trafo.translation);
+			X3DJSON.nodeUtil('rotscale3', 'rotation',  trafo.rotation);
+			X3DJSON.nodeUtil('rotscale3', 'scale',  trafo.scale);
+		} else {
+			console.error("this.recompute returned undefined");
+		}
+	}
+        ;
 
-	this.initialize = function (){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation')); } ;
+	this.initialize = function (){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
+        }
+        ;
 
-	this.set_startpoint = function (val,t){ this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation')); } ;
+	this.set_startpoint = function (val,t){
+            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
+        }
+        ;
 
-	this.set_endpoint = function (val,t){ this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation')); };
+	this.set_endpoint = function (val,t){
+            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

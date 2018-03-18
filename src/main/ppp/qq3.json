@@ -1,51 +1,49 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "qq3.x3d"
+          "@content": "qq3.x3d",
+          "@name": "title"
         },
         {
-          "@name": "creator",
-          "@content": "John Carlson"
+          "@content": "John Carlson",
+          "@name": "creator"
         },
         {
-          "@name": "translator",
-          "@content": "John Carlson"
+          "@content": "John Carlson",
+          "@name": "translator"
         },
         {
-          "@name": "created",
-          "@content": "11 Jan 2015"
+          "@content": "11 Jan 2015",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "05 May 2017"
+          "@content": "05 May 2017",
+          "@name": "modified"
         },
         {
-          "@name": "description",
-          "@content": "12 extrusions to test prototype expander"
+          "@content": "12 extrusions to test prototype expander",
+          "@name": "description"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/x3d/qq3.x3d"
+          "@content": "https://coderextreme.net/x3d/qq3.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "manual"
+          "@content": "manual",
+          "@name": "generator"
         },
         {
           "@name": "translated",
-          "@content": "30 January 2018"
+          "@content": "18 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
@@ -84,7 +82,9 @@
                 "Group": {
                   "-children": [
                     {
-                      "#comment": "left"
+                      "#comment": [
+                        " left "
+                      ]
                     },
                     {
                       "Transform": {
@@ -165,7 +165,9 @@
                       }
                     },
                     {
-                      "#comment": "right"
+                      "#comment": [
+                        " right "
+                      ]
                     },
                     {
                       "Transform": {
@@ -246,7 +248,9 @@
                       }
                     },
                     {
-                      "#comment": "up"
+                      "#comment": [
+                        " up "
+                      ]
                     },
                     {
                       "Transform": {
@@ -265,7 +269,9 @@
                       }
                     },
                     {
-                      "#comment": "down"
+                      "#comment": [
+                        " down "
+                      ]
                     },
                     {
                       "Transform": {
@@ -291,12 +297,19 @@
         },
         {
           "Transform": {
+            "@translation": [
+              0,
+              0,
+              0
+            ],
             "-children": [
               {
                 "Group": {
                   "-children": [
                     {
-                      "#comment": "left"
+                      "#comment": [
+                        " left "
+                      ]
                     },
                     {
                       "Transform": {
@@ -377,7 +390,9 @@
                       }
                     },
                     {
-                      "#comment": "right"
+                      "#comment": [
+                        " right "
+                      ]
                     },
                     {
                       "Transform": {
@@ -458,7 +473,9 @@
                       }
                     },
                     {
-                      "#comment": "up"
+                      "#comment": [
+                        " up "
+                      ]
                     },
                     {
                       "Transform": {
@@ -477,7 +494,9 @@
                       }
                     },
                     {
-                      "#comment": "down"
+                      "#comment": [
+                        " down "
+                      ]
                     },
                     {
                       "Transform": {
@@ -513,7 +532,9 @@
                 "Group": {
                   "-children": [
                     {
-                      "#comment": "left"
+                      "#comment": [
+                        " left "
+                      ]
                     },
                     {
                       "Transform": {
@@ -594,7 +615,9 @@
                       }
                     },
                     {
-                      "#comment": "right"
+                      "#comment": [
+                        " right "
+                      ]
                     },
                     {
                       "Transform": {
@@ -675,7 +698,9 @@
                       }
                     },
                     {
-                      "#comment": "up"
+                      "#comment": [
+                        " up "
+                      ]
                     },
                     {
                       "Transform": {
@@ -694,7 +719,9 @@
                       }
                     },
                     {
-                      "#comment": "down"
+                      "#comment": [
+                        " down "
+                      ]
                     },
                     {
                       "Transform": {
@@ -719,6 +746,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }
