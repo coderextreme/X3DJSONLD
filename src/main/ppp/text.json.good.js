@@ -123,7 +123,9 @@ X3DJSON['Script'][''] = function() {
 		return value;
 	};
 	this.frontUrls = new MFString("rnl_front.png","uffizi_front.png");
-ecmascript: var me = '"1"""2""3"';
+ecmascript:
+			    var me = '"1" "\"2" "3"';
+			    
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};

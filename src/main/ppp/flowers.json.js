@@ -203,16 +203,119 @@ X3DJSON['Script']['DECLflower_INSTANCE_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
-ecmascript: 
-	this.newBubble = function () { this.proxy.translation = new SFVec3f(0, 0, 0); this.proxy.velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } ;
+ecmascript:
+			
+	this.newBubble = function () {
+			    this.proxy.translation = new SFVec3f(0, 0, 0);
+			    this.proxy.velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			;
 
-	this.set_fraction = function () { this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); if (Math.abs(this.proxy.translation.x) > 10) { this.newBubble(); } else if (Math.abs(this.proxy.translation.y) > 10) { this.newBubble(); } else if (Math.abs(this.proxy.translation.z) > 10) { this.newBubble(); } else { this.proxy.velocity = new SFVec3f( this.proxy.velocity.x + Math.random() * 0.2 - 0.1, this.proxy.velocity.y + Math.random() * 0.2 - 0.1, this.proxy.velocity.z + Math.random() * 0.2 - 0.1 ); } this.animate_flowers(); } ;
+	this.set_fraction = function () {
+			    this.proxy.translation = new SFVec3f(
+			    	this.proxy.translation.x + this.proxy.velocity.x,
+				this.proxy.translation.y + this.proxy.velocity.y,
+				this.proxy.translation.z + this.proxy.velocity.z);
+			    if (Math.abs(this.proxy.translation.x) > 10) {
+					this.newBubble();
+			    } else if (Math.abs(this.proxy.translation.y) > 10) {
+					this.newBubble();
+			    } else if (Math.abs(this.proxy.translation.z) > 10) {
+					this.newBubble();
+			    } else {
+					this.proxy.velocity = new SFVec3f(
+						this.proxy.velocity.x + Math.random() * 0.2 - 0.1,
+						this.proxy.velocity.y + Math.random() * 0.2 - 0.1,
+						this.proxy.velocity.z + Math.random() * 0.2 - 0.1
+					);
+			    }
+			    this.animate_flowers();
+			}
 
-	this.initialize = function () { var cis = []; this.newBubble(); resolution = 100; this.updateCoordinates(resolution); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } this.proxy.coordIndexes = new MFInt32(cis); } ;
+			;
 
-	this.updateCoordinates = function (resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var crds = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = this.proxy.a + this.proxy.b * Math.cos(this.proxy.c * theta) * Math.cos(this.proxy.d * phi); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; this.proxy.coordinates = new MFVec3f(crds); } } ;
+	this.initialize = function () {
+			     var cis = [];
+			     this.newBubble();
+			     resolution = 100;
+			     this.updateCoordinates(resolution);
+			     for ( i = 0; i < resolution-1; i++) {
+				for ( j = 0; j < resolution-1; j++) {
+				     cis.push(i*resolution+j);
+				     cis.push(i*resolution+j+1);
+				     cis.push((i+1)*resolution+j+1);
+				     cis.push((i+1)*resolution+j);
+				     cis.push(-1);
+				}
+			    }
+			     this.proxy.coordIndexes = new MFInt32(cis);
+			}
 
-	this.animate_flowers = function (fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: this.proxy.a += Math.random() * 0.2 - 0.1; break; case 1: this.proxy.b += Math.random() * 0.2 - 0.1; break; case 2: this.proxy.c += Math.random() * 2 - 1; break; case 3: this.proxy.d += Math.random() * 2 - 1; break; } if (this.proxy.a > 1) { this.proxy.a = 0.5; } if (this.proxy.b > 1) { this.proxy.b = 0.5; } if (this.proxy.c < 1) { this.proxy.c = 4; } if (this.proxy.d < 1) { this.proxy.d = 4; } if (this.proxy.c > 10) { this.proxy.c = 4; } if (this.proxy.d > 10) { this.proxy.d = 4; } resolution = 100; this.updateCoordinates(resolution); };
+			;
+
+	this.updateCoordinates = function (resolution) {
+			     theta = 0.0;
+			     phi = 0.0;
+			     delta = (2 * 3.141592653) / (resolution-1);
+			     var crds = [];
+			     for ( i = 0; i < resolution; i++) {
+				for ( j = 0; j < resolution; j++) {
+					rho = this.proxy.a + this.proxy.b * Math.cos(this.proxy.c * theta) * Math.cos(this.proxy.d * phi);
+					crds.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
+					theta += delta;
+				}
+				phi += delta;
+				this.proxy.coordinates = new MFVec3f(crds);
+			     }
+			}
+
+			;
+
+	this.animate_flowers = function (fraction, eventTime) {
+				choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					this.proxy.a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					this.proxy.b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					this.proxy.c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					this.proxy.d += Math.random() * 2 - 1;
+					break;
+				}
+				if (this.proxy.a > 1) {
+					this.proxy.a =  0.5;
+				}
+				if (this.proxy.b > 1) {
+					this.proxy.b =  0.5;
+				}
+				if (this.proxy.c < 1) {
+					this.proxy.c =  4;
+				}
+				if (this.proxy.d < 1) {
+					this.proxy.d =  4;
+				}
+				if (this.proxy.c > 10) {
+					this.proxy.c = 4;
+				}
+				if (this.proxy.d > 10) {
+					this.proxy.d = 4;
+				}
+				resolution = 100;
+				this.updateCoordinates(resolution);
+			}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

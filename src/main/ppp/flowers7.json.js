@@ -227,8 +227,24 @@ X3DJSON['Script']['UrlSelector'] = function() {
 		return value;
 	};
 	this.old = new SFInt32(-1);
-ecmascript: 
-	this.set_fraction = function ( f, tm ) { var side = Math.floor(f*this.proxy.frontUrls.length); if (side > this.proxy.frontUrls.length-1) { side = 0; } if (side != this.proxy.old) { this.proxy.old = side; this.proxy.front[0] = this.proxy.frontUrls[side]; this.proxy.back[0] = this.proxy.backUrls[side]; this.proxy.left[0] = this.proxy.leftUrls[side]; this.proxy.right[0] = this.proxy.rightUrls[side]; this.proxy.top[0] = this.proxy.topUrls[side]; this.proxy.bottom[0] = this.proxy.bottomUrls[side]; } };
+
+ecmascript:
+        
+	this.set_fraction = function ( f, tm ) {
+            var side = Math.floor(f*this.proxy.frontUrls.length);
+            if (side > this.proxy.frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != this.proxy.old) {
+                    this.proxy.old = side;
+                    this.proxy.front[0] = this.proxy.frontUrls[side];
+                    this.proxy.back[0] = this.proxy.backUrls[side];
+                    this.proxy.left[0] = this.proxy.leftUrls[side];
+                    this.proxy.right[0] = this.proxy.rightUrls[side];
+                    this.proxy.top[0] = this.proxy.topUrls[side];
+                    this.proxy.bottom[0] = this.proxy.bottomUrls[side];
+            }
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -309,8 +325,42 @@ X3DJSON['Script']['Animate'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0);
-ecmascript: 
-	this.set_fraction = function () { var choice = Math.floor(Math.random() * 4); if (choice == 0) { this.proxy.a = this.proxy.a + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 1) { this.proxy.b = this.proxy.b + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 2) { this.proxy.c = this.proxy.c + Math.floor(Math.random() * 2) * 2 - 1; } else if (choice == 3) { this.proxy.d = this.proxy.d + Math.floor(Math.random() * 2) * 2 - 1; } this.proxy.tdelta = this.proxy.tdelta + 0.5; this.proxy.pdelta = this.proxy.pdelta + 0.5; if (this.proxy.a < 1) { this.proxy.a = 10; } if (this.proxy.b < 1) { this.proxy.b = 10; } if (this.proxy.c < 1) { this.proxy.c = 4; } if (this.proxy.c > 20) { this.proxy.c = 4; } if (this.proxy.d < 1) { this.proxy.d = 4; } if (this.proxy.d > 20) { this.proxy.d = 4; } };
+
+ecmascript:
+
+
+	this.set_fraction = function () {
+	var choice = Math.floor(Math.random() * 4);
+	if (choice == 0) {
+		this.proxy.a = this.proxy.a + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 1) {
+		this.proxy.b = this.proxy.b + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 2) {
+		this.proxy.c = this.proxy.c + Math.floor(Math.random() * 2) * 2 - 1;
+	} else if (choice == 3) {
+		this.proxy.d = this.proxy.d + Math.floor(Math.random() * 2) * 2 - 1;
+	}
+	this.proxy.tdelta = this.proxy.tdelta + 0.5;
+	this.proxy.pdelta = this.proxy.pdelta + 0.5;
+	if (this.proxy.a < 1) {
+		this.proxy.a = 10;
+	}
+	if (this.proxy.b < 1) {
+		this.proxy.b = 10;
+	}
+	if (this.proxy.c < 1) {
+		this.proxy.c = 4;
+	}
+	if (this.proxy.c > 20) {
+		this.proxy.c = 4;
+	}
+	if (this.proxy.d < 1) {
+		this.proxy.d = 4;
+	}
+	if (this.proxy.d > 20) {
+		this.proxy.d = 4;
+	}
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

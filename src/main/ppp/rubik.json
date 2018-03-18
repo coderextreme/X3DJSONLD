@@ -1,10 +1,8 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -29,11 +27,11 @@
         },
         {
           "@name": "translated",
-          "@content": "30 January 2018"
+          "@content": "18 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
@@ -66,20 +64,19 @@
         {},
         {
           "Transform": {
-            "@translation": [
-              0,
-              0,
-              0
-            ],
+            "@translation": "0 0 0",
             "-children": [
               {
                 "Transform": {
+                  "@translation": "0 0 0",
                   "-children": [
                     {
                       "Transform": {
+                        "@translation": "0 0 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -101,16 +98,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -132,16 +125,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -163,27 +152,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -205,16 +186,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -236,16 +213,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -267,27 +240,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 -2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -309,16 +274,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -340,16 +301,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -371,38 +328,26 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
                         ]
                       }
                     }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    0
                   ]
                 }
               },
               {
                 "Transform": {
+                  "@translation": "0 0 2",
                   "-children": [
                     {
                       "Transform": {
+                        "@translation": "0 0 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -424,16 +369,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -455,16 +396,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -486,27 +423,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -528,16 +457,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -559,16 +484,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -590,27 +511,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 -2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -632,16 +545,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -663,16 +572,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -694,38 +599,26 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
                         ]
                       }
                     }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    2
                   ]
                 }
               },
               {
                 "Transform": {
+                  "@translation": "0 0 -2",
                   "-children": [
                     {
                       "Transform": {
+                        "@translation": "0 0 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -747,16 +640,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -778,16 +667,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -809,27 +694,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -851,16 +728,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -882,16 +755,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -913,27 +782,19 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
                         ]
                       }
                     },
                     {
                       "Transform": {
+                        "@translation": "0 -2 0",
                         "-children": [
                           {
                             "Transform": {
+                              "@translation": "0 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -955,16 +816,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -986,16 +843,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
                               ]
                             }
                           },
                           {
                             "Transform": {
+                              "@translation": "-2 0 0",
                               "-children": [
                                 {
                                   "Shape": {
@@ -1017,27 +870,12 @@
                                     }
                                   }
                                 }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
                               ]
                             }
                           }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
                         ]
                       }
                     }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    -2
                   ]
                 }
               }
@@ -1045,6 +883,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

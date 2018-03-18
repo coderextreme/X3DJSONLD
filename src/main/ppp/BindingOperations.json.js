@@ -203,18 +203,107 @@ X3DJSON['Script']['BindingSequencerEngine'] = function() {
 		return value;
 	};
 	this.priorInputvalue = new SFInt32(-1);
-ecmascript: 
-	this.initialize = function () { this.proxy.bindView5 = true; console.error ('Timing script initialized and ready for activation'); } ;
+ecmascript:
 
-	this.set_timeEvent = function (inputValue) { if (inputValue == this.proxy.priorInputvalue) { return; // ignore repeated inputs } // new value provided this.proxy.priorInputvalue = inputValue; // console.error ('timeEvent inputValue=' + inputValue); // mimics user execution of Figure 4.1 steps t_0 through t_8 if (inputValue == 0) { console.error ('=========== time t0'); this.proxy.bindView1 = true; } else if (inputValue == 1) { console.error ('=========== time t1'); this.proxy.bindView2 = true; } else if (inputValue == 2) { console.error ('=========== time t2'); this.proxy.bindView3 = true; } else if (inputValue == 3) { console.error ('=========== time t3'); this.proxy.bindView3 = false; } else if (inputValue == 4) { console.error ('=========== time t4'); this.proxy.bindView1 = true; } else if (inputValue == 5) { console.error ('=========== time t5'); this.proxy.bindView2 = false; } else if (inputValue == 6) { console.error ('=========== time t6'); this.proxy.bindView1 = false; } else if (inputValue == 7) { console.error ('=========== time t7'); this.proxy.bindView4 = true; } else if (inputValue == 8) { console.error ('=========== time t8'); console.error (', no action, all done'); console.error (''); } } ;
 
-	this.view1Bound = function (inputValue) { console.error (', this.proxy.view1Bound ' + (inputValue)); if (this.proxy.priorInputvalue == -1) console.error (''); } ;
+	this.initialize = function ()
+{
+    this.proxy.bindView5 = true;
+    console.error ('Timing script initialized and ready for activation');
+}
+;
 
-	this.view2Bound = function (inputValue) { console.error (', this.proxy.view2Bound ' + (inputValue)); } ;
+	this.set_timeEvent = function (inputValue)
+{
+    if (inputValue == this.proxy.priorInputvalue)
+    {
+        return; // ignore repeated inputs
+    }
+    // new value provided
+    this.proxy.priorInputvalue = inputValue;
+    // console.error ('timeEvent inputValue=' + inputValue);
+        
+    // mimics user execution of Figure 4.1 steps t_0 through t_8
+    if (inputValue == 0)
+    {
+        console.error ('=========== time t0');
+        this.proxy.bindView1 = true;
+    }
+    else if (inputValue == 1)
+    {
+        console.error ('=========== time t1');
+        this.proxy.bindView2 = true;
+    }
+    else if (inputValue == 2)
+    {
+        console.error ('=========== time t2');
+        this.proxy.bindView3 = true;
+    }
+    else if (inputValue == 3)
+    {
+        console.error ('=========== time t3');
+        this.proxy.bindView3 = false;
+    }
+    else if (inputValue == 4)
+    {
+        console.error ('=========== time t4');
+        this.proxy.bindView1 = true;
+    }
+    else if (inputValue == 5)
+    {
+        console.error ('=========== time t5');
+        this.proxy.bindView2 = false;
+    }
+    else if (inputValue == 6)
+    {
+        console.error ('=========== time t6');
+        this.proxy.bindView1 = false;
+    }
+    else if (inputValue == 7)
+    {
+        console.error ('=========== time t7');
+        this.proxy.bindView4 = true;
 
-	this.view3Bound = function (inputValue) { console.error (', this.proxy.view3Bound ' + (inputValue)); } ;
+    }
+    else if (inputValue == 8)
+    {
+        console.error ('=========== time t8');
+        console.error (', no action, all done');
+        console.error ('');
+    }
+}
 
-	this.view4Bound = function (inputValue) { console.error (', this.proxy.view4Bound ' + (inputValue)); } functino view5Bound (inputValue) { console.error (', view5Bound ' + (inputValue)); };
+;
+
+	this.view1Bound = function (inputValue)
+{
+    console.error (', this.proxy.view1Bound ' + (inputValue));
+    if (this.proxy.priorInputvalue == -1) console.error ('');
+}
+;
+
+	this.view2Bound = function (inputValue)
+{
+    console.error (', this.proxy.view2Bound ' + (inputValue));
+}
+;
+
+	this.view3Bound = function (inputValue)
+{
+    console.error (', this.proxy.view3Bound ' + (inputValue));
+}
+;
+
+	this.view4Bound = function (inputValue)
+{
+    console.error (', this.proxy.view4Bound ' + (inputValue));
+}
+;
+
+	this.view5Bound = function (inputValue)
+{
+    console.error (', this.view5Bound ' + (inputValue));
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

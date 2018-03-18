@@ -227,8 +227,25 @@ X3DJSON['Script']['UrlSelector'] = function() {
 		return value;
 	};
 	this.old = new SFInt32(-1);
-ecmascript: 
-	this.set_fraction = function ( f, tm ) { var side = Math.floor(f*this.proxy.frontUrls.length); if (side > this.proxy.frontUrls.length-1) { side = 0; } if (side != this.proxy.old) { // console.error(f+""+side); this.proxy.old = side; this.proxy.front_changed[0] = this.proxy.frontUrls[side]; this.proxy.back_changed[0] = this.proxy.backUrls[side]; this.proxy.left_changed[0] = this.proxy.leftUrls[side]; this.proxy.right_changed[0] = this.proxy.rightUrls[side]; this.proxy.top_changed[0] = this.proxy.topUrls[side]; this.proxy.bottom_changed[0] = this.proxy.bottomUrls[side]; } };
+
+ecmascript:
+        
+	this.set_fraction = function ( f, tm ) {
+	    var side = Math.floor(f*this.proxy.frontUrls.length);
+	    if (side > this.proxy.frontUrls.length-1) {
+	    	side = 0;
+	    }
+	    if (side != this.proxy.old) {
+	    	    // console.error(f+" "+side);
+	    	    this.proxy.old = side;
+		    this.proxy.front_changed[0] = this.proxy.frontUrls[side];
+		    this.proxy.back_changed[0] = this.proxy.backUrls[side];
+		    this.proxy.left_changed[0] = this.proxy.leftUrls[side];
+		    this.proxy.right_changed[0] = this.proxy.rightUrls[side];
+		    this.proxy.top_changed[0] = this.proxy.topUrls[side];
+		    this.proxy.bottom_changed[0] = this.proxy.bottomUrls[side];
+            }
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

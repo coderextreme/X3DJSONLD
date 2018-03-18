@@ -1,15 +1,13 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@name": "Geospatial",
-          "@level": 1
+          "@level": 1,
+          "@name": "Geospatial"
         }
       ],
       "meta": [
@@ -35,11 +33,11 @@
         },
         {
           "@name": "translated",
-          "@content": "30 January 2018"
+          "@content": "18 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
@@ -50,10 +48,14 @@
     "Scene": {
       "-children": [
         {
-          "#comment": "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
+          "#comment": [
+            "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
+          ]
         },
         {
-          "#comment": "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
+          "#comment": [
+            "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
+          ]
         },
         {
           "GeoViewpoint": {
@@ -69,7 +71,8 @@
               0,
               0
             ],
-            "@description": "Tour Views"
+            "@description": "Tour Views",
+            "@retainUserOffsets": false
           }
         },
         {
@@ -198,7 +201,23 @@
               }
             ],
             "#sourceText": [
-              "ecmascript: function set_cycle(value) { var cartesianMult = -150; // -150 if cartesian, 1 if geo var ov = val; // Browser.print('old '+ov); do { val = Math.floor(Math.random()*2); var vc = val; positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4); } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]); // Browser.println(positions[ov]); // Browser.println(positions[vc]); position = new MFVec3d(); position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]); position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]); }"
+              "ecmascript:",
+              "",
+              "               function set_cycle(value) {",
+              "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
+              "                        var ov = val;",
+              "\t\t\t// Browser.print('old '+ov);",
+              "                        do {",
+              "                                val = Math.floor(Math.random()*2);",
+              "                                var vc = val;",
+              "                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);",
+              "                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);",
+              "\t\t\t// Browser.println(positions[ov]);",
+              "\t\t\t// Browser.println(positions[vc]);",
+              "                        position = new MFVec3d();",
+              "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);",
+              "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);",
+              "               }"
             ]
           }
         },
@@ -235,6 +254,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

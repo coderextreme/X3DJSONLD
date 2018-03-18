@@ -1,10 +1,8 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -47,11 +45,11 @@
         },
         {
           "@name": "translated",
-          "@content": "30 January 2018"
+          "@content": "18 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
@@ -475,7 +473,22 @@
               }
             ],
             "#sourceText": [
-              "ecmascript: function set_cycle(value) { var ov = lastKey; do { lastKey = Math.round(Math.random()*(positions.length-1)); } while (lastKey === ov); var vc = lastKey; orientation_changed = new MFRotation(); orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w); orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w); position_changed = new MFVec3f(); position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z); position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z); // } }"
+              "ecmascript:",
+              "               function set_cycle(value) {",
+              "                        var ov = lastKey;",
+              "                        do {",
+              "                            lastKey = Math.round(Math.random()*(positions.length-1));",
+              "                        } while (lastKey === ov);",
+              "                        var vc = lastKey;",
+              "                        ",
+              "                        orientation_changed = new MFRotation();",
+              "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
+              "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+              "                        position_changed = new MFVec3f();",
+              "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
+              "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
+              "                    // }",
+              "               }"
             ]
           }
         },
@@ -536,6 +549,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

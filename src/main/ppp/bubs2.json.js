@@ -155,10 +155,60 @@ X3DJSON['Script']['DECLBubble_bubbleA_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-ecmascript: 
-	this.initialize = function () { this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125); this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4); } ;
+ecmascript:
 
-	this.set_fraction = function (value) { if (typeof this.proxy.translation === 'undefined') { this.proxy.translation = new SFVec3f(0, 0, 0); } if (typeof this.proxy.velocity === 'undefined') { this.proxy.velocity = new SFVec3f(0, 0, 0); } if (typeof scalevel === 'undefined') { scalevel = new SFVec3f(0, 0, 0); } if (typeof this.proxy.scale === 'undefined') { this.proxy.scale = new SFVec3f(1, 1, 1); } this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z); // if you get to far away or too big, explode if ( Math.abs(this.proxy.translation.x) > 256) { this.proxy.translation.x = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.y) > 256) { this.proxy.translation.y = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.z) > 256) { this.proxy.translation.z = 0; this.initialize(); } if (Math.abs(this.proxy.scale.x) > 20) { this.proxy.scale.x = this.proxy.scale.x/20; this.proxy.translation.x = 0; this.initialize(); } if (Math.abs(this.proxy.scale.y) > 20) { this.proxy.scale.y = this.proxy.scale.y/20; this.proxy.translation.y = 0; this.initialize(); } if (Math.abs(this.proxy.scale.z) > 20) { this.proxy.scale.z = this.proxy.scale.z/20; this.proxy.translation.z = 0; this.initialize(); } };
+	this.initialize = function () {
+    this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+;
+
+	this.set_fraction = function (value) {
+    if (typeof this.proxy.translation === 'undefined') {
+		this.proxy.translation = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.velocity === 'undefined') {
+		this.proxy.velocity = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scalevel === 'undefined') {
+		scalevel = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.scale === 'undefined') {
+		this.proxy.scale = new SFVec3f(1, 1, 1);
+    }
+    this.proxy.translation = new SFVec3f(	this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z);
+    this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(this.proxy.translation.x) > 256) {
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.y) > 256) {
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.z) > 256) {
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.x) > 20) {
+	this.proxy.scale.x = this.proxy.scale.x/20;
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.y) > 20) {
+	this.proxy.scale.y = this.proxy.scale.y/20;
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.z) > 20) {
+	this.proxy.scale.z = this.proxy.scale.z/20;
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -223,10 +273,60 @@ X3DJSON['Script']['DECLBubble_bubbleB_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-ecmascript: 
-	this.initialize = function () { this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125); this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4); } ;
+ecmascript:
 
-	this.set_fraction = function (value) { if (typeof this.proxy.translation === 'undefined') { this.proxy.translation = new SFVec3f(0, 0, 0); } if (typeof this.proxy.velocity === 'undefined') { this.proxy.velocity = new SFVec3f(0, 0, 0); } if (typeof scalevel === 'undefined') { scalevel = new SFVec3f(0, 0, 0); } if (typeof this.proxy.scale === 'undefined') { this.proxy.scale = new SFVec3f(1, 1, 1); } this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z); // if you get to far away or too big, explode if ( Math.abs(this.proxy.translation.x) > 256) { this.proxy.translation.x = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.y) > 256) { this.proxy.translation.y = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.z) > 256) { this.proxy.translation.z = 0; this.initialize(); } if (Math.abs(this.proxy.scale.x) > 20) { this.proxy.scale.x = this.proxy.scale.x/20; this.proxy.translation.x = 0; this.initialize(); } if (Math.abs(this.proxy.scale.y) > 20) { this.proxy.scale.y = this.proxy.scale.y/20; this.proxy.translation.y = 0; this.initialize(); } if (Math.abs(this.proxy.scale.z) > 20) { this.proxy.scale.z = this.proxy.scale.z/20; this.proxy.translation.z = 0; this.initialize(); } };
+	this.initialize = function () {
+    this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+;
+
+	this.set_fraction = function (value) {
+    if (typeof this.proxy.translation === 'undefined') {
+		this.proxy.translation = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.velocity === 'undefined') {
+		this.proxy.velocity = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scalevel === 'undefined') {
+		scalevel = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.scale === 'undefined') {
+		this.proxy.scale = new SFVec3f(1, 1, 1);
+    }
+    this.proxy.translation = new SFVec3f(	this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z);
+    this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(this.proxy.translation.x) > 256) {
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.y) > 256) {
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.z) > 256) {
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.x) > 20) {
+	this.proxy.scale.x = this.proxy.scale.x/20;
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.y) > 20) {
+	this.proxy.scale.y = this.proxy.scale.y/20;
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.z) > 20) {
+	this.proxy.scale.z = this.proxy.scale.z/20;
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -291,10 +391,60 @@ X3DJSON['Script']['DECLBubble_bubbleC_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-ecmascript: 
-	this.initialize = function () { this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125); this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4); } ;
+ecmascript:
 
-	this.set_fraction = function (value) { if (typeof this.proxy.translation === 'undefined') { this.proxy.translation = new SFVec3f(0, 0, 0); } if (typeof this.proxy.velocity === 'undefined') { this.proxy.velocity = new SFVec3f(0, 0, 0); } if (typeof scalevel === 'undefined') { scalevel = new SFVec3f(0, 0, 0); } if (typeof this.proxy.scale === 'undefined') { this.proxy.scale = new SFVec3f(1, 1, 1); } this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z); // if you get to far away or too big, explode if ( Math.abs(this.proxy.translation.x) > 256) { this.proxy.translation.x = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.y) > 256) { this.proxy.translation.y = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.z) > 256) { this.proxy.translation.z = 0; this.initialize(); } if (Math.abs(this.proxy.scale.x) > 20) { this.proxy.scale.x = this.proxy.scale.x/20; this.proxy.translation.x = 0; this.initialize(); } if (Math.abs(this.proxy.scale.y) > 20) { this.proxy.scale.y = this.proxy.scale.y/20; this.proxy.translation.y = 0; this.initialize(); } if (Math.abs(this.proxy.scale.z) > 20) { this.proxy.scale.z = this.proxy.scale.z/20; this.proxy.translation.z = 0; this.initialize(); } };
+	this.initialize = function () {
+    this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+;
+
+	this.set_fraction = function (value) {
+    if (typeof this.proxy.translation === 'undefined') {
+		this.proxy.translation = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.velocity === 'undefined') {
+		this.proxy.velocity = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scalevel === 'undefined') {
+		scalevel = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.scale === 'undefined') {
+		this.proxy.scale = new SFVec3f(1, 1, 1);
+    }
+    this.proxy.translation = new SFVec3f(	this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z);
+    this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(this.proxy.translation.x) > 256) {
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.y) > 256) {
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.z) > 256) {
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.x) > 20) {
+	this.proxy.scale.x = this.proxy.scale.x/20;
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.y) > 20) {
+	this.proxy.scale.y = this.proxy.scale.y/20;
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.z) > 20) {
+	this.proxy.scale.z = this.proxy.scale.z/20;
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -359,10 +509,60 @@ X3DJSON['Script']['DECLBubble_bubbleD_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-ecmascript: 
-	this.initialize = function () { this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125); this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4); } ;
+ecmascript:
 
-	this.set_fraction = function (value) { if (typeof this.proxy.translation === 'undefined') { this.proxy.translation = new SFVec3f(0, 0, 0); } if (typeof this.proxy.velocity === 'undefined') { this.proxy.velocity = new SFVec3f(0, 0, 0); } if (typeof scalevel === 'undefined') { scalevel = new SFVec3f(0, 0, 0); } if (typeof this.proxy.scale === 'undefined') { this.proxy.scale = new SFVec3f(1, 1, 1); } this.proxy.translation = new SFVec3f( this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z); this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z); // if you get to far away or too big, explode if ( Math.abs(this.proxy.translation.x) > 256) { this.proxy.translation.x = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.y) > 256) { this.proxy.translation.y = 0; this.initialize(); } if ( Math.abs(this.proxy.translation.z) > 256) { this.proxy.translation.z = 0; this.initialize(); } if (Math.abs(this.proxy.scale.x) > 20) { this.proxy.scale.x = this.proxy.scale.x/20; this.proxy.translation.x = 0; this.initialize(); } if (Math.abs(this.proxy.scale.y) > 20) { this.proxy.scale.y = this.proxy.scale.y/20; this.proxy.translation.y = 0; this.initialize(); } if (Math.abs(this.proxy.scale.z) > 20) { this.proxy.scale.z = this.proxy.scale.z/20; this.proxy.translation.z = 0; this.initialize(); } };
+	this.initialize = function () {
+    this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+;
+
+	this.set_fraction = function (value) {
+    if (typeof this.proxy.translation === 'undefined') {
+		this.proxy.translation = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.velocity === 'undefined') {
+		this.proxy.velocity = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scalevel === 'undefined') {
+		scalevel = new SFVec3f(0, 0, 0);
+    }
+    if (typeof this.proxy.scale === 'undefined') {
+		this.proxy.scale = new SFVec3f(1, 1, 1);
+    }
+    this.proxy.translation = new SFVec3f(	this.proxy.translation.x + this.proxy.velocity.x, this.proxy.translation.y + this.proxy.velocity.y, this.proxy.translation.z + this.proxy.velocity.z);
+    this.proxy.scale = new SFVec3f(this.proxy.scale.x + this.proxy.scalvel.x, this.proxy.scale.y + this.proxy.scalvel.y, this.proxy.scale.z + this.proxy.scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(this.proxy.translation.x) > 256) {
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.y) > 256) {
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if ( Math.abs(this.proxy.translation.z) > 256) {
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.x) > 20) {
+	this.proxy.scale.x = this.proxy.scale.x/20;
+	this.proxy.translation.x = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.y) > 20) {
+	this.proxy.scale.y = this.proxy.scale.y/20;
+	this.proxy.translation.y = 0;
+	this.initialize();
+    }
+    if (Math.abs(this.proxy.scale.z) > 20) {
+	this.proxy.scale.z = this.proxy.scale.z/20;
+	this.proxy.translation.z = 0;
+	this.initialize();
+    }
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
