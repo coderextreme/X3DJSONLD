@@ -3,6 +3,8 @@
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
    <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
    <script type="text/javascript" src="../node/x_ite.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -21,15 +23,35 @@
     </style>
 </head>
 <body>
-    <div id="x3domjson"></div>
-    <X3DCanvas id="x_itejson" cache='false'>
-           <p>Your browser may not support all features required by X_ITEJSONLD!</p>
+<table>
+<tr>
+<td>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    	<div id="x3domjson"></div>
+    <X3DCanvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
 	   <Scene>
 	   </Scene>
 	   </X3D>
     </X3DCanvas>
+</td>
+<td>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+	<div id="x3domxml"></div>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+</tr>
+</table>
+    <button onclick="load('#x3domjson','../data/flipp.json'); return false">Load</button>
 </body>
+    <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
     <script type="text/javascript" src="../node/Flattener.js"></script>
@@ -75,15 +97,15 @@ function getJSON(url) {
 }
 // Done with include
 
-	function loadX3DJSON(selector, url) {
+	function load(selector, url) {
 		getJSON(url).then(function(json) {
-			load_X_ITE_JS(json); // loads into X_ITE element on page.
+			loadX3D(selector, json, url); // loads into X_ITE element on page.
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
-				load_X_ITE_JS(json); // reloads X_ITE element on page.
+				loadX3D(selector, json, url); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);
@@ -94,7 +116,7 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','../data/flipp.json');
+		load('#x3domjson','../data/flipp.json');
 	});
     </script>
 </html>
