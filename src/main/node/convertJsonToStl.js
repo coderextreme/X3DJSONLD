@@ -42,6 +42,11 @@ function toNormals(json, LDNodeList, ParentNode) {
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
+		Box : function(obj, LDNode) {
+			LDNode.kid = true;
+			LDNode.geometry = true;
+			LDNode.size = [2,2,2];
+		},
 		IndexedTriangleSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = obj["@normalPerVertex"];
 			LDNode.kid = true;
@@ -72,19 +77,31 @@ function toNormals(json, LDNodeList, ParentNode) {
 	}
 	var fieldDispatchTable = {
 		"@scale" : function(obj, LDNode) {
+			if (typeof obj == 'string') {
+				obj = obj.split(/[ \t,]+/);
+			}
 			LDNode.scale = Matrix.scale(obj[0], obj[1], obj[2]);
 			console.log("Scaling", LDNode.scale);
 		},
 		"@rotation" : function(obj, LDNode) {
+			if (typeof obj == 'string') {
+				obj = obj.split(/[ \t,]+/);
+			}
 			LDNode.quaternion = Matrix.quaternion(obj[0], obj[1], obj[2], obj[3]);
-			console.log("Rotating", LDNode.scale);
+			console.log("Rotating", LDNode.quaternion);
 		},
 		"@translation" : function(obj, LDNode) {
+			if (typeof obj == 'string') {
+				obj = obj.split(/[ \t,]+/);
+			}
 			LDNode.translation = Matrix.translation(obj[0], obj[1], obj[2]);
-			console.log("Translating", LDNode.scale);
+			console.log("Translating", LDNode.translation);
 		},
 		"@normalPerVertex" : function(obj, LDNode) {
 			LDNode.normalPerVertex = obj;
+		},
+		"@size" : function(obj, LDNode) {
+			LDNode.size = obj;
 		},
 		"@vector" : function(obj, LDNode) {
 			var len = obj.length / 3;
@@ -337,7 +354,128 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 		},
 		IndexedTriangleSet: IndexedTriangle,
 		IndexedTriangleStripSet: IndexedTriangle,
-		IndexedTriangleFanSet: IndexedTriangle
+		IndexedTriangleFanSet: IndexedTriangle,
+		Box: function(LDNode, output, transform) {
+			output.push("solid "+(LDNode.DEF || LDNode.nodeName));
+			var size = LDNode.size;
+			this.SixSided(LDNode, output, transform, size[0]/2, size[1]/2, size[2]/2);
+			output.push("endsolid "+(LDNode.DEF || LDNode.nodeName));
+		},
+		SixSided: function(LDNode, output, transform, x, y, z) {
+			var size = LDNode.size;
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// back
+				[
+				[ x,  y, -z],
+				[ x, -y, -z],
+				[-x, -y, -z],
+				[-x,  y, -z]
+				]);
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// front
+				[
+				[ x, y,  z],
+				[-x, y,  z],
+				[-x,-y,  z],
+				[ x,-y,  z]
+				]);
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// bottom
+				[
+				[-x, -y, -z],
+				[ x, -y, -z],
+				[ x, -y,  z],
+				[-x, -y,  z]
+				]);
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// top
+				[
+				[-x,  y, -z],
+				[-x,  y,  z],
+				[ x,  y,  z],
+				[ x,  y, -z]
+				]);
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// right
+				[
+				[ x, -y,  z],
+				[ x, -y, -z],
+				[ x,  y, -z],
+				[ x,  y,  z]
+				]);
+			this.Square(
+				LDNode,
+				output,
+				transform,
+				// left
+				[
+				[-x,  y,  z],
+				[-x,  y, -z],
+				[-x, -y, -z],
+				[-x,  -y, z]
+				]);
+		},
+		Square: function(LDNode, output, transform, square) {
+			this.Triangle(
+				LDNode,
+				output,
+				transform,
+				[square[0], square[1], square[2]]);
+			this.Triangle(
+				LDNode,
+				output,
+				transform,
+				[square[0], square[2], square[3]]
+				);
+		},
+		Triangle: function(LDNode, output, transform, coords) {
+			var normal = triangle_normal(
+				coords[0], coords[1], coords[2],
+				output,
+				transform);
+			printSFVec3f("  facet normal",
+				normal[0],
+				normal[1],
+				normal[2],
+				output,
+				transform);
+			output.push("    outer loop");
+			printSFVec3f("      vertex",
+				coords[0][0],
+				coords[0][1],
+				coords[0][2],
+				output,
+				transform);
+			printSFVec3f("      vertex",
+				coords[1][0],
+				coords[1][1],
+				coords[1][2],
+				output,
+				transform);
+			printSFVec3f("      vertex",
+				coords[2][0],
+				coords[2][1],
+				coords[2][2],
+				output,
+				transform);
+			output.push("    endloop");
+			output.push("  endfacet");
+		}
 	};
 	for (var k in LDNode.kids) {
 		var CNode = LDNode.kids[k];
