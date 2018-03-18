@@ -846,4 +846,6 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
 }
 
-module.exports = renderX3D;
+if (typeof module === 'object')  {
+	module.exports = renderX3D;
+}

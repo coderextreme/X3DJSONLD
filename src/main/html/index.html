@@ -17,18 +17,18 @@
     <style type="text/css">
     X3DCanvas {
         background:#000;
-	width: 300px;
-	height:150px;
+	width: 150px;
+	height:75px;
     }
     X3D {
         background:#000;
-	width: 300px;
-	height:150px;
+	width: 150px;
+	height:75px;
     }
     #image {
         background:#000;
-	width: 300px;
-	height:150px;
+	width: 150px;
+	height:75px;
     }
     table td, table td * {
         vertical-align: top;
@@ -232,6 +232,7 @@ Use Namespace: <select id="namespace">
 	   </Scene>
 	   </X3D>
     </X3DCanvas>
+    	<div id="threejs"></div>
 </td>
 <td>
 		<textarea id="exi" rows="15" cols="80"></textarea>
@@ -260,6 +261,7 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 </body>
     <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
     <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
+    <script src="../node/Three2Serializer.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
     <script type="text/javascript" src="../node/Flattener.js"></script>
@@ -271,8 +273,13 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
     <script type="text/javascript" src="../node/convertStlToJson.js"></script>
     <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
-    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript" src="../node/exi.js"></script>
+    <script src="../../../node_modules/three/build/three.js"></script>
+    <script src="../node/x3d-parser.js"></script>
+    <script src="../node/x3d-loader.js"></script>
+    <script src="../node/threex3dloader.js"></script>
+    <script src="../../../node_modules/three/examples/js/loaders/VRMLLoader.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 		loadJson('../data/ball.json'); // does load ball.json

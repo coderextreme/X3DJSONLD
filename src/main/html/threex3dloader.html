@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
-<script src="node/bundle.js"></script>
+<input type="text" id="file" value="../data/ball.x3d"></input>
+<button onclick="load(); return false">Load</button>
+<div id="threejs"></div>
+	<script>
+		function load() {
+			var filename = $("#file").val();
+			threeLoadFile(filename);
+		}
+	</script>
+<script src="../../../node_modules/three/build/three.js"></script>
+<script src="../node/fieldTypes.js"></script>
+<script src="../node/x3d-parser.js"></script>
+<script src="../node/Three2Serializer.js"></script>
+<script src="../node/x3d-loader.js"></script>
+<script src="../node/threex3dloader.js"></script>
 </body>
 </html>

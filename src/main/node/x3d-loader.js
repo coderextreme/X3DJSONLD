@@ -1,9 +1,4 @@
-var renderX3D = require('./x3d-parser');
-var DOMParser = require('xmldom').DOMParser;
-var JSONParser = require('../Three2Serializer.js');
-
-
-module.exports = function (THREE) {
+var x3dLoader = function (THREE) {
 
 	THREE.X3DLoader = function (manager) {
 
@@ -48,12 +43,12 @@ module.exports = function (THREE) {
 
 		},
 
-		parse: function (data, scene) {
+		parse: function (data, scene, fieldTypes) {
 
 			var scene = new THREE.Scene();
 			if (data.startsWith("{")) {
-				var jsonparser = new JSONParser();
-				var x3d = jsonparser.parseFromString(data);
+				var jsonparser = new ThreeSerializer();
+				var x3d = jsonparser.parseFromString(data, fieldTypes);
 				var s = x3d["string"];
 				if (s !== 'Scene') {
 					throw("No JSON scene");
@@ -61,7 +56,7 @@ module.exports = function (THREE) {
 				renderX3D(THREE, x3d, scene, undefined, true);
 			} else {
 				var xmlparser = new DOMParser();
-				var x3d = xmlparser.parseFromString(data);
+				var x3d = xmlparser.parseFromString(data, 'application/xml');
 				renderX3D(THREE, x3d, scene, undefined, false);
 			}
 
@@ -71,3 +66,7 @@ module.exports = function (THREE) {
 	};
 
 };
+
+if (typeof module === 'object')  {
+	module.exports = x3dLoader;
+}

@@ -120,29 +120,29 @@ public class bubs2
 "    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);" + "\n" + 
 "    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);" + "\n" + 
 "    // if you get to far away or too big, explode" + "\n" + 
-"    if ( Math.abs(translation.x) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.x) > 256) {" + "\n" + 
 "	translation.x = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if ( Math.abs(translation.y) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.y) > 256) {" + "\n" + 
 "	translation.y = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if ( Math.abs(translation.z) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.z) > 256) {" + "\n" + 
 "	translation.z = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.x) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.x) > 20) {" + "\n" + 
 "	scale.x = scale.x/20;" + "\n" + 
 "	translation.x = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.y) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.y) > 20) {" + "\n" + 
 "	scale.y = scale.y/20;" + "\n" + 
 "	translation.y = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.z) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.z) > 20) {" + "\n" + 
 "	scale.z = scale.z/20;" + "\n" + 
 "	translation.z = 0;" + "\n" + 
 "	initialize();" + "\n" + 

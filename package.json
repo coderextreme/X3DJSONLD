@@ -9,6 +9,7 @@
     "express": "*",
     "glob": "*",
     "java": "*",
+    "three": "*",
     "jsonlint": "^1.6.3",
     "jvm-npm": "0.1.1",
     "mutation-observer": "*",
@@ -22,6 +23,6 @@
   "scripts": {
     "start": "node app.js",
     "postinstall": "sh build.sh",
-    "dont_use_browserify": "browserify src/main/node/threex3dloader.js > src/main/node/bundle.js"
+    "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }
