@@ -177,9 +177,9 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")))      ;
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("position").setValue("0.0 0.0 0.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50.0 50.0 50.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50"));
 ProtoInstance2
             .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"));
 ProtoInstance2

@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -460,7 +460,11 @@
                   "fieldValue": [
                     {
                       "@name": "position",
-                      "@value": "0.0 0.0 0.0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     }
                   ]
                 }
@@ -472,7 +476,11 @@
                   "fieldValue": [
                     {
                       "@name": "position",
-                      "@value": "50.0 50.0 50.0"
+                      "@value": [
+                        50,
+                        50,
+                        50
+                      ]
                     }
                   ]
                 }
@@ -484,7 +492,11 @@
                   "fieldValue": [
                     {
                       "@name": "position",
-                      "@value": "-50.0 -50.0 -50.0"
+                      "@value": [
+                        -50,
+                        -50,
+                        -50
+                      ]
                     }
                   ]
                 }
@@ -496,7 +508,11 @@
                   "fieldValue": [
                     {
                       "@name": "position",
-                      "@value": "50.0 50.0 -50.0"
+                      "@value": [
+                        50,
+                        50,
+                        -50
+                      ]
                     }
                   ]
                 }
@@ -508,11 +524,19 @@
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "set_positionB",
-                      "@value": "50 50 50"
+                      "@value": [
+                        50,
+                        50,
+                        50
+                      ]
                     }
                   ]
                 }
@@ -524,11 +548,19 @@
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
-                      "@value": "0 0 0"
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
                     },
                     {
                       "@name": "set_positionB",
-                      "@value": "-50 -50 -50"
+                      "@value": [
+                        -50,
+                        -50,
+                        -50
+                      ]
                     }
                   ]
                 }
@@ -540,11 +572,19 @@
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
-                      "@value": "50 50 50"
+                      "@value": [
+                        50,
+                        50,
+                        50
+                      ]
                     },
                     {
                       "@name": "set_positionB",
-                      "@value": "50 50 -50"
+                      "@value": [
+                        50,
+                        50,
+                        -50
+                      ]
                     }
                   ]
                 }

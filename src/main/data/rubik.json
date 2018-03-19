@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -161,7 +161,11 @@
                           "fieldValue": [
                             {
                               "@name": "xtranslation",
-                              "@value": "0 0 0"
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -172,7 +176,11 @@
                           "fieldValue": [
                             {
                               "@name": "xtranslation",
-                              "@value": "2 0 0"
+                              "@value": [
+                                2,
+                                0,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -183,7 +191,11 @@
                           "fieldValue": [
                             {
                               "@name": "xtranslation",
-                              "@value": "-2 0 0"
+                              "@value": [
+                                -2,
+                                0,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -236,7 +248,11 @@
                           "fieldValue": [
                             {
                               "@name": "ytranslation",
-                              "@value": "0 0 0"
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -247,7 +263,11 @@
                           "fieldValue": [
                             {
                               "@name": "ytranslation",
-                              "@value": "0 2 0"
+                              "@value": [
+                                0,
+                                2,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -258,7 +278,11 @@
                           "fieldValue": [
                             {
                               "@name": "ytranslation",
-                              "@value": "0 -2 0"
+                              "@value": [
+                                0,
+                                -2,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -311,7 +335,11 @@
                           "fieldValue": [
                             {
                               "@name": "ztranslation",
-                              "@value": "0 0 0"
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
                             }
                           ]
                         }
@@ -322,7 +350,11 @@
                           "fieldValue": [
                             {
                               "@name": "ztranslation",
-                              "@value": "0 0 2"
+                              "@value": [
+                                0,
+                                0,
+                                2
+                              ]
                             }
                           ]
                         }
@@ -333,7 +365,11 @@
                           "fieldValue": [
                             {
                               "@name": "ztranslation",
-                              "@value": "0 0 -2"
+                              "@value": [
+                                0,
+                                0,
+                                -2
+                              ]
                             }
                           ]
                         }
@@ -351,7 +387,11 @@
             "fieldValue": [
               {
                 "@name": "ttranslation",
-                "@value": "0 0 0"
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               }
             ]
           }

@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 March 2018"
+            "@content":"19 March 2018"
           },
           {
             "@name":"generator",
@@ -96,7 +96,7 @@
                               "#comment":"<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>"
                             },
                             {
-                              "#comment":"<ShaderProgram url='\"../shaders/freewrl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"
+                              "#comment":"<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>"
                             },
                             {
                               "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>"
@@ -114,7 +114,7 @@
                               "#comment":"</ShaderProgram>"
                             },
                             {
-                              "#comment":"<ShaderProgram url='\"../shaders/freewrl.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"
+                              "#comment":"<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"
                             },
                             {
                               "#comment":"</ProgramShader>"
@@ -150,10 +150,10 @@
                               "#comment":"<field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/contact.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
                             },
                             {
                               "#comment":"</ComposedShader>"
@@ -189,10 +189,10 @@
                               "#comment":"<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/octaga.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
                             },
                             {
                               "#comment":"</ComposedShader>"
@@ -222,10 +222,10 @@
                               "#comment":"<field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/instant.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\"containerField='parts'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"
                             },
                             {
-                              "#comment":"<ShaderPart url='\"../shaders/common.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                              "#comment":"<ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
                             },
                             {
                               "#comment":"</ComposedShader>"

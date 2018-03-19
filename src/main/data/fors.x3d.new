@@ -83,9 +83,9 @@ ecmascript:
 </ProtoBody>
 </ProtoDeclare>
 <Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" enabled="true" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
-<ProtoInstance DEF="nodeA" name="node"><fieldValue name="position" value="0.0 0.0 0.0"></fieldValue>
+<ProtoInstance DEF="nodeA" name="node"><fieldValue name="position" value="0 0 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="nodeB" name="node"><fieldValue name="position" value="50.0 50.0 50.0"></fieldValue>
+<ProtoInstance DEF="nodeB" name="node"><fieldValue name="position" value="50 50 50"></fieldValue>
 </ProtoInstance>
 <ProtoInstance DEF="linkA" name="cylinder"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
 <fieldValue name="set_positionB" value="50 50 50"></fieldValue>

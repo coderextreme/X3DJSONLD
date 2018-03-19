@@ -310,7 +310,7 @@ ProtoInstance56.setName("node")
 
 fieldValue57 = fieldValueObject()
 fieldValue57.setName("position")
-fieldValue57.setValue("0.0 0.0 0.0")
+fieldValue57.setValue("0 0 0")
 
 ProtoInstance56.addFieldValue(fieldValue57)
 Transform54.addChild(ProtoInstance56)
@@ -320,7 +320,7 @@ ProtoInstance58.setName("node")
 
 fieldValue59 = fieldValueObject()
 fieldValue59.setName("position")
-fieldValue59.setValue("50.0 50.0 50.0")
+fieldValue59.setValue("50 50 50")
 
 ProtoInstance58.addFieldValue(fieldValue59)
 Transform54.addChild(ProtoInstance58)
