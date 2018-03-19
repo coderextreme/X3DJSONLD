@@ -128,9 +128,9 @@ if (typeof require === 'function' && typeof load !== 'function') {
  */
 function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDeclare, obj) {
 	if (typeof urls !== 'undefined') {
-		console.error("Preprocessed", urls)
+		// console.error("Preprocessed", urls)
 		urls = processURLs(urls, loadpath);
-		console.error("Postprocessed", urls)
+		// console.error("Postprocessed", urls)
 		for (var u in urls) {
 			try {
 				var url = urls[u];
@@ -147,7 +147,7 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 					}
 
 					if (protocol === "http") {
-						console.error("Loading HTTP URL", url);
+						// console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
@@ -165,7 +165,7 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 					
 						}
 					} else if (protocol === "https") {
-						console.error("Loading HTTPS URL", url);
+						// console.error("Loading HTTPS URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
@@ -184,7 +184,7 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 						}
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
-						console.error("Loading FILE URL", url);
+						// console.error("Loading FILE URL", url);
 						var hash = url.indexOf("#");
 						if (hash > 0) {
 							url = url.substring(0, hash);
@@ -196,7 +196,7 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 							var filename = url;
 							if (filename.endsWith(".json")) {
 								filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
-								console.error("converting possible X3D to JSON", filename);
+								// console.error("converting possible X3D to JSON", filename);
 								if (typeof runAndSend === 'function') {
 									runAndSend(['---silent', filename], function(jsobj) {
 										data = JSON.stringify(jsobj);
@@ -206,7 +206,7 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 							}
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-						console.error("Loading Relative URL", url);
+						// console.error("Loading Relative URL", url);
 						$.get(url, function(data) {
 							loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 						});
@@ -272,7 +272,7 @@ function CreateElement(key, x3djsonNS, containerField) {
 	} else {
 		child = document.createElementNS(x3djsonNS, key);
 		if (child == null || typeof child === 'undefined') {
-			console.error('Trouble creating element for', key);
+			// console.error('Trouble creating element for', key);
 			child = document.createElement(key);
 		}
 	}
@@ -294,7 +294,7 @@ function CDATACreateFunction(document, element, str) {
 		str = y;
 		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 		if (str !== y) {
-			console.error("CDATA Replacing",str,"with",y);
+			// console.error("CDATA Replacing",str,"with",y);
 		}
 	} while (y != str);
 	var domParser = new DOMParser();
@@ -423,7 +423,7 @@ function SFStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/"/g, '\\\"');
 	if (y !== str) {
-		console.error("X3DJSONLD [] replacing", y, "with", str);
+		// console.error("X3DJSONLD [] replacing", y, "with", str);
 	}
 	return str;
 }
@@ -436,7 +436,7 @@ function JSONStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
-		console.error("X3DJSONLD replacing", y, "with", str);
+		// console.error("X3DJSONLD replacing", y, "with", str);
 	}
 	return str;
 }

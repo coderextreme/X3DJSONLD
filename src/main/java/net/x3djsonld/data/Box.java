@@ -112,13 +112,15 @@ public class Box
             .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"))
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-    .addChild(new ProtoInstanceObject().setName("three")
+    .addChild(new ProtoInstanceObject("threepi", "three").setDEF("threepi").setName("three")
       .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
-        .addChild(new ShapeObject()
+        .addChild(new ShapeObject("box")
           .setGeometry(new BoxObject().setSize(1.0f,1.0f,1.0f))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f)))))));
+            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))))
+    .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
+      .addChild(new ShapeObject().setUSE("box"))));
   }
 	// end of initialize() method
 

@@ -214,7 +214,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 			str = y;
 			y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 			if (str !== y) {
-				console.error("CDATA Replacing",str,"with",y);
+				// console.error("CDATA Replacing",str,"with",y);
 			}
 		} while (y != str);
 
