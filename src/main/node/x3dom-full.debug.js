@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'326a4b5bd01a43f47e4875a57fef6916ba7df33b' - b'Sat Jul 22 02:17:48 2017 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'770406f16691ff42e705b150e5825ca8a943ab5c' - b'Thu Feb 22 07:32:24 2018 -0500' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -3082,7 +3082,7 @@ x3dom.EarClipping = {
 		
 		var node = linklist.first.next;
 		var plane = this.identifyPlane(node.prev.point, node.point, node.next.point);
-		var i, points, x, y;
+		var i, points, point_indexes, x, y;
 		points = [];
 		point_indexes = [];
 		
@@ -3118,8 +3118,8 @@ x3dom.EarClipping = {
 		mapped.colors = [];
 		mapped.texCoords = [];
 		
-		points = [];
-		
+		var points = [];
+		var i, x, y;
 		for (i = 0; i < linklist.length; i++) {
 			node = linklist.getNode(i);
 			switch (plane) {
@@ -3232,6 +3232,7 @@ function earcut(data, holeIndices, dim) {
 // AP: separated to get original winding order
 function windingOrder(data, start, end, dim) {
 	var sum = 0;
+	var i, j;
     for (i = start, j = end - dim; i < end; i += dim) {
         sum += (data[j] - data[i]) * (data[i + 1] + data[j + 1]);
         j = i;
@@ -7671,15 +7672,15 @@ x3dom.glTF.glTFLoader.prototype.getScene = function(shape,shaderProgram, gl, sce
     this.updateScene(shape, shaderProgram, gl, scene);
 };
 
-x3dom.glTF.glTFLoader.prototype.getMesh = function(shape,shaderProgram, gl, meshName)
+x3dom.glTF.glTFLoader.prototype.getMesh = function(shape, shaderProgram, gl, meshName)
 {
     this.reset(shape,gl);
 
     var mesh;
-    if(meshName == null)
+    if (meshName == null)
     {
         mesh = Object.keys(this.scene.meshes)[0];
-    }else
+    } else
     {
         for(var key in this.scene.meshes){
             if(this.scene.meshes.hasOwnProperty(key)
@@ -7690,7 +7691,7 @@ x3dom.glTF.glTFLoader.prototype.getMesh = function(shape,shaderProgram, gl, mesh
             }
         }
     }
-    this.updateMesh(shape, shaderProgram, gl, mesh);
+    this.updateMesh(shape, shaderProgram, gl, mesh, new x3dom.fields.SFMatrix4f());
 };
 
 x3dom.glTF.glTFLoader.prototype.reset = function(shape, gl)
@@ -8054,7 +8055,7 @@ x3dom.glTF.glTFLoader.prototype.loadImage = function(imageNodeName, mimeType)
         return this.loaded.images[imageNodeName];
 
     var imageNode = this.scene.images[imageNodeName];
-    if(imageNode.extensions!=null && imageNode.extensions.KHR_binary_glTF != null)
+    if (imageNode.extensions != null && imageNode.extensions.KHR_binary_glTF != null)
     {
         var ext = imageNode.extensions.KHR_binary_glTF;
         var bufferView = this.scene.bufferViews[ext.bufferView];
@@ -8068,6 +8069,17 @@ x3dom.glTF.glTFLoader.prototype.loadImage = function(imageNodeName, mimeType)
         var image = new Image();
 
         image.src = blobUrl;
+
+        this.loaded.images[imageNodeName] = image;
+
+        return image;
+    }
+    //untested
+    if (imageNode.uri != null)
+    {
+        var image = new Image();
+
+        image.src = imageNode.uri;
 
         this.loaded.images[imageNodeName] = image;
 
@@ -8227,11 +8239,33 @@ x3dom.glTF.glTFLoader.prototype.loadShaderProgram = function(gl, shaderProgramNa
 
 x3dom.glTF.glTFLoader.prototype._loadShaderSource = function(shaderNode)
 {
-    var bufferView = this.scene.bufferViews[shaderNode.extensions.KHR_binary_glTF.bufferView];
+    if(shaderNode.extensions != null && shaderNode.extensions.KHR_binary_glTF != null)
+    {
+        var bufferView = this.scene.bufferViews[shaderNode.extensions.KHR_binary_glTF.bufferView];
 
-    var shaderBytes = new Uint8Array(this.body.buffer, this.header.bodyOffset+bufferView.byteOffset, bufferView.byteLength);
-    var src = new TextDecoder("ascii").decode(shaderBytes);
-    return src;
+        var shaderBytes = new Uint8Array(this.body.buffer, this.header.bodyOffset+bufferView.byteOffset, bufferView.byteLength);
+        var src = new TextDecoder("ascii").decode(shaderBytes);
+        return src;
+    }
+    else
+    {
+        var dataURL = /^data\:([^]*?)(?:;([^]*?))?(;base64)?,([^]*)$/;
+        var result = dataURL .exec (shaderNode.uri);
+        if (result)
+        {
+            //var mimeType = result [1];
+            var data = result [4];
+
+            if (result [2] === "base64")
+                data = atob (data);
+            else
+                data = unescape (data);
+
+            console.log(data);
+            return data;
+        }
+        x3dom.debug.logError('no shader found');
+    }
 };
 
 /**
@@ -8509,14 +8543,13 @@ x3dom.glTF.glTFKHRMaterialCommons.prototype.bind = function(gl, shaderProgram)
 {
     this.program.bind();
 
-
     // set all used Shader Parameter
     for(var key in shaderProgram){
         if(!shaderProgram.hasOwnProperty(key))
             continue;
 
         if(this.program.hasOwnProperty(key))
-            this.program[key] = shaderProgram[key];
+            this.program[key] = this.updateTransforms(key, shaderProgram[key]);
     }
 
     if(this.diffuseTex != null)
@@ -8540,6 +8573,54 @@ x3dom.glTF.glTFKHRMaterialCommons.prototype.bind = function(gl, shaderProgram)
     this.program.lightVector = this.lightVector;
 
     this.program.technique = this.technique;
+};
+
+x3dom.glTF.glTFKHRMaterialCommons.prototype.updateTransforms = function(uniform, value)
+{
+    var matrix4f = new x3dom.fields.SFMatrix4f();
+    
+    function glMultMatrix4 (gl, m) {
+        matrix4f.setFromArray(gl);
+        return matrix4f.mult(m).toGL(); //optimize by multiplying gl matrixes directly
+    };
+    
+    switch(uniform){
+        case "modelViewInverseTransposeMatrix":
+            //do modelviewinverse
+            var worldInverse = this.worldTransform.inverse();
+            matrix4f.setFromArray(value);
+            //mult in, transpose and to GL
+            var mat = worldInverse.mult(matrix4f).transpose().toGL();
+            var model_view_inv_gl = [
+                mat[0], mat[1], mat[2],
+                mat[4],mat[5],mat[6],
+                mat[8],mat[9],mat[10]];
+            return model_view_inv_gl;
+            break;
+        case "modelViewInverseMatrix":
+            // work with worldTransform.inverse
+            // (VM x W)-1 = W-1 x VM-1
+            var worldInverse = this.worldTransform.inverse();
+            matrix4f.setFromArray(value);
+            return worldInverse.mult(matrix4f);
+            break;
+        case "modelViewMatrix":
+        case "modelViewProjectionMatrix":
+        case "modelMatrix":
+        case "model":
+            return glMultMatrix4(value, this.worldTransform);
+            break;
+        case "viewMatrix":
+        case "projectionMatrix":
+            return value;
+            break;
+        default:
+            return value;
+            break;
+    }
+    
+	console.warn("switch default not encountered ?");
+	return value;
 };
 
 x3dom.glTF.glTFMaterial = function(technique)
@@ -8810,9 +8891,8 @@ x3dom.X3DCanvas = function(x3dElem, canvasIdx)
 	this.canvas.parent = this;
 	
 	this.gl = this._initContext( this.canvas, (this.backend.search("desktop") >= 0),
-											  (this.backend.search("mobile") >= 0),
-											  (this.backend.search("flashie") >= 0),
-											  (this.backend.search("webgl2") >= 0));
+		(this.backend.search("mobile") >= 0),
+		(this.backend.search("webgl2") >= 0));
 	this.backend = 'webgl';
 	
 	if (this.gl == null)
@@ -9002,8 +9082,12 @@ x3dom.X3DCanvas.prototype.bindEventListeners = function() {
             this.focus();
 
             var originalY = this.parent.mousePosition(evt).y;
-
-            this.mouse_drag_y += 2 * evt.detail;
+            if(this.parent.doc._scene.getNavigationInfo()._vf.reverseScroll == true){
+                this.mouse_drag_y -= 2 * evt.detail;
+            }
+            else{
+                this.mouse_drag_y += 2 * evt.detail;
+            }
 
             this.parent.doc.onWheel(that.gl, this.mouse_drag_x, this.mouse_drag_y, originalY);
             this.parent.doc.needRender = true;
@@ -9015,6 +9099,7 @@ x3dom.X3DCanvas.prototype.bindEventListeners = function() {
 
     this.onKeyPress = function (evt) {
         if (!this.parent.disableKeys) {
+            evt.preventDefault();
             this.parent.doc.onKeyPress(evt.charCode);
         }
         this.parent.doc.needRender = true;
@@ -9025,8 +9110,13 @@ x3dom.X3DCanvas.prototype.bindEventListeners = function() {
             this.focus();
 
             var originalY = this.parent.mousePosition(evt).y;
-
-            this.mouse_drag_y -= 0.1 * evt.wheelDelta;
+            
+            if(this.parent.doc._scene.getNavigationInfo()._vf.reverseScroll == true){
+                this.mouse_drag_y += 0.1 * evt.wheelDelta;
+            }
+            else{
+                this.mouse_drag_y -= 0.1 * evt.wheelDelta;
+            }
 
             this.parent.doc.onWheel(that.gl, this.mouse_drag_x, this.mouse_drag_y, originalY);
             this.parent.doc.needRender = true;
@@ -12899,7 +12989,7 @@ x3dom.X3DDocument.prototype.onKeyUp = function(keyCode)
             stack = this._scene.getViewpoint()._stack;
 
             if (stack) {
-                stack.switchTo('next');
+                stack.switchTo('prev');
             }
             else {
                 x3dom.debug.logError ('No valid ViewBindable stack.');
@@ -12909,7 +12999,27 @@ x3dom.X3DDocument.prototype.onKeyUp = function(keyCode)
             stack = this._scene.getViewpoint()._stack;
 
             if (stack) {
-                stack.switchTo('prev');
+                stack.switchTo('next');
+            }
+            else {
+                x3dom.debug.logError ('No valid ViewBindable stack.');
+            }
+            break;
+        case 35: /* end */
+            stack = this._scene.getViewpoint()._stack;
+
+            if (stack) {
+                stack.switchTo('last');
+            }
+            else {
+                x3dom.debug.logError ('No valid ViewBindable stack.');
+            }
+            break;
+        case 36: /* home */
+            stack = this._scene.getViewpoint()._stack;
+
+            if (stack) {
+                stack.switchTo('first');
             }
             else {
                 x3dom.debug.logError ('No valid ViewBindable stack.');
@@ -14238,6 +14348,9 @@ x3dom.Viewarea.prototype.onMousePress = function (x, y, buttonState)
 {
     this._needNavigationMatrixUpdate = true;
 
+    // simulate move first, in case mouse not moved after last click
+    this.prepareEvents(x, y, 0, "onmouseover");
+    // touchsensor isActive is invoked now since in affectedPointingSensorList
     this.prepareEvents(x, y, buttonState, "onmousedown");
     this._pickingInfo.lastClickObj = this._pickingInfo.pickObj;
     this._pickingInfo.firstObj = this._pickingInfo.pickObj;
@@ -16684,6 +16797,7 @@ x3dom.fields.SFVec2f.copy = function(v) {
 
 x3dom.fields.SFVec2f.parse = function (str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    if (m === null) return new x3dom.fields.SFVec2f();
     return new x3dom.fields.SFVec2f(+m[1], +m[2]);
 };
 
@@ -16767,6 +16881,7 @@ x3dom.fields.SFVec2f.prototype.toString = function () {
 
 x3dom.fields.SFVec2f.prototype.setValueByStr = function(str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    m = m || [0, 0, 0];
     this.x = +m[1];
     this.y = +m[2];
     return this;
@@ -16952,11 +17067,13 @@ x3dom.fields.SFVec4f.prototype.copy = function() {
 
 x3dom.fields.SFVec4f.parse = function (str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    if (m === null) return new x3dom.fields.SFVec4f();
     return new x3dom.fields.SFVec4f(+m[1], +m[2], +m[3], +m[4]);
 };
 
 x3dom.fields.SFVec4f.prototype.setValueByStr = function(str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    m = m || [0, 0, 0, 0, 0];
     this.x = +m[1];
     this.y = +m[2];
     this.z = +m[3];
@@ -17007,6 +17124,7 @@ x3dom.fields.Quaternion.prototype.multiply = function (that) {
 
 x3dom.fields.Quaternion.parseAxisAngle = function (str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    if (m === null) return new x3dom.fields.Quaternion();
     return x3dom.fields.Quaternion.axisAngle(new x3dom.fields.SFVec3f(+m[1], +m[2], +m[3]), +m[4]);
 };
 
@@ -17312,6 +17430,7 @@ x3dom.fields.Quaternion.prototype.toString = function () {
 
 x3dom.fields.Quaternion.prototype.setValueByStr = function(str) {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec(str);
+    m = m || [0, 1, 0, 0, 0];
     var quat = x3dom.fields.Quaternion.axisAngle(new x3dom.fields.SFVec3f(+m[1], +m[2], +m[3]), +m[4]);
     this.x = quat.x;
     this.y = quat.y;
@@ -18138,7 +18257,7 @@ x3dom.fields.MFVec3f.parse = function(str) {
 
 x3dom.fields.MFVec3f.prototype.copy = function()
 {
-    return x3dom.fields.MFVec3f.copy(this);
+    x3dom.fields.MFVec3f.copy(this);
 };
 
 x3dom.fields.MFVec3f.prototype.setValueByStr = function(str) {
@@ -18161,13 +18280,6 @@ x3dom.fields.MFVec3f.prototype.toGL = function() {
     return a;
 };
 
-x3dom.fields.MFVec3f.prototype.toString = function () {
-    var str = "";
-    for (var i=0, n=this.length; i<n; i++) {
-		 str = str + this[i].toString() + " ";
-    }
-    return str;
-};
 
 ///////////////////////////////////////////////////////////////////////////////
 /** MFVec2f constructor.
@@ -19742,987 +19854,6 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function(object, parentkey, element,
 		return element;
 	};
 
-x3dom.PROTOS = function() {
-	this.protos = {};
-	this.names = {};
-	this.protoField = {};
-	this.scriptField = {};
-	this.interfaceField = {};
-	this.envField = {};
-	this.scopecount = 0;
-	this.privatescope = [];
-	this.defs = {};
-	this.founddef = null;
-	this.SFNodes = {
-		"-appearance" : 1,
-		"-body" : 1,
-		"-child" : 1,
-		"-collidable" : 1,
-		"-collider" : 1,
-		"-color" : 1,
-		"-composableRenderStyle" : 1,
-		"-coord" : 1,
-		"-emitter" : 1,
-		"-fillProperties" : 1,
-		"-fogCoord" : 1,
-		"-fontStyle" : 1,
-		"-geometry" : 1,
-		"-geoOrigin" : 1,
-		"-layout" : 1,
-		"-lineProperties" : 1,
-		"-massDensityModel" : 1,
-		"-material" : 1,
-		"-metadata" : 1,
-		"-normal" : 1,
-		"-nurbsCurve" : 1,
-		"-nurbsCurve2D" : 1,
-		"-pickingGeometry" : 1,
-		"-renderStyle" : 1,
-		"-shape" : 1,
-		"-source" : 1,
-		"-texCoord" : 1,
-		"-texCoordNurbs" : 1,
-		"-texCoordRamp" : 1,
-		"-texture" : 1,
-		"-texture2D" : 1,
-		"-texture2DMulti" : 1,
-		"-texture3D" : 1,
-		"-textureProperties" : 1,
-		"-textureTransform" : 1,
-		"-transferFunction" : 1,
-		"-viewport" : 1
-	};
-}
-
-x3dom.PROTOS.prototype = {
-	pushScope: function (s) {
-		// console.error("PUSH", s);
-		this.privatescope.push(s);
-	},
-
-	popScope: function () {
-		// console.error("POP", this.privatescope[this.privatescope.length-1]);
-		this.privatescope.pop();
-	},
-
-	saveDef: function (def) {
-		this.defs[def] = this.getScope();
-		var d = this.getScope(def);
-		// console.error("DEF SAVED", d, this.defs[def]);
-		return d;
-	},
-
-	getDef: function (def) {
-		// console.error("SCOPE OF DEF", def, this.defs[def]);
-		return this.defs[def];
-	},
-
-	getField: function (scope, field) {
-		return scope + "_" + field;
-	},
-
-	getScope: function (def) {
-		var scope;
-		if (def) {
-			if (this.defs[def]) {
-				scope = this.defs[def] + "_" + def;
-			} else {
-				scope = def;
-			}
-		} else {
-			scope = this.privatescope.join("_");
-		}
-		// console.error("GET", [def], scope);
-		// TODO VERIFY IF THIS IS RIGHT
-		var decl = scope.lastIndexOf("DECL");
-		if (decl > 0) {
-			scope = scope.substring(decl);
-		}
-		return scope;
-	},
-
-	scopeLength: function () {
-		return this.privatescope.length;
-	},
-
-	upScope: function (i) {
-		return this.privatescope.slice(0, this.privatescope.length - i).join("_");
-	},
-
-	setLoadURLs: function (func) {
-		this.loadURLs = func;
-	},
-
-	setValueFromInterface: function (field, object, objectfield) {
-		// copy the default interface value;
-		var fieldname_field_scope = this.getInterface(field);
-		// default to "@".  - might need to be specified for children, see setter.
-		var prefix = "@";
-		if (typeof fieldname_field_scope != 'undefined' && typeof fieldname_field_scope[0] != 'undefined') {
-			prefix = fieldname_field_scope[0].substr(0, 1);
-		}
-		if (prefix === '@' && objectfield === 'children') {
-			prefix = '-';
-		}
-		if (prefix === '-' && objectfield === 'value') {
-			prefix = "@";
-		}
-		objectfield = prefix + objectfield;
-		if (typeof fieldname_field_scope != 'undefined' && typeof fieldname_field_scope[1] != 'undefined' && typeof fieldname_field_scope[0] != 'undefined' && typeof fieldname_field_scope[1][fieldname_field_scope[0]] != 'undefined') {
-			// just grab the one value out of the interface.  We may want more later for typechecking
-			var value = fieldname_field_scope[1][fieldname_field_scope[0]];
-			if (Array.isArray(value) && fieldname_field_scope[1]["@type"] === "SFNode" && objectfield !== '-children') {
-				// and some SF fields are arrays, so we have to explicitly test for SFNode
-				// can't shove an array into an SFNode, so take the first element, per Roy Walmsley
-				value = value[0];
-				// console.error("SFNode array[0]=", value);
-			}
-			if (!Array.isArray(value) && objectfield === '-children') {
-				objectfield = "@value";
-			}
-			object[objectfield] = value;
-			return [fieldname_field_scope[1]["@type"], fieldname_field_scope[2]];
-		}
-		return undefined;
-	},
-
-	getObjectField: function (f, type) {
-		var objectfield = "value";
-		if (type.indexOf("FNode") === 1) {
-			objectfield = "children";
-		}
-		for (var a in f) {
-			if (a === '@value' || a === '-children') {
-				// console.error("===========attribute", a);
-				objectfield = a.substr(1);
-			}
-		}
-		return objectfield;
-	},
-
-	findFieldByName: function (fields, objectfield) {
-		for (var field in fields) {
-			var f = fields[field];
-			var fieldname = f["@name"];
-			if (fieldname === objectfield) {
-				// console.error("Found", fieldname);
-				return f;
-			}
-		}
-		throw "Can't find " + objectfield;
-	},
-
-	getScriptFieldFieldTypeFieldByNameAttribute: function (fields, objectfield) {
-		// console.error("Searching", fields);
-		var f = this.findFieldByName(fields, objectfield);
-		var fieldname = f["@name"];
-		var type = f["@type"];
-		objectfield = this.getObjectField(f, type);
-		return [f, fieldname, type, objectfield];
-	},
-
-	getScriptFieldFieldTypeField: function (fields, field) {
-		var f = fields[field];
-		var fieldname = f["@name"];
-		var type = f["@type"];
-		var objectfield = this.getObjectField(f, type);
-		return [f, fieldname, type, objectfield];
-	},
-
-	setScriptFields: function (fields, def) {
-		var scope = this.getScope();
-		for (var field in fields) {
-			var field_name_field_type_objectfield_name = this.getScriptFieldFieldTypeField(fields, field);
-			var f = field_name_field_type_objectfield_name[0];
-			var fieldname = field_name_field_type_objectfield_name[1];
-			var type = field_name_field_type_objectfield_name[2];
-			var objectfield = field_name_field_type_objectfield_name[3];
-			var type_scope = this.setValueFromInterface(fieldname, f, objectfield);
-			// console.error("SSF1", scope, fieldname, f, objectfield, type, def);
-			this.setScriptField(scope, fieldname, f, objectfield, type, def);
-			if (typeof type_scope !== 'undefined') {
-				// console.error("SSF2", type_scope[1], fieldname, f, objectfield, type, def);
-				this.setScriptField(type_scope[1], fieldname, f, objectfield, type, def);
-			}
-
-		}
-
-	},
-
-	setScriptField: function (scope, field, f, objectfield, type, def) {
-		if (typeof this.scriptField[this.getField(scope, field)] === 'undefined') {
-			this.scriptField[this.getField(scope, field)] = [];
-		}
-		// set another reference
-		this.scriptField[this.getField(scope, field)][this.scriptField[this.getField(scope, field)].length] = [f, objectfield, type, def];
-	},
-
-	setEnv: function (scope, protoField, newobject, nodeField, type, newdef) {
-		var fieldname_field_scope = this.getInterface(protoField);
-		if (typeof fieldname_field_scope !== 'undefined') {
-			scope = fieldname_field_scope[2];
-		}
-		if (typeof this.envField[this.getField(scope, protoField)] === 'undefined') {
-			this.envField[this.getField(scope, protoField)] = [];
-		}
-		// set another reference
-		this.envField[this.getField(scope, protoField)][this.envField[this.getField(scope, protoField)].length] = [newobject, nodeField, type, newdef];
-		// console.error("setconnenv", this.envField[this.getField(scope,protoField)].length, scope, protoField, JSON.stringify(newobject), nodeField, type, newdef);
-	},
-
-	getEnv: function (scope, protoField) {
-		// console.error(">>>>>>", scope, protoField, JSON.stringify(this.envField[this.getField(scope,protoField)]));
-		return this.envField[this.getField(scope, protoField)];
-	},
-
-	setConnectField: function (scope, field, newobject, objectfield, type, newdef) {
-		// console.error("setconn", scope, field, JSON.stringify(newobject), type, newdef);
-		if (typeof this.protoField[this.getField(scope, field)] === 'undefined') {
-			this.protoField[this.getField(scope, field)] = [];
-		}
-		this.protoField[this.getField(scope, field)][this.protoField[this.getField(scope, field)].length] = [newobject, objectfield, type, newdef];
-	},
-
-	// In the ProtoBody (for the instance)
-	// p === "IS"
-	setConnectFields: function (object, p, newobject) {
-		var def = object["@DEF"]; // at same level as IS
-		var newdef = this.saveDef(def);
-		var connect = object[p]["connect"];
-		var scope = this.getScope();
-		for (var cfield in connect) {
-			var f = connect[cfield];
-			// console.error("Connect field", field, f);
-			if (f) {
-				var field = this.getScope(f["@protoField"]);
-				var objectfield = f["@nodeField"];
-				// console.error("Node field is", objectfield);
-				var type_scope = this.setValueFromInterface(field, newobject, objectfield);
-				var type = undefined;
-				if (typeof type_scope !== 'undefined') {
-					type = type_scope[0];
-					this.setEnv(scope, field, newobject, objectfield, type, newdef);
-					this.setConnectField(scope, field, newobject, objectfield, type, newdef);
-					this.setConnectField(type_scope[1], field, newobject, objectfield, type, newdef);
-				} else {
-					this.setEnv(scope, field, newobject, objectfield, type, newdef);
-					this.setConnectField(scope, field, newobject, objectfield, type, newdef);
-				}
-			}
-		}
-	},
-
-	setScriptConnectFields: function (file, object, p, newobject) {
-		var connect = object[p]["connect"];
-		var scope = this.getScope();
-		var def = object["@DEF"];
-		newobject["field"] = this.realPrototypeExpander(file, object["field"], true);
-		var newdef = newobject["@DEF"]; // at same level as IS
-		for (var cfield in connect) {
-			var f = connect[cfield];
-			if (f) {
-				var field = this.getScope(f["@protoField"]);
-				var objectfield = f["@nodeField"];
-				// console.error("Connect field", field, objectfield);
-				var field_name_field_type_objectfield_name = this.getScriptFieldFieldTypeFieldByNameAttribute(newobject["field"], objectfield);
-				f = field_name_field_type_objectfield_name[0];
-				var fieldname = field_name_field_type_objectfield_name[1];
-				var type = field_name_field_type_objectfield_name[2];
-				objectfield = field_name_field_type_objectfield_name[3];
-				// console.error("Node field is", objectfield);
-				var type_scope = this.setValueFromInterface(field, f, objectfield);
-				if (typeof type_scope !== 'undefined') {
-					type = type_scope[0];
-					// this.setEnv(scope, field, newobject, objectfield, type, newdef);
-					// console.error("SSF3", scope, field, f, objectfield, type, def);
-					this.setScriptField(scope, field, f, objectfield, type, def);
-					// console.error("SSF4", type_scope[1], field, f, objectfield, type, def);
-					this.setScriptField(type_scope[1], field, f, objectfield, type, def);
-				} else {
-					// this.setEnv(scope, field, newobject, objectfield, type, newdef);
-					// console.error("SSF5", scope, field, f, objectfield, type, def);
-					this.setScriptField(scope, field, f, objectfield, type, def);
-				}
-			}
-		}
-	},
-
-	getInterface: function (field) {
-		for (var i = 0; i < this.scopeLength(); i++) {
-			var scope = this.upScope(i);
-			if (!scope) {
-				break;
-			}
-			var fieldname_field_scope = this.interfaceField[this.getField(scope, field)];
-			//console.error("getinter", scope, field, fieldnamefield);
-			if (fieldname_field_scope) {
-				return fieldname_field_scope;
-			}
-			//console.error("looping", i);
-		}
-	},
-
-	setInterface: function (field, fieldname) {
-		var scope = this.getScope();
-		this.interfaceField[this.getField(scope, field["@name"])] = [fieldname, field, scope];
-		// console.error("setinter", scope, field["@name"], fieldname, field[fieldname]);
-	},
-
-	clearScope: function (field, object) {
-		var scope = this.getScope();
-		delete this.scriptField[this.getField(scope, field)];
-		delete this.protoField[this.getField(scope, field)];
-		this.zap(field, object);
-	},
-
-	extractConnectedDef: function (scope, field) {
-		var defobj;
-		for (var sf in this.scriptField[this.getField(scope, field)]) {
-			// just grab first one, the others may be bad
-			if (typeof defobj === 'undefined') {
-				var obj = this.scriptField[this.getField(scope, field)][sf];
-				if (typeof obj !== 'undefined') {
-					if (typeof obj[3] !== 'undefined') {
-						var f = this.getField(scope, obj[3]);
-						if (f.indexOf("DECL", 1) == -1) {
-							defobj = [f,  obj[0]["@name"]];
-						}
-					}
-				}
-			}
-		}
-		if (typeof defobj === 'undefined') {
-			for (var pf in this.protoField[this.getField(scope, field)]) {
-				var obj2 = this.protoField[this.getField(scope, field)][pf];
-				if (typeof obj2 !== 'undefined') {
-					defobj = [obj2[3], obj2[1]];
-				}
-			}
-		}
-		if (typeof defobj === 'undefined') {
-			for (var pf2 in this.protoField[this.getField(scope, "__DEF_FIELD__")]) {
-				var obj3 = this.protoField[this.getField(scope, "__DEF_FIELD__")][pf2];
-				if (typeof obj3 !== 'undefined') {
-					defobj = [obj3[3], field];
-				}
-			}
-		}
-		if (typeof defobj === 'undefined') {
-			defobj = [scope, field];
-		}
-		return defobj;
-	},
-
-	setObjectValues: function (scope, field, fieldOrNode, value) {
-		// console.error("resolve", scope, field, fieldOrNode, JSON.stringify(value));
-		var foundOther = false;
-		// branch out across children of a proto declare
-		for (var pf in this.protoField[this.getField(scope, field)]) {
-			var obj = this.protoField[this.getField(scope, field)][pf];
-			if (typeof obj !== 'undefined') {
-				// console.error("\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
-				this.setObjectValue(scope, field, obj, fieldOrNode, value);
-				foundOther = true;
-				// console.error("\t\tresultprotovalue", JSON.stringify(obj));
-			} else {
-				// console.error("protoundef", scope, field);
-			}
-		}
-
-		// look for script fields
-		for (var sf in this.scriptField[this.getField(scope, field)]) {
-			var obj2 = this.scriptField[this.getField(scope, field)][sf];
-			if (typeof obj2 !== 'undefined') {
-				// console.error("\t\tfoundscriptvalue", scope, field, JSON.stringify(obj2), fieldOrNode, JSON.stringify(value));
-				this.setObjectValue(scope, field, obj2, fieldOrNode, value);
-				foundOther = true;
-				// console.error("\t\tresultscriptvalue", JSON.stringify(obj2));
-			} else {
-				// console.error("scriptundef", scope, field);
-			}
-		}
-
-		if (foundOther) {
-			return;
-		}
-
-		// find prototype up the scope stream
-		for (var i = 0; i < this.scopeLength(); i++) {
-			var parentScope = this.upScope(i);
-			if (!parentScope) {
-				break;
-			}
-			var envs = this.getEnv(parentScope, field);
-			// console.error(i, parentScope, field, JSON.stringify(envs), JSON.stringify(value));
-			for (var e in envs) {
-				var obj3 = envs[e];
-				// console.error("newobject", JSON.stringify(obj3[0]));
-				// console.error("nodeField", JSON.stringify(obj3[1]));
-				// console.error("type", JSON.stringify(obj3[2]));
-				// console.error("newdef", JSON.stringify(obj3[3]));
-				// console.error("parentscope", JSON.stringify(parentScope));
-				if (typeof obj3 !== 'undefined' && obj3[3].indexOf(parentScope) === obj3[3].lastIndexOf(parentScope)) {
-					// console.error("\t\tfoundenvvalue", parentScope, obj3[1], JSON.stringify(obj3), fieldOrNode, JSON.stringify(value));
-					this.setObjectValue(parentScope, obj3[1], obj3, fieldOrNode, value);
-					// console.error("\t\tresultenvvalue", JSON.stringify(obj3));
-				}
-			}
-		}
-	},
-
-	setObjectValue: function (scope, field, obj, fieldOrNode, value) {
-		// console.error("SOV", scope, field, obj, fieldOrNode, value);
-		if (Array.isArray(value) && typeof obj[2] !== 'undefined') {
-			// and some SF fields are arrays, so we have to explicitly test for SFNode
-			if (obj[2] === "SFNode") {
-				// can't shove an array into an SF, so take the first element, per Roy Walmsley
-				// console.error("SFNode is array=", value);
-				value = value[0];
-				// console.error("SFNode array[0]=", value);
-			} else if (obj[2] === "MFNode") {
-				// value = { "Group" : { "-children" : value }};
-				// console.error("MFNode", value);
-			}
-		}
-		// if the recursion didn't set it, set it now
-		var prefix = obj[1].substr(0, 1);
-		if (prefix !== '-' && prefix !== '@') {
-			prefix = fieldOrNode.substr(0, 1);
-		} else {
-			prefix = "";
-		}
-		if (prefix === '@' && obj[1] === 'children') {
-			prefix = '-';
-		}
-		if (prefix === '-' && obj[1] === 'value') {
-			prefix = "@";
-		}
-		if (!Array.isArray(value) && obj[1] === 'children') {
-			value = [value];
-		}
-		// console.error("SOVobjI", JSON.stringify(obj));
-		// console.error("SOVobj0I", JSON.stringify(obj[0]));
-		// console.error("SOVobj1I", JSON.stringify(obj[1]));
-		// console.error("SOVobj2I", JSON.stringify(obj[2]));
-		// console.error("SOVobj3I", JSON.stringify(obj[3]));
-		// console.error("SOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
-		// console.error("SOVrsI", JSON.stringify(value));
-		obj[0][prefix + obj[1]] = value;// JSON.parse(JSON.stringify(value));
-		// console.error("SOVvalueO", JSON.stringify(value));
-		// console.error("SOVobj3O", JSON.stringify(obj[3]));
-		// console.error("SOVobj2O", JSON.stringify(obj[2]));
-		// console.error("SOVobj1O", JSON.stringify(obj[1]));
-		// console.error("SOVobj0O", JSON.stringify(obj[0]));
-		// console.error("SOVobjO", JSON.stringify(obj));
-		// console.error("setresult", obj[0], "[", prefix, obj[1], "]", '=', value, 'alt', fieldOrNode);
-	},
-
-	zap: function (field, object) {
-		var p;
-		if (typeof object === "object") {
-			for (p in object) {
-				if (p.toLowerCase() === 'is') {
-					var connect = object[p]["connect"];
-					for (var fld in connect) {
-						var f = connect[fld];
-						if (f && f["@protoField"] === field) {
-							// console.error("zapping", field);
-							delete connect[fld];
-						}
-					}
-				} else {
-					this.zap(field, object[p]);
-				}
-			}
-		}
-		return object;
-	},
-	zapIs: function (object) {
-		var p;
-		if (typeof object === "object") {
-			for (p in object) {
-				if (p.toLowerCase() === 'is') {
-					delete object[p];
-				} else {
-					this.zapIs(object[p]);
-				}
-			}
-		}
-		return object;
-	},
-
-
-	flattenerArray : function(object, parentArray) {
-		var newobject = [];
-		var offset = 0;
-		for (var p in object) {
-			var possibleArray = this.flattener(object[p], newobject, object.length);
-			if (Array.isArray(possibleArray)) {
-				for (var q in possibleArray) {
-					newobject[parseInt(p)+offset+parseInt(q)] = possibleArray[q];
-				}
-				offset += possibleArray.length-1;
-			} else {
-				newobject[parseInt(p)+offset] = possibleArray;
-			}
-		}
-		return newobject;
-	},
-
-	flattenerObject : function(object, parentArray, arrayLen) {
-		var newobject = {};
-		for (var p in object) {
-			var possibleArray = this.flattener(object[p], parentArray, arrayLen);
-			if (Array.isArray(possibleArray)) {
-				if (this.SFNodes[p]) {
-					// this.SFNodes should only have one child
-					newobject[p] = possibleArray[0];
-					// handle extra nodes brought in from proto
-					if (possibleArray.length > 1) {
-						parentArray[arrayLen] = { "Switch" : {
-									"@whichChoice": -1,
-									"-children" : [
-										{"Group" : {
-										"-children" : [
-										]
-										}
-										}
-									]
-									}
-									};
-						for (var i = 1; i < possibleArray.length; i++) {
-							parentArray[arrayLen]["Switch"]["-children"][0]["Group"]["-children"][i-1] = possibleArray[i];
-						}
-					}
-				} else {
-					newobject[p] = possibleArray;
-				}
-			} else {
-				if (this.SFNodes[p]) {
-					if (typeof possibleArray === 'object' && possibleArray["#comment"]) {
-						if (newobject["-children"]) {
-							newobject[p] = {};
-							newobject["-children"].push(possibleArray);
-						} else {
-							newobject[p] = {};
-							newobject["-children"] = [ possibleArray ];
-						}
-					} else {
-						newobject[p] = possibleArray;
-					}
-				} else {
-					newobject[p] = possibleArray;
-				}
-			}
-		}
-		return newobject;
-	},
-
-	flattener : function(object, parentArray, arrayLen) {
-		if (typeof object === "object") {
-			if (Array.isArray(object)) {
-				var newobject = this.flattenerArray(object, parentArray);
-			} else {
-				var newobject = this.flattenerObject(object, parentArray, arrayLen);
-			}
-			return newobject;
-		} else {
-			return object;
-		}
-	},
-
-	prototypeExpander: function (file, object) {
-		this.protos = {};
-		this.names = {};
-		this.protoField = {};
-		this.scriptField = {};
-		this.interfaceField = {};
-		this.envField = {};
-		this.scopecount = 0;
-		this.privatescope = [];
-		this.defs = {};
-		this.founddef = null;
-		object = this.realPrototypeExpander(file, object, false);
-		this.zapIs(object);
-		object = this.flattener(object);
-		return object;
-	},
-
-	readCode : function (data, fileExt) {
-		if (typeof data !== 'undefined') {
-			newobject[p]["#sourceText"] = data.split(/\r?\n/);
-			delete newobject[p]["@url"];
-		}
-	},
-
-	handleScript: function (file, object, p, newobject) {
-		newobject[p] = this.realPrototypeExpander(file, object[p], true);
-		this.setScriptFields(newobject[p]["field"], newobject[p]["@DEF"]);
-		var url = newobject[p]["@url"];
-		console.error("Not loading Script--missing loadURLs", file, url);
-		// this.loadURLs(file, url, this.readCode, null, p, newobject);
-	},
-
-	handleProtoDeclare: function (file, object, p) {
-		var name = object[p]["@name"];
-		var def = object[p]["@DEF"];
-		this.protos[name] = object[p];
-		this.saveDef(def);
-		// don't need to save def
-		if (typeof object[p]["@appinfo"] !== 'undefined') {
-			this.protos[name]["@appinfo"] = object[p]["@appinfo"];
-		}
-		if (typeof object[p]["@documentation"] !== 'undefined') {
-			this.protos[name]["@documentation"] = object[p]["@documentation"];
-		}
-		this.pushScope("DECL" + name);
-		this.names[def] = name;
-		this.realPrototypeExpander(file, object[p], false);
-		this.popScope();
-		return object;
-	},
-
-	handleProtoInterface: function (file, object, p) {
-		var fields = object[p]["field"];
-		for (var field in fields) {
-			var f = fields[field];
-			if (typeof f["@value"] !== 'undefined') {
-				this.setInterface(f, "@value");
-			} else if (typeof f["-children"] !== 'undefined') {
-				this.setInterface(f, "-children");
-			} else {
-				this.setInterface(f);
-			}
-		}
-		return object;
-	},
-
-	handleProtoInstance: function (file, object, p) {
-		var name = object[p]["@name"];
-		var def = object[p]["@DEF"];
-		var use = object[p]["@USE"];
-		this.names[def] = name;
-		if (typeof name === 'undefined' && typeof use !== 'undefined') {
-			name = this.names[use];
-		}
-		this.pushScope("DECL" + name);
-
-		var instance = {};
-		if (typeof def === 'undefined' && typeof use === 'undefined') {
-			def = "INSTANCE";
-		}
-		if (this.getDef(def) && typeof use === 'undefined') {
-			this.scopecount += 1000;
-			def += "" + this.scopecount;
-		} else {
-			// first appearance of def is left alone
-		}
-		if (typeof def !== 'undefined') {
-			var newdef = this.saveDef(def);
-			this.pushScope(def);
-		}
-		var bodydef;
-		if (typeof this.protos[name] === 'undefined' || typeof this.protos[name]['ProtoBody'] === 'undefined') {
-			console.error("ProtoBody undefined for", name);
-		} else {
-			// console.error("Copying ProtoBody", name);
-			var children = this.protos[name]['ProtoBody']['-children'];
-			for (var child in children) {
-				var ch = children[child];
-				for (var objkey in ch) {
-					if (typeof bodydef === 'undefined') {
-						bodydef = ch[objkey]["@DEF"];
-						if (typeof use !== 'undefined') {
-							var iuse = this.saveDef(use);
-							this.pushScope(use);
-						}
-					}
-				}
-			}
-			instance = JSON.parse(JSON.stringify(children));
-		}
-
-		// instance is an array.  Get the first object, no matter how
-		// deep it is.
-		// TODO comments
-
-		var firstobj = instance;
-
-		while (Array.isArray(firstobj)) {
-			if (firstobj[0] === null || typeof firstobj[0] === 'undefined') {
-				break;
-			}
-			firstobj = firstobj[0];
-		}
-
-
-		if (typeof use !== 'undefined' && typeof firstobj === 'object') {
-			if (typeof bodydef !== 'undefined') {
-				var bdef = this.saveDef(bodydef);
-				this.pushScope(bodydef);
-			}
-			var newobject = {
-				"Group": {  // replace ProtoInstance with Group
-					"@USE" : this.getScope()
-				}
-			};
-			if (typeof bodydef !== 'undefined') {
-				this.popScope();
-			}
-
-		} else {
-			var newobject = this.realPrototypeExpander(file, instance, false);
-
-			var fieldValue = object[p]["fieldValue"];
-			for (var field in fieldValue) {
-				var fv = fieldValue[field];
-				var protoField = fv["@name"];
-				var fieldOrNode = "@value";
-				var value = fv[fieldOrNode];
-				for (var nv in fv) {
-					if (nv === '@name') {
-						continue;
-					}
-					fieldOrNode = nv;
-					value = fv[fieldOrNode];
-					this.pushScope("FIELD" + protoField);
-					value = this.realPrototypeExpander(file, value, false);
-					this.popScope();
-					this.getInterface(protoField);
-					this.setObjectValues(this.getScope(),
-						protoField,
-						fieldOrNode,
-						value);
-				}
-				// this.clearScope(fieldname, newobject);
-			}
-		}
-
-		if (typeof use !== 'undefined') {
-			this.popScope();
-		}
-		if (typeof def !== 'undefined') {
-			this.popScope();
-		}
-		this.popScope();
-		return newobject;
-	},
-	realPrototypeExpander: function (file, object, inScript) {
-		if (typeof object === "object") {
-			var newobject = null;
-			if (Array.isArray(object)) {
-				newobject = [];
-			} else {
-				newobject = {};
-			}
-			for (var p in object) {
-				var plc = p.toLowerCase();
-				if (plc === 'script') {
-					this.handleScript(file, object, p, newobject);
-				} else if (plc === 'protodeclare') {
-					this.handleProtoDeclare(file, object, p);
-				} else if (plc === 'protointerface') {
-					this.handleProtoInterface(file, object, p);
-				} else if (plc === 'protobody') {
-					this.realPrototypeExpander(file, object[p], inScript);
-				} else if (plc === 'protoinstance') {
-					newobject = this.handleProtoInstance(file, object, p);
-				} else if (plc === 'connect') {
-					this.realPrototypeExpander(file, object[p], inScript);
-				} else if (plc === 'fieldvalue') {
-					this.realPrototypeExpander(file, object[p], inScript);
-				} else if (plc === 'field') {
-					newobject[p] = this.realPrototypeExpander(file, object[p], inScript);
-				} else if (plc === '@value') {
-					newobject[p] = this.realPrototypeExpander(file, object[p], inScript);
-					// console.error("@value is ", newobject[p]);
-				} else if (plc === '-children') {
-					newobject[p] = this.realPrototypeExpander(file, object[p], inScript);
-					// console.error("-children is ", newobject[p]);
-				} else if (plc === 'is') {
-					if (inScript) {
-						this.setScriptConnectFields(file, object, p, newobject);
-					} else {
-						this.setConnectFields(object, p, newobject);
-					}
-					this.realPrototypeExpander(file, object[p], inScript);
-				} else if (plc === 'route') {
-					newobject[p] = {};
-					var envFrom = this.extractConnectedDef(this.getScope(object[p]["@fromNode"]), object[p]["@fromField"]);
-					newobject[p]["@fromNode"] = envFrom[0];
-					newobject[p]["@fromField"] = envFrom[1];
-					var envTo = this.extractConnectedDef(this.getScope(object[p]["@toNode"]), object[p]["@toField"]);
-					newobject[p]["@toNode"] = envTo[0];
-					newobject[p]["@toField"] = envTo[1];
-				} else if (plc === '@name') {
-					newobject[p] = object[p];
-				} else if (plc === '@def') {
-					newobject[p] = this.saveDef(object[p]);
-					/*
-					if (typeof process != 'undefined') {
-						process.stderr.write("d3 ");
-					}
-					*/
-					this.setConnectField(this.getScope(), "__DEF_FIELD__", newobject, object[p], "SFString", newobject[p]);
-				} else if (plc === '@use') {
-					newobject[p] = this.getScope(object[p]);
-					// console.error("USE for", object[p], "is", newobject[p]);
-				} else {
-					newobject[p] = this.realPrototypeExpander(file, object[p], inScript);
-				}
-			}
-			return newobject;
-		} else {
-			return object;
-		}
-	},
-
-	searchForProtoDeclare: function (object, name) {
-		var p;
-		var found;
-		if (typeof object === "object") {
-			for (p in object) {
-				if (p === 'ProtoDeclare') {
-					if (object[p]["@name"] === name) {
-						found = object;
-					}
-					// find the first one if none match
-					if (typeof found === 'undefined' && this.founddef === null) {
-						this.founddef = object;
-					}
-				}
-				if (typeof found === 'undefined') {
-					found = this.searchForProtoDeclare(object[p], name);
-				}
-			}
-		}
-		if (typeof found !== 'undefined') {
-			// console.error("defaulted to", found["ProtoDeclare"]["@name"]);
-		}
-		return found;
-	},
-
-
-	searchAndReplaceProto: function (filename, json, protoname, founddef, obj, objret) {
-		var newobj = this.searchForProtoDeclare(json, protoname);
-		if (typeof newobj === 'undefined') {
-			newobj = founddef;
-		}
-		if (newobj === null || typeof newobj.ProtoDeclare === 'undefined') {
-			console.error("ProtoDeclare is still null or undefined in ", JSON.stringify(json));
-		} else {
-			var name = obj["@name"];
-			var appinfo = obj["@appinfo"];
-			var description = obj["@description"];
-			newobj["ProtoDeclare"]["@name"] = name;
-			newobj["ProtoDeclare"]["@appinfo"] = appinfo;
-			newobj["ProtoDeclare"]["@description"] = description;
-		}
-		objret(newobj);
-	},
-
-
-	loadedProto: function (data, protoname, obj, filename, protoexp, objret) {
-		if (typeof data !== 'undefined') {
-			try {
-				// can only search for one Proto at a time
-				this.founddef = null;
-				var json = {};
-				try {
-					json = JSON.parse(data);
-					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
-				} catch (e) {
-					console.error("Failed to parse JSON from " + filename);
-					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
-						runAndSend(['---silent', filename], function(json) {
-							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
-						});
-					} else {
-						try {
-							var str = serializeDOM(undefined, data.firstElementChild, true);
-							$.post("/convert", str, function(json) {
-								protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
-							}, "json")
-						} catch (e) {
-							alert(e);
-						}
-					}
-				}
-			} catch (e) {
-				console.error("Failed to parse JSON in ", filename, e);
-			}
-		} else {
-			console.error("data is undefined for file", filename);
-		}
-	},
-
-	doLoad : function (data, u, protoexp, done, p, obj) {
-		var name = obj["@name"];
-		var nameIndex = u.indexOf("#");
-		var protoname = name;
-		if (nameIndex >= 0) {
-			protoname = u.substring(nameIndex + 1);
-		}
-
-		try {
-			protoexp.loadedProto(data, protoname, obj, u, protoexp, function (nuobject) {
-				done(p, nuobject);
-			});
-		} catch (e) {
-			console.error("Error searching for proto", e);
-		}
-	},
-
-	load : function (p, file, object, done) {
-		var obj = object[p];
-		var url = obj["@url"];
-		// this is a single task
-		console.error("Not loading External Prototype--missing loadURLs", file, url);
-		// this.loadURLs(file, url, this.doLoad, this, done, p, obj);
-	},
-
-	expand : function (file, object, done) {
-		for (var p in object) {
-			if (p === 'ExternProtoDeclare') {
-				this.load(p, file, object, done);
-			} else {
-				// this is a single task:
-				done(p, this.externalPrototypeExpander(file, object[p]));
-			}
-		}
-	},
-
-	externalPrototypeExpander: function (file, object) {
-		if (typeof object === "object") {
-			var newobject = null;
-			if (Array.isArray(object)) {
-				newobject = [];
-			} else {
-				newobject = {};
-			}
-			// Wait for expectedreturn tasks to finish
-			var expectedreturn = Object.keys(object).length;
-			this.expand(file, object, function (p, newobj) {
-				if (p === "ExternProtoDeclare") {
-					newobject = newobj;
-				} else {
-					newobject[p] = newobj;
-				}
-			});
-			while (expectedreturn > Object.keys(newobject).length + 1); {  // when they are equal, we exit
-				setTimeout(function () { }, 50);
-			}
-			// console.error("Exited loop");
-
-			return newobject;
-		} else {
-			return object;
-		}
-	}
-};
-
-x3dom.protoExpander = new x3dom.PROTOS();
-
 /*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
@@ -21720,12 +20851,13 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function(gl, prope
 		if((properties.TEXTURED || properties.DIFFUSEMAP)) {
 			shader += "uniform sampler2D diffuseMap;\n";
 		}
-		if(properties.CUBEMAP) {
-			shader += "uniform samplerCube environmentMap;\n";
-			shader += "varying vec3 fragViewDir;\n";
-            shader += "uniform float environmentFactor;\n";
-
-		}
+        if(properties.CUBEMAP) {
+            shader += "uniform samplerCube environmentMap;\n";
+            shader += "varying vec3 fragViewDir;\n";
+            if(properties.CSSHADER) {
+                shader += "uniform float environmentFactor;\n";
+            }
+        }
 		if(properties.SPECMAP){
 			shader += "uniform sampler2D specularMap;\n";
 		}
@@ -22002,7 +21134,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function(gl, prope
 					shader += "color.rgb *= texColor.rgb;\n";
 				}
 				if(properties.CUBEMAP) {
-					shader += "color.rgb *= mix(vec3(1.0,1.0,1.0), envColor.rgb, environmentFactor);\n";
+					if(properties.CSSHADER) {
+						shader += "color.rgb *= mix(vec3(1.0,1.0,1.0), envColor.rgb, environmentFactor);\n";
+					}else{
+						shader += "color.rgb *= envColor.rgb;\n";
+					}
 				}
 			}else{
 				shader += "color.rgb = (_emissiveColor + max(ambient + diffuse, 0.0) * texColor.rgb + specular*_specularColor);\n";
@@ -24220,7 +23356,7 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateVertexShader = function(
                 "{"+
                 "    vec4 pos = modelViewProjectionMatrix * vec4(position, 1.0);"+
                 "    v_eye = (modelViewMatrix * vec4(position, 1.0)).xyz;"+
-                "    v_normal = (normalMatrix * vec4(normal,1.0)).xyz;"+
+                "    v_normal = normalize((normalMatrix * vec4(normal,1.0)).xyz);"+
                 "    v_texcoord = texcoord;"+
                 "    gl_Position = pos;"+
                 "}";
@@ -24288,7 +23424,7 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateFragmentShader = functio
     "void main(void)\n"+
     "{\n"+
         "vec4 I = -vec4(normalize(v_eye),1.0);\n"+
-        "vec4 N = vec4(normalize(v_normal),1.0);\n"+
+        "vec4 N = vec4(v_normal,1.0);\n"+
         "vec4 al = ambientLight;\n"+
         "vec4 L = normalize(lightVector-vec4(v_eye,1.0));\n";
 
@@ -24340,6 +23476,8 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateFragmentShader = functio
             shader += "    eye = -v_eye.xyz;\n";
             shader += "}\n";
 
+            //divide glTF shininess by 128 since it is provided premultiplied
+            shader += "float _shininess = shininess * 0.0078125;\n";
             shader += "vec3 ads;\n";
 
             for(var l=0; l<properties.LIGHTS; l++) {
@@ -24354,7 +23492,7 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateFragmentShader = functio
                     "light"+l+"_AmbientIntensity, " +
                     "light"+l+"_BeamWidth, " +
                     "light"+l+"_CutOffAngle, " +
-                    "v_normal, eye, shininess, ambientIntensity);\n";
+                    "v_normal, eye, _shininess, ambientIntensity);\n";
                 shader += "ambient  += " + lightCol + " * ads.r;\n" +
                     "diffuse  += " + lightCol + " * ads.g;\n" +
                     "specular += " + lightCol + " * ads.b;\n";
@@ -24367,7 +23505,7 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateFragmentShader = functio
             shader += "color.rgb = (_emission.rgb + max(ambient + diffuse, 0.0) * color.rgb + specular*_specularColor.rgb);\n";
         }
 
-        shader += "gl_FragColor = vec4(color.rgb, 1.0-transparency);\n"+
+        shader += "gl_FragColor = vec4(color.rgb, transparency);\n"+
     "}";
 
     var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
@@ -24380,6 +23518,7 @@ x3dom.shader.KHRMaterialCommonsShader.prototype.generateFragmentShader = functio
 
     return fragmentShader;
 };
+
 /**
  * Generate the final ShadowShader program
  */
@@ -24937,7 +24076,7 @@ x3dom.gfx_webgl = (function () {
         var validContextNames = ['webgl', 'experimental-webgl', 'moz-webgl', 'webkit-3d'];
 
         if (tryWebGL2) {
-            validContextNames = ['experimental-webgl2'].concat(validContextNames);
+            validContextNames = ['webgl2','experimental-webgl2'].concat(validContextNames);
         }
 
         var ctx = null;
@@ -27878,7 +27017,7 @@ x3dom.gfx_webgl = (function () {
 
                 line = viewarea.calcViewRay(x, y, cctowc);
 
-                pickPos = line.pos.add(line.dir.multiply(dist * sceneSize));
+                pickPos = from.add(line.dir.multiply(dist * sceneSize));
 
                 index = 4;      // get right pixel
                 dist = (pixelData[index    ] / 255.0) * denom +
@@ -27886,7 +27025,7 @@ x3dom.gfx_webgl = (function () {
 
                 lineoff = viewarea.calcViewRay(x + pixelOffset, y, cctowc);
 
-                right = lineoff.pos.add(lineoff.dir.multiply(dist * sceneSize));
+                right = from.add(lineoff.dir.multiply(dist * sceneSize));
                 right = right.subtract(pickPos).normalize();
 
                 index = 8;      // get top pixel
@@ -27895,7 +27034,7 @@ x3dom.gfx_webgl = (function () {
 
                 lineoff = viewarea.calcViewRay(x, y - pixelOffset, cctowc);
 
-                up = lineoff.pos.add(lineoff.dir.multiply(dist * sceneSize));
+                up = from.add(lineoff.dir.multiply(dist * sceneSize));
                 up = up.subtract(pickPos).normalize();
 
                 pickNorm = right.cross(up).normalize();
@@ -27908,14 +27047,14 @@ x3dom.gfx_webgl = (function () {
 
                 line = viewarea.calcViewRay(x, y, cctowc);
 
-                pickPos = line.pos.add(line.dir.multiply(dist * sceneSize));
+                pickPos = from.add(line.dir.multiply(dist * sceneSize));
 
                 index = 4;      // get right pixel
                 dist = pixelData[index] / 255.0;
 
                 lineoff = viewarea.calcViewRay(x + pixelOffset, y, cctowc);
 
-                right = lineoff.pos.add(lineoff.dir.multiply(dist * sceneSize));
+                right = from.add(lineoff.dir.multiply(dist * sceneSize));
                 right = right.subtract(pickPos).normalize();
 
                 index = 8;      // get top pixel
@@ -27923,7 +27062,7 @@ x3dom.gfx_webgl = (function () {
 
                 lineoff = viewarea.calcViewRay(x, y - pixelOffset, cctowc);
 
-                up = lineoff.pos.add(lineoff.dir.multiply(dist * sceneSize));
+                up = from.add(lineoff.dir.multiply(dist * sceneSize));
                 up = up.subtract(pickPos).normalize();
 
                 pickNorm = right.cross(up).normalize();
@@ -29233,12 +28372,12 @@ x3dom.gfx_webgl = (function () {
         }
 
         var bgnd = scene.getBackground();
-        if (bgnd._webgl !== undefined && bgnd._webgl.position !== undefined) {
+        if (bgnd._webgl.position !== undefined) {
             gl.deleteBuffer(bgnd._webgl.buffers[1]);
             gl.deleteBuffer(bgnd._webgl.buffers[0]);
         }
         var fgnd = scene._fgnd;
-        if (fgnd._webgl !== undefined && fgnd._webgl.position !== undefined) {
+        if (fgnd._webgl.position !== undefined) {
             gl.deleteBuffer(fgnd._webgl.buffers[1]);
             gl.deleteBuffer(fgnd._webgl.buffers[0]);
         }
@@ -30296,9 +29435,6 @@ x3dom.registerNodeType(
                                 case "string":
                                     this._vf[field] = msg;
                                     break;
-				default:
-                                    this._vf[field] = msg;
-                                    break;
                             }
                         }
                         catch (exc2) {
@@ -30321,14 +29457,14 @@ x3dom.registerNodeType(
                     pos = fromField.indexOf(pre);
                     if (pos === 0) {
                         fieldName = fromField.substr(pre.length, fromField.length - 1);
-                        if (this._vf[fieldName]) {
+                        if (this._vf[fieldName] !== undefined) {
                             fromField = fieldName;
                         }
                     } else {
                         pos = fromField.indexOf(post);
                         if (pos > 0) {
                             fieldName = fromField.substr(0, fromField.length - post.length);
-                            if (this._vf[fieldName]) {
+                            if (this._vf[fieldName] !== undefined) {
                                 fromField = fieldName;
                             }
                         }
@@ -30340,7 +29476,7 @@ x3dom.registerNodeType(
                     pos = toField.indexOf(pre);
                     if (pos === 0) {
                         fieldName = toField.substr(pre.length, toField.length - 1);
-                        if (toNode._vf[fieldName]) {
+                        if (toNode._vf[fieldName] !== undefined) {
                             toField = fieldName;
                         }
                     }
@@ -30348,7 +29484,7 @@ x3dom.registerNodeType(
                         pos = toField.indexOf(post);
                         if (pos > 0) {
                             fieldName = toField.substr(0, toField.length - post.length);
-                            if (toNode._vf[fieldName]) {
+                            if (toNode._vf[fieldName] !== undefined) {
                                 toField = fieldName;
                             }
                         }
@@ -30396,14 +29532,14 @@ x3dom.registerNodeType(
                     pos = fromField.indexOf(pre);
                     if (pos === 0) {
                         fieldName = fromField.substr(pre.length, fromField.length - 1);
-                        if (this._vf[fieldName]) {
+                        if (this._vf[fieldName] !== undefined) {
                             fromField = fieldName;
                         }
                     } else {
                         pos = fromField.indexOf(post);
                         if (pos > 0) {
                             fieldName = fromField.substr(0, fromField.length - post.length);
-                            if (this._vf[fieldName]) {
+                            if (this._vf[fieldName] !== undefined) {
                                 fromField = fieldName;
                             }
                         }
@@ -30415,7 +29551,7 @@ x3dom.registerNodeType(
                     pos = toField.indexOf(pre);
                     if (pos === 0) {
                         fieldName = toField.substr(pre.length, toField.length - 1);
-                        if (toNode._vf[fieldName]) {
+                        if (toNode._vf[fieldName] !== undefined) {
                             toField = fieldName;
                         }
                     }
@@ -30423,7 +29559,7 @@ x3dom.registerNodeType(
                         pos = toField.indexOf(post);
                         if (pos > 0) {
                             fieldName = toField.substr(0, toField.length - post.length);
-                            if (toNode._vf[fieldName]) {
+                            if (toNode._vf[fieldName] !== undefined) {
                                 toField = fieldName;
                             }
                         }
@@ -35941,6 +35077,54 @@ x3dom.registerNodeType(
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
+ * (C)2017 A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+/* ### Coordinate ### */
+x3dom.registerNodeType(
+    "CoordinateDouble",
+    "Nurbs",
+    defineClass(x3dom.nodeTypes.X3DCoordinateNode,
+        
+        /**
+         * Constructor for CoordinateDouble
+         * @constructs x3dom.nodeTypes.CoordinateDouble
+         * @x3d 3.3
+         * @component Nurbs
+         * @status full
+         * @extends x3dom.nodeTypes.X3DCoordinateNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc Coordinate builds geometry using a set of double precision 3D coordinates.
+         * X3DCoordinateNode is used by IndexedFaceSet, IndexedLineSet, LineSet and PointSet.
+         */
+        function (ctx) {
+            x3dom.nodeTypes.CoordinateDouble.superClass.call(this, ctx);
+
+            /**
+             * Contains the 3D coordinates
+             * @var {x3dom.fields.MFVec3d} point
+             * @memberof x3dom.nodeTypes.Coordinate
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_MFVec3d(ctx, 'point', []);
+        
+        },
+        {
+            getPoints: function() {
+                return this._vf.point;
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
  * (C)2009 Fraunhofer IGD, Darmstadt, Germany
  * Dual licensed under the MIT and GPL
  */
@@ -37746,7 +36930,7 @@ x3dom.registerNodeType(
                     this._objectID = ++x3dom.nodeTypes.Shape.objectID;
                     x3dom.nodeTypes.Shape.idMap.nodeID[this._objectID] = this;
                 }
-                this.invalidateVolume();
+                this.setAllDirty();
             }
         }
     )
@@ -37777,6 +36961,7 @@ x3dom.nodeTypes.Shape.idMap = {
         }
     }
 };
+
 /** @namespace x3dom.nodeTypes */
 /**
  * Created by Sven Kluge on 27.06.2016.
@@ -42608,7 +41793,7 @@ x3dom.registerNodeType(
 				    var json = JSON.parse(xhr.response);
 				    console.log("post parse", json);
 			
-				    json = x3dom.protoExpander.prototypeExpander(xhr.responseURL, json);
+				    // json = x3dom.protoExpander.prototypeExpander(xhr.responseURL, json);
 				    console.log("return from expander", json);
 				    var parser = new x3dom.JSONParser();
 				    xml = parser.parseJavaScript(json);
@@ -44848,11 +44033,11 @@ x3dom.registerNodeType(
              * The orientation fields of the Viewpoint node specifies relative orientation to the default orientation.
              * @var {x3dom.fields.SFRotation} orientation
              * @memberof x3dom.nodeTypes.Viewpoint
-             * @initvalue 0,0,0,1
+             * @initvalue 0,0,1,0
              * @field x3d
              * @instance
              */
-            this.addField_SFRotation(ctx, 'orientation', 0, 0, 0, 1);
+            this.addField_SFRotation(ctx, 'orientation', 0, 0, 1, 0);
 
             /**
              * The centerOfRotation field specifies a center about which to rotate the user's eyepoint when in EXAMINE mode.
@@ -45458,6 +44643,16 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_SFBool(ctx, 'headlight', true);
+
+            /**
+             * Enable/disable reversed mousewheel scrolling to zoom.
+             * @var {x3dom.fields.SFBool} reverseScroll
+             * @memberof x3dom.nodeTypes.NavigationInfo
+             * @initvalue false
+             * @field x3dom
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'reverseScroll', false);
 
             /**
              * defines the navigation type
@@ -48911,8 +48106,8 @@ x3dom.registerNodeType(
             parentRemoved: function(parent)
             {
                 Array.forEach(parent._parentNodes, function (shape) {
-                    // THINKABOUTME: this is a bit ugly, cleanup more generically
-                    if (x3dom.isa(shape, x3dom.nodeTypes.Shape)) {
+                    // THINKABOUTME: cleanup more generically, X3DShapeNode allows VolumeData
+                    if (x3dom.isa(shape, x3dom.nodeTypes.X3DShapeNode)) {
                         shape._dirty.texture = true;
                     }
                     else {
@@ -49001,6 +48196,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -51934,191 +51130,6 @@ x3dom.registerNodeType(
         }
     )
 );
-/** @namespace x3dom.nodeTypes */
-/*
- * X3DOM JavaScript Library
- * http://www.x3dom.org
- *
- * (C)2009 Fraunhofer IGD, Darmstadt, Germany
- * Dual licensed under the MIT and GPL
- */
-
-/* ### Script ### */
-x3dom.registerNodeType(
-    "Script",
-    "Scripting",
-    defineClass(x3dom.nodeTypes.X3DChildNode,
-        
-        /**
-         * Constructor for Script
-         * @constructs x3dom.nodeTypes.Script
-         * @x3d 3.3
-         * @component Shaders
-         * @status experimental
-         * @extends x3dom.nodeTypes.X3DShaderNode
-         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
-         * @classdesc The Script node defines a script.
-         */
-        function (ctx) {
-            x3dom.nodeTypes.Script.superClass.call(this, ctx);
-
-
-            /**
-             * Contains all fields of
-             * @var {x3dom.fields.MFNode} fields
-             * @memberof x3dom.nodeTypes.Script
-             * @initvalue x3dom.nodeTypes.Field
-             * @field x3d
-             * @instance
-             */
-            this.addField_MFNode('fields', x3dom.nodeTypes.Field);
-            this.addField_SFString(ctx, 'type', "text/javascript");
-            this.addField_MFString(ctx, 'url', []);
-            x3dom.debug.assert(this._vf.type.toLowerCase() == 'text/javascript',
-                               "Unknown script type!");
-
-        },
-        {
-            nodeChanged: function()
-            {
-                var i, n;
-
-                var ctx = {};
-                n = this._cf.fields.nodes.length;
-
-                for (i=0; i<n; i++)
-                {
-                    var fieldName = this._cf.fields.nodes[i]._vf.name;
-                    ctx.xmlNode = this._cf.fields.nodes[i]._xmlNode;
-
-                    var needNode = false;
-
-                    if (ctx.xmlNode === undefined || ctx.xmlNode === null) {
-                        ctx.xmlNode = document.createElement("field");
-                        needNode = true;
-                    }
-
-                    ctx.xmlNode.setAttribute(fieldName, this._cf.fields.nodes[i]._vf.value);
-
-                    var funcName = "this.addField_" + this._cf.fields.nodes[i]._vf.type + "(ctx, name);";
-                    var func = new Function('ctx', 'name', funcName);
-
-                    func.call(this, ctx, fieldName);
-
-                    if (needNode) {
-                        ctx.xmlNode = null;    // cleanup
-                    }
-                }
-
-
-                if (ctx.xmlNode !== undefined && ctx.xmlNode !== null)
-                {
-                    var that = this;
-
-                    if (that._vf.url.length && that._vf.url[0].indexOf('\n') == -1)
-                    {
-                        var xhr = new XMLHttpRequest();
-                        xhr.open("GET", that._nameSpace.getURL(that._vf.url[0]), false);
-                        xhr.onload = function() {
-                            that._vf.url = new x3dom.fields.MFString( [] );
-                            that._vf.url.push(xhr.response);
-                        };
-                        xhr.onerror = function() {
-                            x3dom.debug.logError("Could not load file '" + that._vf.url[0] + "'.");
-                        };
-                        //xhr.send(null);
-                        x3dom.RequestManager.addRequest( xhr );
-                    }
-                    else
-                    {
-                        if (that._vf.url.length) {
-                            that._vf.url = new x3dom.fields.MFString( [] );
-                        }
-                        try {
-                            that._vf.url.push(ctx.xmlNode.childNodes[1].nodeValue);
-                            ctx.xmlNode.removeChild(ctx.xmlNode.childNodes[1]);
-                        }
-                        catch(e) {
-                            Array.forEach( ctx.xmlNode.childNodes, function (childDomNode) {
-                                if (childDomNode.nodeType === 3) {
-                                    that._vf.url.push(childDomNode.nodeValue);
-                                }
-                                else if (childDomNode.nodeType === 4) {
-                                    that._vf.url.push(childDomNode.data);
-                                }
-                                childDomNode.parentNode.removeChild(childDomNode);
-                            } );
-                        }
-                    }
-                }
-                if (fieldName === "url") {
-                    Array.forEach(this._parentNodes, function (parent) {
-                        parent.fieldChanged("url");
-                    });
-                }
-
-                Array.forEach(this._parentNodes, function (app) {
-                    Array.forEach(app._parentNodes, function (parent) {
-                        if (parent._cleanupGLObjects)
-                            parent._cleanupGLObjects();
-                        parent.setAllDirty();
-                    });
-                });
-            },
-
-            fieldChanged: function(fieldName)
-            {
-                var i, n = this._cf.fields.nodes.length;
-
-                for (i=0; i<n; i++)
-                {
-                    var field = this._cf.fields.nodes[i]._vf.name;
-
-                    if (field === fieldName)
-                    {
-                        var msg = this._cf.fields.nodes[i]._vf.value;
-
-                        try {
-                            this._vf[field].setValueByStr(msg);
-                        }
-                        catch (exc1) {
-                            try {
-                                switch ((typeof(this._vf[field])).toString()) {
-                                    case "number":
-                                        this._vf[field] = +msg;
-                                        break;
-                                    case "boolean":
-                                        this._vf[field] = (msg.toLowerCase() === "true");
-                                        break;
-                                    case "string":
-                                        this._vf[field] = msg;
-                                        break;
-                                }
-                            }
-                            catch (exc2) {
-                                x3dom.debug.logError("setValueByStr() NYI for " + typeof(this._vf[field]));
-                            }
-                        }
-
-                        break;
-                    }
-                }
-
-                if (fieldName === "url") {
-                    Array.forEach(this._parentNodes, function (parent) {
-                        parent.fieldChanged("url");
-                    });
-                }
-            },
-
-            parentAdded: function(parent)
-            {
-                parent.nodeChanged();
-            }
-        }
-    )
-);
-
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -57722,6 +56733,7 @@ x3dom.registerNodeType(
             //---------------------------------------
             // PROPERTIES
             //---------------------------------------
+            this._isOver = false; // track for touchTime 
         },
         {
             //----------------------------------------------------------------------------------------------------------------------
@@ -57739,6 +56751,7 @@ x3dom.registerNodeType(
                 {
                     this._vf.isActive = true;
                     this.postMessage('isActive', true);
+                    this._isOver = true;
                 }
             },
 
@@ -57780,6 +56793,7 @@ x3dom.registerNodeType(
                 if (this._vf.enabled)
                 {
                     this.postMessage('isOver', false);
+                    this._isOver = false;
                 }
             },
 
@@ -57796,6 +56810,8 @@ x3dom.registerNodeType(
                 {
                     this._vf.isActive = false;
                     this.postMessage('isActive', false);
+                    if (this._isOver) // button released and still over
+                      this.postMessage('touchTime', Date.now()/1000);
                 }
             }
 
@@ -58892,6 +57908,630 @@ x3dom.registerNodeType(
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### X3DSequencerNode ###
+x3dom.registerNodeType(
+    "X3DSequencerNode",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DChildNode,
+        
+        /**
+         * Constructor for X3DSequencerNode
+         * @constructs x3dom.nodeTypes.X3DSequencerNode
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc The abstract node X3DSequencerNode forms the basis for all types of sequencers.
+         */
+        function (ctx) {
+            x3dom.nodeTypes.X3DSequencerNode.superClass.call(this, ctx);
+        
+            /**
+             * If the next inputOnly field receives an SFBool event with value TRUE, it triggers the next output value in keyValue array by issuing a value_changed event with that value.
+             * After reaching the boundary of keyValue array, next goes to the initial element after last.
+             * @var {x3dom.fields.SFBool} next
+             * @memberof x3dom.nodeTypes.X3DSequencerNode
+             * @initvalue false
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'next', false);
+        
+            /**
+             * If the previous inputOnly field receives an SFBool event with value TRUE, it triggers the previous output value in keyValue array by issuing a value_changed event with that value.
+             * After reaching the boundary of keyValue array previous goes to the last element after the first.
+             * @var {x3dom.fields.SFBool} previous
+             * @memberof x3dom.nodeTypes.X3DSequencerNode
+             * @initvalue false
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'previous', false);
+
+            /**
+             * The key field contains the list of key times, the keyValue field contains values for the target field, one complete set of values for each key.
+             * Sequencer nodes containing no keys in the key field shall not produce any events.
+             * However, an input event that replaces an empty key field with one that contains keys will cause the sequencer node to produce events the next time that a set_fraction event is received.
+             * @var {x3dom.fields.MFFloat} key
+             * @memberof x3dom.nodeTypes.X3DSequencerNode
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_MFFloat(ctx, 'key', []);
+
+            /**
+             * The set_fraction inputOnly field receives an SFFloat event and causes the sequencer node function to evaluate, resulting in a value_changed output event of the specified type with the same timestamp as the set_fraction event.
+             * @var {x3dom.fields.SFFloat} set_fraction
+             * @memberof x3dom.nodeTypes.X3DSequencerNode
+             * @initvalue 0
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFFloat(ctx, 'set_fraction', 0);
+        
+            this._keyIndex = -1;
+            this._key_changed = false;
+            this._keyValue_changed = false;
+        
+        },
+        {
+            findInterval: function (time) {
+                var keyLength = this._vf.key.length-1;
+                
+                if (time < this._vf.key[0]) {
+                    return 0;
+                }
+
+                else if (time >= this._vf.key[keyLength]) {
+                    return keyLength;
+                }
+
+                for (var i = 0; i < keyLength; ++i) {
+                    if ((this._vf.key[i] <= time) && (time < this._vf.key[i+1])) {
+                        return i;
+                    }
+                }
+                return 0; // should never happen
+            },        
+
+            fieldChanged: function(fieldName)
+            {
+                if(fieldName === "set_fraction")
+                {
+                    var keyIndex = this.findInterval(this._vf.set_fraction);
+                    if (keyIndex !== this._keyIndex) { // only generate event when necessary
+                      this._keyIndex = keyIndex;
+                      this.postMessage('value_changed', this._vf.keyValue[keyIndex]);
+                    }
+                    return;
+                }
+                if(fieldName === "next" && this._vf.next)
+                {
+                    this._keyIndex = (this._keyIndex + 1)%(this._vf.key.length);
+                    this.postMessage('value_changed', this._vf.keyValue[this._keyIndex]);
+                    return;
+                }
+                if(fieldName === "previous" && this._vf.previous)
+                {
+                    this._keyIndex = (this._keyIndex - 1 + this._vf.key.length)%(this._vf.key.length);
+                    this.postMessage('value_changed', this._vf.keyValue[this._keyIndex]);
+                    return;
+                }
+                if(fieldName === "key")
+                {
+                    if (this._key_changed) { // avoid loop this way since no timestamping
+                        this._key_changed = false;
+                        return
+                    }
+                    this._key_changed = true;
+                    this.postMessage('key', this._vf.key);
+                    return;
+                }
+                if(fieldName === "keyValue")
+                {
+                    if (this._keyValue_changed) { // avoid loop this way since no timestamping
+                        this._keyValue_changed = false;
+                        return
+                    }
+                    this._keyValue_changed = true;
+                    this.postMessage('keyValue', this._vf.keyValue);
+                    return;
+                }
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "X3DTriggerNode",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DChildNode,
+        
+        /**
+         * Constructor for X3DTriggerNode
+         * @constructs x3dom.nodeTypes.X3DTriggerNode
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc This abstract node type is the base node type from which all trigger nodes are derived.
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.X3DTriggerNode.superClass.call(this, ctx);
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "BooleanFilter",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DChildNode,
+        
+        /**
+         * Constructor for BooleanFilter
+         * @constructs x3dom.nodeTypes.BooleanFilter
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc filters Boolean events, allowing for selective routing of TRUE or FALSE values and negation.
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.BooleanFilter.superClass.call(this, ctx);
+            
+            /**
+             * input bool event to be filtered.
+             * @var {x3dom.fields.SFBool} set_boolean
+             * @memberof x3dom.nodeTypes.BooleanFilter
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'set_boolean');
+            
+            /**
+             * output if input is false
+             * @var {x3dom.fields.SFBool} inputFalse
+             * @memberof x3dom.nodeTypes.BooleanFilter
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'inputFalse');
+            
+            /**
+             * output if input is true
+             * @var {x3dom.fields.SFBool} inputTrue
+             * @memberof x3dom.nodeTypes.BooleanFilter
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'inputTrue');
+            
+            /**
+             * output negated input
+             * @var {x3dom.fields.SFBool} inputNegate
+             * @memberof x3dom.nodeTypes.BooleanFilter
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'inputNegate');
+        },
+        {
+            fieldChanged: function(fieldName)
+            {
+                if (fieldName === 'set_boolean') { //ignore attempted input to all other fields
+                    var input = this._vf.set_boolean;
+                    this._vf.inputNegate = !input;
+                    this.postMessage('inputNegate', !input);
+                    if (input) {
+                        this._vf.inputTrue = true;
+                        this.postMessage('inputTrue', true);
+                        return;
+                    }
+                    this._vf.inputFalse = false; // confirmed with other browsers
+                    this.postMessage('inputFalse', false);
+                    return;
+                }
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanSequencer ###
+x3dom.registerNodeType(
+    "BooleanSequencer",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DSequencerNode,
+        
+        /**
+         * Constructor for BooleanSequencer
+         * @constructs x3dom.nodeTypes.BooleanSequencer
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DSequencerNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc BooleanSequencer generates sequential value_changed events selected from the keyValue field when driven from a TimeSensor clock. Among other actions, it can enable/disable lights and sensors, or bind/unbind viewpoints and other X3DBindableNode nodes using set_bind events.
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.BooleanSequencer.superClass.call(this, ctx);
+            
+            /**
+             * Defines the set of Booleans, that are used for sequencing.
+             * Is made up of a list of FALSE and TRUE values.
+             * @var {x3dom.fields.MFBoolean} keyValue
+             * @memberof x3dom.nodeTypes.BooleanSequencer
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_MFBoolean(ctx, 'keyValue', []);
+        
+        },
+        {
+        // all in base class
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "BooleanToggle",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DChildNode,
+        
+        /**
+         * Constructor for BooleanToggle
+         * @constructs x3dom.nodeTypes.BooleanToggle
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc stores and toggles boolean value
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.BooleanToggle.superClass.call(this, ctx);
+            
+            /**
+             * input bool in event to cause toggling.
+             * @var {x3dom.fields.SFBool} set_boolean
+             * @memberof x3dom.nodeTypes.BooleanToggle
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'set_boolean');
+            
+            /**
+             * stored value to toggle and output; resetable
+             * @var {x3dom.fields.SFBool} toggle
+             * @memberof x3dom.nodeTypes.BooleanToggle
+             * @initvalue false
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'toggle', false);
+            
+        },
+        {
+            fieldChanged: function(fieldName)
+            {
+                if (fieldName === 'set_boolean') { //resetting toggle happens elsewhere 
+                    if (this._vf.set_boolean) { //ignore false as input
+                      var toggled = ! this._vf.toggle; //minimize property access
+                      this._vf.toggle = toggled;
+                      this.postMessage('toggle', toggled);
+                    }
+                    return;
+                }
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "BooleanTrigger",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DTriggerNode,
+        
+        /**
+         * Constructor for BooleanTrigger
+         * @constructs x3dom.nodeTypes.BooleanTrigger
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc generates true Boolean events upon receiving time events
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.BooleanTrigger.superClass.call(this, ctx);
+            
+            /**
+             * input time in event to trigger output.
+             * @var {x3dom.fields.SFBool} set_triggerTime
+             * @memberof x3dom.nodeTypes.BooleanTrigger
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFTime(ctx, 'set_triggerTime');
+            
+            /**
+             * output field name; probably needed only as event name since output only; not 'physically'
+             * @var {x3dom.fields.SFBool} triggerTrue
+             * @memberof x3dom.nodeTypes.BooleanTrigger
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            //this.addField_SFBool(ctx, 'triggerTrue');
+            
+        },
+        {
+            fieldChanged: function(fieldName)
+            {
+                if (fieldName === 'set_triggerTime') { //for any time input
+                    this.postMessage('triggerTrue', true);
+                }
+                return;
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### IntegerSequencer ###
+x3dom.registerNodeType(
+    "IntegerSequencer",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DSequencerNode,
+        
+        /**
+         * Constructor for IntegerSequencer
+         * @constructs x3dom.nodeTypes.IntegerSequencer
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DSequencerNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc The IntegerSequencer node generates sequential discrete value_changed events selected from the keyValue field in response to each set_fraction, next, or previous event.
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.IntegerSequencer.superClass.call(this, ctx);
+            
+            /**
+             * Defines the set of integers, that are used for sequencing.
+             * @var {x3dom.fields.MFInt32} keyValue
+             * @memberof x3dom.nodeTypes.IntegerSequencer
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_MFInt32(ctx, 'keyValue', []);
+        
+        },
+        {
+        // all in base class
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "IntegerTrigger",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DTriggerNode,
+        
+        /**
+         * Constructor for IntegerTrigger
+         * @constructs x3dom.nodeTypes.IntegerTrigger
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc generates Integer events upon receiving Boolean events
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.IntegerTrigger.superClass.call(this, ctx);
+            
+            /**
+             * input boolean to trigger output.
+             * @var {x3dom.fields.SFBool} set_boolean
+             * @memberof x3dom.nodeTypes.IntegerTrigger
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'set_boolean');
+            
+            /**
+             * integer value to be output upon input; can be reset
+             * @var {x3dom.fields.SFInt32} integerKey
+             * @memberof x3dom.nodeTypes.IntegerTrigger
+             * @initvalue -1
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFInt32(ctx, 'integerKey', -1);
+      
+            /**
+             * output field name; probably needed only as event name since output only; not 'physically'
+             * @var {x3dom.fields.SFInt32} triggerValue
+             * @memberof x3dom.nodeTypes.IntegerTrigger
+             * @initvalue none
+             * @field x3d
+             * @instance
+             */
+            //this.addField_SFInt32(ctx, 'triggerValue');
+            
+        },
+        {
+            fieldChanged: function(fieldName)
+            {
+                if (fieldName === 'set_boolean') { //for any boolean input
+                  //if (this._vf.set_boolean) //Mantis 519 proposal: only if true
+                    this.postMessage('triggerValue', this._vf.integerKey);
+                }
+                return;
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2009, 2017, A. Plesch, Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+// ### BooleanFilter ###
+x3dom.registerNodeType(
+    "TimeTrigger",
+    "EventUtilities",
+    defineClass(x3dom.nodeTypes.X3DTriggerNode,
+        
+        /**
+         * Constructor for TimeTrigger
+         * @constructs x3dom.nodeTypes.TimeTrigger
+         * @x3d 3.3
+         * @component EventUtilities
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc generates Time events upon receiving Boolean events
+         */
+         
+        function (ctx) {
+            x3dom.nodeTypes.TimeTrigger.superClass.call(this, ctx);
+            
+            /**
+             * input boolean to trigger output.
+             * @var {x3dom.fields.SFBool} set_boolean
+             * @memberof x3dom.nodeTypes.TimeTrigger
+             * @initvalue None
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'set_boolean');
+            
+            /**
+             * output field name; probably needed only as event name since output only; not 'physically'
+             * @var {x3dom.fields.SFTime} triggerTime
+             * @memberof x3dom.nodeTypes.TimeTrigger
+             * @initvalue none
+             * @field x3d
+             * @instance
+             */
+            //this.addField_SFTime(ctx, 'triggerTime');
+            
+        },
+        {
+            fieldChanged: function(fieldName)
+            {
+                if (fieldName === 'set_boolean') { //for any boolean input
+                  //if (this._vf.set_boolean) //Mantis 519 proposal
+                    this.postMessage('triggerTime', Date.now()/1000);
+                }
+                return;
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
  * (C)2009 Fraunhofer IGD, Darmstadt, Germany
  * Dual licensed under the MIT and GPL
  */
@@ -59112,7 +58752,7 @@ x3dom.registerNodeType(
                 {
                     x = (eastingFirst ? coords[i].x : coords[i].y);
                     y = (eastingFirst ? coords[i].y : coords[i].x);
-                    z = coords[i].z;
+                    //z = coords[i].z; //not used
 
                     //var M = M0 + y/k0; //Arc length along standard meridian.
                     //var M = y/k0;
@@ -59302,7 +58942,7 @@ x3dom.registerNodeType(
                     p = Math.sqrt(x*x + y*y);
                     q = Math.atan((z * a) / (p * b));
                     lat = Math.atan((z + eps * b * Math.pow(Math.sin(q),3))/(p - esq * a * Math.pow(Math.cos(q),3)));
-                    nu = a / Math.sqrt(1-esq * Math.pow(Math.sin(lat),2));
+                    nu = a / Math.sqrt(1 - esq * Math.pow(Math.sin(lat),2));
                     elev = p/Math.cos(lat) - nu;
                     // atan2 gets the sign correct for longitude; is exact since in circular section
                     lon = Math.atan2(y, x);
@@ -60850,7 +60490,7 @@ x3dom.registerNodeType(
                 // C: geoCenter Translation
                 // regular Transform P' = T * C * R * SR * S * -SR * -C * P
                 
-                var geoCenterRotMat, geoCenter, scaleOrientMat, geoTransform, coords, geoCenterGC, geoSystem, geoOrigin;
+                var geoCenterRotMat, geoCenter, skipGO, scaleOrientMat, geoTransform, coords, geoCenterGC, geoSystem, geoOrigin;
                 geoSystem = this._vf.geoSystem;
                 geoOrigin = this._cf.geoOrigin;
                 geoCenter = this._vf.geoCenter;
@@ -63164,9 +62804,9 @@ x3dom.registerNodeType(
                 "  s1 = floor(volpos.z*nS);\n"+
                 "  s2 = s1+1.0;\n"+
                 "  dx1 = fract(s1/nX);\n"+
-                "  dy1 = floor(s1/nY)/nY;\n"+
+                "  dy1 = floor(s1/nX)/nY;\n"+
                 "  dx2 = fract(s2/nX);\n"+
-                "  dy2 = floor(s2/nY)/nY;\n"+
+                "  dy2 = floor(s2/nX)/nY;\n"+
                 "  texpos1.x = dx1+(volpos.x/nX);\n"+
                 "  texpos1.y = dy1+(volpos.y/nY);\n"+
                 "  texpos2.x = dx2+(volpos.x/nX);\n"+
@@ -65033,7 +64673,7 @@ x3dom.registerNodeType(
     "MPRVolumeStyle",
     "VolumeRendering",
     defineClass(x3dom.nodeTypes.X3DVolumeRenderStyleNode,
-        
+
         /**
          * Constructor for MPRVolumeStyle
          * @constructs x3dom.nodeTypes.MPRVolumeStyle
@@ -65049,7 +64689,7 @@ x3dom.registerNodeType(
 
 
             /**
-             * The originLine field specifies the base line of the slice plane. 
+             * The originLine field specifies the base line of the slice plane.
              * @var {x3dom.fields.SFVec3f} originLine
              * @memberof x3dom.nodeTypes.MPRVolumeStyle
              * @initvalue 1.0,1.0,0.0
@@ -65088,11 +64728,22 @@ x3dom.registerNodeType(
              */
             this.addField_SFNode('transferFunction', x3dom.nodeTypes.Texture);
 
+            /**
+             * The forceOpaque field is a boolean flag that forces the reconstructed planes to be opaque, if false the opacity (alpha channel) from the transferFunction field will be applied.
+             * @var {x3dom.fields.SFBool} forceOpaque
+             * @memberof x3dom.nodeTypes.MPRVolumeStyle
+             * @initvalue true
+             * @field x3dom
+             * @instance
+             */
+            this.addField_SFBool(ctx, 'forceOpaque', true);
+
             this.uniformVec3fOriginLine = new x3dom.nodeTypes.Uniform(ctx);
             this.uniformVec3fFinalLine = new x3dom.nodeTypes.Uniform(ctx);
             this.uniformFloatPosition = new x3dom.nodeTypes.Uniform(ctx);
             this.uniformSampler2DTransferFunction = new x3dom.nodeTypes.Uniform(ctx);
-        
+            this.uniformBoolForceOpaque = new x3dom.nodeTypes.Uniform(ctx);
+
         },
         {
             fieldChanged: function(fieldName) {
@@ -65108,6 +64759,10 @@ x3dom.registerNodeType(
                     case 'finalLine':
                         this.uniformVec3fFinalLine._vf.value = this._vf.finalLine;
                         this.uniformVec3fFinalLine.fieldChanged("value");
+                        break;
+                    case 'forceOpaque':
+                        this.uniformBoolForceOpaque._vf.value = this._vf.forceOpaque;
+                        this.uniformBoolForceOpaque.fieldChanged("value");
                         break;
                 }
             },
@@ -65136,7 +64791,12 @@ x3dom.registerNodeType(
                     this.uniformSampler2DTransferFunction._vf.value = this._volumeDataParent._textureID++;
                     unis.push(this.uniformSampler2DTransferFunction);
                 }
-  
+
+                this.uniformBoolForceOpaque._vf.name = 'forceOpaque';
+                this.uniformBoolForceOpaque._vf.type = 'SFBool';
+                this.uniformBoolForceOpaque._vf.value = this._vf.forceOpaque;
+                unis.push(this.uniformBoolForceOpaque);
+
                 return unis;
             },
 
@@ -65152,7 +64812,7 @@ x3dom.registerNodeType(
             },
 
             styleUniformsShaderText: function(){
-                var uniformShaderText = "uniform vec3 originLine;\nuniform vec3 finalLine;\nuniform float positionLine;\n";
+                var uniformShaderText = "uniform vec3 originLine;\nuniform vec3 finalLine;\nuniform float positionLine;\nuniform bool forceOpaque;\n";
                 if (this._cf.transferFunction.node) {
                     uniformShaderText += "uniform sampler2D uTransferFunction;\n";
                 }
@@ -65160,7 +64820,7 @@ x3dom.registerNodeType(
             },
 
             fragmentShaderText : function (numberOfSlices, slicesOverX, slicesOverY) {
-                var shader = 
+                var shader =
                 this._parentNodes[0].fragmentPreamble+
                 this._parentNodes[0].defaultUniformsShaderText(numberOfSlices, slicesOverX, slicesOverY)+
                 this.styleUniformsShaderText()+
@@ -65176,11 +64836,19 @@ x3dom.registerNodeType(
                 "  vec4 color = vec4(0.0,0.0,0.0,0.0);\n"+
                 "  vec3 pos = d*dir+pos.rgb;\n"+
                 "  if (!(pos.x > 1.0 || pos.y > 1.0 || pos.z > 1.0 || pos.x<0.0 || pos.y<0.0 || pos.z<0.0)){\n"+
-                "    vec3 intesity = cTexture3D(uVolData,pos.rgb,numberOfSlices,slicesOverX,slicesOverY).rgb;\n";
+                "    vec4 intesity = cTexture3D(uVolData,pos.rgb,numberOfSlices,slicesOverX,slicesOverY);\n";
                 if (this._cf.transferFunction.node){
-                    shader += "    color = vec4(texture2D(uTransferFunction, vec2(intesity.r,0.5)).rgb, 1.0);\n";
+                    shader += "    if (forceOpaque){\n"+
+                    "      color = vec4(texture2D(uTransferFunction, vec2(intesity.r,0.5)).rgb, 1.0);\n"+
+                    "    }else{\n"+
+                    "      color = texture2D(uTransferFunction, vec2(intesity.r,0.5)).rgba;\n"+
+                    "    }\n";
                 }else{
-                    shader += "    color = vec4(intesity,1.0);\n";
+                    shader += "    if (forceOpaque){\n"+
+                    "      color = vec4(intesity.rgb,1.0);\n"+
+                    "    }else{\n"+
+                    "      color = intesity;\n"+
+                    "    }\n";
                 }
                 shader += "  }\n"+
                 "  gl_FragColor = color;\n"+
@@ -65190,6 +64858,7 @@ x3dom.registerNodeType(
          }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * MEDX3DOM JavaScript Library
