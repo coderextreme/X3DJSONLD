@@ -41,7 +41,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -398,19 +398,13 @@
                           },
                           "-children": [
                             {
-                              "#comment": [
-                                ""
-                              ]
+                              "#comment": ""
                             },
                             {
-                              "#comment": [
-                                "\t\t\t<Sphere></Sphere>"
-                              ]
+                              "#comment": "\t\t\t<Sphere></Sphere>"
                             },
                             {
-                              "#comment": [
-                                "\t\t\t"
-                              ]
+                              "#comment": "\t\t\t"
                             }
                           ],
                           "-geometry": {
@@ -669,24 +663,16 @@
                   }
                 },
                 {
-                  "#comment": [
-                    ""
-                  ]
+                  "#comment": ""
                 },
                 {
-                  "#comment": [
-                    "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"
-                  ]
+                  "#comment": "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"
                 },
                 {
-                  "#comment": [
-                    "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
-                  ]
+                  "#comment": "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
                 },
                 {
-                  "#comment": [
-                    "\t\t"
-                  ]
+                  "#comment": "\t\t"
                 }
               ]
             }
@@ -701,24 +687,16 @@
                 }
               },
               {
-                "#comment": [
-                  ""
-                ]
+                "#comment": ""
               },
               {
-                "#comment": [
-                  "            <ProtoInstance name=\"flower\"/>"
-                ]
+                "#comment": "            <ProtoInstance name=\"flower\"/>"
               },
               {
-                "#comment": [
-                  "            <ProtoInstance name=\"flower\"/>"
-                ]
+                "#comment": "            <ProtoInstance name=\"flower\"/>"
               },
               {
-                "#comment": [
-                  "\t    "
-                ]
+                "#comment": "\t    "
               }
             ]
           }

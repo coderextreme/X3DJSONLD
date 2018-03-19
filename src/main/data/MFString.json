@@ -71,7 +71,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -3210,9 +3210,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": [
-                        " Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) "
-                      ]
+                      "#comment": " Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) "
                     },
                     {
                       "Inline": {
@@ -3248,9 +3246,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": [
-                        " Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "
-                      ]
+                      "#comment": " Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "
                     },
                     {
                       "Inline": {
@@ -3286,9 +3282,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": [
-                        " Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "
-                      ]
+                      "#comment": " Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "
                     },
                     {
                       "Inline": {
@@ -3849,9 +3843,7 @@
           }
         },
         {
-          "#comment": [
-            " Animation commands for Rear Right Wheel Starts "
-          ]
+          "#comment": " Animation commands for Rear Right Wheel Starts "
         },
         {
           "TimeSensor": {
@@ -3962,9 +3954,7 @@
           }
         },
         {
-          "#comment": [
-            " Animation commands for Rear Left Wheel "
-          ]
+          "#comment": " Animation commands for Rear Left Wheel "
         },
         {
           "TimeSensor": {
@@ -4712,9 +4702,7 @@
           }
         },
         {
-          "#comment": [
-            " TODO fix type, add filter "
-          ]
+          "#comment": " TODO fix type, add filter "
         }
       ]
     },

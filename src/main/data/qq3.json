@@ -43,7 +43,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -62,9 +62,7 @@
                   "Group": {
                     "-children": [
                       {
-                        "#comment": [
-                          " left "
-                        ]
+                        "#comment": " left "
                       },
                       {
                         "Transform": {
@@ -145,9 +143,7 @@
                         }
                       },
                       {
-                        "#comment": [
-                          " right "
-                        ]
+                        "#comment": " right "
                       },
                       {
                         "Transform": {
@@ -228,9 +224,7 @@
                         }
                       },
                       {
-                        "#comment": [
-                          " up "
-                        ]
+                        "#comment": " up "
                       },
                       {
                         "Transform": {
@@ -249,9 +243,7 @@
                         }
                       },
                       {
-                        "#comment": [
-                          " down "
-                        ]
+                        "#comment": " down "
                       },
                       {
                         "Transform": {

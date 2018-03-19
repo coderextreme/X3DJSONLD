@@ -55,7 +55,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -72,24 +72,16 @@
             "ProtoInterface": {
               "-children": [
                 {
-                  "#comment": [
-                    " COLOR OF ARCH "
-                  ]
+                  "#comment": " COLOR OF ARCH "
                 },
                 {
-                  "#comment": [
-                    " INPUT PARAMETERS "
-                  ]
+                  "#comment": " INPUT PARAMETERS "
                 },
                 {
-                  "#comment": [
-                    " General parameters: measures in meters "
-                  ]
+                  "#comment": " General parameters: measures in meters "
                 },
                 {
-                  "#comment": [
-                    " Parameters to create to create shapes related to arch: put true to apply "
-                  ]
+                  "#comment": " Parameters to create to create shapes related to arch: put true to apply "
                 }
               ],
               "field": [
@@ -204,14 +196,10 @@
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": [
-                    " First node determines node type of this prototype "
-                  ]
+                  "#comment": " First node determines node type of this prototype "
                 },
                 {
-                  "#comment": [
-                    " IndexedFaceset creates arch "
-                  ]
+                  "#comment": " IndexedFaceset creates arch "
                 },
                 {
                   "Transform": {
@@ -222,9 +210,7 @@
                           "@DEF": "Arch",
                           "-children": [
                             {
-                              "#comment": [
-                                " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
-                              ]
+                              "#comment": " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
                             }
                           ],
                           "-geometry": {
@@ -267,14 +253,10 @@
                   }
                 },
                 {
-                  "#comment": [
-                    " Subsequent nodes do not render, but still must be a valid X3D subgraph "
-                  ]
+                  "#comment": " Subsequent nodes do not render, but still must be a valid X3D subgraph "
                 },
                 {
-                  "#comment": [
-                    " This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs "
-                  ]
+                  "#comment": " This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs "
                 },
                 {
                   "Script": {
@@ -284,24 +266,16 @@
                     ],
                     "-children": [
                       {
-                        "#comment": [
-                          " INPUT PARAMETERS "
-                        ]
+                        "#comment": " INPUT PARAMETERS "
                       },
                       {
-                        "#comment": [
-                          " General parameters "
-                        ]
+                        "#comment": " General parameters "
                       },
                       {
-                        "#comment": [
-                          " Parameters to create to create shapes related to arch: put true to apply "
-                        ]
+                        "#comment": " Parameters to create to create shapes related to arch: put true to apply "
                       },
                       {
-                        "#comment": [
-                          " OUTPUT PARAMETERS "
-                        ]
+                        "#comment": " OUTPUT PARAMETERS "
                       }
                     ],
                     "field": [
@@ -527,9 +501,7 @@
           }
         },
         {
-          "#comment": [
-            " Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) "
-          ]
+          "#comment": " Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) "
         },
         {
           "Inline": {

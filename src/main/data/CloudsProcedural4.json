@@ -47,7 +47,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -58,9 +58,7 @@
     "Scene": {
       "-children": [
         {
-          "#comment": [
-            " A png image file for the cloud texture must be designated in the ecmascript node. "
-          ]
+          "#comment": " A png image file for the cloud texture must be designated in the ecmascript node. "
         },
         {
           "Viewpoint": {

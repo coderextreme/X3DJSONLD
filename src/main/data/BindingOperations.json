@@ -71,7 +71,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -146,9 +146,7 @@
           }
         },
         {
-          "#comment": [
-            " Script initialization ought to first bind view5 below. "
-          ]
+          "#comment": " Script initialization ought to first bind view5 below. "
         },
         {
           "Group": {
@@ -323,14 +321,10 @@
           }
         },
         {
-          "#comment": [
-            " The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. "
-          ]
+          "#comment": " The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. "
         },
         {
-          "#comment": [
-            " It does not need to be studied in this chapter. "
-          ]
+          "#comment": " It does not need to be studied in this chapter. "
         },
         {
           "Transform": {
@@ -341,9 +335,7 @@
             ],
             "-children": [
               {
-                "#comment": [
-                  " notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. "
-                ]
+                "#comment": " notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. "
               },
               {
                 "Viewpoint": {
@@ -621,9 +613,7 @@
                 }
               },
               {
-                "#comment": [
-                  " drive Script with TimeSensor clock "
-                ]
+                "#comment": " drive Script with TimeSensor clock "
               },
               {
                 "ROUTE": {
@@ -634,9 +624,7 @@
                 }
               },
               {
-                "#comment": [
-                  " Script will bind and unbind Viewpoint nodes "
-                ]
+                "#comment": " Script will bind and unbind Viewpoint nodes "
               },
               {
                 "ROUTE": {
@@ -679,9 +667,7 @@
                 }
               },
               {
-                "#comment": [
-                  " Viewpoint nodes report bind and unbind events "
-                ]
+                "#comment": " Viewpoint nodes report bind and unbind events "
               },
               {
                 "ROUTE": {

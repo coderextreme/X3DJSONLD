@@ -115,7 +115,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -280,14 +280,10 @@
             ],
             "-children": [
               {
-                "#comment": [
-                  " initialize() method includes unit test to printAllStrategies() to console "
-                ]
+                "#comment": " initialize() method includes unit test to printAllStrategies() to console "
               },
               {
-                "#comment": [
-                  " TODO insert field definitions here (index string_changed previous next random) and then animate! "
-                ]
+                "#comment": " TODO insert field definitions here (index string_changed previous next random) and then animate! "
               }
             ],
             "field": [
@@ -406,24 +402,16 @@
                   "@minFront": 20,
                   "-children": [
                     {
-                      "#comment": [
-                        " Make sure the sound source AudioClip is audible at the user location "
-                      ]
+                      "#comment": " Make sure the sound source AudioClip is audible at the user location "
                     },
                     {
-                      "#comment": [
-                        " Not all X3D players seem to use the .mp3 "
-                      ]
+                      "#comment": " Not all X3D players seem to use the .mp3 "
                     },
                     {
-                      "#comment": [
-                        " &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players "
-                      ]
+                      "#comment": " &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players "
                     },
                     {
-                      "#comment": [
-                        " %20 is space character used in uri/url encoding "
-                      ]
+                      "#comment": " %20 is space character used in uri/url encoding "
                     }
                   ],
                   "-source": {
@@ -527,9 +515,7 @@
                         "@DEF": "TransparentClickSurface",
                         "-children": [
                           {
-                            "#comment": [
-                              " support Selectable Text with a scalable IFS "
-                            ]
+                            "#comment": " support Selectable Text with a scalable IFS "
                           }
                         ],
                         "-geometry": {

@@ -55,7 +55,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -88,44 +88,28 @@
           "Shape": {
             "-children": [
               {
-                "#comment": [
-                  " Empty string \"\" means to skip a line "
-                ]
+                "#comment": " Empty string \"\" means to skip a line "
               },
               {
-                "#comment": [
-                  " The ampersand escape characters are based on XML rules "
-                ]
+                "#comment": " The ampersand escape characters are based on XML rules "
               },
               {
-                "#comment": [
-                  " apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute "
-                ]
+                "#comment": " apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute "
               },
               {
-                "#comment": [
-                  " ampersand & is &amp; and needs to be escaped "
-                ]
+                "#comment": " ampersand & is &amp; and needs to be escaped "
               },
               {
-                "#comment": [
-                  " quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute "
-                ]
+                "#comment": " quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute "
               },
               {
-                "#comment": [
-                  " quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" "
-                ]
+                "#comment": " quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" "
               },
               {
-                "#comment": [
-                  " backslash \\ is used as escape character for \" (and itself) in X3D "
-                ]
+                "#comment": " backslash \\ is used as escape character for \" (and itself) in X3D "
               },
               {
-                "#comment": [
-                  " character entities are listed in HTML specification and are good for any XML "
-                ]
+                "#comment": " character entities are listed in HTML specification and are good for any XML "
               }
             ],
             "-geometry": {

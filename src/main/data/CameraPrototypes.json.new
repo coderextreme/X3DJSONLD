@@ -67,7 +67,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -78,9 +78,7 @@
     "Scene": {
       "-children": [
         {
-          "#comment": [
-            " =============== Camera ============== "
-          ]
+          "#comment": " =============== Camera ============== "
         },
         {
           "ProtoDeclare": {
@@ -89,9 +87,7 @@
             "ProtoInterface": {
               "-children": [
                 {
-                  "#comment": [
-                    " Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "
-                  ]
+                  "#comment": " Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "
                 }
               ],
               "field": [
@@ -176,9 +172,7 @@
                   "@type": "MFNode",
                   "-children": [
                     {
-                      "#comment": [
-                        " initialization nodes (if any) go here "
-                      ]
+                      "#comment": " initialization nodes (if any) go here "
                     }
                   ]
                 },
@@ -269,9 +263,7 @@
                   "@type": "SFNode",
                   "-children": [
                     {
-                      "#comment": [
-                        " initialization node (if any) goes here "
-                      ]
+                      "#comment": " initialization node (if any) goes here "
                     }
                   ]
                 },
@@ -324,9 +316,7 @@
                   }
                 },
                 {
-                  "#comment": [
-                    " NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation "
-                  ]
+                  "#comment": " NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation "
                 },
                 {
                   "NavigationInfo": {
@@ -353,18 +343,14 @@
                       ],
                       "-children": [
                         {
-                          "#comment": [
-                            " No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. "
-                          ]
+                          "#comment": " No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. "
                         }
                       ]
                     }
                   }
                 },
                 {
-                  "#comment": [
-                    " this DirectionalLight replaces NavigationInfo headlight in order to add color capability "
-                  ]
+                  "#comment": " this DirectionalLight replaces NavigationInfo headlight in order to add color capability "
                 },
                 {
                   "DirectionalLight": {
@@ -372,9 +358,7 @@
                     "@global": true,
                     "-children": [
                       {
-                        "#comment": [
-                          " TODO confirm other default field values match NavigationInfo spec "
-                        ]
+                        "#comment": " TODO confirm other default field values match NavigationInfo spec "
                       }
                     ],
                     "IS": {
@@ -470,9 +454,7 @@
                     "@mustEvaluate": true,
                     "-children": [
                       {
-                        "#comment": [
-                          " binding is controlled externally, all camera operations proceed the same regardless of whether bound or not "
-                        ]
+                        "#comment": " binding is controlled externally, all camera operations proceed the same regardless of whether bound or not "
                       }
                     ],
                     "field": [
@@ -531,9 +513,7 @@
                         "@type": "MFNode",
                         "-children": [
                           {
-                            "#comment": [
-                              " initialization nodes (if any) go here "
-                            ]
+                            "#comment": " initialization nodes (if any) go here "
                           }
                         ]
                       },
@@ -586,9 +566,7 @@
                         "@type": "SFNode",
                         "-children": [
                           {
-                            "#comment": [
-                              " initialization node (if any) goes here "
-                            ]
+                            "#comment": " initialization node (if any) goes here "
                           }
                         ]
                       },
@@ -1184,9 +1162,7 @@
           }
         },
         {
-          "#comment": [
-            " =============== CameraShot ============== "
-          ]
+          "#comment": " =============== CameraShot ============== "
         },
         {
           "ProtoDeclare": {
@@ -1214,9 +1190,7 @@
                   "@type": "MFNode",
                   "-children": [
                     {
-                      "#comment": [
-                        " initializing CameraMovement nodes are inserted here by scene author using ProtoInstance "
-                      ]
+                      "#comment": " initializing CameraMovement nodes are inserted here by scene author using ProtoInstance "
                     }
                   ]
                 },
@@ -1323,9 +1297,7 @@
                         "@type": "MFNode",
                         "-children": [
                           {
-                            "#comment": [
-                              " initialization nodes (if any) go here "
-                            ]
+                            "#comment": " initialization nodes (if any) go here "
                           }
                         ]
                       },
@@ -1553,18 +1525,14 @@
                   }
                 },
                 {
-                  "#comment": [
-                    " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
-                  ]
+                  "#comment": " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
                 }
               ]
             }
           }
         },
         {
-          "#comment": [
-            " =============== CameraMovement ============== "
-          ]
+          "#comment": " =============== CameraMovement ============== "
         },
         {
           "ProtoDeclare": {
@@ -1672,19 +1640,13 @@
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": [
-                    " First node determines node type of this prototype "
-                  ]
+                  "#comment": " First node determines node type of this prototype "
                 },
                 {
-                  "#comment": [
-                    " Subsequent nodes do not render, but still must be a valid X3D subgraph "
-                  ]
+                  "#comment": " Subsequent nodes do not render, but still must be a valid X3D subgraph "
                 },
                 {
-                  "#comment": [
-                    " Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events "
-                  ]
+                  "#comment": " Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events "
                 },
                 {
                   "Script": {
@@ -1913,18 +1875,14 @@
                   }
                 },
                 {
-                  "#comment": [
-                    " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
-                  ]
+                  "#comment": " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
                 }
               ]
             }
           }
         },
         {
-          "#comment": [
-            " =============== OfflineRender ============== "
-          ]
+          "#comment": " =============== OfflineRender ============== "
         },
         {
           "ProtoDeclare": {
@@ -1933,9 +1891,7 @@
             "ProtoInterface": {
               "-children": [
                 {
-                  "#comment": [
-                    " TODO non-photorealistic rendering (NPR) parameters "
-                  ]
+                  "#comment": " TODO non-photorealistic rendering (NPR) parameters "
                 }
               ],
               "field": [
@@ -2024,14 +1980,10 @@
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": [
-                    " First node determines node type of this prototype "
-                  ]
+                  "#comment": " First node determines node type of this prototype "
                 },
                 {
-                  "#comment": [
-                    " Subsequent nodes do not render, but still must be a valid X3D subgraph "
-                  ]
+                  "#comment": " Subsequent nodes do not render, but still must be a valid X3D subgraph "
                 },
                 {
                   "Script": {
@@ -2213,18 +2165,14 @@
                   }
                 },
                 {
-                  "#comment": [
-                    " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
-                  ]
+                  "#comment": " Add any ROUTEs here, going from Script to other nodes within ProtoBody "
                 }
               ]
             }
           }
         },
         {
-          "#comment": [
-            " =============== Launch Prototype Example ============== "
-          ]
+          "#comment": " =============== Launch Prototype Example ============== "
         },
         {
           "Background": {
