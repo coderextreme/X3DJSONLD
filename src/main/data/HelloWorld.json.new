@@ -103,7 +103,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -112,18 +112,14 @@
       ],
       "-children": [
         {
-          "#comment": [
-            " Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON "
-          ]
+          "#comment": " Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON "
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": [
-            " Example scene to illustrate X3D nodes and fields (XML elements and attributes) "
-          ]
+          "#comment": " Example scene to illustrate X3D nodes and fields (XML elements and attributes) "
         },
         {
           "WorldInfo": {

@@ -51,7 +51,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -66,9 +66,7 @@
             "@DEF": "Arch",
             "-children": [
               {
-                "#comment": [
-                  " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
-                ]
+                "#comment": " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
               }
             ],
             "-geometry": {

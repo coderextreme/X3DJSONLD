@@ -41,7 +41,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -185,174 +185,106 @@
                               },
                               "-children": [
                                 {
-                                  "#comment": [
-                                    ""
-                                  ]
+                                  "#comment": ""
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t<ComposedShader DEF='gl' language=\"GLSL\">"
-                                  ]
+                                  "#comment": "\t\t\t\t\t<ComposedShader DEF='gl' language=\"GLSL\">"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    ""
-                                  ]
+                                  "#comment": ""
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t</ComposedShader>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t</ComposedShader>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t<ComposedShader DEF='freewrl' language=\"GLSL\">"
-                                  ]
+                                  "#comment": "\t\t\t\t\t<ComposedShader DEF='freewrl' language=\"GLSL\">"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    ""
-                                  ]
+                                  "#comment": ""
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t</ComposedShader>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t</ComposedShader>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t"
-                                  ]
+                                  "#comment": "\t\t\t\t\t"
                                 },
                                 {
-                                  "#comment": [
-                                    ""
-                                  ]
+                                  "#comment": ""
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t<ComposedShader DEF='instant' language=\"GLSL\">"
-                                  ]
+                                  "#comment": "\t\t\t\t\t<ComposedShader DEF='instant' language=\"GLSL\">"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
-                                  ]
+                                  "#comment": "\t\t\t\t\t  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"
                                 },
                                 {
-                                  "#comment": [
-                                    ""
-                                  ]
+                                  "#comment": ""
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "\t\t\t      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
-                                  ]
+                                  "#comment": "\t\t\t      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                 },
                                 {
-                                  "#comment": [
-                                    "                            </ComposedShader>"
-                                  ]
+                                  "#comment": "                            </ComposedShader>"
                                 },
                                 {
-                                  "#comment": [
-                                    "                            "
-                                  ]
+                                  "#comment": "                            "
                                 }
                               ],
                               "-shaders": [

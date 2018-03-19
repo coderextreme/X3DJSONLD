@@ -38,7 +38,7 @@
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -83,19 +83,13 @@
                         "Shape": {
                           "-children": [
                             {
-                              "#comment": [
-                                "comment before Sphere"
-                              ]
+                              "#comment": "comment before Sphere"
                             },
                             {
-                              "#comment": [
-                                "comment after Sphere"
-                              ]
+                              "#comment": "comment after Sphere"
                             },
                             {
-                              "#comment": [
-                                "comment after Appearance"
-                              ]
+                              "#comment": "comment after Appearance"
                             }
                           ],
                           "-geometry": {
@@ -105,14 +99,10 @@
                             "Appearance": {
                               "-children": [
                                 {
-                                  "#comment": [
-                                    "comment before Material"
-                                  ]
+                                  "#comment": "comment before Material"
                                 },
                                 {
-                                  "#comment": [
-                                    "comment after Material"
-                                  ]
+                                  "#comment": "comment after Material"
                                 }
                               ],
                               "-material": {
