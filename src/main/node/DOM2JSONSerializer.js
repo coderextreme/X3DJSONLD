@@ -357,7 +357,9 @@ DOM2JSONSerializer.prototype = {
 			if (typeof fields[fieldName] === 'undefined') {
 				fields[fieldName] = []
 			}
-			fields[fieldName].push({"#comment": subobject});
+			for (var line in subobject) {
+				fields[fieldName].push({"#comment": subobject[line]});
+			}
 		} else if (node.nodeType === 4) {
 			fieldName = "#sourceText";
 			subobject = this.descendSourceText(node);
