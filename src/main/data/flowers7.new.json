@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 March 2018"
+            "@content":"19 March 2018"
           },
           {
             "@name":"generator",
@@ -440,7 +440,7 @@
             "#comment":""
           },
           {
-            "#comment":"<TimeSensor DEF=\"Clock\"cycleInterval=\"45\"loop='true'/>"
+            "#comment":"<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>"
           },
           {
             "#comment":"<ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>"

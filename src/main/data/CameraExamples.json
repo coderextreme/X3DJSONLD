@@ -83,7 +83,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -626,11 +626,15 @@
               },
               {
                 "@name": "headlight",
-                "@value": "true"
+                "@value": true
               },
               {
                 "@name": "position",
-                "@value": "-4 4 10"
+                "@value": [
+                  -4,
+                  4,
+                  10
+                ]
               },
               {
                 "@name": "shots",
@@ -646,11 +650,20 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "-50 1 -10"
+                          "@value": [
+                            -50,
+                            1,
+                            -10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 1 0 0"
+                          "@value": [
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
                         },
                         {
                           "@name": "moves",
@@ -665,15 +678,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-50 1 -15"
+                                    "@value": [
+                                      -50,
+                                      1,
+                                      -15
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -688,15 +710,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-50 1 -10"
+                                    "@value": [
+                                      -50,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -711,15 +742,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-50 1 -10"
+                                    "@value": [
+                                      -50,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -740,11 +780,20 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "-40 1 -10"
+                          "@value": [
+                            -40,
+                            1,
+                            -10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 1 0 0"
+                          "@value": [
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
                         },
                         {
                           "@name": "moves",
@@ -760,15 +809,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-45 1 -10"
+                                    "@value": [
+                                      -45,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -783,15 +841,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-40 1 -10"
+                                    "@value": [
+                                      -40,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -806,15 +873,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-40 1 -10"
+                                    "@value": [
+                                      -40,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -835,11 +911,20 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "-30 1 -10"
+                          "@value": [
+                            -30,
+                            1,
+                            -10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 1 0 0"
+                          "@value": [
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
                         },
                         {
                           "@name": "moves",
@@ -855,15 +940,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "2"
+                                    "@value": 2
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-30 1 -10"
+                                    "@value": [
+                                      -30,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0.4"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0.4
+                                    ]
                                   }
                                 ]
                               }
@@ -879,15 +973,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-30 1 -10"
+                                    "@value": [
+                                      -30,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 -0.4"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      -0.4
+                                    ]
                                   }
                                 ]
                               }
@@ -902,15 +1005,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "2"
+                                    "@value": 2
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-30 1 -10"
+                                    "@value": [
+                                      -30,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -925,15 +1037,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "2"
+                                    "@value": 2
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-30 1 -10"
+                                    "@value": [
+                                      -30,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -954,11 +1075,20 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "-20 1 -10"
+                          "@value": [
+                            -20,
+                            1,
+                            -10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 1 0 0"
+                          "@value": [
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
                         },
                         {
                           "@name": "moves",
@@ -974,15 +1104,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-20 5 -10"
+                                    "@value": [
+                                      -20,
+                                      5,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -998,15 +1137,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-20 1 -10"
+                                    "@value": [
+                                      -20,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -1022,15 +1170,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "2"
+                                    "@value": 2
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-20 1 -10"
+                                    "@value": [
+                                      -20,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -1051,15 +1208,24 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "-10 1 -10"
+                          "@value": [
+                            -10,
+                            1,
+                            -10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 0 1 0"
+                          "@value": [
+                            0,
+                            0,
+                            1,
+                            0
+                          ]
                         },
                         {
                           "@name": "traceEnabled",
-                          "@value": "true"
+                          "@value": true
                         },
                         {
                           "@name": "moves",
@@ -1074,15 +1240,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 0"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -1098,15 +1273,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 0.785"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      0.785
+                                    ]
                                   }
                                 ]
                               }
@@ -1122,15 +1306,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 0.785"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      0.785
+                                    ]
                                   }
                                 ]
                               }
@@ -1145,15 +1338,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 -0.785"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      -0.785
+                                    ]
                                   }
                                 ]
                               }
@@ -1168,15 +1370,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 -0.785"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      -0.785
+                                    ]
                                   }
                                 ]
                               }
@@ -1192,15 +1403,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "1"
+                                    "@value": 1
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "-10 1 -10"
+                                    "@value": [
+                                      -10,
+                                      1,
+                                      -10
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 0"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -1216,15 +1436,24 @@
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "2"
+                                    "@value": 2
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "0 2 12"
+                                    "@value": [
+                                      0,
+                                      2,
+                                      12
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 0 1 0"
+                                    "@value": [
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ]
                                   }
                                 ]
                               }
@@ -1778,7 +2007,11 @@
               },
               {
                 "@name": "position",
-                "@value": "4 4 10"
+                "@value": [
+                  4,
+                  4,
+                  10
+                ]
               },
               {
                 "@name": "shots",
@@ -1794,11 +2027,20 @@
                         },
                         {
                           "@name": "initialPosition",
-                          "@value": "6 6 10"
+                          "@value": [
+                            6,
+                            6,
+                            10
+                          ]
                         },
                         {
                           "@name": "initialOrientation",
-                          "@value": "0 1 0 0"
+                          "@value": [
+                            0,
+                            1,
+                            0,
+                            0
+                          ]
                         },
                         {
                           "@name": "moves",
@@ -1814,15 +2056,19 @@
                                   },
                                   {
                                     "@name": "tracking",
-                                    "@value": "true"
+                                    "@value": true
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "8"
+                                    "@value": 8
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "6 6 10"
+                                    "@value": [
+                                      6,
+                                      6,
+                                      10
+                                    ]
                                   }
                                 ],
                                 "-children": [
@@ -1845,15 +2091,19 @@
                                   },
                                   {
                                     "@name": "tracking",
-                                    "@value": "true"
+                                    "@value": true
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "8"
+                                    "@value": 8
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "40 6 12"
+                                    "@value": [
+                                      40,
+                                      6,
+                                      12
+                                    ]
                                   }
                                 ],
                                 "-children": [
@@ -1876,15 +2126,19 @@
                                   },
                                   {
                                     "@name": "tracking",
-                                    "@value": "true"
+                                    "@value": true
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "3"
+                                    "@value": 3
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "40 20 13"
+                                    "@value": [
+                                      40,
+                                      20,
+                                      13
+                                    ]
                                   }
                                 ],
                                 "-children": [
@@ -1907,23 +2161,36 @@
                                   },
                                   {
                                     "@name": "tracking",
-                                    "@value": "true"
+                                    "@value": true
                                   },
                                   {
                                     "@name": "duration",
-                                    "@value": "5"
+                                    "@value": 5
                                   },
                                   {
                                     "@name": "goalPosition",
-                                    "@value": "4 4 10"
+                                    "@value": [
+                                      4,
+                                      4,
+                                      10
+                                    ]
                                   },
                                   {
                                     "@name": "goalAimPoint",
-                                    "@value": "4 4 0"
+                                    "@value": [
+                                      4,
+                                      4,
+                                      0
+                                    ]
                                   },
                                   {
                                     "@name": "goalOrientation",
-                                    "@value": "0 1 0 0"
+                                    "@value": [
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ]
                                   }
                                 ],
                                 "-children": [
@@ -2293,19 +2560,27 @@
                     },
                     {
                       "@name": "visible",
-                      "@value": "false"
+                      "@value": false
                     },
                     {
                       "@name": "lineColor",
-                      "@value": "0.9 0.9 0.9"
+                      "@value": [
+                        0.9,
+                        0.9,
+                        0.9
+                      ]
                     },
                     {
                       "@name": "frustumColor",
-                      "@value": "0.8 0.8 0.8"
+                      "@value": [
+                        0.8,
+                        0.8,
+                        0.8
+                      ]
                     },
                     {
                       "@name": "transparency",
-                      "@value": "0.95"
+                      "@value": 0.95
                     }
                   ]
                 }
@@ -3091,19 +3366,31 @@
             "fieldValue": [
               {
                 "@name": "enabled",
-                "@value": "true"
+                "@value": true
               },
               {
                 "@name": "markerColor",
-                "@value": "1 0.5 0"
+                "@value": [
+                  1,
+                  0.5,
+                  0
+                ]
               },
               {
                 "@name": "scale",
-                "@value": "1 1 1"
+                "@value": [
+                  1,
+                  1,
+                  1
+                ]
               },
               {
                 "@name": "positionOffsetFromCamera",
-                "@value": "0 0 -6"
+                "@value": [
+                  0,
+                  0,
+                  -6
+                ]
               }
             ]
           }

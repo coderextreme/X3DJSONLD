@@ -69,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -382,7 +382,11 @@
                           "fieldValue": [
                             {
                               "@name": "onlyColor",
-                              "@value": "0.2 0.6 0.6"
+                              "@value": [
+                                0.2,
+                                0.6,
+                                0.6
+                              ]
                             }
                           ]
                         }
@@ -417,7 +421,7 @@
             "fieldValue": [
               {
                 "@name": "enabled",
-                "@value": "true"
+                "@value": true
               }
             ]
           }

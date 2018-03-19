@@ -3,6 +3,8 @@
 // var jsonlint = require("jsonlint");
 
 function DOM2JSONSerializer() {
+	this.fieldTypeMapping = {};
+	this.DEFMapping = {};
 }
 
 
@@ -29,7 +31,7 @@ DOM2JSONSerializer.prototype = {
 		try {
 			var st = JSON.stringify(obj, null, 2);
 		} catch (e) {
-			console.log(st, obj, clazz, e);
+			console.error(st, obj, clazz, e);
 
 		}
 		return st;
@@ -97,6 +99,7 @@ DOM2JSONSerializer.prototype = {
 		var fields = {};
 		var attrType = "";
 		var fieldAttrType = this.descendAttribute(element, "type");
+		// console.error("field attr type", fieldAttrType);
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
@@ -136,7 +139,7 @@ DOM2JSONSerializer.prototype = {
 							replace(/\\n/g, "\n").
 							replace(/\\\\/g, "\\");
 						if (attrs[a].nodeValue !== attrval) {
-							// console.log("Replacing", attrs[a].nodeValue, attrval);
+							// console.error("Replacing", attrs[a].nodeValue, attrval);
 						}
 					} else if (attrType === "SFInt32") {
 						attrval = parseInt(attrs[a].nodeValue);
@@ -218,25 +221,69 @@ DOM2JSONSerializer.prototype = {
 		if (at === "containerField") {
 			value = "children";
 		}
-		for (var a in element.attributes) {
-			var attrs = element.attributes;
-			try {
-				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					var attr = attrs[a].nodeName;
-					if (attr === at) {
-						value = attrs[a].nodeValue;
+		if (element !== null) {
+			for (var a in element.attributes) {
+				var attrs = element.attributes;
+				try {
+					parseInt(a);
+					if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+						var attr = attrs[a].nodeName;
+						if (attr === at) {
+							value = attrs[a].nodeValue;
+						}
+						if (attr === 'name') {
+							var fieldName = attrs[a].nodeValue;
+						}
 					}
+				} catch (e) {
+					console.error(e);
 				}
-			} catch (e) {
-				console.error(e);
 			}
-		}
-		if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
-			if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
-				var tmpvalue = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
-				if (tmpvalue !== 'proxy') { // must be set with containerField attribute
-					value = tmpvalue;
+			// find the value of to Proto field's type
+			if (element.parentNode) {
+				var parentName = this.descendAttribute(element.parentNode, "name");
+				// console.error("parent", parentName, "DEF", def, "fieldName", fieldName, element.parentNode);
+				var def = this.descendAttribute(element.parentNode, "DEF");
+				if (element.nodeName === "field" && at === 'type') {
+					if (element.parentNode.nodeName === "ExternProtoDeclare" ||
+					    element.parentNode.parentNode.nodeName === "ProtoDeclare") {
+						if (!parentName) {
+							parentName = this.descendAttribute(element.parentNode.parentNode, "name");
+						}
+						if (typeof def === 'undefined') {
+							def = this.descendAttribute(element.parentNode.parentNode, "DEF");
+						}
+						if (typeof parentName !== 'undefined') {
+							if (typeof this.fieldTypeMapping[parentName] === 'undefined') {
+								this.fieldTypeMapping[parentName] = []
+							}
+							// console.error("parent2", parentName, "DEF", def, "fieldName", fieldName);
+							this.fieldTypeMapping[parentName][fieldName] = value;
+							this.DEFMapping[def] = parentName;
+							// console.error("SET", parentName, this.fieldTypeMapping[parentName]);
+							// console.error("SET DEF", def, this.DEFMapping[def]);
+						}
+					}
+				} else if (element.nodeName === "fieldValue" && at === 'type') {
+					if (typeof parentName === 'undefined') {
+						// find name by looking up USE
+						var use = this.descendAttribute(element.parentNode, "USE");
+						parentName = this.DEFMapping[use];
+						// console.error("GET USE", use, this.DEFMapping[use]);
+					}
+					if (typeof parentName !== 'undefined') {
+						// console.error("GET", parentName, this.fieldTypeMapping[parentName]);
+						value = this.fieldTypeMapping[parentName][fieldName];
+					}
+					// console.error("parent3", parentName, "USE", use, "fieldName", fieldName, "value", value);
+				}
+			}
+			if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
+				if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
+					var tmpvalue = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
+					if (tmpvalue !== 'proxy') { // must be set with containerField attribute
+						value = tmpvalue;
+					}
 				}
 			}
 		}
@@ -273,7 +320,7 @@ DOM2JSONSerializer.prototype = {
 			} else {
 				fieldName = '-'+attrName;
 				var attrType = fieldTypes[element.nodeName][attrName];
-				// console.log(element.nodeName, fieldName, node.nodeName, attrType);
+				// console.error(element.nodeName, fieldName, node.nodeName, attrType);
 				if (attrType === "SFNode") {
 					if (typeof fields[fieldName] === 'undefined') {
 						fields[fieldName] = subobject;
@@ -341,6 +388,7 @@ DOM2JSONSerializer.prototype = {
 			element.nodeName == "Scene" ||
 			element.nodeName == "head") {
 			object = fields;
+			// console.error(object);
 		} else {
 			object[element.nodeName] =  fields;
 		}

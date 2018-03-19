@@ -316,7 +316,7 @@ ProtoInstance58.setName("node")
 
 fieldValue59 = fieldValueObject()
 fieldValue59.setName("position")
-fieldValue59.setValue("0.0 0.0 0.0")
+fieldValue59.setValue("0 0 0")
 
 ProtoInstance58.addFieldValue(fieldValue59)
 Transform56.addChild(ProtoInstance58)
@@ -326,7 +326,7 @@ ProtoInstance60.setName("node")
 
 fieldValue61 = fieldValueObject()
 fieldValue61.setName("position")
-fieldValue61.setValue("50.0 50.0 50.0")
+fieldValue61.setValue("50 50 50")
 
 ProtoInstance60.addFieldValue(fieldValue61)
 Transform56.addChild(ProtoInstance60)
@@ -336,7 +336,7 @@ ProtoInstance62.setName("node")
 
 fieldValue63 = fieldValueObject()
 fieldValue63.setName("position")
-fieldValue63.setValue("-50.0 -50.0 -50.0")
+fieldValue63.setValue("-50 -50 -50")
 
 ProtoInstance62.addFieldValue(fieldValue63)
 Transform56.addChild(ProtoInstance62)
@@ -346,7 +346,7 @@ ProtoInstance64.setName("node")
 
 fieldValue65 = fieldValueObject()
 fieldValue65.setName("position")
-fieldValue65.setValue("50.0 50.0 -50.0")
+fieldValue65.setValue("50 50 -50")
 
 ProtoInstance64.addFieldValue(fieldValue65)
 Transform56.addChild(ProtoInstance64)

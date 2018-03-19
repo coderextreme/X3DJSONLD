@@ -51,7 +51,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -485,35 +485,43 @@
             "fieldValue": [
               {
                 "@name": "diffuseColor",
-                "@value": "0.5 0.3 0.6"
+                "@value": [
+                  0.5,
+                  0.3,
+                  0.6
+                ]
               },
               {
                 "@name": "emissiveColor",
-                "@value": "0.5 0.3 0.6"
+                "@value": [
+                  0.5,
+                  0.3,
+                  0.6
+                ]
               },
               {
                 "@name": "clearSpanWidth",
-                "@value": "5"
+                "@value": 5
               },
               {
                 "@name": "riseHeight",
-                "@value": "2.5"
+                "@value": 2.5
               },
               {
                 "@name": "depth",
-                "@value": "2"
+                "@value": 2
               },
               {
                 "@name": "topAbutmentHeight",
-                "@value": "0.6"
+                "@value": 0.6
               },
               {
                 "@name": "pierWidth",
-                "@value": "1"
+                "@value": 1
               },
               {
                 "@name": "pierHeight",
-                "@value": "2"
+                "@value": 2
               }
             ]
           }

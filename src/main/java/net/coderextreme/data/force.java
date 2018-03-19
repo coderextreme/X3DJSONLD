@@ -222,13 +222,13 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")))      ;
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("position").setValue("0.0 0.0 0.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50.0 50.0 50.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50"));
 ProtoInstance2
-            .addFieldValue(new fieldValueObject().setName("position").setValue("-50.0 -50.0 -50.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50"));
 ProtoInstance3
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50.0 50.0 -50.0"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 -50"));
 ProtoInstance4
             .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"));
 ProtoInstance4

@@ -59,7 +59,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
@@ -195,7 +195,11 @@
             "fieldValue": [
               {
                 "@name": "screenOffset",
-                "@value": "-0.75 1 -5"
+                "@value": [
+                  -0.75,
+                  1,
+                  -5
+                ]
               },
               {
                 "@name": "children",
