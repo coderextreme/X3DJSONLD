@@ -144,7 +144,7 @@ protected static class ExitException extends SecurityException
 					out = source;
 					out = outdir+out.substring(0, out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
-						System.err.println("BEGIN "+source+" > "+extension);
+						System.err.print("BEGIN "+source+" > "+extension+", ");
 						if (out.lastIndexOf("/") > 0) {
 							File dir = new File(out.substring(0, out.lastIndexOf("/")));
 							dir.mkdirs();
