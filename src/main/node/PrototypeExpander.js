@@ -1,6 +1,12 @@
 var runAndSend;
+var DOM2JSONSerializer;
+var mapToMethod;
+var fieldTypes;
 if (typeof require !== 'undefined') {
 	runAndSend = require("./runAndSend");
+	DOM2JSONSerializer = require("./DOM2JSONSerializer");
+	mapToMethod = require("./mapToMethod");
+	fieldTypes = require("./fieldTypes");
 }
 function PROTOS() {
 	this.protos = {};
@@ -790,6 +796,7 @@ PROTOS.prototype = {
 					console.error("parsed JSON from " + filename);
 					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
+					/*
 					console.error("Failed to parse JSON from " + filename);
 					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
 						console.error("calling run and send");
@@ -799,17 +806,19 @@ PROTOS.prototype = {
 							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 						});
 						console.error("async skip of run and send " + filename);
-					} else {
-						console.error("calling converter on server");
+					} else
+					*/
+					if (typeof DOM2JSONSerializer === 'function') {
+						console.error("calling local converter");
 						try {
-							var str = serializeDOM(undefined, data.firstElementChild, true);
-							$.post("/convert", str, function(json) {
-								console.error("JSON converted on server is", json);
-								protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
-							}, "json")
+							var serializer = new DOM2JSONSerializer();
+							var str = serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
+							protoexp.searchAndReplaceProto(filename, JSON.parse(str), protoname, protoexp.founddef, obj, objret);
 						} catch (e) {
-							alert(e);
-							console.error("Server convert failed", e);
+							if (typeof alert === 'function') {
+								alert(e);
+							}
+							console.error("Convert failed", e);
 						}
 					}
 				}
