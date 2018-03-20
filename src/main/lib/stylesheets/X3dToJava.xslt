@@ -833,8 +833,14 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>)</xsl:text>
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(), 'Metadata')">
-					<!-- addChild() utility method supports consistent root-node support for X3DChildNode, X3DMetadataNode and LayerSet -->
-					<xsl:text>.addChild(</xsl:text>
+					<!-- special handling for Scene.addMetadata -->
+					<xsl:text>.addMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Scene') and (local-name() = 'LayerSet')">
+					<!-- special handling for Scene.addLayerSet -->
+					<xsl:text>.addLayerSet(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
