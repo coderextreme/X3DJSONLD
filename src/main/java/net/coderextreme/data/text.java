@@ -115,17 +115,17 @@ public class text {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node\"\"\"".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Node\"\"\""});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node2".replaceAll("\"", "\\\""),"\\".replaceAll("\"", "\\\""),"\\\\".replaceAll("\"", "\\\""),"Node2".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Node2","\\\\","\\\\\\\\","Node2"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node3 \\\\ \\ ".replaceAll("\"", "\\\""),"Node3\"\"\"".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Node3 \\\\\\\\ \\\\ ","Node3\"\"\""});
   }
 }
 }

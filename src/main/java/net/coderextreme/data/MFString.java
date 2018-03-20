@@ -396,32 +396,32 @@ protected class MFInt3219 {
 }
 protected class MFString20 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Cockpit.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d".replaceAll("\"", "\\\""),"Cockpit.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"});
   }
 }
 protected class MFString21 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Seat.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d".replaceAll("\"", "\\\""),"Seat.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"});
   }
 }
 protected class MFString22 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"FrontWheel.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d".replaceAll("\"", "\\\""),"FrontWheel.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"});
   }
 }
 protected class MFString23 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"RearLeftWheel.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d".replaceAll("\"", "\\\""),"RearLeftWheel.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"});
   }
 }
 protected class MFString24 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"RearRightWheel.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d".replaceAll("\"", "\\\""),"RearRightWheel.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"});
   }
 }
 protected class MFString25 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"RED Button".replaceAll("\"", "\\\""),"Gear Up".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"RED Button","Gear Up"});
   }
 }
 protected class MFFloat26 {
@@ -431,12 +431,12 @@ protected class MFFloat26 {
 }
 protected class MFString27 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"YELLOW Button".replaceAll("\"", "\\\""),"Gear Down".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"YELLOW Button","Gear Down"});
   }
 }
 protected class MFString28 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target Locked".replaceAll("\"", "\\\""),"      FIRE!..".replaceAll("\"", "\\\""),"(Green Button)".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Target Locked","      FIRE!..","(Green Button)"});
   }
 }
 protected class MFFloat29 {
@@ -521,47 +521,47 @@ protected class MFColor44 {
 }
 protected class MFString45 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Amraam.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d".replaceAll("\"", "\\\""),"../../Weapons/Missiles/Amraam.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"});
   }
 }
 protected class MFString46 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"SidewinderHolder.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d".replaceAll("\"", "\\\""),"SidewinderHolder.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"});
   }
 }
 protected class MFString47 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"TurkishFlagLeft.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d".replaceAll("\"", "\\\""),"TurkishFlagLeft.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"});
   }
 }
 protected class MFString48 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"TurkishFlagRight.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d".replaceAll("\"", "\\\""),"TurkishFlagRight.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"});
   }
 }
 protected class MFString49 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"AmraamHolder.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d".replaceAll("\"", "\\\""),"AmraamHolder.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"});
   }
 }
 protected class MFString50 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Sidewinder.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d".replaceAll("\"", "\\\""),"../../Weapons/Missiles/Sidewinder.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"});
   }
 }
 protected class MFString51 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"FuelTankHolder.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d".replaceAll("\"", "\\\""),"FuelTankHolder.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"});
   }
 }
 protected class MFString52 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"FuelTank.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d".replaceAll("\"", "\\\""),"FuelTank.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"});
   }
 }
 protected class MFString53 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d".replaceAll("\"", "\\\""),"Target.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"});
   }
 }
 protected class MFFloat54 {

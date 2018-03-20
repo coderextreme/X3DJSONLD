@@ -982,17 +982,17 @@ protected class MFColor4 {
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraExamples.x3d".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d".replaceAll("\"", "\\\""),"CameraExamples.wrl".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d".replaceAll("\"", "\\\""),"defines multiple prototype nodes".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"Click on this text to see".replaceAll("\"", "\\\""),"CameraExamples.x3d scene".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 }

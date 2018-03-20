@@ -201,17 +201,17 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Oblique Strategies".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"(Over One Hundred Worthwhile Dilemmas)".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"by Brian Eno and Peter Schmidt".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"SANS".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"SANS"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFInt324 {
@@ -226,27 +226,27 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"./ObliqueStrategiesScript.js".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"./ObliqueStrategiesScript.js"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"SANS".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"SANS"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium".replaceAll("\"", "\\\""),"translate_tts_mp3FileFormatNotSupported.wav".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"previous".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"previous"});
   }
 }
 protected class MFInt3211 {
@@ -261,27 +261,27 @@ protected class MFVec3f12 {
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"next".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"next"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"random".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"random"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"target=_blank".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"target=_blank"});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"});
   }
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"speech".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"speech"});
   }
 }
 }

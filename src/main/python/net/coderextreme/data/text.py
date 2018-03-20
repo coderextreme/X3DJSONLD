@@ -61,7 +61,7 @@ Transform9.addChild(Shape10)
 Shape15 = ShapeObject()
 
 Text16 = TextObject()
-Text16.setString(["Node2","\\","\\\\","Node2"])
+Text16.setString(["Node2","\\\\","\\\\\\\\","Node2"])
 
 FontStyle17 = FontStyleObject()
 
@@ -77,7 +77,7 @@ Transform9.addChild(Shape15)
 Shape20 = ShapeObject()
 
 Text21 = TextObject()
-Text21.setString(["Node3 \\\\ \\ ","Node3\"\"\""])
+Text21.setString(["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""])
 
 FontStyle22 = FontStyleObject()
 

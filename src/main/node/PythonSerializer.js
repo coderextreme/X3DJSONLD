@@ -216,6 +216,7 @@ PythonSerializer.prototype = {
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 							map(function(x) {
 								var y = x.
+								       replace(/(\\\\+)/g, '$1$1').
 								       replace(/\\\\"/g, '\\\"').
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').

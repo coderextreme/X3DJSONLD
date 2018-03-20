@@ -94,7 +94,7 @@ Shape16.addComments(CommentsBlock(""" backslash \\ is used as escape character f
 Shape16.addComments(CommentsBlock(""" character entities are listed in HTML specification and are good for any XML """))
 Text17 = TextObject()
 Text17.setDEF("DefaultText")
-Text17.setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe  '  is &apos;","ampersand & is &amp;","quote mark  \"  is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"])
+Text17.setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe  '  is &apos;","ampersand & is &amp;","quote mark  \"  is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"])
 
 FontStyle18 = FontStyleObject()
 FontStyle18.setDEF("CenteredFontStyle")

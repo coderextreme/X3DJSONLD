@@ -265,37 +265,37 @@ public class BindingOperations {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"View".replaceAll("\"", "\\\""),"# 1".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"View","# 1"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"View".replaceAll("\"", "\\\""),"# 2".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"View","# 2"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"View".replaceAll("\"", "\\\""),"# 3".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"View","# 3"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"View".replaceAll("\"", "\\\""),"# 4".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"View","# 4"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Click here to animate".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Click here to animate"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"BEGIN".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","BEGIN"});
   }
 }
 protected class MFFloat7 {

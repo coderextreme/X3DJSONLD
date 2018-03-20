@@ -245,17 +245,17 @@ ProtoInstance6
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Node"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"SERIF".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"SERIF"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFFloat3 {

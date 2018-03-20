@@ -715,122 +715,122 @@ ProtoInstance34
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#Camera".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera".replaceAll("\"", "\\\""),"CameraPrototypes.wrl#Camera".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraShot".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot".replaceAll("\"", "\\\""),"CameraPrototypes.wrl#CameraShot".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraMovement".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement".replaceAll("\"", "\\\""),"CameraPrototypes.wrl#CameraMovement".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#OfflineRender".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender".replaceAll("\"", "\\\""),"CameraPrototypes.wrl#OfflineRender".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Click to animate".replaceAll("\"", "\\\""),"SimpleShotsTest".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Click to animate","SimpleShotsTest"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveZoom.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveZoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Zoom in, out".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Zoom in, out"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveDolly.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveDolly.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Dolly left, right".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Dolly left, right"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMovePan.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMovePan.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Pan left, right".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Pan left, right"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveBoom.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveBoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Boom up, down".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Boom up, down"});
   }
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString18 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveTilt.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveTilt.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"});
   }
 }
 protected class MFString19 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Tilt left, right".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Tilt left, right"});
   }
 }
 protected class MFString20 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString21 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Click to animate".replaceAll("\"", "\\\""),"AimPointTest".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Click to animate","AimPointTest"});
   }
 }
 protected class MFString22 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString23 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraShape.x3d".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraShape.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"});
   }
 }
 protected class MFInt3224 {
@@ -845,12 +845,12 @@ protected class MFVec3f25 {
 }
 protected class MFString26 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum".replaceAll("\"", "\\\""),"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"});
   }
 }
 protected class MFString27 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"ANIMATE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"ANIMATE"});
   }
 }
 protected class MFColor28 {
@@ -880,7 +880,7 @@ protected class MFColor32 {
 }
 protected class MFString33 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d".replaceAll("\"", "\\\""),"../../Savage/Tools/Authoring/CoordinateAxes.x3d".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d".replaceAll("\"", "\\\""),"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl".replaceAll("\"", "\\\""),"../../Savage/Tools/Authoring/CoordinateAxes.wrl".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
   }
 }
 protected class MFFloat34 {
@@ -895,32 +895,32 @@ protected class MFVec3f35 {
 }
 protected class MFString36 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../earth-topo.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"});
   }
 }
 protected class MFString37 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair".replaceAll("\"", "\\\""),"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"});
   }
 }
 protected class MFString38 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"target=_blank".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"target=_blank"});
   }
 }
 protected class MFString39 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraExample.x3d".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d".replaceAll("\"", "\\\""),"CameraExample.wrl".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"});
   }
 }
 protected class MFString40 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototype".replaceAll("\"", "\\\""),"defines a prototype".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"Click on this text to see".replaceAll("\"", "\\\""),"CameraExample scene".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"});
   }
 }
 protected class MFString41 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 }
