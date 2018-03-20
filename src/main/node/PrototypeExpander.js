@@ -602,9 +602,11 @@ PROTOS.prototype = {
 			}
 			firstobj = firstobj[0];
 		}
-		firstobj["@DEF"] = this.getScope();
-
-
+		/*
+		if (typeof firstobj === 'object') {
+			firstobj[objkey]["@DEF"] = this.getScope();
+		}
+		*/
 		if (typeof use !== 'undefined' && typeof firstobj === 'object') {
 			/*
 			if (typeof bodydef !== 'undefined') {
