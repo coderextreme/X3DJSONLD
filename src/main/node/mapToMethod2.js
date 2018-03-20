@@ -140,6 +140,8 @@ var mapToMethod2 = {
 		"GeoOrigin" : "setGeoOrigin"
 	},
 	"Scene" : {
+		"Metadata" : "addMetadata",
+		"MetadataString" : "addMetadata",
 		"LayerSet" : "addLayerSet"
 	},
 	"HAnimHumanoid" : {
