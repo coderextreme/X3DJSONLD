@@ -602,11 +602,6 @@ PROTOS.prototype = {
 			}
 			firstobj = firstobj[0];
 		}
-		/*
-		if (typeof firstobj === 'object') {
-			firstobj[objkey]["@DEF"] = this.getScope();
-		}
-		*/
 		if (typeof use !== 'undefined' && typeof firstobj === 'object') {
 			/*
 			if (typeof bodydef !== 'undefined') {
@@ -638,6 +633,9 @@ PROTOS.prototype = {
 					fieldOrNode = nv;
 					value = fv[fieldOrNode];
 					this.pushScope("FIELD" + protoField);
+		if (typeof firstobj === 'object' && typeof firstobj[objkey] !== 'undefined') {
+			firstobj[objkey]["@DEF"] = this.getScope();
+		}
 					value = this.realPrototypeExpander(file, value, false);
 					this.popScope();
 					this.getInterface(protoField);
