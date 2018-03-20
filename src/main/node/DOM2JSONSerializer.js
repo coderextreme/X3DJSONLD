@@ -3,8 +3,8 @@
 // var jsonlint = require("jsonlint");
 
 function DOM2JSONSerializer() {
-	this.fieldTypeMapping = {};
-	this.DEFMapping = {};
+	var fieldTypeMapping = {};
+	var DEFMapping = {};
 }
 
 
@@ -100,118 +100,120 @@ DOM2JSONSerializer.prototype = {
 		var attrType = "";
 		var fieldAttrType = this.descendAttribute(element, "type");
 		// console.error("field attr type", fieldAttrType);
-		for (var a in element.attributes) {
-			var attrs = element.attributes;
-			try {
-				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					var attr = attrs[a].nodeName;
-					var method = attr;
-					// look at object model
-					var attrType = "SFString";
-					try {
-						attrType = fieldTypes[element.nodeName][attr];
-					} catch (e) {
-						console.error("Missing", attr, "in fieldTypes.js element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
-					}
+		if (element !== null && typeof element !== 'undefined') {
+			for (var a in element.attributes) {
+				var attrs = element.attributes;
+				try {
+					parseInt(a);
+					if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+						var attr = attrs[a].nodeName;
+						var method = attr;
+						// look at object model
+						var attrType = "SFString";
+						try {
+							attrType = fieldTypes[element.nodeName][attr];
+						} catch (e) {
+							console.error("Missing", attr, "in fieldTypes.js element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
+						}
 
-					if (attrs[a].nodeValue === 'NULL' &&
-					   (fieldAttrType === "SFNode"  ||
-					    fieldAttrType === "MFNode")) {
-						method = "-children";
-					} else if (fieldAttrType !== "" && attr === "value") {
-						attrType = fieldAttrType;
-					} else if (attr === "value") {
-						// coercions, not checking type
-						if (attrs[a].nodeValue[0] === '"' && attrs[a].nodeValue[attrs[a].nodeValue.length-1] === '"') {
-							attrType = "MFString";
+						if (attrs[a].nodeValue === 'NULL' &&
+						   (fieldAttrType === "SFNode"  ||
+						    fieldAttrType === "MFNode")) {
+							method = "-children";
+						} else if (fieldAttrType !== "" && attr === "value") {
+							attrType = fieldAttrType;
+						} else if (attr === "value") {
+							// coercions, not checking type
+							if (attrs[a].nodeValue[0] === '"' && attrs[a].nodeValue[attrs[a].nodeValue.length-1] === '"') {
+								attrType = "MFString";
+							}
 						}
-					}
-					var attrmethod = method;
-					if (attrmethod === 'containerField') {
-						continue;
-					}
-					var attrval = "";
-					if (attrs[a].nodeValue === 'NULL') {
-						attrval = "null";
-					} else if (attrType === "SFString") {
-						attrval = attrs[a].nodeValue.
-							replace(/\\n/g, "\n").
-							replace(/\\\\/g, "\\");
-						if (attrs[a].nodeValue !== attrval) {
-							// console.error("Replacing", attrs[a].nodeValue, attrval);
+						var attrmethod = method;
+						if (attrmethod === 'containerField') {
+							continue;
 						}
-					} else if (attrType === "SFInt32") {
-						attrval = parseInt(attrs[a].nodeValue);
-					} else if (attrType === "SFFloat") {
-						attrval = parseFloat(attrs[a].nodeValue);
-					} else if (attrType === "SFDouble" ||
-						attrType === "SFTime") {
-						attrval = parseFloat(attrs[a].nodeValue);
-					} else if (attrType === "SFBool") {
-						attrval = this.parseBool(attrs[a].nodeValue);
-					} else if (attrType === "MFString") {
-						attrval = this.descendSubArray(
-							attrs[a].nodeValue.
-								substr(1, attrs[a].nodeValue.length-2).
-								replace(/\\"/g, '"').
-								replace(/\\\\/g, "\\").
-							/*
-								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-								replace(/\\\\\\\\"/g, '\\\\"').
-								replace(/\\\\"/g, '\\\\\\"').
-								replace(/\t/g, '\\t').
-								replace(/&/g, "&amp;").
-								*/
-								split(/"[\n\r\t ,]+"/), this.echo);
-					} else if (
-						attrType === "MFInt32"||
-						attrType === "MFImage"||
-						attrType === "SFImage"||
-						attrType === "SFColorRGBA"||
-						attrType === "MFColorRGBA") {
-						attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseInt);
-					} else if (
-						attrType === "SFColor"||
-						attrType === "MFColor"||
-						attrType === "SFVec2f"||
-						attrType === "SFVec3f"||
-						attrType === "SFVec4f"||
-						attrType === "MFVec2f"||
-						attrType === "MFVec3f"||
-						attrType === "MFVec4f"||
-						attrType === "SFMatrix3f"||
-						attrType === "SFMatrix4f"||
-						attrType === "MFMatrix3f"||
-						attrType === "MFMatrix4f"||
-						attrType === "SFRotation"||
-						attrType === "MFRotation"||
-						attrType === "MFFloat"||
-						attrType === "SFVec2d"||
-						attrType === "SFVec3d"||
-						attrType === "SFVec4d"||
-						attrType === "MFVec2d"||
-						attrType === "MFVec3d"||
-						attrType === "MFVec4d"||
-						attrType === "SFMatrix3d"||
-						attrType === "SFMatrix4d"||
-						attrType === "MFMatrix3d"||
-						attrType === "MFMatrix4d"||
-						attrType === "MFDouble") {
-						attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseFloat);
-					} else if (
-						attrType === "MFBool") {
-						attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), this.parseBool);
-					} else {
-						attrval = attrs[a].nodeValue.replace(/\\?"/g, "\\\"");
+						var attrval = "";
+						if (attrs[a].nodeValue === 'NULL') {
+							attrval = "null";
+						} else if (attrType === "SFString") {
+							attrval = attrs[a].nodeValue.
+								replace(/\\n/g, "\n").
+								replace(/\\\\/g, "\\");
+							if (attrs[a].nodeValue !== attrval) {
+								// console.error("Replacing", attrs[a].nodeValue, attrval);
+							}
+						} else if (attrType === "SFInt32") {
+							attrval = parseInt(attrs[a].nodeValue);
+						} else if (attrType === "SFFloat") {
+							attrval = parseFloat(attrs[a].nodeValue);
+						} else if (attrType === "SFDouble" ||
+							attrType === "SFTime") {
+							attrval = parseFloat(attrs[a].nodeValue);
+						} else if (attrType === "SFBool") {
+							attrval = this.parseBool(attrs[a].nodeValue);
+						} else if (attrType === "MFString") {
+							attrval = this.descendSubArray(
+								attrs[a].nodeValue.
+									substr(1, attrs[a].nodeValue.length-2).
+									replace(/\\"/g, '"').
+									replace(/\\\\/g, "\\").
+								/*
+									replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
+									replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+									replace(/\\\\\\\\"/g, '\\\\"').
+									replace(/\\\\"/g, '\\\\\\"').
+									replace(/\t/g, '\\t').
+									replace(/&/g, "&amp;").
+									*/
+									split(/"[\n\r\t ,]+"/), this.echo);
+						} else if (
+							attrType === "MFInt32"||
+							attrType === "MFImage"||
+							attrType === "SFImage"||
+							attrType === "SFColorRGBA"||
+							attrType === "MFColorRGBA") {
+							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseInt);
+						} else if (
+							attrType === "SFColor"||
+							attrType === "MFColor"||
+							attrType === "SFVec2f"||
+							attrType === "SFVec3f"||
+							attrType === "SFVec4f"||
+							attrType === "MFVec2f"||
+							attrType === "MFVec3f"||
+							attrType === "MFVec4f"||
+							attrType === "SFMatrix3f"||
+							attrType === "SFMatrix4f"||
+							attrType === "MFMatrix3f"||
+							attrType === "MFMatrix4f"||
+							attrType === "SFRotation"||
+							attrType === "MFRotation"||
+							attrType === "MFFloat"||
+							attrType === "SFVec2d"||
+							attrType === "SFVec3d"||
+							attrType === "SFVec4d"||
+							attrType === "MFVec2d"||
+							attrType === "MFVec3d"||
+							attrType === "MFVec4d"||
+							attrType === "SFMatrix3d"||
+							attrType === "SFMatrix4d"||
+							attrType === "MFMatrix3d"||
+							attrType === "MFMatrix4d"||
+							attrType === "MFDouble") {
+							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseFloat);
+						} else if (
+							attrType === "MFBool") {
+							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), this.parseBool);
+						} else {
+							attrval = attrs[a].nodeValue.replace(/\\?"/g, "\\\"");
+						}
+						fields["@"+attrmethod] = attrval;
 					}
-					fields["@"+attrmethod] = attrval;
+				} catch (e) {
+					console.error(e);
 				}
-			} catch (e) {
-				console.error(e);
+				attrType = "";
 			}
-			attrType = "";
 		}
 		return fields;
 	},
@@ -221,7 +223,7 @@ DOM2JSONSerializer.prototype = {
 		if (at === "containerField") {
 			value = "children";
 		}
-		if (element !== null) {
+		if (element !== null && typeof element !== 'undefined') {
 			for (var a in element.attributes) {
 				var attrs = element.attributes;
 				try {

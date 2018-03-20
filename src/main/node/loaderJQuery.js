@@ -82,7 +82,8 @@ function loadXmlBrowsers(xml) {
 			alert("Problems with X_ITE xml", e);
 			console.error(e);
 		}
-		$('#x3domxml').get()[0].innerHTML = xml;
+		// put everthing inside Scene into the browser's Scene's innerHTML
+		$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
 		x3dom.reload();
 	}
 }
@@ -727,7 +728,8 @@ function loadSchema(json, file, doValidate, success, failure) {
 		$.getJSON('../schema/draft-06-JSONSchema.json', function(metaschemajson) {
 		    // try {
 		      ajv.addMetaSchema(metaschemajson);
-		      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
+		      $.getJSON("../schema/x3d-6.0-JSONSchema.json", function(schemajson) {
+		      // $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 			   // try {
 			      ajv.addSchema(schemajson);
 			      validated_version = ajv.compile(schemajson);
