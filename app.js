@@ -16,6 +16,9 @@ var FL = require('./src/main/node/Flattener')
 var flattener = FL.flattener;
 
 var runAndSend = require('./src/main/node/runAndSend');
+var DOM2JSONSerializer = require("./src/main/node/DOM2JSONSerializer");
+var mapToMethod = require("./src/main/node/mapToMethod");
+var fieldTypes = require("./src/main/node/fieldTypes");
 
 
 var www = config.x3dcode;
@@ -35,7 +38,14 @@ app.use(express.static('src/main/html'));
 app.use(express.static('src/main'));
 
 function convertX3dToJson(res, infile, outfile, next) {
-	console.error("Calling converter on "+infile);
+	var serializer = DOM2JSONSerializer();
+	console.error("Calling converter "+serializer+" on "+infile);
+	var str = new serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
+	var json = JSON.parse(str);
+	json = PROTOS.externalPrototypeExpander(outfile, json);
+	json = flattener(json);
+	send(res, json, "text/json", next);
+	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
 		// console.error("Calling extern proto expander");
 		json = PROTOS.externalPrototypeExpander(outfile, json);
@@ -43,6 +53,7 @@ function convertX3dToJson(res, infile, outfile, next) {
 		// console.error("Json", json);
 		send(res, json, "text/json", next);
 	});
+	*/
 }
 
 function send(res, data, type, next) {
