@@ -345,9 +345,8 @@ JavaScriptSerializer.prototype = {
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
-					replace(/'/g, "\\'").
-					replace(/""/g, '" "');
-				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock('"+y.split("\n").join("\\n\'+\n\'")+"'))";
+					replace(/"/g, '\\"');
+				str += "\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
@@ -355,7 +354,7 @@ JavaScriptSerializer.prototype = {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"')
+						replace(/"/g, '\\"');
 						/*
 						replace(/\\n/g, "\\\\n")
 						*/
