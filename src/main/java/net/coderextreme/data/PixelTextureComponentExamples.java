@@ -166,32 +166,32 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"0".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"0"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"1".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"1"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"2".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"2"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"3".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"3"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"4".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"4"});
   }
 }
 }

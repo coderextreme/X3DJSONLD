@@ -118,12 +118,12 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Character entity substitutions:".replaceAll("\"", "\\\""),"empty string \"\" skips a line:".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"apostrophe  '  is &apos;".replaceAll("\"", "\\\""),"ampersand & is &amp;".replaceAll("\"", "\\\""),"quote mark  \"  is &quot;".replaceAll("\"", "\\\""),"backslash \\ is X3D escape character".replaceAll("\"", "\\\""),"double backslash \\\\ is X3D backslash \\ character".replaceAll("\"", "\\\""),"Pi Π is &#928; XML character entity".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Character entity substitutions:","empty string \"\" skips a line:","","apostrophe  '  is &apos;","ampersand & is &amp;","quote mark  \"  is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 }

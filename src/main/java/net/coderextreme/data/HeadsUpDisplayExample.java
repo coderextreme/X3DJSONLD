@@ -122,7 +122,7 @@ ProtoInstance0
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HeadsUpDisplayPrototype.x3d#HeadsUpDisplay".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay".replaceAll("\"", "\\\""),"HeadsUpDisplayPrototype.wrl#HeadsUpDisplay".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"});
   }
 }
 protected class MFFloat1 {
@@ -147,17 +147,17 @@ protected class MFColor4 {
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HUD text stays fixed".replaceAll("\"", "\\\""),"while user navigates".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"HUD text stays fixed","while user navigates"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../HelloWorld.x3d".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d".replaceAll("\"", "\\\""),"../HelloWorld.wrl".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"});
   }
 }
 }

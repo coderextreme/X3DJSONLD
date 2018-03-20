@@ -153,27 +153,27 @@ public class CoordinateAxes {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Y".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Y"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"SANS".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"SANS"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"X".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"X"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Z".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"Z"});
   }
 }
 }

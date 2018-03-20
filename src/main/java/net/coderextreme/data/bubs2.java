@@ -174,32 +174,32 @@ ProtoInstanceObject ProtoInstance3 = null;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/BK.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/BK.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/BT.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/BT.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/FR.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/FR.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/LF.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/LF.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/RT.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/RT.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/TP.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/TP.png".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"});
   }
 }
 }

@@ -143,7 +143,7 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg".replaceAll("\"", "\\\"")});
+    return new MFStringObject(new java.lang.String[] {"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"});
   }
 }
 protected class MFInt327 {
