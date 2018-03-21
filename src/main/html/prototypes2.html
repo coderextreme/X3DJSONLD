@@ -80,7 +80,7 @@ function getJSON(url) {
 }
 // Done with include
 
-	function loadX3DJSON(selector, url) {
+	function loadX3DJSON(url) {
 		getJSON(url).then(function(json) {
 			var parent = CreateElement('X3D');
 			json = protoExpander.prototypeExpander(url, json, "");
@@ -107,7 +107,7 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','../data/bubs.json');
+		loadX3DJSON('../data/bubs.json');
 	});
     </script>
 </html>

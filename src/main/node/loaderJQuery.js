@@ -416,8 +416,11 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 					return false;
 				}
 			}
-			$(selector+" X3D").remove();
-			$(selector).append(element);
+			// $(selector+" X3D").remove();
+			// $(selector).append(element);
+			$(selector).empty();
+			$(element.querySelector("Scene")).children().appendTo(selector);
+			$(selector+" script").remove(); // remove all scripts
 			try {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
