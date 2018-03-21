@@ -9595,9 +9595,6 @@
 					"$ref": "#/definitions/-metadata"
 				}
 			},
-			"required": [
-				"@name"
-			],
 			"additionalProperties": false
 		},
 		"ProtoInterface": {
