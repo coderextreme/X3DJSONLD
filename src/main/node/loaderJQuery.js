@@ -420,7 +420,8 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			// $(selector).append(element);
 			$(selector).empty();
 			$(element.querySelector("Scene")).children().appendTo(selector);
-			$(selector+" script").remove(); // remove all scripts
+			// remove all text nodes in scripts (and fields too, sigh)
+			$(selector+" script").empty();
 			try {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {

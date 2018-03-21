@@ -18257,7 +18257,7 @@ x3dom.fields.MFVec3f.parse = function(str) {
 
 x3dom.fields.MFVec3f.prototype.copy = function()
 {
-    x3dom.fields.MFVec3f.copy(this);
+    return x3dom.fields.MFVec3f.copy(this);
 };
 
 x3dom.fields.MFVec3f.prototype.setValueByStr = function(str) {
@@ -18280,6 +18280,13 @@ x3dom.fields.MFVec3f.prototype.toGL = function() {
     return a;
 };
 
+x3dom.fields.MFVec3f.prototype.toString = function () {
+    var str = "";
+    for (var i=0, n=this.length; i<n; i++) {
+		 str = str + this[i].toString() + " ";
+    }
+    return str;
+};
 
 ///////////////////////////////////////////////////////////////////////////////
 /** MFVec2f constructor.
@@ -30414,6 +30421,9 @@ x3dom.registerNodeType(
                                         this._vf[field] = (msg.toLowerCase() == "true");
                                     break;
                                 case "string":
+                                    this._vf[field] = msg;
+                                    break;
+				default:
                                     this._vf[field] = msg;
                                     break;
                             }
