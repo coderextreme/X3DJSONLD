@@ -43,7 +43,10 @@
 				X3DOM
 			</td>
 			<td>
-    				<div id="x3domjson"></div>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='900px' height='450px' backend='webgl'>
+		<Scene id="x3domjson">
+		</Scene>
+    </X3D>
 			</td>
 		<tr>
 		</tr>
@@ -61,8 +64,10 @@
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
 			var element = ConvertToX3DOM(json, "X3D", parent, url); // returns an element
-			$(selector+" X3D").remove();
-			$(selector).append(element); // add to X3DOM
+			// $(selector+" X3D").remove();
+			// $(selector).append(element); // add to X3DOM
+			$(selector).empty();
+			$(element.querySelector("Scene")).children().appendTo(selector);
 			load_X_ITE_DOM(element); // loads into X_ITE element on page.
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
