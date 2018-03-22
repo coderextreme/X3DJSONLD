@@ -55,6 +55,9 @@ function ProcessJSON(json, file) {
 			classes.push("if (typeof X3DJSON === 'undefined') {");
 			classes.push("	var X3DJSON = {};");
 			classes.push("}");
+			classes.push("if (typeof __eventTime === 'undefined') {");
+			classes.push("	var __eventTime = 0;");
+			classes.push("}");
 			processScripts(json, classes, undefined, routecode, loopItems);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')

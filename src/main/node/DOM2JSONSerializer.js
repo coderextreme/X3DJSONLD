@@ -5,6 +5,8 @@
 function DOM2JSONSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
+	this.fieldTypeMapping = {};
+	this.DEFMapping = {};
 }
 
 

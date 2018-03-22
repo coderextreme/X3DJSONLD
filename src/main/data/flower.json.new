@@ -94,11 +94,11 @@
                         -1
                       ],
                       "@creaseAngle": 0,
-                      "@DEF": "ifs",
+                      "@DEF": "Orbit",
                       "@solid": true,
                       "-coord": {
                         "Coordinate": {
-                          "@DEF": "crd",
+                          "@DEF": "OrbitCoordinates",
                           "@point": [
                             0,
                             0,
@@ -121,7 +121,7 @@
         },
         {
           "Script": {
-            "@DEF": "FlowerScript",
+            "@DEF": "OrbitScript",
             "field": [
               {
                 "@accessType": "inputOnly",
@@ -139,66 +139,84 @@
                 "@type": "MFInt32"
               }
             ],
+            "-children": [
+              {
+                "#comment": ""
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
+              },
+              {
+                "#comment": "\t"
+              }
+            ],
             "#sourceText": [
               "ecmascript:",
-              "    ",
+              "",
               "var e = 5;",
               "var f = 5;",
               "var g = 5;",
               "var h = 5;",
-              "var resolution = 150;",
+              "var resolution = 100;",
               "var t = 0;",
               "var p = 0;",
               "",
               "function initialize() {",
-              "     var localci = new Array();",
-              "     var ci = 0;",
-              "     var buf = [];",
-              "     for (var i = 0; i < resolution-1; i++) {",
-              "     \tfor (var j = 0; j < resolution-1; j++) {",
-              "\t     localci[ci] = i*resolution+j;",
-              "\t     localci[ci+1] = i*resolution+j+1;",
-              "\t     localci[ci+2] = (i+1)*resolution+j+1;",
-              "\t     localci[ci+3] = (i+1)*resolution+j;",
-              "\t     localci[ci+4] = -1;",
-              "\t     buf.push(localci[ci]);",
-              "\t     buf.push(localci[ci+1]);",
-              "\t     buf.push(localci[ci+3]);",
-              "\t     buf.push(localci[ci+4]);",
-              "",
-              "\t     buf.push(localci[ci+1]);",
-              "\t     buf.push(localci[ci+2]);",
-              "\t     buf.push(localci[ci+3]);",
-              "\t     buf.push(localci[ci+4]);",
-              "\t     ci += 5;",
+              "     generateCoordinates(resolution);",
+              "     var localci = [];",
+              "     for ( i = 0; i < resolution-1; i++) {",
+              "     \tfor ( j = 0; j < resolution-1; j++) {",
+              "\t     localci.push(i*resolution+j);",
+              "\t     localci.push(i*resolution+j+1);",
+              "\t     localci.push((i+1)*resolution+j+1);",
+              "\t     localci.push((i+1)*resolution+j);",
+              "\t     localci.push(-1);",
               "\t}",
               "    }",
-              "    updateCoordinates(resolution);",
-              "    coordIndexes = new x3dom.fields.MFInt32(buf);",
+              "    coordIndexes = new MFInt32(localci);",
               "}",
               "",
-              "function updateCoordinates(resolution) {",
+              "function generateCoordinates(resolution) {",
               "     theta = 0.0;",
               "     phi = 0.0;",
               "     delta = (2 * 3.141592653) / (resolution-1);",
-              "     var buf = [];",
+              "     var localc = [];",
               "     for ( i = 0; i < resolution; i++) {",
               "     \tfor ( j = 0; j < resolution; j++) {",
-              "\t\trho = e + f * Math.cos(g * theta + t) * Math.cos(h * phi + p);",
-              "\t\tvar coord = new x3dom.fields.SFVec3f(",
+              "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+              "\t\tlocalc.push(new SFVec3f(",
               "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
               "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
               "\t\t\trho * Math.sin(phi)",
-              "\t\t);",
-              "\t     \tbuf.push(coord);",
+              "\t\t));",
               "\t\ttheta += delta;",
               "\t}",
               "\tphi += delta;",
               "     }",
-              "     coordinates = new x3dom.fields.MFVec3f(buf);",
+              "     coordinates = new MFVec3f(localc);",
               "}",
               "",
-              "function set_fraction() {",
+              "function set_fraction(fraction, eventTime) {",
+              "\tt += 0.5;",
+              "\tp += 0.5;",
               "\tchoice = Math.floor(Math.random() * 4);",
               "\tswitch (choice) {",
               "\tcase 0:",
@@ -214,8 +232,6 @@
               "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
               "\t\tbreak;",
               "\t}",
-              "\tt += 0.5;",
-              "\tp += 0.5;",
               "\tif (f < 1) {",
               "\t\tf = 10;",
               "\t}",
@@ -225,7 +241,7 @@
               "\tif (h < 1) {",
               "\t\th = 4;",
               "\t}",
-              "\tupdateCoordinates(resolution);",
+              "\tgenerateCoordinates(resolution);",
               "}"
             ]
           }
@@ -239,17 +255,17 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "FlowerScript",
+            "@fromNode": "OrbitScript",
             "@fromField": "coordIndexes",
-            "@toNode": "ifs",
+            "@toNode": "Orbit",
             "@toField": "coordIndex"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "FlowerScript",
+            "@fromNode": "OrbitScript",
             "@fromField": "coordinates",
-            "@toNode": "crd",
+            "@toNode": "OrbitCoordinates",
             "@toField": "point"
           }
         },
@@ -257,7 +273,7 @@
           "ROUTE": {
             "@fromNode": "Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "FlowerScript",
+            "@toNode": "OrbitScript",
             "@toField": "set_fraction"
           }
         }

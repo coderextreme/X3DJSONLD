@@ -160,7 +160,9 @@ function loadScripts(json, selector) {
 	var totalScript = "var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text;
 	try {
 		// TODO eval is evil
-		eval(totalScript);
+		if (typeof totalScript != 'undefined') {
+			eval(totalScript);
+		}
 	} catch (e) {
 		console.error(totalScript, e);
 	}
@@ -168,7 +170,9 @@ function loadScripts(json, selector) {
 	// run initializers, initializeOnly routes, and eventHandler initialization, proxies
 	try {
 		// TODO eval is evil
-		eval(routes.text);
+		if (typeof routes.text != 'undefined') {
+			eval(routes.text);
+		}
 	} catch (e) {
 		console.error(routes.text, e);
 	}
@@ -176,7 +180,9 @@ function loadScripts(json, selector) {
 	X3DJSON.runRoutes = function() {
 		try {
 			// TODO eval is evil
-			eval(loop.text);
+			if (typeof loop.text != 'undefined') {
+				eval(loop.text);
+			}
 			x3dom.reload();  // This may be necessary
 		} catch (e) {
 			console.error(loop.text, e);
