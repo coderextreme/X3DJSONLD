@@ -44,15 +44,23 @@
         <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
         <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
 	<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
+	<!--
         <field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="f" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="g" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="h" type="SFFloat" value="5"/>
+        <field accessType="inputOutput" name="resolution" type="SFInt32" value="100"/>
+	-->
 <![CDATA[
 ecmascript:
 
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
+
 function initialize() {
-     resolution = 100;
      generateCoordinates(resolution);
      var localci = [];
      for ( i = 0; i < resolution-1; i++) {
@@ -112,7 +120,6 @@ function set_fraction(fraction, eventTime) {
 	if (h < 1) {
 		h = 4;
 	}
-	resolution = 100;
 	generateCoordinates(resolution);
 }
       ]]></Script>
@@ -120,12 +127,21 @@ function set_fraction(fraction, eventTime) {
         <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
         <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
 	<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
+	<!--
         <field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="f" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="g" type="SFFloat" value="5"/>
         <field accessType="inputOutput" name="h" type="SFFloat" value="5"/>
+        <field accessType="inputOutput" name="resolution" type="SFInt32" value="100"/>
+	-->
 <![CDATA[
 ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
 
 function initialize() {
      resolution = 100;
@@ -189,21 +205,20 @@ function set_fraction(fraction, eventTime) {
 	if (h < 1) {
 		h = 4;
 	}
-	resolution = 100;
 	generateCoordinates(resolution);
 }
       ]]></Script>
     </Group>
-    <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="coordIndex" toNode="Orbit"/>
-    <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="point" toNode="OrbitCoordinates"/>
-    <ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitScript"/>
+    <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex"/>
+    <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"/>
+    <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"/>
 
-    <ROUTE fromField="coordIndexes" fromNode="OrbitScript2" toField="coordIndex" toNode="Orbit2"/>
-    <ROUTE fromField="coordinates" fromNode="OrbitScript2" toField="point" toNode="OrbitCoordinates2"/>
-    <ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitScript2"/>
+    <ROUTE fromNode="OrbitScript2" fromField="coordIndexes" toNode="Orbit2" toField="coordIndex"/>
+    <ROUTE fromNode="OrbitScript2" fromField="coordinates" toNode="OrbitCoordinates2" toField="point"/>
+    <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript2" toField="set_fraction"/>
 
-    <ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitPath"/>
-    <ROUTE fromField="value_changed" fromNode="OrbitPath" toField="rotation" toNode="OrbitTransform"/>
-    <ROUTE fromField="value_changed" fromNode="OrbitPath" toField="rotation" toNode="OrbitTransform2"/>
+    <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitPath" toField="set_fraction"/>
+    <ROUTE fromNode="OrbitPath" fromField="value_changed" toNode="OrbitTransform" toField="rotation"/>
+    <ROUTE fromNode="OrbitPath" fromField="value_changed" toNode="OrbitTransform2" toField="rotation"/>
   </Scene>
 </X3D>

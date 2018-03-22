@@ -315,8 +315,8 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 	var dispatchTable = {
 		IndexedFaceSet: function(LDNode, output, transform) {
 			if (typeof LDNode.coordIndex === 'object') {
-				console.log("coordindex in transform", LDNode.coordIndex);
-				console.log("point in transform", LDNode.Coordinate.point);
+				// console.log("coordindex in transform", LDNode.coordIndex);
+				// console.log("point in transform", LDNode.Coordinate.point);
 				output.push("solid "+(LDNode.DEF || LDNode.nodeName));
 				for (var face in LDNode.coordIndex) { // each face
 					var f = LDNode.coordIndex[face];
