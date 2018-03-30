@@ -187,6 +187,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE2000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -258,6 +259,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };
@@ -355,6 +358,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE4000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -426,6 +430,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };
@@ -523,6 +529,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE6000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -594,6 +601,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };
@@ -691,6 +700,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE8000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -762,6 +772,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };
@@ -859,6 +871,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE10000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -930,6 +943,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };
@@ -1027,6 +1042,7 @@ X3DJSON['Script']['DECLFlowerProto_INSTANCE12000_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -1098,6 +1114,8 @@ ecmascript:
 					this.proxy.d = 4;
 				}
 			}
+
+
 ;
 
 };

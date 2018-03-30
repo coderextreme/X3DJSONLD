@@ -228,6 +228,7 @@ X3DJSON['Script']['UrlSelector'] = function() {
 	};
 	this.old = new SFInt32(-1);
 
+
 ecmascript:
         
 	this.set_fraction = function ( f, tm ) {
@@ -244,7 +245,9 @@ ecmascript:
                     this.proxy.top[0] = this.proxy.topUrls[side];
                     this.proxy.bottom[0] = this.proxy.bottomUrls[side];
             }
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -326,6 +329,8 @@ X3DJSON['Script']['Animate'] = function() {
 	};
 	this.pdelta = new SFFloat(0);
 
+
+
 ecmascript:
 
 
@@ -360,7 +365,9 @@ ecmascript:
 	if (this.proxy.d > 20) {
 		this.proxy.d = 4;
 	}
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -1,13 +1,15 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Geospatial"
+          "@name": "Geospatial",
+          "@level": 1
         }
       ],
       "meta": [
@@ -33,11 +35,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -48,14 +50,10 @@
     "Scene": {
       "-children": [
         {
-          "#comment": [
-            "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
-          ]
+          "#comment": "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
         },
         {
-          "#comment": [
-            "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
-          ]
+          "#comment": "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
         },
         {
           "GeoViewpoint": {
@@ -71,8 +69,7 @@
               0,
               0
             ],
-            "@description": "Tour Views",
-            "@retainUserOffsets": false
+            "@description": "Tour Views"
           }
         },
         {
@@ -254,8 +251,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

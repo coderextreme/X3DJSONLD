@@ -1,61 +1,63 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Interchange",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "gridBack.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "gridBack.x3d"
         },
         {
-          "@content": "Checkerboard grid background for X3D/VRML materials selection.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Checkerboard grid background for X3D/VRML materials selection."
         },
         {
-          "@content": "David Roussel",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "David Roussel"
         },
         {
-          "@content": "James Harney, Don Brutzman NPS",
-          "@name": "translator"
+          "@name": "translator",
+          "@content": "James Harney, Don Brutzman NPS"
         },
         {
-          "@content": "8 April 2002",
-          "@name": "created"
+          "@name": "created",
+          "@content": "8 April 2002"
         },
         {
-          "@content": "12 January 2014",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "12 January 2014"
         },
         {
-          "@content": "http://vrmlstuff.free.fr/materials",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "http://vrmlstuff.free.fr/materials"
         },
         {
-          "@content": "Universal Media Material Library",
-          "@name": "subject"
+          "@name": "subject",
+          "@content": "Universal Media Material Library"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "18 March 2018"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "19 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -599,8 +601,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

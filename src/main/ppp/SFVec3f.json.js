@@ -155,6 +155,7 @@ X3DJSON['Script']['Bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
+
 ecmascript:
 			
 	this.newBubble = function () {
@@ -191,6 +192,8 @@ ecmascript:
 	this.initialize = function () {
 			     this.newBubble();
 			}
+
+
 ;
 
 };

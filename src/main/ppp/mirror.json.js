@@ -228,6 +228,7 @@ X3DJSON['Script']['UrlSelector'] = function() {
 	};
 	this.old = new SFInt32(-1);
 
+
 ecmascript:
         
 	this.set_fraction = function ( f, tm ) {
@@ -245,7 +246,9 @@ ecmascript:
 		    this.proxy.top_changed[0] = this.proxy.topUrls[side];
 		    this.proxy.bottom_changed[0] = this.proxy.bottomUrls[side];
             }
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

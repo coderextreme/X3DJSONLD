@@ -163,7 +163,8 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -211,7 +212,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
         }
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -284,7 +286,8 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -332,7 +335,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
         }
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -405,7 +409,8 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -453,7 +458,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
         }
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

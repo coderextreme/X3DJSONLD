@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -22,8 +24,8 @@
           "@content": "5 May 2015"
         },
         {
-          "@content": "05 May 2017",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "05 May 2017"
         },
         {
           "@name": "description",
@@ -39,11 +41,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -85,9 +87,7 @@
                 "Group": {
                   "-children": [
                     {
-                      "#comment": [
-                        "left"
-                      ]
+                      "#comment": "left"
                     },
                     {
                       "Transform": {
@@ -165,17 +165,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "right"
-                      ]
+                      "#comment": "right"
                     },
                     {
                       "Transform": {
@@ -292,8 +288,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE_RightSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -306,9 +301,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "up"
-                      ]
+                      "#comment": "up"
                     },
                     {
                       "Transform": {
@@ -420,8 +413,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE_UpSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -434,9 +426,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "down"
-                      ]
+                      "#comment": "down"
                     },
                     {
                       "Transform": {
@@ -514,17 +504,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "center"
-                      ]
+                      "#comment": "center"
                     },
                     {
                       "Transform": {
@@ -586,8 +572,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE_CenterSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -618,6 +603,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -626,7 +612,8 @@
                     "",
                     "function set_rightstring(rightstr) {",
                     "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -646,6 +633,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -654,7 +642,8 @@
                     "",
                     "function set_upstring(upstr) {",
                     "\tuplines = new MFString(upstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -674,6 +663,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -682,7 +672,8 @@
                     "",
                     "function set_centerstring(centerstr) {",
                     "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -768,9 +759,7 @@
                 "Group": {
                   "-children": [
                     {
-                      "#comment": [
-                        "left"
-                      ]
+                      "#comment": "left"
                     },
                     {
                       "Transform": {
@@ -848,17 +837,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "right"
-                      ]
+                      "#comment": "right"
                     },
                     {
                       "Transform": {
@@ -975,8 +960,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE1000_RightSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -989,9 +973,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "up"
-                      ]
+                      "#comment": "up"
                     },
                     {
                       "Transform": {
@@ -1103,8 +1085,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE1000_UpSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -1117,9 +1098,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "down"
-                      ]
+                      "#comment": "down"
                     },
                     {
                       "Transform": {
@@ -1197,17 +1176,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "center"
-                      ]
+                      "#comment": "center"
                     },
                     {
                       "Transform": {
@@ -1269,8 +1244,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE1000_CenterSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -1301,6 +1275,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1309,7 +1284,8 @@
                     "",
                     "function set_rightstring(rightstr) {",
                     "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -1329,6 +1305,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1337,7 +1314,8 @@
                     "",
                     "function set_upstring(upstr) {",
                     "\tuplines = new MFString(upstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -1357,6 +1335,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1365,7 +1344,8 @@
                     "",
                     "function set_centerstring(centerstr) {",
                     "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -1456,9 +1436,7 @@
                 "Group": {
                   "-children": [
                     {
-                      "#comment": [
-                        "left"
-                      ]
+                      "#comment": "left"
                     },
                     {
                       "Transform": {
@@ -1536,17 +1514,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "right"
-                      ]
+                      "#comment": "right"
                     },
                     {
                       "Transform": {
@@ -1663,8 +1637,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE2000_RightSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -1677,9 +1650,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "up"
-                      ]
+                      "#comment": "up"
                     },
                     {
                       "Transform": {
@@ -1791,8 +1762,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE2000_UpSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -1805,9 +1775,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        "down"
-                      ]
+                      "#comment": "down"
                     },
                     {
                       "Transform": {
@@ -1885,17 +1853,13 @@
                             }
                           },
                           {
-                            "#comment": [
-                              "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
-                            ]
+                            "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                           }
                         ]
                       }
                     },
                     {
-                      "#comment": [
-                        "center"
-                      ]
+                      "#comment": "center"
                     },
                     {
                       "Transform": {
@@ -1957,8 +1921,7 @@
                           {
                             "StringSensor": {
                               "@DEF": "DECLProcess_INSTANCE2000_CenterSensor",
-                              "@enabled": false,
-                              "@deletionAllowed": true
+                              "@enabled": false
                             }
                           },
                           {
@@ -1989,6 +1952,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1997,7 +1961,8 @@
                     "",
                     "function set_rightstring(rightstr) {",
                     "\trightlines = new MFString(rightstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -2017,6 +1982,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -2025,7 +1991,8 @@
                     "",
                     "function set_upstring(upstr) {",
                     "\tuplines = new MFString(upstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -2045,6 +2012,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -2053,7 +2021,8 @@
                     "",
                     "function set_centerstring(centerstr) {",
                     "\tcenterlines = new MFString(centerstr);",
-                    "}"
+                    "}",
+                    ""
                   ]
                 }
               },
@@ -2133,8 +2102,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

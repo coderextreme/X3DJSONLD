@@ -1,7 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -26,11 +29,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -61,13 +64,18 @@
         {},
         {
           "Transform": {
-            "@translation": "0 0 0",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
             "-children": [
               {
                 "Transform": {
                   "-children": [
                     {
                       "Shape": {
+                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
                         "-geometry": {
                           "Box": {
                             "@size": [
@@ -93,15 +101,19 @@
                       }
                     }
                   ],
-                  "@translation": "0 0 0"
-                },
-                "@DEF": "DECLanyShape_INSTANCE3000"
+                  "@translation": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
               },
               {
                 "Transform": {
                   "-children": [
                     {
                       "Shape": {
+                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
                         "-geometry": {
                           "Box": {
                             "@size": [
@@ -127,15 +139,19 @@
                       }
                     }
                   ],
-                  "@translation": "2 0 0"
-                },
-                "@DEF": "DECLanyShape_INSTANCE4000"
+                  "@translation": [
+                    2,
+                    0,
+                    0
+                  ]
+                }
               },
               {
                 "Transform": {
                   "-children": [
                     {
                       "Shape": {
+                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
                         "-geometry": {
                           "Box": {
                             "@size": [
@@ -161,13 +177,15 @@
                       }
                     }
                   ],
-                  "@translation": "-2 0 0"
-                },
-                "@DEF": "DECLanyShape_INSTANCE5000"
+                  "@translation": [
+                    -2,
+                    0,
+                    0
+                  ]
+                }
               }
             ]
-          },
-          "@DEF": "DECLthree_threepi"
+          }
         },
         {
           "Transform": {
@@ -178,16 +196,14 @@
             ],
             "-children": [
               {
-                "Transform": {
-                  "@USE": "DECLthree_threepi"
+                "Shape": {
+                  "@USE": "DECLthree_threepi_FIELDmyShape_box"
                 }
               }
             ]
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

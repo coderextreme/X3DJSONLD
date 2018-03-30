@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -37,11 +39,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -52,12 +54,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Background": {
@@ -94,11 +91,6 @@
               {
                 "Transform": {
                   "@DEF": "DECLflower_INSTANCE_transform",
-                  "@translation": [
-                    0,
-                    0,
-                    0
-                  ],
                   "-children": [
                     {
                       "Shape": {
@@ -397,18 +389,13 @@
                         },
                         "-children": [
                           {
-                            "#comment": [
-                              "",
-                              "\t\t\t<Sphere></Sphere>",
-                              "\t\t\t"
-                            ]
+                            "#comment": "<Sphere></Sphere>"
                           }
                         ],
                         "-geometry": {
                           "IndexedFaceSet": {
                             "@convex": false,
                             "@DEF": "DECLflower_INSTANCE_Orbit",
-                            "@creaseAngle": 0,
                             "-coord": {
                               "Coordinate": {
                                 "@DEF": "DECLflower_INSTANCE_OrbitCoordinates"
@@ -451,13 +438,13 @@
                       "@type": "SFTime"
                     },
                     {
-                      "@accessType": "inputOutput",
                       "@name": "coordinates",
+                      "@accessType": "inputOutput",
                       "@type": "MFVec3f"
                     },
                     {
-                      "@accessType": "outputOnly",
                       "@name": "coordIndexes",
+                      "@accessType": "outputOnly",
                       "@type": "MFInt32"
                     },
                     {
@@ -498,6 +485,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "\t\t\tfunction newBubble() {",
                     "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -601,6 +589,8 @@
                     "\t\t\t\tresolution = 100;",
                     "\t\t\t\tupdateCoordinates(resolution);",
                     "\t\t\t}",
+                    "",
+                    "",
                     ""
                   ]
                 }
@@ -660,27 +650,15 @@
                 }
               },
               {
-                "#comment": [
-                  "",
-                  "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>",
-                  "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>",
-                  "\t\t"
-                ]
+                "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
               },
               {
-                "#comment": [
-                  "",
-                  "            <ProtoInstance name=\"flower\"/>",
-                  "            <ProtoInstance name=\"flower\"/>",
-                  "\t    "
-                ]
+                "#comment": "<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
               }
             ]
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

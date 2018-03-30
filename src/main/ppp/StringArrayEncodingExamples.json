@@ -1,77 +1,79 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "StringArrayEncodingExamples.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "StringArrayEncodingExamples.x3d"
         },
         {
-          "@content": "Demonstrate simple X3D MFString (string array) encoding.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Demonstrate simple X3D MFString (string array) encoding."
         },
         {
-          "@content": "27 May 2017",
-          "@name": "created"
+          "@name": "created",
+          "@content": "27 May 2017"
         },
         {
-          "@content": "27 May 2017",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "27 May 2017"
         },
         {
-          "@content": "Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Don Brutzman"
         },
         {
-          "@content": "X3dHeaderPrototypeSyntaxExamples.x3d",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "X3dHeaderPrototypeSyntaxExamples.x3d"
         },
         {
-          "@content": "X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString",
-          "@name": "specificationSection"
+          "@name": "specificationSection",
+          "@content": "X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"
         },
         {
-          "@content": "http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString",
-          "@name": "specificationUrl"
+          "@name": "specificationUrl",
+          "@content": "http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"
         },
         {
-          "@content": "X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString",
-          "@name": "specificationSection"
+          "@name": "specificationSection",
+          "@content": "X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"
         },
         {
-          "@content": "http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString",
-          "@name": "specificationUrl"
+          "@name": "specificationUrl",
+          "@content": "http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"
         },
         {
-          "@content": "X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString",
-          "@name": "specificationSection"
+          "@name": "specificationSection",
+          "@content": "X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"
         },
         {
-          "@content": "http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString",
-          "@name": "specificationUrl"
+          "@name": "specificationUrl",
+          "@content": "http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "18 March 2018"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "19 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -107,14 +109,10 @@
                 ],
                 "-children": [
                   {
-                    "#comment": [
-                      " alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' "
-                    ]
+                    "#comment": "alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
                   },
                   {
-                    "#comment": [
-                      " alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
-                    ]
+                    "#comment": "alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
                   }
                 ],
                 "-fontStyle": {
@@ -144,8 +142,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

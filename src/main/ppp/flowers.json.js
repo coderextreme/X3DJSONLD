@@ -203,6 +203,7 @@ X3DJSON['Script']['DECLflower_INSTANCE_Bounce'] = function() {
 		return value;
 	};
 	this.pdelta = new SFFloat(0.5);
+
 ecmascript:
 			
 	this.newBubble = function () {
@@ -315,6 +316,8 @@ ecmascript:
 				resolution = 100;
 				this.updateCoordinates(resolution);
 			}
+
+
 ;
 
 };

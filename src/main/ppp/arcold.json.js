@@ -148,6 +148,7 @@ X3DJSON['Script']['DECLpoint_G1_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f();
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -155,7 +156,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -213,6 +216,7 @@ X3DJSON['Script']['DECLpoint_G2_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f();
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -220,7 +224,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -278,6 +284,7 @@ X3DJSON['Script']['DECLpoint_G3_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f();
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -285,7 +292,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -343,6 +352,7 @@ X3DJSON['Script']['DECLpoint_G4_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f();
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -350,7 +360,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -382,7 +394,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = X3DJSON.nodeUtil('DECLpoint_G1_node');
+	this.startnode = new SFNode();
 	this.set_endnode = function (value) {
 		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -390,7 +402,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = X3DJSON.nodeUtil('DECLpoint_G2_node');
+	this.endnode = new SFNode();
 	this.set_transnode = function (value) {
 		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -398,7 +410,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = X3DJSON.nodeUtil('trans1');
+	this.transnode = new SFNode();
 	this.set_rotscalenode = function (value) {
 		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -406,7 +418,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = X3DJSON.nodeUtil('rotscale1');
+	this.rotscalenode = new SFNode();
 	this.set_startpoint = function (value) {
 		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -423,7 +435,8 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -453,9 +466,9 @@ ecmascript:
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
 		if (typeof trafo !== 'undefined') {
-			X3DJSON.nodeUtil('trans1', 'translation',  trafo.translation);
-			X3DJSON.nodeUtil('rotscale1', 'rotation',  trafo.rotation);
-			X3DJSON.nodeUtil('rotscale1', 'scale',  trafo.scale);
+			this.proxy.transnode.translation = trafo.translation;
+			this.proxy.rotscalenode.rotation = trafo.rotation;
+			this.proxy.rotscalenode.scale = trafo.scale;
 		} else {
 			console.error("this.recompute returned undefined");
 		}
@@ -463,18 +476,20 @@ ecmascript:
         ;
 
 	this.initialize = function (){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+            this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_startpoint = function (val,t){
-            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+            this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_endpoint = function (val,t){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
-        };
+            this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -506,7 +521,7 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = X3DJSON.nodeUtil('DECLpoint_G1_node');
+	this.startnode = new SFNode();
 	this.set_endnode = function (value) {
 		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -514,7 +529,7 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = X3DJSON.nodeUtil('DECLpoint_G3_node');
+	this.endnode = new SFNode();
 	this.set_transnode = function (value) {
 		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -522,7 +537,7 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = X3DJSON.nodeUtil('trans2');
+	this.transnode = new SFNode();
 	this.set_rotscalenode = function (value) {
 		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -530,7 +545,7 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = X3DJSON.nodeUtil('rotscale2');
+	this.rotscalenode = new SFNode();
 	this.set_startpoint = function (value) {
 		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -547,7 +562,8 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -577,9 +593,9 @@ ecmascript:
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
 		if (typeof trafo !== 'undefined') {
-			X3DJSON.nodeUtil('trans2', 'translation',  trafo.translation);
-			X3DJSON.nodeUtil('rotscale2', 'rotation',  trafo.rotation);
-			X3DJSON.nodeUtil('rotscale2', 'scale',  trafo.scale);
+			this.proxy.transnode.translation = trafo.translation;
+			this.proxy.rotscalenode.rotation = trafo.rotation;
+			this.proxy.rotscalenode.scale = trafo.scale;
 		} else {
 			console.error("this.recompute returned undefined");
 		}
@@ -587,18 +603,20 @@ ecmascript:
         ;
 
 	this.initialize = function (){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
+            this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_startpoint = function (val,t){
-            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
+            this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_endpoint = function (val,t){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G3_node', 'translation'));
-        };
+            this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -630,7 +648,7 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = X3DJSON.nodeUtil('DECLpoint_G1_node');
+	this.startnode = new SFNode();
 	this.set_endnode = function (value) {
 		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -638,7 +656,7 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = X3DJSON.nodeUtil('DECLpoint_G4_node');
+	this.endnode = new SFNode();
 	this.set_transnode = function (value) {
 		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -646,7 +664,7 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = X3DJSON.nodeUtil('trans3');
+	this.transnode = new SFNode();
 	this.set_rotscalenode = function (value) {
 		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -654,7 +672,7 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = X3DJSON.nodeUtil('rotscale3');
+	this.rotscalenode = new SFNode();
 	this.set_startpoint = function (value) {
 		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -671,7 +689,8 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -701,9 +720,9 @@ ecmascript:
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
 		if (typeof trafo !== 'undefined') {
-			X3DJSON.nodeUtil('trans3', 'translation',  trafo.translation);
-			X3DJSON.nodeUtil('rotscale3', 'rotation',  trafo.rotation);
-			X3DJSON.nodeUtil('rotscale3', 'scale',  trafo.scale);
+			this.proxy.transnode.translation = trafo.translation;
+			this.proxy.rotscalenode.rotation = trafo.rotation;
+			this.proxy.rotscalenode.scale = trafo.scale;
 		} else {
 			console.error("this.recompute returned undefined");
 		}
@@ -711,18 +730,20 @@ ecmascript:
         ;
 
 	this.initialize = function (){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
+            this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_startpoint = function (val,t){
-            this.recompute_and_route(val || X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
+            this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_endpoint = function (val,t){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val || X3DJSON.nodeUtil('DECLpoint_G4_node', 'translation'));
-        };
+            this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

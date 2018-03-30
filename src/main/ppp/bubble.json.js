@@ -155,6 +155,7 @@ X3DJSON['Script']['DECLBubble_bubbleA_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
+
 ecmascript:
 
 	this.initialize = function () {
@@ -202,7 +203,8 @@ ecmascript:
 		this.proxy.translation.z = 0;
 		this.initialize();
 	}
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -27,11 +29,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -48,13 +50,7 @@
               0,
               5
             ],
-            "@description": "Only Viewpoint",
-            "@orientation": [
-              0,
-              0,
-              1,
-              0
-            ]
+            "@description": "Only Viewpoint"
           }
         },
         {
@@ -161,13 +157,16 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}"
+                    "\t\t}",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -306,13 +305,16 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}"
+                    "\t\t}",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -451,13 +453,16 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}"
+                    "\t\t}",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -596,13 +601,16 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}"
+                    "\t\t}",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -654,11 +662,6 @@
               {
                 "Transform": {
                   "@DEF": "DECLx3dconnector_connector1_trans",
-                  "@translation": [
-                    0,
-                    0,
-                    0
-                  ],
                   "-children": [
                     {
                       "Transform": {
@@ -698,32 +701,18 @@
                   "@DEF": "DECLx3dconnector_connector1_S1",
                   "field": [
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "startnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G1_node"
-                          }
-                        }
-                      ]
-                    },
-                    {
                       "@accessType": "initializeOnly",
-                      "@name": "endnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G2_node"
-                          }
-                        }
-                      ]
+                      "@type": "SFNode"
                     },
                     {
-                      "@accessType": "inputOutput",
+                      "@name": "endnode",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFNode"
+                    },
+                    {
                       "@name": "position",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -734,8 +723,8 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOutput",
                       "@name": "rotscale",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -746,18 +735,19 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_startpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_endpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
+                    "",
+                    "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",
                     "\t    if (typeof endpoint === 'undefined') {",
                     "\t\treturn;",
@@ -801,7 +791,8 @@
                     "        function set_endpoint(val,t){",
                     "            recompute_and_route(startnode.translation,val);",
                     "        }",
-                    "            "
+                    "",
+                    ""
                   ]
                 }
               }
@@ -814,11 +805,6 @@
               {
                 "Transform": {
                   "@DEF": "DECLx3dconnector_connector2_trans",
-                  "@translation": [
-                    0,
-                    0,
-                    0
-                  ],
                   "-children": [
                     {
                       "Transform": {
@@ -858,32 +844,18 @@
                   "@DEF": "DECLx3dconnector_connector2_S1",
                   "field": [
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "startnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G1_node"
-                          }
-                        }
-                      ]
-                    },
-                    {
                       "@accessType": "initializeOnly",
-                      "@name": "endnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G3_node"
-                          }
-                        }
-                      ]
+                      "@type": "SFNode"
                     },
                     {
-                      "@accessType": "inputOutput",
+                      "@name": "endnode",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFNode"
+                    },
+                    {
                       "@name": "position",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -894,8 +866,8 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOutput",
                       "@name": "rotscale",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -906,18 +878,19 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_startpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_endpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
+                    "",
+                    "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",
                     "\t    if (typeof endpoint === 'undefined') {",
                     "\t\treturn;",
@@ -961,7 +934,8 @@
                     "        function set_endpoint(val,t){",
                     "            recompute_and_route(startnode.translation,val);",
                     "        }",
-                    "            "
+                    "",
+                    ""
                   ]
                 }
               }
@@ -974,11 +948,6 @@
               {
                 "Transform": {
                   "@DEF": "DECLx3dconnector_connector3_trans",
-                  "@translation": [
-                    0,
-                    0,
-                    0
-                  ],
                   "-children": [
                     {
                       "Transform": {
@@ -1018,32 +987,18 @@
                   "@DEF": "DECLx3dconnector_connector3_S1",
                   "field": [
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "startnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G1_node"
-                          }
-                        }
-                      ]
-                    },
-                    {
                       "@accessType": "initializeOnly",
-                      "@name": "endnode",
-                      "@type": "SFNode",
-                      "-children": [
-                        {
-                          "Group": {
-                            "@USE": "DECLpoint_G4_node"
-                          }
-                        }
-                      ]
+                      "@type": "SFNode"
                     },
                     {
-                      "@accessType": "inputOutput",
+                      "@name": "endnode",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFNode"
+                    },
+                    {
                       "@name": "position",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -1054,8 +1009,8 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOutput",
                       "@name": "rotscale",
+                      "@accessType": "inputOutput",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -1066,18 +1021,19 @@
                       ]
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_startpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     },
                     {
-                      "@accessType": "inputOnly",
                       "@name": "set_endpoint",
+                      "@accessType": "inputOnly",
                       "@type": "SFVec3f"
                     }
                   ],
                   "#sourceText": [
-                    "ecmascript:",
+                    "",
+                    "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",
                     "\t    if (typeof endpoint === 'undefined') {",
                     "\t\treturn;",
@@ -1121,7 +1077,8 @@
                     "        function set_endpoint(val,t){",
                     "            recompute_and_route(startnode.translation,val);",
                     "        }",
-                    "            "
+                    "",
+                    ""
                   ]
                 }
               }
@@ -1177,8 +1134,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

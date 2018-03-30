@@ -1,61 +1,63 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Interactive",
     "@version": "3.1",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "SimpleCamera.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "SimpleCamera.x3d"
         },
         {
-          "@content": "Simple video camera shape",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Simple video camera shape"
         },
         {
-          "@content": "Jeff Weekley and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Jeff Weekley and Don Brutzman"
         },
         {
-          "@content": "2 June 2009",
-          "@name": "created"
-        },
-        {
-          "@content": "2 June 2009",
-          "@name": "translated"
-        },
-        {
-          "@content": "13 January 2014",
-          "@name": "modified"
-        },
-        {
-          "@content": "CameraExamples.x3d",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
-          "@name": "generator"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../../license.html",
-          "@name": "license"
+          "@name": "created",
+          "@content": "2 June 2009"
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "2 June 2009"
+        },
+        {
+          "@name": "modified",
+          "@content": "13 January 2014"
+        },
+        {
+          "@name": "reference",
+          "@content": "CameraExamples.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "19 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -181,9 +183,7 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": [
-                                      " Universal Media Library: Metals 30 "
-                                    ]
+                                    "#comment": "Universal Media Library: Metals 30"
                                   }
                                 ]
                               }
@@ -4043,8 +4043,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

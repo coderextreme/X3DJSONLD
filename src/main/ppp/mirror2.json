@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -37,11 +39,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -176,9 +178,7 @@
                             "@language": "GLSL",
                             "-children": [
                               {
-                                "#comment": [
-                                  "http://hypertextbook.com/facts/2005/JustinChe.shtml"
-                                ]
+                                "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml"
                               }
                             ],
                             "field": [
@@ -245,9 +245,7 @@
                             "@language": "GLSL",
                             "-children": [
                               {
-                                "#comment": [
-                                  "http://hypertextbook.com/facts/2005/JustinChe.shtml"
-                                ]
+                                "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml"
                               }
                             ],
                             "field": [
@@ -463,6 +461,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "        function set_fraction( f, tm ) {",
                     "\t    var side = Math.floor(f*frontUrls.length);",
@@ -479,7 +478,9 @@
                     "\t\t    top_changed[0] = topUrls[side];",
                     "\t\t    bottom_changed[0] = bottomUrls[side];",
                     "            }",
-                    "        }"
+                    "        }",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -598,8 +599,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

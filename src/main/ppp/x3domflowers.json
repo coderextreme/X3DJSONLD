@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -27,11 +29,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -42,12 +44,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Background": {
@@ -88,11 +85,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE2000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -239,13 +231,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -343,6 +329,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -409,6 +396,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -496,11 +485,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE4000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -647,13 +631,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -751,6 +729,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -817,6 +796,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -904,11 +885,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE6000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -1055,13 +1031,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -1159,6 +1129,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1225,6 +1196,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -1312,11 +1285,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE8000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -1463,13 +1431,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -1567,6 +1529,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1633,6 +1596,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -1720,11 +1685,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE10000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -1871,13 +1831,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -1975,6 +1929,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -2041,6 +1996,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -2128,11 +2085,6 @@
                     {
                       "Transform": {
                         "@DEF": "DECLFlowerProto_INSTANCE12000_transform",
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
                         "-children": [
                           {
                             "Shape": {
@@ -2279,13 +2231,7 @@
                                         ],
                                         "-children": [
                                           {
-                                            "#comment": [
-                                              "",
-                                              "                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-                                              "                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-                                              "                                </field>",
-                                              "\t\t\t\t"
-                                            ]
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                           }
                                         ],
                                         "-parts": [
@@ -2383,6 +2329,7 @@
                                 }
                               ],
                               "#sourceText": [
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -2449,6 +2396,8 @@
                                 "\t\t\t\t\td = 4;",
                                 "\t\t\t\t}",
                                 "\t\t\t}",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -2534,8 +2483,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

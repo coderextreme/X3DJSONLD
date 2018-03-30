@@ -122,7 +122,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.clearSpanWidth;
 		return value;
 	};
-	this.clearSpanWidth = new SFFloat("5");
+	this.clearSpanWidth = new SFFloat(5);
 	this.set_riseHeight = function (value) {
 		this.proxy.riseHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -130,7 +130,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.riseHeight;
 		return value;
 	};
-	this.riseHeight = new SFFloat("2.5");
+	this.riseHeight = new SFFloat(2.5);
 	this.set_depth = function (value) {
 		this.proxy.depth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -138,7 +138,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.depth;
 		return value;
 	};
-	this.depth = new SFFloat("2");
+	this.depth = new SFFloat(2);
 	this.set_topAbutmentHeight = function (value) {
 		this.proxy.topAbutmentHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -146,7 +146,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.topAbutmentHeight;
 		return value;
 	};
-	this.topAbutmentHeight = new SFFloat("0.6");
+	this.topAbutmentHeight = new SFFloat(0.6);
 	this.set_pierWidth = function (value) {
 		this.proxy.pierWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -154,7 +154,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.pierWidth;
 		return value;
 	};
-	this.pierWidth = new SFFloat("1");
+	this.pierWidth = new SFFloat(1);
 	this.set_pierHeight = function (value) {
 		this.proxy.pierHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -162,7 +162,7 @@ X3DJSON['Script']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = functi
 		var value = this.pierHeight;
 		return value;
 	};
-	this.pierHeight = new SFFloat("2");
+	this.pierHeight = new SFFloat(2);
 	this.set_archHalf = function (value) {
 		this.proxy.archHalf = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};

@@ -171,7 +171,8 @@ X3DJSON['Script']['RandomTourTime'] = function() {
 		return value;
 	};
 	this.orientation = undefined;
-ecmascript:
+
+	    ecmascript:
                
 	this.set_cycle = function (value) {
                         var ov = this.proxy.lastKey;
@@ -179,7 +180,7 @@ ecmascript:
                             this.proxy.lastKey = Math.round(Math.random()*(this.proxy.positions.length-1));
                         } while (this.proxy.lastKey === ov);
                         var vc = this.proxy.lastKey;
-                        
+
                         this.proxy.orientation_changed = new MFRotation();
                         this.proxy.orientation_changed[0] = new SFRotation(this.proxy.orientations[ov].x, this.proxy.orientations[ov].y, this.proxy.orientations[ov].z, this.proxy.orientations[ov].w);
                         this.proxy.orientation_changed[1] = new SFRotation(this.proxy.orientations[vc].x, this.proxy.orientations[vc].y, this.proxy.orientations[vc].z, this.proxy.orientations[vc].w);
