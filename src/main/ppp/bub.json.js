@@ -139,6 +139,7 @@ X3DJSON['Script']['DECLBubble_INSTANCE_Bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -167,7 +168,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -216,6 +218,7 @@ X3DJSON['Script']['DECLBubble_INSTANCE1000_Bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -244,7 +247,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -293,6 +297,7 @@ X3DJSON['Script']['DECLBubble_INSTANCE2000_Bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
+
 ecmascript:
 			
 	this.initialize = function () {
@@ -321,7 +326,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

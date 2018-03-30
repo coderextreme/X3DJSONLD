@@ -139,44 +139,43 @@ X3DJSON['Script']['OrbitScript'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-
-
-
 ecmascript:
-
+    
 var e = 5;
 var f = 5;
 var g = 5;
 var h = 5;
+var resolution = 100;
+var t = 0;
+var p = 0;
 
 
 	this.initialize = function () {
-     resolution = 100;
-     this.updateCoordinates(resolution);
-     var cis = [];
+     this.generateCoordinates(resolution);
+     var localci = [];
      for ( i = 0; i < resolution-1; i++) {
      	for ( j = 0; j < resolution-1; j++) {
-	     cis.push(i*resolution+j);
-	     cis.push(i*resolution+j+1);
-	     cis.push((i+1)*resolution+j+1);
-	     cis.push((i+1)*resolution+j);
-	     cis.push(-1);
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
 	}
     }
-    this.proxy.coordIndexes = new MFInt32(cis);
+    this.proxy.coordIndexes = new MFInt32(localci);
 }
 
 ;
 
-	this.updateCoordinates = function (resolution) {
+	this.generateCoordinates = function (resolution) {
      theta = 0.0;
      phi = 0.0;
      delta = (2 * 3.141592653) / (resolution-1);
-     var crds = [];
+     var localc = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		crds.push(new SFVec3f(
+		localc.push(new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
 			rho * Math.sin(phi)
@@ -185,12 +184,14 @@ var h = 5;
 	}
 	phi += delta;
      }
-     this.proxy.coordinates = new MFVec3f(crds);
+     this.proxy.coordinates = new MFVec3f(localc);
 }
 
 ;
 
 	this.set_fraction = function (fraction, eventTime) {
+	t += 0.5;
+	p += 0.5;
 	choice = Math.floor(Math.random() * 4);
 	switch (choice) {
 	case 0:
@@ -215,10 +216,8 @@ var h = 5;
 	if (h < 1) {
 		h = 4;
 	}
-	resolution = 100;
-	this.updateCoordinates(resolution);
-}
-;
+	this.generateCoordinates(resolution);
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -147,6 +147,7 @@ X3DJSON['Script']['DECLnode_nodeA_MoveBall'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
+
  ecmascript:
 					
 	this.set_cycle = function (value) {
@@ -155,7 +156,7 @@ X3DJSON['Script']['DECLnode_nodeA_MoveBall'] = function() {
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
 					}
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -212,6 +213,7 @@ X3DJSON['Script']['DECLnode_nodeB_MoveBall'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
+
  ecmascript:
 					
 	this.set_cycle = function (value) {
@@ -220,7 +222,7 @@ X3DJSON['Script']['DECLnode_nodeB_MoveBall'] = function() {
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
 					}
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -269,6 +271,7 @@ X3DJSON['Script']['DECLcylinder_linkA_MoveCylinder'] = function() {
 		return value;
 	};
 	this.endB = undefined;
+
  ecmascript:
 
                 
@@ -279,7 +282,8 @@ X3DJSON['Script']['DECLcylinder_linkA_MoveCylinder'] = function() {
 		        this.proxy.spine = new MFVec3f([value, this.proxy.spine[1]]);
 		    }
                 }
-        ;
+
+       ;
 
 	this.set_endB = function (value) {
 		    if (typeof this.proxy.spine === "undefined") {
@@ -288,13 +292,14 @@ X3DJSON['Script']['DECLcylinder_linkA_MoveCylinder'] = function() {
 		        this.proxy.spine = new MFVec3f([this.proxy.spine[0], value]);
 		    }
                 }
-        ;
+
+       ;
 
 	this.set_spine = function (value) {
 		    console.error(''+'"');
                     this.proxy.spine = value;
                 }
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

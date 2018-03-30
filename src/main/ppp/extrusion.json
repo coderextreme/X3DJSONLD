@@ -1,8 +1,10 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -31,11 +33,11 @@
         },
         {
           "@name": "translated",
-          "@content": "18 March 2018"
+          "@content": "19 March 2018"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -146,6 +148,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "",
                     "                function set_cycle(value) {",
@@ -153,7 +156,9 @@
                     "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);",
                     "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);",
                     "\t\t        spine = new MFVec3f([endA, endB]);",
-                    "                }"
+                    "                }",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -177,8 +182,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

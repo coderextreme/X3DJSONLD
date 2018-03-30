@@ -203,7 +203,8 @@ X3DJSON['Script']['BindingSequencerEngine'] = function() {
 		return value;
 	};
 	this.priorInputvalue = new SFInt32(-1);
-ecmascript:
+
+        ecmascript:
 
 
 	this.initialize = function ()
@@ -222,7 +223,7 @@ ecmascript:
     // new value provided
     this.proxy.priorInputvalue = inputValue;
     // console.error ('timeEvent inputValue=' + inputValue);
-        
+
     // mimics user execution of Figure 4.1 steps t_0 through t_8
     if (inputValue == 0)
     {
@@ -303,7 +304,9 @@ ecmascript:
 	this.view5Bound = function (inputValue)
 {
     console.error (', this.view5Bound ' + (inputValue));
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

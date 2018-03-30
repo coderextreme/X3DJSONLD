@@ -148,6 +148,7 @@ X3DJSON['Script']['DECLpoint_G1_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f([new SFVec3f ( 0 , 0 , 0 ),new SFVec3f ( 0 , 5 , 0 )]);
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -155,7 +156,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -213,6 +216,7 @@ X3DJSON['Script']['DECLpoint_G2_MB1'] = function() {
 	};
 	this.keyValue = new MFVec3f([new SFVec3f ( 0 , 0 , 0 ),new SFVec3f ( 0 , 5 , 0 )]);
 
+
 ecmascript:
 		
 	this.set_location = function (value) {
@@ -220,7 +224,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -252,7 +258,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = X3DJSON.nodeUtil('DECLpoint_G1_node');
+	this.startnode = new SFNode();
 	this.set_endnode = function (value) {
 		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -260,7 +266,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = X3DJSON.nodeUtil('DECLpoint_G2_node');
+	this.endnode = new SFNode();
 	this.set_position = function (value) {
 		this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -293,7 +299,8 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-ecmascript:
+
+            ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -334,19 +341,20 @@ ecmascript:
         ;
 
 	this.initialize = function (){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+            this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_startpoint = function (val,t){
-            this.recompute_and_route(val,X3DJSON.nodeUtil('DECLpoint_G2_node', 'translation'));
+            this.recompute_and_route(val,this.proxy.endnode.translation);
         }
         ;
 
 	this.set_endpoint = function (val,t){
-            this.recompute_and_route(X3DJSON.nodeUtil('DECLpoint_G1_node', 'translation'),val);
+            this.recompute_and_route(this.proxy.startnode.translation,val);
         }
-            ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

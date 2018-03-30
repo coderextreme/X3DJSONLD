@@ -1,93 +1,95 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "CameraExamples.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "CameraExamples.x3d"
         },
         {
-          "@content": "Camera, CameraShot and CameraMove examples that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Camera, CameraShot and CameraMove examples that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."
         },
         {
-          "@content": "Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint.",
-          "@name": "documentation"
+          "@name": "documentation",
+          "@content": "Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."
         },
         {
-          "@content": "Don Brutzman and Jeff Weekley",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Don Brutzman and Jeff Weekley"
         },
         {
-          "@content": "18 June 2009",
-          "@name": "created"
+          "@name": "created",
+          "@content": "18 June 2009"
         },
         {
-          "@content": "12 January 2014",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "12 January 2014"
         },
         {
-          "@content": "Schematron rules, backed up by initialize() checks",
-          "@name": "TODO"
+          "@name": "TODO",
+          "@content": "Schematron rules, backed up by initialize() checks"
         },
         {
-          "@content": "BeyondViewpointCameraNodesWeb3D2009.pdf",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "BeyondViewpointCameraNodesWeb3D2009.pdf"
         },
         {
-          "@content": "CameraExamplesDemo.mp4",
-          "@name": "MovingImage"
+          "@name": "MovingImage",
+          "@content": "CameraExamplesDemo.mp4"
         },
         {
-          "@content": "http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
         },
         {
-          "@content": "Camera nodes for Viewpoint navigation control",
-          "@name": "subject"
+          "@name": "subject",
+          "@content": "Camera nodes for Viewpoint navigation control"
         },
         {
-          "@content": "CameraPrototypes.x3d",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "CameraPrototypes.x3d"
         },
         {
-          "@content": "CameraExamplesConsoleLog.txt",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "CameraExamplesConsoleLog.txt"
         },
         {
-          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"
         },
         {
-          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "18 March 2018"
+          "@name": "identifier",
+          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "19 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -96,42 +98,30 @@
       ],
       "-children": [
         {
-          "#comment": [
-            " TODO warn if more than one identifier present "
-          ]
+          "#comment": "TODO warn if more than one identifier present"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": [
-            " =============== Camera ============== "
-          ]
+          "#comment": "=============== Camera =============="
         },
         {},
         {
-          "#comment": [
-            " =============== CameraShot ============== "
-          ]
+          "#comment": "=============== CameraShot =============="
         },
         {},
         {
-          "#comment": [
-            " =============== CameraMovement ============== "
-          ]
+          "#comment": "=============== CameraMovement =============="
         },
         {},
         {
-          "#comment": [
-            " =============== OfflineRender ============== "
-          ]
+          "#comment": "=============== OfflineRender =============="
         },
         {},
         {
-          "#comment": [
-            " =============== Lights, camera, action! ============== "
-          ]
+          "#comment": "=============== Lights, camera, action! =============="
         },
         {
           "DirectionalLight": {
@@ -180,19 +170,13 @@
           }
         },
         {
-          "#comment": [
-            " Keep prototype instances in same file while developing, then move later "
-          ]
+          "#comment": "Keep prototype instances in same file while developing, then move later"
         },
         {
-          "#comment": [
-            " We will create examples matching those in the paper "
-          ]
+          "#comment": "We will create examples matching those in the paper"
         },
         {
-          "#comment": [
-            " =============== Camera.SimpleShotsTest ============== "
-          ]
+          "#comment": "=============== Camera.SimpleShotsTest =============="
         },
         {},
         {
@@ -205,9 +189,7 @@
                 }
               },
               {
-                "#comment": [
-                  " initialize clock to match totalDuration of combined Shot Moves "
-                ]
+                "#comment": "initialize clock to match totalDuration of combined Shot Moves"
               },
               {
                 "ROUTE": {
@@ -218,9 +200,7 @@
                 }
               },
               {
-                "#comment": [
-                  " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
-                ]
+                "#comment": "TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator"
               },
               {
                 "ROUTE": {
@@ -311,9 +291,7 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": [
-                                      " Universal Media Library: ArtDeco 5 "
-                                    ]
+                                    "#comment": "Universal Media Library: ArtDeco 5"
                                   }
                                 ]
                               }
@@ -323,9 +301,7 @@
                       }
                     },
                     {
-                      "#comment": [
-                        " Simplify intersection test for user selecting text "
-                      ]
+                      "#comment": "Simplify intersection test for user selecting text"
                     },
                     {
                       "Shape": {
@@ -719,9 +695,7 @@
           }
         },
         {
-          "#comment": [
-            " =============== Camera.AimPointTest ============== "
-          ]
+          "#comment": "=============== Camera.AimPointTest =============="
         },
         {},
         {
@@ -734,9 +708,7 @@
                 }
               },
               {
-                "#comment": [
-                  " initialize clock to match totalDuration of combined Shot Moves "
-                ]
+                "#comment": "initialize clock to match totalDuration of combined Shot Moves"
               },
               {
                 "ROUTE": {
@@ -747,9 +719,7 @@
                 }
               },
               {
-                "#comment": [
-                  " TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator "
-                ]
+                "#comment": "TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator"
               },
               {
                 "ROUTE": {
@@ -844,15 +814,11 @@
           }
         },
         {
-          "#comment": [
-            " TODO build a test once implemented "
-          ]
+          "#comment": "TODO build a test once implemented"
         },
         {},
         {
-          "#comment": [
-            " =============== animate a camera shape to visualize view changes ============== "
-          ]
+          "#comment": "=============== animate a camera shape to visualize view changes =============="
         },
         {
           "Transform": {
@@ -864,9 +830,7 @@
             ],
             "-children": [
               {
-                "#comment": [
-                  " move CameraShape using active Camera "
-                ]
+                "#comment": "move CameraShape using active Camera"
               },
               {
                 "ROUTE": {
@@ -965,9 +929,7 @@
                 }
               },
               {
-                "#comment": [
-                  " Display frustum to show camera view within the scene, toggled by user selecting CameraShape "
-                ]
+                "#comment": "Display frustum to show camera view within the scene, toggled by user selecting CameraShape"
               },
               {},
               {},
@@ -996,9 +958,7 @@
           }
         },
         {
-          "#comment": [
-            " =============== add checkerboard, axes and other things to look at while animating ============== "
-          ]
+          "#comment": "=============== add checkerboard, axes and other things to look at while animating =============="
         },
         {
           "Background": {
@@ -1697,16 +1657,12 @@
           }
         },
         {
-          "#comment": [
-            " ================ CrossHair visualization for center of screen ================ "
-          ]
+          "#comment": "================ CrossHair visualization for center of screen ================"
         },
         {},
         {},
         {
-          "#comment": [
-            " turn on CrossHairInstance when animated camera viewpoints are bound "
-          ]
+          "#comment": "turn on CrossHairInstance when animated camera viewpoints are bound"
         },
         {
           "ROUTE": {
@@ -1725,14 +1681,10 @@
           }
         },
         {
-          "#comment": [
-            " turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> "
-          ]
+          "#comment": "turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/>"
         },
         {
-          "#comment": [
-            " =============== TODO Launch Prototype Example ============== "
-          ]
+          "#comment": "=============== TODO Launch Prototype Example =============="
         },
         {
           "Anchor": {
@@ -1799,8 +1751,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

@@ -132,6 +132,7 @@ X3DJSON['Script']['MoveCylinder'] = function() {
 	};
 	this.spine = new MFVec3f([new SFVec3f ( -50 , -50 , 0 ),new SFVec3f ( 50 , 50 , 0 )]);
 
+
 ecmascript:
 
                 
@@ -140,7 +141,9 @@ ecmascript:
                         var endA = new SFVec3f(this.proxy.spine[0].x*Math.random()*2, this.proxy.spine[0].y*Math.random()*2, this.proxy.spine[0].z*Math.random()*2);
                         var endB = new SFVec3f(this.proxy.spine[1].x*Math.random()*2, this.proxy.spine[1].y*Math.random()*2, this.proxy.spine[1].z*Math.random()*2);
 		        this.proxy.spine = new MFVec3f([endA, endB]);
-                };
+                }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

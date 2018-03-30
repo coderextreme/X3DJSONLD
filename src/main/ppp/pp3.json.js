@@ -131,6 +131,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE_RightSingleToMultiString'] = function() 
 		return value;
 	};
 	this.rightlines = new MFString();
+
 ecmascript:
 
 
@@ -142,7 +143,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -183,6 +185,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE_UpSingleToMultiString'] = function() {
 		return value;
 	};
 	this.uplines = new MFString();
+
 ecmascript:
 
 
@@ -194,7 +197,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -235,6 +239,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = function()
 		return value;
 	};
 	this.centerlines = new MFString();
+
 ecmascript:
 
 
@@ -246,7 +251,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -287,6 +293,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = functio
 		return value;
 	};
 	this.rightlines = new MFString();
+
 ecmascript:
 
 
@@ -298,7 +305,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -339,6 +347,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = function()
 		return value;
 	};
 	this.uplines = new MFString();
+
 ecmascript:
 
 
@@ -350,7 +359,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -391,6 +401,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = functi
 		return value;
 	};
 	this.centerlines = new MFString();
+
 ecmascript:
 
 
@@ -402,7 +413,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -443,6 +455,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = functio
 		return value;
 	};
 	this.rightlines = new MFString();
+
 ecmascript:
 
 
@@ -454,7 +467,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -495,6 +509,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = function()
 		return value;
 	};
 	this.uplines = new MFString();
+
 ecmascript:
 
 
@@ -506,7 +521,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -547,6 +563,7 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = functi
 		return value;
 	};
 	this.centerlines = new MFString();
+
 ecmascript:
 
 
@@ -558,7 +575,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
