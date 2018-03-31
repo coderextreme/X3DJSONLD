@@ -95,7 +95,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 
 		
 		try {
-			var metaschema = fs.readFileSync('../schema/draft-06-JSONSchema.json');
+			var metaschema = fs.readFileSync('../schema/draft-07-JSONSchema.json');
 			var metaschemajson = JSON.parse(metaschema.toString());
 			ajv.addMetaSchema(metaschemajson);
 		} catch (e) {
