@@ -82,7 +82,7 @@ public class flower {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","ANY"}))
+        .addChild(new NavigationInfoObject())
         .addChild(new DirectionalLightObject().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
         .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
@@ -90,22 +90,15 @@ public class flower {
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setTransparency(0.1f).setDiffuseColor(new float[] {0.9f,0.3f,0.3f}).setSpecularColor(new float[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
-            .setGeometry(new IndexedFaceSetObject().setCcw(false).setConvex(false).setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setCreaseAngle(0f).setDEF("Orbit").setSolid(true)
+            .setGeometry(new IndexedFaceSetObject().setCcw(false).setConvex(false).setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setDEF("Orbit")
               .setCoord(new CoordinateObject().setDEF("OrbitCoordinates").setPoint(new MFVec3fObject(new MFVec3f2().getArray()))))))
         .addChild(new ScriptObject().setDEF("OrbitScript")
-          .addField(new fieldObject().setType("SFFloat").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
-          .addField(new fieldObject().setType("MFVec3f").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
-          .addField(new fieldObject().setType("MFInt32").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
-          .addComments(new CommentsBlock(""))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
-          .addComments(new CommentsBlock("	"))
-          .setSourceCode("ecmascript:\n"+
+          .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
+          .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -179,6 +172,7 @@ public class flower {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
         .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))

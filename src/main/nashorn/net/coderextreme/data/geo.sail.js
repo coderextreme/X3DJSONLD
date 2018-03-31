@@ -16,7 +16,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setType(Java.to(["ANY","EXAMINE","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setDEF("Tour").setDescription("Tour Views"))
-        .addComments(new CommentsBlock('Viewpoint position=\'0 0 4\' description=\'sphere in road\'/'))
+        .addComments(new CommentsBlock("Viewpoint position='0 0 4' description='sphere in road'/"))
         .addChild(new BackgroundObject().setBackUrl(Java.to(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"], Java.type("java.lang.String[]"))))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()

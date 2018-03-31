@@ -167,8 +167,7 @@ ProtoInstanceObject ProtoInstance0 = null;
             .addChild(new ROUTEObject().setFromField("pointOut").setFromNode("ArchPrototypeScript").setToField("point").setToNode("ArchChord"))
             .addChild(new ROUTEObject().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("ArchPrototype").setDEF("ArchInstance"))
-        .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
-        .addChild(new InlineObject().setDEF("CoordinateAxes").setUrl(new MFStringObject(new MFString1().getArray()))))      ;
+        .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)")))      ;
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0
@@ -190,11 +189,6 @@ ProtoInstance0
 protected class MFString0 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../node/ArchPrototypeScript.js"});
-  }
-}
-protected class MFString1 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../data/CoordinateAxes.x3d"});
   }
 }
 }

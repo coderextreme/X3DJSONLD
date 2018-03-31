@@ -8,7 +8,6 @@ X3D0.setVersion("3.3")
 Scene1 = SceneObject()
 
 NavigationInfo2 = NavigationInfoObject()
-NavigationInfo2.setType(["EXAMINE","ANY"])
 
 Scene1.addChild(NavigationInfo2)
 DirectionalLight3 = DirectionalLightObject()
@@ -42,7 +41,6 @@ Shape7.setAppearance(Appearance8)
 IndexedFaceSet10 = IndexedFaceSetObject()
 IndexedFaceSet10.setConvex(False)
 IndexedFaceSet10.setDEF("Orbit")
-IndexedFaceSet10.setCreaseAngle(0)
 
 Coordinate11 = CoordinateObject()
 Coordinate11.setDEF("OrbitCoordinates")
@@ -56,43 +54,28 @@ Script12.setDEF("OrbitScript")
 
 field13 = fieldObject()
 field13.setType(fieldObject.TYPE_SFFLOAT)
-field13.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field13.setName("set_fraction")
+field13.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script12.addField(field13)
 field14 = fieldObject()
 field14.setType(fieldObject.TYPE_MFVEC3F)
-field14.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field14.setName("coordinates")
+field14.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script12.addField(field14)
 field15 = fieldObject()
 field15.setType(fieldObject.TYPE_MFINT32)
-field15.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field15.setName("coordIndexes")
+field15.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script12.addField(field15)
 
-Script12.addComments(CommentsBlock(""""""))
+Script12.addComments(CommentsBlock("""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"""))
 
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"""))
-
-Script12.addComments(CommentsBlock("""        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"""))
-
-Script12.addComments(CommentsBlock("""	"""))
-
-Script12.setSourceCode("ecmascript:\n"+
-"    \n"+
+Script12.setSourceCode("\n"+
+"ecmascript:\n"+
+"\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+
@@ -165,6 +148,7 @@ Script12.setSourceCode("ecmascript:\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"\n"+
 "")
 Scene1.addChild(Script12)
 TimeSensor16 = TimeSensorObject()

@@ -99,16 +99,14 @@ public class CloudsProcedural4 {
         .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new MFColor0().getArray())).setSkyColor(new MFColorObject(new MFColor1().getArray())))
         .addChild(new DirectionalLightObject().setAmbientIntensity(1f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
         .addChild(new GroupObject().setDEF("Terrain")
-          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
-            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString2().getArray()))))
+          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f}))
           .addChild(new TransformObject().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {25000f,0f,25000f})
             .addChild(new ShapeObject()
               .setGeometry(new Rectangle2DObject().setSize(new float[] {77000f,55000f}))
               .setAppearance(new AppearanceObject()
-                .setTexture(new ImageTextureObject().setUrl(new MFStringObject(new MFString3().getArray())))))))
+                .setTexture(new ImageTextureObject().setUrl(new MFStringObject(new MFString2().getArray())))))))
         .addChild(new GroupObject().setDEF("Placemarks")
-          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})
-            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString4().getArray())))))
+          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})))
         .addChild(new GroupObject().setDEF("Clouds")
           .addChild(new TransformObject().setDEF("Cumulus"))
           .addChild(new TransformObject().setDEF("Cirrus"))
@@ -520,17 +518,7 @@ protected class MFColor1 {
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"});
-  }
-}
-protected class MFString3 {
-  protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"});
-  }
-}
-protected class MFString4 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"});
   }
 }
 }
