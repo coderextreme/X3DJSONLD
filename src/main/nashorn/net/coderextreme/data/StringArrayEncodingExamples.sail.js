@@ -26,8 +26,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.6,1,0.8], Java.type("float[]"))))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(Java.to(["One, Two, Three","","He said, \"Immel did it!\""], Java.type("java.lang.String[]")))
-            .addComments(new CommentsBlock('alternative XML encoding: Text string=\'"One, Two, Three" " " "He said, \\&quot;Immel did it!\\&quot;"\''))
-            .addComments(new CommentsBlock('alternative Java source: .setString(new String [] {"One, Two, Three", " ", "He said, \\" "Immel did it!\\" ""})'))
+            .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
+            .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
             .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setStyle("BOLD")))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.6,0.4,0.2], Java.type("float[]")))))))      ;

@@ -493,6 +493,11 @@ ProtoInstance72.addFieldValue(fieldValue80)
 Scene13.addChild(ProtoInstance72)
 
 Scene13.addComments(CommentsBlock("""Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"""))
+Inline81 = InlineObject()
+Inline81.setDEF("CoordinateAxes")
+Inline81.setUrl(["../data/CoordinateAxes.x3d"])
+
+Scene13.addChild(Inline81)
 X3D0.setScene(Scene13)
 
 X3D0.toFileX3D("../data/ArchPrototype.new.x3d")
