@@ -176,6 +176,11 @@
                 }
               ]
             }
+          },
+          { "Inline":
+            {
+              "@url":["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"]
+            }
           }
         ]
     }
