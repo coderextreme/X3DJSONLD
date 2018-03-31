@@ -118,6 +118,9 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	classes.log("		};");	
 	classes.log("	}};");
 	classes.log("}");
+	classes.log("if (typeof $ !== 'function') {");
+	classes.log("	$ = function() { return { attr : function() {}, 0 : null }; };");
+	classes.log("}");
 	classes.log("X3DJSON.nodeUtil = function(node, field, value) {");
 	classes.log("		var selector = \""+selector+" [DEF='\"+node+\"']\";");
 	/*
@@ -138,7 +141,9 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	classes.log("			// console.log('set', node, '.', field, '=', value);");
 	classes.log("			*/");
 	classes.log("			try {");
-	classes.log("				element.setFieldValue(field, value);");
+	classes.log("				if (typeof element.setFieldValue === 'function') {");
+	classes.log("					element.setFieldValue(field, value);");
+	classes.log("				}");
 	classes.log("			} catch (e) {");
 	classes.log("				console.log(e);");
 	classes.log("			}");
@@ -527,8 +532,8 @@ function processSource(lines, classes, mypackage) {
 					pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?(\\b)';
 					body = body.replace(new RegExp(pattern, 'g'), "$1X3DJSON.nodeUtil('"+USE+"', '$2')$3");
 				} else {
-					var pattern = '(\\b)('+n+')(\\b)';
-					body = body.replace(new RegExp(pattern, 'g'), "$1this.proxy.$2$3");
+					var pattern = '((?!var).)(\\b)+('+n+')(\\b)';
+					body = body.replace(new RegExp(pattern, 'g'), "$1$2this.proxy.$3$4");
 				}
 				/*
 				var pattern = '(\\b)('+n+'[ \t\n\r]+)=([^=][^;]*);';
