@@ -25,6 +25,7 @@
                 <field name='set_location' accessType='inputOnly' type='SFTime'/>
                 <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
+
 ecmascript:
 		function set_location(value) {
                     old = translation;
@@ -32,6 +33,7 @@ ecmascript:
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
+
 
 ]]>
             </Script>
@@ -55,6 +57,7 @@ ecmascript:
                 <field name='set_location' accessType='inputOnly' type='SFTime'/>
                 <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
+
 ecmascript:
 		function set_location(value) {
                     old = translation;
@@ -62,6 +65,7 @@ ecmascript:
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
+
 
 ]]>
             </Script>
@@ -98,6 +102,7 @@ ecmascript:
                 <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
                 <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
 <![CDATA[
+
 ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -142,6 +147,7 @@ ecmascript:
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
+
 
 ]]>
             </Script>
