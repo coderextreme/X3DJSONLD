@@ -31,7 +31,8 @@ var ProtoInstance0 = null;
         .addChild(new ViewpointObject().setDescription("Heads-up display (HUD)"))
         .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
-          .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view"))))      ;
+          .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
+        .addChild(new InlineObject().setUrl(Java.to(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"], Java.type("java.lang.String[]")))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0

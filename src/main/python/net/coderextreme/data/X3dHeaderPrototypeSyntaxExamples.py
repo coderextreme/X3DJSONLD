@@ -49,7 +49,7 @@ meta9.setContent("14 October 2002")
 head1.addMeta(meta9)
 meta10 = metaObject()
 meta10.setName("modified")
-meta10.setContent("7 May 2017")
+meta10.setContent("27 May 2017")
 
 head1.addMeta(meta10)
 meta11 = metaObject()
@@ -256,12 +256,9 @@ Shape55 = ShapeObject()
 
 
 Shape55.addComments(CommentsBlock("""note that Collision proxy Shape is not rendered"""))
+Sphere56 = SphereObject()
 
-Shape55.addComments(CommentsBlock("""alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"""))
-Text56 = TextObject()
-Text56.setString(["He said, \"Immel did it!\""])
-
-Shape55.setGeometry(Text56)
+Shape55.setGeometry(Sphere56)
 Appearance57 = AppearanceObject()
 
 Material58 = MaterialObject()
