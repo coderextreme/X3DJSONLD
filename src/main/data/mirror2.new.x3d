@@ -65,6 +65,7 @@
                 <field name='old' accessType='inputOutput' type='SFInt32' value='-1'/>
 <![CDATA[
 
+
 ecmascript:
         function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
@@ -82,6 +83,8 @@ ecmascript:
 		    bottom_changed[0] = bottomUrls[side];
             }
         }
+
+
 
 ]]>
             </Script>

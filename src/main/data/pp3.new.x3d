@@ -97,6 +97,7 @@
                     <field name='set_rightstring' accessType='inputOnly' type='SFString'/>
                     <field name='rightlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[
+
 ecmascript:
 
 function initialize() {
@@ -107,12 +108,14 @@ function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
 }
 
+
 ]]>
                 </Script>
                 <Script DEF='UpSingleToMultiString'>
                     <field name='set_upstring' accessType='inputOnly' type='SFString'/>
                     <field name='uplines' accessType='outputOnly' type='MFString'/>
 <![CDATA[
+
 ecmascript:
 
 function initialize() {
@@ -123,12 +126,14 @@ function set_upstring(upstr) {
 	uplines = new MFString(upstr);
 }
 
+
 ]]>
                 </Script>
                 <Script DEF='CenterSingleToMultiString'>
                     <field name='set_centerstring' accessType='inputOnly' type='SFString'/>
                     <field name='centerlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[
+
 ecmascript:
 
 function initialize() {
@@ -138,6 +143,7 @@ function initialize() {
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
 }
+
 
 ]]>
                 </Script>

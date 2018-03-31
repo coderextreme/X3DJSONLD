@@ -44,6 +44,7 @@
                     <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
 
+
 ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
@@ -51,6 +52,8 @@ ecmascript:
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
+
+
 
 ]]>
                 </Script>
@@ -83,6 +86,7 @@ ecmascript:
                     </IS>
 <![CDATA[
 
+
 ecmascript:
 
                 function set_endA(value) {
@@ -92,7 +96,7 @@ ecmascript:
 		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
-                
+
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f([value, value]);
@@ -100,10 +104,12 @@ ecmascript:
 		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
-                
+
                 function set_spine(value) {
                     spine = value;
                 }
+
+
 
 ]]>
                 </Script>
