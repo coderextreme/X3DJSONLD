@@ -94,10 +94,9 @@
             ]
           }
         },
-        {},
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleA_transform",
+            "@DEF": "DECLBubble_bubbleA",
             "-children": [
               {
                 "Shape": {
@@ -174,6 +173,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -214,7 +214,8 @@
                     "    }",
                     "}",
                     "",
-                    "\t\t\t"
+                    "\t\t\t",
+                    ""
                   ]
                 }
               },
@@ -229,7 +230,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_translation"
                 }
               },
@@ -237,7 +238,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_scale"
                 }
               },
@@ -254,7 +255,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleB_transform",
+            "@DEF": "DECLBubble_bubbleB",
             "-children": [
               {
                 "Shape": {
@@ -331,6 +332,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -371,7 +373,8 @@
                     "    }",
                     "}",
                     "",
-                    "\t\t\t"
+                    "\t\t\t",
+                    ""
                   ]
                 }
               },
@@ -386,7 +389,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_translation"
                 }
               },
@@ -394,7 +397,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_scale"
                 }
               },
@@ -411,7 +414,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleC_transform",
+            "@DEF": "DECLBubble_bubbleC",
             "-children": [
               {
                 "Shape": {
@@ -488,6 +491,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -528,7 +532,8 @@
                     "    }",
                     "}",
                     "",
-                    "\t\t\t"
+                    "\t\t\t",
+                    ""
                   ]
                 }
               },
@@ -543,7 +548,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_translation"
                 }
               },
@@ -551,7 +556,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_scale"
                 }
               },
@@ -568,7 +573,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleD_transform",
+            "@DEF": "DECLBubble_bubbleD",
             "-children": [
               {
                 "Shape": {
@@ -645,6 +650,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -685,7 +691,8 @@
                     "    }",
                     "}",
                     "",
-                    "\t\t\t"
+                    "\t\t\t",
+                    ""
                   ]
                 }
               },
@@ -700,7 +707,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_translation"
                 }
               },
@@ -708,7 +715,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toNode": "DECLBubble_transform",
                   "@toField": "set_scale"
                 }
               },

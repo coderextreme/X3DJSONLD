@@ -1,49 +1,55 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "title",
-          "@name": "flowers2.x3d"
+          "@name": "flowers2.x3d",
+          "@content": "title"
         },
         {
-          "@content": "John Carlson",
-          "@name": "author"
+          "@name": "creator",
+          "@content": "John Carlson"
         },
         {
-          "@content": "John Carlson",
-          "@name": "transcriber"
+          "@name": "transcriber",
+          "@content": "John Carlson"
         },
         {
-          "@content": "23 January 2005",
-          "@name": "created"
+          "@name": "created",
+          "@content": "23 January 2005"
         },
         {
-          "@content": "05 May 2017",
-          "@name": "modified"
-        },
-        {
-          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)",
-          "@name": "description"
-        },
-        {
-          "@content": "https://coderextreme.net/x3d/flowers2.x3d",
-          "@name": "url"
-        },
-        {
-          "@content": "manually written",
-          "@name": "generator"
-        },
-        {
-          "@name": "translated",
+          "@name": "modified",
           "@content": "21 March 2018"
         },
         {
+          "@name": "description",
+          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"
+        },
+        {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "manually written"
+        },
+        {
+          "@name": "license",
+          "@content": "http://www.web3d.org/x3d/content/examples/license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "31 March 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
@@ -54,12 +60,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Viewpoint": {
@@ -114,52 +115,6 @@
                   ]
                 }
               },
-              {
-                "Transform": {
-                  "@DEF": "OrbitTransform",
-                  "@translation": [
-                    8,
-                    0,
-                    0
-                  ],
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0,
-                                  0.5,
-                                  1
-                                ],
-                                "@specularColor": [
-                                  0,
-                                  0.5,
-                                  1
-                                ]
-                              }
-                            }
-                          }
-                        },
-                        "-geometry": {
-                          "IndexedFaceSet": {
-                            "@convex": false,
-                            "@DEF": "Orbit",
-                            "@creaseAngle": 0,
-                            "-coord": {
-                              "Coordinate": {
-                                "@DEF": "OrbitCoordinates"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
               {},
               {
                 "Group": {
@@ -197,7 +152,6 @@
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@DEF": "DECLorbit_INSTANCE_Orbit",
-                                  "@creaseAngle": 0,
                                   "-coord": {
                                     "Coordinate": {
                                       "@DEF": "DECLorbit_INSTANCE_OrbitCoordinates"
@@ -215,53 +169,54 @@
                         "@DEF": "DECLorbit_INSTANCE_OrbitScript",
                         "field": [
                           {
-                            "@accessType": "inputOnly",
                             "@name": "set_fraction",
+                            "@accessType": "inputOnly",
                             "@type": "SFFloat"
                           },
                           {
-                            "@accessType": "outputOnly",
                             "@name": "coordinates",
+                            "@accessType": "outputOnly",
                             "@type": "MFVec3f"
                           },
                           {
-                            "@accessType": "outputOnly",
                             "@name": "coordIndexes",
+                            "@accessType": "outputOnly",
                             "@type": "MFInt32"
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "e",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "f",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "g",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "h",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "resolution",
+                            "@accessType": "inputOutput",
                             "@type": "SFInt32",
                             "@value": 50
                           }
                         ],
                         "#sourceText": [
                           "",
+                          "\t\t\t",
                           "\t\t\tecmascript:",
                           "",
                           "\t\t\tvar e = 5;",
@@ -400,7 +355,7 @@
                                         0.5,
                                         1
                                       ],
-                                      "@transparency": 1
+                                      "@transparency": 0.5
                                     }
                                   }
                                 }
@@ -408,7 +363,6 @@
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@DEF": "DECLorbit_INSTANCE1000_Orbit",
-                                  "@creaseAngle": 0,
                                   "-coord": {
                                     "Coordinate": {
                                       "@DEF": "DECLorbit_INSTANCE1000_OrbitCoordinates"
@@ -426,53 +380,54 @@
                         "@DEF": "DECLorbit_INSTANCE1000_OrbitScript",
                         "field": [
                           {
-                            "@accessType": "inputOnly",
                             "@name": "set_fraction",
+                            "@accessType": "inputOnly",
                             "@type": "SFFloat"
                           },
                           {
-                            "@accessType": "outputOnly",
                             "@name": "coordinates",
+                            "@accessType": "outputOnly",
                             "@type": "MFVec3f"
                           },
                           {
-                            "@accessType": "outputOnly",
                             "@name": "coordIndexes",
+                            "@accessType": "outputOnly",
                             "@type": "MFInt32"
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "e",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "f",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "g",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "h",
+                            "@accessType": "inputOutput",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
-                            "@accessType": "inputOutput",
                             "@name": "resolution",
+                            "@accessType": "inputOutput",
                             "@type": "SFInt32",
                             "@value": 50
                           }
                         ],
                         "#sourceText": [
                           "",
+                          "\t\t\t",
                           "\t\t\tecmascript:",
                           "",
                           "\t\t\tvar e = 5;",
@@ -595,8 +550,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

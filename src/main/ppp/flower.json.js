@@ -2,6 +2,9 @@ var x3dom = require('../node/fields.js');
 if (typeof X3DJSON === 'undefined') {
 	var X3DJSON = {};
 }
+if (typeof __eventTime === 'undefined') {
+	var __eventTime = 0;
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -71,7 +74,11 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			$(selector).attr(field, value);
 			// console.log('set', node, '.', field, '=', value);
 			*/
-			element.setFieldValue(field, value);
+			try {
+				element.setFieldValue(field, value);
+			} catch (e) {
+				console.log(e);
+			}
 			return element;
 		} else if (arguments.length > 1) {
 			value = element.getFieldValue(field);
@@ -139,6 +146,7 @@ X3DJSON['Script']['OrbitScript'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
+
 ecmascript:
 
 var e = 5;
@@ -217,7 +225,8 @@ var p = 0;
 		h = 4;
 	}
 	this.generateCoordinates(resolution);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -74,7 +74,11 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			$(selector).attr(field, value);
 			// console.log('set', node, '.', field, '=', value);
 			*/
-			element.setFieldValue(field, value);
+			try {
+				element.setFieldValue(field, value);
+			} catch (e) {
+				console.log(e);
+			}
 			return element;
 		} else if (arguments.length > 1) {
 			value = element.getFieldValue(field);
@@ -183,6 +187,7 @@ X3DJSON['Script']['DECLorbit_INSTANCE_OrbitScript'] = function() {
 	};
 	this.resolution = new SFInt32(50);
 
+			
 			ecmascript:
 
 			var e = 5;
@@ -349,6 +354,7 @@ X3DJSON['Script']['DECLorbit_INSTANCE1000_OrbitScript'] = function() {
 	};
 	this.resolution = new SFInt32(50);
 
+			
 			ecmascript:
 
 			var e = 5;
