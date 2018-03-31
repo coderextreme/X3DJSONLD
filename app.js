@@ -141,75 +141,71 @@ app.get("/data/*.x3d*", function(req, res, next) {
 app.get("/files", function(req, res, next) {
 	var test = req._parsedUrl.query;
 	var json = [];
-	var wrl = [];
 
 	glob(www+'/**/*.wrl', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
-				wrl.push(file.substr(www.length, file.length-www.length));
+				json.push(file.substr(www.length, file.length-www.length));
 				console.error(file);
 			}
-
 		});
-		glob(www+'src/main/wrl/*.wrl', function( err, files ) {
-			if (err) return;
-			files.forEach(function(file) {
-				if (new RegExp(test).test(file)) {
-					wrl.push(file.substr(www.length, file.length-www.length));
-					console.error(file);
-				}
-
-			});
-			if (wrl.length > 0) {
-				send(res, wrl, "model/vrml", next);
+	glob(www+'/**/*.json', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file.substr(www.length, file.length-www.length));
+				console.error(file);
 			}
-			console.log("Got "+wrl+" wrl files");
 		});
-	});
-	glob('src/main/ply/*.ply', function( err, files ) {
+	glob('src/main/data/**', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
 				json.push(file);
 				console.error(file);
 			}
-
 		});
-		glob('src/main/stl/*.stl', function( err, files ) {
-			if (err) return;
-			files.forEach(function(file) {
-				if (new RegExp(test).test(file)) {
-					json.push(file);
-					console.error(file);
-				}
-
-			});
-			glob('src/main/Examples/**/*.json', function( err, files ) {
-				if (err) return;
-				files.forEach(function(file) {
-					if (new RegExp(test).test(file)) {
-						file = file.replace(/src\/main/, '..');
-						json.push(file);
-						console.error(file);
-					}
-
-				});
-				glob(www+'/**/*.json', function( err, files ) {
-					if (err) return;
-					files.forEach(function(file) {
-						if (new RegExp(test).test(file)) {
-							json.push(file.substr(www.length, file.length-www.length));
-							console.error(file);
-						}
-
-					});
-					if (wrl.length === 0) {
-						send(res, json, "text/json", next);
-					}
-				});
-			});
+	glob('src/main/wrl/**', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file);
+				console.error(file);
+			}
 		});
+	glob('src/main/ply/**', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file);
+				console.error(file);
+			}
+		});
+	glob('src/main/stl/**', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file);
+				console.error(file);
+			}
+		});
+	glob('src/main/Examples/**', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file);
+				console.error(file);
+			}
+		});
+	console.log("Sending ", json.length, "files");
+	send(res, json, "text/json", next);
+	});
+	});
+	});
+	});
+	});
+	});
 	});
 });
 

@@ -104,6 +104,7 @@ function filterExisting(event) {
 function filter(event) {
 	$('#file').children().remove().end();
 	$.getJSON("/files?"+event.target.value, function (data) {
+		alert(data);
 		$.each(data, function(i, opt) {
 			$('#file').append($("<option>", { value: opt, text: opt}));
 		});
@@ -416,9 +417,8 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 
 				document.getElementById("dom").onclick = function() {
 					// capture the display
-					convertXmlToJson(serializeDOM(json, element), function(json, path) {
-						updateStl(path);
-					}, url);
+					var json = convertXmlToJson(getXmlString(element), path);
+					updateStl(json);
 					return false;
 				}
 			}
@@ -468,17 +468,17 @@ function updateFromPly(path) {
 }
 
 function updateFromXml(path) {
-	var xml = $('#xml').val();
-	convertXmlToJson(xml, updateFromJson, path);
+	var json = convertXmlToJson($('#xml').val(), path);
+	updateFromJson(json, path);
 }
 
 function loadXml(url) {
 	// gets converted to JSON on server
-	$.getJSON(url, function(json) {
-		updateFromJson(json, url);
-		updateXml(json, url);
+	$.get(url, function(xml) {
+		$('#xml').val(getXmlString(xml));
+		updateFromXml(url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('convert on server to JSON request failed! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
 function loadStl(url) {
@@ -592,7 +592,7 @@ function getXmlString(xml) {
   return xml;
 }
 
-function convertXmlToJson(xmlString, callback, path) {
+function convertXmlToJson(xmlString, path) {
     if (typeof DOM2JSONSerializer !== 'undefined') {
 	try {
 		var doc = null;
@@ -607,17 +607,22 @@ function convertXmlToJson(xmlString, callback, path) {
 		var serializer = new DOM2JSONSerializer();
 		var json = serializer.serializeToString(null, element, path, mapToMethod, fieldTypes);
 		$('#json').val(json);
-	        callback(JSON.parse(json), path);
-		// skip rest, we have our results
-    		return;
-callback(json, path);
+		json = JSON.parse(json);
+		try {
+			// reload XML parser with original
+			loadXmlBrowsers([xmlString]);
+		} catch (e) {
+			alert("Problems with loading xml browsers with XML", e);
+			console.error(e);
+		}
+    		return json;
 	} catch (e) {
 		alert("Problems serializing to JSON", e);
 		console.error(e);
 	}
     }
     $.post("/convert", xmlString, function(json) {
-	    callback(json, path);
+	    return json;
     }, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
@@ -653,13 +658,13 @@ callback(json, path);
 		 try {
 		// console.error('JSON', result);
 			 // console.error(result);
-			var json = getXmlString(result);
+			var xml = getXmlString(result); // pull JSON out of XML
 			 // put bad JSON in the JSON area
-			$('#json').val(json);
-			console.error("Result", json);
-			var js = JSON.parse(json);
+			$('#json').val(xml);
+			console.error("Result", xml);
+			var json = JSON.parse(xml);
 			console.error("Parsing Accomplished")
-			callback(js, path);
+			return json;
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers. Works better if you use node.js as a web server and run the command node app.js from webroot after running npm install"+e);
 			loadXmlBrowsers([xmlString]);
