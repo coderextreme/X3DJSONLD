@@ -2,16 +2,11 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "DirectionalLight": {
@@ -75,7 +70,6 @@
                     "IndexedFaceSet": {
                       "@convex": false,
                       "@DEF": "Orbit",
-                      "@creaseAngle": 0,
                       "-coord": {
                         "Coordinate": {
                           "@DEF": "OrbitCoordinates"
@@ -93,53 +87,30 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@accessType": "inputOnly",
                 "@name": "set_fraction",
+                "@accessType": "inputOnly",
                 "@type": "SFFloat"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "coordinates",
+                "@accessType": "outputOnly",
                 "@type": "MFVec3f"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "coordIndexes",
+                "@accessType": "outputOnly",
                 "@type": "MFInt32"
               }
             ],
             "-children": [
               {
-                "#comment": ""
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"
-              },
-              {
-                "#comment": "\t"
+                "#comment": "<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"
               }
             ],
             "#sourceText": [
+              "",
               "ecmascript:",
-              "    ",
+              "",
               "var e = 5;",
               "var f = 5;",
               "var g = 5;",
@@ -211,7 +182,8 @@
               "\t\th = 4;",
               "\t}",
               "\tgenerateCoordinates(resolution);",
-              "}"
+              "}",
+              ""
             ]
           }
         },
