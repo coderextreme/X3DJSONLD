@@ -24,6 +24,7 @@
             <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
             <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
 <![CDATA[
+
 ecmascript:
 			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
@@ -55,6 +56,8 @@ ecmascript:
 			function initialize() {
 			     newBubble();
 			}
+
+
 
 
 ]]>
