@@ -884,7 +884,9 @@ PROTOS.prototype = {
 				if (p === "ExternProtoDeclare") {
 					console.error("Putting in", newobj);
 					console.error("OLD ", object);
-					newobject = newobj;
+					if (newobj != null && typeof newobj != 'undefined') {
+						newobject = newobj;
+					}
 					console.error("EPD", newobject);
 				} else {
 					newobject[p] = newobj;
