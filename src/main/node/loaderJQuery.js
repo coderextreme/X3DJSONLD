@@ -735,11 +735,13 @@ function loadSchema(json, file, doValidate, success, failure) {
 		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
 		*/
 		
+		/*
 		$.getJSON('../schema/draft-07-JSONSchema.json', function(metaschemajson) {
 		    // try {
 		      ajv.addMetaSchema(metaschemajson);
-		      $.getJSON("../schema/x3d-6.0-JSONSchema.json", function(schemajson) {
-		      // $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
+		      */
+		      // $.getJSON("../schema/x3d-6.0-JSONSchema.json", function(schemajson) {
+		      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 			   // try {
 			      ajv.addSchema(schemajson);
 			      validated_version = ajv.compile(schemajson);
@@ -751,9 +753,11 @@ function loadSchema(json, file, doValidate, success, failure) {
 			}).fail(function(e) {
 			   doValidate(json, validated_version, file, undefined, failure, e);
 			});
+		/*
 		}).fail(function(e) {
 		   doValidate(json, validated_version, file, undefined, failure, e);
 		});
+		*/
 	} else {
 	      doValidate(json, validated_version, file, success, undefined);
 	}
