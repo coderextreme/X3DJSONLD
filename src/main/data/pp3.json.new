@@ -22,8 +22,8 @@
           "@content": "5 May 2015"
         },
         {
-          "@content": "05 May 2017",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "05 May 2017"
         },
         {
           "@name": "description",
@@ -263,8 +263,7 @@
                             {
                               "StringSensor": {
                                 "@DEF": "RightSensor",
-                                "@enabled": false,
-                                "@deletionAllowed": true
+                                "@enabled": false
                               }
                             },
                             {
@@ -389,8 +388,7 @@
                             {
                               "StringSensor": {
                                 "@DEF": "UpSensor",
-                                "@enabled": false,
-                                "@deletionAllowed": true
+                                "@enabled": false
                               }
                             },
                             {
@@ -549,8 +547,7 @@
                             {
                               "StringSensor": {
                                 "@DEF": "CenterSensor",
-                                "@enabled": false,
-                                "@deletionAllowed": true
+                                "@enabled": false
                               }
                             },
                             {
@@ -581,6 +578,7 @@
                       }
                     ],
                     "#sourceText": [
+                      "",
                       "ecmascript:",
                       "",
                       "function initialize() {",
@@ -589,7 +587,8 @@
                       "",
                       "function set_rightstring(rightstr) {",
                       "\trightlines = new MFString(rightstr);",
-                      "}"
+                      "}",
+                      ""
                     ]
                   }
                 },
@@ -609,6 +608,7 @@
                       }
                     ],
                     "#sourceText": [
+                      "",
                       "ecmascript:",
                       "",
                       "function initialize() {",
@@ -617,7 +617,8 @@
                       "",
                       "function set_upstring(upstr) {",
                       "\tuplines = new MFString(upstr);",
-                      "}"
+                      "}",
+                      ""
                     ]
                   }
                 },
@@ -637,6 +638,7 @@
                       }
                     ],
                     "#sourceText": [
+                      "",
                       "ecmascript:",
                       "",
                       "function initialize() {",
@@ -645,7 +647,8 @@
                       "",
                       "function set_centerstring(centerstr) {",
                       "\tcenterlines = new MFString(centerstr);",
-                      "}"
+                      "}",
+                      ""
                     ]
                   }
                 },

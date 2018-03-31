@@ -63,14 +63,15 @@
             <field name='set_orientation' accessType='inputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
             <field name='orientation_changed' accessType='outputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
 <![CDATA[
-ecmascript:
+
+	    ecmascript:
                function set_cycle(value) {
                         var ov = lastKey;
                         do {
                             lastKey = Math.round(Math.random()*(positions.length-1));
                         } while (lastKey === ov);
                         var vc = lastKey;
-                        
+
                         orientation_changed = new MFRotation();
                         orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
                         orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);

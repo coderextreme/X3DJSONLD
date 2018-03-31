@@ -52,12 +52,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Background": {
@@ -95,11 +90,6 @@
                 {
                   "Transform": {
                     "@DEF": "transform",
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "-children": [
                       {
                         "Shape": {
@@ -398,20 +388,13 @@
                           },
                           "-children": [
                             {
-                              "#comment": ""
-                            },
-                            {
-                              "#comment": "\t\t\t<Sphere></Sphere>"
-                            },
-                            {
-                              "#comment": "\t\t\t"
+                              "#comment": "<Sphere></Sphere>"
                             }
                           ],
                           "-geometry": {
                             "IndexedFaceSet": {
                               "@convex": false,
                               "@DEF": "Orbit",
-                              "@creaseAngle": 0,
                               "-coord": {
                                 "Coordinate": {
                                   "@DEF": "OrbitCoordinates"
@@ -454,13 +437,13 @@
                         "@type": "SFTime"
                       },
                       {
-                        "@accessType": "inputOutput",
                         "@name": "coordinates",
+                        "@accessType": "inputOutput",
                         "@type": "MFVec3f"
                       },
                       {
-                        "@accessType": "outputOnly",
                         "@name": "coordIndexes",
+                        "@accessType": "outputOnly",
                         "@type": "MFInt32"
                       },
                       {
@@ -501,6 +484,7 @@
                       }
                     ],
                     "#sourceText": [
+                      "",
                       "ecmascript:",
                       "\t\t\tfunction newBubble() {",
                       "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -604,6 +588,8 @@
                       "\t\t\t\tresolution = 100;",
                       "\t\t\t\tupdateCoordinates(resolution);",
                       "\t\t\t}",
+                      "",
+                      "",
                       ""
                     ]
                   }
@@ -663,16 +649,7 @@
                   }
                 },
                 {
-                  "#comment": ""
-                },
-                {
-                  "#comment": "\t\t<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"
-                },
-                {
-                  "#comment": "\t\t<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
-                },
-                {
-                  "#comment": "\t\t"
+                  "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
                 }
               ]
             }
@@ -687,16 +664,7 @@
                 }
               },
               {
-                "#comment": ""
-              },
-              {
-                "#comment": "            <ProtoInstance name=\"flower\"/>"
-              },
-              {
-                "#comment": "            <ProtoInstance name=\"flower\"/>"
-              },
-              {
-                "#comment": "\t    "
+                "#comment": "<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
               }
             ]
           }

@@ -113,9 +113,6 @@
                                     ],
                                     "-fontStyle": {
                                       "FontStyle": {
-                                        "@family": [
-                                          "SERIF"
-                                        ],
                                         "@justify": [
                                           "MIDDLE",
                                           "MIDDLE"
@@ -200,13 +197,16 @@
                     ],
                     "#sourceText": [
                       "",
+                      "",
                       "ecmascript:",
                       "\t\t\t\t\tfunction set_cycle(value) {",
                       "                                                old = translation;",
                       "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                       "                                                keyValue = new MFVec3f([old, translation]);",
                       "\t\t\t\t\t\t// Browser.println(translation);",
-                      "\t\t\t\t\t}"
+                      "\t\t\t\t\t}",
+                      "",
+                      ""
                     ]
                   }
                 },
@@ -381,6 +381,7 @@
                     },
                     "#sourceText": [
                       "",
+                      "",
                       "ecmascript:",
                       "",
                       "                function set_endA(value) {",
@@ -390,7 +391,7 @@
                       "\t\t        spine = new MFVec3f([value, spine[1]]);",
                       "\t\t    }",
                       "                }",
-                      "                ",
+                      "",
                       "                function set_endB(value) {",
                       "\t\t    if (typeof spine === 'undefined') {",
                       "\t\t        spine = new MFVec3f([value, value]);",
@@ -398,10 +399,12 @@
                       "\t\t        spine = new MFVec3f([spine[0], value]);",
                       "\t\t    }",
                       "                }",
-                      "                ",
+                      "",
                       "                function set_spine(value) {",
                       "                    spine = value;",
-                      "                }"
+                      "                }",
+                      "",
+                      ""
                     ]
                   }
                 },
@@ -429,7 +432,6 @@
               {
                 "PlaneSensor": {
                   "@DEF": "clickGenerator",
-                  "@enabled": true,
                   "@minPosition": [
                     -50,
                     -50
@@ -443,8 +445,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "nodeA",
                   "@name": "node",
+                  "@DEF": "nodeA",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -459,8 +461,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "nodeB",
                   "@name": "node",
+                  "@DEF": "nodeB",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -475,8 +477,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "linkA",
                   "@name": "cylinder",
+                  "@DEF": "linkA",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",

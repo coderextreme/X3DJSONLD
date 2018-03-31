@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta content="TextExamples.x3d" name="title"></meta>
-<meta content="Show different escape-character text examples for embedded quotation marks." name="description"></meta>
-<meta content="Don Brutzman" name="creator"></meta>
-<meta content="7 April 2001" name="created"></meta>
-<meta content="26 April 2016" name="modified"></meta>
-<meta content="Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control." name="warning"></meta>
-<meta content="Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations." name="warning"></meta>
-<meta content="http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d" name="identifier"></meta>
-<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
-<meta content="../license.html" name="license"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="title" content="TextExamples.x3d"></meta>
+<meta name="description" content="Show different escape-character text examples for embedded quotation marks."></meta>
+<meta name="creator" content="Don Brutzman"></meta>
+<meta name="created" content="7 April 2001"></meta>
+<meta name="modified" content="26 April 2016"></meta>
+<meta name="warning" content="Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."></meta>
+<meta name="warning" content="Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Transform translation="0 2 0"><Shape><Text containerField="geometry" string="&quot;Compare special character escaping&quot;"><FontStyle containerField="fontStyle" DEF="testFontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
 </Text>

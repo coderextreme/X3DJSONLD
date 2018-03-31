@@ -22,11 +22,7 @@
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                             <ComposedShader DEF='shader' language='GLSL' class=''>
-                                <!--  -->
-                                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> -->
-                                <!-- <ComposedCubeMapTexture USE="texture"/> -->
-                                <!-- </field> -->
-                                <!--  -->
+                                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                                 <ShaderPart type='VERTEX' url='' class=''>
                                     <IS>
                                         <connect nodeField='url' protoField='vertex'/>
@@ -77,6 +73,7 @@
                         <field name='tdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='pdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
 <![CDATA[
+
 ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
@@ -143,6 +140,8 @@ ecmascript:
 					d = 4;
 				}
 			}
+
+
 
 
 ]]>

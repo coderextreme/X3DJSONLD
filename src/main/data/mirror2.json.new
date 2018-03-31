@@ -459,6 +459,7 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "        function set_fraction( f, tm ) {",
                     "\t    var side = Math.floor(f*frontUrls.length);",
@@ -475,7 +476,9 @@
                     "\t\t    top_changed[0] = topUrls[side];",
                     "\t\t    bottom_changed[0] = bottomUrls[side];",
                     "            }",
-                    "        }"
+                    "        }",
+                    "",
+                    ""
                   ]
                 }
               },

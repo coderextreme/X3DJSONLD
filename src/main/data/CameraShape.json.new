@@ -6,48 +6,48 @@
     "head": {
       "meta": [
         {
-          "@content": "SimpleCamera.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "SimpleCamera.x3d"
         },
         {
-          "@content": "Simple video camera shape",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Simple video camera shape"
         },
         {
-          "@content": "Jeff Weekley and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Jeff Weekley and Don Brutzman"
         },
         {
-          "@content": "2 June 2009",
-          "@name": "created"
+          "@name": "created",
+          "@content": "2 June 2009"
         },
         {
-          "@content": "2 June 2009",
-          "@name": "translated"
+          "@name": "translated",
+          "@content": "2 June 2009"
         },
         {
-          "@content": "13 January 2014",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "13 January 2014"
         },
         {
-          "@content": "CameraExamples.x3d",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "CameraExamples.x3d"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
         },
         {
-          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
         },
         {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
         },
         {
-          "@content": "../../license.html",
-          "@name": "license"
+          "@name": "license",
+          "@content": "../../license.html"
         },
         {
           "@name": "translated",
@@ -181,7 +181,7 @@
                                 ],
                                 "-children": [
                                   {
-                                    "#comment": " Universal Media Library: Metals 30 "
+                                    "#comment": "Universal Media Library: Metals 30"
                                   }
                                 ]
                               }

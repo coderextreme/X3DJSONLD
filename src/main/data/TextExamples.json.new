@@ -6,44 +6,44 @@
     "head": {
       "meta": [
         {
-          "@content": "TextExamples.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "TextExamples.x3d"
         },
         {
-          "@content": "Show different escape-character text examples for embedded quotation marks.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Show different escape-character text examples for embedded quotation marks."
         },
         {
-          "@content": "Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Don Brutzman"
         },
         {
-          "@content": "7 April 2001",
-          "@name": "created"
+          "@name": "created",
+          "@content": "7 April 2001"
         },
         {
-          "@content": "26 April 2016",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "26 April 2016"
         },
         {
-          "@content": "Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control.",
-          "@name": "warning"
+          "@name": "warning",
+          "@content": "Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."
         },
         {
-          "@content": "Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations.",
-          "@name": "warning"
+          "@name": "warning",
+          "@content": "Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"
         },
         {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
         },
         {
-          "@content": "../license.html",
-          "@name": "license"
+          "@name": "license",
+          "@content": "../license.html"
         },
         {
           "@name": "translated",
