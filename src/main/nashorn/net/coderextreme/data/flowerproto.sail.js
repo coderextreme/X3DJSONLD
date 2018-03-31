@@ -16,10 +16,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("FlowerProto")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("vertex").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("fragment").setValue("\"../shaders/pc_flowers.fs\"")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("\"../shaders/gl_flowers_chromatic.vs\""))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("\"../shaders/pc_flowers.fs\"")))
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform").setTranslation(Java.to([0,0,0], Java.type("float[]")))
+            .addChild(new TransformObject().setDEF("transform")
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))))
@@ -42,11 +42,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addComments(new CommentsBlock(''))
-                    .addComments(new CommentsBlock('                                <field name=\'cube\' type=\'SFNode\' accessType="inputOutput">'))
-                    .addComments(new CommentsBlock('                                    <ComposedCubeMapTexture USE="texture"/>'))
-                    .addComments(new CommentsBlock('                                </field>'))
-                    .addComments(new CommentsBlock('				'))
+                    .addComments(new CommentsBlock('<field name=\'cube\' type=\'SFNode\' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field>'))
                     .addParts(new ShaderPartObject().setType("VERTEX")
                       .setIS(new ISObject()
                         .addConnect(new connectObject().setNodeField("url").setProtoField("vertex"))))
@@ -64,7 +60,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .setSourceCode("ecmascript:\n"+
+                .setSourceCode("\n"+
+"ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -130,6 +127,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "					d = 4;\n"+
 "				}\n"+
 "			}\n"+
+"\n"+
+"\n"+
 "\n"+
 ""))
               .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))

@@ -87,8 +87,8 @@ public class SFVec3f {
         .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","ANY"}))
-        .addChild(new TransformObject().setDEF("transform").setTranslation(new float[] {0f,0f,0f})
+        .addChild(new NavigationInfoObject())
+        .addChild(new TransformObject().setDEF("transform")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
@@ -99,7 +99,8 @@ public class SFVec3f {
           .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFVec3f").setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFTime").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -130,6 +131,8 @@ public class SFVec3f {
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}\n"+
+"\n"+
+"\n"+
 "\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))

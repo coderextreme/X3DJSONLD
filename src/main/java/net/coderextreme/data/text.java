@@ -107,9 +107,11 @@ public class text {
               .setMaterial(new MaterialObject())))
           .addChild(new ScriptObject()
             .addField(new fieldObject().setType("MFString").setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
-            .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';\n"+
+            .setSourceCode("\n"+
+"			    ecmascript:\n"+
+"			    var me = '\"1\" \"\"2\" \"\\n3\"';\n"+
 "			    \n"+
+"			\n"+
 ""))))      ;
     return X3D0;
     }

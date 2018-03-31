@@ -82,21 +82,21 @@ public class MFString {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setContent("F16.x3d").setName("title"))
-        .addMeta(new metaObject().setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey").setName("description"))
-        .addMeta(new metaObject().setContent("Murat ONDER, LTJG, Turkish Navy").setName("creator"))
-        .addMeta(new metaObject().setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission.").setName("creator"))
-        .addMeta(new metaObject().setContent("13 July 2003").setName("created"))
-        .addMeta(new metaObject().setContent("27 November 2015").setName("modified"))
-        .addMeta(new metaObject().setContent("http://www.fas.org/man/dod-101/sys/ac/f-16.htm").setName("reference"))
-        .addMeta(new metaObject().setContent("Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY").setName("permission"))
-        .addMeta(new metaObject().setContent("The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated.").setName("reference"))
-        .addMeta(new metaObject().setContent("\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\"").setName("drawing"))
-        .addMeta(new metaObject().setContent("\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\"").setName("Image"))
-        .addMeta(new metaObject().setContent("https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d").setName("identifier"))
-        .addMeta(new metaObject().setContent("F16, F-16, Fighting Falcon").setName("subject"))
-        .addMeta(new metaObject().setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit").setName("generator"))
-        .addMeta(new metaObject().setContent("../../license.html").setName("license")))
+        .addMeta(new metaObject().setName("title").setContent("F16.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
+        .addMeta(new metaObject().setName("creator").setContent("Murat ONDER, LTJG, Turkish Navy"))
+        .addMeta(new metaObject().setName("creator").setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))
+        .addMeta(new metaObject().setName("created").setContent("13 July 2003"))
+        .addMeta(new metaObject().setName("modified").setContent("27 November 2015"))
+        .addMeta(new metaObject().setName("reference").setContent("http://www.fas.org/man/dod-101/sys/ac/f-16.htm"))
+        .addMeta(new metaObject().setName("permission").setContent("Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY"))
+        .addMeta(new metaObject().setName("reference").setContent("The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated."))
+        .addMeta(new metaObject().setName("drawing").setContent("\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\""))
+        .addMeta(new metaObject().setName("Image").setContent("\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\""))
+        .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d"))
+        .addMeta(new metaObject().setName("subject").setContent("F16, F-16, Fighting Falcon"))
+        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new metaObject().setName("license").setContent("../../license.html")))
       .setScene(new SceneObject()
         .addChild(new TransformObject().setDEF("F16Transform")
           .addChild(new TransformObject().setDEF("MainFrameTransform").setScale(new float[] {3f,3f,3f})
@@ -159,13 +159,13 @@ public class MFString {
           .addChild(new TransformObject().setDEF("SeatTransform").setRotation(new float[] {-1f,0f,0f,-0.1f}).setScale(new float[] {0.9f,0.9f,0.9f}).setTranslation(new float[] {0f,0f,-8.3f})
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString21().getArray()))))
           .addChild(new TransformObject().setDEF("FrontWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,0f,1.92f}).setTranslation(new float[] {0.7f,-5.2f,-6.5f})
-            .addComments(new CommentsBlock(" Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) "))
+            .addComments(new CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString22().getArray()))))
           .addChild(new TransformObject().setDEF("RearLeftWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {1f,0f,1f,1.92f}).setTranslation(new float[] {-2.95f,-5f,7f})
-            .addComments(new CommentsBlock(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "))
+            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString23().getArray()))))
           .addChild(new TransformObject().setDEF("RearRightWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,-1f,1.92f}).setTranslation(new float[] {2.95f,-5f,7f})
-            .addComments(new CommentsBlock(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) "))
+            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
             .addChild(new InlineObject().setUrl(new MFStringObject(new MFString24().getArray()))))
           .addChild(new TransformObject().setDEF("CockpitButtonsTransform")
             .addChild(new TransformObject().setDEF("UpButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {-0.95f,1.05f,-10f})
@@ -222,7 +222,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorDown").setToField("set_startTime").setToNode("WheelDown"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("WheelDown").setToField("set_fraction").setToNode("GearDownInterpolator"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("GearDownInterpolator").setToField("set_rotation").setToNode("FrontWheelTransform"))
-        .addComments(new CommentsBlock(" Animation commands for Rear Right Wheel Starts "))
+        .addComments(new CommentsBlock("Animation commands for Rear Right Wheel Starts"))
         .addChild(new TimeSensorObject().setDEF("RRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("RRearDown1").setCycleInterval(8d))
         .addChild(new OrientationInterpolatorObject().setDEF("RRearInterUp1").setKey(new MFFloatObject(new MFFloat33().getArray())).setKeyValue(new MFRotationObject(new MFRotation34().getArray())))
@@ -233,7 +233,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("RRearUp1").setToField("set_fraction").setToNode("RRearInterUp1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("RRearInterDown1").setToField("set_rotation").setToNode("RearRightWheelTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("RRearInterUp1").setToField("set_rotation").setToNode("RearRightWheelTransform"))
-        .addComments(new CommentsBlock(" Animation commands for Rear Left Wheel "))
+        .addComments(new CommentsBlock("Animation commands for Rear Left Wheel"))
         .addChild(new TimeSensorObject().setDEF("LRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("LRearDown1").setCycleInterval(8d))
         .addChild(new OrientationInterpolatorObject().setDEF("LRearInterUp1").setKey(new MFFloatObject(new MFFloat37().getArray())).setKeyValue(new MFRotationObject(new MFRotation38().getArray())))
@@ -291,7 +291,7 @@ public class MFString {
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("MissilePath").setToField("set_translation").setToNode("LeftmostAmraamTransform"))
         .addChild(new ViewpointObject().setDEF("MissileLaunchView").setDescription("Missile Fire View").setOrientation(new float[] {0.094f,-0.994f,0.057f,1.1716f}).setPosition(new float[] {-344.3f,-142.8f,-27.7f}))
         .addChild(new ROUTEObject().setFromField("isActive").setFromNode("FireSensor").setToField("set_bind").setToNode("MissileLaunchView"))
-        .addComments(new CommentsBlock(" TODO fix type, add filter ")))      ;
+        .addComments(new CommentsBlock("TODO fix type, add filter")))      ;
     return X3D0;
     }
 protected class MFInt320 {
@@ -436,7 +436,7 @@ protected class MFString27 {
 }
 protected class MFString28 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target Locked","      FIRE!..","(Green Button)"});
+    return new MFStringObject(new java.lang.String[] {"Target Locked"," FIRE!..","(Green Button)"});
   }
 }
 protected class MFFloat29 {

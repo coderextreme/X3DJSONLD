@@ -38,7 +38,6 @@ Scene7 = SceneObject()
 Viewpoint8 = ViewpointObject()
 Viewpoint8.setPosition([0,0,5])
 Viewpoint8.setDescription("Only Viewpoint")
-Viewpoint8.setOrientation([0,0,1,0])
 
 Scene7.addChild(Viewpoint8)
 Background9 = BackgroundObject()
@@ -247,38 +246,38 @@ ProtoInterface57 = ProtoInterfaceObject()
 
 field58 = fieldObject()
 field58.setType(fieldObject.TYPE_SFNODE)
-field58.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field58.setName("startnode")
+field58.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface57.addField(field58)
 field59 = fieldObject()
 field59.setType(fieldObject.TYPE_SFNODE)
-field59.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field59.setName("endnode")
+field59.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface57.addField(field59)
 field60 = fieldObject()
 field60.setType(fieldObject.TYPE_SFNODE)
-field60.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field60.setName("transnode")
+field60.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface57.addField(field60)
 field61 = fieldObject()
 field61.setType(fieldObject.TYPE_SFNODE)
-field61.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field61.setName("rotscalenode")
+field61.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface57.addField(field61)
 field62 = fieldObject()
 field62.setType(fieldObject.TYPE_SFVEC3F)
-field62.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field62.setName("set_startpoint")
+field62.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 ProtoInterface57.addField(field62)
 field63 = fieldObject()
 field63.setType(fieldObject.TYPE_SFVEC3F)
-field63.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field63.setName("set_endpoint")
+field63.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 ProtoInterface57.addField(field63)
 ProtoDeclare56.setProtoInterface(ProtoInterface57)
@@ -289,38 +288,38 @@ Script65.setDEF("S1")
 
 field66 = fieldObject()
 field66.setType(fieldObject.TYPE_SFNODE)
-field66.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field66.setName("startnode")
+field66.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script65.addField(field66)
 field67 = fieldObject()
 field67.setType(fieldObject.TYPE_SFNODE)
-field67.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field67.setName("endnode")
+field67.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script65.addField(field67)
 field68 = fieldObject()
 field68.setType(fieldObject.TYPE_SFNODE)
-field68.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field68.setName("transnode")
+field68.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script65.addField(field68)
 field69 = fieldObject()
 field69.setType(fieldObject.TYPE_SFNODE)
-field69.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field69.setName("rotscalenode")
+field69.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script65.addField(field69)
 field70 = fieldObject()
 field70.setType(fieldObject.TYPE_SFVEC3F)
-field70.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field70.setName("set_startpoint")
+field70.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script65.addField(field70)
 field71 = fieldObject()
 field71.setType(fieldObject.TYPE_SFVEC3F)
-field71.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field71.setName("set_endpoint")
+field71.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script65.addField(field71)
 IS72 = ISObject()
@@ -357,7 +356,8 @@ connect78.setProtoField("set_endpoint")
 IS72.addConnect(connect78)
 Script65.setIS(IS72)
 
-Script65.setSourceCode("ecmascript:\n"+
+Script65.setSourceCode("\n"+
+"            ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -396,7 +396,8 @@ Script65.setSourceCode("ecmascript:\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
-"            \n"+
+"\n"+
+"\n"+
 "")
 ProtoBody64.addChild(Script65)
 ProtoDeclare56.setProtoBody(ProtoBody64)

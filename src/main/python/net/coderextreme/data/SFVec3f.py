@@ -31,12 +31,10 @@ X3D0.setHead(head1)
 Scene6 = SceneObject()
 
 NavigationInfo7 = NavigationInfoObject()
-NavigationInfo7.setType(["EXAMINE","ANY"])
 
 Scene6.addChild(NavigationInfo7)
 Transform8 = TransformObject()
 Transform8.setDEF("transform")
-Transform8.setTranslation([0,0,0])
 
 Shape9 = ShapeObject()
 
@@ -91,7 +89,8 @@ field18.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script13.addField(field18)
 
-Script13.setSourceCode("ecmascript:\n"+
+Script13.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -122,6 +121,8 @@ Script13.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}\n"+
+"\n"+
+"\n"+
 "\n"+
 "")
 Scene6.addChild(Script13)

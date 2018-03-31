@@ -46,7 +46,6 @@ X3D0.setHead(head1)
 Scene9 = SceneObject()
 
 NavigationInfo10 = NavigationInfoObject()
-NavigationInfo10.setType(["EXAMINE","ANY"])
 
 Scene9.addChild(NavigationInfo10)
 Background11 = BackgroundObject()
@@ -65,7 +64,6 @@ ProtoBody13 = ProtoBodyObject()
 
 Transform14 = TransformObject()
 Transform14.setDEF("transform")
-Transform14.setTranslation([0,0,0])
 
 Shape15 = ShapeObject()
 
@@ -284,15 +282,10 @@ ComposedShader45.addParts(ShaderPart54)
 Appearance16.addShaders(ComposedShader45)
 Shape15.setAppearance(Appearance16)
 
-Shape15.addComments(CommentsBlock(""""""))
-
-Shape15.addComments(CommentsBlock("""			<Sphere></Sphere>"""))
-
-Shape15.addComments(CommentsBlock("""			"""))
+Shape15.addComments(CommentsBlock("""<Sphere></Sphere>"""))
 IndexedFaceSet55 = IndexedFaceSetObject()
 IndexedFaceSet55.setConvex(False)
 IndexedFaceSet55.setDEF("Orbit")
-IndexedFaceSet55.setCreaseAngle(0)
 
 Coordinate56 = CoordinateObject()
 Coordinate56.setDEF("OrbitCoordinates")
@@ -326,14 +319,14 @@ field60.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script57.addField(field60)
 field61 = fieldObject()
 field61.setType(fieldObject.TYPE_MFVEC3F)
-field61.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field61.setName("coordinates")
+field61.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 
 Script57.addField(field61)
 field62 = fieldObject()
 field62.setType(fieldObject.TYPE_MFINT32)
-field62.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field62.setName("coordIndexes")
+field62.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script57.addField(field62)
 field63 = fieldObject()
@@ -379,7 +372,8 @@ field68.setValue("0.5")
 
 Script57.addField(field68)
 
-Script57.setSourceCode("ecmascript:\n"+
+Script57.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -483,6 +477,8 @@ Script57.setSourceCode("ecmascript:\n"+
 "				updateCoordinates(resolution);\n"+
 "			}\n"+
 "\n"+
+"\n"+
+"\n"+
 "")
 ProtoBody13.addChild(Script57)
 TimeSensor69 = TimeSensorObject()
@@ -531,13 +527,7 @@ ROUTE75.setToField("set_translation")
 
 ProtoBody13.addChild(ROUTE75)
 
-ProtoBody13.addComments(CommentsBlock(""""""))
-
-ProtoBody13.addComments(CommentsBlock("""		<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"""))
-
-ProtoBody13.addComments(CommentsBlock("""		<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
-
-ProtoBody13.addComments(CommentsBlock("""		"""))
+ProtoBody13.addComments(CommentsBlock("""<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
 ProtoDeclare12.setProtoBody(ProtoBody13)
 Scene9.addChild(ProtoDeclare12)
 Transform76 = TransformObject()
@@ -547,13 +537,7 @@ ProtoInstance77.setName("flower")
 
 Transform76.addChild(ProtoInstance77)
 
-Transform76.addComments(CommentsBlock(""""""))
-
-Transform76.addComments(CommentsBlock("""            <ProtoInstance name=\"flower\"/>"""))
-
-Transform76.addComments(CommentsBlock("""            <ProtoInstance name=\"flower\"/>"""))
-
-Transform76.addComments(CommentsBlock("""	    """))
+Transform76.addComments(CommentsBlock("""<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"""))
 Scene9.addChild(Transform76)
 X3D0.setScene(Scene9)
 

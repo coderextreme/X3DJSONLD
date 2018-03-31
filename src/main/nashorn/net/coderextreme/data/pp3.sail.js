@@ -13,7 +13,7 @@ var ProtoInstance2 = null;
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("translator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("created").setContent("5 May 2015"))
-        .addMeta(new metaObject().setContent("05 May 2017").setName("modified"))
+        .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("manual")))
@@ -39,7 +39,7 @@ var ProtoInstance2 = null;
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDEF("MaterialLightBlue").setDiffuseColor(Java.to([1,1,1], Java.type("float[]")))))
                     .setGeometry(new TextObject().setDEF("RightString").setString(Java.to(["r"], Java.type("java.lang.String[]"))))))
-                .addChild(new StringSensorObject().setDEF("RightSensor").setEnabled(false).setDeletionAllowed(true))
+                .addChild(new StringSensorObject().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments(new CommentsBlock('up'))
               .addChild(new TransformObject().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
@@ -52,7 +52,7 @@ var ProtoInstance2 = null;
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
                     .setGeometry(new TextObject().setDEF("UpString").setString(Java.to(["u"], Java.type("java.lang.String[]"))))))
-                .addChild(new StringSensorObject().setDEF("UpSensor").setEnabled(false).setDeletionAllowed(true))
+                .addChild(new StringSensorObject().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments(new CommentsBlock('down'))
               .addChild(new TransformObject().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
@@ -72,12 +72,13 @@ var ProtoInstance2 = null;
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
                     .setGeometry(new TextObject().setDEF("CenterString"))))
-                .addChild(new StringSensorObject().setDEF("CenterSensor").setEnabled(false).setDeletionAllowed(true))
+                .addChild(new StringSensorObject().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("CenterTouch"))))
             .addChild(new ScriptObject().setDEF("RightSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -86,11 +87,13 @@ var ProtoInstance2 = null;
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
 "}\n"+
+"\n"+
 ""))
             .addChild(new ScriptObject().setDEF("UpSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -99,11 +102,13 @@ var ProtoInstance2 = null;
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
 "}\n"+
+"\n"+
 ""))
             .addChild(new ScriptObject().setDEF("CenterSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
@@ -112,6 +117,7 @@ var ProtoInstance2 = null;
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
 "}\n"+
+"\n"+
 ""))
             .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
             .addChild(new ROUTEObject().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))

@@ -47,7 +47,6 @@ Material11.setDiffuseColor([1,1,1])
 Appearance10.setMaterial(Material11)
 Shape9.setAppearance(Appearance10)
 Sphere12 = SphereObject()
-Sphere12.setRadius(1)
 
 Shape9.setGeometry(Sphere12)
 Group8.addChild(Shape9)

@@ -37,20 +37,19 @@ Scene7 = SceneObject()
 
 Collision8 = CollisionObject()
 Collision8.setDEF("DoNotCollideWithVisualizationWidget")
-Collision8.setEnabled(True)
 
 
-Collision8.addComments(CommentsBlock(""" Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. """))
+Collision8.addComments(CommentsBlock("""Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."""))
 
-Collision8.addComments(CommentsBlock(""" This NavigationInfo allows examine mode and will be overridden by any parent scene. """))
+Collision8.addComments(CommentsBlock("""This NavigationInfo allows examine mode and will be overridden by any parent scene."""))
 
-Collision8.addComments(CommentsBlock(""" Each arrow goes from +1m to -1m to allow linear scaling to fit a scene """))
+Collision8.addComments(CommentsBlock("""Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"""))
 
-Collision8.addComments(CommentsBlock(""" Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user """))
+Collision8.addComments(CommentsBlock("""Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"""))
 Group9 = GroupObject()
 
 
-Group9.addComments(CommentsBlock(""" Vertical Y arrow and label """))
+Group9.addComments(CommentsBlock("""Vertical Y arrow and label"""))
 Group10 = GroupObject()
 Group10.setDEF("ArrowGreen")
 
@@ -125,7 +124,7 @@ Transform26 = TransformObject()
 Transform26.setRotation([0,0,1,-1.57079])
 
 
-Transform26.addComments(CommentsBlock(""" Horizontal X arrow and label """))
+Transform26.addComments(CommentsBlock("""Horizontal X arrow and label"""))
 Group27 = GroupObject()
 
 Group28 = GroupObject()
@@ -168,7 +167,7 @@ Transform37.setRotation([0,0,1,1.57079])
 Transform37.setTranslation([0.072,1.1,0])
 
 
-Transform37.addComments(CommentsBlock(""" note label rotated back to original coordinate frame """))
+Transform37.addComments(CommentsBlock("""note label rotated back to original coordinate frame"""))
 Billboard38 = BillboardObject()
 
 Shape39 = ShapeObject()
@@ -194,7 +193,7 @@ Transform43 = TransformObject()
 Transform43.setRotation([1,0,0,1.57079])
 
 
-Transform43.addComments(CommentsBlock(""" Perpendicular Z arrow and label, note right-hand rule """))
+Transform43.addComments(CommentsBlock("""Perpendicular Z arrow and label, note right-hand rule"""))
 Group44 = GroupObject()
 
 Group45 = GroupObject()
@@ -237,7 +236,7 @@ Transform54.setRotation([1,0,0,-1.57079])
 Transform54.setTranslation([0,1.1,0.072])
 
 
-Transform54.addComments(CommentsBlock(""" note label rotated back to original coordinate frame """))
+Transform54.addComments(CommentsBlock("""note label rotated back to original coordinate frame"""))
 Billboard55 = BillboardObject()
 
 Shape56 = ShapeObject()

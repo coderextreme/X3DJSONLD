@@ -14,7 +14,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("Only Viewpoint"))
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("float[]"))))
-        .addChild(new TransformObject().setDEF("DECLpoint_G1_node").setTranslation(Java.to([0,0,0], Java.type("float[]")))
+        .addChild(new TransformObject().setDEF("DECLpoint_G1_node")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject().setRadius(0.1))
             .setAppearance(new AppearanceObject()
@@ -25,20 +25,22 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("ecmascript:\n"+
+            .setSourceCode("\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}\n"+
+"\n"+
 ""))
           .addChild(new TimeSensorObject().setDEF("DECLpoint_G1_CL1").setCycleInterval(3).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("cycleTime").setToNode("DECLpoint_G1_MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G1_PI1").setToField("set_fraction"))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_MB1").setFromField("keyValue").setToNode("DECLpoint_G1_PI1").setToField("keyValue"))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_PI1").setFromField("value_changed").setToNode("DECLpoint_G1_node").setToField("set_translation")))
-        .addChild(new TransformObject().setDEF("DECLpoint_G2_node").setTranslation(Java.to([0,0,0], Java.type("float[]")))
+        .addChild(new TransformObject().setDEF("DECLpoint_G2_node")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject().setRadius(0.1))
             .setAppearance(new AppearanceObject()
@@ -49,13 +51,15 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("ecmascript:\n"+
+            .setSourceCode("\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}\n"+
+"\n"+
 ""))
           .addChild(new TimeSensorObject().setDEF("DECLpoint_G2_CL1").setCycleInterval(3).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("cycleTime").setToNode("DECLpoint_G2_MB1").setToField("set_location"))
@@ -80,7 +84,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_rotscale")))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+            .setSourceCode("\n"+
+"ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -124,6 +129,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
+"\n"+
 "")))
         .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;

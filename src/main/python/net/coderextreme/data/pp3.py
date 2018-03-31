@@ -28,8 +28,8 @@ meta5.setContent("5 May 2015")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setContent("05 May 2017")
 meta6.setName("modified")
+meta6.setContent("05 May 2017")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
@@ -127,7 +127,6 @@ Transform19.addChild(Transform24)
 StringSensor29 = StringSensorObject()
 StringSensor29.setDEF("RightSensor")
 StringSensor29.setEnabled(False)
-StringSensor29.setDeletionAllowed(True)
 
 Transform19.addChild(StringSensor29)
 TouchSensor30 = TouchSensorObject()
@@ -180,7 +179,6 @@ Transform31.addChild(Transform36)
 StringSensor41 = StringSensorObject()
 StringSensor41.setDEF("UpSensor")
 StringSensor41.setEnabled(False)
-StringSensor41.setDeletionAllowed(True)
 
 Transform31.addChild(StringSensor41)
 TouchSensor42 = TouchSensorObject()
@@ -253,7 +251,6 @@ Transform48.addChild(Transform53)
 StringSensor58 = StringSensorObject()
 StringSensor58.setDEF("CenterSensor")
 StringSensor58.setEnabled(False)
-StringSensor58.setDeletionAllowed(True)
 
 Transform48.addChild(StringSensor58)
 TouchSensor59 = TouchSensorObject()
@@ -279,7 +276,8 @@ field62.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script60.addField(field62)
 
-Script60.setSourceCode("ecmascript:\n"+
+Script60.setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -288,6 +286,7 @@ Script60.setSourceCode("ecmascript:\n"+
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
 "}\n"+
+"\n"+
 "")
 ProtoBody12.addChild(Script60)
 Script63 = ScriptObject()
@@ -306,7 +305,8 @@ field65.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script63.addField(field65)
 
-Script63.setSourceCode("ecmascript:\n"+
+Script63.setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -315,6 +315,7 @@ Script63.setSourceCode("ecmascript:\n"+
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
 "}\n"+
+"\n"+
 "")
 ProtoBody12.addChild(Script63)
 Script66 = ScriptObject()
@@ -333,7 +334,8 @@ field68.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script66.addField(field68)
 
-Script66.setSourceCode("ecmascript:\n"+
+Script66.setSourceCode("\n"+
+"ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
@@ -342,6 +344,7 @@ Script66.setSourceCode("ecmascript:\n"+
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
 "}\n"+
+"\n"+
 "")
 ProtoBody12.addChild(Script66)
 ROUTE69 = ROUTEObject()

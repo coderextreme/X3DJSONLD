@@ -39,10 +39,13 @@ Script8 = ScriptObject()
 Script8.setDEF("Browser")
 
 
-Script8.setSourceCode("ecmascript:\n"+
+Script8.setSourceCode("\n"+
+"ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }\n"+
+"\n"+
+"\n"+
 "")
 Scene7.addChild(Script8)
 Script9 = ScriptObject()
@@ -50,6 +53,7 @@ Script9.setDEF("Clouds")
 
 
 Script9.setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "\n"+
@@ -60,6 +64,8 @@ Script9.setSourceCode("\n"+
 "'    ' + '               	\\n';\n"+
 "\n"+
 "}\n"+
+"\n"+
+"\n"+
 "")
 Scene7.addChild(Script9)
 X3D0.setScene(Scene7)

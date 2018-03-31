@@ -100,9 +100,11 @@ field26.setValue("\"rnl_front.png\" \"uffizi_front.png\"")
 
 Script25.addField(field26)
 
-Script25.setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';\n"+
+Script25.setSourceCode("\n"+
+"			    ecmascript:\n"+
+"			    var me = '\"1\" \"\"2\" \"\\n3\"';\n"+
 "			    \n"+
+"			\n"+
 "")
 Transform9.addChild(Script25)
 Scene8.addChild(Transform9)

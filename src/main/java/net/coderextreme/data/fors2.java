@@ -115,14 +115,15 @@ ProtoInstanceObject ProtoInstance2 = null;
               .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode(" ecmascript:\n"+
+              .setSourceCode("\n"+
+" ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}\n"+
-" \n"+
+"\n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
@@ -145,7 +146,8 @@ ProtoInstanceObject ProtoInstance2 = null;
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
                 .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB")))
-              .setSourceCode(" ecmascript:\n"+
+              .setSourceCode("\n"+
+" ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
@@ -154,7 +156,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"                \n"+
+"\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -162,12 +164,12 @@ ProtoInstanceObject ProtoInstance2 = null;
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"                \n"+
+"\n"+
 "                function set_spine(value) {\n"+
 "		    Browser.print('\\n'+'\"');\n"+
 "                    spine = value;\n"+
 "                }\n"+
-" \n"+
+"\n"+
 ""))
             .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild(new TransformObject().setScale(new float[] {0.1f,0.1f,0.1f})
