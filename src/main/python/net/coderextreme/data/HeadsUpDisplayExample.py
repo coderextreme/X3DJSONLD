@@ -160,10 +160,6 @@ Shape26.setAppearance(Appearance29)
 fieldValue25.addChild(Shape26)
 ProtoInstance23.addFieldValue(fieldValue25)
 Scene15.addChild(ProtoInstance23)
-Inline31 = InlineObject()
-Inline31.setUrl(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"])
-
-Scene15.addChild(Inline31)
 X3D0.setScene(Scene15)
 
 X3D0.toFileX3D("../data/HeadsUpDisplayExample.new.x3d")

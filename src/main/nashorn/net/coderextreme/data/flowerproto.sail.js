@@ -42,7 +42,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addComments(new CommentsBlock('<field name=\'cube\' type=\'SFNode\' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field>'))
+                    .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
                     .addParts(new ShaderPartObject().setType("VERTEX")
                       .setIS(new ISObject()
                         .addConnect(new connectObject().setNodeField("url").setProtoField("vertex"))))

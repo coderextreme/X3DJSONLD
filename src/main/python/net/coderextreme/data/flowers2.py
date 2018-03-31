@@ -8,55 +8,54 @@ X3D0.setVersion("3.0")
 head1 = headObject()
 
 meta2 = metaObject()
-meta2.setContent("title")
 meta2.setName("flowers2.x3d")
+meta2.setContent("title")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
-meta3.setContent("John Carlson")
 meta3.setName("creator")
+meta3.setContent("John Carlson")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
-meta4.setContent("John Carlson")
 meta4.setName("transcriber")
+meta4.setContent("John Carlson")
 
 head1.addMeta(meta4)
 meta5 = metaObject()
-meta5.setContent("23 January 2005")
 meta5.setName("created")
+meta5.setContent("23 January 2005")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setContent("21 March 2018")
 meta6.setName("modified")
+meta6.setContent("21 March 2018")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
-meta7.setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")
 meta7.setName("description")
+meta7.setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")
 meta8.setName("identifier")
+meta8.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
-meta9.setContent("manually written")
 meta9.setName("generator")
+meta9.setContent("manually written")
 
 head1.addMeta(meta9)
 meta10 = metaObject()
-meta10.setContent("http://www.web3d.org/x3d/content/examples/license.html")
 meta10.setName("license")
+meta10.setContent("http://www.web3d.org/x3d/content/examples/license.html")
 
 head1.addMeta(meta10)
 X3D0.setHead(head1)
 Scene11 = SceneObject()
 
 NavigationInfo12 = NavigationInfoObject()
-NavigationInfo12.setType(["EXAMINE","ANY"])
 
 Scene11.addChild(NavigationInfo12)
 Viewpoint13 = ViewpointObject()
@@ -159,7 +158,6 @@ Appearance30.setMaterial(Material31)
 Shape29.setAppearance(Appearance30)
 IndexedFaceSet36 = IndexedFaceSetObject()
 IndexedFaceSet36.setDEF("Orbit")
-IndexedFaceSet36.setCreaseAngle(0)
 
 Coordinate37 = CoordinateObject()
 Coordinate37.setDEF("OrbitCoordinates")
@@ -173,59 +171,60 @@ Script38.setDEF("OrbitScript")
 
 field39 = fieldObject()
 field39.setType(fieldObject.TYPE_SFFLOAT)
-field39.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field39.setName("set_fraction")
+field39.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script38.addField(field39)
 field40 = fieldObject()
 field40.setType(fieldObject.TYPE_MFVEC3F)
-field40.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field40.setName("coordinates")
+field40.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script38.addField(field40)
 field41 = fieldObject()
 field41.setType(fieldObject.TYPE_MFINT32)
-field41.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field41.setName("coordIndexes")
+field41.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script38.addField(field41)
 field42 = fieldObject()
 field42.setType(fieldObject.TYPE_SFFLOAT)
-field42.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field42.setName("e")
+field42.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field42.setValue("5")
 
 Script38.addField(field42)
 field43 = fieldObject()
 field43.setType(fieldObject.TYPE_SFFLOAT)
-field43.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field43.setName("f")
+field43.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field43.setValue("5")
 
 Script38.addField(field43)
 field44 = fieldObject()
 field44.setType(fieldObject.TYPE_SFFLOAT)
-field44.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field44.setName("g")
+field44.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field44.setValue("5")
 
 Script38.addField(field44)
 field45 = fieldObject()
 field45.setType(fieldObject.TYPE_SFFLOAT)
-field45.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field45.setName("h")
+field45.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field45.setValue("5")
 
 Script38.addField(field45)
 field46 = fieldObject()
 field46.setType(fieldObject.TYPE_SFINT32)
-field46.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field46.setName("resolution")
+field46.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field46.setValue("50")
 
 Script38.addField(field46)
 
 Script38.setSourceCode("\n"+
+"			\n"+
 "			ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+

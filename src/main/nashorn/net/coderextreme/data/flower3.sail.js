@@ -6,7 +6,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE","ANY"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfoObject())
         .addChild(new DirectionalLightObject().setDirection(Java.to([0,-0.8,-0.2], Java.type("float[]"))).setIntensity(0.5))
         .addChild(new BackgroundObject().setSkyColor(Java.to([1,1,1], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(Java.to([0,0,50], Java.type("float[]"))))
@@ -14,23 +14,16 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0.5,1], Java.type("float[]"))).setSpecularColor(Java.to([0,0.5,1], Java.type("float[]")))))
-            .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0)
+            .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
               .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
         .addChild(new ScriptObject().setDEF("OrbitScript")
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
-          .addComments(new CommentsBlock(""))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"))
-          .addComments(new CommentsBlock("        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
-          .addComments(new CommentsBlock("	"))
-          .setSourceCode("ecmascript:\n"+
-"    \n"+
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
+          .setSourceCode("\n"+
+"ecmascript:\n"+
+"\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+
@@ -103,6 +96,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}\n"+
+"\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(true))
         .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
