@@ -48,13 +48,7 @@
               0,
               5
             ],
-            "@description": "Only Viewpoint",
-            "@orientation": [
-              0,
-              0,
-              1,
-              0
-            ]
+            "@description": "Only Viewpoint"
           }
         },
         {
@@ -205,33 +199,33 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "initializeOnly",
                   "@name": "startnode",
+                  "@accessType": "initializeOnly",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "initializeOnly",
                   "@name": "endnode",
+                  "@accessType": "initializeOnly",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "initializeOnly",
                   "@name": "transnode",
-                  "@type": "SFNode"
-                },
-                {
                   "@accessType": "initializeOnly",
-                  "@name": "rotscalenode",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOnly",
+                  "@name": "rotscalenode",
+                  "@accessType": "initializeOnly",
+                  "@type": "SFNode"
+                },
+                {
                   "@name": "set_startpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 },
                 {
-                  "@accessType": "inputOnly",
                   "@name": "set_endpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 }
               ]
@@ -243,33 +237,33 @@
                     "@DEF": "S1",
                     "field": [
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "startnode",
+                        "@accessType": "initializeOnly",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "endnode",
+                        "@accessType": "initializeOnly",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "transnode",
-                        "@type": "SFNode"
-                      },
-                      {
                         "@accessType": "initializeOnly",
-                        "@name": "rotscalenode",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "inputOnly",
+                        "@name": "rotscalenode",
+                        "@accessType": "initializeOnly",
+                        "@type": "SFNode"
+                      },
+                      {
                         "@name": "set_startpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       },
                       {
-                        "@accessType": "inputOnly",
                         "@name": "set_endpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       }
                     ],
@@ -302,7 +296,8 @@
                       ]
                     },
                     "#sourceText": [
-                      "ecmascript:",
+                      "",
+                      "            ecmascript:",
                       "        function recompute(startpoint,endpoint){",
                       "\t    if (typeof endpoint === 'undefined') {",
                       "\t\treturn;",
@@ -341,7 +336,8 @@
                       "        function set_endpoint(val,t){",
                       "            recompute_and_route(startnode.translation,val);",
                       "        }",
-                      "            "
+                      "",
+                      ""
                     ]
                   }
                 }

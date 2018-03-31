@@ -106,11 +106,6 @@
               "-children": [
                 {
                   "Transform": {
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "IS": {
                       "connect": [
                         {
@@ -177,11 +172,6 @@
               "-children": [
                 {
                   "Transform": {
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "IS": {
                       "connect": [
                         {
@@ -315,11 +305,6 @@
               "-children": [
                 {
                   "Transform": {
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "IS": {
                       "connect": [
                         {
@@ -453,11 +438,6 @@
               "-children": [
                 {
                   "Transform": {
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "IS": {
                       "connect": [
                         {

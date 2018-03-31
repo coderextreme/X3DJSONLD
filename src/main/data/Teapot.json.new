@@ -7,83 +7,43 @@
       "meta": [
         {
           "@name": "title",
-          "@content": "MooringBuoy.x3d",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "MooringBuoy.x3d"
         },
         {
           "@name": "description",
-          "@content": "A mooring buoy used in Naval Harbors",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "A mooring buoy used in Naval Harbors"
         },
         {
           "@name": "creator",
-          "@content": "LT Patrick Sullivan",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "LT Patrick Sullivan"
         },
         {
           "@name": "created",
-          "@content": "28 July 2006",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "28 July 2006"
         },
         {
           "@name": "modified",
-          "@content": "12 January 2014",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "12 January 2014"
         },
         {
           "@name": "identifier",
-          "@content": "https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d"
         },
         {
           "@name": "generator",
-          "@content": "VizX3D, http://www.vivaty.com/downloads/studio",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "VizX3D, http://www.vivaty.com/downloads/studio"
         },
         {
           "@name": "generator",
-          "@content": "Wings3D, http://www.wings3d.com",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "Wings3D, http://www.wings3d.com"
         },
         {
           "@name": "generator",
-          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
         },
         {
           "@name": "license",
-          "@content": "../../license.html",
-          "@dir": "",
-          "@http_equiv": "",
-          "@lang": "",
-          "@scheme": ""
+          "@content": "../../license.html"
         },
         {
           "@name": "translated",
@@ -103,152 +63,38 @@
       "-children": [
         {
           "Transform": {
-            "@bboxCenter": [
-              0,
-              0,
-              0
-            ],
-            "@bboxSize": [
-              -1,
-              -1,
-              -1
-            ],
-            "@center": [
-              0,
-              0,
-              0
-            ],
-            "@rotation": [
-              0,
-              0,
-              1,
-              0
-            ],
             "@scale": [
               0.3,
               0.3,
               0.3
             ],
-            "@scaleOrientation": [
-              0,
-              0,
-              1,
-              0
-            ],
-            "@translation": [
-              0,
-              0,
-              0
-            ],
-            "@class": "",
             "-children": [
               {
                 "Group": {
                   "@DEF": "MooringBuoyWithHook",
-                  "@bboxCenter": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "@bboxSize": [
-                    -1,
-                    -1,
-                    -1
-                  ],
-                  "@class": "",
                   "-children": [
                     {
                       "Transform": {
                         "@DEF": "Hook",
-                        "@bboxCenter": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@bboxSize": [
-                          -1,
-                          -1,
-                          -1
-                        ],
-                        "@center": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@rotation": [
-                          0,
-                          0,
-                          1,
-                          0
-                        ],
-                        "@scale": [
-                          1,
-                          1,
-                          1
-                        ],
-                        "@scaleOrientation": [
-                          0,
-                          0,
-                          1,
-                          0
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@class": "",
                         "-children": [
                           {
                             "Shape": {
-                              "@bboxCenter": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@bboxSize": [
-                                -1,
-                                -1,
-                                -1
-                              ],
-                              "@class": "",
                               "-appearance": {
                                 "Appearance": {
-                                  "@class": "",
                                   "-material": {
                                     "Material": {
                                       "@DEF": "Black_mat",
-                                      "@ambientIntensity": 0.2,
                                       "@diffuseColor": [
                                         0,
                                         0,
                                         0
-                                      ],
-                                      "@emissiveColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ],
-                                      "@shininess": 0.2,
-                                      "@specularColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ],
-                                      "@transparency": 0,
-                                      "@class": ""
+                                      ]
                                     }
                                   }
                                 }
                               },
                               "-geometry": {
                                 "IndexedFaceSet": {
-                                  "@ccw": true,
-                                  "@colorIndex": [
-                                    null
-                                  ],
-                                  "@colorPerVertex": true,
-                                  "@convex": true,
                                   "@coordIndex": [
                                     0,
                                     1,
@@ -1756,15 +1602,6 @@
                                     -1
                                   ],
                                   "@creaseAngle": 0.524,
-                                  "@normalIndex": [
-                                    null
-                                  ],
-                                  "@normalPerVertex": true,
-                                  "@solid": true,
-                                  "@texCoordIndex": [
-                                    null
-                                  ],
-                                  "@class": "",
                                   "-coord": {
                                     "Coordinate": {
                                       "@point": [
@@ -2344,8 +2181,7 @@
                                         0,
                                         0.67,
                                         0.02
-                                      ],
-                                      "@class": ""
+                                      ]
                                     }
                                   }
                                 }
@@ -2358,61 +2194,11 @@
                     {
                       "Transform": {
                         "@DEF": "MooringBuoy",
-                        "@bboxCenter": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@bboxSize": [
-                          -1,
-                          -1,
-                          -1
-                        ],
-                        "@center": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@rotation": [
-                          0,
-                          0,
-                          1,
-                          0
-                        ],
-                        "@scale": [
-                          1,
-                          1,
-                          1
-                        ],
-                        "@scaleOrientation": [
-                          0,
-                          0,
-                          1,
-                          0
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ],
-                        "@class": "",
                         "-children": [
                           {
                             "Shape": {
-                              "@bboxCenter": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@bboxSize": [
-                                -1,
-                                -1,
-                                -1
-                              ],
-                              "@class": "",
                               "-appearance": {
                                 "Appearance": {
-                                  "@class": "",
                                   "-material": {
                                     "Material": {
                                       "@DEF": "default_mat",
@@ -2422,41 +2208,20 @@
                                         0.50196,
                                         0.50196
                                       ],
-                                      "@emissiveColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ],
-                                      "@shininess": 1,
-                                      "@specularColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ],
-                                      "@transparency": 0,
-                                      "@class": ""
+                                      "@shininess": 1
                                     }
                                   },
                                   "-texture": {
                                     "ImageTexture": {
-                                      "@repeatS": true,
-                                      "@repeatT": true,
                                       "@url": [
                                         "examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"
-                                      ],
-                                      "@class": ""
+                                      ]
                                     }
                                   }
                                 }
                               },
                               "-geometry": {
                                 "IndexedFaceSet": {
-                                  "@ccw": true,
-                                  "@colorIndex": [
-                                    null
-                                  ],
-                                  "@colorPerVertex": true,
-                                  "@convex": true,
                                   "@coordIndex": [
                                     0,
                                     1,
@@ -4748,11 +4513,6 @@
                                     -1
                                   ],
                                   "@creaseAngle": 1.047,
-                                  "@normalIndex": [
-                                    null
-                                  ],
-                                  "@normalPerVertex": true,
-                                  "@solid": true,
                                   "@texCoordIndex": [
                                     0,
                                     1,
@@ -7043,7 +6803,6 @@
                                     257,
                                     -1
                                   ],
-                                  "@class": "",
                                   "-coord": {
                                     "Coordinate": {
                                       "@point": [
@@ -7911,8 +7670,7 @@
                                         0.21046,
                                         0.51249,
                                         0.14062
-                                      ],
-                                      "@class": ""
+                                      ]
                                     }
                                   },
                                   "-texCoord": {
@@ -8494,8 +8252,7 @@
                                         0.987,
                                         0.656,
                                         0.987
-                                      ],
-                                      "@class": ""
+                                      ]
                                     }
                                   }
                                 }

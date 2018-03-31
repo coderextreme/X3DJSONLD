@@ -4,7 +4,7 @@
 <meta name="creator" content="John Carlson"></meta>
 <meta name="translator" content="John Carlson"></meta>
 <meta name="created" content="5 May 2015"></meta>
-<meta content="05 May 2017" name="modified"></meta>
+<meta name="modified" content="05 May 2017"></meta>
 <meta name="description" content="A process pipeline between three spheres (try typing on spheres and blue"></meta>
 <meta name="identifier" content="https://coderextreme.net/x3d/pp3.x3d"></meta>
 <meta name="generator" content="manual"></meta>
@@ -23,7 +23,7 @@
 <Text containerField="geometry" DEF="RightString" string="&quot;r&quot;"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="RightSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="RightSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="RightTouch"></TouchSensor>
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
@@ -35,7 +35,7 @@
 <Text containerField="geometry" DEF="UpString" string="&quot;u&quot;"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="UpSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="UpSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="UpTouch"></TouchSensor>
 </Transform>
 <!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
@@ -52,13 +52,14 @@
 <Text containerField="geometry" DEF="CenterString"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="CenterSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="CenterSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="CenterTouch"></TouchSensor>
 </Transform>
 </Group>
 <Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
 <field name="rightlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 
 function initialize() {
 	rightlines = new MFString("");
@@ -67,10 +68,12 @@ function initialize() {
 function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
 }
+
 ]]></Script>
 <Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
 <field name="uplines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 
 function initialize() {
 	uplines = new MFString("");
@@ -79,10 +82,12 @@ function initialize() {
 function set_upstring(upstr) {
 	uplines = new MFString(upstr);
 }
+
 ]]></Script>
 <Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
 <field name="centerlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 
 function initialize() {
 	centerlines = new MFString("");
@@ -91,6 +96,7 @@ function initialize() {
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
 }
+
 ]]></Script>
 <ROUTE fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"></ROUTE>
 <ROUTE fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"></ROUTE>

@@ -59,6 +59,7 @@
 <field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
 <field name="old" type="SFInt32" accessType="inputOutput" value="-1"></field>
 <![CDATA[
+
 ecmascript:
         function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
@@ -76,6 +77,8 @@ ecmascript:
 		    bottom_changed[0] = bottomUrls[side];
             }
         }
+
+
 ]]></Script>
 <TimeSensor DEF="Clock" cycleInterval="45" loop="true"></TimeSensor>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="UrlSelector" toField="set_fraction"></ROUTE>

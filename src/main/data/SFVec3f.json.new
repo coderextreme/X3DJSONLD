@@ -38,21 +38,11 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Transform": {
             "@DEF": "transform",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {
@@ -133,6 +123,7 @@
               }
             ],
             "#sourceText": [
+              "",
               "ecmascript:",
               "\t\t\tfunction newBubble() {",
               "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -164,6 +155,8 @@
               "\t\t\tfunction initialize() {",
               "\t\t\t     newBubble();",
               "\t\t\t}",
+              "",
+              "",
               ""
             ]
           }

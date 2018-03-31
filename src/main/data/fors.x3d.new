@@ -15,7 +15,7 @@
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle containerField="fontStyle" family="&quot;SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
@@ -28,6 +28,7 @@
 <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
 <![CDATA[
+
 ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
@@ -35,6 +36,8 @@ ecmascript:
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
+
+
 ]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
@@ -57,6 +60,7 @@ ecmascript:
 <connect nodeField="set_endB" protoField="set_positionB"></connect>
 </IS>
 <![CDATA[
+
 ecmascript:
 
                 function set_endA(value) {
@@ -66,7 +70,7 @@ ecmascript:
 		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
-                
+
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f([value, value]);
@@ -74,20 +78,22 @@ ecmascript:
 		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
-                
+
                 function set_spine(value) {
                     spine = value;
                 }
+
+
 ]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" enabled="true" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
-<ProtoInstance DEF="nodeA" name="node"><fieldValue name="position" value="0 0 0"></fieldValue>
+<Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
+<ProtoInstance name="node" DEF="nodeA"><fieldValue name="position" value="0 0 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="nodeB" name="node"><fieldValue name="position" value="50 50 50"></fieldValue>
+<ProtoInstance name="node" DEF="nodeB"><fieldValue name="position" value="50 50 50"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="linkA" name="cylinder"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
+<ProtoInstance name="cylinder" DEF="linkA"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
 <fieldValue name="set_positionB" value="50 50 50"></fieldValue>
 </ProtoInstance>
 </Transform>

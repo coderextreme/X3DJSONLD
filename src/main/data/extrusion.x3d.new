@@ -15,6 +15,7 @@
 <Script DEF="MoveCylinder"><field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="spine" accessType="inputOutput" type="MFVec3f" value="-50 -50 0 50 50 0"></field>
 <![CDATA[
+
 ecmascript:
 
                 function set_cycle(value) {
@@ -23,6 +24,8 @@ ecmascript:
                         var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
 		        spine = new MFVec3f([endA, endB]);
                 }
+
+
 ]]></Script>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="MoveCylinder" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="spine"></ROUTE>

@@ -8,7 +8,7 @@
 </head>
 <Scene><Group><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1"></Sphere>
+<Sphere containerField="geometry"></Sphere>
 </Shape>
 </Group>
 </Scene>

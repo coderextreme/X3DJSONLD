@@ -48,12 +48,6 @@
               0,
               5
             ],
-            "@orientation": [
-              0,
-              0,
-              1,
-              0
-            ],
             "@description": "a moving graph"
           }
         },
@@ -180,8 +174,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "inputOutput",
                   "@name": "translation",
+                  "@accessType": "inputOutput",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -281,13 +275,16 @@
                           ],
                           "#sourceText": [
                             "",
+                            "",
                             "ecmascript:",
                             "\t\tfunction set_location(value) {",
                             "                    old = translation;",
                             "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                             "                    keyValue = new MFVec3f([old, translation]);",
                             "\t\t    // Browser.println(translation);",
-                            "\t\t}"
+                            "\t\t}",
+                            "",
+                            ""
                           ]
                         }
                       },
@@ -338,7 +335,7 @@
           }
         },
         {
-          "#comment": " from doug sanden "
+          "#comment": "from doug sanden"
         },
         {
           "ProtoDeclare": {
@@ -346,33 +343,33 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "inputOutput",
                   "@name": "startnode",
+                  "@accessType": "inputOutput",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOutput",
                   "@name": "endnode",
+                  "@accessType": "inputOutput",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOutput",
                   "@name": "transnode",
-                  "@type": "SFNode"
-                },
-                {
                   "@accessType": "inputOutput",
-                  "@name": "rotscalenode",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOnly",
+                  "@name": "rotscalenode",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode"
+                },
+                {
                   "@name": "set_startpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 },
                 {
-                  "@accessType": "inputOnly",
                   "@name": "set_endpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 }
               ]
@@ -384,33 +381,33 @@
                     "@DEF": "S1",
                     "field": [
                       {
-                        "@accessType": "inputOutput",
                         "@name": "startnode",
+                        "@accessType": "inputOutput",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "inputOutput",
                         "@name": "endnode",
+                        "@accessType": "inputOutput",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "inputOutput",
                         "@name": "transnode",
-                        "@type": "SFNode"
-                      },
-                      {
                         "@accessType": "inputOutput",
-                        "@name": "rotscalenode",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "inputOnly",
+                        "@name": "rotscalenode",
+                        "@accessType": "inputOutput",
+                        "@type": "SFNode"
+                      },
+                      {
                         "@name": "set_startpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       },
                       {
-                        "@accessType": "inputOnly",
                         "@name": "set_endpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       }
                     ],
@@ -443,7 +440,8 @@
                       ]
                     },
                     "#sourceText": [
-                      "ecmascript:",
+                      "",
+                      "            ecmascript:",
                       "        function recompute(startpoint,endpoint){",
                       "\t    if (typeof endpoint === 'undefined') {",
                       "\t\treturn;",
@@ -485,7 +483,9 @@
                       "        }",
                       "        function set_endpoint(val,t){",
                       "            recompute_and_route(startnode.translation,val || endnode.translation);",
-                      "        }"
+                      "        }",
+                      "",
+                      ""
                     ]
                   }
                 }
@@ -495,26 +495,26 @@
         },
         {
           "ProtoInstance": {
-            "@DEF": "G1",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G1"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G2",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G2"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G3",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G3"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G4",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G4"
           }
         },
         {

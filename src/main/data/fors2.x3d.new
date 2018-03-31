@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3"><head><meta name="creator" content="John W Carlson"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
 <meta name="modified" content="April 18 2017"></meta>
 <meta name="title" content="fors2.x3d"></meta>
@@ -22,14 +22,15 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-<![CDATA[ ecmascript:
+<![CDATA[
+ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
- 
+
 ]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
@@ -51,7 +52,8 @@
 <IS><connect nodeField="set_endA" protoField="positionA"></connect>
 <connect nodeField="set_endB" protoField="positionB"></connect>
 </IS>
-<![CDATA[ ecmascript:
+<![CDATA[
+ ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === "undefined") {
@@ -60,7 +62,7 @@
 		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
-                
+
                 function set_endB(value) {
 		    if (typeof spine === "undefined") {
 		        spine = new MFVec3f([value, value]);
@@ -68,12 +70,12 @@
 		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
-                
+
                 function set_spine(value) {
 		    Browser.print('\n'+'"');
                     spine = value;
                 }
- 
+
 ]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>

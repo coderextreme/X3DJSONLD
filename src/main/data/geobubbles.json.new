@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Geospatial"
+          "@name": "Geospatial",
+          "@level": 1
         }
       ],
       "meta": [
@@ -67,8 +67,7 @@
               0,
               0
             ],
-            "@description": "Tour Views",
-            "@retainUserOffsets": false
+            "@description": "Tour Views"
           }
         },
         {

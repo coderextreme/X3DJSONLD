@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta content="Table5_18PixelTexture" name="title"></meta>
-<meta content="PixelTexture example for Table 5.18" name="description"></meta>
-<meta content="Leonard Daly and Don Brutzman" name="creator"></meta>
-<meta content="18 December 2006" name="created"></meta>
-<meta content="2 April 2017" name="modified"></meta>
-<meta content="http://X3dGraphics.com" name="reference"></meta>
-<meta content="http://www.web3d.org/x3d/content/examples/X3dResources.html" name="reference"></meta>
-<meta content="Copyright 2006, Daly Realism and Don Brutzman" name="rights"></meta>
-<meta content="X3D, PixelTexture" name="subject"></meta>
-<meta content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture" name="identifier"></meta>
-<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
-<meta content="../license.html" name="license"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="Table5_18PixelTexture"></meta>
+<meta name="description" content="PixelTexture example for Table 5.18"></meta>
+<meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
+<meta name="created" content="18 December 2006"></meta>
+<meta name="modified" content="2 April 2017"></meta>
+<meta name="reference" content="http://X3dGraphics.com"></meta>
+<meta name="reference" content="http://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
+<meta name="rights" content="Copyright 2006, Daly Realism and Don Brutzman"></meta>
+<meta name="subject" content="X3D, PixelTexture"></meta>
+<meta name="identifier" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Background skyColor="0 0 1"></Background>
 <Transform DEF="Checkerboard" translation="0 0 -10"><Shape><Appearance containerField="appearance"><TextureTransform containerField="textureTransform" scale="500 500"></TextureTransform>

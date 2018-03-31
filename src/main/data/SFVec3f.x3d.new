@@ -5,8 +5,8 @@
 <meta name="description" content="3 prismatic spheres"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/SFVec3f.x3d"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
-<Transform DEF="transform" translation="0 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<Scene><NavigationInfo></NavigationInfo>
+<Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>
@@ -16,7 +16,8 @@
 <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
@@ -47,6 +48,8 @@
 			function initialize() {
 			     newBubble();
 			}
+
+
 
 ]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>

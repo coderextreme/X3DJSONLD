@@ -6,36 +6,36 @@
     "head": {
       "meta": [
         {
-          "@content": "qq3.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "qq3.x3d"
         },
         {
-          "@content": "John Carlson",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "John Carlson"
         },
         {
-          "@content": "John Carlson",
-          "@name": "translator"
+          "@name": "translator",
+          "@content": "John Carlson"
         },
         {
-          "@content": "11 Jan 2015",
-          "@name": "created"
+          "@name": "created",
+          "@content": "11 Jan 2015"
         },
         {
-          "@content": "05 May 2017",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "05 May 2017"
         },
         {
-          "@content": "12 extrusions to test prototype expander",
-          "@name": "description"
+          "@name": "description",
+          "@content": "12 extrusions to test prototype expander"
         },
         {
-          "@content": "https://coderextreme.net/x3d/qq3.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/x3d/qq3.x3d"
         },
         {
-          "@content": "manual",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "manual"
         },
         {
           "@name": "translated",
@@ -62,7 +62,7 @@
                   "Group": {
                     "-children": [
                       {
-                        "#comment": " left "
+                        "#comment": "left"
                       },
                       {
                         "Transform": {
@@ -143,7 +143,7 @@
                         }
                       },
                       {
-                        "#comment": " right "
+                        "#comment": "right"
                       },
                       {
                         "Transform": {
@@ -224,7 +224,7 @@
                         }
                       },
                       {
-                        "#comment": " up "
+                        "#comment": "up"
                       },
                       {
                         "Transform": {
@@ -243,7 +243,7 @@
                         }
                       },
                       {
-                        "#comment": " down "
+                        "#comment": "down"
                       },
                       {
                         "Transform": {
@@ -302,11 +302,6 @@
         },
         {
           "Transform": {
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "ProtoInstance": {

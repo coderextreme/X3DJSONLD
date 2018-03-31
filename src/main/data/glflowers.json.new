@@ -42,12 +42,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Background": {
@@ -88,13 +83,13 @@
                   ],
                   "field": [
                     {
-                      "@accessType": "inputOutput",
                       "@name": "vertex",
+                      "@accessType": "inputOutput",
                       "@type": "MFString"
                     },
                     {
-                      "@accessType": "inputOutput",
                       "@name": "fragment",
+                      "@accessType": "inputOutput",
                       "@type": "MFString"
                     }
                   ]
