@@ -34,7 +34,6 @@
                                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
                                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
                             </ComposedCubeMapTexture>
-
                             <ComposedShader language="GLSL">
                                   <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
                                   <field name='cube' type='SFNode' accessType="inputOutput">
@@ -46,9 +45,9 @@
                                   <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
                                   <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 
-				  <ShaderPart url='"../shaders/common.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs"' type="VERTEX">
+				  <ShaderPart url='"../shaders/gl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"' type="VERTEX">
                                 </ShaderPart>
-				<ShaderPart url='"../shaders/gl_flowers_chromatic.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs"' type='FRAGMENT'>
+				<ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'>
                                 </ShaderPart>
                             </ComposedShader>
 
@@ -68,7 +67,6 @@
 				<ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'>
                                 </ShaderPart>
                             </ComposedShader>
-
                             <ComposedShader DEF="shader" language="GLSL">
                                 <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
                                 <field name='cube' type='SFNode' accessType="inputOutput">
