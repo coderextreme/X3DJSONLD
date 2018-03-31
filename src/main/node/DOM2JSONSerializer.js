@@ -13,6 +13,9 @@ function DOM2JSONSerializer() {
 DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		var obj = this.subSerializeToString(element, fieldTypes, 0, mapToMethod);
+		if (typeof obj['X3D'] === 'undefined') {
+			obj['X3D'] = {};
+		}
 		obj['X3D']['encoding'] = 'UTF-8';
 		obj['X3D']['JSON schema'] = 'http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json';
 		if (typeof obj['X3D']['head'] !== 'undefined') {
@@ -376,27 +379,29 @@ DOM2JSONSerializer.prototype = {
 
 	subSerializeToString : function(element, fieldTypes, n, mapToMethod) {
 		var fields = this.descendFields(element, fieldTypes);
-		for (var cn in element.childNodes) {
-			if (element.childNodes.hasOwnProperty(cn)) {
-				var node = element.childNodes[cn];
-				this.descendNode(node, fieldTypes, n+1, fields, element, mapToMethod);
-
-			}
-		}
-		    
 		var object = {};
-		if (element.nodeName === "meta" ||
-			element.nodeName === "unit" ||
-			element.nodeName === "component" ||
-			element.nodeName === "field" ||
-			element.nodeName === "fieldValue" ||
-			element.nodeName === "connect" ||
-			element.nodeName == "Scene" ||
-			element.nodeName == "head") {
-			object = fields;
-			// console.error(object);
-		} else {
-			object[element.nodeName] =  fields;
+		if (typeof element != 'undefined') {
+			for (var cn in element.childNodes) {
+				if (element.childNodes.hasOwnProperty(cn)) {
+					var node = element.childNodes[cn];
+					this.descendNode(node, fieldTypes, n+1, fields, element, mapToMethod);
+
+				}
+			}
+			    
+			if (element.nodeName === "meta" ||
+				element.nodeName === "unit" ||
+				element.nodeName === "component" ||
+				element.nodeName === "field" ||
+				element.nodeName === "fieldValue" ||
+				element.nodeName === "connect" ||
+				element.nodeName == "Scene" ||
+				element.nodeName == "head") {
+				object = fields;
+				// console.error(object);
+			} else {
+				object[element.nodeName] =  fields;
+			}
 		}
     		return object;
 	}
