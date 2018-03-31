@@ -137,7 +137,11 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	classes.log("			$(selector).attr(field, value);");
 	classes.log("			// console.log('set', node, '.', field, '=', value);");
 	classes.log("			*/");
-	classes.log("			element.setFieldValue(field, value);");
+	classes.log("			try {");
+	classes.log("				element.setFieldValue(field, value);");
+	classes.log("			} catch (e) {");
+	classes.log("				console.log(e);");
+	classes.log("			}");
 	classes.log("			return element;");
 	classes.log("		} else if (arguments.length > 1) {");
 	classes.log("			value = element.getFieldValue(field);");
