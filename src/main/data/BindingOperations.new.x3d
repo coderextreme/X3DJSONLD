@@ -103,7 +103,8 @@
                 <field name='view4Bound' accessType='inputOnly' type='SFBool'/>
                 <field name='priorInputvalue' accessType='initializeOnly' type='SFInt32' value='-1'/>
 <![CDATA[
-ecmascript:
+
+        ecmascript:
 
 function initialize ()
 {
@@ -119,7 +120,7 @@ function set_timeEvent (inputValue)
     // new value provided
     priorInputvalue = inputValue;
     // Browser.print ('\ntimeEvent inputValue=' + inputValue);
-        
+
     // mimics user execution of Figure 4.1 steps t_0 through t_8
     if (inputValue == 0)
     {
@@ -191,6 +192,8 @@ function view5Bound (inputValue)
 {
     Browser.print (', view5Bound ' + (inputValue));
 }
+
+
 
 ]]>
             </Script>
