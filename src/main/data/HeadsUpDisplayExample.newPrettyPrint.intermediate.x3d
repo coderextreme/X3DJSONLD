@@ -41,5 +41,6 @@
                 </Shape>
             </fieldValue>
         </ProtoInstance>
+        <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"../HelloWorld.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d" "../HelloWorld.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"' class=''/>
     </Scene>
 </X3D>

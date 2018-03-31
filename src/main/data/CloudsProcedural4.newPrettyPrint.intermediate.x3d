@@ -20,7 +20,9 @@
         <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' groundColor='0 0 1' leftUrl='' rightUrl='' skyAngle='' skyColor='0 0 1' topUrl='' transparency='0.0' class=''/>
         <DirectionalLight ambientIntensity='1.0' color='1 1 1' direction='-1 0 0' global='true' intensity='1.0' on='true' class=''/>
         <Group DEF='Terrain' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='50 50 50' scaleOrientation='0 0 1 0' translation='25000 0 25000' class=''/>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='50 50 50' scaleOrientation='0 0 1 0' translation='25000 0 25000' class=''>
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"MontereyBayLargeMesh.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d" "MontereyBayLargeMesh.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"' class=''/>
+            </Transform>
             <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 1.57' scale='1 1 1' scaleOrientation='0 0 1 0' translation='25000 0 25000' class=''>
                 <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                     <Appearance class=''>
@@ -31,7 +33,9 @@
             </Transform>
         </Group>
         <Group DEF='Placemarks' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='50 50 50' scaleOrientation='0 0 1 0' translation='45000 30 44000' class=''/>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='50 50 50' scaleOrientation='0 0 1 0' translation='45000 30 44000' class=''>
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"Lighthouse.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d" "Lighthouse.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"' class=''/>
+            </Transform>
         </Group>
         <Group DEF='Clouds' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
             <Transform DEF='Cumulus' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''/>

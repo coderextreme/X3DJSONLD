@@ -103,16 +103,23 @@
                     </IndexedFaceSet>
                 </Shape>
             </Transform>
-            <Transform DEF='CockpitTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 -0.1' scale='0.045 0.045 0.045' scaleOrientation='0 0 1 0' translation='0 1 -10' class=''/>
-            <Transform DEF='SeatTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 -0.1' scale='0.9 0.9 0.9' scaleOrientation='0 0 1 0' translation='0 0 -8.3' class=''/>
+            <Transform DEF='CockpitTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 -0.1' scale='0.045 0.045 0.045' scaleOrientation='0 0 1 0' translation='0 1 -10' class=''>
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"Cockpit.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d" "Cockpit.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"' class=''/>
+            </Transform>
+            <Transform DEF='SeatTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 -0.1' scale='0.9 0.9 0.9' scaleOrientation='0 0 1 0' translation='0 0 -8.3' class=''>
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"Seat.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d" "Seat.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"' class=''/>
+            </Transform>
             <Transform DEF='FrontWheelTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 2.5 0' rotation='-1 0 0 1.92' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0.7 -5.2 -6.5' class=''>
                 <!-- Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) -->
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"FrontWheel.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d" "FrontWheel.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"' class=''/>
             </Transform>
             <Transform DEF='RearLeftWheelTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 2.5 0' rotation='1 0 1 1.92' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-2.95 -5 7' class=''>
                 <!-- Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) -->
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"RearLeftWheel.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d" "RearLeftWheel.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"' class=''/>
             </Transform>
             <Transform DEF='RearRightWheelTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 2.5 0' rotation='-1 0 -1 1.92' scale='1 1 1' scaleOrientation='0 0 1 0' translation='2.95 -5 7' class=''>
                 <!-- Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) -->
+                <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"RearRightWheel.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d" "RearRightWheel.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"' class=''/>
             </Transform>
             <Transform DEF='CockpitButtonsTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
                 <Transform DEF='UpButtonTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 1.57' scale='0.008 0.008 0.008' scaleOrientation='0 0 1 0' translation='-0.95 1.05 -10' class=''>
@@ -215,22 +222,54 @@
         <ROUTE fromField='value_changed' fromNode='LRearInterDown1' toField='set_rotation' toNode='RearLeftWheelTransform'/>
         <ROUTE fromField='value_changed' fromNode='LRearInterUp1' toField='set_rotation' toNode='RearLeftWheelTransform'/>
         <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='1.309 1.570796' groundColor='0 0.3 0.7 0 0.35 0.75 0 0.4 0.8' leftUrl='' rightUrl='' skyAngle='1.309 1.571' skyColor='0 0.3 0.8 0 0.5 1 1 1 1' topUrl='' transparency='0.0' class=''/>
-        <Transform DEF='RightmostAmraamTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='15.65 0 4.5' class=''/>
-        <Transform DEF='LeftmostAmraamTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='-15.65 0 4.5' class=''/>
-        <Transform DEF='SidewinderHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='6 3 3' scaleOrientation='0 0 1 0' translation='9 -1.125 8' class=''/>
-        <Transform DEF='SidewinderHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='6 3 3' scaleOrientation='0 0 1 0' translation='-8.45 -1.125 8' class=''/>
-        <Transform DEF='TurkishFlagTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 -1 0 1.57' scale='0.3 0.25 0.3' scaleOrientation='0 0 1 0' translation='-0.01 8 19.5' class=''/>
-        <Transform DEF='TurkishFlagTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='0.3 0.25 0.3' scaleOrientation='0 0 1 0' translation='0.01 8 20.5' class=''/>
-        <Transform DEF='AmraamHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-12 -0.176 10.7' class=''/>
-        <Transform DEF='AmraamHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='12 -0.176 10.7' class=''/>
-        <Transform DEF='AmraamInnerTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='12 -1.6 4.5' class=''/>
-        <Transform DEF='AmraamInnerTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='-12 -1.6 4.5' class=''/>
-        <Transform DEF='SidewinderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.6 1.6 1.6' scaleOrientation='0 0 1 0' translation='-8.7 -2 3.5' class=''/>
-        <Transform DEF='SidewinderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.6 1.6 1.6' scaleOrientation='0 0 1 0' translation='8.7 -2 3.5' class=''/>
-        <Transform DEF='FuelTankHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='-4.8 -1.125 6' class=''/>
-        <Transform DEF='FuelTankHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='5.3 -1.125 6' class=''/>
-        <Transform DEF='FuelTankTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='5 -2.85 5.5' class=''/>
-        <Transform DEF='FuelTankTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='-5 -2.85 5.5' class=''/>
+        <Transform DEF='RightmostAmraamTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='15.65 0 4.5' class=''>
+            <Inline DEF='Amraam' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"../../Weapons/Missiles/Amraam.x3d" "https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d" "../../Weapons/Missiles/Amraam.wrl" "https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='LeftmostAmraamTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='-15.65 0 4.5' class=''>
+            <Inline USE='Amraam'/>
+        </Transform>
+        <Transform DEF='SidewinderHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='6 3 3' scaleOrientation='0 0 1 0' translation='9 -1.125 8' class=''>
+            <Inline DEF='SidewinderHolder' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"SidewinderHolder.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d" "SidewinderHolder.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='SidewinderHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='6 3 3' scaleOrientation='0 0 1 0' translation='-8.45 -1.125 8' class=''>
+            <Inline USE='SidewinderHolder'/>
+        </Transform>
+        <Transform DEF='TurkishFlagTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 -1 0 1.57' scale='0.3 0.25 0.3' scaleOrientation='0 0 1 0' translation='-0.01 8 19.5' class=''>
+            <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"TurkishFlagLeft.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d" "TurkishFlagLeft.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='TurkishFlagTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='0.3 0.25 0.3' scaleOrientation='0 0 1 0' translation='0.01 8 20.5' class=''>
+            <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"TurkishFlagRight.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d" "TurkishFlagRight.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='AmraamHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-12 -0.176 10.7' class=''>
+            <Inline DEF='AmraamHolder' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"AmraamHolder.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d" "AmraamHolder.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='AmraamHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='12 -0.176 10.7' class=''>
+            <Inline USE='AmraamHolder'/>
+        </Transform>
+        <Transform DEF='AmraamInnerTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='12 -1.6 4.5' class=''>
+            <Inline USE='Amraam'/>
+        </Transform>
+        <Transform DEF='AmraamInnerTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' scaleOrientation='0 0 1 0' translation='-12 -1.6 4.5' class=''>
+            <Inline USE='Amraam'/>
+        </Transform>
+        <Transform DEF='SidewinderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.6 1.6 1.6' scaleOrientation='0 0 1 0' translation='-8.7 -2 3.5' class=''>
+            <Inline DEF='Sidewinder' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"../../Weapons/Missiles/Sidewinder.x3d" "https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d" "../../Weapons/Missiles/Sidewinder.wrl" "https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='SidewinderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.6 1.6 1.6' scaleOrientation='0 0 1 0' translation='8.7 -2 3.5' class=''>
+            <Inline USE='Sidewinder'/>
+        </Transform>
+        <Transform DEF='FuelTankHolderTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='-4.8 -1.125 6' class=''>
+            <Inline DEF='FuelTankHolder' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"FuelTankHolder.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d" "FuelTankHolder.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='FuelTankHolderTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 1 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='5.3 -1.125 6' class=''>
+            <Inline USE='FuelTankHolder'/>
+        </Transform>
+        <Transform DEF='FuelTankTransformRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='5 -2.85 5.5' class=''>
+            <Inline DEF='FuelTank' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"FuelTank.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d" "FuelTank.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"' class=''/>
+        </Transform>
+        <Transform DEF='FuelTankTransformLeft' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='-1 0 0 1.57' scale='1.5 1.5 1.5' scaleOrientation='0 0 1 0' translation='-5 -2.85 5.5' class=''>
+            <Inline USE='FuelTank'/>
+        </Transform>
         <Transform DEF='InlineCoverOfPlaneTansform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
@@ -239,7 +278,9 @@
                 <Box size='4.15 0.1 20' solid='true' class=''/>
             </Shape>
         </Transform>
-        <Transform DEF='TargetHelicopterTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='16 -50 -500' class=''/>
+        <Transform DEF='TargetHelicopterTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='16 -50 -500' class=''>
+            <Inline bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"Target.x3d" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d" "Target.wrl" "https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"' class=''/>
+        </Transform>
         <TimeSensor DEF='FireClock' cycleInterval='8.0' enabled='true' loop='false' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
         <PositionInterpolator DEF='MissilePath' key='0 0.1 1' keyValue='-15.65 0 4.5 -15.65 -2 4.5 16 -50 -500' class=''/>
         <ROUTE fromField='touchTime' fromNode='FireSensor' toField='set_startTime' toNode='FireClock'/>
