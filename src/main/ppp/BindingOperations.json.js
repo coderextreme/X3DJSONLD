@@ -61,6 +61,9 @@ if (typeof document === 'undefined') {
 		};
 	}};
 }
+if (typeof $ !== 'function') {
+	$ = function() { return { attr : function() {}, 0 : null }; };
+}
 X3DJSON.nodeUtil = function(node, field, value) {
 		var selector = "undefined [DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -75,7 +78,9 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			// console.log('set', node, '.', field, '=', value);
 			*/
 			try {
-				element.setFieldValue(field, value);
+				if (typeof element.setFieldValue === 'function') {
+					element.setFieldValue(field, value);
+				}
 			} catch (e) {
 				console.log(e);
 			}
