@@ -6,12 +6,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "DirectionalLight": {
@@ -93,9 +88,7 @@
                         2,
                         -1
                       ],
-                      "@creaseAngle": 0,
                       "@DEF": "Orbit",
-                      "@solid": true,
                       "-coord": {
                         "Coordinate": {
                           "@DEF": "OrbitCoordinates",
@@ -124,51 +117,28 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@accessType": "inputOnly",
                 "@name": "set_fraction",
+                "@accessType": "inputOnly",
                 "@type": "SFFloat"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "coordinates",
+                "@accessType": "outputOnly",
                 "@type": "MFVec3f"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "coordIndexes",
+                "@accessType": "outputOnly",
                 "@type": "MFInt32"
               }
             ],
             "-children": [
               {
-                "#comment": ""
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
-              },
-              {
-                "#comment": "        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
-              },
-              {
-                "#comment": "\t"
+                "#comment": "<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
               }
             ],
             "#sourceText": [
+              "",
               "ecmascript:",
               "",
               "var e = 5;",
@@ -242,7 +212,8 @@
               "\t\th = 4;",
               "\t}",
               "\tgenerateCoordinates(resolution);",
-              "}"
+              "}",
+              ""
             ]
           }
         },

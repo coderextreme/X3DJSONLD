@@ -38,9 +38,11 @@
             <Script directOutput='false' mustEvaluate='false' url='' class=''>
                 <field name='frontUrls' accessType='initializeOnly' appinfo='' documentation='' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
-ecmascript:
-			    var me = '"1" "\"2" "\n3"';
+
+			    ecmascript:
+			    var me = '"1" ""2" "\n3"';
 			    
+			
 
 ]]>
             </Script>

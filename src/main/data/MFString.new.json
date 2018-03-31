@@ -437,14 +437,7 @@
                     "@DEF":"CockpitTransform",
                     "@rotation":[1,0,0,-0.1],
                     "@scale":[0.045,0.045,0.045],
-                    "@translation":[0,1,-10],
-                    "-children":[
-                      { "Inline":
-                        {
-                          "@url":["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"]
-                        }
-                      }
-                    ]
+                    "@translation":[0,1,-10]
                   }
                 },
                 { "Transform":
@@ -452,14 +445,7 @@
                     "@DEF":"SeatTransform",
                     "@rotation":[-1,0,0,-0.1],
                     "@scale":[0.9,0.9,0.9],
-                    "@translation":[0,0,-8.3],
-                    "-children":[
-                      { "Inline":
-                        {
-                          "@url":["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"]
-                        }
-                      }
-                    ]
+                    "@translation":[0,0,-8.3]
                   }
                 },
                 { "Transform":
@@ -471,11 +457,6 @@
                     "-children":[
                       {
                         "#comment":"Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"
-                      },
-                      { "Inline":
-                        {
-                          "@url":["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]
-                        }
                       }
                     ]
                   }
@@ -489,11 +470,6 @@
                     "-children":[
                       {
                         "#comment":"Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"
-                      },
-                      { "Inline":
-                        {
-                          "@url":["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]
-                        }
                       }
                     ]
                   }
@@ -507,11 +483,6 @@
                     "-children":[
                       {
                         "#comment":"Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"
-                      },
-                      { "Inline":
-                        {
-                          "@url":["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]
-                        }
                       }
                     ]
                   }
@@ -1049,15 +1020,7 @@
               "@DEF":"RightmostAmraamTransform",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
-              "@translation":[15.65,0,4.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"Amraam",
-                    "@url":["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"]
-                  }
-                }
-              ]
+              "@translation":[15.65,0,4.5]
             }
           },
           { "Transform":
@@ -1065,14 +1028,7 @@
               "@DEF":"LeftmostAmraamTransform",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
-              "@translation":[-15.65,0,4.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"Amraam"
-                  }
-                }
-              ]
+              "@translation":[-15.65,0,4.5]
             }
           },
           { "Transform":
@@ -1080,15 +1036,7 @@
               "@DEF":"SidewinderHolderTransformRight",
               "@rotation":[0,1,0,1.57],
               "@scale":[6,3,3],
-              "@translation":[9,-1.125,8],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"SidewinderHolder",
-                    "@url":["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"]
-                  }
-                }
-              ]
+              "@translation":[9,-1.125,8]
             }
           },
           { "Transform":
@@ -1096,14 +1044,7 @@
               "@DEF":"SidewinderHolderTransformLeft",
               "@rotation":[0,1,0,1.57],
               "@scale":[6,3,3],
-              "@translation":[-8.45,-1.125,8],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"SidewinderHolder"
-                  }
-                }
-              ]
+              "@translation":[-8.45,-1.125,8]
             }
           },
           { "Transform":
@@ -1111,14 +1052,7 @@
               "@DEF":"TurkishFlagTransformLeft",
               "@rotation":[0,-1,0,1.57],
               "@scale":[0.3,0.25,0.3],
-              "@translation":[-0.01,8,19.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@url":["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"]
-                  }
-                }
-              ]
+              "@translation":[-0.01,8,19.5]
             }
           },
           { "Transform":
@@ -1126,41 +1060,19 @@
               "@DEF":"TurkishFlagTransformRight",
               "@rotation":[0,1,0,1.57],
               "@scale":[0.3,0.25,0.3],
-              "@translation":[0.01,8,20.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@url":["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"]
-                  }
-                }
-              ]
+              "@translation":[0.01,8,20.5]
             }
           },
           { "Transform":
             {
               "@DEF":"AmraamHolderTransformLeft",
-              "@translation":[-12,-0.176,10.7],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"AmraamHolder",
-                    "@url":["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"]
-                  }
-                }
-              ]
+              "@translation":[-12,-0.176,10.7]
             }
           },
           { "Transform":
             {
               "@DEF":"AmraamHolderTransformRight",
-              "@translation":[12,-0.176,10.7],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"AmraamHolder"
-                  }
-                }
-              ]
+              "@translation":[12,-0.176,10.7]
             }
           },
           { "Transform":
@@ -1168,14 +1080,7 @@
               "@DEF":"AmraamInnerTransformRight",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
-              "@translation":[12,-1.6,4.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"Amraam"
-                  }
-                }
-              ]
+              "@translation":[12,-1.6,4.5]
             }
           },
           { "Transform":
@@ -1183,14 +1088,7 @@
               "@DEF":"AmraamInnerTransformLeft",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
-              "@translation":[-12,-1.6,4.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"Amraam"
-                  }
-                }
-              ]
+              "@translation":[-12,-1.6,4.5]
             }
           },
           { "Transform":
@@ -1198,15 +1096,7 @@
               "@DEF":"SidewinderTransformLeft",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.6,1.6,1.6],
-              "@translation":[-8.7,-2,3.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"Sidewinder",
-                    "@url":["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"]
-                  }
-                }
-              ]
+              "@translation":[-8.7,-2,3.5]
             }
           },
           { "Transform":
@@ -1214,14 +1104,7 @@
               "@DEF":"SidewinderTransformRight",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.6,1.6,1.6],
-              "@translation":[8.7,-2,3.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"Sidewinder"
-                  }
-                }
-              ]
+              "@translation":[8.7,-2,3.5]
             }
           },
           { "Transform":
@@ -1229,15 +1112,7 @@
               "@DEF":"FuelTankHolderTransformLeft",
               "@rotation":[0,1,0,1.57],
               "@scale":[1.5,1.5,1.5],
-              "@translation":[-4.8,-1.125,6],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"FuelTankHolder",
-                    "@url":["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"]
-                  }
-                }
-              ]
+              "@translation":[-4.8,-1.125,6]
             }
           },
           { "Transform":
@@ -1245,14 +1120,7 @@
               "@DEF":"FuelTankHolderTransformRight",
               "@rotation":[0,1,0,1.57],
               "@scale":[1.5,1.5,1.5],
-              "@translation":[5.3,-1.125,6],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"FuelTankHolder"
-                  }
-                }
-              ]
+              "@translation":[5.3,-1.125,6]
             }
           },
           { "Transform":
@@ -1260,15 +1128,7 @@
               "@DEF":"FuelTankTransformRight",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.5,1.5,1.5],
-              "@translation":[5,-2.85,5.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@DEF":"FuelTank",
-                    "@url":["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"]
-                  }
-                }
-              ]
+              "@translation":[5,-2.85,5.5]
             }
           },
           { "Transform":
@@ -1276,14 +1136,7 @@
               "@DEF":"FuelTankTransformLeft",
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.5,1.5,1.5],
-              "@translation":[-5,-2.85,5.5],
-              "-children":[
-                { "Inline":
-                  {
-                    "@USE":"FuelTank"
-                  }
-                }
-              ]
+              "@translation":[-5,-2.85,5.5]
             }
           },
           { "Transform":
@@ -1317,14 +1170,7 @@
           { "Transform":
             {
               "@DEF":"TargetHelicopterTransform",
-              "@translation":[16,-50,-500],
-              "-children":[
-                { "Inline":
-                  {
-                    "@url":["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"]
-                  }
-                }
-              ]
+              "@translation":[16,-50,-500]
             }
           },
           { "TimeSensor":

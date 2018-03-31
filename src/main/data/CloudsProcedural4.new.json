@@ -105,14 +105,7 @@
                 { "Transform":
                   {
                     "@scale":[50,50,50],
-                    "@translation":[25000,0,25000],
-                    "-children":[
-                      { "Inline":
-                        {
-                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]
-                        }
-                      }
-                    ]
+                    "@translation":[25000,0,25000]
                   }
                 },
                 { "Transform":
@@ -154,14 +147,7 @@
                 { "Transform":
                   {
                     "@scale":[50,50,50],
-                    "@translation":[45000,30,44000],
-                    "-children":[
-                      { "Inline":
-                        {
-                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]
-                        }
-                      }
-                    ]
+                    "@translation":[45000,30,44000]
                   }
                 }
               ]
