@@ -14,8 +14,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a flower")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE","ANY"], Java.type("java.lang.String[]"))))
-        .addComments(new CommentsBlock(' Images courtesy of Paul Debevec\'s Light Probe Image Gallery '))
+        .addChild(new NavigationInfoObject())
+        .addComments(new CommentsBlock('Images courtesy of Paul Debevec\'s Light Probe Image Gallery'))
         .addChild(new BackgroundObject().setDEF("background").setBackUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setPosition(Java.to([0,0,40], Java.type("float[]"))).setDescription("Transparent rose"))
         .addChild(new TransformObject().setDEF("Rose01")
@@ -41,9 +41,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addComments(new CommentsBlock('field name=\'cube\' type=\'SFNode\' accessType="inputOutput">'))
-                .addComments(new CommentsBlock('			  <ComposedCubeMapTexture USE="texture"/>'))
-                .addComments(new CommentsBlock('		  </field'))
+                .addComments(new CommentsBlock('field name=\'cube\' type=\'SFNode\' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field'))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], Java.type("java.lang.String[]")))))
               .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
@@ -61,7 +59,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], Java.type("java.lang.String[]"))))))
-            .setGeometry(new SphereObject().setSolid(false).setRadius(1))))
+            .setGeometry(new SphereObject().setSolid(false))))
         .addChild(new ScriptObject().setDEF("UrlSelector").setDirectOutput(true)
           .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("backUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\""))
@@ -78,6 +76,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
           .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "            var side = Math.floor(f*frontUrls.length);\n"+
@@ -94,23 +93,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                    bottom[0] = bottomUrls[side];\n"+
 "            }\n"+
 "        }\n"+
+"\n"+
+"\n"+
 ""))
-        .addComments(new CommentsBlock(''))
-        .addComments(new CommentsBlock('            <TimeSensor DEF="Clock" cycleInterval="45" loop=\'true\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'Clock\' fromField=\'fraction_changed\' toNode=\'UrlSelector\' toField=\'set_fraction\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'background\' toField=\'frontUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'background\' toField=\'backUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'background\' toField=\'leftUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'background\' toField=\'rightUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'background\' toField=\'topUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'background\' toField=\'bottomUrl\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'frontShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'backShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'leftShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'rightShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'topShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('            <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'bottomShader\' toField=\'url\'/>'))
-        .addComments(new CommentsBlock('	    '))
+        .addComments(new CommentsBlock('<TimeSensor DEF="Clock" cycleInterval="45" loop=\'true\'/> <ROUTE fromNode=\'Clock\' fromField=\'fraction_changed\' toNode=\'UrlSelector\' toField=\'set_fraction\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'background\' toField=\'frontUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'background\' toField=\'backUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'background\' toField=\'leftUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'background\' toField=\'rightUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'background\' toField=\'topUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'background\' toField=\'bottomUrl\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'frontShader\' toField=\'url\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'backShader\' toField=\'url\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'leftShader\' toField=\'url\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'rightShader\' toField=\'url\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'topShader\' toField=\'url\'/> <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'bottomShader\' toField=\'url\'/>'))
         .addChild(new ScriptObject().setDEF("Animate").setDirectOutput(true)
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
@@ -120,6 +106,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .setSourceCode("\n"+
+"\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
@@ -154,6 +142,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		d = 4;\n"+
 "	}\n"+
 "}\n"+
+"\n"+
+"\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))

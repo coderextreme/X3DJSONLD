@@ -14,7 +14,7 @@ meta2.setName("flowers2.x3d")
 head1.addMeta(meta2)
 meta3 = metaObject()
 meta3.setContent("John Carlson")
-meta3.setName("author")
+meta3.setName("creator")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
@@ -28,7 +28,7 @@ meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setContent("05 May 2017")
+meta6.setContent("21 March 2018")
 meta6.setName("modified")
 
 head1.addMeta(meta6)
@@ -38,8 +38,8 @@ meta7.setName("description")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setContent("https://coderextreme.net/x3d/flowers2.x3d")
-meta8.setName("url")
+meta8.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")
+meta8.setName("identifier")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
@@ -47,349 +47,346 @@ meta9.setContent("manually written")
 meta9.setName("generator")
 
 head1.addMeta(meta9)
+meta10 = metaObject()
+meta10.setContent("http://www.web3d.org/x3d/content/examples/license.html")
+meta10.setName("license")
+
+head1.addMeta(meta10)
 X3D0.setHead(head1)
-Scene10 = SceneObject()
+Scene11 = SceneObject()
 
-NavigationInfo11 = NavigationInfoObject()
-NavigationInfo11.setType(["EXAMINE","ANY"])
+NavigationInfo12 = NavigationInfoObject()
+NavigationInfo12.setType(["EXAMINE","ANY"])
 
-Scene10.addChild(NavigationInfo11)
-Viewpoint12 = ViewpointObject()
-Viewpoint12.setDescription("Two mathematical orbitals")
-Viewpoint12.setPosition([0,0,50])
+Scene11.addChild(NavigationInfo12)
+Viewpoint13 = ViewpointObject()
+Viewpoint13.setDescription("Two mathematical orbitals")
+Viewpoint13.setPosition([0,0,50])
 
-Scene10.addChild(Viewpoint12)
-Group13 = GroupObject()
+Scene11.addChild(Viewpoint13)
+Group14 = GroupObject()
 
-DirectionalLight14 = DirectionalLightObject()
-DirectionalLight14.setDirection([1,1,1])
+DirectionalLight15 = DirectionalLightObject()
+DirectionalLight15.setDirection([1,1,1])
 
-Group13.addChild(DirectionalLight14)
-Transform15 = TransformObject()
-Transform15.setDEF("OrbitTransform")
-Transform15.setTranslation([8,0,0])
+Group14.addChild(DirectionalLight15)
+TimeSensor16 = TimeSensorObject()
+TimeSensor16.setDEF("Clock")
+TimeSensor16.setCycleInterval(16)
+TimeSensor16.setLoop(True)
 
-Shape16 = ShapeObject()
+Group14.addChild(TimeSensor16)
+OrientationInterpolator17 = OrientationInterpolatorObject()
+OrientationInterpolator17.setDEF("OrbitPath")
+OrientationInterpolator17.setKey([0,0.5,1])
+OrientationInterpolator17.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
 
-Appearance17 = AppearanceObject()
+Group14.addChild(OrientationInterpolator17)
+ProtoDeclare18 = ProtoDeclareObject()
+ProtoDeclare18.setName("orbit")
 
-Material18 = MaterialObject()
-Material18.setDiffuseColor([0,0.5,1])
-Material18.setSpecularColor([0,0.5,1])
+ProtoInterface19 = ProtoInterfaceObject()
 
-Appearance17.setMaterial(Material18)
-Shape16.setAppearance(Appearance17)
-IndexedFaceSet19 = IndexedFaceSetObject()
-IndexedFaceSet19.setConvex(False)
-IndexedFaceSet19.setDEF("Orbit")
-IndexedFaceSet19.setCreaseAngle(0)
+field20 = fieldObject()
+field20.setType(fieldObject.TYPE_SFVEC3F)
+field20.setName("translation")
+field20.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field20.setValue("-8 0 0")
 
-Coordinate20 = CoordinateObject()
-Coordinate20.setDEF("OrbitCoordinates")
+ProtoInterface19.addField(field20)
+field21 = fieldObject()
+field21.setType(fieldObject.TYPE_SFVEC3F)
+field21.setName("diffuseColor")
+field21.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field21.setValue("1 0.5 0")
 
-IndexedFaceSet19.setCoord(Coordinate20)
-Shape16.setGeometry(IndexedFaceSet19)
-Transform15.addChild(Shape16)
-Group13.addChild(Transform15)
-Transform21 = TransformObject()
-Transform21.setDEF("OrbitTransform2")
-Transform21.setTranslation([-8,0,0])
+ProtoInterface19.addField(field21)
+field22 = fieldObject()
+field22.setType(fieldObject.TYPE_SFVEC3F)
+field22.setName("specularColor")
+field22.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field22.setValue("1 0.5 0")
 
-Shape22 = ShapeObject()
+ProtoInterface19.addField(field22)
+field23 = fieldObject()
+field23.setType(fieldObject.TYPE_SFFLOAT)
+field23.setName("transparency")
+field23.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field23.setValue("0.75")
 
-Appearance23 = AppearanceObject()
+ProtoInterface19.addField(field23)
+ProtoDeclare18.setProtoInterface(ProtoInterface19)
+ProtoBody24 = ProtoBodyObject()
 
-Material24 = MaterialObject()
-Material24.setDiffuseColor([1,0.5,0])
-Material24.setSpecularColor([1,0.5,0])
-Material24.setTransparency(0.75)
+Group25 = GroupObject()
 
-Appearance23.setMaterial(Material24)
-Shape22.setAppearance(Appearance23)
-IndexedFaceSet25 = IndexedFaceSetObject()
-IndexedFaceSet25.setDEF("Orbit2")
-IndexedFaceSet25.setCreaseAngle(0)
+Transform26 = TransformObject()
+Transform26.setDEF("OrbitTransform")
 
-Coordinate26 = CoordinateObject()
-Coordinate26.setDEF("OrbitCoordinates2")
+IS27 = ISObject()
 
-IndexedFaceSet25.setCoord(Coordinate26)
-Shape22.setGeometry(IndexedFaceSet25)
-Transform21.addChild(Shape22)
-Group13.addChild(Transform21)
-TimeSensor27 = TimeSensorObject()
-TimeSensor27.setDEF("Clock")
-TimeSensor27.setCycleInterval(16)
-TimeSensor27.setLoop(True)
+connect28 = connectObject()
+connect28.setNodeField("translation")
+connect28.setProtoField("translation")
 
-Group13.addChild(TimeSensor27)
-OrientationInterpolator28 = OrientationInterpolatorObject()
-OrientationInterpolator28.setDEF("OrbitPath")
-OrientationInterpolator28.setKey([0,0.5,1])
-OrientationInterpolator28.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
+IS27.addConnect(connect28)
+Transform26.setIS(IS27)
+Shape29 = ShapeObject()
 
-Group13.addChild(OrientationInterpolator28)
-Script29 = ScriptObject()
-Script29.setDEF("OrbitScript")
+Appearance30 = AppearanceObject()
 
-field30 = fieldObject()
-field30.setType(fieldObject.TYPE_SFFLOAT)
-field30.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
-field30.setName("set_fraction")
+Material31 = MaterialObject()
 
-Script29.addField(field30)
-field31 = fieldObject()
-field31.setType(fieldObject.TYPE_MFVEC3F)
-field31.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
-field31.setName("coordinates")
+IS32 = ISObject()
 
-Script29.addField(field31)
-field32 = fieldObject()
-field32.setType(fieldObject.TYPE_MFINT32)
-field32.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
-field32.setName("coordIndexes")
+connect33 = connectObject()
+connect33.setNodeField("diffuseColor")
+connect33.setProtoField("diffuseColor")
 
-Script29.addField(field32)
+IS32.addConnect(connect33)
+connect34 = connectObject()
+connect34.setNodeField("specularColor")
+connect34.setProtoField("specularColor")
 
-Script29.setSourceCode("\n"+
+IS32.addConnect(connect34)
+connect35 = connectObject()
+connect35.setNodeField("transparency")
+connect35.setProtoField("transparency")
+
+IS32.addConnect(connect35)
+Material31.setIS(IS32)
+Appearance30.setMaterial(Material31)
+Shape29.setAppearance(Appearance30)
+IndexedFaceSet36 = IndexedFaceSetObject()
+IndexedFaceSet36.setDEF("Orbit")
+IndexedFaceSet36.setCreaseAngle(0)
+
+Coordinate37 = CoordinateObject()
+Coordinate37.setDEF("OrbitCoordinates")
+
+IndexedFaceSet36.setCoord(Coordinate37)
+Shape29.setGeometry(IndexedFaceSet36)
+Transform26.addChild(Shape29)
+Group25.addChild(Transform26)
+Script38 = ScriptObject()
+Script38.setDEF("OrbitScript")
+
+field39 = fieldObject()
+field39.setType(fieldObject.TYPE_SFFLOAT)
+field39.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field39.setName("set_fraction")
+
+Script38.addField(field39)
+field40 = fieldObject()
+field40.setType(fieldObject.TYPE_MFVEC3F)
+field40.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field40.setName("coordinates")
+
+Script38.addField(field40)
+field41 = fieldObject()
+field41.setType(fieldObject.TYPE_MFINT32)
+field41.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field41.setName("coordIndexes")
+
+Script38.addField(field41)
+field42 = fieldObject()
+field42.setType(fieldObject.TYPE_SFFLOAT)
+field42.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field42.setName("e")
+field42.setValue("5")
+
+Script38.addField(field42)
+field43 = fieldObject()
+field43.setType(fieldObject.TYPE_SFFLOAT)
+field43.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field43.setName("f")
+field43.setValue("5")
+
+Script38.addField(field43)
+field44 = fieldObject()
+field44.setType(fieldObject.TYPE_SFFLOAT)
+field44.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field44.setName("g")
+field44.setValue("5")
+
+Script38.addField(field44)
+field45 = fieldObject()
+field45.setType(fieldObject.TYPE_SFFLOAT)
+field45.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field45.setName("h")
+field45.setValue("5")
+
+Script38.addField(field45)
+field46 = fieldObject()
+field46.setType(fieldObject.TYPE_SFINT32)
+field46.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field46.setName("resolution")
+field46.setValue("50")
+
+Script38.addField(field46)
+
+Script38.setSourceCode("\n"+
+"			ecmascript:\n"+
 "\n"+
-"ecmascript:\n"+
+"			var e = 5;\n"+
+"			var f = 5;\n"+
+"			var g = 5;\n"+
+"			var h = 5;\n"+
+"			var resolution = 100;\n"+
 "\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
+"			function initialize() {\n"+
+"			     generateCoordinates();\n"+
+"			     var localci = [];\n"+
+"			     for ( i = 0; i < resolution-1; i++) {\n"+
+"				for ( j = 0; j < resolution-1; j++) {\n"+
+"				     localci.push(i*resolution+j);\n"+
+"				     localci.push(i*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j);\n"+
+"				     localci.push(-1);\n"+
+"				}\n"+
+"			    }\n"+
+"			    coordIndexes = new MFInt32(localci);\n"+
+"			}\n"+
 "\n"+
-"function initialize() {\n"+
-"     resolution = 100;\n"+
-"     generateCoordinates(resolution);\n"+
-"     var localci = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci.push(i*resolution+j);\n"+
-"	     localci.push(i*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j);\n"+
-"	     localci.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
-"}\n"+
+"			function generateCoordinates() {\n"+
+"			     theta = 0.0;\n"+
+"			     phi = 0.0;\n"+
+"			     delta = (2 * 3.141592653) / (resolution-1);\n"+
+"			     var localc = [];\n"+
+"			     for ( i = 0; i < resolution; i++) {\n"+
+"				for ( j = 0; j < resolution; j++) {\n"+
+"					rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"					localc.push(new SFVec3f(\n"+
+"						rho * Math.cos(phi) * Math.cos(theta),\n"+
+"						rho * Math.cos(phi) * Math.sin(theta),\n"+
+"						rho * Math.sin(phi)\n"+
+"					));\n"+
+"					theta += delta;\n"+
+"				}\n"+
+"				phi += delta;\n"+
+"			     }\n"+
+"			     \n"+
+"			     coordinates = new MFVec3f(localc);\n"+
+"			}\n"+
 "\n"+
-"function generateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	resolution = 100;\n"+
-"	generateCoordinates(resolution);\n"+
-"}\n"+
-"      \n"+
+"			function set_fraction(fraction, eventTime) {\n"+
+"				choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				if (f < 1) {\n"+
+"					f = 10;\n"+
+"				}\n"+
+"				if (g < 1) {\n"+
+"					g = 4;\n"+
+"				}\n"+
+"				if (h < 1) {\n"+
+"					h = 4;\n"+
+"				}\n"+
+"				generateCoordinates();\n"+
+"			}\n"+
+"			      \n"+
 "")
-Group13.addChild(Script29)
-Script33 = ScriptObject()
-Script33.setDEF("OrbitScript2")
+Group25.addChild(Script38)
+ROUTE47 = ROUTEObject()
+ROUTE47.setFromNode("OrbitScript")
+ROUTE47.setFromField("coordIndexes")
+ROUTE47.setToNode("Orbit")
+ROUTE47.setToField("coordIndex")
 
-field34 = fieldObject()
-field34.setType(fieldObject.TYPE_SFFLOAT)
-field34.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
-field34.setName("set_fraction")
+Group25.addChild(ROUTE47)
+ROUTE48 = ROUTEObject()
+ROUTE48.setFromNode("OrbitScript")
+ROUTE48.setFromField("coordinates")
+ROUTE48.setToNode("OrbitCoordinates")
+ROUTE48.setToField("point")
 
-Script33.addField(field34)
-field35 = fieldObject()
-field35.setType(fieldObject.TYPE_MFVEC3F)
-field35.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
-field35.setName("coordinates")
+Group25.addChild(ROUTE48)
+ROUTE49 = ROUTEObject()
+ROUTE49.setFromNode("Clock")
+ROUTE49.setFromField("fraction_changed")
+ROUTE49.setToNode("OrbitScript")
+ROUTE49.setToField("set_fraction")
 
-Script33.addField(field35)
-field36 = fieldObject()
-field36.setType(fieldObject.TYPE_MFINT32)
-field36.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
-field36.setName("coordIndexes")
+Group25.addChild(ROUTE49)
+ROUTE50 = ROUTEObject()
+ROUTE50.setFromNode("OrbitPath")
+ROUTE50.setFromField("value_changed")
+ROUTE50.setToNode("OrbitTransform")
+ROUTE50.setToField("rotation")
 
-Script33.addField(field36)
+Group25.addChild(ROUTE50)
+ProtoBody24.addChild(Group25)
+ProtoDeclare18.setProtoBody(ProtoBody24)
+Group14.addChild(ProtoDeclare18)
+ProtoInstance51 = ProtoInstanceObject()
+ProtoInstance51.setName("orbit")
 
-Script33.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
-"function initialize() {\n"+
-"     resolution = 100;\n"+
-"     generateCoordinates(resolution);\n"+
-"     var localci = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci.push(i*resolution+j);\n"+
-"	     localci.push(i*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j);\n"+
-"	     localci.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
-"}\n"+
-"\n"+
-"function generateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     \n"+
-"     coordinates = new MFVec3f(localc);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	resolution = 100;\n"+
-"	generateCoordinates(resolution);\n"+
-"}\n"+
-"      \n"+
-"")
-Group13.addChild(Script33)
-Scene10.addChild(Group13)
-ROUTE37 = ROUTEObject()
-ROUTE37.setFromField("coordIndexes")
-ROUTE37.setFromNode("OrbitScript")
-ROUTE37.setToField("coordIndex")
-ROUTE37.setToNode("Orbit")
+fieldValue52 = fieldValueObject()
+fieldValue52.setName("translation")
+fieldValue52.setValue("-8 0 0")
 
-Scene10.addChild(ROUTE37)
-ROUTE38 = ROUTEObject()
-ROUTE38.setFromField("coordinates")
-ROUTE38.setFromNode("OrbitScript")
-ROUTE38.setToField("point")
-ROUTE38.setToNode("OrbitCoordinates")
+ProtoInstance51.addFieldValue(fieldValue52)
+fieldValue53 = fieldValueObject()
+fieldValue53.setName("diffuseColor")
+fieldValue53.setValue("1 0.5 0")
 
-Scene10.addChild(ROUTE38)
-ROUTE39 = ROUTEObject()
-ROUTE39.setFromField("fraction_changed")
-ROUTE39.setFromNode("Clock")
-ROUTE39.setToField("set_fraction")
-ROUTE39.setToNode("OrbitScript")
+ProtoInstance51.addFieldValue(fieldValue53)
+fieldValue54 = fieldValueObject()
+fieldValue54.setName("specularColor")
+fieldValue54.setValue("1 0.5 0")
 
-Scene10.addChild(ROUTE39)
-ROUTE40 = ROUTEObject()
-ROUTE40.setFromField("coordIndexes")
-ROUTE40.setFromNode("OrbitScript2")
-ROUTE40.setToField("coordIndex")
-ROUTE40.setToNode("Orbit2")
+ProtoInstance51.addFieldValue(fieldValue54)
+fieldValue55 = fieldValueObject()
+fieldValue55.setName("transparency")
+fieldValue55.setValue("0.75")
 
-Scene10.addChild(ROUTE40)
-ROUTE41 = ROUTEObject()
-ROUTE41.setFromField("coordinates")
-ROUTE41.setFromNode("OrbitScript2")
-ROUTE41.setToField("point")
-ROUTE41.setToNode("OrbitCoordinates2")
+ProtoInstance51.addFieldValue(fieldValue55)
+Group14.addChild(ProtoInstance51)
+ProtoInstance56 = ProtoInstanceObject()
+ProtoInstance56.setName("orbit")
 
-Scene10.addChild(ROUTE41)
-ROUTE42 = ROUTEObject()
-ROUTE42.setFromField("fraction_changed")
-ROUTE42.setFromNode("Clock")
-ROUTE42.setToField("set_fraction")
-ROUTE42.setToNode("OrbitScript2")
+fieldValue57 = fieldValueObject()
+fieldValue57.setName("translation")
+fieldValue57.setValue("8 0 0")
 
-Scene10.addChild(ROUTE42)
-ROUTE43 = ROUTEObject()
-ROUTE43.setFromField("fraction_changed")
-ROUTE43.setFromNode("Clock")
-ROUTE43.setToField("set_fraction")
-ROUTE43.setToNode("OrbitPath")
+ProtoInstance56.addFieldValue(fieldValue57)
+fieldValue58 = fieldValueObject()
+fieldValue58.setName("diffuseColor")
+fieldValue58.setValue("0 0.5 1")
 
-Scene10.addChild(ROUTE43)
-ROUTE44 = ROUTEObject()
-ROUTE44.setFromField("value_changed")
-ROUTE44.setFromNode("OrbitPath")
-ROUTE44.setToField("rotation")
-ROUTE44.setToNode("OrbitTransform")
+ProtoInstance56.addFieldValue(fieldValue58)
+fieldValue59 = fieldValueObject()
+fieldValue59.setName("specularColor")
+fieldValue59.setValue("0 0.5 1")
 
-Scene10.addChild(ROUTE44)
-ROUTE45 = ROUTEObject()
-ROUTE45.setFromField("value_changed")
-ROUTE45.setFromNode("OrbitPath")
-ROUTE45.setToField("rotation")
-ROUTE45.setToNode("OrbitTransform2")
+ProtoInstance56.addFieldValue(fieldValue59)
+fieldValue60 = fieldValueObject()
+fieldValue60.setName("transparency")
+fieldValue60.setValue("0.5")
 
-Scene10.addChild(ROUTE45)
-X3D0.setScene(Scene10)
+ProtoInstance56.addFieldValue(fieldValue60)
+Group14.addChild(ProtoInstance56)
+ROUTE61 = ROUTEObject()
+ROUTE61.setFromNode("Clock")
+ROUTE61.setFromField("fraction_changed")
+ROUTE61.setToNode("OrbitPath")
+ROUTE61.setToField("set_fraction")
+
+Group14.addChild(ROUTE61)
+Scene11.addChild(Group14)
+X3D0.setScene(Scene11)
 
 X3D0.toFileX3D("../data/flowers2.new.x3d")

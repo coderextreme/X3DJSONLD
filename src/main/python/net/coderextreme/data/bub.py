@@ -46,7 +46,6 @@ X3D0.setHead(head1)
 Scene9 = SceneObject()
 
 NavigationInfo10 = NavigationInfoObject()
-NavigationInfo10.setType(["EXAMINE","ANY"])
 
 Scene9.addChild(NavigationInfo10)
 Background11 = BackgroundObject()
@@ -70,7 +69,6 @@ ProtoBody14 = ProtoBodyObject()
 
 Transform15 = TransformObject()
 Transform15.setDEF("transform")
-Transform15.setTranslation([0,0,0])
 
 Shape16 = ShapeObject()
 Shape16.setDEF("myShape")
@@ -111,73 +109,9 @@ ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_t
 ComposedCubeMapTexture19.setTop(ImageTexture25)
 Appearance17.setTexture(ComposedCubeMapTexture19)
 
-Appearance17.addComments(CommentsBlock(""""""))
+Appearance17.addComments(CommentsBlock("""<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"""))
 
-Appearance17.addComments(CommentsBlock("""					<ComposedShader DEF='gl' language=\"GLSL\">"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
-
-Appearance17.addComments(CommentsBlock(""""""))
-
-Appearance17.addComments(CommentsBlock("""					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""					</ComposedShader>"""))
-
-Appearance17.addComments(CommentsBlock("""					<ComposedShader DEF='freewrl' language=\"GLSL\">"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
-
-Appearance17.addComments(CommentsBlock(""""""))
-
-Appearance17.addComments(CommentsBlock("""					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""					</ComposedShader>"""))
-
-Appearance17.addComments(CommentsBlock("""					"""))
-
-Appearance17.addComments(CommentsBlock(""""""))
-
-Appearance17.addComments(CommentsBlock("""					<ComposedShader DEF='instant' language=\"GLSL\">"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
-
-Appearance17.addComments(CommentsBlock("""					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
-
-Appearance17.addComments(CommentsBlock(""""""))
-
-Appearance17.addComments(CommentsBlock("""			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
-
-Appearance17.addComments(CommentsBlock("""                            </ComposedShader>"""))
-
-Appearance17.addComments(CommentsBlock("""                            """))
+Appearance17.addComments(CommentsBlock("""<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"""))
 ComposedShader26 = ComposedShaderObject()
 ComposedShader26.setDEF("x3dom")
 ComposedShader26.setLanguage("GLSL")
@@ -311,7 +245,8 @@ field47.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script44.addField(field47)
 
-Script44.setSourceCode("ecmascript:\n"+
+Script44.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -336,7 +271,8 @@ Script44.setSourceCode("ecmascript:\n"+
 "				velocity.z += Math.random() * 0.2 - 0.1;\n"+
 "			    }\n"+
 "			}\n"+
-"               \n"+
+"\n"+
+"\n"+
 "")
 ProtoBody14.addChild(Script44)
 TimeSensor48 = TimeSensorObject()

@@ -99,6 +99,7 @@ public class extrusion {
             .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("MFVec3f").setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
             .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
@@ -107,6 +108,8 @@ public class extrusion {
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
 "		        spine = new MFVec3f([endA, endB]);\n"+
 "                }\n"+
+"\n"+
+"\n"+
 ""))
           .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))))      ;

@@ -82,6 +82,7 @@ field17.setValue("-50 -50 0 50 50 0")
 Script15.addField(field17)
 
 Script15.setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
@@ -90,6 +91,8 @@ Script15.setSourceCode("\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
 "		        spine = new MFVec3f([endA, endB]);\n"+
 "                }\n"+
+"\n"+
+"\n"+
 "")
 Group9.addChild(Script15)
 ROUTE18 = ROUTEObject()

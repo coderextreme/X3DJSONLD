@@ -90,7 +90,7 @@ public class flowers4 {
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers4.x3d"))
         .addMeta(new metaObject().setName("description").setContent("an animated flower")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","ANY"}))
+        .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new TransformObject().setDEF("transform")
           .addChild(new ShapeObject()
@@ -111,16 +111,15 @@ public class flowers4 {
                 .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray())))))
-            .addComments(new CommentsBlock(""))
-            .addComments(new CommentsBlock("                <Sphere>"))
-            .addComments(new CommentsBlock("		"))
-            .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0f)
+            .addComments(new CommentsBlock("<Sphere>"))
+            .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
               .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
         .addChild(new ScriptObject().setDEF("OrbitScript")
-          .addField(new fieldObject().setType("SFFloat").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
-          .addField(new fieldObject().setType("MFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("coordinates"))
-          .addField(new fieldObject().setType("MFInt32").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+          .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .setSourceCode("\n"+
+"\n"+
 "\n"+
 "ecmascript:\n"+
 "\n"+
@@ -193,7 +192,7 @@ public class flowers4 {
 "	resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}\n"+
-"      \n"+
+"\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
         .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))

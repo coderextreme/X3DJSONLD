@@ -46,7 +46,6 @@ X3D0.setHead(head1)
 Scene9 = SceneObject()
 
 NavigationInfo10 = NavigationInfoObject()
-NavigationInfo10.setType(["EXAMINE","ANY"])
 
 Scene9.addChild(NavigationInfo10)
 Background11 = BackgroundObject()
@@ -149,15 +148,10 @@ ComposedShader23.addParts(ShaderPart30)
 Appearance14.addShaders(ComposedShader23)
 Shape13.setAppearance(Appearance14)
 
-Shape13.addComments(CommentsBlock(""""""))
-
-Shape13.addComments(CommentsBlock("""                <Sphere>"""))
-
-Shape13.addComments(CommentsBlock("""		"""))
+Shape13.addComments(CommentsBlock("""<Sphere>"""))
 IndexedFaceSet31 = IndexedFaceSetObject()
 IndexedFaceSet31.setConvex(False)
 IndexedFaceSet31.setDEF("Orbit")
-IndexedFaceSet31.setCreaseAngle(0)
 
 Coordinate32 = CoordinateObject()
 Coordinate32.setDEF("OrbitCoordinates")
@@ -171,24 +165,25 @@ Script33.setDEF("OrbitScript")
 
 field34 = fieldObject()
 field34.setType(fieldObject.TYPE_SFFLOAT)
-field34.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field34.setName("set_fraction")
+field34.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script33.addField(field34)
 field35 = fieldObject()
 field35.setType(fieldObject.TYPE_MFVEC3F)
-field35.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field35.setName("coordinates")
+field35.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 
 Script33.addField(field35)
 field36 = fieldObject()
 field36.setType(fieldObject.TYPE_MFINT32)
-field36.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field36.setName("coordIndexes")
+field36.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script33.addField(field36)
 
 Script33.setSourceCode("\n"+
+"\n"+
 "\n"+
 "ecmascript:\n"+
 "\n"+
@@ -261,7 +256,7 @@ Script33.setSourceCode("\n"+
 "	resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}\n"+
-"      \n"+
+"\n"+
 "")
 Scene9.addChild(Script33)
 TimeSensor37 = TimeSensorObject()

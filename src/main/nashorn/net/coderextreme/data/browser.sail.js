@@ -13,13 +13,17 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
       .setScene(new SceneObject()
         .addChild(new ScriptObject().setDEF("Browser")
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }\n"+
+"\n"+
+"\n"+
 ""))
         .addChild(new ScriptObject().setDEF("Clouds")
           .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "\n"+
@@ -30,5 +34,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "'    ' + '               	\\n';\n"+
 "\n"+
 "}\n"+
+"\n"+
+"\n"+
 "")))      ;
     X3D0.toFileX3D("../data/browser.new.x3d");

@@ -52,15 +52,15 @@ ProtoInterface11 = ProtoInterfaceObject()
 
 field12 = fieldObject()
 field12.setType(fieldObject.TYPE_MFSTRING)
-field12.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field12.setName("vertex")
+field12.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field12.setValue("\"../shaders/gl_flowers_chromatic.vs\"")
 
 ProtoInterface11.addField(field12)
 field13 = fieldObject()
 field13.setType(fieldObject.TYPE_MFSTRING)
-field13.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field13.setName("fragment")
+field13.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field13.setValue("\"../shaders/pc_flowers.fs\"")
 
 ProtoInterface11.addField(field13)
@@ -69,7 +69,6 @@ ProtoBody14 = ProtoBodyObject()
 
 Transform15 = TransformObject()
 Transform15.setDEF("transform")
-Transform15.setTranslation([0,0,0])
 
 Shape16 = ShapeObject()
 
@@ -189,15 +188,7 @@ field37.setValue("0.5")
 
 ComposedShader26.addField(field37)
 
-ComposedShader26.addComments(CommentsBlock(""""""))
-
-ComposedShader26.addComments(CommentsBlock("""                                <field name='cube' type='SFNode' accessType=\"inputOutput\">"""))
-
-ComposedShader26.addComments(CommentsBlock("""                                    <ComposedCubeMapTexture USE=\"texture\"/>"""))
-
-ComposedShader26.addComments(CommentsBlock("""                                </field>"""))
-
-ComposedShader26.addComments(CommentsBlock("""				"""))
+ComposedShader26.addComments(CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
 ShaderPart38 = ShaderPartObject()
 ShaderPart38.setType("VERTEX")
 
@@ -294,7 +285,8 @@ field54.setValue("0.5")
 
 Script45.addField(field54)
 
-Script45.setSourceCode("ecmascript:\n"+
+Script45.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -360,6 +352,8 @@ Script45.setSourceCode("ecmascript:\n"+
 "					d = 4;\n"+
 "				}\n"+
 "			}\n"+
+"\n"+
+"\n"+
 "\n"+
 "")
 Transform15.addChild(Script45)

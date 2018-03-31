@@ -135,14 +135,15 @@ public class bubbles {
           .addField(new fieldObject().setType("MFVec3f").setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("MFRotation").setName("set_orientation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("MFRotation").setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"	    ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "                        var ov = lastKey;\n"+
 "                        do {\n"+
 "                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
 "                        } while (lastKey === ov);\n"+
 "                        var vc = lastKey;\n"+
-"                        \n"+
+"\n"+
 "                        orientation_changed = new MFRotation();\n"+
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+

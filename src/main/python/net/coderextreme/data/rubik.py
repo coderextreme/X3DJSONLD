@@ -60,7 +60,6 @@ ProtoDeclare10.setProtoInterface(ProtoInterface11)
 ProtoBody13 = ProtoBodyObject()
 
 Transform14 = TransformObject()
-Transform14.setTranslation([0,0,0])
 
 IS15 = ISObject()
 
@@ -102,7 +101,6 @@ ProtoDeclare21.setProtoInterface(ProtoInterface22)
 ProtoBody24 = ProtoBodyObject()
 
 Transform25 = TransformObject()
-Transform25.setTranslation([0,0,0])
 
 IS26 = ISObject()
 
@@ -158,7 +156,6 @@ ProtoDeclare34.setProtoInterface(ProtoInterface35)
 ProtoBody37 = ProtoBodyObject()
 
 Transform38 = TransformObject()
-Transform38.setTranslation([0,0,0])
 
 IS39 = ISObject()
 
@@ -214,7 +211,6 @@ ProtoDeclare47.setProtoInterface(ProtoInterface48)
 ProtoBody50 = ProtoBodyObject()
 
 Transform51 = TransformObject()
-Transform51.setTranslation([0,0,0])
 
 IS52 = ISObject()
 

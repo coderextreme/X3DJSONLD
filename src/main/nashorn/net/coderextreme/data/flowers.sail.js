@@ -15,11 +15,11 @@ var ProtoInstance0 = null;
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers.x3d")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE","ANY"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new ProtoDeclareObject().setName("flower")
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform").setTranslation(Java.to([0,0,0], Java.type("float[]")))
+            .addChild(new TransformObject().setDEF("transform")
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]"))))
@@ -60,24 +60,23 @@ var ProtoInstance0 = null;
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], Java.type("java.lang.String[]"))))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]"))))))
-                .addComments(new CommentsBlock(''))
-                .addComments(new CommentsBlock('			<Sphere></Sphere>'))
-                .addComments(new CommentsBlock('			'))
-                .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(0)
+                .addComments(new CommentsBlock('<Sphere></Sphere>'))
+                .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
                   .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
             .addChild(new ScriptObject().setDEF("Bounce")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("coordinates"))
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+              .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -181,6 +180,8 @@ var ProtoInstance0 = null;
 "				updateCoordinates(resolution);\n"+
 "			}\n"+
 "\n"+
+"\n"+
+"\n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
             .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
@@ -189,14 +190,8 @@ var ProtoInstance0 = null;
             .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
-            .addComments(new CommentsBlock(''))
-            .addComments(new CommentsBlock('		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/>'))
-            .addComments(new CommentsBlock('		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/>'))
-            .addComments(new CommentsBlock('		'))))
+            .addComments(new CommentsBlock('<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/>'))))
         .addChild(new TransformObject()
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
-          .addComments(new CommentsBlock(''))
-          .addComments(new CommentsBlock('            <ProtoInstance name="flower"/>'))
-          .addComments(new CommentsBlock('            <ProtoInstance name="flower"/>'))
-          .addComments(new CommentsBlock('	    '))))      ;
+          .addComments(new CommentsBlock('<ProtoInstance name="flower"/> <ProtoInstance name="flower"/>'))))      ;
     X3D0.toFileX3D("../data/flowers.new.x3d");

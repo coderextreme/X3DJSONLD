@@ -8,55 +8,55 @@ X3D0.setVersion("3.2")
 head1 = headObject()
 
 meta2 = metaObject()
-meta2.setContent("CloudsProcedural4.x3d")
 meta2.setName("title")
+meta2.setContent("CloudsProcedural4.x3d")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
-meta3.setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.")
 meta3.setName("description")
+meta3.setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
-meta4.setContent("Capt Darren W. Murphy")
 meta4.setName("creator")
+meta4.setContent("Capt Darren W. Murphy")
 
 head1.addMeta(meta4)
 meta5 = metaObject()
-meta5.setContent("1 November 2007")
 meta5.setName("created")
+meta5.setContent("1 November 2007")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setContent("14 January 2014")
 meta6.setName("modified")
+meta6.setContent("14 January 2014")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
-meta7.setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d")
 meta7.setName("identifier")
+meta7.setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")
 meta8.setName("generator")
+meta8.setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
-meta9.setContent("../../license.html")
 meta9.setName("license")
+meta9.setContent("../../license.html")
 
 head1.addMeta(meta9)
 meta10 = metaObject()
-meta10.setContent("fix links")
 meta10.setName("TODO")
+meta10.setContent("fix links")
 
 head1.addMeta(meta10)
 X3D0.setHead(head1)
 Scene11 = SceneObject()
 
 
-Scene11.addComments(CommentsBlock(""" A png image file for the cloud texture must be designated in the ecmascript node. """))
+Scene11.addComments(CommentsBlock("""A png image file for the cloud texture must be designated in the ecmascript node."""))
 Viewpoint12 = ViewpointObject()
 Viewpoint12.setDescription("Main")
 Viewpoint12.setJump(False)
@@ -155,8 +155,8 @@ Script32.setDirectOutput(True)
 
 field33 = fieldObject()
 field33.setType(fieldObject.TYPE_SFNODE)
-field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field33.setName("Cumulus")
+field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Transform34 = TransformObject()
 Transform34.setUSE("Cumulus")
@@ -165,8 +165,8 @@ field33.addChild(Transform34)
 Script32.addField(field33)
 field35 = fieldObject()
 field35.setType(fieldObject.TYPE_SFNODE)
-field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field35.setName("Cirrus")
+field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Transform36 = TransformObject()
 Transform36.setUSE("Cirrus")
@@ -175,12 +175,13 @@ field35.addChild(Transform36)
 Script32.addField(field35)
 field37 = fieldObject()
 field37.setType(fieldObject.TYPE_SFNODE)
-field37.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field37.setName("Fog")
+field37.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script32.addField(field37)
 
 Script32.setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "\n"+
@@ -353,12 +354,12 @@ Script32.setSourceCode("\n"+
 "\n"+
 "		if (Y <= 30) //cloud shading and lighting control\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "  		else\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "	\n"+
@@ -502,7 +503,7 @@ Script32.setSourceCode("\n"+
 "		'			    material Material {			\\n' +\n"+
 "		'			    }					\\n' +\n"+
 " 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \\n' +\n"+
+"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
 "		'	                      }	                                \\n' +\n"+
 "		'	                    }	                                \\n' +\n"+
 "		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+
@@ -562,6 +563,8 @@ Script32.setSourceCode("\n"+
 "\n"+
 "cirrus();\n"+
 "}\n"+
+"\n"+
+"\n"+
 "")
 Group28.addChild(Script32)
 DirectionalLight38 = DirectionalLightObject()

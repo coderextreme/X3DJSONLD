@@ -6,17 +6,17 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
       .setHead(new headObject()
-        .addMeta(new metaObject().setContent("CloudsProcedural4.x3d").setName("title"))
-        .addMeta(new metaObject().setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.").setName("description"))
-        .addMeta(new metaObject().setContent("Capt Darren W. Murphy").setName("creator"))
-        .addMeta(new metaObject().setContent("1 November 2007").setName("created"))
-        .addMeta(new metaObject().setContent("14 January 2014").setName("modified"))
-        .addMeta(new metaObject().setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d").setName("identifier"))
-        .addMeta(new metaObject().setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html").setName("generator"))
-        .addMeta(new metaObject().setContent("../../license.html").setName("license"))
-        .addMeta(new metaObject().setContent("fix links").setName("TODO")))
+        .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+        .addMeta(new metaObject().setName("creator").setContent("Capt Darren W. Murphy"))
+        .addMeta(new metaObject().setName("created").setContent("1 November 2007"))
+        .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+        .addMeta(new metaObject().setName("license").setContent("../../license.html"))
+        .addMeta(new metaObject().setName("TODO").setContent("fix links")))
       .setScene(new SceneObject()
-        .addComments(new CommentsBlock(' A png image file for the cloud texture must be designated in the ecmascript node. '))
+        .addComments(new CommentsBlock('A png image file for the cloud texture must be designated in the ecmascript node.'))
         .addChild(new ViewpointObject().setDescription("Main").setJump(false).setOrientation(Java.to([0,1,0,1.57], Java.type("float[]"))).setPosition(Java.to([50000,1000,42000], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("Light House Tower").setJump(false).setOrientation(Java.to([0,1,0,1.3], Java.type("float[]"))).setPosition(Java.to([45000,1290,44000], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("centerWest").setJump(false).setOrientation(Java.to([0,1,0,2.5], Java.type("float[]"))).setPosition(Java.to([48000,1000,20000], Java.type("float[]"))))
@@ -38,12 +38,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild(new TransformObject().setDEF("Cirrus"))
           .addChild(new TransformObject().setDEF("Fog"))
           .addChild(new ScriptObject().setDEF("PixelScript").setDirectOutput(true)
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Cumulus")
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Cumulus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cumulus")))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Cirrus")
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cirrus")))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Fog"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
             .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "\n"+
 "\n"+
@@ -216,12 +217,12 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "\n"+
 "		if (Y <= 30) //cloud shading and lighting control\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "  		else\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "	\n"+
@@ -365,7 +366,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		'			    material Material {			\\n' +\n"+
 "		'			    }					\\n' +\n"+
 " 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \\n' +\n"+
+"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
 "		'	                      }	                                \\n' +\n"+
 "		'	                    }	                                \\n' +\n"+
 "		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+
@@ -425,6 +426,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "\n"+
 "cirrus();\n"+
 "}\n"+
+"\n"+
+"\n"+
 ""))
           .addChild(new DirectionalLightObject().setAmbientIntensity(1).setColor(Java.to([1,0,0], Java.type("float[]"))).setDirection(Java.to([-1,-1,0], Java.type("float[]"))).setGlobal(true))))      ;
     X3D0.toFileX3D("../data/CloudsProcedural4.new.x3d");

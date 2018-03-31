@@ -291,14 +291,15 @@ field54.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script47.addField(field54)
 
-Script47.setSourceCode("ecmascript:\n"+
+Script47.setSourceCode("\n"+
+"	    ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "                        var ov = lastKey;\n"+
 "                        do {\n"+
 "                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
 "                        } while (lastKey === ov);\n"+
 "                        var vc = lastKey;\n"+
-"                        \n"+
+"\n"+
 "                        orientation_changed = new MFRotation();\n"+
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+

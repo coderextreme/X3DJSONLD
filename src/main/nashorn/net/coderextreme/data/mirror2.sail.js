@@ -62,6 +62,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
             .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
@@ -79,6 +80,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		    bottom_changed[0] = bottomUrls[side];\n"+
 "            }\n"+
 "        }\n"+
+"\n"+
+"\n"+
 ""))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(45).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))

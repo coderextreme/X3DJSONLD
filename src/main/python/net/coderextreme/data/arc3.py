@@ -46,7 +46,6 @@ Background9.setSkyColor([0.4,0.4,0.4])
 Scene7.addChild(Background9)
 Transform10 = TransformObject()
 Transform10.setDEF("DECLpoint_G1_node")
-Transform10.setTranslation([0,0,0])
 
 Shape11 = ShapeObject()
 
@@ -99,13 +98,15 @@ field20.setValue("0 0 0 0 5 0")
 
 Script16.addField(field20)
 
-Script16.setSourceCode("ecmascript:\n"+
+Script16.setSourceCode("\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}\n"+
+"\n"+
 "")
 Transform10.addChild(Script16)
 TimeSensor21 = TimeSensorObject()
@@ -145,7 +146,6 @@ Transform10.addChild(ROUTE25)
 Scene7.addChild(Transform10)
 Transform26 = TransformObject()
 Transform26.setDEF("DECLpoint_G2_node")
-Transform26.setTranslation([0,0,0])
 
 Shape27 = ShapeObject()
 
@@ -198,13 +198,15 @@ field36.setValue("0 0 0 0 5 0")
 
 Script32.addField(field36)
 
-Script32.setSourceCode("ecmascript:\n"+
+Script32.setSourceCode("\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}\n"+
+"\n"+
 "")
 Transform26.addChild(Script32)
 TimeSensor37 = TimeSensorObject()
@@ -323,7 +325,8 @@ field59.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script49.addField(field59)
 
-Script49.setSourceCode("ecmascript:\n"+
+Script49.setSourceCode("\n"+
+"ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -367,6 +370,7 @@ Script49.setSourceCode("ecmascript:\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
+"\n"+
 "")
 Group42.addChild(Script49)
 Scene7.addChild(Group42)

@@ -8,43 +8,43 @@ X3D0.setVersion("3.3")
 head1 = headObject()
 
 meta2 = metaObject()
-meta2.setContent("qq3.x3d")
 meta2.setName("title")
+meta2.setContent("qq3.x3d")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
-meta3.setContent("John Carlson")
 meta3.setName("creator")
+meta3.setContent("John Carlson")
 
 head1.addMeta(meta3)
 meta4 = metaObject()
-meta4.setContent("John Carlson")
 meta4.setName("translator")
+meta4.setContent("John Carlson")
 
 head1.addMeta(meta4)
 meta5 = metaObject()
-meta5.setContent("11 Jan 2015")
 meta5.setName("created")
+meta5.setContent("11 Jan 2015")
 
 head1.addMeta(meta5)
 meta6 = metaObject()
-meta6.setContent("05 May 2017")
 meta6.setName("modified")
+meta6.setContent("05 May 2017")
 
 head1.addMeta(meta6)
 meta7 = metaObject()
-meta7.setContent("12 extrusions to test prototype expander")
 meta7.setName("description")
+meta7.setContent("12 extrusions to test prototype expander")
 
 head1.addMeta(meta7)
 meta8 = metaObject()
-meta8.setContent("https://coderextreme.net/x3d/qq3.x3d")
 meta8.setName("identifier")
+meta8.setContent("https://coderextreme.net/x3d/qq3.x3d")
 
 head1.addMeta(meta8)
 meta9 = metaObject()
-meta9.setContent("manual")
 meta9.setName("generator")
+meta9.setContent("manual")
 
 head1.addMeta(meta9)
 X3D0.setHead(head1)
@@ -58,7 +58,7 @@ ProtoBody12 = ProtoBodyObject()
 Group13 = GroupObject()
 
 
-Group13.addComments(CommentsBlock(""" left """))
+Group13.addComments(CommentsBlock("""left"""))
 Transform14 = TransformObject()
 Transform14.setScale([0.5,0.5,0.5])
 
@@ -81,7 +81,7 @@ Shape15.setGeometry(Extrusion18)
 Transform14.addChild(Shape15)
 Group13.addChild(Transform14)
 
-Group13.addComments(CommentsBlock(""" right """))
+Group13.addComments(CommentsBlock("""right"""))
 Transform19 = TransformObject()
 Transform19.setScale([0.5,0.5,0.5])
 
@@ -104,7 +104,7 @@ Shape20.setGeometry(Extrusion23)
 Transform19.addChild(Shape20)
 Group13.addChild(Transform19)
 
-Group13.addComments(CommentsBlock(""" up """))
+Group13.addComments(CommentsBlock("""up"""))
 Transform24 = TransformObject()
 Transform24.setScale([0.5,0.5,0.5])
 
@@ -114,7 +114,7 @@ Shape25.setUSE("ShapeUpRight")
 Transform24.addChild(Shape25)
 Group13.addChild(Transform24)
 
-Group13.addComments(CommentsBlock(""" down """))
+Group13.addComments(CommentsBlock("""down"""))
 Transform26 = TransformObject()
 Transform26.setScale([0.5,0.5,0.5])
 
@@ -141,7 +141,6 @@ ProtoInstance30.setName("Process")
 Transform29.addChild(ProtoInstance30)
 Scene10.addChild(Transform29)
 Transform31 = TransformObject()
-Transform31.setTranslation([0,0,0])
 
 ProtoInstance32 = ProtoInstanceObject()
 ProtoInstance32.setName("Process")

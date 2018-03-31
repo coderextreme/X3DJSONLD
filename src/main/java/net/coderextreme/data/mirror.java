@@ -145,6 +145,7 @@ public class mirror {
             .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFInt32").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
             .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
@@ -162,6 +163,8 @@ public class mirror {
 "		    bottom_changed[0] = bottomUrls[side];\n"+
 "            }\n"+
 "        }\n"+
+"\n"+
+"\n"+
 ""))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(45d).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))

@@ -8,8 +8,8 @@ X3D0.setVersion("3.3")
 head1 = headObject()
 
 component2 = componentObject()
-component2.setLevel(1)
 component2.setName("Geospatial")
+component2.setLevel(1)
 
 head1.addComponent(component2)
 meta3 = metaObject()
@@ -49,7 +49,6 @@ GeoViewpoint9.setDEF("Tour")
 GeoViewpoint9.setPosition([0,0,4])
 GeoViewpoint9.setOrientation([1,0,0,0])
 GeoViewpoint9.setDescription("Tour Views")
-GeoViewpoint9.setRetainUserOffsets(False)
 
 Scene8.addChild(GeoViewpoint9)
 Background10 = BackgroundObject()

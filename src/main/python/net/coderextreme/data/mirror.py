@@ -339,6 +339,7 @@ field61.setValue("-1")
 Script47.addField(field61)
 
 Script47.setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
@@ -356,6 +357,8 @@ Script47.setSourceCode("\n"+
 "		    bottom_changed[0] = bottomUrls[side];\n"+
 "            }\n"+
 "        }\n"+
+"\n"+
+"\n"+
 "")
 Transform19.addChild(Script47)
 TimeSensor62 = TimeSensorObject()

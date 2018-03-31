@@ -91,7 +91,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new SceneObject()
-        .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint").setOrientation(new float[] {0f,0f,1f,0f}))
+        .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
         .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new TransformObject().setDEF("G1")
           .addChild(new ShapeObject()
@@ -141,20 +141,20 @@ ProtoInstanceObject ProtoInstance2 = null;
               .setGeometry(new CylinderObject().setRadius(0.05f)))))
         .addChild(new ProtoDeclareObject().setName("x3dconnector")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("startnode"))
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("endnode"))
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("transnode"))
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("rotscalenode"))
-            .addField(new fieldObject().setType("SFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_startpoint"))
-            .addField(new fieldObject().setType("SFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_endpoint")))
+            .addField(new fieldObject().setType("SFNode").setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new fieldObject().setType("SFNode").setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new fieldObject().setType("SFNode").setName("transnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new fieldObject().setType("SFNode").setName("rotscalenode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new fieldObject().setType("SFVec3f").setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType("SFVec3f").setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new ScriptObject().setDEF("S1")
-              .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("startnode"))
-              .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("endnode"))
-              .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("transnode"))
-              .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("rotscalenode"))
-              .addField(new fieldObject().setType("SFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_startpoint"))
-              .addField(new fieldObject().setType("SFVec3f").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("set_endpoint"))
+              .addField(new fieldObject().setType("SFNode").setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new fieldObject().setType("SFNode").setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new fieldObject().setType("SFNode").setName("transnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new fieldObject().setType("SFNode").setName("rotscalenode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new fieldObject().setType("SFVec3f").setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType("SFVec3f").setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
                 .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
@@ -162,7 +162,8 @@ ProtoInstanceObject ProtoInstance2 = null;
                 .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
                 .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"            ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -201,7 +202,8 @@ ProtoInstanceObject ProtoInstance2 = null;
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
-"            \n"+
+"\n"+
+"\n"+
 ""))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))

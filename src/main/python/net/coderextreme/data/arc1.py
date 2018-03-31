@@ -38,7 +38,6 @@ Scene7 = SceneObject()
 Viewpoint8 = ViewpointObject()
 Viewpoint8.setPosition([0,0,5])
 Viewpoint8.setDescription("Only Viewpoint")
-Viewpoint8.setOrientation([0,0,1,0])
 
 Scene7.addChild(Viewpoint8)
 Background9 = BackgroundObject()
@@ -52,8 +51,8 @@ ProtoInterface11 = ProtoInterfaceObject()
 
 field12 = fieldObject()
 field12.setType(fieldObject.TYPE_SFVEC3F)
-field12.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field12.setName("translation")
+field12.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field12.setValue("0 0 0")
 
 ProtoInterface11.addField(field12)
@@ -123,6 +122,7 @@ field26.setValue("0 0 0 0 5 0")
 Script22.addField(field26)
 
 Script22.setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
@@ -130,6 +130,8 @@ Script22.setSourceCode("\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}\n"+
+"\n"+
+"\n"+
 "")
 Transform14.addChild(Script22)
 TimeSensor27 = TimeSensorObject()
@@ -176,26 +178,26 @@ ProtoInterface33 = ProtoInterfaceObject()
 
 field34 = fieldObject()
 field34.setType(fieldObject.TYPE_SFNODE)
-field34.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field34.setName("startnode")
+field34.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface33.addField(field34)
 field35 = fieldObject()
 field35.setType(fieldObject.TYPE_SFNODE)
-field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field35.setName("endnode")
+field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 ProtoInterface33.addField(field35)
 field36 = fieldObject()
 field36.setType(fieldObject.TYPE_SFVEC3F)
-field36.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field36.setName("set_startpoint")
+field36.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 ProtoInterface33.addField(field36)
 field37 = fieldObject()
 field37.setType(fieldObject.TYPE_SFVEC3F)
-field37.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field37.setName("set_endpoint")
+field37.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 ProtoInterface33.addField(field37)
 ProtoDeclare32.setProtoInterface(ProtoInterface33)
@@ -205,7 +207,6 @@ Group39 = GroupObject()
 
 Transform40 = TransformObject()
 Transform40.setDEF("trans")
-Transform40.setTranslation([0,0,0])
 
 Transform41 = TransformObject()
 Transform41.setDEF("rotscale")
@@ -232,20 +233,20 @@ Script46.setDEF("S1")
 
 field47 = fieldObject()
 field47.setType(fieldObject.TYPE_SFNODE)
-field47.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field47.setName("startnode")
+field47.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script46.addField(field47)
 field48 = fieldObject()
 field48.setType(fieldObject.TYPE_SFNODE)
-field48.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 field48.setName("endnode")
+field48.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script46.addField(field48)
 field49 = fieldObject()
 field49.setType(fieldObject.TYPE_SFNODE)
-field49.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field49.setName("position")
+field49.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 
 Transform50 = TransformObject()
 Transform50.setUSE("trans")
@@ -254,8 +255,8 @@ field49.addChild(Transform50)
 Script46.addField(field49)
 field51 = fieldObject()
 field51.setType(fieldObject.TYPE_SFNODE)
-field51.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field51.setName("rotscale")
+field51.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 
 Transform52 = TransformObject()
 Transform52.setUSE("rotscale")
@@ -264,14 +265,14 @@ field51.addChild(Transform52)
 Script46.addField(field51)
 field53 = fieldObject()
 field53.setType(fieldObject.TYPE_SFVEC3F)
-field53.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field53.setName("set_startpoint")
+field53.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script46.addField(field53)
 field54 = fieldObject()
 field54.setType(fieldObject.TYPE_SFVEC3F)
-field54.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 field54.setName("set_endpoint")
+field54.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script46.addField(field54)
 IS55 = ISObject()
@@ -298,7 +299,8 @@ connect59.setProtoField("set_endpoint")
 IS55.addConnect(connect59)
 Script46.setIS(IS55)
 
-Script46.setSourceCode("ecmascript:\n"+
+Script46.setSourceCode("\n"+
+"            ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -342,20 +344,21 @@ Script46.setSourceCode("ecmascript:\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
-"            \n"+
+"\n"+
+"\n"+
 "")
 Group39.addChild(Script46)
 ProtoBody38.addChild(Group39)
 ProtoDeclare32.setProtoBody(ProtoBody38)
 Scene7.addChild(ProtoDeclare32)
 ProtoInstance60 = ProtoInstanceObject()
-ProtoInstance60.setDEF("G1")
 ProtoInstance60.setName("point")
+ProtoInstance60.setDEF("G1")
 
 Scene7.addChild(ProtoInstance60)
 ProtoInstance61 = ProtoInstanceObject()
-ProtoInstance61.setDEF("G2")
 ProtoInstance61.setName("point")
+ProtoInstance61.setDEF("G2")
 
 Scene7.addChild(ProtoInstance61)
 ProtoInstance62 = ProtoInstanceObject()
