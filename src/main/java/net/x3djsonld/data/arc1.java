@@ -42,6 +42,10 @@ import org.web3d.x3d.jsail.Time.*;
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
 			<td> a generic proto to connect two objects </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/license.html" target="_blank">http://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -75,7 +79,8 @@ public class arc1
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects"))
+    .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
@@ -92,7 +97,6 @@ public class arc1
               .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
           .addChild(new PositionInterpolatorObject("PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
           .addChild(new ScriptObject("MB1").setSourceCode("\n" + 
-"\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 

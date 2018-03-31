@@ -7,7 +7,6 @@
         <meta name='generator' content='manual'/>
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
-        <meta name='license' content='http://www.web3d.org/x3d/content/examples/license.html'/>
     </head>
     <Scene>
         <Viewpoint description='Only Viewpoint' position='0 0 5'/>
@@ -34,6 +33,7 @@
                         <field name='set_location' accessType='inputOnly' type='SFTime'/>
                         <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
+
 
 ecmascript:
 		function set_location(value) {
@@ -77,10 +77,10 @@ ecmascript:
                     <Script DEF='S1'>
                         <field name='startnode' accessType='initializeOnly' type='SFNode'/>
                         <field name='endnode' accessType='initializeOnly' type='SFNode'/>
-                        <field name='position' accessType='outputOnly' type='SFNode'>
+                        <field name='position' accessType='inputOutput' type='SFNode'>
                             <Transform USE='trans'/>
                         </field>
-                        <field name='rotscale' accessType='outputOnly' type='SFNode'>
+                        <field name='rotscale' accessType='inputOutput' type='SFNode'>
                             <Transform USE='rotscale'/>
                         </field>
                         <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
@@ -154,8 +154,8 @@ ecmascript:
             <fieldValue name='endnode'>
                 <ProtoInstance USE='G2'/>
             </fieldValue>
-            <fieldValue name='set_startpoint' value='0 0 0'/>
-            <fieldValue name='set_endpoint' value='0 0 0'/>
+            <fieldValue name='set_startpoint'/>
+            <fieldValue name='set_endpoint'/>
         </ProtoInstance>
         <ROUTE fromField='translation' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
         <ROUTE fromField='translation' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
