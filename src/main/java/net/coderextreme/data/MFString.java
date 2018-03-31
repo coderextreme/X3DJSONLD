@@ -154,14 +154,19 @@ public class MFString {
               .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3218().getArray())).setCreaseAngle(0.5f).setNormalIndex(new MFInt32Object(new MFInt3219().getArray())).setSolid(false)
                 .setCoord(new CoordinateObject().setUSE("coordinates"))
                 .setNormal(new NormalObject().setUSE("normalVector")))))
-          .addChild(new TransformObject().setDEF("CockpitTransform").setRotation(new float[] {1f,0f,0f,-0.1f}).setScale(new float[] {0.045f,0.045f,0.045f}).setTranslation(new float[] {0f,1f,-10f}))
-          .addChild(new TransformObject().setDEF("SeatTransform").setRotation(new float[] {-1f,0f,0f,-0.1f}).setScale(new float[] {0.9f,0.9f,0.9f}).setTranslation(new float[] {0f,0f,-8.3f}))
+          .addChild(new TransformObject().setDEF("CockpitTransform").setRotation(new float[] {1f,0f,0f,-0.1f}).setScale(new float[] {0.045f,0.045f,0.045f}).setTranslation(new float[] {0f,1f,-10f})
+            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString20().getArray()))))
+          .addChild(new TransformObject().setDEF("SeatTransform").setRotation(new float[] {-1f,0f,0f,-0.1f}).setScale(new float[] {0.9f,0.9f,0.9f}).setTranslation(new float[] {0f,0f,-8.3f})
+            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString21().getArray()))))
           .addChild(new TransformObject().setDEF("FrontWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,0f,1.92f}).setTranslation(new float[] {0.7f,-5.2f,-6.5f})
-            .addComments(new CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)")))
+            .addComments(new CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"))
+            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString22().getArray()))))
           .addChild(new TransformObject().setDEF("RearLeftWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {1f,0f,1f,1.92f}).setTranslation(new float[] {-2.95f,-5f,7f})
-            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)")))
+            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString23().getArray()))))
           .addChild(new TransformObject().setDEF("RearRightWheelTransform").setCenter(new float[] {0f,2.5f,0f}).setRotation(new float[] {-1f,0f,-1f,1.92f}).setTranslation(new float[] {2.95f,-5f,7f})
-            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)")))
+            .addComments(new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString24().getArray()))))
           .addChild(new TransformObject().setDEF("CockpitButtonsTransform")
             .addChild(new TransformObject().setDEF("UpButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {-0.95f,1.05f,-10f})
               .addChild(new ShapeObject()
@@ -177,12 +182,12 @@ public class MFString {
               .addChild(new TouchSensorObject().setDEF("TouchSensorDown").setDescription("click for gears down")))
             .addChild(new TransformObject().setDEF("GearUpTextTransform").setScale(new float[] {0.06f,0.06f,0.06f}).setTranslation(new float[] {-0.65f,1.55f,-10f})
               .addChild(new ShapeObject()
-                .setGeometry(new TextObject().setString(new MFStringObject(new MFString20().getArray())))
+                .setGeometry(new TextObject().setString(new MFStringObject(new MFString25().getArray())))
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f})))))
             .addChild(new TransformObject().setDEF("GearDownTextTransform").setScale(new float[] {0.06f,0.06f,0.06f}).setTranslation(new float[] {-0.65f,1.35f,-10f})
               .addChild(new ShapeObject()
-                .setGeometry(new TextObject().setLength(new MFFloatObject(new MFFloat21().getArray())).setString(new MFStringObject(new MFString22().getArray())))
+                .setGeometry(new TextObject().setLength(new MFFloatObject(new MFFloat26().getArray())).setString(new MFStringObject(new MFString27().getArray())))
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,0f})))))
             .addChild(new TransformObject().setDEF("FireButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {0.52f,1.6f,-10f})
@@ -193,7 +198,7 @@ public class MFString {
               .addChild(new TouchSensorObject().setDEF("FireSensor").setDescription("click to fire")))
             .addChild(new TransformObject().setDEF("FireTextTransform").setScale(new float[] {0.06f,0.06f,0.06f}).setTranslation(new float[] {0.36f,1.5f,-10f})
               .addChild(new ShapeObject()
-                .setGeometry(new TextObject().setString(new MFStringObject(new MFString23().getArray())))
+                .setGeometry(new TextObject().setString(new MFStringObject(new MFString28().getArray())))
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.75f,0.18f}))))))
           .addChild(new ViewpointObject().setDescription("F16 Close Look-up").setOrientation(new float[] {-0.559f,-0.827f,-0.057f,1.3534f}).setPosition(new float[] {-28.7f,19.9f,17.4f}))
@@ -208,20 +213,20 @@ public class MFString {
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.5f,0.5f,0.5f}).setShininess(0.5f))))))
         .addChild(new TimeSensorObject().setDEF("WheelUp").setCycleInterval(8d))
-        .addChild(new OrientationInterpolatorObject().setDEF("GearUpInterpolator").setKey(new MFFloatObject(new MFFloat24().getArray())).setKeyValue(new MFRotationObject(new MFRotation25().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("GearUpInterpolator").setKey(new MFFloatObject(new MFFloat29().getArray())).setKeyValue(new MFRotationObject(new MFRotation30().getArray())))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorUp").setToField("set_startTime").setToNode("WheelUp"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("WheelUp").setToField("set_fraction").setToNode("GearUpInterpolator"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("GearUpInterpolator").setToField("set_rotation").setToNode("FrontWheelTransform"))
         .addChild(new TimeSensorObject().setDEF("WheelDown").setCycleInterval(8d))
-        .addChild(new OrientationInterpolatorObject().setDEF("GearDownInterpolator").setKey(new MFFloatObject(new MFFloat26().getArray())).setKeyValue(new MFRotationObject(new MFRotation27().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("GearDownInterpolator").setKey(new MFFloatObject(new MFFloat31().getArray())).setKeyValue(new MFRotationObject(new MFRotation32().getArray())))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorDown").setToField("set_startTime").setToNode("WheelDown"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("WheelDown").setToField("set_fraction").setToNode("GearDownInterpolator"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("GearDownInterpolator").setToField("set_rotation").setToNode("FrontWheelTransform"))
         .addComments(new CommentsBlock("Animation commands for Rear Right Wheel Starts"))
         .addChild(new TimeSensorObject().setDEF("RRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("RRearDown1").setCycleInterval(8d))
-        .addChild(new OrientationInterpolatorObject().setDEF("RRearInterUp1").setKey(new MFFloatObject(new MFFloat28().getArray())).setKeyValue(new MFRotationObject(new MFRotation29().getArray())))
-        .addChild(new OrientationInterpolatorObject().setDEF("RRearInterDown1").setKey(new MFFloatObject(new MFFloat30().getArray())).setKeyValue(new MFRotationObject(new MFRotation31().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("RRearInterUp1").setKey(new MFFloatObject(new MFFloat33().getArray())).setKeyValue(new MFRotationObject(new MFRotation34().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("RRearInterDown1").setKey(new MFFloatObject(new MFFloat35().getArray())).setKeyValue(new MFRotationObject(new MFRotation36().getArray())))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorDown").setToField("set_startTime").setToNode("RRearDown1"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorUp").setToField("set_startTime").setToNode("RRearUp1"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("RRearDown1").setToField("set_fraction").setToNode("RRearInterDown1"))
@@ -231,39 +236,56 @@ public class MFString {
         .addComments(new CommentsBlock("Animation commands for Rear Left Wheel"))
         .addChild(new TimeSensorObject().setDEF("LRearUp1").setCycleInterval(8d))
         .addChild(new TimeSensorObject().setDEF("LRearDown1").setCycleInterval(8d))
-        .addChild(new OrientationInterpolatorObject().setDEF("LRearInterUp1").setKey(new MFFloatObject(new MFFloat32().getArray())).setKeyValue(new MFRotationObject(new MFRotation33().getArray())))
-        .addChild(new OrientationInterpolatorObject().setDEF("LRearInterDown1").setKey(new MFFloatObject(new MFFloat34().getArray())).setKeyValue(new MFRotationObject(new MFRotation35().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("LRearInterUp1").setKey(new MFFloatObject(new MFFloat37().getArray())).setKeyValue(new MFRotationObject(new MFRotation38().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("LRearInterDown1").setKey(new MFFloatObject(new MFFloat39().getArray())).setKeyValue(new MFRotationObject(new MFRotation40().getArray())))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorDown").setToField("set_startTime").setToNode("LRearDown1"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("TouchSensorUp").setToField("set_startTime").setToNode("LRearUp1"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("LRearDown1").setToField("set_fraction").setToNode("LRearInterDown1"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("LRearUp1").setToField("set_fraction").setToNode("LRearInterUp1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("LRearInterDown1").setToField("set_rotation").setToNode("RearLeftWheelTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("LRearInterUp1").setToField("set_rotation").setToNode("RearLeftWheelTransform"))
-        .addChild(new BackgroundObject().setGroundAngle(new MFFloatObject(new MFFloat36().getArray())).setGroundColor(new MFColorObject(new MFColor37().getArray())).setSkyAngle(new MFFloatObject(new MFFloat38().getArray())).setSkyColor(new MFColorObject(new MFColor39().getArray())))
-        .addChild(new TransformObject().setDEF("RightmostAmraamTransform").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {15.65f,0f,4.5f}))
-        .addChild(new TransformObject().setDEF("LeftmostAmraamTransform").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {-15.65f,0f,4.5f}))
-        .addChild(new TransformObject().setDEF("SidewinderHolderTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {6f,3f,3f}).setTranslation(new float[] {9f,-1.125f,8f}))
-        .addChild(new TransformObject().setDEF("SidewinderHolderTransformLeft").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {6f,3f,3f}).setTranslation(new float[] {-8.45f,-1.125f,8f}))
-        .addChild(new TransformObject().setDEF("TurkishFlagTransformLeft").setRotation(new float[] {0f,-1f,0f,1.57f}).setScale(new float[] {0.3f,0.25f,0.3f}).setTranslation(new float[] {-0.01f,8f,19.5f}))
-        .addChild(new TransformObject().setDEF("TurkishFlagTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.3f,0.25f,0.3f}).setTranslation(new float[] {0.01f,8f,20.5f}))
-        .addChild(new TransformObject().setDEF("AmraamHolderTransformLeft").setTranslation(new float[] {-12f,-0.176f,10.7f}))
-        .addChild(new TransformObject().setDEF("AmraamHolderTransformRight").setTranslation(new float[] {12f,-0.176f,10.7f}))
-        .addChild(new TransformObject().setDEF("AmraamInnerTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {12f,-1.6f,4.5f}))
-        .addChild(new TransformObject().setDEF("AmraamInnerTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {-12f,-1.6f,4.5f}))
-        .addChild(new TransformObject().setDEF("SidewinderTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.6f,1.6f,1.6f}).setTranslation(new float[] {-8.7f,-2f,3.5f}))
-        .addChild(new TransformObject().setDEF("SidewinderTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.6f,1.6f,1.6f}).setTranslation(new float[] {8.7f,-2f,3.5f}))
-        .addChild(new TransformObject().setDEF("FuelTankHolderTransformLeft").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {-4.8f,-1.125f,6f}))
-        .addChild(new TransformObject().setDEF("FuelTankHolderTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {5.3f,-1.125f,6f}))
-        .addChild(new TransformObject().setDEF("FuelTankTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {5f,-2.85f,5.5f}))
-        .addChild(new TransformObject().setDEF("FuelTankTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {-5f,-2.85f,5.5f}))
+        .addChild(new BackgroundObject().setGroundAngle(new MFFloatObject(new MFFloat41().getArray())).setGroundColor(new MFColorObject(new MFColor42().getArray())).setSkyAngle(new MFFloatObject(new MFFloat43().getArray())).setSkyColor(new MFColorObject(new MFColor44().getArray())))
+        .addChild(new TransformObject().setDEF("RightmostAmraamTransform").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {15.65f,0f,4.5f})
+          .addChild(new InlineObject().setDEF("Amraam").setUrl(new MFStringObject(new MFString45().getArray()))))
+        .addChild(new TransformObject().setDEF("LeftmostAmraamTransform").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {-15.65f,0f,4.5f})
+          .addChild(new InlineObject().setUSE("Amraam")))
+        .addChild(new TransformObject().setDEF("SidewinderHolderTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {6f,3f,3f}).setTranslation(new float[] {9f,-1.125f,8f})
+          .addChild(new InlineObject().setDEF("SidewinderHolder").setUrl(new MFStringObject(new MFString46().getArray()))))
+        .addChild(new TransformObject().setDEF("SidewinderHolderTransformLeft").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {6f,3f,3f}).setTranslation(new float[] {-8.45f,-1.125f,8f})
+          .addChild(new InlineObject().setUSE("SidewinderHolder")))
+        .addChild(new TransformObject().setDEF("TurkishFlagTransformLeft").setRotation(new float[] {0f,-1f,0f,1.57f}).setScale(new float[] {0.3f,0.25f,0.3f}).setTranslation(new float[] {-0.01f,8f,19.5f})
+          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString47().getArray()))))
+        .addChild(new TransformObject().setDEF("TurkishFlagTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.3f,0.25f,0.3f}).setTranslation(new float[] {0.01f,8f,20.5f})
+          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString48().getArray()))))
+        .addChild(new TransformObject().setDEF("AmraamHolderTransformLeft").setTranslation(new float[] {-12f,-0.176f,10.7f})
+          .addChild(new InlineObject().setDEF("AmraamHolder").setUrl(new MFStringObject(new MFString49().getArray()))))
+        .addChild(new TransformObject().setDEF("AmraamHolderTransformRight").setTranslation(new float[] {12f,-0.176f,10.7f})
+          .addChild(new InlineObject().setUSE("AmraamHolder")))
+        .addChild(new TransformObject().setDEF("AmraamInnerTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {12f,-1.6f,4.5f})
+          .addChild(new InlineObject().setUSE("Amraam")))
+        .addChild(new TransformObject().setDEF("AmraamInnerTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.4f,1.4f,1.4f}).setTranslation(new float[] {-12f,-1.6f,4.5f})
+          .addChild(new InlineObject().setUSE("Amraam")))
+        .addChild(new TransformObject().setDEF("SidewinderTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.6f,1.6f,1.6f}).setTranslation(new float[] {-8.7f,-2f,3.5f})
+          .addChild(new InlineObject().setDEF("Sidewinder").setUrl(new MFStringObject(new MFString50().getArray()))))
+        .addChild(new TransformObject().setDEF("SidewinderTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.6f,1.6f,1.6f}).setTranslation(new float[] {8.7f,-2f,3.5f})
+          .addChild(new InlineObject().setUSE("Sidewinder")))
+        .addChild(new TransformObject().setDEF("FuelTankHolderTransformLeft").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {-4.8f,-1.125f,6f})
+          .addChild(new InlineObject().setDEF("FuelTankHolder").setUrl(new MFStringObject(new MFString51().getArray()))))
+        .addChild(new TransformObject().setDEF("FuelTankHolderTransformRight").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {5.3f,-1.125f,6f})
+          .addChild(new InlineObject().setUSE("FuelTankHolder")))
+        .addChild(new TransformObject().setDEF("FuelTankTransformRight").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {5f,-2.85f,5.5f})
+          .addChild(new InlineObject().setDEF("FuelTank").setUrl(new MFStringObject(new MFString52().getArray()))))
+        .addChild(new TransformObject().setDEF("FuelTankTransformLeft").setRotation(new float[] {-1f,0f,0f,1.57f}).setScale(new float[] {1.5f,1.5f,1.5f}).setTranslation(new float[] {-5f,-2.85f,5.5f})
+          .addChild(new InlineObject().setUSE("FuelTank")))
         .addChild(new TransformObject().setDEF("InlineCoverOfPlaneTansform")
           .addChild(new ShapeObject()
             .setGeometry(new BoxObject().setSize(new float[] {4.15f,0.1f,20f}))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.25f,0.25f,0.25f})))))
-        .addChild(new TransformObject().setDEF("TargetHelicopterTransform").setTranslation(new float[] {16f,-50f,-500f}))
+        .addChild(new TransformObject().setDEF("TargetHelicopterTransform").setTranslation(new float[] {16f,-50f,-500f})
+          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString53().getArray()))))
         .addChild(new TimeSensorObject().setDEF("FireClock").setCycleInterval(8d))
-        .addChild(new PositionInterpolatorObject().setDEF("MissilePath").setKey(new MFFloatObject(new MFFloat40().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f41().getArray())))
+        .addChild(new PositionInterpolatorObject().setDEF("MissilePath").setKey(new MFFloatObject(new MFFloat54().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f55().getArray())))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("FireSensor").setToField("set_startTime").setToNode("FireClock"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("FireClock").setToField("set_fraction").setToNode("MissilePath"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("MissilePath").setToField("set_translation").setToNode("LeftmostAmraamTransform"))
@@ -374,110 +396,180 @@ protected class MFInt3219 {
 }
 protected class MFString20 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"RED Button","Gear Up"});
+    return new MFStringObject(new java.lang.String[] {"Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"});
   }
 }
-protected class MFFloat21 {
-  protected MFFloatObject getArray() {
-    return new MFFloatObject(new float[] {5.5f});
+protected class MFString21 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"});
   }
 }
 protected class MFString22 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"YELLOW Button","Gear Down"});
+    return new MFStringObject(new java.lang.String[] {"FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"});
   }
 }
 protected class MFString23 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target Locked"," FIRE!..","(Green Button)"});
+    return new MFStringObject(new java.lang.String[] {"RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"});
   }
 }
-protected class MFFloat24 {
-  protected MFFloatObject getArray() {
-    return new MFFloatObject(new float[] {0f,0.5f,1f});
+protected class MFString24 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"});
   }
 }
-protected class MFRotation25 {
-  protected MFRotationObject getArray() {
-    return new MFRotationObject(new float[] {1f,0f,0f,0f,1f,0f,0f,-0.79f,1f,0f,0f,-1.92f});
+protected class MFString25 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"RED Button","Gear Up"});
   }
 }
 protected class MFFloat26 {
   protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {5.5f});
+  }
+}
+protected class MFString27 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"YELLOW Button","Gear Down"});
+  }
+}
+protected class MFString28 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"Target Locked"," FIRE!..","(Green Button)"});
+  }
+}
+protected class MFFloat29 {
+  protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation27 {
+protected class MFRotation30 {
+  protected MFRotationObject getArray() {
+    return new MFRotationObject(new float[] {1f,0f,0f,0f,1f,0f,0f,-0.79f,1f,0f,0f,-1.92f});
+  }
+}
+protected class MFFloat31 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,0.5f,1f});
+  }
+}
+protected class MFRotation32 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,-1.92f,1f,0f,0f,-0.79f,1f,0f,0f,0f});
   }
 }
-protected class MFFloat28 {
+protected class MFFloat33 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation29 {
+protected class MFRotation34 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,-1f,0f,-1f,0f,-1f,0.44f,-1f,0f,-1f,1.92f});
   }
 }
-protected class MFFloat30 {
+protected class MFFloat35 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation31 {
+protected class MFRotation36 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,-1f,1.92f,-1f,0f,-1f,0.44f,-1f,0f,-1f,0f});
   }
 }
-protected class MFFloat32 {
+protected class MFFloat37 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation33 {
+protected class MFRotation38 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,1f,0f,1f,0f,1f,0.44f,1f,0f,1f,1.92f});
   }
 }
-protected class MFFloat34 {
+protected class MFFloat39 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation35 {
+protected class MFRotation40 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,1f,1.92f,1f,0f,1f,0.44f,1f,0f,1f,0f});
   }
 }
-protected class MFFloat36 {
+protected class MFFloat41 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {1.309f,1.570796f});
   }
 }
-protected class MFColor37 {
+protected class MFColor42 {
   protected MFColorObject getArray() {
     return new MFColorObject(new float[] {0f,0.3f,0.7f,0f,0.35f,0.75f,0f,0.4f,0.8f});
   }
 }
-protected class MFFloat38 {
+protected class MFFloat43 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {1.309f,1.571f});
   }
 }
-protected class MFColor39 {
+protected class MFColor44 {
   protected MFColorObject getArray() {
     return new MFColorObject(new float[] {0f,0.3f,0.8f,0f,0.5f,1f,1f,1f,1f});
   }
 }
-protected class MFFloat40 {
+protected class MFString45 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"});
+  }
+}
+protected class MFString46 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"});
+  }
+}
+protected class MFString47 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"});
+  }
+}
+protected class MFString48 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"});
+  }
+}
+protected class MFString49 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"});
+  }
+}
+protected class MFString50 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"});
+  }
+}
+protected class MFString51 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"});
+  }
+}
+protected class MFString52 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"});
+  }
+}
+protected class MFString53 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"});
+  }
+}
+protected class MFFloat54 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.1f,1f});
   }
 }
-protected class MFVec3f41 {
+protected class MFVec3f55 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-15.65f,0f,4.5f,-15.65f,-2f,4.5f,16f,-50f,-500f});
   }

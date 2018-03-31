@@ -331,13 +331,14 @@ ProtoInstanceObject ProtoInstance34 = null;
           .addChild(new ROUTEObject().setFromField("orientation_changed").setFromNode("Camera.AimPointTest").setToField("rotation").setToNode("CameraShapeTransform"))
           .addChild(new TransformObject().setDEF("CameraOffsetTransform").setTranslation(new float[] {0f,0f,0.25f})
             .addChild(new TouchSensorObject().setDEF("CameraShapeTouched"))
+            .addChild(new InlineObject().setDEF("CameraShape").setUrl(new MFStringObject(new MFString23().getArray())))
             .addChild(new ShapeObject().setDEF("SightLine")
-              .setGeometry(new IndexedLineSetObject().setCoordIndex(new MFInt32Object(new MFInt3223().getArray()))
-                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f24().getArray()))))
+              .setGeometry(new IndexedLineSetObject().setCoordIndex(new MFInt32Object(new MFInt3224().getArray()))
+                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f25().getArray()))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setEmissiveColor(new float[] {0.8f,0.8f,0.4f})))))
           .addComments(new CommentsBlock("Display frustum to show camera view within the scene, toggled by user selecting CameraShape"))
-          .addChild(new ExternProtoDeclareObject().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFStringObject(new MFString25().getArray()))
+          .addChild(new ExternProtoDeclareObject().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFStringObject(new MFString26().getArray()))
             .addField(new fieldObject().setType("SFNode").setName("ViewpointNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
             .addField(new fieldObject().setType("SFNode").setName("NavigationInfoNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
             .addField(new fieldObject().setType("SFBool").setName("visible").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered"))
@@ -351,17 +352,18 @@ ProtoInstanceObject ProtoInstance34 = null;
           .addChild(new ROUTEObject().setFromField("isActive").setFromNode("CameraShapeTouched").setToField("set_boolean").setToNode("ViewFrustumToggle"))
           .addChild(new ROUTEObject().setFromField("toggle").setFromNode("ViewFrustumToggle").setToField("set_visible").setToNode("ViewFrustumNode")))
         .addComments(new CommentsBlock("=============== add checkerboard, axes and other things to look at while animating =============="))
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor27().getArray())))
+        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor28().getArray())))
         .addChild(new TransformObject().setRotation(new float[] {1f,0f,0f,-1.57079f}).setScale(new float[] {10f,10f,10f})
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
-            .setGeometry(new IndexedFaceSetObject().setColorIndex(new MFInt32Object(new MFInt3228().getArray())).setColorPerVertex(false).setCoordIndex(new MFInt32Object(new MFInt3229().getArray())).setNormalPerVertex(false).setSolid(false)
-              .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f30().getArray())))
-              .setColor(new ColorObject().setColor(new MFColorObject(new MFColor31().getArray()))))))
-        .addChild(new TransformObject().setScale(new float[] {3f,3f,3f}).setTranslation(new float[] {0f,0.25f,0f}))
+            .setGeometry(new IndexedFaceSetObject().setColorIndex(new MFInt32Object(new MFInt3229().getArray())).setColorPerVertex(false).setCoordIndex(new MFInt32Object(new MFInt3230().getArray())).setNormalPerVertex(false).setSolid(false)
+              .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f31().getArray())))
+              .setColor(new ColorObject().setColor(new MFColorObject(new MFColor32().getArray()))))))
+        .addChild(new TransformObject().setScale(new float[] {3f,3f,3f}).setTranslation(new float[] {0f,0.25f,0f})
+          .addChild(new InlineObject().setDEF("CoordinateAxes").setUrl(new MFStringObject(new MFString33().getArray()))))
         .addChild(new TransformObject().setDEF("MovingBoxTransform")
-          .addChild(new PositionInterpolatorObject().setDEF("BoxPath").setKey(new MFFloatObject(new MFFloat32().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f33().getArray())))
+          .addChild(new PositionInterpolatorObject().setDEF("BoxPath").setKey(new MFFloatObject(new MFFloat34().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f35().getArray())))
           .addChild(new TimeSensorObject().setDEF("BoxTimer").setCycleInterval(10d).setLoop(true))
           .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("BoxPath").setToField("translation").setToNode("MovingBoxTransform"))
           .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.1"))
@@ -372,9 +374,9 @@ ProtoInstanceObject ProtoInstance34 = null;
             .setGeometry(new BoxObject())
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())
-              .setTexture(new ImageTextureObject().setUrl(new MFStringObject(new MFString34().getArray()))))))
+              .setTexture(new ImageTextureObject().setUrl(new MFStringObject(new MFString36().getArray()))))))
         .addComments(new CommentsBlock("================ CrossHair visualization for center of screen ================"))
-        .addChild(new ExternProtoDeclareObject().setName("CrossHair").setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point").setUrl(new MFStringObject(new MFString35().getArray()))
+        .addChild(new ExternProtoDeclareObject().setName("CrossHair").setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point").setUrl(new MFStringObject(new MFString37().getArray()))
           .addField(new fieldObject().setType("SFBool").setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("whether CrissHair orititype is enabled or not"))
           .addField(new fieldObject().setType("SFBool").setName("set_enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setAppinfo("control whether enabled/disabled"))
           .addField(new fieldObject().setType("SFColor").setName("markerColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("color of CrossHair marker"))
@@ -386,11 +388,11 @@ ProtoInstanceObject ProtoInstance34 = null;
         .addChild(new ROUTEObject().setFromField("isBound").setFromNode("Camera.AimPointTest").setToField("set_enabled").setToNode("CrossHairInstance"))
         .addComments(new CommentsBlock("turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/>"))
         .addComments(new CommentsBlock("=============== TODO Launch Prototype Example =============="))
-        .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new MFStringObject(new MFString36().getArray())).setUrl(new MFStringObject(new MFString37().getArray()))
+        .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new MFStringObject(new MFString38().getArray())).setUrl(new MFStringObject(new MFString39().getArray()))
           .addChild(new TransformObject().setTranslation(new float[] {0f,-3f,0f})
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(new MFStringObject(new MFString38().getArray()))
-                .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString39().getArray())).setSize(0.5f)))
+              .setGeometry(new TextObject().setString(new MFStringObject(new MFString40().getArray()))
+                .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString41().getArray())).setSize(0.5f)))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,0.2f})))))))      ;
 ProtoInstance0
@@ -692,7 +694,7 @@ ProtoInstance33
               .addChild(new ViewpointObject().setDEF("FrustumViewpoint").setDescription("viewpoint for ViewFrustum").setPosition(new float[] {0f,0f,0f})));
 ProtoInstance33
             .addFieldValue(new fieldValueObject().setName("NavigationInfoNode")
-              .addChild(new NavigationInfoObject().setDEF("TestNavigationInfo").setTransitionType(new MFStringObject(new MFString26().getArray())).setVisibilityLimit(100f)));
+              .addChild(new NavigationInfoObject().setDEF("TestNavigationInfo").setTransitionType(new MFStringObject(new MFString27().getArray())).setVisibilityLimit(100f)));
 ProtoInstance33
             .addFieldValue(new fieldValueObject().setName("visible").setValue("false"));
 ProtoInstance33
@@ -826,87 +828,97 @@ protected class MFString22 {
     return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
-protected class MFInt3223 {
+protected class MFString23 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"CameraShape.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"});
+  }
+}
+protected class MFInt3224 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,1});
   }
 }
-protected class MFVec3f24 {
+protected class MFVec3f25 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,0f,0f,0f,0f,-100f});
   }
 }
-protected class MFString25 {
+protected class MFString26 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"});
   }
 }
-protected class MFString26 {
+protected class MFString27 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"ANIMATE"});
   }
 }
-protected class MFColor27 {
+protected class MFColor28 {
   protected MFColorObject getArray() {
     return new MFColorObject(new float[] {0.282353f,0.380392f,0.470588f});
   }
 }
-protected class MFInt3228 {
+protected class MFInt3229 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0});
   }
 }
-protected class MFInt3229 {
+protected class MFInt3230 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1});
   }
 }
-protected class MFVec3f30 {
+protected class MFVec3f31 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
   }
 }
-protected class MFColor31 {
+protected class MFColor32 {
   protected MFColorObject getArray() {
     return new MFColorObject(new float[] {0.435294f,0.741176f,0f,0f,0.560784f,0.580392f});
   }
 }
-protected class MFFloat32 {
+protected class MFString33 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
+  }
+}
+protected class MFFloat34 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
-protected class MFVec3f33 {
+protected class MFVec3f35 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-5f,1f,5f,45f,1f,5f,45f,1f,-45f,-5f,1f,-45f,-5f,1f,5f});
   }
 }
-protected class MFString34 {
+protected class MFString36 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"});
   }
 }
-protected class MFString35 {
+protected class MFString37 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"});
   }
 }
-protected class MFString36 {
+protected class MFString38 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"target=_blank"});
   }
 }
-protected class MFString37 {
+protected class MFString39 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"CameraExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"});
   }
 }
-protected class MFString38 {
+protected class MFString40 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"});
   }
 }
-protected class MFString39 {
+protected class MFString41 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }

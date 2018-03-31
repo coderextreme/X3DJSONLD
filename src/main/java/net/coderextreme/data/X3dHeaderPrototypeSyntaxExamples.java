@@ -94,7 +94,7 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addMeta(new metaObject().setName("title").setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
         .addMeta(new metaObject().setName("description").setContent("X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."))
         .addMeta(new metaObject().setName("created").setContent("14 October 2002"))
-        .addMeta(new metaObject().setName("modified").setContent("7 May 2017"))
+        .addMeta(new metaObject().setName("modified").setContent("27 May 2017"))
         .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
         .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"))
         .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"))
@@ -145,8 +145,7 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addChild(new CollisionObject()
           .setProxy(new ShapeObject()
             .addComments(new CommentsBlock("note that Collision proxy Shape is not rendered"))
-            .addComments(new CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray())))
+            .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new GroupObject().setUSE("ExampleChildElement")))
@@ -154,16 +153,16 @@ ProtoInstanceObject ProtoInstance3 = null;
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(ProtoInstance2 = new ProtoInstanceObject().setName("EmissiveMaterial")))
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString2().getArray()))
-              .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString3().getArray())).setSize(0.6f)))))
+            .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray()))
+              .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString2().getArray())).setSize(0.6f)))))
         .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("ViewPositionOrientation"))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(4d).setLoop(true))
-        .addChild(new OrientationInterpolatorObject().setDEF("Spinner").setKey(new MFFloatObject(new MFFloat4().getArray())).setKeyValue(new MFRotationObject(new MFRotation5().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("Spinner").setKey(new MFFloatObject(new MFFloat3().getArray())).setKeyValue(new MFRotationObject(new MFRotation4().getArray())))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("Spinner"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("Spinner").setToField("rotation").setToNode("TransformExampleUSE"))
-        .addChild(new InlineObject().setDEF("someInline").setUrl(new MFStringObject(new MFString6().getArray())))
+        .addChild(new InlineObject().setDEF("someInline").setUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline"))
-        .addChild(new PositionInterpolatorObject().setDEF("StayInPlace").setKey(new MFFloatObject(new MFFloat7().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f8().getArray())))
+        .addChild(new PositionInterpolatorObject().setDEF("StayInPlace").setKey(new MFFloatObject(new MFFloat6().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f7().getArray())))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("StayInPlace"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot")))      ;
 ProtoInstance2
@@ -179,40 +178,35 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"He said, \"Immel did it!\""});
+    return new MFStringObject(new java.lang.String[] {"X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"});
-  }
-}
-protected class MFString3 {
-  protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
-protected class MFFloat4 {
+protected class MFFloat3 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation5 {
+protected class MFRotation4 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,1f,0f,0f,0f,1f,0f,3.14159f,0f,1f,0f,6.28318f});
   }
 }
-protected class MFString6 {
+protected class MFString5 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"});
   }
 }
-protected class MFFloat7 {
+protected class MFFloat6 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFVec3f8 {
+protected class MFVec3f7 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,0f,0f,0f,0f,0f});
   }
