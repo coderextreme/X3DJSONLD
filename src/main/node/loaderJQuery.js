@@ -104,7 +104,6 @@ function filterExisting(event) {
 function filter(event) {
 	$('#file').children().remove().end();
 	$.getJSON("/files?"+event.target.value, function (data) {
-		alert(data);
 		$.each(data, function(i, opt) {
 			$('#file').append($("<option>", { value: opt, text: opt}));
 		});
