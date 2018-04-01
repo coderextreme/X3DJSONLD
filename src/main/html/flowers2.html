@@ -4,7 +4,10 @@
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <!--
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    -->
+    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
    <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
    <script type="text/javascript" src="../node/x_ite.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -23,6 +26,7 @@
     </style>
 </head>
 <body>
+	<span style="display:none"> Use VRMLScript in X3DOM? <input id="scripting" type="checkbox" checked="true"></input></span>
     <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='900px' height='450px' backend='webgl'>
 		<Scene id="x3domjson">
 		</Scene>
@@ -36,6 +40,7 @@
     </X3DCanvas>
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
     <script type="text/javascript" src="../node/Flattener.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
@@ -82,21 +87,13 @@ function getJSON(url) {
 
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
+			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
-			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
-			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
-			var url = '../data/abox.json';
-			getJSON(url).then(function(subjson) {
-				subjson = protoExpander.prototypeExpander(url, subjson, "");
-				subjson = flattener(subjson);
-				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
-				$(selector).empty();
-				$(element.querySelector(scenetag)).children().appendTo(selector);
-				x3dom.reload();
-			}).catch(function(err) {
-				alert("Subscene Load failed");
-				console.log(err);
+		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
+				if ($('#scripting').is(':checked')) {
+					loadScripts(json, selector);
+				}
 			});
 		}).catch(function(err) {
 			alert("Scene Load failed");
@@ -105,15 +102,9 @@ function getJSON(url) {
 	}
 	function load_X_ITE(url) {
 		getJSON(url).then(function(json) {
-			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
-			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
-			var suburl = '../data/abox.json';
-			getJSON(suburl).then(function(subjson) {
-				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
+			var xml = [];
+			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
 				load_X_ITE_DOM(element); // reloads X_ITE element on page.
-			}).catch(function(err) {
-				alert("Subscene Load failed");
-				console.log(err);
 			});
 		}).catch(function(err) {
 			alert("Scene Load failed");
@@ -121,8 +112,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('#x3domjson','../data/flipp.json');
-		load_X_ITE('../data/flipp.json');
+		load_X3DOM('#x3domjson','../data/flowers2.json');
+		load_X_ITE('../data/flowers2.json');
 	});
     </script>
 </html>
