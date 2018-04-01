@@ -166,14 +166,23 @@
                                                   }
                                               }
                                             },
+                                          "-children":[
+                                            {
+                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                            }
+                                          ],
                                           "-geometry":
                                             { "IndexedFaceSet":
                                               {
+                                                "@ccw":false,
+                                                "@convex":false,
+                                                "@coordIndex":[0,1,2,-1],
                                                 "@DEF":"Orbit",
                                                 "-coord":
                                                   { "Coordinate":
                                                     {
-                                                      "@DEF":"OrbitCoordinates"
+                                                      "@DEF":"OrbitCoordinates",
+                                                      "@point":[0,0,1,0,1,0,1,0,0]
                                                     }
                                                   }
                                               }
