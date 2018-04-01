@@ -84,7 +84,7 @@ ProtoInstanceObject ProtoInstance0 = null;
 ProtoInstanceObject ProtoInstance1 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("flowers2.x3d").setContent("title"))
+        .addMeta(new metaObject().setName("title").setContent("flowers2.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
         .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
@@ -98,8 +98,6 @@ ProtoInstanceObject ProtoInstance1 = null;
         .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))
         .addChild(new GroupObject()
           .addChild(new DirectionalLightObject().setDirection(new float[] {1f,1f,1f}))
-          .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
-          .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
           .addChild(new ProtoDeclareObject().setName("orbit")
             .setProtoInterface(new ProtoInterfaceObject()
               .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -108,6 +106,8 @@ ProtoInstanceObject ProtoInstance1 = null;
               .addField(new fieldObject().setType("SFFloat").setName("transparency").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
             .setProtoBody(new ProtoBodyObject()
               .addChild(new GroupObject()
+                .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+                .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
                 .addChild(new TransformObject().setDEF("OrbitTransform")
                   .setIS(new ISObject()
                     .addConnect(new connectObject().setNodeField("translation").setProtoField("translation")))
@@ -207,10 +207,10 @@ ProtoInstanceObject ProtoInstance1 = null;
                 .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
                 .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
                 .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-                .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation")))))
+                .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+                .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("orbit"))
-          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("orbit"))
-          .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction"))))      ;
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("orbit"))))      ;
 ProtoInstance0
             .addFieldValue(new fieldValueObject().setName("translation").setValue("-8 0 0"));
 ProtoInstance0

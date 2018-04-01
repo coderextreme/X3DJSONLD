@@ -6,8 +6,8 @@
     "head": {
       "meta": [
         {
-          "@name": "flowers2.x3d",
-          "@content": "title"
+          "@name": "title",
+          "@content": "flowers2.x3d"
         },
         {
           "@name": "creator",
@@ -43,7 +43,7 @@
         },
         {
           "@name": "translated",
-          "@content": "31 March 2018"
+          "@content": "1 April 2018"
         },
         {
           "@name": "generator",
@@ -79,37 +79,6 @@
                     1,
                     1,
                     1
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "Clock",
-                  "@cycleInterval": 16,
-                  "@loop": true
-                }
-              },
-              {
-                "OrientationInterpolator": {
-                  "@DEF": "OrbitPath",
-                  "@key": [
-                    0,
-                    0.5,
-                    1
-                  ],
-                  "@keyValue": [
-                    1,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    3.14,
-                    1,
-                    0,
-                    0,
-                    6.28
                   ]
                 }
               },
@@ -161,6 +130,37 @@
                       {
                         "Group": {
                           "-children": [
+                            {
+                              "TimeSensor": {
+                                "@DEF": "Clock",
+                                "@cycleInterval": 16,
+                                "@loop": true
+                              }
+                            },
+                            {
+                              "OrientationInterpolator": {
+                                "@DEF": "OrbitPath",
+                                "@key": [
+                                  0,
+                                  0.5,
+                                  1
+                                ],
+                                "@keyValue": [
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  3.14,
+                                  1,
+                                  0,
+                                  0,
+                                  6.28
+                                ]
+                              }
+                            },
                             {
                               "Transform": {
                                 "@DEF": "OrbitTransform",
@@ -373,6 +373,14 @@
                                 "@toNode": "OrbitTransform",
                                 "@toField": "rotation"
                               }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "Clock",
+                                "@fromField": "fraction_changed",
+                                "@toNode": "OrbitPath",
+                                "@toField": "set_fraction"
+                              }
                             }
                           ]
                         }
@@ -449,14 +457,6 @@
                       "@value": 0.5
                     }
                   ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "Clock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "OrbitPath",
-                  "@toField": "set_fraction"
                 }
               }
             ]
