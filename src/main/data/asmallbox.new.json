@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"abox.x3d"
+            "@content":"asmallbox.x3d"
           },
           {
             "@name":"creator",
@@ -143,7 +143,6 @@
                         "-geometry":
                           { "Box":
                             {
-                              "@size":[0.125,0.125,0.125]
                             }
                           }
                       }

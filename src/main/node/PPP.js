@@ -48,7 +48,7 @@ function ProcessJSON(json, file) {
 
 		var xml = new LOG();
 		var NS = "http://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
+		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
 			var classes = new LOG();
 			var routecode = new LOG();
 			var loopItems = new LOG();

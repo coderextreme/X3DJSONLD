@@ -553,10 +553,10 @@ function loadX3DJS(DOMImplementation, jsobj, path, xml, NS, loadSchema, doValida
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 			xml.push(serializeDOM(jsobj, child, true));
 		}
-		callback(child);
+		callback(child, xmlDoc);
 	}, function(e) {
 		console.error(e);
-		callback(null);
+		callback(null, null);
 	});
 }
 
