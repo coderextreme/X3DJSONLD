@@ -8,8 +8,8 @@
     "head": {
       "meta": [
         {
-          "@name": "flowers2.x3d",
-          "@content": "title"
+          "@name": "title",
+          "@content": "flowers2.x3d"
         },
         {
           "@name": "creator",
@@ -45,7 +45,7 @@
         },
         {
           "@name": "translated",
-          "@content": "31 March 2018"
+          "@content": "01 April 2018"
         },
         {
           "@name": "generator",
@@ -84,41 +84,41 @@
                   ]
                 }
               },
-              {
-                "TimeSensor": {
-                  "@DEF": "Clock",
-                  "@cycleInterval": 16,
-                  "@loop": true
-                }
-              },
-              {
-                "OrientationInterpolator": {
-                  "@DEF": "OrbitPath",
-                  "@key": [
-                    0,
-                    0.5,
-                    1
-                  ],
-                  "@keyValue": [
-                    1,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    3.14,
-                    1,
-                    0,
-                    0,
-                    6.28
-                  ]
-                }
-              },
               {},
               {
                 "Group": {
                   "-children": [
+                    {
+                      "TimeSensor": {
+                        "@DEF": "DECLorbit_INSTANCE_Clock",
+                        "@cycleInterval": 16,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "OrientationInterpolator": {
+                        "@DEF": "DECLorbit_INSTANCE_OrbitPath",
+                        "@key": [
+                          0,
+                          0.5,
+                          1
+                        ],
+                        "@keyValue": [
+                          1,
+                          0,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                          3.14,
+                          1,
+                          0,
+                          0,
+                          6.28
+                        ]
+                      }
+                    },
                     {
                       "Transform": {
                         "@DEF": "DECLorbit_INSTANCE_OrbitTransform",
@@ -149,12 +149,36 @@
                                   }
                                 }
                               },
+                              "-children": [
+                                {
+                                  "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                }
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
+                                  "@ccw": false,
+                                  "@convex": false,
+                                  "@coordIndex": [
+                                    0,
+                                    1,
+                                    2,
+                                    -1
+                                  ],
                                   "@DEF": "DECLorbit_INSTANCE_Orbit",
                                   "-coord": {
                                     "Coordinate": {
-                                      "@DEF": "DECLorbit_INSTANCE_OrbitCoordinates"
+                                      "@DEF": "DECLorbit_INSTANCE_OrbitCoordinates",
+                                      "@point": [
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0,
+                                        0
+                                      ]
                                     }
                                   }
                                 }
@@ -185,25 +209,25 @@
                           },
                           {
                             "@name": "e",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "f",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "g",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "h",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
@@ -276,6 +300,9 @@
                           "\t\t\t\tcase 3:",
                           "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
                           "\t\t\t\t\tbreak;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (e < 1) {",
+                          "\t\t\t\t\tf = 10;",
                           "\t\t\t\t}",
                           "\t\t\t\tif (f < 1) {",
                           "\t\t\t\t\tf = 10;",
@@ -310,7 +337,7 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "Clock",
+                        "@fromNode": "DECLorbit_INSTANCE_Clock",
                         "@fromField": "fraction_changed",
                         "@toNode": "DECLorbit_INSTANCE_OrbitScript",
                         "@toField": "set_fraction"
@@ -318,10 +345,18 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "OrbitPath",
+                        "@fromNode": "DECLorbit_INSTANCE_OrbitPath",
                         "@fromField": "value_changed",
                         "@toNode": "DECLorbit_INSTANCE_OrbitTransform",
                         "@toField": "rotation"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "DECLorbit_INSTANCE_Clock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "DECLorbit_INSTANCE_OrbitPath",
+                        "@toField": "set_fraction"
                       }
                     }
                   ]
@@ -330,6 +365,37 @@
               {
                 "Group": {
                   "-children": [
+                    {
+                      "TimeSensor": {
+                        "@DEF": "DECLorbit_INSTANCE1000_Clock",
+                        "@cycleInterval": 16,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "OrientationInterpolator": {
+                        "@DEF": "DECLorbit_INSTANCE1000_OrbitPath",
+                        "@key": [
+                          0,
+                          0.5,
+                          1
+                        ],
+                        "@keyValue": [
+                          1,
+                          0,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                          3.14,
+                          1,
+                          0,
+                          0,
+                          6.28
+                        ]
+                      }
+                    },
                     {
                       "Transform": {
                         "@DEF": "DECLorbit_INSTANCE1000_OrbitTransform",
@@ -360,12 +426,36 @@
                                   }
                                 }
                               },
+                              "-children": [
+                                {
+                                  "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                }
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
+                                  "@ccw": false,
+                                  "@convex": false,
+                                  "@coordIndex": [
+                                    0,
+                                    1,
+                                    2,
+                                    -1
+                                  ],
                                   "@DEF": "DECLorbit_INSTANCE1000_Orbit",
                                   "-coord": {
                                     "Coordinate": {
-                                      "@DEF": "DECLorbit_INSTANCE1000_OrbitCoordinates"
+                                      "@DEF": "DECLorbit_INSTANCE1000_OrbitCoordinates",
+                                      "@point": [
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0,
+                                        0
+                                      ]
                                     }
                                   }
                                 }
@@ -396,25 +486,25 @@
                           },
                           {
                             "@name": "e",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "f",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "g",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
                           {
                             "@name": "h",
-                            "@accessType": "inputOutput",
+                            "@accessType": "outputOnly",
                             "@type": "SFFloat",
                             "@value": 5
                           },
@@ -488,6 +578,9 @@
                           "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
                           "\t\t\t\t\tbreak;",
                           "\t\t\t\t}",
+                          "\t\t\t\tif (e < 1) {",
+                          "\t\t\t\t\tf = 10;",
+                          "\t\t\t\t}",
                           "\t\t\t\tif (f < 1) {",
                           "\t\t\t\t\tf = 10;",
                           "\t\t\t\t}",
@@ -521,7 +614,7 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "Clock",
+                        "@fromNode": "DECLorbit_INSTANCE1000_Clock",
                         "@fromField": "fraction_changed",
                         "@toNode": "DECLorbit_INSTANCE1000_OrbitScript",
                         "@toField": "set_fraction"
@@ -529,21 +622,21 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "OrbitPath",
+                        "@fromNode": "DECLorbit_INSTANCE1000_OrbitPath",
                         "@fromField": "value_changed",
                         "@toNode": "DECLorbit_INSTANCE1000_OrbitTransform",
                         "@toField": "rotation"
                       }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "DECLorbit_INSTANCE1000_Clock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "DECLorbit_INSTANCE1000_OrbitPath",
+                        "@toField": "set_fraction"
+                      }
                     }
                   ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "Clock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "OrbitPath",
-                  "@toField": "set_fraction"
                 }
               }
             ]

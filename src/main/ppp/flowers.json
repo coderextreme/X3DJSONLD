@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "31 March 2018"
+          "@content": "01 April 2018"
         },
         {
           "@name": "generator",
@@ -219,8 +219,8 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "../shaders/common.vs",
-                                          "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs"
+                                          "../shaders/gl_flowers_chromatic.vs",
+                                          "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"
                                         ],
                                         "@type": "VERTEX"
                                       }
@@ -228,8 +228,8 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "../shaders/gl_flowers_chromatic.fs",
-                                          "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs"
+                                          "../shaders/common.fs",
+                                          "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
                                         ],
                                         "@type": "FRAGMENT"
                                       }
