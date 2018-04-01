@@ -118,8 +118,9 @@ ProtoInstanceObject ProtoInstance1 = null;
                           .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor"))
                           .addConnect(new connectObject().setNodeField("specularColor").setProtoField("specularColor"))
                           .addConnect(new connectObject().setNodeField("transparency").setProtoField("transparency")))))
-                    .setGeometry(new IndexedFaceSetObject().setDEF("Orbit")
-                      .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
+                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
+                    .setGeometry(new IndexedFaceSetObject().setCcw(false).setConvex(false).setCoordIndex(new MFInt32Object(new MFInt322().getArray())).setDEF("Orbit")
+                      .setCoord(new CoordinateObject().setDEF("OrbitCoordinates").setPoint(new MFVec3fObject(new MFVec3f3().getArray()))))))
                 .addChild(new ScriptObject().setDEF("OrbitScript")
                   .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                   .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
@@ -240,6 +241,16 @@ protected class MFFloat0 {
 protected class MFRotation1 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
+  }
+}
+protected class MFInt322 {
+  protected MFInt32Object getArray() {
+    return new MFInt32Object(new int[] {0,1,2,-1});
+  }
+}
+protected class MFVec3f3 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
   }
 }
 }

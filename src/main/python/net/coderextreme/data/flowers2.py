@@ -156,11 +156,17 @@ IS32.addConnect(connect35)
 Material31.setIS(IS32)
 Appearance30.setMaterial(Material31)
 Shape29.setAppearance(Appearance30)
+
+Shape29.addComments(CommentsBlock("""<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""))
 IndexedFaceSet36 = IndexedFaceSetObject()
+IndexedFaceSet36.setCcw(False)
+IndexedFaceSet36.setConvex(False)
+IndexedFaceSet36.setCoordIndex([0,1,2,-1])
 IndexedFaceSet36.setDEF("Orbit")
 
 Coordinate37 = CoordinateObject()
 Coordinate37.setDEF("OrbitCoordinates")
+Coordinate37.setPoint([0,0,1,0,1,0,1,0,0])
 
 IndexedFaceSet36.setCoord(Coordinate37)
 Shape29.setGeometry(IndexedFaceSet36)
