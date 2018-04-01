@@ -248,7 +248,7 @@ if (typeof mapToMethod !== 'undefined') {
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
 	var xml = [];
-	loadX3DJS(json, path, xml, NS, loadSchema, doValidate, function(element) {
+	loadX3DJS(document.implementation, json, path, xml, NS, loadSchema, doValidate, function(element) {
 		if (element != null) {
 			next(xml);
 		} else {
@@ -340,7 +340,8 @@ function appendInline(element, url, next) {
 		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, function() {
-			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
+			// TODO note that passing document will not work with CDATA sections.   We need another way.  Perhaps we can create a CDATA section from element?
+			ConvertToX3DOM(document, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
 			console.error(e);
@@ -371,7 +372,7 @@ function loadInline(selector, url) {
  * returns element loaded
  */
 function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
-	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(element) {
+	loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, function(element) {
 		if (element != null) {
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
@@ -397,7 +398,7 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
  */
 function replaceX3DJSON(selector, json, url, xml, NS, next) {
 
-	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(element) {
+	loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, function(element) {
 		if (element != null) {
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.

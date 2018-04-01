@@ -16,9 +16,8 @@ var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
 X3DJSONLD.setProcessURLs(function(urls) { return urls}); // do not modify URLs on server
-
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
-var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
+var loadX3DJS = X3DJSONLD.loadX3DJS;
 
 var Script = require('./Script');
 var LOG = Script.LOG;
@@ -142,7 +141,7 @@ function convertJSON(options) {
 		}
 		var xml = new LOG();
 		var NS = "http://www.web3d.org/specifications/x3d";
-		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
+		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}
@@ -182,61 +181,6 @@ function convertJSON(options) {
 }
 
 
-/**
- * json -- JavaScript JSON object
- * path -- used for determining subURLs
- * xml -- unused, see X3DJSONLD.js version
- * NS -- ununsed, see X3DJSONLD.js version
- * loadSchema -- to load JSON schema
- * doValidate -- function to validate JSON
- * callback -- function which receives return element
- */
-
-function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
-	if (typeof json === 'undefined') {
-		console.error('json undefined.  Look in', path, 'for hints');
-	}
-	var version = json.X3D["@version"];
-	var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
-	var document = DOMImplementation.createDocument(null, "X3D", docType);
-	// Bring in JSON to DOM/XML conversion --  used to build DOM/XML.
-	X3DJSONLD.setDocument(document);
-	X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
-		// for script nodes
-		/*
-		var child = document.createCDATASection(str);
-		*/
-		var y = str.replace(/\\"/g, "\\\"")
-		.replace(/&lt;/g, "<")
-		.replace(/&gt;/g, ">")
-		.replace(/&amp;/g, "&");
-		do {
-			str = y;
-			y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
-			if (str !== y) {
-				// console.error("CDATA Replacing",str,"with",y);
-			}
-		} while (y != str);
-
-		var child = document.createCDATASection(y);
-		element.appendChild(child);
-	});
-
-	document.insertBefore(document.createProcessingInstruction('xml', 'version="1.0" encoding="'+json.X3D["encoding"]+'"'), document.doctype);
-	var element = document.getElementsByTagNameNS(null, "X3D")[0];
-	element.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-
-	// TODO Probably shouldn't call convert before we validate
-	ConvertToX3DOM(json, "", element, path);
-
-	loadSchema(json, path, doValidate, function() {
-		callback(element);
-	}, function(e) {
-		console.error("Error: ", e);
-		callback(element); // TODO should not return element, but we are overriding
-	});
-}
-
 /*
  * replaceX3DJSON
  * replace children of and element with DOM created from X3D JSON.
@@ -252,7 +196,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
  */
 function replaceX3DJSON(parent, json, url, xml, NS, next) {
 
-	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(child) {
+	loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, function(child) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);
@@ -265,7 +209,6 @@ function replaceX3DJSON(parent, json, url, xml, NS, next) {
 
 if (typeof module === 'object')  {
 	module.exports = {
-		loadX3DJS: loadX3DJS,
 		replaceX3DJSON: replaceX3DJSON,
 		convertJSON: convertJSON,
 		loadSchema: loadSchema,
