@@ -88,7 +88,7 @@ function getJSON(url) {
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
-			var url = '../data/asmallbox.json';
+			var url = '../data/SFVec3f.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				subjson = flattener(subjson);
