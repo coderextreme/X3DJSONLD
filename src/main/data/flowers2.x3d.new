@@ -14,8 +14,8 @@
 <Viewpoint description="Two mathematical orbitals" position="0 0 50"></Viewpoint>
 <Group><DirectionalLight direction="1 1 1"></DirectionalLight>
 <ProtoDeclare name="orbit"><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="-8 0 0"></field>
-<field name="diffuseColor" accessType="inputOutput" type="SFVec3f" value="1 0.5 0"></field>
-<field name="specularColor" accessType="inputOutput" type="SFVec3f" value="1 0.5 0"></field>
+<field name="diffuseColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
+<field name="specularColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
 <field name="transparency" accessType="inputOutput" type="SFFloat" value="0.75"></field>
 </ProtoInterface>
 <ProtoBody><Group><TimeSensor DEF="Clock" cycleInterval="16" loop="true"></TimeSensor>

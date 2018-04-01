@@ -90,13 +90,13 @@
                           {
                             "@name":"diffuseColor",
                             "@accessType":"inputOutput",
-                            "@type":"SFVec3f",
+                            "@type":"SFColor",
                             "@value":[1,0.5,0]
                           },
                           {
                             "@name":"specularColor",
                             "@accessType":"inputOutput",
-                            "@type":"SFVec3f",
+                            "@type":"SFColor",
                             "@value":[1,0.5,0]
                           },
                           {
