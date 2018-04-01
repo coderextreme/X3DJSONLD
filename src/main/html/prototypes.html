@@ -85,6 +85,10 @@
 			$(htmlselector).empty();
 			$(element.querySelector(xmlselector)).children().appendTo(htmlselector);
 			$(htmlselector+" Script").empty();
+			// join json for scripts
+			for (var c in subjson["X3D"]["Scene"]["-children"]) {
+				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
+			}
 			if ($('#scripting').is(':checked')) {
 				loadScripts(json, htmlselector);
 			}
@@ -104,10 +108,10 @@
 	}
 	$(document).ready(function() {
 		load_X3DOM('../data/bubs.json', function(element, xmlDoc, json) {
-			loadSubscene_X3DOM("#x3domjson", "Scene", '../data/asmallbox.json', element, xmlDoc, json);
+			loadSubscene_X3DOM("#x3domjson", "Scene", '../data/SFVec3f.json', element, xmlDoc, json);
 		});
 		load_X_ITE('../data/bubs.json', function(element, xmlDoc) {
-			loadSubscene_X_ITE("Scene", '../data/asmallbox.json', element, xmlDoc);
+			loadSubscene_X_ITE("Scene", '../data/sFVec3f.json', element, xmlDoc);
 		});
 	});
     </script>
