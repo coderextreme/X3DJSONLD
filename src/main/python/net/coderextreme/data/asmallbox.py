@@ -9,7 +9,7 @@ head1 = headObject()
 
 meta2 = metaObject()
 meta2.setName("title")
-meta2.setContent("abox.x3d")
+meta2.setContent("asmallbox.x3d")
 
 head1.addMeta(meta2)
 meta3 = metaObject()
@@ -114,7 +114,6 @@ fieldValue28.setName("myShape")
 Shape29 = ShapeObject()
 
 Box30 = BoxObject()
-Box30.setSize([0.125,0.125,0.125])
 
 Shape29.setGeometry(Box30)
 fieldValue28.addChild(Shape29)
