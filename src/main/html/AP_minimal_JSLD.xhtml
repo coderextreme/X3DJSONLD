@@ -38,7 +38,7 @@
 
 	function importInto_X_ITE(json) {
 		var xml = [];
-		loadX3DJS(json, url, xml, "", loadSchema, doValidate, function(jsDOM) {
+		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(jsDOM) {
 			load_X_ITE_DOM(jsDOM);
 		});
 	}
