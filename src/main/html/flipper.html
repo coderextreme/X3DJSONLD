@@ -80,22 +80,34 @@ function getJSON(url) {
 }
 // Done with include
 
-	function loadX3DJSON(selector, url) {
+	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
-			var parent = CreateElement(x3dtag);
-			return ConvertToX3DOM(json, x3dtag, parent, url); // returns an element
-		}).then(function(element) {
-			$(selector+" "+x3dtag).remove();
-			$(selector).append(element); // add to X3DOM
-			load_X_ITE_DOM(element); // loads into X_ITE element on page.
-			return element
-		}).then(function(element) {
+			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
+			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var url = '../data/abox.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				subjson = flattener(subjson);
-				var sceneElement = ConvertToX3DOM(subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
+				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
+				$(selector).empty();
+				$(element.querySelector(scenetag)).children().appendTo(selector);
 				x3dom.reload();
+			}).catch(function(err) {
+				alert("Subscene Load failed");
+				console.log(err);
+			});
+		}).catch(function(err) {
+			alert("Scene Load failed");
+			console.log(err);
+		});
+	}
+	function load_X_ITE(url) {
+		getJSON(url).then(function(json) {
+			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
+			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
+			var suburl = '../data/abox.json';
+			getJSON(suburl).then(function(subjson) {
+				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
 				load_X_ITE_DOM(element); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
@@ -107,7 +119,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','../data/flipp.json');
+		load_X3DOM('#x3domjson','../data/flipp.json');
+		load_X_ITE('../data/flipp.json');
 	});
     </script>
 </html>

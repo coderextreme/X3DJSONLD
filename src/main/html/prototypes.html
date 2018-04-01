@@ -58,34 +58,56 @@
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
-	function loadX3DJSON(selector, url, callback) {
+	function load_X3DOM(url, callback) {
 		$.getJSON(url, function(json) {
-			var parent = CreateElement('X3D');
+			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
-			var element = ConvertToX3DOM(json, "X3D", parent, url); // returns an element
-			// $(selector+" X3D").remove();
-			// $(selector).append(element); // add to X3DOM
-			$(selector).empty();
-			$(element.querySelector("Scene")).children().appendTo(selector);
-			load_X_ITE_DOM(element); // loads into X_ITE element on page.
-    			if ($('#scripting').is(':checked')) {
-				loadScripts(json);
-			}
-			callback(element);
+			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
+				callback(element, xmlDoc, json);
+			});
 		});
 	}
-	function loadSubscene(selector, url, element) {
+	function load_X_ITE(url, callback) {
+		$.getJSON(url, function(json) {
+			var xml = [];
+			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
+				load_X_ITE_DOM(element); // loads into X_ITE element on page.
+				callback(element, xmlDoc);
+			});
+		});
+	}
+	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json) {
 		$.getJSON(url, function(subjson) {
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			subjson = flattener(subjson);
-			var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector(selector), url);  // returns Scene element
+			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"][xmlselector], xmlselector, element.querySelector(xmlselector), url);  // returns Scene element
+			$(htmlselector).empty();
+			$(element.querySelector(xmlselector)).children().appendTo(htmlselector);
+			$(htmlselector+" Script").empty();
+			if ($('#scripting').is(':checked')) {
+				loadScripts(json, htmlselector);
+			}
+			try {
+				x3dom.reload();  // This may be necessary
+			} catch (e) {
+				console.error(e);
+				alert("Problem with x3dom.reload()", e);
+			}
+		});
+	}
+	function loadSubscene_X_ITE(htmlselector, url, element, xmlDoc) {
+		$.getJSON(url, function(subjson) {
+			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(htmlselector), url);  // returns Scene element
 			load_X_ITE_DOM(element); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','../data/bubs.json', function(element) {
-			loadSubscene("Scene", 'data/asmallbox.json', element);
+		load_X3DOM('../data/bubs.json', function(element, xmlDoc, json) {
+			loadSubscene_X3DOM("#x3domjson", "Scene", '../data/asmallbox.json', element, xmlDoc, json);
+		});
+		load_X_ITE('../data/bubs.json', function(element, xmlDoc) {
+			loadSubscene_X_ITE("Scene", '../data/asmallbox.json', element, xmlDoc);
 		});
 	});
     </script>

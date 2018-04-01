@@ -82,7 +82,6 @@ function getJSON(url) {
 
 	function loadX3DJSON(url) {
 		getJSON(url).then(function(json) {
-			var parent = CreateElement('X3D');
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
 			load_X_ITE_JS(json); // loads into X_ITE element on page.
