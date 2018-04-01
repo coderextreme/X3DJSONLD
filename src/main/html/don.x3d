@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D  version="3.0" profile="Immersive" ><head><meta name="title" content="flowers2.x3d" ></meta>
+<meta name="creator" content="John Carlson" ></meta>
+<meta name="transcriber" content="John Carlson" ></meta>
+<meta name="created" content="23 January 2005" ></meta>
+<meta name="modified" content="21 March 2018" ></meta>
+<meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)" ></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d" ></meta>
+<meta name="generator" content="manually written" ></meta>
+<meta name="license" content="http://www.web3d.org/x3d/content/examples/license.html" ></meta>
+</head>
+<Scene><NavigationInfo ></NavigationInfo>
+<Viewpoint description="Two mathematical orbitals" position="0 0 50" ></Viewpoint>
+<Group><DirectionalLight direction="1 1 1" ></DirectionalLight>
+<ProtoDeclare name="orbit"><ProtoInterface><field type="SFVec3f" name="translation" accessType="inputOutput" value="-8 0 0" ></field>
+<field type="SFColor" name="diffuseColor" accessType="inputOutput" value="1 0.5 0" ></field>
+<field type="SFColor" name="specularColor" accessType="inputOutput" value="1 0.5 0" ></field>
+<field type="SFFloat" name="transparency" accessType="inputOutput" value="0.75" ></field>
+</ProtoInterface>
+<ProtoBody><Group><TimeSensor DEF="Clock" cycleInterval="16" loop="true" ></TimeSensor>
+<OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28" ></OrientationInterpolator>
+<Transform DEF="OrbitTransform"><IS><connect nodeField="translation" protoField="translation" ></connect>
+</IS>
+<Shape><Appearance containerField="appearance"><Material containerField="material"><IS><connect nodeField="diffuseColor" protoField="diffuseColor" ></connect>
+<connect nodeField="specularColor" protoField="specularColor" ></connect>
+<connect nodeField="transparency" protoField="transparency" ></connect>
+</IS>
+</Material>
+</Appearance>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" DEF="Orbit" ccw="false" convex="false" coordIndex="0 1 2 -1"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0" ></Coordinate>
+</IndexedFaceSet>
+</Shape>
+</Transform>
+<Script DEF="OrbitScript"><field type="SFFloat" name="set_fraction" accessType="inputOnly" ></field>
+<field type="MFVec3f" name="coordinates" accessType="outputOnly" ></field>
+<field type="MFInt32" name="coordIndexes" accessType="outputOnly" ></field>
+<field type="SFFloat" name="e" accessType="outputOnly" value="5" ></field>
+<field type="SFFloat" name="f" accessType="outputOnly" value="5" ></field>
+<field type="SFFloat" name="g" accessType="outputOnly" value="5" ></field>
+<field type="SFFloat" name="h" accessType="outputOnly" value="5" ></field>
+<field type="SFInt32" name="resolution" accessType="inputOutput" value="50" ></field>
+ 
+			
+			ecmascript:
+
+			var e = 5;
+			var f = 5;
+			var g = 5;
+			var h = 5;
+			var resolution = 100;
+
+			function initialize() {
+			     generateCoordinates();
+			     var localci = [];
+			     for ( i = 0; i &lt; resolution-1; i++) {
+				for ( j = 0; j &lt; resolution-1; j++) {
+				     localci.push(i*resolution+j);
+				     localci.push(i*resolution+j+1);
+				     localci.push((i+1)*resolution+j+1);
+				     localci.push((i+1)*resolution+j);
+				     localci.push(-1);
+				}
+			    }
+			    coordIndexes = new MFInt32(localci);
+			}
+
+			function generateCoordinates() {
+			     theta = 0.0;
+			     phi = 0.0;
+			     delta = (2 * 3.141592653) / (resolution-1);
+			     var localc = [];
+			     for ( i = 0; i &lt; resolution; i++) {
+				for ( j = 0; j &lt; resolution; j++) {
+					rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+					localc.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			     
+			     coordinates = new MFVec3f(localc);
+			}
+
+			function set_fraction(fraction, eventTime) {
+				choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					e += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 1:
+					f += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 2:
+					g += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 3:
+					h += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				}
+				if (e &lt; 1) {
+					f = 10;
+				}
+				if (f &lt; 1) {
+					f = 10;
+				}
+				if (g &lt; 1) {
+					g = 4;
+				}
+				if (h &lt; 1) {
+					h = 4;
+				}
+				generateCoordinates();
+			}
+			      
+ </Script>
+<ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex" ></ROUTE>
+<ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point" ></ROUTE>
+<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction" ></ROUTE>
+<ROUTE fromNode="OrbitPath" fromField="value_changed" toNode="OrbitTransform" toField="rotation" ></ROUTE>
+<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitPath" toField="set_fraction" ></ROUTE>
+</Group>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoInstance name="orbit"><fieldValue name="translation" value="-8 0 0" ></fieldValue>
+<fieldValue name="diffuseColor" value="1 0.5 0" ></fieldValue>
+<fieldValue name="specularColor" value="1 0.5 0" ></fieldValue>
+<fieldValue name="transparency" value="0.75" ></fieldValue>
+</ProtoInstance>
+<ProtoInstance name="orbit"><fieldValue name="translation" value="8 0 0" ></fieldValue>
+<fieldValue name="diffuseColor" value="0 0.5 1" ></fieldValue>
+<fieldValue name="specularColor" value="0 0.5 1" ></fieldValue>
+<fieldValue name="transparency" value="0.5" ></fieldValue>
+</ProtoInstance>
+</Group>
+</Scene>
+</X3D>
