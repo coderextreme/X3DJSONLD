@@ -190,28 +190,28 @@ Script38.addField(field41)
 field42 = fieldObject()
 field42.setType(fieldObject.TYPE_SFFLOAT)
 field42.setName("e")
-field42.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field42.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field42.setValue("5")
 
 Script38.addField(field42)
 field43 = fieldObject()
 field43.setType(fieldObject.TYPE_SFFLOAT)
 field43.setName("f")
-field43.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field43.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field43.setValue("5")
 
 Script38.addField(field43)
 field44 = fieldObject()
 field44.setType(fieldObject.TYPE_SFFLOAT)
 field44.setName("g")
-field44.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field44.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field44.setValue("5")
 
 Script38.addField(field44)
 field45 = fieldObject()
 field45.setType(fieldObject.TYPE_SFFLOAT)
 field45.setName("h")
-field45.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field45.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 field45.setValue("5")
 
 Script38.addField(field45)
@@ -284,6 +284,9 @@ Script38.setSourceCode("\n"+
 "				case 3:\n"+
 "					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
 "					break;\n"+
+"				}\n"+
+"				if (e < 1) {\n"+
+"					f = 10;\n"+
 "				}\n"+
 "				if (f < 1) {\n"+
 "					f = 10;\n"+

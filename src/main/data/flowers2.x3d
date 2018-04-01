@@ -54,10 +54,10 @@
 				<field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
 				<field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
 				<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
-				<field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
-				<field accessType="inputOutput" name="f" type="SFFloat" value="5"/>
-				<field accessType="inputOutput" name="g" type="SFFloat" value="5"/>
-				<field accessType="inputOutput" name="h" type="SFFloat" value="5"/>
+				<field accessType="outputOnly" name="e" type="SFFloat" value="5"/>
+				<field accessType="outputOnly" name="f" type="SFFloat" value="5"/>
+				<field accessType="outputOnly" name="g" type="SFFloat" value="5"/>
+				<field accessType="outputOnly" name="h" type="SFFloat" value="5"/>
 				<field accessType="inputOutput" name="resolution" type="SFInt32" value="50"/>
 			<![CDATA[
 			ecmascript:
@@ -119,6 +119,9 @@
 				case 3:
 					h += Math.floor(Math.random() * 2) * 2 - 1;
 					break;
+				}
+				if (e < 1) {
+					f = 10;
 				}
 				if (f < 1) {
 					f = 10;
