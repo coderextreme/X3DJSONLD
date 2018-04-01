@@ -40,7 +40,7 @@
 <field type="SFFloat" name="g" accessType="outputOnly" value="5" ></field>
 <field type="SFFloat" name="h" accessType="outputOnly" value="5" ></field>
 <field type="SFInt32" name="resolution" accessType="inputOutput" value="50" ></field>
- 
+<![CDATA[ 
 			
 			ecmascript:
 
@@ -53,8 +53,8 @@
 			function initialize() {
 			     generateCoordinates();
 			     var localci = [];
-			     for ( i = 0; i &lt; resolution-1; i++) {
-				for ( j = 0; j &lt; resolution-1; j++) {
+			     for ( i = 0; i < resolution-1; i++) {
+			     for ( j = 0; j < resolution-1; j++) {
 				     localci.push(i*resolution+j);
 				     localci.push(i*resolution+j+1);
 				     localci.push((i+1)*resolution+j+1);
@@ -70,8 +70,8 @@
 			     phi = 0.0;
 			     delta = (2 * 3.141592653) / (resolution-1);
 			     var localc = [];
-			     for ( i = 0; i &lt; resolution; i++) {
-				for ( j = 0; j &lt; resolution; j++) {
+			     for ( i = 0; i < resolution; i++) {
+			     for ( j = 0; j < resolution; j++) {
 					rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
 					localc.push(new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
@@ -102,22 +102,22 @@
 					h += Math.floor(Math.random() * 2) * 2 - 1;
 					break;
 				}
-				if (e &lt; 1) {
+				if (e < 1) {
 					f = 10;
 				}
-				if (f &lt; 1) {
+				if (f < 1) {
 					f = 10;
 				}
-				if (g &lt; 1) {
+				if (g < 1) {
 					g = 4;
 				}
-				if (h &lt; 1) {
+				if (h < 1) {
 					h = 4;
 				}
 				generateCoordinates();
 			}
 			      
- </Script>
+			]]> </Script>
 <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex" ></ROUTE>
 <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point" ></ROUTE>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction" ></ROUTE>

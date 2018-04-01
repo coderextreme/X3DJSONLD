@@ -258,6 +258,9 @@ X3DJSON['Script']['DECLorbit_INSTANCE_OrbitScript'] = function() {
 					this.proxy.h += Math.floor(Math.random() * 2) * 2 - 1;
 					break;
 				}
+				if (this.proxy.e < 1) {
+					this.proxy.f = 10;
+				}
 				if (this.proxy.f < 1) {
 					this.proxy.f = 10;
 				}
@@ -425,6 +428,9 @@ X3DJSON['Script']['DECLorbit_INSTANCE1000_OrbitScript'] = function() {
 					this.proxy.h += Math.floor(Math.random() * 2) * 2 - 1;
 					break;
 				}
+				if (this.proxy.e < 1) {
+					this.proxy.f = 10;
+				}
 				if (this.proxy.f < 1) {
 					this.proxy.f = 10;
 				}
@@ -488,11 +494,13 @@ X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'].push(f
 		}
 });
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
-X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
-X3DJSON.nodeUtil('OrbitPath').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
+X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitPath').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock').addEventListener('outputchange', function(event) {
 }, false);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
@@ -526,17 +534,17 @@ X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'].pu
 		}
 });
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
-X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
-X3DJSON.nodeUtil('OrbitPath').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
+X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock').addEventListener('outputchange', function(event) {
 }, false);
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
 			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
