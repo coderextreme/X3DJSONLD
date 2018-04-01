@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><component name="Shaders" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
 <meta name="title" content="flowers.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
@@ -25,8 +25,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/common.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/gl_flowers_chromatic.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/gl_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
