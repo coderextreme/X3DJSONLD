@@ -235,25 +235,25 @@
                                   },
                                   {
                                     "@name": "e",
-                                    "@accessType": "inputOutput",
+                                    "@accessType": "outputOnly",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "f",
-                                    "@accessType": "inputOutput",
+                                    "@accessType": "outputOnly",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "g",
-                                    "@accessType": "inputOutput",
+                                    "@accessType": "outputOnly",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "h",
-                                    "@accessType": "inputOutput",
+                                    "@accessType": "outputOnly",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
@@ -326,6 +326,9 @@
                                   "\t\t\t\tcase 3:",
                                   "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
                                   "\t\t\t\t\tbreak;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tif (e < 1) {",
+                                  "\t\t\t\t\tf = 10;",
                                   "\t\t\t\t}",
                                   "\t\t\t\tif (f < 1) {",
                                   "\t\t\t\t\tf = 10;",

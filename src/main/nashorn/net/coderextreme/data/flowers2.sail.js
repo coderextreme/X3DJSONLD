@@ -48,10 +48,10 @@ var ProtoInstance1 = null;
                   .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                   .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
                   .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("e").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("f").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("g").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("h").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("e").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
+                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("f").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
+                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("g").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
+                  .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("h").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
                   .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("resolution").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
                   .setSourceCode("\n"+
 "			\n"+
@@ -114,6 +114,9 @@ var ProtoInstance1 = null;
 "				case 3:\n"+
 "					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
 "					break;\n"+
+"				}\n"+
+"				if (e < 1) {\n"+
+"					f = 10;\n"+
 "				}\n"+
 "				if (f < 1) {\n"+
 "					f = 10;\n"+
