@@ -72,7 +72,6 @@ function loadXmlBrowsers(xml) {
 		$('#xml').val(xml.join("\n"));
 	}
 	// DISPLAY XML in X3DOM
-	// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 	xml = $('#xml').val();
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -83,6 +82,7 @@ function loadXmlBrowsers(xml) {
 			console.error(e);
 		}
 		// put everthing inside Scene into the browser's Scene's innerHTML
+		// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 		$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
 		x3dom.reload();
 	}
@@ -277,7 +277,7 @@ function loadX3D(selector, json, url) {
     }
     var NS = $('#namespace option:selected').text();
     var xml = [];
-    replaceX3DJSON(selector, json, url, xml, NS, function(child) {
+    replaceX3DJSON(selector, json, url, xml, NS, function(child, xmlDoc) {
 	    if (child != null) {
 		        try {
 			    load_X_ITE_JS(json);
@@ -340,7 +340,6 @@ function appendInline(element, url, xmlDoc, next) {
 		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, function() {
-			// TODO note that passing document will not work with CDATA sections.   We need another way.  Perhaps we can create a CDATA section from element?
 			ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
@@ -393,7 +392,7 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
  * url -- name of path/filename json loaded from
  * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
- * next -- to return the element or null
+ * next -- to return the element and xmlDoc or null, null
  * returns element loaded
  */
 function replaceX3DJSON(selector, json, url, xml, NS, next) {
@@ -435,7 +434,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 				alert("Problem with x3dom.reload()", e);
 			}
 		}
-		next(element);
+		next(element, xmlDoc);
 	});
 }
 
