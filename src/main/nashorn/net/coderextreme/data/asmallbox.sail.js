@@ -8,7 +8,7 @@ var ProtoInstance0 = null;
 var ProtoInstance1 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("abox.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("asmallbox.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
@@ -37,5 +37,5 @@ var ProtoInstance1 = null;
 ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
-              .setGeometry(new BoxObject().setSize(Java.to([0.125,0.125,0.125], Java.type("float[]"))))));
+              .setGeometry(new BoxObject())));
     X3D0.toFileX3D("../data/asmallbox.new.x3d");
