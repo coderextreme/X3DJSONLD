@@ -322,7 +322,7 @@ function realProcessScripts(object, classes, mypackage, routecode, loopItems, se
 	}
 }
 
-function valueExpand(type, flat, children) {
+function valueExpand(type, flat, children, selector, url) {
 	// console.error("TYPE IS "+type);
 	var str = JSON.stringify(flat);
 	var num = 0; // this will cause an error below if not set
@@ -429,7 +429,7 @@ function processFields(fields, classes, mypackage, selector, url) {
 		// console.error("NAME IS ",f, JSON.stringify(name));
 		types[name] = object["@type"];
 		// console.error("TYPE IS ",f, object["@type"]);
-		values[name] = valueExpand(types[name], object["@value"], object["-children"]);
+		values[name] = valueExpand(types[name], object["@value"], object["-children"], selector, url);
 		// console.error("VALUE IS ",f, object["@value"]);
 		switch(object['@accessType']) {
 		case 'initializeOnly':
