@@ -317,8 +317,8 @@ function loadX3D(selector, json, url) {
 			}
 		    if ($('#scripting').is(':checked')) {
 			try {
-				loadScripts(json, "#x3domjson");
-				loadScripts(json, "#x3domxml");
+				loadScripts(json, "#x3domjson", url);
+				loadScripts(json, "#x3domxml", url);
 			} catch (e) {
 				alert("Problems with loading scripts", e);
 				console.error(e);
