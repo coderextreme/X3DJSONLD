@@ -92,7 +92,7 @@ function getJSON(url) {
 			json = flattener(json);
 		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
 				if ($('#scripting').is(':checked')) {
-					loadScripts(json, selector);
+					loadScripts(json, selector, url);
 				}
 			});
 		}).catch(function(err) {

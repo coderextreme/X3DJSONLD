@@ -85,9 +85,6 @@ function getJSON(url) {
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
 			load_X_ITE_JS(json); // loads into X_ITE element on page.
-    			if ($('#scripting').is(':checked')) {
-				loadScripts(json);
-			}
 			var url = '../data/SFVec3f.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
