@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['Browser'] = function() {
+X3DJSON['Scriptundefined']['Browser'] = function() {
 
 ecmascript:
                 
@@ -137,28 +142,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['Browser'] = new X3DJSON['Script']['Browser']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['Browser'] = new X3DJSON['Scriptundefined']['Browser']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Browser'] === 'undefined') {
-X3DJSON['Obj']['Browser'] = {};
-}
-
-if (typeof X3DJSON['Obj']['Browser']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Browser']['ACTION'] = {};
-X3DJSON['Obj']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Browser']['ACTION'],X3DJSON['Obj']['Browser']);
-}
-if (typeof X3DJSON['Obj']['Browser'].initialize === "function") X3DJSON['Obj']['Browser'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['Browser'] === 'undefined') {
+X3DJSON['Objundefined']['Browser'] = {};
 }
 
-X3DJSON['Script']['Clouds'] = function() {
+if (typeof X3DJSON['Objundefined']['Browser']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['Browser']['ACTION'] = {};
+X3DJSON['Objundefined']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['Browser']['ACTION'],X3DJSON['Objundefined']['Browser']);
+}
+if (typeof X3DJSON['Objundefined']['Browser'].initialize === "function") X3DJSON['Objundefined']['Browser'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['Clouds'] = function() {
 
 
 ecmascript:
@@ -176,21 +181,21 @@ var xxx = ' '+' '+
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['Clouds'] = new X3DJSON['Script']['Clouds']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['Clouds'] = new X3DJSON['Scriptundefined']['Clouds']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Clouds'] === 'undefined') {
-X3DJSON['Obj']['Clouds'] = {};
+if (typeof X3DJSON['Objundefined']['Clouds'] === 'undefined') {
+X3DJSON['Objundefined']['Clouds'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Clouds']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Clouds']['ACTION'] = {};
-X3DJSON['Obj']['Clouds'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Clouds']['ACTION'],X3DJSON['Obj']['Clouds']);
+if (typeof X3DJSON['Objundefined']['Clouds']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['Clouds']['ACTION'] = {};
+X3DJSON['Objundefined']['Clouds'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['Clouds']['ACTION'],X3DJSON['Objundefined']['Clouds']);
 }
-if (typeof X3DJSON['Obj']['Clouds'].initialize === "function") X3DJSON['Obj']['Clouds'].initialize();
+if (typeof X3DJSON['Objundefined']['Clouds'].initialize === "function") X3DJSON['Objundefined']['Clouds'].initialize();
 

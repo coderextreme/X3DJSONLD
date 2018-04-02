@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE_RightSingleToMultiString'] = function() {
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] = function() {
 	this.set_rightstring = function (value) {
 		this.proxy.rightstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -159,28 +164,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE_RightSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE_UpSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] = function() {
 	this.set_upstring = function (value) {
 		this.proxy.upstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -213,28 +218,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE_UpSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = function() {
 	this.set_centerstring = function (value) {
 		this.proxy.centerstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -267,28 +272,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE_CenterSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = function() {
 	this.set_rightstring = function (value) {
 		this.proxy.rightstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -321,28 +326,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE1000_RightSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = function() {
 	this.set_upstring = function (value) {
 		this.proxy.upstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -375,28 +380,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE1000_UpSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = function() {
 	this.set_centerstring = function (value) {
 		this.proxy.centerstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -429,28 +434,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = function() {
 	this.set_rightstring = function (value) {
 		this.proxy.rightstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -483,28 +488,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE2000_RightSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = function() {
 	this.set_upstring = function (value) {
 		this.proxy.upstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -537,28 +542,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE2000_UpSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']);
-}
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = {};
 }
 
-X3DJSON['Script']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']);
+}
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = function() {
 	this.set_centerstring = function (value) {
 		this.proxy.centerstring = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -591,236 +596,236 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = new X3DJSON['Script']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = new X3DJSON['Scriptundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'] = {};
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']);
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION'],X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']);
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].initialize();
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].initialize === "function") X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].initialize();
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
 		if (property === 'centerlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
 		if (property === 'rightlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
 		if (property === 'uplines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
 		if (property === 'centerlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
 		if (property === 'rightlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
 		if (property === 'uplines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString']['ACTION']['centerlines'].push(function(property, value) {
 		if (property === 'centerlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION']['rightlines'].push(function(property, value) {
 		if (property === 'rightlines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightTouch').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = {};
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'] = [];
+if (typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'] === 'undefined') {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'] = [];
 }
-X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION']['uplines'].push(function(property, value) {
 		if (property === 'uplines') {
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);
 X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpTouch').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
-			X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
-			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE1000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].uplines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].set_centerstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_CenterString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'].centerlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].set_rightstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_RightString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].rightlines, __eventTime);
+			X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].set_upstring(X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpSensor','enteredText'), __eventTime);
+			X3DJSON.nodeUtil('DECLProcess_INSTANCE2000_UpString','string',typeof X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines === "function" ? X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines() : X3DJSON['Objundefined']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].uplines, __eventTime);

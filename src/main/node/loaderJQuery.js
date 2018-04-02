@@ -110,6 +110,16 @@ function filter(event) {
 	});
 }
 
+var X3DJSON = {};
+function initializeScripts() {
+	if (typeof X3DJSON !== 'undefined') {
+		delete X3DJSON;
+	}
+	X3DJSON = {};
+	X3DJSON.runRoutes = [];
+}
+
+
 function loadScripts(json, selector) {
     if ($('#scripting').is(':checked')) {
 	// Now generate JavaScript code for Scripts and Routes
@@ -117,10 +127,6 @@ function loadScripts(json, selector) {
 	var routecode = new LOG();
 	var loopItems = new LOG();
 	processScripts(json, classes, undefined, routecode, loopItems, selector);
-
-	if (typeof X3DJSON !== 'undefined') {
-		delete X3DJSON;
-	}
 
 	/*
 	$("#scripts").remove();
@@ -154,17 +160,27 @@ function loadScripts(json, selector) {
 	// zapSource(json);
 
 	
-        // initialize scripts
-	var X3DJSON = {};
+        // initialize json
 	var __eventTime = 0;
-	var totalScript = "var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text;
+	var jsonScript = "var myjson = "+JSON.stringify(json, null, 2);
 	try {
 		// TODO eval is evil
-		if (typeof totalScript != 'undefined') {
-			eval(totalScript);
+		if (typeof jsonScript != 'undefined') {
+			eval(jsonScript);
 		}
 	} catch (e) {
-		console.error(totalScript, e);
+		console.log(jsonScript, e);
+	}
+
+        // initialize scripts
+	try {
+		// TODO eval is evil
+		if (typeof scripts.text != 'undefined') {
+			eval(scripts.text);
+		}
+	} catch (e) {
+		console.log(jsonScript+";\n"+scripts.text, e);
+	    
 	}
 	 
 	// run initializers, initializeOnly routes, and eventHandler initialization, proxies
@@ -174,10 +190,10 @@ function loadScripts(json, selector) {
 			eval(routes.text);
 		}
 	} catch (e) {
-		console.error(routes.text, e);
+		console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text, e);
 	}
 	// event loop
-	X3DJSON.runRoutes = function() {
+	X3DJSON.runRoutes.push(function() {
 		try {
 			// TODO eval is evil
 			if (typeof loop.text != 'undefined') {
@@ -185,15 +201,20 @@ function loadScripts(json, selector) {
 			}
 			x3dom.reload();  // This may be necessary
 		} catch (e) {
-			console.error(loop.text, e);
+			console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text+"\n"+loop.text, e);
 		}
 		__eventTime += 1000 / 60;
-	};
+	});
 	if (typeof intervalId !== 'undefined') {
 		console.error("Interval", intervalId, "cleared");
 		clearInterval(intervalId);
 	}
-	intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );
+	function runAllRoutes() {
+		for (var r in X3DJSON.runRoutes) {
+			X3DJSON.runRoutes[r]();
+		}
+	}
+	intervalId = setInterval(runAllRoutes, 1000 / 60 );
     }
 }
 
@@ -258,6 +279,9 @@ function convertJsonToXml(json, next, path) {
 }
 
 function loadX3D(selector, json, url) {
+    if ($('#scripting').is(':checked')) {
+    	initializeScripts();
+    }
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {

@@ -35,6 +35,9 @@ if (typeof Browser === 'undefined') {
 			 if (element != null) {
 				 return ConvertToX3DOM(document, jsobj, "", element, 'foo.json');
 		         }
+		},
+		getDocument : function() {
+			return document;
 		}
 	};
 }

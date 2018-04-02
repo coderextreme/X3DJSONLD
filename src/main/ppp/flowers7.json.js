@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['UrlSelector'] = function() {
+X3DJSON['Scriptundefined']['UrlSelector'] = function() {
 	this.set_frontUrls = function (value) {
 		this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -262,28 +267,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['UrlSelector'] = new X3DJSON['Script']['UrlSelector']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['UrlSelector'] = new X3DJSON['Scriptundefined']['UrlSelector']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj']['UrlSelector'] = {};
-}
-
-if (typeof X3DJSON['Obj']['UrlSelector']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['UrlSelector']['ACTION'] = {};
-X3DJSON['Obj']['UrlSelector'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['UrlSelector']['ACTION'],X3DJSON['Obj']['UrlSelector']);
-}
-if (typeof X3DJSON['Obj']['UrlSelector'].initialize === "function") X3DJSON['Obj']['UrlSelector'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['UrlSelector'] === 'undefined') {
+X3DJSON['Objundefined']['UrlSelector'] = {};
 }
 
-X3DJSON['Script']['Animate'] = function() {
+if (typeof X3DJSON['Objundefined']['UrlSelector']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['UrlSelector']['ACTION'] = {};
+X3DJSON['Objundefined']['UrlSelector'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['UrlSelector']['ACTION'],X3DJSON['Objundefined']['UrlSelector']);
+}
+if (typeof X3DJSON['Objundefined']['UrlSelector'].initialize === "function") X3DJSON['Objundefined']['UrlSelector'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['Animate'] = function() {
 	this.set_fraction = function (value) {
 		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -382,229 +387,229 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['Animate'] = new X3DJSON['Script']['Animate']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['Animate'] = new X3DJSON['Scriptundefined']['Animate']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION'] = {};
-X3DJSON['Obj']['Animate'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Animate']['ACTION'],X3DJSON['Obj']['Animate']);
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION'] = {};
+X3DJSON['Objundefined']['Animate'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['Animate']['ACTION'],X3DJSON['Objundefined']['Animate']);
 }
-if (typeof X3DJSON['Obj']['Animate'].initialize === "function") X3DJSON['Obj']['Animate'].initialize();
+if (typeof X3DJSON['Objundefined']['Animate'].initialize === "function") X3DJSON['Objundefined']['Animate'].initialize();
 X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
+			X3DJSON['Objundefined']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['a'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['a'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['a'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['a'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['a'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['a'].push(function(property, value) {
 		if (property === 'a') {
-			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
+			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['b'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['b'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['b'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['b'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['b'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['b'].push(function(property, value) {
 		if (property === 'b') {
-			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
+			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['c'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['c'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['c'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['c'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['c'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['c'].push(function(property, value) {
 		if (property === 'c') {
-			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
+			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['d'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['d'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['d'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['d'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['d'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['d'].push(function(property, value) {
 		if (property === 'd') {
-			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
+			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['pdelta'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['pdelta'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['pdelta'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'].push(function(property, value) {
 		if (property === 'pdelta') {
-			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
+			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['tdelta'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['tdelta'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['tdelta'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'].push(function(property, value) {
 		if (property === 'tdelta') {
-			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
+			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['a'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['a'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['a'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['a'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['a'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['a'].push(function(property, value) {
 		if (property === 'a') {
-			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
+			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['b'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['b'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['b'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['b'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['b'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['b'].push(function(property, value) {
 		if (property === 'b') {
-			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
+			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['c'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['c'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['c'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['c'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['c'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['c'].push(function(property, value) {
 		if (property === 'c') {
-			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
+			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['d'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['d'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['d'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['d'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['d'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['d'].push(function(property, value) {
 		if (property === 'd') {
-			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
+			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['pdelta'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['pdelta'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['pdelta'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['pdelta'].push(function(property, value) {
 		if (property === 'pdelta') {
-			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
+			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['Animate'] === 'undefined') {
-X3DJSON['Obj']['Animate'] = {};
+if (typeof X3DJSON['Objundefined']['Animate'] === 'undefined') {
+X3DJSON['Objundefined']['Animate'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Animate']['ACTION']['tdelta'] === 'undefined') {
-X3DJSON['Obj']['Animate']['ACTION']['tdelta'] = [];
+if (typeof X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'] === 'undefined') {
+X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'] = [];
 }
-X3DJSON['Obj']['Animate']['ACTION']['tdelta'].push(function(property, value) {
+X3DJSON['Objundefined']['Animate']['ACTION']['tdelta'].push(function(property, value) {
 		if (property === 'tdelta') {
-			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
+			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
-			X3DJSON['Obj']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
-			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
-			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
-			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
-			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
-			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
-			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
-			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Obj']['Animate'].a === "function" ? X3DJSON['Obj']['Animate'].a() : X3DJSON['Obj']['Animate'].a, __eventTime);
-			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Obj']['Animate'].b === "function" ? X3DJSON['Obj']['Animate'].b() : X3DJSON['Obj']['Animate'].b, __eventTime);
-			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Obj']['Animate'].c === "function" ? X3DJSON['Obj']['Animate'].c() : X3DJSON['Obj']['Animate'].c, __eventTime);
-			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Obj']['Animate'].d === "function" ? X3DJSON['Obj']['Animate'].d() : X3DJSON['Obj']['Animate'].d, __eventTime);
-			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Obj']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Animate'].pdelta() : X3DJSON['Obj']['Animate'].pdelta, __eventTime);
-			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Obj']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Animate'].tdelta() : X3DJSON['Obj']['Animate'].tdelta, __eventTime);
+			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);
+			X3DJSON['Objundefined']['Animate'].set_fraction(X3DJSON.nodeUtil('TourTime','fraction'), __eventTime);
+			X3DJSON.nodeUtil('x_ite','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
+			X3DJSON.nodeUtil('x_ite','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
+			X3DJSON.nodeUtil('x_ite','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
+			X3DJSON.nodeUtil('x_ite','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
+			X3DJSON.nodeUtil('x_ite','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
+			X3DJSON.nodeUtil('x_ite','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);
+			X3DJSON.nodeUtil('x3dom','a',typeof X3DJSON['Objundefined']['Animate'].a === "function" ? X3DJSON['Objundefined']['Animate'].a() : X3DJSON['Objundefined']['Animate'].a, __eventTime);
+			X3DJSON.nodeUtil('x3dom','b',typeof X3DJSON['Objundefined']['Animate'].b === "function" ? X3DJSON['Objundefined']['Animate'].b() : X3DJSON['Objundefined']['Animate'].b, __eventTime);
+			X3DJSON.nodeUtil('x3dom','c',typeof X3DJSON['Objundefined']['Animate'].c === "function" ? X3DJSON['Objundefined']['Animate'].c() : X3DJSON['Objundefined']['Animate'].c, __eventTime);
+			X3DJSON.nodeUtil('x3dom','d',typeof X3DJSON['Objundefined']['Animate'].d === "function" ? X3DJSON['Objundefined']['Animate'].d() : X3DJSON['Objundefined']['Animate'].d, __eventTime);
+			X3DJSON.nodeUtil('x3dom','pdelta',typeof X3DJSON['Objundefined']['Animate'].pdelta === "function" ? X3DJSON['Objundefined']['Animate'].pdelta() : X3DJSON['Objundefined']['Animate'].pdelta, __eventTime);
+			X3DJSON.nodeUtil('x3dom','tdelta',typeof X3DJSON['Objundefined']['Animate'].tdelta === "function" ? X3DJSON['Objundefined']['Animate'].tdelta() : X3DJSON['Objundefined']['Animate'].tdelta, __eventTime);

@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['TextScript'] = function() {
+X3DJSON['Scriptundefined']['TextScript'] = function() {
 	this.set_index = function (value) {
 		this.proxy.index = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -192,103 +197,103 @@ X3DJSON['Script']['TextScript'] = function() {
 	};
 	this.traceEnabled = new SFBool(true);
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['TextScript'] = new X3DJSON['Script']['TextScript']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['TextScript'] = new X3DJSON['Scriptundefined']['TextScript']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['TextScript'] === 'undefined') {
-X3DJSON['Obj']['TextScript'] = {};
-}
-
-if (typeof X3DJSON['Obj']['TextScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['TextScript']['ACTION'] = {};
-X3DJSON['Obj']['TextScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['TextScript']['ACTION'],X3DJSON['Obj']['TextScript']);
-}
-if (typeof X3DJSON['Obj']['TextScript'].initialize === "function") X3DJSON['Obj']['TextScript'].initialize();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['TextScript'] === 'undefined') {
-X3DJSON['Obj']['TextScript'] = {};
+if (typeof X3DJSON['Objundefined']['TextScript'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['TextScript']['ACTION']['string'] === 'undefined') {
-X3DJSON['Obj']['TextScript']['ACTION']['string'] = [];
+if (typeof X3DJSON['Objundefined']['TextScript']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript']['ACTION'] = {};
+X3DJSON['Objundefined']['TextScript'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['TextScript']['ACTION'],X3DJSON['Objundefined']['TextScript']);
 }
-X3DJSON['Obj']['TextScript']['ACTION']['string'].push(function(property, value) {
+if (typeof X3DJSON['Objundefined']['TextScript'].initialize === "function") X3DJSON['Objundefined']['TextScript'].initialize();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
+}
+if (typeof X3DJSON['Objundefined']['TextScript'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript'] = {};
+}
+
+if (typeof X3DJSON['Objundefined']['TextScript']['ACTION']['string'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript']['ACTION']['string'] = [];
+}
+X3DJSON['Objundefined']['TextScript']['ACTION']['string'].push(function(property, value) {
 		if (property === 'string') {
-			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Obj']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['TextScript'].string_changed() : X3DJSON['Obj']['TextScript'].string, __eventTime);
+			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Objundefined']['TextScript'].string_changed === "function" ? X3DJSON['Objundefined']['TextScript'].string_changed() : X3DJSON['Objundefined']['TextScript'].string, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Obj']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['TextScript'].string_changed() : X3DJSON['Obj']['TextScript'].string, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Objundefined']['TextScript'].string_changed === "function" ? X3DJSON['Objundefined']['TextScript'].string_changed() : X3DJSON['Objundefined']['TextScript'].string, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['TextScript'] === 'undefined') {
-X3DJSON['Obj']['TextScript'] = {};
+if (typeof X3DJSON['Objundefined']['TextScript'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
-X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'] = [];
+if (typeof X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'] = [];
 }
-X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
+X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
 		if (property === 'textToSpeechUrl') {
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['TextScript'] === 'undefined') {
-X3DJSON['Obj']['TextScript'] = {};
+if (typeof X3DJSON['Objundefined']['TextScript'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['TextScript']['ACTION']['newCardTime'] === 'undefined') {
-X3DJSON['Obj']['TextScript']['ACTION']['newCardTime'] = [];
+if (typeof X3DJSON['Objundefined']['TextScript']['ACTION']['newCardTime'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript']['ACTION']['newCardTime'] = [];
 }
-X3DJSON['Obj']['TextScript']['ACTION']['newCardTime'].push(function(property, value) {
+X3DJSON['Objundefined']['TextScript']['ACTION']['newCardTime'].push(function(property, value) {
 		if (property === 'newCardTime') {
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['TextScript'].newCardTime() : X3DJSON['Obj']['TextScript'].newCardTime, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Objundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Objundefined']['TextScript'].newCardTime() : X3DJSON['Objundefined']['TextScript'].newCardTime, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['TextScript'].newCardTime() : X3DJSON['Obj']['TextScript'].newCardTime, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Objundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Objundefined']['TextScript'].newCardTime() : X3DJSON['Objundefined']['TextScript'].newCardTime, __eventTime);
 X3DJSON.nodeUtil('PreviousTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
 X3DJSON.nodeUtil('NextTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
 X3DJSON.nodeUtil('RandomTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['TextScript'] === 'undefined') {
-X3DJSON['Obj']['TextScript'] = {};
+if (typeof X3DJSON['Objundefined']['TextScript'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
-X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'] = [];
+if (typeof X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
+X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'] = [];
 }
-X3DJSON['Obj']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
+X3DJSON['Objundefined']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
 		if (property === 'textToSpeechUrl') {
-			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
-			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Obj']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['TextScript'].string_changed() : X3DJSON['Obj']['TextScript'].string, __eventTime);
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
-			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['TextScript'].newCardTime() : X3DJSON['Obj']['TextScript'].newCardTime, __eventTime);
-			X3DJSON['Obj']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
-			X3DJSON['Obj']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
-			X3DJSON['Obj']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
-			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('CardText','string',typeof X3DJSON['Objundefined']['TextScript'].string_changed === "function" ? X3DJSON['Objundefined']['TextScript'].string_changed() : X3DJSON['Objundefined']['TextScript'].string, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Objundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Objundefined']['TextScript'].newCardTime() : X3DJSON['Objundefined']['TextScript'].newCardTime, __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectNextCard(X3DJSON.nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Objundefined']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
+			X3DJSON.nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Objundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Objundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Objundefined']['TextScript'].textToSpeechUrl, __eventTime);

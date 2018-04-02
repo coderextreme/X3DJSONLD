@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script'][''] = function() {
+X3DJSON['Scriptundefined'][''] = function() {
 	this.set_frontUrls = function (value) {
 		this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -141,21 +146,21 @@ X3DJSON['Script'][''] = function() {
 			    
 			
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj'][''] = new X3DJSON['Script']['']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined'][''] = new X3DJSON['Scriptundefined']['']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj'][''] === 'undefined') {
-X3DJSON['Obj'][''] = {};
+if (typeof X3DJSON['Objundefined'][''] === 'undefined') {
+X3DJSON['Objundefined'][''] = {};
 }
 
-if (typeof X3DJSON['Obj']['']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['']['ACTION'] = {};
-X3DJSON['Obj'][''].proxy = X3DJSON.createProxy(X3DJSON['Obj']['']['ACTION'],X3DJSON['Obj']['']);
+if (typeof X3DJSON['Objundefined']['']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['']['ACTION'] = {};
+X3DJSON['Objundefined'][''].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['']['ACTION'],X3DJSON['Objundefined']['']);
 }
-if (typeof X3DJSON['Obj'][''].initialize === "function") X3DJSON['Obj'][''].initialize();
+if (typeof X3DJSON['Objundefined'][''].initialize === "function") X3DJSON['Objundefined'][''].initialize();
 

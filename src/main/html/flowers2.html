@@ -112,6 +112,9 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
+		if ($('#scripting').is(':checked')) {
+			initializeScripts();
+		}
 		load_X3DOM('#x3domjson','../data/flowers2.json');
 		load_X_ITE('../data/flowers2.json');
 	});

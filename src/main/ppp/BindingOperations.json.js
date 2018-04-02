@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['BindingSequencerEngine'] = function() {
+X3DJSON['Scriptundefined']['BindingSequencerEngine'] = function() {
 	this.set_timeEvent = function (value) {
 		this.proxy.timeEvent = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -321,134 +326,134 @@ X3DJSON['Script']['BindingSequencerEngine'] = function() {
 ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['BindingSequencerEngine'] = new X3DJSON['Script']['BindingSequencerEngine']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['BindingSequencerEngine'] = new X3DJSON['Scriptundefined']['BindingSequencerEngine']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION'] = {};
-X3DJSON['Obj']['BindingSequencerEngine'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['BindingSequencerEngine']['ACTION'],X3DJSON['Obj']['BindingSequencerEngine']);
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION'] = {};
+X3DJSON['Objundefined']['BindingSequencerEngine'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION'],X3DJSON['Objundefined']['BindingSequencerEngine']);
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'].initialize === "function") X3DJSON['Obj']['BindingSequencerEngine'].initialize();
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'].initialize === "function") X3DJSON['Objundefined']['BindingSequencerEngine'].initialize();
 X3DJSON.nodeUtil('TextTouchSensor').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('TimingSequencer').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
 }, false);
-			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'] = [];
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView1'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView1'] = [];
 }
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'].push(function(property, value) {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView1'].push(function(property, value) {
 		if (property === 'bindView1') {
-			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'] = [];
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView2'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView2'] = [];
 }
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'].push(function(property, value) {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView2'].push(function(property, value) {
 		if (property === 'bindView2') {
-			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'] = [];
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView3'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView3'] = [];
 }
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'].push(function(property, value) {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView3'].push(function(property, value) {
 		if (property === 'bindView3') {
-			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'] = [];
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView4'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView4'] = [];
 }
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'].push(function(property, value) {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView4'].push(function(property, value) {
 		if (property === 'bindView4') {
-			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine'] = {};
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine'] = {};
 }
 
-if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'] === 'undefined') {
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'] = [];
+if (typeof X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView5'] === 'undefined') {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView5'] = [];
 }
-X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'].push(function(property, value) {
+X3DJSON['Objundefined']['BindingSequencerEngine']['ACTION']['bindView5'].push(function(property, value) {
 		if (property === 'bindView5') {
-			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5, __eventTime);
 X3DJSON.nodeUtil('View1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
 }, false);
-			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
 X3DJSON.nodeUtil('View2').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
 }, false);
-			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
 X3DJSON.nodeUtil('View3').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
 }, false);
-			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
 X3DJSON.nodeUtil('View4').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
 }, false);
-			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
-			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
-			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
-			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
-			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
-			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
-			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
-			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
-			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
-			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
-			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5() : X3DJSON['Objundefined']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+			X3DJSON['Objundefined']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
