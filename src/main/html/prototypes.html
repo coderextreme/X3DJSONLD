@@ -64,6 +64,9 @@
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
+			if ($('#scripting').is(':checked')) {
+				loadScripts(json, htmlselector, url);
+			}
 			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
 				callback(element, xmlDoc, json);
 			});
@@ -82,6 +85,9 @@
 		$.getJSON(url, function(subjson) {
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			subjson = flattener(subjson);
+			if ($('#scripting').is(':checked')) {
+				loadScripts(subjson, htmlselector, url);
+			}
 			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"][xmlselector], xmlselector, element.querySelector(xmlselector), url);  // returns Scene element
 			$(element.querySelector(xmlselector)).children().appendTo(htmlselector);
 			// join json for scripts
@@ -89,7 +95,7 @@
 				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 			}
 			if (typeof callback === 'function') {
-				callback(json, htmlselector);
+				callback(subjson, htmlselector);
 			}
 		});
 	}
@@ -109,12 +115,9 @@
 			initializeScripts();
 		}
 		load_X3DOM(htmlselector, flowers2, function(element, xmlDoc, json) {
-			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json, function(json, htmlselector) {
-				loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json, function(json, htmlselector) {
+			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json, function(sub1json, htmlselector) {
+				loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json, function(sub2json, htmlselector) {
 					$(htmlselector+" Script").empty();
-					if ($('#scripting').is(':checked')) {
-						loadScripts(json, htmlselector);
-					}
 					try {
 						x3dom.reload();  // This may be necessary
 					} catch (e) {

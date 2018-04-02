@@ -65,7 +65,7 @@ if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var selector = "undefined [DEF='"+node+"']";
+		var selector = "../data/X3dHeaderPrototypeSyntaxExamples.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);

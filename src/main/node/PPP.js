@@ -61,7 +61,7 @@ function ProcessJSON(json, file) {
 			classes.push("if (typeof __eventTime === 'undefined') {");
 			classes.push("	var __eventTime = 0;");
 			classes.push("}");
-			processScripts(json, classes, undefined, routecode, loopItems);
+			processScripts(json, classes, undefined, routecode, loopItems, file);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')
 				.replace(/&gt;/g, '>')

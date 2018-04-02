@@ -120,13 +120,13 @@ function initializeScripts() {
 }
 
 
-function loadScripts(json, selector) {
+function loadScripts(json, selector, url) {
     if ($('#scripting').is(':checked')) {
 	// Now generate JavaScript code for Scripts and Routes
 	var classes = new LOG();
 	var routecode = new LOG();
 	var loopItems = new LOG();
-	processScripts(json, classes, undefined, routecode, loopItems, selector);
+	processScripts(json, classes, undefined, routecode, loopItems, selector, url);
 
 	/*
 	$("#scripts").remove();
