@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['DECLorbit_INSTANCE_OrbitScript'] = function() {
+X3DJSON['Scriptundefined']['DECLorbit_INSTANCE_OrbitScript'] = function() {
 	this.set_fraction = function (value) {
 		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -275,28 +280,28 @@ X3DJSON['Script']['DECLorbit_INSTANCE_OrbitScript'] = function() {
 			      ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] = new X3DJSON['Script']['DECLorbit_INSTANCE_OrbitScript']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] = new X3DJSON['Scriptundefined']['DECLorbit_INSTANCE_OrbitScript']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION'] = {};
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION'],X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']);
-}
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].initialize === "function") X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] = {};
 }
 
-X3DJSON['Script']['DECLorbit_INSTANCE1000_OrbitScript'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION'],X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']);
+}
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].initialize === "function") X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLorbit_INSTANCE1000_OrbitScript'] = function() {
 	this.set_fraction = function (value) {
 		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -445,106 +450,106 @@ X3DJSON['Script']['DECLorbit_INSTANCE1000_OrbitScript'] = function() {
 			      ;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] = new X3DJSON['Script']['DECLorbit_INSTANCE1000_OrbitScript']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] = new X3DJSON['Scriptundefined']['DECLorbit_INSTANCE1000_OrbitScript']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'] = {};
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'],X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']);
-}
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].initialize === "function") X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].initialize();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] = {};
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'] = [];
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION'],X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']);
 }
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].initialize === "function") X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].initialize();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
+}
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] = {};
+}
+
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'] = [];
+}
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
 		if (property === 'coordIndexes') {
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'] = {};
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'] = [];
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'] = [];
 }
-X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
 		if (property === 'coordinates') {
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitPath').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'] = [];
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'] = [];
 }
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
 		if (property === 'coordIndexes') {
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'] === 'undefined') {
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'] = [];
+if (typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'] === 'undefined') {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'] = [];
 }
-X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
 		if (property === 'coordinates') {
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitPath').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
-			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE_Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Orbit','coordIndex',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_OrbitCoordinates','point',typeof X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates === "function" ? X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates() : X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Objundefined']['DECLorbit_INSTANCE1000_OrbitScript'].set_fraction(X3DJSON.nodeUtil('DECLorbit_INSTANCE1000_Clock','fraction'), __eventTime);

@@ -80,15 +80,20 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			try {
 				if (typeof element.setFieldValue === 'function') {
 					element.setFieldValue(field, value);
+				} else {
+					element.setAttribute(field, value);
 				}
 			} catch (e) {
 				console.log(e);
 			}
 			return element;
 		} else if (arguments.length > 1) {
-			value = element.getFieldValue(field);
+			if (typeof element.getFieldValue === 'function') {
+				value = element.getFieldValue(field);
+			} else {
+				value = element.getAttribute(field);
+			}
 			/*
-			value = $(selector).attr(field);
 			if (element &&
 				element._x3domNode &&
 				element._x3domNode._vf &&
@@ -122,11 +127,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
 }
 
-X3DJSON['Script']['DECLBubble_bubbleA_bounce'] = function() {
+X3DJSON['Scriptundefined']['DECLBubble_bubbleA_bounce'] = function() {
 	this.set_scale = function (value) {
 		this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -214,28 +219,28 @@ ecmascript:
 			;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] = new X3DJSON['Script']['DECLBubble_bubbleA_bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] = new X3DJSON['Scriptundefined']['DECLBubble_bubbleA_bounce']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION'] = {};
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleA_bounce']);
-}
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] = {};
 }
 
-X3DJSON['Script']['DECLBubble_bubbleB_bounce'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION'],X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']);
+}
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].initialize === "function") X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLBubble_bubbleB_bounce'] = function() {
 	this.set_scale = function (value) {
 		this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -323,28 +328,28 @@ ecmascript:
 			;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] = new X3DJSON['Script']['DECLBubble_bubbleB_bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] = new X3DJSON['Scriptundefined']['DECLBubble_bubbleB_bounce']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION'] = {};
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleB_bounce']);
-}
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] = {};
 }
 
-X3DJSON['Script']['DECLBubble_bubbleC_bounce'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION'],X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']);
+}
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].initialize === "function") X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLBubble_bubbleC_bounce'] = function() {
 	this.set_scale = function (value) {
 		this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -432,28 +437,28 @@ ecmascript:
 			;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] = new X3DJSON['Script']['DECLBubble_bubbleC_bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] = new X3DJSON['Scriptundefined']['DECLBubble_bubbleC_bounce']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION'] = {};
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleC_bounce']);
-}
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] = {};
 }
 
-X3DJSON['Script']['DECLBubble_bubbleD_bounce'] = function() {
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION'],X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']);
+}
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].initialize === "function") X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].initialize();
+if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
+X3DJSON['Scriptundefined'] = {};
+}
+
+X3DJSON['Scriptundefined']['DECLBubble_bubbleD_bounce'] = function() {
 	this.set_scale = function (value) {
 		this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -541,176 +546,176 @@ ecmascript:
 			;
 
 };
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
 
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] = new X3DJSON['Script']['DECLBubble_bubbleD_bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] = new X3DJSON['Scriptundefined']['DECLBubble_bubbleD_bounce']();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION'] = {};
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleD_bounce']);
-}
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].initialize();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION'] = {};
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION'],X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']);
 }
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['translation'].push(function(property, value) {
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].initialize === "function") X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].initialize();
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
+}
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] = {};
+}
+
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] = [];
+}
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION']['scale'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'].push(function(property, value) {
 		if (property === 'scale') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
 X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['translation'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['translation'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['scale'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['scale'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['scale'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['scale'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION']['scale'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce']['ACTION']['scale'].push(function(property, value) {
 		if (property === 'scale') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
 X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['translation'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['translation'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['scale'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['scale'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['scale'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['scale'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION']['scale'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce']['ACTION']['scale'].push(function(property, value) {
 		if (property === 'scale') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
 X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['translation'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['translation'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
+if (typeof X3DJSON['Objundefined'] === 'undefined') {
+X3DJSON['Objundefined'] = {};
 }
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce'] = {};
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['scale'] === 'undefined') {
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['scale'] = [];
+if (typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['scale'] === 'undefined') {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['scale'] = [];
 }
-X3DJSON['Obj']['DECLBubble_bubbleD_bounce']['ACTION']['scale'].push(function(property, value) {
+X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce']['ACTION']['scale'].push(function(property, value) {
 		if (property === 'scale') {
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
 X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
-			X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
-			X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
-			X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
-			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
-			X3DJSON['Obj']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleB_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].scale, __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleB_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleB_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleC_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].scale, __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleC_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleC_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','translation',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('DECLBubble_bubbleD_transform','scale',typeof X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed === "function" ? X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale_changed() : X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].scale, __eventTime);
+			X3DJSON['Objundefined']['DECLBubble_bubbleD_bounce'].set_fraction(X3DJSON.nodeUtil('DECLBubble_bubbleD_bubbleClock','fraction'), __eventTime);

@@ -191,27 +191,27 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	classes.log("	});");
 	classes.log("	return proxy;");
 	classes.log("};");
-	realProcessScripts(object, classes, mypackage, routecode, loopItems);
+	realProcessScripts(object, classes, mypackage, routecode, loopItems, selector);
 }
 
-function doRoute(mypackage, fromNode, fromField, toNode, toField, log, set, changed) {
+function doRoute(mypackage, fromNode, fromField, toNode, toField, log, set, changed, selector) {
 	var fromScript = mypackage.find(fromNode);
 	var toScript = mypackage.find(toNode);
 	// only add routes with scripts involved
 	if (typeof fromScript !== 'undefined' || typeof toScript !== 'undefined') {
 		var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
 		if (typeof fromScript !== 'undefined') {
-			from = 'typeof '+useX3DJSON('Obj',fromScript.name)+'.'+fromField+changed+' === "function" ? '+useX3DJSON('Obj', fromScript.name) + '.'+fromField+changed+'() : '+useX3DJSON('Obj', fromScript.name) + '.'+fromField;
+			from = 'typeof '+useX3DJSON('Obj', selector,fromScript.name)+'.'+fromField+changed+' === "function" ? '+useX3DJSON('Obj', selector, fromScript.name) + '.'+fromField+changed+'() : '+useX3DJSON('Obj', selector, fromScript.name) + '.'+fromField;
 		}
 		var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
 		if (typeof toScript !== 'undefined') {
-			to = useX3DJSON('Obj', toScript.name) + '.'+set+toField+'(';
+			to = useX3DJSON('Obj', selector, toScript.name) + '.'+set+toField+'(';
 		}
 		log.log("			"+to+from+", __eventTime);");
 	}
 }
 
-function processRoute(route, routecode, mypackage, loopItems) {
+function processRoute(route, routecode, mypackage, loopItems, selector) {
 	var fromNode = route["@fromNode"];
 	var fromField = route["@fromField"];
 	var toNode = route["@toNode"];
@@ -233,33 +233,33 @@ function processRoute(route, routecode, mypackage, loopItems) {
 	// var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
 	if (typeof fromScript === 'undefined') {
 		routecode.log("X3DJSON.nodeUtil('"+fromNode+"').addEventListener('outputchange', function(event) {");
-		doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed);
+		doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector);
 		routecode.log("}, false);");	
 		/*
-		routecode.log(declareX3DJSON('ROUTE', fromRoute));
-		routecode.log(useX3DJSON('ROUTE', fromRoute)+" = new MutationObserver(function(mutations) {");
+		routecode.log(declareX3DJSON('ROUTE', selector, fromRoute));
+		routecode.log(useX3DJSON('ROUTE', selector, fromRoute)+" = new MutationObserver(function(mutations) {");
 		routecode.log("		mutations.forEach(function(mutation) {");
 		routecode.log("			console.log(mutation, '"+fromField+"');");	
-		doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed);
+		doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector);
 		routecode.log("		});");	
 		routecode.log("});");	
 		routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+fromField+"'] };");	
 		// it's a real node
 		try {
-			routecode.log(useX3DJSON('ROUTE', fromRoute)+".observe(X3DJSON.nodeUtil('"+fromNode+"'), config);");
+			routecode.log(useX3DJSON('ROUTE', selector, fromRoute)+".observe(X3DJSON.nodeUtil('"+fromNode+"'), config);");
 		} catch (e) {
 			console.error("Error creating observe", e);
 		}
 		*/
 	} else {
-		routecode.log(declareX3DJSON('Obj', fromScript.name+":"+"ACTION"));
-		var proxyAction = useX3DJSON('Obj', fromScript.name+":"+"ACTION");
+		routecode.log(declareX3DJSON('Obj', selector, fromScript.name+":"+"ACTION"));
+		var proxyAction = useX3DJSON('Obj', selector, fromScript.name+":"+"ACTION");
 		routecode.log("if (typeof "+proxyAction+"['"+fromField+"'] === 'undefined') {");
 		routecode.log(		proxyAction+"['"+fromField+"'] = [];");
 		routecode.log("}");
 		routecode.log(proxyAction+"['"+fromField+"'].push(function(property, value) {");
 		routecode.log("		if (property === '"+fromField+"') {");
-		doRoute(fromScript, fromNode, fromField, toNode, toField, routecode, set, changed);
+		doRoute(fromScript, fromNode, fromField, toNode, toField, routecode, set, changed, selector);
 		routecode.log("		}");
 		routecode.log("});");
 		// TODO Proxy code goes here
@@ -267,13 +267,13 @@ function processRoute(route, routecode, mypackage, loopItems) {
 
 	// set routes that run every loop
 	// if (toField === 'set_fraction' || changed) {
-		doRoute(mypackage, fromNode, fromField, toNode, toField, loopItems, set, changed);
+		doRoute(mypackage, fromNode, fromField, toNode, toField, loopItems, set, changed, selector);
 	// }
 	// run the route once for initializeOnly
-	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed);
+	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector);
 }
 
-function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
+function realProcessScripts(object, classes, mypackage, routecode, loopItems, selector) {
 	mypackage = mypackage || new Script();
 	var p;
 	if (typeof object === "object") {
@@ -289,13 +289,13 @@ function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
 				var script = new Script(mypackage, name);
 				// console.error("SCRIPT IS ",JSON.stringify(object[p]));
 				registerFields(object[p]['field'], classes, script);
-				processFields(object[p]['field'], classes, script);
-				processSource(object[p]['#sourceText'], classes, script);
-				realProcessScripts(object[p], classes, script, routecode, loopItems);
+				processFields(object[p]['field'], classes, script, selector);
+				processSource(object[p]['#sourceText'], classes, script, selector);
+				realProcessScripts(object[p], classes, script, routecode, loopItems, selector);
 				// zap original source because we don't need it
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
-				processRoute(object[p], routecode, mypackage, loopItems);
+				processRoute(object[p], routecode, mypackage, loopItems, selector);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -305,7 +305,7 @@ function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				realProcessScripts(object[p], classes, mypackage, routecode, loopItems);
+				realProcessScripts(object[p], classes, mypackage, routecode, loopItems, selector);
 			}
 		}
 	}
@@ -400,9 +400,9 @@ function registerFields(fields, classes, mypackage) {
 	}
 }
 
-function processFields(fields, classes, mypackage) {
-	classes.log(declareX3DJSON('Script', mypackage.name));
-	classes.log(useX3DJSON('Script', mypackage.name) +  ' = function() {');
+function processFields(fields, classes, mypackage, selector) {
+	classes.log(declareX3DJSON('Script', selector, mypackage.name));
+	classes.log(useX3DJSON('Script', selector, mypackage.name) +  ' = function() {');
 
 	// console.error("0FIELDS IS "+JSON.stringify(fields));
 	var f;
@@ -475,8 +475,8 @@ function processFields(fields, classes, mypackage) {
 	}
 }
 
-function declareX3DJSON(type, mypackage) {
-	var hier = (type+":"+mypackage).split(/:/);
+function declareX3DJSON(type, selector, mypackage) {
+	var hier = (type+selector+":"+mypackage).split(/:/);
 	var str = "";
 	for (var h = 1; h < hier.length; h++) {
 		var sub = "X3DJSON['"+hier.slice(0, h).join("']['")+"']";
@@ -487,13 +487,13 @@ function declareX3DJSON(type, mypackage) {
 	return str;
 
 }
-function useX3DJSON(type, mypackage) {
-	var hier = (type+":"+mypackage).split(/:/);
+function useX3DJSON(type, selector, mypackage) {
+	var hier = (type+selector+":"+mypackage).split(/:/);
 	var str = "X3DJSON['"+hier.slice(0, hier.length).join("']['")+"']";
 	return str;
 }
 
-function processSource(lines, classes, mypackage) {
+function processSource(lines, classes, mypackage, selector) {
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
@@ -569,17 +569,17 @@ function processSource(lines, classes, mypackage) {
 		}
 	}
 	classes.log('};');
-	classes.log(declareX3DJSON('Obj', mypackage.name));
-	classes.log(useX3DJSON('Obj', mypackage.name) + ' = new '+ useX3DJSON('Script', mypackage.name) +'();');
-	classes.log(declareX3DJSON('Obj', mypackage.name+":"+"ACTION"));
-	var proxyAction = useX3DJSON('Obj', mypackage.name+":"+"ACTION");
+	classes.log(declareX3DJSON('Obj', selector, mypackage.name));
+	classes.log(useX3DJSON('Obj', selector, mypackage.name) + ' = new '+ useX3DJSON('Script', selector, mypackage.name) +'();');
+	classes.log(declareX3DJSON('Obj', selector, mypackage.name+":"+"ACTION"));
+	var proxyAction = useX3DJSON('Obj', selector, mypackage.name+":"+"ACTION");
 	classes.log("if (typeof "+proxyAction+" === 'undefined') {");
 	classes.log(	proxyAction + " = {};");
-	classes.log(	useX3DJSON('Obj',mypackage.name)+".proxy = X3DJSON.createProxy("+
+	classes.log(	useX3DJSON('Obj', selector,mypackage.name)+".proxy = X3DJSON.createProxy("+
 			proxyAction+","+
-			useX3DJSON('Obj',mypackage.name)+");");
+			useX3DJSON('Obj', selector,mypackage.name)+");");
 	classes.log("}");
-	classes.log('if (typeof '+useX3DJSON('Obj',mypackage.name)+'.initialize === "function") '+useX3DJSON('Obj', mypackage.name) + '.initialize();');
+	classes.log('if (typeof '+useX3DJSON('Obj', selector,mypackage.name)+'.initialize === "function") '+useX3DJSON('Obj', selector, mypackage.name) + '.initialize();');
 }
 
 if (typeof module === 'object')  {

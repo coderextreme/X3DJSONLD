@@ -58,7 +58,8 @@
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
-	function load_X3DOM(url, callback) {
+	function load_X3DOM(htmlselector, url, callback) {
+		$(htmlselector).empty();
 		$.getJSON(url, function(json) {
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
@@ -77,26 +78,18 @@
 			});
 		});
 	}
-	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json) {
+	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json, callback) {
 		$.getJSON(url, function(subjson) {
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			subjson = flattener(subjson);
 			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"][xmlselector], xmlselector, element.querySelector(xmlselector), url);  // returns Scene element
-			$(htmlselector).empty();
 			$(element.querySelector(xmlselector)).children().appendTo(htmlselector);
-			$(htmlselector+" Script").empty();
 			// join json for scripts
 			for (var c in subjson["X3D"]["Scene"]["-children"]) {
 				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 			}
-			if ($('#scripting').is(':checked')) {
-				loadScripts(json, htmlselector);
-			}
-			try {
-				x3dom.reload();  // This may be necessary
-			} catch (e) {
-				console.error(e);
-				alert("Problem with x3dom.reload()", e);
+			if (typeof callback === 'function') {
+				callback(json, htmlselector);
 			}
 		});
 	}
@@ -107,11 +100,33 @@
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('../data/flowers2.json', function(element, xmlDoc, json) {
-			loadSubscene_X3DOM("#x3domjson", "Scene", '../data/bubs.json', element, xmlDoc, json);
+		var htmlselector = "#x3domjson";
+		var xmlselector = "Scene";
+		var flowers2 = '../data/flowers2.json';
+		var bubbles = '../data/force.json';
+		var force = '../data/bubs.json';
+		if ($('#scripting').is(':checked')) {
+			initializeScripts();
+		}
+		load_X3DOM(htmlselector, flowers2, function(element, xmlDoc, json) {
+			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json, function(json, htmlselector) {
+				loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json, function(json, htmlselector) {
+					$(htmlselector+" Script").empty();
+					if ($('#scripting').is(':checked')) {
+						loadScripts(json, htmlselector);
+					}
+					try {
+						x3dom.reload();  // This may be necessary
+					} catch (e) {
+						console.error(e);
+						alert("Problem with x3dom.reload()", e);
+					}
+				});
+			});
 		});
-		load_X_ITE('../data/flowers2.json', function(element, xmlDoc) {
-			loadSubscene_X_ITE("Scene", '../data/bubs.json', element, xmlDoc);
+		load_X_ITE(flowers2, function(element, xmlDoc) {
+			loadSubscene_X_ITE(xmlselector, bubbles, element, xmlDoc);
+			loadSubscene_X_ITE(xmlselector, force, element, xmlDoc);
 		});
 	});
     </script>
