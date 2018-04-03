@@ -39,24 +39,25 @@ process.argv.shift(); // get rid of -- args
 process.argv.shift();
 
 function ProcessJSON(json, file) {
-		// Run it through the prototype expander
-		json = PROTOS.externalPrototypeExpander(file, json);
-		json = PROTOS.prototypeExpander(file, json, "");
-		json = flattener(json);
+	// Run it through the prototype expander
+	json = PROTOS.externalPrototypeExpander(file, json);
+	json = PROTOS.prototypeExpander(file, json, "");
+	json = flattener(json);
 
-		var xml = new LOG();
-		var NS = "http://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
-			var str = serializer.serializeToString(json, element);
-			var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
-			try {
-				fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
-			} catch (e) {
-				console.error("Error creating dir for "+outfile);
-			}
-			fs.writeFileSync(outfile, str);
-			console.error("Processed XML", outfile);
-		});
+	var xml = new LOG();
+	var NS = "http://www.web3d.org/specifications/x3d";
+	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
+		var str = serializer.serializeToString(json, element);
+		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
+		try {
+			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
+		} catch (e) {
+			console.error("Error creating dir for "+outfile);
+		}
+		fs.writeFileSync(outfile, str);
+		console.error("Processed XML", outfile);
+	});
+	return json;
 }
 
 var files = process.argv;

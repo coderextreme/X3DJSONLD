@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/flowers.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/flowers.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/flowers.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/flowers.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Script../data/flowers.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/flowers.jsonundefined'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLflower_INSTANCE_Bounce'] = function() {
+X3DJSON['Script../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] = function() {
 	this.set_translation = function (value) {
 		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -338,44 +342,44 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'] = new X3DJSON['Scriptundefined']['DECLflower_INSTANCE_Bounce']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] = new X3DJSON['Script../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']();
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'] = {};
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION'],X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']);
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION'] = {};
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION'],X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']);
 }
-if (typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].initialize === "function") X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].initialize();
-X3DJSON.nodeUtil('DECLflower_INSTANCE_SongTime').addEventListener('outputchange', function(event) {
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].initialize === "function") X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].initialize();
+X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_SongTime').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
+X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+			X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'] = {};
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] = [];
 }
-X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'].push(function(property, value) {
+X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
+			X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
-			X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Objundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
+			X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
+			X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
+			X3DJSON['../data/flowers.jsonundefined'].nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj../data/flowers.jsonundefined']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);

@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/PixelTextureComponentExamples.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/PixelTextureComponentExamples.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/PixelTextureComponentExamples.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/PixelTextureComponentExamples.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {

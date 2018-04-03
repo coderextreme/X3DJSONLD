@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/X3dHeaderPrototypeSyntaxExamples.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'].nodeUtil('Clock').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('Spinner').addEventListener('outputchange', function(event) {
+X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'].nodeUtil('Spinner').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'].nodeUtil('Clock').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('StayInPlace').addEventListener('outputchange', function(event) {
+X3DJSON['../data/X3dHeaderPrototypeSyntaxExamples.jsonundefined'].nodeUtil('StayInPlace').addEventListener('outputchange', function(event) {
 }, false);

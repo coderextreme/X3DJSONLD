@@ -206,7 +206,7 @@ function loadScripts(json, selector, url) {
 		__eventTime += 1000 / 60;
 	});
 	if (typeof intervalId !== 'undefined') {
-		console.error("Interval", intervalId, "cleared");
+		// console.error("Interval", intervalId, "cleared");
 		clearInterval(intervalId);
 	}
 	function runAllRoutes() {
@@ -278,38 +278,40 @@ function convertJsonToXml(json, next, path) {
 	}); // does not load path
 }
 
-function loadX3D(selector, json, url) {
-    if ($('#scripting').is(':checked')) {
-    	initializeScripts();
-    }
+function loadProtoX3D(selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		// json = protoExpander.externalPrototypeExpander(url, json);
 		json = protoExpander.prototypeExpander(url, json, "");
-		json = flattener(json);
 	} catch (e) {
-		alert("Problems with ProtoExpander", e);
+		alert("Problems with Proto Expander", e);
 		console.error(e);
 	}
-	// console.error("JSON IS NOW", json);
-	try {
-		$('#json').val(JSON.stringify(json, null, 2));
-	} catch (e) {
-		alert("JSON isn't valid", e);
-	}
     }
+    try {
+	json = flattener(json);
+    } catch (e) {
+	alert("Problems with Flattener", e);
+	console.error(e);
+    }
+    
+   // console.error("JSON IS NOW", json);
+   try {
+	$('#json').val(JSON.stringify(json, null, 2));
+   } catch (e) {
+	alert("JSON isn't valid", e);
+   }
     var NS = $('#namespace option:selected').text();
     var xml = [];
     replaceX3DJSON(selector, json, url, xml, NS, function(child, xmlDoc) {
 	    if (child != null) {
-		        try {
+			try {
 			    load_X_ITE_JS(json);
 			} catch (e) {
 				alert("Problems with X_ITE DOM", e);
 				console.error(e);
 			}
-		        try {
+			try {
 			    loadXmlBrowsers(xml);
 			} catch (e) {
 				alert("Problems with loading xml browsers", e);
@@ -329,13 +331,37 @@ function loadX3D(selector, json, url) {
 	    }
 	    // do this afterwards to take advantage of prototype expander
 	    try {
-	    	updateStl(json);
+		updateStl(json);
 	    } catch (e) {
-	    	alert("Problems updating Stl");
-	    	console.error(e);
+		alert("Problems updating Stl");
+		console.error(e);
 	    }
     });
     return json;
+}
+
+function loadX3D(selector, json, url) {
+    if ($('#scripting').is(':checked')) {
+    	initializeScripts();
+    }
+    if ($('#externprototype').is(':checked')) {
+	// Expand Protos
+	try {
+		$.ajaxSetup({
+		  async: false
+		});
+		json = protoExpander.externalPrototypeExpander(url, json);
+		$.ajaxSetup({
+		  async: true
+		});
+		json = loadProtoX3D(selector, json, url);
+	} catch (e) {
+		alert("Problems with ExternProto Expander", e);
+		console.error(e);
+	}
+    } else {
+	json = loadProtoX3D(selector, json, url);
+    }
 }
 
 /**
@@ -347,7 +373,13 @@ function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
 		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
 			try {
-				/// json = protoExpander.externalPrototypeExpander(url, json);
+				$.ajaxSetup({
+				  async: false
+				});
+				json = protoExpander.externalPrototypeExpander(url, json);
+				$.ajaxSetup({
+				  async: true
+				});
 				json = protoExpander.prototypeExpander(url, json, "");
 				json = flattener(json);
 			} catch (e) {
@@ -473,7 +505,7 @@ function updateFromJson(json, path) {
 		console.error(e);
 	}
 	try {
-		json = loadX3D("#x3domjson", json, path); // does not load path
+		loadX3D("#x3domjson", json, path);
 	} catch (e) {
 		alert("Problems converting and loading JSON", e);
 		console.error(e);

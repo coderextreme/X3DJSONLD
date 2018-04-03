@@ -5,8 +5,8 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/ball.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/ball.jsonundefined'] = {};
+if (typeof X3DJSON['../data/x3domflowers.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/x3domflowers.jsonundefined'] = {};
 }
 
 var MFBool = x3dom.fields.MFBoolean;
@@ -68,8 +68,8 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/ball.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/ball.json [DEF='"+node+"']";
+X3DJSON['../data/x3domflowers.jsonundefined'].nodeUtil = function(node, field, value) {
+		var selector = "../data/x3domflowers.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);

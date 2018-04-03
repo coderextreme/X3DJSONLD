@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/x3dconnector.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/x3dconnector.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/x3dconnector.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Script../data/x3dconnector.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/x3dconnector.jsonundefined'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
+X3DJSON['Script../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'] = function() {
 	this.set_startnode = function (value) {
 		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -139,7 +143,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = X3DJSON.nodeUtil('G1');
+	this.startnode = X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1');
 	this.set_endnode = function (value) {
 		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -147,7 +151,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = X3DJSON.nodeUtil('G2');
+	this.endnode = X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2');
 	this.set_transnode = function (value) {
 		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -155,7 +159,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = X3DJSON.nodeUtil('transC1');
+	this.transnode = X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('transC1');
 	this.set_rotscalenode = function (value) {
 		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -163,7 +167,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = X3DJSON.nodeUtil('rotscaleC1');
+	this.rotscalenode = X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('rotscaleC1');
 	this.set_startpoint = function (value) {
 		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -210,57 +214,57 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 	      var trafo = this.recompute(startpoint, endpoint);
-	      X3DJSON.nodeUtil('transC1', 'translation',  trafo.translation);
-	      X3DJSON.nodeUtil('rotscaleC1', 'rotation',  trafo.rotation);
-	      X3DJSON.nodeUtil('rotscaleC1', 'scale',  trafo.scale);
+	      X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('transC1', 'translation',  trafo.translation);
+	      X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('rotscaleC1', 'rotation',  trafo.rotation);
+	      X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('rotscaleC1', 'scale',  trafo.scale);
 	}
         ;
 
 	this.initialize = function (){
-            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),X3DJSON.nodeUtil('G2', 'translation'));
+            this.recompute_and_route(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1', 'translation'),X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2', 'translation'));
         }
         ;
 
 	this.set_startpoint = function (val,t){
-            this.recompute_and_route(val,X3DJSON.nodeUtil('G2', 'translation'));
+            this.recompute_and_route(val,X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2', 'translation'));
         }
         ;
 
 	this.set_endpoint = function (val,t){
-            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
+            this.recompute_and_route(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1', 'translation'),val);
         }
 
 ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/x3dconnector.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/x3dconnector.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Script../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1']();
+if (typeof X3DJSON['Obj../data/x3dconnector.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/x3dconnector.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] = {};
+if (typeof X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'] === 'undefined') {
+X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']);
+if (typeof X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
+X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1']);
 }
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].initialize();
-X3DJSON.nodeUtil('PS1').addEventListener('outputchange', function(event) {
+if (typeof X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize();
+X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('PS1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('PS2').addEventListener('outputchange', function(event) {
+X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('PS2').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('G1').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1','translation'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
-X3DJSON.nodeUtil('G2').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1','translation'), __eventTime);
+X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2','translation'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2','translation'), __eventTime);
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G1','translation'), __eventTime);
+			X3DJSON['Obj../data/x3dconnector.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/x3dconnector.jsonundefined'].nodeUtil('G2','translation'), __eventTime);

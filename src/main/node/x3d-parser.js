@@ -565,7 +565,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
     var getTree = function (x3d, useJson) {
 
 	if (useJson) {
-		console.error(x3d);
+		// console.error(x3d);
 		return x3d;
 	} else {
 		var tree = { 'string': 'Scene', children: [] };
