@@ -5,8 +5,12 @@
 function DOM2JSONSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
-	this.fieldTypeMapping = {};
-	this.DEFMapping = {};
+	try {
+		this.fieldTypeMapping = {};
+		this.DEFMapping = {};
+	} catch (e) {
+		console.error("DOM2JSONSerializer does not have a this in constructor");
+	}
 }
 
 
