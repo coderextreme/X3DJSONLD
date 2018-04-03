@@ -234,10 +234,12 @@ function magic(path, type) {
 		console.error("Requested", url);
 		var wind = url.indexOf("www.web3d.org");
 		if (wind > 0) {
-			var data = fs.readFileSync(www + "/" + url.substring(wind));
+			url = url.substring(wind);
+			url = www + "/" + url;
 		} else {
-			var data = fs.readFileSync(__dirname+"/"+url);
+			url = __dirname+"/"+url;
 		}
+		var data = fs.readFileSync(url);
 		if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
 			sendNoNext(res, data, type);
 		} else {
