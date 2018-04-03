@@ -38,13 +38,23 @@ app.use(express.static('src/main/html'));
 app.use(express.static('src/main'));
 
 function convertX3dToJson(res, infile, outfile, next) {
-	var serializer = DOM2JSONSerializer();
-	console.error("Calling converter "+serializer+" on "+infile);
-	var str = new serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
-	var json = JSON.parse(str);
-	// json = PROTOS.externalPrototypeExpander(outfile, json);
-	// json = flattener(json);
-	send(res, json, "text/json", next);
+	try {
+		var data = fs.readFileSync(infile);
+		var doc = null;
+		var domParser = new DOMParser();
+		doc = domParser.parseFromString (data, 'application/xml');
+		var element = doc.documentElement;
+		console.error("Calling converter "+serializer+" on "+infile);
+		var serializer = new DOM2JSONSerializer();
+		var str = new serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
+		var json = JSON.parse(str);
+		// json = PROTOS.externalPrototypeExpander(outfile, json);
+		// json = flattener(json);
+		send(res, json, "text/json", next);
+	} catch (e) {
+		next();
+		console.error("Problems converting", infile, "to", outfile);
+	}
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
 		// console.error("Calling extern proto expander");
@@ -222,8 +232,9 @@ function magic(path, type) {
 			url = url.substr(1);
 		}
 		console.error("Requested", url);
-		if (url.startsWith("www.web3d.org")) {
-			var data = fs.readFileSync(www + "/" + url);
+		var wind = url.indexOf("www.web3d.org");
+		if (wind > 0) {
+			var data = fs.readFileSync(www + "/" + url.substring(wind));
 		} else {
 			var data = fs.readFileSync(__dirname+"/"+url);
 		}
@@ -299,6 +310,7 @@ app.get("*.json", function(req, res, next) {
 	if (outfile.indexOf("www.web3d.org") >= 0) {
 		outfile = www +"/"+file.substr(file.indexOf("www.web3d.org"));
 	}
+	try {
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
@@ -319,6 +331,10 @@ app.get("*.json", function(req, res, next) {
 		convertX3dToJson(res, infile, outfile, next);
 	}
 	*/
+	} catch (e) {
+		console.error("Couldn't read JSON.  Consider creating a JSON file", url);
+		next();
+	}
 });
 
 
