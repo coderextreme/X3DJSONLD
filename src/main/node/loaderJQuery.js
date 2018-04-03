@@ -681,6 +681,7 @@ function convertXmlToJson(xmlString, path) {
     }, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
+	    /*
 	    $.get("stylesheets/X3dToJson.xslt", function(xslt) {
 		// console.error("VAL", xmlString);
 		var demo = { xslt: xslt};
@@ -728,6 +729,7 @@ function convertXmlToJson(xmlString, path) {
 	    .fail(function(jqXHR, textStatus, errorThrown) {
 	    	alert('Could not process stylesheet X3dToJson.xslt! ' + textStatus + ' ' + errorThrown);
 	    });
+	    */
     });
 }
 
