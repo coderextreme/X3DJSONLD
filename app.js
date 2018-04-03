@@ -42,8 +42,8 @@ function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter "+serializer+" on "+infile);
 	var str = new serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
 	var json = JSON.parse(str);
-	json = PROTOS.externalPrototypeExpander(outfile, json);
-	json = flattener(json);
+	// json = PROTOS.externalPrototypeExpander(outfile, json);
+	// json = flattener(json);
 	send(res, json, "text/json", next);
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
@@ -217,19 +217,24 @@ app.get("/files", function(req, res, next) {
 function magic(path, type) {
     app.get(path, function(req, res, next) {
 	var url = req._parsedUrl.pathname;
-	while (url.startsWith("/")) {
-		url = url.substr(1);
-	}
-	console.error("Requested", url);
-	if (url.startsWith("www.web3d.org")) {
-		var data = fs.readFileSync(www + "/" + url);
-	} else {
-		var data = fs.readFileSync(__dirname+"/"+url);
-	}
-	if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
-		sendNoNext(res, data, type);
-	} else {
-		sendNoNext(res, data.toString(), type);
+	try {
+		while (url.startsWith("/")) {
+			url = url.substr(1);
+		}
+		console.error("Requested", url);
+		if (url.startsWith("www.web3d.org")) {
+			var data = fs.readFileSync(www + "/" + url);
+		} else {
+			var data = fs.readFileSync(__dirname+"/"+url);
+		}
+		if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
+			sendNoNext(res, data, type);
+		} else {
+			sendNoNext(res, data.toString(), type);
+		}
+	} catch (e) {
+		console.error("Couldn't read", url);
+		next();
 	}
     });
 }
@@ -299,12 +304,12 @@ app.get("*.json", function(req, res, next) {
 	*/
 		console.error("Reading", outfile);
 		var data = fs.readFileSync(outfile);
-		console.error("Data", data.toString());
+		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
-		console.error(JSON.stringify(json));
+		// console.error(JSON.stringify(json));
 		// console.error("Calling extern proto expander");
-		json = PROTOS.externalPrototypeExpander(outfile, json);
-		json = flattener(json);
+		// json = PROTOS.externalPrototypeExpander(outfile, json);
+		// json = flattener(json);
 		// console.error(JSON.stringify(json));
                 send(res, json, "text/json", next);
 	/*
