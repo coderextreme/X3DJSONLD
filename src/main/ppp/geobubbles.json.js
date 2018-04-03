@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/geobubbles.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/geobubbles.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/geobubbles.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Script../data/geobubbles.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/geobubbles.jsonundefined'] = {};
 }
 
-X3DJSON['Scriptundefined']['RandomTourTime'] = function() {
+X3DJSON['Script../data/geobubbles.jsonundefined']['RandomTourTime'] = function() {
 	this.set_cycle = function (value) {
 		this.proxy.cycle = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -184,46 +188,46 @@ ecmascript:
                };
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['RandomTourTime'] = new X3DJSON['Scriptundefined']['RandomTourTime']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'] = new X3DJSON['Script../data/geobubbles.jsonundefined']['RandomTourTime']();
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['RandomTourTime'] === 'undefined') {
-X3DJSON['Objundefined']['RandomTourTime'] = {};
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['RandomTourTime']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['RandomTourTime']['ACTION'] = {};
-X3DJSON['Objundefined']['RandomTourTime'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['RandomTourTime']['ACTION'],X3DJSON['Objundefined']['RandomTourTime']);
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION'] = {};
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION'],X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']);
 }
-if (typeof X3DJSON['Objundefined']['RandomTourTime'].initialize === "function") X3DJSON['Objundefined']['RandomTourTime'].initialize();
-X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].initialize === "function") X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].initialize();
+X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].set_cycle(X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+			X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].set_cycle(X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['RandomTourTime'] === 'undefined') {
-X3DJSON['Objundefined']['RandomTourTime'] = {};
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['RandomTourTime']['ACTION']['position'] === 'undefined') {
-X3DJSON['Objundefined']['RandomTourTime']['ACTION']['position'] = [];
+if (typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION']['position'] = [];
 }
-X3DJSON['Objundefined']['RandomTourTime']['ACTION']['position'].push(function(property, value) {
+X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Objundefined']['RandomTourTime'].position === "function" ? X3DJSON['Objundefined']['RandomTourTime'].position() : X3DJSON['Objundefined']['RandomTourTime'].position, __eventTime);
+			X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position === "function" ? X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position() : X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Objundefined']['RandomTourTime'].position === "function" ? X3DJSON['Objundefined']['RandomTourTime'].position() : X3DJSON['Objundefined']['RandomTourTime'].position, __eventTime);
-X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position === "function" ? X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position() : X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position, __eventTime);
+X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourTime').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TourPosition').addEventListener('outputchange', function(event) {
+X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourPosition').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON['Objundefined']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Objundefined']['RandomTourTime'].position === "function" ? X3DJSON['Objundefined']['RandomTourTime'].position() : X3DJSON['Objundefined']['RandomTourTime'].position, __eventTime);
+			X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].set_cycle(X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
+			X3DJSON['../data/geobubbles.jsonundefined'].nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position === "function" ? X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position() : X3DJSON['Obj../data/geobubbles.jsonundefined']['RandomTourTime'].position, __eventTime);

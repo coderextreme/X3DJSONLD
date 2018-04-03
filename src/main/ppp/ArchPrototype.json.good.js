@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/ArchPrototype.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/ArchPrototype.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/ArchPrototype.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Script../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/ArchPrototype.jsonundefined'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = function() {
+X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = function() {
 	this.set_clearSpanWidth = function (value) {
 		this.proxy.clearSpanWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -566,71 +570,71 @@ X3DJSON['Scriptundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']
         ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = new X3DJSON['Scriptundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = new X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']();
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
-}
-
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'],X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']);
-}
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize === "function") X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
-}
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] = [];
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] = {};
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'],X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']);
 }
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'].push(function(property, value) {
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize === "function") X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize();
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
+}
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+}
+
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] = [];
+}
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'].push(function(property, value) {
 		if (property === 'computedScale') {
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] = [];
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] = [];
 }
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'].push(function(property, value) {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'].push(function(property, value) {
 		if (property === 'pointOut') {
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] === 'undefined') {
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] = [];
+if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] === 'undefined') {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] = [];
 }
-X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'].push(function(property, value) {
+X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'].push(function(property, value) {
 		if (property === 'indexOut') {
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
-			X3DJSON.nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Objundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);

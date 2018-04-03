@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/flipp.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/flipp.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/flipp.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/flipp.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,9 +131,9 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-X3DJSON.nodeUtil('ci').addEventListener('outputchange', function(event) {
+X3DJSON['../data/flipp.jsonundefined'].nodeUtil('ci').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('si').addEventListener('outputchange', function(event) {
+X3DJSON['../data/flipp.jsonundefined'].nodeUtil('si').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('ts').addEventListener('outputchange', function(event) {
+X3DJSON['../data/flipp.jsonundefined'].nodeUtil('ts').addEventListener('outputchange', function(event) {
 }, false);

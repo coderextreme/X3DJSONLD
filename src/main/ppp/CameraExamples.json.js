@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/CameraExamples.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/CameraExamples.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/CameraExamples.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,49 +131,49 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-X3DJSON.nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('CameraShapeTouched').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTouched').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('ViewFrustumToggle').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('ViewFrustumToggle').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('BoxTimer').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxTimer').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);

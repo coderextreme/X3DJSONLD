@@ -5,6 +5,10 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
+if (typeof X3DJSON['../data/arc1.jsonundefined'] === 'undefined') {
+	X3DJSON['../data/arc1.jsonundefined'] = {};
+}
+
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -64,7 +68,7 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON.nodeUtil = function(node, field, value) {
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil = function(node, field, value) {
 		var selector = "../data/arc1.json [DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
@@ -127,11 +131,11 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Script../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/arc1.jsonundefined'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLpoint_G1_MB1'] = function() {
+X3DJSON['Script../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] = function() {
 	this.set_translation = function (value) {
 		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -178,28 +182,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLpoint_G1_MB1'] = new X3DJSON['Scriptundefined']['DECLpoint_G1_MB1']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] = new X3DJSON['Script../data/arc1.jsonundefined']['DECLpoint_G1_MB1']();
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G1_MB1'] = {};
-}
-
-if (typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLpoint_G1_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION'],X3DJSON['Objundefined']['DECLpoint_G1_MB1']);
-}
-if (typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'].initialize === "function") X3DJSON['Objundefined']['DECLpoint_G1_MB1'].initialize();
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLpoint_G2_MB1'] = function() {
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION'],X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']);
+}
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].initialize === "function") X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].initialize();
+if (typeof X3DJSON['Script../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/arc1.jsonundefined'] = {};
+}
+
+X3DJSON['Script../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] = function() {
 	this.set_translation = function (value) {
 		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -246,28 +250,28 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLpoint_G2_MB1'] = new X3DJSON['Scriptundefined']['DECLpoint_G2_MB1']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] = new X3DJSON['Script../data/arc1.jsonundefined']['DECLpoint_G2_MB1']();
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G2_MB1'] = {};
-}
-
-if (typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLpoint_G2_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION'],X3DJSON['Objundefined']['DECLpoint_G2_MB1']);
-}
-if (typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'].initialize === "function") X3DJSON['Objundefined']['DECLpoint_G2_MB1'].initialize();
-if (typeof X3DJSON['Scriptundefined'] === 'undefined') {
-X3DJSON['Scriptundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] = {};
 }
 
-X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION'],X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']);
+}
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].initialize === "function") X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].initialize();
+if (typeof X3DJSON['Script../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Script../data/arc1.jsonundefined'] = {};
+}
+
+X3DJSON['Script../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'] = function() {
 	this.set_startnode = function (value) {
 		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -291,7 +295,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.position;
 		return value;
 	};
-	this.position = X3DJSON.nodeUtil('DECLx3dconnector_connector1_trans');
+	this.position = X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLx3dconnector_connector1_trans');
 	this.set_rotscale = function (value) {
 		this.proxy.rotscale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -299,7 +303,7 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 		var value = this.rotscale;
 		return value;
 	};
-	this.rotscale = X3DJSON.nodeUtil('DECLx3dconnector_connector1_rotscale');
+	this.rotscale = X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLx3dconnector_connector1_rotscale');
 	this.set_startpoint = function (value) {
 		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
@@ -351,9 +355,9 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 	      var trafo = this.recompute(startpoint, endpoint);
-	      X3DJSON.nodeUtil('DECLx3dconnector_connector1_trans', 'translation',  trafo.translation);
-	      X3DJSON.nodeUtil('DECLx3dconnector_connector1_rotscale', 'rotation',  trafo.rotation);
-	      X3DJSON.nodeUtil('DECLx3dconnector_connector1_rotscale', 'scale',  trafo.scale);
+	      X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLx3dconnector_connector1_trans', 'translation',  trafo.translation);
+	      X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLx3dconnector_connector1_rotscale', 'rotation',  trafo.rotation);
+	      X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLx3dconnector_connector1_rotscale', 'scale',  trafo.scale);
 	}
         ;
 
@@ -374,82 +378,82 @@ X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1'] = function() {
 ;
 
 };
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
 
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Scriptundefined']['DECLx3dconnector_connector1_S1']();
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Script../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1']();
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
-X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1']);
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1']);
 }
-if (typeof X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].initialize();
-X3DJSON.nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize();
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
-X3DJSON.nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G1_MB1'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] = [];
 }
-X3DJSON['Objundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'].push(function(property, value) {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-X3DJSON.nodeUtil('DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
-X3DJSON.nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Objundefined'] === 'undefined') {
-X3DJSON['Objundefined'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined'] = {};
 }
-if (typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G2_MB1'] = {};
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'] = {};
 }
 
-if (typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] = [];
 }
-X3DJSON['Objundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'].push(function(property, value) {
+X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-X3DJSON.nodeUtil('DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON.nodeUtil('DECLpoint_G1_node').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_node').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
-X3DJSON.nodeUtil('DECLpoint_G2_node').addEventListener('outputchange', function(event) {
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('DECLpoint_G2_node','translation'), __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
+X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_node').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_node','translation'), __eventTime);
 }, false);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('DECLpoint_G2_node','translation'), __eventTime);
-			X3DJSON['Objundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-			X3DJSON['Objundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Objundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
-			X3DJSON['Objundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('DECLpoint_G2_node','translation'), __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_node','translation'), __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
+			X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arc1.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G1_node','translation'), __eventTime);
+			X3DJSON['Obj../data/arc1.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arc1.jsonundefined'].nodeUtil('DECLpoint_G2_node','translation'), __eventTime);

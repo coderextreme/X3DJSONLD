@@ -34,50 +34,51 @@ var doValidate = convertJSON.doValidate;
 var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
-		json = PROTOS.externalPrototypeExpander(file, json);
-		json = PROTOS.prototypeExpander(file, json, "");
-		json = flattener(json);
-		console.log(JSON.stringify(json));
-		var outfile = file.replace(/data/, "ppp");
+	json = PROTOS.externalPrototypeExpander(file, json);
+	json = PROTOS.prototypeExpander(file, json, "");
+	json = flattener(json);
+	console.log(JSON.stringify(json));
+	var outfile = file.replace(/data/, "ppp");
+	try {
+		fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
+	} catch (e) {
+		console.error("Error creating ppp");
+	}
+	fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
+
+	var xml = new LOG();
+	var NS = "http://www.web3d.org/specifications/x3d";
+	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
+		var classes = new LOG();
+		var routecode = new LOG();
+		var loopItems = new LOG();
+		console.error("OUTPUTTING", file);
+
+		classes.push("var x3dom = require('../node/fields.js');");
+		classes.push("if (typeof X3DJSON === 'undefined') {");
+		classes.push("	var X3DJSON = {};");
+		classes.push("}");
+		classes.push("if (typeof __eventTime === 'undefined') {");
+		classes.push("	var __eventTime = 0;");
+		classes.push("}");
+		processScripts(json, classes, undefined, routecode, loopItems, file);
+		var code = classes.join('\n')
+			.replace(/&lt;/g, '<')
+			.replace(/&gt;/g, '>')
+
+		var route = routecode.join('\n');
+		var loop = loopItems.join('\n');
+		var totalcode = code+"\n"+route+"\n"+loop;
+		console.log(totalcode);
 		try {
-			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
+			eval(totalcode);
+			fs.writeFileSync(outfile+".good.js", totalcode);
 		} catch (e) {
-			console.error("Error creating ppp");
+			fs.writeFileSync(outfile+".js", totalcode);
+			console.error("See "+outfile+".js for bad code", e);
 		}
-		fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
-
-		var xml = new LOG();
-		var NS = "http://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
-			var classes = new LOG();
-			var routecode = new LOG();
-			var loopItems = new LOG();
-			console.error("OUTPUTTING", file);
-
-			classes.push("var x3dom = require('../node/fields.js');");
-			classes.push("if (typeof X3DJSON === 'undefined') {");
-			classes.push("	var X3DJSON = {};");
-			classes.push("}");
-			classes.push("if (typeof __eventTime === 'undefined') {");
-			classes.push("	var __eventTime = 0;");
-			classes.push("}");
-			processScripts(json, classes, undefined, routecode, loopItems, file);
-			var code = classes.join('\n')
-				.replace(/&lt;/g, '<')
-				.replace(/&gt;/g, '>')
-
-			var route = routecode.join('\n');
-			var loop = loopItems.join('\n');
-			var totalcode = code+"\n"+route+"\n"+loop;
-			console.log(totalcode);
-			try {
-				eval(totalcode);
-				fs.writeFileSync(outfile+".good.js", totalcode);
-			} catch (e) {
-				fs.writeFileSync(outfile+".js", totalcode);
-				console.error("See "+outfile+".js for bad code", e);
-			}
-		});
+	});
+	return json;
 }
 
 /*

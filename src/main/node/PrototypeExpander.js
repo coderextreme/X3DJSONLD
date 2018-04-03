@@ -737,6 +737,9 @@ PROTOS.prototype = {
 	searchForProtoDeclare: function (object, name) {
 		var p;
 		var found;
+		if (typeof alert === 'function') {
+			// alert("searching for "+ name+" in "+JSON.stringify(object));
+		}
 		if (typeof object === "object") {
 			for (p in object) {
 				if (p === 'ProtoDeclare') {
@@ -747,6 +750,9 @@ PROTOS.prototype = {
 					}
 					// find the first one if none match
 					if (typeof found === 'undefined' && this.founddef === null) {
+						if (typeof alert === 'function') {
+							// alert("First default found");
+						}
 						console.error("First default found");
 						this.founddef = object;
 					}
@@ -764,13 +770,19 @@ PROTOS.prototype = {
 
 
 	searchAndReplaceProto: function (filename, json, protoname, founddef, obj, objret) {
-		console.error("finished converting", filename);
+		if (typeof alert === 'function') {
+			// alert("finished converting"+ filename);
+		}
+		console.error("finished converting"+ filename);
 		var newobj = this.searchForProtoDeclare(json, protoname);
 		if (typeof newobj === 'undefined') {
 			newobj = founddef;
 		}
 		if (newobj === null || typeof newobj.ProtoDeclare === 'undefined') {
-			console.error("ProtoDeclare is still null or undefined in ", JSON.stringify(json));
+			if (typeof alert === 'function') {
+				// alert("ProtoDeclare is still null or undefined ",filename + " " + protoname + " " + JSON.stringify(json));
+			}
+			console.error("ProtoDeclare is still null or undefined",filename, protoname, JSON.stringify(json));
 		} else {
 			var name = obj["@name"];
 			var appinfo = obj["@appinfo"];
@@ -778,6 +790,10 @@ PROTOS.prototype = {
 			newobj["ProtoDeclare"]["@name"] = name;
 			newobj["ProtoDeclare"]["@appinfo"] = appinfo;
 			newobj["ProtoDeclare"]["@description"] = description;
+		}
+		if (typeof alert === 'function') {
+			// alert("returning "+ JSON.stringify(newobj));
+			console.log("returning ", JSON.stringify(newobj));
 		}
 		objret(newobj);
 	},
@@ -791,9 +807,15 @@ PROTOS.prototype = {
 				this.founddef = null;
 				var json = {};
 				try {
-					console.error("parsing ", data);
-					json = JSON.parse(data);
+					// console.error("parsing ", data);
+					// alert("parsed JSON from " + filename);
+					// alert("data is " + JSON.stringify(data));
 					console.error("parsed JSON from " + filename);
+					if (filename.indexOf(".json") > 0) {
+						json = data;
+					} else {
+						json = JSON.parse(data);
+					}
 					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
 					/*
@@ -809,6 +831,9 @@ PROTOS.prototype = {
 					} else
 					*/
 					if (typeof DOM2JSONSerializer === 'function') {
+						if (typeof alert === 'function') {
+							// alert("calling local converter");
+						}
 						console.error("calling local converter");
 						try {
 							var serializer = new DOM2JSONSerializer();
@@ -820,6 +845,11 @@ PROTOS.prototype = {
 							}
 							console.error("Convert failed", e);
 						}
+					} else {
+						if (typeof alert === 'function') {
+							// alert("Did not convert XML to JSON.  Oops!");
+						}
+						console.error("Did not convert XML to JSON.  Oops!")
 					}
 				}
 			} catch (e) {
@@ -842,34 +872,24 @@ PROTOS.prototype = {
 		console.error("protoname is", protoname, protoexp);
 		try {
 			protoexp.loadedProto(data, protoname, obj, u, protoexp, function (nuobject) {
+				if (typeof alert === 'function') {
+					// alert("Done searching, found "+JSON.stringify(nuobject));
+				}
 				console.error("Done searching, found", nuobject);
-				done(p, nuobject);
+				done(p, nuobject, protoexp);
 			});
 		} catch (e) {
 			console.error("Error searching for proto", e);
 		}
 	},
 
-	load : function (p, file, object, done) {
+	load : function (p, file, object, protoexp, done, finish) {
 		var obj = object[p];
 		var url = obj["@url"];
 		// this is a single task
 		console.error("loading External Prototype", file, url);
-		this.loadURLs(file, url, this.doLoad, this, done, p, obj);
+		protoexp.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj, finish);
 	},
-
-	expand : function (file, object, done) {
-		for (var p in object) {
-			if (p === 'ExternProtoDeclare') {
-				console.error("Found External Prototype reference", file, object);
-				this.load(p, file, object, done);
-			} else {
-				// this is a single task:
-				done(p, this.externalPrototypeExpander(file, object[p]));
-			}
-		}
-	},
-
 	externalPrototypeExpander: function (file, object) {
 		if (typeof object === "object") {
 			var newobject = null;
@@ -879,25 +899,25 @@ PROTOS.prototype = {
 				newobject = {};
 			}
 			// Wait for expectedreturn tasks to finish
-			var expectedreturn = Object.keys(object).length;
-			this.expand(file, object, function (p, newobj) {
+			for (var p in object) {
 				if (p === "ExternProtoDeclare") {
-					console.error("Putting in", newobj);
-					console.error("OLD ", object);
-					if (newobj != null && typeof newobj != 'undefined') {
-						newobject = newobj;
-					}
-					console.error("EPD", newobject);
+					this.load(p, file, object, this, function(p, newobj, protoexp) {
+						if (newobj != null && typeof newobj != 'undefined') {
+							// process new proto declare for additional extern proto declares
+							console.log("*******", typeof protoexp);
+							newobject["ProtoDeclare"] = protoexp.externalPrototypeExpander(file, newobj)["ProtoDeclare"];
+						}
+					});
 				} else {
-					newobject[p] = newobj;
+					console.log("*******", typeof this);
+					newobject[p] = this.externalPrototypeExpander(file, object[p]);
 				}
-			});
-			while (expectedreturn > Object.keys(newobject).length + 1); {  // when they are equal, we exit
-				console.error(expectedreturn, '=', Object.keys(newobject).length);
-				setTimeout(function () { }, 50);
 			}
-			// console.error("Exited loop");
-
+			var expectedreturn = Object.keys(object).length;
+			while (expectedreturn > Object.keys(newobject).length + 1); {  // when they are equal, we exit
+			       console.error(expectedreturn, '=', Object.keys(newobject).length);
+			       setTimeout(function () { }, 50);
+			}
 			return newobject;
 		} else {
 			return object;
