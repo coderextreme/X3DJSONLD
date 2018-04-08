@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'e20fe14d821b84594ea76c9aae4724b0c142c09d' - b'Sun Mar 18 22:09:50 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'9ea3a548c4294b4b2bf47d6940c6553c4898deef' - b'Sat Apr 7 21:37:48 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -18281,11 +18281,7 @@ x3dom.fields.MFVec3f.prototype.toGL = function() {
 };
 
 x3dom.fields.MFVec3f.prototype.toString = function () {
-    var str = "";
-    for (var i=0, n=this.length; i<n; i++) {
-		 str = str + this[i].toString() + " ";
-    }
-    return str;
+	return this.map(function (sf) { return sf.toString(); }).join(' ');
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -19601,7 +19597,18 @@ x3dom.docs.getComponentInfo = function() {
     return result;
 };
 
-﻿"use strict";
+﻿/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2018 Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ *
+ * Based on code originally provided by
+ * John Carlson https://coderextreme.net/X3DJSONLD
+ */
+
+"use strict";
 
 x3dom.JSONParser = function(scene)
 {
@@ -19617,7 +19624,7 @@ x3dom.JSONParser.prototype.constructor = x3dom.JSONParser;
 x3dom.JSONParser.prototype.parseJavaScript = function(jsobj) {
 		var child = this.CreateElement('X3D');
 		this.ConvertToX3DOM(jsobj, "", child);
-		console.log(jsobj, child);
+		// console.log(jsobj, child);
 		return child;
 	};
 
@@ -19691,7 +19698,7 @@ x3dom.JSONParser.prototype.CDATACreateFunction = function(document, element, str
 			str = y;
 			y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 			if (str !== y) {
-				console.log("CDATA Replacing",str,"with",y);
+				// console.log("CDATA Replacing",str,"with",y);
 			}
 		} while (y != str);
 		var domParser = new DOMParser();
@@ -19707,9 +19714,9 @@ x3dom.JSONParser.prototype.CDATACreateFunction = function(document, element, str
 x3dom.JSONParser.prototype.ConvertObject = function(key, object, element, containerField) {
 		var child;
 		if (object !== null && typeof object[key] === 'object') {
-			if (key.substr(0,1) === '@') {
+			if (key.startsWith('@')) {
 				this.ConvertToX3DOM(object[key], key, element);
-			} else if (key.substr(0,1) === '-') {
+			} else if (key.startsWith('-')) {
 				this.ConvertChildren(key, object[key], element);
 			} else if (key === '#comment') {
 				for (var c in object[key]) {
@@ -19745,7 +19752,7 @@ x3dom.JSONParser.prototype.CommentStringToXML = function(str) {
 		var y = str;
 		str = str.replace(/\\\\/g, '\\');
 		if (y !== str) {
-			console.log("X3DJSONLD <!-> replacing", y, "with", str);
+			// console.log("X3DJSONLD <!-> replacing", y, "with", str);
 		}
 		return str;
 	};
@@ -19763,7 +19770,7 @@ x3dom.JSONParser.prototype.SFStringToXML = function(str) {
 		str = str.replace(/\\/g, '\\\\');
 		str = str.replace(/"/g, '\\\"');
 		if (y !== str) {
-			console.log("X3DJSONLD [] replacing", y, "with", str);
+			// console.log("X3DJSONLD [] replacing", y, "with", str);
 		}
 		return str;
 	};
@@ -19776,7 +19783,7 @@ x3dom.JSONParser.prototype.JSONStringToXML = function(str) {
 		str = str.replace(/\\/g, '\\\\');
 		str = str.replace(/\n/g, '\\n');
 		if (y !== str) {
-			console.log("X3DJSONLD replacing", y, "with", str);
+			// console.log("X3DJSONLD replacing", y, "with", str);
 		}
 		return str;
 	};
@@ -19844,7 +19851,7 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function(object, parentkey, element,
 			}
 		}
 		if (isArray) {
-			if (parentkey.substr(0,1) === '@') {
+			if (parentkey.startsWith('@')) {
 				if (arrayOfStrings) {
 					arrayOfStrings = false;
 					for (var str in localArray) {
@@ -19860,6 +19867,17 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function(object, parentkey, element,
 		}
 		return element;
 	};
+
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2018 Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ *
+ * Based on code originally provided by
+ * John Carlson https://coderextreme.net/X3DJSONLD
+ */
 
 x3dom.PROTOS = function() {
 	this.protos = {};
@@ -30421,9 +30439,6 @@ x3dom.registerNodeType(
                                         this._vf[field] = (msg.toLowerCase() == "true");
                                     break;
                                 case "string":
-                                    this._vf[field] = msg;
-                                    break;
-				default:
                                     this._vf[field] = msg;
                                     break;
                             }
@@ -42634,7 +42649,7 @@ x3dom.registerNodeType(
         {
             fieldChanged: function (fieldName)
             {
-                if (fieldName == "url") {
+                if (fieldName == "url" || fieldName == "load") {
 
                     //Remove the childs of the x3domNode
                     for (var i=0; i<this._childNodes.length; i++)
@@ -42711,19 +42726,24 @@ x3dom.registerNodeType(
 
             loadInline: function ()
             {
+                if (!this._vf.load) {
+                    x3dom.debug.logInfo('Inline: load field prevented loading of ' + this._vf.url[0]);
+                    return;
+                }
+              
                 var that = this;
 
 		var isJSON = true;
 
                 var xhr = new window.XMLHttpRequest();
                 if (this._vf.url.length && this._vf.url[0].length) {
-			if (this._vf.url[0].endsWith(".x3d")) {
+			if (this._vf.url[0].toLowerCase().endsWith(".x3d")) {
 				isJSON = false;
 				if (xhr.overrideMimeType)
 				    xhr.overrideMimeType('text/xml');   //application/xhtml+xml
-			} else if (this._vf.url[0].endsWith(".json")) {
+			} else if (this._vf.url[0].toLowerCase().endsWith(".json")) {
 				if (xhr.overrideMimeType)
-				    xhr.overrideMimeType('text/json');
+				    xhr.overrideMimeType('application/json');
 			}
 		} else {
 			isJSON = false;
@@ -42779,16 +42799,16 @@ x3dom.registerNodeType(
                     var inlScene = null, newScene = null, nameSpace = null, xml = null;
 
 		    if (isJSON) {
-			    console.log(xhr);
+			    // console.log(xhr);
 			    try {
 				    var json = JSON.parse(xhr.response);
-				    console.log("post parse", json);
+				    // console.log("post parse", json);
 			
 				    json = x3dom.protoExpander.prototypeExpander(xhr.responseURL, json);
-				    console.log("return from expander", json);
+				    // console.log("return from expander", json);
 				    var parser = new x3dom.JSONParser();
 				    xml = parser.parseJavaScript(json);
-				    console.log("post parser", xml);
+				    // console.log("post parser", xml);
 			    } catch (e) {
 				    console.error(e);
 			    }
@@ -46264,6 +46284,17 @@ x3dom.registerNodeType(
              */
             this.addField_MFFloat(ctx, "range", []);
 
+            /**
+             * outputOnly field which is emitted when the level changes to another range index. When L(d) is activated for display, the LOD node generates a level_changed event with value i where the value of i identifies which value of L was activated for display. Indicates current level of LOD children when activated.
+             * @var {x3dom.fields.SFInt32} level_changed
+             * @range [0, inf]
+             * @memberof x3dom.nodeTypes.LOD
+             * @initvalue 0
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFInt32(ctx, "level_changed", 0);
+
             this._lastRangePos = -1;
         
         },
@@ -46290,6 +46321,12 @@ x3dom.registerNodeType(
                 if (i && i >= n) {
                     i = n - 1;
                 }
+              
+                if (i !== this._lastRangePos) {
+                    //x3dom.debug.logInfo('Changed from '+this._lastRangePos+' th range to '+i+' th.');
+                    this.postMessage('level_changed', i);
+                }
+              
                 this._lastRangePos = i;
 
                 var cnode = this._childNodes[i];
@@ -46351,6 +46388,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -60624,6 +60662,17 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_SFFloat(ctx, 'range', 10);
+        
+            /**
+             * outputOnly field which is emitted when the level changes to another range. Event with value 0 or 1, where 0 indicates the rootNode field and 1 indicates the nodes specified by the child1Url, child2Url, child3Url, and child4Url fields.
+             * @var {x3dom.fields.SFInt32} level_changed
+             * @range [0, 1]
+             * @memberof x3dom.nodeTypes.GeoLOD
+             * @initvalue 0
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFInt32(ctx, "level_changed", 0);
 
             /**
              *
@@ -60678,7 +60727,8 @@ x3dom.registerNodeType(
             this._child4added = false;
             this._rootNodeLoaded = true;
             this._childUrlNodes = new x3dom.fields.MFNode(x3dom.nodeTypes.X3DChildNode);
-              
+        
+            this._lastRangePos = -1;
         },
         {
             collectDrawableObjects: function(transform, drawableCollection, singlePath, invalidateCache, planeMask, clipPlanes)
@@ -60714,6 +60764,7 @@ x3dom.registerNodeType(
                 
                 if (len > this._vf.range) {
                     
+                    i = 0;
                     if(!this._rootNodeLoaded) {
                         this._rootNodeLoaded = true;
                     }
@@ -60723,6 +60774,7 @@ x3dom.registerNodeType(
                 
                 else {
                     
+                    i = 1;
                     if (!this._child1added) {
                         this._child1added = true;
                         this.addInlineChild(this._vf.child1Url);
@@ -60748,7 +60800,14 @@ x3dom.registerNodeType(
                     cnodes = this._childUrlNodes.nodes;
                     
                 }
-                
+                    
+                if (i !== this._lastRangePos) {
+                    //x3dom.debug.logInfo('Changed from '+this._lastRangePos+' th range to '+i+' th.');
+                    this.postMessage('level_changed', i);
+                }
+                    
+                this._lastRangePos = i;
+                    
                 n = cnodes.length;
                                 
                 //probably not necessary to check if there are any child nodes
