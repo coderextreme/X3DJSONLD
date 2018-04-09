@@ -131,7 +131,7 @@ function convertStlToJson(file) {
 		  },
 		  {
 		    "@name":"generator",
-		    "@content":"convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"
+		    "@content":"X3DJSONLD:  https://github.com/coderextreme/X3DJSONLD/"
 		  },
 		  {
 		    "@name":"license",

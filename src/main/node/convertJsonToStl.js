@@ -261,11 +261,18 @@ function triangle_normal(a, b, c) {
 	return normalize(baxbc);
 }
 
+function printNormal(prefix, x, y, z, output, transform) {
+	var finaltransform = transform.copy();
+	var point = normalize(finaltransform.matvecmult(new Matrix(x, y, z, 1)))
+	output.push([prefix, point[0], point[1], point[2]].join(" "));
+}
+
 function printSFVec3f(prefix, x, y, z, output, transform) {
 	var finaltransform = transform.copy();
 	var point = finaltransform.matvecmult(new Matrix(x, y, z, 1))
 	output.push([prefix, point[0], point[1], point[2]].join(" "));
 }
+
 function IndexedTriangle(LDNode, output, transform) {
 	if (typeof LDNode.index === 'object') {
 		output.push("solid "+(LDNode.DEF || LDNode.nodeName));
@@ -280,14 +287,14 @@ function IndexedTriangle(LDNode, output, transform) {
 					LDNode.Coordinate.point[f[2]],
 					output,
 					transform);
-				printSFVec3f("  facet normal",
+				printNormal("  facet normal",
 					normal[0],
 					normal[1],
 					normal[2],
 					output,
 					transform);
 			} else {
-				printSFVec3f("  facet normal",
+				printNormal("  facet normal",
 					LDNode.Normal.vector[f[0]][0],
 					LDNode.Normal.vector[f[0]][1],
 					LDNode.Normal.vector[f[0]][2],
@@ -326,7 +333,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 							LDNode.Coordinate.point[f[0]],
 							LDNode.Coordinate.point[f[1]],
 							LDNode.Coordinate.point[f[2]]);
-						printSFVec3f("  facet normal",
+						printNormal("  facet normal",
 							normal[0],
 							normal[1],
 							normal[2],
@@ -334,7 +341,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 							transform);
 					} else {
 						var fn = LDNode.normalIndex[face];
-						printSFVec3f("  facet normal",
+						printNormal("  facet normal",
 							LDNode.Normal.vector[fn[0]][0], 
 							LDNode.Normal.vector[fn[0]][1],
 							LDNode.Normal.vector[fn[0]][2],
@@ -454,7 +461,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 				coords[0], coords[1], coords[2],
 				output,
 				transform);
-			printSFVec3f("  facet normal",
+			printNormal("  facet normal",
 				normal[0],
 				normal[1],
 				normal[2],
