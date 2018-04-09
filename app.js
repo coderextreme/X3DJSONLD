@@ -134,6 +134,19 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
+
+app.get("/www.web3d.org/*.wrl", function(req, res, next) {
+	var url = req._parsedUrl.pathname;
+	var hash = url.indexOf("#");
+	var infile = url;
+	if (hash > 0) {
+	       infile = url.substring(0, hash);
+	}
+	infile = www + "/" + infile;
+	var data = fs.readFileSync(infile);
+	sendNoNext(res, data.toString(), "model/vrml");
+});
+
 /*
 app.get("/data/*.x3d*", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
