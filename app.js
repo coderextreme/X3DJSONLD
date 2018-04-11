@@ -8,9 +8,9 @@ var path = require('path');
 
 var fs = require("fs");
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
-var loadURLs = X3DJSONLD.loadURLs;
+
 var PROTOS = require('./src/main/node/PrototypeExpander')
-PROTOS.setLoadURLs(loadURLs);
+PROTOS.setX3DJSONLD(X3DJSONLD);
 ;
 var FL = require('./src/main/node/Flattener')
 var flattener = FL.flattener;

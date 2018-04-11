@@ -67,7 +67,7 @@
 			if ($('#scripting').is(':checked')) {
 				loadScripts(json, htmlselector, url);
 			}
-			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
+			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 				callback(element, xmlDoc, json);
 			});
 		});
@@ -75,7 +75,7 @@
 	function load_X_ITE(url, callback) {
 		$.getJSON(url, function(json) {
 			var xml = [];
-			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
+			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 				load_X_ITE_DOM(element); // loads into X_ITE element on page.
 				callback(element, xmlDoc);
 			});
@@ -88,7 +88,7 @@
 			if ($('#scripting').is(':checked')) {
 				loadScripts(subjson, htmlselector, url);
 			}
-			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"][xmlselector], xmlselector, element.querySelector(xmlselector), url);  // returns Scene element
+			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"][xmlselector], xmlselector, element.querySelector(xmlselector), url);  // returns Scene element
 			$(element.querySelector(xmlselector)).children().appendTo(htmlselector);
 			// join json for scripts
 			for (var c in subjson["X3D"]["Scene"]["-children"]) {
@@ -101,7 +101,7 @@
 	}
 	function loadSubscene_X_ITE(htmlselector, url, element, xmlDoc) {
 		$.getJSON(url, function(subjson) {
-			var sceneElement = ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(htmlselector), url);  // returns Scene element
+			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(htmlselector), url);  // returns Scene element
 			load_X_ITE_DOM(element); // loads into X_ITE element on page.
 		});
 	}

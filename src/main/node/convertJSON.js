@@ -15,9 +15,8 @@ var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
-X3DJSONLD.setProcessURLs(function(urls) { return urls}); // do not modify URLs on server
+X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
-var loadX3DJS = X3DJSONLD.loadX3DJS;
 
 var Script = require('./Script');
 var LOG = Script.LOG;
@@ -30,7 +29,7 @@ for (var par in mapToMethod2) {
 
 var validate = function() { return false; }
 
-function doValidate(json, validated_version, file, success, failure) {
+function doValidate(json, validated_version, file, X3DJSONLD, success, failure) {
 	var retval = false;
 	var version = json.X3D["@version"];
 	var error = ""
@@ -47,7 +46,7 @@ function doValidate(json, validated_version, file, success, failure) {
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " dataPath: " + dataPath+ "\r\n";
-				var selectedObject = selectObjectFromJSObj(json, dataPath);
+				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, dataPath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));
@@ -79,7 +78,7 @@ function doValidate(json, validated_version, file, success, failure) {
 	}
 }
 
-function loadSchema(json, file, doValidate, success, failure) {
+function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true, "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -110,9 +109,9 @@ function loadSchema(json, file, doValidate, success, failure) {
 		if (typeof validated_version === 'undefined') {
 			console.error("Schema", version, "not compiled");
 		}
-		doValidate(json, validated_version, file, success, failure);
+		doValidate(json, validated_version, file, X3DJSONLD, success, failure);
 	} else {
-		doValidate(json, validated_version, file, success, failure);
+		doValidate(json, validated_version, file, X3DJSONLD, success, failure);
 	}
 }
 
@@ -141,7 +140,7 @@ function convertJSON(options) {
 		}
 		var xml = new LOG();
 		var NS = "http://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
+		X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}
@@ -196,7 +195,7 @@ function convertJSON(options) {
  */
 function replaceX3DJSON(parent, json, url, xml, NS, next) {
 
-	loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, function(child) {
+	X3DJSONLD.loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(child) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);

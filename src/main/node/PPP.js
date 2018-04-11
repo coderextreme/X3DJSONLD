@@ -4,18 +4,11 @@
 var fs = require("fs");
 
 var X3DJSONLD = require('./X3DJSONLD.js');
-X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
-	// for script nodes
-	var child = document.createCDATASection(str);
-	element.appendChild(child);
-});
-var loadURLs = X3DJSONLD.loadURLs;
 var Browser = X3DJSONLD.Browser;
-var loadX3DJS = X3DJSONLD.loadX3DJS;
 
 // Bring in prototype expander and script expander
 var PROTOS = require('./PrototypeExpander')
-PROTOS.setLoadURLs(loadURLs);
+PROTOS.setX3DJSONLD(X3DJSONLD);
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -48,7 +41,7 @@ function ProcessJSON(json, file) {
 
 	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
+	X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 		var classes = new LOG();
 		var routecode = new LOG();
 		var loopItems = new LOG();

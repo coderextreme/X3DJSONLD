@@ -1,7 +1,8 @@
 if (typeof protoExpander !== 'undefined') {
-	protoExpander.setLoadURLs(loadURLs);
+	protoExpander.setX3DJSONLD(X3DJSONLD);
 }
-//  setProcessURLs(function() {}); // do modify URLs in GUI
+var Browser = X3DJSONLD.Browser;
+//  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
 var getFirstBrowserLanguage = function () {
@@ -269,7 +270,7 @@ if (typeof mapToMethod !== 'undefined') {
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
 	var xml = [];
-	loadX3DJS(document.implementation, json, path, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
+	X3DJSONLD.loadX3DJS(document.implementation, json, path, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 		if (element != null) {
 			next(xml);
 		} else {
@@ -395,8 +396,8 @@ function appendInline(element, url, xmlDoc, next) {
 			console.error("Perhaps you need to include the Flattener.js?");
 		}
 		// must validate here because we call an inner method.
-		loadSchema(json, url, doValidate, function() {
-			ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
+		loadSchema(json, url, doValidate, X3DJSONLD, function() {
+			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
 			console.error(e);
@@ -427,9 +428,9 @@ function loadInline(selector, url, xmlDoc) {
  * returns element loaded
  */
 function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
-	loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
+	X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 		if (element != null) {
-			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
 		}
 		next(element);
@@ -453,9 +454,9 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
  */
 function replaceX3DJSON(selector, json, url, xml, NS, next) {
 
-	loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, function(element, xmlDoc) {
+	X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 		if (element != null) {
-			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
 			if (typeof JavaScriptSerializer !== 'undefined') {
 				try {
@@ -735,7 +736,7 @@ function convertXmlToJson(xmlString, path) {
 
 var validate = function() { return false; }
 
-function doValidate(json, validated_version, file, success, failure, e) {
+function doValidate(json, validated_version, file, X3DJSONLD, success, failure, e) {
 	var retval = false;
 	if (e) {
 		alert(e);
@@ -754,7 +755,7 @@ function doValidate(json, validated_version, file, success, failure, e) {
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " dataPath: " + dataPath+ "\n";
-				var selectedObject = selectObjectFromJSObj(json, dataPath);
+				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, dataPath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));
@@ -783,7 +784,7 @@ function doValidate(json, validated_version, file, success, failure, e) {
 	}
 }
 
-function loadSchema(json, file, doValidate, success, failure) {
+function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true, "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -811,16 +812,16 @@ function loadSchema(json, file, doValidate, success, failure) {
 			      if (typeof validated_version === 'undefined') {
 				      console.error("Schema not compiled");
 			      }
-			      doValidate(json, validated_version, file, success, undefined);
+			      doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 			}).fail(function(e) {
-			   doValidate(json, validated_version, file, undefined, failure, e);
+			   doValidate(json, validated_version, file, X3DJSONLD, undefined, failure, e);
 			});
 		/*
 		}).fail(function(e) {
-		   doValidate(json, validated_version, file, undefined, failure, e);
+		   doValidate(json, validated_version, file, X3DJSONLD, undefined, failure, e);
 		});
 		*/
 	} else {
-	      doValidate(json, validated_version, file, success, undefined);
+	      doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 	}
 }

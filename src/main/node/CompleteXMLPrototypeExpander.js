@@ -3,17 +3,10 @@
 var fs = require("fs");
 
 var X3DJSONLD = require('./X3DJSONLD.js');
-X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
-	// for script nodes
-	var child = document.createCDATASection(str);
-	element.appendChild(child);
-});
 var Browser = X3DJSONLD.Browser;
-var loadURLs = X3DJSONLD.loadURLs;
-var loadX3DJS = X3DJSONLD.loadX3DJS;
 
 var PROTOS = require('./PrototypeExpander')
-PROTOS.setLoadURLs(loadURLs);
+PROTOS.setX3DJSONLD(X3DJSONLD);
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -46,7 +39,7 @@ function ProcessJSON(json, file) {
 
 	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, function(element) {
+	X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 		var str = serializer.serializeToString(json, element);
 		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 		try {

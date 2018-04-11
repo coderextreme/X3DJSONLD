@@ -84,13 +84,13 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
-			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
-			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
+			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
+			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var url = '../data/abox.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				subjson = flattener(subjson);
-				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
+				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
 				$(selector).empty();
 				$(element.querySelector(scenetag)).children().appendTo(selector);
 				x3dom.reload();
@@ -105,11 +105,11 @@ function getJSON(url) {
 	}
 	function load_X_ITE(url) {
 		getJSON(url).then(function(json) {
-			var parent = CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
-			var element =  ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
+			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
+			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
-				var sceneElement = ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
+				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
 				load_X_ITE_DOM(element); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
