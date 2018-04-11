@@ -113,7 +113,7 @@
         },
         {
           "@name": "translated",
-          "@content": "01 April 2018"
+          "@content": "11 April 2018"
         },
         {
           "@name": "generator",
@@ -273,7 +273,7 @@
           "Script": {
             "@DEF": "TextScript",
             "@url": [
-              "./ObliqueStrategiesScript.js"
+              "../data/./ObliqueStrategiesScript.js"
             ],
             "-children": [
               {
