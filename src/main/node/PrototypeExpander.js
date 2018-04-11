@@ -302,7 +302,7 @@ PROTOS.prototype = {
 
 	extractConnectedDef: function (scope, field) {
 		var defobj;
-		console.error("extracting def from script, proto, or otherwise:", scope, field, this.getField(scope, field), this.getField(scope, "__DEF_FIELD__"), this.scriptField[this.getField(scope, field)], this.protoField[this.getField(scope, field)], this.protoField[this.getField(scope, "__DEF_FIELD__")]);
+		// console.error("extracting def from script, proto, or otherwise:", scope, field, this.getField(scope, field), this.getField(scope, "__DEF_FIELD__"), this.scriptField[this.getField(scope, field)], this.protoField[this.getField(scope, field)], this.protoField[this.getField(scope, "__DEF_FIELD__")]);
 		for (var sf in this.scriptField[this.getField(scope, field)]) {
 			// just grab first one, the others may be bad
 			if (typeof defobj === 'undefined') {
@@ -312,7 +312,7 @@ PROTOS.prototype = {
 						var f = this.getField(scope, obj[3]);
 						if (f.indexOf("DECL", 1) == -1) {
 							defobj = [f,  obj[0]["@name"]];
-							console.error("def5 is", defobj);
+							// console.error("def5 is", defobj);
 						}
 					}
 				}
@@ -323,7 +323,7 @@ PROTOS.prototype = {
 				var obj2 = this.protoField[this.getField(scope, field)][pf];
 				if (typeof obj2 !== 'undefined') {
 					defobj = [obj2[3], obj2[1]];
-					console.error("def2 is", defobj);
+					// console.error("def2 is", defobj);
 				}
 			}
 		}
@@ -332,13 +332,13 @@ PROTOS.prototype = {
 				var obj3 = this.protoField[this.getField(scope, "__DEF_FIELD__")][pf2];
 				if (typeof obj3 !== 'undefined') {
 					defobj = [obj3[3], field];
-					console.error("def3 is", defobj);
+					// console.error("def3 is", defobj);
 				}
 			}
 		}
 		if (typeof defobj === 'undefined') {
 			defobj = [scope, field];
-			console.error("def4 is", defobj);
+			// console.error("def4 is", defobj);
 		}
 		return defobj;
 	},
@@ -741,9 +741,9 @@ PROTOS.prototype = {
 		if (typeof object === "object") {
 			for (p in object) {
 				if (p === 'ProtoDeclare') {
-					console.error("looked at", object[p]["@name"], "for", name);
+					// console.error("looked at", object[p]["@name"], "for", name);
 					if (object[p]["@name"] === name) {
-						console.error("Found equal names");
+						// console.error("Found equal names");
 						found = object;
 					}
 					// find the first one if none match
@@ -751,7 +751,7 @@ PROTOS.prototype = {
 						if (typeof alert === 'function') {
 							// alert("First default found");
 						}
-						console.error("First default found");
+						// console.error("First default found");
 						this.founddef = object;
 					}
 				}
@@ -771,7 +771,7 @@ PROTOS.prototype = {
 		if (typeof alert === 'function') {
 			// alert("finished converting"+ filename);
 		}
-		console.error("finished converting"+ filename);
+		// console.error("finished converting"+ filename);
 		var newobj = this.searchForProtoDeclare(json, protoname);
 		if (typeof newobj === 'undefined') {
 			newobj = founddef;
@@ -791,7 +791,7 @@ PROTOS.prototype = {
 		}
 		if (typeof alert === 'function') {
 			// alert("returning "+ JSON.stringify(newobj));
-			console.log("returning ", JSON.stringify(newobj));
+			// console.log("returning ", JSON.stringify(newobj));
 		}
 		objret(newobj);
 	},
@@ -799,7 +799,7 @@ PROTOS.prototype = {
 
 	loadedProto: function (data, protoname, obj, filename, protoexp, objret) {
 		if (typeof data !== 'undefined') {
-			console.error("searching for", protoname);
+			// console.error("searching for", protoname);
 			try {
 				// can only search for one Proto at a time
 				this.founddef = null;
@@ -808,7 +808,7 @@ PROTOS.prototype = {
 					// console.error("parsing ", data);
 					// alert("parsed JSON from " + filename);
 					// alert("data is " + JSON.stringify(data));
-					console.error("parsed JSON from " + filename);
+					// console.error("parsed JSON from " + filename);
 					if (filename.indexOf(".json") > 0) {
 						json = data;
 					} else {
@@ -832,7 +832,7 @@ PROTOS.prototype = {
 						if (typeof alert === 'function') {
 							// alert("calling local converter");
 						}
-						console.error("calling local converter");
+						// console.error("calling local converter");
 						try {
 							var serializer = new DOM2JSONSerializer();
 							var str = serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
@@ -862,18 +862,18 @@ PROTOS.prototype = {
 		var name = obj["@name"];
 		var nameIndex = u.indexOf("#");
 		var protoname = name;
-		console.error("doLoad External Prototype", u);
+		// console.error("doLoad External Prototype", u);
 		if (nameIndex >= 0) {
 			protoname = u.substring(nameIndex + 1);
 		}
 
-		console.error("protoname is", protoname, protoexp);
+		// console.error("protoname is", protoname, protoexp);
 		try {
 			protoexp.loadedProto(data, protoname, obj, u, protoexp, function (nuobject) {
 				if (typeof alert === 'function') {
 					// alert("Done searching, found "+JSON.stringify(nuobject));
 				}
-				console.error("Done searching, found", nuobject);
+				// console.error("Done searching, found", nuobject);
 				done(p, nuobject, protoexp);
 			});
 		} catch (e) {
@@ -881,12 +881,12 @@ PROTOS.prototype = {
 		}
 	},
 
-	load : function (p, file, object, protoexp, done, finish) {
+	load : function (p, file, object, protoexp, done) {
 		var obj = object[p];
 		var url = obj["@url"];
 		// this is a single task
-		console.error("loading External Prototype", file, url);
-		this.X3DJSONLD.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj, finish);
+		// console.error("loading External Prototype", file, url);
+		this.X3DJSONLD.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj);
 	},
 	externalPrototypeExpander: function (file, object) {
 		if (typeof object === "object") {
@@ -896,24 +896,24 @@ PROTOS.prototype = {
 			} else {
 				newobject = {};
 			}
-			// Wait for expectedreturn tasks to finish
 			for (var p in object) {
 				if (p === "ExternProtoDeclare") {
 					this.load(p, file, object, this, function(p, newobj, protoexp) {
 						if (newobj != null && typeof newobj != 'undefined') {
 							// process new proto declare for additional extern proto declares
-							console.log("*******", typeof protoexp);
+							// console.log("*******", typeof protoexp);
 							newobject["ProtoDeclare"] = protoexp.externalPrototypeExpander(file, newobj)["ProtoDeclare"];
 						}
 					});
 				} else {
-					console.log("*******", typeof this);
+					// console.log("*******", typeof this);
 					newobject[p] = this.externalPrototypeExpander(file, object[p]);
 				}
 			}
 			var expectedreturn = Object.keys(object).length;
+			// Wait for expectedreturn tasks to finish
 			while (expectedreturn > Object.keys(newobject).length + 1); {  // when they are equal, we exit
-			       console.error(expectedreturn, '=', Object.keys(newobject).length);
+			       // console.error(expectedreturn, '=', Object.keys(newobject).length);
 			       setTimeout(function () { }, 50);
 			}
 			return newobject;
