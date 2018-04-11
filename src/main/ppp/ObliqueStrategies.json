@@ -273,7 +273,7 @@
           "Script": {
             "@DEF": "TextScript",
             "@url": [
-              "../data/./ObliqueStrategiesScript.js"
+              "./ObliqueStrategiesScript.js"
             ],
             "-children": [
               {
