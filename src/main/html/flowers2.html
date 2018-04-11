@@ -103,7 +103,7 @@ function getJSON(url) {
 	function load_X_ITE(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
-			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, function(element, xmlDoc) {
+			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 				load_X_ITE_DOM(element); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {

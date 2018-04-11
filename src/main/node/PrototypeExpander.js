@@ -74,11 +74,9 @@ PROTOS.prototype = {
 	upScope: function (i) {
 		return this.privatescope.slice(0, this.privatescope.length - i).join("_");
 	},
-
-	setLoadURLs: function (func) {
-		this.loadURLs = func;
+	setX3DJSONLD: function (X3DJSONLD) {
+		this.X3DJSONLD = X3DJSONLD;
 	},
-
 	setValueFromInterface: function (field, object, objectfield) {
 		// copy the default interface value;
 		var fieldname_field_scope = this.getInterface(field);
@@ -513,7 +511,7 @@ PROTOS.prototype = {
 		// console.error("DEF is", newobject[p]["@DEF"]);
 		this.setScriptFields(newobject[p]["field"], newobject[p]["@DEF"]);
 		var url = newobject[p]["@url"];
-		this.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
+		this.X3DJSONLD.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
 	},
 
 	handleProtoDeclare: function (file, object, p) {
@@ -888,7 +886,7 @@ PROTOS.prototype = {
 		var url = obj["@url"];
 		// this is a single task
 		console.error("loading External Prototype", file, url);
-		protoexp.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj, finish);
+		this.X3DJSONLD.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj, finish);
 	},
 	externalPrototypeExpander: function (file, object) {
 		if (typeof object === "object") {
