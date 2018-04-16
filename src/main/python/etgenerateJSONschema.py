@@ -263,13 +263,14 @@ class ClassPrinter:
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
-                    for enum in enumerations:
-                        val = enum.get("value")
-                        if ' ' in val:
-                            val = '"'+val.replace('"', '\\"')+'"'
-                        elif not '"' in val:
-                            val = '"'+val+'"'
-                        enums.append(val)
+                    if field.get('additionalEnumerationValuesAllowed') is None:
+                        for enum in enumerations:
+                            val = enum.get("value")
+                            if ' ' in val:
+                                val = '"'+val.replace('"', '\\"')+'"'
+                            elif not '"' in val:
+                                val = '"'+val+'"'
+                            enums.append(val)
 
                 allTheSame = True
                 firstValue = None
@@ -586,7 +587,7 @@ class ClassPrinter:
         return str
 
 code = '''{
-        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$schema": "http://json-schema.org/draft-07/schema#",
         "title": "JSON Schema X3D V3.3",
         "description": "Experimental JSON Schema for X3D V3.3 ",
         "type": "object",
@@ -1519,7 +1520,7 @@ code = '''{
 '''
 
 
-soup = xml.etree.ElementTree.parse("../../specifications/X3DObjectModel-3.3.xml").getroot()
+soup = xml.etree.ElementTree.parse(sys.stdin).getroot()
 
 classes = {}
 containerFields = {}
@@ -1566,6 +1567,6 @@ if code[-2] == ',':
     code = code[:-2] + '\n' # strip off comma
 code += '\t}\n}\n'
 
-f = open("../schema/x3d-5.0-JSONSchema.json", "w")
+f = sys.stdout
 f.write(code)
 f.close()
