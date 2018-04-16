@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.2" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.2.xsd" ><head><meta name="title" content="CameraPrototypes.x3d"></meta>
+<meta name="description" content="Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."></meta>
+<meta name="creator" content="Don Brutzman and Jeff Weekley"></meta>
+<meta name="created" content="16 March 2009"></meta>
+<meta name="modified" content="25 October 2016"></meta>
+<meta name="TODO" content="Schematron rules, backed up by initialize() checks"></meta>
+<meta name="reference" content="BeyondViewpointCameraNodesWeb3D2009.pdf"></meta>
+<meta name="reference" content="http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"></meta>
+<meta name="subject" content="Camera nodes for Viewpoint navigation control"></meta>
+<meta name="reference" content="CameraExamples.x3d"></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"></meta>
+<meta name="reference" content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
+</head>
+<Scene><!--=============== Camera ==============--><!--=============== CameraShot ==============--><!--=============== CameraMovement ==============--><!--=============== OfflineRender ==============--><!--=============== Launch Prototype Example ==============--><Background skyColor="0.282353 0.380392 0.470588"></Background>
+<Anchor description="launch CameraExample scene" url="&quot;CameraExamples.x3d&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d&quot; &quot;CameraExamples.wrl&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl&quot;"><Transform><Shape><Text containerField="geometry" string="&quot;CameraPrototypes.x3d&quot; &quot;defines multiple prototype nodes&quot; &quot;&quot; &quot;Click on this text to see&quot; &quot;CameraExamples.x3d scene&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 0.2"></Material>
+</Appearance>
+</Shape>
+</Transform>
+</Anchor>
+</Scene>
+</X3D>
