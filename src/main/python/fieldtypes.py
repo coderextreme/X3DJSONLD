@@ -32,7 +32,7 @@ class ClassPrinter:
 
 code = "var fieldTypes = {"
 
-soup = BeautifulSoup(open("../../specifications/X3DObjectModel-3.3.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-3.3.xml"), "xml")
 
 classes = {}
 
