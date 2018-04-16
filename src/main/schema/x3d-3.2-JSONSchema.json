@@ -1273,9 +1273,11 @@
               "type": "string"
             },
             "@duration_changed": {
+              "minimum": -1,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@isActive": {
@@ -1551,10 +1553,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -1650,109 +1648,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "BlendedVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-renderStyle": {
-              "$ref": "#/definitions/-X3DComposableVolumeRenderStyleNodeSFNode"
-            },
-            "-voxels": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@weightConstant1": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0.5,
-              "type": "number"
-            },
-            "@weightConstant2": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0.5,
-              "type": "number"
-            },
-            "@weightFunction1": {
-              "enum": [
-                "CONSTANT",
-                "ALPHA1",
-                "ALPHA2",
-                "ONE_MINUS_ALPHA1",
-                "ONE_MINUS_ALPHA2",
-                "TABLE"
-              ],
-              "default": "CONSTANT",
-              "type": "string"
-            },
-            "@weightFunction2": {
-              "enum": [
-                "CONSTANT",
-                "ALPHA1",
-                "ALPHA2",
-                "ONE_MINUS_ALPHA1",
-                "ONE_MINUS_ALPHA2",
-                "TABLE"
-              ],
-              "default": "CONSTANT",
-              "type": "string"
-            },
-            "-weightTransferFunction1": {
-              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
-            },
-            "-weightTransferFunction2": {
-              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -2006,78 +1901,6 @@
             },
             "@triggerTrue": {
               "type": "boolean"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "BoundaryEnhancementVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@boundaryOpacity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0.9,
-              "type": "number"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@opacityFactor": {
-              "minimum": 0,
-              "default": 2,
-              "type": "number"
-            },
-            "@retainedOpacity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0.2,
-              "type": "number"
             },
             "@DEF": {
               "type": "string"
@@ -2584,117 +2407,6 @@
         }
       ]
     },
-    "CartoonVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@colorSteps": {
-              "maximum": 64,
-              "minimum": 1,
-              "default": 4,
-              "type": "integer"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@orthogonalColor": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "default": 1,
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
-            "@parallelColor": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
-            },
-            "-surfaceNormals": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "Circle2D": {
       "type": "object",
       "oneOf": [
@@ -3180,17 +2892,6 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
-                "enum": [
-                  "BOUNCE",
-                  "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
-                  "ERROR_REDUCTION",
-                  "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
-                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -3475,115 +3176,6 @@
         }
       ]
     },
-    "ColorChaser": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@duration": {
-              "minimum": 0,
-              "default": 1,
-              "type": "number"
-            },
-            "@initialDestination": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0.8,
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
-            "@initialValue": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0.8,
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
-            "@isActive": {
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@set_destination": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_value": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@value_changed": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "ColorDamper": {
       "type": "object",
       "oneOf": [
@@ -3660,18 +3252,26 @@
               "type": "integer"
             },
             "@set_destination": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
             "@set_value": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -3685,10 +3285,14 @@
               "type": "number"
             },
             "@value_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -3762,10 +3366,14 @@
               "type": "number"
             },
             "@value_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -4047,64 +3655,6 @@
         }
       ]
     },
-    "ComposedVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-renderStyle": {
-              "$ref": "#/definitions/-X3DComposableVolumeRenderStyleNodeMFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "Cone": {
       "type": "object",
       "oneOf": [
@@ -4332,17 +3882,6 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
-                "enum": [
-                  "BOUNCE",
-                  "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
-                  "ERROR_REDUCTION",
-                  "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
-                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -4628,102 +4167,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@point": {
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "CoordinateChaser": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@duration": {
-              "minimum": 0,
-              "default": 1,
-              "type": "number"
-            },
-            "@initialDestination": {
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@initialValue": {
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@isActive": {
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@set_destination": {
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_value": {
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@value_changed": {
               "type": "array",
               "minItems": 3,
               "items": {
@@ -5713,10 +5156,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -5841,104 +5280,6 @@
             },
             "@set_fraction": {
               "type": "number"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "EdgeEnhancementVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@edgeColor": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "@gradientThreshold": {
-              "maximum": 3.1416,
-              "minimum": 0,
-              "default": 0.4,
-              "type": "number"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-surfaceNormals": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -6432,6 +5773,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -6525,6 +5867,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@translation": {
@@ -6541,6 +5884,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -7181,12 +6525,6 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER",
-                  "Arial"
-                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -7797,6 +7135,8 @@
               "$ref": "#/definitions/@geoSystem"
             },
             "@level_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "integer"
             },
             "-metadata": {
@@ -8505,6 +7845,10 @@
             "@geoSystem": {
               "$ref": "#/definitions/@geoSystem"
             },
+            "@headlight": {
+              "default": true,
+              "type": "boolean"
+            },
             "@isBound": {
               "type": "boolean"
             },
@@ -8514,6 +7858,22 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@navType": {
+              "type": "array",
+              "items": [
+                {
+                  "default": "EXAMINE",
+                  "type": "string"
+                },
+                {
+                  "default": "ANY",
+                  "type": "string"
+                }
+              ],
+              "additionalItems": {
+                "type": "string"
+              }
             },
             "@orientation": {
               "type": "array",
@@ -8949,7 +8309,7 @@
               "$ref": "#/definitions/-HAnimJoint|HAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-X3DChildNodeMFNode"
+              "$ref": "#/definitions/-Group|Transform|Shape|IndexedFaceSetMFNode"
             },
             "-skinCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
@@ -9046,7 +8406,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSegmentMFNode"
+              "$ref": "#/definitions/-HAnimJoint|HAnimSegment|HAnimSiteMFNode"
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
@@ -10034,24 +9394,28 @@
             "@set_colorIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_normalIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_texCoordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10153,12 +9517,14 @@
             "@set_colorIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10250,6 +9616,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -10348,6 +9715,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10446,6 +9814,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -10544,6 +9913,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10770,110 +10140,6 @@
             },
             "@triggerValue": {
               "type": "integer"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "IsoSurfaceVolumeData": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@bboxCenter": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@bboxSize": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": -1,
-                "type": "number"
-              }
-            },
-            "@contourStepSize": {
-              "default": 0,
-              "type": "number"
-            },
-            "@dimensions": {
-              "exclusiveMinimum": 0,
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 1,
-                "exclusiveMinimum": 0,
-                "type": "number"
-              }
-            },
-            "-gradients": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-renderStyle": {
-              "$ref": "#/definitions/-X3DVolumeRenderStyleNodeMFNode"
-            },
-            "@surfaceTolerance": {
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
-            "@surfaceValues": {
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
-            "-voxels": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -11443,11 +10709,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -11483,12 +10744,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -11862,6 +11117,7 @@
               "type": "boolean"
             },
             "@level_changed": {
+              "minimum": 0,
               "type": "integer"
             },
             "-metadata": {
@@ -12099,69 +11355,6 @@
               "type": "array",
               "items": {
                 "type": "number"
-              }
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "MetadataBoolean": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@name": {
-              "type": "string"
-            },
-            "@reference": {
-              "type": "string"
-            },
-            "@value": {
-              "type": "array",
-              "items": {
-                "type": "boolean"
               }
             },
             "@DEF": {
@@ -12567,10 +11760,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -12699,9 +11888,11 @@
               "type": "string"
             },
             "@duration_changed": {
+              "minimum": -1,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@isActive": {
@@ -12831,10 +12022,6 @@
             "@function": {
               "type": "array",
               "items": {
-                "enum": [
-                  "COMPLEMENT",
-                  "ALPHAREPLICATE"
-                ],
                 "type": "string"
               }
             },
@@ -12844,39 +12031,12 @@
             "@mode": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ADD",
-                  "ADDSIGNED",
-                  "ADDSIGNED2X",
-                  "ADDSMOOTH",
-                  "BLENDCURRENTALPHA",
-                  "BLENDDIFFUSEALPHA",
-                  "BLENDFACTORALPHA",
-                  "BLENDTEXTUREALPHA",
-                  "DOTPRODUCT3",
-                  "MODULATE",
-                  "MODULATE2X",
-                  "MODULATE4X",
-                  "MODULATEALPHA_ADDCOLOR",
-                  "MODULATEINVALPHA_ADDCOLOR",
-                  "MODULATEINVCOLOR_ADDALPHA",
-                  "OFF",
-                  "REPLACE",
-                  "SELECTARG1",
-                  "SELECTARG2",
-                  "SUBTRACT"
-                ],
                 "type": "string"
               }
             },
             "@source": {
               "type": "array",
               "items": {
-                "enum": [
-                  "DIFFUSE",
-                  "FACTOR",
-                  "SPECULAR"
-                ],
                 "type": "string"
               }
             },
@@ -13095,11 +12255,6 @@
             "@transitionType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "TELEPORT",
-                  "LINEAR",
-                  "ANIMATE"
-                ],
                 "default": "LINEAR",
                 "type": "string"
               }
@@ -13108,28 +12263,10 @@
               "type": "array",
               "items": [
                 {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
                   "default": "EXAMINE",
                   "type": "string"
                 },
                 {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
                   "default": "ANY",
                   "type": "string"
                 }
@@ -14271,64 +13408,6 @@
         }
       ]
     },
-    "OpacityMapVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-transferFunction": {
-              "$ref": "#/definitions/-X3DTexture2DNode|X3DTexture3DNodeSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "OrientationChaser": {
       "type": "object",
       "oneOf": [
@@ -15110,11 +14189,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15696,11 +14770,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15722,12 +14791,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -15950,6 +15013,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -16674,11 +15738,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -16693,12 +15752,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -16767,76 +15820,6 @@
             },
             "-programs": {
               "$ref": "#/definitions/-ShaderProgramMFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "ProjectionVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "@intensityThreshold": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@type": {
-              "enum": [
-                "MAX",
-                "MIN",
-                "AVERAGE"
-              ],
-              "default": "MAX",
-              "type": "string"
             },
             "@DEF": {
               "type": "string"
@@ -17235,6 +16218,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -17255,6 +16239,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@transmitterApplicationID": {
@@ -17278,6 +16263,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -17434,6 +16420,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "type": "number"
             },
@@ -17663,6 +16650,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "type": "number"
             },
@@ -17802,92 +16790,6 @@
         }
       ]
     },
-    "ScalarDamper": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@initialDestination": {
-              "default": 0,
-              "type": "number"
-            },
-            "@initialValue": {
-              "default": 0,
-              "type": "number"
-            },
-            "@isActive": {
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@order": {
-              "maximum": 5,
-              "minimum": 0,
-              "default": 3,
-              "type": "integer"
-            },
-            "@set_destination": {
-              "type": "number"
-            },
-            "@set_value": {
-              "type": "number"
-            },
-            "@tau": {
-              "minimum": 0,
-              "default": 0.3,
-              "type": "number"
-            },
-            "@tolerance": {
-              "default": -1,
-              "type": "number"
-            },
-            "@value_changed": {
-              "type": "number"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "ScalarInterpolator": {
       "type": "object",
       "oneOf": [
@@ -17997,12 +16899,6 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER",
-                  "Arial"
-                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -18231,174 +17127,6 @@
         }
       ]
     },
-    "SegmentedVolumeData": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@bboxCenter": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@bboxSize": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": -1,
-                "type": "number"
-              }
-            },
-            "@dimensions": {
-              "exclusiveMinimum": 0,
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 1,
-                "exclusiveMinimum": 0,
-                "type": "number"
-              }
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-renderStyle": {
-              "$ref": "#/definitions/-X3DVolumeRenderStyleNodeMFNode"
-            },
-            "@segmentEnabled": {
-              "type": "array",
-              "items": {
-                "type": "boolean"
-              }
-            },
-            "-segmentIdentifiers": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "-voxels": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "ShadedVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "@lighting": {
-              "default": false,
-              "type": "boolean"
-            },
-            "-material": {
-              "$ref": "#/definitions/-X3DMaterialNodeSFNode"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@phaseFunction": {
-              "default": "Henyey-Greenstein",
-              "type": "string"
-            },
-            "@shadows": {
-              "default": false,
-              "type": "boolean"
-            },
-            "-surfaceNormals": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "ShaderPart": {
       "type": "object",
       "oneOf": [
@@ -18447,10 +17175,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
-              "enum": [
-                "VERTEX",
-                "FRAGMENT"
-              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18524,10 +17248,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
-              "enum": [
-                "VERTEX",
-                "FRAGMENT"
-              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18765,6 +17485,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -18789,6 +17510,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@whichGeometry": {
@@ -18796,83 +17518,9 @@
               "type": "integer"
             },
             "@writeInterval": {
-              "default": 1,
-              "type": "number"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "SilhouetteEnhancementVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@silhouetteBoundaryOpacity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
-            "@silhouetteRetainedOpacity": {
-              "maximum": 1,
               "minimum": 0,
               "default": 1,
               "type": "number"
-            },
-            "@silhouetteSharpness": {
-              "minimum": 0,
-              "default": 0.5,
-              "type": "number"
-            },
-            "-surfaceNormals": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -18971,10 +17619,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -19075,10 +17719,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -20099,6 +18739,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -20193,100 +18834,6 @@
               "minimum": -1,
               "default": -1,
               "type": "integer"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "TexCoordChaser2D": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@duration": {
-              "minimum": 0,
-              "default": 1,
-              "type": "number"
-            },
-            "@initialDestination": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@initialValue": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@isActive": {
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@set_destination": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_value": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@value_changed": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "type": "string"
@@ -21367,14 +19914,16 @@
               "$ref": "#/definitions/IS"
             },
             "@cycleInterval": {
-              "exclusiveMinimum": 0,
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
             "@cycleTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@enabled": {
@@ -21414,6 +19963,7 @@
               "type": "number"
             },
             "@time": {
+              "minimum": 0,
               "type": "number"
             },
             "@DEF": {
@@ -21472,132 +20022,6 @@
             },
             "@triggerTime": {
               "type": "number"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "ToneMappedVolumeStyle": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@coolColor": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
-            },
-            "@enabled": {
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-surfaceNormals": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@warmColor": {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
             },
             "@DEF": {
               "type": "string"
@@ -22155,6 +20579,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -22176,6 +20601,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@transmitFrequencyBandwidth": {
@@ -22191,6 +20617,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -22805,10 +21232,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -23248,92 +21671,6 @@
         }
       ]
     },
-    "VolumeData": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@bboxCenter": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@bboxSize": {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": -1,
-                "type": "number"
-              }
-            },
-            "@dimensions": {
-              "exclusiveMinimum": 0,
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 1,
-                "exclusiveMinimum": 0,
-                "type": "number"
-              }
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "-renderStyle": {
-              "$ref": "#/definitions/-X3DVolumeRenderStyleNodeSFNode"
-            },
-            "-voxels": {
-              "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
-            },
-            "@DEF": {
-              "type": "string"
-            },
-            "@class": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "VolumeEmitter": {
       "type": "object",
       "oneOf": [
@@ -23425,6 +21762,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -23517,11 +21855,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -23536,12 +21869,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -23756,8 +22083,7 @@
               "Text",
               "Texturing",
               "Texturing3D",
-              "Time",
-              "VolumeRendering"
+              "Time"
             ],
             "type": "string"
           }
@@ -23955,9 +22281,6 @@
         },
         "meta": {
           "$ref": "#/definitions/meta"
-        },
-        "unit": {
-          "$ref": "#/definitions/unit"
         }
       },
       "additionalProperties": false
@@ -24117,40 +22440,6 @@
       },
       "additionalProperties": false
     },
-    "unit": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "-children": {
-            "$ref": "#/definitions/-childrenStatements"
-          },
-          "@category": {
-            "enum": [
-              "angle",
-              "force",
-              "length",
-              "mass"
-            ],
-            "type": "string"
-          },
-          "@conversionFactor": {
-            "exclusiveMinimum": 0,
-            "default": 1,
-            "type": "number"
-          },
-          "@name": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "@category",
-          "@conversionFactor",
-          "@name"
-        ],
-        "additionalProperties": false
-      }
-    },
     "X3D": {
       "type": "object",
       "properties": {
@@ -24182,7 +22471,6 @@
             "CADInterchange",
             "Interactive",
             "Immersive",
-            "MedicalInterchange",
             "MPEG4Interactive",
             "Full"
           ],
@@ -24196,8 +22484,7 @@
           "enum": [
             "3.0",
             "3.1",
-            "3.2",
-            "3.3"
+            "3.2"
           ],
           "default": "3.3",
           "type": "string"
@@ -24254,12 +22541,6 @@
           "NavigationInfo": {
             "$ref": "#/definitions/NavigationInfo"
           },
-          "ColorChaser": {
-            "$ref": "#/definitions/ColorChaser"
-          },
-          "CoordinateChaser": {
-            "$ref": "#/definitions/CoordinateChaser"
-          },
           "OrientationChaser": {
             "$ref": "#/definitions/OrientationChaser"
           },
@@ -24271,9 +22552,6 @@
           },
           "ScalarChaser": {
             "$ref": "#/definitions/ScalarChaser"
-          },
-          "TexCoordChaser2D": {
-            "$ref": "#/definitions/TexCoordChaser2D"
           },
           "ColorDamper": {
             "$ref": "#/definitions/ColorDamper"
@@ -24289,9 +22567,6 @@
           },
           "PositionDamper2D": {
             "$ref": "#/definitions/PositionDamper2D"
-          },
-          "ScalarDamper": {
-            "$ref": "#/definitions/ScalarDamper"
           },
           "TexCoordDamper2D": {
             "$ref": "#/definitions/TexCoordDamper2D"
@@ -24518,15 +22793,6 @@
           "TimeTrigger": {
             "$ref": "#/definitions/TimeTrigger"
           },
-          "IsoSurfaceVolumeData": {
-            "$ref": "#/definitions/IsoSurfaceVolumeData"
-          },
-          "SegmentedVolumeData": {
-            "$ref": "#/definitions/SegmentedVolumeData"
-          },
-          "VolumeData": {
-            "$ref": "#/definitions/VolumeData"
-          },
           "BooleanFilter": {
             "$ref": "#/definitions/BooleanFilter"
           },
@@ -24588,9 +22854,6 @@
     "-X3DMetadataObjectSFNode": {
       "type": "object",
       "properties": {
-        "MetadataBoolean": {
-          "$ref": "#/definitions/MetadataBoolean"
-        },
         "MetadataDouble": {
           "$ref": "#/definitions/MetadataDouble"
         },
@@ -24741,78 +23004,6 @@
       "properties": {
         "RigidBody": {
           "$ref": "#/definitions/RigidBody"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DComposableVolumeRenderStyleNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "BlendedVolumeStyle": {
-          "$ref": "#/definitions/BlendedVolumeStyle"
-        },
-        "BoundaryEnhancementVolumeStyle": {
-          "$ref": "#/definitions/BoundaryEnhancementVolumeStyle"
-        },
-        "CartoonVolumeStyle": {
-          "$ref": "#/definitions/CartoonVolumeStyle"
-        },
-        "ComposedVolumeStyle": {
-          "$ref": "#/definitions/ComposedVolumeStyle"
-        },
-        "EdgeEnhancementVolumeStyle": {
-          "$ref": "#/definitions/EdgeEnhancementVolumeStyle"
-        },
-        "OpacityMapVolumeStyle": {
-          "$ref": "#/definitions/OpacityMapVolumeStyle"
-        },
-        "ShadedVolumeStyle": {
-          "$ref": "#/definitions/ShadedVolumeStyle"
-        },
-        "SilhouetteEnhancementVolumeStyle": {
-          "$ref": "#/definitions/SilhouetteEnhancementVolumeStyle"
-        },
-        "ToneMappedVolumeStyle": {
-          "$ref": "#/definitions/ToneMappedVolumeStyle"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DTexture3DNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ComposedTexture3D": {
-          "$ref": "#/definitions/ComposedTexture3D"
-        },
-        "ImageTexture3D": {
-          "$ref": "#/definitions/ImageTexture3D"
-        },
-        "PixelTexture3D": {
-          "$ref": "#/definitions/PixelTexture3D"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DTexture2DNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/definitions/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/definitions/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/definitions/PixelTexture"
         },
         "ProtoInstance": {
           "$ref": "#/definitions/ProtoInstance"
@@ -25031,12 +23222,6 @@
         "NavigationInfo": {
           "$ref": "#/definitions/NavigationInfo"
         },
-        "ColorChaser": {
-          "$ref": "#/definitions/ColorChaser"
-        },
-        "CoordinateChaser": {
-          "$ref": "#/definitions/CoordinateChaser"
-        },
         "OrientationChaser": {
           "$ref": "#/definitions/OrientationChaser"
         },
@@ -25048,9 +23233,6 @@
         },
         "ScalarChaser": {
           "$ref": "#/definitions/ScalarChaser"
-        },
-        "TexCoordChaser2D": {
-          "$ref": "#/definitions/TexCoordChaser2D"
         },
         "ColorDamper": {
           "$ref": "#/definitions/ColorDamper"
@@ -25066,9 +23248,6 @@
         },
         "PositionDamper2D": {
           "$ref": "#/definitions/PositionDamper2D"
-        },
-        "ScalarDamper": {
-          "$ref": "#/definitions/ScalarDamper"
         },
         "TexCoordDamper2D": {
           "$ref": "#/definitions/TexCoordDamper2D"
@@ -25295,15 +23474,6 @@
         "TimeTrigger": {
           "$ref": "#/definitions/TimeTrigger"
         },
-        "IsoSurfaceVolumeData": {
-          "$ref": "#/definitions/IsoSurfaceVolumeData"
-        },
-        "SegmentedVolumeData": {
-          "$ref": "#/definitions/SegmentedVolumeData"
-        },
-        "VolumeData": {
-          "$ref": "#/definitions/VolumeData"
-        },
         "BooleanFilter": {
           "$ref": "#/definitions/BooleanFilter"
         },
@@ -25439,6 +23609,24 @@
         "additionalProperties": false
       }
     },
+    "-X3DTexture2DNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/definitions/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/definitions/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/definitions/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-ShaderPartMFNode": {
       "type": "array",
       "minItems": 1,
@@ -25494,49 +23682,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-X3DComposableVolumeRenderStyleNodeMFNode": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "BlendedVolumeStyle": {
-            "$ref": "#/definitions/BlendedVolumeStyle"
-          },
-          "BoundaryEnhancementVolumeStyle": {
-            "$ref": "#/definitions/BoundaryEnhancementVolumeStyle"
-          },
-          "CartoonVolumeStyle": {
-            "$ref": "#/definitions/CartoonVolumeStyle"
-          },
-          "ComposedVolumeStyle": {
-            "$ref": "#/definitions/ComposedVolumeStyle"
-          },
-          "EdgeEnhancementVolumeStyle": {
-            "$ref": "#/definitions/EdgeEnhancementVolumeStyle"
-          },
-          "OpacityMapVolumeStyle": {
-            "$ref": "#/definitions/OpacityMapVolumeStyle"
-          },
-          "ShadedVolumeStyle": {
-            "$ref": "#/definitions/ShadedVolumeStyle"
-          },
-          "SilhouetteEnhancementVolumeStyle": {
-            "$ref": "#/definitions/SilhouetteEnhancementVolumeStyle"
-          },
-          "ToneMappedVolumeStyle": {
-            "$ref": "#/definitions/ToneMappedVolumeStyle"
-          },
-          "ProtoInstance": {
-            "$ref": "#/definitions/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-NurbsCurve2D|ContourPolyline2DMFNode": {
       "type": "array",
@@ -25790,12 +23935,6 @@
           "NavigationInfo": {
             "$ref": "#/definitions/NavigationInfo"
           },
-          "ColorChaser": {
-            "$ref": "#/definitions/ColorChaser"
-          },
-          "CoordinateChaser": {
-            "$ref": "#/definitions/CoordinateChaser"
-          },
           "OrientationChaser": {
             "$ref": "#/definitions/OrientationChaser"
           },
@@ -25807,9 +23946,6 @@
           },
           "ScalarChaser": {
             "$ref": "#/definitions/ScalarChaser"
-          },
-          "TexCoordChaser2D": {
-            "$ref": "#/definitions/TexCoordChaser2D"
           },
           "ColorDamper": {
             "$ref": "#/definitions/ColorDamper"
@@ -25825,9 +23961,6 @@
           },
           "PositionDamper2D": {
             "$ref": "#/definitions/PositionDamper2D"
-          },
-          "ScalarDamper": {
-            "$ref": "#/definitions/ScalarDamper"
           },
           "TexCoordDamper2D": {
             "$ref": "#/definitions/TexCoordDamper2D"
@@ -26050,15 +24183,6 @@
           },
           "TimeTrigger": {
             "$ref": "#/definitions/TimeTrigger"
-          },
-          "IsoSurfaceVolumeData": {
-            "$ref": "#/definitions/IsoSurfaceVolumeData"
-          },
-          "SegmentedVolumeData": {
-            "$ref": "#/definitions/SegmentedVolumeData"
-          },
-          "VolumeData": {
-            "$ref": "#/definitions/VolumeData"
           },
           "BooleanFilter": {
             "$ref": "#/definitions/BooleanFilter"
@@ -26327,36 +24451,6 @@
           "UniversalJoint": {
             "$ref": "#/definitions/UniversalJoint"
           },
-          "BlendedVolumeStyle": {
-            "$ref": "#/definitions/BlendedVolumeStyle"
-          },
-          "BoundaryEnhancementVolumeStyle": {
-            "$ref": "#/definitions/BoundaryEnhancementVolumeStyle"
-          },
-          "CartoonVolumeStyle": {
-            "$ref": "#/definitions/CartoonVolumeStyle"
-          },
-          "ComposedVolumeStyle": {
-            "$ref": "#/definitions/ComposedVolumeStyle"
-          },
-          "EdgeEnhancementVolumeStyle": {
-            "$ref": "#/definitions/EdgeEnhancementVolumeStyle"
-          },
-          "OpacityMapVolumeStyle": {
-            "$ref": "#/definitions/OpacityMapVolumeStyle"
-          },
-          "ShadedVolumeStyle": {
-            "$ref": "#/definitions/ShadedVolumeStyle"
-          },
-          "SilhouetteEnhancementVolumeStyle": {
-            "$ref": "#/definitions/SilhouetteEnhancementVolumeStyle"
-          },
-          "ToneMappedVolumeStyle": {
-            "$ref": "#/definitions/ToneMappedVolumeStyle"
-          },
-          "ProjectionVolumeStyle": {
-            "$ref": "#/definitions/ProjectionVolumeStyle"
-          },
           "CollisionCollection": {
             "$ref": "#/definitions/CollisionCollection"
           },
@@ -26371,9 +24465,6 @@
           },
           "LayerSet": {
             "$ref": "#/definitions/LayerSet"
-          },
-          "MetadataBoolean": {
-            "$ref": "#/definitions/MetadataBoolean"
           },
           "MetadataDouble": {
             "$ref": "#/definitions/MetadataDouble"
@@ -26488,6 +24579,34 @@
         "additionalProperties": false
       }
     },
+    "-Group|Transform|Shape|IndexedFaceSetMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Group": {
+            "$ref": "#/definitions/Group"
+          },
+          "Transform": {
+            "$ref": "#/definitions/Transform"
+          },
+          "Shape": {
+            "$ref": "#/definitions/Shape"
+          },
+          "IndexedFaceSet": {
+            "$ref": "#/definitions/IndexedFaceSet"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DCoordinateNodeSFNode": {
       "type": "object",
       "properties": {
@@ -26506,7 +24625,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint|HAnimSegmentMFNode": {
+    "-HAnimJoint|HAnimSegment|HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26520,6 +24639,9 @@
           },
           "HAnimSegment": {
             "$ref": "#/definitions/HAnimSegment"
+          },
+          "HAnimSite": {
+            "$ref": "#/definitions/HAnimSite"
           },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
@@ -26539,52 +24661,6 @@
           },
           "HAnimDisplacer": {
             "$ref": "#/definitions/HAnimDisplacer"
-          },
-          "ProtoInstance": {
-            "$ref": "#/definitions/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-X3DVolumeRenderStyleNodeMFNode": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "BlendedVolumeStyle": {
-            "$ref": "#/definitions/BlendedVolumeStyle"
-          },
-          "BoundaryEnhancementVolumeStyle": {
-            "$ref": "#/definitions/BoundaryEnhancementVolumeStyle"
-          },
-          "CartoonVolumeStyle": {
-            "$ref": "#/definitions/CartoonVolumeStyle"
-          },
-          "ComposedVolumeStyle": {
-            "$ref": "#/definitions/ComposedVolumeStyle"
-          },
-          "EdgeEnhancementVolumeStyle": {
-            "$ref": "#/definitions/EdgeEnhancementVolumeStyle"
-          },
-          "OpacityMapVolumeStyle": {
-            "$ref": "#/definitions/OpacityMapVolumeStyle"
-          },
-          "ShadedVolumeStyle": {
-            "$ref": "#/definitions/ShadedVolumeStyle"
-          },
-          "SilhouetteEnhancementVolumeStyle": {
-            "$ref": "#/definitions/SilhouetteEnhancementVolumeStyle"
-          },
-          "ToneMappedVolumeStyle": {
-            "$ref": "#/definitions/ToneMappedVolumeStyle"
-          },
-          "ProjectionVolumeStyle": {
-            "$ref": "#/definitions/ProjectionVolumeStyle"
           },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
@@ -26784,9 +24860,6 @@
         "properties": {
           "#comment": {
             "type": "string"
-          },
-          "MetadataBoolean": {
-            "$ref": "#/definitions/MetadataBoolean"
           },
           "MetadataDouble": {
             "$ref": "#/definitions/MetadataDouble"
@@ -27009,33 +25082,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "-X3DTexture2DNode|X3DTexture3DNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/definitions/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/definitions/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/definitions/PixelTexture"
-        },
-        "ComposedTexture3D": {
-          "$ref": "#/definitions/ComposedTexture3D"
-        },
-        "ImageTexture3D": {
-          "$ref": "#/definitions/ImageTexture3D"
-        },
-        "PixelTexture3D": {
-          "$ref": "#/definitions/PixelTexture3D"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
     },
     "-X3DAppearanceNodeSFNode": {
       "type": "object",
@@ -27354,45 +25400,6 @@
         "additionalProperties": false
       }
     },
-    "-X3DVolumeRenderStyleNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "BlendedVolumeStyle": {
-          "$ref": "#/definitions/BlendedVolumeStyle"
-        },
-        "BoundaryEnhancementVolumeStyle": {
-          "$ref": "#/definitions/BoundaryEnhancementVolumeStyle"
-        },
-        "CartoonVolumeStyle": {
-          "$ref": "#/definitions/CartoonVolumeStyle"
-        },
-        "ComposedVolumeStyle": {
-          "$ref": "#/definitions/ComposedVolumeStyle"
-        },
-        "EdgeEnhancementVolumeStyle": {
-          "$ref": "#/definitions/EdgeEnhancementVolumeStyle"
-        },
-        "OpacityMapVolumeStyle": {
-          "$ref": "#/definitions/OpacityMapVolumeStyle"
-        },
-        "ShadedVolumeStyle": {
-          "$ref": "#/definitions/ShadedVolumeStyle"
-        },
-        "SilhouetteEnhancementVolumeStyle": {
-          "$ref": "#/definitions/SilhouetteEnhancementVolumeStyle"
-        },
-        "ToneMappedVolumeStyle": {
-          "$ref": "#/definitions/ToneMappedVolumeStyle"
-        },
-        "ProjectionVolumeStyle": {
-          "$ref": "#/definitions/ProjectionVolumeStyle"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DChildNode|X3DMetadataObject|LayerSetMFNode": {
       "type": "array",
       "minItems": 1,
@@ -27438,12 +25445,6 @@
           "NavigationInfo": {
             "$ref": "#/definitions/NavigationInfo"
           },
-          "ColorChaser": {
-            "$ref": "#/definitions/ColorChaser"
-          },
-          "CoordinateChaser": {
-            "$ref": "#/definitions/CoordinateChaser"
-          },
           "OrientationChaser": {
             "$ref": "#/definitions/OrientationChaser"
           },
@@ -27455,9 +25456,6 @@
           },
           "ScalarChaser": {
             "$ref": "#/definitions/ScalarChaser"
-          },
-          "TexCoordChaser2D": {
-            "$ref": "#/definitions/TexCoordChaser2D"
           },
           "ColorDamper": {
             "$ref": "#/definitions/ColorDamper"
@@ -27473,9 +25471,6 @@
           },
           "PositionDamper2D": {
             "$ref": "#/definitions/PositionDamper2D"
-          },
-          "ScalarDamper": {
-            "$ref": "#/definitions/ScalarDamper"
           },
           "TexCoordDamper2D": {
             "$ref": "#/definitions/TexCoordDamper2D"
@@ -27702,15 +25697,6 @@
           "TimeTrigger": {
             "$ref": "#/definitions/TimeTrigger"
           },
-          "IsoSurfaceVolumeData": {
-            "$ref": "#/definitions/IsoSurfaceVolumeData"
-          },
-          "SegmentedVolumeData": {
-            "$ref": "#/definitions/SegmentedVolumeData"
-          },
-          "VolumeData": {
-            "$ref": "#/definitions/VolumeData"
-          },
           "BooleanFilter": {
             "$ref": "#/definitions/BooleanFilter"
           },
@@ -27764,9 +25750,6 @@
           },
           "ViewpointGroup": {
             "$ref": "#/definitions/ViewpointGroup"
-          },
-          "MetadataBoolean": {
-            "$ref": "#/definitions/MetadataBoolean"
           },
           "MetadataDouble": {
             "$ref": "#/definitions/MetadataDouble"
