@@ -611,6 +611,7 @@ PROTOS.prototype = {
 		this.privatescope = [];
 		this.defs = {};
 		this.founddef = null;
+		object = this.externalPrototypeExpander(file, object);
 		object = this.realPrototypeExpander(file, object, false);
 		this.zapIs(object);
 		object = this.flattener(object);

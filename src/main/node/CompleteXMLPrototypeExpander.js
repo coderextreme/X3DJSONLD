@@ -29,7 +29,6 @@ process.argv.shift();
 
 function ProcessJSON(json, file) {
 	// Run it through the prototype expander
-	json = PROTOS.externalPrototypeExpander(file, json);
 	json = PROTOS.prototypeExpander(file, json, "");
 
 	var xml = new LOG();

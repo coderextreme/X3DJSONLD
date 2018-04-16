@@ -333,27 +333,16 @@ function loadProtoX3D(selector, json, url) {
 }
 
 function loadX3D(selector, json, url) {
-    if ($('#scripting').is(':checked')) {
-    	initializeScripts();
-    }
-    if ($('#externprototype').is(':checked')) {
-	// Expand Protos
-	try {
-		$.ajaxSetup({
-		  async: false
-		});
-		json = protoExpander.externalPrototypeExpander(url, json);
-		$.ajaxSetup({
-		  async: true
-		});
-		json = loadProtoX3D(selector, json, url);
-	} catch (e) {
-		alert("Problems with ExternProto Expander", e);
-		console.error(e);
+	if ($('#scripting').is(':checked')) {
+		initializeScripts();
 	}
-    } else {
+	$.ajaxSetup({
+	  async: false
+	});
 	json = loadProtoX3D(selector, json, url);
-    }
+	$.ajaxSetup({
+	  async: true
+	});
 }
 
 /**
@@ -365,14 +354,15 @@ function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
 		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
 			try {
+			    if ($('#prototype').is(':checked')) {
 				$.ajaxSetup({
 				  async: false
 				});
-				json = protoExpander.externalPrototypeExpander(url, json);
+				json = protoExpander.prototypeExpander(url, json, "");
 				$.ajaxSetup({
 				  async: true
 				});
-				json = protoExpander.prototypeExpander(url, json, "");
+			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline", e);
 				console.error(e);
