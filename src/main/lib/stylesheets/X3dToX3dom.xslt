@@ -70,7 +70,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
     <xsl:param name="urlCobweb"                >http://code.create3000.de/x_ite</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionCobweb"            >latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or latest/dist with no trailing slash / -->
+    <xsl:param name="versionCobweb"            >latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 or latest/dist with no trailing slash / -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
@@ -1759,6 +1759,16 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 					</xsl:variable>
 					<!-- good attribute found, output it -->
                     <xsl:text> </xsl:text>
+					<!-- apparently namespace-prefix attributes on X3D element can't be added without inducing error 
+					<xsl:choose>
+						<xsl:when test="(local-name() = 'xsd')">
+							<xsl:text>xmlns:</xsl:text>
+						</xsl:when>
+						<xsl:when test="(local-name() = 'noNamespaceSchemaLocation')">
+							<xsl:text>xsd:</xsl:text>
+						</xsl:when>
+					</xsl:choose>
+					-->
                     <xsl:value-of select="local-name()"/>
 					<xsl:text>=</xsl:text>
 					<xsl:value-of select="$attributeDelimiter"/>
@@ -1770,6 +1780,12 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
     </xsl:template>
 	
     <xsl:template match="*">
+			<xsl:if test="local-name() = 'X3D'">
+				<xsl:comment> Conversion note: the following HTML button is overlaid on top of the page </xsl:comment>
+				<xsl:text>&#10;</xsl:text>
+				<button id="toggleZoomButton" onclick="toggleZoom(this); return false;">Zoom</button>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
             <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
             <xsl:value-of select="local-name(.)"/>
             <!-- X3D node attributes -->
@@ -1814,14 +1830,6 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 </xsl:otherwise>
             </xsl:choose>
         <xsl:text>&#10;</xsl:text>
-
-        <xsl:if test="local-name() = 'head'">
-            <xsl:comment> Conversion note: the following HTML button is overlaid on top of the X3D scene </xsl:comment>
-            <xsl:text>&#10;</xsl:text>
-            <button id="toggleZoomButton" onclick="toggleZoom(this); return false;">Zoom</button>
-            <xsl:text>&#10;</xsl:text>
-        </xsl:if>
-        
         <!-- next are X3D node children, following contained head section -->
     </xsl:template>
     

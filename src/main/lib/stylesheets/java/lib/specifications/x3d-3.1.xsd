@@ -2816,7 +2816,14 @@ Open-source license:
 	<xs:complexType name="X3DSoundSourceNode" abstract="true">
 		<xs:annotation>
 			<xs:appinfo>
-				<xs:attribute name="duration_changed" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="duration_changed" fixed="outputOnlyField">
+                                    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="-1"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="Sound"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
 				Nodes implementing X3DSoundSourceNode are allowed as children of Sound node.
@@ -2909,7 +2916,14 @@ Open-source license:
 	<xs:complexType name="X3DTimeDependentNode" abstract="true">
 		<xs:annotation>
 			<xs:appinfo>
-				<xs:attribute name="elapsedTime" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="elapsedTime" fixed="outputOnlyField">
+				    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="isActive" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isPaused" type="SFBool" fixed="outputOnlyField">
 					<xs:annotation>
@@ -3031,7 +3045,14 @@ Open-source license:
 							<xs:sequence>
 									<xs:group ref="SceneGraphFragmentWithPrototypeDeclarationsContentModel" maxOccurs="unbounded"/>
 							</xs:sequence>
-							<xs:attribute name="timestamp" type="SFTime" use="required"/>
+							<xs:attribute name="timestamp" use="required">
+                                                            < ! - - type="SFTimeNonNegative" - - >
+                                                            <xs:simpleType>
+                                                                    <xs:restriction base="SFTime">
+                                                                            <xs:minInclusive value="0"/>
+                                                                    </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:attribute>
 							<xs:attribute name="type" type="fieldTypeName" use="required"/>
 							<xs:attribute name="value" type="xs:string"/>
 					</xs:extension>
@@ -7292,7 +7313,7 @@ Open-source license:
 	<xs:element name="MovieTexture">
 		<xs:annotation>
 			<xs:appinfo>
-				<!-- TextureProperties in X3D v3.2 -->
+				<!-- textureProperties in X3D v3.2 -->
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DTexture2DNode"/>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DUrlObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="Texturing"/>
@@ -8192,9 +8213,23 @@ Open-source license:
 	<xs:element name="TimeSensor">
 		<xs:annotation>
 			<xs:appinfo>
-				<xs:attribute name="cycleTime" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="cycleTime" fixed="outputOnlyField">
+				    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="fraction_changed" type="SFFloat" fixed="outputOnlyField"/>
-				<xs:attribute name="time" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="time" fixed="outputOnlyField">
+				    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DSensorNode"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="Time"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
@@ -8208,7 +8243,7 @@ Open-source license:
 						<!-- type="SFTimeNonNegative" -->
 						<xs:simpleType>
 							<xs:restriction base="SFTime">
-								<xs:minExclusive value="0"/>
+								<xs:minInclusive value="0"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
@@ -8890,7 +8925,14 @@ Open-source license:
 				<xs:attribute name="isNetworkWriter" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isRtpHeaderHeard" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isStandAlone" type="SFBool" fixed="outputOnlyField"/>
-				<xs:attribute name="timestamp" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="timestamp" fixed="outputOnlyField">
+                                    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DNetworkSensorNode"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="DIS"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
@@ -8913,8 +8955,22 @@ Open-source license:
 					<xs:attribute name="entitySubcategory" type="SFInt32" default="0"/>
 					<xs:attribute name="entitySpecific" type="SFInt32" default="0"/>
 					<xs:attribute name="entityExtra" type="SFInt32" default="0"/>
-					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
-					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
+					<xs:attribute name="readInterval" default="0.1">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+					<xs:attribute name="writeInterval" default="1.0">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
 					<xs:attribute name="networkMode" type="networkModeValues" default="standAlone"/>
 					<xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
 					<xs:attribute name="rotation" type="SFRotation" default="0 0 1 0"/>
@@ -8970,7 +9026,14 @@ Open-source license:
 				<xs:attribute name="isNetworkWriter" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isRtpHeaderHeard" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isStandAlone" type="SFBool" fixed="outputOnlyField"/>
-				<xs:attribute name="timestamp" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="timestamp" fixed="outputOnlyField">
+                                    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="DIS"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
@@ -8983,8 +9046,22 @@ Open-source license:
 					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
 					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
-					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
-					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
+					<xs:attribute name="readInterval" default="0.1">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+					<xs:attribute name="writeInterval" default="1.0">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
 					<xs:attribute name="networkMode" type="networkModeValues" default="standAlone"/>
 					<xs:attribute name="siteID" type="SFInt32" default="0"/>
 					<xs:attribute name="applicationID" type="SFInt32" default="0"/>
@@ -9015,7 +9092,14 @@ Open-source license:
 				<xs:attribute name="isNetworkWriter" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isRtpHeaderHeard" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isStandAlone" type="SFBool" fixed="outputOnlyField"/>
-				<xs:attribute name="timestamp" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="timestamp" fixed="outputOnlyField">
+                                    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="DIS"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
@@ -9028,8 +9112,22 @@ Open-source license:
 					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
 					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
-					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
-					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
+					<xs:attribute name="readInterval" default="0.1">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+					<xs:attribute name="writeInterval" default="1.0">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
 					<xs:attribute name="networkMode" type="networkModeValues" default="standAlone"/>
 					<xs:attribute name="siteID" type="SFInt32" default="0"/>
 					<xs:attribute name="applicationID" type="SFInt32" default="0"/>
@@ -9060,7 +9158,14 @@ Open-source license:
 				<xs:attribute name="isNetworkWriter" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isRtpHeaderHeard" type="SFBool" fixed="outputOnlyField"/>
 				<xs:attribute name="isStandAlone" type="SFBool" fixed="outputOnlyField"/>
-				<xs:attribute name="timestamp" type="SFTime" fixed="outputOnlyField"/>
+				<xs:attribute name="timestamp" fixed="outputOnlyField">
+                                    <!-- type="SFTimeNonNegative" -->
+                                    <xs:simpleType>
+                                            <xs:restriction base="SFTime">
+                                                    <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="DIS"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
@@ -9073,8 +9178,22 @@ Open-source license:
 					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
 					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
-					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
-					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
+					<xs:attribute name="readInterval" default="0.1">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+					<xs:attribute name="writeInterval" default="1.0">
+                                            <!-- type="SFTimeNonNegative" -->
+                                            <xs:simpleType>
+                                                    <xs:restriction base="SFTime">
+                                                            <xs:minInclusive value="0"/>
+                                                    </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
 					<xs:attribute name="networkMode" type="networkModeValues" default="standAlone"/>
 					<xs:attribute name="siteID" type="SFInt32" default="0"/>
 					<xs:attribute name="applicationID" type="SFInt32" default="0"/>
