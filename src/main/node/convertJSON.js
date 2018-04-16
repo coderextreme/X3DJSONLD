@@ -8,7 +8,7 @@ var mapToMethod2 = require('./mapToMethod2.js');
 var jsonlint = require('jsonlint');
 var fieldTypes = require('./fieldTypes.js');
 var Ajv = require('ajv');
-var ajv = new Ajv({ allErrors:true});
+var ajv = new Ajv();
 var localize = require('ajv-i18n');
 
 var xmldom = require('xmldom');
