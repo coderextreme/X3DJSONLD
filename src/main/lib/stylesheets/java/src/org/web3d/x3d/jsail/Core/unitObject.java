@@ -67,10 +67,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  * </ul>
  * <br>
 
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#UNITStatement" target="blank">X3D Abstract Specification: unit</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#unit" target="_blank">X3D Tooltips: unit</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -346,6 +344,7 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public unitObject setCategory(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -372,8 +371,9 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public unitObject setCategory(SFStringObject newValue)
 	{
-		setCategory(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCategory(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value within allowed range of (0,infinity) from inputOutput SFDouble field named <i>conversionFactor</i>.
@@ -398,6 +398,7 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public unitObject setConversionFactor(double newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("unit conversionFactor newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -413,8 +414,9 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public unitObject setConversionFactor(SFDoubleObject newValue)
 	{
-		setConversionFactor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setConversionFactor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -441,6 +443,7 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public final unitObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to unit
@@ -467,8 +470,9 @@ public class unitObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public unitObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

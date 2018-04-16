@@ -43,7 +43,7 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: (X3D version 3.2 or later) EaseInEaseOut enables gradual animation transitions by modifying TimeSensor fraction outputs. Output values are modified fractions that can be ROUTEd to an interpolator, a sequencer, or another SFFloat attribute.
+ * <i>X3D node tooltip</i>: (X3D version 3.2 or later) EaseInEaseOut enables gradual animation transitions by modifying TimeSensor fraction outputs. Output values are modified fractions. Authors can ROUTE value_changed output events to an interpolator, a sequencer, or another SFFloat attribute.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisEaseInEaseOutDEF.set_fraction </li> 
  *  <li> <i>Hint:</i> typical output connection is ROUTE thisEaseInEaseOutDEF.modifiedFraction_changed TO someDestinationNodeDEF.set_fraction. </li> 
@@ -51,11 +51,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#EaseInEaseOut" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#EaseInEaseOut" target="blank">X3D Abstract Specification: EaseInEaseOut</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#EaseInEaseOut" target="_blank">X3D Tooltips: EaseInEaseOut</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -125,8 +123,10 @@ public interface EaseInEaseOut extends X3DChildNode
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>modifiedFraction_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Interpolated output value determined by current key time, corresponding easeInEaseOut smoothing intervals, and corresponding key pair.  * <br>
-
+	 * <i>Tooltip:</i> Interpolated output value determined by current key time, corresponding easeInEaseOut smoothing intervals, and corresponding key pair.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of modifiedFraction_changed field
 	 */
 	public float getModifiedFraction();

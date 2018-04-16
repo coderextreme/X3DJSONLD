@@ -53,10 +53,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  *  <li> <i>Hint:</i> X3D XML Encoding <br> <a href="http://www.web3d.org/files/specifications/19776-1/V3.2/Part01/concepts.html#Header" target="_blank">http://www.web3d.org/files/specifications/19776-1/V3.2/Part01/concepts.html#Header</a> </li> 
  *  <li> <i>Warning:</i>  the COMPONENT statement is capitalized in the ClassicVRML Encoding. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Components" target="blank">X3D Abstract Specification: component</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#component" target="_blank">X3D Tooltips: component</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -336,6 +334,7 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public componentObject setLevel(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 1) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("component level newValue=" + newValue + " has component value less than restriction minInclusive=1");
@@ -354,8 +353,9 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public componentObject setLevel(SFInt32Object newValue)
 	{
-		setLevel(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLevel(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['Core'|'CADGeometry'|'CubeMapTexturing'|'DIS'|'EnvironmentalEffects'|'EnvironmentalSensor'|'EventUtilities'|'Followers'|'Geometry2D'|'Geometry3D'|'Geospatial'|'Grouping'|'H-Anim'|'Interpolation'|'KeyDeviceSensor'|'Layering'|'Layout'|'Lighting'|'Navigation'|'Networking'|'NURBS'|'ParticleSystems'|'Picking'|'PointingDeviceSensor'|'Rendering'|'RigidBodyPhysics'|'Scripting'|'Shaders'|'Shape'|'Sound'|'Text'|'Texturing'|'Texturing3D'|'Time'|'VolumeRendering'] from inputOutput SFString field named <i>name</i>.
@@ -387,6 +387,7 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public final componentObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -456,8 +457,9 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public componentObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

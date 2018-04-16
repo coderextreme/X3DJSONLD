@@ -62,10 +62,8 @@ import org.web3d.x3d.jsail.Sound.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/sound.html#Sound" target="blank">X3D Abstract Specification: Sound</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sound" target="_blank">X3D Tooltips: Sound</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Audio" target="_blank">X3D Scene Authoring Hints: Audio</a>
  */
@@ -431,6 +429,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setDirection(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -449,8 +448,9 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	 */
 	public SoundObject setDirection(SFVec3fObject newValue)
 	{
-		setDirection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDirection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -490,6 +490,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setIntensity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound intensity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -508,8 +509,9 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	 */
 	public SoundObject setIntensity(SFFloatObject newValue)
 	{
-		setIntensity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIntensity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>location</i>.
@@ -536,6 +538,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setLocation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -554,8 +557,9 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	 */
 	public SoundObject setLocation(SFVec3fObject newValue)
 	{
-		setLocation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLocation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -595,6 +599,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setMaxBack(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound maxBack newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -610,8 +615,9 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	 */
 	public SoundObject setMaxBack(SFFloatObject newValue)
 	{
-		setMaxBack(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxBack(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>maxFront</i>.
@@ -636,6 +642,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setMaxFront(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound maxFront newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -651,8 +658,9 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	 */
 	public SoundObject setMaxFront(SFFloatObject newValue)
 	{
-		setMaxFront(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxFront(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -676,6 +684,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public SoundObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -768,6 +777,7 @@ setAttribute method invocations).
 	@Override
 	public SoundObject setMinBack(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound minBack newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -783,8 +793,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setMinBack(SFFloatObject newValue)
 	{
-		setMinBack(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinBack(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>minFront</i>.
@@ -809,6 +820,7 @@ setAttribute method invocations).
 	@Override
 	public SoundObject setMinFront(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound minFront newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -824,8 +836,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setMinFront(SFFloatObject newValue)
 	{
-		setMinFront(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinFront(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>priority</i>.
@@ -850,6 +863,7 @@ setAttribute method invocations).
 	@Override
 	public SoundObject setPriority(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sound priority newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -868,8 +882,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setPriority(SFFloatObject newValue)
 	{
-		setPriority(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPriority(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DSoundSourceNode instance (using a properly typed node) from inputOutput SFNode field <i>source</i>.
@@ -891,6 +906,7 @@ setAttribute method invocations).
 	@Override
 	public SoundObject setSource(X3DSoundSourceNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		source = newValue;
 		if (newValue != null)
 		{
@@ -985,6 +1001,7 @@ setAttribute method invocations).
 	@Override
 	public SoundObject setSpatialize(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		spatialize = newValue;
 		return this;
 	}
@@ -996,8 +1013,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setSpatialize(SFBoolObject newValue)
 	{
-		setSpatialize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpatialize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1012,6 +1030,7 @@ setAttribute method invocations).
 	@Override
 	public final SoundObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Sound
@@ -1039,8 +1058,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1058,6 +1078,7 @@ setAttribute method invocations).
 	@Override
 	public final SoundObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Sound
@@ -1085,8 +1106,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1099,6 +1121,7 @@ setAttribute method invocations).
 	@Override
 	public final SoundObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1113,8 +1136,9 @@ setAttribute method invocations).
 	 */
 	public SoundObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

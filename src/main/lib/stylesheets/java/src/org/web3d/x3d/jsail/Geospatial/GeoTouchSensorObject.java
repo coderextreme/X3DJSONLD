@@ -62,10 +62,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoTouchSensor" target="blank">X3D Abstract Specification: GeoTouchSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoTouchSensor" target="_blank">X3D Tooltips: GeoTouchSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -397,6 +395,7 @@ public class GeoTouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public GeoTouchSensorObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -411,8 +410,9 @@ public class GeoTouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public GeoTouchSensorObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -437,6 +437,7 @@ public class GeoTouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public GeoTouchSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -448,8 +449,9 @@ public class GeoTouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public GeoTouchSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
@@ -471,6 +473,7 @@ public class GeoTouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public GeoTouchSensorObject setGeoOrigin(GeoOrigin newValue)
 	{
+		// set-newValue-validity-checks #0
 		geoOrigin = newValue;
 		if (newValue != null)
 		{
@@ -579,6 +582,7 @@ setAttribute method invocations).
 	@Override
 	public GeoTouchSensorObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -605,8 +609,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -620,6 +625,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -635,6 +641,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -651,6 +658,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -667,8 +675,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple double results from outputOnly SFVec3d field named <i>hitGeoCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D point on surface of underlying geometry, given in GeoTouchSensor's local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D point on surface of underlying geometry, given in GeoTouchSensor's local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitGeoCoord_changed field
 	 */
 	@Override
@@ -679,8 +689,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitNormal_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing surface normal vector at the hitGeoCoordinate.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing surface normal vector at the hitGeoCoordinate.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitNormal_changed field
 	 */
 	@Override
@@ -691,8 +703,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D point on surface of underlying geometry, given in geometry coordinates (not geographic coordinates).  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D point on surface of underlying geometry, given in geometry coordinates (not geographic coordinates).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitPoint_changed field
 	 */
 	@Override
@@ -703,8 +717,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>hitTexCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing texture coordinates of surface at the hitGeoCoordinate.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing texture coordinates of surface at the hitGeoCoordinate.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitTexCoord_changed field
 	 */
 	@Override
@@ -715,8 +731,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -727,8 +745,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Is pointing device over sensor's geometry?.  * <br>
-
+	 * <i>Tooltip:</i> Is pointing device over sensor's geometry?.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -758,6 +778,7 @@ setAttribute method invocations).
 	@Override
 	public GeoTouchSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -832,7 +853,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> Time event generated when touched.
  * <ul>
- *  <li> <i> Hint:</i>  touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Hint:</i> touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of touchTime field
 	 */
@@ -854,6 +876,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoTouchSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoTouchSensor
@@ -881,8 +904,9 @@ setAttribute method invocations).
 	 */
 	public GeoTouchSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -900,6 +924,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoTouchSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoTouchSensor
@@ -927,8 +952,9 @@ setAttribute method invocations).
 	 */
 	public GeoTouchSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -941,6 +967,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoTouchSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -955,8 +982,9 @@ setAttribute method invocations).
 	 */
 	public GeoTouchSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

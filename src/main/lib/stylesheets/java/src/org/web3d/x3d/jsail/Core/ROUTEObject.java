@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  *  <li> <i>Warning:</i> event-source fields can have accessType outputOnly or inputOutput, while event-target nodes can have accessType inputOnly or inputOutput. </li> 
  *  <li> <i>Hint:</i>  event tracing supports animation debugging <br> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/Chapter07-EventAnimationInterpolation-EventTracing.pdf" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/Chapter07-EventAnimationInterpolation-EventTracing.pdf</a> </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ModifyingObjectsRoutes" target="blank">X3D Abstract Specification: ROUTE</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ROUTE" target="_blank">X3D Tooltips: ROUTE</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -258,6 +256,7 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setFromField(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ROUTE
@@ -284,8 +283,9 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setFromField(SFStringObject newValue)
 	{
-		setFromField(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFromField(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>fromNode</i>.
@@ -308,6 +308,7 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setFromNode(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ROUTE
@@ -334,8 +335,9 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setFromNode(SFStringObject newValue)
 	{
-		setFromNode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFromNode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>toField</i>.
@@ -364,6 +366,7 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setToField(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ROUTE
@@ -390,8 +393,9 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setToField(SFStringObject newValue)
 	{
-		setToField(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setToField(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>toNode</i>.
@@ -414,6 +418,7 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setToNode(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ROUTE
@@ -440,8 +445,9 @@ public class ROUTEObject extends org.web3d.x3d.jsail.X3DConcreteStatement implem
 	 */
 	public ROUTEObject setToNode(SFStringObject newValue)
 	{
-		setToNode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setToNode(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -744,12 +750,14 @@ setAttribute method invocations).
 		X3DConcreteNode fromNodeObject = null;
 		X3DConcreteNode   toNodeObject = null;	
 													
-		if ((findAncestorSceneObject() == null) && (findAncestorProtoBody() == null) &&
-			!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+		if ((findAncestorSceneObject() == null) && (findAncestorProtoBody() == null))
 		{
-			errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-						   ", ROUTE is not currently connected to scene graph and thus fromNode/toNode fields cannot be checkedmust first be connected to scene graph in order to get checked. ";
-			validationResult.append(ROUTE_description).append("\n").append(errorNotice).append("\n");
+			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+			{
+				errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
+							   ", ROUTE is not currently connected to scene graph and thus fromNode/toNode fields cannot be checkedmust first be connected to scene graph in order to get checked. ";
+				validationResult.append(ROUTE_description).append("\n").append(errorNotice).append("\n");
+			}
 		}
 		if (getFromField().isEmpty())
 		{

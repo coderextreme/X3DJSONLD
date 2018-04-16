@@ -44,16 +44,14 @@ import org.web3d.x3d.sai.Core.*;
  * <ul>
  *  <li> <i>Hint:</i> NavigationInfo, Background, TextureBackground, Fog, GeoViewpoint, OrthoViewpoint and Viewpoint are bindable nodes, meaning that no more than one of each node type can be active at a given time. </li> 
  *  <li> <i>Warning:</i> results are undefined if a bindable node (Viewpoint, OrthoViewpoint, NavigationInfo, Fog, Background, TextureBackground) is a contained child of LOD or Switch. </li> 
- *  <li> <i>Warning:</i> child ImageTexture or PixelTexture nodes must have unique containerField values for backTexture, bottomTexture, frontTexture, leftTexture, rightTexture, or topTexture. </li> 
+ *  <li> <i>Warning:</i> each of the child ImageTexture or PixelTexture nodes must have unique containerField values for backTexture, bottomTexture, frontTexture, leftTexture, rightTexture, or topTexture. </li> 
  *  <li> <i>Hint:</i>  authors can have LoadSensor nodes receive notification when background texture node(s) are loaded. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#TextureBackground" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#TextureBackground" target="blank">X3D Abstract Specification: TextureBackground</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureBackground" target="_blank">X3D Tooltips: TextureBackground</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -77,8 +75,10 @@ public interface TextureBackground extends X3DBackgroundNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  event sent when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> event sent when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -161,7 +161,8 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * <br><br>
 	 * <i>Tooltip:</i> event true sent when node becomes active, event false sent when unbound by another node.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */

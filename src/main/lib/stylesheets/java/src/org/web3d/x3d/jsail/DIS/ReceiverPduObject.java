@@ -55,10 +55,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#ReceiverPdu" target="blank">X3D Abstract Specification: ReceiverPdu</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ReceiverPdu" target="_blank">X3D Tooltips: ReceiverPdu</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -737,6 +735,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setAddress(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -751,8 +750,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setAddress(SFStringObject newValue)
 	{
-		setAddress(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAddress(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>applicationID</i>.
@@ -777,6 +777,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		applicationID = newValue;
 		return this;
 	}
@@ -788,8 +789,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setApplicationID(SFInt32Object newValue)
 	{
-		setApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly SFVec3f field named <i>bboxCenter</i>.
@@ -816,6 +818,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -834,8 +837,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -878,6 +882,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -900,8 +905,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -941,6 +947,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -952,8 +959,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityID</i>.
@@ -978,6 +986,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setEntityID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityID = newValue;
 		return this;
 	}
@@ -989,8 +998,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setEntityID(SFInt32Object newValue)
 	{
-		setEntityID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple double results from inputOutput SFVec3d field named <i>geoCoords</i>.
@@ -1010,6 +1020,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setGeoCoords(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1028,8 +1039,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ReceiverPduObject setGeoCoords(SFVec3dObject newValue)
 	{
-		setGeoCoords(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoCoords(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1088,6 +1100,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ReceiverPduObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -1114,8 +1127,9 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -1129,6 +1143,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -1144,6 +1159,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -1160,6 +1176,7 @@ public class ReceiverPduObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -1176,8 +1193,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Have we had a network update recently?.  * <br>
-
+	 * <i>Tooltip:</i> Have we had a network update recently?.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -1188,8 +1207,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkReader</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="remote" (listen to network as copy of remote entity).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="remote" (listen to network as copy of remote entity)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkReader field
 	 */
 	@Override
@@ -1200,8 +1221,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkWriter</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="master" (output to network as master entity at writeInterval).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="master" (output to network as master entity at writeInterval)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkWriter field
 	 */
 	@Override
@@ -1212,8 +1235,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isRtpHeaderHeard</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether incoming DIS packets have an RTP header prepended.  * <br>
-
+	 * <i>Tooltip:</i> Whether incoming DIS packets have an RTP header prepended.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isRtpHeaderHeard field
 	 */
 	@Override
@@ -1224,8 +1249,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isStandAlone</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="local" (ignore network but still respond to local events).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="local" (ignore network but still respond to local events)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isStandAlone field
 	 */
 	@Override
@@ -1255,6 +1282,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1347,6 +1375,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setMulticastRelayHost(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1361,8 +1390,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setMulticastRelayHost(SFStringObject newValue)
 	{
-		setMulticastRelayHost(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMulticastRelayHost(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>multicastRelayPort</i>.
@@ -1387,6 +1417,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setMulticastRelayPort(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		multicastRelayPort = newValue;
 		return this;
 	}
@@ -1398,8 +1429,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setMulticastRelayPort(SFInt32Object newValue)
 	{
-		setMulticastRelayPort(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMulticastRelayPort(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['standAlone'|'networkReader'|'networkWriter'] from inputOutput SFString field named <i>networkMode</i>.
@@ -1431,6 +1463,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setNetworkMode(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1456,8 +1489,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setNetworkMode(SFStringObject newValue)
 	{
-		setNetworkMode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNetworkMode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>port</i>.
@@ -1482,6 +1516,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setPort(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		port = newValue;
 		return this;
 	}
@@ -1493,8 +1528,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setPort(SFInt32Object newValue)
 	{
-		setPort(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPort(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>radioID</i>.
@@ -1519,6 +1555,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setRadioID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		radioID = newValue;
 		return this;
 	}
@@ -1530,14 +1567,17 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setRadioID(SFInt32Object newValue)
 	{
-		setRadioID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRadioID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>readInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between read updates, 0 means no reading.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading.
+ * <ul>
+ *  <li> <i> Hint:</i>  readInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of readInterval field
 	 */
 	@Override
@@ -1547,15 +1587,20 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>readInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between read updates, 0 means no reading.
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading. Hint: readInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the readInterval field.
 	 * @return {@link ReceiverPduObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public ReceiverPduObject setReadInterval(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("ReceiverPdu readInterval newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		readInterval = newValue;
 		return this;
 	}
@@ -1567,8 +1612,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setReadInterval(SFTimeObject newValue)
 	{
-		setReadInterval(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReadInterval(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>receivedPower</i>.
@@ -1593,6 +1639,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setReceivedPower(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		receivedPower = newValue;
 		return this;
 	}
@@ -1604,8 +1651,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setReceivedPower(SFFloatObject newValue)
 	{
-		setReceivedPower(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReceivedPower(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>receiverState</i>.
@@ -1630,6 +1678,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setReceiverState(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		receiverState = newValue;
 		return this;
 	}
@@ -1641,8 +1690,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setReceiverState(SFInt32Object newValue)
 	{
-		setReceiverState(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReceiverState(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>rtpHeaderExpected</i>.
@@ -1667,6 +1717,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setRtpHeaderExpected(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		rtpHeaderExpected = newValue;
 		return this;
 	}
@@ -1678,8 +1729,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setRtpHeaderExpected(SFBoolObject newValue)
 	{
-		setRtpHeaderExpected(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRtpHeaderExpected(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>siteID</i>.
@@ -1704,6 +1756,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		siteID = newValue;
 		return this;
 	}
@@ -1715,14 +1768,17 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setSiteID(SFInt32Object newValue)
 	{
-		setSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>timestamp</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>timestamp</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  DIS timestamp in X3D units (seconds since 1 January 1970).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) DIS timestamp in X3D units (seconds since 1 January 1970).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of timestamp field
 	 */
 	@Override
@@ -1753,6 +1809,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setTransmitterApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		transmitterApplicationID = newValue;
 		return this;
 	}
@@ -1764,8 +1821,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setTransmitterApplicationID(SFInt32Object newValue)
 	{
-		setTransmitterApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransmitterApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>transmitterEntityID</i>.
@@ -1790,6 +1848,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setTransmitterEntityID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		transmitterEntityID = newValue;
 		return this;
 	}
@@ -1801,8 +1860,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setTransmitterEntityID(SFInt32Object newValue)
 	{
-		setTransmitterEntityID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransmitterEntityID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>transmitterRadioID</i>.
@@ -1827,6 +1887,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setTransmitterRadioID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		transmitterRadioID = newValue;
 		return this;
 	}
@@ -1838,8 +1899,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setTransmitterRadioID(SFInt32Object newValue)
 	{
-		setTransmitterRadioID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransmitterRadioID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>transmitterSiteID</i>.
@@ -1864,6 +1926,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setTransmitterSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		transmitterSiteID = newValue;
 		return this;
 	}
@@ -1875,8 +1938,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setTransmitterSiteID(SFInt32Object newValue)
 	{
-		setTransmitterSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransmitterSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>whichGeometry</i>.
@@ -1901,6 +1965,7 @@ setAttribute method invocations).
 	@Override
 	public ReceiverPduObject setWhichGeometry(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		whichGeometry = newValue;
 		return this;
 	}
@@ -1912,14 +1977,17 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setWhichGeometry(SFInt32Object newValue)
 	{
-		setWhichGeometry(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWhichGeometry(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>writeInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between write updates, 0 means no writing (sending).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending).
+ * <ul>
+ *  <li> <i> Hint:</i>  writeInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of writeInterval field
 	 */
 	@Override
@@ -1929,15 +1997,20 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>writeInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between write updates, 0 means no writing (sending).
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending). Hint: writeInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the writeInterval field.
 	 * @return {@link ReceiverPduObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public ReceiverPduObject setWriteInterval(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("ReceiverPdu writeInterval newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		writeInterval = newValue;
 		return this;
 	}
@@ -1949,8 +2022,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setWriteInterval(SFTimeObject newValue)
 	{
-		setWriteInterval(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWriteInterval(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1965,6 +2039,7 @@ setAttribute method invocations).
 	@Override
 	public final ReceiverPduObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ReceiverPdu
@@ -1992,8 +2067,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2011,6 +2087,7 @@ setAttribute method invocations).
 	@Override
 	public final ReceiverPduObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ReceiverPdu
@@ -2038,8 +2115,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2052,6 +2130,7 @@ setAttribute method invocations).
 	@Override
 	public final ReceiverPduObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2066,8 +2145,9 @@ setAttribute method invocations).
 	 */
 	public ReceiverPduObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

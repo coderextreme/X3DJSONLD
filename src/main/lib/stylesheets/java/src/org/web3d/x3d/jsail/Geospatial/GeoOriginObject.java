@@ -59,10 +59,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoOrigin" target="blank">X3D Abstract Specification: GeoOrigin</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoOrigin" target="_blank">X3D Tooltips: GeoOrigin</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -293,6 +291,7 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public GeoOriginObject setGeoCoords(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -311,8 +310,9 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public GeoOriginObject setGeoCoords(SFVec3dObject newValue)
 	{
-		setGeoCoords(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoCoords(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -371,6 +371,7 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public GeoOriginObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -397,8 +398,9 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -412,6 +414,7 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -427,6 +430,7 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -443,6 +447,7 @@ public class GeoOriginObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -478,6 +483,7 @@ setAttribute method invocations).
 	@Override
 	public GeoOriginObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -570,6 +576,7 @@ setAttribute method invocations).
 	@Override
 	public GeoOriginObject setRotateYUp(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		rotateYUp = newValue;
 		return this;
 	}
@@ -581,8 +588,9 @@ setAttribute method invocations).
 	 */
 	public GeoOriginObject setRotateYUp(SFBoolObject newValue)
 	{
-		setRotateYUp(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotateYUp(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -597,6 +605,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoOriginObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoOrigin
@@ -624,8 +633,9 @@ setAttribute method invocations).
 	 */
 	public GeoOriginObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -643,6 +653,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoOriginObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoOrigin
@@ -670,8 +681,9 @@ setAttribute method invocations).
 	 */
 	public GeoOriginObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -684,6 +696,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoOriginObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -698,8 +711,9 @@ setAttribute method invocations).
 	 */
 	public GeoOriginObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

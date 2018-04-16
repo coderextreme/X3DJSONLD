@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: BooleanSequencer generates periodic discrete Boolean values that can be ROUTEd to other Boolean attributes.
+ * <i>X3D node tooltip</i>: BooleanSequencer generates periodic discrete Boolean values. Authors can ROUTE value_changed output events to other Boolean attributes.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction </li> 
  *  <li> <i>Hint:</i> typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
@@ -55,10 +55,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html#BooleanSequencer" target="blank">X3D Abstract Specification: BooleanSequencer</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#BooleanSequencer" target="_blank">X3D Tooltips: BooleanSequencer</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -344,6 +342,7 @@ public class BooleanSequencerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public BooleanSequencerObject setKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKey(); // newValueNullSetDEFAULT_VALUE
@@ -370,8 +369,9 @@ public class BooleanSequencerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat key field, similar to {@link #setKey(float[])}.
@@ -385,6 +385,7 @@ public class BooleanSequencerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		key = newValue;
 		return this;
 	}
@@ -410,6 +411,7 @@ setAttribute method invocations).
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -457,6 +459,7 @@ setAttribute method invocations).
 	@Override
 	public BooleanSequencerObject setKeyValue(boolean[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
@@ -483,8 +486,9 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKeyValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFBool keyValue field, similar to {@link #setKeyValue(boolean[])}.
@@ -498,6 +502,7 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		keyValue = newValue;
 		return this;
 	}
@@ -533,6 +538,7 @@ setAttribute method invocations).
 	@Override
 	public BooleanSequencerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -613,6 +619,7 @@ setAttribute method invocations).
 	@Override
 	public BooleanSequencerObject setNext(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		next = newValue;
 		return this;
 	}
@@ -624,8 +631,9 @@ setAttribute method invocations).
 	 */
 	public BooleanSequencerObject setNext(SFBoolObject newValue)
 	{
-		setNext(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNext(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -638,6 +646,7 @@ setAttribute method invocations).
 	@Override
 	public BooleanSequencerObject setPrevious(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		previous = newValue;
 		return this;
 	}
@@ -649,14 +658,17 @@ setAttribute method invocations).
 	 */
 	public BooleanSequencerObject setPrevious(SFBoolObject newValue)
 	{
-		setPrevious(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPrevious(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Single intermittent output value determined by current key time and corresponding keyValue entry.  * <br>
-
+	 * <i>Tooltip:</i> Single intermittent output value determined by current key time and corresponding keyValue entry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	@Override
@@ -677,6 +689,7 @@ setAttribute method invocations).
 	@Override
 	public final BooleanSequencerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to BooleanSequencer
@@ -704,8 +717,9 @@ setAttribute method invocations).
 	 */
 	public BooleanSequencerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -723,6 +737,7 @@ setAttribute method invocations).
 	@Override
 	public final BooleanSequencerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to BooleanSequencer
@@ -750,8 +765,9 @@ setAttribute method invocations).
 	 */
 	public BooleanSequencerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -764,6 +780,7 @@ setAttribute method invocations).
 	@Override
 	public final BooleanSequencerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -778,8 +795,9 @@ setAttribute method invocations).
 	 */
 	public BooleanSequencerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

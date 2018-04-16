@@ -70,10 +70,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
 
  * <br>
 
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Header" target="blank">X3D Abstract Specification: meta</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta" target="_blank">X3D Tooltips: meta</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: metaStatements</a>
  */
@@ -398,6 +396,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setContent(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -412,8 +411,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setContent(SFStringObject newValue)
 	{
-		setContent(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setContent(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['rtl'|'ltr'] from inputOutput SFString field named <i>dir</i>.
@@ -441,6 +441,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setDir(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -465,8 +466,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setDir(SFStringObject newValue)
 	{
-		setDir(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDir(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>http-equiv</i>.
@@ -494,6 +496,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setHttp_equiv(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -508,8 +511,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setHttp_equiv(SFStringObject newValue)
 	{
-		setHttp_equiv(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setHttp_equiv(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>lang</i>.
@@ -535,6 +539,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setLang(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -549,8 +554,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setLang(SFStringObject newValue)
 	{
-		setLang(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLang(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['accessRights'|'contributor'|'created'|'creator'|'description'|'drawing'|'error'|'generator'|'hint'|'identifier'|'Image'|'info'|'license'|'modified'|'MovingImage'|'photo'|'reference'|'requires'|'rights'|'robots'|'Sound'|'specificationSection'|'specificationUrl'|'subject'|'Text'|'title'|'TODO'|'translator'|'translated'|'version'|'warning'|'etc.'] from inputOutput SFString field named <i>name</i>.
@@ -584,6 +590,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public final metaObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -598,8 +605,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>scheme</i>.
@@ -623,6 +631,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setScheme(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -637,8 +646,9 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public metaObject setScheme(SFStringObject newValue)
 	{
-		setScheme(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScheme(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

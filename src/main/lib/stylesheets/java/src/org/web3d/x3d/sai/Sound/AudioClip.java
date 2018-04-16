@@ -52,11 +52,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#AudioClip" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/sound.html#AudioClip" target="blank">X3D Abstract Specification: AudioClip</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#AudioClip" target="_blank">X3D Tooltips: AudioClip</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Audio" target="_blank">X3D Scene Authoring Hints: Audio</a>
  */
@@ -87,19 +85,27 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	public AudioClip setDescription(String newValue);
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>duration_changed</i>.
+	 * Provide double value in seconds within allowed range of [-1,infinity) from outputOnly SFTime field named <i>duration_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  duration_changed is length of time in seconds for one cycle of audio.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) or -1. duration_changed is length of time in seconds for one cycle of media stream.
+ * <ul>
+ *  <li> <i>Warning:</i> duration value of -1 implies that media data has not yet loaded or is unavailable for some reason. </li> 
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i> duration_changed is an SFTime duration interval, normally nonnegative, and not an absolute clock time. </li> 
+ *  <li> <i>Hint:</i>  changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified. </li> 
+ * </ul>
 	 * @return value of duration_changed field
 	 */
 	@Override
 	public double getDuration();
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>elapsedTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>elapsedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time.
+ * <ul>
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i>  elapsedTime is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of elapsedTime field
 	 */
 	@Override
@@ -107,8 +113,10 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when playback starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when playback starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -116,8 +124,10 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isPaused</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isPaused true/false events are sent when AudioClip is paused/resumed.  * <br>
-
+	 * <i>Tooltip:</i> isPaused true/false events are sent when AudioClip is paused/resumed.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isPaused field
 	 */
 	@Override
@@ -164,7 +174,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	 * <br><br>
 	 * <i>Tooltip:</i> When time now &amp;gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of pauseTime field
 	 */
@@ -174,7 +184,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>pauseTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the pauseTime field.
 	 * @return {@link AudioClip} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -184,8 +194,10 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Provide float value within allowed range of (0,infinity) from inputOutput SFFloat field named <i>pitch</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.  * <br>
-
+	 * <i>Tooltip:</i> (0,+infinity) Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.
+ * <ul>
+ *  <li> <i> Hint:</i>  changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified. </li> 
+ * </ul>
 	 * @return value of pitch field
 	 */
 	@Override
@@ -194,7 +206,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Assign float value within allowed range of (0,infinity) to inputOutput SFFloat field named <i>pitch</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.
+	 * <i>Tooltip:</i> (0,+infinity) Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed. Hint: changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified.
 	 * @param newValue is new value for the pitch field.
 	 * @return {@link AudioClip} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -206,7 +218,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	 * <br><br>
 	 * <i>Tooltip:</i> When resumeTime becomes &amp;lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of resumeTime field
 	 */
@@ -216,7 +228,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the resumeTime field.
 	 * @return {@link AudioClip} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -228,7 +240,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of startTime field
 	 */
@@ -238,7 +250,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the startTime field.
 	 * @return {@link AudioClip} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -250,7 +262,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_stopTime event values less than or equal to startTime. </li> 
  * </ul>
@@ -262,7 +274,7 @@ public interface AudioClip extends X3DSoundSourceNode, X3DUrlObject
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
 	 * @param newValue is new value for the stopTime field.
 	 * @return {@link AudioClip} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

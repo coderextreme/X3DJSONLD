@@ -52,15 +52,14 @@ import org.web3d.x3d.jsail.Core.*;
  *  <li> <i>Hint:</i> NavigationInfo types '"WALK" "FLY"' support camera-to-object collision detection. </li> 
  *  <li> <i>Warning:</i> results are undefined if a bindable node (Viewpoint, OrthoViewpoint, NavigationInfo, Fog, Background, TextureBackground) is a contained child of LOD or Switch. </li> 
  *  <li> <i>Hint:</i> Regardless of viewpoint jump value at bind time, the relative viewing transformation between user's view and defined position/orientation is stored for later use when un-jumping (returning to the viewpoint when subsequent viewpoint is unbound). </li> 
+ *  <li> <i>Hint:</i> customizable design pattern for dedicated Viewpoint/NavigationInfo pair: &amp;lt;Viewpoint DEF='SpecialView'/&amp;gt; &amp;lt;NavigationInfo DEF='SpecialNav'/&amp;gt; &amp;lt;ROUTE fromNode='SpecialView' fromField='isBound' toNode='SpecialNav' toField='set_bind'/&amp;gt; </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Viewpoints <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints</a> </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo" target="blank">X3D Abstract Specification: NavigationInfo</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NavigationInfo" target="_blank">X3D Tooltips: NavigationInfo</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">X3D Scene Authoring Hints: Viewpoints</a>
  */
@@ -436,11 +435,11 @@ public class NavigationInfoObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Provide array of Float results within allowed range of [0,infinity) from inputOutput MFFloat field named <i>avatarSize</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> avatarSize triplet values are: (a) collision distance between user and geometry (near clipping plane of the view frustrum) (b) viewer height above terrain (c) tallest height viewer can WALK over.
+	 * <i>Tooltip:</i> avatarSize triplet values define three separate parameters: (a) collisionDistance between user and geometry, i.e. near clipping plane of view frustrum, default 0.25m, (b) viewer height above terrain, default 1.6m, and (c) tallest height viewer can WALK over, default 0.75m.
  * <ul>
- *  <li> <i>Warning:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
- *  <li> <i>Hint:</i> keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
- *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
+ *  <li> <i>Hint:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
+ *  <li> <i>Warning:</i> important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
+ *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
 	 * @return value of avatarSize field
 	 */
@@ -467,13 +466,14 @@ public class NavigationInfoObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Assign Float array within allowed range of [0,infinity) to inputOutput MFFloat field named <i>avatarSize</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> avatarSize triplet values are: (a) collision distance between user and geometry (near clipping plane of the view frustrum) (b) viewer height above terrain (c) tallest height viewer can WALK over. Warning: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Hint: keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> avatarSize triplet values define three separate parameters: (a) collisionDistance between user and geometry, i.e. near clipping plane of view frustrum, default 0.25m, (b) viewer height above terrain, default 1.6m, and (c) tallest height viewer can WALK over, default 0.75m. Hint: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Warning: important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the avatarSize field.
 	 * @return {@link NavigationInfoObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public NavigationInfoObject setAvatarSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAvatarSize(); // newValueNullSetDEFAULT_VALUE
@@ -500,8 +500,9 @@ public class NavigationInfoObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearAvatarSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setAvatarSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAvatarSize(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat avatarSize field, similar to {@link #setAvatarSize(float[])}.
@@ -515,6 +516,7 @@ public class NavigationInfoObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearAvatarSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		avatarSize = newValue;
 		return this;
 	}
@@ -540,6 +542,7 @@ setAttribute method invocations).
 			clearAvatarSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -551,8 +554,10 @@ setAttribute method invocations).
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event sent reporting timestamp when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> Event sent reporting timestamp when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -583,6 +588,7 @@ setAttribute method invocations).
 	@Override
 	public NavigationInfoObject setHeadlight(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		headlight = newValue;
 		return this;
 	}
@@ -594,15 +600,17 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setHeadlight(SFBoolObject newValue)
 	{
-		setHeadlight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setHeadlight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isBound</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */
@@ -633,6 +641,7 @@ setAttribute method invocations).
 	@Override
 	public NavigationInfoObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -727,6 +736,7 @@ setAttribute method invocations).
 	@Override
 	public NavigationInfoObject setSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NavigationInfo speed newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -742,14 +752,17 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setSpeed(SFFloatObject newValue)
 	{
-		setSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>transitionComplete</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event signaling viewpoint transition complete. Interchange profile hint: this field may be ignored, applying the default value regardless.  * <br>
-
+	 * <i>Tooltip:</i> Event signaling viewpoint transition complete. Interchange profile hint: this field may be ignored.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of transitionComplete field
 	 */
 	@Override
@@ -760,7 +773,7 @@ setAttribute method invocations).
 	/**
 	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>transitionTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> (X3D version 3.1 or later) Duration of viewpoint transition in seconds.
+	 * <i>Tooltip:</i> (X3D version 3.1 or later) transitionTime defines the expected duration of viewpoint transition in seconds.
  * <ul>
  *  <li> <i> Hint:</i>  If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
@@ -775,13 +788,18 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>transitionTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> (X3D version 3.1 or later) Duration of viewpoint transition in seconds. Hint: If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> (X3D version 3.1 or later) transitionTime defines the expected duration of viewpoint transition in seconds. Hint: If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the transitionTime field.
 	 * @return {@link NavigationInfoObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public NavigationInfoObject setTransitionTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("NavigationInfo transitionTime newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		transitionTime = newValue;
 		return this;
 	}
@@ -793,8 +811,9 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setTransitionTime(SFTimeObject newValue)
 	{
-		setTransitionTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransitionTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String enumeration results with quoted value(s) ["TELEPORT","LINEAR","ANIMATE",...] from inputOutput MFString field named <i>transitionType</i>.
@@ -839,6 +858,7 @@ setAttribute method invocations).
 	@Override
 	public NavigationInfoObject setTransitionType(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTransitionType(); // newValueNullSetDEFAULT_VALUE
@@ -865,8 +885,9 @@ setAttribute method invocations).
 			clearTransitionType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setTransitionType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransitionType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString transitionType field, similar to {@link #setTransitionType(String[])}.
@@ -881,6 +902,7 @@ setAttribute method invocations).
 			clearTransitionType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setTransitionType(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -897,6 +919,7 @@ setAttribute method invocations).
 			clearTransitionType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setTransitionType(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -912,6 +935,7 @@ setAttribute method invocations).
 			clearTransitionType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		transitionType = newValue;
 		return this;
 	}
@@ -971,6 +995,7 @@ setAttribute method invocations).
 	@Override
 	public NavigationInfoObject setType(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearType(); // newValueNullSetDEFAULT_VALUE
@@ -997,8 +1022,9 @@ setAttribute method invocations).
 			clearType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString type field, similar to {@link #setType(String[])}.
@@ -1013,6 +1039,7 @@ setAttribute method invocations).
 			clearType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setType(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -1029,6 +1056,7 @@ setAttribute method invocations).
 			clearType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setType(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -1044,6 +1072,7 @@ setAttribute method invocations).
 			clearType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		type = newValue;
 		return this;
 	}
@@ -1063,10 +1092,10 @@ setAttribute method invocations).
 	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum).
  * <ul>
  *  <li> <i>Hint:</i> visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). </li> 
- *  <li> <i>Hint:</i> keep visibilityLimit &amp;gt;= zero. </li> 
- *  <li> <i>Warning:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
- *  <li> <i>Hint:</i> keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
- *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
+ *  <li> <i>Hint:</i> set visibilityLimit to appropriate positive value in meters to define far culling plane of view frustum. </li> 
+ *  <li> <i>Hint:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
+ *  <li> <i>Warning:</i> important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
+ *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
 	 * @return value of visibilityLimit field
 	 */
@@ -1079,13 +1108,14 @@ setAttribute method invocations).
 	/**
 	 * Assign float value within allowed range of [0,infinity) to inputOutput SFFloat field named <i>visibilityLimit</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum). Hint: visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). Hint: keep visibilityLimit &gt;= zero. Warning: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Hint: keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum). Hint: visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). Hint: set visibilityLimit to appropriate positive value in meters to define far culling plane of view frustum. Hint: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Warning: important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the visibilityLimit field.
 	 * @return {@link NavigationInfoObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public NavigationInfoObject setVisibilityLimit(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NavigationInfo visibilityLimit newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1101,8 +1131,9 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setVisibilityLimit(SFFloatObject newValue)
 	{
-		setVisibilityLimit(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVisibilityLimit(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1117,6 +1148,7 @@ setAttribute method invocations).
 	@Override
 	public final NavigationInfoObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NavigationInfo
@@ -1144,8 +1176,9 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1163,6 +1196,7 @@ setAttribute method invocations).
 	@Override
 	public final NavigationInfoObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NavigationInfo
@@ -1190,8 +1224,9 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1204,6 +1239,7 @@ setAttribute method invocations).
 	@Override
 	public final NavigationInfoObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1218,8 +1254,9 @@ setAttribute method invocations).
 	 */
 	public NavigationInfoObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

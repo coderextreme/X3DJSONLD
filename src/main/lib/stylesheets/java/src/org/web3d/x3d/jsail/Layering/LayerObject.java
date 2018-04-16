@@ -86,10 +86,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layering.html#Layer" target="blank">X3D Abstract Specification: Layer</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Layer" target="_blank">X3D Tooltips: Layer</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -366,6 +364,7 @@ public class LayerObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 	@Override
 	public LayerObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -396,6 +395,7 @@ public class LayerObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -544,8 +544,10 @@ setAttribute method invocations).
 											/**
 	 * Provide boolean value from inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isPickable determines whether pick traversal is performed for this layer.  * <br>
-
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isPickable field
 	 */
 	@Override
@@ -557,13 +559,14 @@ setAttribute method invocations).
 	/**
 	 * Assign boolean value to inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer. Warning: it is an error to define this transient outputOnly field in an X3D file.
 	 * @param newValue is new value for the isPickable field.
 	 * @return {@link LayerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public LayerObject setIsPickable(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		isPickable = newValue;
 		return this;
 	}
@@ -575,8 +578,9 @@ setAttribute method invocations).
 	 */
 	public LayerObject setIsPickable(SFBoolObject newValue)
 	{
-		setIsPickable(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIsPickable(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -600,6 +604,7 @@ setAttribute method invocations).
 	@Override
 	public LayerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -694,6 +699,7 @@ setAttribute method invocations).
 	@Override
 	public LayerObject setViewport(X3DViewportNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		viewport = newValue;
 		if (newValue != null)
 		{
@@ -773,6 +779,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Layer
@@ -800,8 +807,9 @@ setAttribute method invocations).
 	 */
 	public LayerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -819,6 +827,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Layer
@@ -846,8 +855,9 @@ setAttribute method invocations).
 	 */
 	public LayerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -860,6 +870,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -874,8 +885,9 @@ setAttribute method invocations).
 	 */
 	public LayerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

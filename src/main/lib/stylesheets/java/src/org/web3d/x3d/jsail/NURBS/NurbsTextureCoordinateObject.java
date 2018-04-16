@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/nurbs.html#NurbsTextureCoordinate" target="blank">X3D Abstract Specification: NurbsTextureCoordinate</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsTextureCoordinate" target="_blank">X3D Tooltips: NurbsTextureCoordinate</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -345,6 +343,7 @@ public class NurbsTextureCoordinateObject extends org.web3d.x3d.jsail.X3DConcret
 	@Override
 	public NurbsTextureCoordinateObject setControlPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -363,8 +362,9 @@ public class NurbsTextureCoordinateObject extends org.web3d.x3d.jsail.X3DConcret
 	 */
 	public NurbsTextureCoordinateObject setControlPoint(MFVec2fObject newValue)
 	{
-		setControlPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setControlPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -388,6 +388,7 @@ public class NurbsTextureCoordinateObject extends org.web3d.x3d.jsail.X3DConcret
 	@Override
 	public NurbsTextureCoordinateObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -480,6 +481,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setUDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsTextureCoordinate uDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -495,8 +497,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setUDimension(SFInt32Object newValue)
 	{
-		setUDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results from initializeOnly MFDouble field named <i>uKnot</i>.
@@ -535,6 +538,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setUKnot(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
@@ -561,8 +565,9 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUKnot(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUKnot(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble uKnot field, similar to {@link #setUKnot(double[])}.
@@ -576,6 +581,7 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		uKnot = newValue;
 		return this;
 	}
@@ -601,6 +607,7 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -632,6 +639,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setUOrder(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 2) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsTextureCoordinate uOrder newValue=" + newValue + " has component value less than restriction minInclusive=2");
@@ -647,8 +655,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setUOrder(SFInt32Object newValue)
 	{
-		setUOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,infinity) from initializeOnly SFInt32 field named <i>vDimension</i>.
@@ -673,6 +682,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setVDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsTextureCoordinate vDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -688,8 +698,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setVDimension(SFInt32Object newValue)
 	{
-		setVDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results from initializeOnly MFDouble field named <i>vKnot</i>.
@@ -728,6 +739,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setVKnot(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
@@ -754,8 +766,9 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setVKnot(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVKnot(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble vKnot field, similar to {@link #setVKnot(double[])}.
@@ -769,6 +782,7 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		vKnot = newValue;
 		return this;
 	}
@@ -794,6 +808,7 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -825,6 +840,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setVOrder(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 2) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsTextureCoordinate vOrder newValue=" + newValue + " has component value less than restriction minInclusive=2");
@@ -840,8 +856,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setVOrder(SFInt32Object newValue)
 	{
-		setVOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results within allowed range of (0,infinity) from inputOutput MFFloat field named <i>weight</i>.
@@ -882,6 +899,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsTextureCoordinateObject setWeight(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
@@ -908,8 +926,9 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setWeight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat weight field, similar to {@link #setWeight(float[])}.
@@ -923,6 +942,7 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		weight = newValue;
 		return this;
 	}
@@ -948,6 +968,7 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -969,6 +990,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsTextureCoordinateObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsTextureCoordinate
@@ -996,8 +1018,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1015,6 +1038,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsTextureCoordinateObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsTextureCoordinate
@@ -1042,8 +1066,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1056,6 +1081,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsTextureCoordinateObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1070,8 +1096,9 @@ setAttribute method invocations).
 	 */
 	public NurbsTextureCoordinateObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

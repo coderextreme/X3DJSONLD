@@ -15,7 +15,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='28 January 2018'/>
+        <meta name='modified' content='19 March 2018'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -30,7 +30,7 @@
         <meta name='identifier' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d'/>
         <meta name='license' content='../license.html'/>
         <meta name='SpecialTest' content='tested sat: name value cannot contain embedded space character'/>
-        <meta name='translated' content='29 January 2018'/>
+        <meta name='translated' content='09 April 2018'/>
         <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html'/>
         <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding'/>
     </head>
@@ -42,8 +42,8 @@
         <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
         <WorldInfo USE='WorldInfoDEF'/>
         <WorldInfo USE='WorldInfoDEF'/>
-        <MetadataString DEF='scene.addChildMetadataObject' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
-        <LayerSet DEF='scene.addChildLayerSetObjectTest' order='0'/>
+        <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+        <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
         <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
             <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "http://www.web3d.org/specifications/java/X3DJSAIL.html"'>
                 <Shape DEF='BoxShape'>
@@ -73,7 +73,7 @@
                     <Material USE='GreenMaterial'/>
                 </Appearance>
                 <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
-                    <!-- Comment example A, plain quotation marks: He said, \"Immel did it!\" -->
+                    <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
                     <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
                     <MetadataSet name='EscapedQuotationMarksMetadataSet'>
                         <MetadataString name='quotesTestC' containerField='value' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
@@ -84,11 +84,12 @@
             </Shape>
             <Collision>
                 <!-- test containerField='proxy' -->
-                <Shape DEF='ProxyShape'>
-                    <!-- alternative XML encoding: Text string='\"One, Two, Three\"\"\"\"He said, \\&quot;Immel did it!\\&quot;\"' -->
-                    <!-- alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) -->
+                <Shape DEF='ProxyShape' containerField='proxy'>
+                    <!-- alternative XML encoding: Text string='"One, Two, Comment" " " "He said, \\&quot;Immel did it!\\&quot;"' -->
+                    <!-- alternative XML encoding: Text string='"One, Two, Comment" " " "He said, \\&quot;Immel did it!\\&quot;" " "' -->
+                    <!-- alternative Java source: .setString(new String [] {"One, Two, Comment", " ", "He said, " " "Immel did it!" " " "}) -->
                     <!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
-                    <Text string='"One, Two, Three" "" "He said, \"Immel did it!\""'/>
+                    <Text string='"One, Two, Text" "" "He said, \"Immel did it!\" \"\""'/>
                 </Shape>
             </Collision>
             <!-- It's a beautiful world -->
@@ -106,7 +107,13 @@
                 <field name='colorInput' accessType='inputOnly' type='SFColor'/>
                 <field name='colorsOutput' accessType='outputOnly' type='MFColor'/>
 <![CDATA[
-ecmascript: function colorInput (eventValue) // Example source code { colorsOutput = new MFColor(eventValue); // assigning value sends output event // Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n'); }
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
 ]]>
             </Script>
             <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1'>
@@ -125,7 +132,7 @@ ecmascript: function colorInput (eventValue) // Example source code { colorsOutp
             <ProtoBody>
                 <!-- Initial node of ProtoBody determines prototype node type -->
                 <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.127273' specularColor='0.276305 0.11431 0.139857'/>
-                <!-- [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\" -->
+                <!-- [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()="Material" -->
                 <!-- presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types -->
                 <TouchSensor description='within ProtoBody'>
                     <IS>
@@ -136,25 +143,34 @@ ecmascript: function colorInput (eventValue) // Example source code { colorsOutp
             </ProtoBody>
         </ProtoDeclare>
         <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material node' url='"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"'>
-            <!-- [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\" -->
+            <!-- [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability." -->
             <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField' type='SFString'/>
         </ExternProtoDeclare>
         <!-- Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place -->
         <Shape DEF='TestShape1'>
             <Appearance DEF='TestAppearance1'>
                 <!-- ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java -->
+                <ProtoInstance name='ArtDeco01Material' containerField='material'>
+                    <!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material" -->
+                    <fieldValue name='description' value='ArtDeco01Material can substitute for a Material node'/>
+                </ProtoInstance>
             </Appearance>
             <Sphere radius='0.001'/>
         </Shape>
         <Shape DEF='TestShape2'>
             <Appearance DEF='TestAppearance2'>
                 <!-- ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java -->
+                <ProtoInstance DEF='ArtDeco02MaterialDEF' name='ArtDeco02Material' containerField='material'>
+                    <!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability." -->
+                    <fieldValue name='description' value='ArtDeco02Material can substitute for another Material node'/>
+                </ProtoInstance>
             </Appearance>
             <Cone bottomRadius='0.001' height='0.001'/>
         </Shape>
         <Shape DEF='TestShape3'>
             <Appearance DEF='TestAppearance3'>
                 <!-- ArtDeco02Material ProtoInstance USE goes here... -->
+                <ProtoInstance USE='ArtDeco02MaterialDEF' containerField='material'/>
             </Appearance>
             <Cylinder height='0.001' radius='0.001'/>
         </Shape>
@@ -193,7 +209,29 @@ ecmascript: function colorInput (eventValue) // Example source code { colorsOutp
                         <connect nodeField='diffuseColor' protoField='diffuseColor'/>
                     </IS>
 <![CDATA[
-ecmascript: function initialize () { newColor = diffuseColor; // start with correct color } function set_enabled (newValue) { enabled = newValue; } function clockTrigger (timeValue) { if (!enabled) return; red = newColor.r; green = newColor.g; blue = newColor.b; // note different modulation rates for each color component, % is modulus operator newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1); if (enabled) { Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n'); } }
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+\tenabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+\tif (enabled)
+\t{
+\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
+\t}
+}
 ]]>
                 </Script>
             </ProtoBody>
@@ -204,6 +242,7 @@ ecmascript: function initialize () { newColor = diffuseColor; // start with corr
                 <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
                 <Appearance DEF='DeclarativeAppearanceExample'>
                     <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
+                    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>
                 </Appearance>
                 <Cone bottom='false' bottomRadius='0.05' height='0.1'/>
             </Shape>
@@ -211,10 +250,10 @@ ecmascript: function initialize () { newColor = diffuseColor; // start with corr
         </Group>
         <!-- Test success: declarative statement addChild() -->
         <!-- Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> -->
-        <!-- Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> -->
-        <!-- Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found -->
-        <!-- Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found -->
-        <!-- Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found -->
+        <!-- Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/> -->
+        <!-- Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found -->
+        <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found -->
+        <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found -->
         <Group DEF='TestFieldObjectsGroup'>
             <!-- testFieldObjects() results -->
             <!-- SFBool default=true, true=true, false=false, negate()=true -->
@@ -234,7 +273,7 @@ ecmascript: function initialize () { newColor = diffuseColor; // start with corr
             <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
             <MovieTexture containerField='source' description='mpgsys.mpg from ConformanceNist suite' url='"mpgsys.mpg" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"'>
                 <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
-                <!-- Expected containerField='source', allowed containerField values=\"texture\"\"source\"\"back\"\"bottom\"\"front\"\"left\"\"right\"\"top\"\"backTexture\"\"bottomTexture\"\"frontTexture\"\"leftTexture\"\"rightTexture\"\"topTexture\" -->
+                <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
             </MovieTexture>
         </Sound>
         <!-- Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true -->

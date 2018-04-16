@@ -64,7 +64,7 @@
           },
           {
             "@name":"modified",
-            "@content":"28 January 2018"
+            "@content":"19 March 2018"
           },
           {
             "@name":"generator",
@@ -124,7 +124,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 January 2018"
+            "@content":"09 April 2018"
           },
           {
             "@name":"generator",
@@ -178,13 +178,13 @@
           { "MetadataString":
             {
               "@name":"test",
-              "@DEF":"scene.addChildMetadataObject",
+              "@DEF":"scene.addChildMetadata",
               "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
             }
           },
           { "LayerSet":
             {
-              "@DEF":"scene.addChildLayerSetObjectTest"
+              "@DEF":"scene.addChildLayerSetTest"
             }
           },
           { "Transform":
@@ -366,10 +366,13 @@
                           "@DEF":"ProxyShape",
                           "-children":[
                             {
-                              "#comment":"alternative XML encoding: Text string='\"One, Two, Three\"\"\"\"He said, \\&quot;Immel did it!\\&quot;\"'"
+                              "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
                             },
                             {
-                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
+                              "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
+                            },
+                            {
+                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\"\"})"
                             },
                             {
                               "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
@@ -378,7 +381,7 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@string":["One, Two, Three","","He said, \"Immel did it!\""]
+                                "@string":["One, Two, Text","","He said, \"Immel did it!\" \"\""]
                               }
                             }
                         }
@@ -455,7 +458,22 @@
                       }
                     ],
                     "#sourceText":[
-"ecmascript: function colorInput (eventValue) // Example source code { colorsOutput = new MFColor(eventValue); // assigning value sends output event // Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n'); }"
+"",
+"",
+"",
+"",
+"ecmascript:",
+"",
+"function colorInput (eventValue) // Example source code",
+"{",
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
+"}",
+"",
+"",
+"",
+"",
+""
 ]
                   }
                 },
@@ -844,7 +862,38 @@
                             ]
                         },
                         "#sourceText":[
-"ecmascript: function initialize () { newColor = diffuseColor; // start with correct color } function set_enabled (newValue) { enabled = newValue; } function clockTrigger (timeValue) { if (!enabled) return; red = newColor.r; green = newColor.g; blue = newColor.b; // note different modulation rates for each color component, % is modulus operator newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1); if (enabled) { Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n'); } }"
+"",
+"",
+"",
+"",
+"ecmascript:",
+"function initialize ()",
+"{",
+"    newColor = diffuseColor; // start with correct color",
+"}",
+"function set_enabled (newValue)",
+"{",
+"\tenabled = newValue;",
+"}",
+"function clockTrigger (timeValue)",
+"{",
+"    if (!enabled) return;",
+"    red   = newColor.r;",
+"    green = newColor.g;",
+"    blue  = newColor.b;",
+"",
+"    // note different modulation rates for each color component, % is modulus operator",
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
+"\tif (enabled)",
+"\t{",
+"\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
+"\t}",
+"}",
+"",
+"",
+"",
+"",
+""
 ]
                       }
                     }
@@ -989,7 +1038,7 @@
                         "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                       },
                       {
-                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\"\"source\"\"back\"\"bottom\"\"front\"\"left\"\"right\"\"top\"\"backTexture\"\"bottomTexture\"\"frontTexture\"\"leftTexture\"\"rightTexture\"\"topTexture\""
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
                       }
                     ]
                   }

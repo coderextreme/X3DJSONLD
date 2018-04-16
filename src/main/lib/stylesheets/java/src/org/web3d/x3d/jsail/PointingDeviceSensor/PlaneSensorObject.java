@@ -57,10 +57,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#PlaneSensor" target="blank">X3D Abstract Specification: PlaneSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PlaneSensor" target="_blank">X3D Tooltips: PlaneSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -424,6 +422,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setAutoOffset(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		autoOffset = newValue;
 		return this;
 	}
@@ -435,8 +434,9 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public PlaneSensorObject setAutoOffset(SFBoolObject newValue)
 	{
-		setAutoOffset(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAutoOffset(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>axisRotation</i>.
@@ -461,6 +461,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setAxisRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -479,8 +480,9 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public PlaneSensorObject setAxisRotation(SFRotationObject newValue)
 	{
-		setAxisRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxisRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -524,6 +526,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -538,8 +541,9 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public PlaneSensorObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -564,6 +568,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -575,14 +580,17 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public PlaneSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -593,8 +601,10 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.  * <br>
-
+	 * <i>Tooltip:</i> Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -627,6 +637,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setMaxPosition(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -645,8 +656,9 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public PlaneSensorObject setMaxPosition(SFVec2fObject newValue)
 	{
-		setMaxPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -684,6 +696,7 @@ public class PlaneSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public PlaneSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -778,6 +791,7 @@ setAttribute method invocations).
 	@Override
 	public PlaneSensorObject setMinPosition(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -796,8 +810,9 @@ setAttribute method invocations).
 	 */
 	public PlaneSensorObject setMinPosition(SFVec2fObject newValue)
 	{
-		setMinPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -838,6 +853,7 @@ setAttribute method invocations).
 	@Override
 	public PlaneSensorObject setOffset(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -856,8 +872,9 @@ setAttribute method invocations).
 	 */
 	public PlaneSensorObject setOffset(SFVec3fObject newValue)
 	{
-		setOffset(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOffset(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -877,8 +894,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>trackPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.  * <br>
-
+	 * <i>Tooltip:</i> trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of trackPoint_changed field
 	 */
 	@Override
@@ -889,8 +908,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>translation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  translation_changed events equal sum of relative translation change plus offset value.  * <br>
-
+	 * <i>Tooltip:</i> translation_changed events equal sum of relative translation change plus offset value.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of translation_changed field
 	 */
 	@Override
@@ -911,6 +932,7 @@ setAttribute method invocations).
 	@Override
 	public final PlaneSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PlaneSensor
@@ -938,8 +960,9 @@ setAttribute method invocations).
 	 */
 	public PlaneSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -957,6 +980,7 @@ setAttribute method invocations).
 	@Override
 	public final PlaneSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PlaneSensor
@@ -984,8 +1008,9 @@ setAttribute method invocations).
 	 */
 	public PlaneSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -998,6 +1023,7 @@ setAttribute method invocations).
 	@Override
 	public final PlaneSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1012,8 +1038,9 @@ setAttribute method invocations).
 	 */
 	public PlaneSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -103,10 +103,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#Appearance" target="blank">X3D Abstract Specification: Appearance</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Appearance" target="_blank">X3D Tooltips: Appearance</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -392,6 +390,7 @@ public class AppearanceObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public AppearanceObject setFillProperties(FillProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		fillProperties = newValue;
 		if (newValue != null)
 		{
@@ -478,6 +477,7 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setLineProperties(LineProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		lineProperties = newValue;
 		if (newValue != null)
 		{
@@ -564,11 +564,11 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setMaterial(X3DMaterialNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		material = newValue;
 		if (newValue != null)
 		{
 			((X3DConcreteElement) material).setParentObject(this); // parentTest15
-			((X3DConcreteNode)material).setContainerFieldOverride("material");
 		}
 		if (materialProtoInstance != null)
 		{
@@ -654,6 +654,7 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -760,6 +761,7 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setShaders(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearShaders(); // newValueNullSetDEFAULT_VALUE
@@ -790,6 +792,7 @@ setAttribute method invocations).
 			clearShaders(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		shaders = newValue;
 		for (X3DShaderNode element : newValue)
 		{
@@ -899,6 +902,7 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setTexture(X3DTextureNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		texture = newValue;
 		if (newValue != null)
 		{
@@ -985,6 +989,7 @@ setAttribute method invocations).
 	@Override
 	public AppearanceObject setTextureTransform(X3DTextureTransformNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureTransform = newValue;
 		if (newValue != null)
 		{
@@ -1064,6 +1069,7 @@ setAttribute method invocations).
 	@Override
 	public final AppearanceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Appearance
@@ -1091,8 +1097,9 @@ setAttribute method invocations).
 	 */
 	public AppearanceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1110,6 +1117,7 @@ setAttribute method invocations).
 	@Override
 	public final AppearanceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Appearance
@@ -1137,8 +1145,9 @@ setAttribute method invocations).
 	 */
 	public AppearanceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1151,6 +1160,7 @@ setAttribute method invocations).
 	@Override
 	public final AppearanceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1165,8 +1175,9 @@ setAttribute method invocations).
 	 */
 	public AppearanceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

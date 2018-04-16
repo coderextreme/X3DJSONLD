@@ -47,11 +47,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ColorDamper" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/followers.html#ColorDamper" target="blank">X3D Abstract Specification: ColorDamper</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorDamper" target="_blank">X3D Tooltips: ColorDamper</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -98,8 +96,10 @@ public interface ColorDamper extends X3DDamperNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when follower-node computation starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when follower-node computation starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -164,7 +164,7 @@ public interface ColorDamper extends X3DDamperNode
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>tolerance</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  -1 or [0,+infinity) Absolute value for satisfactory completion proximity (-1 lets browser choose).  * <br>
+	 * <i>Tooltip:</i>  [0,+infinity) or -1. Absolute value for satisfactory completion proximity (-1 lets browser choose).  * <br>
 
 	 * @return value of tolerance field
 	 */
@@ -174,7 +174,7 @@ public interface ColorDamper extends X3DDamperNode
 	/**
 	 * Assign float value to inputOutput SFFloat field named <i>tolerance</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> -1 or [0,+infinity) Absolute value for satisfactory completion proximity (-1 lets browser choose).
+	 * <i>Tooltip:</i> [0,+infinity) or -1. Absolute value for satisfactory completion proximity (-1 lets browser choose).
 	 * @param newValue is new value for the tolerance field.
 	 * @return {@link ColorDamper} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -184,8 +184,10 @@ public interface ColorDamper extends X3DDamperNode
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from outputOnly SFColor field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.  * <br>
-
+	 * <i>Tooltip:</i> Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	public float[] getValue();

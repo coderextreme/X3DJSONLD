@@ -38,21 +38,18 @@ import java.util.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
+
+ * <br>
+ * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
 Description of a single component.1188311883
 A component description contains useful pieces of information about
 the requirements. Of primary importance is the specification component name and level.
 Additional information includes title and URL for the component provider.
-
  * 
-
- * <br>
- * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#ComponentInfo" target="_blank">SAI Java Specification: B.6.1 ComponentInfo</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#COMPONENTStatement" target="blank">X3D Abstract Specification: 7.2.5.4 COMPONENT statement</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComponentInfo" target="_blank">X3D Tooltips: ComponentInfo</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

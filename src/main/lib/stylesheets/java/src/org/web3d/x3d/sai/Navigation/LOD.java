@@ -59,11 +59,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#LOD" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#LOD" target="blank">X3D Abstract Specification: LOD</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LOD" target="_blank">X3D Tooltips: LOD</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -193,10 +191,12 @@ public interface LOD extends X3DGroupingNode
 	public LOD setForceTransitions(boolean newValue);
 
 	/**
-	 * Provide int value from outputOnly SFInt32 field named <i>level_changed</i>.
+	 * Provide int value within allowed range of [0,infinity) from outputOnly SFInt32 field named <i>level_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Indicates current level of LOD children when activated.  * <br>
-
+	 * <i>Tooltip:</i> Indicates current level of LOD children when activated.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of level_changed field
 	 */
 	public int getLevel();

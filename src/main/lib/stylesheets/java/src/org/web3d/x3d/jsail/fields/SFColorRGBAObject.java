@@ -40,12 +40,6 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFColorRGBA X3D field type.
  * 
  * <br><br>
- * The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.
-<br><br>
-Related field object: {@link MFColorRGBAObject}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColorRGBA">X3D Tooltips: type SFColorRGBA</a>
-
- * 
 
  * <br>
  * Note that {@linkplain SFColorObject#ALICEBLUE SFColorObject} provides a variety of color constants.
@@ -53,12 +47,15 @@ Related field object: {@link MFColorRGBAObject}
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.
+ * <br><br>
+ * Related field object: {@link MFColorRGBAObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColorRGBA">X3D Tooltips: type SFColorRGBA</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA" target="blank">X3D Abstract Specification: SFColorRGBAAndMFColorRGBA</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -73,6 +70,9 @@ public class SFColorRGBAObject extends X3DConcreteField implements org.web3d.x3d
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Java Tutorials: Primitive Data Types</a>
      */
 	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 0.0f};
+
+	/** Default tuple size for this field type is <i>4</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 4;
 
 	// Member value declaration is encapsulated and private, using preferred Java types for concretes library
 	private float[] SFColorRGBA = java.util.Arrays.copyOf(DEFAULT_VALUE, DEFAULT_VALUE.length); // must be separate copy

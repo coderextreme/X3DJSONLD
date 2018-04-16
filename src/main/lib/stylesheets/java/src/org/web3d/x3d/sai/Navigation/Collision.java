@@ -60,11 +60,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Collision" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#Collision" target="blank">X3D Abstract Specification: Collision</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Collision" target="_blank">X3D Tooltips: Collision</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -160,8 +158,10 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time of collision between camera (avatar) and geometry.  * <br>
-
+	 * <i>Tooltip:</i> Time of collision between camera (avatar) and geometry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of collideTime field
 	 */
 	public double getCollideTime();
@@ -190,8 +190,10 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when triggering the sensor. isActive=true when view-object collision occurs, isActive=false when view-object collision no longer occurs.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when triggering the sensor. isActive=true when view-object collision occurs, isActive=false when view-object collision no longer occurs.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override

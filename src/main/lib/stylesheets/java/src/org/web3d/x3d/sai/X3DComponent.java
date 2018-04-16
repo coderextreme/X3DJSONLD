@@ -38,6 +38,9 @@ import java.util.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
+
+ * <br>
+ * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
 <p>
 Provides for implementation of a X3D player than runs as a
@@ -48,12 +51,7 @@ Generally this is used to provide a definition of an AWT component with a
 VRML/X3D display capability. There is no reason why this can not be used for
 other browser representations such as off-screen renderers or file savers.
 <p>
-
  * 
-
- * <br>
- * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#BrowserFactory" target="_blank">SAI Java Specification: B.5.2 BrowserFactory</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>

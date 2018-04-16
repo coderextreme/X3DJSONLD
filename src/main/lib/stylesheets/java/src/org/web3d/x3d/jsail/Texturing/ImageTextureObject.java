@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Texturing.*;
 
 /**
- * <i>X3D node tooltip</i>: ImageTexture maps a 2D-image file onto a geometric shape. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) values in range [0.0, 1.0] for opposite corners of the image.
+ * <i>X3D node tooltip</i>: ImageTexture maps a 2D-image file onto a geometric shape. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) texture-coordinate values in range [0.0, 1.0] for opposite corners of the image.
  * <ul>
  *  <li> <i>Hint:</i> can contain a single TextureProperties node. </li> 
  *  <li> <i>Hint:</i> insert Shape and Appearance nodes before adding texture. </li> 
@@ -68,10 +68,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#ImageTexture" target="blank">X3D Abstract Specification: ImageTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageTexture" target="_blank">X3D Tooltips: ImageTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -316,6 +314,7 @@ public class ImageTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public ImageTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -408,6 +407,7 @@ setAttribute method invocations).
 	@Override
 	public ImageTextureObject setRepeatS(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatS = newValue;
 		return this;
 	}
@@ -419,8 +419,9 @@ setAttribute method invocations).
 	 */
 	public ImageTextureObject setRepeatS(SFBoolObject newValue)
 	{
-		setRepeatS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatT</i>.
@@ -445,6 +446,7 @@ setAttribute method invocations).
 	@Override
 	public ImageTextureObject setRepeatT(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatT = newValue;
 		return this;
 	}
@@ -456,8 +458,9 @@ setAttribute method invocations).
 	 */
 	public ImageTextureObject setRepeatT(SFBoolObject newValue)
 	{
-		setRepeatT(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatT(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
@@ -479,6 +482,7 @@ setAttribute method invocations).
 	@Override
 	public ImageTextureObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -588,6 +592,7 @@ setAttribute method invocations).
 	@Override
 	public ImageTextureObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -614,8 +619,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -629,6 +635,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -644,6 +651,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -660,6 +668,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -686,6 +695,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ImageTexture
@@ -713,8 +723,9 @@ setAttribute method invocations).
 	 */
 	public ImageTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -732,6 +743,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ImageTexture
@@ -759,8 +771,9 @@ setAttribute method invocations).
 	 */
 	public ImageTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -773,6 +786,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -787,8 +801,9 @@ setAttribute method invocations).
 	 */
 	public ImageTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

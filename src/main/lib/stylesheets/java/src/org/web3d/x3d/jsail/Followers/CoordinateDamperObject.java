@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/followers.html#CoordinateDamper" target="blank">X3D Abstract Specification: CoordinateDamper</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateDamper" target="_blank">X3D Tooltips: CoordinateDamper</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -360,6 +358,7 @@ public class CoordinateDamperObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public CoordinateDamperObject setInitialDestination(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -378,8 +377,9 @@ public class CoordinateDamperObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public CoordinateDamperObject setInitialDestination(MFVec3fObject newValue)
 	{
-		setInitialDestination(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInitialDestination(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly MFVec3f field named <i>initialValue</i>.
@@ -404,6 +404,7 @@ public class CoordinateDamperObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public CoordinateDamperObject setInitialValue(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -422,14 +423,17 @@ public class CoordinateDamperObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public CoordinateDamperObject setInitialValue(MFVec3fObject newValue)
 	{
-		setInitialValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInitialValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when follower-node computation starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when follower-node computation starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -459,6 +463,7 @@ public class CoordinateDamperObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public CoordinateDamperObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -551,6 +556,7 @@ setAttribute method invocations).
 	@Override
 	public CoordinateDamperObject setOrder(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CoordinateDamper order newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -569,8 +575,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setOrder(SFInt32Object newValue)
 	{
-		setOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>tau</i>.
@@ -595,6 +602,11 @@ setAttribute method invocations).
 	@Override
 	public CoordinateDamperObject setTau(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("CoordinateDamper tau newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		tau = newValue;
 		return this;
 	}
@@ -606,13 +618,14 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setTau(SFTimeObject newValue)
 	{
-		setTau(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTau(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>tolerance</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  -1 or [0,+infinity) Absolute value for satisfactory completion proximity (-1 lets browser choose).  * <br>
+	 * <i>Tooltip:</i>  [0,+infinity) or -1. Absolute value for satisfactory completion proximity (-1 lets browser choose).  * <br>
 
 	 * @return value of tolerance field
 	 */
@@ -625,13 +638,14 @@ setAttribute method invocations).
 	/**
 	 * Assign float value to inputOutput SFFloat field named <i>tolerance</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> -1 or [0,+infinity) Absolute value for satisfactory completion proximity (-1 lets browser choose).
+	 * <i>Tooltip:</i> [0,+infinity) or -1. Absolute value for satisfactory completion proximity (-1 lets browser choose).
 	 * @param newValue is new value for the tolerance field.
 	 * @return {@link CoordinateDamperObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public CoordinateDamperObject setTolerance(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		tolerance = newValue;
 		return this;
 	}
@@ -643,14 +657,17 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setTolerance(SFFloatObject newValue)
 	{
-		setTolerance(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTolerance(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from outputOnly MFVec3f field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.  * <br>
-
+	 * <i>Tooltip:</i> Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	@Override
@@ -671,6 +688,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateDamperObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CoordinateDamper
@@ -698,8 +716,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -717,6 +736,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateDamperObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CoordinateDamper
@@ -744,8 +764,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -758,6 +779,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateDamperObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -772,8 +794,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateDamperObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

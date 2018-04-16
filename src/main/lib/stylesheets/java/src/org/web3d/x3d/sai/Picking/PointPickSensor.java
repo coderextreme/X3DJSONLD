@@ -48,16 +48,14 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> because points represent an infinitely small location in space, sortOrder values CLOSEST and ALL_SORTED are defined to mean ANY and ALL respectively. </li> 
  *  <li> <i>Hint:</i> picking is performed between rendered frames of the event model. An author sets up the picking request in one frame by placing a LinePickSensor in the desired location. At the start of the next frame, any picking intersections are reported by the pick sensor. </li> 
  *  <li> <i>Hint:</i> picking notification is performed at the start of the frame for all enabled pick sensors once all other sensors are processed. </li> 
- *  <li> <i>Hint:</i> event timing details are explained in 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
+ *  <li> <i>Hint:</i> event timing details are explained in X3D Specification 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
  *  <li> <i>Hint:</i>  PointSet can be used for pickingGeometry node. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#PointPickSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#PointPickSensor" target="blank">X3D Abstract Specification: PointPickSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointPickSensor" target="_blank">X3D Tooltips: PointPickSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -111,8 +109,10 @@ public interface PointPickSensor extends X3DPickSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.  * <br>
-
+	 * <i>Tooltip:</i> isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -180,8 +180,10 @@ public interface PointPickSensor extends X3DPickSensorNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>pickedGeometry</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * <br><br>
 	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
@@ -192,8 +194,10 @@ public interface PointPickSensor extends X3DPickSensorNode
 	/**
 	 * Provide array of 3-tuple float results from outputOnly MFVec3f field named <i>pickedPoint</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D points on surface of underlying pickingGeometry computed by the picking intersection computations, given in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D points on surface of underlying pickingGeometry computed by the picking intersection computations, given in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of pickedPoint field
 	 */
 	public float[] getPickedPoint();

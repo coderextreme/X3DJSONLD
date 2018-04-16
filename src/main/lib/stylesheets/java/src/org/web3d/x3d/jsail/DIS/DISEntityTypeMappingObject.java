@@ -57,10 +57,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#DISEntityTypeMapping" target="blank">X3D Abstract Specification: DISEntityTypeMapping</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#DISEntityTypeMapping" target="_blank">X3D Tooltips: DISEntityTypeMapping</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -356,6 +354,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setCategory(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping category newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -374,8 +373,9 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public DISEntityTypeMappingObject setCategory(SFInt32Object newValue)
 	{
-		setCategory(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCategory(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,65535] from initializeOnly SFInt32 field named <i>country</i>.
@@ -400,6 +400,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setCountry(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping country newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -418,8 +419,9 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public DISEntityTypeMappingObject setCountry(SFInt32Object newValue)
 	{
-		setCountry(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCountry(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,255] from initializeOnly SFInt32 field named <i>domain</i>.
@@ -444,6 +446,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setDomain(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping domain newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -462,8 +465,9 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public DISEntityTypeMappingObject setDomain(SFInt32Object newValue)
 	{
-		setDomain(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDomain(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,255] from initializeOnly SFInt32 field named <i>extra</i>.
@@ -488,6 +492,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setExtra(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping extra newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -506,8 +511,9 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public DISEntityTypeMappingObject setExtra(SFInt32Object newValue)
 	{
-		setExtra(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setExtra(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,255] from initializeOnly SFInt32 field named <i>kind</i>.
@@ -532,6 +538,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setKind(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping kind newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -550,8 +557,9 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public DISEntityTypeMappingObject setKind(SFInt32Object newValue)
 	{
-		setKind(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKind(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -575,6 +583,7 @@ public class DISEntityTypeMappingObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public DISEntityTypeMappingObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -667,6 +676,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityTypeMappingObject setSpecific(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping specific newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -685,8 +695,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityTypeMappingObject setSpecific(SFInt32Object newValue)
 	{
-		setSpecific(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpecific(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,255] from initializeOnly SFInt32 field named <i>subcategory</i>.
@@ -706,6 +717,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityTypeMappingObject setSubcategory(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("DISEntityTypeMapping subcategory newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -724,8 +736,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityTypeMappingObject setSubcategory(SFInt32Object newValue)
 	{
-		setSubcategory(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSubcategory(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.
@@ -770,6 +783,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityTypeMappingObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -796,8 +810,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -811,6 +826,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -826,6 +842,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -842,6 +859,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -868,6 +886,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityTypeMappingObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to DISEntityTypeMapping
@@ -895,8 +914,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityTypeMappingObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -914,6 +934,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityTypeMappingObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to DISEntityTypeMapping
@@ -941,8 +962,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityTypeMappingObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -955,6 +977,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityTypeMappingObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -969,8 +992,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityTypeMappingObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

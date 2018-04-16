@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#TouchSensor" target="blank">X3D Abstract Specification: TouchSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TouchSensor" target="_blank">X3D Tooltips: TouchSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -356,6 +354,7 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public TouchSensorObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -370,8 +369,9 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public TouchSensorObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -396,6 +396,7 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public TouchSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -407,14 +408,17 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public TouchSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitNormal_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing surface normal vector at the hitPoint.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing surface normal vector at the hitPoint.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitNormal_changed field
 	 */
 	@Override
@@ -425,8 +429,10 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing 3D point on surface of underlying geometry, as measured in reference frame for TouchSensor's local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing 3D point on surface of underlying geometry, as measured in reference frame for TouchSensor's local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitPoint_changed field
 	 */
 	@Override
@@ -437,8 +443,10 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>hitTexCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing texture coordinates of surface at the hitPoint.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing texture coordinates of surface at the hitPoint.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitTexCoord_changed field
 	 */
 	@Override
@@ -449,8 +457,10 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when pointing device selection is activated, output event isActive=false is sent when pointing device is deselected.  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when pointing device selection is activated, output event isActive=false is sent when pointing device is deselected.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -461,8 +471,10 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.  * <br>
-
+	 * <i>Tooltip:</i> Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -492,6 +504,7 @@ public class TouchSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public TouchSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -566,7 +579,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> Time event generated when sensor is touched by pointing device, and then deselected by the user.
  * <ul>
- *  <li> <i> Hint:</i>  touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Hint:</i> touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of touchTime field
 	 */
@@ -588,6 +602,7 @@ setAttribute method invocations).
 	@Override
 	public final TouchSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TouchSensor
@@ -615,8 +630,9 @@ setAttribute method invocations).
 	 */
 	public TouchSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -634,6 +650,7 @@ setAttribute method invocations).
 	@Override
 	public final TouchSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TouchSensor
@@ -661,8 +678,9 @@ setAttribute method invocations).
 	 */
 	public TouchSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -675,6 +693,7 @@ setAttribute method invocations).
 	@Override
 	public final TouchSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -689,8 +708,9 @@ setAttribute method invocations).
 	 */
 	public TouchSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

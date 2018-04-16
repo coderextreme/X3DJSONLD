@@ -30,7 +30,7 @@ JavaScriptSerializer.prototype = {
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
-		str += "load('node/X3Dautoclass.js');\n";
+		str += "load('nashorn/node/X3Dautoclass.js');\n";
 		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
@@ -197,10 +197,11 @@ JavaScriptSerializer.prototype = {
 							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
+								replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
 								/*
 								replace(/\\/g, '\\\\').
 								*/
-								replace(/\\n/g, '\\\\n').
+								replace(/\n/g, '\\n').
 								replace(/\\?"/g, "\\\"")
 								+'"';
 						}
@@ -221,6 +222,7 @@ JavaScriptSerializer.prototype = {
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 							map(function(x) {
 								var y = x.
+								       replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
 								       replace(/\\\\"/g, '\\\"').
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').
@@ -344,17 +346,16 @@ JavaScriptSerializer.prototype = {
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
-					replace(/'/g, "\\'").
-					replace(/""/g, '" "');
-				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock('"+y.split("\n").join("\\n\'+\n\'")+"'))";
+					replace(/"/g, '\\"');
+				str += "\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
 				if (y !== node.nodeValue) {
-					print("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
+					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"')
+						replace(/"/g, '\\"');
 						/*
 						replace(/\\n/g, "\\\\n")
 						*/

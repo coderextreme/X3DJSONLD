@@ -55,6 +55,7 @@ import org.web3d.x3d.jsail.Core.*;
 /**
  * <i>X3D node tooltip</i>: Text is a 2D (flat) geometry node that can contain multiple lines of string values. Layout and styling is controlled by a contained FontStyle node.
  * <ul>
+ *  <li> <i>Hint:</i> String (computer science) <br> <a href="https://en.wikipedia.org/wiki/String_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/String_(computer_science)</a> </li> 
  *  <li> <i>Hint:</i> full internationalization (i18n) and localization (l10n) features are available for any written language. </li> 
  *  <li> <i>Hint:</i> relates to Internationalization (i18n) <br> <a href="http://www.w3.org/standards/webdesign/i18n" target="_blank">http://www.w3.org/standards/webdesign/i18n</a> </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
@@ -63,10 +64,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Text" target="blank">X3D Abstract Specification: Text</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Text" target="_blank">X3D Tooltips: Text</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -369,6 +368,7 @@ public class TextObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	@Override
 	public TextObject setFontStyle(X3DFontStyleNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		fontStyle = newValue;
 		if (newValue != null)
 		{
@@ -472,6 +472,7 @@ setAttribute method invocations).
 	@Override
 	public TextObject setLength(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearLength(); // newValueNullSetDEFAULT_VALUE
@@ -498,8 +499,9 @@ setAttribute method invocations).
 			clearLength(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setLength(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLength(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat length field, similar to {@link #setLength(float[])}.
@@ -513,6 +515,7 @@ setAttribute method invocations).
 			clearLength(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		length = newValue;
 		return this;
 	}
@@ -538,6 +541,7 @@ setAttribute method invocations).
 			clearLength(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -549,8 +553,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 2-tuple float results from outputOnly MFVec2f field named <i>lineBounds</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Array of 2D bounding box values for each line of text in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Array of 2D bounding box values for each line of text in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of lineBounds field
 	 */
 	@Override
@@ -581,6 +587,7 @@ setAttribute method invocations).
 	@Override
 	public TextObject setMaxExtent(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Text maxExtent newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -596,8 +603,9 @@ setAttribute method invocations).
 	 */
 	public TextObject setMaxExtent(SFFloatObject newValue)
 	{
-		setMaxExtent(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxExtent(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -621,6 +629,7 @@ setAttribute method invocations).
 	@Override
 	public TextObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -693,8 +702,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>origin</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded. The value of the origin field represents the upper left corner of the textBounds.  * <br>
-
+	 * <i>Tooltip:</i> origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded. The value of the origin field represents the upper left corner of the textBounds.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of origin field
 	 */
 	@Override
@@ -729,6 +740,7 @@ setAttribute method invocations).
 	@Override
 	public TextObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -740,8 +752,9 @@ setAttribute method invocations).
 	 */
 	public TextObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>string</i>.
@@ -785,6 +798,7 @@ setAttribute method invocations).
 	@Override
 	public TextObject setString(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearString(); // newValueNullSetDEFAULT_VALUE
@@ -811,8 +825,9 @@ setAttribute method invocations).
 			clearString(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setString(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setString(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString string field, similar to {@link #setString(String[])}.
@@ -826,6 +841,7 @@ setAttribute method invocations).
 			clearString(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setString(newValue.getValue());
 		return this;
 	}
@@ -841,6 +857,7 @@ setAttribute method invocations).
 			clearString(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		string.clear();
 		string.add(newValue);
 		return this;
@@ -857,6 +874,7 @@ setAttribute method invocations).
 			clearString(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		string = newValue;
 		return this;
 	}
@@ -873,8 +891,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>textBounds</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  2D bounding box value for all lines of text in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> 2D bounding box value for all lines of text in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of textBounds field
 	 */
 	@Override
@@ -895,6 +915,7 @@ setAttribute method invocations).
 	@Override
 	public final TextObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Text
@@ -922,8 +943,9 @@ setAttribute method invocations).
 	 */
 	public TextObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -941,6 +963,7 @@ setAttribute method invocations).
 	@Override
 	public final TextObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Text
@@ -968,8 +991,9 @@ setAttribute method invocations).
 	 */
 	public TextObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -982,6 +1006,7 @@ setAttribute method invocations).
 	@Override
 	public final TextObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -996,8 +1021,9 @@ setAttribute method invocations).
 	 */
 	public TextObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

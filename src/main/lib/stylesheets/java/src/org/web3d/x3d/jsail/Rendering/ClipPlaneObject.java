@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#ClipPlane" target="blank">X3D Abstract Specification: ClipPlane</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ClipPlane" target="_blank">X3D Tooltips: ClipPlane</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -285,6 +283,7 @@ public class ClipPlaneObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ClipPlaneObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -296,8 +295,9 @@ public class ClipPlaneObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ClipPlaneObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -321,6 +321,7 @@ public class ClipPlaneObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ClipPlaneObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -418,6 +419,7 @@ setAttribute method invocations).
 	@Override
 	public ClipPlaneObject setPlane(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -443,8 +445,9 @@ setAttribute method invocations).
 	 */
 	public ClipPlaneObject setPlane(SFVec4fObject newValue)
 	{
-		setPlane(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPlane(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -475,6 +478,7 @@ setAttribute method invocations).
 	@Override
 	public final ClipPlaneObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ClipPlane
@@ -502,8 +506,9 @@ setAttribute method invocations).
 	 */
 	public ClipPlaneObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -521,6 +526,7 @@ setAttribute method invocations).
 	@Override
 	public final ClipPlaneObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ClipPlane
@@ -548,8 +554,9 @@ setAttribute method invocations).
 	 */
 	public ClipPlaneObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -562,6 +569,7 @@ setAttribute method invocations).
 	@Override
 	public final ClipPlaneObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -576,8 +584,9 @@ setAttribute method invocations).
 	 */
 	public ClipPlaneObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

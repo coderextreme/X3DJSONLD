@@ -61,7 +61,7 @@ function processURLs(localArray, path) {
 					 localArray[url] = pc+'/'+localArray[url];
 				}
 				if (localArray[url].indexOf('/') === 0) {
-					// no webroot absolute paths.  No /'s for cobweb shaders
+					// no webroot absolute paths.  No /'s for X_ITE shaders
 					localArray[url] = localArray[url].substring(1);
 				}
 			}
@@ -524,12 +524,11 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
  * jsobj - the JavaScript object to convert to XML and DOM.
  * path - the path of the JSON file.
  * xml - the output xml string array (optional).
- * NS - a namespace for cobweb (optional) -- stripped out.
+ * NS - a namespace for X_ITE (optional) -- stripped out.
  * returns an element in callback or null if error - the element
  * to append or insert into the DOM.
  */
 function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
-	// console.error("Invoking client side loader");
 	loadSchema(jsobj, path, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
@@ -537,7 +536,6 @@ function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 			xml.push(serializeDOM(jsobj, child, true));
 		}
-		// console.error("Returning with", child);
 		callback(child);
 	}, function(e) {
 		// console.error(e);

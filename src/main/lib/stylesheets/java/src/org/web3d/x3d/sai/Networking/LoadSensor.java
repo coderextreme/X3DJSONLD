@@ -52,11 +52,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#LoadSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#LoadSensor" target="blank">X3D Abstract Specification: LoadSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LoadSensor" target="_blank">X3D Tooltips: LoadSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -87,8 +85,10 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when sensing starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when sensing starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -98,7 +98,8 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Notify when all watchList child nodes are loaded, or at least one has failed. Sends true on successfully loading all watchList child nodes. Sends false on timeOut of any watchList child nodes, failure of any watchList child nodes to load, or no local copies available and no network present.
  * <ul>
- *  <li> <i> Hint:</i>  use multiple LoadSensor nodes to track multiple loading nodes individually. </li> 
+ *  <li> <i>Hint:</i> use multiple LoadSensor nodes to track multiple loading nodes individually. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isLoaded field
 	 */
@@ -106,8 +107,10 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>loadTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time of successful load complete, not sent on failure.  * <br>
-
+	 * <i>Tooltip:</i> Time of successful load complete, not sent on failure.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of loadTime field
 	 */
 	public double getLoadTime();
@@ -133,7 +136,8 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> [0,1] Sends 0.0 on start and 1.0 on completion. Intermediate values are browser dependent and always increasing (may indicate fraction of bytes, fraction of expected time or another metric).
  * <ul>
- *  <li> <i> Hint:</i>  only 0 and 1 events are guaranteed. </li> 
+ *  <li> <i>Hint:</i> only 0 and 1 events are guaranteed. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of progress field
 	 */

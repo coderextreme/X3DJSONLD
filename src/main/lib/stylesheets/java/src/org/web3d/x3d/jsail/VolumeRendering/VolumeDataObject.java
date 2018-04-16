@@ -68,10 +68,8 @@ import org.web3d.x3d.jsail.Texturing3D.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#VolumeData" target="blank">X3D Abstract Specification: VolumeData</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#VolumeData" target="_blank">X3D Tooltips: VolumeData</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -341,6 +339,7 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public VolumeDataObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -359,8 +358,9 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public VolumeDataObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -403,6 +403,7 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public VolumeDataObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -425,8 +426,9 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public VolumeDataObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -466,6 +468,7 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public VolumeDataObject setDimensions(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -488,8 +491,9 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public VolumeDataObject setDimensions(SFVec3fObject newValue)
 	{
-		setDimensions(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDimensions(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -528,6 +532,7 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public VolumeDataObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -617,6 +622,7 @@ setAttribute method invocations).
 	@Override
 	public VolumeDataObject setRenderStyle(X3DVolumeRenderStyleNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		renderStyle = newValue;
 		if (newValue != null)
 		{
@@ -703,6 +709,7 @@ setAttribute method invocations).
 	@Override
 	public VolumeDataObject setVoxels(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		voxels = newValue;
 		if (newValue != null)
 		{
@@ -782,6 +789,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumeDataObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to VolumeData
@@ -809,8 +817,9 @@ setAttribute method invocations).
 	 */
 	public VolumeDataObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -828,6 +837,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumeDataObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to VolumeData
@@ -855,8 +865,9 @@ setAttribute method invocations).
 	 */
 	public VolumeDataObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -869,6 +880,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumeDataObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -883,8 +895,9 @@ setAttribute method invocations).
 	 */
 	public VolumeDataObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

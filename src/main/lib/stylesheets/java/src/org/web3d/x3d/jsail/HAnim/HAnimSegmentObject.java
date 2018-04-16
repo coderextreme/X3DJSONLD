@@ -98,10 +98,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimSegment" target="blank">X3D Abstract Specification: HAnimSegment</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimSegment" target="_blank">X3D Tooltips: HAnimSegment</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -736,6 +734,7 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public HAnimSegmentObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -754,8 +753,9 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public HAnimSegmentObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -798,6 +798,7 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public HAnimSegmentObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -820,8 +821,9 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public HAnimSegmentObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -861,6 +863,7 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public HAnimSegmentObject setCenterOfMass(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -879,8 +882,9 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public HAnimSegmentObject setCenterOfMass(SFVec3fObject newValue)
 	{
-		setCenterOfMass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenterOfMass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -934,6 +938,7 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public HAnimSegmentObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -964,6 +969,7 @@ public class HAnimSegmentObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -1136,6 +1142,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimSegmentObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -1246,6 +1253,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimSegmentObject setDisplacers(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearDisplacers(); // newValueNullSetDEFAULT_VALUE
@@ -1276,6 +1284,7 @@ setAttribute method invocations).
 			clearDisplacers(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		displacers = newValue;
 		for (HAnimDisplacer element : newValue)
 		{
@@ -1388,6 +1397,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimSegmentObject setMass(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("HAnimSegment mass newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1403,8 +1413,9 @@ setAttribute method invocations).
 	 */
 	public HAnimSegmentObject setMass(SFFloatObject newValue)
 	{
-		setMass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMass(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -1428,6 +1439,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimSegmentObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1534,6 +1546,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimSegmentObject setMomentsOfInertia(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearMomentsOfInertia(); // newValueNullSetDEFAULT_VALUE
@@ -1560,8 +1573,9 @@ setAttribute method invocations).
 			clearMomentsOfInertia(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setMomentsOfInertia(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMomentsOfInertia(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat momentsOfInertia field, similar to {@link #setMomentsOfInertia(float[])}.
@@ -1575,6 +1589,7 @@ setAttribute method invocations).
 			clearMomentsOfInertia(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		momentsOfInertia = newValue;
 		return this;
 	}
@@ -1600,6 +1615,7 @@ setAttribute method invocations).
 			clearMomentsOfInertia(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1644,6 +1660,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimSegmentObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1772,8 +1789,9 @@ setAttribute method invocations).
 	 */
 	public HAnimSegmentObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1788,6 +1806,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimSegmentObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimSegment
@@ -1815,8 +1834,9 @@ setAttribute method invocations).
 	 */
 	public HAnimSegmentObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1834,6 +1854,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimSegmentObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimSegment
@@ -1861,8 +1882,9 @@ setAttribute method invocations).
 	 */
 	public HAnimSegmentObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1875,6 +1897,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimSegmentObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1889,8 +1912,9 @@ setAttribute method invocations).
 	 */
 	public HAnimSegmentObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

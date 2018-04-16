@@ -96,7 +96,7 @@ import java.util.Arrays;
 /**
  * <i>X3D node tooltip</i>: (X3D version 3.2 or later) ParticleSystem specifies a complete particle system. It can contain Appearance for particle appearance, a geometry node if gemoetryType='GEOMETRY', a colorRamp Color|ColorRGBA node for changing base color over each particle's lifetime, a texcoordRamp TextureCoordinate node to control texture coordinates of provided texture(s) in the Appearance node over time, a single emitter X3DParticleEmitterNode, and an array of physics X3DParticlePhysicsModelNode nodes.
  * <ul>
- *  <li> <i> Hint:</i>  event timing details are explained in 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelHint" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelHint</a>: Wikipedia, particle system <br> <a href="https://en.wikipedia.org/wiki/Particle_system" target="_blank">https://en.wikipedia.org/wiki/Particle_system</a> </li> 
+ *  <li> <i> Hint:</i>  event timing details are explained in X3D Specification 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelHint" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelHint</a>: Wikipedia, particle system <br> <a href="https://en.wikipedia.org/wiki/Particle_system" target="_blank">https://en.wikipedia.org/wiki/Particle_system</a> </li> 
  * </ul>
  * <br>
  * Note that {@linkplain SFColorObject#ALICEBLUE SFColorObject} provides a variety of color constants.
@@ -105,10 +105,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/particle_systems.html#ParticleSystem" target="blank">X3D Abstract Specification: ParticleSystem</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ParticleSystem" target="_blank">X3D Tooltips: ParticleSystem</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -572,6 +570,7 @@ public class ParticleSystemObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ParticleSystemObject setAppearance(X3DAppearanceNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		appearance = newValue;
 		if (newValue != null)
 		{
@@ -663,6 +662,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -681,8 +681,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -725,6 +726,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -747,8 +749,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -808,6 +811,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setColorKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearColorKey(); // newValueNullSetDEFAULT_VALUE
@@ -834,8 +838,9 @@ setAttribute method invocations).
 			clearColorKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setColorKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat colorKey field, similar to {@link #setColorKey(float[])}.
@@ -849,6 +854,7 @@ setAttribute method invocations).
 			clearColorKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		colorKey = newValue;
 		return this;
 	}
@@ -874,6 +880,7 @@ setAttribute method invocations).
 			clearColorKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -912,6 +919,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setColorRamp(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		colorRamp = newValue;
 		if (newValue != null)
 		{
@@ -1003,6 +1011,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setCreateParticles(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		createParticles = newValue;
 		return this;
 	}
@@ -1014,8 +1023,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setCreateParticles(SFBoolObject newValue)
 	{
-		setCreateParticles(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCreateParticles(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DParticleEmitterNode instance (using a properly typed node) from initializeOnly SFNode field <i>emitter</i>.
@@ -1042,6 +1052,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setEmitter(X3DParticleEmitterNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		emitter = newValue;
 		if (newValue != null)
 		{
@@ -1131,6 +1142,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -1142,8 +1154,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DGeometryNode instance (using a properly typed node) from inputOutput SFNode field <i>geometry</i>.
@@ -1173,6 +1186,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setGeometry(X3DGeometryNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		geometry = newValue;
 		if (newValue != null)
 		{
@@ -1276,6 +1290,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setGeometryType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1304,14 +1319,17 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setGeometryType(SFStringObject newValue)
 	{
-		setGeometryType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeometryType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when playback starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when playback starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -1344,6 +1362,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setLifetimeVariation(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem lifetimeVariation newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1362,8 +1381,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setLifetimeVariation(SFFloatObject newValue)
 	{
-		setLifetimeVariation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLifetimeVariation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,infinity) from inputOutput SFInt32 field named <i>maxParticles</i>.
@@ -1388,6 +1408,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setMaxParticles(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem maxParticles newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1403,8 +1424,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setMaxParticles(SFInt32Object newValue)
 	{
-		setMaxParticles(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxParticles(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -1428,6 +1450,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1520,6 +1543,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setParticleLifetime(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ParticleSystem particleLifetime newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1535,8 +1559,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setParticleLifetime(SFFloatObject newValue)
 	{
-		setParticleLifetime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setParticleLifetime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results within allowed range of [0,infinity) from inputOutput SFVec2f field named <i>particleSize</i>.
@@ -1564,6 +1589,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setParticleSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1586,8 +1612,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setParticleSize(SFVec2fObject newValue)
 	{
-		setParticleSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setParticleSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1645,6 +1672,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setPhysics(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearPhysics(); // newValueNullSetDEFAULT_VALUE
@@ -1675,6 +1703,7 @@ setAttribute method invocations).
 			clearPhysics(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		physics = newValue;
 		for (X3DParticlePhysicsModelNode element : newValue)
 		{
@@ -1805,6 +1834,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setTexCoordKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTexCoordKey(); // newValueNullSetDEFAULT_VALUE
@@ -1831,8 +1861,9 @@ setAttribute method invocations).
 			clearTexCoordKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setTexCoordKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTexCoordKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat texCoordKey field, similar to {@link #setTexCoordKey(float[])}.
@@ -1846,6 +1877,7 @@ setAttribute method invocations).
 			clearTexCoordKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		texCoordKey = newValue;
 		return this;
 	}
@@ -1871,6 +1903,7 @@ setAttribute method invocations).
 			clearTexCoordKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1907,6 +1940,7 @@ setAttribute method invocations).
 	@Override
 	public ParticleSystemObject setTexCoordRamp(TextureCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		texCoordRamp = newValue;
 		if (newValue != null)
 		{
@@ -1986,6 +2020,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ParticleSystem
@@ -2013,8 +2048,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2032,6 +2068,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ParticleSystem
@@ -2059,8 +2096,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2073,6 +2111,7 @@ setAttribute method invocations).
 	@Override
 	public final ParticleSystemObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2087,8 +2126,9 @@ setAttribute method invocations).
 	 */
 	public ParticleSystemObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

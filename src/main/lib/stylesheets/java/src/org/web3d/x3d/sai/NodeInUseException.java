@@ -35,14 +35,12 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
- * 
-The exception that is thrown when a reference to a Node is already being
-used when the user wants to add a new DEF, EXPORT or IMPORT definition.
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+The exception that is thrown when a reference to a Node is already being
+used when the user wants to add a new DEF, EXPORT or IMPORT definition. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#NodeInUseException" target="_blank">SAI Java Specification: B.7.17 NodeInUseException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NodeInUseException" target="_blank">X3D Tooltips: NodeInUseException</a>

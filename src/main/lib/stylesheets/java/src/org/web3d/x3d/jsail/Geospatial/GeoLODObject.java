@@ -82,10 +82,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoLOD" target="blank">X3D Abstract Specification: GeoLOD</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoLOD" target="_blank">X3D Tooltips: GeoLOD</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -437,6 +435,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public GeoLODObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -455,8 +454,9 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public GeoLODObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -499,6 +499,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public GeoLODObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -521,8 +522,9 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public GeoLODObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -562,6 +564,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public GeoLODObject setCenter(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -580,8 +583,9 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public GeoLODObject setCenter(SFVec3dObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -635,6 +639,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public GeoLODObject setChild1Url(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChild1Url(); // newValueNullSetDEFAULT_VALUE
@@ -661,8 +666,9 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChild1Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setChild1Url(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setChild1Url(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString child1Url field, similar to {@link #setChild1Url(String[])}.
@@ -676,6 +682,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChild1Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setChild1Url(newValue.getValue());
 		return this;
 	}
@@ -691,6 +698,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChild1Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		child1Url.clear();
 		child1Url.add(newValue);
 		return this;
@@ -707,6 +715,7 @@ public class GeoLODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChild1Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		child1Url = newValue;
 		return this;
 	}
@@ -757,6 +766,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setChild2Url(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChild2Url(); // newValueNullSetDEFAULT_VALUE
@@ -783,8 +793,9 @@ setAttribute method invocations).
 			clearChild2Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setChild2Url(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setChild2Url(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString child2Url field, similar to {@link #setChild2Url(String[])}.
@@ -798,6 +809,7 @@ setAttribute method invocations).
 			clearChild2Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setChild2Url(newValue.getValue());
 		return this;
 	}
@@ -813,6 +825,7 @@ setAttribute method invocations).
 			clearChild2Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		child2Url.clear();
 		child2Url.add(newValue);
 		return this;
@@ -829,6 +842,7 @@ setAttribute method invocations).
 			clearChild2Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		child2Url = newValue;
 		return this;
 	}
@@ -879,6 +893,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setChild3Url(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChild3Url(); // newValueNullSetDEFAULT_VALUE
@@ -905,8 +920,9 @@ setAttribute method invocations).
 			clearChild3Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setChild3Url(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setChild3Url(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString child3Url field, similar to {@link #setChild3Url(String[])}.
@@ -920,6 +936,7 @@ setAttribute method invocations).
 			clearChild3Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setChild3Url(newValue.getValue());
 		return this;
 	}
@@ -935,6 +952,7 @@ setAttribute method invocations).
 			clearChild3Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		child3Url.clear();
 		child3Url.add(newValue);
 		return this;
@@ -951,6 +969,7 @@ setAttribute method invocations).
 			clearChild3Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		child3Url = newValue;
 		return this;
 	}
@@ -1001,6 +1020,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setChild4Url(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChild4Url(); // newValueNullSetDEFAULT_VALUE
@@ -1027,8 +1047,9 @@ setAttribute method invocations).
 			clearChild4Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setChild4Url(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setChild4Url(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString child4Url field, similar to {@link #setChild4Url(String[])}.
@@ -1042,6 +1063,7 @@ setAttribute method invocations).
 			clearChild4Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setChild4Url(newValue.getValue());
 		return this;
 	}
@@ -1057,6 +1079,7 @@ setAttribute method invocations).
 			clearChild4Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		child4Url.clear();
 		child4Url.add(newValue);
 		return this;
@@ -1073,6 +1096,7 @@ setAttribute method invocations).
 			clearChild4Url(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		child4Url = newValue;
 		return this;
 	}
@@ -1172,6 +1196,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setGeoOrigin(GeoOrigin newValue)
 	{
+		// set-newValue-validity-checks #0
 		geoOrigin = newValue;
 		if (newValue != null)
 		{
@@ -1280,6 +1305,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -1306,8 +1332,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -1321,6 +1348,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -1336,6 +1364,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -1352,6 +1381,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -1366,7 +1396,7 @@ setAttribute method invocations).
 		return this;
 	}
 	/**
-	 * Provide int value from outputOnly SFInt32 field named <i>level_changed</i>.
+	 * Provide int value within allowed range of [0,1] from outputOnly SFInt32 field named <i>level_changed</i>.
 	 * @return value of level_changed field
 	 */
 	@Override
@@ -1396,6 +1426,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1490,6 +1521,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setRange(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoLOD range newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1505,8 +1537,9 @@ setAttribute method invocations).
 	 */
 	public GeoLODObject setRange(SFFloatObject newValue)
 	{
-		setRange(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRange(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DChildNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from initializeOnly MFNode field <i>rootNode</i>.
@@ -1545,6 +1578,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setRootNode(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRootNode(); // newValueNullSetDEFAULT_VALUE
@@ -1575,6 +1609,7 @@ setAttribute method invocations).
 			clearRootNode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		rootNode = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -1701,6 +1736,7 @@ setAttribute method invocations).
 	@Override
 	public GeoLODObject setRootUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRootUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1727,8 +1763,9 @@ setAttribute method invocations).
 			clearRootUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setRootUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRootUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString rootUrl field, similar to {@link #setRootUrl(String[])}.
@@ -1742,6 +1779,7 @@ setAttribute method invocations).
 			clearRootUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setRootUrl(newValue.getValue());
 		return this;
 	}
@@ -1757,6 +1795,7 @@ setAttribute method invocations).
 			clearRootUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		rootUrl.clear();
 		rootUrl.add(newValue);
 		return this;
@@ -1773,6 +1812,7 @@ setAttribute method invocations).
 			clearRootUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		rootUrl = newValue;
 		return this;
 	}
@@ -1799,6 +1839,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoLODObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoLOD
@@ -1826,8 +1867,9 @@ setAttribute method invocations).
 	 */
 	public GeoLODObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1845,6 +1887,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoLODObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoLOD
@@ -1872,8 +1915,9 @@ setAttribute method invocations).
 	 */
 	public GeoLODObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1886,6 +1930,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoLODObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1900,8 +1945,9 @@ setAttribute method invocations).
 	 */
 	public GeoLODObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

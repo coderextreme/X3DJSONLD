@@ -40,18 +40,16 @@ import org.web3d.x3d.sai.Core.*;
  * DirectionalLight might not be scoped by parent Group or Transform at levels 1 or 2.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: DirectionalLight creates parallel light rays to illuminate geometric shapes. Light is scoped and only illuminates geometry within its enclosing parent group! No source location is needed since rays are parallel from an infinitely distant source. DirectionalLight nodes do not attenuate with distance. Lights have no visible shape themselves and shine through occluding geometry.
+ * <i>X3D node tooltip</i>: DirectionalLight defines parallel light rays that illuminate geometric shapes. Lighting illuminates all geometry except lines and points. By default, light scope only illuminates peer geometry and children nodes within the scene graph hierarchy. No source location is needed since rays are parallel from an infinitely distant source. DirectionalLight nodes do not attenuate with distance. Lights have no visible shape themselves and lighting effects continue through any intermediate geometry.
  * <ul>
  *  <li> <i>Hint:</i> animate direction to simulate time-of-day sunlight effects. </li> 
- *  <li> <i>Hint:</i>  HeadLight enabled on/off is controlled by NavigationInfo. Interchange profile hint: light might not be scoped by parent Group or Transform. </li> 
+ *  <li> <i>Hint:</i>  the bound NavigationInfo controls whether headlight is enabled on/off. Interchange profile hint: light might not be scoped by parent Group or Transform. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#DirectionalLight" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/lighting.html#DirectionalLight" target="blank">X3D Abstract Specification: DirectionalLight</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#DirectionalLight" target="_blank">X3D Tooltips: DirectionalLight</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

@@ -60,10 +60,8 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> first add a parent Script node or ProtoDeclare/ProtoInterface statements before defining a new field. </li> 
  *  <li> <i>Hint:</i>  in addition to defining a simple-type value attribute, a field statement can alternatively hold initializing SFNode/MFNode values as contained node(s). </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#NodeAndFieldStatementSyntax" target="blank">X3D Abstract Specification: field</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field" target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -466,6 +464,7 @@ public class fieldObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldObject setAccessType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -492,8 +491,9 @@ public class fieldObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldObject setAccessType(SFStringObject newValue)
 	{
-		setAccessType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAccessType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>appinfo</i>.
@@ -516,6 +516,7 @@ public class fieldObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldObject setAppinfo(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -530,8 +531,9 @@ public class fieldObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldObject setAppinfo(SFStringObject newValue)
 	{
-		setAppinfo(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAppinfo(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>children</i>.
@@ -554,6 +556,7 @@ public class fieldObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldObject setChildren(ArrayList<X3DNode> newValue)
 	{
+		// set-newValue-validity-checks #0
 		children = newValue;
 		for (X3DNode arrayElement : children)
 		{
@@ -719,6 +722,7 @@ setAttribute method invocations).
 	 */
 	public fieldObject setDocumentation(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -733,8 +737,9 @@ setAttribute method invocations).
 	 */
 	public fieldObject setDocumentation(SFStringObject newValue)
 	{
-		setDocumentation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDocumentation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -761,6 +766,7 @@ setAttribute method invocations).
 	 */
 	public final fieldObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to field
@@ -787,8 +793,9 @@ setAttribute method invocations).
 	 */
 	public fieldObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['SFBool'|'MFBool'|'SFColor'|'MFColor'|'SFColorRGBA'|'MFColorRGBA'|'SFDouble'|'MFDouble'|'SFFloat'|'MFFloat'|'SFImage'|'MFImage'|'SFInt32'|'SFNode'|'MFNode'|'MFInt32'|'SFRotation'|'MFRotation'|'SFString'|'MFString'|'SFTime'|'MFTime'|'SFVec2d'|'MFVec2d'|'SFVec2f'|'MFVec2f'|'SFVec3d'|'MFVec3d'|'SFVec3f'|'MFVec3f'|'SFVec4d'|'MFVec4d'|'SFVec4f'|'MFVec4f'|'SFMatrix3d'|'MFMatrix3d'|'SFMatrix3f'|'MFMatrix3f'|'SFMatrix4d'|'MFMatrix4d'|'SFMatrix4f'|'MFMatrix4f'] from inputOutput SFString field named <i>type</i>.
@@ -817,6 +824,7 @@ setAttribute method invocations).
 	 */
 	public fieldObject setType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -957,8 +965,9 @@ setAttribute method invocations).
 	 */
 	public fieldObject setType(SFStringObject newValue)
 	{
-		setType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>value</i>.
@@ -1049,6 +1058,7 @@ setAttribute method invocations).
 	 */
 	public fieldObject setValue(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1172,8 +1182,9 @@ setAttribute method invocations).
 	 */
 	public fieldObject setValue(SFStringObject newValue)
 	{
-		setValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setValue(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

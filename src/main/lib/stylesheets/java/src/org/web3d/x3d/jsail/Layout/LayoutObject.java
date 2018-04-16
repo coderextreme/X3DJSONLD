@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#Layout" target="blank">X3D Abstract Specification: Layout</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Layout" target="_blank">X3D Tooltips: Layout</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -534,6 +532,7 @@ public class LayoutObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public LayoutObject setAlign(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			Arrays.asList(newValue).equals(ALIGN_CENTER) ||
@@ -574,8 +573,9 @@ public class LayoutObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearAlign(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setAlign(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAlign(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString align field, similar to {@link #setAlign(String[])}.
@@ -589,6 +589,21 @@ public class LayoutObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 		{
 			clearAlign(); // newValueNullSetDEFAULT_VALUE
 			return this;
+		}
+		// set-newValue-validity-checks #2
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(ALIGN_CENTER) ||
+			newValue.equals(ALIGN_LEFT_BOTTOM) ||
+			newValue.equals(ALIGN_LEFT_CENTER) ||
+			newValue.equals(ALIGN_LEFT_TOP) ||
+			newValue.equals(ALIGN_CENTER_BOTTOM) ||
+			newValue.equals(ALIGN_CENTER_CENTER) ||
+			newValue.equals(ALIGN_CENTER_TOP) ||
+			newValue.equals(ALIGN_RIGHT_BOTTOM) ||
+			newValue.equals(ALIGN_RIGHT_CENTER) ||
+			newValue.equals(ALIGN_RIGHT_TOP))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout align newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
 		setAlign(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
@@ -606,6 +621,21 @@ public class LayoutObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearAlign(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(ALIGN_CENTER) ||
+			newValue.equals(ALIGN_LEFT_BOTTOM) ||
+			newValue.equals(ALIGN_LEFT_CENTER) ||
+			newValue.equals(ALIGN_LEFT_TOP) ||
+			newValue.equals(ALIGN_CENTER_BOTTOM) ||
+			newValue.equals(ALIGN_CENTER_CENTER) ||
+			newValue.equals(ALIGN_CENTER_TOP) ||
+			newValue.equals(ALIGN_RIGHT_BOTTOM) ||
+			newValue.equals(ALIGN_RIGHT_CENTER) ||
+			newValue.equals(ALIGN_RIGHT_TOP))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout align newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
+		}
 		setAlign(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -621,6 +651,7 @@ public class LayoutObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearAlign(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			newValue.equals(ALIGN_CENTER) ||
@@ -670,6 +701,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -778,6 +810,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setOffset(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearOffset(); // newValueNullSetDEFAULT_VALUE
@@ -804,8 +837,9 @@ setAttribute method invocations).
 			clearOffset(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setOffset(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOffset(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat offset field, similar to {@link #setOffset(float[])}.
@@ -819,6 +853,7 @@ setAttribute method invocations).
 			clearOffset(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		offset = newValue;
 		return this;
 	}
@@ -844,6 +879,7 @@ setAttribute method invocations).
 			clearOffset(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -897,6 +933,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setOffsetUnits(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			Arrays.asList(newValue).equals(OFFSETUNITS_WORLD) ||
@@ -938,8 +975,9 @@ setAttribute method invocations).
 			clearOffsetUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setOffsetUnits(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOffsetUnits(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString offsetUnits field, similar to {@link #setOffsetUnits(String[])}.
@@ -953,6 +991,22 @@ setAttribute method invocations).
 		{
 			clearOffsetUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
+		}
+		// set-newValue-validity-checks #2
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(OFFSETUNITS_WORLD) ||
+			newValue.equals(OFFSETUNITS_WORLD_WORLD) ||
+			newValue.equals(OFFSETUNITS_WORLD_PIXEL) ||
+			newValue.equals(OFFSETUNITS_FRACTION) ||
+			newValue.equals(OFFSETUNITS_FRACTION_WORLD) ||
+			newValue.equals(OFFSETUNITS_FRACTION_FRACTION) ||
+			newValue.equals(OFFSETUNITS_FRACTION_PIXEL) ||
+			newValue.equals(OFFSETUNITS_PIXEL) ||
+			newValue.equals(OFFSETUNITS_PIXEL_WORLD) ||
+			newValue.equals(OFFSETUNITS_PIXEL_FRACTION) ||
+			newValue.equals(OFFSETUNITS_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout offsetUnits newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
 		setOffsetUnits(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
@@ -970,6 +1024,22 @@ setAttribute method invocations).
 			clearOffsetUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(OFFSETUNITS_WORLD) ||
+			newValue.equals(OFFSETUNITS_WORLD_WORLD) ||
+			newValue.equals(OFFSETUNITS_WORLD_PIXEL) ||
+			newValue.equals(OFFSETUNITS_FRACTION) ||
+			newValue.equals(OFFSETUNITS_FRACTION_WORLD) ||
+			newValue.equals(OFFSETUNITS_FRACTION_FRACTION) ||
+			newValue.equals(OFFSETUNITS_FRACTION_PIXEL) ||
+			newValue.equals(OFFSETUNITS_PIXEL) ||
+			newValue.equals(OFFSETUNITS_PIXEL_WORLD) ||
+			newValue.equals(OFFSETUNITS_PIXEL_FRACTION) ||
+			newValue.equals(OFFSETUNITS_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout offsetUnits newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
+		}
 		setOffsetUnits(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -985,6 +1055,7 @@ setAttribute method invocations).
 			clearOffsetUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			newValue.equals(OFFSETUNITS_WORLD) ||
@@ -1061,6 +1132,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setScaleMode(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			Arrays.asList(newValue).equals(SCALEMODE_NONE) ||
@@ -1111,8 +1183,9 @@ setAttribute method invocations).
 			clearScaleMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setScaleMode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScaleMode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString scaleMode field, similar to {@link #setScaleMode(String[])}.
@@ -1126,6 +1199,31 @@ setAttribute method invocations).
 		{
 			clearScaleMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
+		}
+		// set-newValue-validity-checks #2
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(SCALEMODE_NONE) ||
+			newValue.equals(SCALEMODE_NONE_NONE) ||
+			newValue.equals(SCALEMODE_NONE_FRACTION) ||
+			newValue.equals(SCALEMODE_NONE_STRETCH) ||
+			newValue.equals(SCALEMODE_NONE_PIXEL) ||
+			newValue.equals(SCALEMODE_FRACTION) ||
+			newValue.equals(SCALEMODE_FRACTION_NONE) ||
+			newValue.equals(SCALEMODE_FRACTION_FRACTION) ||
+			newValue.equals(SCALEMODE_FRACTION_STRETCH) ||
+			newValue.equals(SCALEMODE_FRACTION_PIXEL) ||
+			newValue.equals(SCALEMODE_STRETCH) ||
+			newValue.equals(SCALEMODE_STRETCH_NONE) ||
+			newValue.equals(SCALEMODE_STRETCH_FRACTION) ||
+			newValue.equals(SCALEMODE_STRETCH_STRETCH) ||
+			newValue.equals(SCALEMODE_STRETCH_PIXEL) ||
+			newValue.equals(SCALEMODE_PIXEL) ||
+			newValue.equals(SCALEMODE_PIXEL_NONE) ||
+			newValue.equals(SCALEMODE_PIXEL_FRACTION) ||
+			newValue.equals(SCALEMODE_PIXEL_STRETCH) ||
+			newValue.equals(SCALEMODE_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout scaleMode newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
 		setScaleMode(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
@@ -1143,6 +1241,31 @@ setAttribute method invocations).
 			clearScaleMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(SCALEMODE_NONE) ||
+			newValue.equals(SCALEMODE_NONE_NONE) ||
+			newValue.equals(SCALEMODE_NONE_FRACTION) ||
+			newValue.equals(SCALEMODE_NONE_STRETCH) ||
+			newValue.equals(SCALEMODE_NONE_PIXEL) ||
+			newValue.equals(SCALEMODE_FRACTION) ||
+			newValue.equals(SCALEMODE_FRACTION_NONE) ||
+			newValue.equals(SCALEMODE_FRACTION_FRACTION) ||
+			newValue.equals(SCALEMODE_FRACTION_STRETCH) ||
+			newValue.equals(SCALEMODE_FRACTION_PIXEL) ||
+			newValue.equals(SCALEMODE_STRETCH) ||
+			newValue.equals(SCALEMODE_STRETCH_NONE) ||
+			newValue.equals(SCALEMODE_STRETCH_FRACTION) ||
+			newValue.equals(SCALEMODE_STRETCH_STRETCH) ||
+			newValue.equals(SCALEMODE_STRETCH_PIXEL) ||
+			newValue.equals(SCALEMODE_PIXEL) ||
+			newValue.equals(SCALEMODE_PIXEL_NONE) ||
+			newValue.equals(SCALEMODE_PIXEL_FRACTION) ||
+			newValue.equals(SCALEMODE_PIXEL_STRETCH) ||
+			newValue.equals(SCALEMODE_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout scaleMode newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
+		}
 		setScaleMode(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -1158,6 +1281,7 @@ setAttribute method invocations).
 			clearScaleMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			newValue.equals(SCALEMODE_NONE) ||
@@ -1234,6 +1358,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSize(); // newValueNullSetDEFAULT_VALUE
@@ -1260,8 +1385,9 @@ setAttribute method invocations).
 			clearSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat size field, similar to {@link #setSize(float[])}.
@@ -1275,6 +1401,7 @@ setAttribute method invocations).
 			clearSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		size = newValue;
 		return this;
 	}
@@ -1300,6 +1427,7 @@ setAttribute method invocations).
 			clearSize(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1353,6 +1481,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutObject setSizeUnits(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			Arrays.asList(newValue).equals(SIZEUNITS_WORLD) ||
@@ -1395,8 +1524,9 @@ setAttribute method invocations).
 			clearSizeUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSizeUnits(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSizeUnits(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString sizeUnits field, similar to {@link #setSizeUnits(String[])}.
@@ -1410,6 +1540,23 @@ setAttribute method invocations).
 		{
 			clearSizeUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
+		}
+		// set-newValue-validity-checks #2
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(SIZEUNITS_WORLD) ||
+			newValue.equals(SIZEUNITS_WORLD_WORLD) ||
+			newValue.equals(SIZEUNITS_WORLD_FRACTION) ||
+			newValue.equals(SIZEUNITS_WORLD_PIXEL) ||
+			newValue.equals(SIZEUNITS_FRACTION) ||
+			newValue.equals(SIZEUNITS_FRACTION_WORLD) ||
+			newValue.equals(SIZEUNITS_FRACTION_FRACTION) ||
+			newValue.equals(SIZEUNITS_FRACTION_PIXEL) ||
+			newValue.equals(SIZEUNITS_PIXEL) ||
+			newValue.equals(SIZEUNITS_PIXEL_WORLD) ||
+			newValue.equals(SIZEUNITS_PIXEL_FRACTION) ||
+			newValue.equals(SIZEUNITS_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout sizeUnits newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
 		setSizeUnits(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
@@ -1427,6 +1574,23 @@ setAttribute method invocations).
 			clearSizeUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(SIZEUNITS_WORLD) ||
+			newValue.equals(SIZEUNITS_WORLD_WORLD) ||
+			newValue.equals(SIZEUNITS_WORLD_FRACTION) ||
+			newValue.equals(SIZEUNITS_WORLD_PIXEL) ||
+			newValue.equals(SIZEUNITS_FRACTION) ||
+			newValue.equals(SIZEUNITS_FRACTION_WORLD) ||
+			newValue.equals(SIZEUNITS_FRACTION_FRACTION) ||
+			newValue.equals(SIZEUNITS_FRACTION_PIXEL) ||
+			newValue.equals(SIZEUNITS_PIXEL) ||
+			newValue.equals(SIZEUNITS_PIXEL_WORLD) ||
+			newValue.equals(SIZEUNITS_PIXEL_FRACTION) ||
+			newValue.equals(SIZEUNITS_PIXEL_PIXEL))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("Layout sizeUnits newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
+		}
 		setSizeUnits(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -1442,6 +1606,7 @@ setAttribute method invocations).
 			clearSizeUnits(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			newValue.equals(SIZEUNITS_WORLD) ||
@@ -1484,6 +1649,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Layout
@@ -1511,8 +1677,9 @@ setAttribute method invocations).
 	 */
 	public LayoutObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1530,6 +1697,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Layout
@@ -1557,8 +1725,9 @@ setAttribute method invocations).
 	 */
 	public LayoutObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1571,6 +1740,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1585,8 +1755,9 @@ setAttribute method invocations).
 	 */
 	public LayoutObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  *  <li> <i>Warning:</i> IS/connect elements are only allowed within ProtoDeclare body definitions. </li> 
  *  <li> <i>Hint:</i>  see the IS and ProtoBody statements. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#IS_ConnectStatementSyntax" target="blank">X3D Abstract Specification: connect</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#connect" target="_blank">X3D Tooltips: connect</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  * @see ISObject
@@ -234,6 +232,7 @@ public class connectObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public connectObject setNodeField(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to connect
@@ -260,8 +259,9 @@ public class connectObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public connectObject setNodeField(SFStringObject newValue)
 	{
-		setNodeField(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNodeField(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>protoField</i>.
@@ -286,6 +286,7 @@ public class connectObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public connectObject setProtoField(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to connect
@@ -312,8 +313,9 @@ public class connectObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public connectObject setProtoField(SFStringObject newValue)
 	{
-		setProtoField(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setProtoField(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

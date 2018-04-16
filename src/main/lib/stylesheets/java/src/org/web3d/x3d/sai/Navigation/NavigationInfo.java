@@ -50,15 +50,14 @@ import org.web3d.x3d.sai.Core.*;
  *  <li> <i>Hint:</i> NavigationInfo types '"WALK" "FLY"' support camera-to-object collision detection. </li> 
  *  <li> <i>Warning:</i> results are undefined if a bindable node (Viewpoint, OrthoViewpoint, NavigationInfo, Fog, Background, TextureBackground) is a contained child of LOD or Switch. </li> 
  *  <li> <i>Hint:</i> Regardless of viewpoint jump value at bind time, the relative viewing transformation between user's view and defined position/orientation is stored for later use when un-jumping (returning to the viewpoint when subsequent viewpoint is unbound). </li> 
+ *  <li> <i>Hint:</i> customizable design pattern for dedicated Viewpoint/NavigationInfo pair: &amp;lt;Viewpoint DEF='SpecialView'/&amp;gt; &amp;lt;NavigationInfo DEF='SpecialNav'/&amp;gt; &amp;lt;ROUTE fromNode='SpecialView' fromField='isBound' toNode='SpecialNav' toField='set_bind'/&amp;gt; </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Viewpoints <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints</a> </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#NavigationInfo" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo" target="blank">X3D Abstract Specification: NavigationInfo</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NavigationInfo" target="_blank">X3D Tooltips: NavigationInfo</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">X3D Scene Authoring Hints: Viewpoints</a>
  */
@@ -69,11 +68,11 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Provide array of float results within allowed range of [0,infinity) from inputOutput MFFloat field named <i>avatarSize</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> avatarSize triplet values are: (a) collision distance between user and geometry (near clipping plane of the view frustrum) (b) viewer height above terrain (c) tallest height viewer can WALK over.
+	 * <i>Tooltip:</i> avatarSize triplet values define three separate parameters: (a) collisionDistance between user and geometry, i.e. near clipping plane of view frustrum, default 0.25m, (b) viewer height above terrain, default 1.6m, and (c) tallest height viewer can WALK over, default 0.75m.
  * <ul>
- *  <li> <i>Warning:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
- *  <li> <i>Hint:</i> keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
- *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
+ *  <li> <i>Hint:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
+ *  <li> <i>Warning:</i> important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
+ *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
 	 * @return value of avatarSize field
 	 */
@@ -82,7 +81,7 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Assign float array within allowed range of [0,infinity) to inputOutput MFFloat field named <i>avatarSize</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> avatarSize triplet values are: (a) collision distance between user and geometry (near clipping plane of the view frustrum) (b) viewer height above terrain (c) tallest height viewer can WALK over. Warning: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Hint: keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> avatarSize triplet values define three separate parameters: (a) collisionDistance between user and geometry, i.e. near clipping plane of view frustrum, default 0.25m, (b) viewer height above terrain, default 1.6m, and (c) tallest height viewer can WALK over, default 0.75m. Hint: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Warning: important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the avatarSize field.
 	 * @return {@link NavigationInfo} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -91,8 +90,10 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event sent reporting timestamp when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> Event sent reporting timestamp when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -120,7 +121,8 @@ public interface NavigationInfo extends X3DBindableNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */
@@ -166,15 +168,17 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>transitionComplete</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event signaling viewpoint transition complete. Interchange profile hint: this field may be ignored, applying the default value regardless.  * <br>
-
+	 * <i>Tooltip:</i> Event signaling viewpoint transition complete. Interchange profile hint: this field may be ignored.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of transitionComplete field
 	 */
 	public boolean getTransitionComplete();
 	/**
 	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>transitionTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> (X3D version 3.1 or later) Duration of viewpoint transition in seconds.
+	 * <i>Tooltip:</i> (X3D version 3.1 or later) transitionTime defines the expected duration of viewpoint transition in seconds.
  * <ul>
  *  <li> <i> Hint:</i>  If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
@@ -185,7 +189,7 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>transitionTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> (X3D version 3.1 or later) Duration of viewpoint transition in seconds. Hint: If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> (X3D version 3.1 or later) transitionTime defines the expected duration of viewpoint transition in seconds. Hint: If transitionType is "ANIMATE", transitionTime provides browser-dependent animation parameters. Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the transitionTime field.
 	 * @return {@link NavigationInfo} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -240,10 +244,10 @@ public interface NavigationInfo extends X3DBindableNode
 	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum).
  * <ul>
  *  <li> <i>Hint:</i> visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). </li> 
- *  <li> <i>Hint:</i> keep visibilityLimit &amp;gt;= zero. </li> 
- *  <li> <i>Warning:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
- *  <li> <i>Hint:</i> keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
- *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
+ *  <li> <i>Hint:</i> set visibilityLimit to appropriate positive value in meters to define far culling plane of view frustum. </li> 
+ *  <li> <i>Hint:</i> X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. </li> 
+ *  <li> <i>Warning:</i> important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &amp;lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). </li> 
+ *  <li> <i>Hint:</i>  Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> Interchange profile hint: this field may be ignored, applying the default value regardless. </li> 
  * </ul>
 	 * @return value of visibilityLimit field
 	 */
@@ -252,7 +256,7 @@ public interface NavigationInfo extends X3DBindableNode
 	/**
 	 * Assign float value within allowed range of [0,infinity) to inputOutput SFFloat field named <i>visibilityLimit</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum). Hint: visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). Hint: keep visibilityLimit &gt;= zero. Warning: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Hint: keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Interchange profile hint: this field may be ignored, applying the default value regardless.
+	 * <i>Tooltip:</i> Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum). Hint: visibilityLimit=0.0 indicates an infinite visibility limit (no far clipping plane). Hint: set visibilityLimit to appropriate positive value in meters to define far culling plane of view frustum. Hint: X3D specification recommends that browsers set near clipping plane to one-half of avatarSize.CollisionDistance value. Warning: important design thumbrule is to keep (visibilityLimit / avatarSize.CollisionDistance) &lt; 10,000 to avoid aliasing artifacts (i.e. polygon "tearing"). Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Interchange profile hint: this field may be ignored, applying the default value regardless.
 	 * @param newValue is new value for the visibilityLimit field.
 	 * @return {@link NavigationInfo} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

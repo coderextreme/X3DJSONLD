@@ -56,10 +56,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html#Script" target="blank">X3D Abstract Specification: Script</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Script" target="_blank">X3D Tooltips: Script</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts" target="_blank">X3D Scene Authoring Hints: Scripts</a>
  */
@@ -318,6 +316,7 @@ public class ScriptObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public ScriptObject setDirectOutput(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		directOutput = newValue;
 		return this;
 	}
@@ -329,8 +328,9 @@ public class ScriptObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public ScriptObject setDirectOutput(SFBoolObject newValue)
 	{
-		setDirectOutput(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDirectOutput(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -354,6 +354,7 @@ public class ScriptObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public ScriptObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -448,6 +449,7 @@ setAttribute method invocations).
 	@Override
 	public ScriptObject setMustEvaluate(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		mustEvaluate = newValue;
 		return this;
 	}
@@ -459,8 +461,9 @@ setAttribute method invocations).
 	 */
 	public ScriptObject setMustEvaluate(SFBoolObject newValue)
 	{
-		setMustEvaluate(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMustEvaluate(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.
@@ -511,6 +514,7 @@ setAttribute method invocations).
 	@Override
 	public ScriptObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -537,8 +541,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -552,6 +557,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -567,6 +573,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -583,6 +590,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -609,6 +617,7 @@ setAttribute method invocations).
 	@Override
 	public final ScriptObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Script
@@ -636,8 +645,9 @@ setAttribute method invocations).
 	 */
 	public ScriptObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -655,6 +665,7 @@ setAttribute method invocations).
 	@Override
 	public final ScriptObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Script
@@ -682,8 +693,9 @@ setAttribute method invocations).
 	 */
 	public ScriptObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -696,6 +708,7 @@ setAttribute method invocations).
 	@Override
 	public final ScriptObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -710,8 +723,9 @@ setAttribute method invocations).
 	 */
 	public ScriptObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

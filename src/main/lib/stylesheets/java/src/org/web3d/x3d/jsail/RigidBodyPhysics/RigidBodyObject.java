@@ -61,10 +61,8 @@ Contains a Sphere, Box, or Cone (containerField='massDensityModel') and multiple
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#RigidBody" target="blank">X3D Abstract Specification: RigidBody</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#RigidBody" target="_blank">X3D Tooltips: RigidBody</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -661,6 +659,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setAngularDampingFactor(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		angularDampingFactor = newValue;
 		return this;
 	}
@@ -672,8 +671,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setAngularDampingFactor(SFFloatObject newValue)
 	{
-		setAngularDampingFactor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAngularDampingFactor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>angularVelocity</i>.
@@ -701,6 +701,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setAngularVelocity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -719,8 +720,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setAngularVelocity(SFVec3fObject newValue)
 	{
-		setAngularVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAngularVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -760,6 +762,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setAutoDamp(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		autoDamp = newValue;
 		return this;
 	}
@@ -771,8 +774,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setAutoDamp(SFBoolObject newValue)
 	{
-		setAutoDamp(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAutoDamp(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>autoDisable</i>.
@@ -797,6 +801,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setAutoDisable(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		autoDisable = newValue;
 		return this;
 	}
@@ -808,8 +813,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setAutoDisable(SFBoolObject newValue)
 	{
-		setAutoDisable(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAutoDisable(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>centerOfMass</i>.
@@ -834,6 +840,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setCenterOfMass(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -852,8 +859,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setCenterOfMass(SFVec3fObject newValue)
 	{
-		setCenterOfMass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenterOfMass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -895,6 +903,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setDisableAngularSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		disableAngularSpeed = newValue;
 		return this;
 	}
@@ -906,8 +915,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setDisableAngularSpeed(SFFloatObject newValue)
 	{
-		setDisableAngularSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableAngularSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>disableLinearSpeed</i>.
@@ -934,6 +944,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setDisableLinearSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		disableLinearSpeed = newValue;
 		return this;
 	}
@@ -945,15 +956,17 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setDisableLinearSpeed(SFFloatObject newValue)
 	{
-		setDisableLinearSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableLinearSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>disableTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities.
  * <ul>
- *  <li> <i> Hint:</i>  only activated if autoDisable='true'. </li> 
+ *  <li> <i>Hint:</i> only activated if autoDisable='true' </li> 
+ *  <li> <i>Hint:</i>  disableTime is an SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of disableTime field
 	 */
@@ -964,15 +977,20 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>disableTime</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true'.
+	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true' Hint: disableTime is an SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the disableTime field.
 	 * @return {@link RigidBodyObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public RigidBodyObject setDisableTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("RigidBody disableTime newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		disableTime = newValue;
 		return this;
 	}
@@ -984,8 +1002,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setDisableTime(SFTimeObject newValue)
 	{
-		setDisableTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -1010,6 +1029,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -1021,8 +1041,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results unit axis, angle (in radians) from inputOutput SFVec3f field named <i>finiteRotationAxis</i>.
@@ -1047,6 +1068,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setFiniteRotationAxis(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1065,8 +1087,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setFiniteRotationAxis(SFVec3fObject newValue)
 	{
-		setFiniteRotationAxis(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFiniteRotationAxis(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1108,6 +1131,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setFixed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		fixed = newValue;
 		return this;
 	}
@@ -1119,8 +1143,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setFixed(SFBoolObject newValue)
 	{
-		setFixed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFixed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput MFVec3f field named <i>forces</i>.
@@ -1145,6 +1170,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setForces(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1163,8 +1189,9 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public RigidBodyObject setForces(MFVec3fObject newValue)
 	{
-		setForces(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForces(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DNBodyCollidableNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>geometry</i>.
@@ -1203,6 +1230,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public RigidBodyObject setGeometry(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeometry(); // newValueNullSetDEFAULT_VALUE
@@ -1233,6 +1261,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearGeometry(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geometry = newValue;
 		for (X3DNBodyCollidableNode element : newValue)
 		{
@@ -1347,6 +1376,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setInertia(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1365,8 +1395,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setInertia(SFMatrix3fObject newValue)
 	{
-		setInertia(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInertia(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>linearDampingFactor</i>.
@@ -1391,6 +1422,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setLinearDampingFactor(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		linearDampingFactor = newValue;
 		return this;
 	}
@@ -1402,8 +1434,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setLinearDampingFactor(SFFloatObject newValue)
 	{
-		setLinearDampingFactor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLinearDampingFactor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>linearVelocity</i>.
@@ -1431,6 +1464,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setLinearVelocity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1449,8 +1483,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setLinearVelocity(SFVec3fObject newValue)
 	{
-		setLinearVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLinearVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1492,6 +1527,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setMass(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		mass = newValue;
 		return this;
 	}
@@ -1503,8 +1539,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setMass(SFFloatObject newValue)
 	{
-		setMass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMass(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Sphere|Box|Cone, from inputOutput SFNode field <i>massDensityModel</i>.
@@ -1526,6 +1563,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setMassDensityModel(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		massDensityModel = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -1625,6 +1663,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1717,6 +1756,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1735,8 +1775,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setOrientation(SFRotationObject newValue)
 	{
-		setOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1777,6 +1818,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setPosition(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1795,8 +1837,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setPosition(SFVec3fObject newValue)
 	{
-		setPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1836,6 +1879,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setTorques(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1854,8 +1898,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setTorques(MFVec3fObject newValue)
 	{
-		setTorques(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTorques(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value unit axis, angle (in radians) from inputOutput SFBool field named <i>useFiniteRotation</i>.
@@ -1880,6 +1925,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setUseFiniteRotation(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		useFiniteRotation = newValue;
 		return this;
 	}
@@ -1891,8 +1937,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setUseFiniteRotation(SFBoolObject newValue)
 	{
-		setUseFiniteRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUseFiniteRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>useGlobalGravity</i>.
@@ -1919,6 +1966,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyObject setUseGlobalGravity(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		useGlobalGravity = newValue;
 		return this;
 	}
@@ -1930,8 +1978,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setUseGlobalGravity(SFBoolObject newValue)
 	{
-		setUseGlobalGravity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUseGlobalGravity(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1946,6 +1995,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to RigidBody
@@ -1973,8 +2023,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1992,6 +2043,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to RigidBody
@@ -2019,8 +2071,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2033,6 +2086,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2047,8 +2101,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -70,16 +70,14 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> Sorting is defined based on distance between the centers of the bounds of the picking geometry and the picked geometry. </li> 
  *  <li> <i>Hint:</i> picking is performed between rendered frames of the event model. An author sets up the picking request in one frame by placing a LinePickSensor in the desired location. At the start of the next frame, any picking intersections are reported by the pick sensor. </li> 
  *  <li> <i>Hint:</i> picking notification is performed at the start of the frame for all enabled pick sensors once all other sensors are processed. </li> 
- *  <li> <i>Hint:</i> event timing details are explained in 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
+ *  <li> <i>Hint:</i> event timing details are explained in X3D Specification 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
  *  <li> <i>Hint:</i>  any geometry can be used for pickingGeometry node. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#VolumePickSensor" target="blank">X3D Abstract Specification: VolumePickSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#VolumePickSensor" target="_blank">X3D Tooltips: VolumePickSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -442,6 +440,7 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public VolumePickSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -453,8 +452,9 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public VolumePickSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['BOUNDS'|'GEOMETRY'|'etc.'] from initializeOnly SFString field named <i>intersectionType</i>.
@@ -486,6 +486,7 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public VolumePickSensorObject setIntersectionType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -500,14 +501,17 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public VolumePickSensorObject setIntersectionType(SFStringObject newValue)
 	{
-		setIntersectionType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIntersectionType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.  * <br>
-
+	 * <i>Tooltip:</i> isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -542,6 +546,7 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public VolumePickSensorObject setMatchCriterion(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -567,8 +572,9 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public VolumePickSensorObject setMatchCriterion(SFStringObject newValue)
 	{
-		setMatchCriterion(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMatchCriterion(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -592,6 +598,7 @@ public class VolumePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public VolumePickSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -705,6 +712,7 @@ setAttribute method invocations).
 	@Override
 	public VolumePickSensorObject setObjectType(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
@@ -731,8 +739,9 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setObjectType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setObjectType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString objectType field, similar to {@link #setObjectType(String[])}.
@@ -747,6 +756,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -763,6 +773,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -778,6 +789,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		objectType = newValue;
 		return this;
 	}
@@ -794,8 +806,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of X3DChildNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>pickedGeometry</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * <br><br>
 	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
@@ -845,6 +859,7 @@ setAttribute method invocations).
 	@Override
 	public VolumePickSensorObject setPickingGeometry(X3DGeometryNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		pickingGeometry = newValue;
 		if (newValue != null)
 		{
@@ -955,6 +970,7 @@ setAttribute method invocations).
 	@Override
 	public VolumePickSensorObject setPickTarget(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearPickTarget(); // newValueNullSetDEFAULT_VALUE
@@ -999,6 +1015,7 @@ setAttribute method invocations).
 			clearPickTarget(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -1168,6 +1185,7 @@ setAttribute method invocations).
 	@Override
 	public VolumePickSensorObject setSortOrder(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1182,8 +1200,9 @@ setAttribute method invocations).
 	 */
 	public VolumePickSensorObject setSortOrder(SFStringObject newValue)
 	{
-		setSortOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSortOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1198,6 +1217,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumePickSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to VolumePickSensor
@@ -1225,8 +1245,9 @@ setAttribute method invocations).
 	 */
 	public VolumePickSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1244,6 +1265,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumePickSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to VolumePickSensor
@@ -1271,8 +1293,9 @@ setAttribute method invocations).
 	 */
 	public VolumePickSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1285,6 +1308,7 @@ setAttribute method invocations).
 	@Override
 	public final VolumePickSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1299,8 +1323,9 @@ setAttribute method invocations).
 	 */
 	public VolumePickSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

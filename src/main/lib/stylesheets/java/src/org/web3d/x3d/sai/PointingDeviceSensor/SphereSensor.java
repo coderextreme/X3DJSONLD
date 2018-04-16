@@ -50,11 +50,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#SphereSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#SphereSensor" target="blank">X3D Abstract Specification: SphereSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SphereSensor" target="_blank">X3D Tooltips: SphereSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -128,8 +126,10 @@ public interface SphereSensor extends X3DDragSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -137,8 +137,10 @@ public interface SphereSensor extends X3DDragSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.  * <br>
-
+	 * <i>Tooltip:</i> Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -183,16 +185,20 @@ public interface SphereSensor extends X3DDragSensorNode
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>rotation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  rotation_changed events equal sum of relative bearing changes plus offset value.  * <br>
-
+	 * <i>Tooltip:</i> rotation_changed events equal sum of relative bearing changes plus offset value.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of rotation_changed field
 	 */
 	public float[] getRotation();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>trackPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.  * <br>
-
+	 * <i>Tooltip:</i> trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of trackPoint_changed field
 	 */
 	@Override

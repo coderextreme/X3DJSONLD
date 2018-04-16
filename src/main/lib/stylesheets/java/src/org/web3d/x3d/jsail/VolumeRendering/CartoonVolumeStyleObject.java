@@ -64,10 +64,8 @@ import org.web3d.x3d.jsail.Texturing3D.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#CartoonVolumeStyle" target="blank">X3D Abstract Specification: CartoonVolumeStyle</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CartoonVolumeStyle" target="_blank">X3D Tooltips: CartoonVolumeStyle</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -352,6 +350,7 @@ public class CartoonVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public CartoonVolumeStyleObject setColorSteps(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 1) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CartoonVolumeStyle colorSteps newValue=" + newValue + " has component value less than restriction minInclusive=1");
@@ -370,8 +369,9 @@ public class CartoonVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public CartoonVolumeStyleObject setColorSteps(SFInt32Object newValue)
 	{
-		setColorSteps(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorSteps(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -396,6 +396,7 @@ public class CartoonVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public CartoonVolumeStyleObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -407,8 +408,9 @@ public class CartoonVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public CartoonVolumeStyleObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -432,6 +434,7 @@ public class CartoonVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public CartoonVolumeStyleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -527,6 +530,7 @@ setAttribute method invocations).
 	@Override
 	public CartoonVolumeStyleObject setOrthogonalColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -545,8 +549,9 @@ setAttribute method invocations).
 	 */
 	public CartoonVolumeStyleObject setOrthogonalColor(SFColorRGBAObject newValue)
 	{
-		setOrthogonalColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrthogonalColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -590,6 +595,7 @@ setAttribute method invocations).
 	@Override
 	public CartoonVolumeStyleObject setParallelColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -608,8 +614,9 @@ setAttribute method invocations).
 	 */
 	public CartoonVolumeStyleObject setParallelColor(SFColorRGBAObject newValue)
 	{
-		setParallelColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setParallelColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -647,6 +654,7 @@ setAttribute method invocations).
 	@Override
 	public CartoonVolumeStyleObject setSurfaceNormals(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		surfaceNormals = newValue;
 		if (newValue != null)
 		{
@@ -726,6 +734,7 @@ setAttribute method invocations).
 	@Override
 	public final CartoonVolumeStyleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CartoonVolumeStyle
@@ -753,8 +762,9 @@ setAttribute method invocations).
 	 */
 	public CartoonVolumeStyleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -772,6 +782,7 @@ setAttribute method invocations).
 	@Override
 	public final CartoonVolumeStyleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CartoonVolumeStyle
@@ -799,8 +810,9 @@ setAttribute method invocations).
 	 */
 	public CartoonVolumeStyleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -813,6 +825,7 @@ setAttribute method invocations).
 	@Override
 	public final CartoonVolumeStyleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -827,8 +840,9 @@ setAttribute method invocations).
 	 */
 	public CartoonVolumeStyleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

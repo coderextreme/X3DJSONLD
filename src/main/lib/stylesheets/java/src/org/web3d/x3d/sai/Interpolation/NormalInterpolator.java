@@ -40,18 +40,16 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: NormalInterpolator generates a series of normal (perpendicular) vector sets along the surface of a unit sphere ROUTE values to vector attribute of a &amp;lt;Normal&amp;gt; node or another Vector3FloatArray attribute
+ * <i>X3D node tooltip</i>: NormalInterpolator generates a series of normal (perpendicular) 3-tuple SFVec3f values. Each vector value has unit length, i.e. the set of allowed vectors describes the surface of a unit sphere. Authors can ROUTE value_changed output events to a Normal node's vector field, or to another 3-tuple SFVec3f field.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction </li> 
  *  <li> <i>Hint:</i>  typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#NormalInterpolator" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#NormalInterpolator" target="blank">X3D Abstract Specification: NormalInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NormalInterpolator" target="_blank">X3D Tooltips: NormalInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -126,7 +124,8 @@ public interface NormalInterpolator extends X3DInterpolatorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Linearly interpolated output value determined by current key time and corresponding keyValue pair.
  * <ul>
- *  <li> <i> Hint:</i>  X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Hint:</i> X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of value_changed field
 	 */

@@ -47,15 +47,14 @@ import org.web3d.x3d.jsail.Core.*;
 /**
  * <i>X3D node tooltip</i>: Cone is a geometry node.
  * <ul>
- *  <li> <i> Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
+ *  <li> <i>Hint:</i> cone <br> <a href="https://en.wikipedia.org/wiki/Cone" target="_blank">https://en.wikipedia.org/wiki/Cone</a> </li> 
+ *  <li> <i>Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html#Cone" target="blank">X3D Abstract Specification: Cone</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Cone" target="_blank">X3D Tooltips: Cone</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -311,6 +310,7 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	@Override
 	public ConeObject setBottom(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		bottom = newValue;
 		return this;
 	}
@@ -322,8 +322,9 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	 */
 	public ConeObject setBottom(SFBoolObject newValue)
 	{
-		setBottom(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBottom(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of (0,infinity) from initializeOnly SFFloat field named <i>bottomRadius</i>.
@@ -350,6 +351,7 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	@Override
 	public ConeObject setBottomRadius(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Cone bottomRadius newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -365,8 +367,9 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	 */
 	public ConeObject setBottomRadius(SFFloatObject newValue)
 	{
-		setBottomRadius(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBottomRadius(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of (0,infinity) from initializeOnly SFFloat field named <i>height</i>.
@@ -393,6 +396,7 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	@Override
 	public ConeObject setHeight(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Cone height newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -408,8 +412,9 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	 */
 	public ConeObject setHeight(SFFloatObject newValue)
 	{
-		setHeight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setHeight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -433,6 +438,7 @@ public class ConeObject extends org.web3d.x3d.jsail.X3DConcreteNode implements o
 	@Override
 	public ConeObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -527,6 +533,7 @@ setAttribute method invocations).
 	@Override
 	public ConeObject setSide(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		side = newValue;
 		return this;
 	}
@@ -538,8 +545,9 @@ setAttribute method invocations).
 	 */
 	public ConeObject setSide(SFBoolObject newValue)
 	{
-		setSide(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSide(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -568,6 +576,7 @@ setAttribute method invocations).
 	@Override
 	public ConeObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -579,8 +588,9 @@ setAttribute method invocations).
 	 */
 	public ConeObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -595,6 +605,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Cone
@@ -622,8 +633,9 @@ setAttribute method invocations).
 	 */
 	public ConeObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -641,6 +653,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Cone
@@ -668,8 +681,9 @@ setAttribute method invocations).
 	 */
 	public ConeObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -682,6 +696,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -696,8 +711,9 @@ setAttribute method invocations).
 	 */
 	public ConeObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

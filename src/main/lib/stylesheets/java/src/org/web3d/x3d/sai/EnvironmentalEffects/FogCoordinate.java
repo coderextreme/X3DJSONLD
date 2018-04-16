@@ -48,11 +48,9 @@ import org.web3d.x3d.sai.Core.*;
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#FogCoordinate" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#FogCoordinate" target="blank">X3D Abstract Specification: FogCoordinate</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#FogCoordinate" target="_blank">X3D Tooltips: FogCoordinate</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -63,7 +61,7 @@ public interface FogCoordinate extends X3DGeometricPropertyNode
 	/**
 	 * Provide array of float results within allowed range of [0,1] from inputOutput MFFloat field named <i>depth</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  depth contains a set of 3D coordinate triplet values.  * <br>
+	 * <i>Tooltip:</i>  depth contains a set of 3D coordinate (triplet) point values.  * <br>
 
 	 * @return value of depth field
 	 */
@@ -72,7 +70,7 @@ public interface FogCoordinate extends X3DGeometricPropertyNode
 	/**
 	 * Assign float array within allowed range of [0,1] to inputOutput MFFloat field named <i>depth</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> depth contains a set of 3D coordinate triplet values.
+	 * <i>Tooltip:</i> depth contains a set of 3D coordinate (triplet) point values.
 	 * @param newValue is new value for the depth field.
 	 * @return {@link FogCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

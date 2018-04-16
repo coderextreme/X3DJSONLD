@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: (X3D version 3.2 or later) EaseInEaseOut enables gradual animation transitions by modifying TimeSensor fraction outputs. Output values are modified fractions that can be ROUTEd to an interpolator, a sequencer, or another SFFloat attribute.
+ * <i>X3D node tooltip</i>: (X3D version 3.2 or later) EaseInEaseOut enables gradual animation transitions by modifying TimeSensor fraction outputs. Output values are modified fractions. Authors can ROUTE value_changed output events to an interpolator, a sequencer, or another SFFloat attribute.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisEaseInEaseOutDEF.set_fraction </li> 
  *  <li> <i>Hint:</i> typical output connection is ROUTE thisEaseInEaseOutDEF.modifiedFraction_changed TO someDestinationNodeDEF.set_fraction. </li> 
@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#EaseInEaseOut" target="blank">X3D Abstract Specification: EaseInEaseOut</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#EaseInEaseOut" target="_blank">X3D Tooltips: EaseInEaseOut</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -305,6 +303,7 @@ public class EaseInEaseOutObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public EaseInEaseOutObject setEaseInEaseOut(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -323,8 +322,9 @@ public class EaseInEaseOutObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public EaseInEaseOutObject setEaseInEaseOut(MFVec2fObject newValue)
 	{
-		setEaseInEaseOut(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEaseInEaseOut(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>key</i>.
@@ -367,6 +367,7 @@ public class EaseInEaseOutObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public EaseInEaseOutObject setKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKey(); // newValueNullSetDEFAULT_VALUE
@@ -393,8 +394,9 @@ public class EaseInEaseOutObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat key field, similar to {@link #setKey(float[])}.
@@ -408,6 +410,7 @@ public class EaseInEaseOutObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		key = newValue;
 		return this;
 	}
@@ -433,6 +436,7 @@ setAttribute method invocations).
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -463,6 +467,7 @@ setAttribute method invocations).
 	@Override
 	public EaseInEaseOutObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -535,8 +540,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>modifiedFraction_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Interpolated output value determined by current key time, corresponding easeInEaseOut smoothing intervals, and corresponding key pair.  * <br>
-
+	 * <i>Tooltip:</i> Interpolated output value determined by current key time, corresponding easeInEaseOut smoothing intervals, and corresponding key pair.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of modifiedFraction_changed field
 	 */
 	@Override
@@ -557,6 +564,7 @@ setAttribute method invocations).
 	@Override
 	public final EaseInEaseOutObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to EaseInEaseOut
@@ -584,8 +592,9 @@ setAttribute method invocations).
 	 */
 	public EaseInEaseOutObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -603,6 +612,7 @@ setAttribute method invocations).
 	@Override
 	public final EaseInEaseOutObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to EaseInEaseOut
@@ -630,8 +640,9 @@ setAttribute method invocations).
 	 */
 	public EaseInEaseOutObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -644,6 +655,7 @@ setAttribute method invocations).
 	@Override
 	public final EaseInEaseOutObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -658,8 +670,9 @@ setAttribute method invocations).
 	 */
 	public EaseInEaseOutObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

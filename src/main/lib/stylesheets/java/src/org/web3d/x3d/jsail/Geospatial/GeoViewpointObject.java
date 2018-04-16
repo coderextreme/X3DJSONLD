@@ -62,15 +62,14 @@ import org.web3d.x3d.jsail.Core.*;
  *  <li> <i>Warning:</i> do not include GeoViewpoint OrthoViewpoint or Viewpoint as a child of LOD or Switch, instead use ViewpointGroup as parent to constrain location proximity where the viewpoint is available to user. </li> 
  *  <li> <i>Warning:</i> GeoViewpoint navType and headlight fields were removed as part of X3D version 3.3, authors can instead use a NavigationInfo node for those fields in prior X3D versions 3.0, 3.1 or 3.2. Upgrading such legacy scenes to version 3.3 or greater is preferred and recommended. </li> 
  *  <li> <i>Hint:</i> Regardless of viewpoint jump value at bind time, the relative viewing transformation between user's view and defined position/orientation is stored for later use when un-jumping (returning to the viewpoint when subsequent viewpoint is unbound). </li> 
+ *  <li> <i>Hint:</i> customizable design pattern for dedicated Viewpoint/NavigationInfo pair: &amp;lt;Viewpoint DEF='SpecialView'/&amp;gt; &amp;lt;NavigationInfo DEF='SpecialNav'/&amp;gt; &amp;lt;ROUTE fromNode='SpecialView' fromField='isBound' toNode='SpecialNav' toField='set_bind'/&amp;gt; </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Viewpoints <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints</a> </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoViewpoint" target="blank">X3D Abstract Specification: GeoViewpoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoViewpoint" target="_blank">X3D Tooltips: GeoViewpoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">X3D Scene Authoring Hints: Viewpoints</a>
  */
@@ -437,8 +436,10 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event sent reporting timestamp when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> Event sent reporting timestamp when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -469,6 +470,7 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public GeoViewpointObject setCenterOfRotation(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -487,8 +489,9 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public GeoViewpointObject setCenterOfRotation(SFVec3dObject newValue)
 	{
-		setCenterOfRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenterOfRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -531,6 +534,7 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public GeoViewpointObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -545,8 +549,9 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public GeoViewpointObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of (0,3.1416) from inputOutput SFFloat field named <i>fieldOfView</i>.
@@ -571,6 +576,7 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public GeoViewpointObject setFieldOfView(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoViewpoint fieldOfView newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -589,8 +595,9 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public GeoViewpointObject setFieldOfView(SFFloatObject newValue)
 	{
-		setFieldOfView(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFieldOfView(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
@@ -612,6 +619,7 @@ public class GeoViewpointObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public GeoViewpointObject setGeoOrigin(GeoOrigin newValue)
 	{
+		// set-newValue-validity-checks #0
 		geoOrigin = newValue;
 		if (newValue != null)
 		{
@@ -720,6 +728,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -746,8 +755,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -761,6 +771,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -776,6 +787,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -792,6 +804,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -808,8 +821,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isBound</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.  * <br>
-
+	 * <i>Tooltip:</i> Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isBound field
 	 */
 	@Override
@@ -840,6 +855,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setJump(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		jump = newValue;
 		return this;
 	}
@@ -851,8 +867,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setJump(SFBoolObject newValue)
 	{
-		setJump(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setJump(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -876,6 +893,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -971,6 +989,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -989,8 +1008,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setOrientation(SFRotationObject newValue)
 	{
-		setOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1031,6 +1051,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setPosition(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1049,8 +1070,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setPosition(SFVec3dObject newValue)
 	{
-		setPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1090,6 +1112,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setRetainUserOffsets(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		retainUserOffsets = newValue;
 		return this;
 	}
@@ -1101,8 +1124,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setRetainUserOffsets(SFBoolObject newValue)
 	{
-		setRetainUserOffsets(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRetainUserOffsets(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>speedFactor</i>.
@@ -1129,6 +1153,7 @@ setAttribute method invocations).
 	@Override
 	public GeoViewpointObject setSpeedFactor(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoViewpoint speedFactor newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1144,8 +1169,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setSpeedFactor(SFFloatObject newValue)
 	{
-		setSpeedFactor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpeedFactor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1160,6 +1186,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoViewpointObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoViewpoint
@@ -1187,8 +1214,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1206,6 +1234,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoViewpointObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoViewpoint
@@ -1233,8 +1262,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1247,6 +1277,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoViewpointObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1261,8 +1292,9 @@ setAttribute method invocations).
 	 */
 	public GeoViewpointObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -53,10 +53,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html#IntegerTrigger" target="blank">X3D Abstract Specification: IntegerTrigger</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IntegerTrigger" target="_blank">X3D Tooltips: IntegerTrigger</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -292,6 +290,7 @@ public class IntegerTriggerObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public IntegerTriggerObject setIntegerKey(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		integerKey = newValue;
 		return this;
 	}
@@ -303,8 +302,9 @@ public class IntegerTriggerObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public IntegerTriggerObject setIntegerKey(SFInt32Object newValue)
 	{
-		setIntegerKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIntegerKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -328,6 +328,7 @@ public class IntegerTriggerObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public IntegerTriggerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -400,8 +401,10 @@ setAttribute method invocations).
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>triggerValue</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  triggerValue provides integer event output matching integerKey when true set_boolean received.  * <br>
-
+	 * <i>Tooltip:</i> triggerValue provides integer event output matching integerKey when true set_boolean received.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of triggerValue field
 	 */
 	@Override
@@ -422,6 +425,7 @@ setAttribute method invocations).
 	@Override
 	public final IntegerTriggerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IntegerTrigger
@@ -449,8 +453,9 @@ setAttribute method invocations).
 	 */
 	public IntegerTriggerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -468,6 +473,7 @@ setAttribute method invocations).
 	@Override
 	public final IntegerTriggerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IntegerTrigger
@@ -495,8 +501,9 @@ setAttribute method invocations).
 	 */
 	public IntegerTriggerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -509,6 +516,7 @@ setAttribute method invocations).
 	@Override
 	public final IntegerTriggerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -523,8 +531,9 @@ setAttribute method invocations).
 	 */
 	public IntegerTriggerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

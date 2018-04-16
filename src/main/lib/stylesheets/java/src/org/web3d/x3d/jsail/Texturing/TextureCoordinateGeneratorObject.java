@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: TextureCoordinateGenerator computes 2D (s,t) texture-coordinate points, used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map textures to vertices (and patches to polygons).
+ * <i>X3D node tooltip</i>: TextureCoordinateGenerator computes 2D (s,t) texture-coordinate points, used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map textures to vertices (and patches to NURBS surfaces).
  * <ul>
  *  <li> <i>Hint:</i> add Shape and then polgyonal/planar geometry before adding TextureCoordinateGenerator. </li> 
  *  <li> <i>Hint:</i> Texture mapping <br> <a href="https://en.wikipedia.org/wiki/Texture_mapping" target="_blank">https://en.wikipedia.org/wiki/Texture_mapping</a> </li> 
@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureCoordinateGenerator" target="blank">X3D Abstract Specification: TextureCoordinateGenerator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureCoordinateGenerator" target="_blank">X3D Tooltips: TextureCoordinateGenerator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -318,6 +316,7 @@ public class TextureCoordinateGeneratorObject extends org.web3d.x3d.jsail.X3DCon
 	@Override
 	public TextureCoordinateGeneratorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -417,6 +416,7 @@ setAttribute method invocations).
 	@Override
 	public TextureCoordinateGeneratorObject setMode(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -450,8 +450,9 @@ setAttribute method invocations).
 	 */
 	public TextureCoordinateGeneratorObject setMode(SFStringObject newValue)
 	{
-		setMode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>parameter</i>.
@@ -490,6 +491,7 @@ setAttribute method invocations).
 	@Override
 	public TextureCoordinateGeneratorObject setParameter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
@@ -516,8 +518,9 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setParameter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setParameter(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat parameter field, similar to {@link #setParameter(float[])}.
@@ -531,6 +534,7 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		parameter = newValue;
 		return this;
 	}
@@ -556,6 +560,7 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -577,6 +582,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureCoordinateGeneratorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureCoordinateGenerator
@@ -604,8 +610,9 @@ setAttribute method invocations).
 	 */
 	public TextureCoordinateGeneratorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -623,6 +630,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureCoordinateGeneratorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureCoordinateGenerator
@@ -650,8 +658,9 @@ setAttribute method invocations).
 	 */
 	public TextureCoordinateGeneratorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -664,6 +673,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureCoordinateGeneratorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -678,8 +688,9 @@ setAttribute method invocations).
 	 */
 	public TextureCoordinateGeneratorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

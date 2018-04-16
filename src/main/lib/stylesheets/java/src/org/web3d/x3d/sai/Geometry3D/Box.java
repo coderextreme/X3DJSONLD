@@ -43,17 +43,17 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: Box is a geometry node.
+ * <i>X3D node tooltip</i>: Box is a geometry node specifying a rectangular cuboid.
  * <ul>
- *  <li> <i> Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
+ *  <li> <i>Hint:</i> Cuboid <br> <a href="https://en.wikipedia.org/wiki/Cuboid" target="_blank">https://en.wikipedia.org/wiki/Cuboid</a> </li> 
+ *  <li> <i>Hint:</i> Parallelepiped <br> <a href="https://en.wikipedia.org/wiki/Parallelepiped" target="_blank">https://en.wikipedia.org/wiki/Parallelepiped</a> </li> 
+ *  <li> <i>Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Box" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html#Box" target="blank">X3D Abstract Specification: Box</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Box" target="_blank">X3D Tooltips: Box</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

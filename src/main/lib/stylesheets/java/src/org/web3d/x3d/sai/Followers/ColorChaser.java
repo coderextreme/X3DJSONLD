@@ -47,11 +47,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ColorChaser" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/followers.html#ColorChaser" target="blank">X3D Abstract Specification: ColorChaser</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorChaser" target="_blank">X3D Tooltips: ColorChaser</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -62,8 +60,10 @@ public interface ColorChaser extends X3DChaserNode
 	/**
 	 * Provide double value in seconds within allowed range of [0,infinity) from initializeOnly SFTime field named <i>duration</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  [0,+infinity) duration is the time interval for filter response in seconds.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds.
+ * <ul>
+ *  <li> <i> Hint:</i>  duration is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of duration field
 	 */
 	@Override
@@ -72,7 +72,7 @@ public interface ColorChaser extends X3DChaserNode
 	/**
 	 * Assign double value in seconds within allowed range of [0,infinity) to initializeOnly SFTime field named <i>duration</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds.
+	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds. Hint: duration is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the duration field.
 	 * @return {@link ColorChaser} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -118,8 +118,10 @@ public interface ColorChaser extends X3DChaserNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when follower-node computation starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when follower-node computation starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -144,8 +146,10 @@ public interface ColorChaser extends X3DChaserNode
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from outputOnly SFColor field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.  * <br>
-
+	 * <i>Tooltip:</i> Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	public float[] getValue();

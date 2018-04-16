@@ -60,10 +60,8 @@ import org.web3d.x3d.jsail.Texturing3D.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#SilhouetteEnhancementVolumeStyle" target="blank">X3D Abstract Specification: SilhouetteEnhancementVolumeStyle</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SilhouetteEnhancementVolumeStyle" target="_blank">X3D Tooltips: SilhouetteEnhancementVolumeStyle</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -345,6 +343,7 @@ public class SilhouetteEnhancementVolumeStyleObject extends org.web3d.x3d.jsail.
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -356,8 +355,9 @@ public class SilhouetteEnhancementVolumeStyleObject extends org.web3d.x3d.jsail.
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -381,6 +381,7 @@ public class SilhouetteEnhancementVolumeStyleObject extends org.web3d.x3d.jsail.
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -473,6 +474,7 @@ setAttribute method invocations).
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteBoundaryOpacity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SilhouetteEnhancementVolumeStyle silhouetteBoundaryOpacity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -491,8 +493,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteBoundaryOpacity(SFFloatObject newValue)
 	{
-		setSilhouetteBoundaryOpacity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSilhouetteBoundaryOpacity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>silhouetteRetainedOpacity</i>.
@@ -517,6 +520,7 @@ setAttribute method invocations).
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteRetainedOpacity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SilhouetteEnhancementVolumeStyle silhouetteRetainedOpacity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -535,8 +539,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteRetainedOpacity(SFFloatObject newValue)
 	{
-		setSilhouetteRetainedOpacity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSilhouetteRetainedOpacity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>silhouetteSharpness</i>.
@@ -561,6 +566,7 @@ setAttribute method invocations).
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteSharpness(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SilhouetteEnhancementVolumeStyle silhouetteSharpness newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -576,8 +582,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setSilhouetteSharpness(SFFloatObject newValue)
 	{
-		setSilhouetteSharpness(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSilhouetteSharpness(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>surfaceNormals</i>.
@@ -599,6 +606,7 @@ setAttribute method invocations).
 	@Override
 	public SilhouetteEnhancementVolumeStyleObject setSurfaceNormals(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		surfaceNormals = newValue;
 		if (newValue != null)
 		{
@@ -678,6 +686,7 @@ setAttribute method invocations).
 	@Override
 	public final SilhouetteEnhancementVolumeStyleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SilhouetteEnhancementVolumeStyle
@@ -705,8 +714,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -724,6 +734,7 @@ setAttribute method invocations).
 	@Override
 	public final SilhouetteEnhancementVolumeStyleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SilhouetteEnhancementVolumeStyle
@@ -751,8 +762,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -765,6 +777,7 @@ setAttribute method invocations).
 	@Override
 	public final SilhouetteEnhancementVolumeStyleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -779,8 +792,9 @@ setAttribute method invocations).
 	 */
 	public SilhouetteEnhancementVolumeStyleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

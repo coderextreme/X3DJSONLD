@@ -44,18 +44,16 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: Inline is a X3DBoundedObject node that can load nodes from another X3D scene via url.
+ * <i>X3D node tooltip</i>: Inline can load another X3D or VRML model into the current scene via url. Inline is an X3DBoundedObject node that has bounding-box dimensions.
  * <ul>
  *  <li> <i>Hint:</i> you cannot ROUTE values into an Inline scene, use IMPORT/EXPORT (or ExternProtoDeclare and ProtoInstance) instead. </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Inlines and Prototypes <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes</a> </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Inline" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#Inline" target="blank">X3D Abstract Specification: Inline</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Inline" target="_blank">X3D Tooltips: Inline</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */

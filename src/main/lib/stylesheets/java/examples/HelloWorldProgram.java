@@ -144,11 +144,39 @@ public class HelloWorldProgram
 		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
+
 		System.out.println ("Create .xml (X3D XML Encoding) version of model");
 		savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_XML;
 		savedFile        = x3dModel.toFileXML(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileXML(\"" + savedFileName + "\") success: " + savedFileExists);
+		if (!(savedFile == null))
+			System.out.println (savedFile.getAbsolutePath());
+		System.out.println ("===========================================");
+
+		System.out.println ("Create pretty-print .html documentation of model");
+		savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_HTML;
+		savedFile        = x3dModel.toFileHtmlDocumentation(savedFileName);
+		savedFileExists = !(savedFile == null);
+		System.out.println ("helloWorldObject.toFileHtmlDocumentation(\"" + savedFileName + "\") success: " + savedFileExists);
+		if (!(savedFile == null))
+			System.out.println (savedFile.getAbsolutePath());
+		System.out.println ("===========================================");
+
+		System.out.println ("Create .x3d (X3D XML Encoding) cleaned-up version of model using X3D Tidy");
+		savedFileName    = thisSceneName + "Tidy" + X3DObject.FILE_EXTENSION_X3D;
+		savedFile        = x3dModel.toFileX3dTidy(savedFileName);
+		savedFileExists = !(savedFile == null);
+		System.out.println ("helloWorldObject.toFileX3dTidy(\"" + savedFileName + "\") success: " + savedFileExists);
+		if (!(savedFile == null))
+			System.out.println (savedFile.getAbsolutePath());
+		System.out.println ("===========================================");
+
+		System.out.println ("Create .md (Markdown) file for model meta information using X3dModelMetaToMarkdown.xslt");
+		savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_MARKDOWN;
+		savedFile        = x3dModel.toFileModelMetaMarkdown(savedFileName);
+		savedFileExists = !(savedFile == null);
+		System.out.println ("helloWorldObject.toFileModelMetaMarkdown(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
@@ -178,9 +206,9 @@ public class HelloWorldProgram
 			+ " and stylesheet " + ConfigurationProperties.STYLESHEET_htmlDocumentation);
 		ConfigurationProperties.setDeleteIntermediateFiles(true);
 		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_HTML;
-		savedFile       = x3dModel.toFileDocumentationHtml(savedFileName);
+		savedFile       = x3dModel.toFileHtmlDocumentation(savedFileName);
 		savedFileExists = !(savedFile == null);
-		System.out.println ("helloWorldObject.toFileDocumentationHTML(\"" + savedFileName + "\") success: " + savedFileExists);
+		System.out.println ("helloWorldObject.toFileHtmlDocumentation(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		ConfigurationProperties.setDebugModeActive(false);
@@ -494,8 +522,8 @@ public class HelloWorldProgram
 		scene.addChildren(worldInfoCopy1);
 		scene.addChildren(worldInfoCopy2);
                 // utility methods for SceneObject
-		scene.addChild   (new MetadataStringObject("scene.addChildMetadataObject").setName("test").setValue("Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"));
-		scene.addChild   (new       LayerSetObject("scene.addChildLayerSetObjectTest"));
+		scene.addMetadata  (new MetadataStringObject("scene.addChildMetadata").setName("test").setValue("Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"));
+		scene.addLayerSet  (new       LayerSetObject("scene.addChildLayerSetTest"));
 		
 		scene.addChildren(logoTransform);
 		float[] rootTranslationOffset = {0.0f, 1.5f, 0.0f};
@@ -546,6 +574,7 @@ public class HelloWorldProgram
 		CoordinateObject boxCoordinateNode = new CoordinateObject();
 		boxCoordinateNode.setPoint(boxPathPointArray);
 		indexedLineSet.setCoord(boxCoordinateNode);
+		indexedLineSet.addComments("Coordinate 3-tuple point count: " + indexedLineSet.getCoordCount());
 		
 		// test alternate type forms
 		boxCoordinateNode.setPoint(new MFVec3fObject(new float[] {-8f,-9f,4f,-7f,-7f,5f,-3f,0f,5f}));				//  floats to  float array to MFVec3f
@@ -631,11 +660,12 @@ public class HelloWorldProgram
 		collisionObject.addComments("test containerField='proxy'")
 			.setProxy(new ShapeObject("ProxyShape")
 			// test MFString alternatives, last one wins: MFStringObject single-string XML syntax, MFStringObject String[] array, String[] array
-			.setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Three\" \"\" \"He said, \"Immel did it!\"\"")))
-			.setGeometry(new TextObject().setString(new MFStringObject(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""})))
-			.setGeometry(new TextObject().setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}))
-				.addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
-				.addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})")
+			.setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Text\" \"\" \"He said, \"Immel did it!\"\" \"\"")))
+			.setGeometry(new TextObject().setString(new MFStringObject(new String [] {"One, Two, Text", "", "He said, \"Immel did it!\" \"\""}))) /* , "\\s", "\\\\" */
+			.setGeometry(new TextObject().setString(new String [] {"One, Two, Text", "", "He said, \"Immel did it!\" \"\""})) /* , "\\s", "\\\\" */
+				.addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
+				.addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' ")
+				.addComments(" alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"})")
 				.addComments(" reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html "));
 		
 		textTransform.addChild(collisionObject);

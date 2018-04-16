@@ -45,11 +45,9 @@ import org.web3d.x3d.sai.Core.*;
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DTimeDependentNode" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/time.html#X3DTimeDependentNode" target="blank">X3D Abstract Specification: TODO</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -58,7 +56,7 @@ public interface X3DTimeDependentNode extends X3DChildNode
 	// ==== Accessor methods: strongly typed get/set methods for compile-time strictness
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>elapsedTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>elapsedTime</i>.
 	 * @return value of elapsedTime field
 	 */
 	public double getElapsedTime();

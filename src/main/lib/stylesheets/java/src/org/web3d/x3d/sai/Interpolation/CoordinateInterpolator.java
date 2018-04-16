@@ -40,18 +40,16 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: CoordinateInterpolator generates a series of Coordinate values that can be ROUTEd to a &amp;lt;Coordinate&amp;gt; node's 'point' attribute or another Vector3FloatArray attribute.
+ * <i>X3D node tooltip</i>: CoordinateInterpolator linearly interpolates among a list of 3-tuple MFVec3f arrays, producing a single MFVec3f array that is fractional average between two nearest arrays in the list. Authors can ROUTE value_changed output events (an array of 3-tuple SFVec3f values) to a Coordinate node's point field, or to another MFVec3f field.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction. </li> 
  *  <li> <i>Hint:</i>  typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#CoordinateInterpolator" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#CoordinateInterpolator" target="blank">X3D Abstract Specification: CoordinateInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateInterpolator" target="_blank">X3D Tooltips: CoordinateInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -129,7 +127,8 @@ public interface CoordinateInterpolator extends X3DInterpolatorNode
 	 * <i>Tooltip:</i> Linearly interpolated output value determined by current key time and corresponding keyValue pair.
  * <ul>
  *  <li> <i>Hint:</i> X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
- *  <li> <i>Hint:</i>  keyValue/key integer multiple defines how many coordinates are sent in value_changed outputOnlys. </li> 
+ *  <li> <i>Hint:</i> keyValue/key integer multiple defines how many coordinates are sent in value_changed outputOnlys. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of value_changed field
 	 */

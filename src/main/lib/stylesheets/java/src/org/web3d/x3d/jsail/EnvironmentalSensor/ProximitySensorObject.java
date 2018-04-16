@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html#ProximitySensor" target="blank">X3D Abstract Specification: ProximitySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProximitySensor" target="_blank">X3D Tooltips: ProximitySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -365,6 +363,7 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public ProximitySensorObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -383,8 +382,9 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public ProximitySensorObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -404,8 +404,10 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	/**
 	 * Provide array of 3-tuple float results unit axis, angle (in radians) from outputOnly SFVec3f field named <i>centerOfRotation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends changed centerOfRotation values, likely caused by user interaction.  * <br>
-
+	 * <i>Tooltip:</i> Sends changed centerOfRotation values, likely caused by user interaction.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of centerOfRotation_changed field
 	 */
 	@Override
@@ -436,6 +438,7 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public ProximitySensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -447,14 +450,17 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public ProximitySensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>enterTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera enters the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera enters the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enterTime field
 	 */
 	@Override
@@ -465,8 +471,10 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>exitTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera exits the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera exits the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of exitTime field
 	 */
 	@Override
@@ -477,8 +485,10 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -508,6 +518,7 @@ public class ProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public ProximitySensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -580,8 +591,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>orientation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends rotation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends rotation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of orientation_changed field
 	 */
 	@Override
@@ -592,8 +605,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>position_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends translation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends translation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of position_changed field
 	 */
 	@Override
@@ -626,6 +641,7 @@ setAttribute method invocations).
 	@Override
 	public ProximitySensorObject setSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -648,8 +664,9 @@ setAttribute method invocations).
 	 */
 	public ProximitySensorObject setSize(SFVec3fObject newValue)
 	{
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -679,6 +696,7 @@ setAttribute method invocations).
 	@Override
 	public final ProximitySensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProximitySensor
@@ -706,8 +724,9 @@ setAttribute method invocations).
 	 */
 	public ProximitySensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -725,6 +744,7 @@ setAttribute method invocations).
 	@Override
 	public final ProximitySensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProximitySensor
@@ -752,8 +772,9 @@ setAttribute method invocations).
 	 */
 	public ProximitySensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -766,6 +787,7 @@ setAttribute method invocations).
 	@Override
 	public final ProximitySensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -780,8 +802,9 @@ setAttribute method invocations).
 	 */
 	public ProximitySensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

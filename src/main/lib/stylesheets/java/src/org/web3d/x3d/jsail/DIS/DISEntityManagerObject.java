@@ -81,10 +81,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#DISEntityManager" target="blank">X3D Abstract Specification: DISEntityManager</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#DISEntityManager" target="_blank">X3D Tooltips: DISEntityManager</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -385,6 +383,7 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public DISEntityManagerObject setAddress(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -399,8 +398,9 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public DISEntityManagerObject setAddress(SFStringObject newValue)
 	{
-		setAddress(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAddress(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>applicationID</i>.
@@ -425,6 +425,7 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public DISEntityManagerObject setApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		applicationID = newValue;
 		return this;
 	}
@@ -436,8 +437,9 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public DISEntityManagerObject setApplicationID(SFInt32Object newValue)
 	{
-		setApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of DISEntityTypeMapping results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>mapping</i>.
@@ -476,6 +478,7 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public DISEntityManagerObject setMapping(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearMapping(); // newValueNullSetDEFAULT_VALUE
@@ -506,6 +509,7 @@ public class DISEntityManagerObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 			clearMapping(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		mapping = newValue;
 		for (DISEntityTypeMapping element : newValue)
 		{
@@ -617,6 +621,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityManagerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -709,6 +714,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityManagerObject setPort(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		port = newValue;
 		return this;
 	}
@@ -720,8 +726,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityManagerObject setPort(SFInt32Object newValue)
 	{
-		setPort(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPort(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>siteID</i>.
@@ -746,6 +753,7 @@ setAttribute method invocations).
 	@Override
 	public DISEntityManagerObject setSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		siteID = newValue;
 		return this;
 	}
@@ -757,8 +765,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityManagerObject setSiteID(SFInt32Object newValue)
 	{
-		setSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -773,6 +782,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityManagerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to DISEntityManager
@@ -800,8 +810,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityManagerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -819,6 +830,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityManagerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to DISEntityManager
@@ -846,8 +858,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityManagerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -860,6 +873,7 @@ setAttribute method invocations).
 	@Override
 	public final DISEntityManagerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -874,8 +888,9 @@ setAttribute method invocations).
 	 */
 	public DISEntityManagerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

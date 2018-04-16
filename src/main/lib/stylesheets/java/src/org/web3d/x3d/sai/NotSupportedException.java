@@ -35,14 +35,12 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
- * 
-The exception that is thrown when an operation is not supported by an
-underlying implementation.
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+The exception that is thrown when an operation is not supported by an
+underlying implementation. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#NotSupportedException" target="_blank">SAI Java Specification: B.7.20 NotSupportedException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NotSupportedException" target="_blank">X3D Tooltips: NotSupportedException</a>

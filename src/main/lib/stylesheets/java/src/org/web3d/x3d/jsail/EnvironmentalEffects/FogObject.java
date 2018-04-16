@@ -57,10 +57,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#Fog" target="blank">X3D Abstract Specification: Fog</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Fog" target="_blank">X3D Tooltips: Fog</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -329,8 +327,10 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Event sent reporting timestamp when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> Event sent reporting timestamp when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -364,6 +364,7 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public FogObject setColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -382,8 +383,9 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	 */
 	public FogObject setColor(SFColorObject newValue)
 	{
-		setColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -430,6 +432,7 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public FogObject setFogType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -454,15 +457,17 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	 */
 	public FogObject setFogType(SFStringObject newValue)
 	{
-		setFogType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFogType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isBound</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */
@@ -493,6 +498,7 @@ public class FogObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public FogObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -587,6 +593,7 @@ setAttribute method invocations).
 	@Override
 	public FogObject setVisibilityRange(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Fog visibilityRange newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -602,8 +609,9 @@ setAttribute method invocations).
 	 */
 	public FogObject setVisibilityRange(SFFloatObject newValue)
 	{
-		setVisibilityRange(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVisibilityRange(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -618,6 +626,7 @@ setAttribute method invocations).
 	@Override
 	public final FogObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Fog
@@ -645,8 +654,9 @@ setAttribute method invocations).
 	 */
 	public FogObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -664,6 +674,7 @@ setAttribute method invocations).
 	@Override
 	public final FogObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Fog
@@ -691,8 +702,9 @@ setAttribute method invocations).
 	 */
 	public FogObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -705,6 +717,7 @@ setAttribute method invocations).
 	@Override
 	public final FogObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -719,8 +732,9 @@ setAttribute method invocations).
 	 */
 	public FogObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

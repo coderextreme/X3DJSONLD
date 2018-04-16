@@ -94,10 +94,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#LayoutLayer" target="blank">X3D Abstract Specification: LayoutLayer</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayoutLayer" target="_blank">X3D Tooltips: LayoutLayer</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -390,6 +388,7 @@ public class LayoutLayerObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public LayoutLayerObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -420,6 +419,7 @@ public class LayoutLayerObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -568,8 +568,10 @@ setAttribute method invocations).
 											/**
 	 * Provide boolean value from inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isPickable determines whether pick traversal is performed for this layer.  * <br>
-
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isPickable field
 	 */
 	@Override
@@ -581,13 +583,14 @@ setAttribute method invocations).
 	/**
 	 * Assign boolean value to inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer. Warning: it is an error to define this transient outputOnly field in an X3D file.
 	 * @param newValue is new value for the isPickable field.
 	 * @return {@link LayoutLayerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public LayoutLayerObject setIsPickable(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		isPickable = newValue;
 		return this;
 	}
@@ -599,8 +602,9 @@ setAttribute method invocations).
 	 */
 	public LayoutLayerObject setIsPickable(SFBoolObject newValue)
 	{
-		setIsPickable(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIsPickable(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DLayoutNode instance (using a properly typed node) from inputOutput SFNode field <i>layout</i>.
@@ -627,6 +631,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutLayerObject setLayout(X3DLayoutNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		layout = newValue;
 		if (newValue != null)
 		{
@@ -715,6 +720,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutLayerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -809,6 +815,7 @@ setAttribute method invocations).
 	@Override
 	public LayoutLayerObject setViewport(X3DViewportNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		viewport = newValue;
 		if (newValue != null)
 		{
@@ -888,6 +895,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutLayerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LayoutLayer
@@ -915,8 +923,9 @@ setAttribute method invocations).
 	 */
 	public LayoutLayerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -934,6 +943,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutLayerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LayoutLayer
@@ -961,8 +971,9 @@ setAttribute method invocations).
 	 */
 	public LayoutLayerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -975,6 +986,7 @@ setAttribute method invocations).
 	@Override
 	public final LayoutLayerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -989,8 +1001,9 @@ setAttribute method invocations).
 	 */
 	public LayoutLayerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

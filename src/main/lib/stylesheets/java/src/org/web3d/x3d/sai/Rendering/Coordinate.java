@@ -40,18 +40,16 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>:  Coordinate builds geometry by defining a set of 3D coordinate triplet values.
+ * <i>X3D node tooltip</i>:  Coordinate builds geometry by defining a set of 3D coordinate (triplet) point values.
 Coordinate is used by IndexedFaceSet, IndexedLineSet, LineSet, PointSet, Triangle* and IndexedTriangle* nodes.
 Coordinate is also used by HAnimHumanoid, HAnimSegment, and various Nurbs nodes.  * <br>
  * <br>
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Coordinate" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#Coordinate" target="blank">X3D Abstract Specification: Coordinate</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Coordinate" target="_blank">X3D Tooltips: Coordinate</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -79,7 +77,7 @@ public interface Coordinate extends X3DCoordinateNode
 	/**
 	 * Provide array of 3-tuple float results from inputOutput MFVec3f field named <i>point</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  point contains a set of 3D coordinate triplet values.  * <br>
+	 * <i>Tooltip:</i>  point contains a set of 3D coordinate (triplet) point values.  * <br>
 
 	 * @return value of point field
 	 */
@@ -88,7 +86,7 @@ public interface Coordinate extends X3DCoordinateNode
 	/**
 	 * Assign 3-tuple float array to inputOutput MFVec3f field named <i>point</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> point contains a set of 3D coordinate triplet values.
+	 * <i>Tooltip:</i> point contains a set of 3D coordinate (triplet) point values.
 	 * @param newValue is new value for the point field.
 	 * @return {@link Coordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

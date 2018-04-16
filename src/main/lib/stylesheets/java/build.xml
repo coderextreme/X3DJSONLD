@@ -52,7 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="fork"                value="true"/>    <!-- note that Netbeans default path is built in and has to be overridden by going to     -->
     
 	<!-- Netbeans > Tools > Options > Java > Ant                                              -->
-    <!-- and then pointing to C:\apache-ant-1.9.3 (or somesuch locally installed directory)   -->
+    <!-- and then pointing to C:\apache-ant-1.10.1 (or somesuch locally installed directory)  -->
 
     <!-- ANT Contrib archive at http://sourceforge.net/projects/ant-contrib/files    (v1.0b3) -->
     <!-- must have ant-contrib-1.0b3.jar in ANT_HOME/lib (or else specify path)               -->
@@ -137,4 +137,12 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
         <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
     </target>
+
+    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
+		<echo message="==========================================="/>
+		<echo message="ant nashorn/build.xml test.nashorn"/>
+		<ant antfile="nashorn/build.xml" target="test.nashorn"/>
+		<echo message="==========================================="/>
+    </target>
+	
 </project>

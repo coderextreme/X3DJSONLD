@@ -40,21 +40,18 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFDouble X3D field type.
  * 
  * <br><br>
- * SFDouble is a double-precision floating-point type. Array values are optionally separated by commas. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.
-<br><br>
-Related field object: {@link MFDoubleObject}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFDouble">X3D Tooltips: type SFDouble</a>
-
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * SFDouble is a double-precision floating-point type. Array values are optionally separated by commas. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.
+ * <br><br>
+ * Related field object: {@link MFDoubleObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFDouble">X3D Tooltips: type SFDouble</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFDoubleAndMFDouble" target="blank">X3D Abstract Specification: SFDoubleAndMFDouble</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -69,6 +66,9 @@ public class SFDoubleObject extends X3DConcreteField implements org.web3d.x3d.sa
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Java Tutorials: Primitive Data Types</a>
      */
 	public static final double DEFAULT_VALUE = 0.0;
+
+	/** Default tuple size for this field type is <i>1</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 1;
 
 	// Member value declaration is encapsulated and private, using preferred Java types for concretes library
 	private double SFDouble = DEFAULT_VALUE;

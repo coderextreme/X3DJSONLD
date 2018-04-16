@@ -40,7 +40,7 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: ColorInterpolator generates a range of Color values that can be ROUTEd to a &amp;lt;Color&amp;gt; node's color attribute.
+ * <i>X3D node tooltip</i>: ColorInterpolator generates a range of color values. Authors can ROUTE value_changed output events to various color fields of Material or Color nodes.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction. </li> 
  *  <li> <i>Hint:</i> typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
@@ -48,11 +48,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ColorInterpolator" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#ColorInterpolator" target="blank">X3D Abstract Specification: ColorInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorInterpolator" target="_blank">X3D Tooltips: ColorInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -127,7 +125,8 @@ public interface ColorInterpolator extends X3DInterpolatorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Linearly interpolated output value determined by current key time and corresponding keyValue pair.
  * <ul>
- *  <li> <i> Hint:</i>  X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Hint:</i> X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of value_changed field
 	 */

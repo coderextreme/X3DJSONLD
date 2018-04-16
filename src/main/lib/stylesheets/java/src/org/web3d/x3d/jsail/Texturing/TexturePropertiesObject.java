@@ -57,10 +57,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureProperties" target="blank">X3D Abstract Specification: TextureProperties</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureProperties" target="_blank">X3D Tooltips: TextureProperties</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -556,6 +554,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setAnisotropicDegree(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 1f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TextureProperties anisotropicDegree newValue=" + newValue + " has component value less than restriction minInclusive=1");
@@ -571,8 +570,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setAnisotropicDegree(SFFloatObject newValue)
 	{
-		setAnisotropicDegree(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAnisotropicDegree(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results using RGBA values [0..1] using RGBA values [0..1] from inputOutput SFColorRGBA field named <i>borderColor</i>.
@@ -599,6 +599,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setBorderColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -617,8 +618,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setBorderColor(SFColorRGBAObject newValue)
 	{
-		setBorderColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBorderColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -659,6 +661,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setBorderWidth(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TextureProperties borderWidth newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -674,8 +677,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setBorderWidth(SFInt32Object newValue)
 	{
-		setBorderWidth(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBorderWidth(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['CLAMP'|'CLAMP_TO_EDGE'|'CLAMP_TO_BOUNDARY'|'MIRRORED_REPEAT'|'REPEAT'] from inputOutput SFString field named <i>boundaryModeR</i>.
@@ -707,6 +711,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setBoundaryModeR(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -734,8 +739,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setBoundaryModeR(SFStringObject newValue)
 	{
-		setBoundaryModeR(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBoundaryModeR(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['CLAMP'|'CLAMP_TO_EDGE'|'CLAMP_TO_BOUNDARY'|'MIRRORED_REPEAT'|'REPEAT'] from inputOutput SFString field named <i>boundaryModeS</i>.
@@ -767,6 +773,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setBoundaryModeS(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -794,8 +801,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setBoundaryModeS(SFStringObject newValue)
 	{
-		setBoundaryModeS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBoundaryModeS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['CLAMP'|'CLAMP_TO_EDGE'|'CLAMP_TO_BOUNDARY'|'MIRRORED_REPEAT'|'REPEAT'] from inputOutput SFString field named <i>boundaryModeT</i>.
@@ -827,6 +835,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setBoundaryModeT(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -854,8 +863,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setBoundaryModeT(SFStringObject newValue)
 	{
-		setBoundaryModeT(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBoundaryModeT(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>generateMipMaps</i>.
@@ -865,7 +875,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
  *  <li> <i>Warning:</i> must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. </li> 
  *  <li> <i>Hint:</i> mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. </li> 
  *  <li> <i>Hint:</i> Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. </li> 
- *  <li> <i>Hint:</i> Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> </li> 
+ *  <li> <i>Hint:</i> Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> </li> 
  *  <li> <i>Hint:</i>  Mipmap <br> <a href="https://en.wikipedia.org/wiki/Mipmap" target="_blank">https://en.wikipedia.org/wiki/Mipmap</a> </li> 
  * </ul>
 	 * @return value of generateMipMaps field
@@ -879,13 +889,14 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	/**
 	 * Assign boolean value to initializeOnly SFBool field named <i>generateMipMaps</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Determines whether MIPMAPs are generated for texture images. Warning: must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. Hint: mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. Hint: Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Hint: Mipmap https://en.wikipedia.org/wiki/Mipmap
+	 * <i>Tooltip:</i> Determines whether MIPMAPs are generated for texture images. Warning: must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. Hint: mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. Hint: Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Hint: Mipmap https://en.wikipedia.org/wiki/Mipmap
 	 * @param newValue is new value for the generateMipMaps field.
 	 * @return {@link TexturePropertiesObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public TexturePropertiesObject setGenerateMipMaps(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		generateMipMaps = newValue;
 		return this;
 	}
@@ -897,8 +908,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setGenerateMipMaps(SFBoolObject newValue)
 	{
-		setGenerateMipMaps(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGenerateMipMaps(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['AVG_PIXEL'|'DEFAULT'|'FASTEST'|'NEAREST_PIXEL'|'NICEST'] from inputOutput SFString field named <i>magnificationFilter</i>.
@@ -930,6 +942,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setMagnificationFilter(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -957,8 +970,9 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public TexturePropertiesObject setMagnificationFilter(SFStringObject newValue)
 	{
-		setMagnificationFilter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMagnificationFilter(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -982,6 +996,7 @@ public class TexturePropertiesObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TexturePropertiesObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1081,6 +1096,7 @@ setAttribute method invocations).
 	@Override
 	public TexturePropertiesObject setMinificationFilter(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1112,8 +1128,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setMinificationFilter(SFStringObject newValue)
 	{
-		setMinificationFilter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinificationFilter(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['DEFAULT'|'FASTEST'|'HIGH'|'LOW'|'MEDIUM'|'NICEST'] from inputOutput SFString field named <i>textureCompression</i>.
@@ -1146,6 +1163,7 @@ setAttribute method invocations).
 	@Override
 	public TexturePropertiesObject setTextureCompression(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1174,8 +1192,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setTextureCompression(SFStringObject newValue)
 	{
-		setTextureCompression(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTextureCompression(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>texturePriority</i>.
@@ -1200,6 +1219,7 @@ setAttribute method invocations).
 	@Override
 	public TexturePropertiesObject setTexturePriority(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TextureProperties texturePriority newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1218,8 +1238,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setTexturePriority(SFFloatObject newValue)
 	{
-		setTexturePriority(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTexturePriority(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1234,6 +1255,7 @@ setAttribute method invocations).
 	@Override
 	public final TexturePropertiesObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureProperties
@@ -1261,8 +1283,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1280,6 +1303,7 @@ setAttribute method invocations).
 	@Override
 	public final TexturePropertiesObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureProperties
@@ -1307,8 +1331,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1321,6 +1346,7 @@ setAttribute method invocations).
 	@Override
 	public final TexturePropertiesObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1335,8 +1361,9 @@ setAttribute method invocations).
 	 */
 	public TexturePropertiesObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

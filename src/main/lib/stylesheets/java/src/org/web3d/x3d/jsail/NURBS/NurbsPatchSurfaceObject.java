@@ -59,10 +59,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/nurbs.html#NurbsPatchSurface" target="blank">X3D Abstract Specification: NurbsPatchSurface</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsPatchSurface" target="_blank">X3D Tooltips: NurbsPatchSurface</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -438,6 +436,7 @@ public class NurbsPatchSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public NurbsPatchSurfaceObject setControlPoint(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		controlPoint = newValue;
 		if (newValue != null)
 		{
@@ -526,6 +525,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -621,6 +621,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -632,8 +633,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTextureCoordinateNode|NurbsTextureCoordinate, from inputOutput SFNode field <i>texCoord</i>.
@@ -655,6 +657,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setTexCoord(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		texCoord = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -754,6 +757,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setUClosed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		uClosed = newValue;
 		return this;
 	}
@@ -765,8 +769,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setUClosed(SFBoolObject newValue)
 	{
-		setUClosed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUClosed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,infinity) from initializeOnly SFInt32 field named <i>uDimension</i>.
@@ -791,6 +796,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setUDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsPatchSurface uDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -806,8 +812,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setUDimension(SFInt32Object newValue)
 	{
-		setUDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results from initializeOnly MFDouble field named <i>uKnot</i>.
@@ -846,6 +853,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setUKnot(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
@@ -872,8 +880,9 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUKnot(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUKnot(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble uKnot field, similar to {@link #setUKnot(double[])}.
@@ -887,6 +896,7 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		uKnot = newValue;
 		return this;
 	}
@@ -912,6 +922,7 @@ setAttribute method invocations).
 			clearUKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -943,6 +954,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setUOrder(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 2) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsPatchSurface uOrder newValue=" + newValue + " has component value less than restriction minInclusive=2");
@@ -958,8 +970,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setUOrder(SFInt32Object newValue)
 	{
-		setUOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>uTessellation</i>.
@@ -984,6 +997,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setUTessellation(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		uTessellation = newValue;
 		return this;
 	}
@@ -995,8 +1009,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setUTessellation(SFInt32Object newValue)
 	{
-		setUTessellation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUTessellation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>vClosed</i>.
@@ -1021,6 +1036,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setVClosed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		vClosed = newValue;
 		return this;
 	}
@@ -1032,8 +1048,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setVClosed(SFBoolObject newValue)
 	{
-		setVClosed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVClosed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,infinity) from initializeOnly SFInt32 field named <i>vDimension</i>.
@@ -1058,6 +1075,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setVDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsPatchSurface vDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1073,8 +1091,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setVDimension(SFInt32Object newValue)
 	{
-		setVDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results from initializeOnly MFDouble field named <i>vKnot</i>.
@@ -1113,6 +1132,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setVKnot(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
@@ -1139,8 +1159,9 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setVKnot(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVKnot(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble vKnot field, similar to {@link #setVKnot(double[])}.
@@ -1154,6 +1175,7 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		vKnot = newValue;
 		return this;
 	}
@@ -1179,6 +1201,7 @@ setAttribute method invocations).
 			clearVKnot(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1210,6 +1233,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setVOrder(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 2) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("NurbsPatchSurface vOrder newValue=" + newValue + " has component value less than restriction minInclusive=2");
@@ -1225,8 +1249,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setVOrder(SFInt32Object newValue)
 	{
-		setVOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>vTessellation</i>.
@@ -1251,6 +1276,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setVTessellation(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		vTessellation = newValue;
 		return this;
 	}
@@ -1262,8 +1288,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setVTessellation(SFInt32Object newValue)
 	{
-		setVTessellation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVTessellation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results within allowed range of (0,infinity) from inputOutput MFDouble field named <i>weight</i>.
@@ -1302,6 +1329,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsPatchSurfaceObject setWeight(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
@@ -1328,8 +1356,9 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setWeight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble weight field, similar to {@link #setWeight(double[])}.
@@ -1343,6 +1372,7 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		weight = newValue;
 		return this;
 	}
@@ -1368,6 +1398,7 @@ setAttribute method invocations).
 			clearWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1389,6 +1420,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsPatchSurfaceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsPatchSurface
@@ -1416,8 +1448,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1435,6 +1468,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsPatchSurfaceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsPatchSurface
@@ -1462,8 +1496,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1476,6 +1511,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsPatchSurfaceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1490,8 +1526,9 @@ setAttribute method invocations).
 	 */
 	public NurbsPatchSurfaceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

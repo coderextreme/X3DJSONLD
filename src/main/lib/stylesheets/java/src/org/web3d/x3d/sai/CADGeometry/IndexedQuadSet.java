@@ -52,6 +52,8 @@ import java.util.Arrays;
  * <br><br>
  * <i>X3D node tooltip</i>: (X3D version 3.1 or later) IndexedQuadSet is a geometry node that defines planar quadrilaterals. IndexedQuadSet contains a Coordinate|CoordinateDouble node, and can also contain Color|ColorRGBA, Normal and TextureCoordinate nodes.
  * <ul>
+ *  <li> <i>Hint:</i> Quadrilateral <br> <a href="https://en.wikipedia.org/wiki/Quadrilateral" target="_blank">https://en.wikipedia.org/wiki/Quadrilateral</a> </li> 
+ *  <li> <i>Hint:</i> Quadrilateral <br> <a href="https://en.wikipedia.org/wiki/Quadrilateral" target="_blank">https://en.wikipedia.org/wiki/Quadrilateral</a> </li> 
  *  <li> <i>Hint:</i> color, normal and texCoord values are applied in the same order as coord values. </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
  *  <li> <i>Hint:</i> for advanced extensibility, authors can substitute a type-matched ProtoInstance node (with correct containerField value) for contained node content. </li> 
@@ -62,11 +64,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#IndexedQuadSet" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/CADGeometry.html#IndexedQuadSet" target="blank">X3D Abstract Specification: IndexedQuadSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedQuadSet" target="_blank">X3D Tooltips: IndexedQuadSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Meshes" target="_blank">X3D Scene Authoring Hints: Meshes</a>
  */

@@ -44,7 +44,6 @@ import org.web3d.x3d.jsail.Core.*;
  * 
  * <br><br>
 
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>

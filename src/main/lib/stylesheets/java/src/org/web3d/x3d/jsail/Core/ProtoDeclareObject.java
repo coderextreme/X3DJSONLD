@@ -70,10 +70,8 @@ import org.web3d.x3d.jsail.Core.*;
  *  <li> <i>Warning:</i> a ProtoInstance node may not be instantiated inside its own ProtoDeclare or ExternProtoDeclare declaration (i.e. recursive prototypes are illegal). </li> 
  *  <li> <i>Hint:</i>  X3D Scene Authoring Hints, Inlines and Prototypes <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes</a> </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax" target="blank">X3D Abstract Specification: ProtoDeclare</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoDeclare" target="_blank">X3D Tooltips: ProtoDeclare</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */
@@ -282,6 +280,7 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setAppinfo(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -296,8 +295,9 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setAppinfo(SFStringObject newValue)
 	{
-		setAppinfo(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAppinfo(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>documentation</i>.
@@ -320,6 +320,7 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setDocumentation(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -334,8 +335,9 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setDocumentation(SFStringObject newValue)
 	{
-		setDocumentation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDocumentation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -362,6 +364,7 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public final ProtoDeclareObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoDeclare
@@ -388,8 +391,9 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide ProtoBodyObject instance (using a properly typed node) from inputOutput SFNode field <i>ProtoBody</i>.
@@ -407,6 +411,7 @@ public class ProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoDeclareObject setProtoBody(ProtoBodyObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		ProtoBody = newValue;
 		if (newValue != null)
 		{
@@ -451,6 +456,7 @@ setAttribute method invocations).	 */
 	 */
 	public ProtoDeclareObject setProtoInterface(ProtoInterfaceObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		ProtoInterface = newValue;
 		if (newValue != null)
 		{

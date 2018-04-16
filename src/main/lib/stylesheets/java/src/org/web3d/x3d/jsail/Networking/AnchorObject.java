@@ -70,7 +70,7 @@ import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
 
 /**
- * <i>X3D node tooltip</i>: Anchor is a Grouping node that can contain most nodes. When the user selects any of the geometry contained by the Anchor node, it jumps to another viewpoint or loads content (such as X3D, an image or HTML) specified by the url field. Loaded content completely replaces current content, if parameter is same window.
+ * <i>X3D node tooltip</i>: Anchor is a Grouping node that can contain most nodes. When the user selects any of the geometry contained by the Anchor node, the browser either jumps to another viewpoint (similar to HTML bookmark) or else loads content (such as X3D, an image or HTML) specified by the url field. Newly loaded content completely replaces current content, if the value of parameter field indicates using the same window.
  * <ul>
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
  *  <li> <i>Hint:</i> see X3D Specification 20.2.1 Overview of pointing device sensors <br> <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#OverviewOfPointingDeviceSensors" target="_blank">http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#OverviewOfPointingDeviceSensors</a> </li> 
@@ -79,10 +79,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#Anchor" target="blank">X3D Abstract Specification: Anchor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Anchor" target="_blank">X3D Tooltips: Anchor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -384,6 +382,7 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public AnchorObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -402,8 +401,9 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public AnchorObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -446,6 +446,7 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public AnchorObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -468,8 +469,9 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public AnchorObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -530,6 +532,7 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public AnchorObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -560,6 +563,7 @@ public class AnchorObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -730,6 +734,7 @@ setAttribute method invocations).
 	@Override
 	public AnchorObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -744,8 +749,9 @@ setAttribute method invocations).
 	 */
 	public AnchorObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -769,6 +775,7 @@ setAttribute method invocations).
 	@Override
 	public AnchorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -879,6 +886,7 @@ setAttribute method invocations).
 	@Override
 	public AnchorObject setParameter(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
@@ -905,8 +913,9 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setParameter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setParameter(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString parameter field, similar to {@link #setParameter(String[])}.
@@ -920,6 +929,7 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setParameter(newValue.getValue());
 		return this;
 	}
@@ -935,6 +945,7 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		parameter.clear();
 		parameter.add(newValue);
 		return this;
@@ -951,6 +962,7 @@ setAttribute method invocations).
 			clearParameter(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		parameter = newValue;
 		return this;
 	}
@@ -1010,6 +1022,7 @@ setAttribute method invocations).
 	@Override
 	public AnchorObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1036,8 +1049,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -1051,6 +1065,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -1066,6 +1081,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -1082,6 +1098,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -1108,6 +1125,7 @@ setAttribute method invocations).
 	@Override
 	public final AnchorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Anchor
@@ -1135,8 +1153,9 @@ setAttribute method invocations).
 	 */
 	public AnchorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1154,6 +1173,7 @@ setAttribute method invocations).
 	@Override
 	public final AnchorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Anchor
@@ -1181,8 +1201,9 @@ setAttribute method invocations).
 	 */
 	public AnchorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1195,6 +1216,7 @@ setAttribute method invocations).
 	@Override
 	public final AnchorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1209,8 +1231,9 @@ setAttribute method invocations).
 	 */
 	public AnchorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -55,10 +55,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#FogCoordinate" target="blank">X3D Abstract Specification: FogCoordinate</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#FogCoordinate" target="_blank">X3D Tooltips: FogCoordinate</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -247,7 +245,7 @@ public class FogCoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	/**
 	 * Provide array of Float results within allowed range of [0,1] from inputOutput MFFloat field named <i>depth</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  depth contains a set of 3D coordinate triplet values.  * <br>
+	 * <i>Tooltip:</i>  depth contains a set of 3D coordinate (triplet) point values.  * <br>
 
 	 * @return value of depth field
 	 */
@@ -274,13 +272,14 @@ public class FogCoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	/**
 	 * Assign Float array within allowed range of [0,1] to inputOutput MFFloat field named <i>depth</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> depth contains a set of 3D coordinate triplet values.
+	 * <i>Tooltip:</i> depth contains a set of 3D coordinate (triplet) point values.
 	 * @param newValue is new value for the depth field.
 	 * @return {@link FogCoordinateObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public FogCoordinateObject setDepth(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearDepth(); // newValueNullSetDEFAULT_VALUE
@@ -307,8 +306,9 @@ public class FogCoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearDepth(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setDepth(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDepth(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat depth field, similar to {@link #setDepth(float[])}.
@@ -322,6 +322,7 @@ public class FogCoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearDepth(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		depth = newValue;
 		return this;
 	}
@@ -347,6 +348,7 @@ setAttribute method invocations).
 			clearDepth(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -377,6 +379,7 @@ setAttribute method invocations).
 	@Override
 	public FogCoordinateObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -459,6 +462,7 @@ setAttribute method invocations).
 	@Override
 	public final FogCoordinateObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to FogCoordinate
@@ -486,8 +490,9 @@ setAttribute method invocations).
 	 */
 	public FogCoordinateObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -505,6 +510,7 @@ setAttribute method invocations).
 	@Override
 	public final FogCoordinateObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to FogCoordinate
@@ -532,8 +538,9 @@ setAttribute method invocations).
 	 */
 	public FogCoordinateObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -546,6 +553,7 @@ setAttribute method invocations).
 	@Override
 	public final FogCoordinateObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -560,8 +568,9 @@ setAttribute method invocations).
 	 */
 	public FogCoordinateObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: Background simulates ground and sky, using vertical arrays of wraparound color values, Background can also provide backdrop textures on all six sides.
+ * <i>X3D node tooltip</i>: Background simulates ground and sky, using vertical arrays of wraparound color values. Background can also provide url addresses for backdrop textures on all six sides.
  * <ul>
  *  <li> <i>Hint:</i> NavigationInfo, Background, TextureBackground, Fog, GeoViewpoint, OrthoViewpoint and Viewpoint are bindable nodes, meaning that no more than one of each node type can be active at a given time. </li> 
  *  <li> <i>Warning:</i> results are undefined if a bindable node (Viewpoint, OrthoViewpoint, NavigationInfo, Fog, Background, TextureBackground) is a contained child of LOD or Switch. </li> 
@@ -58,10 +58,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#Background" target="blank">X3D Abstract Specification: Background</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Background" target="_blank">X3D Tooltips: Background</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -496,6 +494,7 @@ public class BackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public BackgroundObject setBackUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearBackUrl(); // newValueNullSetDEFAULT_VALUE
@@ -522,8 +521,9 @@ public class BackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			clearBackUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setBackUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString backUrl field, similar to {@link #setBackUrl(String[])}.
@@ -537,6 +537,7 @@ public class BackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			clearBackUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setBackUrl(newValue.getValue());
 		return this;
 	}
@@ -552,6 +553,7 @@ public class BackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			clearBackUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		backUrl.clear();
 		backUrl.add(newValue);
 		return this;
@@ -568,6 +570,7 @@ public class BackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			clearBackUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		backUrl = newValue;
 		return this;
 	}
@@ -584,8 +587,10 @@ setAttribute method invocations).
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  event sent when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> event sent when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -635,6 +640,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setBottomUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearBottomUrl(); // newValueNullSetDEFAULT_VALUE
@@ -661,8 +667,9 @@ setAttribute method invocations).
 			clearBottomUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setBottomUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBottomUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString bottomUrl field, similar to {@link #setBottomUrl(String[])}.
@@ -676,6 +683,7 @@ setAttribute method invocations).
 			clearBottomUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setBottomUrl(newValue.getValue());
 		return this;
 	}
@@ -691,6 +699,7 @@ setAttribute method invocations).
 			clearBottomUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		bottomUrl.clear();
 		bottomUrl.add(newValue);
 		return this;
@@ -707,6 +716,7 @@ setAttribute method invocations).
 			clearBottomUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		bottomUrl = newValue;
 		return this;
 	}
@@ -762,6 +772,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setFrontUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearFrontUrl(); // newValueNullSetDEFAULT_VALUE
@@ -788,8 +799,9 @@ setAttribute method invocations).
 			clearFrontUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setFrontUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFrontUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString frontUrl field, similar to {@link #setFrontUrl(String[])}.
@@ -803,6 +815,7 @@ setAttribute method invocations).
 			clearFrontUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setFrontUrl(newValue.getValue());
 		return this;
 	}
@@ -818,6 +831,7 @@ setAttribute method invocations).
 			clearFrontUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		frontUrl.clear();
 		frontUrl.add(newValue);
 		return this;
@@ -834,6 +848,7 @@ setAttribute method invocations).
 			clearFrontUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		frontUrl = newValue;
 		return this;
 	}
@@ -887,6 +902,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setGroundAngle(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
@@ -913,8 +929,9 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGroundAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGroundAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat groundAngle field, similar to {@link #setGroundAngle(float[])}.
@@ -928,6 +945,7 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		groundAngle = newValue;
 		return this;
 	}
@@ -953,6 +971,7 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -988,6 +1007,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setGroundColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1006,15 +1026,17 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setGroundColor(MFColorObject newValue)
 	{
-		setGroundColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGroundColor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isBound</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> event true sent when node becomes active, event false sent when unbound by another node.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */
@@ -1065,6 +1087,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setLeftUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearLeftUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1091,8 +1114,9 @@ setAttribute method invocations).
 			clearLeftUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setLeftUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLeftUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString leftUrl field, similar to {@link #setLeftUrl(String[])}.
@@ -1106,6 +1130,7 @@ setAttribute method invocations).
 			clearLeftUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setLeftUrl(newValue.getValue());
 		return this;
 	}
@@ -1121,6 +1146,7 @@ setAttribute method invocations).
 			clearLeftUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		leftUrl.clear();
 		leftUrl.add(newValue);
 		return this;
@@ -1137,6 +1163,7 @@ setAttribute method invocations).
 			clearLeftUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		leftUrl = newValue;
 		return this;
 	}
@@ -1172,6 +1199,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1283,6 +1311,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setRightUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRightUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1309,8 +1338,9 @@ setAttribute method invocations).
 			clearRightUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setRightUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRightUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString rightUrl field, similar to {@link #setRightUrl(String[])}.
@@ -1324,6 +1354,7 @@ setAttribute method invocations).
 			clearRightUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setRightUrl(newValue.getValue());
 		return this;
 	}
@@ -1339,6 +1370,7 @@ setAttribute method invocations).
 			clearRightUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		rightUrl.clear();
 		rightUrl.add(newValue);
 		return this;
@@ -1355,6 +1387,7 @@ setAttribute method invocations).
 			clearRightUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		rightUrl = newValue;
 		return this;
 	}
@@ -1408,6 +1441,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setSkyAngle(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
@@ -1434,8 +1468,9 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSkyAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkyAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat skyAngle field, similar to {@link #setSkyAngle(float[])}.
@@ -1449,6 +1484,7 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		skyAngle = newValue;
 		return this;
 	}
@@ -1474,6 +1510,7 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1509,6 +1546,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setSkyColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1527,8 +1565,9 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setSkyColor(MFColorObject newValue)
 	{
-		setSkyColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkyColor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>topUrl</i>.
@@ -1572,6 +1611,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setTopUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTopUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1598,8 +1638,9 @@ setAttribute method invocations).
 			clearTopUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setTopUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTopUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString topUrl field, similar to {@link #setTopUrl(String[])}.
@@ -1613,6 +1654,7 @@ setAttribute method invocations).
 			clearTopUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setTopUrl(newValue.getValue());
 		return this;
 	}
@@ -1628,6 +1670,7 @@ setAttribute method invocations).
 			clearTopUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		topUrl.clear();
 		topUrl.add(newValue);
 		return this;
@@ -1644,6 +1687,7 @@ setAttribute method invocations).
 			clearTopUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		topUrl = newValue;
 		return this;
 	}
@@ -1680,6 +1724,7 @@ setAttribute method invocations).
 	@Override
 	public BackgroundObject setTransparency(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Background transparency newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1698,8 +1743,9 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setTransparency(SFFloatObject newValue)
 	{
-		setTransparency(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransparency(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1714,6 +1760,7 @@ setAttribute method invocations).
 	@Override
 	public final BackgroundObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Background
@@ -1741,8 +1788,9 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1760,6 +1808,7 @@ setAttribute method invocations).
 	@Override
 	public final BackgroundObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Background
@@ -1787,8 +1836,9 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1801,6 +1851,7 @@ setAttribute method invocations).
 	@Override
 	public final BackgroundObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1815,8 +1866,9 @@ setAttribute method invocations).
 	 */
 	public BackgroundObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

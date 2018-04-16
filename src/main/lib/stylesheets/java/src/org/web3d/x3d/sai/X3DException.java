@@ -35,18 +35,16 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
+
+ * <br>
+ * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
 The basic exception that is thrown by any X3D method call that needs to
 throw an exception.
 
 Based on RuntimeException so that the user has the choice of deciding
 whether to catch the exception or not.
-
  * 
-
- * <br>
- * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DException" target="_blank">SAI Java Specification: B.7.1 X3DException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>

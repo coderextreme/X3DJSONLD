@@ -72,10 +72,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texture3D.html#ComposedTexture3D" target="blank">X3D Abstract Specification: ComposedTexture3D</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedTexture3D" target="_blank">X3D Tooltips: ComposedTexture3D</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -329,6 +327,7 @@ public class ComposedTexture3DObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public ComposedTexture3DObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -421,6 +420,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedTexture3DObject setRepeatR(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatR = newValue;
 		return this;
 	}
@@ -432,8 +432,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setRepeatR(SFBoolObject newValue)
 	{
-		setRepeatR(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatR(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatS</i>.
@@ -458,6 +459,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedTexture3DObject setRepeatS(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatS = newValue;
 		return this;
 	}
@@ -469,8 +471,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setRepeatS(SFBoolObject newValue)
 	{
-		setRepeatS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatT</i>.
@@ -495,6 +498,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedTexture3DObject setRepeatT(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatT = newValue;
 		return this;
 	}
@@ -506,8 +510,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setRepeatT(SFBoolObject newValue)
 	{
-		setRepeatT(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatT(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DTexture2DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>texture</i>.
@@ -546,6 +551,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedTexture3DObject setTexture(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTexture(); // newValueNullSetDEFAULT_VALUE
@@ -576,6 +582,7 @@ setAttribute method invocations).
 			clearTexture(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		texture = newValue;
 		for (X3DTexture2DNode element : newValue)
 		{
@@ -685,6 +692,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedTexture3DObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -764,6 +772,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedTexture3DObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ComposedTexture3D
@@ -791,8 +800,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -810,6 +820,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedTexture3DObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ComposedTexture3D
@@ -837,8 +848,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -851,6 +863,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedTexture3DObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -865,8 +878,9 @@ setAttribute method invocations).
 	 */
 	public ComposedTexture3DObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

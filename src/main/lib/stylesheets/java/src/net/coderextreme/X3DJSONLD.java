@@ -43,7 +43,7 @@ public class X3DJSONLD {
 
 	public Element CreateElement(Document document, String key, String containerField) {
 		Element child = document.createElement(key);
-		if (containerField != null) {
+		if (containerField != null && !containerField.equals("children")) {
 			elementSetAttribute(child, "containerField", containerField);
 		}
 		return child;
@@ -56,7 +56,7 @@ public class X3DJSONLD {
 			if (i > 0) {
 				sb.append("\r\n");
 			}
-			sb.append(value.get(i));
+			sb.append(stripQuotes(value.get(i).toString()));
 		}
 		String y = sb.toString();
 		System.err.println("CDATA Replacing "+y);
@@ -82,10 +82,10 @@ public class X3DJSONLD {
 		// System.err.println(key+"= P "+object.get(key));
 		if (object != null && object.get(key) instanceof JsonObject) {
 			if (key.substring(0,1).equals("@")) {
-				convertJsonValue(document, object.get(key), key, element, null);
+				convertJsonValue(document, object.get(key), key, element, containerField);
 			} else if (key.substring(0,1).equals("-")) {
 				System.err.println("converting children at "+key);
-				convertJsonValue(document, object.get(key), key, element, null);
+				convertJsonValue(document, object.get(key), key, element, key.substring(1));
 			} else if (key.equals("#comment")) {
 				if (object.get(key) instanceof JsonArray) {
 					JsonArray array = (JsonArray)object.get(key);
@@ -102,9 +102,9 @@ public class X3DJSONLD {
 				CDATACreateFunction(document, element, (JsonArray)object.get(key));
 			} else if (key.equals("connect") || key.equals("fieldValue") || key.equals("field") || key.equals("meta") || key.equals("component") || key.equals("unit")) {
 				JsonArray array = (JsonArray)object.get(key);
-				convertJsonArray(document, array, key, element, null);
+				convertJsonArray(document, array, key, element, containerField);
 			} else {
-				convertJsonValue(document, object.get(key), key, element, null);
+				convertJsonValue(document, object.get(key), key, element, containerField);
 			}
 		}
 	}
@@ -114,6 +114,19 @@ public class X3DJSONLD {
 		System.err.println("X3DJSONLD comment replacing "+ y);
 		str = stripQuotes(y);
 		str = " "+str+" ";
+		String x;
+		do {
+			x = str;
+			str = x.replaceAll("(.*)\\\\\"(.*)\\\\\"(.*)", "$1\"$2\"$3");
+		} while (!x.equals(str));
+		do {
+			x = str;
+			str = x.replaceAll("(.*)\\\\\"(.*)", "$1\"$2");
+		} while (!x.equals(str));
+		do {
+			x = str;
+			str = x.replaceAll("\"\"", "\" \"");
+		} while (!x.equals(str));
 		if (!y.equals(str)) {
 		System.err.println("with                        "+ str);
 		} else {
@@ -136,15 +149,7 @@ public class X3DJSONLD {
 	public String fixXML(String str, String version) {
 		String y = str;
 		System.err.println("fixXML replacing "+ y);
-		str = str.replace("?>", "?><!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D "+version+"//EN\" \"http://www.web3d.org/specifications/x3d-"+version+".dtd\">");
-		str = str.replaceAll(">", ">\r\n");
-		/*
-		String x;
-		do {
-			x = str;
-			str = x.replaceAll("(<!--.*)\\\\\"([^\"]*)\\\\\"(.*-->)", "$1\"$2\"$3");
-		} while (!x.equals(str));
-		*/
+		str = str.replace("?>", "?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D "+version+"//EN\" \"http://www.web3d.org/specifications/x3d-"+version+".dtd\">\n");
 		if (!y.equals(str)) {
 		System.err.println("with             "+ str);
 		} else {
@@ -174,12 +179,14 @@ public class X3DJSONLD {
 			// System.err.println(key+"= O "+ok);
 			if (ok instanceof JsonObject) {
 				if (key.substring(0,1).equals("@")) {
-					convertProperty(document, key, (JsonObject)ok, child, null);
+					convertProperty(document, key, (JsonObject)ok, child, containerField);
+				} else if (key.substring(0,1).equals("-")) {
+					convertJsonObject(document, (JsonObject)ok, key, child, key.substring(1));
 				} else {
-					convertJsonObject(document, (JsonObject)ok, key, child, null);
+					convertJsonObject(document, (JsonObject)ok, key, child, containerField);
 				}
 			} else if (ok instanceof JsonArray) {
-				convertJsonArray(document, (JsonArray)ok, key, child, null);
+				convertJsonArray(document, (JsonArray)ok, key, child, containerField);
 			} else if (ok instanceof JsonNumber) {
 				elementSetAttribute(child, key.substring(1),ok.toString());
 			} else if (ok instanceof JsonString) {
@@ -224,12 +231,12 @@ public class X3DJSONLD {
 					kii = false;
 				}
 				if (!parentkey.startsWith("-") && kii) {
-					convertJsonValue(document, ok, parentkey, element, null);
+					convertJsonValue(document, ok, parentkey, element, containerField);
 				} else {
-					convertJsonValue(document, ok, ""+key, element, null);
+					convertJsonValue(document, ok, ""+key, element, parentkey.substring(1));
 				}
 			} else if (ok instanceof JsonArray) {
-				convertJsonValue(document, ok, ""+key, element, null);
+				convertJsonValue(document, ok, ""+key, element, containerField);
 			} else if (ok == null) {
 			} else {
 			}
@@ -294,6 +301,7 @@ public class X3DJSONLD {
 		DOMImplementationLS ls = (DOMImplementationLS)document.getImplementation();
 		LSOutput output = ls.createLSOutput();
 		LSSerializer ser = ls.createLSSerializer();
+        	ser.getDomConfig().setParameter("format-pretty-print", true);
 		StringWriter writer = new StringWriter();
 		output.setCharacterStream(writer);
 		output.setEncoding("UTF-8");

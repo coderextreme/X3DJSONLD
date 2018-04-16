@@ -69,10 +69,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#UniversalJoint" target="blank">X3D Abstract Specification: UniversalJoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#UniversalJoint" target="_blank">X3D Tooltips: UniversalJoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -494,6 +492,7 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public UniversalJointObject setAnchorPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -512,8 +511,9 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public UniversalJointObject setAnchorPoint(SFVec3fObject newValue)
 	{
-		setAnchorPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAnchorPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -555,6 +555,7 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public UniversalJointObject setAxis1(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -573,8 +574,9 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public UniversalJointObject setAxis1(SFVec3fObject newValue)
 	{
-		setAxis1(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis1(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -616,6 +618,7 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public UniversalJointObject setAxis2(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -634,8 +637,9 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public UniversalJointObject setAxis2(SFVec3fObject newValue)
 	{
-		setAxis2(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis2(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -672,6 +676,7 @@ public class UniversalJointObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public UniversalJointObject setBody1(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body1 = newValue;
 		if (newValue != null)
 		{
@@ -776,6 +781,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setBody2(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body2 = newValue;
 		if (newValue != null)
 		{
@@ -901,6 +907,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setForceOutput(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
@@ -927,8 +934,9 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setForceOutput(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForceOutput(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString forceOutput field, similar to {@link #setForceOutput(String[])}.
@@ -943,6 +951,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -959,6 +968,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -974,6 +984,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		forceOutput = newValue;
 		return this;
 	}
@@ -1009,6 +1020,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1103,6 +1115,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setStop1Bounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("UniversalJoint stop1Bounce newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1121,8 +1134,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setStop1Bounce(SFFloatObject newValue)
 	{
-		setStop1Bounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop1Bounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>stop1ErrorCorrection</i>.
@@ -1149,6 +1163,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setStop1ErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("UniversalJoint stop1ErrorCorrection newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1167,8 +1182,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setStop1ErrorCorrection(SFFloatObject newValue)
 	{
-		setStop1ErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop1ErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>stop2Bounce</i>.
@@ -1195,6 +1211,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setStop2Bounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("UniversalJoint stop2Bounce newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1213,8 +1230,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setStop2Bounce(SFFloatObject newValue)
 	{
-		setStop2Bounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop2Bounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>stop2ErrorCorrection</i>.
@@ -1241,6 +1259,7 @@ setAttribute method invocations).
 	@Override
 	public UniversalJointObject setStop2ErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("UniversalJoint stop2ErrorCorrection newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1259,8 +1278,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setStop2ErrorCorrection(SFFloatObject newValue)
 	{
-		setStop2ErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop2ErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1275,6 +1295,7 @@ setAttribute method invocations).
 	@Override
 	public final UniversalJointObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to UniversalJoint
@@ -1302,8 +1323,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1321,6 +1343,7 @@ setAttribute method invocations).
 	@Override
 	public final UniversalJointObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to UniversalJoint
@@ -1348,8 +1371,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1362,6 +1386,7 @@ setAttribute method invocations).
 	@Override
 	public final UniversalJointObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1376,8 +1401,9 @@ setAttribute method invocations).
 	 */
 	public UniversalJointObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

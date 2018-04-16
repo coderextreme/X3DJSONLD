@@ -42,17 +42,16 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: TimeSensor continuously generates events as time passes. Typical use: ROUTE thisTimeSensor.fraction_changed TO someInterpolator.set_fraction. Interchange profile hint: TimeSensor may be ignored if cycleInterval &amp;lt; 0.01 second.
+ * <i>X3D node tooltip</i>: TimeSensor continuously generates events as time passes. Typical use: ROUTE thisTimeSensorDEF.fraction_changed TO someInterpolatorDEF.set_fraction. Interchange profile hint: TimeSensor may be ignored if cycleInterval &amp;lt; 0.01 second.
  * <ul>
- *  <li> <i> Hint:</i>  event timing details are explained in 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModel" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModel</a> </li> 
+ *  <li> <i>Hint:</i> event timing details are explained in X3D Specification 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModel" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModel</a> </li> 
+ *  <li> <i>Hint:</i>  see X3D Specification 8 Time component <br> <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/time.html" target="_blank">http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/time.html</a> </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#TimeSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/time.html#TimeSensor" target="blank">X3D Abstract Specification: TimeSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TimeSensor" target="_blank">X3D Tooltips: TimeSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -61,39 +60,45 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	// ==== Accessor methods: strongly typed get/set methods for compile-time strictness
 
 	/**
-	 * Provide double value in seconds within allowed range of (0,infinity) from inputOutput SFTime field named <i>cycleInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>cycleInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> cycleInterval is loop duration in seconds. Interchange profile hint: TimeSensor may be ignored if cycleInterval &amp;lt; 0.01 second.
+	 * <i>Tooltip:</i> [0,+infinity) cycleInterval is loop duration in seconds. Interchange profile hint: TimeSensor may be ignored if cycleInterval &amp;lt; 0.01 second.
  * <ul>
- *  <li> <i> Warning:</i>  An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
+ *  <li> <i>Warning:</i> An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
+ *  <li> <i>Hint:</i>  cycleInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of cycleInterval field
 	 */
 	public double getCycleInterval();
 
 	/**
-	 * Assign double value in seconds within allowed range of (0,infinity) to inputOutput SFTime field named <i>cycleInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>cycleInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> cycleInterval is loop duration in seconds. Interchange profile hint: TimeSensor may be ignored if cycleInterval &lt; 0.01 second. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events.
+	 * <i>Tooltip:</i> [0,+infinity) cycleInterval is loop duration in seconds. Interchange profile hint: TimeSensor may be ignored if cycleInterval &lt; 0.01 second. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Hint: cycleInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the cycleInterval field.
 	 * @return {@link TimeSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public TimeSensor setCycleInterval(double newValue);
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>cycleTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>cycleTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  cycleTime sends a time outputOnly at startTime, and also at the beginning of each new cycle (useful for synchronization with other time-based objects).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) cycleTime sends a time outputOnly at startTime, and also at the beginning of each new cycle (useful for synchronization with other time-based objects).
+ * <ul>
+ *  <li> <i>Hint:</i> the first cycleTime event for a TimeSensor node can be used as an alarm (single pulse at a specified time). </li> 
+ *  <li> <i>Hint:</i>  cycleTime is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of cycleTime field
 	 */
 	public double getCycleTime();
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>elapsedTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>elapsedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Current elapsed time since TimeSensor activated/running, cumulative in seconds, and not counting any paused time.
+	 * <i>Tooltip:</i> [0,+infinity) Current elapsed time since TimeSensor activated/running, cumulative in seconds, and not counting any paused time.
  * <ul>
- *  <li> <i> Warning:</i>  not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i>  elapsedTime is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of elapsedTime field
 	 */
@@ -122,16 +127,20 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>fraction_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  fraction_changed continuously sends value in range [0,1] showing time progress in the current cycle.  * <br>
-
+	 * <i>Tooltip:</i> fraction_changed continuously sends value in range [0,1] showing time progress in the current cycle.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of fraction_changed field
 	 */
 	public float getFraction();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when TimeSensor starts/stops running.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when TimeSensor starts/stops running.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -141,7 +150,8 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> isPaused true/false events are sent when TimeSensor is paused/resumed.
  * <ul>
- *  <li> <i> Warning:</i>  not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isPaused field
 	 */
@@ -189,7 +199,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> When time now &amp;gt;= pauseTime, isPaused becomes true and TimeSensor becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i>  not supported in VRML97. </li> 
  * </ul>
 	 * @return value of pauseTime field
@@ -200,7 +210,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>pauseTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and TimeSensor becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: not supported in VRML97.
+	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and TimeSensor becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: not supported in VRML97.
 	 * @param newValue is new value for the pauseTime field.
 	 * @return {@link TimeSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -212,7 +222,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> When resumeTime becomes &amp;lt;= time now, isPaused becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i>  not supported in VRML97. </li> 
  * </ul>
 	 * @return value of resumeTime field
@@ -223,7 +233,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: not supported in VRML97.
+	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: not supported in VRML97.
 	 * @param newValue is new value for the resumeTime field.
 	 * @return {@link TimeSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -235,7 +245,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> When time now &amp;gt;= startTime, isActive becomes true and TimeSensor becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of startTime field
 	 */
@@ -245,7 +255,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When time now &gt;= startTime, isActive becomes true and TimeSensor becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> When time now &gt;= startTime, isActive becomes true and TimeSensor becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the startTime field.
 	 * @return {@link TimeSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -257,7 +267,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> When stopTime becomes &amp;lt;= time now, isActive becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_stopTime event values less than or equal to startTime. </li> 
  * </ul>
@@ -269,7 +279,7 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When stopTime becomes &lt;= time now, isActive becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
+	 * <i>Tooltip:</i> When stopTime becomes &lt;= time now, isActive becomes false and TimeSensor becomes inactive. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
 	 * @param newValue is new value for the stopTime field.
 	 * @return {@link TimeSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -277,10 +287,12 @@ public interface TimeSensor extends X3DTimeDependentNode, X3DSensorNode
 	public TimeSensor setStopTime(double newValue);
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>time</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>time</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time continuously sends the absolute time (since January 1, 1970) for a given simulation tick.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Time continuously sends the absolute time (since January 1, 1970) for a given simulation tick.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of time field
 	 */
 	public double getTime();

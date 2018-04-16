@@ -48,11 +48,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#TouchSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#TouchSensor" target="blank">X3D Abstract Specification: TouchSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TouchSensor" target="_blank">X3D Tooltips: TouchSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -106,32 +104,40 @@ public interface TouchSensor extends X3DTouchSensorNode
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitNormal_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing surface normal vector at the hitPoint.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing surface normal vector at the hitPoint.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitNormal_changed field
 	 */
 	public float[] getHitNormal();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing 3D point on surface of underlying geometry, as measured in reference frame for TouchSensor's local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing 3D point on surface of underlying geometry, as measured in reference frame for TouchSensor's local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitPoint_changed field
 	 */
 	public float[] getHitPoint();
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>hitTexCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When pointing device selects geometry, send event containing texture coordinates of surface at the hitPoint.  * <br>
-
+	 * <i>Tooltip:</i> When pointing device selects geometry, send event containing texture coordinates of surface at the hitPoint.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitTexCoord_changed field
 	 */
 	public float[] getHitTexCoord();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when pointing device selection is activated, output event isActive=false is sent when pointing device is deselected.  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when pointing device selection is activated, output event isActive=false is sent when pointing device is deselected.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -139,8 +145,10 @@ public interface TouchSensor extends X3DTouchSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.  * <br>
-
+	 * <i>Tooltip:</i> Hover over geometry by aiming the mouse (or pointing device) to generate isOver events. Sensor sends output event isOver=true event when pointing device moves over sensor's geometry, and later sends output event isOver=false event when pointing device moves off.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -167,7 +175,8 @@ public interface TouchSensor extends X3DTouchSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Time event generated when sensor is touched by pointing device, and then deselected by the user.
  * <ul>
- *  <li> <i> Hint:</i>  touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Hint:</i> touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of touchTime field
 	 */

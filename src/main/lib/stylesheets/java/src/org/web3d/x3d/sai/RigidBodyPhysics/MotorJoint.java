@@ -49,11 +49,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#MotorJoint" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#MotorJoint" target="blank">X3D Abstract Specification: MotorJoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MotorJoint" target="_blank">X3D Tooltips: MotorJoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -275,16 +273,20 @@ public interface MotorJoint extends X3DRigidJointNode
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor1Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor1Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor1Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor1Angle field
 	 */
 	public float getMotor1Angle();
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor1AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor1AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor1AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor1AngleRate field
 	 */
 	public float getMotor1AngleRate();
@@ -311,16 +313,20 @@ public interface MotorJoint extends X3DRigidJointNode
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor2Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor2Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor2Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor2Angle field
 	 */
 	public float getMotor2Angle();
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor2AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor2AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor2AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor2AngleRate field
 	 */
 	public float getMotor2AngleRate();
@@ -347,16 +353,20 @@ public interface MotorJoint extends X3DRigidJointNode
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor3Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor3Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor3Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor3Angle field
 	 */
 	public float getMotor3Angle();
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor3AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor3AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor3AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor3AngleRate field
 	 */
 	public float getMotor3AngleRate();

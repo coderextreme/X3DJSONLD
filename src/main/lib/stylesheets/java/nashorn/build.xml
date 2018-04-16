@@ -45,6 +45,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <project name="X3D Nashorn SAI Library" default="default" basedir=".">
     <description>Builds, tests, and runs the X3D Nashorn SAI Library project.</description>
 	
+    <property name="java.dir"                value=".."/>
     <property name="javac.verbose"            value="-verbose"/>
     <property name="fork"                     value="true"/>
 
@@ -64,7 +65,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	<!-- http://happygiraffe.github.io/jslint4java/cli.html -->
     <!-- http://kaatz-media.com/2011/10/06/uberprufen-von-javascript-dateien-ant-und-jslint-jenkins-using-ant-on-jenkins-for-jslint -->
     <!-- TODO bug report: https://code.google.com/p/jslint4java/issues/detail?id=101 -->
-    <property name="jslint.jar"     value="../../lib/jslint4java-2.0.5.jar"/>
+    <property name="jslint.jar"     value="${java.dir}/../lib/jslint4java-2.0.5.jar"/>
     <taskdef name="jslint" 
         classname="com.googlecode.jslint4java.ant.JSLintTask"
         classpath="${jslint.jar}" />
@@ -77,35 +78,34 @@ POSSIBILITY OF SUCH DAMAGE.
 	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
 	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
 	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
-	<property name="json-schema-validator.jar"     value="../../lib/json-schema-validator-2.2.6-lib.jar"/>
+	<property name="json-schema-validator.jar"     value="${java.dir}/../lib/json-schema-validator-2.2.6-lib.jar"/>
 
     <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
-    <property name="saxon.dir"               value="../lib" description="relative path"/>
+    <property name="saxon.dir"               value="${java.dir}/lib" description="relative path"/>
     <property name="saxon.jar"               value="saxon9he.jar"/>
 
     <!-- http://openexi.sourceforge.net -->
     <!-- https://sourceforge.net/projects/openexi/files -->
-    <property name="openexi.dir"             value="../lib" description="relative path"/>
+    <property name="openexi.dir"             value="${java.dir}/lib" description="relative path"/>
 	<property name="openexi.jar"             value="nagasena.jar"/>
     
     <!-- https://exificient.github.io/java -->
     <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
-    <property name="exificient.dir"          value="../lib" description="relative path"/>
+    <property name="exificient.dir"          value="${java.dir}/lib" description="relative path"/>
     <property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
 
-    <property name="javax.json.dir"          value="../lib" description="relative path"/>
+    <property name="javax.json.dir"          value="${java.dir}/lib" description="relative path"/>
     <property name="javax.json.jar"          value="javax.json-api-1.0.jar"/>
 
 
     <property name="javac.verbose"           value="-verbose"/>
-    <property name="java.dir"                value=".."/>
     <property name="java.classes.dir"        value="${java.dir}/classes"/>
     <property name="java.examples.dir"       value="${java.dir}/examples"/>
     <property name="java.jars.dir"           value="${java.dir}/jars"/>
     <property name="java.lib.dir"            location="${java.dir}/lib"/>
     <property name="java.src.dir"            value="${java.dir}/src"/>
     <property name="java.coderextreme.dir"       value="${java.src.dir}/net/coderextreme"/>
-    <property name="nashorn.dir"             value="."/>
+    <property name="nashorn.dir"             value="${java.dir}/nashorn"/>
     <property name="nashorn.examples.dir"       value="${nashorn.dir}/examples"/>
     <property name="java.jars.dir"           value="${java.dir}/jars"/>
     <property name="src.org.web3d.x3d.jsail" value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
@@ -147,33 +147,33 @@ POSSIBILITY OF SUCH DAMAGE.
 			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
                     <arg value="-toJSON"/>
                     <arg value="-toFile"/>
-		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.json"/>
                 </java>
                 <java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
 			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
                     <arg value="-toX3D"/>
                     <arg value="-toFile"/>
-		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.x3d"/>
                 </java>
 		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.Nashorn.x3d"/>
-		<xmlvalidate lenient="yes" warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
-		<xmlvalidate lenient="no"  warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
-		<condition property="Nashorn.x3d.match" value="true">
+		<echo message="HelloWorldProgramOutput.Java.x3d"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.x3d"/>
+		<condition property="Java.x3d.match" value="true">
 			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"
-				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.x3d"/>
 		</condition>
-		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
-		<echo message="matches HelloWorldProgramOutput.x3d: ${Nashorn.x3d.match}"/>
+		<!-- otherwise --><property name="Java.x3d.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.x3d: ${Java.x3d.match}"/>
 		<echo message="==========================================="/>
 		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.Nashorn.json"/>
-		<condition property="Nashorn.json.match" value="true">
+		<echo message="HelloWorldProgramOutput.Java.json"/>
+		<condition property="Java.json.match" value="true">
 			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.json"
-				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.json"/>
 		</condition>
-		<!-- otherwise --><property name="Nashorn.json.match" value="false"/>
-		<echo message="matches HelloWorldProgramOutput.json: ${Nashorn.json.match}"/>
+		<!-- otherwise --><property name="Java.json.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.json: ${Java.json.match}"/>
 		<echo message="==========================================="/>
 		<echo message="script:"/>
 		<!--
@@ -187,31 +187,49 @@ POSSIBILITY OF SUCH DAMAGE.
 		</script>
 		-->
 		<exec executable="jjs">
-			<arg value="-J-Djava.class.path=../jars/X3DJSAIL.3.3.full.jar"/>
+			<arg value="-J-Djava.class.path=${java.dir}/jars/X3DJSAIL.3.3.full.jar"/>
 			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js"/>
 		</exec>
 		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.Nashorn.x3d"/>
+		<echo message="HelloWorldProgramOutput.Java.x3d"/>
 		<condition property="Nashorn.x3d.match" value="true">
 			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js.new.x3d"
-				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.x3d"/>
 		</condition>
 		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
 		<echo message="matches HelloWorldProgramOutput.Nashorn.js.new.x3d: ${Nashorn.x3d.match}"/>
 		<echo message="==========================================="/>
 		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.Nashorn.json"/>
+		<echo message="HelloWorldProgramOutput.Java.json"/>
 		<condition property="Nashorn.json.match" value="true">
 			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js.new.json"
-				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Java.json"/>
 		</condition>
 		<!-- otherwise --><property name="Nashorn.json.match" value="false"/>
 		<echo message="matches HelloWorldProgramOutput.Nashorn.js.new.json: ${Nashorn.json.match}"/>
 		<echo message="==========================================="/>
 		<exec executable="jjs">
-			<arg value="-J-Djava.class.path=../jars/X3DJSAIL.3.3.full.jar;../classes"/>
+			<arg value="-J-Djava.class.path=${java.dir}/jars/X3DJSAIL.3.3.full.jar;${java.dir}/classes"/>
 			<arg value="${nashorn.examples.dir}/Nashorn.js"/>
 		</exec>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.x3d"/>
+		<condition property="Nashorn.x3d.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"
+				file2="${nashorn.examples.dir}/Nashorn.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
+		<echo message="matches Nashorn.x3d: ${Nashorn.x3d.match}"/>
+		<echo message="==========================================="/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.x3d"/>
+		<condition property="Nashorn.x3d.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"
+				file2="${nashorn.examples.dir}/Nashorn0.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
+		<echo message="matches Nashorn0.x3d: ${Nashorn.x3d.match}"/>
+		<echo message="==========================================="/>
 
     </target>
 	

@@ -53,11 +53,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#SignalPdu" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#SignalPdu" target="blank">X3D Abstract Specification: SignalPdu</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SignalPdu" target="_blank">X3D Tooltips: SignalPdu</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -277,8 +275,10 @@ public interface SignalPdu extends X3DNetworkSensorNode, X3DBoundedObject
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Have we had a network update recently?.  * <br>
-
+	 * <i>Tooltip:</i> Have we had a network update recently?.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -286,32 +286,40 @@ public interface SignalPdu extends X3DNetworkSensorNode, X3DBoundedObject
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkReader</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="remote" (listen to network as copy of remote entity).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="remote" (listen to network as copy of remote entity)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkReader field
 	 */
 	public boolean getIsNetworkReader();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkWriter</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="master" (output to network as master entity at writeInterval).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="master" (output to network as master entity at writeInterval)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkWriter field
 	 */
 	public boolean getIsNetworkWriter();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isRtpHeaderHeard</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether incoming DIS packets have an RTP header prepended.  * <br>
-
+	 * <i>Tooltip:</i> Whether incoming DIS packets have an RTP header prepended.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isRtpHeaderHeard field
 	 */
 	public boolean getIsRtpHeaderHeard();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isStandAlone</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="local" (ignore network but still respond to local events).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="local" (ignore network but still respond to local events)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isStandAlone field
 	 */
 	public boolean getIsStandAlone();
@@ -426,18 +434,20 @@ public interface SignalPdu extends X3DNetworkSensorNode, X3DBoundedObject
 	public SignalPdu setRadioID(int newValue);
 
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>readInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between read updates, 0 means no reading.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading.
+ * <ul>
+ *  <li> <i> Hint:</i>  readInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of readInterval field
 	 */
 	public double getReadInterval();
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>readInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between read updates, 0 means no reading.
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading. Hint: readInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the readInterval field.
 	 * @return {@link SignalPdu} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -534,10 +544,12 @@ public interface SignalPdu extends X3DNetworkSensorNode, X3DBoundedObject
 	public SignalPdu setTdlType(int newValue);
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>timestamp</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>timestamp</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  DIS timestamp in X3D units (seconds since 1 January 1970).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) DIS timestamp in X3D units (seconds since 1 January 1970).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of timestamp field
 	 */
 	public double getTimestamp();
@@ -560,18 +572,20 @@ public interface SignalPdu extends X3DNetworkSensorNode, X3DBoundedObject
 	public SignalPdu setWhichGeometry(int newValue);
 
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>writeInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between write updates, 0 means no writing (sending).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending).
+ * <ul>
+ *  <li> <i> Hint:</i>  writeInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of writeInterval field
 	 */
 	public double getWriteInterval();
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>writeInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between write updates, 0 means no writing (sending).
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending). Hint: writeInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the writeInterval field.
 	 * @return {@link SignalPdu} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

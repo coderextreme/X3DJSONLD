@@ -84,10 +84,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#BlendedVolumeStyle" target="blank">X3D Abstract Specification: BlendedVolumeStyle</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#BlendedVolumeStyle" target="_blank">X3D Tooltips: BlendedVolumeStyle</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -473,6 +471,7 @@ public class BlendedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public BlendedVolumeStyleObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -484,8 +483,9 @@ public class BlendedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public BlendedVolumeStyleObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -509,6 +509,7 @@ public class BlendedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public BlendedVolumeStyleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -598,6 +599,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setRenderStyle(X3DComposableVolumeRenderStyleNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		renderStyle = newValue;
 		if (newValue != null)
 		{
@@ -684,6 +686,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setVoxels(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		voxels = newValue;
 		if (newValue != null)
 		{
@@ -773,6 +776,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightConstant1(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("BlendedVolumeStyle weightConstant1 newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -791,8 +795,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setWeightConstant1(SFFloatObject newValue)
 	{
-		setWeightConstant1(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeightConstant1(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>weightConstant2</i>.
@@ -817,6 +822,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightConstant2(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("BlendedVolumeStyle weightConstant2 newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -835,8 +841,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setWeightConstant2(SFFloatObject newValue)
 	{
-		setWeightConstant2(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeightConstant2(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['CONSTANT'|'ALPHA1'|'ALPHA2'|'ONE_MINUS_ALPHA1'|'ONE_MINUS_ALPHA2'|'TABLE'] from inputOutput SFString field named <i>weightFunction1</i>.
@@ -869,6 +876,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightFunction1(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -897,8 +905,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setWeightFunction1(SFStringObject newValue)
 	{
-		setWeightFunction1(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeightFunction1(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['CONSTANT'|'ALPHA1'|'ALPHA2'|'ONE_MINUS_ALPHA1'|'ONE_MINUS_ALPHA2'|'TABLE'] from inputOutput SFString field named <i>weightFunction2</i>.
@@ -931,6 +940,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightFunction2(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -959,8 +969,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setWeightFunction2(SFStringObject newValue)
 	{
-		setWeightFunction2(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWeightFunction2(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>weightTransferFunction1</i>.
@@ -982,6 +993,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightTransferFunction1(X3DTexture2DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		weightTransferFunction1 = newValue;
 		if (newValue != null)
 		{
@@ -1068,6 +1080,7 @@ setAttribute method invocations).
 	@Override
 	public BlendedVolumeStyleObject setWeightTransferFunction2(X3DTexture2DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		weightTransferFunction2 = newValue;
 		if (newValue != null)
 		{
@@ -1147,6 +1160,7 @@ setAttribute method invocations).
 	@Override
 	public final BlendedVolumeStyleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to BlendedVolumeStyle
@@ -1174,8 +1188,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1193,6 +1208,7 @@ setAttribute method invocations).
 	@Override
 	public final BlendedVolumeStyleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to BlendedVolumeStyle
@@ -1220,8 +1236,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1234,6 +1251,7 @@ setAttribute method invocations).
 	@Override
 	public final BlendedVolumeStyleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1248,8 +1266,9 @@ setAttribute method invocations).
 	 */
 	public BlendedVolumeStyleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

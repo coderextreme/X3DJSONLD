@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Texturing.*;
 
 /**
- * <i>X3D node tooltip</i>: GeneratedCubeMapTexture defines a cubic environment map that sources its data from internally generated images. The viewpoint of the generated texture is the location and orientation of the associated geometry in world space.
+ * <i>X3D node tooltip</i>: GeneratedCubeMapTexture (X3D version 3.1 or later) is a texture node that defines a cubic environment map that sources its data from internally generated images. The viewpoint of the generated texture is the location and orientation of the associated geometry in world space.
  * <ul>
  *  <li> <i>Hint:</i> can contain a single TextureProperties node. </li> 
  *  <li> <i>Hint:</i>  typically a Box is used for applying the GeneratedCubeMapTexture. </li> 
@@ -61,10 +61,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture" target="blank">X3D Abstract Specification: GeneratedCubeMapTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeneratedCubeMapTexture" target="_blank">X3D Tooltips: GeneratedCubeMapTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -308,6 +306,7 @@ public class GeneratedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcre
 	@Override
 	public GeneratedCubeMapTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -400,6 +399,7 @@ setAttribute method invocations).
 	@Override
 	public GeneratedCubeMapTextureObject setSize(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeneratedCubeMapTexture size newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -415,8 +415,9 @@ setAttribute method invocations).
 	 */
 	public GeneratedCubeMapTextureObject setSize(SFInt32Object newValue)
 	{
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
@@ -438,6 +439,7 @@ setAttribute method invocations).
 	@Override
 	public GeneratedCubeMapTextureObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -534,6 +536,7 @@ setAttribute method invocations).
 	@Override
 	public GeneratedCubeMapTextureObject setUpdate(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -559,8 +562,9 @@ setAttribute method invocations).
 	 */
 	public GeneratedCubeMapTextureObject setUpdate(SFStringObject newValue)
 	{
-		setUpdate(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUpdate(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -575,6 +579,7 @@ setAttribute method invocations).
 	@Override
 	public final GeneratedCubeMapTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeneratedCubeMapTexture
@@ -602,8 +607,9 @@ setAttribute method invocations).
 	 */
 	public GeneratedCubeMapTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -621,6 +627,7 @@ setAttribute method invocations).
 	@Override
 	public final GeneratedCubeMapTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeneratedCubeMapTexture
@@ -648,8 +655,9 @@ setAttribute method invocations).
 	 */
 	public GeneratedCubeMapTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -662,6 +670,7 @@ setAttribute method invocations).
 	@Override
 	public final GeneratedCubeMapTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -676,8 +685,9 @@ setAttribute method invocations).
 	 */
 	public GeneratedCubeMapTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -38,6 +38,9 @@ import java.util.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
+
+ * <br>
+ * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
 <p>
 Browser interface that represents the additional abilities an external
@@ -48,12 +51,7 @@ A number of the methods in this application can take strings representing URLs.
 relative URL strings contained in URL fields of nodes or these method
 arguments are interpreted as follows:
 </p>
-
  * 
-
- * <br>
- * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#BrowserFactory" target="_blank">SAI Java Specification: B.5.2 BrowserFactory</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ExternalBrowser" target="_blank">X3D Tooltips: ExternalBrowser</a>

@@ -54,10 +54,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/nurbs.html#Contour2D" target="blank">X3D Abstract Specification: Contour2D</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Contour2D" target="_blank">X3D Tooltips: Contour2D</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -294,6 +292,7 @@ public class Contour2DObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public Contour2DObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -343,6 +342,7 @@ public class Contour2DObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -621,6 +621,7 @@ setAttribute method invocations).
 	@Override
 	public Contour2DObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -703,6 +704,7 @@ setAttribute method invocations).
 	@Override
 	public final Contour2DObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Contour2D
@@ -730,8 +732,9 @@ setAttribute method invocations).
 	 */
 	public Contour2DObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -749,6 +752,7 @@ setAttribute method invocations).
 	@Override
 	public final Contour2DObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Contour2D
@@ -776,8 +780,9 @@ setAttribute method invocations).
 	 */
 	public Contour2DObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -790,6 +795,7 @@ setAttribute method invocations).
 	@Override
 	public final Contour2DObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -804,8 +810,9 @@ setAttribute method invocations).
 	 */
 	public Contour2DObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -56,10 +56,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#PackagedShader" target="blank">X3D Abstract Specification: PackagedShader</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PackagedShader" target="_blank">X3D Tooltips: PackagedShader</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -327,6 +325,7 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public PackagedShaderObject setActivate(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		activate = newValue;
 		return this;
 	}
@@ -338,14 +337,17 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public PackagedShaderObject setActivate(SFBoolObject newValue)
 	{
-		setActivate(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setActivate(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isSelected</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isSelected indicates this shader instance is selected for use by browser.  * <br>
-
+	 * <i>Tooltip:</i> isSelected indicates this shader instance is selected for use by browser
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isSelected field
 	 */
 	@Override
@@ -356,8 +358,10 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isValid</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isValid indicates whether current shader objects can be run as a shader program.  * <br>
-
+	 * <i>Tooltip:</i> isValid indicates whether current shader objects can be run as a shader program.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isValid field
 	 */
 	@Override
@@ -395,6 +399,7 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public PackagedShaderObject setLanguage(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -409,8 +414,9 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public PackagedShaderObject setLanguage(SFStringObject newValue)
 	{
-		setLanguage(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLanguage(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -434,6 +440,7 @@ public class PackagedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public PackagedShaderObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -542,6 +549,7 @@ setAttribute method invocations).
 	@Override
 	public PackagedShaderObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -568,8 +576,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -583,6 +592,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -598,6 +608,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -614,6 +625,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -640,6 +652,7 @@ setAttribute method invocations).
 	@Override
 	public final PackagedShaderObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PackagedShader
@@ -667,8 +680,9 @@ setAttribute method invocations).
 	 */
 	public PackagedShaderObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -686,6 +700,7 @@ setAttribute method invocations).
 	@Override
 	public final PackagedShaderObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PackagedShader
@@ -713,8 +728,9 @@ setAttribute method invocations).
 	 */
 	public PackagedShaderObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -727,6 +743,7 @@ setAttribute method invocations).
 	@Override
 	public final PackagedShaderObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -741,8 +758,9 @@ setAttribute method invocations).
 	 */
 	public PackagedShaderObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -90,10 +90,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoElevationGrid" target="blank">X3D Abstract Specification: GeoElevationGrid</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoElevationGrid" target="_blank">X3D Tooltips: GeoElevationGrid</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -515,6 +513,7 @@ public class GeoElevationGridObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public GeoElevationGridObject setCcw(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		ccw = newValue;
 		return this;
 	}
@@ -526,8 +525,9 @@ public class GeoElevationGridObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public GeoElevationGridObject setCcw(SFBoolObject newValue)
 	{
-		setCcw(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCcw(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DColorNode instance (using a properly typed node) using RGB values [0..1] from inputOutput SFNode field <i>color</i>.
@@ -549,6 +549,7 @@ public class GeoElevationGridObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public GeoElevationGridObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -640,6 +641,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setColorPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		colorPerVertex = newValue;
 		return this;
 	}
@@ -651,8 +653,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setColorPerVertex(SFBoolObject newValue)
 	{
-		setColorPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value unit axis, angle (in radians) within allowed range of [0,infinity) from initializeOnly SFDouble field named <i>creaseAngle</i>.
@@ -680,6 +683,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setCreaseAngle(double newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid creaseAngle newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -695,8 +699,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setCreaseAngle(SFDoubleObject newValue)
 	{
-		setCreaseAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCreaseAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple double results from initializeOnly SFVec3d field named <i>geoGridOrigin</i>.
@@ -721,6 +726,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setGeoGridOrigin(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -739,8 +745,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setGeoGridOrigin(SFVec3dObject newValue)
 	{
-		setGeoGridOrigin(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoGridOrigin(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -777,6 +784,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setGeoOrigin(GeoOrigin newValue)
 	{
+		// set-newValue-validity-checks #0
 		geoOrigin = newValue;
 		if (newValue != null)
 		{
@@ -885,6 +893,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -911,8 +920,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -926,6 +936,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -941,6 +952,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -957,6 +969,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -1010,6 +1023,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setHeight(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearHeight(); // newValueNullSetDEFAULT_VALUE
@@ -1036,8 +1050,9 @@ setAttribute method invocations).
 			clearHeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setHeight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setHeight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFDouble height field, similar to {@link #setHeight(double[])}.
@@ -1051,6 +1066,7 @@ setAttribute method invocations).
 			clearHeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		height = newValue;
 		return this;
 	}
@@ -1076,6 +1092,7 @@ setAttribute method invocations).
 			clearHeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1106,6 +1123,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1195,6 +1213,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setNormal(X3DNormalNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		normal = newValue;
 		if (newValue != null)
 		{
@@ -1286,6 +1305,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setNormalPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		normalPerVertex = newValue;
 		return this;
 	}
@@ -1297,8 +1317,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setNormalPerVertex(SFBoolObject newValue)
 	{
-		setNormalPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -1326,6 +1347,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -1337,8 +1359,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTextureCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>texCoord</i>.
@@ -1360,6 +1383,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setTexCoord(X3DTextureCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		texCoord = newValue;
 		if (newValue != null)
 		{
@@ -1452,6 +1476,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setXDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid xDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1467,8 +1492,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setXDimension(SFInt32Object newValue)
 	{
-		setXDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setXDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value within allowed range of (0,infinity) from initializeOnly SFDouble field named <i>xSpacing</i>.
@@ -1496,6 +1522,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setXSpacing(double newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid xSpacing newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -1511,8 +1538,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setXSpacing(SFDoubleObject newValue)
 	{
-		setXSpacing(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setXSpacing(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>yScale</i>.
@@ -1537,6 +1565,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setYScale(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid yScale newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1552,8 +1581,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setYScale(SFFloatObject newValue)
 	{
-		setYScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setYScale(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value within allowed range of [0,infinity) from initializeOnly SFInt32 field named <i>zDimension</i>.
@@ -1581,6 +1611,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setZDimension(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid zDimension newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1596,8 +1627,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setZDimension(SFInt32Object newValue)
 	{
-		setZDimension(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setZDimension(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value within allowed range of (0,infinity) from initializeOnly SFDouble field named <i>zSpacing</i>.
@@ -1625,6 +1657,7 @@ setAttribute method invocations).
 	@Override
 	public GeoElevationGridObject setZSpacing(double newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("GeoElevationGrid zSpacing newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -1640,8 +1673,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setZSpacing(SFDoubleObject newValue)
 	{
-		setZSpacing(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setZSpacing(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1656,6 +1690,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoElevationGridObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoElevationGrid
@@ -1683,8 +1718,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1702,6 +1738,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoElevationGridObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoElevationGrid
@@ -1729,8 +1766,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1743,6 +1781,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoElevationGridObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1757,8 +1796,9 @@ setAttribute method invocations).
 	 */
 	public GeoElevationGridObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

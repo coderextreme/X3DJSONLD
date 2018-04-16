@@ -40,12 +40,6 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFColor X3D field type.
  * 
  * <br><br>
- * The SFColor field specifies one RGB (red-green-blue) color triple. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.
-<br><br>
-Related field object: {@link MFColorObject}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColor">X3D Tooltips: type SFColor</a>
-
- * 
 
  * <br>
  * Note that {@linkplain SFColorObject#ALICEBLUE SFColorObject} provides a variety of color constants.
@@ -53,12 +47,15 @@ Related field object: {@link MFColorObject}
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * The SFColor field specifies one RGB (red-green-blue) color triple. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.
+ * <br><br>
+ * Related field object: {@link MFColorObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColor">X3D Tooltips: type SFColor</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor" target="blank">X3D Abstract Specification: SFColorAndMFColor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -73,6 +70,9 @@ public class SFColorObject extends X3DConcreteField implements org.web3d.x3d.sai
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Java Tutorials: Primitive Data Types</a>
      */
 	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f};
+
+	/** Default tuple size for this field type is <i>3</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 3;
 
 	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ALICEBLUE = toFloatArray(0xf0f8ff); // decimal 240,248,255

@@ -53,10 +53,8 @@ Contains multiple CollidableShape, CollidableOffset, or CollisionSpace nodes (co
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#CollisionSpace" target="blank">X3D Abstract Specification: CollisionSpace</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollisionSpace" target="_blank">X3D Tooltips: CollisionSpace</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -327,6 +325,7 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public CollisionSpaceObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -345,8 +344,9 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public CollisionSpaceObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -389,6 +389,7 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public CollisionSpaceObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -411,8 +412,9 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public CollisionSpaceObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -467,6 +469,7 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public CollisionSpaceObject setCollidables(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearCollidables(); // newValueNullSetDEFAULT_VALUE
@@ -510,6 +513,7 @@ public class CollisionSpaceObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearCollidables(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -668,6 +672,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionSpaceObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -679,8 +684,9 @@ setAttribute method invocations).
 	 */
 	public CollisionSpaceObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -704,6 +710,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionSpaceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -799,6 +806,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionSpaceObject setUseGeometry(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		useGeometry = newValue;
 		return this;
 	}
@@ -810,8 +818,9 @@ setAttribute method invocations).
 	 */
 	public CollisionSpaceObject setUseGeometry(SFBoolObject newValue)
 	{
-		setUseGeometry(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUseGeometry(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -826,6 +835,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionSpaceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollisionSpace
@@ -853,8 +863,9 @@ setAttribute method invocations).
 	 */
 	public CollisionSpaceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -872,6 +883,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionSpaceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollisionSpace
@@ -899,8 +911,9 @@ setAttribute method invocations).
 	 */
 	public CollisionSpaceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -913,6 +926,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionSpaceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -927,8 +941,9 @@ setAttribute method invocations).
 	 */
 	public CollisionSpaceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

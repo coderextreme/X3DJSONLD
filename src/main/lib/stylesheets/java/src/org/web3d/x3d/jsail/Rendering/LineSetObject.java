@@ -80,6 +80,7 @@ import java.util.Arrays;
 /**
  * <i>X3D node tooltip</i>: LineSet is a geometry node that can contain a Coordinate|CoordinateDouble node and optionally a Color|ColorRGBA node.
  * <ul>
+ *  <li> <i>Hint:</i> Polygonal chain <br> <a href="https://en.wikipedia.org/wiki/Polygonal_chain" target="_blank">https://en.wikipedia.org/wiki/Polygonal_chain</a> </li> 
  *  <li> <i>Hint:</i> either values in a contained Color node, or else Material emissiveColor in corresponding Appearance node, are used for rendering lines and points. </li> 
  *  <li> <i>Warning:</i> lines are not lit, are not texture-mapped, and do not participate in collision detection. </li> 
  *  <li> <i>Warning:</i> use a different color (or Material emissiveColor) than the Background color, otherwise geometry is invisible. </li> 
@@ -92,10 +93,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#LineSet" target="blank">X3D Abstract Specification: LineSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LineSet" target="_blank">X3D Tooltips: LineSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -381,6 +380,7 @@ public class LineSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public LineSetObject setAttrib(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
@@ -411,6 +411,7 @@ public class LineSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		attrib = newValue;
 		for (X3DVertexAttributeNode element : newValue)
 		{
@@ -520,6 +521,7 @@ setAttribute method invocations).
 	@Override
 	public LineSetObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -606,6 +608,7 @@ setAttribute method invocations).
 	@Override
 	public LineSetObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -692,6 +695,7 @@ setAttribute method invocations).
 	@Override
 	public LineSetObject setFogCoord(FogCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		fogCoord = newValue;
 		if (newValue != null)
 		{
@@ -780,6 +784,7 @@ setAttribute method invocations).
 	@Override
 	public LineSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -886,6 +891,7 @@ setAttribute method invocations).
 	@Override
 	public LineSetObject setVertexCount(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearVertexCount(); // newValueNullSetDEFAULT_VALUE
@@ -912,8 +918,9 @@ setAttribute method invocations).
 			clearVertexCount(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setVertexCount(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVertexCount(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 vertexCount field, similar to {@link #setVertexCount(int[])}.
@@ -927,6 +934,7 @@ setAttribute method invocations).
 			clearVertexCount(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		vertexCount = newValue;
 		return this;
 	}
@@ -953,6 +961,7 @@ setAttribute method invocations).
 	@Override
 	public final LineSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LineSet
@@ -980,8 +989,9 @@ setAttribute method invocations).
 	 */
 	public LineSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -999,6 +1009,7 @@ setAttribute method invocations).
 	@Override
 	public final LineSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LineSet
@@ -1026,8 +1037,9 @@ setAttribute method invocations).
 	 */
 	public LineSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1040,6 +1052,7 @@ setAttribute method invocations).
 	@Override
 	public final LineSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1054,8 +1067,9 @@ setAttribute method invocations).
 	 */
 	public LineSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
