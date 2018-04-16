@@ -4613,7 +4613,7 @@ EXTERNPROTO TransmitterPdu [
         <xsl:text>Metadata nodes are not supported as a child of current node </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text> in VRML97 encoding.  The child </xsl:text>
-        <xsl:value-of select="local-name(*)"/>
+        <xsl:value-of select="local-name(*[starts-with(local-name(),'Metadata')][1])"/>
         <xsl:text> node has been moved to immediately follow the parent </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>.</xsl:text>

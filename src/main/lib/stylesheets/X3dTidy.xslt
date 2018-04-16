@@ -57,8 +57,6 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- TODO XSLT version="2.0" -->
-
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
@@ -1315,7 +1313,6 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="not($containsQuote)">
-                            <xsl:text>'</xsl:text>
                             <xsl:if test="(substring(.,string-length(.)-3,4) = '.wrl') or (contains(.,'.wrl#')) and not(contains(.,'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
@@ -1391,7 +1388,6 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="$containsQuote and not(contains(.,':/'))">
-                            <xsl:text>'</xsl:text>
                             <xsl:if test="((substring(translate(., '&quot;', ''),string-length(translate(., '&quot;', ''))-3,4) = '.wrl') or (contains(.,'.wrl#'))) and not(contains(.,'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
@@ -1470,7 +1466,6 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>'</xsl:text>
                             <xsl:call-template name="escape-special-characters">
                                 <xsl:with-param name="inputString" select="."/>
                             </xsl:call-template>
@@ -3281,7 +3276,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
             </xsl:choose>
             <!-- tail recurse on remainder of list of URLs -->
-            <xsl:if test="$restURLs!=''">
+            <xsl:if test="($restURLs!='')">
                 <xsl:call-template name="URL-ize-MFString-elements">
                     <xsl:with-param name="list" select="$restURLs"/>
                     <xsl:with-param name="urlsOnly" select="$urlsOnly"/>
