@@ -226,7 +226,7 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"./ObliqueStrategiesScript.js"});
+    return new MFStringObject(new java.lang.String[] {"../node/ObliqueStrategiesScript.js"});
   }
 }
 protected class MFString7 {

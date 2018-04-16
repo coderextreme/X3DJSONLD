@@ -112,7 +112,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2018"
+            "@content":"16 April 2018"
           },
           {
             "@name":"generator",
@@ -222,7 +222,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["./ObliqueStrategiesScript.js"],
+              "@url":["../node/ObliqueStrategiesScript.js"],
               "-children":[
                 {
                   "#comment":"initialize() method includes unit test to printAllStrategies() to console"

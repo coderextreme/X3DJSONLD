@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "11 April 2018"
+          "@content": "16 April 2018"
         },
         {
           "@name": "generator",
@@ -209,7 +209,6 @@
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
-                          "Browser.print(translation.toString());",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
@@ -398,7 +397,6 @@
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
-                          "Browser.print(translation.toString());",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
@@ -587,7 +585,6 @@
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
-                          "Browser.print(translation.toString());",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
@@ -776,7 +773,6 @@
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
-                          "Browser.print(translation.toString());",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",

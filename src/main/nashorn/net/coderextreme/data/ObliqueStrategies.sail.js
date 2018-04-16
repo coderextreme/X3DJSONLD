@@ -48,7 +48,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setCoord(new CoordinateObject().setPoint(Java.to([1,1,0,1,-1,0,-1,-1,0,-1,1,0], Java.type("float[]")))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setAmbientIntensity(0.245763).setDiffuseColor(Java.to([0.34773,0.090909,0.005289], Java.type("float[]"))).setShininess(0.07).setSpecularColor(Java.to([0.336735,0.051091,0.051091], Java.type("float[]"))).setTransparency(0.8))))))
-        .addChild(new ScriptObject().setDEF("TextScript").setUrl(Java.to(["./ObliqueStrategiesScript.js"], Java.type("java.lang.String[]")))
+        .addChild(new ScriptObject().setDEF("TextScript").setUrl(Java.to(["../node/ObliqueStrategiesScript.js"], Java.type("java.lang.String[]")))
           .addComments(new CommentsBlock("initialize() method includes unit test to printAllStrategies() to console"))
           .addComments(new CommentsBlock("TODO insert field definitions here (index string_changed previous next random) and then animate!"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("index").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("index for active strategy card, -1 means no selection").setValue("0"))

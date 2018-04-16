@@ -1,6 +1,3 @@
-if (typeof protoExpander !== 'undefined') {
-	protoExpander.setX3DJSONLD(X3DJSONLD);
-}
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 

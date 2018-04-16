@@ -53,7 +53,7 @@
         </Shape>
       </Transform>
     </Transform>
-    <Script DEF='TextScript' url='"./ObliqueStrategiesScript.js"'>
+    <Script DEF='TextScript' url='"../node/ObliqueStrategiesScript.js"'>
       <!-- initialize() method includes unit test to printAllStrategies() to console -->
       <!-- TODO insert field definitions here (index string_changed previous next random) and then animate! -->
       <field accessType='initializeOnly' appinfo='index for active strategy card, -1 means no selection' name='index' type='SFInt32' value='0'/>
