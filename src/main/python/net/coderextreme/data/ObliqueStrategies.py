@@ -208,7 +208,7 @@ Transform31.addChild(Transform38)
 Scene28.addChild(Transform31)
 Script44 = ScriptObject()
 Script44.setDEF("TextScript")
-Script44.setUrl(["./ObliqueStrategiesScript.js"])
+Script44.setUrl(["../node/ObliqueStrategiesScript.js"])
 
 
 Script44.addComments(CommentsBlock("""initialize() method includes unit test to printAllStrategies() to console"""))

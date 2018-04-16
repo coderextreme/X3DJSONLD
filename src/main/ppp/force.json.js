@@ -174,7 +174,6 @@ ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
-console.error(this.proxy.translation.toString());
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
@@ -243,7 +242,6 @@ ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
-console.error(this.proxy.translation.toString());
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
@@ -312,7 +310,6 @@ ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
-console.error(this.proxy.translation.toString());
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
@@ -381,7 +378,6 @@ ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
-console.error(this.proxy.translation.toString());
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
