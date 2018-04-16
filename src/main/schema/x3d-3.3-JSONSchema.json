@@ -1273,9 +1273,11 @@
               "type": "string"
             },
             "@duration_changed": {
+              "minimum": -1,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@isActive": {
@@ -1551,10 +1553,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -3180,17 +3178,6 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
-                "enum": [
-                  "BOUNCE",
-                  "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
-                  "ERROR_REDUCTION",
-                  "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
-                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -3550,26 +3537,38 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@set_destination": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
             "@set_value": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
             "@value_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -3660,18 +3659,26 @@
               "type": "integer"
             },
             "@set_destination": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
             "@set_value": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -3685,10 +3692,14 @@
               "type": "number"
             },
             "@value_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -3762,10 +3773,14 @@
               "type": "number"
             },
             "@value_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
+                "maximum": 1,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -4332,17 +4347,6 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
-                "enum": [
-                  "BOUNCE",
-                  "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
-                  "ERROR_REDUCTION",
-                  "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
-                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -5713,10 +5717,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -6432,6 +6432,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -6525,6 +6526,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@translation": {
@@ -6541,6 +6543,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -7181,12 +7184,6 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER",
-                  "Arial"
-                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -7797,6 +7794,8 @@
               "$ref": "#/definitions/@geoSystem"
             },
             "@level_changed": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "integer"
             },
             "-metadata": {
@@ -8949,7 +8948,7 @@
               "$ref": "#/definitions/-HAnimJoint|HAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-X3DChildNodeMFNode"
+              "$ref": "#/definitions/-Group|Transform|Shape|IndexedFaceSetMFNode"
             },
             "-skinCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
@@ -9046,7 +9045,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSegmentMFNode"
+              "$ref": "#/definitions/-HAnimJoint|HAnimSegment|HAnimSiteMFNode"
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
@@ -10034,24 +10033,28 @@
             "@set_colorIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_normalIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_texCoordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10153,12 +10156,14 @@
             "@set_colorIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10250,6 +10255,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -10348,6 +10354,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -10446,6 +10453,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -10544,6 +10552,7 @@
             "@set_index": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -11443,11 +11452,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -11483,12 +11487,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -11862,6 +11860,7 @@
               "type": "boolean"
             },
             "@level_changed": {
+              "minimum": 0,
               "type": "integer"
             },
             "-metadata": {
@@ -12567,10 +12566,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -12699,9 +12694,11 @@
               "type": "string"
             },
             "@duration_changed": {
+              "minimum": -1,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@isActive": {
@@ -12831,10 +12828,6 @@
             "@function": {
               "type": "array",
               "items": {
-                "enum": [
-                  "COMPLEMENT",
-                  "ALPHAREPLICATE"
-                ],
                 "type": "string"
               }
             },
@@ -12844,39 +12837,12 @@
             "@mode": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ADD",
-                  "ADDSIGNED",
-                  "ADDSIGNED2X",
-                  "ADDSMOOTH",
-                  "BLENDCURRENTALPHA",
-                  "BLENDDIFFUSEALPHA",
-                  "BLENDFACTORALPHA",
-                  "BLENDTEXTUREALPHA",
-                  "DOTPRODUCT3",
-                  "MODULATE",
-                  "MODULATE2X",
-                  "MODULATE4X",
-                  "MODULATEALPHA_ADDCOLOR",
-                  "MODULATEINVALPHA_ADDCOLOR",
-                  "MODULATEINVCOLOR_ADDALPHA",
-                  "OFF",
-                  "REPLACE",
-                  "SELECTARG1",
-                  "SELECTARG2",
-                  "SUBTRACT"
-                ],
                 "type": "string"
               }
             },
             "@source": {
               "type": "array",
               "items": {
-                "enum": [
-                  "DIFFUSE",
-                  "FACTOR",
-                  "SPECULAR"
-                ],
                 "type": "string"
               }
             },
@@ -13095,11 +13061,6 @@
             "@transitionType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "TELEPORT",
-                  "LINEAR",
-                  "ANIMATE"
-                ],
                 "default": "LINEAR",
                 "type": "string"
               }
@@ -13108,28 +13069,10 @@
               "type": "array",
               "items": [
                 {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
                   "default": "EXAMINE",
                   "type": "string"
                 },
                 {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
                   "default": "ANY",
                   "type": "string"
                 }
@@ -15110,11 +15053,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15696,11 +15634,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15722,12 +15655,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -15950,6 +15877,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -16674,11 +16602,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -16693,12 +16616,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -17235,6 +17152,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -17255,6 +17173,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@transmitterApplicationID": {
@@ -17278,6 +17197,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -17434,6 +17354,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "type": "number"
             },
@@ -17663,6 +17584,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "type": "number"
             },
@@ -17997,12 +17919,6 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER",
-                  "Arial"
-                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -18447,10 +18363,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
-              "enum": [
-                "VERTEX",
-                "FRAGMENT"
-              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18524,10 +18436,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
-              "enum": [
-                "VERTEX",
-                "FRAGMENT"
-              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18765,6 +18673,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -18789,6 +18698,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@whichGeometry": {
@@ -18796,6 +18706,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -18971,10 +18882,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -19075,10 +18982,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -20099,6 +20002,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -21367,14 +21271,16 @@
               "$ref": "#/definitions/IS"
             },
             "@cycleInterval": {
-              "exclusiveMinimum": 0,
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
             "@cycleTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@elapsedTime": {
+              "minimum": 0,
               "type": "number"
             },
             "@enabled": {
@@ -21414,6 +21320,7 @@
               "type": "number"
             },
             "@time": {
+              "minimum": 0,
               "type": "number"
             },
             "@DEF": {
@@ -22155,6 +22062,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "type": "number"
             },
@@ -22176,6 +22084,7 @@
               "type": "integer"
             },
             "@timestamp": {
+              "minimum": 0,
               "type": "number"
             },
             "@transmitFrequencyBandwidth": {
@@ -22191,6 +22100,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "type": "number"
             },
@@ -22805,10 +22715,6 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
-                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -23425,6 +23331,7 @@
             "@set_coordIndex": {
               "type": "array",
               "items": {
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -23517,11 +23424,6 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
-                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -23536,12 +23438,6 @@
               "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
             },
             "@sortOrder": {
-              "enum": [
-                "ANY",
-                "CLOSEST",
-                "ALL",
-                "ALL_SORTED"
-              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -26488,6 +26384,34 @@
         "additionalProperties": false
       }
     },
+    "-Group|Transform|Shape|IndexedFaceSetMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Group": {
+            "$ref": "#/definitions/Group"
+          },
+          "Transform": {
+            "$ref": "#/definitions/Transform"
+          },
+          "Shape": {
+            "$ref": "#/definitions/Shape"
+          },
+          "IndexedFaceSet": {
+            "$ref": "#/definitions/IndexedFaceSet"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DCoordinateNodeSFNode": {
       "type": "object",
       "properties": {
@@ -26506,7 +26430,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint|HAnimSegmentMFNode": {
+    "-HAnimJoint|HAnimSegment|HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26520,6 +26444,9 @@
           },
           "HAnimSegment": {
             "$ref": "#/definitions/HAnimSegment"
+          },
+          "HAnimSite": {
+            "$ref": "#/definitions/HAnimSite"
           },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
