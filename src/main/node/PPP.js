@@ -8,7 +8,6 @@ var Browser = X3DJSONLD.Browser;
 
 // Bring in prototype expander and script expander
 var PROTOS = require('./PrototypeExpander')
-PROTOS.setX3DJSONLD(X3DJSONLD);
 
 var Script = require('./Script');
 var LOG = Script.LOG;

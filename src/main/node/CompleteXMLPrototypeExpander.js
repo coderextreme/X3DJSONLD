@@ -6,7 +6,6 @@ var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
 var PROTOS = require('./PrototypeExpander')
-PROTOS.setX3DJSONLD(X3DJSONLD);
 
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();

@@ -2,11 +2,17 @@ var runAndSend;
 var DOM2JSONSerializer;
 var mapToMethod;
 var fieldTypes;
+var fs;
+var http;
+var https;
 if (typeof require !== 'undefined') {
 	runAndSend = require("./runAndSend");
 	DOM2JSONSerializer = require("./DOM2JSONSerializer");
 	mapToMethod = require("./mapToMethod");
 	fieldTypes = require("./fieldTypes");
+	fs = require("fs");
+	http = require("http");
+	https = require("https");
 }
 function PROTOS() {
 	this.protos = {};
@@ -189,9 +195,6 @@ PROTOS.prototype = {
 
 	upScope: function (i) {
 		return this.privatescope.slice(0, this.privatescope.length - i).join("_");
-	},
-	setX3DJSONLD: function (X3DJSONLD) {
-		this.X3DJSONLD = X3DJSONLD;
 	},
 	setValueFromInterface: function (field, object, objectfield) {
 		// copy the default interface value;
@@ -628,7 +631,7 @@ PROTOS.prototype = {
 		// console.error("DEF is", newobject[p]["@DEF"]);
 		this.setScriptFields(newobject[p]["field"], newobject[p]["@DEF"]);
 		var url = newobject[p]["@url"];
-		this.X3DJSONLD.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
+		this.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
 	},
 
 	handleProtoDeclare: function (file, object, p) {
@@ -998,12 +1001,192 @@ PROTOS.prototype = {
 		}
 	},
 
+	/**
+	 * processURLs and make them more kosher for the X3DJSONLD user inteferface to
+	 * deal with.  Pass an array of URLs and a path for the main JSON file you are
+	 * loading.
+	 */
+	processURLs: function(localArray, path) {
+		// console.error("Process URLs", path, localArray);
+		var url;
+		// No longer need to split
+		for (url in localArray) {
+			if (localArray[url].indexOf("http://") === 0
+			 || localArray[url].indexOf("https://") === 0) {
+			} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
+				var ls = localArray[url].lastIndexOf("/");
+				if (ls > 0) {
+					localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
+				}
+
+			} else {
+				/*
+				var s = localArray[url].indexOf('/');
+				*/
+				var p = localArray[url].indexOf('#');
+				var pe = path.lastIndexOf('/');
+				var pc = path;
+				if (pe >= 0) {
+					pc = path.substring(0, pe);
+				}
+				/*
+				if (s != 0 && p != 0) {
+					if (localArray[url].indexOf(pc) != 0) {
+						 localArray[url] = pc+'/'+localArray[url];
+					}
+					if (localArray[url].indexOf('/') === 0) {
+						// no webroot absolute paths.  No /'s for X_ITE shaders
+						localArray[url] = localArray[url].substring(1);
+					}
+				}
+				*/
+				while (localArray[url].startsWith("../")) {
+					localArray[url] = localArray[url].substr(3);
+					var pe = pc.lastIndexOf('/');
+					if (pe >= 0) {
+						pc = pc.substring(0, pe);
+					} else {
+						pc = "";
+					}
+				}
+				if (p == 0) {
+					localArray[url] = path+localArray[url];
+				} else {
+					localArray[url] = pc+"/"+localArray[url];
+				}
+			}
+			// for server side
+			var h = localArray[url].lastIndexOf("#") ;
+			var hash = "";
+			if (h >= 0) {
+				hash = localArray[url].substring(h);
+				localArray[url] = localArray[url].substring(0, h);
+			}
+			/*
+			var x3d = localArray[url].lastIndexOf(".x3d") ;
+			if (x3d === localArray[url].length - 4) {
+				localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
+			}
+			*/
+			var wrl = localArray[url].lastIndexOf(".wrl") ;
+			if (wrl === localArray[url].length - 4) {
+				localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
+			}
+			var wrz = localArray[url].lastIndexOf(".wrz") ;
+			if (wrz === localArray[url].length - 4) {
+				localArray[url] = localArray[url].substring(0, wrz)+".json" + hash;
+			}
+				
+		}
+		// console.error("Processed URLs", localArray.join(" "));
+		return localArray;
+	},
+
+	/**
+	 * Use almost any method possible to load a set of URLs.  The loadpath is the
+	 * original URL the main JSON got laoded from, Urls is the se of urls, and
+	 * the loadedCallback returns the data and the URL it was loaded from.
+	 */
+	loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoDeclare, obj) {
+		if (typeof urls !== 'undefined') {
+			// console.error("Preprocessed", urls)
+			urls = this.processURLs(urls, loadpath);
+			// console.error("Postprocessed", urls)
+			for (var u in urls) {
+				try {
+					var url = urls[u];
+					(function(url) {
+						var p = url.indexOf("://");
+						var protocol = "file";
+						var host = "localhost";
+						var path = "/"+loadpath;
+						if (p > 0) {
+							protocol = url.substring(0, p);
+							var pa = url.indexOf("/", p+3);
+							host = url.substring(p+3, pa);
+							path = url.substring(pa);
+						}
+
+						if (protocol === "http") {
+							// console.error("Loading HTTP URL", url);
+							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
+								$.get(url, function(data) {
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+								});
+							} else {
+								http.get({ host: host, path: path}, function(res) {
+									var data = '';
+									res.on('data', function (d) {
+										data += d;
+									});
+									res.on('end', function() {
+										loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+									});
+								});
+						
+							}
+						} else if (protocol === "https") {
+							// console.error("Loading HTTPS URL", url);
+							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
+								$.get(url, function(data) {
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+								});
+							} else {
+								https.get({ host: host, path: path}, function(res) {
+									var data = '';
+									res.on('data', function (d) {
+										data += d;
+									});
+									res.on('end', function() {
+										loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+									});
+								});
+						
+							}
+						} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
+							// should be async, but out of memory
+							// console.error("Loading FILE URL", url);
+							var hash = url.indexOf("#");
+							if (hash > 0) {
+								url = url.substring(0, hash);
+							}
+							try {
+								var data = fs.readFileSync(url);
+								loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
+							} catch (e) {
+								var filename = url;
+								if (filename.endsWith(".json")) {
+									filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
+									// console.error("converting possible X3D to JSON", filename);
+									if (typeof runAndSend === 'function') {
+										runAndSend(['---silent', filename], function(jsobj) {
+											data = JSON.stringify(jsobj);
+											loadedCallback(data, filename, protoexp, done, externProtoDeclare, obj);
+										});
+									}
+								}
+							}
+						} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
+							// console.error("Loading Relative URL", url);
+							$.get(url, function(data) {
+								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+							});
+						} else {
+							console.error("Didn't load", url, ".  No JQuery $.get() or file system");
+						}
+					})(url);
+				} catch (e) {
+					console.error(e);
+				}
+			}
+		}
+	},
 	load : function (p, file, object, protoexp, done) {
 		var obj = object[p];
 		var url = obj["@url"];
 		// this is a single task
 		// console.error("loading External Prototype", file, url);
-		this.X3DJSONLD.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj);
+		this.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj);
 	},
 	externalPrototypeExpander: function (file, object) {
 		if (typeof object === "object") {
