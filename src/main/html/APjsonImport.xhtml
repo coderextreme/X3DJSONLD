@@ -152,7 +152,6 @@ Use Namespace: <select id="namespace">
 	var xml = [], NS;
 	if ($('#prototype').is(':checked')) {
 		test_json = protoExpander.prototypeExpander(url, test_json, "");
-		test_json = flattener(test_json);
 	        $('textarea#json').val(JSON.stringify(test_json, null, 2));
 	}
 	X3DJSONLD.loadX3DJS(document.implementation, test_json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(json_element) {

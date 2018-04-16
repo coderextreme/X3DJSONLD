@@ -63,7 +63,6 @@
 		$.getJSON(url, function(json) {
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
-			json = flattener(json);
 			if ($('#scripting').is(':checked')) {
 				loadScripts(json, htmlselector, url);
 			}
@@ -84,7 +83,6 @@
 	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json, callback) {
 		$.getJSON(url, function(subjson) {
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
-			subjson = flattener(subjson);
 			if ($('#scripting').is(':checked')) {
 				loadScripts(subjson, htmlselector, url);
 			}
