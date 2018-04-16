@@ -336,13 +336,7 @@ function loadX3D(selector, json, url) {
 	if ($('#scripting').is(':checked')) {
 		initializeScripts();
 	}
-	$.ajaxSetup({
-	  async: false
-	});
 	json = loadProtoX3D(selector, json, url);
-	$.ajaxSetup({
-	  async: true
-	});
 }
 
 /**
@@ -355,13 +349,7 @@ function appendInline(element, url, xmlDoc, next) {
 		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
 			try {
 			    if ($('#prototype').is(':checked')) {
-				$.ajaxSetup({
-				  async: false
-				});
 				json = protoExpander.prototypeExpander(url, json, "");
-				$.ajaxSetup({
-				  async: true
-				});
 			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline", e);

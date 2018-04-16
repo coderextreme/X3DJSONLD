@@ -1111,10 +1111,16 @@ PROTOS.prototype = {
 						if (protocol === "http") {
 							// console.error("Loading HTTP URL", url);
 							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
+								$.ajaxSetup({
+								  async: false
+								});
 								$.get(url, function(data) {
 									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 								});
-							} else {
+								$.ajaxSetup({
+								  async: true
+								});
+							} else if (typeof http !== 'undefined') {
 								http.get({ host: host, path: path}, function(res) {
 									var data = '';
 									res.on('data', function (d) {
@@ -1129,10 +1135,16 @@ PROTOS.prototype = {
 						} else if (protocol === "https") {
 							// console.error("Loading HTTPS URL", url);
 							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
+								$.ajaxSetup({
+								  async: false
+								});
 								$.get(url, function(data) {
 									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 								});
-							} else {
+								$.ajaxSetup({
+								  async: true
+								});
+							} else if (typeof https !== 'undefined') {
 								https.get({ host: host, path: path}, function(res) {
 									var data = '';
 									res.on('data', function (d) {
@@ -1169,8 +1181,14 @@ PROTOS.prototype = {
 							}
 						} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							// console.error("Loading Relative URL", url);
+							$.ajaxSetup({
+							  async: false
+							});
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+							});
+							$.ajaxSetup({
+							  async: true
 							});
 						} else {
 							console.error("Didn't load", url, ".  No JQuery $.get() or file system");
