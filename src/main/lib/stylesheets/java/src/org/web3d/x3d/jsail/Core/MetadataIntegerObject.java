@@ -59,10 +59,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#MetadataInteger" target="blank">X3D Abstract Specification: MetadataInteger</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataInteger" target="_blank">X3D Tooltips: MetadataInteger</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata</a>
  */
@@ -306,6 +304,7 @@ public class MetadataIntegerObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public MetadataIntegerObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -404,6 +403,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataIntegerObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -418,8 +418,9 @@ setAttribute method invocations).
 	 */
 	public MetadataIntegerObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>reference</i>.
@@ -445,6 +446,7 @@ setAttribute method invocations).
 	@Override
 	public MetadataIntegerObject setReference(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -459,8 +461,9 @@ setAttribute method invocations).
 	 */
 	public MetadataIntegerObject setReference(SFStringObject newValue)
 	{
-		setReference(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReference(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Integer results from inputOutput MFInt32 field named <i>value</i>.
@@ -502,6 +505,7 @@ setAttribute method invocations).
 	@Override
 	public MetadataIntegerObject setValue(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearValue(); // newValueNullSetDEFAULT_VALUE
@@ -528,8 +532,9 @@ setAttribute method invocations).
 			clearValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList MFInt32 value field, similar to {@link #setValue(int[])}.
@@ -543,6 +548,7 @@ setAttribute method invocations).
 			clearValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		value = newValue;
 		return this;
 	}
@@ -570,6 +576,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataIntegerObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MetadataInteger
@@ -597,8 +604,9 @@ setAttribute method invocations).
 	 */
 	public MetadataIntegerObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -617,6 +625,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataIntegerObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MetadataInteger
@@ -644,8 +653,9 @@ setAttribute method invocations).
 	 */
 	public MetadataIntegerObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -657,6 +667,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataIntegerObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -671,8 +682,9 @@ setAttribute method invocations).
 	 */
 	public MetadataIntegerObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

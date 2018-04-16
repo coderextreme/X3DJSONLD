@@ -105,10 +105,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid" target="blank">X3D Abstract Specification: HAnimHumanoid</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimHumanoid" target="_blank">X3D Tooltips: HAnimHumanoid</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -602,6 +600,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public HAnimHumanoidObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -620,8 +619,9 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public HAnimHumanoidObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -664,6 +664,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public HAnimHumanoidObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -686,8 +687,9 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public HAnimHumanoidObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -727,6 +729,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public HAnimHumanoidObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -745,8 +748,9 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public HAnimHumanoidObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -802,6 +806,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public HAnimHumanoidObject setInfo(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearInfo(); // newValueNullSetDEFAULT_VALUE
@@ -828,8 +833,9 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearInfo(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setInfo(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInfo(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString info field, similar to {@link #setInfo(String[])}.
@@ -843,6 +849,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearInfo(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setInfo(newValue.getValue());
 		return this;
 	}
@@ -858,6 +865,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearInfo(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		info.clear();
 		info.add(newValue);
 		return this;
@@ -874,6 +882,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearInfo(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		info = newValue;
 		return this;
 	}
@@ -934,6 +943,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setJoints(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearJoints(); // newValueNullSetDEFAULT_VALUE
@@ -964,6 +974,7 @@ setAttribute method invocations).
 			clearJoints(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		joints = newValue;
 		for (HAnimJoint element : newValue)
 		{
@@ -1075,6 +1086,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1173,6 +1185,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimHumanoidObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimHumanoid
@@ -1199,8 +1212,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
@@ -1227,6 +1241,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1245,8 +1260,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setRotation(SFRotationObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1287,6 +1303,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1309,8 +1326,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setScale(SFVec3fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1350,6 +1368,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setScaleOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1368,8 +1387,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setScaleOrientation(SFRotationObject newValue)
 	{
-		setScaleOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScaleOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1434,6 +1454,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSegments(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSegments(); // newValueNullSetDEFAULT_VALUE
@@ -1464,6 +1485,7 @@ setAttribute method invocations).
 			clearSegments(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		segments = newValue;
 		for (HAnimSegment element : newValue)
 		{
@@ -1600,6 +1622,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSites(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSites(); // newValueNullSetDEFAULT_VALUE
@@ -1630,6 +1653,7 @@ setAttribute method invocations).
 			clearSites(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		sites = newValue;
 		for (HAnimSite element : newValue)
 		{
@@ -1765,6 +1789,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSkeleton(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkeleton(); // newValueNullSetDEFAULT_VALUE
@@ -1808,6 +1833,7 @@ setAttribute method invocations).
 			clearSkeleton(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -1991,6 +2017,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSkin(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkin(); // newValueNullSetDEFAULT_VALUE
@@ -2036,6 +2063,7 @@ setAttribute method invocations).
 			clearSkin(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -2208,6 +2236,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSkinCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		skinCoord = newValue;
 		if (newValue != null)
 		{
@@ -2302,6 +2331,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setSkinNormal(X3DNormalNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		skinNormal = newValue;
 		if (newValue != null)
 		{
@@ -2393,6 +2423,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2411,8 +2442,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setTranslation(SFVec3fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2458,6 +2490,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setVersion(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2472,8 +2505,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setVersion(SFStringObject newValue)
 	{
-		setVersion(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVersion(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of HAnimSite results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>viewpoints</i>.
@@ -2522,6 +2556,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimHumanoidObject setViewpoints(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearViewpoints(); // newValueNullSetDEFAULT_VALUE
@@ -2552,6 +2587,7 @@ setAttribute method invocations).
 			clearViewpoints(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		viewpoints = newValue;
 		for (HAnimSite element : newValue)
 		{
@@ -2654,6 +2690,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimHumanoidObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimHumanoid
@@ -2681,8 +2718,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2700,6 +2738,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimHumanoidObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimHumanoid
@@ -2727,8 +2766,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2741,6 +2781,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimHumanoidObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2755,8 +2796,9 @@ setAttribute method invocations).
 	 */
 	public HAnimHumanoidObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

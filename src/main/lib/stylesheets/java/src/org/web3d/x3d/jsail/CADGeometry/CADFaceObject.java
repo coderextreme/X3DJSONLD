@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/CADGeometry.html#CADFace" target="blank">X3D Abstract Specification: CADFace</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADFace" target="_blank">X3D Tooltips: CADFace</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Meshes" target="_blank">X3D Scene Authoring Hints: Meshes</a>
  */
@@ -311,6 +309,7 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADFaceObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -329,8 +328,9 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	 */
 	public CADFaceObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -373,6 +373,7 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADFaceObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -395,8 +396,9 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	 */
 	public CADFaceObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -435,6 +437,7 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADFaceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -532,6 +535,7 @@ setAttribute method invocations).
 	@Override
 	public final CADFaceObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -546,8 +550,9 @@ setAttribute method invocations).
 	 */
 	public CADFaceObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Shape|LOD|Transform, from inputOutput SFNode field <i>shape</i>.
@@ -569,6 +574,7 @@ setAttribute method invocations).
 	@Override
 	public CADFaceObject setShape(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		shape = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -661,6 +667,7 @@ setAttribute method invocations).
 	@Override
 	public final CADFaceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CADFace
@@ -688,8 +695,9 @@ setAttribute method invocations).
 	 */
 	public CADFaceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -707,6 +715,7 @@ setAttribute method invocations).
 	@Override
 	public final CADFaceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CADFace
@@ -734,8 +743,9 @@ setAttribute method invocations).
 	 */
 	public CADFaceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -748,6 +758,7 @@ setAttribute method invocations).
 	@Override
 	public final CADFaceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -762,8 +773,9 @@ setAttribute method invocations).
 	 */
 	public CADFaceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

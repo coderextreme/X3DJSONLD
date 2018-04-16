@@ -51,10 +51,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/particle_systems.html#ConeEmitter" target="blank">X3D Abstract Specification: ConeEmitter</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ConeEmitter" target="_blank">X3D Tooltips: ConeEmitter</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -368,6 +366,7 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ConeEmitterObject setAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ConeEmitter angle newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -386,8 +385,9 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ConeEmitterObject setAngle(SFFloatObject newValue)
 	{
-		setAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results within allowed range of [-1,1] from inputOutput SFVec3f field named <i>direction</i>.
@@ -412,6 +412,7 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ConeEmitterObject setDirection(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -437,8 +438,9 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ConeEmitterObject setDirection(SFVec3fObject newValue)
 	{
-		setDirection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDirection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -473,6 +475,7 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ConeEmitterObject setMass(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ConeEmitter mass newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -488,8 +491,9 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	 */
 	public ConeEmitterObject setMass(SFFloatObject newValue)
 	{
-		setMass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMass(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -513,6 +517,7 @@ public class ConeEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public ConeEmitterObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -605,6 +610,7 @@ setAttribute method invocations).
 	@Override
 	public ConeEmitterObject setPosition(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -623,8 +629,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setPosition(SFVec3fObject newValue)
 	{
-		setPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -664,6 +671,7 @@ setAttribute method invocations).
 	@Override
 	public ConeEmitterObject setSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ConeEmitter speed newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -679,8 +687,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setSpeed(SFFloatObject newValue)
 	{
-		setSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>surfaceArea</i>.
@@ -708,6 +717,7 @@ setAttribute method invocations).
 	@Override
 	public ConeEmitterObject setSurfaceArea(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ConeEmitter surfaceArea newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -723,8 +733,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setSurfaceArea(SFFloatObject newValue)
 	{
-		setSurfaceArea(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSurfaceArea(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>variation</i>.
@@ -751,6 +762,7 @@ setAttribute method invocations).
 	@Override
 	public ConeEmitterObject setVariation(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ConeEmitter variation newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -766,8 +778,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setVariation(SFFloatObject newValue)
 	{
-		setVariation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVariation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -782,6 +795,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeEmitterObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ConeEmitter
@@ -809,8 +823,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -828,6 +843,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeEmitterObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ConeEmitter
@@ -855,8 +871,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -869,6 +886,7 @@ setAttribute method invocations).
 	@Override
 	public final ConeEmitterObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -883,8 +901,9 @@ setAttribute method invocations).
 	 */
 	public ConeEmitterObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

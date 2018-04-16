@@ -74,10 +74,8 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> design for this element matches the &amp;lt;head&amp;gt; tag in HTML. </li> 
  *  <li> <i>Hint:</i>  head is first child of X3D element, and precedes the Scene element. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Header" target="blank">X3D Abstract Specification: head</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#head" target="_blank">X3D Tooltips: head</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -251,6 +249,7 @@ public class headObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public headObject setComponentList(ArrayList<componentObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		componentList = newValue;
 		for (componentObject arrayElement : componentList)
 		{
@@ -345,6 +344,7 @@ setAttribute method invocations).
 	 */
 	public headObject setMetaList(ArrayList<metaObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		metaList = newValue;
 		for (metaObject arrayElement : metaList)
 		{
@@ -439,6 +439,7 @@ setAttribute method invocations).
 	 */
 	public headObject setUnitList(ArrayList<unitObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		unitList = newValue;
 		for (unitObject arrayElement : unitList)
 		{

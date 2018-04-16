@@ -49,15 +49,14 @@ import java.io.File;
  * <i>X3D node tooltip</i>: Extrusion is a geometry node that sequentially stretches a 2D cross section along a 3D-spine path in the local coordinate system, creating an outer hull. Scaling and rotating the crossSection 2D outline at each control point can modify the outer hull of the Extrusion to produce a wide variety of interesting shapes.
  * <ul>
  *  <li> <i>Warning:</i> take care to avoid defining parameter combinations that create self-intersecting, impossible or inverted geometry. </li> 
+ *  <li> <i>Hint:</i> Extrusion <br> <a href="https://en.wikipedia.org/wiki/Extrusion" target="_blank">https://en.wikipedia.org/wiki/Extrusion</a> </li> 
  *  <li> <i>Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html#Extrusion" target="blank">X3D Abstract Specification: Extrusion</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Extrusion" target="_blank">X3D Tooltips: Extrusion</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -409,6 +408,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setBeginCap(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		beginCap = newValue;
 		return this;
 	}
@@ -420,8 +420,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setBeginCap(SFBoolObject newValue)
 	{
-		setBeginCap(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBeginCap(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>ccw</i>.
@@ -448,6 +449,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setCcw(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		ccw = newValue;
 		return this;
 	}
@@ -459,8 +461,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setCcw(SFBoolObject newValue)
 	{
-		setCcw(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCcw(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>convex</i>.
@@ -487,6 +490,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setConvex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		convex = newValue;
 		return this;
 	}
@@ -498,8 +502,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setConvex(SFBoolObject newValue)
 	{
-		setConvex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setConvex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value unit axis, angle (in radians) within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>creaseAngle</i>.
@@ -526,6 +531,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setCreaseAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Extrusion creaseAngle newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -541,8 +547,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setCreaseAngle(SFFloatObject newValue)
 	{
-		setCreaseAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCreaseAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from initializeOnly MFVec2f field named <i>crossSection</i>.
@@ -572,6 +579,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setCrossSection(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -590,8 +598,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setCrossSection(MFVec2fObject newValue)
 	{
-		setCrossSection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCrossSection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>endCap</i>.
@@ -618,6 +627,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setEndCap(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		endCap = newValue;
 		return this;
 	}
@@ -629,8 +639,9 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public ExtrusionObject setEndCap(SFBoolObject newValue)
 	{
-		setEndCap(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEndCap(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -654,6 +665,7 @@ public class ExtrusionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public ExtrusionObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -749,6 +761,7 @@ setAttribute method invocations).
 	@Override
 	public ExtrusionObject setOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -767,8 +780,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setOrientation(MFRotationObject newValue)
 	{
-		setOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from inputOutput MFVec2f field named <i>scale</i>.
@@ -797,6 +811,7 @@ setAttribute method invocations).
 	@Override
 	public ExtrusionObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -815,8 +830,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setScale(MFVec2fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -844,6 +860,7 @@ setAttribute method invocations).
 	@Override
 	public ExtrusionObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -855,8 +872,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly MFVec3f field named <i>spine</i>.
@@ -885,6 +903,7 @@ setAttribute method invocations).
 	@Override
 	public ExtrusionObject setSpine(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -903,8 +922,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setSpine(MFVec3fObject newValue)
 	{
-		setSpine(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpine(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -919,6 +939,7 @@ setAttribute method invocations).
 	@Override
 	public final ExtrusionObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Extrusion
@@ -946,8 +967,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -965,6 +987,7 @@ setAttribute method invocations).
 	@Override
 	public final ExtrusionObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Extrusion
@@ -992,8 +1015,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1006,6 +1030,7 @@ setAttribute method invocations).
 	@Override
 	public final ExtrusionObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1020,8 +1045,9 @@ setAttribute method invocations).
 	 */
 	public ExtrusionObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -1768,7 +1794,7 @@ setAttribute method invocations).
         {
             boolean isClosed;
             if (crossSection == null) return false; // safety check
-            int crossSectionTupleLength = crossSection.length / 2;
+            int crossSectionTupleLength = crossSection.length / MFVec2fObject.TUPLE_SIZE;
             isClosed = (crossSectionTupleLength > 1) && 
                        (crossSection[0] == crossSection[(crossSectionTupleLength-1)*2 + 0]) && 
                        (crossSection[1] == crossSection[(crossSectionTupleLength-1)*2 + 1]);
@@ -1783,7 +1809,7 @@ setAttribute method invocations).
         {
             boolean isClosed;
             if (spine == null) return false; // safety check
-            int spineTupleLength = spine.length / 3;
+            int spineTupleLength = spine.length / MFVec3fObject.TUPLE_SIZE;
             isClosed = (spineTupleLength > 1) && 
                        (spine[0] == spine[(spineTupleLength-1)*3 + 0]) && 
                        (spine[1] == spine[(spineTupleLength-1)*3 + 1]) && 

@@ -73,10 +73,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ProtoInstanceAndFieldValueStatement" target="blank">X3D Abstract Specification: ProtoInstance</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoInstance" target="_blank">X3D Tooltips: ProtoInstance</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */
@@ -300,6 +298,7 @@ public class ProtoInstanceObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public ProtoInstanceObject setFieldValueList(ArrayList<fieldValueObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		fieldValueList = newValue;
 		for (fieldValueObject arrayElement : fieldValueList)
 		{
@@ -373,6 +372,7 @@ setAttribute method invocations).
 	@Override
 	public ProtoInstanceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -471,6 +471,7 @@ setAttribute method invocations).
 	@Override
 	public final ProtoInstanceObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
@@ -497,8 +498,9 @@ setAttribute method invocations).
 	 */
 	public ProtoInstanceObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -513,6 +515,7 @@ setAttribute method invocations).
 	@Override
 	public final ProtoInstanceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
@@ -540,8 +543,9 @@ setAttribute method invocations).
 	 */
 	public ProtoInstanceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -559,6 +563,7 @@ setAttribute method invocations).
 	@Override
 	public final ProtoInstanceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
@@ -586,8 +591,9 @@ setAttribute method invocations).
 	 */
 	public ProtoInstanceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -600,6 +606,7 @@ setAttribute method invocations).
 	@Override
 	public final ProtoInstanceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -614,8 +621,9 @@ setAttribute method invocations).
 	 */
 	public ProtoInstanceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -779,15 +787,20 @@ setAttribute method invocations).
 	{
 		// check for corresponding declaration
 		String errorNotice = new String();
-		if ((findAncestorSceneObject() == null) &&
-			!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+		if (findAncestorSceneObject() == null)
 		{
-			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-						   "ProtoInstance name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
-			validationResult.append(errorNotice).append("\n");
-			return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + "_PrototypeNotFound"; // node type not found
+			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+			{
+				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
+							   "ProtoInstance name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+				validationResult.append(errorNotice).append("\n");
+				return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + "_PrototypeNotFound"; // node type not found
+			}
+			else return errorNotice;
 		}
-		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+		X3DConcreteElement matchingDeclaration = null;
+		if (findAncestorSceneObject() != null)
+			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
 		{
 			// added matching methods for getNodeType() in ProtoDeclare, ProtoBody

@@ -47,6 +47,7 @@ import java.util.Arrays;
  * <br><br>
  * <i>X3D node tooltip</i>: PointSet is a node that contains a set of colored 3D points, represented by contained Color|ColorRGBA and Coordinate|CoordinateDouble nodes.
  * <ul>
+ *  <li> <i>Hint:</i> Point (geometry) <br> <a href="https://en.wikipedia.org/wiki/Point_(geometry)" target="_blank">https://en.wikipedia.org/wiki/Point_(geometry)</a> </li> 
  *  <li> <i>Hint:</i> either values in a contained Color node, or else Material emissiveColor in corresponding Appearance node, are used for rendering lines and points. </li> 
  *  <li> <i>Warning:</i> use a different color (or Material emissiveColor) than the Background color, otherwise geometry is invisible. </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
@@ -54,11 +55,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#PointSet" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#PointSet" target="blank">X3D Abstract Specification: PointSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointSet" target="_blank">X3D Tooltips: PointSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

@@ -219,7 +219,7 @@ for Java programmers.
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] 
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
                 </p>
                 <p>
                     <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
@@ -274,7 +274,7 @@ for Java programmers.
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] 
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]
 						<br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
                     </p>
                     <p>
                         <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
@@ -1271,7 +1271,7 @@ System.out.println ("===========================================");
 					<a href="examples/HelloWorldProgramOutput.html">Pretty-print HTML documentation</a>
 					using method
 					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileDocumentationHtml-java.lang.String-">X3DObject.toFileDocumentationHtml(String filename)</a></code>
-					and stylesheets
+					with stylesheets
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_htmlDocumentation">STYLESHEET_htmlDocumentation</a></code>,
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_extrusionCrossSectionSVG">STYLESHEET_extrusionCrossSectionSVG</a></code>
 				</li>
@@ -1279,29 +1279,49 @@ System.out.println ("===========================================");
 					<a href="examples/HelloWorldProgramOutputX3DOM.xhtml">X3DOM page presentation</a>
 					using method
 					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX3DOM-java.lang.String-">X3DObject.toFileX3DOM(String filename)</a></code>
-					and stylesheet
+					with stylesheet
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
 				</li>
 				<li>
 					<a href="examples/HelloWorldProgramOutputX_ITE.html">X_ITE page presentation</a>
 					using method
 					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX_ITE-java.lang.String-java.lang.String-">X3DObject.toFileX_ITE(String sourceSceneName, String filename)</a></code>
-					and stylesheet
+					with stylesheet
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
 					(with parameter settings)
+				</li>
+				<li>
+					<a href="http://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D-Tidy</a>
+				   (<a href="examples/HelloWorldProgramOutputTidy.x3d">example</a>)
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX3dTidy-java.lang.String-">X3DObject.toFileX3dTidy(String filename)</a></code>
+					and
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toStringX3dTidy--">X3DObject.toStringX3dTidy()</a></code>
+					with stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DTIDY">STYLESHEET_X3DTIDY</a></code>
+					(TODO add parameter settings)
+				</li>
+				<li>
+					<a href="examples/HelloWorldProgramOutput.md">Model Meta Information to Markdown</a>
+					using methods
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileModelMetaMarkdown-java.lang.String-">X3DObject.toFileModelMetaMarkdown(String filename)</a></code>
+					and
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toStringModelMetaMarkdown--">X3DObject.toStringModelMetaMarkdown()</a></code>
+					with stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_MODEL_META_TO_MARKDOWN">STYLESHEET_MODEL_META_TO_MARKDOWN</a></code>
 				</li>
 				<li>
 					<a href="examples/HelloWorldProgramOutput.json">JSON encoding</a>
 					using method
 					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJSON-java.lang.String-">X3DObject.toFileJSON(String filename)</a></code>
-					and stylesheet
+					with stylesheet
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_JSON">STYLESHEET_JSON</a></code>
 				</li>
 				<li>
 					<a href="examples/HelloWorldProgramOutput.java">Java language binding</a>
 					using method
 					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJava-java.lang.String-">X3DObject.toFileJava(String filename)</a></code>
-					and stylesheet
+					with stylesheet
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_JAVA">STYLESHEET_JAVA</a></code>
 				</li>
 				<li>
@@ -1571,7 +1591,7 @@ System.out.println ("===========================================");
 </h3>
 
 	<blockquote>
-		Updated 27 January 2017.
+		Updated 14 April 2018.
 	</blockquote>
 
 	<blockquote>

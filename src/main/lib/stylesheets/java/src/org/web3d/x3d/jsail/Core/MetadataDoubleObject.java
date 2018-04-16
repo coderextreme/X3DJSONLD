@@ -60,10 +60,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#MetadataDouble" target="blank">X3D Abstract Specification: MetadataDouble</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataDouble" target="_blank">X3D Tooltips: MetadataDouble</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata</a>
  */
@@ -307,6 +305,7 @@ public class MetadataDoubleObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public MetadataDoubleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -405,6 +404,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataDoubleObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -419,8 +419,9 @@ setAttribute method invocations).
 	 */
 	public MetadataDoubleObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>reference</i>.
@@ -446,6 +447,7 @@ setAttribute method invocations).
 	@Override
 	public MetadataDoubleObject setReference(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -460,8 +462,9 @@ setAttribute method invocations).
 	 */
 	public MetadataDoubleObject setReference(SFStringObject newValue)
 	{
-		setReference(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReference(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Double results from inputOutput MFDouble field named <i>value</i>.
@@ -503,6 +506,7 @@ setAttribute method invocations).
 	@Override
 	public MetadataDoubleObject setValue(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearValue(); // newValueNullSetDEFAULT_VALUE
@@ -529,8 +533,9 @@ setAttribute method invocations).
 			clearValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList MFDouble value field, similar to {@link #setValue(double[])}.
@@ -544,6 +549,7 @@ setAttribute method invocations).
 			clearValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		value = newValue;
 		return this;
 	}
@@ -569,6 +575,7 @@ setAttribute method invocations).
 			clearValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		double[] holdArray = new double[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -591,6 +598,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataDoubleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MetadataDouble
@@ -618,8 +626,9 @@ setAttribute method invocations).
 	 */
 	public MetadataDoubleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -638,6 +647,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataDoubleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MetadataDouble
@@ -665,8 +675,9 @@ setAttribute method invocations).
 	 */
 	public MetadataDoubleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -678,6 +689,7 @@ setAttribute method invocations).
 	@Override
 	public final MetadataDoubleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -692,8 +704,9 @@ setAttribute method invocations).
 	 */
 	public MetadataDoubleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

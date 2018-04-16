@@ -45,17 +45,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: Sphere is a geometry node.
+ * <i>X3D node tooltip</i>: Sphere is a geometry node, representing a perfectly round geometrical object that is the surface of a completely round ball.
  * <ul>
- *  <li> <i> Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
+ *  <li> <i>Hint:</i> Sphere <br> <a href="https://en.wikipedia.org/wiki/Sphere" target="_blank">https://en.wikipedia.org/wiki/Sphere</a> </li> 
+ *  <li> <i>Hint:</i>  insert a Shape node before adding geometry or Appearance. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html#Sphere" target="blank">X3D Abstract Specification: Sphere</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sphere" target="_blank">X3D Tooltips: Sphere</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -272,6 +271,7 @@ public class SphereObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public SphereObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -366,6 +366,7 @@ setAttribute method invocations).
 	@Override
 	public SphereObject setRadius(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Sphere radius newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -381,8 +382,9 @@ setAttribute method invocations).
 	 */
 	public SphereObject setRadius(SFFloatObject newValue)
 	{
-		setRadius(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRadius(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -411,6 +413,7 @@ setAttribute method invocations).
 	@Override
 	public SphereObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -422,8 +425,9 @@ setAttribute method invocations).
 	 */
 	public SphereObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -438,6 +442,7 @@ setAttribute method invocations).
 	@Override
 	public final SphereObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Sphere
@@ -465,8 +470,9 @@ setAttribute method invocations).
 	 */
 	public SphereObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -484,6 +490,7 @@ setAttribute method invocations).
 	@Override
 	public final SphereObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Sphere
@@ -511,8 +518,9 @@ setAttribute method invocations).
 	 */
 	public SphereObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -525,6 +533,7 @@ setAttribute method invocations).
 	@Override
 	public final SphereObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -539,8 +548,9 @@ setAttribute method invocations).
 	 */
 	public SphereObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

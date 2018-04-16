@@ -71,10 +71,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#SingleAxisHingeJoint" target="blank">X3D Abstract Specification: SingleAxisHingeJoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SingleAxisHingeJoint" target="_blank">X3D Tooltips: SingleAxisHingeJoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -478,6 +476,7 @@ public class SingleAxisHingeJointObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public SingleAxisHingeJointObject setAnchorPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -496,8 +495,9 @@ public class SingleAxisHingeJointObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public SingleAxisHingeJointObject setAnchorPoint(SFVec3fObject newValue)
 	{
-		setAnchorPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAnchorPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -555,6 +555,7 @@ public class SingleAxisHingeJointObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public SingleAxisHingeJointObject setAxis(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -573,8 +574,9 @@ public class SingleAxisHingeJointObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public SingleAxisHingeJointObject setAxis(SFVec3fObject newValue)
 	{
-		setAxis(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -611,6 +613,7 @@ public class SingleAxisHingeJointObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public SingleAxisHingeJointObject setBody1(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body1 = newValue;
 		if (newValue != null)
 		{
@@ -706,6 +709,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setBody2(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body2 = newValue;
 		if (newValue != null)
 		{
@@ -822,6 +826,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setForceOutput(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
@@ -848,8 +853,9 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setForceOutput(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForceOutput(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString forceOutput field, similar to {@link #setForceOutput(String[])}.
@@ -864,6 +870,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -880,6 +887,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -895,6 +903,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		forceOutput = newValue;
 		return this;
 	}
@@ -931,6 +940,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setMaxAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		maxAngle = newValue;
 		return this;
 	}
@@ -942,8 +952,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setMaxAngle(SFFloatObject newValue)
 	{
-		setMaxAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -967,6 +978,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1059,6 +1071,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setMinAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		minAngle = newValue;
 		return this;
 	}
@@ -1070,8 +1083,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setMinAngle(SFFloatObject newValue)
 	{
-		setMinAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stopBounce</i>.
@@ -1098,6 +1112,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setStopBounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stopBounce = newValue;
 		return this;
 	}
@@ -1109,8 +1124,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setStopBounce(SFFloatObject newValue)
 	{
-		setStopBounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStopBounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stopErrorCorrection</i>.
@@ -1137,6 +1153,7 @@ setAttribute method invocations).
 	@Override
 	public SingleAxisHingeJointObject setStopErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stopErrorCorrection = newValue;
 		return this;
 	}
@@ -1148,8 +1165,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setStopErrorCorrection(SFFloatObject newValue)
 	{
-		setStopErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStopErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1164,6 +1182,7 @@ setAttribute method invocations).
 	@Override
 	public final SingleAxisHingeJointObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SingleAxisHingeJoint
@@ -1191,8 +1210,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1210,6 +1230,7 @@ setAttribute method invocations).
 	@Override
 	public final SingleAxisHingeJointObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SingleAxisHingeJoint
@@ -1237,8 +1258,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1251,6 +1273,7 @@ setAttribute method invocations).
 	@Override
 	public final SingleAxisHingeJointObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1265,8 +1288,9 @@ setAttribute method invocations).
 	 */
 	public SingleAxisHingeJointObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>:  Coordinate builds geometry by defining a set of 3D coordinate triplet values.
+ * <i>X3D node tooltip</i>:  Coordinate builds geometry by defining a set of 3D coordinate (triplet) point values.
 Coordinate is used by IndexedFaceSet, IndexedLineSet, LineSet, PointSet, Triangle* and IndexedTriangle* nodes.
 Coordinate is also used by HAnimHumanoid, HAnimSegment, and various Nurbs nodes.  * <br>
  * <br>
@@ -53,10 +53,8 @@ Coordinate is also used by HAnimHumanoid, HAnimSegment, and various Nurbs nodes.
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#Coordinate" target="blank">X3D Abstract Specification: Coordinate</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Coordinate" target="_blank">X3D Tooltips: Coordinate</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -264,6 +262,7 @@ public class CoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public CoordinateObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -336,7 +335,7 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from inputOutput MFVec3f field named <i>point</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  point contains a set of 3D coordinate triplet values.  * <br>
+	 * <i>Tooltip:</i>  point contains a set of 3D coordinate (triplet) point values.  * <br>
 
 	 * @return value of point field
 	 */
@@ -349,13 +348,14 @@ setAttribute method invocations).
 	/**
 	 * Assign 3-tuple float array to inputOutput MFVec3f field named <i>point</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> point contains a set of 3D coordinate triplet values.
+	 * <i>Tooltip:</i> point contains a set of 3D coordinate (triplet) point values.
 	 * @param newValue is new value for the point field.
 	 * @return {@link CoordinateObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public CoordinateObject setPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -374,8 +374,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateObject setPoint(MFVec3fObject newValue)
 	{
-		setPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -390,6 +391,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Coordinate
@@ -417,8 +419,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -436,6 +439,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Coordinate
@@ -463,8 +467,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -477,6 +482,7 @@ setAttribute method invocations).
 	@Override
 	public final CoordinateObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -491,8 +497,9 @@ setAttribute method invocations).
 	 */
 	public CoordinateObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

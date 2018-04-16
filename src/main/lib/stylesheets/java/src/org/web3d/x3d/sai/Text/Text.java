@@ -46,6 +46,7 @@ import org.web3d.x3d.sai.Core.*;
  * <br><br>
  * <i>X3D node tooltip</i>: Text is a 2D (flat) geometry node that can contain multiple lines of string values. Layout and styling is controlled by a contained FontStyle node.
  * <ul>
+ *  <li> <i>Hint:</i> String (computer science) <br> <a href="https://en.wikipedia.org/wiki/String_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/String_(computer_science)</a> </li> 
  *  <li> <i>Hint:</i> full internationalization (i18n) and localization (l10n) features are available for any written language. </li> 
  *  <li> <i>Hint:</i> relates to Internationalization (i18n) <br> <a href="http://www.w3.org/standards/webdesign/i18n" target="_blank">http://www.w3.org/standards/webdesign/i18n</a> </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
@@ -53,11 +54,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Text" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Text" target="blank">X3D Abstract Specification: Text</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Text" target="_blank">X3D Tooltips: Text</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -99,8 +98,10 @@ public interface Text extends X3DGeometryNode
 	/**
 	 * Provide array of 2-tuple float results from outputOnly MFVec2f field named <i>lineBounds</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Array of 2D bounding box values for each line of text in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Array of 2D bounding box values for each line of text in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of lineBounds field
 	 */
 	public float[] getLineBounds();
@@ -142,8 +143,10 @@ public interface Text extends X3DGeometryNode
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>origin</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded. The value of the origin field represents the upper left corner of the textBounds.  * <br>
-
+	 * <i>Tooltip:</i> origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded. The value of the origin field represents the upper left corner of the textBounds.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of origin field
 	 */
 	public float[] getOrigin();
@@ -195,8 +198,10 @@ public interface Text extends X3DGeometryNode
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>textBounds</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  2D bounding box value for all lines of text in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> 2D bounding box value for all lines of text in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of textBounds field
 	 */
 	public float[] getTextBounds();

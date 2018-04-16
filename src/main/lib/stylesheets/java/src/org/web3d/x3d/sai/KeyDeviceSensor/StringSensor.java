@@ -40,16 +40,14 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>:  StringSensor generates events as the user presses keys on the keyboard.  * <br>
+ * <i>X3D node tooltip</i>:  StringSensor generates events as the user presses keys on the keyboard. Browser support includes the notion of "keyboard focus".  * <br>
  * <br>
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#StringSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/keyboard.html#StringSensor" target="blank">X3D Abstract Specification: StringSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#StringSensor" target="_blank">X3D Tooltips: StringSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -100,8 +98,10 @@ public interface StringSensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide String value from outputOnly SFString field named <i>enteredText</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated as character-producing keys are pressed on keyboard.  * <br>
-
+	 * <i>Tooltip:</i> Events generated as character-producing keys are pressed on keyboard.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enteredText field
 	 */
 	public String getEnteredText();
@@ -110,7 +110,8 @@ public interface StringSensor extends X3DKeyDeviceSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Events generated when sequence of keystrokes matches keys in terminationText string when this condition occurs, enteredText is moved to finalText and enteredText is set to empty string.
  * <ul>
- *  <li> <i> Hint:</i>  termination key is typically defined by local system. </li> 
+ *  <li> <i>Hint:</i> termination key is typically defined by local system. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of finalText field
 	 */
@@ -118,8 +119,10 @@ public interface StringSensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override

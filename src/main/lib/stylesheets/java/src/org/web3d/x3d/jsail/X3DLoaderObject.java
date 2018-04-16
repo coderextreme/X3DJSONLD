@@ -89,6 +89,7 @@ import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.sai.Shaders.*;
 import org.web3d.x3d.sai.Core.*;
+import org.web3d.x3d.sai.CubeMapTexturing.*;
 import org.web3d.x3d.sai.Grouping.*;
 import org.web3d.x3d.sai.Rendering.*;
 import org.web3d.x3d.sai.Shape.*;
@@ -105,17 +106,15 @@ import org.web3d.x3d.sai.X3DException;
 
 
 /**
- * Concrete class for loading an X3D graphics string, file or fragment encoded in XML, using the Document Object Model (DOM).
+ * Concrete class for loading an X3D graphics string, file or fragment, encoded in XML, using the Document Object Model (DOM).
  * 
  * <br><br>
+
  * 
 	@see <a href="https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html">Java Tutorials: Document Object Model (DOM)</a>
 	
 	@see <a href="https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html">Java Tutorials: Reading XML Data into a DOM</a>
-
  * 
-
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
@@ -413,8 +412,8 @@ public class X3DLoaderObject
 	{
 		String indent = "  "; // TODO omit when refactored
 		boolean   nodeChildFound = false;
-		Class              elementClass;	
-		X3DConcreteElement elementObject = null;
+		Class<X3DConcreteElement> elementClass; // TODO <X3DConcreteElement> ?
+		X3DConcreteElement       elementObject = null;
 		String errorNotice;
 
 		switch (node.getNodeType())
@@ -458,8 +457,8 @@ public class X3DLoaderObject
 				
 				try // to create X3DObject and related X3DConcreteElement node/statement objects
 				{
-					elementClass  = Class.forName(packageName); // must be fully qualified packageName
-					elementObject = (X3DConcreteElement) elementClass.newInstance();
+					elementClass  = (Class<X3DConcreteElement>)Class.forName(packageName); // must be fully qualified packageName
+					elementObject = elementClass.newInstance();
 					
 					if ((elementObject instanceof org.web3d.x3d.jsail.Core.X3DObject) // remember root node of X3D model if found
 						|| ((loadedX3dObjectTree == null) && (elementObject instanceof org.web3d.x3d.jsail.X3DConcreteNode))) // found fragment
@@ -656,9 +655,9 @@ public class X3DLoaderObject
 							else if (childElementName.equals("Scene"))
 									((X3DObject)elementObject).setScene ((SceneObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.startsWith("Metadata"))
-									((SceneObject)elementObject).addChild ((X3DMetadataObject) childX3dElement);
+									((SceneObject)elementObject).addMetadata ((X3DMetadataObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
-									((SceneObject)elementObject).addChild ((LayerSetObject) childX3dElement);
+									((SceneObject)elementObject).addLayerSet ((LayerSetObject) childX3dElement);
 							else if (nodeName.equals("Scene"))
 									((SceneObject)elementObject).addChild ((X3DChildNode) childX3dElement);
 							// CommentsBlock handled by case org.w3c.dom.Node.COMMENT_NODE
@@ -719,6 +718,41 @@ public class X3DLoaderObject
 							else if (nodeName.equals("Sound") && (childElementName.equals("AudioClip") || childElementName.equals("MovieTexture")))
 									((SoundObject)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
 
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("front"))
+									((ComposedCubeMapTextureObject)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("front"))
+									((ComposedCubeMapTextureObject)elementObject).setFront ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("back"))
+									((ComposedCubeMapTextureObject)elementObject).setBack ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("back"))
+									((ComposedCubeMapTextureObject)elementObject).setBack ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("left"))
+									((ComposedCubeMapTextureObject)elementObject).setLeft ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("left"))
+									((ComposedCubeMapTextureObject)elementObject).setLeft ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("right"))
+									((ComposedCubeMapTextureObject)elementObject).setRight ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("right"))
+									((ComposedCubeMapTextureObject)elementObject).setRight ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("top"))
+									((ComposedCubeMapTextureObject)elementObject).setTop ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("top"))
+									((ComposedCubeMapTextureObject)elementObject).setTop ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("bottom"))
+									((ComposedCubeMapTextureObject)elementObject).setBottom ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("bottom"))
+									((ComposedCubeMapTextureObject)elementObject).setBottom ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture"))
+							{
+										errorNotice = "[X3DLoaderObject error] parent " + nodeName + " has child " + childElementName + " with invalid containerField='" + containerField + "' (must have value of front, back, left, right, top or bottom)";
+										validationResult.append(errorNotice).append("\n");
+							}
+							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture"))
+							{
+										errorNotice = "[X3DLoaderObject error] parent " + nodeName + " has child ProtoInstance with invalid containerField='" + containerField + "' (must have value of front, back, left, right, top or bottom)";
+										validationResult.append(errorNotice).append("\n");
+							}
+					
 							else if (childElementName.endsWith("Texture"))
 									((AppearanceObject)elementObject).setTexture ((X3DTextureNode) childX3dElement);
 							else if (protoInstanceNodeType.equals("Texture"))
@@ -729,6 +763,25 @@ public class X3DLoaderObject
 							else if (protoInstanceNodeType.equals("TextureTransform"))
 									((AppearanceObject)elementObject).setTextureTransform ((ProtoInstanceObject) childX3dElement);
 
+							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart"))
+									((ComposedShaderObject)elementObject).addParts ((ShaderPartObject) childX3dElement);
+							// TODO ComposedShaderObject design missing utility method to add ProtoInstance to typed array
+							else if (nodeName.equals("ComposedShader") && protoInstanceNodeType.equals("ShaderPart")) // TODO is this correct type?
+							{
+//									((ComposedShaderObject)elementObject).addParts ((ProtoInstanceObject) childX3dElement);
+									errorNotice = "[X3DLoaderObject error] parent " + nodeName + " design shortfall, has no addParts(ProtoInstance) utility method";
+									validationResult.append(errorNotice).append("\n");
+							}
+							else if (nodeName.equals("ProgramShader") && childElementName.equals("ShaderProgram"))
+									((ProgramShaderObject)elementObject).addPrograms ((ShaderProgramObject) childX3dElement);
+							// TODO ProgramShaderObject design missing utility method to add ProtoInstance to typed array
+							else if (nodeName.equals("ProgramShader") && protoInstanceNodeType.equals("ShaderProgram")) // TODO is this correct type?
+							{
+//									((ProgramShaderObject)elementObject).addPrograms ((ProtoInstanceObject) childX3dElement);
+									errorNotice = "[X3DLoaderObject error] parent " + nodeName + " design shortfall, has no addParts(ProtoInstance) utility method";
+									validationResult.append(errorNotice).append("\n");
+							}
+					
 							else if (childElementName.contains("Shader"))
 									((AppearanceObject)elementObject).addShaders ((X3DShaderNode) childX3dElement);
 				// TODO		else if (protoInstanceNodeType.equals("Shader"))
@@ -846,12 +899,12 @@ public class X3DLoaderObject
 				org.w3c.dom.NamedNodeMap attributes = node.getAttributes();
 				for (int i = 0; i < attributes.getLength(); i++)
 				{
-					String				fieldObjectTypePrefix;
-					String				fieldObjectName;
-					Class				fieldObjectClass;
-					X3DConcreteField	fieldObject;
-					Method			 	fieldSetMethod;
-					String			 	fieldSetMethodName = "setValueByString";
+					String				    fieldObjectTypePrefix;
+					String				    fieldObjectName;
+					Class<X3DConcreteField> fieldObjectClass; // TODO <X3DConcreteField> ?
+					X3DConcreteField	    fieldObject;
+					Method			 	    fieldSetMethod;
+					String			 	    fieldSetMethodName = "setValueByString";
 
 					org.w3c.dom.Node currentAttributeNode = attributes.item(i);
 					String attributeName  = currentAttributeNode.getNodeName();
@@ -910,7 +963,7 @@ public class X3DLoaderObject
 						if   (attributeType.equals(SFStringObject.NAME))
 						{
 							// SFString attribute values are easy: set value directly on parent object
-							elementSetMethod  = elementClass.getMethod(elementSetMethodName, new Class[] { String.class });
+							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<String>[])new Class[] { String.class }));
 							elementSetMethod.invoke (elementObject, new Object[] { attributeValue });
 						}
 						else if (attributeType.equals(SFNodeObject.NAME) || attributeType.equals(MFNodeObject.NAME))
@@ -926,14 +979,14 @@ public class X3DLoaderObject
 						{
 							fieldObjectTypePrefix = "org.web3d.x3d.jsail.fields.";
 							fieldObjectName       = fieldObjectTypePrefix + attributeType + "Object";
-							fieldObjectClass      = Class.forName(fieldObjectName);
+							fieldObjectClass      = (Class<X3DConcreteField>)Class.forName(fieldObjectName);
 							// Class.newInstance() creates constructor using no parameters
-							fieldObject           = (X3DConcreteField) fieldObjectClass.newInstance(); // default value
+							fieldObject           = fieldObjectClass.newInstance(); // default value
 							fieldObject.initialize(); // make sure reset
 							
 							// Invoke protected fieldObject.setValueByString() to match
 							// fieldObjectClass.getDeclaredMethods(); // debug use; must be Declared for protected visibility
-							fieldSetMethod = fieldObjectClass.getDeclaredMethod(fieldSetMethodName, new Class[] { String.class });
+							fieldSetMethod = fieldObjectClass.getDeclaredMethod(fieldSetMethodName, ((Class<String>[])new Class[] { String.class }));
 							
 							// https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/AccessibleObject.html
 							if (!!Modifier.isPublic(fieldSetMethod.getModifiers()))
@@ -949,7 +1002,7 @@ public class X3DLoaderObject
 							// set value on org.web3d.x3d.jsail.fields.* fieldObject to reinitialize it
 							fieldSetMethod.invoke (fieldObject, new Object[] { attributeValue });
 							
-							elementSetMethod  = elementClass.getMethod(elementSetMethodName, new Class[] { fieldObjectClass });
+							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<fieldObject>[])new Class[] { fieldObjectClass }));
 							elementSetMethod.invoke (elementObject, new Object[] { fieldObject });
 							// element now has correct attribute value set  8)
 						}

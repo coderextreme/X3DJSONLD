@@ -79,10 +79,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/CADGeometry.html#CADPart" target="blank">X3D Abstract Specification: CADPart</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADPart" target="_blank">X3D Tooltips: CADPart</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -443,6 +441,7 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADPartObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -461,8 +460,9 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	 */
 	public CADPartObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -505,6 +505,7 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADPartObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -527,8 +528,9 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	 */
 	public CADPartObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -570,6 +572,7 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADPartObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -588,8 +591,9 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	 */
 	public CADPartObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -643,6 +647,7 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public CADPartObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -673,6 +678,7 @@ public class CADPartObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (CADFace element : newValue)
 		{
@@ -800,6 +806,7 @@ setAttribute method invocations).
 	@Override
 	public CADPartObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -897,6 +904,7 @@ setAttribute method invocations).
 	@Override
 	public final CADPartObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -911,8 +919,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
@@ -939,6 +948,7 @@ setAttribute method invocations).
 	@Override
 	public CADPartObject setRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -957,8 +967,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setRotation(SFRotationObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1001,6 +1012,7 @@ setAttribute method invocations).
 	@Override
 	public CADPartObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1019,8 +1031,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setScale(SFVec3fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1062,6 +1075,7 @@ setAttribute method invocations).
 	@Override
 	public CADPartObject setScaleOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1080,8 +1094,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setScaleOrientation(SFRotationObject newValue)
 	{
-		setScaleOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScaleOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1124,6 +1139,7 @@ setAttribute method invocations).
 	@Override
 	public CADPartObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1142,8 +1158,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setTranslation(SFVec3fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1173,6 +1190,7 @@ setAttribute method invocations).
 	@Override
 	public final CADPartObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CADPart
@@ -1200,8 +1218,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1219,6 +1238,7 @@ setAttribute method invocations).
 	@Override
 	public final CADPartObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CADPart
@@ -1246,8 +1266,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1260,6 +1281,7 @@ setAttribute method invocations).
 	@Override
 	public final CADPartObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1274,8 +1296,9 @@ setAttribute method invocations).
 	 */
 	public CADPartObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

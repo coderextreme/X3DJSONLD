@@ -70,19 +70,12 @@ import org.web3d.x3d.jsail.Texturing3D.*;
 import java.util.Arrays;
 
 /**
- * <i>X3D node tooltip</i>: (X3D version 3.3 or later) IsoSurfaceVolumeData displays one or more surfaces extracted from a voxel dataset. A surface is defined as the boundary between regions in the volume where the voxel values are larger than a given value (the iso value) on one side of the boundary and smaller on the other side, and the gradient magnitude is larger than surfaceTolerance.
- * <ul>
- *  <li> <i>Hint:</i> IsoSurfaceVolumeData can contain a single Texture3D node with containerField='gradients' that is used to provide explicit per-voxel gradient direction information for determining surface boundaries, rather than having values implicitly calculated by the implementation. </li> 
- *  <li> <i>Hint:</i> IsoSurfaceVolumeData can contain another Texture3D node with containerField='voxels' containing voxel data. </li> 
- *  <li> <i>Hint:</i>  IsoSurfaceVolumeData can contain multiple VolumeStyle nodes. </li> 
- * </ul>
+
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#IsoSurfaceVolumeData" target="blank">X3D Abstract Specification: IsoSurfaceVolumeData</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IsoSurfaceVolumeData" target="_blank">X3D Tooltips: IsoSurfaceVolumeData</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -395,11 +388,6 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly SFVec3f field named <i>bboxCenter</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.
- * <ul>
- *  <li> <i> Hint:</i>  precomputation and inclusion of bounding box information can speed up the initialization of large detailed models, with a corresponding cost of increased file size. </li> 
- * </ul>
 	 * @return value of bboxCenter field
 	 */
 	@Override
@@ -410,14 +398,13 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/**
 	 * Assign 3-tuple float array to initializeOnly SFVec3f field named <i>bboxCenter</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system. Hint: precomputation and inclusion of bounding box information can speed up the initialization of large detailed models, with a corresponding cost of increased file size.
 	 * @param newValue is new value for the bboxCenter field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -436,8 +423,9 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public IsoSurfaceVolumeDataObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -456,12 +444,6 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	}
 	/**
 	 * Provide array of 3-tuple float results within allowed range of [0,infinity), or default value [-1 -1 -1], from initializeOnly SFVec3f field named <i>bboxSize</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost. Bounding box size can also be defined as an optional authoring hint that suggests an optimization or constraint.
- * <ul>
- *  <li> <i>Hint:</i> can be useful for collision computations or inverse-kinematics (IK) engines. </li> 
- *  <li> <i>Hint:</i>  precomputation and inclusion of bounding box information can speed up the initialization of large detailed models, with a corresponding cost of increased file size. </li> 
- * </ul>
 	 * @return value of bboxSize field
 	 */
 	@Override
@@ -472,14 +454,13 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/**
 	 * Assign 3-tuple float array within allowed range of [0,infinity), or default value [-1 -1 -1], to initializeOnly SFVec3f field named <i>bboxSize</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost. Bounding box size can also be defined as an optional authoring hint that suggests an optimization or constraint. Hint: can be useful for collision computations or inverse-kinematics (IK) engines. Hint: precomputation and inclusion of bounding box information can speed up the initialization of large detailed models, with a corresponding cost of increased file size.
 	 * @param newValue is new value for the bboxSize field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -502,8 +483,9 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public IsoSurfaceVolumeDataObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -522,11 +504,6 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>contourStepSize</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> If contourStepSize is non-zero, also render all isosurfaces that are multiples of that step size from initial surface value.
- * <ul>
- *  <li> <i> Hint:</i>  contourStepSize can be negative so that steppping can proceed in a negative direction. </li> 
- * </ul>
 	 * @return value of contourStepSize field
 	 */
 	@Override
@@ -537,14 +514,13 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/**
 	 * Assign float value to inputOutput SFFloat field named <i>contourStepSize</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> If contourStepSize is non-zero, also render all isosurfaces that are multiples of that step size from initial surface value. Hint: contourStepSize can be negative so that steppping can proceed in a negative direction.
 	 * @param newValue is new value for the contourStepSize field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setContourStepSize(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		contourStepSize = newValue;
 		return this;
 	}
@@ -556,14 +532,12 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public IsoSurfaceVolumeDataObject setContourStepSize(SFFloatObject newValue)
 	{
-		setContourStepSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setContourStepSize(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results within allowed range of (0,infinity) from inputOutput SFVec3f field named <i>dimensions</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i>  Actual-size X-Y-Z dimensions of volume data in local coordinate system.  * <br>
-
 	 * @return value of dimensions field
 	 */
 	@Override
@@ -574,14 +548,13 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/**
 	 * Assign 3-tuple float array within allowed range of (0,infinity) to inputOutput SFVec3f field named <i>dimensions</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> Actual-size X-Y-Z dimensions of volume data in local coordinate system.
 	 * @param newValue is new value for the dimensions field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setDimensions(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -604,8 +577,9 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	 */
 	public IsoSurfaceVolumeDataObject setDimensions(SFVec3fObject newValue)
 	{
-		setDimensions(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDimensions(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -642,6 +616,7 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 	@Override
 	public IsoSurfaceVolumeDataObject setGradients(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		gradients = newValue;
 		if (newValue != null)
 		{
@@ -730,6 +705,7 @@ setAttribute method invocations).
 	@Override
 	public IsoSurfaceVolumeDataObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -836,6 +812,7 @@ setAttribute method invocations).
 	@Override
 	public IsoSurfaceVolumeDataObject setRenderStyle(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRenderStyle(); // newValueNullSetDEFAULT_VALUE
@@ -866,6 +843,7 @@ setAttribute method invocations).
 			clearRenderStyle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		renderStyle = newValue;
 		for (X3DVolumeRenderStyleNode element : newValue)
 		{
@@ -957,11 +935,6 @@ setAttribute method invocations).
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>surfaceTolerance</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) Threshold for gradient magnitude for voxel inolusion in isosurface.
- * <ul>
- *  <li> <i> Hint:</i>  contained Texture3D node with containerField='gradients' can provide explicit per-voxel gradient direction information for determining surface boundaries. </li> 
- * </ul>
 	 * @return value of surfaceTolerance field
 	 */
 	@Override
@@ -972,14 +945,13 @@ setAttribute method invocations).
 
 	/**
 	 * Assign float value within allowed range of [0,infinity) to inputOutput SFFloat field named <i>surfaceTolerance</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) Threshold for gradient magnitude for voxel inolusion in isosurface. Hint: contained Texture3D node with containerField='gradients' can provide explicit per-voxel gradient direction information for determining surface boundaries.
 	 * @param newValue is new value for the surfaceTolerance field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setSurfaceTolerance(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("IsoSurfaceVolumeData surfaceTolerance newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -995,14 +967,12 @@ setAttribute method invocations).
 	 */
 	public IsoSurfaceVolumeDataObject setSurfaceTolerance(SFFloatObject newValue)
 	{
-		setSurfaceTolerance(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSurfaceTolerance(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>surfaceValues</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i>  If surfaceValues has one value defined, render corresponding isosurface plus any isosurfaces based on contourStepSize. If surfaceValues has more than one value defined, ignore contourStepSize and render surfaces corresponding to listed surfaceValues.  * <br>
-
 	 * @return value of surfaceValues field
 	 */
 	@Override
@@ -1027,14 +997,13 @@ setAttribute method invocations).
 
 	/**
 	 * Assign Float array to inputOutput MFFloat field named <i>surfaceValues</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> If surfaceValues has one value defined, render corresponding isosurface plus any isosurfaces based on contourStepSize. If surfaceValues has more than one value defined, ignore contourStepSize and render surfaces corresponding to listed surfaceValues.
 	 * @param newValue is new value for the surfaceValues field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public IsoSurfaceVolumeDataObject setSurfaceValues(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSurfaceValues(); // newValueNullSetDEFAULT_VALUE
@@ -1061,8 +1030,9 @@ setAttribute method invocations).
 			clearSurfaceValues(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSurfaceValues(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSurfaceValues(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat surfaceValues field, similar to {@link #setSurfaceValues(float[])}.
@@ -1076,6 +1046,7 @@ setAttribute method invocations).
 			clearSurfaceValues(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		surfaceValues = newValue;
 		return this;
 	}
@@ -1101,6 +1072,7 @@ setAttribute method invocations).
 			clearSurfaceValues(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1129,6 +1101,7 @@ setAttribute method invocations).
 	@Override
 	public IsoSurfaceVolumeDataObject setVoxels(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		voxels = newValue;
 		if (newValue != null)
 		{
@@ -1199,8 +1172,6 @@ setAttribute method invocations).
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> DEF defines a unique ID name for this node, referenceable by other nodes. Hint: descriptive DEF names improve clarity and help document a model. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>
 	 *  Note that setting the DEF value clears the USE value.
 	 * @param newValue is new value for the DEF field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
@@ -1208,6 +1179,7 @@ setAttribute method invocations).
 	@Override
 	public final IsoSurfaceVolumeDataObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IsoSurfaceVolumeData
@@ -1235,14 +1207,13 @@ setAttribute method invocations).
 	 */
 	public IsoSurfaceVolumeDataObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>USE</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value). Hint: USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. Warning: do NOT include any child nodes, a DEF attribute, or any other attribute values (except for containerField) when defining a USE attribute. Warning: each USE value must match a corresponding DEF value that is defined earlier in the scene.
 	 * <br><br>
 	 * <i>Note:</i> each <code>USE</code> node is still an independent object, with the <code>USE</code> value matching the <code>DEF</code> value in the preceding object. 
 	 * <br><br>
@@ -1254,6 +1225,7 @@ setAttribute method invocations).
 	@Override
 	public final IsoSurfaceVolumeDataObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IsoSurfaceVolumeData
@@ -1281,20 +1253,20 @@ setAttribute method invocations).
 	 */
 	public IsoSurfaceVolumeDataObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>class</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets. Warning: currently the class attribute is only supported in XML encoding of X3D scenes. Hint: W3C Cascading Style Sheets https://www.w3.org/Style/CSS
 	 * @param newValue is new value for the class field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public final IsoSurfaceVolumeDataObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1309,8 +1281,9 @@ setAttribute method invocations).
 	 */
 	public IsoSurfaceVolumeDataObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

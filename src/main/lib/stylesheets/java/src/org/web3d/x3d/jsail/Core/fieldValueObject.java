@@ -61,10 +61,8 @@ import java.util.Arrays;
  *  <li> <i>Warning:</i> fieldValue content type must match the content type defined in the corresponding ProtoDeclare or ExternProtoDeclare field statement. </li> 
  *  <li> <i>Hint:</i>  in addition to defining a simple-type value attribute, a fieldValue statement can alternatively hold initializing SFNode/MFNode values as contained node(s). </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ProtoInstanceAndFieldValueStatement" target="blank">X3D Abstract Specification: fieldValue</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -269,6 +267,7 @@ public class fieldValueObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public fieldValueObject setChildren(ArrayList<X3DNode> newValue)
 	{
+		// set-newValue-validity-checks #0
 		children = newValue;
 		for (X3DNode arrayElement : children)
 		{
@@ -438,6 +437,7 @@ setAttribute method invocations).
 	 */
 	public final fieldValueObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to fieldValue
@@ -464,8 +464,9 @@ setAttribute method invocations).
 	 */
 	public fieldValueObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>value</i>.
@@ -552,6 +553,7 @@ setAttribute method invocations).
 	 */
 	public fieldValueObject setValue(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -675,8 +677,9 @@ setAttribute method invocations).
 	 */
 	public fieldValueObject setValue(SFStringObject newValue)
 	{
-		setValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setValue(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

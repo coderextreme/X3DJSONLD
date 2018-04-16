@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/followers.html#TexCoordChaser2D" target="blank">X3D Abstract Specification: TexCoordChaser2D</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TexCoordChaser2D" target="_blank">X3D Tooltips: TexCoordChaser2D</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -298,8 +296,10 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	/**
 	 * Provide double value in seconds within allowed range of [0,infinity) from initializeOnly SFTime field named <i>duration</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  [0,+infinity) duration is the time interval for filter response in seconds.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds.
+ * <ul>
+ *  <li> <i> Hint:</i>  duration is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of duration field
 	 */
 	@Override
@@ -311,13 +311,18 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	/**
 	 * Assign double value in seconds within allowed range of [0,infinity) to initializeOnly SFTime field named <i>duration</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds.
+	 * <i>Tooltip:</i> [0,+infinity) duration is the time interval for filter response in seconds. Hint: duration is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the duration field.
 	 * @return {@link TexCoordChaser2DObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public TexCoordChaser2DObject setDuration(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("TexCoordChaser2D duration newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		duration = newValue;
 		return this;
 	}
@@ -329,8 +334,9 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TexCoordChaser2DObject setDuration(SFTimeObject newValue)
 	{
-		setDuration(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDuration(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from initializeOnly MFVec2f field named <i>initialDestination</i>.
@@ -355,6 +361,7 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TexCoordChaser2DObject setInitialDestination(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -373,8 +380,9 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TexCoordChaser2DObject setInitialDestination(MFVec2fObject newValue)
 	{
-		setInitialDestination(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInitialDestination(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from initializeOnly MFVec2f field named <i>initialValue</i>.
@@ -399,6 +407,7 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TexCoordChaser2DObject setInitialValue(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -417,14 +426,17 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TexCoordChaser2DObject setInitialValue(MFVec2fObject newValue)
 	{
-		setInitialValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInitialValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when follower-node computation starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when follower-node computation starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -454,6 +466,7 @@ public class TexCoordChaser2DObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TexCoordChaser2DObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -526,8 +539,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 2-tuple float results from outputOnly MFVec2f field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.  * <br>
-
+	 * <i>Tooltip:</i> Computed output value that approaches within tolerance of destination value, as determined by elapsed time, order and tau.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	@Override
@@ -548,6 +563,7 @@ setAttribute method invocations).
 	@Override
 	public final TexCoordChaser2DObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TexCoordChaser2D
@@ -575,8 +591,9 @@ setAttribute method invocations).
 	 */
 	public TexCoordChaser2DObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -594,6 +611,7 @@ setAttribute method invocations).
 	@Override
 	public final TexCoordChaser2DObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TexCoordChaser2D
@@ -621,8 +639,9 @@ setAttribute method invocations).
 	 */
 	public TexCoordChaser2DObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -635,6 +654,7 @@ setAttribute method invocations).
 	@Override
 	public final TexCoordChaser2DObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -649,8 +669,9 @@ setAttribute method invocations).
 	 */
 	public TexCoordChaser2DObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

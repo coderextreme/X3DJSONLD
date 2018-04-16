@@ -76,10 +76,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layering.html#Viewport" target="blank">X3D Abstract Specification: Viewport</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Viewport" target="_blank">X3D Tooltips: Viewport</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -345,6 +343,7 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public ViewportObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -363,8 +362,9 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	 */
 	public ViewportObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -407,6 +407,7 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public ViewportObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -429,8 +430,9 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	 */
 	public ViewportObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -491,6 +493,7 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public ViewportObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -521,6 +524,7 @@ public class ViewportObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -705,6 +709,7 @@ setAttribute method invocations).
 	@Override
 	public ViewportObject setClipBoundary(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearClipBoundary(); // newValueNullSetDEFAULT_VALUE
@@ -731,8 +736,9 @@ setAttribute method invocations).
 			clearClipBoundary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setClipBoundary(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setClipBoundary(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat clipBoundary field, similar to {@link #setClipBoundary(float[])}.
@@ -746,6 +752,7 @@ setAttribute method invocations).
 			clearClipBoundary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		clipBoundary = newValue;
 		return this;
 	}
@@ -771,6 +778,7 @@ setAttribute method invocations).
 			clearClipBoundary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -801,6 +809,7 @@ setAttribute method invocations).
 	@Override
 	public ViewportObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -883,6 +892,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewportObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Viewport
@@ -910,8 +920,9 @@ setAttribute method invocations).
 	 */
 	public ViewportObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -929,6 +940,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewportObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Viewport
@@ -956,8 +968,9 @@ setAttribute method invocations).
 	 */
 	public ViewportObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -970,6 +983,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewportObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -984,8 +998,9 @@ setAttribute method invocations).
 	 */
 	public ViewportObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

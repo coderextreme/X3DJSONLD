@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#SplinePositionInterpolator" target="blank">X3D Abstract Specification: SplinePositionInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SplinePositionInterpolator" target="_blank">X3D Tooltips: SplinePositionInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -351,6 +349,7 @@ public class SplinePositionInterpolatorObject extends org.web3d.x3d.jsail.X3DCon
 	@Override
 	public SplinePositionInterpolatorObject setClosed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		closed = newValue;
 		return this;
 	}
@@ -362,8 +361,9 @@ public class SplinePositionInterpolatorObject extends org.web3d.x3d.jsail.X3DCon
 	 */
 	public SplinePositionInterpolatorObject setClosed(SFBoolObject newValue)
 	{
-		setClosed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setClosed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>key</i>.
@@ -406,6 +406,7 @@ public class SplinePositionInterpolatorObject extends org.web3d.x3d.jsail.X3DCon
 	@Override
 	public SplinePositionInterpolatorObject setKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKey(); // newValueNullSetDEFAULT_VALUE
@@ -432,8 +433,9 @@ public class SplinePositionInterpolatorObject extends org.web3d.x3d.jsail.X3DCon
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat key field, similar to {@link #setKey(float[])}.
@@ -447,6 +449,7 @@ public class SplinePositionInterpolatorObject extends org.web3d.x3d.jsail.X3DCon
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		key = newValue;
 		return this;
 	}
@@ -472,6 +475,7 @@ setAttribute method invocations).
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -505,6 +509,7 @@ setAttribute method invocations).
 	@Override
 	public SplinePositionInterpolatorObject setKeyValue(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -523,8 +528,9 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setKeyValue(MFVec3fObject newValue)
 	{
-		setKeyValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput MFVec3f field named <i>keyVelocity</i>.
@@ -551,6 +557,7 @@ setAttribute method invocations).
 	@Override
 	public SplinePositionInterpolatorObject setKeyVelocity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -569,8 +576,9 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setKeyVelocity(MFVec3fObject newValue)
 	{
-		setKeyVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -594,6 +602,7 @@ setAttribute method invocations).
 	@Override
 	public SplinePositionInterpolatorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -688,6 +697,7 @@ setAttribute method invocations).
 	@Override
 	public SplinePositionInterpolatorObject setNormalizeVelocity(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		normalizeVelocity = newValue;
 		return this;
 	}
@@ -699,14 +709,17 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setNormalizeVelocity(SFBoolObject newValue)
 	{
-		setNormalizeVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalizeVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Nonlinearly interpolated output value computed by using current time fraction along with corresponding key, keyValue and keyVelocity values.  * <br>
-
+	 * <i>Tooltip:</i> Nonlinearly interpolated output value computed by using current time fraction along with corresponding key, keyValue and keyVelocity values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	@Override
@@ -727,6 +740,7 @@ setAttribute method invocations).
 	@Override
 	public final SplinePositionInterpolatorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SplinePositionInterpolator
@@ -754,8 +768,9 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -773,6 +788,7 @@ setAttribute method invocations).
 	@Override
 	public final SplinePositionInterpolatorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SplinePositionInterpolator
@@ -800,8 +816,9 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -814,6 +831,7 @@ setAttribute method invocations).
 	@Override
 	public final SplinePositionInterpolatorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -828,8 +846,9 @@ setAttribute method invocations).
 	 */
 	public SplinePositionInterpolatorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

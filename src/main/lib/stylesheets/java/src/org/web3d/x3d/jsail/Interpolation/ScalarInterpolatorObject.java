@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>: ScalarInterpolator generates piecewise-linear values that can be ROUTEd to other Float attributes.
+ * <i>X3D node tooltip</i>: ScalarInterpolator generates piecewise-linear SFFloat values. Authors can ROUTE value_changed output events to other SFFloat fields.
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction </li> 
  *  <li> <i>Hint:</i>  typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
@@ -53,10 +53,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#ScalarInterpolator" target="blank">X3D Abstract Specification: ScalarInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScalarInterpolator" target="_blank">X3D Tooltips: ScalarInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -320,6 +318,7 @@ public class ScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public ScalarInterpolatorObject setKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKey(); // newValueNullSetDEFAULT_VALUE
@@ -346,8 +345,9 @@ public class ScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat key field, similar to {@link #setKey(float[])}.
@@ -361,6 +361,7 @@ public class ScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		key = newValue;
 		return this;
 	}
@@ -386,6 +387,7 @@ setAttribute method invocations).
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -434,6 +436,7 @@ setAttribute method invocations).
 	@Override
 	public ScalarInterpolatorObject setKeyValue(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
@@ -460,8 +463,9 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKeyValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat keyValue field, similar to {@link #setKeyValue(float[])}.
@@ -475,6 +479,7 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		keyValue = newValue;
 		return this;
 	}
@@ -500,6 +505,7 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -530,6 +536,7 @@ setAttribute method invocations).
 	@Override
 	public ScalarInterpolatorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -604,7 +611,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> Linearly interpolated output value determined by current key time and corresponding keyValue pair.
  * <ul>
- *  <li> <i> Hint:</i>  X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Hint:</i> X3D players might not send unchanging intermediate values, thus avoiding excessive superfluous events that have no effect. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of value_changed field
 	 */
@@ -626,6 +634,7 @@ setAttribute method invocations).
 	@Override
 	public final ScalarInterpolatorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ScalarInterpolator
@@ -653,8 +662,9 @@ setAttribute method invocations).
 	 */
 	public ScalarInterpolatorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -672,6 +682,7 @@ setAttribute method invocations).
 	@Override
 	public final ScalarInterpolatorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ScalarInterpolator
@@ -699,8 +710,9 @@ setAttribute method invocations).
 	 */
 	public ScalarInterpolatorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -713,6 +725,7 @@ setAttribute method invocations).
 	@Override
 	public final ScalarInterpolatorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -727,8 +740,9 @@ setAttribute method invocations).
 	 */
 	public ScalarInterpolatorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

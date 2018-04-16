@@ -41,18 +41,16 @@ import org.web3d.x3d.sai.Texturing.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: GeneratedCubeMapTexture defines a cubic environment map that sources its data from internally generated images. The viewpoint of the generated texture is the location and orientation of the associated geometry in world space.
+ * <i>X3D node tooltip</i>: GeneratedCubeMapTexture (X3D version 3.1 or later) is a texture node that defines a cubic environment map that sources its data from internally generated images. The viewpoint of the generated texture is the location and orientation of the associated geometry in world space.
  * <ul>
  *  <li> <i>Hint:</i> can contain a single TextureProperties node. </li> 
  *  <li> <i>Hint:</i>  typically a Box is used for applying the GeneratedCubeMapTexture. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#GeneratedCubeMapTexture" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture" target="blank">X3D Abstract Specification: GeneratedCubeMapTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeneratedCubeMapTexture" target="_blank">X3D Tooltips: GeneratedCubeMapTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */

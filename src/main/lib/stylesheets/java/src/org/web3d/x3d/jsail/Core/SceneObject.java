@@ -57,10 +57,8 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> Scene nodes within Inlined worlds report identical values as top-most root Scene node. </li> 
  *  <li> <i>Warning:</i>  player support for attribute fields in this node is not defined. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Header" target="blank">X3D Abstract Specification: Scene</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Scene" target="_blank">X3D Tooltips: Scene</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -213,6 +211,7 @@ public class SceneObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public SceneObject setChildren(ArrayList<X3DNode> newValue)
 	{
+		// set-newValue-validity-checks #0
 		children = newValue;
 		for (X3DNode arrayElement : children)
 		{
@@ -660,11 +659,11 @@ setAttribute method invocations).
 
 	/**
 	 * Utility method to add single X3DMetadataNode to contained list of existing Scene root nodes (if any).
-         * <i>WARNING</i>: Scene is a statement that is implicit in several encodings and has no <i>metadata</i> field, so top-level metadata nodes are kept together with other top-level root nodes as Scene children.
+         * <i>WARNING</i>: Scene is a statement that is implicit in several encodings and has no <i>metadata</i> field, so top-level metadata nodes are typically kept together within other top-level root nodes as Scene children.
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	*/
-	public SceneObject addChild(X3DMetadataObject newValue)
+	public SceneObject addMetadata(X3DMetadataObject newValue)
 	{
 		if (newValue == null)
 		{
@@ -680,7 +679,7 @@ setAttribute method invocations).
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	*/
-	public SceneObject addChild(LayerSetObject newValue)
+	public SceneObject addLayerSet(LayerSetObject newValue)
 	{
 		if (newValue == null)
 		{

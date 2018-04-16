@@ -138,5 +138,18 @@ var mapToMethod2 = {
 	},
 	"GeoLOD" : {
 		"GeoOrigin" : "setGeoOrigin"
+	},
+	"Scene" : {
+		"Metadata" : "addMetadata",
+		"MetadataString" : "addMetadata",
+		"LayerSet" : "addLayerSet"
+	},
+	"HAnimHumanoid" : {
+		"HAnimJoint" : "addJoints",
+		"HAnimSegment" : "addSegments"
 	}
 };
+
+if (typeof module === 'object')  {
+	module.exports = mapToMethod2;
+}

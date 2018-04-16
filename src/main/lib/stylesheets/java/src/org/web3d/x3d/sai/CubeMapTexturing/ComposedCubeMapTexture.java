@@ -46,18 +46,16 @@ import org.web3d.x3d.sai.Texturing.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: ComposedCubeMapTexture (X3D version 3.1 or later) defines a cubic environment map source as an explicit set of images drawn from individual 2D texture nodes.
+ * <i>X3D node tooltip</i>: ComposedCubeMapTexture (X3D version 3.1 or later) is a texture node that defines a cubic environment map source as an explicit set of images drawn from individual 2D texture nodes.
  * <ul>
  *  <li> <i>Hint:</i> 0..6 child image nodes are allowed (ImageTexture MovieTexture PixelTexture) with corresponding containerField values: front back left right top bottom. </li> 
- *  <li> <i>Warning:</i>  child ImageTexture or PixelTexture nodes must have unique containerField values for back, bottom, front, left, right, or top. </li> 
+ *  <li> <i>Warning:</i>  each of the child ImageTexture or PixelTexture nodes must have unique containerField values for back, bottom, front, left, right, or top. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ComposedCubeMapTexture" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#ComposedCubeMapTexture" target="blank">X3D Abstract Specification: ComposedCubeMapTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedCubeMapTexture" target="_blank">X3D Tooltips: ComposedCubeMapTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */

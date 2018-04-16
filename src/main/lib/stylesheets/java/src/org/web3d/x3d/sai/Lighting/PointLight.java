@@ -40,17 +40,15 @@ import org.web3d.x3d.sai.Core.*;
  * Linear attenuation may occur at level 2, full support at level 3.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: PointLight is a single light source that illuminates outwards in all directions. Light illuminates all geometry and is normally scoped to illuminate peers and children nodes within the scene graph hierarchy Lights have no visible shape themselves and shine through occluding geometry.
+ * <i>X3D node tooltip</i>: PointLight is a single light source that illuminates outwards in all directions. Lighting illuminates all geometry except lines and points. By default, light scope only illuminates peer geometry and children nodes within the scene graph hierarchy. Lights have no visible shape themselves and lighting effects continue through any intermediate geometry.
  * <ul>
- *  <li> <i> Hint:</i>  HeadLight enabled on/off is controlled by NavigationInfo. </li> 
+ *  <li> <i> Hint:</i>  the bound NavigationInfo controls whether headlight is enabled on/off. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#PointLight" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/lighting.html#PointLight" target="blank">X3D Abstract Specification: PointLight</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointLight" target="_blank">X3D Tooltips: PointLight</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

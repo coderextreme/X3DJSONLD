@@ -76,10 +76,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 import org.web3d.x3d.jsail.Core.*;
 import java.util.Arrays;
+import org.web3d.x3d.jsail.NURBS.CoordinateDoubleObject;
 
 /**
- * <i>X3D node tooltip</i>: IndexedLineSet is a geometry node that can contain a Coordinate|CoordinateDouble node and optionally a Color|ColorRGBA node.
+ * <i>X3D node tooltip</i>: IndexedLineSet defines polyline segments using index lists corresponding to vertex coordinates. IndexedLineSet is a geometry node that can contain a Coordinate|CoordinateDouble node and optionally a Color|ColorRGBA node.
  * <ul>
+ *  <li> <i>Hint:</i> Polygonal chain <br> <a href="https://en.wikipedia.org/wiki/Polygonal_chain" target="_blank">https://en.wikipedia.org/wiki/Polygonal_chain</a> </li> 
  *  <li> <i>Hint:</i> either values in a contained Color node, or else Material emissiveColor in corresponding Appearance node, are used for rendering lines and points. </li> 
  *  <li> <i>Warning:</i> lines are not lit, are not texture-mapped, and do not participate in collision detection. </li> 
  *  <li> <i>Warning:</i> use a different color (or Material emissiveColor) than the Background color, otherwise geometry is invisible. </li> 
@@ -93,10 +95,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#IndexedLineSet" target="blank">X3D Abstract Specification: IndexedLineSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedLineSet" target="_blank">X3D Tooltips: IndexedLineSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -409,6 +409,7 @@ public class IndexedLineSetObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public IndexedLineSetObject setAttrib(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
@@ -439,6 +440,7 @@ public class IndexedLineSetObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		attrib = newValue;
 		for (X3DVertexAttributeNode element : newValue)
 		{
@@ -548,6 +550,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -657,6 +660,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setColorIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
@@ -683,8 +687,9 @@ setAttribute method invocations).
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setColorIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 colorIndex field, similar to {@link #setColorIndex(int[])}.
@@ -698,6 +703,7 @@ setAttribute method invocations).
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		colorIndex = newValue;
 		return this;
 	}
@@ -736,6 +742,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setColorPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		colorPerVertex = newValue;
 		return this;
 	}
@@ -747,8 +754,9 @@ setAttribute method invocations).
 	 */
 	public IndexedLineSetObject setColorPerVertex(SFBoolObject newValue)
 	{
-		setColorPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
@@ -770,6 +778,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -877,6 +886,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setCoordIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
@@ -903,8 +913,9 @@ setAttribute method invocations).
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setCoordIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCoordIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 coordIndex field, similar to {@link #setCoordIndex(int[])}.
@@ -918,6 +929,7 @@ setAttribute method invocations).
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		coordIndex = newValue;
 		return this;
 	}
@@ -951,6 +963,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setFogCoord(FogCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		fogCoord = newValue;
 		if (newValue != null)
 		{
@@ -1039,6 +1052,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedLineSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1121,6 +1135,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedLineSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IndexedLineSet
@@ -1148,8 +1163,9 @@ setAttribute method invocations).
 	 */
 	public IndexedLineSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1167,6 +1183,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedLineSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IndexedLineSet
@@ -1194,8 +1211,9 @@ setAttribute method invocations).
 	 */
 	public IndexedLineSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1208,6 +1226,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedLineSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1222,8 +1241,9 @@ setAttribute method invocations).
 	 */
 	public IndexedLineSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -2021,17 +2041,23 @@ setAttribute method invocations).
 			throw new InvalidFieldValueException(errorNotice); // report error		
 		}
 
-		if (((coord != null) || (coordProtoInstance != null)) && coordIndex.isEmpty())
+		if (hasCoord() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing Coordinate node must also include coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getCoordCount() > 0)
+			{
+				String errorNotice = NAME + " containing Coordinate nodel with " + getCoordCount() + " values must also include coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
 		if (((color != null) || (colorProtoInstance != null)) && colorIndex.isEmpty() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing Color node must also include colorIndex or coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getColorCount() > 0)
+			{
+				String errorNotice = NAME + " containing Color node with " + getColorCount() + " values must also include colorIndex or coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
 		if (getIS() != null)
 		{
@@ -2088,5 +2114,62 @@ setAttribute method invocations).
 			}
 		}
 		return validationResult.toString();
+	}
+
+	/** 
+	 * Utility method to get number of coordinate 3-tuple values in contained Coordinate/CoordinateDouble or ProtoInstance node 
+	 * @see CoordinateObject
+	 * @see CoordinateDoubleObject
+	 * @see ProtoInstanceObject
+	 * @return number of coordinate 3-tuple values
+	 */
+	public int getCoordCount()
+	{
+		if (getCoord() != null)
+		{
+			if      (getCoord() instanceof CoordinateObject)
+				 return (((CoordinateObject      )getCoord()).getPoint().length / SFVec3fObject.TUPLE_SIZE);
+			else if (getCoord() instanceof CoordinateDoubleObject)
+				 return (((CoordinateDoubleObject)getCoord()).getPoint().length / SFVec3dObject.TUPLE_SIZE);
+		}
+		else if ((getCoordProtoInstance() != null) && getCoordProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getCoordProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("point"))
+					     return nextFieldValue.getValueMFVec3f().size();
+				else if (nextFieldValue.getName().equals("point"))
+					     return nextFieldValue.getValueMFVec3d().size();
+			}
+		}
+		return 0; // otherwise
+	}
+	/** 
+	 * Utility method to get number of 3-tuple Color RGB values (or 4-tuple ColorRGBA values) in contained Color/ColorRGBA or ProtoInstance node 
+	 * @see ColorObject
+	 * @see ColorRGBAObject
+	 * @see ProtoInstanceObject
+	 * @return number of color values
+	 */
+	public int getColorCount()
+	{
+		if (getColor() != null)
+		{
+			if      (getColor() instanceof ColorObject)
+			         return (((ColorObject    )getColor()).getColor().length / SFColorObject.TUPLE_SIZE);
+			else if (getColor() instanceof ColorRGBAObject)
+				     return (((ColorRGBAObject)getColor()).getColor().length / SFColorRGBAObject.TUPLE_SIZE);
+		}
+		else if ((getColorProtoInstance() != null) && getColorProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getColorProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("color"))
+					     return nextFieldValue.getValueMFColor().size();
+				else if (nextFieldValue.getName().equals("color"))
+					     return nextFieldValue.getValueMFColorRGBA().size();
+			}
+		}
+		return 0;
 	}
 }

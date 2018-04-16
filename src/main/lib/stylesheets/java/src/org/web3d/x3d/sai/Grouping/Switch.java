@@ -54,11 +54,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Switch" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html#Switch" target="blank">X3D Abstract Specification: Switch</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Switch" target="_blank">X3D Tooltips: Switch</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -171,7 +169,7 @@ public interface Switch extends X3DGroupingNode
 	/**
 	 * Provide int value within allowed range of [-1,infinity) from inputOutput SFInt32 field named <i>whichChoice</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Index of active child choice, counting from 0.
+	 * <i>Tooltip:</i> [-1,+infinity) Index of active child choice, counting from 0.
  * <ul>
  *  <li> <i> Warning:</i>  default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child. </li> 
  * </ul>
@@ -182,7 +180,7 @@ public interface Switch extends X3DGroupingNode
 	/**
 	 * Assign int value within allowed range of [-1,infinity) to inputOutput SFInt32 field named <i>whichChoice</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Index of active child choice, counting from 0. Warning: default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child.
+	 * <i>Tooltip:</i> [-1,+infinity) Index of active child choice, counting from 0. Warning: default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child.
 	 * @param newValue is new value for the whichChoice field.
 	 * @return {@link Switch} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

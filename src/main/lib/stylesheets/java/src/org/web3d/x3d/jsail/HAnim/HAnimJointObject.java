@@ -69,10 +69,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimJoint" target="blank">X3D Abstract Specification: HAnimJoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimJoint" target="_blank">X3D Tooltips: HAnimJoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -823,6 +821,7 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public HAnimJointObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -841,8 +840,9 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public HAnimJointObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -885,6 +885,7 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public HAnimJointObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -907,8 +908,9 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public HAnimJointObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -950,6 +952,7 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public HAnimJointObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -968,8 +971,9 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public HAnimJointObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1025,6 +1029,7 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public HAnimJointObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -1075,6 +1080,7 @@ public class HAnimJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -1348,6 +1354,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setDisplacers(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearDisplacers(); // newValueNullSetDEFAULT_VALUE
@@ -1378,6 +1385,7 @@ setAttribute method invocations).
 			clearDisplacers(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		displacers = newValue;
 		for (HAnimDisplacer element : newValue)
 		{
@@ -1490,6 +1498,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setLimitOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1508,8 +1517,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setLimitOrientation(SFRotationObject newValue)
 	{
-		setLimitOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLimitOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1566,6 +1576,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setLlimit(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearLlimit(); // newValueNullSetDEFAULT_VALUE
@@ -1592,8 +1603,9 @@ setAttribute method invocations).
 			clearLlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setLlimit(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLlimit(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat llimit field, similar to {@link #setLlimit(float[])}.
@@ -1607,6 +1619,7 @@ setAttribute method invocations).
 			clearLlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		llimit = newValue;
 		return this;
 	}
@@ -1632,6 +1645,7 @@ setAttribute method invocations).
 			clearLlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1662,6 +1676,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1766,6 +1781,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimJointObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1894,8 +1910,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
@@ -1922,6 +1939,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1940,8 +1958,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setRotation(SFRotationObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1982,6 +2001,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2004,8 +2024,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setScale(SFVec3fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2045,6 +2066,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setScaleOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2063,8 +2085,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setScaleOrientation(SFRotationObject newValue)
 	{
-		setScaleOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScaleOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2123,6 +2146,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setSkinCoordIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkinCoordIndex(); // newValueNullSetDEFAULT_VALUE
@@ -2149,8 +2173,9 @@ setAttribute method invocations).
 			clearSkinCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSkinCoordIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkinCoordIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 skinCoordIndex field, similar to {@link #setSkinCoordIndex(int[])}.
@@ -2164,6 +2189,7 @@ setAttribute method invocations).
 			clearSkinCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		skinCoordIndex = newValue;
 		return this;
 	}
@@ -2216,6 +2242,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setSkinCoordWeight(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkinCoordWeight(); // newValueNullSetDEFAULT_VALUE
@@ -2242,8 +2269,9 @@ setAttribute method invocations).
 			clearSkinCoordWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSkinCoordWeight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkinCoordWeight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat skinCoordWeight field, similar to {@link #setSkinCoordWeight(float[])}.
@@ -2257,6 +2285,7 @@ setAttribute method invocations).
 			clearSkinCoordWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		skinCoordWeight = newValue;
 		return this;
 	}
@@ -2282,6 +2311,7 @@ setAttribute method invocations).
 			clearSkinCoordWeight(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -2329,6 +2359,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setStiffness(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearStiffness(); // newValueNullSetDEFAULT_VALUE
@@ -2355,8 +2386,9 @@ setAttribute method invocations).
 			clearStiffness(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setStiffness(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStiffness(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat stiffness field, similar to {@link #setStiffness(float[])}.
@@ -2370,6 +2402,7 @@ setAttribute method invocations).
 			clearStiffness(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		stiffness = newValue;
 		return this;
 	}
@@ -2395,6 +2428,7 @@ setAttribute method invocations).
 			clearStiffness(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -2429,6 +2463,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2447,8 +2482,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setTranslation(SFVec3fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2504,6 +2540,7 @@ setAttribute method invocations).
 	@Override
 	public HAnimJointObject setUlimit(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUlimit(); // newValueNullSetDEFAULT_VALUE
@@ -2530,8 +2567,9 @@ setAttribute method invocations).
 			clearUlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUlimit(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUlimit(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat ulimit field, similar to {@link #setUlimit(float[])}.
@@ -2545,6 +2583,7 @@ setAttribute method invocations).
 			clearUlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		ulimit = newValue;
 		return this;
 	}
@@ -2570,6 +2609,7 @@ setAttribute method invocations).
 			clearUlimit(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -2591,6 +2631,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimJointObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimJoint
@@ -2618,8 +2659,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2637,6 +2679,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimJointObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimJoint
@@ -2664,8 +2707,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2678,6 +2722,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimJointObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -2692,8 +2737,9 @@ setAttribute method invocations).
 	 */
 	public HAnimJointObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

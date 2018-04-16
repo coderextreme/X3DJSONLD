@@ -35,15 +35,13 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
- * 
-The exception that is thrown when asking for a Node by name, and the
-name is valid but the underlying node reference is not available from the
-Inline yet.
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+The exception that is thrown when asking for a Node by name, and the
+name is valid but the underlying node reference is not available from the
+Inline yet. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#NodeUnavailableException" target="_blank">SAI Java Specification: B.7.18 NodeUnavailableException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NodeUnavailableException" target="_blank">X3D Tooltips: NodeUnavailableException</a>

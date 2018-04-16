@@ -99,6 +99,7 @@ import java.util.Arrays;
  * <br><br>
  * <i>X3D node tooltip</i>: (X3D version 3.1 or later) QuadSet is a geometry node that defines planar quadrilaterals. QuadSet contains a Coordinate|CoordinateDouble node, and can also contain Color|ColorRGBA, Normal and TextureCoordinate nodes.
  * <ul>
+ *  <li> <i>Hint:</i> Quadrilateral <br> <a href="https://en.wikipedia.org/wiki/Quadrilateral" target="_blank">https://en.wikipedia.org/wiki/Quadrilateral</a> </li> 
  *  <li> <i>Hint:</i> color, normal and texCoord values are applied in the same order as coord values. </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
  *  <li> <i>Hint:</i> for advanced extensibility, authors can substitute a type-matched ProtoInstance node (with correct containerField value) for contained node content. </li> 
@@ -110,10 +111,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/CADGeometry.html#QuadSet" target="blank">X3D Abstract Specification: QuadSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#QuadSet" target="_blank">X3D Tooltips: QuadSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Meshes" target="_blank">X3D Scene Authoring Hints: Meshes</a>
  */
@@ -464,6 +463,7 @@ public class QuadSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public QuadSetObject setAttrib(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
@@ -494,6 +494,7 @@ public class QuadSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		attrib = newValue;
 		for (X3DVertexAttributeNode element : newValue)
 		{
@@ -608,6 +609,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setCcw(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		ccw = newValue;
 		return this;
 	}
@@ -619,8 +621,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setCcw(SFBoolObject newValue)
 	{
-		setCcw(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCcw(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DColorNode instance (using a properly typed node) using RGB values [0..1] from inputOutput SFNode field <i>color</i>.
@@ -642,6 +645,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -735,6 +739,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setColorPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		colorPerVertex = newValue;
 		return this;
 	}
@@ -746,8 +751,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setColorPerVertex(SFBoolObject newValue)
 	{
-		setColorPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
@@ -769,6 +775,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -855,6 +862,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setFogCoord(FogCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		fogCoord = newValue;
 		if (newValue != null)
 		{
@@ -943,6 +951,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1032,6 +1041,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setNormal(X3DNormalNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		normal = newValue;
 		if (newValue != null)
 		{
@@ -1123,6 +1133,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setNormalPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		normalPerVertex = newValue;
 		return this;
 	}
@@ -1134,8 +1145,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setNormalPerVertex(SFBoolObject newValue)
 	{
-		setNormalPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -1163,6 +1175,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -1174,8 +1187,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTextureCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>texCoord</i>.
@@ -1197,6 +1211,7 @@ setAttribute method invocations).
 	@Override
 	public QuadSetObject setTexCoord(X3DTextureCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		texCoord = newValue;
 		if (newValue != null)
 		{
@@ -1276,6 +1291,7 @@ setAttribute method invocations).
 	@Override
 	public final QuadSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to QuadSet
@@ -1303,8 +1319,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1322,6 +1339,7 @@ setAttribute method invocations).
 	@Override
 	public final QuadSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to QuadSet
@@ -1349,8 +1367,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1363,6 +1382,7 @@ setAttribute method invocations).
 	@Override
 	public final QuadSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1377,8 +1397,9 @@ setAttribute method invocations).
 	 */
 	public QuadSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

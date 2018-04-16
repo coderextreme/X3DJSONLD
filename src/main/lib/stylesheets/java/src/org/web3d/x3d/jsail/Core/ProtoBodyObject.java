@@ -60,10 +60,8 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> initial scene node in a ProtoDeclare/ProtoBody statement determines this prototype's node type. </li> 
  *  <li> <i>Warning:</i>  only the first top-level node and its children are rendered, subsequent nodes (such as Scripts and ROUTEs) are active but are not drawn. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax" target="blank">X3D Abstract Specification: ProtoBody</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoBody" target="_blank">X3D Tooltips: ProtoBody</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */
@@ -218,6 +216,7 @@ public class ProtoBodyObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ProtoBodyObject setChildren(ArrayList<X3DNode> newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (primaryNode != null)
 		{
 			primaryNode.setParentObject(null); // housekeeping, clear prior object

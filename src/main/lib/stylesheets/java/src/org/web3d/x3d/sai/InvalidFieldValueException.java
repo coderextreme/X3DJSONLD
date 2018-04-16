@@ -35,15 +35,13 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
- * 
-This exception may be generated when a node verifies the correctness of a setValue operation.
-The exception can occur during the scene-parsing process, or else by the field during
-runtime as the user is trying to modify it.
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+This exception may be generated when a node verifies the correctness of a setValue operation.
+The exception can occur during the scene-parsing process, or else by the field during
+runtime as the user is trying to modify it. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#InvalidFieldValueException" target="_blank">SAI Java Specification: B.7.10 InvalidFieldValueException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#InvalidFieldValueException" target="_blank">X3D Tooltips: InvalidFieldValueException</a>

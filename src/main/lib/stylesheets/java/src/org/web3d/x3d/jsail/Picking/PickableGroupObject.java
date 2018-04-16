@@ -77,10 +77,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#PickableGroup" target="blank">X3D Abstract Specification: PickableGroup</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PickableGroup" target="_blank">X3D Tooltips: PickableGroup</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -375,6 +373,7 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public PickableGroupObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -393,8 +392,9 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public PickableGroupObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -437,6 +437,7 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public PickableGroupObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -459,8 +460,9 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	 */
 	public PickableGroupObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -521,6 +523,7 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	@Override
 	public PickableGroupObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -551,6 +554,7 @@ public class PickableGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -718,6 +722,7 @@ setAttribute method invocations).
 	@Override
 	public PickableGroupObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -831,6 +836,7 @@ setAttribute method invocations).
 	@Override
 	public PickableGroupObject setObjectType(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
@@ -857,8 +863,9 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setObjectType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setObjectType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString objectType field, similar to {@link #setObjectType(String[])}.
@@ -873,6 +880,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -889,6 +897,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -904,6 +913,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		objectType = newValue;
 		return this;
 	}
@@ -943,6 +953,7 @@ setAttribute method invocations).
 	@Override
 	public PickableGroupObject setPickable(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		pickable = newValue;
 		return this;
 	}
@@ -954,8 +965,9 @@ setAttribute method invocations).
 	 */
 	public PickableGroupObject setPickable(SFBoolObject newValue)
 	{
-		setPickable(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPickable(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -970,6 +982,7 @@ setAttribute method invocations).
 	@Override
 	public final PickableGroupObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PickableGroup
@@ -997,8 +1010,9 @@ setAttribute method invocations).
 	 */
 	public PickableGroupObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1016,6 +1030,7 @@ setAttribute method invocations).
 	@Override
 	public final PickableGroupObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PickableGroup
@@ -1043,8 +1058,9 @@ setAttribute method invocations).
 	 */
 	public PickableGroupObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1057,6 +1073,7 @@ setAttribute method invocations).
 	@Override
 	public final PickableGroupObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1071,8 +1088,9 @@ setAttribute method invocations).
 	 */
 	public PickableGroupObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

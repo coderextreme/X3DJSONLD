@@ -40,7 +40,7 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: IntegerSequencer generates periodic discrete integer values that can be ROUTEd to other SFInt32 attributes (for example, useful when animating whichChoice in a Switch node).
+ * <i>X3D node tooltip</i>: IntegerSequencer generates periodic discrete integer values. Authors can ROUTE value_changed output events to other SFInt32 attributes (for example, useful when animating whichChoice in a Switch node).
  * <ul>
  *  <li> <i>Hint:</i> typical input connection is ROUTE someTimeSensorDEF.fraction_changed TO thisInterpolatorDEF.set_fraction </li> 
  *  <li> <i>Hint:</i> typical output connection is ROUTE thisInterpolatorDEF.value_changed TO someDestinationNodeDEF.set_someAttribute. </li> 
@@ -49,11 +49,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#IntegerSequencer" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html#IntegerSequencer" target="blank">X3D Abstract Specification: IntegerSequencer</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IntegerSequencer" target="_blank">X3D Tooltips: IntegerSequencer</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -147,8 +145,10 @@ public interface IntegerSequencer extends X3DSequencerNode
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Single intermittent output value determined by current key time and corresponding keyValue entry.  * <br>
-
+	 * <i>Tooltip:</i> Single intermittent output value determined by current key time and corresponding keyValue entry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	public int getValue();

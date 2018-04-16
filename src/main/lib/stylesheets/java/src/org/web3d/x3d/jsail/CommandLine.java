@@ -54,12 +54,11 @@ import org.web3d.x3d.sai.X3DException;
  * 
  * <br><br>
 
+
  * Usage: <code>% java -jar X3DJSAIL.3.3.classes.jar -help</code>
  * @see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
  * @see <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Java Tutorials, Lesson: Packaging Programs in JAR Files</a>
  * 
-
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -95,9 +94,9 @@ public class CommandLine
         clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
@@ -105,6 +104,9 @@ public class CommandLine
     private static boolean convertToClassicVRML = false;
     private static boolean convertToX3D         = false;
     private static boolean convertToXML         = false;
+    private static boolean convertToHTML        = false; // pretty-print documentation
+    private static boolean convertToMarkdown    = false; // model meta information
+    private static boolean convertToTidy        = false;
     private static boolean convertToJSON        = false;
     private static boolean convertToJS          = false;
     private static boolean convertToX3DOM       = false;
@@ -126,6 +128,9 @@ public class CommandLine
 		convertToClassicVRML = false;
 		convertToX3D         = false;
 		convertToXML         = false;
+		convertToHTML        = false;
+		convertToMarkdown    = false;
+		convertToTidy        = false;
 		convertToJSON        = false;
 		convertToJS          = false;
 		convertToX3DOM       = false;
@@ -200,7 +205,9 @@ public class CommandLine
 					else 
 					{
 						sourceFileName     = args[i];
-						sourceFileNameRoot = sourceFileName.substring(0,sourceFileName.lastIndexOf("."));
+						sourceFileNameRoot = sourceFileName;
+						if (sourceFileName.contains("."))
+							sourceFileNameRoot = sourceFileName.substring(0,sourceFileName.lastIndexOf("."));
 						sourceFile = new File(sourceFileName);
 						if (!sourceFile.exists())
 						{
@@ -253,6 +260,33 @@ public class CommandLine
 					convertToXML = true;
 					conversionExtension = X3DObject.FILE_EXTENSION_XML;
 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to XML encoding");
+				}
+				else if (args[i].equalsIgnoreCase("-html")  || args[i].equalsIgnoreCase("-tohtml")  || args[i].equalsIgnoreCase("-html5") || args[i].equalsIgnoreCase("-tohtml5") ||
+						 args[i].equalsIgnoreCase("-xhtml") || args[i].equalsIgnoreCase("-toxhtml") || args[i].equalsIgnoreCase("-prettyprint"))
+				{
+				    /* pretty-print documentation */
+					clearPriorConversionSwitches(args[i]);
+					convertToHTML = true;
+					if  (args[i].equalsIgnoreCase("-xhtml") || args[i].equalsIgnoreCase("-toxhtml"))
+					     conversionExtension = X3DObject.FILE_EXTENSION_XHTML;
+					else conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " pretty-print documentation");
+				}
+				else if (args[i].equalsIgnoreCase("-md")  || args[i].equalsIgnoreCase("-tomd")  || args[i].equalsIgnoreCase("-markdown") || args[i].equalsIgnoreCase("-tomarkdown"))
+				{
+				    /* model meta information to markdown, used in ModelExchange.nps.edu */
+					clearPriorConversionSwitches(args[i]);
+					convertToMarkdown = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
+					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown");
+				}
+				else if (args[i].equalsIgnoreCase("-tidy") || args[i].equalsIgnoreCase("-totidy") || args[i].equalsIgnoreCase("-x3dtidy") || args[i].equalsIgnoreCase("-tox3dtidy"))
+				{
+				    /* X3D-Tidy cleanup */
+					clearPriorConversionSwitches(args[i]);
+					convertToTidy = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					System.out.println ("parameter: \"" + args[i] + "\" for producing X3D-Tidy cleanup of .x3d");
 				}
 				else if (args[i].equalsIgnoreCase("-x3dv") || args[i].equalsIgnoreCase("-tox3dv") || 
 						 args[i].equalsIgnoreCase("-toClassicVRML") || args[i].equalsIgnoreCase("-ClassicVRML"))
@@ -451,6 +485,10 @@ public class CommandLine
 		}
 		if ((convertToX3D         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D))    ||
 			(convertToXML         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XML))    ||
+			(convertToHTML        && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML)))   ||
+			(convertToMarkdown    &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_MARKDOWN)) ||
+			(convertToTidy        &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D))      ||
 			(convertToClassicVRML &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_CLASSICVRML)) ||
 			(convertToVRML97      &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_VRML97)) ||
 			(convertToX3DOM       && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
@@ -535,7 +573,7 @@ public class CommandLine
                         System.out.println("convert to VRML97:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileVRML97 (resultFileName);
+                              resultFile =      loadedX3dModel.toFileVRML97 (resultFileName);
                         else System.out.println(loadedX3dModel.toStringVRML97());
                     }
                     else if (convertToJSON)
@@ -544,7 +582,7 @@ public class CommandLine
                 	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
                         System.out.println("convert to JSON:");
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileJSON (resultFileName);
+                              resultFile =      loadedX3dModel.toFileJSON (resultFileName);
                         else System.out.println(loadedX3dModel.toStringJSON());
                 	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
@@ -554,7 +592,7 @@ public class CommandLine
                 	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
                         System.out.println("convert to JS JavaScript:");
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileJavaScript (resultFileName);
+                              resultFile =      loadedX3dModel.toFileJavaScript (resultFileName);
                         else System.out.println(loadedX3dModel.toStringJavaScript());
                 	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
@@ -563,7 +601,7 @@ public class CommandLine
                         System.out.println("convert to ClassicVRML:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileClassicVRML (resultFileName);
+                              resultFile =      loadedX3dModel.toFileClassicVRML (resultFileName);
                         else System.out.println(loadedX3dModel.toStringClassicVRML());
                     }
                     else if (convertToX3D)
@@ -571,7 +609,7 @@ public class CommandLine
                         System.out.println("convert to X3D:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileX3D (resultFileName);
+                              resultFile =      loadedX3dModel.toFileX3D (resultFileName);
                         else System.out.println(loadedX3dModel.toStringX3D());
                     }
                     else if (convertToXML)
@@ -579,15 +617,39 @@ public class CommandLine
                         System.out.println("convert to XML:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileXML (resultFileName);
+                             resultFile =       loadedX3dModel.toFileXML (resultFileName);
                         else System.out.println(loadedX3dModel.toStringXML());
+                    }
+                    else if (convertToHTML) // pretty-print documentation
+                    {
+                        System.out.println("convert to " + conversionExtension + " pretty-print documentation");
+                        if (!convertToFile) System.out.println(); 
+                        if  (convertToFile)
+                             resultFile =       loadedX3dModel.toFileHtmlDocumentation (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringHtmlDocumentation());
+                    }
+                    else if (convertToMarkdown) // model meta information
+                    {
+                        System.out.println("convert to " + conversionExtension + " model meta information markdown");
+                        if (!convertToFile) System.out.println(); 
+                        if  (convertToFile)
+                             resultFile =       loadedX3dModel.toFileModelMetaMarkdown (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringModelMetaMarkdown());
+                    }
+                    else if (convertToTidy)
+                    {
+                        System.out.println("convert to X3D Tidy cleaned-up version");
+                        if (!convertToFile) System.out.println(); 
+                        if  (convertToFile)
+                             resultFile =       loadedX3dModel.toFileX3dTidy (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringX3dTidy());
                     }
                     else if (convertToX3DOM)
                     {
                         System.out.println("convert to X3DOM:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileX3DOM (resultFileName);
+                              resultFile =      loadedX3dModel.toFileX3DOM (resultFileName);
                         else System.out.println(loadedX3dModel.toStringX3DOM());
                     }
                     else if (convertToX_ITE)
@@ -595,7 +657,7 @@ public class CommandLine
                         System.out.println("convert to X_ITE:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = loadedX3dModel.toFileX_ITE  (sourceFileName, resultFileName);
+                              resultFile =      loadedX3dModel.toFileX_ITE  (sourceFileName, resultFileName);
                         else System.out.println(loadedX3dModel.toStringX_ITE(sourceFileName));
                     }
                     else if (convertToEXI)
@@ -813,14 +875,17 @@ public class CommandLine
      */
     private static void clearPriorConversionSwitches(String newCommand)
     {
-        if (convertToVRML97 || convertToClassicVRML || convertToX3D   || convertToXML ||
-            convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)       
+        if (convertToVRML97 || convertToClassicVRML || convertToX3D   || convertToXML || convertToHTML || convertToMarkdown || convertToTidy ||
+            convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
         convertToVRML97      = false;
         convertToClassicVRML = false;
         convertToX3D         = false;
         convertToXML         = false;
+        convertToHTML        = false;
+        convertToMarkdown    = false;
+        convertToTidy        = false;
         convertToJSON        = false;
         convertToJS          = false;
         convertToX3DOM       = false;

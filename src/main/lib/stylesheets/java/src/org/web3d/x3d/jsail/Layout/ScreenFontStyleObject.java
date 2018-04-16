@@ -52,10 +52,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#ScreenFontStyle" target="blank">X3D Abstract Specification: ScreenFontStyle</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScreenFontStyle" target="_blank">X3D Tooltips: ScreenFontStyle</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -467,6 +465,7 @@ public class ScreenFontStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public ScreenFontStyleObject setFamily(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearFamily(); // newValueNullSetDEFAULT_VALUE
@@ -493,8 +492,9 @@ public class ScreenFontStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			clearFamily(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setFamily(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFamily(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString family field, similar to {@link #setFamily(String[])}.
@@ -509,6 +509,7 @@ public class ScreenFontStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			clearFamily(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setFamily(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -525,6 +526,7 @@ public class ScreenFontStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			clearFamily(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setFamily(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -540,6 +542,7 @@ public class ScreenFontStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			clearFamily(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		family = newValue;
 		return this;
 	}
@@ -579,6 +582,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setHorizontal(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		horizontal = newValue;
 		return this;
 	}
@@ -590,8 +594,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setHorizontal(SFBoolObject newValue)
 	{
-		setHorizontal(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setHorizontal(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String enumeration results ['"MIDDLE"'|'"MIDDLE" "BEGIN"'|'"MIDDLE" "END"'|'"MIDDLE" "FIRST"'|'"MIDDLE" "MIDDLE"'|'"BEGIN"'|'"BEGIN" "BEGIN"'|'"BEGIN" "END"'|'"BEGIN" "FIRST"'|'"BEGIN" "MIDDLE"'|'"END"'|'"END" "BEGIN"'|'"END" "END"'|'"END" "FIRST"'|'"END" "MIDDLE"'|'"FIRST"'|'"FIRST" "BEGIN"'|'"FIRST" "END"'|'"FIRST" "FIRST"'|'"FIRST" "MIDDLE"'] from initializeOnly MFString field named <i>justify</i>.
@@ -640,6 +645,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setJustify(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			Arrays.asList(newValue).equals(JUSTIFY_MIDDLE) ||
@@ -690,8 +696,9 @@ setAttribute method invocations).
 			clearJustify(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setJustify(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setJustify(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString justify field, similar to {@link #setJustify(String[])}.
@@ -705,6 +712,31 @@ setAttribute method invocations).
 		{
 			clearJustify(); // newValueNullSetDEFAULT_VALUE
 			return this;
+		}
+		// set-newValue-validity-checks #2
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(JUSTIFY_MIDDLE) ||
+			newValue.equals(JUSTIFY_MIDDLE_BEGIN) ||
+			newValue.equals(JUSTIFY_MIDDLE_END) ||
+			newValue.equals(JUSTIFY_MIDDLE_FIRST) ||
+			newValue.equals(JUSTIFY_MIDDLE_MIDDLE) ||
+			newValue.equals(JUSTIFY_BEGIN) ||
+			newValue.equals(JUSTIFY_BEGIN_BEGIN) ||
+			newValue.equals(JUSTIFY_BEGIN_END) ||
+			newValue.equals(JUSTIFY_BEGIN_FIRST) ||
+			newValue.equals(JUSTIFY_BEGIN_MIDDLE) ||
+			newValue.equals(JUSTIFY_END) ||
+			newValue.equals(JUSTIFY_END_BEGIN) ||
+			newValue.equals(JUSTIFY_END_END) ||
+			newValue.equals(JUSTIFY_END_FIRST) ||
+			newValue.equals(JUSTIFY_END_MIDDLE) ||
+			newValue.equals(JUSTIFY_FIRST) ||
+			newValue.equals(JUSTIFY_FIRST_BEGIN) ||
+			newValue.equals(JUSTIFY_FIRST_END) ||
+			newValue.equals(JUSTIFY_FIRST_FIRST) ||
+			newValue.equals(JUSTIFY_FIRST_MIDDLE))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("ScreenFontStyle justify newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
 		setJustify(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
@@ -722,6 +754,31 @@ setAttribute method invocations).
 			clearJustify(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
+		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
+		if (!(
+			newValue.equals(JUSTIFY_MIDDLE) ||
+			newValue.equals(JUSTIFY_MIDDLE_BEGIN) ||
+			newValue.equals(JUSTIFY_MIDDLE_END) ||
+			newValue.equals(JUSTIFY_MIDDLE_FIRST) ||
+			newValue.equals(JUSTIFY_MIDDLE_MIDDLE) ||
+			newValue.equals(JUSTIFY_BEGIN) ||
+			newValue.equals(JUSTIFY_BEGIN_BEGIN) ||
+			newValue.equals(JUSTIFY_BEGIN_END) ||
+			newValue.equals(JUSTIFY_BEGIN_FIRST) ||
+			newValue.equals(JUSTIFY_BEGIN_MIDDLE) ||
+			newValue.equals(JUSTIFY_END) ||
+			newValue.equals(JUSTIFY_END_BEGIN) ||
+			newValue.equals(JUSTIFY_END_END) ||
+			newValue.equals(JUSTIFY_END_FIRST) ||
+			newValue.equals(JUSTIFY_END_MIDDLE) ||
+			newValue.equals(JUSTIFY_FIRST) ||
+			newValue.equals(JUSTIFY_FIRST_BEGIN) ||
+			newValue.equals(JUSTIFY_FIRST_END) ||
+			newValue.equals(JUSTIFY_FIRST_FIRST) ||
+			newValue.equals(JUSTIFY_FIRST_MIDDLE))) {
+			throw new org.web3d.x3d.sai.InvalidFieldValueException("ScreenFontStyle justify newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
+		}
 		setJustify(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -737,6 +794,7 @@ setAttribute method invocations).
 			clearJustify(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph
 		if (!(
 			newValue.equals(JUSTIFY_MIDDLE) ||
@@ -803,6 +861,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setLanguage(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -817,8 +876,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setLanguage(SFStringObject newValue)
 	{
-		setLanguage(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLanguage(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>leftToRight</i>.
@@ -838,6 +898,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setLeftToRight(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		leftToRight = newValue;
 		return this;
 	}
@@ -849,8 +910,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setLeftToRight(SFBoolObject newValue)
 	{
-		setLeftToRight(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLeftToRight(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -874,6 +936,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -968,6 +1031,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setPointSize(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ScreenFontStyle pointSize newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -983,8 +1047,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setPointSize(SFFloatObject newValue)
 	{
-		setPointSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPointSize(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>spacing</i>.
@@ -1009,6 +1074,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setSpacing(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("ScreenFontStyle spacing newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1024,8 +1090,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setSpacing(SFFloatObject newValue)
 	{
-		setSpacing(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpacing(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['PLAIN'|'BOLD'|'ITALIC'|'BOLDITALIC'] from initializeOnly SFString field named <i>style</i>.
@@ -1057,6 +1124,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setStyle(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -1083,8 +1151,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setStyle(SFStringObject newValue)
 	{
-		setStyle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStyle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>topToBottom</i>.
@@ -1112,6 +1181,7 @@ setAttribute method invocations).
 	@Override
 	public ScreenFontStyleObject setTopToBottom(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		topToBottom = newValue;
 		return this;
 	}
@@ -1123,8 +1193,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setTopToBottom(SFBoolObject newValue)
 	{
-		setTopToBottom(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTopToBottom(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1139,6 +1210,7 @@ setAttribute method invocations).
 	@Override
 	public final ScreenFontStyleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ScreenFontStyle
@@ -1166,8 +1238,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1185,6 +1258,7 @@ setAttribute method invocations).
 	@Override
 	public final ScreenFontStyleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ScreenFontStyle
@@ -1212,8 +1286,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1226,6 +1301,7 @@ setAttribute method invocations).
 	@Override
 	public final ScreenFontStyleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1240,8 +1316,9 @@ setAttribute method invocations).
 	 */
 	public ScreenFontStyleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

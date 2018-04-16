@@ -80,6 +80,7 @@ import java.util.Arrays;
 /**
  * <i>X3D node tooltip</i>: PointSet is a node that contains a set of colored 3D points, represented by contained Color|ColorRGBA and Coordinate|CoordinateDouble nodes.
  * <ul>
+ *  <li> <i>Hint:</i> Point (geometry) <br> <a href="https://en.wikipedia.org/wiki/Point_(geometry)" target="_blank">https://en.wikipedia.org/wiki/Point_(geometry)</a> </li> 
  *  <li> <i>Hint:</i> either values in a contained Color node, or else Material emissiveColor in corresponding Appearance node, are used for rendering lines and points. </li> 
  *  <li> <i>Warning:</i> use a different color (or Material emissiveColor) than the Background color, otherwise geometry is invisible. </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
@@ -88,10 +89,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#PointSet" target="blank">X3D Abstract Specification: PointSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointSet" target="_blank">X3D Tooltips: PointSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -362,6 +361,7 @@ public class PointSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public PointSetObject setAttrib(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
@@ -392,6 +392,7 @@ public class PointSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		attrib = newValue;
 		for (X3DVertexAttributeNode element : newValue)
 		{
@@ -501,6 +502,7 @@ setAttribute method invocations).
 	@Override
 	public PointSetObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -587,6 +589,7 @@ setAttribute method invocations).
 	@Override
 	public PointSetObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -673,6 +676,7 @@ setAttribute method invocations).
 	@Override
 	public PointSetObject setFogCoord(FogCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		fogCoord = newValue;
 		if (newValue != null)
 		{
@@ -761,6 +765,7 @@ setAttribute method invocations).
 	@Override
 	public PointSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -843,6 +848,7 @@ setAttribute method invocations).
 	@Override
 	public final PointSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PointSet
@@ -870,8 +876,9 @@ setAttribute method invocations).
 	 */
 	public PointSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -889,6 +896,7 @@ setAttribute method invocations).
 	@Override
 	public final PointSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PointSet
@@ -916,8 +924,9 @@ setAttribute method invocations).
 	 */
 	public PointSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -930,6 +939,7 @@ setAttribute method invocations).
 	@Override
 	public final PointSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -944,8 +954,9 @@ setAttribute method invocations).
 	 */
 	public PointSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

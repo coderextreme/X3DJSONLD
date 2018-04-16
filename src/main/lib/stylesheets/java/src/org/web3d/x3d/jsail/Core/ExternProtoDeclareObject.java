@@ -63,10 +63,8 @@ import java.util.Arrays;
  *  <li> <i>Warning:</i> do not include a &amp;lt;ProtoInterface&amp;gt; element. </li> 
  *  <li> <i>Warning:</i>  setting a value is not allowed for ExternProtoDeclare field declarations, since original ProtoDeclare initializations or local ProtoInstance fieldValue initializations take precedence. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Externalprototypesemantics" target="blank">X3D Abstract Specification: ExternProtoDeclare</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ExternProtoDeclare" target="_blank">X3D Tooltips: ExternProtoDeclare</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -278,6 +276,7 @@ public class ExternProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteSta
 	 */
 	public ExternProtoDeclareObject setAppinfo(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -292,8 +291,9 @@ public class ExternProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteSta
 	 */
 	public ExternProtoDeclareObject setAppinfo(SFStringObject newValue)
 	{
-		setAppinfo(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAppinfo(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>documentation</i>.
@@ -316,6 +316,7 @@ public class ExternProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteSta
 	 */
 	public ExternProtoDeclareObject setDocumentation(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -330,8 +331,9 @@ public class ExternProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteSta
 	 */
 	public ExternProtoDeclareObject setDocumentation(SFStringObject newValue)
 	{
-		setDocumentation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDocumentation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of fieldObject results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>field</i>.
@@ -354,6 +356,7 @@ public class ExternProtoDeclareObject extends org.web3d.x3d.jsail.X3DConcreteSta
 	 */
 	public ExternProtoDeclareObject setFieldList(ArrayList<fieldObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		fieldList = newValue;
 		for (fieldObject arrayElement : fieldList)
 		{			// No value is allowed within field having parent ExternProtoDeclare
@@ -458,6 +461,7 @@ setAttribute method invocations).
 	 */
 	public final ExternProtoDeclareObject setName(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ExternProtoDeclare
@@ -484,8 +488,9 @@ setAttribute method invocations).
 	 */
 	public ExternProtoDeclareObject setName(SFStringObject newValue)
 	{
-		setName(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setName(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.
@@ -519,6 +524,7 @@ setAttribute method invocations).
 	 */
 	public ExternProtoDeclareObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -545,8 +551,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Utility method to clear MFString value of url field.
@@ -584,12 +591,14 @@ setAttribute method invocations).
 	public String getNodeType()
 	{
 		String errorNotice = new String();
-		if ((findAncestorSceneObject() == null) &&
-			!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+		if (findAncestorSceneObject() == null)
 		{
-			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE + ": " +
+			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+			{
+				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE + ": " +
 						   "ExternProtoDeclare name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
-			validationResult.append(errorNotice).append("\n");
+				validationResult.append(errorNotice).append("\n");
+			}
 			return errorNotice; // node type not found
 		}
 		// TODO contained-comment convention for noting node type

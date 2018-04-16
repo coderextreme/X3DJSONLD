@@ -41,7 +41,6 @@ import org.web3d.x3d.sai.X3DFieldEvent;
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/types.html#X3DFieldEventListener" target="_blank">SAI Java Specification: B.4.3 X3DFieldEventListener</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/servRef.html#RegisterBrowserInterest" target="blank">SAI Abstract Specification: 6.3.20 registerBrowserInterest</a>

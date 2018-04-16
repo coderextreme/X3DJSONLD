@@ -90,10 +90,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#Collision" target="blank">X3D Abstract Specification: Collision</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Collision" target="_blank">X3D Tooltips: Collision</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -391,6 +389,7 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public CollisionObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -409,8 +408,9 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public CollisionObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -453,6 +453,7 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public CollisionObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -475,8 +476,9 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public CollisionObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -537,6 +539,7 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public CollisionObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -567,6 +570,7 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -715,8 +719,10 @@ setAttribute method invocations).
 											/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time of collision between camera (avatar) and geometry.  * <br>
-
+	 * <i>Tooltip:</i> Time of collision between camera (avatar) and geometry.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of collideTime field
 	 */
 	@Override
@@ -749,6 +755,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -760,14 +767,17 @@ setAttribute method invocations).
 	 */
 	public CollisionObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when triggering the sensor. isActive=true when view-object collision occurs, isActive=false when view-object collision no longer occurs.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when triggering the sensor. isActive=true when view-object collision occurs, isActive=false when view-object collision no longer occurs.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -797,6 +807,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -886,6 +897,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionObject setProxy(X3DChildNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		proxy = newValue;
 		if (newValue != null)
 		{
@@ -967,6 +979,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Collision
@@ -994,8 +1007,9 @@ setAttribute method invocations).
 	 */
 	public CollisionObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1013,6 +1027,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Collision
@@ -1040,8 +1055,9 @@ setAttribute method invocations).
 	 */
 	public CollisionObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1054,6 +1070,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1068,8 +1085,9 @@ setAttribute method invocations).
 	 */
 	public CollisionObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

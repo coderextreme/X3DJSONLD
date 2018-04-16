@@ -59,12 +59,11 @@ import java.util.Arrays;
  * <ul>
  *  <li> <i>Warning:</i> IS statements are only allowed within a ProtoBody definition, which follows ProtoInterface field declarations, and thus are only found within a ProtoDeclare statement. </li> 
  *  <li> <i>Hint:</i> an IS statement precedes any sibling Metadata* node, which in turn precedes any other sibling nodes. </li> 
- *  <li> <i>Hint:</i>  see the connect and ProtoBody statements. </li> 
+ *  <li> <i>Hint:</i> see the connect and ProtoBody statements. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PROTOdefinitionsemantics" target="blank">X3D Abstract Specification: IS</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IS" target="_blank">X3D Tooltips: IS</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  * @see connectObject
@@ -225,6 +224,7 @@ public class ISObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 */
 	public ISObject setConnectList(ArrayList<connectObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		connectList = newValue;
 		for (connectObject arrayElement : connectList)
 		{

@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/interp.html#SplineScalarInterpolator" target="blank">X3D Abstract Specification: SplineScalarInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SplineScalarInterpolator" target="_blank">X3D Tooltips: SplineScalarInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -351,6 +349,7 @@ public class SplineScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcr
 	@Override
 	public SplineScalarInterpolatorObject setClosed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		closed = newValue;
 		return this;
 	}
@@ -362,8 +361,9 @@ public class SplineScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcr
 	 */
 	public SplineScalarInterpolatorObject setClosed(SFBoolObject newValue)
 	{
-		setClosed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setClosed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>key</i>.
@@ -406,6 +406,7 @@ public class SplineScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcr
 	@Override
 	public SplineScalarInterpolatorObject setKey(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKey(); // newValueNullSetDEFAULT_VALUE
@@ -432,8 +433,9 @@ public class SplineScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcr
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKey(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKey(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat key field, similar to {@link #setKey(float[])}.
@@ -447,6 +449,7 @@ public class SplineScalarInterpolatorObject extends org.web3d.x3d.jsail.X3DConcr
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		key = newValue;
 		return this;
 	}
@@ -472,6 +475,7 @@ setAttribute method invocations).
 			clearKey(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -519,6 +523,7 @@ setAttribute method invocations).
 	@Override
 	public SplineScalarInterpolatorObject setKeyValue(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
@@ -545,8 +550,9 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKeyValue(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyValue(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat keyValue field, similar to {@link #setKeyValue(float[])}.
@@ -560,6 +566,7 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		keyValue = newValue;
 		return this;
 	}
@@ -585,6 +592,7 @@ setAttribute method invocations).
 			clearKeyValue(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -632,6 +640,7 @@ setAttribute method invocations).
 	@Override
 	public SplineScalarInterpolatorObject setKeyVelocity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearKeyVelocity(); // newValueNullSetDEFAULT_VALUE
@@ -658,8 +667,9 @@ setAttribute method invocations).
 			clearKeyVelocity(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setKeyVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setKeyVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat keyVelocity field, similar to {@link #setKeyVelocity(float[])}.
@@ -673,6 +683,7 @@ setAttribute method invocations).
 			clearKeyVelocity(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		keyVelocity = newValue;
 		return this;
 	}
@@ -698,6 +709,7 @@ setAttribute method invocations).
 			clearKeyVelocity(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -728,6 +740,7 @@ setAttribute method invocations).
 	@Override
 	public SplineScalarInterpolatorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -822,6 +835,7 @@ setAttribute method invocations).
 	@Override
 	public SplineScalarInterpolatorObject setNormalizeVelocity(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		normalizeVelocity = newValue;
 		return this;
 	}
@@ -833,14 +847,17 @@ setAttribute method invocations).
 	 */
 	public SplineScalarInterpolatorObject setNormalizeVelocity(SFBoolObject newValue)
 	{
-		setNormalizeVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalizeVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>value_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Nonlinearly interpolated output value computed by using current time fraction along with corresponding key, keyValue and keyVelocity values.  * <br>
-
+	 * <i>Tooltip:</i> Nonlinearly interpolated output value computed by using current time fraction along with corresponding key, keyValue and keyVelocity values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of value_changed field
 	 */
 	@Override
@@ -861,6 +878,7 @@ setAttribute method invocations).
 	@Override
 	public final SplineScalarInterpolatorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SplineScalarInterpolator
@@ -888,8 +906,9 @@ setAttribute method invocations).
 	 */
 	public SplineScalarInterpolatorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -907,6 +926,7 @@ setAttribute method invocations).
 	@Override
 	public final SplineScalarInterpolatorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SplineScalarInterpolator
@@ -934,8 +954,9 @@ setAttribute method invocations).
 	 */
 	public SplineScalarInterpolatorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -948,6 +969,7 @@ setAttribute method invocations).
 	@Override
 	public final SplineScalarInterpolatorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -962,8 +984,9 @@ setAttribute method invocations).
 	 */
 	public SplineScalarInterpolatorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

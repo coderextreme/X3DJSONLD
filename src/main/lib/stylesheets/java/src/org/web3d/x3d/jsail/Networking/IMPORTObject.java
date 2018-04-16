@@ -54,10 +54,8 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  *  <li> <i>Warning:</i> corresponding parent-scene IMPORT and child Inline-scene EXPORT statements are necessary in order to ROUTE values between a parent model and a child Inline model. </li> 
  *  <li> <i>Hint:</i>  see X3D Specification 4.4.6 Import/Export semantics <br> <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ImportExportsemantics" target="_blank">http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ImportExportsemantics</a> </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#IMPORTSemantics" target="blank">X3D Abstract Specification: IMPORT</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IMPORT" target="_blank">X3D Tooltips: IMPORT</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */
@@ -242,6 +240,7 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setAS(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IMPORT
@@ -268,8 +267,9 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setAS(SFStringObject newValue)
 	{
-		setAS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>importedDEF</i>.
@@ -294,6 +294,7 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setImportedDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IMPORT
@@ -320,8 +321,9 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setImportedDEF(SFStringObject newValue)
 	{
-		setImportedDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setImportedDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>inlineDEF</i>.
@@ -346,6 +348,7 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setInlineDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IMPORT
@@ -372,8 +375,9 @@ public class IMPORTObject extends org.web3d.x3d.jsail.X3DConcreteStatement imple
 	 */
 	public IMPORTObject setInlineDEF(SFStringObject newValue)
 	{
-		setInlineDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setInlineDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -662,12 +666,14 @@ setAttribute method invocations).
 		String errorNotice = new String();
 		String IMPORT_description = "<IMPORT inlineDEF='" + inlineDEF + "' importedDEF='" + importedDEF + "' AS='" + AS + "'/>";
 										
-		if ((findAncestorSceneObject() == null) &&
-			!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+		if (findAncestorSceneObject() == null)
 		{
-			errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-						   ": IMPORT is not currently connected to SceneObject scene graph and thus cannot get checked.";
-			validationResult.append(IMPORT_description).append("\n").append(errorNotice).append("\n");
+			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+			{
+				errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
+							   ": IMPORT is not currently connected to SceneObject scene graph and thus cannot get checked.";
+				validationResult.append(IMPORT_description).append("\n").append(errorNotice).append("\n");
+			}
 		}
 		else
 		{

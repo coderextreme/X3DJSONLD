@@ -55,10 +55,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureTransform" target="blank">X3D Abstract Specification: TextureTransform</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureTransform" target="_blank">X3D Tooltips: TextureTransform</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -324,6 +322,7 @@ public class TextureTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TextureTransformObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -342,8 +341,9 @@ public class TextureTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TextureTransformObject setCenter(SFVec2fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -381,6 +381,7 @@ public class TextureTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TextureTransformObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -475,6 +476,7 @@ setAttribute method invocations).
 	@Override
 	public TextureTransformObject setRotation(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		rotation = newValue;
 		return this;
 	}
@@ -486,8 +488,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setRotation(SFFloatObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from inputOutput SFVec2f field named <i>scale</i>.
@@ -512,6 +515,7 @@ setAttribute method invocations).
 	@Override
 	public TextureTransformObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -530,8 +534,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setScale(SFVec2fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -570,6 +575,7 @@ setAttribute method invocations).
 	@Override
 	public TextureTransformObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -588,8 +594,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setTranslation(SFVec2fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -618,6 +625,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureTransformObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureTransform
@@ -645,8 +653,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -664,6 +673,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureTransformObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureTransform
@@ -691,8 +701,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -705,6 +716,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureTransformObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -719,8 +731,9 @@ setAttribute method invocations).
 	 */
 	public TextureTransformObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

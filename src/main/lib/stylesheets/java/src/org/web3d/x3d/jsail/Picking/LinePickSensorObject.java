@@ -68,16 +68,14 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> when the picking line segment intersects a coplanar polygon, computed intersection point(s) are illustrated in Figure 38.1 <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/picking.html#f-LineIntersection" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/picking.html#f-LineIntersection</a> </li> 
  *  <li> <i>Hint:</i> picking is performed between rendered frames of the event model. An author sets up the picking request in one frame by placing a LinePickSensor in the desired location. At the start of the next frame, any picking intersections are reported by the pick sensor. </li> 
  *  <li> <i>Hint:</i> picking notification is performed at the start of the frame for all enabled pick sensors once all other sensors are processed. </li> 
- *  <li> <i>Hint:</i> event timing details are explained in 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
+ *  <li> <i>Hint:</i> event timing details are explained in X3D Specification 4.4.8.3 Execution model <br> <a href="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning" target="_blank">http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#ExecutionModelWarning</a>: order of contained nodes is significant, single pickingGeometry node must precede pickTarget node array. </li> 
  *  <li> <i>Hint:</i>  IndexedLineSet or Lineset can be used for pickingGeometry node. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#LinePickSensor" target="blank">X3D Abstract Specification: LinePickSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LinePickSensor" target="_blank">X3D Tooltips: LinePickSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -473,6 +471,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public LinePickSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -484,8 +483,9 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public LinePickSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String enumeration value ['BOUNDS'|'GEOMETRY'|'etc.'] from initializeOnly SFString field named <i>intersectionType</i>.
@@ -517,6 +517,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public LinePickSensorObject setIntersectionType(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -531,14 +532,17 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public LinePickSensorObject setIntersectionType(SFStringObject newValue)
 	{
-		setIntersectionType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIntersectionType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.  * <br>
-
+	 * <i>Tooltip:</i> isActive indicates when the intersecting object is picked by the picking geometry. Output event isActive=true gets sent once a picked item is found. Output event isActive=false gets sent once no picked item is found.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -573,6 +577,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public LinePickSensorObject setMatchCriterion(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -598,8 +603,9 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public LinePickSensorObject setMatchCriterion(SFStringObject newValue)
 	{
-		setMatchCriterion(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMatchCriterion(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -623,6 +629,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public LinePickSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -736,6 +743,7 @@ setAttribute method invocations).
 	@Override
 	public LinePickSensorObject setObjectType(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
@@ -762,8 +770,9 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setObjectType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setObjectType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString objectType field, similar to {@link #setObjectType(String[])}.
@@ -778,6 +787,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -794,6 +804,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setObjectType(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -809,6 +820,7 @@ setAttribute method invocations).
 			clearObjectType(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		objectType = newValue;
 		return this;
 	}
@@ -825,8 +837,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of X3DChildNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>pickedGeometry</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * <br><br>
 	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
@@ -854,8 +868,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly MFVec3f field named <i>pickedNormal</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing surface normal vectors computed by the picking intersection computations.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing surface normal vectors computed by the picking intersection computations.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of pickedNormal field
 	 */
 	@Override
@@ -866,8 +882,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly MFVec3f field named <i>pickedPoint</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D points on surface of underlying pickingGeometry computed by the picking intersection computations, given in the local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D points on surface of underlying pickingGeometry computed by the picking intersection computations, given in the local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of pickedPoint field
 	 */
 	@Override
@@ -880,7 +898,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> Output event containing 3D texture coordinates of surfaces computed by the picking intersection computations. Picked texture coordinates are in three dimensions. If the target texture coordinate has two dimensions, the third coordinate (z component of an SFVec3f) shall be zero.
  * <ul>
- *  <li> <i> Warning:</i>  if the target object has multiple textures defined, only texture coordinates for the first texture are returned and all other textures are ignored. </li> 
+ *  <li> <i>Warning:</i> if the target object has multiple textures defined, only texture coordinates for the first texture are returned and all other textures are ignored. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of pickedTextureCoordinate field
 	 */
@@ -914,6 +933,7 @@ setAttribute method invocations).
 	@Override
 	public LinePickSensorObject setPickingGeometry(X3DGeometryNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		pickingGeometry = newValue;
 		if (newValue != null)
 		{
@@ -1024,6 +1044,7 @@ setAttribute method invocations).
 	@Override
 	public LinePickSensorObject setPickTarget(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearPickTarget(); // newValueNullSetDEFAULT_VALUE
@@ -1068,6 +1089,7 @@ setAttribute method invocations).
 			clearPickTarget(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -1237,6 +1259,7 @@ setAttribute method invocations).
 	@Override
 	public LinePickSensorObject setSortOrder(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1251,8 +1274,9 @@ setAttribute method invocations).
 	 */
 	public LinePickSensorObject setSortOrder(SFStringObject newValue)
 	{
-		setSortOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSortOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1267,6 +1291,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LinePickSensor
@@ -1294,8 +1319,9 @@ setAttribute method invocations).
 	 */
 	public LinePickSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1313,6 +1339,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LinePickSensor
@@ -1340,8 +1367,9 @@ setAttribute method invocations).
 	 */
 	public LinePickSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1354,6 +1382,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1368,8 +1397,9 @@ setAttribute method invocations).
 	 */
 	public LinePickSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

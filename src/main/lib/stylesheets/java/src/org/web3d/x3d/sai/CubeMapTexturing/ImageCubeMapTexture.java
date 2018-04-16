@@ -43,17 +43,15 @@ import org.web3d.x3d.sai.Texturing.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: ImageCubeMapTexture defines a cubic environment map source as a single file format that contains multiple images, one for each side.
+ * <i>X3D node tooltip</i>: ImageCubeMapTexture (X3D version 3.1 or later) is a texture node that defines a cubic environment map source as a single file format that contains multiple images, one for each side.
  * <ul>
  *  <li> <i> Hint:</i>  can contain a single TextureProperties node. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ImageCubeMapTexture" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#ImageCubeMapTexture" target="blank">X3D Abstract Specification: ImageCubeMapTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageCubeMapTexture" target="_blank">X3D Tooltips: ImageCubeMapTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */

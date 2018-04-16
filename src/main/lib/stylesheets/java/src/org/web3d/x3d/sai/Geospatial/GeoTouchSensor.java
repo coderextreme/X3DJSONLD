@@ -52,11 +52,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#GeoTouchSensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoTouchSensor" target="blank">X3D Abstract Specification: GeoTouchSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoTouchSensor" target="_blank">X3D Tooltips: GeoTouchSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -146,40 +144,50 @@ public interface GeoTouchSensor extends X3DTouchSensorNode
 	/**
 	 * Provide array of 3-tuple double results from outputOnly SFVec3d field named <i>hitGeoCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D point on surface of underlying geometry, given in GeoTouchSensor's local coordinate system.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D point on surface of underlying geometry, given in GeoTouchSensor's local coordinate system.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitGeoCoord_changed field
 	 */
 	public double[] getHitGeoCoord();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitNormal_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing surface normal vector at the hitGeoCoordinate.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing surface normal vector at the hitGeoCoordinate.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitNormal_changed field
 	 */
 	public float[] getHitNormal();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>hitPoint_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing 3D point on surface of underlying geometry, given in geometry coordinates (not geographic coordinates).  * <br>
-
+	 * <i>Tooltip:</i> Output event containing 3D point on surface of underlying geometry, given in geometry coordinates (not geographic coordinates).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitPoint_changed field
 	 */
 	public float[] getHitPoint();
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>hitTexCoord_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Output event containing texture coordinates of surface at the hitGeoCoordinate.  * <br>
-
+	 * <i>Tooltip:</i> Output event containing texture coordinates of surface at the hitGeoCoordinate.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of hitTexCoord_changed field
 	 */
 	public float[] getHitTexCoord();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -187,8 +195,10 @@ public interface GeoTouchSensor extends X3DTouchSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isOver</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Is pointing device over sensor's geometry?.  * <br>
-
+	 * <i>Tooltip:</i> Is pointing device over sensor's geometry?.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isOver field
 	 */
 	@Override
@@ -215,7 +225,8 @@ public interface GeoTouchSensor extends X3DTouchSensorNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Time event generated when touched.
  * <ul>
- *  <li> <i> Hint:</i>  touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Hint:</i> touchTime event is generated when following three conditions are all met: (a) pointing device was pointing towards geometry when initially activated (isActive=true), (b) pointing device is currently pointing towards the geometry (isOver=true), and (c) pointing device selection is deactivated/deselected by user (isActive=false event is also generated). </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of touchTime field
 	 */

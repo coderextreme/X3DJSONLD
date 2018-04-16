@@ -40,21 +40,18 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFInt32 X3D field type.
  * 
  * <br><br>
- * An SFInt32 field specifies one 32-bit signed integer.
-<br><br>
-Related field object: {@link MFInt32Object}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFInt32">X3D Tooltips: type SFInt32</a>
-
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * An SFInt32 field specifies one 32-bit signed integer.
+ * <br><br>
+ * Related field object: {@link MFInt32Object}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFInt32">X3D Tooltips: type SFInt32</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFInt32AndMFInt32" target="blank">X3D Abstract Specification: SFInt32AndMFInt32</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -69,6 +66,9 @@ public class SFInt32Object extends X3DConcreteField implements org.web3d.x3d.sai
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Java Tutorials: Primitive Data Types</a>
      */
 	public static final int DEFAULT_VALUE = 0;
+
+	/** Default tuple size for this field type is <i>1</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 1;
 
 	// Member value declaration is encapsulated and private, using preferred Java types for concretes library
 	private int SFInt32 = DEFAULT_VALUE;

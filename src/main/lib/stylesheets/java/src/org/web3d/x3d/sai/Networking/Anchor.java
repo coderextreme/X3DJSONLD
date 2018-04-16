@@ -47,7 +47,7 @@ import java.util.Arrays;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: Anchor is a Grouping node that can contain most nodes. When the user selects any of the geometry contained by the Anchor node, it jumps to another viewpoint or loads content (such as X3D, an image or HTML) specified by the url field. Loaded content completely replaces current content, if parameter is same window.
+ * <i>X3D node tooltip</i>: Anchor is a Grouping node that can contain most nodes. When the user selects any of the geometry contained by the Anchor node, the browser either jumps to another viewpoint (similar to HTML bookmark) or else loads content (such as X3D, an image or HTML) specified by the url field. Newly loaded content completely replaces current content, if the value of parameter field indicates using the same window.
  * <ul>
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
  *  <li> <i>Hint:</i> see X3D Specification 20.2.1 Overview of pointing device sensors <br> <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#OverviewOfPointingDeviceSensors" target="_blank">http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/pointingsensor.html#OverviewOfPointingDeviceSensors</a> </li> 
@@ -55,11 +55,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#Anchor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#Anchor" target="blank">X3D Abstract Specification: Anchor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Anchor" target="_blank">X3D Tooltips: Anchor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

@@ -60,10 +60,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#Material" target="blank">X3D Abstract Specification: TwoSidedMaterial</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TwoSidedMaterial" target="_blank">X3D Tooltips: TwoSidedMaterial</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -491,6 +489,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setAmbientIntensity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial ambientIntensity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -509,8 +508,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setAmbientIntensity(SFFloatObject newValue)
 	{
-		setAmbientIntensity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAmbientIntensity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>backAmbientIntensity</i>.
@@ -535,6 +535,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackAmbientIntensity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial backAmbientIntensity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -553,8 +554,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackAmbientIntensity(SFFloatObject newValue)
 	{
-		setBackAmbientIntensity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackAmbientIntensity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>backDiffuseColor</i>.
@@ -581,6 +583,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackDiffuseColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -599,8 +602,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackDiffuseColor(SFColorObject newValue)
 	{
-		setBackDiffuseColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackDiffuseColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -645,6 +649,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackEmissiveColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -663,8 +668,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackEmissiveColor(SFColorObject newValue)
 	{
-		setBackEmissiveColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackEmissiveColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -704,6 +710,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackShininess(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial backShininess newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -722,8 +729,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackShininess(SFFloatObject newValue)
 	{
-		setBackShininess(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackShininess(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>backSpecularColor</i>.
@@ -748,6 +756,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackSpecularColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -766,8 +775,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackSpecularColor(SFColorObject newValue)
 	{
-		setBackSpecularColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackSpecularColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -807,6 +817,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setBackTransparency(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial backTransparency newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -825,8 +836,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setBackTransparency(SFFloatObject newValue)
 	{
-		setBackTransparency(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBackTransparency(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>diffuseColor</i>.
@@ -853,6 +865,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setDiffuseColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -871,8 +884,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setDiffuseColor(SFColorObject newValue)
 	{
-		setDiffuseColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDiffuseColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -917,6 +931,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setEmissiveColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -935,8 +950,9 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	 */
 	public TwoSidedMaterialObject setEmissiveColor(SFColorObject newValue)
 	{
-		setEmissiveColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEmissiveColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -975,6 +991,7 @@ public class TwoSidedMaterialObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 	@Override
 	public TwoSidedMaterialObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1069,6 +1086,7 @@ setAttribute method invocations).
 	@Override
 	public TwoSidedMaterialObject setSeparateBackColor(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		separateBackColor = newValue;
 		return this;
 	}
@@ -1080,8 +1098,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setSeparateBackColor(SFBoolObject newValue)
 	{
-		setSeparateBackColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSeparateBackColor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>shininess</i>.
@@ -1106,6 +1125,7 @@ setAttribute method invocations).
 	@Override
 	public TwoSidedMaterialObject setShininess(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial shininess newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1124,8 +1144,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setShininess(SFFloatObject newValue)
 	{
-		setShininess(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setShininess(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>specularColor</i>.
@@ -1150,6 +1171,7 @@ setAttribute method invocations).
 	@Override
 	public TwoSidedMaterialObject setSpecularColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1168,8 +1190,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setSpecularColor(SFColorObject newValue)
 	{
-		setSpecularColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpecularColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1209,6 +1232,7 @@ setAttribute method invocations).
 	@Override
 	public TwoSidedMaterialObject setTransparency(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TwoSidedMaterial transparency newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1227,8 +1251,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setTransparency(SFFloatObject newValue)
 	{
-		setTransparency(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransparency(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1243,6 +1268,7 @@ setAttribute method invocations).
 	@Override
 	public final TwoSidedMaterialObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TwoSidedMaterial
@@ -1270,8 +1296,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1289,6 +1316,7 @@ setAttribute method invocations).
 	@Override
 	public final TwoSidedMaterialObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TwoSidedMaterial
@@ -1316,8 +1344,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1330,6 +1359,7 @@ setAttribute method invocations).
 	@Override
 	public final TwoSidedMaterialObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1344,8 +1374,9 @@ setAttribute method invocations).
 	 */
 	public TwoSidedMaterialObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

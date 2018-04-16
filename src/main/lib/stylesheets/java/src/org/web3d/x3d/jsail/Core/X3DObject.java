@@ -125,10 +125,8 @@ import org.web3d.x3d.jsail.Core.*;
  *  <li> <i>Hint:</i> for more on XML declaration and DOCTYPE (DTD) statements, see <br> <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation</a> </li> 
  *  <li> <i>Hint:</i>  additional attributes are under consideration for use when embedding X3D version 4 scenes within HTML version 5 web pages. </li> 
  * </ul>
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Header" target="blank">X3D Abstract Specification: X3D</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#X3D" target="_blank">X3D Tooltips: X3D</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -455,6 +453,13 @@ public class X3DObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	public static final String FILE_EXTENSION_HTML = ".html";
 										
 	/**
+	 * File extension for markdown encoding, with dot prepended: <i>.md</i>
+	 * @see <a href="https://docs.gitlab.com/ee/user/markdown.html">GitLab Flavored Markdown (GFM)</a>
+	 * @see <a href="https://en.wikipedia.org/wiki/Markdown">Wikipedia: Markdown</a>
+	 */
+	public static final String FILE_EXTENSION_MARKDOWN = ".md";
+										
+	/**
 	 * File extension for XHTML Encoding, with dot prepended: <i>.xhtml</i>
 	 * @see <a href="https://www.w3.org/TR/html/xhtml.html#xhtml">HTML5: XHTML syntax</a>
 	 */
@@ -609,8 +614,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toStringXML()
 	 * @see X3DObject#toFileXML(String)
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3d
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -629,7 +634,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             "\"" + FILE_EXTENSION_X3D + "\" or " +
                             "\"" + FILE_EXTENSION_XML + "\"");
 		}
-               if      (!fileNameMeetsX3dNamingConventions(fileName))
+                if (!fileNameMeetsX3dNamingConventions(fileName))
                     System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions. Output serialization allowed to continue, file may be editable...");
                 else if (!isFileNameNMTOKEN(fileName)) // less strict
                     System.out.println ("Warning: " + fileName + " is not a valid NMTOKEN. Output serialization allowed to continue, file may be editable...");
@@ -685,8 +690,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Serialize scene graph using <i>toStringClassicVRML()</i> to create a new X3D file with extension <i>x3dv</i>.
 	 * @see X3DObject#toStringClassicVRML()
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3dv
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -759,8 +764,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Serialize scene graph using <i>toStringVRML97()</i> to create a new X3D file with extension <i>wrl</i>.
 	 * @see X3DObject#toStringVRML97()
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .wrl
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -862,9 +867,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toFileX3DOM(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
-         * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
@@ -898,6 +903,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_htmlDocumentation))
                 {
                     expectedFileNameExtension = FILE_EXTENSION_HTML;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DTIDY))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_X3D;
                 }
                 else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVA))
                 {
@@ -1046,7 +1055,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			{
 				errorNotice += "Stylesheet not found in " + jarPath + ": " + stylesheetPath + ", ";
 			}
-                        // if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
+            // if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
 			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
                         if ((stylesheetInputStream == null) && !stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
@@ -1133,7 +1142,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Serialize scene graph using <i>toFileX3D()</i> and then create a new pretty-print HTML file with extension <i>.html</i>, suitable for documentation purposes.
-         * Also create SVG output file (with same base name) for Extrusion crossSection, if found.
+     * Also create SVG output file (with same base name) for Extrusion crossSection, if found.
 	 * @see ConfigurationProperties#STYLESHEET_htmlDocumentation
 	 * @see ConfigurationProperties#STYLESHEET_extrusionCrossSectionSVG
 	 * @see X3DObject#toStringX3D()
@@ -1151,7 +1160,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @param fileName name of file to create and save, can include local directory path, must end with .html
 	 * @return File containing result (if operation succeeds), null otherwise
 	 */
-	public File toFileDocumentationHtml(String fileName)
+	public File toFileHtmlDocumentation(String fileName)
 	{
             String   svgFileName = fileName;
             if (     svgFileName.endsWith(".html"))
@@ -1168,7 +1177,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 /*
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileDocumentationHtml(fileName) fileName not provided;" +
+			throw new X3DException("toFileHtmlDocumentation(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_HTML + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_HTML) && !fileName.endsWith(FILE_EXTENSION_XHTML))
@@ -1207,11 +1216,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(fileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: toFileDocumentationHtml() is overwriting prior file " + fileName);
+			System.out.println ("Warning: toFileHtmlDocumentation() is overwriting prior file " + fileName);
 		}
 		else if  (priorFile.exists())
 		{
-			System.out.println ("Warning: toFileDocumentationHtml() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("Warning: toFileHtmlDocumentation() is not allowed to overwrite prior file: " + fileName);
 			System.out.println ("  see X3DJSAIL.properties file, or ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles(), to get/set permissions");
 			return null;
 		}
@@ -1302,7 +1311,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			{
 				errorNotice += "Stylesheet not found in jar: " + stylesheetPath + ", ";
 			}
-                        // TODO fix: if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
+            // TODO fix: if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
 			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
 			if ((stylesheetInputStream == null) && !stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";					
@@ -1439,7 +1448,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				String fileContents = readFile(temporaryFileName);
 				fileJSON.delete();
 				return fileContents;
-//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
 //				return String.join("\n",lines);
 			}
 		}
@@ -1468,7 +1477,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				String fileContents = readFile(temporaryFileName);
 				fileJava.delete();
 				return fileContents;
-//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
 //				return String.join("\n",lines);
 			}
 		}
@@ -1497,7 +1506,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				String fileContents = readFile(temporaryFileName);
 				fileJavaScript.delete();
 				return fileContents;
-//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
 //				return String.join("\n",lines);
 			}
 		}
@@ -1512,8 +1521,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript file.
 	 * @author John Carlson
 	 * @see X3DObject#toStringJavaScript()
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
 	 * @param fileName name of file to create and save, can include local directory path, must end with .js
 	 * @return File containing result (if operation succeeds), empty otherwise
 	 */
@@ -1578,12 +1587,56 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 String outputSceneText = toStringJSON();
                 try
                 {
-                       bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
-                       String tmpStr = "load('jvm-npm.js');\nload('repeatPolyfill.js');\nvar xmldom = require('node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
-                       bufferedWriter.write(tmpStr, 0, tmpStr.length());
-                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('node/mapToMethod.js');\n var mapToMethod2 = require('node/mapToMethod2.js');\n var fieldTypes = require('node/fieldTypes.js');\n load('node/X3DJSONLD.js');\n load('node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
-                       bufferedWriter.write(tmpStr, 0, tmpStr.length());
-                       bufferedWriter.close(); // ensure file writing is complete
+					// patches by John Carlson
+                    bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
+					String nashornFolder = "nashorn";
+					String tmpStr = "load('"+nashornFolder+"/jvm-npm.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "load('"+nashornFolder+"/repeatPolyfill.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var xmldom = require('"+nashornFolder+"/node_modules/xmldom');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var DOMParser = xmldom.DOMParser;\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var XMLSerializer = new xmldom.XMLSerializer();\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var DOMImplementation = new xmldom.DOMImplementation();\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var json = "+outputSceneText+";\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var version = json['X3D']['@version'];\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var document = DOMImplementation.createDocument(null, 'X3D', docType);\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var mapToMethod = require('"+nashornFolder+"/node/mapToMethod.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var mapToMethod2 = require('"+nashornFolder+"/node/mapToMethod2.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var fieldTypes = require('"+nashornFolder+"/node/fieldTypes.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "load('"+nashornFolder+"/node/X3DJSONLD.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "load('"+nashornFolder+"/node/JavaScriptSerializer.js');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var child = CreateElement('X3D');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "ConvertToX3DOM(json, '', child, 'flipper.json');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "print('Returning with', child);\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var FileWriter = Java.type('java.io.FileWriter');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "var fw = new FileWriter('"+fileName+"');\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "fw.write(output);\n";
+					bufferedWriter.write(tmpStr, 0, tmpStr.length());
+					tmpStr = "fw.close();\n";
+                    bufferedWriter.write(tmpStr, 0, tmpStr.length());
+                    bufferedWriter.close(); // ensure file writing is complete
                 }
                 catch (IOException exception)
                 {
@@ -1591,18 +1644,114 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                ", unable to save file: " + exception);
                 }
                 try {
-                       ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                       engine.eval("load('"+intermediateJSFileName+"');");
-                       if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-                               intermediateJSFilePath.toFile().deleteOnExit();
-					   engine.eval("print('Hello World!');");
+					ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+					 engine.eval("load('"+intermediateJSFileName+"');");
+					if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
+							intermediateJSFilePath.toFile().deleteOnExit();
+					engine.eval("print('Hello World!');");
                 }
                 catch (ScriptException exception)
                 {
-                       throw new X3DException(errorNotice + "ScriptException when processing fileName " + intermediateJSFilePath +
-                               ", unable to save result: " + exception);
+					throw new X3DException(errorNotice + "ScriptException when processing fileName " + intermediateJSFilePath +
+							", unable to save result: " + exception);
                 }
                 return outputFilePath.toFile(); // success
+	}
+
+	/**
+	 * Serialize scene graph using STYLESHEET_htmlDocumentation to create a new X3DOM html page as a string.
+	 * @see X3DObject#toFileHtmlDocumentation(String)
+	 * @see X3DObject#FILE_EXTENSION_HTML
+	 * @see X3DObject#FILE_EXTENSION_XHTML
+	 * @see ConfigurationProperties#STYLESHEET_htmlDocumentation
+	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringHtmlDocumentation()
+	{
+		String temporaryFileName = "temporaryPrettyPrintOutputFile.html";
+		
+		try
+		{
+			File     fileHTML = toFileHtmlDocumentation(temporaryFileName);
+
+			if  ((fileHTML != null) && fileHTML.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileHTML.delete();
+				return fileContents;
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
+//				return String.join("\n",lines);
+			}
+		}
+		catch (IOException ioe)
+		{
+			// TODO consider throwing exception instead
+		}
+		return "";
+	}
+
+	/**
+	 * Produce model meta information as `name`=`value` pairs, providing markdown output as a string.
+	 * @see X3DObject#toFileModelMetaMarkdown(String)
+	 * @see X3DObject#FILE_EXTENSION_MARKDOWN
+	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringModelMetaMarkdown()
+	{
+		String temporaryFileName = "temporaryModelMetaMarkdownOutputFile.x3d";
+		
+		try
+		{
+			File     fileMarkdown = toFileModelMetaMarkdown(temporaryFileName);
+
+			if  ((fileMarkdown != null) && fileMarkdown.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileMarkdown.delete();
+				return fileContents;
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
+//				return String.join("\n",lines);
+			}
+		}
+		catch (IOException ioe)
+		{
+			// TODO consider throwing exception instead
+		}
+		return "";
+	}
+
+	/**
+	 * Produce alternate cleaned-up X3D scene using STYLESHEET_X3DTIDY, providing output as a string.
+	 * @see X3DObject#toFileX3dTidy(String)
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see ConfigurationProperties#STYLESHEET_X3DTIDY
+	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringX3dTidy()
+	{
+		String temporaryFileName = "temporaryPrettyPrintOutputFile.x3d";
+		
+		try
+		{
+			File     fileHTML = toFileX3dTidy(temporaryFileName);
+
+			if  ((fileHTML != null) && fileHTML.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileHTML.delete();
+				return fileContents;
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
+//				return String.join("\n",lines);
+			}
+		}
+		catch (IOException ioe)
+		{
+			// TODO consider throwing exception instead
+		}
+		return "";
 	}
 
 	/**
@@ -1627,7 +1776,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				String fileContents = readFile(temporaryFileName);
 				fileX3DOM.delete();
 				return fileContents;
-//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
 //				return String.join("\n",lines);
 			}
 		}
@@ -1662,7 +1811,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				String fileContents = readFile(temporaryFileName);
 				fileX_ITE.delete();
 				return fileContents;
-//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
 //				return String.join("\n",lines);
 			}
 		}
@@ -1679,7 +1828,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileDocumentationHtml(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
 	 * @see X3DObject#toFileX3DOM(String)
@@ -1721,7 +1870,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFileDocumentationHtml(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
 	 * @see X3DObject#toFileX3DOM(String)
@@ -1774,6 +1923,102 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
 					parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
+
+	/**
+	 * Creatmodel meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
+	 * @see X3DObject#toStringModelMetaMarkdown()
+	 * @see X3DObject#toStringX3D()
+	 * @see X3DObject#toFileX3D(String)
+	 * @see X3DObject#toFileJava(String)
+	 * @see X3DObject#toFileJSON(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
+	 * @see X3DObject#toFileX_ITE(String,String)
+	 * @see X3DObject#toFileCobweb(String,String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
+	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
+	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
+	 * @param fileName name of file to create and save, can include local directory path, must end with .xhtml (preferred) or .html
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileModelMetaMarkdown(String fileName)
+	{
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileX3dTidy(fileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_MARKDOWN + "\"");
+		}
+		if (!fileName.endsWith(FILE_EXTENSION_MARKDOWN))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_MARKDOWN + "\"");
+		}
+		if      (!fileNameMeetsX3dNamingConventions(fileName))
+                    System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions. Output serialization allowed to continue, file may be editable...");
+                else if (!isFileNameNMTOKEN(fileName)) // less strict
+                    System.out.println ("Warning: " + fileName + " is not a valid NMTOKEN. Output serialization allowed to continue, file may be editable...");
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName); // no stylesheet parameters
+	}
+
+	/**
+	 * Create alternate cleaned-up X3D scene using STYLESHEET_X3DTIDY within an output file having extension <i>.x3d</i>.
+	 * @see X3DObject#toStringX3dTidy()
+	 * @see X3DObject#toStringX3D()
+	 * @see X3DObject#toFileX3D(String)
+	 * @see X3DObject#toFileJava(String)
+	 * @see X3DObject#toFileJSON(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
+	 * @see X3DObject#toFileX_ITE(String,String)
+	 * @see X3DObject#toFileCobweb(String,String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see ConfigurationProperties#STYLESHEET_X3DTIDY
+	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
+	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
+	 * @param fileName name of file to create and save, can include local directory path, must end with .xhtml (preferred) or .html
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileX3dTidy(String fileName)
+	{
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileX3dTidy(fileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
+		}
+		if (!fileName.endsWith(FILE_EXTENSION_X3D))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_X3D + "\"");
+		}
+		if      (!fileNameMeetsX3dNamingConventions(fileName))
+                    System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions. Output serialization allowed to continue, file may be editable...");
+                else if (!isFileNameNMTOKEN(fileName)) // less strict
+                    System.out.println ("Warning: " + fileName + " is not a valid NMTOKEN. Output serialization allowed to continue, file may be editable...");
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DTIDY, fileName); // no stylesheet parameters
+	}
 										
 	/**
 	 * Create displayable scene page rendered with X3DOM, using STYLESHEET_X3DOM by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
@@ -1782,11 +2027,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJava(String)
 	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFileDocumentationHtml(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
-         * @see SFStringObject#isNMTOKEN(String)
-         * @see SFStringObject#meetsX3dNamingConventions(String)
+	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFStringObject#meetsX3dNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
@@ -1819,7 +2064,6 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
-
         return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DOM, fileName, "player", "X3DOM");
 	}
 										
@@ -1830,7 +2074,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJava(String)
 	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFileDocumentationHtml(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
 	 * @see X3DObject#toFileX3DOM(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
@@ -1861,7 +2105,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJava(String)
 	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFileDocumentationHtml(String)
+	 * @see X3DObject#toFileHtmlDocumentation(String)
 	 * @see X3DObject#toFileX3DOM(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
@@ -2644,7 +2888,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		else if (args[0].toLowerCase().startsWith("html") && !fileName.isEmpty())
 		{
-			newFile = toFileDocumentationHtml(fileName);
+			newFile = toFileHtmlDocumentation(fileName);
 			if  (newFile != null)
 				 return newFile.getAbsolutePath();
 			else return "file not saved";
@@ -2685,6 +2929,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
 	public X3DObject setHead(headObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		head = newValue;
 		if (newValue != null)
 		{
@@ -2747,6 +2992,7 @@ setAttribute method invocations).	 */
 	 */
 	public X3DObject setProfile(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -2777,8 +3023,9 @@ setAttribute method invocations).	 */
 	 */
 	public X3DObject setProfile(SFStringObject newValue)
 	{
-		setProfile(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setProfile(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide SceneObject instance (using a properly typed node) from inputOutput SFNode field <i>Scene</i>.
@@ -2796,6 +3043,7 @@ setAttribute method invocations).	 */
 	 */
 	public X3DObject setScene(SceneObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		Scene = newValue;
 		if (newValue != null)
 		{
@@ -2854,6 +3102,7 @@ setAttribute method invocations).	 */
 	 */
 	public X3DObject setVersion(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -2880,8 +3129,9 @@ setAttribute method invocations).	 */
 	 */
 	public X3DObject setVersion(SFStringObject newValue)
 	{
-		setVersion(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setVersion(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

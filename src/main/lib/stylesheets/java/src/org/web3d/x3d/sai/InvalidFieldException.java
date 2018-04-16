@@ -35,18 +35,16 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
+
+ * <br>
+ * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
 The exception that is thrown when a reference to any field is not valid.
 Generally used as a base class to more specific invalid field methods.
 
 A field may be invalid for a number of reasons:
 The user may have typed in the wrong name through a typo.The name may not correspond to a field in that node at all.The name given refers to a valid field but the field cannot be
-     accessed as an outputOnly field.
- * 
-
- * <br>
- * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+     accessed as an outputOnly field. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#InvalidFieldException" target="_blank">SAI Java Specification: B.7.9 InvalidFieldException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#InvalidFieldException" target="_blank">X3D Tooltips: InvalidFieldException</a>

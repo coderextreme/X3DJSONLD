@@ -81,10 +81,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#EspduTransform" target="blank">X3D Abstract Specification: EspduTransform</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#EspduTransform" target="_blank">X3D Tooltips: EspduTransform</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -1615,6 +1613,7 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public EspduTransformObject setAddress(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1629,8 +1628,9 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public EspduTransformObject setAddress(SFStringObject newValue)
 	{
-		setAddress(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAddress(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>applicationID</i>.
@@ -1655,6 +1655,7 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public EspduTransformObject setApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		applicationID = newValue;
 		return this;
 	}
@@ -1666,8 +1667,9 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public EspduTransformObject setApplicationID(SFInt32Object newValue)
 	{
-		setApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Float results from inputOutput MFFloat field named <i>articulationParameterArray</i>.
@@ -1708,6 +1710,7 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public EspduTransformObject setArticulationParameterArray(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearArticulationParameterArray(); // newValueNullSetDEFAULT_VALUE
@@ -1734,8 +1737,9 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearArticulationParameterArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setArticulationParameterArray(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterArray(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat articulationParameterArray field, similar to {@link #setArticulationParameterArray(float[])}.
@@ -1749,6 +1753,7 @@ public class EspduTransformObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearArticulationParameterArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		articulationParameterArray = newValue;
 		return this;
 	}
@@ -1774,6 +1779,7 @@ setAttribute method invocations).
 			clearArticulationParameterArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1819,6 +1825,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setArticulationParameterChangeIndicatorArray(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearArticulationParameterChangeIndicatorArray(); // newValueNullSetDEFAULT_VALUE
@@ -1845,8 +1852,9 @@ setAttribute method invocations).
 			clearArticulationParameterChangeIndicatorArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setArticulationParameterChangeIndicatorArray(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterChangeIndicatorArray(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 articulationParameterChangeIndicatorArray field, similar to {@link #setArticulationParameterChangeIndicatorArray(int[])}.
@@ -1860,6 +1868,7 @@ setAttribute method invocations).
 			clearArticulationParameterChangeIndicatorArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		articulationParameterChangeIndicatorArray = newValue;
 		return this;
 	}
@@ -1896,6 +1905,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setArticulationParameterCount(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		articulationParameterCount = newValue;
 		return this;
 	}
@@ -1907,8 +1917,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setArticulationParameterCount(SFInt32Object newValue)
 	{
-		setArticulationParameterCount(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterCount(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of Integer results from inputOutput MFInt32 field named <i>articulationParameterDesignatorArray</i>.
@@ -1947,6 +1958,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setArticulationParameterDesignatorArray(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearArticulationParameterDesignatorArray(); // newValueNullSetDEFAULT_VALUE
@@ -1973,8 +1985,9 @@ setAttribute method invocations).
 			clearArticulationParameterDesignatorArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setArticulationParameterDesignatorArray(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterDesignatorArray(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 articulationParameterDesignatorArray field, similar to {@link #setArticulationParameterDesignatorArray(int[])}.
@@ -1988,6 +2001,7 @@ setAttribute method invocations).
 			clearArticulationParameterDesignatorArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		articulationParameterDesignatorArray = newValue;
 		return this;
 	}
@@ -2038,6 +2052,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setArticulationParameterIdPartAttachedToArray(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearArticulationParameterIdPartAttachedToArray(); // newValueNullSetDEFAULT_VALUE
@@ -2064,8 +2079,9 @@ setAttribute method invocations).
 			clearArticulationParameterIdPartAttachedToArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setArticulationParameterIdPartAttachedToArray(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterIdPartAttachedToArray(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 articulationParameterIdPartAttachedToArray field, similar to {@link #setArticulationParameterIdPartAttachedToArray(int[])}.
@@ -2079,6 +2095,7 @@ setAttribute method invocations).
 			clearArticulationParameterIdPartAttachedToArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		articulationParameterIdPartAttachedToArray = newValue;
 		return this;
 	}
@@ -2129,6 +2146,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setArticulationParameterTypeArray(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearArticulationParameterTypeArray(); // newValueNullSetDEFAULT_VALUE
@@ -2155,8 +2173,9 @@ setAttribute method invocations).
 			clearArticulationParameterTypeArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setArticulationParameterTypeArray(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setArticulationParameterTypeArray(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 articulationParameterTypeArray field, similar to {@link #setArticulationParameterTypeArray(int[])}.
@@ -2170,6 +2189,7 @@ setAttribute method invocations).
 			clearArticulationParameterTypeArray(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		articulationParameterTypeArray = newValue;
 		return this;
 	}
@@ -2186,8 +2206,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue0_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue0_changed field
 	 */
 	@Override
@@ -2198,8 +2220,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue1_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue1_changed field
 	 */
 	@Override
@@ -2222,8 +2246,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue3_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue3_changed field
 	 */
 	@Override
@@ -2234,8 +2260,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue4_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue4_changed field
 	 */
 	@Override
@@ -2246,8 +2274,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue5_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue5_changed field
 	 */
 	@Override
@@ -2258,8 +2288,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue6_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue6_changed field
 	 */
 	@Override
@@ -2270,8 +2302,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue7_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue7_changed field
 	 */
 	@Override
@@ -2304,6 +2338,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2322,8 +2357,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2366,6 +2402,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2388,8 +2425,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2429,6 +2467,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2447,8 +2486,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2502,6 +2542,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -2532,6 +2573,7 @@ setAttribute method invocations).
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -2680,8 +2722,10 @@ setAttribute method invocations).
 											/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When were we collided with?.  * <br>
-
+	 * <i>Tooltip:</i> When were we collided with?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of collideTime field
 	 */
 	@Override
@@ -2712,6 +2756,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setCollisionType(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		collisionType = newValue;
 		return this;
 	}
@@ -2723,8 +2768,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setCollisionType(SFInt32Object newValue)
 	{
-		setCollisionType(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCollisionType(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>deadReckoning</i>.
@@ -2749,6 +2795,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setDeadReckoning(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		deadReckoning = newValue;
 		return this;
 	}
@@ -2760,8 +2807,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setDeadReckoning(SFInt32Object newValue)
 	{
-		setDeadReckoning(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDeadReckoning(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>detonateTime</i>.
@@ -2798,6 +2846,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setDetonationLocation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2816,8 +2865,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setDetonationLocation(SFVec3fObject newValue)
 	{
-		setDetonationLocation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDetonationLocation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2857,6 +2907,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setDetonationRelativeLocation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -2875,8 +2926,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setDetonationRelativeLocation(SFVec3fObject newValue)
 	{
-		setDetonationRelativeLocation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDetonationRelativeLocation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -2916,6 +2968,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setDetonationResult(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		detonationResult = newValue;
 		return this;
 	}
@@ -2927,8 +2980,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setDetonationResult(SFInt32Object newValue)
 	{
-		setDetonationResult(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDetonationResult(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -2953,6 +3007,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -2964,8 +3019,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityCategory</i>.
@@ -2990,6 +3046,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityCategory(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityCategory = newValue;
 		return this;
 	}
@@ -3001,8 +3058,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityCategory(SFInt32Object newValue)
 	{
-		setEntityCategory(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityCategory(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityCountry</i>.
@@ -3027,6 +3085,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityCountry(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityCountry = newValue;
 		return this;
 	}
@@ -3038,8 +3097,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityCountry(SFInt32Object newValue)
 	{
-		setEntityCountry(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityCountry(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityDomain</i>.
@@ -3064,6 +3124,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityDomain(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityDomain = newValue;
 		return this;
 	}
@@ -3075,8 +3136,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityDomain(SFInt32Object newValue)
 	{
-		setEntityDomain(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityDomain(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityExtra</i>.
@@ -3101,6 +3163,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityExtra(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityExtra = newValue;
 		return this;
 	}
@@ -3112,8 +3175,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityExtra(SFInt32Object newValue)
 	{
-		setEntityExtra(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityExtra(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityID</i>.
@@ -3138,6 +3202,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityID = newValue;
 		return this;
 	}
@@ -3149,8 +3214,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityID(SFInt32Object newValue)
 	{
-		setEntityID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entityKind</i>.
@@ -3175,6 +3241,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntityKind(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entityKind = newValue;
 		return this;
 	}
@@ -3186,8 +3253,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntityKind(SFInt32Object newValue)
 	{
-		setEntityKind(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntityKind(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entitySpecific</i>.
@@ -3212,6 +3280,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntitySpecific(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entitySpecific = newValue;
 		return this;
 	}
@@ -3223,8 +3292,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntitySpecific(SFInt32Object newValue)
 	{
-		setEntitySpecific(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntitySpecific(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>entitySubcategory</i>.
@@ -3244,6 +3314,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEntitySubcategory(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		entitySubcategory = newValue;
 		return this;
 	}
@@ -3255,8 +3326,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEntitySubcategory(SFInt32Object newValue)
 	{
-		setEntitySubcategory(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEntitySubcategory(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>eventApplicationID</i>.
@@ -3281,6 +3353,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEventApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		eventApplicationID = newValue;
 		return this;
 	}
@@ -3292,8 +3365,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEventApplicationID(SFInt32Object newValue)
 	{
-		setEventApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEventApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>eventEntityID</i>.
@@ -3318,6 +3392,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEventEntityID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		eventEntityID = newValue;
 		return this;
 	}
@@ -3329,8 +3404,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEventEntityID(SFInt32Object newValue)
 	{
-		setEventEntityID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEventEntityID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>eventNumber</i>.
@@ -3357,6 +3433,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEventNumber(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		eventNumber = newValue;
 		return this;
 	}
@@ -3368,8 +3445,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEventNumber(SFInt32Object newValue)
 	{
-		setEventNumber(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEventNumber(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>eventSiteID</i>.
@@ -3394,6 +3472,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setEventSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		eventSiteID = newValue;
 		return this;
 	}
@@ -3405,8 +3484,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setEventSiteID(SFInt32Object newValue)
 	{
-		setEventSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEventSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>fired1</i>.
@@ -3431,6 +3511,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFired1(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		fired1 = newValue;
 		return this;
 	}
@@ -3442,8 +3523,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFired1(SFBoolObject newValue)
 	{
-		setFired1(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFired1(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>fired2</i>.
@@ -3468,6 +3550,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFired2(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		fired2 = newValue;
 		return this;
 	}
@@ -3479,14 +3562,17 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFired2(SFBoolObject newValue)
 	{
-		setFired2(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFired2(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>firedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When did we shoot a weapon (Fire PDU)?.  * <br>
-
+	 * <i>Tooltip:</i> When did we shoot a weapon (Fire PDU)?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of firedTime field
 	 */
 	@Override
@@ -3517,6 +3603,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFireMissionIndex(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		fireMissionIndex = newValue;
 		return this;
 	}
@@ -3528,8 +3615,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFireMissionIndex(SFInt32Object newValue)
 	{
-		setFireMissionIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFireMissionIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>firingRange</i>.
@@ -3554,6 +3642,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFiringRange(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		firingRange = newValue;
 		return this;
 	}
@@ -3565,8 +3654,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFiringRange(SFFloatObject newValue)
 	{
-		setFiringRange(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFiringRange(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>firingRate</i>.
@@ -3591,6 +3681,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFiringRate(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		firingRate = newValue;
 		return this;
 	}
@@ -3602,8 +3693,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFiringRate(SFInt32Object newValue)
 	{
-		setFiringRate(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFiringRate(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>forceID</i>.
@@ -3628,6 +3720,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setForceID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		forceID = newValue;
 		return this;
 	}
@@ -3639,8 +3732,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setForceID(SFInt32Object newValue)
 	{
-		setForceID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForceID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>fuse</i>.
@@ -3665,6 +3759,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setFuse(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		fuse = newValue;
 		return this;
 	}
@@ -3676,8 +3771,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setFuse(SFInt32Object newValue)
 	{
-		setFuse(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFuse(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple double results from inputOutput SFVec3d field named <i>geoCoords</i>.
@@ -3697,6 +3793,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setGeoCoords(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -3715,8 +3812,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setGeoCoords(SFVec3dObject newValue)
 	{
-		setGeoCoords(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoCoords(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -3775,6 +3873,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -3801,8 +3900,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -3816,6 +3916,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -3831,6 +3932,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -3847,6 +3949,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -3863,8 +3966,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Have we received a network update recently?.  * <br>
-
+	 * <i>Tooltip:</i> Have we received a network update recently?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -3875,8 +3980,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isCollided</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Has a matching CollisionPDU reported a collision?.  * <br>
-
+	 * <i>Tooltip:</i> Has a matching CollisionPDU reported a collision?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isCollided field
 	 */
 	@Override
@@ -3887,8 +3994,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isDetonated</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Has a matching DetonationPDU reported a detonation?.  * <br>
-
+	 * <i>Tooltip:</i> Has a matching DetonationPDU reported a detonation?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isDetonated field
 	 */
 	@Override
@@ -3899,8 +4008,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkReader</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="remote" (listen to network as copy of remote entity).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="remote" (listen to network as copy of remote entity)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkReader field
 	 */
 	@Override
@@ -3911,8 +4022,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkWriter</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="master" (output to network as master entity at writeInterval).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="master" (output to network as master entity at writeInterval)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkWriter field
 	 */
 	@Override
@@ -3923,8 +4036,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isRtpHeaderHeard</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether incoming DIS packets have an RTP header prepended.  * <br>
-
+	 * <i>Tooltip:</i> Whether incoming DIS packets have an RTP header prepended.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isRtpHeaderHeard field
 	 */
 	@Override
@@ -3935,8 +4050,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isStandAlone</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="local" (ignore network but still respond to local events).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="local" (ignore network but still respond to local events)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isStandAlone field
 	 */
 	@Override
@@ -3967,6 +4084,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setLinearAcceleration(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -3985,8 +4103,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setLinearAcceleration(SFVec3fObject newValue)
 	{
-		setLinearAcceleration(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLinearAcceleration(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4026,6 +4145,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setLinearVelocity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4044,8 +4164,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setLinearVelocity(SFVec3fObject newValue)
 	{
-		setLinearVelocity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLinearVelocity(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4085,6 +4206,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMarking(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -4099,8 +4221,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMarking(SFStringObject newValue)
 	{
-		setMarking(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMarking(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -4124,6 +4247,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -4216,6 +4340,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMulticastRelayHost(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -4230,8 +4355,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMulticastRelayHost(SFStringObject newValue)
 	{
-		setMulticastRelayHost(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMulticastRelayHost(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>multicastRelayPort</i>.
@@ -4256,6 +4382,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMulticastRelayPort(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		multicastRelayPort = newValue;
 		return this;
 	}
@@ -4267,8 +4394,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMulticastRelayPort(SFInt32Object newValue)
 	{
-		setMulticastRelayPort(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMulticastRelayPort(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>munitionApplicationID</i>.
@@ -4293,6 +4421,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionApplicationID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		munitionApplicationID = newValue;
 		return this;
 	}
@@ -4304,8 +4433,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionApplicationID(SFInt32Object newValue)
 	{
-		setMunitionApplicationID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionApplicationID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>munitionEndPoint</i>.
@@ -4330,6 +4460,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionEndPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4348,8 +4479,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionEndPoint(SFVec3fObject newValue)
 	{
-		setMunitionEndPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionEndPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4389,6 +4521,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionEntityID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		munitionEntityID = newValue;
 		return this;
 	}
@@ -4400,8 +4533,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionEntityID(SFInt32Object newValue)
 	{
-		setMunitionEntityID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionEntityID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>munitionQuantity</i>.
@@ -4426,6 +4560,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionQuantity(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		munitionQuantity = newValue;
 		return this;
 	}
@@ -4437,8 +4572,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionQuantity(SFInt32Object newValue)
 	{
-		setMunitionQuantity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionQuantity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>munitionSiteID</i>.
@@ -4463,6 +4599,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		munitionSiteID = newValue;
 		return this;
 	}
@@ -4474,8 +4611,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionSiteID(SFInt32Object newValue)
 	{
-		setMunitionSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>munitionStartPoint</i>.
@@ -4500,6 +4638,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setMunitionStartPoint(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4518,8 +4657,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setMunitionStartPoint(SFVec3fObject newValue)
 	{
-		setMunitionStartPoint(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMunitionStartPoint(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4566,6 +4706,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setNetworkMode(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // null string check
 		else newValue = MFStringObject.cleanupUnescapedEnclosingQuotes(newValue); // enumeration value
@@ -4591,8 +4732,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setNetworkMode(SFStringObject newValue)
 	{
-		setNetworkMode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNetworkMode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>port</i>.
@@ -4617,6 +4759,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setPort(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		port = newValue;
 		return this;
 	}
@@ -4628,14 +4771,17 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setPort(SFInt32Object newValue)
 	{
-		setPort(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPort(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>readInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between read updates, 0 means no reading.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading.
+ * <ul>
+ *  <li> <i> Hint:</i>  readInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of readInterval field
 	 */
 	@Override
@@ -4645,15 +4791,20 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>readInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between read updates, 0 means no reading.
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading. Hint: readInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the readInterval field.
 	 * @return {@link EspduTransformObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public EspduTransformObject setReadInterval(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("EspduTransform readInterval newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		readInterval = newValue;
 		return this;
 	}
@@ -4665,8 +4816,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setReadInterval(SFTimeObject newValue)
 	{
-		setReadInterval(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setReadInterval(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
@@ -4691,6 +4843,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4709,8 +4862,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setRotation(SFRotationObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4751,6 +4905,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setRtpHeaderExpected(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		rtpHeaderExpected = newValue;
 		return this;
 	}
@@ -4762,8 +4917,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setRtpHeaderExpected(SFBoolObject newValue)
 	{
-		setRtpHeaderExpected(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRtpHeaderExpected(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>scale</i>.
@@ -4788,6 +4944,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setScale(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4806,8 +4963,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setScale(SFVec3fObject newValue)
 	{
-		setScale(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScale(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4847,6 +5005,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setScaleOrientation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4865,8 +5024,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setScaleOrientation(SFRotationObject newValue)
 	{
-		setScaleOrientation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setScaleOrientation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -4907,6 +5067,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setSiteID(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		siteID = newValue;
 		return this;
 	}
@@ -4918,14 +5079,17 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setSiteID(SFInt32Object newValue)
 	{
-		setSiteID(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSiteID(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>timestamp</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>timestamp</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  DIS timestamp in VRML time units from latest update.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) DIS timestamp received from latest PDU update, converted to X3D SFTime units.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of timestamp field
 	 */
 	@Override
@@ -4956,6 +5120,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -4974,8 +5139,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setTranslation(SFVec3fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -5015,6 +5181,7 @@ setAttribute method invocations).
 	@Override
 	public EspduTransformObject setWarhead(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		warhead = newValue;
 		return this;
 	}
@@ -5026,14 +5193,17 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setWarhead(SFInt32Object newValue)
 	{
-		setWarhead(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWarhead(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>writeInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between write updates, 0 means no writing (sending).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending).
+ * <ul>
+ *  <li> <i> Hint:</i>  writeInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of writeInterval field
 	 */
 	@Override
@@ -5043,15 +5213,20 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>writeInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between write updates, 0 means no writing (sending).
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending). Hint: writeInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the writeInterval field.
 	 * @return {@link EspduTransformObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public EspduTransformObject setWriteInterval(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("EspduTransform writeInterval newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		writeInterval = newValue;
 		return this;
 	}
@@ -5063,8 +5238,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setWriteInterval(SFTimeObject newValue)
 	{
-		setWriteInterval(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWriteInterval(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -5079,6 +5255,7 @@ setAttribute method invocations).
 	@Override
 	public final EspduTransformObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to EspduTransform
@@ -5106,8 +5283,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -5125,6 +5303,7 @@ setAttribute method invocations).
 	@Override
 	public final EspduTransformObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to EspduTransform
@@ -5152,8 +5331,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -5166,6 +5346,7 @@ setAttribute method invocations).
 	@Override
 	public final EspduTransformObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -5180,8 +5361,9 @@ setAttribute method invocations).
 	 */
 	public EspduTransformObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

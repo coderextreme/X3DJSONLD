@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Core.*;
  * <ul>
  *  <li> <i>Hint:</i> NavigationInfo, Background, TextureBackground, Fog, GeoViewpoint, OrthoViewpoint and Viewpoint are bindable nodes, meaning that no more than one of each node type can be active at a given time. </li> 
  *  <li> <i>Warning:</i> results are undefined if a bindable node (Viewpoint, OrthoViewpoint, NavigationInfo, Fog, Background, TextureBackground) is a contained child of LOD or Switch. </li> 
- *  <li> <i>Warning:</i> child ImageTexture or PixelTexture nodes must have unique containerField values for backTexture, bottomTexture, frontTexture, leftTexture, rightTexture, or topTexture. </li> 
+ *  <li> <i>Warning:</i> each of the child ImageTexture or PixelTexture nodes must have unique containerField values for backTexture, bottomTexture, frontTexture, leftTexture, rightTexture, or topTexture. </li> 
  *  <li> <i>Hint:</i>  authors can have LoadSensor nodes receive notification when background texture node(s) are loaded. </li> 
  * </ul>
  * <br>
@@ -59,10 +59,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#TextureBackground" target="blank">X3D Abstract Specification: TextureBackground</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureBackground" target="_blank">X3D Tooltips: TextureBackground</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -463,6 +461,7 @@ public class TextureBackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public TextureBackgroundObject setBackTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		backTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -544,8 +543,10 @@ setAttribute method invocations).
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  event sent when node becomes active/inactive.  * <br>
-
+	 * <i>Tooltip:</i> event sent when node becomes active/inactive.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of bindTime field
 	 */
 	@Override
@@ -573,6 +574,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setBottomTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		bottomTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -671,6 +673,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setFrontTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		frontTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -789,6 +792,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setGroundAngle(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
@@ -815,8 +819,9 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGroundAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGroundAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat groundAngle field, similar to {@link #setGroundAngle(float[])}.
@@ -830,6 +835,7 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		groundAngle = newValue;
 		return this;
 	}
@@ -855,6 +861,7 @@ setAttribute method invocations).
 			clearGroundAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -890,6 +897,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setGroundColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -908,15 +916,17 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setGroundColor(MFColorObject newValue)
 	{
-		setGroundColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGroundColor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isBound</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> event true sent when node becomes active, event false sent when unbound by another node.
  * <ul>
- *  <li> <i> Hint:</i>  paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Hint:</i> paired node operations can be established by connecting set_bind and isBound fields of corresponding bindable nodes. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isBound field
 	 */
@@ -945,6 +955,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setLeftTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		leftTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -1045,6 +1056,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1134,6 +1146,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setRightTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		rightTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -1252,6 +1265,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setSkyAngle(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
@@ -1278,8 +1292,9 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSkyAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkyAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat skyAngle field, similar to {@link #setSkyAngle(float[])}.
@@ -1293,6 +1308,7 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		skyAngle = newValue;
 		return this;
 	}
@@ -1318,6 +1334,7 @@ setAttribute method invocations).
 			clearSkyAngle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1353,6 +1370,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setSkyColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1371,8 +1389,9 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setSkyColor(MFColorObject newValue)
 	{
-		setSkyColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSkyColor(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>topTexture</i>.
@@ -1394,6 +1413,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setTopTexture(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		topTexture = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -1495,6 +1515,7 @@ setAttribute method invocations).
 	@Override
 	public TextureBackgroundObject setTransparency(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("TextureBackground transparency newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1513,8 +1534,9 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setTransparency(SFFloatObject newValue)
 	{
-		setTransparency(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTransparency(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1529,6 +1551,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureBackgroundObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureBackground
@@ -1556,8 +1579,9 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1575,6 +1599,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureBackgroundObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TextureBackground
@@ -1602,8 +1627,9 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1616,6 +1642,7 @@ setAttribute method invocations).
 	@Override
 	public final TextureBackgroundObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1630,8 +1657,9 @@ setAttribute method invocations).
 	 */
 	public TextureBackgroundObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

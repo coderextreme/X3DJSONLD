@@ -59,11 +59,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#GeoLOD" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoLOD" target="blank">X3D Abstract Specification: GeoLOD</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoLOD" target="_blank">X3D Tooltips: GeoLOD</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -251,7 +249,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	public GeoLOD setGeoSystem(String[] newValue);
 
 	/**
-	 * Provide int value from outputOnly SFInt32 field named <i>level_changed</i>.
+	 * Provide int value within allowed range of [0,1] from outputOnly SFInt32 field named <i>level_changed</i>.
 	 * @return value of level_changed field
 	 */
 	public int getLevel();

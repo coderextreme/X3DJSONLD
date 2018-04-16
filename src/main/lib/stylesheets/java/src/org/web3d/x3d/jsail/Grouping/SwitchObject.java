@@ -81,10 +81,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html#Switch" target="blank">X3D Abstract Specification: Switch</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Switch" target="_blank">X3D Tooltips: Switch</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -350,6 +348,7 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public SwitchObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -368,8 +367,9 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public SwitchObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -412,6 +412,7 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public SwitchObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -434,8 +435,9 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	 */
 	public SwitchObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -496,6 +498,7 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 	@Override
 	public SwitchObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -526,6 +529,7 @@ public class SwitchObject extends org.web3d.x3d.jsail.X3DConcreteNode implements
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -693,6 +697,7 @@ setAttribute method invocations).
 	@Override
 	public SwitchObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -765,7 +770,7 @@ setAttribute method invocations).
 	/**
 	 * Provide int value within allowed range of [-1,infinity) from inputOutput SFInt32 field named <i>whichChoice</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Index of active child choice, counting from 0.
+	 * <i>Tooltip:</i> [-1,+infinity) Index of active child choice, counting from 0.
  * <ul>
  *  <li> <i> Warning:</i>  default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child. </li> 
  * </ul>
@@ -780,13 +785,14 @@ setAttribute method invocations).
 	/**
 	 * Assign int value within allowed range of [-1,infinity) to inputOutput SFInt32 field named <i>whichChoice</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Index of active child choice, counting from 0. Warning: default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child.
+	 * <i>Tooltip:</i> [-1,+infinity) Index of active child choice, counting from 0. Warning: default whichChoice= -1 means no selection (and no rendering), whichChoice=0 means initial child.
 	 * @param newValue is new value for the whichChoice field.
 	 * @return {@link SwitchObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public SwitchObject setWhichChoice(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < -1) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Switch whichChoice newValue=" + newValue + " has component value less than restriction minInclusive=-1");
@@ -802,8 +808,9 @@ setAttribute method invocations).
 	 */
 	public SwitchObject setWhichChoice(SFInt32Object newValue)
 	{
-		setWhichChoice(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setWhichChoice(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -818,6 +825,7 @@ setAttribute method invocations).
 	@Override
 	public final SwitchObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Switch
@@ -845,8 +853,9 @@ setAttribute method invocations).
 	 */
 	public SwitchObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -864,6 +873,7 @@ setAttribute method invocations).
 	@Override
 	public final SwitchObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Switch
@@ -891,8 +901,9 @@ setAttribute method invocations).
 	 */
 	public SwitchObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -905,6 +916,7 @@ setAttribute method invocations).
 	@Override
 	public final SwitchObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -919,8 +931,9 @@ setAttribute method invocations).
 	 */
 	public SwitchObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

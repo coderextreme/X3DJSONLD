@@ -56,10 +56,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html#TransformSensor" target="blank">X3D Abstract Specification: TransformSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TransformSensor" target="_blank">X3D Tooltips: TransformSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -372,6 +370,7 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public TransformSensorObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -390,8 +389,9 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public TransformSensorObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -431,6 +431,7 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public TransformSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -442,14 +443,17 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public TransformSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>enterTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when targetObject enters the box region for sensor.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when targetObject enters the box region for sensor.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enterTime field
 	 */
 	@Override
@@ -460,8 +464,10 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>exitTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when targetObject exits the box region for sensor.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when targetObject exits the box region for sensor.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of exitTime field
 	 */
 	@Override
@@ -472,8 +478,10 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when triggering the sensor. isActive=true when targetObject enters the box region, isActive=false when targetObject exits the box region.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when triggering the sensor. isActive=true when targetObject enters the box region, isActive=false when targetObject exits the box region.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -503,6 +511,7 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public TransformSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -575,8 +584,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>orientation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends rotation event relative to center whenever the target object is contained within the box region and results change.  * <br>
-
+	 * <i>Tooltip:</i> Sends rotation event relative to center whenever the target object is contained within the box region and results change.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of orientation_changed field
 	 */
 	@Override
@@ -587,8 +598,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>position_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends translation event relative to center whenever the target object is contained within the box region and results change.  * <br>
-
+	 * <i>Tooltip:</i> Sends translation event relative to center whenever the target object is contained within the box region and results change.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of position_changed field
 	 */
 	@Override
@@ -619,6 +632,7 @@ setAttribute method invocations).
 	@Override
 	public TransformSensorObject setSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -641,8 +655,9 @@ setAttribute method invocations).
 	 */
 	public TransformSensorObject setSize(SFVec3fObject newValue)
 	{
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -684,6 +699,7 @@ setAttribute method invocations).
 	@Override
 	public TransformSensorObject setTargetObject(X3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		targetObject = newValue;
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
@@ -773,6 +789,7 @@ setAttribute method invocations).
 	@Override
 	public final TransformSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TransformSensor
@@ -800,8 +817,9 @@ setAttribute method invocations).
 	 */
 	public TransformSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -819,6 +837,7 @@ setAttribute method invocations).
 	@Override
 	public final TransformSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to TransformSensor
@@ -846,8 +865,9 @@ setAttribute method invocations).
 	 */
 	public TransformSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -860,6 +880,7 @@ setAttribute method invocations).
 	@Override
 	public final TransformSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -874,8 +895,9 @@ setAttribute method invocations).
 	 */
 	public TransformSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

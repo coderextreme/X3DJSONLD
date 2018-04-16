@@ -56,11 +56,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#LayoutLayer" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#LayoutLayer" target="blank">X3D Abstract Specification: LayoutLayer</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayoutLayer" target="_blank">X3D Tooltips: LayoutLayer</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -108,8 +106,10 @@ public interface LayoutLayer extends X3DLayerNode
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isPickable determines whether pick traversal is performed for this layer.  * <br>
-
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isPickable field
 	 */
 	@Override
@@ -118,7 +118,7 @@ public interface LayoutLayer extends X3DLayerNode
 	/**
 	 * Assign boolean value to inputOutput SFBool field named <i>isPickable</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer.
+	 * <i>Tooltip:</i> isPickable determines whether pick traversal is performed for this layer. Warning: it is an error to define this transient outputOnly field in an X3D file.
 	 * @param newValue is new value for the isPickable field.
 	 * @return {@link LayoutLayer} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

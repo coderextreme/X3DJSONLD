@@ -55,10 +55,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#ViewpointGroup" target="blank">X3D Abstract Specification: ViewpointGroup</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ViewpointGroup" target="_blank">X3D Tooltips: ViewpointGroup</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Viewpoints" target="_blank">X3D Scene Authoring Hints: Viewpoints</a>
  */
@@ -346,6 +344,7 @@ public class ViewpointGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ViewpointGroupObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -364,8 +363,9 @@ public class ViewpointGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public ViewpointGroupObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -420,6 +420,7 @@ public class ViewpointGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ViewpointGroupObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -469,6 +470,7 @@ public class ViewpointGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -727,6 +729,7 @@ setAttribute method invocations).
 	@Override
 	public ViewpointGroupObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -741,8 +744,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>displayed</i>.
@@ -767,6 +771,7 @@ setAttribute method invocations).
 	@Override
 	public ViewpointGroupObject setDisplayed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		displayed = newValue;
 		return this;
 	}
@@ -778,8 +783,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setDisplayed(SFBoolObject newValue)
 	{
-		setDisplayed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisplayed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -803,6 +809,7 @@ setAttribute method invocations).
 	@Override
 	public ViewpointGroupObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -895,6 +902,7 @@ setAttribute method invocations).
 	@Override
 	public ViewpointGroupObject setRetainUserOffsets(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		retainUserOffsets = newValue;
 		return this;
 	}
@@ -906,8 +914,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setRetainUserOffsets(SFBoolObject newValue)
 	{
-		setRetainUserOffsets(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRetainUserOffsets(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly SFVec3f field named <i>size</i>.
@@ -934,6 +943,7 @@ setAttribute method invocations).
 	@Override
 	public ViewpointGroupObject setSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -952,8 +962,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setSize(SFVec3fObject newValue)
 	{
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -983,6 +994,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewpointGroupObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ViewpointGroup
@@ -1010,8 +1022,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1029,6 +1042,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewpointGroupObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ViewpointGroup
@@ -1056,8 +1070,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1070,6 +1085,7 @@ setAttribute method invocations).
 	@Override
 	public final ViewpointGroupObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1084,8 +1100,9 @@ setAttribute method invocations).
 	 */
 	public ViewpointGroupObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

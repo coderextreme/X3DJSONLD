@@ -53,10 +53,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#CollisionCollection" target="blank">X3D Abstract Specification: CollisionCollection</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollisionCollection" target="_blank">X3D Tooltips: CollisionCollection</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -476,6 +474,7 @@ public class CollisionCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public CollisionCollectionObject setAppliedParameters(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
@@ -502,8 +501,9 @@ public class CollisionCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setAppliedParameters(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAppliedParameters(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString appliedParameters field, similar to {@link #setAppliedParameters(String[])}.
@@ -518,6 +518,7 @@ public class CollisionCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setAppliedParameters(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -534,6 +535,7 @@ public class CollisionCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setAppliedParameters(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -549,6 +551,7 @@ public class CollisionCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		appliedParameters = newValue;
 		return this;
 	}
@@ -585,6 +588,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setBounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CollisionCollection bounce newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -603,8 +607,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setBounce(SFFloatObject newValue)
 	{
-		setBounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode, from inputOutput MFNode field <i>collidables</i>.
@@ -644,6 +649,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setCollidables(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearCollidables(); // newValueNullSetDEFAULT_VALUE
@@ -687,6 +693,7 @@ setAttribute method invocations).
 			clearCollidables(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
@@ -845,6 +852,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -856,8 +864,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results within allowed range of [0,infinity) from inputOutput SFVec2f field named <i>frictionCoefficients</i>.
@@ -882,6 +891,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setFrictionCoefficients(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -904,8 +914,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setFrictionCoefficients(SFVec2fObject newValue)
 	{
-		setFrictionCoefficients(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFrictionCoefficients(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -943,6 +954,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1035,6 +1047,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setMinBounceSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CollisionCollection minBounceSpeed newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1050,8 +1063,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setMinBounceSpeed(SFFloatObject newValue)
 	{
-		setMinBounceSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinBounceSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from inputOutput SFVec2f field named <i>slipFactors</i>.
@@ -1076,6 +1090,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setSlipFactors(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1094,8 +1109,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setSlipFactors(SFVec2fObject newValue)
 	{
-		setSlipFactors(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSlipFactors(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1134,6 +1150,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setSoftnessConstantForceMix(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CollisionCollection softnessConstantForceMix newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1152,8 +1169,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setSoftnessConstantForceMix(SFFloatObject newValue)
 	{
-		setSoftnessConstantForceMix(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSoftnessConstantForceMix(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>softnessErrorCorrection</i>.
@@ -1178,6 +1196,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setSoftnessErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("CollisionCollection softnessErrorCorrection newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1196,8 +1215,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setSoftnessErrorCorrection(SFFloatObject newValue)
 	{
-		setSoftnessErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSoftnessErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from inputOutput SFVec2f field named <i>surfaceSpeed</i>.
@@ -1222,6 +1242,7 @@ setAttribute method invocations).
 	@Override
 	public CollisionCollectionObject setSurfaceSpeed(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1240,8 +1261,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setSurfaceSpeed(SFVec2fObject newValue)
 	{
-		setSurfaceSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSurfaceSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1270,6 +1292,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionCollectionObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollisionCollection
@@ -1297,8 +1320,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1316,6 +1340,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionCollectionObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollisionCollection
@@ -1343,8 +1368,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1357,6 +1383,7 @@ setAttribute method invocations).
 	@Override
 	public final CollisionCollectionObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1371,8 +1398,9 @@ setAttribute method invocations).
 	 */
 	public CollisionCollectionObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

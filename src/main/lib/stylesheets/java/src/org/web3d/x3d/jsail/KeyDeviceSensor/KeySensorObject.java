@@ -45,17 +45,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>:  KeySensor generates events as the user presses keys on the keyboard.
-Supports notion of "keyboard focus".  * <br>
+ * <i>X3D node tooltip</i>:  KeySensor generates events as the user presses keys on the keyboard. Browser support includes the notion of "keyboard focus".  * <br>
  * <br>
 
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/keyboard.html#KeySensor" target="blank">X3D Abstract Specification: KeySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#KeySensor" target="_blank">X3D Tooltips: KeySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -341,8 +338,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>actionKeyPress</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  action key press gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.  * <br>
-
+	 * <i>Tooltip:</i> action key press gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of actionKeyPress field
 	 */
 	@Override
@@ -353,8 +352,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>actionKeyRelease</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  action key release gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.  * <br>
-
+	 * <i>Tooltip:</i> action key release gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of actionKeyRelease field
 	 */
 	@Override
@@ -365,8 +366,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>altKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  altKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> altKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of altKey field
 	 */
 	@Override
@@ -377,8 +380,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>controlKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  controlKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> controlKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of controlKey field
 	 */
 	@Override
@@ -409,6 +414,7 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public KeySensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -420,14 +426,17 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public KeySensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -438,8 +447,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide String value from outputOnly SFString field named <i>keyPress</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated when user presses character-producing keys on keyboard produces integer UTF-8 character values.  * <br>
-
+	 * <i>Tooltip:</i> Events generated when user presses character-producing keys on keyboard produces integer UTF-8 character values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of keyPress field
 	 */
 	@Override
@@ -450,8 +461,10 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide String value from outputOnly SFString field named <i>keyRelease</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated when user releases character-producing keys on keyboard produces integer UTF-8 character values.  * <br>
-
+	 * <i>Tooltip:</i> Events generated when user releases character-producing keys on keyboard produces integer UTF-8 character values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of keyRelease field
 	 */
 	@Override
@@ -481,6 +494,7 @@ public class KeySensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public KeySensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -553,8 +567,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>shiftKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  shiftKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> shiftKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of shiftKey field
 	 */
 	@Override
@@ -575,6 +591,7 @@ setAttribute method invocations).
 	@Override
 	public final KeySensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to KeySensor
@@ -602,8 +619,9 @@ setAttribute method invocations).
 	 */
 	public KeySensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -621,6 +639,7 @@ setAttribute method invocations).
 	@Override
 	public final KeySensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to KeySensor
@@ -648,8 +667,9 @@ setAttribute method invocations).
 	 */
 	public KeySensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -662,6 +682,7 @@ setAttribute method invocations).
 	@Override
 	public final KeySensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -676,8 +697,9 @@ setAttribute method invocations).
 	 */
 	public KeySensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

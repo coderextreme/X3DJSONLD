@@ -137,6 +137,10 @@ TODO identified issues:
 
 X3D Schema update activity:
 
+14 APR 2018 brutzman
+- Ensure range limits (typically minInclusive 0) present for SFTime duration fields,
+  including outputOnly fields
+
 6 JAN 2018 brutzman
 - Allow HAnimHumanoid skin field to contain Group|Transform|Shape|IndexedFaceSet
 - Improved descriptions for hanimVersionValues enumerations.

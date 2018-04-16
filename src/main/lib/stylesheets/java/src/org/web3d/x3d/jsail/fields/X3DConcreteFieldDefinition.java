@@ -39,6 +39,9 @@ import org.web3d.x3d.sai.*;  // making sure #2
  * 
  * <br><br>
 
+ * <br>
+ * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
+
  * <p>
  * Representation of a node's field definition.
  * </p>
@@ -55,12 +58,7 @@ import org.web3d.x3d.sai.*;  // making sure #2
  * </p>
  *
  * @author Justin Couch
-
  * 
-
- * <br>
- * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>

@@ -40,6 +40,7 @@ import java.io.*;
 import java.util.*;
 
 /**
+
  * <p>
 Concrete class that enables developers to set custom configuration properties when using X3D Java SAI Library (X3DJSAIL).
 </p>
@@ -53,10 +54,7 @@ are available to load Java .property files, such as
 <p>Output serialization support is provided for indentation, 
 <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Canonical Form</a>,
 and showing default attribute values.</p>
-
  * 
-
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -216,6 +214,19 @@ public class ConfigurationProperties
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.html" target="_blank">examples/HelloWorldProgramOutput.html</a>
 	 */
 	public static final String STYLESHEET_htmlDocumentation   = "X3dToXhtml.xslt";
+				
+	/** XSLT stylesheet to create model meta information as markdown: <i>../lib/stylesheets/X3dToXhtml.xslt</i>
+	 * @see <a href="../../../../../../lib/stylesheets/X3dModelMetaToMarkdown.xslt" target="_blank">X3dModelMetaToMarkdown.xslt</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.md" target="_blank">examples/HelloWorldProgramOutput.md</a>
+	 */
+	public static final String STYLESHEET_MODEL_META_TO_MARKDOWN   = "X3dModelMetaToMarkdown.xslt";
+				
+	/** XSLT stylesheet to create X3D-Tidy cleaned-up version of X3D scene: <i>../lib/stylesheets/X3dToXhtml.xslt</i>
+	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
+	 * @see <a href="../../../../../../lib/stylesheets/X3dTidy.xslt" target="_blank">X3dTidy.xslt</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutputTidy.x3d" target="_blank">examples/HelloWorldProgramOutputTidy.x3d</a>
+	 */
+	public static final String STYLESHEET_X3DTIDY   = "X3dTidy.xslt";
 				
 	/** XSLT stylesheet to create Extrusion node cross sections in SVG from X3D scene: <i>../lib/stylesheets/X3dExtrusionToSvgViaXslt1.1.xslt</i> */
 	public static final String STYLESHEET_extrusionCrossSectionSVG   = "X3dExtrusionToSvgViaXslt1.1.xslt";

@@ -38,14 +38,12 @@ import java.util.*;
  * Describes a 3x3 Matrix as required by the SAIMatrix abstract type.
  * 
  * <br><br>
- * 
-@author Justin Couch
-
- * 
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+@author Justin Couch
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Matrix3" target="_blank">SAI Java Specification: B.5.4 Matrix3</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIMatrix" target="blank">SAI Abstract Specification: 5.2.20 SAIMatrix</a>

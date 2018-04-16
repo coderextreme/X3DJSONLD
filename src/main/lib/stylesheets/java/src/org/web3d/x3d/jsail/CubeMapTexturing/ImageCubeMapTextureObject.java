@@ -53,17 +53,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Texturing.*;
 
 /**
- * <i>X3D node tooltip</i>: ImageCubeMapTexture defines a cubic environment map source as a single file format that contains multiple images, one for each side.
+ * <i>X3D node tooltip</i>: ImageCubeMapTexture (X3D version 3.1 or later) is a texture node that defines a cubic environment map source as a single file format that contains multiple images, one for each side.
  * <ul>
  *  <li> <i> Hint:</i>  can contain a single TextureProperties node. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#ImageCubeMapTexture" target="blank">X3D Abstract Specification: ImageCubeMapTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageCubeMapTexture" target="_blank">X3D Tooltips: ImageCubeMapTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -284,6 +282,7 @@ public class ImageCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public ImageCubeMapTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -373,6 +372,7 @@ setAttribute method invocations).
 	@Override
 	public ImageCubeMapTextureObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -482,6 +482,7 @@ setAttribute method invocations).
 	@Override
 	public ImageCubeMapTextureObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -508,8 +509,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -523,6 +525,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -538,6 +541,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -554,6 +558,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -580,6 +585,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageCubeMapTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ImageCubeMapTexture
@@ -607,8 +613,9 @@ setAttribute method invocations).
 	 */
 	public ImageCubeMapTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -626,6 +633,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageCubeMapTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ImageCubeMapTexture
@@ -653,8 +661,9 @@ setAttribute method invocations).
 	 */
 	public ImageCubeMapTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -667,6 +676,7 @@ setAttribute method invocations).
 	@Override
 	public final ImageCubeMapTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -681,8 +691,9 @@ setAttribute method invocations).
 	 */
 	public ImageCubeMapTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

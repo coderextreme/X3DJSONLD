@@ -40,21 +40,18 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFRotation X3D field type.
  * 
  * <br><br>
- * SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters in attribute values do not pass strict XML validation.
-<br><br>
-Related field object: {@link MFRotationObject}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFRotation">X3D Tooltips: type SFRotation</a>
-
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters in attribute values do not pass strict XML validation.
+ * <br><br>
+ * Related field object: {@link MFRotationObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFRotation">X3D Tooltips: type SFRotation</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation" target="blank">X3D Abstract Specification: SFRotationAndMFRotation</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -72,6 +69,9 @@ public class SFRotationObject extends X3DConcreteField implements org.web3d.x3d.
 
 	/** Preferred default value for this field type, oriented for rotation about Y axis. */
 	public static final float[] PREFERRED_DEFAULT_VALUE = {0.0f, 1.0f, 0.0f, 0.0f};
+
+	/** Default tuple size for this field type is <i>4</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 4;
 
 	// Member value declaration is encapsulated and private, using preferred Java types for concretes library
 	private float[] SFRotation = java.util.Arrays.copyOf(DEFAULT_VALUE, DEFAULT_VALUE.length); // must be separate copy
@@ -298,6 +298,7 @@ method invocations on the same node object).
 		if (length == 0.0f)
 		{
 			SFRotation = java.util.Arrays.copyOf(DEFAULT_VALUE, DEFAULT_VALUE.length); // must be separate copy
+			System.err.println ("SFRotation.normalize(): zero-length axis encountered, reset entire SFRotation to DEFAULT_VALUE: " + DEFAULT_VALUE);
 		}
 		else
 		{

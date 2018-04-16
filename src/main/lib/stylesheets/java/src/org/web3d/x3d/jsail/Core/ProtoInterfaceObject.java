@@ -59,10 +59,8 @@ import java.util.Arrays;
  * <i>X3D statement tooltip</i>:  ProtoInterface is the first statement inside a ProtoDeclare statement and holds field declarations. ProtoInterface is followed by a corresponding ProtoBody statement.  * <br>
  * <br>
 
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax" target="blank">X3D Abstract Specification: ProtoInterface</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoInterface" target="_blank">X3D Tooltips: ProtoInterface</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes" target="_blank">X3D Scene Authoring Hints: InlinesPrototypes</a>
  */
@@ -220,6 +218,7 @@ public class ProtoInterfaceObject extends org.web3d.x3d.jsail.X3DConcreteStateme
 	 */
 	public ProtoInterfaceObject setFieldList(ArrayList<fieldObject> newValue)
 	{
+		// set-newValue-validity-checks #0
 		fieldList = newValue;
 		for (fieldObject arrayElement : fieldList)
 		{

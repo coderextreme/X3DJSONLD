@@ -48,9 +48,9 @@ import org.web3d.x3d.jsail.Core.*;
  * Linear attenuation may occur at level 2, full support at level 3.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>: SpotLight is a light source that illuminates geometry within a conical beam. Light illuminates all geometry and is normally scoped to illuminate peers and children nodes within the scene graph hierarchy Lights have no visible shape themselves and shine through occluding geometry.
+ * <i>X3D node tooltip</i>: SpotLight is a light source that illuminates geometry within a conical beam. Lighting illuminates all geometry except lines and points. By default, light scope only illuminates peer geometry and children nodes within the scene graph hierarchy. Lights have no visible shape themselves and lighting effects continue through any intermediate geometry.
  * <ul>
- *  <li> <i> Hint:</i>  HeadLight enabled on/off is controlled by NavigationInfo. </li> 
+ *  <li> <i> Hint:</i>  the bound NavigationInfo controls whether headlight is enabled on/off. </li> 
  * </ul>
  * <br>
  * Note that {@linkplain SFColorObject#ALICEBLUE SFColorObject} provides a variety of color constants.
@@ -59,10 +59,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/lighting.html#SpotLight" target="blank">X3D Abstract Specification: SpotLight</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SpotLight" target="_blank">X3D Tooltips: SpotLight</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -448,6 +446,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setAmbientIntensity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SpotLight ambientIntensity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -466,8 +465,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setAmbientIntensity(SFFloatObject newValue)
 	{
-		setAmbientIntensity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAmbientIntensity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results within allowed range of [0,infinity) from inputOutput SFVec3f field named <i>attenuation</i>.
@@ -492,6 +492,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setAttenuation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -514,8 +515,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setAttenuation(SFVec3fObject newValue)
 	{
-		setAttenuation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAttenuation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -558,6 +560,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setBeamWidth(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SpotLight beamWidth newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -576,8 +579,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setBeamWidth(SFFloatObject newValue)
 	{
-		setBeamWidth(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBeamWidth(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>color</i>.
@@ -604,6 +608,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -622,8 +627,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setColor(SFColorObject newValue)
 	{
-		setColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -666,6 +672,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setCutOffAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SpotLight cutOffAngle newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -684,8 +691,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setCutOffAngle(SFFloatObject newValue)
 	{
-		setCutOffAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCutOffAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>direction</i>.
@@ -710,6 +718,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setDirection(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -728,8 +737,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setDirection(SFVec3fObject newValue)
 	{
-		setDirection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDirection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -769,6 +779,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setGlobal(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		global = newValue;
 		return this;
 	}
@@ -780,8 +791,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setGlobal(SFBoolObject newValue)
 	{
-		setGlobal(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGlobal(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>intensity</i>.
@@ -806,6 +818,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setIntensity(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SpotLight intensity newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -824,8 +837,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setIntensity(SFFloatObject newValue)
 	{
-		setIntensity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIntensity(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>location</i>.
@@ -850,6 +864,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setLocation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -868,8 +883,9 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public SpotLightObject setLocation(SFVec3fObject newValue)
 	{
-		setLocation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLocation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -908,6 +924,7 @@ public class SpotLightObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public SpotLightObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1000,6 +1017,7 @@ setAttribute method invocations).
 	@Override
 	public SpotLightObject setOn(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		on = newValue;
 		return this;
 	}
@@ -1011,8 +1029,9 @@ setAttribute method invocations).
 	 */
 	public SpotLightObject setOn(SFBoolObject newValue)
 	{
-		setOn(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOn(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>radius</i>.
@@ -1037,6 +1056,7 @@ setAttribute method invocations).
 	@Override
 	public SpotLightObject setRadius(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("SpotLight radius newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1052,8 +1072,9 @@ setAttribute method invocations).
 	 */
 	public SpotLightObject setRadius(SFFloatObject newValue)
 	{
-		setRadius(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRadius(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1068,6 +1089,7 @@ setAttribute method invocations).
 	@Override
 	public final SpotLightObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SpotLight
@@ -1095,8 +1117,9 @@ setAttribute method invocations).
 	 */
 	public SpotLightObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1114,6 +1137,7 @@ setAttribute method invocations).
 	@Override
 	public final SpotLightObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SpotLight
@@ -1141,8 +1165,9 @@ setAttribute method invocations).
 	 */
 	public SpotLightObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1155,6 +1180,7 @@ setAttribute method invocations).
 	@Override
 	public final SpotLightObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1169,8 +1195,9 @@ setAttribute method invocations).
 	 */
 	public SpotLightObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

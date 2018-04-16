@@ -45,16 +45,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Core.*;
 
 /**
- * <i>X3D node tooltip</i>:  StringSensor generates events as the user presses keys on the keyboard.  * <br>
+ * <i>X3D node tooltip</i>:  StringSensor generates events as the user presses keys on the keyboard. Browser support includes the notion of "keyboard focus".  * <br>
  * <br>
 
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/keyboard.html#StringSensor" target="blank">X3D Abstract Specification: StringSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#StringSensor" target="_blank">X3D Tooltips: StringSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -325,6 +323,7 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public StringSensorObject setDeletionAllowed(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		deletionAllowed = newValue;
 		return this;
 	}
@@ -336,8 +335,9 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public StringSensorObject setDeletionAllowed(SFBoolObject newValue)
 	{
-		setDeletionAllowed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDeletionAllowed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -362,6 +362,7 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public StringSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -373,14 +374,17 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public StringSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide String value from outputOnly SFString field named <i>enteredText</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated as character-producing keys are pressed on keyboard.  * <br>
-
+	 * <i>Tooltip:</i> Events generated as character-producing keys are pressed on keyboard.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enteredText field
 	 */
 	@Override
@@ -393,7 +397,8 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 * <br><br>
 	 * <i>Tooltip:</i> Events generated when sequence of keystrokes matches keys in terminationText string when this condition occurs, enteredText is moved to finalText and enteredText is set to empty string.
  * <ul>
- *  <li> <i> Hint:</i>  termination key is typically defined by local system. </li> 
+ *  <li> <i>Hint:</i> termination key is typically defined by local system. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of finalText field
 	 */
@@ -405,8 +410,10 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -436,6 +443,7 @@ public class StringSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public StringSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -518,6 +526,7 @@ setAttribute method invocations).
 	@Override
 	public final StringSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to StringSensor
@@ -545,8 +554,9 @@ setAttribute method invocations).
 	 */
 	public StringSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -564,6 +574,7 @@ setAttribute method invocations).
 	@Override
 	public final StringSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to StringSensor
@@ -591,8 +602,9 @@ setAttribute method invocations).
 	 */
 	public StringSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -605,6 +617,7 @@ setAttribute method invocations).
 	@Override
 	public final StringSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -619,8 +632,9 @@ setAttribute method invocations).
 	 */
 	public StringSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

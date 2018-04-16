@@ -65,10 +65,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#LoadSensor" target="blank">X3D Abstract Specification: LoadSensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LoadSensor" target="_blank">X3D Tooltips: LoadSensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -357,6 +355,7 @@ public class LoadSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public LoadSensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -368,14 +367,17 @@ public class LoadSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public LoadSensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when sensing starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when sensing starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -388,7 +390,8 @@ public class LoadSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 * <br><br>
 	 * <i>Tooltip:</i> Notify when all watchList child nodes are loaded, or at least one has failed. Sends true on successfully loading all watchList child nodes. Sends false on timeOut of any watchList child nodes, failure of any watchList child nodes to load, or no local copies available and no network present.
  * <ul>
- *  <li> <i> Hint:</i>  use multiple LoadSensor nodes to track multiple loading nodes individually. </li> 
+ *  <li> <i>Hint:</i> use multiple LoadSensor nodes to track multiple loading nodes individually. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isLoaded field
 	 */
@@ -400,8 +403,10 @@ public class LoadSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>loadTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time of successful load complete, not sent on failure.  * <br>
-
+	 * <i>Tooltip:</i> Time of successful load complete, not sent on failure.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of loadTime field
 	 */
 	@Override
@@ -431,6 +436,7 @@ public class LoadSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public LoadSensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -505,7 +511,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> [0,1] Sends 0.0 on start and 1.0 on completion. Intermediate values are browser dependent and always increasing (may indicate fraction of bytes, fraction of expected time or another metric).
  * <ul>
- *  <li> <i> Hint:</i>  only 0 and 1 events are guaranteed. </li> 
+ *  <li> <i>Hint:</i> only 0 and 1 events are guaranteed. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of progress field
 	 */
@@ -537,6 +544,11 @@ setAttribute method invocations).
 	@Override
 	public LoadSensorObject setTimeOut(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("LoadSensor timeOut newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		timeOut = newValue;
 		return this;
 	}
@@ -548,8 +560,9 @@ setAttribute method invocations).
 	 */
 	public LoadSensorObject setTimeOut(SFTimeObject newValue)
 	{
-		setTimeOut(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTimeOut(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DUrlObject results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>watchList</i>.
@@ -588,6 +601,7 @@ setAttribute method invocations).
 	@Override
 	public LoadSensorObject setWatchList(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearWatchList(); // newValueNullSetDEFAULT_VALUE
@@ -618,6 +632,7 @@ setAttribute method invocations).
 			clearWatchList(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		watchList = newValue;
 		for (X3DUrlObject element : newValue)
 		{
@@ -720,6 +735,7 @@ setAttribute method invocations).
 	@Override
 	public final LoadSensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LoadSensor
@@ -747,8 +763,9 @@ setAttribute method invocations).
 	 */
 	public LoadSensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -766,6 +783,7 @@ setAttribute method invocations).
 	@Override
 	public final LoadSensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LoadSensor
@@ -793,8 +811,9 @@ setAttribute method invocations).
 	 */
 	public LoadSensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -807,6 +826,7 @@ setAttribute method invocations).
 	@Override
 	public final LoadSensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -821,8 +841,9 @@ setAttribute method invocations).
 	 */
 	public LoadSensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

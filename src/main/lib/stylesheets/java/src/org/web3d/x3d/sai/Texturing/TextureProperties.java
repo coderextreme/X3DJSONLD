@@ -50,11 +50,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#TextureProperties" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureProperties" target="blank">X3D Abstract Specification: TextureProperties</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureProperties" target="_blank">X3D Tooltips: TextureProperties</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -192,7 +190,7 @@ public interface TextureProperties extends X3DNode
  *  <li> <i>Warning:</i> must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. </li> 
  *  <li> <i>Hint:</i> mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. </li> 
  *  <li> <i>Hint:</i> Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. </li> 
- *  <li> <i>Hint:</i> Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> </li> 
+ *  <li> <i>Hint:</i> Aliasing <br> <a href="https://en.wikipedia.org/wiki/Aliasing" target="_blank">https://en.wikipedia.org/wiki/Aliasing</a> and Clipping <br> <a href="https://en.wikipedia.org/wiki/Clipping_(computer_graphics)" target="_blank">https://en.wikipedia.org/wiki/Clipping_(computer_graphics)</a> </li> 
  *  <li> <i>Hint:</i>  Mipmap <br> <a href="https://en.wikipedia.org/wiki/Mipmap" target="_blank">https://en.wikipedia.org/wiki/Mipmap</a> </li> 
  * </ul>
 	 * @return value of generateMipMaps field
@@ -202,7 +200,7 @@ public interface TextureProperties extends X3DNode
 	/**
 	 * Assign boolean value to initializeOnly SFBool field named <i>generateMipMaps</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Determines whether MIPMAPs are generated for texture images. Warning: must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. Hint: mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. Hint: Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing Hint: Mipmap https://en.wikipedia.org/wiki/Mipmap
+	 * <i>Tooltip:</i> Determines whether MIPMAPs are generated for texture images. Warning: must declare generateMipMaps='true' for minificationFilter modes with MIPMAP in their value. Hint: mipmap preprocessing is a low-level rendering technique that can increase rendering speed and reduce aliasing artifacts. Hint: Mipmap pyramids are pre-calculated, optimized sequences of images, each of which is a progressively lower resolution representation of the same image. The height and width of each image level in the mipmap is a power of two smaller than the previous level. Hint: Aliasing https://en.wikipedia.org/wiki/Aliasing and Clipping https://en.wikipedia.org/wiki/Clipping_(computer_graphics) Hint: Mipmap https://en.wikipedia.org/wiki/Mipmap
 	 * @param newValue is new value for the generateMipMaps field.
 	 * @return {@link TextureProperties} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

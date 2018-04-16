@@ -56,10 +56,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/sound.html#AudioClip" target="blank">X3D Abstract Specification: AudioClip</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#AudioClip" target="_blank">X3D Tooltips: AudioClip</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Audio" target="_blank">X3D Scene Authoring Hints: Audio</a>
  */
@@ -443,6 +441,7 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public AudioClipObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -457,14 +456,20 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public AudioClipObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>duration_changed</i>.
+	 * Provide double value in seconds within allowed range of [-1,infinity) from outputOnly SFTime field named <i>duration_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  duration_changed is length of time in seconds for one cycle of audio.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) or -1. duration_changed is length of time in seconds for one cycle of media stream.
+ * <ul>
+ *  <li> <i>Warning:</i> duration value of -1 implies that media data has not yet loaded or is unavailable for some reason. </li> 
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i> duration_changed is an SFTime duration interval, normally nonnegative, and not an absolute clock time. </li> 
+ *  <li> <i>Hint:</i>  changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified. </li> 
+ * </ul>
 	 * @return value of duration_changed field
 	 */
 	@Override
@@ -473,10 +478,13 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 		return duration;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>elapsedTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>elapsedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time.
+ * <ul>
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i>  elapsedTime is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of elapsedTime field
 	 */
 	@Override
@@ -487,8 +495,10 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when playback starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when playback starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -499,8 +509,10 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isPaused</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isPaused true/false events are sent when AudioClip is paused/resumed.  * <br>
-
+	 * <i>Tooltip:</i> isPaused true/false events are sent when AudioClip is paused/resumed.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isPaused field
 	 */
 	@Override
@@ -531,6 +543,7 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public AudioClipObject setLoop(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		loop = newValue;
 		return this;
 	}
@@ -542,8 +555,9 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	 */
 	public AudioClipObject setLoop(SFBoolObject newValue)
 	{
-		setLoop(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLoop(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -567,6 +581,7 @@ public class AudioClipObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 	@Override
 	public AudioClipObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -641,7 +656,7 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> When time now &amp;gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of pauseTime field
 	 */
@@ -654,13 +669,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>pauseTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the pauseTime field.
 	 * @return {@link AudioClipObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public AudioClipObject setPauseTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		pauseTime = newValue;
 		return this;
 	}
@@ -672,14 +688,17 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setPauseTime(SFTimeObject newValue)
 	{
-		setPauseTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPauseTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of (0,infinity) from inputOutput SFFloat field named <i>pitch</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.  * <br>
-
+	 * <i>Tooltip:</i> (0,+infinity) Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.
+ * <ul>
+ *  <li> <i> Hint:</i>  changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified. </li> 
+ * </ul>
 	 * @return value of pitch field
 	 */
 	@Override
@@ -691,13 +710,14 @@ setAttribute method invocations).
 	/**
 	 * Assign float value within allowed range of (0,infinity) to inputOutput SFFloat field named <i>pitch</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed.
+	 * <i>Tooltip:</i> (0,+infinity) Multiplier for the rate at which sampled sound is played. Changing pitch also changes playback speed. Hint: changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified.
 	 * @param newValue is new value for the pitch field.
 	 * @return {@link AudioClipObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public AudioClipObject setPitch(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("AudioClip pitch newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -713,15 +733,16 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setPitch(SFFloatObject newValue)
 	{
-		setPitch(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPitch(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> When resumeTime becomes &amp;lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of resumeTime field
 	 */
@@ -734,13 +755,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and AudioClip becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the resumeTime field.
 	 * @return {@link AudioClipObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public AudioClipObject setResumeTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		resumeTime = newValue;
 		return this;
 	}
@@ -752,15 +774,16 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setResumeTime(SFTimeObject newValue)
 	{
-		setResumeTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setResumeTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of startTime field
 	 */
@@ -773,13 +796,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the startTime field.
 	 * @return {@link AudioClipObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public AudioClipObject setStartTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		startTime = newValue;
 		return this;
 	}
@@ -791,15 +815,16 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setStartTime(SFTimeObject newValue)
 	{
-		setStartTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStartTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_stopTime event values less than or equal to startTime. </li> 
  * </ul>
@@ -814,13 +839,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
 	 * @param newValue is new value for the stopTime field.
 	 * @return {@link AudioClipObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public AudioClipObject setStopTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		stopTime = newValue;
 		return this;
 	}
@@ -832,8 +858,9 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setStopTime(SFTimeObject newValue)
 	{
-		setStopTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStopTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.
@@ -878,6 +905,7 @@ setAttribute method invocations).
 	@Override
 	public AudioClipObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -904,8 +932,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -919,6 +948,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -934,6 +964,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -950,6 +981,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -976,6 +1008,7 @@ setAttribute method invocations).
 	@Override
 	public final AudioClipObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to AudioClip
@@ -1003,8 +1036,9 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1022,6 +1056,7 @@ setAttribute method invocations).
 	@Override
 	public final AudioClipObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to AudioClip
@@ -1049,8 +1084,9 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1063,6 +1099,7 @@ setAttribute method invocations).
 	@Override
 	public final AudioClipObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1077,8 +1114,9 @@ setAttribute method invocations).
 	 */
 	public AudioClipObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

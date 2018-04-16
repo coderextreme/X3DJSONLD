@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Texturing.*;
 
 /**
- * <i>X3D node tooltip</i>: PixelTexture creates a 2D-image texture map using a numeric array of pixel values. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) values in range [0.0, 1.0] for opposite corners of the image.
+ * <i>X3D node tooltip</i>: PixelTexture creates a 2D-image texture map using a numeric array of pixel values. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) texture-coordinate values in range [0.0, 1.0] for opposite corners of the image.
  * <ul>
  *  <li> <i>Hint:</i> this is a good way to bundle image(s) into a single scene file, avoiding multiple downloads. </li> 
  *  <li> <i>Warning:</i> aggregate file size can grow dramatically. </li> 
@@ -67,10 +67,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#PixelTexture" target="blank">X3D Abstract Specification: PixelTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PixelTexture" target="_blank">X3D Tooltips: PixelTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -330,6 +328,7 @@ public class PixelTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public PixelTextureObject setImage(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			return setImage(IMAGE_DEFAULT_VALUE); // newValueNullSetDEFAULT_VALUE
 		image.clear(); // reset
@@ -350,8 +349,9 @@ public class PixelTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	{
 		if (newValue == null)
 			return setImage(IMAGE_DEFAULT_VALUE); // newValueNullSetDEFAULT_VALUE
-		setImage(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setImage(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of SFImage image field, similar to {@link #setImage(int[])}.
@@ -362,6 +362,7 @@ public class PixelTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	{
 		if (newValue == null)
 			return setImage(IMAGE_DEFAULT_VALUE); // newValueNullSetDEFAULT_VALUE
+		// set-newValue-validity-checks #4
 		image = newValue;
 		return this;
 	}
@@ -397,6 +398,7 @@ setAttribute method invocations).
 	@Override
 	public PixelTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -489,6 +491,7 @@ setAttribute method invocations).
 	@Override
 	public PixelTextureObject setRepeatS(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatS = newValue;
 		return this;
 	}
@@ -500,8 +503,9 @@ setAttribute method invocations).
 	 */
 	public PixelTextureObject setRepeatS(SFBoolObject newValue)
 	{
-		setRepeatS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatT</i>.
@@ -526,6 +530,7 @@ setAttribute method invocations).
 	@Override
 	public PixelTextureObject setRepeatT(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatT = newValue;
 		return this;
 	}
@@ -537,8 +542,9 @@ setAttribute method invocations).
 	 */
 	public PixelTextureObject setRepeatT(SFBoolObject newValue)
 	{
-		setRepeatT(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatT(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
@@ -560,6 +566,7 @@ setAttribute method invocations).
 	@Override
 	public PixelTextureObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -639,6 +646,7 @@ setAttribute method invocations).
 	@Override
 	public final PixelTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PixelTexture
@@ -666,8 +674,9 @@ setAttribute method invocations).
 	 */
 	public PixelTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -685,6 +694,7 @@ setAttribute method invocations).
 	@Override
 	public final PixelTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to PixelTexture
@@ -712,8 +722,9 @@ setAttribute method invocations).
 	 */
 	public PixelTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -726,6 +737,7 @@ setAttribute method invocations).
 	@Override
 	public final PixelTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -740,8 +752,9 @@ setAttribute method invocations).
 	 */
 	public PixelTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -78,10 +78,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#SegmentedVolumeData" target="blank">X3D Abstract Specification: SegmentedVolumeData</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SegmentedVolumeData" target="_blank">X3D Tooltips: SegmentedVolumeData</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -381,6 +379,7 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public SegmentedVolumeDataObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -399,8 +398,9 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	 */
 	public SegmentedVolumeDataObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -443,6 +443,7 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public SegmentedVolumeDataObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -465,8 +466,9 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	 */
 	public SegmentedVolumeDataObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -506,6 +508,7 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public SegmentedVolumeDataObject setDimensions(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -528,8 +531,9 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	 */
 	public SegmentedVolumeDataObject setDimensions(SFVec3fObject newValue)
 	{
-		setDimensions(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDimensions(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -568,6 +572,7 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public SegmentedVolumeDataObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -674,6 +679,7 @@ setAttribute method invocations).
 	@Override
 	public SegmentedVolumeDataObject setRenderStyle(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRenderStyle(); // newValueNullSetDEFAULT_VALUE
@@ -704,6 +710,7 @@ setAttribute method invocations).
 			clearRenderStyle(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		renderStyle = newValue;
 		for (X3DVolumeRenderStyleNode element : newValue)
 		{
@@ -825,6 +832,7 @@ setAttribute method invocations).
 	@Override
 	public SegmentedVolumeDataObject setSegmentEnabled(boolean[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSegmentEnabled(); // newValueNullSetDEFAULT_VALUE
@@ -851,8 +859,9 @@ setAttribute method invocations).
 			clearSegmentEnabled(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSegmentEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSegmentEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFBool segmentEnabled field, similar to {@link #setSegmentEnabled(boolean[])}.
@@ -866,6 +875,7 @@ setAttribute method invocations).
 			clearSegmentEnabled(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		segmentEnabled = newValue;
 		return this;
 	}
@@ -899,6 +909,7 @@ setAttribute method invocations).
 	@Override
 	public SegmentedVolumeDataObject setSegmentIdentifiers(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		segmentIdentifiers = newValue;
 		if (newValue != null)
 		{
@@ -985,6 +996,7 @@ setAttribute method invocations).
 	@Override
 	public SegmentedVolumeDataObject setVoxels(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		voxels = newValue;
 		if (newValue != null)
 		{
@@ -1064,6 +1076,7 @@ setAttribute method invocations).
 	@Override
 	public final SegmentedVolumeDataObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SegmentedVolumeData
@@ -1091,8 +1104,9 @@ setAttribute method invocations).
 	 */
 	public SegmentedVolumeDataObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1110,6 +1124,7 @@ setAttribute method invocations).
 	@Override
 	public final SegmentedVolumeDataObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to SegmentedVolumeData
@@ -1137,8 +1152,9 @@ setAttribute method invocations).
 	 */
 	public SegmentedVolumeDataObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1151,6 +1167,7 @@ setAttribute method invocations).
 	@Override
 	public final SegmentedVolumeDataObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1165,8 +1182,9 @@ setAttribute method invocations).
 	 */
 	public SegmentedVolumeDataObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

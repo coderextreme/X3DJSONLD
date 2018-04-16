@@ -58,11 +58,9 @@ import java.util.Arrays;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#EspduTransform" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#EspduTransform" target="blank">X3D Abstract Specification: EspduTransform</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#EspduTransform" target="_blank">X3D Tooltips: EspduTransform</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -219,16 +217,20 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue0_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue0_changed field
 	 */
 	public float getArticulationParameterValue0();
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue1_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue1_changed field
 	 */
 	public float getArticulationParameterValue1();
@@ -243,40 +245,50 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue3_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue3_changed field
 	 */
 	public float getArticulationParameterValue3();
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue4_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue4_changed field
 	 */
 	public float getArticulationParameterValue4();
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue5_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue5_changed field
 	 */
 	public float getArticulationParameterValue5();
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue6_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue6_changed field
 	 */
 	public float getArticulationParameterValue6();
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>articulationParameterValue7_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Get element of user-defined payload array.  * <br>
-
+	 * <i>Tooltip:</i> Get element of user-defined payload array.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of articulationParameterValue7_changed field
 	 */
 	public float getArticulationParameterValue7();
@@ -379,8 +391,10 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When were we collided with?.  * <br>
-
+	 * <i>Tooltip:</i> When were we collided with?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of collideTime field
 	 */
 	public double getCollideTime();
@@ -754,8 +768,10 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>firedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  When did we shoot a weapon (Fire PDU)?.  * <br>
-
+	 * <i>Tooltip:</i> When did we shoot a weapon (Fire PDU)?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of firedTime field
 	 */
 	public double getFiredTime();
@@ -888,8 +904,10 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Have we received a network update recently?.  * <br>
-
+	 * <i>Tooltip:</i> Have we received a network update recently?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -897,48 +915,60 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isCollided</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Has a matching CollisionPDU reported a collision?.  * <br>
-
+	 * <i>Tooltip:</i> Has a matching CollisionPDU reported a collision?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isCollided field
 	 */
 	public boolean getIsCollided();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isDetonated</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Has a matching DetonationPDU reported a detonation?.  * <br>
-
+	 * <i>Tooltip:</i> Has a matching DetonationPDU reported a detonation?
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isDetonated field
 	 */
 	public boolean getIsDetonated();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkReader</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="remote" (listen to network as copy of remote entity).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="remote" (listen to network as copy of remote entity)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkReader field
 	 */
 	public boolean getIsNetworkReader();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isNetworkWriter</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="master" (output to network as master entity at writeInterval).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="master" (output to network as master entity at writeInterval)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isNetworkWriter field
 	 */
 	public boolean getIsNetworkWriter();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isRtpHeaderHeard</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether incoming DIS packets have an RTP header prepended.  * <br>
-
+	 * <i>Tooltip:</i> Whether incoming DIS packets have an RTP header prepended.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isRtpHeaderHeard field
 	 */
 	public boolean getIsRtpHeaderHeard();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isStandAlone</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Whether networkMode="local" (ignore network but still respond to local events).  * <br>
-
+	 * <i>Tooltip:</i> Whether networkMode="local" (ignore network but still respond to local events)
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isStandAlone field
 	 */
 	public boolean getIsStandAlone();
@@ -1197,18 +1227,20 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	public EspduTransform setPort(int newValue);
 
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>readInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between read updates, 0 means no reading.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading.
+ * <ul>
+ *  <li> <i> Hint:</i>  readInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of readInterval field
 	 */
 	public double getReadInterval();
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>readInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>readInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between read updates, 0 means no reading.
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between read updates, 0 means no reading. Hint: readInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the readInterval field.
 	 * @return {@link EspduTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1305,10 +1337,12 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	public EspduTransform setSiteID(int newValue);
 
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>timestamp</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>timestamp</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  DIS timestamp in VRML time units from latest update.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) DIS timestamp received from latest PDU update, converted to X3D SFTime units.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of timestamp field
 	 */
 	public double getTimestamp();
@@ -1349,18 +1383,20 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	public EspduTransform setWarhead(int newValue);
 
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>writeInterval</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Seconds between write updates, 0 means no writing (sending).  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending).
+ * <ul>
+ *  <li> <i> Hint:</i>  writeInterval is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
+ * </ul>
 	 * @return value of writeInterval field
 	 */
 	public double getWriteInterval();
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>writeInterval</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>writeInterval</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Seconds between write updates, 0 means no writing (sending).
+	 * <i>Tooltip:</i> [0,+infinity) Seconds between write updates, 0 means no writing (sending). Hint: writeInterval is a nonnegative SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the writeInterval field.
 	 * @return {@link EspduTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

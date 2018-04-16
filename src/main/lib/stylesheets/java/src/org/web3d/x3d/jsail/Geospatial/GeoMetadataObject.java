@@ -62,10 +62,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoMetadata" target="blank">X3D Abstract Specification: GeoMetadata</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoMetadata" target="_blank">X3D Tooltips: GeoMetadata</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -329,6 +327,7 @@ public class GeoMetadataObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 	@Override
 	public GeoMetadataObject setData(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearData(); // newValueNullSetDEFAULT_VALUE
@@ -359,6 +358,7 @@ public class GeoMetadataObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			clearData(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		data = newValue;
 		for (X3DNode element : newValue)
 		{
@@ -470,6 +470,7 @@ setAttribute method invocations).
 	@Override
 	public GeoMetadataObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -579,6 +580,7 @@ setAttribute method invocations).
 	@Override
 	public GeoMetadataObject setSummary(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSummary(); // newValueNullSetDEFAULT_VALUE
@@ -605,8 +607,9 @@ setAttribute method invocations).
 			clearSummary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSummary(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSummary(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString summary field, similar to {@link #setSummary(String[])}.
@@ -620,6 +623,7 @@ setAttribute method invocations).
 			clearSummary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setSummary(newValue.getValue());
 		return this;
 	}
@@ -635,6 +639,7 @@ setAttribute method invocations).
 			clearSummary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		summary.clear();
 		summary.add(newValue);
 		return this;
@@ -651,6 +656,7 @@ setAttribute method invocations).
 			clearSummary(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		summary = newValue;
 		return this;
 	}
@@ -707,6 +713,7 @@ setAttribute method invocations).
 	@Override
 	public GeoMetadataObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -733,8 +740,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -748,6 +756,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -763,6 +772,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -779,6 +789,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -805,6 +816,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoMetadataObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoMetadata
@@ -832,8 +844,9 @@ setAttribute method invocations).
 	 */
 	public GeoMetadataObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -851,6 +864,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoMetadataObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoMetadata
@@ -878,8 +892,9 @@ setAttribute method invocations).
 	 */
 	public GeoMetadataObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -892,6 +907,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoMetadataObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -906,8 +922,9 @@ setAttribute method invocations).
 	 */
 	public GeoMetadataObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

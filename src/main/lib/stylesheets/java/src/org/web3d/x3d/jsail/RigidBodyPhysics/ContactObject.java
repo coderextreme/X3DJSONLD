@@ -85,10 +85,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#Contact" target="blank">X3D Abstract Specification: Contact</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Contact" target="_blank">X3D Tooltips: Contact</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -611,6 +609,7 @@ public class ContactObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 	@Override
 	public ContactObject setAppliedParameters(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
@@ -637,8 +636,9 @@ public class ContactObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setAppliedParameters(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAppliedParameters(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString appliedParameters field, similar to {@link #setAppliedParameters(String[])}.
@@ -653,6 +653,7 @@ public class ContactObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setAppliedParameters(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -669,6 +670,7 @@ public class ContactObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setAppliedParameters(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -684,6 +686,7 @@ public class ContactObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			clearAppliedParameters(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		appliedParameters = newValue;
 		return this;
 	}
@@ -717,6 +720,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setBody1(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body1 = newValue;
 		if (newValue != null)
 		{
@@ -803,6 +807,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setBody2(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body2 = newValue;
 		if (newValue != null)
 		{
@@ -892,6 +897,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setBounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Contact bounce newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -910,8 +916,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setBounce(SFFloatObject newValue)
 	{
-		setBounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>contactNormal</i>.
@@ -936,6 +943,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setContactNormal(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -954,8 +962,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setContactNormal(SFVec3fObject newValue)
 	{
-		setContactNormal(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setContactNormal(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -995,6 +1004,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setDepth(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		depth = newValue;
 		return this;
 	}
@@ -1006,8 +1016,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setDepth(SFFloatObject newValue)
 	{
-		setDepth(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDepth(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results within allowed range of [0,infinity) from inputOutput SFVec2f field named <i>frictionCoefficients</i>.
@@ -1032,6 +1043,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setFrictionCoefficients(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1054,8 +1066,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setFrictionCoefficients(SFVec2fObject newValue)
 	{
-		setFrictionCoefficients(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFrictionCoefficients(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1096,6 +1109,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setFrictionDirection(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1114,8 +1128,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setFrictionDirection(SFVec3fObject newValue)
 	{
-		setFrictionDirection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFrictionDirection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1152,6 +1167,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setGeometry1(X3DNBodyCollidableNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		geometry1 = newValue;
 		if (newValue != null)
 		{
@@ -1238,6 +1254,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setGeometry2(X3DNBodyCollidableNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		geometry2 = newValue;
 		if (newValue != null)
 		{
@@ -1326,6 +1343,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1418,6 +1436,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setMinBounceSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Contact minBounceSpeed newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1433,8 +1452,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setMinBounceSpeed(SFFloatObject newValue)
 	{
-		setMinBounceSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMinBounceSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>position</i>.
@@ -1459,6 +1479,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setPosition(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1477,8 +1498,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setPosition(SFVec3fObject newValue)
 	{
-		setPosition(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPosition(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1518,6 +1540,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setSlipCoefficients(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1536,8 +1559,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setSlipCoefficients(SFVec2fObject newValue)
 	{
-		setSlipCoefficients(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSlipCoefficients(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1576,6 +1600,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setSoftnessConstantForceMix(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Contact softnessConstantForceMix newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1594,8 +1619,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setSoftnessConstantForceMix(SFFloatObject newValue)
 	{
-		setSoftnessConstantForceMix(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSoftnessConstantForceMix(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>softnessErrorCorrection</i>.
@@ -1620,6 +1646,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setSoftnessErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("Contact softnessErrorCorrection newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1638,8 +1665,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setSoftnessErrorCorrection(SFFloatObject newValue)
 	{
-		setSoftnessErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSoftnessErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 2-tuple float results from inputOutput SFVec2f field named <i>surfaceSpeed</i>.
@@ -1664,6 +1692,7 @@ setAttribute method invocations).
 	@Override
 	public ContactObject setSurfaceSpeed(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1682,8 +1711,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setSurfaceSpeed(SFVec2fObject newValue)
 	{
-		setSurfaceSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSurfaceSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1712,6 +1742,7 @@ setAttribute method invocations).
 	@Override
 	public final ContactObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Contact
@@ -1739,8 +1770,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1758,6 +1790,7 @@ setAttribute method invocations).
 	@Override
 	public final ContactObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to Contact
@@ -1785,8 +1818,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1799,6 +1833,7 @@ setAttribute method invocations).
 	@Override
 	public final ContactObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1813,8 +1848,9 @@ setAttribute method invocations).
 	 */
 	public ContactObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -40,21 +40,18 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * This utility class provides a concrete implementation corresponding to SFBool X3D field type.
  * 
  * <br><br>
- * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
-<br><br>
-Related field object: {@link MFBoolObject}
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFBool">X3D Tooltips: type SFBool</a>
-
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
+ * <br><br>
+ * Related field object: {@link MFBoolObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFBool">X3D Tooltips: type SFBool</a>
+ * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DFieldTypes" target="_blank">SAI Java Specification: B.4.11 X3DFieldTypes</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/dataRef.html#SAIFieldType" target="blank">SAI Abstract Specification: 5.2.15 SAIFieldType</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFBoolAndMFBool" target="blank">X3D Abstract Specification: SFBoolAndMFBool</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html" target="_blank">X3D Tooltips</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field"      target="_blank">X3D Tooltips: field</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank">X3D Tooltips: fieldValue</a>
@@ -69,6 +66,9 @@ public class SFBoolObject extends X3DConcreteField implements org.web3d.x3d.sai.
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Java Tutorials: Primitive Data Types</a>
      */
 	public static final boolean DEFAULT_VALUE = true;
+
+	/** Default tuple size for this field type is <i>1</i> (i.e. number of component values making up a single-field SF object). */
+	public static final int TUPLE_SIZE = 1;
 
 	/** String constant for boolean value <em>true</em>, note lower-case value is XML syntax (upper-case value is VRML syntax) */
 	public static String TRUE  = "true";

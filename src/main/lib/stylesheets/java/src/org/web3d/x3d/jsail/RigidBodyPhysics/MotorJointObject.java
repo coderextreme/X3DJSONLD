@@ -69,10 +69,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#MotorJoint" target="blank">X3D Abstract Specification: MotorJoint</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MotorJoint" target="_blank">X3D Tooltips: MotorJoint</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -690,6 +688,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAutoCalc(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		autoCalc = newValue;
 		return this;
 	}
@@ -701,8 +700,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAutoCalc(SFBoolObject newValue)
 	{
-		setAutoCalc(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAutoCalc(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value unit axis, angle (in radians) from inputOutput SFFloat field named <i>axis1Angle</i>.
@@ -727,6 +727,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis1Angle(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis1Angle = newValue;
 		return this;
 	}
@@ -738,8 +739,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis1Angle(SFFloatObject newValue)
 	{
-		setAxis1Angle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis1Angle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>axis1Torque</i>.
@@ -764,6 +766,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis1Torque(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis1Torque = newValue;
 		return this;
 	}
@@ -775,8 +778,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis1Torque(SFFloatObject newValue)
 	{
-		setAxis1Torque(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis1Torque(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value unit axis, angle (in radians) from inputOutput SFFloat field named <i>axis2Angle</i>.
@@ -801,6 +805,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis2Angle(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis2Angle = newValue;
 		return this;
 	}
@@ -812,8 +817,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis2Angle(SFFloatObject newValue)
 	{
-		setAxis2Angle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis2Angle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>axis2Torque</i>.
@@ -838,6 +844,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis2Torque(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis2Torque = newValue;
 		return this;
 	}
@@ -849,8 +856,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis2Torque(SFFloatObject newValue)
 	{
-		setAxis2Torque(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis2Torque(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value unit axis, angle (in radians) from inputOutput SFFloat field named <i>axis3Angle</i>.
@@ -875,6 +883,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis3Angle(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis3Angle = newValue;
 		return this;
 	}
@@ -886,8 +895,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis3Angle(SFFloatObject newValue)
 	{
-		setAxis3Angle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis3Angle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>axis3Torque</i>.
@@ -912,6 +922,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setAxis3Torque(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		axis3Torque = newValue;
 		return this;
 	}
@@ -923,8 +934,9 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	 */
 	public MotorJointObject setAxis3Torque(SFFloatObject newValue)
 	{
-		setAxis3Torque(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAxis3Torque(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body1</i>.
@@ -946,6 +958,7 @@ public class MotorJointObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 	@Override
 	public MotorJointObject setBody1(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body1 = newValue;
 		if (newValue != null)
 		{
@@ -1032,6 +1045,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setBody2(RigidBody newValue)
 	{
+		// set-newValue-validity-checks #0
 		body2 = newValue;
 		if (newValue != null)
 		{
@@ -1121,6 +1135,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setEnabledAxes(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("MotorJoint enabledAxes newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1139,8 +1154,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setEnabledAxes(SFInt32Object newValue)
 	{
-		setEnabledAxes(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabledAxes(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of String enumeration results ['"ALL"'|'"NONE"'|'"etc."'] from inputOutput MFString field named <i>forceOutput</i>.
@@ -1183,6 +1199,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setForceOutput(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
@@ -1209,8 +1226,9 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setForceOutput(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForceOutput(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString forceOutput field, similar to {@link #setForceOutput(String[])}.
@@ -1225,6 +1243,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -1241,6 +1260,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setForceOutput(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -1256,6 +1276,7 @@ setAttribute method invocations).
 			clearForceOutput(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		forceOutput = newValue;
 		return this;
 	}
@@ -1291,6 +1312,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1363,8 +1385,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor1Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor1Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor1Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor1Angle field
 	 */
 	@Override
@@ -1375,8 +1399,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor1AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor1AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor1AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor1AngleRate field
 	 */
 	@Override
@@ -1409,6 +1435,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setMotor1Axis(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1427,8 +1454,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setMotor1Axis(SFVec3fObject newValue)
 	{
-		setMotor1Axis(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMotor1Axis(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1448,8 +1476,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor2Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor2Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor2Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor2Angle field
 	 */
 	@Override
@@ -1460,8 +1490,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor2AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor2AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor2AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor2AngleRate field
 	 */
 	@Override
@@ -1494,6 +1526,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setMotor2Axis(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1512,8 +1545,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setMotor2Axis(SFVec3fObject newValue)
 	{
-		setMotor2Axis(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMotor2Axis(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1533,8 +1567,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor3Angle</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor3Angle provides calculated angle of rotation (radians) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor3Angle provides calculated angle of rotation (radians) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor3Angle field
 	 */
 	@Override
@@ -1545,8 +1581,10 @@ setAttribute method invocations).
 	/**
 	 * Provide float value unit axis, angle (in radians) from outputOnly SFFloat field named <i>motor3AngleRate</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  motor3AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.  * <br>
-
+	 * <i>Tooltip:</i> motor3AngleRate provides calculated anglular rotation rate (radians/second) for this motor joint from last frame.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of motor3AngleRate field
 	 */
 	@Override
@@ -1579,6 +1617,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setMotor3Axis(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1597,8 +1636,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setMotor3Axis(SFVec3fObject newValue)
 	{
-		setMotor3Axis(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMotor3Axis(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1640,6 +1680,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop1Bounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop1Bounce = newValue;
 		return this;
 	}
@@ -1651,8 +1692,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop1Bounce(SFFloatObject newValue)
 	{
-		setStop1Bounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop1Bounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stop1ErrorCorrection</i>.
@@ -1679,6 +1721,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop1ErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop1ErrorCorrection = newValue;
 		return this;
 	}
@@ -1690,8 +1733,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop1ErrorCorrection(SFFloatObject newValue)
 	{
-		setStop1ErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop1ErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stop2Bounce</i>.
@@ -1718,6 +1762,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop2Bounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop2Bounce = newValue;
 		return this;
 	}
@@ -1729,8 +1774,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop2Bounce(SFFloatObject newValue)
 	{
-		setStop2Bounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop2Bounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stop2ErrorCorrection</i>.
@@ -1757,6 +1803,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop2ErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop2ErrorCorrection = newValue;
 		return this;
 	}
@@ -1768,8 +1815,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop2ErrorCorrection(SFFloatObject newValue)
 	{
-		setStop2ErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop2ErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stop3Bounce</i>.
@@ -1796,6 +1844,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop3Bounce(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop3Bounce = newValue;
 		return this;
 	}
@@ -1807,8 +1856,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop3Bounce(SFFloatObject newValue)
 	{
-		setStop3Bounce(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop3Bounce(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>stop3ErrorCorrection</i>.
@@ -1835,6 +1885,7 @@ setAttribute method invocations).
 	@Override
 	public MotorJointObject setStop3ErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		stop3ErrorCorrection = newValue;
 		return this;
 	}
@@ -1846,8 +1897,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setStop3ErrorCorrection(SFFloatObject newValue)
 	{
-		setStop3ErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStop3ErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1862,6 +1914,7 @@ setAttribute method invocations).
 	@Override
 	public final MotorJointObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MotorJoint
@@ -1889,8 +1942,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1908,6 +1962,7 @@ setAttribute method invocations).
 	@Override
 	public final MotorJointObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MotorJoint
@@ -1935,8 +1990,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1949,6 +2005,7 @@ setAttribute method invocations).
 	@Override
 	public final MotorJointObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1963,8 +2020,9 @@ setAttribute method invocations).
 	 */
 	public MotorJointObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

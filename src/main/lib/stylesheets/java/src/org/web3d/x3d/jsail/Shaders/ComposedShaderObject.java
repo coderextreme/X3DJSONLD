@@ -65,10 +65,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#ComposedShader" target="blank">X3D Abstract Specification: ComposedShader</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedShader" target="_blank">X3D Tooltips: ComposedShader</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -333,6 +331,7 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ComposedShaderObject setActivate(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		activate = newValue;
 		return this;
 	}
@@ -344,14 +343,17 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public ComposedShaderObject setActivate(SFBoolObject newValue)
 	{
-		setActivate(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setActivate(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isSelected</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isSelected indicates this shader instance is selected for use by browser.  * <br>
-
+	 * <i>Tooltip:</i> isSelected indicates this shader instance is selected for use by browser
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isSelected field
 	 */
 	@Override
@@ -362,8 +364,10 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isValid</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isValid indicates whether current shader objects can be run as a shader program.  * <br>
-
+	 * <i>Tooltip:</i> isValid indicates whether current shader objects can be run as a shader program.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isValid field
 	 */
 	@Override
@@ -401,6 +405,7 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ComposedShaderObject setLanguage(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -415,8 +420,9 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 */
 	public ComposedShaderObject setLanguage(SFStringObject newValue)
 	{
-		setLanguage(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLanguage(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -440,6 +446,7 @@ public class ComposedShaderObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public ComposedShaderObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -546,6 +553,7 @@ setAttribute method invocations).
 	@Override
 	public ComposedShaderObject setParts(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearParts(); // newValueNullSetDEFAULT_VALUE
@@ -576,6 +584,7 @@ setAttribute method invocations).
 			clearParts(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		parts = newValue;
 		for (ShaderPart element : newValue)
 		{
@@ -678,6 +687,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedShaderObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ComposedShader
@@ -705,8 +715,9 @@ setAttribute method invocations).
 	 */
 	public ComposedShaderObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -724,6 +735,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedShaderObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ComposedShader
@@ -751,8 +763,9 @@ setAttribute method invocations).
 	 */
 	public ComposedShaderObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -765,6 +778,7 @@ setAttribute method invocations).
 	@Override
 	public final ComposedShaderObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -779,8 +793,9 @@ setAttribute method invocations).
 	 */
 	public ComposedShaderObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

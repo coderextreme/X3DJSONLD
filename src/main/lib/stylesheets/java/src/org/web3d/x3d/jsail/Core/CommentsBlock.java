@@ -42,7 +42,6 @@ import java.util.*;
  * 
  * <br><br>
 
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */

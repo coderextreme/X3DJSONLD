@@ -52,11 +52,9 @@ import java.util.Arrays;
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#RigidBodyCollection" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#RigidBodyCollection" target="blank">X3D Abstract Specification: RigidBodyCollection</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#RigidBodyCollection" target="_blank">X3D Tooltips: RigidBodyCollection</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -205,20 +203,21 @@ public interface RigidBodyCollection extends X3DChildNode
 	public RigidBodyCollection setDisableLinearSpeed(float newValue);
 
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>disableTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities.
  * <ul>
- *  <li> <i> Hint:</i>  only activated if autoDisable='true'. </li> 
+ *  <li> <i>Hint:</i> only activated if autoDisable='true' </li> 
+ *  <li> <i>Hint:</i>  disableTime is an SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of disableTime field
 	 */
 	public double getDisableTime();
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>disableTime</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true'.
+	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true' Hint: disableTime is an SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the disableTime field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

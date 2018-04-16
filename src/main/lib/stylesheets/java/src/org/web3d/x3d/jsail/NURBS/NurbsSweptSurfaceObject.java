@@ -68,10 +68,8 @@ and a trajectoryCurve [NurbsCurve].  * <br>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/nurbs.html#NurbsSweptSurface" target="blank">X3D Abstract Specification: NurbsSweptSurface</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSweptSurface" target="_blank">X3D Tooltips: NurbsSweptSurface</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -323,6 +321,7 @@ public class NurbsSweptSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public NurbsSweptSurfaceObject setCcw(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		ccw = newValue;
 		return this;
 	}
@@ -334,8 +333,9 @@ public class NurbsSweptSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public NurbsSweptSurfaceObject setCcw(SFBoolObject newValue)
 	{
-		setCcw(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCcw(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DNurbsControlCurveNode instance (using a properly typed node) from inputOutput SFNode field <i>crossSectionCurve</i>.
@@ -357,6 +357,7 @@ public class NurbsSweptSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public NurbsSweptSurfaceObject setCrossSectionCurve(X3DNurbsControlCurveNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		crossSectionCurve = newValue;
 		if (newValue != null)
 		{
@@ -445,6 +446,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsSweptSurfaceObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -540,6 +542,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsSweptSurfaceObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -551,8 +554,9 @@ setAttribute method invocations).
 	 */
 	public NurbsSweptSurfaceObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide NurbsCurve instance (using a properly typed node) from inputOutput SFNode field <i>trajectoryCurve</i>.
@@ -574,6 +578,7 @@ setAttribute method invocations).
 	@Override
 	public NurbsSweptSurfaceObject setTrajectoryCurve(NurbsCurve newValue)
 	{
+		// set-newValue-validity-checks #0
 		trajectoryCurve = newValue;
 		if (newValue != null)
 		{
@@ -653,6 +658,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsSweptSurfaceObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsSweptSurface
@@ -680,8 +686,9 @@ setAttribute method invocations).
 	 */
 	public NurbsSweptSurfaceObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -699,6 +706,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsSweptSurfaceObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to NurbsSweptSurface
@@ -726,8 +734,9 @@ setAttribute method invocations).
 	 */
 	public NurbsSweptSurfaceObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -740,6 +749,7 @@ setAttribute method invocations).
 	@Override
 	public final NurbsSweptSurfaceObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -754,8 +764,9 @@ setAttribute method invocations).
 	 */
 	public NurbsSweptSurfaceObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

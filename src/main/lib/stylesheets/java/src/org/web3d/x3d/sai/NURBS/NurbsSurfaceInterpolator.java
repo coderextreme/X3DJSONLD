@@ -50,11 +50,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#NurbsSurfaceInterpolator" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/nurbs.html#NurbsSurfaceInterpolator" target="blank">X3D Abstract Specification: NurbsSurfaceInterpolator</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSurfaceInterpolator" target="_blank">X3D Tooltips: NurbsSurfaceInterpolator</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -95,16 +93,20 @@ public interface NurbsSurfaceInterpolator extends X3DChildNode
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>normal_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computationaly interpolated output value determined by current key time and corresponding keyValue pair.  * <br>
-
+	 * <i>Tooltip:</i> Computationaly interpolated output value determined by current key time and corresponding keyValue pair.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of normal_changed field
 	 */
 	public float[] getNormal();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>position_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Computationaly interpolated output value determined by current key time and corresponding keyValue pair.  * <br>
-
+	 * <i>Tooltip:</i> Computationaly interpolated output value determined by current key time and corresponding keyValue pair.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of position_changed field
 	 */
 	public float[] getPosition();

@@ -40,17 +40,14 @@ import org.web3d.x3d.sai.Core.*;
  * Abstract node interface, defined by X3D specification to support X3D Java interoperability.
  * 
  * <br><br>
- * <i>X3D node tooltip</i>:  KeySensor generates events as the user presses keys on the keyboard.
-Supports notion of "keyboard focus".  * <br>
+ * <i>X3D node tooltip</i>:  KeySensor generates events as the user presses keys on the keyboard. Browser support includes the notion of "keyboard focus".  * <br>
  * <br>
 
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#KeySensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/keyboard.html#KeySensor" target="blank">X3D Abstract Specification: KeySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#KeySensor" target="_blank">X3D Tooltips: KeySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -61,32 +58,40 @@ public interface KeySensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>actionKeyPress</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  action key press gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.  * <br>
-
+	 * <i>Tooltip:</i> action key press gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of actionKeyPress field
 	 */
 	public int getActionKeyPress();
 	/**
 	 * Provide int value from outputOnly SFInt32 field named <i>actionKeyRelease</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  action key release gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.  * <br>
-
+	 * <i>Tooltip:</i> action key release gives following values: HOME=000 END=1001 PGUP=1002 PGDN=1003 UP=1004 DOWN=1005 LEFT=1006 RIGHT=1007 F1..F12 = 1008..1019.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of actionKeyRelease field
 	 */
 	public int getActionKeyRelease();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>altKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  altKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> altKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of altKey field
 	 */
 	public boolean getAltKey();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>controlKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  controlKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> controlKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of controlKey field
 	 */
 	public boolean getControlKey();
@@ -113,8 +118,10 @@ public interface KeySensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).  * <br>
-
+	 * <i>Tooltip:</i> Select geometry by activating the pointing device (e.g. clicking the mouse) to generate isActive events. Output event isActive=true is sent when geometry is selected (e.g. when primary mouse button is pressed), output event isActive=false is sent when geometry is deselected (e.g. when primary mouse button is released).
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -122,16 +129,20 @@ public interface KeySensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide String value from outputOnly SFString field named <i>keyPress</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated when user presses character-producing keys on keyboard produces integer UTF-8 character values.  * <br>
-
+	 * <i>Tooltip:</i> Events generated when user presses character-producing keys on keyboard produces integer UTF-8 character values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of keyPress field
 	 */
 	public String getKeyPress();
 	/**
 	 * Provide String value from outputOnly SFString field named <i>keyRelease</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Events generated when user releases character-producing keys on keyboard produces integer UTF-8 character values.  * <br>
-
+	 * <i>Tooltip:</i> Events generated when user releases character-producing keys on keyboard produces integer UTF-8 character values.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of keyRelease field
 	 */
 	public String getKeyRelease();
@@ -155,8 +166,10 @@ public interface KeySensor extends X3DKeyDeviceSensorNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>shiftKey</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  shiftKey generates true event when pressed, false event when released.  * <br>
-
+	 * <i>Tooltip:</i> shiftKey generates true event when pressed, false event when released.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of shiftKey field
 	 */
 	public boolean getShiftKey();

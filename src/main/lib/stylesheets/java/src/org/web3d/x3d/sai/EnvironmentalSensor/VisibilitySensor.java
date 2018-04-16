@@ -47,11 +47,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#VisibilitySensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html#VisibilitySensor" target="blank">X3D Abstract Specification: VisibilitySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#VisibilitySensor" target="_blank">X3D Tooltips: VisibilitySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -100,24 +98,30 @@ public interface VisibilitySensor extends X3DEnvironmentalSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>enterTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera enters visibility region for sensor.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera enters visibility region for sensor.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enterTime field
 	 */
 	public double getEnterTime();
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>exitTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera exits visibility region for sensor.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera exits visibility region for sensor.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of exitTime field
 	 */
 	public double getExitTime();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when triggering the sensor. isActive=true when entering visibility region, isActive=false when exiting visibility region.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when triggering the sensor. isActive=true when entering visibility region, isActive=false when exiting visibility region.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override

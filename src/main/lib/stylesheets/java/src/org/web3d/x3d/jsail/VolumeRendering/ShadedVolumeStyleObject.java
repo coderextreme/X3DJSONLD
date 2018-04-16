@@ -71,10 +71,8 @@ import org.web3d.x3d.jsail.Texturing3D.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ShadedVolumeStyle" target="blank">X3D Abstract Specification: ShadedVolumeStyle</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ShadedVolumeStyle" target="_blank">X3D Tooltips: ShadedVolumeStyle</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Volume" target="_blank">X3D Scene Authoring Hints: Volume</a>
  */
@@ -374,6 +372,7 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public ShadedVolumeStyleObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -385,8 +384,9 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public ShadedVolumeStyleObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>lighting</i>.
@@ -411,6 +411,7 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public ShadedVolumeStyleObject setLighting(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		lighting = newValue;
 		return this;
 	}
@@ -422,8 +423,9 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 */
 	public ShadedVolumeStyleObject setLighting(SFBoolObject newValue)
 	{
-		setLighting(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLighting(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMaterialNode instance (using a properly typed node) from inputOutput SFNode field <i>material</i>.
@@ -445,6 +447,7 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	@Override
 	public ShadedVolumeStyleObject setMaterial(X3DMaterialNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		material = newValue;
 		if (newValue != null)
 		{
@@ -533,6 +536,7 @@ setAttribute method invocations).
 	@Override
 	public ShadedVolumeStyleObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -631,6 +635,7 @@ setAttribute method invocations).
 	@Override
 	public ShadedVolumeStyleObject setPhaseFunction(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -645,8 +650,9 @@ setAttribute method invocations).
 	 */
 	public ShadedVolumeStyleObject setPhaseFunction(SFStringObject newValue)
 	{
-		setPhaseFunction(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPhaseFunction(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>shadows</i>.
@@ -671,6 +677,7 @@ setAttribute method invocations).
 	@Override
 	public ShadedVolumeStyleObject setShadows(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		shadows = newValue;
 		return this;
 	}
@@ -682,8 +689,9 @@ setAttribute method invocations).
 	 */
 	public ShadedVolumeStyleObject setShadows(SFBoolObject newValue)
 	{
-		setShadows(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setShadows(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>surfaceNormals</i>.
@@ -705,6 +713,7 @@ setAttribute method invocations).
 	@Override
 	public ShadedVolumeStyleObject setSurfaceNormals(X3DTexture3DNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		surfaceNormals = newValue;
 		if (newValue != null)
 		{
@@ -784,6 +793,7 @@ setAttribute method invocations).
 	@Override
 	public final ShadedVolumeStyleObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ShadedVolumeStyle
@@ -811,8 +821,9 @@ setAttribute method invocations).
 	 */
 	public ShadedVolumeStyleObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -830,6 +841,7 @@ setAttribute method invocations).
 	@Override
 	public final ShadedVolumeStyleObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ShadedVolumeStyle
@@ -857,8 +869,9 @@ setAttribute method invocations).
 	 */
 	public ShadedVolumeStyleObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -871,6 +884,7 @@ setAttribute method invocations).
 	@Override
 	public final ShadedVolumeStyleObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -885,8 +899,9 @@ setAttribute method invocations).
 	 */
 	public ShadedVolumeStyleObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

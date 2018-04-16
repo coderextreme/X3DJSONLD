@@ -35,14 +35,12 @@ package org.web3d.x3d.sai;
 import java.util.*;
 
 /**
- * 
-The exception that is thrown when the user attempts to make method calls
-that require this browser to be shared.
- * 
 
  * <br>
  * <i>Package hint:</i>  This specification class is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
+ * 
+The exception that is thrown when the user attempts to make method calls
+that require this browser to be shared. * 
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#BrowserNotSharedException" target="_blank">SAI Java Specification: B.7.2 BrowserNotSharedException</a>
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#BrowserNotSharedException" target="_blank">X3D Tooltips: BrowserNotSharedException</a>

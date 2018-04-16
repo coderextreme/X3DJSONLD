@@ -60,10 +60,8 @@ import org.web3d.x3d.jsail.Shape.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#CollidableShape" target="blank">X3D Abstract Specification: CollidableShape</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollidableShape" target="_blank">X3D Tooltips: CollidableShape</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -347,6 +345,7 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public CollidableShapeObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -365,8 +364,9 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public CollidableShapeObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -409,6 +409,7 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public CollidableShapeObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -431,8 +432,9 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public CollidableShapeObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -472,6 +474,7 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public CollidableShapeObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -483,8 +486,9 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	 */
 	public CollidableShapeObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -508,6 +512,7 @@ public class CollidableShapeObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 	@Override
 	public CollidableShapeObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -602,6 +607,7 @@ setAttribute method invocations).
 	@Override
 	public CollidableShapeObject setRotation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -620,8 +626,9 @@ setAttribute method invocations).
 	 */
 	public CollidableShapeObject setRotation(SFRotationObject newValue)
 	{
-		setRotation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRotation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -659,6 +666,7 @@ setAttribute method invocations).
 	@Override
 	public CollidableShapeObject setShape(Shape newValue)
 	{
+		// set-newValue-validity-checks #0
 		shape = newValue;
 		if (newValue != null)
 		{
@@ -752,6 +760,7 @@ setAttribute method invocations).
 	@Override
 	public CollidableShapeObject setTranslation(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -770,8 +779,9 @@ setAttribute method invocations).
 	 */
 	public CollidableShapeObject setTranslation(SFVec3fObject newValue)
 	{
-		setTranslation(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTranslation(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -801,6 +811,7 @@ setAttribute method invocations).
 	@Override
 	public final CollidableShapeObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollidableShape
@@ -828,8 +839,9 @@ setAttribute method invocations).
 	 */
 	public CollidableShapeObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -847,6 +859,7 @@ setAttribute method invocations).
 	@Override
 	public final CollidableShapeObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to CollidableShape
@@ -874,8 +887,9 @@ setAttribute method invocations).
 	 */
 	public CollidableShapeObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -888,6 +902,7 @@ setAttribute method invocations).
 	@Override
 	public final CollidableShapeObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -902,8 +917,9 @@ setAttribute method invocations).
 	 */
 	public CollidableShapeObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

@@ -92,10 +92,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 import org.web3d.x3d.jsail.Texturing.*;
 import java.util.Arrays;
+import org.web3d.x3d.jsail.NURBS.CoordinateDoubleObject;
 
 /**
- * <i>X3D node tooltip</i>: IndexedFaceSet is a geometry node containing a Coordinate|CoordinateDouble node, and can also contain Color|ColorRGBA, Normal and TextureCoordinate nodes.
+ * <i>X3D node tooltip</i>: IndexedFaceSet defines polygons using index lists corresponding to vertex coordinates. IndexedFaceSet is a geometry node containing a Coordinate|CoordinateDouble node, and can also contain Color|ColorRGBA, Normal and TextureCoordinate nodes.
  * <ul>
+ *  <li> <i>Hint:</i> Polygon <br> <a href="https://en.wikipedia.org/wiki/Polygon" target="_blank">https://en.wikipedia.org/wiki/Polygon</a> </li> 
  *  <li> <i>Hint:</i> insert a Shape node before adding geometry or Appearance. </li> 
  *  <li> <i>Hint:</i> for advanced extensibility, authors can substitute a type-matched ProtoInstance node (with correct containerField value) for contained node content. </li> 
  *  <li> <i>Warning:</i> rendering characteristics are undefined if polygons are not planar. </li> 
@@ -104,10 +106,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html#IndexedFaceSet" target="blank">X3D Abstract Specification: IndexedFaceSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedFaceSet" target="_blank">X3D Tooltips: IndexedFaceSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Meshes" target="_blank">X3D Scene Authoring Hints: Meshes</a>
  */
@@ -542,6 +542,7 @@ public class IndexedFaceSetObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public IndexedFaceSetObject setAttrib(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
@@ -572,6 +573,7 @@ public class IndexedFaceSetObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			clearAttrib(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		attrib = newValue;
 		for (X3DVertexAttributeNode element : newValue)
 		{
@@ -686,6 +688,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setCcw(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		ccw = newValue;
 		return this;
 	}
@@ -697,8 +700,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setCcw(SFBoolObject newValue)
 	{
-		setCcw(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCcw(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DColorNode instance (using a properly typed node) using RGB values [0..1] from inputOutput SFNode field <i>color</i>.
@@ -720,6 +724,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setColor(X3DColorNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		color = newValue;
 		if (newValue != null)
 		{
@@ -828,6 +833,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setColorIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
@@ -854,8 +860,9 @@ setAttribute method invocations).
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setColorIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 colorIndex field, similar to {@link #setColorIndex(int[])}.
@@ -869,6 +876,7 @@ setAttribute method invocations).
 			clearColorIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		colorIndex = newValue;
 		return this;
 	}
@@ -908,6 +916,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setColorPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		colorPerVertex = newValue;
 		return this;
 	}
@@ -919,8 +928,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setColorPerVertex(SFBoolObject newValue)
 	{
-		setColorPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColorPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>convex</i>.
@@ -947,6 +957,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setConvex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		convex = newValue;
 		return this;
 	}
@@ -958,8 +969,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setConvex(SFBoolObject newValue)
 	{
-		setConvex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setConvex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
@@ -981,6 +993,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setCoord(X3DCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		coord = newValue;
 		if (newValue != null)
 		{
@@ -1087,6 +1100,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setCoordIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
@@ -1113,8 +1127,9 @@ setAttribute method invocations).
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setCoordIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCoordIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 coordIndex field, similar to {@link #setCoordIndex(int[])}.
@@ -1128,6 +1143,7 @@ setAttribute method invocations).
 			clearCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		coordIndex = newValue;
 		return this;
 	}
@@ -1166,6 +1182,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setCreaseAngle(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("IndexedFaceSet creaseAngle newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -1181,8 +1198,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setCreaseAngle(SFFloatObject newValue)
 	{
-		setCreaseAngle(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCreaseAngle(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide FogCoordinate instance (using a properly typed node) from inputOutput SFNode field <i>fogCoord</i>.
@@ -1204,6 +1222,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setFogCoord(FogCoordinate newValue)
 	{
+		// set-newValue-validity-checks #0
 		fogCoord = newValue;
 		if (newValue != null)
 		{
@@ -1292,6 +1311,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1381,6 +1401,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setNormal(X3DNormalNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		normal = newValue;
 		if (newValue != null)
 		{
@@ -1489,6 +1510,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setNormalIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearNormalIndex(); // newValueNullSetDEFAULT_VALUE
@@ -1515,8 +1537,9 @@ setAttribute method invocations).
 			clearNormalIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setNormalIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 normalIndex field, similar to {@link #setNormalIndex(int[])}.
@@ -1530,6 +1553,7 @@ setAttribute method invocations).
 			clearNormalIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		normalIndex = newValue;
 		return this;
 	}
@@ -1568,6 +1592,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setNormalPerVertex(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		normalPerVertex = newValue;
 		return this;
 	}
@@ -1579,8 +1604,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setNormalPerVertex(SFBoolObject newValue)
 	{
-		setNormalPerVertex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setNormalPerVertex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -1608,6 +1634,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setSolid(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		solid = newValue;
 		return this;
 	}
@@ -1619,8 +1646,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setSolid(SFBoolObject newValue)
 	{
-		setSolid(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSolid(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DTextureCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>texCoord</i>.
@@ -1642,6 +1670,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setTexCoord(X3DTextureCoordinateNode newValue)
 	{
+		// set-newValue-validity-checks #0
 		texCoord = newValue;
 		if (newValue != null)
 		{
@@ -1747,6 +1776,7 @@ setAttribute method invocations).
 	@Override
 	public IndexedFaceSetObject setTexCoordIndex(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTexCoordIndex(); // newValueNullSetDEFAULT_VALUE
@@ -1773,8 +1803,9 @@ setAttribute method invocations).
 			clearTexCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setTexCoordIndex(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setTexCoordIndex(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 texCoordIndex field, similar to {@link #setTexCoordIndex(int[])}.
@@ -1788,6 +1819,7 @@ setAttribute method invocations).
 			clearTexCoordIndex(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		texCoordIndex = newValue;
 		return this;
 	}
@@ -1814,6 +1846,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedFaceSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IndexedFaceSet
@@ -1841,8 +1874,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1860,6 +1894,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedFaceSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to IndexedFaceSet
@@ -1887,8 +1922,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1901,6 +1937,7 @@ setAttribute method invocations).
 	@Override
 	public final IndexedFaceSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1915,8 +1952,9 @@ setAttribute method invocations).
 	 */
 	public IndexedFaceSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
@@ -3001,29 +3039,41 @@ setAttribute method invocations).
 			throw new InvalidFieldValueException(errorNotice); // report error		
 		}
 
-		if (((coord != null) || (coordProtoInstance != null)) && coordIndex.isEmpty())
+		if (hasCoord() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing Coordinate node must also include coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getCoordCount() > 0)
+			{
+				String errorNotice = NAME + " containing Coordinate nodel with " + getCoordCount() + " values must also include coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
 		if (((color != null) || (colorProtoInstance != null)) && colorIndex.isEmpty() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing Color node must also include colorIndex or coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getColorCount() > 0)
+			{
+				String errorNotice = NAME + " containing Color node with " + getColorCount() + " values must also include colorIndex or coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
-		if (((normal != null) || (normalProtoInstance != null)) && normalIndex.isEmpty() && coordIndex.isEmpty())
+		if ((hasNormal()) && normalIndex.isEmpty() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing Normal must also include normalIndex or coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getNormalCount() > 0)
+			{
+				String errorNotice = NAME + " containing Normal node with " + getNormalCount() + " values must also include normalIndex or coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
 		if (((texCoord != null) || (texCoordProtoInstance != null)) && texCoordIndex.isEmpty() && coordIndex.isEmpty())
 		{
-			String errorNotice = NAME + " containing TextureCoordinate must also include texCoordIndex or coordIndex field";
-			validationResult.append(errorNotice);
-			throw new InvalidFieldException(errorNotice); // report error
+			if (getTexCoordCount() > 0)
+			{
+				String errorNotice = NAME + " containing TextureCoordinate node with " + getTexCoordCount() + " values must also include texCoordIndex or coordIndex field";
+				validationResult.append(errorNotice);
+				throw new InvalidFieldException(errorNotice); // report error
+			}
 		}
 		if (getIS() != null)
 		{
@@ -3079,5 +3129,107 @@ setAttribute method invocations).
 			}
 		}
 		return validationResult.toString();
+	}
+
+	/** 
+	 * Utility method to get number of coordinate 3-tuple values in contained Coordinate/CoordinateDouble or ProtoInstance node 
+	 * @see CoordinateObject
+	 * @see CoordinateDoubleObject
+	 * @see ProtoInstanceObject
+	 * @return number of coordinate 3-tuple values
+	 */
+	public int getCoordCount()
+	{
+		if (getCoord() != null)
+		{
+			if      (getCoord() instanceof CoordinateObject)
+				 return (((CoordinateObject      )getCoord()).getPoint().length / SFVec3fObject.TUPLE_SIZE);
+			else if (getCoord() instanceof CoordinateDoubleObject)
+				 return (((CoordinateDoubleObject)getCoord()).getPoint().length / SFVec3dObject.TUPLE_SIZE);
+		}
+		else if ((getCoordProtoInstance() != null) && getCoordProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getCoordProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("point"))
+					     return nextFieldValue.getValueMFVec3f().size();
+				else if (nextFieldValue.getName().equals("point"))
+					     return nextFieldValue.getValueMFVec3d().size();
+			}
+		}
+		return 0; // otherwise
+	}
+	/** 
+	 * Utility method to get number of 3-tuple Color RGB values (or 4-tuple ColorRGBA values) in contained Color/ColorRGBA or ProtoInstance node 
+	 * @see ColorObject
+	 * @see ColorRGBAObject
+	 * @see ProtoInstanceObject
+	 * @return number of color values
+	 */
+	public int getColorCount()
+	{
+		if (getColor() != null)
+		{
+			if      (getColor() instanceof ColorObject)
+			         return (((ColorObject    )getColor()).getColor().length / SFColorObject.TUPLE_SIZE);
+			else if (getColor() instanceof ColorRGBAObject)
+				     return (((ColorRGBAObject)getColor()).getColor().length / SFColorRGBAObject.TUPLE_SIZE);
+		}
+		else if ((getColorProtoInstance() != null) && getColorProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getColorProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("color"))
+					     return nextFieldValue.getValueMFColor().size();
+				else if (nextFieldValue.getName().equals("color"))
+					     return nextFieldValue.getValueMFColorRGBA().size();
+			}
+		}
+		return 0;
+	}
+
+	/** 
+	 * Utility method to get number of 3-tuple normal vectors in contained Normal or ProtoInstance node
+	 * @see NormalObject
+	 * @see ProtoInstanceObject
+	 * @return number of color values
+	 */
+	public int getNormalCount()
+	{
+		if (getNormal() != null)
+		{
+			return (((NormalObject)getNormal()).getVector().length / MFVec3fObject.TUPLE_SIZE);
+		}
+		else if ((getNormalProtoInstance() != null) && getColorProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getColorProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("normal"))
+					     return nextFieldValue.getValueMFVec3f().size();
+			}
+		}
+		return 0;
+	}
+	/** 
+	 * Utility method to get number of 2-tuple texture coordinate values in contained TextureCoordinate or ProtoInstance node
+	 * @see TextureCoordinateObject
+	 * @see ProtoInstanceObject
+	 * @return number of color values
+	 */
+	public int getTexCoordCount()
+	{
+		if (getTexCoord() != null)
+		{
+			return (((TextureCoordinateObject)getTexCoord()).getPoint().length / SFVec2fObject.TUPLE_SIZE);
+		}
+		else if ((getTexCoordProtoInstance() != null) && getTexCoordProtoInstance().hasFieldValue())
+		{
+			for (fieldValueObject nextFieldValue : getTexCoordProtoInstance().getFieldValueList())
+			{
+				if      (nextFieldValue.getName().equals("texcoord"))
+					     return nextFieldValue.getValueMFVec2f().size();
+			}
+		}
+		return 0;
 	}
 }

@@ -64,10 +64,8 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoProximitySensor" target="blank">X3D Abstract Specification: GeoProximitySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoProximitySensor" target="_blank">X3D Tooltips: GeoProximitySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -426,6 +424,7 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public GeoProximitySensorObject setCenter(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -444,8 +443,9 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public GeoProximitySensorObject setCenter(SFVec3dObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -465,8 +465,10 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	/**
 	 * Provide array of 3-tuple float results unit axis, angle (in radians) from outputOnly SFVec3f field named <i>centerOfRotation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends changed centerOfRotation values, likely caused by user interaction.  * <br>
-
+	 * <i>Tooltip:</i> Sends changed centerOfRotation values, likely caused by user interaction.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of centerOfRotation_changed field
 	 */
 	@Override
@@ -497,6 +499,7 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public GeoProximitySensorObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -508,14 +511,17 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public GeoProximitySensorObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>enterTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera enters the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera enters the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enterTime field
 	 */
 	@Override
@@ -526,8 +532,10 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>exitTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera exits the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera exits the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of exitTime field
 	 */
 	@Override
@@ -553,6 +561,7 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public GeoProximitySensorObject setGeoCenter(double[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new double[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -571,8 +580,9 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	 */
 	public GeoProximitySensorObject setGeoCenter(SFVec3dObject newValue)
 	{
-		setGeoCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -591,6 +601,13 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	}
 	/**
 	 * Provide array of 3-tuple double results from outputOnly SFVec3d field named <i>geoCoord_changed</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> Sends geospatial coordinates of viewer's position corresponding to world position returned by position_changed.
+ * <ul>
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i> requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of geoCoord_changed field
 	 */
 	@Override
@@ -618,6 +635,7 @@ public class GeoProximitySensorObject extends org.web3d.x3d.jsail.X3DConcreteNod
 	@Override
 	public GeoProximitySensorObject setGeoOrigin(GeoOrigin newValue)
 	{
+		// set-newValue-validity-checks #0
 		geoOrigin = newValue;
 		if (newValue != null)
 		{
@@ -726,6 +744,7 @@ setAttribute method invocations).
 	@Override
 	public GeoProximitySensorObject setGeoSystem(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
@@ -752,8 +771,9 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setGeoSystem(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGeoSystem(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString geoSystem field, similar to {@link #setGeoSystem(String[])}.
@@ -767,6 +787,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setGeoSystem(newValue.getValue());
 		return this;
 	}
@@ -782,6 +803,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		geoSystem.clear();
 		geoSystem.add(newValue);
 		return this;
@@ -798,6 +820,7 @@ setAttribute method invocations).
 			clearGeoSystem(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		geoSystem = newValue;
 		return this;
 	}
@@ -814,8 +837,10 @@ setAttribute method invocations).
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -845,6 +870,7 @@ setAttribute method invocations).
 	@Override
 	public GeoProximitySensorObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -917,8 +943,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>orientation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends rotation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends rotation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of orientation_changed field
 	 */
 	@Override
@@ -929,8 +957,10 @@ setAttribute method invocations).
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>position_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends translation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends translation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of position_changed field
 	 */
 	@Override
@@ -963,6 +993,7 @@ setAttribute method invocations).
 	@Override
 	public GeoProximitySensorObject setSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -985,8 +1016,9 @@ setAttribute method invocations).
 	 */
 	public GeoProximitySensorObject setSize(SFVec3fObject newValue)
 	{
-		setSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1016,6 +1048,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoProximitySensorObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoProximitySensor
@@ -1043,8 +1076,9 @@ setAttribute method invocations).
 	 */
 	public GeoProximitySensorObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1062,6 +1096,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoProximitySensorObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to GeoProximitySensor
@@ -1089,8 +1124,9 @@ setAttribute method invocations).
 	 */
 	public GeoProximitySensorObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1103,6 +1139,7 @@ setAttribute method invocations).
 	@Override
 	public final GeoProximitySensorObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1117,8 +1154,9 @@ setAttribute method invocations).
 	 */
 	public GeoProximitySensorObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

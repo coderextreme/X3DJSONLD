@@ -76,10 +76,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#RigidBodyCollection" target="blank">X3D Abstract Specification: RigidBodyCollection</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#RigidBodyCollection" target="_blank">X3D Tooltips: RigidBodyCollection</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -540,6 +538,7 @@ public class RigidBodyCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public RigidBodyCollectionObject setAutoDisable(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		autoDisable = newValue;
 		return this;
 	}
@@ -551,8 +550,9 @@ public class RigidBodyCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	 */
 	public RigidBodyCollectionObject setAutoDisable(SFBoolObject newValue)
 	{
-		setAutoDisable(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAutoDisable(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of RigidBody results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>bodies</i>.
@@ -591,6 +591,7 @@ public class RigidBodyCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 	@Override
 	public RigidBodyCollectionObject setBodies(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearBodies(); // newValueNullSetDEFAULT_VALUE
@@ -621,6 +622,7 @@ public class RigidBodyCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			clearBodies(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		bodies = newValue;
 		for (RigidBody element : newValue)
 		{
@@ -730,6 +732,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setCollider(CollisionCollection newValue)
 	{
+		// set-newValue-validity-checks #0
 		collider = newValue;
 		if (newValue != null)
 		{
@@ -822,6 +825,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setConstantForceMix(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		constantForceMix = newValue;
 		return this;
 	}
@@ -833,8 +837,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setConstantForceMix(SFFloatObject newValue)
 	{
-		setConstantForceMix(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setConstantForceMix(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>contactSurfaceThickness</i>.
@@ -859,6 +864,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setContactSurfaceThickness(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		contactSurfaceThickness = newValue;
 		return this;
 	}
@@ -870,8 +876,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setContactSurfaceThickness(SFFloatObject newValue)
 	{
-		setContactSurfaceThickness(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setContactSurfaceThickness(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>disableAngularSpeed</i>.
@@ -898,6 +905,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setDisableAngularSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		disableAngularSpeed = newValue;
 		return this;
 	}
@@ -909,8 +917,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setDisableAngularSpeed(SFFloatObject newValue)
 	{
-		setDisableAngularSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableAngularSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>disableLinearSpeed</i>.
@@ -937,6 +946,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setDisableLinearSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		disableLinearSpeed = newValue;
 		return this;
 	}
@@ -948,15 +958,17 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setDisableLinearSpeed(SFFloatObject newValue)
 	{
-		setDisableLinearSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableLinearSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from inputOutput SFTime field named <i>disableTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities.
  * <ul>
- *  <li> <i> Hint:</i>  only activated if autoDisable='true'. </li> 
+ *  <li> <i>Hint:</i> only activated if autoDisable='true' </li> 
+ *  <li> <i>Hint:</i>  disableTime is an SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of disableTime field
 	 */
@@ -967,15 +979,20 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign double value in seconds to inputOutput SFTime field named <i>disableTime</i>.
+	 * Assign double value in seconds within allowed range of [0,infinity) to inputOutput SFTime field named <i>disableTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true'.
+	 * <i>Tooltip:</i> [0,+infinity) disableTime defines interval when body becomes at rest and not part of rigid body calculations, reducing numeric instabilities. Hint: only activated if autoDisable='true' Hint: disableTime is an SFTime duration interval, not an absolute clock time.
 	 * @param newValue is new value for the disableTime field.
 	 * @return {@link RigidBodyCollectionObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public RigidBodyCollectionObject setDisableTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
+            // Check that newValue parameter has legal value(s) before assigning to scene graph
+            if (newValue < 0) {
+                throw new org.web3d.x3d.sai.InvalidFieldValueException("RigidBodyCollection disableTime newValue=" + newValue + " has component value less than restriction minInclusive=0");
+            }
 		disableTime = newValue;
 		return this;
 	}
@@ -987,8 +1004,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setDisableTime(SFTimeObject newValue)
 	{
-		setDisableTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDisableTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -1013,6 +1031,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setEnabled(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		enabled = newValue;
 		return this;
 	}
@@ -1024,8 +1043,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setEnabled(SFBoolObject newValue)
 	{
-		setEnabled(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setEnabled(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>errorCorrection</i>.
@@ -1050,6 +1070,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setErrorCorrection(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		errorCorrection = newValue;
 		return this;
 	}
@@ -1061,8 +1082,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setErrorCorrection(SFFloatObject newValue)
 	{
-		setErrorCorrection(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setErrorCorrection(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>gravity</i>.
@@ -1087,6 +1109,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setGravity(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -1105,8 +1128,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setGravity(SFVec3fObject newValue)
 	{
-		setGravity(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setGravity(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1146,6 +1170,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setIterations(int newValue)
 	{
+		// set-newValue-validity-checks #0
 		iterations = newValue;
 		return this;
 	}
@@ -1157,8 +1182,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setIterations(SFInt32Object newValue)
 	{
-		setIterations(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setIterations(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DRigidJointNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>joints</i>.
@@ -1197,6 +1223,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setJoints(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearJoints(); // newValueNullSetDEFAULT_VALUE
@@ -1227,6 +1254,7 @@ setAttribute method invocations).
 			clearJoints(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		joints = newValue;
 		for (X3DRigidJointNode element : newValue)
 		{
@@ -1339,6 +1367,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setMaxCorrectionSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		maxCorrectionSpeed = newValue;
 		return this;
 	}
@@ -1350,8 +1379,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setMaxCorrectionSpeed(SFFloatObject newValue)
 	{
-		setMaxCorrectionSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMaxCorrectionSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -1375,6 +1405,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -1467,6 +1498,7 @@ setAttribute method invocations).
 	@Override
 	public RigidBodyCollectionObject setPreferAccuracy(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		preferAccuracy = newValue;
 		return this;
 	}
@@ -1478,8 +1510,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setPreferAccuracy(SFBoolObject newValue)
 	{
-		setPreferAccuracy(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPreferAccuracy(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1494,6 +1527,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyCollectionObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to RigidBodyCollection
@@ -1521,8 +1555,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1540,6 +1575,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyCollectionObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to RigidBodyCollection
@@ -1567,8 +1603,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1581,6 +1618,7 @@ setAttribute method invocations).
 	@Override
 	public final RigidBodyCollectionObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1595,8 +1633,9 @@ setAttribute method invocations).
 	 */
 	public RigidBodyCollectionObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

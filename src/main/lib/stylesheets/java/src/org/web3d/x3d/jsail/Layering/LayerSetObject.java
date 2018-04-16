@@ -63,10 +63,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layering.html#LayerSet" target="blank">X3D Abstract Specification: LayerSet</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayerSet" target="_blank">X3D Tooltips: LayerSet</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -307,6 +305,7 @@ public class LayerSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public LayerSetObject setActiveLayer(int newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("LayerSet activeLayer newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -322,8 +321,9 @@ public class LayerSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	 */
 	public LayerSetObject setActiveLayer(SFInt32Object newValue)
 	{
-		setActiveLayer(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setActiveLayer(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of X3DLayerNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>layers</i>.
@@ -370,6 +370,7 @@ public class LayerSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 	@Override
 	public LayerSetObject setLayers(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearLayers(); // newValueNullSetDEFAULT_VALUE
@@ -400,6 +401,7 @@ public class LayerSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implemen
 			clearLayers(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		layers = newValue;
 		for (X3DLayerNode element : newValue)
 		{
@@ -511,6 +513,7 @@ setAttribute method invocations).
 	@Override
 	public LayerSetObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -621,6 +624,7 @@ setAttribute method invocations).
 	@Override
 	public LayerSetObject setOrder(int[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearOrder(); // newValueNullSetDEFAULT_VALUE
@@ -647,8 +651,9 @@ setAttribute method invocations).
 			clearOrder(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setOrder(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setOrder(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFInt32 order field, similar to {@link #setOrder(int[])}.
@@ -662,6 +667,7 @@ setAttribute method invocations).
 			clearOrder(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		order = newValue;
 		return this;
 	}
@@ -688,6 +694,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerSetObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LayerSet
@@ -715,8 +722,9 @@ setAttribute method invocations).
 	 */
 	public LayerSetObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -734,6 +742,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerSetObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LayerSet
@@ -761,8 +770,9 @@ setAttribute method invocations).
 	 */
 	public LayerSetObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -775,6 +785,7 @@ setAttribute method invocations).
 	@Override
 	public final LayerSetObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -789,8 +800,9 @@ setAttribute method invocations).
 	 */
 	public LayerSetObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

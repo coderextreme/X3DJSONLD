@@ -83,10 +83,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#LOD" target="blank">X3D Abstract Specification: LOD</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LOD" target="_blank">X3D Tooltips: LOD</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -378,6 +376,7 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public LODObject setBboxCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -396,8 +395,9 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	 */
 	public LODObject setBboxCenter(SFVec3fObject newValue)
 	{
-		setBboxCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -440,6 +440,7 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public LODObject setBboxSize(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -462,8 +463,9 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	 */
 	public LODObject setBboxSize(SFVec3fObject newValue)
 	{
-		setBboxSize(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setBboxSize(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -503,6 +505,7 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public LODObject setCenter(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -521,8 +524,9 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	 */
 	public LODObject setCenter(SFVec3fObject newValue)
 	{
-		setCenter(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCenter(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -583,6 +587,7 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 	@Override
 	public LODObject setChildren(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
@@ -613,6 +618,7 @@ public class LODObject extends org.web3d.x3d.jsail.X3DConcreteNode implements or
 			clearChildren(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		children = newValue;
 		for (X3DChildNode element : newValue)
 		{
@@ -781,6 +787,7 @@ setAttribute method invocations).
 	@Override
 	public LODObject setForceTransitions(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		forceTransitions = newValue;
 		return this;
 	}
@@ -792,14 +799,17 @@ setAttribute method invocations).
 	 */
 	public LODObject setForceTransitions(SFBoolObject newValue)
 	{
-		setForceTransitions(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setForceTransitions(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide int value from outputOnly SFInt32 field named <i>level_changed</i>.
+	 * Provide int value within allowed range of [0,infinity) from outputOnly SFInt32 field named <i>level_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Indicates current level of LOD children when activated.  * <br>
-
+	 * <i>Tooltip:</i> Indicates current level of LOD children when activated.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of level_changed field
 	 */
 	@Override
@@ -829,6 +839,7 @@ setAttribute method invocations).
 	@Override
 	public LODObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -938,6 +949,7 @@ setAttribute method invocations).
 	@Override
 	public LODObject setRange(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearRange(); // newValueNullSetDEFAULT_VALUE
@@ -964,8 +976,9 @@ setAttribute method invocations).
 			clearRange(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setRange(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRange(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign ArrayList value of MFFloat range field, similar to {@link #setRange(float[])}.
@@ -979,6 +992,7 @@ setAttribute method invocations).
 			clearRange(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		range = newValue;
 		return this;
 	}
@@ -1004,6 +1018,7 @@ setAttribute method invocations).
 			clearRange(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #5
 		float[] holdArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
 		{
@@ -1025,6 +1040,7 @@ setAttribute method invocations).
 	@Override
 	public final LODObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LOD
@@ -1052,8 +1068,9 @@ setAttribute method invocations).
 	 */
 	public LODObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1071,6 +1088,7 @@ setAttribute method invocations).
 	@Override
 	public final LODObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LOD
@@ -1098,8 +1116,9 @@ setAttribute method invocations).
 	 */
 	public LODObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1112,6 +1131,7 @@ setAttribute method invocations).
 	@Override
 	public final LODObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1126,8 +1146,9 @@ setAttribute method invocations).
 	 */
 	public LODObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

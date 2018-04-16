@@ -48,11 +48,9 @@ import org.web3d.x3d.sai.Core.*;
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html#ProximitySensor" target="_blank">SAI Java Specification: TODO</a>
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html#ProximitySensor" target="blank">X3D Abstract Specification: ProximitySensor</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProximitySensor" target="_blank">X3D Tooltips: ProximitySensor</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
@@ -81,8 +79,10 @@ public interface ProximitySensor extends X3DEnvironmentalSensorNode
 	/**
 	 * Provide array of 3-tuple float results unit axis, angle (in radians) from outputOnly SFVec3f field named <i>centerOfRotation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends changed centerOfRotation values, likely caused by user interaction.  * <br>
-
+	 * <i>Tooltip:</i> Sends changed centerOfRotation values, likely caused by user interaction.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of centerOfRotation_changed field
 	 */
 	public float[] getCenterOfRotation();
@@ -109,24 +109,30 @@ public interface ProximitySensor extends X3DEnvironmentalSensorNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>enterTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera enters the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera enters the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of enterTime field
 	 */
 	public double getEnterTime();
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>exitTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Time event generated when user's camera exits the box.  * <br>
-
+	 * <i>Tooltip:</i> Time event generated when user's camera exits the box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of exitTime field
 	 */
 	public double getExitTime();
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent as viewer enters/exits Proximity box. isActive=true when viewer enters Proximity box, isActive=false when viewer exits Proximity box.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -151,16 +157,20 @@ public interface ProximitySensor extends X3DEnvironmentalSensorNode
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>orientation_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends rotation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends rotation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of orientation_changed field
 	 */
 	public float[] getOrientation();
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>position_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Sends translation event relative to center.  * <br>
-
+	 * <i>Tooltip:</i> Sends translation event relative to center.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of position_changed field
 	 */
 	public float[] getPosition();

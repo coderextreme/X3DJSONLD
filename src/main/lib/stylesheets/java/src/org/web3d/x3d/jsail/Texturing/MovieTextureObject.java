@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 import org.web3d.x3d.jsail.Texturing.*;
 
 /**
- * <i>X3D node tooltip</i>: MovieTexture applies a 2D movie image to surface geometry, or provides audio for a Sound node. First define as texture, then USE as Sound source to see it/hear it/save memory. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) values in range [0.0, 1.0] for opposite corners of the image.
+ * <i>X3D node tooltip</i>: MovieTexture applies a 2D movie image to surface geometry, or provides audio for a Sound node. First define as texture, then USE as Sound source to see it/hear it/save memory. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) texture-coordinate values in range [0.0, 1.0] for opposite corners of the image.
  * <ul>
  *  <li> <i>Hint:</i> can contain a single TextureProperties node. </li> 
  *  <li> <i>Hint:</i> insert Shape and Appearance nodes before adding texture. </li> 
@@ -68,10 +68,8 @@ import org.web3d.x3d.jsail.Texturing.*;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#MovieTexture" target="blank">X3D Abstract Specification: MovieTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MovieTexture" target="_blank">X3D Tooltips: MovieTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -507,6 +505,7 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MovieTextureObject setDescription(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -521,14 +520,20 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public MovieTextureObject setDescription(SFStringObject newValue)
 	{
-		setDescription(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDescription(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>duration_changed</i>.
+	 * Provide double value in seconds within allowed range of [-1,infinity) from outputOnly SFTime field named <i>duration_changed</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  Length of time in seconds for one cycle of movie.  * <br>
-
+	 * <i>Tooltip:</i> [0,+infinity) or -1. length of time in seconds for one cycle of media stream.
+ * <ul>
+ *  <li> <i>Warning:</i> duration value of -1 implies that media data has not yet loaded or is unavailable for some reason. </li> 
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i> duration_changed is an SFTime duration interval, normally nonnegative, and not an absolute clock time. </li> 
+ *  <li> <i>Hint:</i>  changing the pitch field does not trigger a duration_changed event. Playback interval may vary but duration of the original media data remains unmodified. </li> 
+ * </ul>
 	 * @return value of duration_changed field
 	 */
 	@Override
@@ -537,11 +542,13 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 		return duration;
 	}
 	/**
-	 * Provide double value in seconds from outputOnly SFTime field named <i>elapsedTime</i>.
+	 * Provide double value in seconds within allowed range of [0,infinity) from outputOnly SFTime field named <i>elapsedTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Current elapsed time since MovieTexture activated/running, cumulative in seconds, and not counting any paused time.
+	 * <i>Tooltip:</i> [0,+infinity) Current elapsed time since MovieTexture activated/running, cumulative in seconds, and not counting any paused time.
  * <ul>
- *  <li> <i> Warning:</i>  not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> it is an error to define this transient outputOnly field in an X3D file. </li> 
+ *  <li> <i>Hint:</i>  elapsedTime is a nonnegative SFTime duration interval, not an absolute clock time. </li> 
  * </ul>
 	 * @return value of elapsedTime field
 	 */
@@ -553,8 +560,10 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i>  isActive true/false events are sent when playback starts/stops.  * <br>
-
+	 * <i>Tooltip:</i> isActive true/false events are sent when playback starts/stops.
+ * <ul>
+ *  <li> <i> Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
+ * </ul>
 	 * @return value of isActive field
 	 */
 	@Override
@@ -567,7 +576,8 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 * <br><br>
 	 * <i>Tooltip:</i> isPaused true/false events are sent when MovieTexture is paused/resumed.
  * <ul>
- *  <li> <i> Warning:</i>  not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i> not supported in VRML97. </li> 
+ *  <li> <i>Warning:</i>  it is an error to define this transient outputOnly field in an X3D file. </li> 
  * </ul>
 	 * @return value of isPaused field
 	 */
@@ -599,6 +609,7 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MovieTextureObject setLoop(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		loop = newValue;
 		return this;
 	}
@@ -610,8 +621,9 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public MovieTextureObject setLoop(SFBoolObject newValue)
 	{
-		setLoop(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setLoop(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -635,6 +647,7 @@ public class MovieTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MovieTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -709,7 +722,7 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> When time now &amp;gt;= pauseTime, isPaused becomes true and MovieTexture becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i>  not supported in VRML97. </li> 
  * </ul>
 	 * @return value of pauseTime field
@@ -723,13 +736,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>pauseTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and MovieTexture becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: not supported in VRML97.
+	 * <i>Tooltip:</i> When time now &gt;= pauseTime, isPaused becomes true and MovieTexture becomes paused. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: not supported in VRML97.
 	 * @param newValue is new value for the pauseTime field.
 	 * @return {@link MovieTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public MovieTextureObject setPauseTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		pauseTime = newValue;
 		return this;
 	}
@@ -741,8 +755,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setPauseTime(SFTimeObject newValue)
 	{
-		setPauseTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPauseTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value within allowed range of (0,infinity) from inputOutput SFFloat field named <i>pitch</i>.
@@ -762,6 +777,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setPitch(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue <= 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("MovieTexture pitch newValue=" + newValue + " has component value less than (or equal to) restriction minExclusive=0");
@@ -777,8 +793,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setPitch(SFFloatObject newValue)
 	{
-		setPitch(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setPitch(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatS</i>.
@@ -803,6 +820,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setRepeatS(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatS = newValue;
 		return this;
 	}
@@ -814,8 +832,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setRepeatS(SFBoolObject newValue)
 	{
-		setRepeatS(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatS(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatT</i>.
@@ -840,6 +859,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setRepeatT(boolean newValue)
 	{
+		// set-newValue-validity-checks #0
 		repeatT = newValue;
 		return this;
 	}
@@ -851,15 +871,16 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setRepeatT(SFBoolObject newValue)
 	{
-		setRepeatT(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setRepeatT(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> When resumeTime becomes &amp;lt;= time now, isPaused becomes false and MovieTexture becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i>  not supported in VRML97. </li> 
  * </ul>
 	 * @return value of resumeTime field
@@ -873,13 +894,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>resumeTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and MovieTexture becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: not supported in VRML97.
+	 * <i>Tooltip:</i> When resumeTime becomes &lt;= time now, isPaused becomes false and MovieTexture becomes active. Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: not supported in VRML97.
 	 * @param newValue is new value for the resumeTime field.
 	 * @return {@link MovieTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public MovieTextureObject setResumeTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		resumeTime = newValue;
 		return this;
 	}
@@ -891,8 +913,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setResumeTime(SFTimeObject newValue)
 	{
-		setResumeTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setResumeTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>speed</i>.
@@ -920,6 +943,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setSpeed(float newValue)
 	{
+		// set-newValue-validity-checks #0
 		speed = newValue;
 		return this;
 	}
@@ -931,15 +955,16 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setSpeed(SFFloatObject newValue)
 	{
-		setSpeed(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSpeed(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i> Hint:</i>  usually receives a ROUTEd time value. </li> 
+ *  <li> <i> Hint:</i>  usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  * </ul>
 	 * @return value of startTime field
 	 */
@@ -952,13 +977,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>startTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime.
 	 * @param newValue is new value for the startTime field.
 	 * @return {@link MovieTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public MovieTextureObject setStartTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		startTime = newValue;
 		return this;
 	}
@@ -970,15 +996,16 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setStartTime(SFTimeObject newValue)
 	{
-		setStartTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStartTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.
  * <ul>
- *  <li> <i>Hint:</i> usually receives a ROUTEd time value. </li> 
+ *  <li> <i>Hint:</i> usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_cycleInterval and set_startTime events. </li> 
  *  <li> <i>Warning:</i> An active TimeSensor node ignores set_stopTime event values less than or equal to startTime. </li> 
  * </ul>
@@ -993,13 +1020,14 @@ setAttribute method invocations).
 	/**
 	 * Assign double value in seconds to inputOutput SFTime field named <i>stopTime</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
+	 * <i>Tooltip:</i> Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT. Hint: usually receives a ROUTEd time value matching system clock, such as output event from TouchSensor touchTime or TimeTrigger triggerTime. Warning: An active TimeSensor node ignores set_cycleInterval and set_startTime events. Warning:An active TimeSensor node ignores set_stopTime event values less than or equal to startTime.
 	 * @param newValue is new value for the stopTime field.
 	 * @return {@link MovieTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
 	public MovieTextureObject setStopTime(double newValue)
 	{
+		// set-newValue-validity-checks #0
 		stopTime = newValue;
 		return this;
 	}
@@ -1011,8 +1039,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setStopTime(SFTimeObject newValue)
 	{
-		setStopTime(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setStopTime(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
@@ -1034,6 +1063,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setTextureProperties(TextureProperties newValue)
 	{
+		// set-newValue-validity-checks #0
 		textureProperties = newValue;
 		if (newValue != null)
 		{
@@ -1143,6 +1173,7 @@ setAttribute method invocations).
 	@Override
 	public MovieTextureObject setUrl(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
@@ -1169,8 +1200,9 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setUrl(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUrl(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString url field, similar to {@link #setUrl(String[])}.
@@ -1184,6 +1216,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setUrl(newValue.getValue());
 		return this;
 	}
@@ -1199,6 +1232,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		url.clear();
 		url.add(newValue);
 		return this;
@@ -1215,6 +1249,7 @@ setAttribute method invocations).
 			clearUrl(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		url = newValue;
 		return this;
 	}
@@ -1241,6 +1276,7 @@ setAttribute method invocations).
 	@Override
 	public final MovieTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MovieTexture
@@ -1268,8 +1304,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1287,6 +1324,7 @@ setAttribute method invocations).
 	@Override
 	public final MovieTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MovieTexture
@@ -1314,8 +1352,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1328,6 +1367,7 @@ setAttribute method invocations).
 	@Override
 	public final MovieTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1342,8 +1382,9 @@ setAttribute method invocations).
 	 */
 	public MovieTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================

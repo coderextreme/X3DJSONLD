@@ -54,7 +54,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 import java.util.Arrays;
 
 /**
- * <i>X3D node tooltip</i>: MultiTexture applies several individual textures to a single geometry node, enabling a variety of visual effects that include light mapping and environment mapping. MultiTexture contains multiple ImageTexture, MovieTexture and PixelTexture nodes. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) values in range [0.0, 1.0] for opposite corners of the image.
+ * <i>X3D node tooltip</i>: MultiTexture applies several individual textures to a single geometry node, enabling a variety of visual effects that include light mapping and environment mapping. MultiTexture contains multiple ImageTexture, MovieTexture and PixelTexture nodes. Texture maps have a 2D coordinate system (s, t) horizontal and vertical, with (s, t) texture-coordinate values in range [0.0, 1.0] for opposite corners of the image.
  * <ul>
  *  <li> <i>Hint:</i> insert Shape and Appearance nodes before adding texture. </li> 
  *  <li> <i>Hint:</i> Texture mapping <br> <a href="https://en.wikipedia.org/wiki/Texture_mapping" target="_blank">https://en.wikipedia.org/wiki/Texture_mapping</a> </li> 
@@ -70,10 +70,8 @@ import java.util.Arrays;
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
- *
  * @author Don Brutzman and Roy Walmsley
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#MultiTexture" target="blank">X3D Abstract Specification: MultiTexture</a>
-
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MultiTexture" target="_blank">X3D Tooltips: MultiTexture</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Images" target="_blank">X3D Scene Authoring Hints: Images</a>
  */
@@ -449,6 +447,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MultiTextureObject setAlpha(float newValue)
 	{
+		// set-newValue-validity-checks #0
             // Check that newValue parameter has legal value(s) before assigning to scene graph
             if (newValue < 0f) {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException("MultiTexture alpha newValue=" + newValue + " has component value less than restriction minInclusive=0");
@@ -467,8 +466,9 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public MultiTextureObject setAlpha(SFFloatObject newValue)
 	{
-		setAlpha(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setAlpha(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Provide array of 3-tuple float results using RGB values [0..1] using RGB values [0..1] from inputOutput SFColor field named <i>color</i>.
@@ -495,6 +495,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MultiTextureObject setColor(float[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new float[0];
 		// Check that newValue parameter has legal size before assigning to scene graph
@@ -513,8 +514,9 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	 */
 	public MultiTextureObject setColor(SFColorObject newValue)
 	{
-		setColor(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setColor(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -575,6 +577,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 	@Override
 	public MultiTextureObject setFunction(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearFunction(); // newValueNullSetDEFAULT_VALUE
@@ -601,8 +604,9 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 			clearFunction(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setFunction(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setFunction(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString function field, similar to {@link #setFunction(String[])}.
@@ -617,6 +621,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 			clearFunction(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setFunction(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -633,6 +638,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 			clearFunction(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setFunction(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -648,6 +654,7 @@ public class MultiTextureObject extends org.web3d.x3d.jsail.X3DConcreteNode impl
 			clearFunction(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		function = newValue;
 		return this;
 	}
@@ -683,6 +690,7 @@ setAttribute method invocations).
 	@Override
 	public MultiTextureObject setMetadata(X3DMetadataObject newValue)
 	{
+		// set-newValue-validity-checks #0
 		metadata = newValue;
 		if (newValue != null)
 		{
@@ -797,6 +805,7 @@ setAttribute method invocations).
 	@Override
 	public MultiTextureObject setMode(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearMode(); // newValueNullSetDEFAULT_VALUE
@@ -823,8 +832,9 @@ setAttribute method invocations).
 			clearMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setMode(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setMode(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString mode field, similar to {@link #setMode(String[])}.
@@ -839,6 +849,7 @@ setAttribute method invocations).
 			clearMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setMode(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -855,6 +866,7 @@ setAttribute method invocations).
 			clearMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setMode(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -870,6 +882,7 @@ setAttribute method invocations).
 			clearMode(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		mode = newValue;
 		return this;
 	}
@@ -927,6 +940,7 @@ setAttribute method invocations).
 	@Override
 	public MultiTextureObject setSource(String[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearSource(); // newValueNullSetDEFAULT_VALUE
@@ -953,8 +967,9 @@ setAttribute method invocations).
 			clearSource(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
-		setSource(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setSource(newValue.getPrimitiveValue());
+            return this;
 	}
 	/**
 	 * Assign single SFString object value to MFString source field, similar to {@link #setSource(String[])}.
@@ -969,6 +984,7 @@ setAttribute method invocations).
 			clearSource(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #2
 		setSource(MFStringObject.cleanupEnumerationValues(newValue.toString())); // enumeration values
 		return this;
 	}
@@ -985,6 +1001,7 @@ setAttribute method invocations).
 			clearSource(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #3
 		setSource(MFStringObject.cleanupEnumerationValues(newValue)); // enumeration values
 		return this;
 	}
@@ -1000,6 +1017,7 @@ setAttribute method invocations).
 			clearSource(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		source = newValue;
 		return this;
 	}
@@ -1050,6 +1068,7 @@ setAttribute method invocations).
 	@Override
 	public MultiTextureObject setTexture(X3DNode[] newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 		{
 			clearTexture(); // newValueNullSetDEFAULT_VALUE
@@ -1080,6 +1099,7 @@ setAttribute method invocations).
 			clearTexture(); // newValueNullSetDEFAULT_VALUE
 			return this;
 		}
+		// set-newValue-validity-checks #4
 		texture = newValue;
 		for (X3DTextureNode element : newValue)
 		{
@@ -1182,6 +1202,7 @@ setAttribute method invocations).
 	@Override
 	public final MultiTextureObject setDEF(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MultiTexture
@@ -1209,8 +1230,9 @@ setAttribute method invocations).
 	 */
 	public MultiTextureObject setDEF(SFStringObject newValue)
 	{
-		setDEF(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setDEF(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1228,6 +1250,7 @@ setAttribute method invocations).
 	@Override
 	public final MultiTextureObject setUSE(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to MultiTexture
@@ -1255,8 +1278,9 @@ setAttribute method invocations).
 	 */
 	public MultiTextureObject setUSE(SFStringObject newValue)
 	{
-		setUSE(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setUSE(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	/**
@@ -1269,6 +1293,7 @@ setAttribute method invocations).
 	@Override
 	public final MultiTextureObject setCssClass(String newValue)
 	{
+		// set-newValue-validity-checks #0
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -1283,8 +1308,9 @@ setAttribute method invocations).
 	 */
 	public MultiTextureObject setCssClass(SFStringObject newValue)
 	{
-		setCssClass(newValue.getPrimitiveValue());
-		return this;
+            // set-newValue-validity-checks #1 skipped, handled by set-primitive method
+            setCssClass(newValue.getPrimitiveValue());
+            return this;
 	}
 
 	// Additional utility methods for this class ==============================
