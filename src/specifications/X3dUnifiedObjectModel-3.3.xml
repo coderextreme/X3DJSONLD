@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- X3D Object Model X3DObjectModel-3.3.xml-->
-<!-- Online at http://www.web3d.org/specifications/X3DObjectModel-3.3.xml -->
+<!-- X3D Object Model X3dUnifiedObjectModel-3.3.xml-->
+<!-- Online at http://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2017-10-01-07:00 16:15:02.247-07:00 -->
+<!-- Generated 2018-04-15-07:00 18:58:24.54-07:00 -->
 <X3DObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                 version="3.3"
-                xsd:noNamespaceSchemaLocation="x3dObjectModel.xsd">
+                xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
    <SimpleTypeEnumerations>
       <SimpleType name="accessTypeNames"
                   baseType="SFString"
@@ -187,7 +187,6 @@
          <enumeration value="&#34;SANS&#34;"/>
          <enumeration value="&#34;SERIF&#34;"/>
          <enumeration value="&#34;TYPEWRITER&#34;"/>
-         <enumeration value="&#34;Arial&#34;"/>
       </SimpleType>
       <SimpleType name="fontStyleValues"
                   baseType="SFString"
@@ -212,13 +211,22 @@
          <enumeration value="&#34;ALL&#34;"/>
          <enumeration value="&#34;NONE&#34;"/>
       </SimpleType>
+      <SimpleType name="generatedCubeMapTextureUpdateValues"
+                  baseType="SFString"
+                  appinfo="generatedCubeMapTextureUpdateValues are allowed enumeration values for GeneratedCubeMapTexture field named 'update'."
+                  documentation="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture">
+         <enumeration value="NONE"/>
+         <enumeration value="NEXT_FRAME_ONLY"/>
+         <enumeration value="ALWAYS"/>
+      </SimpleType>
       <SimpleType name="hanimVersionValues"
                   baseType="SFString"
                   appinfo="hanimVersionValues enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that HAnim version 2.0 is approved, while versions 1.0/1.1 are incompatible and version 2.2 is experimental."
                   documentation="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
-         <enumeration value="2.0" appinfo="HAnim 19774 V1.0 approved by ISO in 2006."/>
+         <enumeration value="2.0"
+                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."/>
          <enumeration value="2.2"
-                      appinfo="Experimental HAnim 19774 V1.0 approved by ISO in 2006."/>
+                      appinfo="Draft revision standard HAnim 19774 version 2 under review by ISO in 2018."/>
       </SimpleType>
       <SimpleType name="intersectionTypeValues"
                   baseType="SFString"
@@ -1033,6 +1041,31 @@
          <enumeration value="&#34;PIXEL&#34; &#34;WORLD&#34;"/>
          <enumeration value="&#34;PIXEL&#34; &#34;FRACTION&#34;"/>
          <enumeration value="&#34;PIXEL&#34; &#34;PIXEL&#34;"/>
+      </SimpleType>
+      <SimpleType name="pickSensorMatchCriterionValues"
+                  baseType="SFString"
+                  appinfo="pickSensorMatchCriterionValues are allowed enumeration values for X3DPickSensorNode node matchCriterion attribute. Bounded, no additional values are possible."
+                  documentation="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
+         <enumeration value="MATCH_ANY"/>
+         <enumeration value="MATCH_EVERY"/>
+         <enumeration value="MATCH_ONLY_ONE"/>
+      </SimpleType>
+      <SimpleType name="pickSensorSortOrderValues"
+                  baseType="SFString"
+                  appinfo="pickSensorSortOrderValues are allowed enumeration values for X3DPickSensorNode node sortOrder attribute. Unbounded, additional values are possible."
+                  documentation="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
+         <enumeration value="ANY"/>
+         <enumeration value="CLOSEST"/>
+         <enumeration value="ALL"/>
+         <enumeration value="ALL_SORTED"/>
+      </SimpleType>
+      <SimpleType name="projectionVolumeStyleTypeValues"
+                  baseType="SFString"
+                  appinfo="projectionVolumeStyleTypeValues are allowed enumeration values for ProjectionVolumeStyle field named 'type'."
+                  documentation="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ProjectionVolumeStyle">
+         <enumeration value="MAX"/>
+         <enumeration value="MIN"/>
+         <enumeration value="AVERAGE"/>
       </SimpleType>
       <SimpleType name="textureBoundaryModeValues"
                   baseType="SFString"
@@ -2184,15 +2217,15 @@
    <FieldTypes>
       <FieldType type="SFBool">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFBoolAndMFBool"
-                              appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: X3D SFBool values are lower case (true|false) in order to maintain compatibility with other XML documents."/>
+                              appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents."/>
       </FieldType>
       <FieldType type="MFBool">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFBoolAndMFBool"
-                              appinfo="MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype."/>
+                              appinfo="MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents."/>
       </FieldType>
       <FieldType type="SFColor">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
-                              appinfo="The SFColor field specifies one RGB (red-green-blue) color triple. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized SFColor field is (0 0 0)."/>
+                              appinfo="The SFColor field specifies one RGB (red-green-blue) color triple. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFColor">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
@@ -2200,7 +2233,7 @@
       </FieldType>
       <FieldType type="SFColorRGBA">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
-                              appinfo="The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0)."/>
+                              appinfo="The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFColorRGBA">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
@@ -2240,35 +2273,35 @@
       </FieldType>
       <FieldType type="SFMatrix3d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d"
-                              appinfo="SFMatrix3d specifies a 3x3 matrix of double-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="SFMatrix3d specifies a 3x3 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFMatrix3d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d"
-                              appinfo="MFMatrix3d specifies zero or more 3x3 matrices of double-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="MFMatrix3d specifies zero or more 3x3 matrices of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 9-tuple values."/>
       </FieldType>
       <FieldType type="SFMatrix3f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f"
-                              appinfo="SFMatrix3f specifies a 3x3 matrix of single-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="SFMatrix3f specifies a 3x3 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFMatrix3f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f"
-                              appinfo="MFMatrix3f specifies zero or more 3x3 matrices of single-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="MFMatrix3f specifies zero or more 3x3 matrices of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 9-tuple values."/>
       </FieldType>
       <FieldType type="SFMatrix4d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d"
-                              appinfo="SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFMatrix4d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d"
-                              appinfo="MFMatrix4d specifies zero or more 4x4 matrices of double-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="MFMatrix4d specifies zero or more 4x4 matrices of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 16-tuple values."/>
       </FieldType>
       <FieldType type="SFMatrix4f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f"
-                              appinfo="SFMatrix4f specifies a 4x4 matrix of single-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="SFMatrix4f specifies a 4x4 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFMatrix4f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f"
-                              appinfo="MFMatrix4f specifies zero or more 4x4 matrices of single-precision floating point numbers, organized in row-major fashion."/>
+                              appinfo="MFMatrix4f specifies zero or more 4x4 matrices of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 16-tuple values."/>
       </FieldType>
       <FieldType type="SFNode">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFNodeAndMFNode"
@@ -2280,11 +2313,11 @@
       </FieldType>
       <FieldType type="SFRotation">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation"
-                              appinfo="SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians."/>
+                              appinfo="SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFRotation">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation"
-                              appinfo="MFRotation is an array of SFRotation values. Individual SFRotation array values are optionally separated by commas."/>
+                              appinfo="MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas."/>
       </FieldType>
       <FieldType type="SFString">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"
@@ -2304,51 +2337,51 @@
       </FieldType>
       <FieldType type="SFVec2d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
-                              appinfo="SFVec2d is a 2-tuple pair of SFDouble values. Hint: SFVec2d can be used to specify a 2D double-precision coordinate."/>
+                              appinfo="SFVec2d is a 2-tuple pair of SFDouble values. Hint: SFVec2d can be used to specify a 2D double-precision coordinate. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec2d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
-                              appinfo="MFVec2d is an array of SFVec2d values. Individual SFVec2d array values are optionally separated by commas."/>
+                              appinfo="MFVec2d is an array of SFVec2d values. Individual singleton SFVec2d array values are optionally separated by commas."/>
       </FieldType>
       <FieldType type="SFVec2f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
-                              appinfo="SFVec2f is a 2-tuple pair of SFFloat values. Hint: SFVec2f can be used to specify a 2D single-precision coordinate."/>
+                              appinfo="SFVec2f is a 2-tuple pair of SFFloat values. Hint: SFVec2f can be used to specify a 2D single-precision coordinate. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec2f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
-                              appinfo="MFVec2f is an array of SFVec2f values. Individual SFVec2f array values are optionally separated by commas."/>
+                              appinfo="MFVec2f is an array of SFVec2f values. Individual singleton SFVec2f array values are optionally separated by commas."/>
       </FieldType>
       <FieldType type="SFVec3d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
-                              appinfo="SFVec3d is a 3-tuple triplet of SFDouble values. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: SFVec3d can be used to specify a georeferenced 3D coordinate."/>
+                              appinfo="SFVec3d is a 3-tuple triplet of SFDouble values. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: SFVec3d can be used to specify a georeferenced 3D coordinate. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec3d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
-                              appinfo="MFVec3d is an array of SFVec3d values. Individual SFVec3d array values are optionally separated by commas. Original rationale for inclusion: GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: MFVec3d can be used to specify a list of georeferenced 3D coordinates."/>
+                              appinfo="MFVec3d is an array of SFVec3d values. Individual singleton SFVec3d array values are optionally separated by commas. Original rationale for inclusion: GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: MFVec3d can be used to specify a list of georeferenced 3D coordinates."/>
       </FieldType>
       <FieldType type="SFVec3f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
-                              appinfo="SFVec3f is a 3-tuple triplet of SFFloat values. Hint: SFVec3f can be used to specify a 3D coordinate or a 3D scale value."/>
+                              appinfo="SFVec3f is a 3-tuple triplet of SFFloat values. Hint: SFVec3f can be used to specify a 3D coordinate or a 3D scale value. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec3f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
-                              appinfo="MFVec3f is an array of SFVec3f values. Individual SFVec3f array values are optionally separated by commas."/>
+                              appinfo="MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas."/>
       </FieldType>
       <FieldType type="SFVec4d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
-                              appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector."/>
+                              appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec4d">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
-                              appinfo="MFVec4d is zero or more SFVec4d values. Individual SFVec4d array values are optionally separated by commas."/>
+                              appinfo="MFVec4d is zero or more SFVec4d values. Individual singleton SFVec4d array values are optionally separated by commas."/>
       </FieldType>
       <FieldType type="SFVec4f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
-                              appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector."/>
+                              appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters in attribute values do not pass strict XML validation."/>
       </FieldType>
       <FieldType type="MFVec4f">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
-                              appinfo="MFVec4f is zero or more SFVec4f values. Individual SFVec4f array values are optionally separated by commas."/>
+                              appinfo="MFVec4f is zero or more SFVec4f values. Individual singleton SFVec4f array values are optionally separated by commas."/>
       </FieldType>
    </FieldTypes>
    <AbstractObjectTypes>
@@ -3821,7 +3854,8 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="matchCriterion"
-                   default="MATCH_ANY">
+                   default="MATCH_ANY"
+                   baseType="pickSensorMatchCriterionValues">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -3858,7 +3892,9 @@
             <field type="SFString"
                    accessType="initializeOnly"
                    name="sortOrder"
-                   default="CLOSEST">
+                   default="CLOSEST"
+                   additionalEnumerationValuesAllowed="true"
+                   baseType="pickSensorSortOrderValues">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -4230,10 +4266,14 @@
             <componentInfo name="Sound" level="1"/>
             <Inheritance baseType="X3DTimeDependentNode"/>
             <field type="SFString" accessType="inputOutput" name="description"/>
-            <field type="SFTime" accessType="outputOnly" name="duration_changed"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="duration_changed"
+                   minInclusive="-1"/>
             <field type="SFTime"
                    accessType="outputOnly"
                    name="elapsedTime"
+                   minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
             <field type="SFBool"
                    accessType="outputOnly"
@@ -4479,7 +4519,10 @@
                               appinfo="Base type from which all time-dependent nodes are derived.">
             <componentInfo name="Time" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
-            <field type="SFTime" accessType="outputOnly" name="elapsedTime"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="elapsedTime"
+                   minInclusive="0"/>
             <field type="SFBool" accessType="outputOnly" name="isActive"/>
             <field type="SFBool" accessType="outputOnly" name="isPaused">
                <componentInfo name="Time" level="2"/>
@@ -5072,10 +5115,12 @@
             <field type="SFTime"
                    accessType="outputOnly"
                    name="duration_changed"
+                   minInclusive="-1"
                    inheritedFrom="X3DSoundSourceNode"/>
             <field type="SFTime"
                    accessType="outputOnly"
                    name="elapsedTime"
+                   minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
             <field type="SFBool"
                    accessType="outputOnly"
@@ -6571,9 +6616,21 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="SFColor" accessType="inputOnly" name="set_destination"/>
-            <field type="SFColor" accessType="inputOnly" name="set_value"/>
-            <field type="SFColor" accessType="outputOnly" name="value_changed"/>
+            <field type="SFColor"
+                   accessType="inputOnly"
+                   name="set_destination"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field type="SFColor"
+                   accessType="inputOnly"
+                   name="set_value"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field type="SFColor"
+                   accessType="outputOnly"
+                   name="value_changed"
+                   minInclusive="0"
+                   maxInclusive="1"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -6625,8 +6682,16 @@
                    minInclusive="0"
                    maxInclusive="5"
                    inheritedFrom="X3DDamperNode"/>
-            <field type="SFColor" accessType="inputOnly" name="set_destination"/>
-            <field type="SFColor" accessType="inputOnly" name="set_value"/>
+            <field type="SFColor"
+                   accessType="inputOnly"
+                   name="set_destination"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field type="SFColor"
+                   accessType="inputOnly"
+                   name="set_value"
+                   minInclusive="0"
+                   maxInclusive="1"/>
             <field type="SFTime"
                    accessType="inputOutput"
                    name="tau"
@@ -6638,7 +6703,11 @@
                    name="tolerance"
                    default="-1"
                    inheritedFrom="X3DDamperNode"/>
-            <field type="SFColor" accessType="outputOnly" name="value_changed"/>
+            <field type="SFColor"
+                   accessType="outputOnly"
+                   name="value_changed"
+                   minInclusive="0"
+                   maxInclusive="1"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -6680,7 +6749,11 @@
                    accessType="inputOnly"
                    name="set_fraction"
                    inheritedFrom="X3DInterpolatorNode"/>
-            <field type="SFColor" accessType="outputOnly" name="value_changed"/>
+            <field type="SFColor"
+                   accessType="outputOnly"
+                   name="value_changed"
+                   minInclusive="0"
+                   maxInclusive="1"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -8439,7 +8512,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="readInterval"
-                   default="0.1"/>
+                   default="0.1"
+                   minInclusive="0"/>
             <field type="MFNode"
                    accessType="inputOnly"
                    name="removeChildren"
@@ -8491,7 +8565,10 @@
                    accessType="inputOutput"
                    name="siteID"
                    default="0"/>
-            <field type="SFTime" accessType="outputOnly" name="timestamp"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="timestamp"
+                   minInclusive="0"/>
             <field type="SFVec3f"
                    accessType="inputOutput"
                    name="translation"
@@ -8503,7 +8580,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="writeInterval"
-                   default="1.0"/>
+                   default="1.0"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -8843,7 +8921,6 @@
                <enumeration value="&#34;SANS&#34;"/>
                <enumeration value="&#34;SERIF&#34;"/>
                <enumeration value="&#34;TYPEWRITER&#34;"/>
-               <enumeration value="&#34;Arial&#34;"/>
             </field>
             <field type="SFBool"
                    accessType="initializeOnly"
@@ -8988,7 +9065,8 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="update"
-                   default="NONE">
+                   default="NONE"
+                   baseType="generatedCubeMapTextureUpdateValues">
                <enumeration value="NONE"/>
                <enumeration value="NEXT_FRAME_ONLY"/>
                <enumeration value="ALWAYS"/>
@@ -9280,7 +9358,11 @@
                    name="geoSystem"
                    default="&#34;GD&#34; &#34;WE&#34;"
                    baseType="geoSystemType"/>
-            <field type="SFInt32" accessType="outputOnly" name="level_changed"/>
+            <field type="SFInt32"
+                   accessType="outputOnly"
+                   name="level_changed"
+                   minInclusive="0"
+                   maxInclusive="1"/>
             <field type="SFNode"
                    accessType="inputOutput"
                    name="metadata"
@@ -10012,7 +10094,7 @@
             <field type="MFNode"
                    accessType="inputOutput"
                    name="skin"
-                   acceptableNodeTypes="X3DChildNode"/>
+                   acceptableNodeTypes="Group|Transform|Shape|IndexedFaceSet"/>
             <field type="SFNode"
                    accessType="inputOutput"
                    name="skinCoord"
@@ -10055,10 +10137,17 @@
             <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
-               <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
+               <NodeContentModel name="HAnimJoint" minOccurs="0" maxOccurs="unbounded"/>
+               <NodeContentModel name="HAnimSegment" minOccurs="0" maxOccurs="unbounded"/>
+               <NodeContentModel name="HAnimSite" minOccurs="0" maxOccurs="unbounded"/>
+               <NodeContentModel name="Group"/>
+               <NodeContentModel name="Transform"/>
+               <NodeContentModel name="Shape"/>
+               <NodeContentModel name="IndexedFaceSet"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
-               <NodeContentModel name="Normal" minOccurs="0"/>
+               <NodeContentModel name="Normal" minOccurs="0" maxOccurs="1"/>
+               <NodeContentModel name="ProtoInstance" minOccurs="0" maxOccurs="unbounded"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -10070,7 +10159,7 @@
             <field type="MFNode"
                    accessType="inputOnly"
                    name="addChildren"
-                   acceptableNodeTypes="HAnimJoint|HAnimSegment"/>
+                   acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"/>
             <field type="SFVec3f"
                    accessType="initializeOnly"
                    name="bboxCenter"
@@ -10087,7 +10176,7 @@
             <field type="MFNode"
                    accessType="inputOutput"
                    name="children"
-                   acceptableNodeTypes="HAnimJoint|HAnimSegment"/>
+                   acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"/>
             <field type="MFNode"
                    accessType="inputOutput"
                    name="displacers"
@@ -10205,7 +10294,7 @@
             <field type="MFNode"
                    accessType="inputOnly"
                    name="removeChildren"
-                   acceptableNodeTypes="HAnimJoint|HAnimSegment"/>
+                   acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"/>
             <field type="SFRotation"
                    accessType="inputOutput"
                    name="rotation"
@@ -10252,7 +10341,9 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="HAnimJoint"/>
                <NodeContentModel name="HAnimSegment"/>
+               <NodeContentModel name="HAnimSite"/>
                <NodeContentModel name="HAnimDisplacer"/>
+               <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -10839,14 +10930,26 @@
                    name="normalPerVertex"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_colorIndex">
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_colorIndex"
+                   minInclusive="-1">
                <componentInfo name="Geometry3D" level="4"/>
             </field>
-            <field type="MFInt32" accessType="inputOnly" name="set_coordIndex"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_normalIndex">
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_coordIndex"
+                   minInclusive="-1"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_normalIndex"
+                   minInclusive="-1">
                <componentInfo name="Geometry3D" level="4"/>
             </field>
-            <field type="MFInt32" accessType="inputOnly" name="set_texCoordIndex"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_texCoordIndex"
+                   minInclusive="-1"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="solid"
@@ -10924,10 +11027,16 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_colorIndex">
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_colorIndex"
+                   minInclusive="-1">
                <componentInfo name="Rendering" level="3"/>
             </field>
-            <field type="MFInt32" accessType="inputOnly" name="set_coordIndex">
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_coordIndex"
+                   minInclusive="-1">
                <componentInfo name="Rendering" level="3"/>
             </field>
             <field type="SFString"
@@ -11008,7 +11117,10 @@
                    name="normalPerVertex"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_index"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_index"
+                   minInclusive="0"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="solid"
@@ -11099,7 +11211,10 @@
                    name="normalPerVertex"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_index"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_index"
+                   minInclusive="-1"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="solid"
@@ -11190,7 +11305,10 @@
                    name="normalPerVertex"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_index"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_index"
+                   minInclusive="0"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="solid"
@@ -11281,7 +11399,10 @@
                    name="normalPerVertex"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_index"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_index"
+                   minInclusive="-1"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="solid"
@@ -11917,7 +12038,8 @@
                    accessType="inputOutput"
                    name="matchCriterion"
                    default="MATCH_ANY"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   baseType="pickSensorMatchCriterionValues">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -11964,7 +12086,9 @@
                    accessType="initializeOnly"
                    name="sortOrder"
                    default="CLOSEST"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   additionalEnumerationValuesAllowed="true"
+                   baseType="pickSensorSortOrderValues">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -12225,7 +12349,10 @@
                    accessType="initializeOnly"
                    name="forceTransitions"
                    default="false"/>
-            <field type="SFInt32" accessType="outputOnly" name="level_changed"/>
+            <field type="SFInt32"
+                   accessType="outputOnly"
+                   name="level_changed"
+                   minInclusive="0"/>
             <field type="SFNode"
                    accessType="inputOutput"
                    name="metadata"
@@ -12773,10 +12900,12 @@
             <field type="SFTime"
                    accessType="outputOnly"
                    name="duration_changed"
+                   minInclusive="-1"
                    inheritedFrom="X3DSoundSourceNode"/>
             <field type="SFTime"
                    accessType="outputOnly"
                    name="elapsedTime"
+                   minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
             <field type="SFBool"
                    accessType="outputOnly"
@@ -14764,7 +14893,8 @@
                    accessType="inputOutput"
                    name="matchCriterion"
                    default="MATCH_ANY"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   baseType="pickSensorMatchCriterionValues">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -14807,7 +14937,9 @@
                    accessType="initializeOnly"
                    name="sortOrder"
                    default="CLOSEST"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   additionalEnumerationValuesAllowed="true"
+                   baseType="pickSensorSortOrderValues">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -14944,7 +15076,10 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_coordIndex"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_coordIndex"
+                   minInclusive="-1"/>
             <field type="SFFloat"
                    accessType="inputOutput"
                    name="speed"
@@ -15337,7 +15472,8 @@
                    accessType="inputOutput"
                    name="matchCriterion"
                    default="MATCH_ANY"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   baseType="pickSensorMatchCriterionValues">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -15379,7 +15515,9 @@
                    accessType="initializeOnly"
                    name="sortOrder"
                    default="CLOSEST"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   additionalEnumerationValuesAllowed="true"
+                   baseType="pickSensorSortOrderValues">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -15490,7 +15628,8 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="type"
-                   default="MAX">
+                   default="MAX"
+                   baseType="projectionVolumeStyleTypeValues">
                <enumeration value="MAX"/>
                <enumeration value="MIN"/>
                <enumeration value="AVERAGE"/>
@@ -15772,7 +15911,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="readInterval"
-                   default="0.1"/>
+                   default="0.1"
+                   minInclusive="0"/>
             <field type="SFFloat"
                    accessType="inputOutput"
                    name="receivedPower"
@@ -15789,7 +15929,10 @@
                    accessType="inputOutput"
                    name="siteID"
                    default="0"/>
-            <field type="SFTime" accessType="outputOnly" name="timestamp"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="timestamp"
+                   minInclusive="0"/>
             <field type="SFInt32"
                    accessType="inputOutput"
                    name="transmitterApplicationID"
@@ -15813,7 +15956,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="writeInterval"
-                   default="1.0"/>
+                   default="1.0"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -15904,7 +16048,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="disableTime"
-                   default="0"/>
+                   default="0"
+                   minInclusive="0"/>
             <field type="SFBool"
                    accessType="inputOutput"
                    name="enabled"
@@ -16022,7 +16167,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="disableTime"
-                   default="0"/>
+                   default="0"
+                   minInclusive="0"/>
             <field type="SFBool"
                    accessType="inputOutput"
                    name="enabled"
@@ -16241,7 +16387,6 @@
                <enumeration value="&#34;SANS&#34;"/>
                <enumeration value="&#34;SERIF&#34;"/>
                <enumeration value="&#34;TYPEWRITER&#34;"/>
-               <enumeration value="&#34;Arial&#34;"/>
             </field>
             <field type="SFBool"
                    accessType="initializeOnly"
@@ -16572,6 +16717,7 @@
                    accessType="inputOutput"
                    name="type"
                    default="VERTEX"
+                   additionalEnumerationValuesAllowed="true"
                    baseType="shaderPartTypeValues">
                <enumeration value="VERTEX"/>
                <enumeration value="FRAGMENT"/>
@@ -16615,6 +16761,7 @@
                    accessType="inputOutput"
                    name="type"
                    default="VERTEX"
+                   additionalEnumerationValuesAllowed="true"
                    baseType="shaderPartTypeValues">
                <enumeration value="VERTEX"/>
                <enumeration value="FRAGMENT"/>
@@ -16779,7 +16926,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="readInterval"
-                   default="0.1"/>
+                   default="0.1"
+                   minInclusive="0"/>
             <field type="SFBool"
                    accessType="initializeOnly"
                    name="rtpHeaderExpected"
@@ -16800,7 +16948,10 @@
                    accessType="inputOutput"
                    name="tdlType"
                    default="0"/>
-            <field type="SFTime" accessType="outputOnly" name="timestamp"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="timestamp"
+                   minInclusive="0"/>
             <field type="SFInt32"
                    accessType="inputOutput"
                    name="whichGeometry"
@@ -16808,7 +16959,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="writeInterval"
-                   default="1.0"/>
+                   default="1.0"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -17604,7 +17756,10 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_coordIndex"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_coordIndex"
+                   minInclusive="-1"/>
             <field type="SFFloat"
                    accessType="inputOutput"
                    name="speed"
@@ -18364,11 +18519,15 @@
                    accessType="inputOutput"
                    name="cycleInterval"
                    default="1.0"
-                   minExclusive="0"/>
-            <field type="SFTime" accessType="outputOnly" name="cycleTime"/>
+                   minInclusive="0"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="cycleTime"
+                   minInclusive="0"/>
             <field type="SFTime"
                    accessType="outputOnly"
                    name="elapsedTime"
+                   minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
             <field type="SFBool"
                    accessType="inputOutput"
@@ -18420,7 +18579,10 @@
                    name="stopTime"
                    default="0"
                    inheritedFrom="X3DTimeDependentNode"/>
-            <field type="SFTime" accessType="outputOnly" name="time"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="time"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -18886,7 +19048,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="readInterval"
-                   default="0.1"/>
+                   default="0.1"
+                   minInclusive="0"/>
             <field type="SFVec3f"
                    accessType="inputOutput"
                    name="relativeAntennaLocation"
@@ -18899,7 +19062,10 @@
                    accessType="inputOutput"
                    name="siteID"
                    default="0"/>
-            <field type="SFTime" accessType="outputOnly" name="timestamp"/>
+            <field type="SFTime"
+                   accessType="outputOnly"
+                   name="timestamp"
+                   minInclusive="0"/>
             <field type="SFFloat"
                    accessType="inputOutput"
                    name="transmitFrequencyBandwidth"
@@ -18915,7 +19081,8 @@
             <field type="SFTime"
                    accessType="inputOutput"
                    name="writeInterval"
-                   default="1.0"/>
+                   default="1.0"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -19775,7 +19942,10 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="MFInt32" accessType="inputOnly" name="set_coordIndex"/>
+            <field type="MFInt32"
+                   accessType="inputOnly"
+                   name="set_coordIndex"
+                   minInclusive="-1"/>
             <field type="SFFloat"
                    accessType="inputOutput"
                    name="speed"
@@ -19842,7 +20012,8 @@
                    accessType="inputOutput"
                    name="matchCriterion"
                    default="MATCH_ANY"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   baseType="pickSensorMatchCriterionValues">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -19884,7 +20055,9 @@
                    accessType="initializeOnly"
                    name="sortOrder"
                    default="CLOSEST"
-                   inheritedFrom="X3DPickSensorNode">
+                   inheritedFrom="X3DPickSensorNode"
+                   additionalEnumerationValuesAllowed="true"
+                   baseType="pickSensorSortOrderValues">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
