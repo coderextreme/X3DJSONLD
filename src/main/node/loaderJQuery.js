@@ -289,12 +289,6 @@ function loadProtoX3D(selector, json, url) {
 		console.error(e);
 	}
     }
-    try {
-	json = flattener(json);
-    } catch (e) {
-	alert("Problems with Flattener", e);
-	console.error(e);
-    }
     
    // console.error("JSON IS NOW", json);
    try {
@@ -382,18 +376,12 @@ function appendInline(element, url, xmlDoc, next) {
 				  async: true
 				});
 				json = protoExpander.prototypeExpander(url, json, "");
-				json = flattener(json);
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline", e);
 				console.error(e);
 			}
 		} else {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
-		}
-		if (typeof flattener === 'function') {
-			json = flattener(json);
-		} else {
-			console.error("Perhaps you need to include the Flattener.js?");
 		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, X3DJSONLD, function() {

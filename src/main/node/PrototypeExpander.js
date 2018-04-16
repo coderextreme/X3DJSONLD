@@ -19,9 +19,125 @@ function PROTOS() {
 	this.privatescope = [];
 	this.defs = {};
 	this.founddef = null;
+	this.SFNodes = {
+		"-appearance" : 1,
+		"-body" : 1,
+		"-child" : 1,
+		"-collidable" : 1,
+		"-collider" : 1,
+		"-color" : 1,
+		"-composableRenderStyle" : 1,
+		"-coord" : 1,
+		"-emitter" : 1,
+		"-fillProperties" : 1,
+		"-fogCoord" : 1,
+		"-fontStyle" : 1,
+		"-geometry" : 1,
+		"-geoOrigin" : 1,
+		"-layout" : 1,
+		"-lineProperties" : 1,
+		"-massDensityModel" : 1,
+		"-material" : 1,
+		"-metadata" : 1,
+		"-normal" : 1,
+		"-nurbsCurve" : 1,
+		"-nurbsCurve2D" : 1,
+		"-pickingGeometry" : 1,
+		"-renderStyle" : 1,
+		"-shape" : 1,
+		"-source" : 1,
+		"-texCoord" : 1,
+		"-texCoordNurbs" : 1,
+		"-texCoordRamp" : 1,
+		"-texture" : 1,
+		"-texture2D" : 1,
+		"-texture2DMulti" : 1,
+		"-texture3D" : 1,
+		"-textureProperties" : 1,
+		"-textureTransform" : 1,
+		"-transferFunction" : 1,
+		"-viewport" : 1
+	};
 }
 
 PROTOS.prototype = {
+	flattenerArray : function(object, parentArray) {
+		var newobject = [];
+		var offset = 0;
+		for (var p in object) {
+			var possibleArray = this.flattener(object[p], newobject, object.length);
+			if (Array.isArray(possibleArray)) {
+				for (var q in possibleArray) {
+					newobject[parseInt(p)+offset+parseInt(q)] = possibleArray[q];
+				}
+				offset += possibleArray.length-1;
+			} else {
+				newobject[parseInt(p)+offset] = possibleArray;
+			}
+		}
+		return newobject;
+	},
+	flattenerObject : function(object, parentArray, arrayLen) {
+		var newobject = {};
+		for (var p in object) {
+			var possibleArray = this.flattener(object[p], parentArray, arrayLen);
+			if (Array.isArray(possibleArray)) {
+				if (this.SFNodes[p]) {
+					// this.SFNodes should only have one child
+					newobject[p] = possibleArray[0];
+					// handle extra nodes brought in from proto
+					if (possibleArray.length > 1) {
+						parentArray[arrayLen] = { "Switch" : {
+									"@whichChoice": -1,
+									"-children" : [
+										{"Group" : {
+										"-children" : [
+										]
+										}
+										}
+									]
+									}
+									};
+						for (var i = 1; i < possibleArray.length; i++) {
+							parentArray[arrayLen]["Switch"]["-children"][0]["Group"]["-children"][i-1] = possibleArray[i];
+						}
+					}
+				} else {
+					newobject[p] = possibleArray;
+				}
+			} else {
+				if (this.SFNodes[p]) {
+					if (typeof possibleArray === 'object' && possibleArray["#comment"]) {
+						if (newobject["-children"]) {
+							newobject[p] = {};
+							newobject["-children"].push(possibleArray);
+						} else {
+							newobject[p] = {};
+							newobject["-children"] = [ possibleArray ];
+						}
+					} else {
+						newobject[p] = possibleArray;
+					}
+				} else {
+					newobject[p] = possibleArray;
+				}
+			}
+		}
+		return newobject;
+	},
+	flattener : function(object, parentArray, arrayLen) {
+		if (typeof object === "object") {
+			if (Array.isArray(object)) {
+				var newobject = this.flattenerArray(object, parentArray);
+			} else {
+				var newobject = this.flattenerObject(object, parentArray, arrayLen);
+			}
+			return newobject;
+		} else {
+			return object;
+		}
+	},
+
 	pushScope: function (s) {
 		// console.error("PUSH", s);
 		this.privatescope.push(s);
@@ -494,6 +610,7 @@ PROTOS.prototype = {
 		this.founddef = null;
 		object = this.realPrototypeExpander(file, object, false);
 		this.zapIs(object);
+		object = this.flattener(object);
 		// console.error("SCRIPTS", JSON.stringify(this.scriptField));
 		// console.error("PROTOS", JSON.stringify(this.protoField, null, 2));
 		return object;

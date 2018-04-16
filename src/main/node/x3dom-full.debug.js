@@ -18281,7 +18281,12 @@ x3dom.fields.MFVec3f.prototype.toGL = function() {
 };
 
 x3dom.fields.MFVec3f.prototype.toString = function () {
-	return this.map(function (sf) { return sf.toString(); }).join(' ');
+   var str = "";
+
+   this.forEach(function (sf) {
+   	str = str + sf.toString() + " ";
+   });
+   return str.trim();
 };
 
 ///////////////////////////////////////////////////////////////////////////////
