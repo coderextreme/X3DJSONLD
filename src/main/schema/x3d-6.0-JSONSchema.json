@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-06/schema#",
+	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "JSON Schema X3D V3.3",
 	"description": "Experimental JSON Schema for X3D V3.3 ",
 	"type": "object",
@@ -4338,7 +4338,6 @@
 				},
 				"@summary": {
 					"type": "array",
-					"minItems": 2,
 					"items": {
 						"type": "string"
 					}
@@ -14389,7 +14388,8 @@
 						"3.0",
 						"3.1",
 						"3.2",
-						"3.3"
+						"3.3",
+						"4.0"
 					],
 					"default": "3.3"
 				},
