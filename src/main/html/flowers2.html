@@ -89,7 +89,6 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
-			json = flattener(json);
 		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
 				if ($('#scripting').is(':checked')) {
 					loadScripts(json, selector, url);
