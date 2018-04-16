@@ -158,7 +158,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else {
+						} else if (typeof http !== 'undefined') {
 							http.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
@@ -176,7 +176,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else {
+						} else if (typeof https !== 'undefined') {
 							https.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
