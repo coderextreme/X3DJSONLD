@@ -10,9 +10,6 @@ var Browser = X3DJSONLD.Browser;
 var PROTOS = require('./PrototypeExpander')
 PROTOS.setX3DJSONLD(X3DJSONLD);
 
-var FL = require('./Flattener')
-var flattener = FL.flattener;
-
 var Script = require('./Script');
 var LOG = Script.LOG;
 var processScripts = Script.processScripts;
@@ -29,7 +26,6 @@ var x3dom = require('./fields.js');
 function ProcessJSON(json, file) {
 	json = PROTOS.externalPrototypeExpander(file, json);
 	json = PROTOS.prototypeExpander(file, json, "");
-	json = flattener(json);
 	console.log(JSON.stringify(json));
 	var outfile = file.replace(/data/, "ppp");
 	try {
