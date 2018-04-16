@@ -23,7 +23,6 @@ var doValidate = convertJSON.doValidate;
 var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
-	json = PROTOS.externalPrototypeExpander(file, json);
 	json = PROTOS.prototypeExpander(file, json, "");
 	console.log(JSON.stringify(json));
 	var outfile = file.replace(/data/, "ppp");
