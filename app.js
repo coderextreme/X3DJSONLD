@@ -52,8 +52,7 @@ function convertX3dToJson(res, infile, outfile, next) {
 	}
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
-		// console.error("Calling extern proto expander");
-		json = PROTOS.externalPrototypeExpander(outfile, json);
+		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		// console.error("Json", json);
 		send(res, json, "text/json", next);
 	});
