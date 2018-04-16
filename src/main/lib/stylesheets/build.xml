@@ -52,7 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <!-- note that Netbeans default path is built in and has to be overridden by going to     -->
     <!-- Netbeans > Tools > Options > Java > Ant                                              -->
-    <!-- and then pointing to C:\apache-ant-1.9.3 (or somesuch locally installed directory)   -->
+    <!-- and then pointing to C:\apache-ant-1.10.1 (or somesuch locally installed directory)  -->
 
     <!-- ANT Contrib archive at http://sourceforge.net/projects/ant-contrib/files    (v1.0b3) -->
     <!-- must have ant-contrib-1.0b3.jar in ANT_HOME/lib (or else specify path)               -->
@@ -111,10 +111,20 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <property name="examples.dir"       location="../content/examples"/>
     <property name="X3dDtdsSchemas.dir" location="../../specifications"/>
-    <!-- Current official X3D Schema source file -->
-    <property name="X3dSchemaSource" value="x3d-3.3.xsd"/>
-    <!-- Current official X3D Object Mpdel source file -->
-    <property name="X3dObjectModel" value="X3DObjectModel-3.3.xml"/>
+    <!-- Current official X3D Schema source file is version 3.3 -->
+    <property name="X3dSchemaSource"    value="x3d-3.3.xsd"/>
+    <property name="X3dSchemaSource4.0" value="x3d-4.0.xsd"/>
+    <property name="X3dSchemaSource3.3" value="x3d-3.3.xsd"/>
+    <property name="X3dSchemaSource3.2" value="x3d-3.2.xsd"/>
+    <property name="X3dSchemaSource3.1" value="x3d-3.1.xsd"/>
+    <property name="X3dSchemaSource3.0" value="x3d-3.0.xsd"/>
+    <!-- Current official X3D Unified Object Model source file is version 3.3 -->
+    <property name="X3dUnifiedObjectModel"    value="X3dUnifiedObjectModel-3.3.xml"/>
+    <property name="X3dUnifiedObjectModel4.0" value="X3dUnifiedObjectModel-4.0.xml"/>
+    <property name="X3dUnifiedObjectModel3.3" value="X3dUnifiedObjectModel-3.3.xml"/>
+    <property name="X3dUnifiedObjectModel3.2" value="X3dUnifiedObjectModel-3.2.xml"/>
+    <property name="X3dUnifiedObjectModel3.1" value="X3dUnifiedObjectModel-3.1.xml"/>
+    <property name="X3dUnifiedObjectModel3.0" value="X3dUnifiedObjectModel-3.0.xml"/>
 
     <!-- target tasks ===================================================================== -->
 
@@ -122,7 +132,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="build" 
-         depends="validate,BuildX3dUnifiedObjectModel.saxon,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
+         depends="validate,BuildX3dUnifiedObjectModel.saxon.all,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
      description="compile and test XSLT stylesheets">
     </target>
 
@@ -234,7 +244,9 @@ and
         <copy file="X3dToJson.xslt"                      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToX3dom.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToXhtml.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-	<!-- requires local copy of specifications directory -->
+		<copy file="X3dTidy.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+		<copy file="X3dModelMetaToMarkdown.xslt"         todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+		<!-- requires local copy of specifications directory -->
         <copy todir="${java.lib.dir}/specifications" verbose="true" failonerror="false">
                 <fileset dir="../../specifications" defaultexcludes="yes">
                         <include name="*.xsd"/>
@@ -247,15 +259,15 @@ and
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:TempSaiJava.txt"/> <!-- output-doc -->
-            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dObjectModel}"/> <!-- source-doc -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dUnifiedObjectModel}"/> <!-- source-doc -->
             <arg value="-xsl:CreateX3dSceneAccessInterfaceJava.xslt"/> <!-- style-doc -->
             <arg value="targetDirectory=${java.dir}"/> <!-- stylesheet parameter -->
         </java>
         <copy file="${java.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
         <!-- precise cleanup of directories occurred earlier -->
-	<!-- empty classpath to ensure internal consistency of package compilation -->
+		<!-- empty classpath to ensure internal consistency of package compilation -->
         <echo message="Compiling org.web3d.x3d.sai interfaces"/>
-	<mkdir  dir="${java.classes.dir}"/>
+		<mkdir  dir="${java.classes.dir}"/>
         <javac srcdir ="${src.org.web3d.x3d.sai}"
                classpath=""
                destdir="${java.classes.dir}"
@@ -482,7 +494,7 @@ and
         <echo message="${jsai.full.archive.jar.name} contains all compiled .class files, all source .java files, and javadoc documentation"/>
         <echo message="${jsai.full.archive.jar.name} is a 'fat jar' that can be run independently on command line or elsewehere"/>
         <!-- https://stackoverflow.com/questions/19150811/what-is-a-fat-jar -->
-        <jar destfile="${jsai.full.archive.jar.name}.withSignatures" >
+        <jar destfile="${jsai.full.archive.jar.name}.withSignatures">
             <manifest id="FullJarManifest">
               <!-- If this is an Applet or Web Start application, include
                    the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
@@ -535,6 +547,11 @@ and
                 <exclude name="${openexi-nagasena.jar}"/>
                 <exclude name="${exificient.jar}"/>
             </fileset>
+            <fileset dir="${java.dir}">
+                <include name="${nashorn.dir}/**/*"/>
+                <exclude name="test.bat"/>
+                <exclude name="${nashorn.dir}/examples"/>
+            </fileset>
             <zipgroupfileset dir="${java.lib.dir}">
                 <include name="${exificient.jar}"/>
                 <include name="${openexi-nagasena.jar}"/>
@@ -545,11 +562,6 @@ and
                     <exclude name="META-INF/SAXONICA.SF"/>
                 -->
             </zipgroupfileset>
-			<!-- TODO move nashorn from stylesheets/ to stylesheets/java ?
-            <fileset dir=".">
-                <include name="${nashorn.dir}/*"/>
-                <include name="test.bat"/>
-            </fileset> -->
         </jar>
         <!-- now remove prior signatures, which are no longer valid since other code products have been integrated.
 			 to learn more about why removing signatures from integrated "fat" jar files is necessary:
@@ -567,7 +579,7 @@ and
         <delete file="${jsai.full.archive.jar.name}.withSignatures" verbose="true"/>
 
 		<!-- ===================================================================== -->
-        <echo>(ensure that destination ${${jsai.full.archive.jar.name}} is not already in use)</echo>
+        <echo>(ensure that destination ${jsai.full.archive.jar.name} is not already in use)</echo>
 		<move file="${jsai.full.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
         <length property="jsai.full.archive.jar.length" file="${java.jars.dir}/${jsai.full.archive.jar.name}"/>
         <echo>Build .jar complete: ${jsai.full.archive.jar.name} for all .class interfaces, .java sources (${jsai.full.archive.jar.length} bytes) </echo>
@@ -639,16 +651,100 @@ and
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
-    <target name="BuildX3dUnifiedObjectModel.saxon" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
+    <target name="BuildX3dUnifiedObjectModel.validate" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
+        <echo message="Check well-formed XML..."/>
+        <xmlvalidate failonerror="false" warn="true" lenient="true">
+            <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.0}"/>
+                <include name="${X3dUnifiedObjectModel3.3}"/>
+                <include name="${X3dUnifiedObjectModel3.2}"/>
+                <include name="${X3dUnifiedObjectModel3.1}"/>
+                <include name="${X3dUnifiedObjectModel3.0}"/>
+            </fileset>
+        </xmlvalidate>
+        <echo message="Check schema validation..."/>
+        <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
+                        fullchecking="false" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
+            <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.0}"/>
+                <include name="${X3dUnifiedObjectModel3.3}"/>
+                <include name="${X3dUnifiedObjectModel3.2}"/>
+                <include name="${X3dUnifiedObjectModel3.1}"/>
+                <include name="${X3dUnifiedObjectModel3.0}"/>
+            </fileset>
+        </schemavalidate>
+        <echo message="Check schema validation, strict fullchecking..."/>
+        <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
+                        fullchecking="true" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
+            <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.0}"/>
+                <include name="${X3dUnifiedObjectModel3.3}"/>
+                <include name="${X3dUnifiedObjectModel3.2}"/>
+                <include name="${X3dUnifiedObjectModel3.1}"/>
+                <include name="${X3dUnifiedObjectModel3.0}"/>
+            </fileset>
+        </schemavalidate>
+    </target>
+
+    <target name="BuildX3dUnifiedObjectModel.saxon.all" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
+	<echo message="==========================================="/>
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 4.0"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-o:unused.html"/> <!-- output-doc -->
-            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
-            <arg value="-xsl:BuildObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource4.0}"/> <!-- source-doc -->
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-		<!-- TODO also add other X3D versions -->
-        <copy file="${X3dObjectModel}" todir="../../specifications/" verbose="true"/>
+	<copy file="${X3dUnifiedObjectModel4.0}" todir="../../specifications/" verbose="true"/>
+        <echo message="==========================================="/>
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 3.2"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.2}"/> <!-- source-doc -->
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+        </java>
+	<copy file="${X3dUnifiedObjectModel3.2}" todir="../../specifications/" verbose="true"/>
+        <echo message="==========================================="/>
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 3.1"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.1}"/> <!-- source-doc -->
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+        </java>
+	<copy file="${X3dUnifiedObjectModel3.1}" todir="../../specifications/" verbose="true"/>
+        <echo message="==========================================="/>
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 3.0"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.0}"/> <!-- source-doc -->
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+        </java>
+	<copy file="${X3dUnifiedObjectModel3.0}" todir="../../specifications/" verbose="true"/>
+        <echo message="==========================================="/>
+        <!-- finally make sure that primary version is up to date -->
+        <antcall target="BuildX3dUnifiedObjectModel.saxon"/><!-- version 3.3 -->
+        <echo message="==========================================="/>
+        <antcall target="BuildX3dUnifiedObjectModel.validate"/>
+        <echo message="==========================================="/>
+    </target>
+
+    <target name="BuildX3dUnifiedObjectModel.saxon" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 3.3"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+        </java>
+	<copy file="${X3dUnifiedObjectModel}"    todir="../../specifications/" verbose="true"/>
     </target>
 
     <target name="BuildSpecificationXmlEncodingFromSchema.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes and clause 7, Encoding of statements" >
@@ -798,7 +894,7 @@ and
      </target>
 
     <target name="validate" depends="" description="validate .xslt stylesheets">
-        <!-- XML schema validation of styleshees is not possible, but Netbeans/X3D-Edit and XML Spy provide good pseudo-validation checks -->
+        <!-- XML schema validation of stylesheets is not possible, but Netbeans/X3D-Edit and XML Spy provide good pseudo-validation checks -->
         <xmlvalidate failonerror="true" warn="true" lenient="true">
             <fileset dir="." includes="*.xslt"/>
         </xmlvalidate>
@@ -861,15 +957,23 @@ and
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/HelloWorldProgramOutput.x3d -toZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toZIP"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         </java>
 		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/flowers4.x3d -toJSON -toFile ${java.examples.dir}/flowers4.json"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/flowers4.x3d"/><!-- input model -->
+            <arg value="-toJSON"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/flowers4.json"/>
+        </java>
+		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toGZIP"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
@@ -877,10 +981,45 @@ and
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toX3D"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+        </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -toXML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.xml"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-toXML"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.xml"/>
+        </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -toHTML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.html (pretty print)"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-toHTML"/><!-- pretty print documentation -->
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.html"/>
+        </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -markdown -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-markdown"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
+        </java>
+        <concat>
+            <fileset file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
+        </concat>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -tidy -toFile ${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-tidy"/><!-- cleaned-up version -->
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
         </java>
 		<echo message="==========================================="/>
 		<echo message="test HelloWorldProgram.java compilation..."/>
@@ -923,7 +1062,7 @@ and
         </java>
 		<delete file="${java.examples.dir}/HelloWorldProgramOutput.class" verbose="true"/>
 		<echo message="==========================================="/>
-        <!-- .json jslint and schema validation -->
+                <!-- .json jslint and schema validation -->
 		<echo>Error checking with jslint: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
 		<java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
 			<arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
