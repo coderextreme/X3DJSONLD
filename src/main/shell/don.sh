@@ -24,7 +24,7 @@ do
 	echo $i
 	# java -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
 	mkdir -p ../data/`dirname $i`
-	java -cp "${CLASSPATH}" $i -validate
+	java -cp "${CLASSPATH}" $i ../data/`basename $i`.x3d -validate
 done
 popd
 echo running jjs
