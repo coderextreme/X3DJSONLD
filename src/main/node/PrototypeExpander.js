@@ -14,6 +14,11 @@ if (typeof require !== 'undefined') {
 	http = require("http");
 	https = require("https");
 }
+
+if (typeof require !== 'undefined') {
+	var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+}
+
 function PROTOS() {
 	this.protos = {};
 	this.names = {};
@@ -930,11 +935,7 @@ PROTOS.prototype = {
 					// alert("parsed JSON from " + filename);
 					// alert("data is " + JSON.stringify(data));
 					// console.error("parsed JSON from " + filename);
-					if (filename.indexOf(".json") > 0) {
-						json = data;
-					} else {
-						json = JSON.parse(data);
-					}
+					json = JSON.parse(data);
 					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
 					/*
@@ -1110,17 +1111,7 @@ PROTOS.prototype = {
 
 						if (protocol === "http") {
 							// console.error("Loading HTTP URL", url);
-							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-								$.ajaxSetup({
-								  async: false
-								});
-								$.get(url, function(data) {
-									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-								});
-								$.ajaxSetup({
-								  async: true
-								});
-							} else if (typeof http !== 'undefined') {
+							if (typeof http !== 'undefined') {
 								http.get({ host: host, path: path}, function(res) {
 									var data = '';
 									res.on('data', function (d) {
@@ -1131,20 +1122,18 @@ PROTOS.prototype = {
 									});
 								});
 						
+							} else {
+								var request = new XMLHttpRequest();
+								request.open('GET', url, false);  // `false` makes the request synchronous
+								request.send(null);
+								if (request.status === 200) {
+									var data = request.responseText;
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+								}
 							}
 						} else if (protocol === "https") {
 							// console.error("Loading HTTPS URL", url);
-							if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-								$.ajaxSetup({
-								  async: false
-								});
-								$.get(url, function(data) {
-									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-								});
-								$.ajaxSetup({
-								  async: true
-								});
-							} else if (typeof https !== 'undefined') {
+							if (typeof https !== 'undefined') {
 								https.get({ host: host, path: path}, function(res) {
 									var data = '';
 									res.on('data', function (d) {
@@ -1154,9 +1143,17 @@ PROTOS.prototype = {
 										loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 									});
 								});
+							} else {
+								var request = new XMLHttpRequest();
+								request.open('GET', url, false);  // `false` makes the request synchronous
+								request.send(null);
+								if (request.status === 200) {
+									var data = request.responseText;
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+								}
 						
 							}
-						} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
+						} else if (typeof fs !== 'undefined' && !protocol.startsWith("http")) {
 							// should be async, but out of memory
 							// console.error("Loading FILE URL", url);
 							var hash = url.indexOf("#");
@@ -1179,19 +1176,16 @@ PROTOS.prototype = {
 									}
 								}
 							}
-						} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-							// console.error("Loading Relative URL", url);
-							$.ajaxSetup({
-							  async: false
-							});
-							$.get(url, function(data) {
-								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-							});
-							$.ajaxSetup({
-							  async: true
-							});
 						} else {
-							console.error("Didn't load", url, ".  No JQuery $.get() or file system");
+							var request = new XMLHttpRequest();
+							request.open('GET', url, false);  // `false` makes the request synchronous
+							request.send(null);
+							if (request.status === 200) {
+								var data = request.responseText;
+								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+							} else {
+								console.error("Didn't load", url, ".  No file system or http request.");
+							}
 						}
 					})(url);
 				} catch (e) {
