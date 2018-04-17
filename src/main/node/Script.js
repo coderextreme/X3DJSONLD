@@ -132,7 +132,7 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	*/
 	classes.log("		var element = document.querySelector(selector);");
 	classes.log("		if (element === null) {");
-	classes.log("			console.error('unDEFed node',node);");
+	classes.log("			console.error('unDEFed node', node, selector);");
 	classes.log("		} else if (arguments.length > 2) {");
 	classes.log("			/*");
 	classes.log("			if (value && typeof value.toString === 'function') {");
