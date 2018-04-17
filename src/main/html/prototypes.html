@@ -70,11 +70,11 @@
 			});
 		});
 	}
-	function load_X_ITE(url, callback) {
+	function load_X_ITE(htmlselector, url, callback) {
 		$.getJSON(url, function(json) {
 			var xml = [];
 			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-				load_X_ITE_DOM(element, "#x_itedom"); // loads into X_ITE element on page.
+				load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
 				callback(element, xmlDoc);
 			});
 		});
@@ -96,10 +96,10 @@
 			}
 		});
 	}
-	function loadSubscene_X_ITE(htmlselector, url, element, xmlDoc) {
+	function loadSubscene_X_ITE(htmlselector, xmlselector, url, element, xmlDoc) {
 		$.getJSON(url, function(subjson) {
-			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(htmlselector), url);  // returns Scene element
-			load_X_ITE_DOM(element, "#x_itedom"); // loads into X_ITE element on page.
+			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(xmlselector), url);  // returns Scene element
+			load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
@@ -124,9 +124,10 @@
 				});
 			});
 		});
-		load_X_ITE(flowers2, function(element, xmlDoc) {
-			loadSubscene_X_ITE(xmlselector, bubbles, element, xmlDoc);
-			loadSubscene_X_ITE(xmlselector, force, element, xmlDoc);
+		var x_itehtmlselector = "#x_itedom";
+		load_X_ITE(x_itehtmlselector, flowers2, function(element, xmlDoc) {
+			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, bubbles, element, xmlDoc);
+			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, force, element, xmlDoc);
 		});
 	});
     </script>
