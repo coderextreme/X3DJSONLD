@@ -95,9 +95,9 @@
     <script type="text/javascript">
 
 	function load_X3DOM_All(loadObj, url, callback) {
-		loadObj.json = protoExpander.prototypeExpander(url, loadObj.json, "");
-		load_X3DOM_JS(loadObj.json, loadObj.x3domjsonselector, url, function(element, xmlDoc, content) {
-			load_X3DOM_XML(content, loadObj.x3domxmlselector, url);
+		loadObj.x3domjson = protoExpander.prototypeExpander(url, loadObj.x3domjson, "");
+		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, xmlDoc, content) {
+			load_X3DOM_XML(content, loadObj.x3domxmlselector);
 			try {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
@@ -105,7 +105,7 @@
 				alert("Problem with x3dom.reload()", e);
 			}
 			if (typeof callback === 'function') {
-				callback(element, xmlDoc, loadObj.json);
+				callback(element, xmlDoc, loadObj.x3domjson);
 			}
 		});
 	}
@@ -121,26 +121,26 @@
 	function load_X3DOM_JS(json, selector, url, callback) {
 		var xml = [];
 		X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-			load_X3DOM_DOM(element, selector, url);
+			load_X3DOM_DOM(element, selector);
 			callback(element, xmlDoc, xml.join("\n"));
 		});
 	}
-	function load_X3DOM_DOM(element, selector, url) {
+	function load_X3DOM_DOM(element, selector) {
 		$(element.querySelector("Scene")).children().appendTo(selector);
 		$(selector+" Script").empty();
 	}
-	function load_X3DOM_XML(content, selector, url) {
+	function load_X3DOM_XML(content, selector) {
 		$(selector).get()[0].innerHTML = content.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
 		$(selector+" Script").empty();
 	}
 	function load_X3DOM(url, callback, loadObj) {
 		$.getJSON(url, function(subjson) {
 			// join json and subjson for scripts
-			if (typeof loadObj.json === 'undefined') {
-				loadObj.json = subjson;
+			if (typeof loadObj.x3domjson === 'undefined') {
+				loadObj.x3domjson = subjson;
 			} else {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
-					loadObj.json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
+					loadObj.x3domjson["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
 			}
 			load_X3DOM_All(loadObj, url, function(element, xmlDoc, json) {
@@ -148,9 +148,9 @@
 					loadScripts(json, loadObj.x3domxmlselector, url);
 					loadScripts(json, loadObj.x3domjsonselector, url);
 				}
-				loadObj.element = element;
-				loadObj.xmlDoc = xmlDoc;
-				loadObj.json = json;
+				loadObj.x3domelement = element;
+				loadObj.x3domxmlDoc = xmlDoc;
+				loadObj.x3domjson = json;
 				callback(true);
 			});
 		});
@@ -198,7 +198,6 @@
 			initializeScripts();
 		}
 		loadObj = {};
-		loadObj.sceneselector = "Scene";
 		loadObj.x3domjsonselector = "#x3domjson";
 		loadObj.x3domxmlselector = "#x3domxml";
 		$(loadObj.x3domjsonselector).empty();

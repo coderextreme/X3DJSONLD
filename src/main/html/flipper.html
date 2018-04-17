@@ -100,14 +100,14 @@ function getJSON(url) {
 			console.log(err);
 		});
 	}
-	function load_X_ITE(url) {
+	function load_X_ITE(selector, url) {
 		getJSON(url).then(function(json) {
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
-				load_X_ITE_DOM(element, "#x_itedom"); // reloads X_ITE element on page.
+				load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);
@@ -118,8 +118,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('#x3domjson','../data/flipp.json');
-		load_X_ITE('../data/flipp.json');
+		load_X3DOM('#x3domjson', '../data/flipp.json');
+		load_X_ITE("#x_itedom", '../data/flipp.json');
 	});
     </script>
 </html>
