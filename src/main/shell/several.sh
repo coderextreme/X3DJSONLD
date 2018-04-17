@@ -46,7 +46,7 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	pushd ../java
 	echo $i
-	java -d64 -Xss1g -Xmx4g $i # sh runToError.sh || echo "Failed"
+	java -Xss1g -Xmx4g $i # sh runToError.sh || echo "Failed"
 	popd
 done
 
