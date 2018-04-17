@@ -87,9 +87,7 @@ bubs2_sail.prototype = {
             .setGeometry(new SphereObject().setRadius(0.25))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-          .addChild(new ScriptObject("bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
@@ -113,35 +111,34 @@ bubs2_sail.prototype = {
 "    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);" + "\n" + 
 "    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);" + "\n" + 
 "    // if you get to far away or too big, explode" + "\n" + 
-"    if ( Math.abs(translation.x) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.x) > 256) {" + "\n" + 
 "	translation.x = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if ( Math.abs(translation.y) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.y) > 256) {" + "\n" + 
 "	translation.y = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if ( Math.abs(translation.z) &gt; 256) {" + "\n" + 
+"    if ( Math.abs(translation.z) > 256) {" + "\n" + 
 "	translation.z = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.x) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.x) > 20) {" + "\n" + 
 "	scale.x = scale.x/20;" + "\n" + 
 "	translation.x = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.y) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.y) > 20) {" + "\n" + 
 "	scale.y = scale.y/20;" + "\n" + 
 "	translation.y = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"    if (Math.abs(scale.z) &gt; 20) {" + "\n" + 
+"    if (Math.abs(scale.z) > 20) {" + "\n" + 
 "	scale.z = scale.z/20;" + "\n" + 
 "	translation.z = 0;" + "\n" + 
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
-"}" + "]]>"
-)
+"}")
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))

@@ -108,9 +108,7 @@ CloudsProcedural4_sail.prototype = {
       .addChild(new TransformObject("Cumulus"))
       .addChild(new TransformObject("Cirrus"))
       .addChild(new TransformObject("Fog"))
-      .addChild(new ScriptObject("PixelScript").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("PixelScript").setDirectOutput(true).setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -492,8 +490,7 @@ CloudsProcedural4_sail.prototype = {
 "cumulus();" + "\n" + 
 "\n" + 
 "cirrus();" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
           .addChild(new TransformObject().setUSE("Cumulus")))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")

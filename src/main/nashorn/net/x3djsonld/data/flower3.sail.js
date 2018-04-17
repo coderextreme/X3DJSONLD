@@ -2,8 +2,8 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene flower_sail. </p>
- <p> Related links: flower_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene flower3_sail. </p>
+ <p> Related links: flower3_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<p>
 		This program uses the
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
@@ -14,7 +14,7 @@ load('X3Dautoclass.js');
 
  */
 
-function flower_sail
+function flower3_sail
   /** Default constructor to create this object. */
   ()
   {
@@ -23,7 +23,7 @@ function flower_sail
     this.initialize();
     return this;
   }
-flower_sail.prototype = {
+flower3_sail.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -33,15 +33,15 @@ flower_sail.prototype = {
     .addChild(new DirectionalLightObject().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([1.000,1.000,1.000], Java.type("float[]")))))
     .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
-    .addChild(new TransformObject().setTranslation(0.0,-1.0,1.0).setRotation(0.0,1.0,0.0,3.1415926).setScale(1.5,1.5,1.5)
+    .addChild(new TransformObject("OrbitTransform").setTranslation(8.0,0.0,0.0)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.1).setShininess(0.145).setSpecularColor(0.8,0.8,0.8).setDiffuseColor(0.9,0.3,0.3)))
-        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]")))
-          .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0], Java.type("float[]"))))))))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.0,0.5,1.0).setSpecularColor(0.0,0.5,1.0)))
+        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
+          .setCoord(new CoordinateObject("OrbitCoordinates")))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
-"\n" + 
+"    " + "\n" + 
 "var e = 5;" + "\n" + 
 "var f = 5;" + "\n" + 
 "var g = 5;" + "\n" + 
@@ -124,7 +124,7 @@ flower_sail.prototype = {
 "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>",
-"        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"], Java.type("java.lang.String[]"))))
+"        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"], Java.type("java.lang.String[]"))))
     .addChild(new TimeSensorObject("Clock").setCycleInterval(16).setLoop(true))
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
@@ -134,7 +134,7 @@ flower_sail.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return flower_sail model
+   * @return flower3_sail model
    */
   getX3dModel : function()
   {	  
@@ -196,8 +196,8 @@ flower_sail.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new flower_sail();
-		print ("flower_sail execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flower3_sail();
+		print ("flower3_sail execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new flower_sail().main();
+new flower3_sail().main();

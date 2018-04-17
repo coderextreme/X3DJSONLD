@@ -98,9 +98,10 @@ public class flowers7
             .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addComments(new String[] {"field name='cube' type='SFNode' accessType=\"inputOutput\">",
+            .addComments(new String[] {" ",
+"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field"})
+"		  </field>"})
             .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))

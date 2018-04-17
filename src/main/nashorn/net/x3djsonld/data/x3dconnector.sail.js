@@ -98,9 +98,7 @@ x3dconnector_sail.prototype = {
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new ScriptObject("S1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
@@ -139,8 +137,7 @@ x3dconnector_sail.prototype = {
 "        }" + "\n" + 
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
           .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))

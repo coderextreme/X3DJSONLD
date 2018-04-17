@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/abox.x3d">abox.x3d</a> </td>
+			<td> <a href="asmallbox.x3d">asmallbox.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -61,24 +61,24 @@ asmallbox_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("abox.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("generator").setContent("manual").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("description").setContent("a box").setDir("").setHttp_equiv("").setLang("").setScheme("")))
+    .addMeta(new metaObject().setName("title").setContent("asmallbox.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("generator").setContent("manual"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("a box")))
   .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("anyShape").setAppinfo("").setDocumentation("")
+    .addChild(new ProtoDeclareObject().setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode").setValue("").setAppinfo("").setDocumentation("")
+        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject()))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
-    .addChild(new ProtoDeclareObject().setName("one").setAppinfo("").setDocumentation("")
+    .addChild(new ProtoDeclareObject().setName("one")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode").setValue("").setAppinfo("").setDocumentation("")
+        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode")
           .addChild(new ShapeObject()
             .setGeometry(new CylinderObject()))))
       .setProtoBody(new ProtoBodyObject()
@@ -87,9 +87,9 @@ asmallbox_sail.prototype = {
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
     .addChild(new ProtoInstanceObject().setName("one")
-      .addFieldValue(new fieldValueObject().setName("myShape").setValue("")
+      .addFieldValue(new fieldValueObject().setName("myShape")
         .addChild(new ShapeObject()
-          .setGeometry(new BoxObject().setSize(0.125,0.125,0.125))))));
+          .setGeometry(new BoxObject())))));
   },
   // end of initialize() method
 

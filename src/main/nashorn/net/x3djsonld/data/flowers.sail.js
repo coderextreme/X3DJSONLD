@@ -92,8 +92,8 @@ flowers_sail.prototype = {
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/common.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.vs\"")))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/gl_flowers_chromatic.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.fs\""))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
               .addShaders(new ComposedShaderObject().setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -118,9 +118,7 @@ flowers_sail.prototype = {
 "			<Sphere></Sphere>"], Java.type("java.lang.String[]")))
             .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
               .setCoord(new CoordinateObject("OrbitCoordinates")))))
-        .addChild(new ScriptObject("Bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -223,8 +221,7 @@ flowers_sail.prototype = {
 "				}" + "\n" + 
 "				resolution = 100;" + "\n" + 
 "				updateCoordinates(resolution);" + "\n" + 
-"			}" + "\n" + "]]>"
-)
+"			}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))

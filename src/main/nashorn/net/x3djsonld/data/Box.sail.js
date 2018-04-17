@@ -106,13 +106,15 @@ Box_sail.prototype = {
             .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"))
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-    .addChild(new ProtoInstanceObject().setName("three")
+    .addChild(new ProtoInstanceObject("threepi", "three").setDEF("threepi").setName("three")
       .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
-        .addChild(new ShapeObject()
+        .addChild(new ShapeObject("box")
           .setGeometry(new BoxObject().setSize(1.0,1.0,1.0))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,0.0)))))));
+            .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,0.0))))))
+    .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
+      .addChild(new ShapeObject().setUSE("box"))));
   },
   // end of initialize() method
 

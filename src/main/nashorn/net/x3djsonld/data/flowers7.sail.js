@@ -104,9 +104,10 @@ flowers7_sail.prototype = {
             .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addComments(Java.to(["field name='cube' type='SFNode' accessType=\"inputOutput\">",
+            .addComments(Java.to([" ",
+"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field], Java.type("java.lang.String[]")))
+"		  </field>"], Java.type("java.lang.String[]")))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
@@ -135,9 +136,7 @@ flowers7_sail.prototype = {
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"")))))
         .setGeometry(new SphereObject().setSolid(false))))
-    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -154,8 +153,7 @@ flowers7_sail.prototype = {
 "                    top[0] = topUrls[side];" + "\n" + 
 "                    bottom[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
       .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_4_53_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_4_54_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_4_55_value))
@@ -185,9 +183,7 @@ flowers7_sail.prototype = {
 "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"], Java.type("java.lang.String[]")))
-    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -223,8 +219,7 @@ flowers7_sail.prototype = {
 "	if (d > 20) {" + "\n" + 
 "		d = 4;" + "\n" + 
 "	}" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))

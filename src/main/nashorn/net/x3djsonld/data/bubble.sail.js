@@ -76,9 +76,7 @@ bubble_sail.prototype = {
             .setGeometry(new SphereObject().setRadius(0.25))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-          .addChild(new ScriptObject("bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
@@ -123,8 +121,7 @@ bubble_sail.prototype = {
 "		translation.z = 0;" + "\n" + 
 "		initialize();" + "\n" + 
 "	}" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))

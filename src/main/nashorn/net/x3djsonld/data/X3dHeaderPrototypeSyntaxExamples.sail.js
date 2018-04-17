@@ -24,7 +24,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 7 May 2017 </td>
+			<td> 27 May 2017 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -89,7 +89,7 @@ X3dHeaderPrototypeSyntaxExamples_sail.prototype = {
     .addMeta(new metaObject().setName("title").setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
     .addMeta(new metaObject().setName("description").setContent("X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."))
     .addMeta(new metaObject().setName("created").setContent("14 October 2002"))
-    .addMeta(new metaObject().setName("modified").setContent("7 May 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("27 May 2017"))
     .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
     .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"))
     .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"))
@@ -140,8 +140,7 @@ X3dHeaderPrototypeSyntaxExamples_sail.prototype = {
     .addChild(new CollisionObject()
       .setProxy(new ShapeObject()
         .addComments(" note that Collision proxy Shape is not rendered ")
-        .setGeometry(new TextObject().setString(new MFStringObject("\"He said, \\\"Immel did it!\\\"\"")))
-        .addComments(" alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"' ")
+        .setGeometry(new SphereObject())
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
       .addChild(new GroupObject().setUSE("ExampleChildElement")))
