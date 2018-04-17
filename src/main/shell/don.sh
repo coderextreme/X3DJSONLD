@@ -22,7 +22,7 @@ echo running java
 for i in `find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//'`
 do
 	echo $i
-	# java -d64 -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
+	# java -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
 	mkdir -p ../data/`dirname $i`
 	java -cp "${CLASSPATH}" $i -validate
 done
