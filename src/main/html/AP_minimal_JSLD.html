@@ -38,17 +38,8 @@
 	function importInto_X_ITE(json) {
 		var xml = [];
 		X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
-			load_X_ITE_DOM(jsDOM);
+			load_X_ITE_DOM(jsDOM, "#x_itedom");
 		});
 	}
-	    
-    	function load_X_ITE_DOM(element) {
-		X3D(function() {
-			var browser = X3D.getBrowser("#x_itedom");
-			var importedScene = browser.importDocument(element);
-			browser.replaceWorld(importedScene);
-		});
-	}
-
     </script>
 </html>

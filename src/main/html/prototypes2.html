@@ -82,14 +82,14 @@ function getJSON(url) {
 	function loadX3DJSON(url) {
 		getJSON(url).then(function(json) {
 			json = protoExpander.prototypeExpander(url, json, "");
-			load_X_ITE_JS(json); // loads into X_ITE element on page.
+			load_X_ITE_JS(json, "#x_itejson"); // loads into X_ITE element on page.
 			var url = '../data/SFVec3f.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
-				load_X_ITE_JS(json); // reloads X_ITE element on page.
+				load_X_ITE_JS(json, "#x_itejson"); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				console.log(err);
 				alert("Subscene Load failed");
