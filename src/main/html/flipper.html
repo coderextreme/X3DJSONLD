@@ -107,7 +107,7 @@ function getJSON(url) {
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
-				load_X_ITE_DOM(element); // reloads X_ITE element on page.
+				load_X_ITE_DOM(element, "#x_itedom"); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);

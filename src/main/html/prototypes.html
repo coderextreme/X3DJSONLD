@@ -74,7 +74,7 @@
 		$.getJSON(url, function(json) {
 			var xml = [];
 			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-				load_X_ITE_DOM(element); // loads into X_ITE element on page.
+				load_X_ITE_DOM(element, "#x_itedom"); // loads into X_ITE element on page.
 				callback(element, xmlDoc);
 			});
 		});
@@ -99,7 +99,7 @@
 	function loadSubscene_X_ITE(htmlselector, url, element, xmlDoc) {
 		$.getJSON(url, function(subjson) {
 			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(htmlselector), url);  // returns Scene element
-			load_X_ITE_DOM(element); // loads into X_ITE element on page.
+			load_X_ITE_DOM(element, "#x_itedom"); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
