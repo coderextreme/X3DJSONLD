@@ -91,6 +91,13 @@
 			for (var c in subjson["X3D"]["Scene"]["-children"]) {
 				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 			}
+			$(htmlselector+" Script").empty();
+			try {
+				x3dom.reload();  // This may be necessary
+			} catch (e) {
+				console.error(e);
+				alert("Problem with x3dom.reload()", e);
+			}
 			if (typeof callback === 'function') {
 				callback(subjson, htmlselector);
 			}
@@ -114,13 +121,6 @@
 		load_X3DOM(htmlselector, flowers2, function(element, xmlDoc, json) {
 			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json, function(sub1json, htmlselector) {
 				loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json, function(sub2json, htmlselector) {
-					$(htmlselector+" Script").empty();
-					try {
-						x3dom.reload();  // This may be necessary
-					} catch (e) {
-						console.error(e);
-						alert("Problem with x3dom.reload()", e);
-					}
 				});
 			});
 		});
