@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'43bdea6d6c00505de844aaaf639f0764a29e423e' - b'Mon Apr 16 18:18:46 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'153e89fbf1e59d6b93ea6c37959fc4465182f3b3' - b'Mon Apr 16 23:20:33 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -30682,6 +30682,9 @@ x3dom.registerNodeType(
                                         this._vf[field] = (msg.toLowerCase() == "true");
                                     break;
                                 case "string":
+                                    this._vf[field] = msg;
+                                    break;
+				default:
                                     this._vf[field] = msg;
                                     break;
                             }
