@@ -64,7 +64,6 @@ loadLocalize(lang);
 
 
 
-var intervalId;
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		$('#xml').val(xml.join("\n"));
@@ -109,12 +108,26 @@ function filter(event) {
 }
 
 var X3DJSON = {};
+
+function runAllRoutes() {
+	for (var r in X3DJSON.runRoutes) {
+		X3DJSON.runRoutes[r]();
+	}
+}
+
 function initializeScripts() {
 	if (typeof X3DJSON !== 'undefined') {
 		delete X3DJSON;
 	}
 	X3DJSON = {};
 	X3DJSON.runRoutes = [];
+    	if ($('#scripting').is(':checked')) {
+		if (typeof X3DJSON.intervalId !== 'undefined') {
+			// console.error("Interval", X3DJSON.intervalId, "cleared");
+			clearInterval(X3DJSON.intervalId);
+		}
+		X3DJSON.intervalId = setInterval(runAllRoutes, 1000 / 60 );
+	}
 }
 
 
@@ -177,7 +190,7 @@ function loadScripts(json, selector, url) {
 			eval(scripts.text);
 		}
 	} catch (e) {
-		console.log(jsonScript+";\n"+scripts.text, e);
+		console.log(scripts.text, e);
 	    
 	}
 	 
@@ -188,7 +201,7 @@ function loadScripts(json, selector, url) {
 			eval(routes.text);
 		}
 	} catch (e) {
-		console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text, e);
+		console.log(routes.text, e);
 	}
 	// event loop
 	X3DJSON.runRoutes.push(function() {
@@ -199,20 +212,10 @@ function loadScripts(json, selector, url) {
 			}
 			x3dom.reload();  // This may be necessary
 		} catch (e) {
-			console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text+"\n"+loop.text, e);
+			console.log(loop.text, e);
 		}
 		__eventTime += 1000 / 60;
 	});
-	if (typeof intervalId !== 'undefined') {
-		// console.error("Interval", intervalId, "cleared");
-		clearInterval(intervalId);
-	}
-	function runAllRoutes() {
-		for (var r in X3DJSON.runRoutes) {
-			X3DJSON.runRoutes[r]();
-		}
-	}
-	intervalId = setInterval(runAllRoutes, 1000 / 60 );
     }
 }
 
