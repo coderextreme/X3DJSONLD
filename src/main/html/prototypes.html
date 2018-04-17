@@ -119,10 +119,8 @@
 			initializeScripts();
 		}
 		load_X3DOM(htmlselector, flowers2, function(element, xmlDoc, json) {
-			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json, function(sub1json, htmlselector) {
-				loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json, function(sub2json, htmlselector) {
-				});
-			});
+			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json);
+			loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json);
 		});
 		var x_itehtmlselector = "#x_itedom";
 		load_X_ITE(x_itehtmlselector, flowers2, function(element, xmlDoc) {
