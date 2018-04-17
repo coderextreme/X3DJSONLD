@@ -94,10 +94,10 @@
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
-	function load_X3DOM_All(jsonselector, xmlselector, json, url, callback) {
-		json = protoExpander.prototypeExpander(url, json, "");
-		load_X3DOM_JS(json, jsonselector, url, function(element, xmlDoc, content) {
-			load_X3DOM_XML(content, xmlselector, url);
+	function load_X3DOM_All(loadObj, url, callback) {
+		loadObj.json = protoExpander.prototypeExpander(url, loadObj.json, "");
+		load_X3DOM_JS(loadObj.json, loadObj.x3domjsonselector, url, function(element, xmlDoc, content) {
+			load_X3DOM_XML(content, loadObj.x3domxmlselector, url);
 			try {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
@@ -105,9 +105,18 @@
 				alert("Problem with x3dom.reload()", e);
 			}
 			if (typeof callback === 'function') {
-				callback(element, xmlDoc, json);
+				callback(element, xmlDoc, loadObj.json);
 			}
 		});
+	}
+	function load_X_ITE_All(loadObj, url, callback) {
+		var xml = [];
+		X3DJSONLD.loadX3DJS(document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+			load_X_ITE_DOM(element, loadObj.x_itehtmlselector); // loads into X_ITE element on page.
+			load_X_ITE_JS(loadObj.x_itejson, loadObj.x_itejsonselector); // loads into X_ITE element on page.
+			load_X_ITE_XML(getXmlString(element), loadObj.x_itexmlselector); // loads into X_ITE element on page.
+			callback(element, xmlDoc, loadObj.x_itejson);
+		})
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
 		var xml = [];
@@ -127,14 +136,14 @@
 	function load_X3DOM(url, callback, loadObj) {
 		$.getJSON(url, function(subjson) {
 			// join json and subjson for scripts
-			if (typedef loadObj.json === 'undefined') {
+			if (typeof loadObj.json === 'undefined') {
 				loadObj.json = subjson;
 			} else {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					loadObj.json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
 			}
-			load_X3DOM_All(loadObj.x3domjsonselector, loadObj.x3domxmlselector, loadObj.json, url, function(element, xmlDoc, json) {
+			load_X3DOM_All(loadObj, url, function(element, xmlDoc, json) {
 				if ($('#scripting').is(':checked')) {
 					loadScripts(json, loadObj.x3domxmlselector, url);
 					loadScripts(json, loadObj.x3domjsonselector, url);
@@ -146,63 +155,59 @@
 			});
 		});
 	}
-	function load_X_ITE(htmlselector, jsonselector, xmlselector, url, callback) {
-		$.getJSON(url, function(json) {
-			var xml = [];
-			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-				load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
-				load_X_ITE_JS(json, jsonselector); // loads into X_ITE element on page.
-				load_X_ITE_XML(xml.join("\n"), xmlselector); // loads into X_ITE element on page.
-				callback(element, xmlDoc, json);
+	function load_X_ITE(url, callback, loadObj) {
+		$.getJSON(url, function(subjson) {
+			// join json and subjson for scripts
+			if (typeof loadObj.x_itejson === 'undefined') {
+				loadObj.x_itejson = subjson;
+			} else {
+				// join json for completeness
+				for (var c in subjson["X3D"]["Scene"]["-children"]) {
+					loadObj.x_itejson["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
+				}
+			}
+			load_X_ITE_All(loadObj, url,  function(element, xmlDoc, json) {
+				loadObj.x_iteelement = element;
+				loadObj.x_itexmlDoc = xmlDoc;
+				loadObj.x_itejson = json;
+				callback(true);
 			});
 		});
 	}
-	function loadSubscene_X_ITE(htmlselector, jsonselector, xmlselector, sceneselector, url, element, xmlDoc, json) {
-		$.getJSON(url, function(subjson) {
-			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(sceneselector), url);  // returns Scene element
-			// join json for completeness
-			for (var c in subjson["X3D"]["Scene"]["-children"]) {
-				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
-			}
-			load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
-			load_X_ITE_JS(json, jsonselector); // loads into X_ITE element on page.
-			load_X_ITE_XML(getXmlString(element), xmlselector); // loads into X_ITE element on page.
-		});
-	}
-	function loadPromise(loadObj) {
+	function loadPromise(url, loadObj, browser) {
 		return new Promise(function(resolve, reject) {
-			load_X3DOM(urls[0], resolve, loadObj);
+			if (browser === "x_ite") {
+				load_X_ITE(url, resolve, loadObj);
+			} else {
+				load_X3DOM(url, resolve, loadObj);
+			}
 		});
 	}
-	function loadScene(loadObj, urls, u) {
-		return makePromise(loadObj).then(function(cont) {
-			if (cont && u < urls.length) {
-				return loadScene(loadObj, urls, ++u);
-			} else {
-				return false;
-			}
-		})
+	function loadScene(loadObj, urls, u, browser) {
+		return loadPromise(urls[u], loadObj, browser)
+			.then(function(cont) {
+				if (cont && u < urls.length) {
+					return loadScene(loadObj, urls, ++u, browser);
+				} else {
+					return false;
+				}
+			})
 	}
         function loadScenes(urls) {
 		if ($('#scripting').is(':checked')) {
 			initializeScripts();
 		}
-		var sceneselector = "Scene";
 		loadObj = {};
+		loadObj.sceneselector = "Scene";
 		loadObj.x3domjsonselector = "#x3domjson";
 		loadObj.x3domxmlselector = "#x3domxml";
 		$(loadObj.x3domjsonselector).empty();
 		$(loadObj.x3domxmlselector).empty();
-		loadScene(loadObj, urls, 0);
-
-		var x_itehtmlselector = "#x_itedom";
-		var x_itejsonselector = "#x_itejson";
-		var x_itexmlselector = "#x_itexml";
-		load_X_ITE(x_itehtmlselector, x_itejsonselector, x_itexmlselector, urls[0], function(element, xmlDoc, json) {
-			for (var u = 1; u < urls.length; u++) {
-				loadSubscene_X_ITE(x_itehtmlselector, x_itejsonselector, x_itexmlselector, sceneselector, urls[u], element, xmlDoc, json);
-			}
-		});
+		loadObj.x_itehtmlselector = "#x_itedom";
+		loadObj.x_itejsonselector = "#x_itejson";
+		loadObj.x_itexmlselector = "#x_itexml";
+		loadScene(loadObj, urls, 0, "x_ite");
+		loadScene(loadObj, urls, 0, "x3dom");
 	}
 	$(document).ready(function() {
 		loadScenes(['../data/flowers2.json', '../data/force.json', '../data/bubs.json']);
