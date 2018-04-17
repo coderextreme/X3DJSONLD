@@ -12,13 +12,13 @@
     <style type="text/css">
     X3DCanvas {
         background:#000;
-	width: 900px;
-	height:450px;
+	width: 450px;
+	height:225px;
     }
     X3D {
         background:#000;
-	width: 900px;
-	height:450px;
+	width: 450px;
+	height:225px;
     }
     </style>
 </head>
@@ -43,7 +43,7 @@
 				X3DOM
 			</td>
 			<td>
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='900px' height='450px' backend='webgl'>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='450px' height='225px' backend='webgl'>
 		<Scene id="x3domjson">
 		</Scene>
     </X3D>
@@ -58,6 +58,9 @@
     <script type="text/javascript">
 
 	function load_X3DOM(htmlselector, url, callback) {
+		if ($('#scripting').is(':checked')) {
+			initializeScripts();
+		}
 		$(htmlselector).empty();
 		$.getJSON(url, function(json) {
 			var xml = [];
@@ -75,11 +78,11 @@
 			var xml = [];
 			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
 				load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
-				callback(element, xmlDoc);
+				callback(element, xmlDoc, json);
 			});
 		});
 	}
-	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json, callback) {
+	function loadSubscene_X3DOM(htmlselector, xmlselector, url, element, xmlDoc, json) {
 		$.getJSON(url, function(subjson) {
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			if ($('#scripting').is(':checked')) {
@@ -98,35 +101,33 @@
 				console.error(e);
 				alert("Problem with x3dom.reload()", e);
 			}
-			if (typeof callback === 'function') {
-				callback(subjson, htmlselector);
-			}
 		});
 	}
-	function loadSubscene_X_ITE(htmlselector, xmlselector, url, element, xmlDoc) {
+	function loadSubscene_X_ITE(htmlselector, xmlselector, url, element, xmlDoc, json) {
 		$.getJSON(url, function(subjson) {
 			var sceneElement = X3DJSONLD.ConvertToX3DOM(xmlDoc, subjson["X3D"]["Scene"], "Scene", element.querySelector(xmlselector), url);  // returns Scene element
+			// join json for completeness
+			for (var c in subjson["X3D"]["Scene"]["-children"]) {
+				json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
+			}
 			load_X_ITE_DOM(element, htmlselector); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
 		var htmlselector = "#x3domjson";
+		var x_itehtmlselector = "#x_itedom";
 		var xmlselector = "Scene";
 		var flowers2 = '../data/flowers2.json';
 		var bubbles = '../data/force.json';
 		var force = '../data/bubs.json';
-		if ($('#scripting').is(':checked')) {
-			initializeScripts();
-		}
 		load_X3DOM(htmlselector, flowers2, function(element, xmlDoc, json) {
 			loadSubscene_X3DOM(htmlselector, xmlselector, bubbles, element, xmlDoc, json);
 			loadSubscene_X3DOM(htmlselector, xmlselector, force, element, xmlDoc, json);
 		});
-		var x_itehtmlselector = "#x_itedom";
-		load_X_ITE(x_itehtmlselector, flowers2, function(element, xmlDoc) {
-			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, bubbles, element, xmlDoc);
-			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, force, element, xmlDoc);
+		load_X_ITE(x_itehtmlselector, flowers2, function(element, xmlDoc, json) {
+			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, bubbles, element, xmlDoc, json);
+			loadSubscene_X_ITE(x_itehtmlselector, xmlselector, force, element, xmlDoc, json);
 		});
 	});
     </script>
-</html>
+</html, json>
