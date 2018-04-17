@@ -1,15 +1,9 @@
 var runAndSend;
-var DOM2JSONSerializer;
-var mapToMethod;
-var fieldTypes;
 var fs;
 var http;
 var https;
 if (typeof require !== 'undefined') {
 	runAndSend = require("./runAndSend");
-	DOM2JSONSerializer = require("./DOM2JSONSerializer");
-	mapToMethod = require("./mapToMethod");
-	fieldTypes = require("./fieldTypes");
 	fs = require("fs");
 	http = require("http");
 	https = require("https");
@@ -950,15 +944,10 @@ PROTOS.prototype = {
 						console.error("async skip of run and send " + filename);
 					} else
 					*/
-					if (typeof DOM2JSONSerializer === 'function') {
-						if (typeof alert === 'function') {
-							// alert("calling local converter");
-						}
-						// console.error("calling local converter");
+					if (typeof convertXmlToJson === 'function') {
 						try {
-							var serializer = new DOM2JSONSerializer();
-							var str = serializer.serializeToString(null, data.firstElementChild, filename, mapToMethod, fieldTypes);
-							protoexp.searchAndReplaceProto(filename, JSON.parse(str), protoname, protoexp.founddef, obj, objret);
+							json = convertXmlToJson(data, filename);
+							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 						} catch (e) {
 							if (typeof alert === 'function') {
 								alert(e);
@@ -966,9 +955,6 @@ PROTOS.prototype = {
 							console.error("Convert failed", e);
 						}
 					} else {
-						if (typeof alert === 'function') {
-							// alert("Did not convert XML to JSON.  Oops!");
-						}
 						console.error("Did not convert XML to JSON.  Oops!")
 					}
 				}
