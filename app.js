@@ -65,7 +65,7 @@ function send(res, data, type, next) {
 }
 
 function sendNoNext(res, data, type) {
-	console.error("Type", type);
+	// console.error("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
 			res.header("Content-Type", type);
