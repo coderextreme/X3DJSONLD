@@ -106,9 +106,7 @@ bubbles_sail.prototype = {
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new PositionInterpolatorObject("TourPosition").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,10.0,0.0,0.0,-10.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
     .addChild(new OrientationInterpolatorObject("TourOrientation").setKey(Java.to([0.0,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416], Java.type("float[]")))))
-    .addChild(new ScriptObject("RandomTourTime").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("RandomTourTime").setSourceCode("\n" + 
 "	    ecmascript:" + "\n" + 
 "               function set_cycle(value) {" + "\n" + 
 "                        var ov = lastKey;" + "\n" + 
@@ -124,8 +122,7 @@ bubbles_sail.prototype = {
 "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
 "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
 "                    // }" + "\n" + 
-"               }" + "]]>"
-)
+"               }")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("lastKey").setType("SFFloat").setValue("0"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("orientations").setType("MFRotation").setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"))

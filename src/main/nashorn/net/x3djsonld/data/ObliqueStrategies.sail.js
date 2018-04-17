@@ -187,7 +187,7 @@ ObliqueStrategies_sail.prototype = {
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(Java.to([1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0], Java.type("float[]"))))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setShininess(0.07).setAmbientIntensity(0.245763).setSpecularColor(0.336735,0.051091,0.051091).setDiffuseColor(0.34773,0.090909,0.005289).setTransparency(0.8))))))
-    .addChild(new ScriptObject("TextScript").setUrl(new MFStringObject("\"./ObliqueStrategiesScript.js\""))
+    .addChild(new ScriptObject("TextScript").setUrl(new MFStringObject("\"../node/ObliqueStrategiesScript.js\""))
       .addComments(" initialize() method includes unit test to printAllStrategies() to console ")
       .addComments(" TODO insert field definitions here (index string_changed previous next random) and then animate! ")
       .addField(new fieldObject().setAccessType("initializeOnly").setName("index").setType("SFInt32").setValue("0").setAppinfo("index for active strategy card, -1 means no selection"))

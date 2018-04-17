@@ -96,9 +96,7 @@ force_sail.prototype = {
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(0.0,0.0,1.0))))))
           .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,5.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-          .addChild(new ScriptObject("MoveBall").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -106,8 +104,7 @@ force_sail.prototype = {
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
-"					}" + "\n" + "]]>"
-)
+"					}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
@@ -127,9 +124,7 @@ force_sail.prototype = {
             .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(Java.to([0.0,-50.0,0.0,0.0,50.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_7_40_crossSection))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,0.0))))
-          .addChild(new ScriptObject("MoveCylinder").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -151,8 +146,7 @@ force_sail.prototype = {
 "                " + "\n" + 
 "                function set_spine(value) {" + "\n" + 
 "                    spine = value;" + "\n" + 
-"                }" + "\n" + "]]>"
-)
+"                }" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 50 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
@@ -179,9 +173,7 @@ force_sail.prototype = {
       .addChild(new ProtoInstanceObject("linkC", "cylinder").setDEF("linkC").setName("cylinder")
         .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("50 50 50"))
         .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 -50"))))
-    .addChild(new ScriptObject("clickHandler").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("clickHandler").setSourceCode("\n" + 
 "	" + "\n" + 
 "ecmascript:" + "\n" + 
 "	function add_node(value) {" + "\n" + 
@@ -200,8 +192,7 @@ force_sail.prototype = {
 "				}" + "\n" + 
 "			});" + "\n" + 
 "                " + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
       .addField(new fieldObject().setAccessType("inputOutput").setName("counter").setType("SFInt32").setValue("0"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("node_changed").setType("SFNode"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("add_node").setType("SFBool").setValue("false"))

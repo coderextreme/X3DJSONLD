@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 April 2018"
+            "@content":"17 April 2018"
           },
           {
             "@name":"generator",
@@ -215,7 +215,7 @@
                                 ],
                                 "-children":[
                                   {
-                                    "#comment":"field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"
+                                    "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                   }
                                 ],
                                 "-parts":[

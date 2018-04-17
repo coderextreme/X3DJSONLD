@@ -67,17 +67,12 @@ browser_sail.prototype = {
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
   .setScene(new SceneObject()
-    .addChild(new ScriptObject("Browser").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("Browser").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "                function initialize() {" + "\n" + 
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');" + "\n" + 
-"                }" + "\n" + "]]>"
-))
-    .addChild(new ScriptObject("Clouds").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+"                }" + "\n"))
+    .addChild(new ScriptObject("Clouds").setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -88,8 +83,7 @@ browser_sail.prototype = {
 "'	Transform		\\n'+" + "\n" + 
 "'    ' + '               	\\n';" + "\n" + 
 "\n" + 
-"}" + "\n" + "]]>"
-)));
+"}" + "\n")));
   },
   // end of initialize() method
 
