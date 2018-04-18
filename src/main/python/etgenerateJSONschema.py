@@ -521,7 +521,10 @@ class ClassPrinter:
                 if not field.get("name").startswith("X3D") or field.get("name") == "X3D" or field.get("name") == "USE":
                     try:
                         if field.get("use") == "required":
+                            required.append("@"+field.get("name"))
+                        elif field.get("name") == "Scene" :  # fields for X3D
                             required.append(field.get("name"))
+                            required.append("@encoding")
                     except:
                         pass
 
@@ -573,8 +576,8 @@ class ClassPrinter:
         str += '\t\t\t\t},\n'
         if required != []:
             str += '\t\t\t\t"required": [\n'
-            str += '\t\t\t\t\t"@'
-            str += '",\n\t\t\t\t\t"@'.join(required)
+            str += '\t\t\t\t\t"'
+            str += '",\n\t\t\t\t\t"'.join(required)
             str += '"\n\t\t\t\t],\n'
         str += '\t\t\t\t"additionalProperties": false\n'
         if foundUse:

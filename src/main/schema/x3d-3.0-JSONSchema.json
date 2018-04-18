@@ -13720,6 +13720,8 @@
       },
       "required": [
         "@profile",
+        "Scene",
+        "@encoding",
         "@version"
       ],
       "additionalProperties": false
