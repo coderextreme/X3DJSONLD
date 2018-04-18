@@ -194,7 +194,8 @@ public class rgb_alpha
     {
         X3DObject exampleObject = new rgb_alpha().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -206,7 +207,7 @@ public class rgb_alpha
 		}
 		if (validate)
 		{
-			System.out.print("rgb_alpha self-validation test results: ");
+			System.out.print("Java program \"rgb_alpha\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
-   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
-   <script type="text/javascript" src="../node/x_ite.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
     <style type="text/css">
@@ -37,7 +37,6 @@
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Flattener.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
@@ -83,13 +82,11 @@ function getJSON(url) {
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
 			json = protoExpander.prototypeExpander(url, json, "");
-			json = flattener(json);
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var url = '../data/abox.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
-				subjson = flattener(subjson);
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
 				$(selector).empty();
 				$(element.querySelector(scenetag)).children().appendTo(selector);
@@ -103,14 +100,14 @@ function getJSON(url) {
 			console.log(err);
 		});
 	}
-	function load_X_ITE(url) {
+	function load_X_ITE(selector, url) {
 		getJSON(url).then(function(json) {
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
-				load_X_ITE_DOM(element); // reloads X_ITE element on page.
+				load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);
@@ -121,8 +118,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('#x3domjson','../data/flipp.json');
-		load_X_ITE('../data/flipp.json');
+		load_X3DOM('#x3domjson', '../data/flipp.json');
+		load_X_ITE("#x_itedom", '../data/flipp.json');
 	});
     </script>
 </html>

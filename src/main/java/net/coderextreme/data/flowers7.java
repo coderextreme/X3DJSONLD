@@ -94,7 +94,7 @@ public class flowers7 {
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new BackgroundObject().setDEF("background").setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,40f}).setDescription("Transparent rose"))
-        .addChild(new TransformObject().setDEF("Rose01")
+        .addChild(new TransformObject()
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
@@ -117,7 +117,7 @@ public class flowers7 {
                 .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
                 .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addComments(new CommentsBlock("field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"))
+                .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray()))))
               .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
@@ -183,19 +183,23 @@ public class flowers7 {
           .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .setSourceCode("\n"+
 "\n"+
-"\n"+
 "ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
-"	if (choice == 0) {\n"+
+"	switch (choice) {\n"+
+"	case 0:\n"+
 "		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 1) {\n"+
+"		break;\n"+
+"	case 1:\n"+
 "		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 2) {\n"+
+"		break;\n"+
+"	case 2:\n"+
 "		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 3) {\n"+
+"		break;\n"+
+"	case 3:\n"+
 "		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
 "	}\n"+
 "	tdelta = tdelta + 0.5;\n"+
 "	pdelta = pdelta + 0.5;\n"+
@@ -304,7 +308,7 @@ protected class MFString12 {
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
   }
 }
 protected class MFString14 {

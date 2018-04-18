@@ -244,9 +244,9 @@ and
         <copy file="X3dToJson.xslt"                      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToX3dom.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToXhtml.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-		<copy file="X3dTidy.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-		<copy file="X3dModelMetaToMarkdown.xslt"         todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-		<!-- requires local copy of specifications directory -->
+        <copy file="X3dTidy.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dModelMetaToMarkdown.xslt"         todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <!-- requires local copy of specifications directory -->
         <copy todir="${java.lib.dir}/specifications" verbose="true" failonerror="false">
                 <fileset dir="../../specifications" defaultexcludes="yes">
                         <include name="*.xsd"/>
@@ -766,7 +766,7 @@ and
         <move file="EncodingOfNodes.html"      todir="../../specifications/XmlEncoding/Part01/" verbose="true"/>
         <move file="EncodingOfStatements.html" todir="../../specifications/XmlEncoding/Part01/" verbose="true"/>
         <copy file="X3DEncodings.css"          todir="../../specifications/XmlEncoding/Part01/" verbose="true"/>
-		<echo message="TODO resolve: questionable practice to have images in parent directory, also different from file structure of VRML encoding"/>
+        <echo message="TODO resolve: questionable practice to have images in parent directory, also different from file structure of VRML encoding"/>
         <copy file="images/x3d.png"            todir="../../specifications/XmlEncoding/images"  verbose="true"/>
         <copy file="images/cube.gif"           todir="../../specifications/XmlEncoding/images"  verbose="true"/>
         <copy file="images/x3dbar.png"         todir="../../specifications/XmlEncoding/images"  verbose="true"/>
@@ -881,7 +881,7 @@ and
      </target>
     
     <target name="test"
-        depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon" description="Perform stylesheet test tasks" >
+        depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon,test.X3dModelMetaToMarkdown.saxon" description="Perform stylesheet test tasks" >
         <!-- TODO:  ,
                  test.X3dToVrml97.xslt, test.X3dToX3dvClassicVrmlEncoding.xslt, test.X3dToXhtml.xslt -->
         <!-- TODO:  test.X3dExtrusionToSvgViaXslt1.1.xslt -->
@@ -913,6 +913,29 @@ and
             <arg value="-xsl:X3dToXhtml.xslt"/> <!-- style-doc -->
         </java>
         <echo message="expected output: ${examples.dir}/HelloWorld.x3d.saxon.html"/>
+    </target>
+    
+    <target name="test.X3dModelMetaToMarkdown.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
+	<echo message="==========================================="/>
+        <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.meta.md with default parameter includeSubdirectoryPaths=true"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:test/HelloWorld.meta.md"/> <!-- output-doc -->
+            <arg value="-s:test/HelloWorld.x3d"/> <!-- source-doc -->
+            <arg value="-xsl:X3dModelMetaToMarkdown.xslt"/> <!-- style-doc -->
+        </java>
+	<echo message="==========================================="/>
+        <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.metaFlattened.md with parameter includeSubdirectoryPaths=false"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:test/HelloWorld.metaFlattened.md"/> <!-- output-doc -->
+            <arg value="-s:test/HelloWorld.x3d"/> <!-- source-doc -->
+            <arg value="-xsl:X3dModelMetaToMarkdown.xslt"/> <!-- style-doc -->
+            <arg value="includeSubdirectoryPaths=false"/> <!-- stylesheet parameter -->
+        </java>
+	<echo message="==========================================="/>
     </target>
     
     <target name="test.X3dToVrml97.saxon" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using saxon" >

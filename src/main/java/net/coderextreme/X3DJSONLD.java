@@ -56,7 +56,7 @@ public class X3DJSONLD {
 			if (i > 0) {
 				sb.append("\r\n");
 			}
-			sb.append(value.get(i));
+			sb.append(stripQuotes(value.get(i).toString()));
 		}
 		String y = sb.toString();
 		System.err.println("CDATA Replacing "+y);

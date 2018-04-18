@@ -7,10 +7,10 @@
     <!--
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
     -->
-    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
-   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
-   <script type="text/javascript" src="../node/x_ite.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
     <style type="text/css">
     X3DCanvas {
@@ -42,7 +42,6 @@
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Flattener.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
@@ -89,7 +88,6 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
-			json = flattener(json);
 		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
 				if ($('#scripting').is(':checked')) {
 					loadScripts(json, selector, url);
@@ -104,7 +102,7 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
 			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-				load_X_ITE_DOM(element); // reloads X_ITE element on page.
+				load_X_ITE_DOM(element, "#x_itedom"); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {
 			alert("Scene Load failed");

@@ -15,14 +15,14 @@
         <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
         <Background DEF='background' backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"' bottomUrl='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"' frontUrl='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"' leftUrl='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"' rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"' topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"'/>
         <Viewpoint description='Transparent rose' position='0 0 40'/>
-        <Transform DEF='Rose01'>
+        <Transform>
             <Shape>
                 <Appearance>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                     <ComposedShader DEF='x3dom' language='GLSL'>
-                        <!-- field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field -->
+                        <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                         <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
+                        <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                         <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -115,19 +115,23 @@ ecmascript:
 <![CDATA[
 
 
-
 ecmascript:
 
 function set_fraction() {
 	var choice = Math.floor(Math.random() * 4);
-	if (choice == 0) {
+	switch (choice) {
+	case 0:
 		a = a + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 1) {
+		break;
+	case 1:
 		b = b + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 2) {
+		break;
+	case 2:
 		c = c + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 3) {
+		break;
+	case 3:
 		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
 	}
 	tdelta = tdelta + 0.5;
 	pdelta = pdelta + 0.5;

@@ -85,7 +85,7 @@ public class flowers7
     .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
     .addChild(new BackgroundObject("background").setBackUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\"")))
     .addChild(new ViewpointObject().setDescription("Transparent rose").setPosition(0.0f,0.0f,40.0f))
-    .addChild(new TransformObject("Rose01")
+    .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
@@ -98,9 +98,10 @@ public class flowers7
             .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addComments(new String[] {"field name='cube' type='SFNode' accessType=\"inputOutput\">",
+            .addComments(new String[] {" ",
+"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field"})
+"		  </field>"})
             .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
@@ -112,7 +113,7 @@ public class flowers7
             .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders(new ComposedShaderObject("x_ite").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
               .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
@@ -128,7 +129,7 @@ public class flowers7
             .addField(new fieldObject().setAccessType("inputOnly").setName("pdelta").setType("SFFloat").setValue("0"))
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"")))))
-        .setGeometry(new SphereObject().setSolid(false))))
+        .setGeometry(new SphereObject())))
     .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -178,19 +179,23 @@ public class flowers7
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"})
     .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
-"\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function set_fraction() {" + "\n" + 
 "	var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"	if (choice == 0) {" + "\n" + 
+"	switch (choice) {" + "\n" + 
+"	case 0:" + "\n" + 
 "		a = a + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 1) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 1:" + "\n" + 
 "		b = b + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 2) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 2:" + "\n" + 
 "		c = c + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 3) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 3:" + "\n" + 
 "		d = d + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
 "	}" + "\n" + 
 "	tdelta = tdelta + 0.5;" + "\n" + 
 "	pdelta = pdelta + 0.5;" + "\n" + 
@@ -281,7 +286,8 @@ public class flowers7
     {
         X3DObject exampleObject = new flowers7().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -293,7 +299,7 @@ public class flowers7
 		}
 		if (validate)
 		{
-			System.out.print("flowers7 self-validation test results: ");
+			System.out.print("Java program \"flowers7\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

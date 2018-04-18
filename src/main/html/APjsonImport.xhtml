@@ -7,8 +7,8 @@
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
-   <script type="text/javascript" src="../node/x_ite.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.min.js"></script>
     <style type="text/css">
     X3DCanvas {
         background:#000;
@@ -142,7 +142,6 @@ Use Namespace: <select id="namespace">
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Flattener.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript" src="../node/test_json.js"></script>
@@ -152,12 +151,11 @@ Use Namespace: <select id="namespace">
 	var xml = [], NS;
 	if ($('#prototype').is(':checked')) {
 		test_json = protoExpander.prototypeExpander(url, test_json, "");
-		test_json = flattener(test_json);
 	        $('textarea#json').val(JSON.stringify(test_json, null, 2));
 	}
 	X3DJSONLD.loadX3DJS(document.implementation, test_json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(json_element) {
 		X3D(function(){
-			load_X_ITE_DOM(json_element);
+			load_X_ITE_DOM(json_element, "#x_itedom");
 		});
 	});
 	

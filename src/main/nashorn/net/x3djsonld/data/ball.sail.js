@@ -88,13 +88,13 @@ ball_sail.prototype = {
             .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addComments(Java.to(["",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
-"                        <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
+"			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
 "                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>",
 "                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>",
 "                        </ShaderProgram>",
-"                        <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
+"			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
 "		    </ProgramShader>"], Java.type("java.lang.String[]")))
           .addComments(Java.to(["",
 "                <ComposedShader language='GLSL'>",
@@ -105,8 +105,8 @@ ball_sail.prototype = {
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"], Java.type("java.lang.String[]")))
           .addComments(Java.to(["",
 "                <ComposedShader language='GLSL'>",
@@ -117,8 +117,8 @@ ball_sail.prototype = {
 "		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"], Java.type("java.lang.String[]")))
           .addComments(Java.to(["",
 "                <ComposedShader language='GLSL'>",
@@ -127,8 +127,8 @@ ball_sail.prototype = {
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"], Java.type("java.lang.String[]")))
           .addComments(Java.to([""], Java.type("java.lang.String[]")))
           .addShaders(new ComposedShaderObject().setLanguage("GLSL")
@@ -138,7 +138,7 @@ ball_sail.prototype = {
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs\"")))
             .addParts(new ShaderPartObject("common").setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders(new ComposedShaderObject().setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))

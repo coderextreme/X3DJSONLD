@@ -337,6 +337,14 @@ public class HelloWorldProgram
 		System.out.println ("CommandLine " + Arrays.toString(args));
 		CommandLine.run (args); // run these commands
 		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toMarkdown",        "-toFile", "HelloWorldProgramOutput.catalog.md"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.run (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toMarkdownFlatten", "-toFile", "HelloWorldProgramOutput.md"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.run (args); // run these commands
+		System.out.println ("===========================================");
 		args = new String[] {"HelloWorldProgramOutput.x3d", "-EXIFICIENT", "-toEXI", "-toFile", "HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
 		CommandLine.run (args); // run these commands

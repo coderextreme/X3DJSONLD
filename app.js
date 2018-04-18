@@ -10,11 +10,7 @@ var fs = require("fs");
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 
 var PROTOS = require('./src/main/node/PrototypeExpander')
-PROTOS.setX3DJSONLD(X3DJSONLD);
 ;
-var FL = require('./src/main/node/Flattener')
-var flattener = FL.flattener;
-
 var runAndSend = require('./src/main/node/runAndSend');
 var DOM2JSONSerializer = require("./src/main/node/DOM2JSONSerializer");
 var mapToMethod = require("./src/main/node/mapToMethod");
@@ -49,7 +45,6 @@ function convertX3dToJson(res, infile, outfile, next) {
 		var str = new serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
 		var json = JSON.parse(str);
 		// json = PROTOS.externalPrototypeExpander(outfile, json);
-		// json = flattener(json);
 		send(res, json, "text/json", next);
 	} catch (e) {
 		next();
@@ -57,9 +52,7 @@ function convertX3dToJson(res, infile, outfile, next) {
 	}
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
-		// console.error("Calling extern proto expander");
-		json = PROTOS.externalPrototypeExpander(outfile, json);
-		json = flattener(json);
+		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		// console.error("Json", json);
 		send(res, json, "text/json", next);
 	});
@@ -72,7 +65,7 @@ function send(res, data, type, next) {
 }
 
 function sendNoNext(res, data, type) {
-	console.error("Type", type);
+	// console.error("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
 			res.header("Content-Type", type);
@@ -336,7 +329,6 @@ app.get("*.json", function(req, res, next) {
 		// console.error(JSON.stringify(json));
 		// console.error("Calling extern proto expander");
 		// json = PROTOS.externalPrototypeExpander(outfile, json);
-		// json = flattener(json);
 		// console.error(JSON.stringify(json));
                 send(res, json, "text/json", next);
 	/*

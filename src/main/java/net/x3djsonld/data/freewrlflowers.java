@@ -119,7 +119,8 @@ public class freewrlflowers
     {
         X3DObject exampleObject = new freewrlflowers().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -131,7 +132,7 @@ public class freewrlflowers
 		}
 		if (validate)
 		{
-			System.out.print("freewrlflowers self-validation test results: ");
+			System.out.print("Java program \"freewrlflowers\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -246,7 +246,8 @@ public class force
     {
         X3DObject exampleObject = new force().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -258,7 +259,7 @@ public class force
 		}
 		if (validate)
 		{
-			System.out.print("force self-validation test results: ");
+			System.out.print("Java program \"force\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

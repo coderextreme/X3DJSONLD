@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "11 April 2018"
+          "@content": "17 April 2018"
         },
         {
           "@name": "generator",
@@ -304,7 +304,7 @@
                                         "ShaderPart": {
                                           "@url": [
                                             "../shaders/pc_bubbles.fs",
-                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                           ],
                                           "@type": "FRAGMENT"
                                         }

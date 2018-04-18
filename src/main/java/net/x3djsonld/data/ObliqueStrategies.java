@@ -200,7 +200,7 @@ public class ObliqueStrategies
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {1.0f,1.0f,0.0f,1.0f,-1.0f,0.0f,-1.0f,-1.0f,0.0f,-1.0f,1.0f,0.0f}))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setShininess(0.07f).setAmbientIntensity(0.245763f).setSpecularColor(0.336735f,0.051091f,0.051091f).setDiffuseColor(0.34773f,0.090909f,0.005289f).setTransparency(0.8f))))))
-    .addChild(new ScriptObject("TextScript").setUrl(new MFStringObject("\"./ObliqueStrategiesScript.js\""))
+    .addChild(new ScriptObject("TextScript").setUrl(new MFStringObject("\"../node/ObliqueStrategiesScript.js\""))
       .addComments(" initialize() method includes unit test to printAllStrategies() to console ")
       .addComments(" TODO insert field definitions here (index string_changed previous next random) and then animate! ")
       .addField(new fieldObject().setAccessType("initializeOnly").setName("index").setType("SFInt32").setValue("0").setAppinfo("index for active strategy card, -1 means no selection"))
@@ -297,7 +297,8 @@ public class ObliqueStrategies
     {
         X3DObject exampleObject = new ObliqueStrategies().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -309,7 +310,7 @@ public class ObliqueStrategies
 		}
 		if (validate)
 		{
-			System.out.print("ObliqueStrategies self-validation test results: ");
+			System.out.print("Java program \"ObliqueStrategies\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

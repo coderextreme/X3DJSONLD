@@ -20,7 +20,7 @@
                 <Transform DEF="transform" translation="0 0 0">
                     <Shape>
                         <Appearance>
-                            <Material diffuseColor=".7 .7 .7"/>
+                            <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5"/>
                             <ComposedCubeMapTexture DEF="texture">
                                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
                                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
@@ -31,30 +31,23 @@
                             </ComposedCubeMapTexture>
 
                             <ComposedShader DEF="shader" language="GLSL">
-                                <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
-				<!--
-                                <field name='cube' type='SFNode' accessType="inputOutput">
-                                    <ComposedCubeMapTexture USE="texture"/>
-                                </field>
-				-->
+                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+		  <!-- 
+		       <field name='cube' type='SFNode' accessType="inputOutput">
+			  <ComposedCubeMapTexture USE="texture"/>
+		  </field>
+		  -->
 
-                                <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-                                <field name='bias' type='SFFloat' accessType="inputOutput" value='10'/>
-                                <field name='scale' type='SFFloat' accessType="inputOutput" value='10'/>
-                                <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-				<field name='a' type='SFFloat' accessType='inputOutput' value='3'>
-				</field>
-				<field name='b' type='SFFloat' accessType='inputOutput' value='1'>
-				</field>
-				<field name='c' type='SFFloat' accessType='inputOutput' value='3'>
-				</field>
-				<field name='d' type='SFFloat' accessType='inputOutput' value='3'>
-				</field>
-				<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'>
-				</field>
-				<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'>
-				</field>
-				  
+                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                                 <ShaderPart type="VERTEX">
 					<IS>
 					<connect nodeField="url" protoField="vertex"/>
@@ -69,17 +62,19 @@
 		    </Appearance>
 		    <Sphere/>
                 </Shape>
-                <Script DEF="Bounce">
+                <Script DEF="Animate">
                   <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-                  <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
+                  <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 		  <field name='a' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 		  <field name='b' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 		  <field name='c' type='SFFloat' accessType='inputOutput' value='3'></field>
 		  <field name='d' type='SFFloat' accessType='inputOutput' value='3'></field>
 		  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 		  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-<![CDATA[ecmascript:
+<![CDATA[
+  
+ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
@@ -147,16 +142,16 @@
 			}
 
 ]]>
-                </Script>
-                <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
-                <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="a" toNode="shader" toField="a"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="b" toNode="shader" toField="b"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="c" toNode="shader" toField="c"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="d" toNode="shader" toField="d"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="tdelta" toNode="shader" toField="tdelta"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="pdelta" toNode="shader" toField="pdelta"></ROUTE>
+            </Script>
+            <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'></TimeSensor>
+            <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="a" toNode="shader" toField="a"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="b" toNode="shader" toField="b"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="c" toNode="shader" toField="c"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="d" toNode="shader" toField="d"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="tdelta" toNode="shader" toField="tdelta"></ROUTE>
+            <ROUTE fromNode="Animate" fromField="pdelta" toNode="shader" toField="pdelta"></ROUTE>
                 </Transform>
             </ProtoBody>
         </ProtoDeclare>        

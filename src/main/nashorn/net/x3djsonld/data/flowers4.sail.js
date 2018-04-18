@@ -88,15 +88,13 @@ flowers4_sail.prototype = {
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))
         .addComments(Java.to(["",
 "                <Sphere>"], Java.type("java.lang.String[]")))
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new CoordinateObject("OrbitCoordinates")))))
-    .addChild(new ScriptObject("OrbitScript").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -169,8 +167,7 @@ flowers4_sail.prototype = {
 "	}" + "\n" + 
 "	resolution = 100;" + "\n" + 
 "	updateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("coordinates").setType("MFVec3f"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32")))

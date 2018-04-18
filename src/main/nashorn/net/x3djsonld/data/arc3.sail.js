@@ -75,17 +75,14 @@ arc3_sail.prototype = {
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(1.0,0.0,0.0))))
       .addChild(new PositionInterpolatorObject("DECLpoint_G1_PI1").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,5.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-      .addChild(new ScriptObject("DECLpoint_G1_MB1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("DECLpoint_G1_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n" + "]]>"
-)
+"		}" + "\n")
         .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -101,17 +98,14 @@ arc3_sail.prototype = {
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(1.0,0.0,0.0))))
       .addChild(new PositionInterpolatorObject("DECLpoint_G2_PI1").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,5.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-      .addChild(new ScriptObject("DECLpoint_G2_MB1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("DECLpoint_G2_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n" + "]]>"
-)
+"		}" + "\n")
         .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -128,9 +122,7 @@ arc3_sail.prototype = {
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.7).setTransparency(0.5)))
             .setGeometry(new CylinderObject().setRadius(0.05)))))
-      .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
@@ -174,8 +166,7 @@ arc3_sail.prototype = {
 "        }" + "\n" + 
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
         .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode")
           .addChild(new GroupObject().setUSE("DECLpoint_G1_node")))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode")

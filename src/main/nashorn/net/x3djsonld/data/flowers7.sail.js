@@ -91,7 +91,7 @@ flowers7_sail.prototype = {
     .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
     .addChild(new BackgroundObject("background").setBackUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\"")))
     .addChild(new ViewpointObject().setDescription("Transparent rose").setPosition(0.0,0.0,40.0))
-    .addChild(new TransformObject("Rose01")
+    .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
@@ -104,9 +104,10 @@ flowers7_sail.prototype = {
             .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addComments(Java.to(["field name='cube' type='SFNode' accessType=\"inputOutput\">",
+            .addComments(Java.to([" ",
+"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field], Java.type("java.lang.String[]")))
+"		  </field>"], Java.type("java.lang.String[]")))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
@@ -118,7 +119,7 @@ flowers7_sail.prototype = {
             .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders(new ComposedShaderObject("x_ite").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
               .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
@@ -134,10 +135,8 @@ flowers7_sail.prototype = {
             .addField(new fieldObject().setAccessType("inputOnly").setName("pdelta").setType("SFFloat").setValue("0"))
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"")))))
-        .setGeometry(new SphereObject().setSolid(false))))
-    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .setGeometry(new SphereObject())))
+    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -154,8 +153,7 @@ flowers7_sail.prototype = {
 "                    top[0] = topUrls[side];" + "\n" + 
 "                    bottom[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
       .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_4_53_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_4_54_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_4_55_value))
@@ -185,23 +183,25 @@ flowers7_sail.prototype = {
 "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"], Java.type("java.lang.String[]")))
-    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
-"\n" + 
+    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function set_fraction() {" + "\n" + 
 "	var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"	if (choice == 0) {" + "\n" + 
+"	switch (choice) {" + "\n" + 
+"	case 0:" + "\n" + 
 "		a = a + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 1) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 1:" + "\n" + 
 "		b = b + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 2) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 2:" + "\n" + 
 "		c = c + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"	} else if (choice == 3) {" + "\n" + 
+"		break;" + "\n" + 
+"	case 3:" + "\n" + 
 "		d = d + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
 "	}" + "\n" + 
 "	tdelta = tdelta + 0.5;" + "\n" + 
 "	pdelta = pdelta + 0.5;" + "\n" + 
@@ -223,8 +223,7 @@ flowers7_sail.prototype = {
 "	if (d > 20) {" + "\n" + 
 "		d = 4;" + "\n" + 
 "	}" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))

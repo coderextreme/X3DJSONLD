@@ -119,9 +119,7 @@ mirror2_sail.prototype = {
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\"")))))
         .setGeometry(new SphereObject().setRadius(30)))
-      .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-" " + "\n" + 
+      .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -139,8 +137,7 @@ mirror2_sail.prototype = {
 "		    top_changed[0] = topUrls[side];" + "\n" + 
 "		    bottom_changed[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
         .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_5_38_value))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_5_39_value))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_5_40_value))

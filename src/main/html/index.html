@@ -7,6 +7,7 @@
     <!--
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
     -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
     <!--
    <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
@@ -17,7 +18,6 @@
 <!--
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
 -->
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
@@ -200,7 +200,6 @@ a:active {
 </td>
 <td>
 Proto Expander? <input id="prototype" type="checkbox" checked="true"></input>
-Extern Expander? <input id="externprototype" type="checkbox" checked="true"></input>
 JSON Scripts? <input id="scripting" type="checkbox" checked="true"></input>
 Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d</option>
@@ -282,7 +281,6 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script src="../node/Three2Serializer.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Flattener.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/mapToMethod.js"></script>
     <script type="text/javascript" src="../node/mapToMethod2.js"></script>
