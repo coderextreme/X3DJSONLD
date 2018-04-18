@@ -70,6 +70,7 @@
 			    </X3DCanvas>
 			</td>
 		</tr>
+		<tr>
 			<td>
 				X3DOM
 			</td>
@@ -145,8 +146,12 @@
 			}
 			load_X3DOM_All(loadObj, url, function(element, xmlDoc, json) {
 				if ($('#scripting').is(':checked')) {
-					loadScripts(json, loadObj.x3domxmlselector, url);
-					loadScripts(json, loadObj.x3domjsonselector, url);
+					if (document.querySelector(loadObj.x3domxmlselector)) {
+						loadScripts(json, loadObj.x3domxmlselector, url);
+					}
+					if (document.querySelector(loadObj.x3domjsonselector)) {
+						loadScripts(json, loadObj.x3domjsonselector, url);
+					}
 				}
 				loadObj.x3domelement = element;
 				loadObj.x3domxmlDoc = xmlDoc;
@@ -209,7 +214,7 @@
 		loadScene(loadObj, urls, 0, "x3dom");
 	}
 	$(document).ready(function() {
-		loadScenes(['../data/flowers2.json', '../data/force.json', '../data/bubs.json']);
+		loadScenes(['../data/flowers2.json', '../data/force.json', '../data/flowers.json']);
 	});
     </script>
 </html, json>

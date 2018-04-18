@@ -87,21 +87,21 @@ function toNormals(json, LDNodeList, ParentNode) {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.scale = Matrix.scale(obj[0], obj[1], obj[2]);
-			console.log("Scaling", LDNode.scale);
+			// console.log("Scaling", LDNode.scale);
 		},
 		"@rotation" : function(obj, LDNode) {
 			if (typeof obj == 'string') {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.quaternion = Matrix.quaternion(obj[0], obj[1], obj[2], obj[3]);
-			console.log("Rotating", LDNode.quaternion);
+			// console.log("Rotating", LDNode.quaternion);
 		},
 		"@translation" : function(obj, LDNode) {
 			if (typeof obj == 'string') {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.translation = Matrix.translation(obj[0], obj[1], obj[2]);
-			console.log("Translating", LDNode.translation);
+			// console.log("Translating", LDNode.translation);
 		},
 		"@normalPerVertex" : function(obj, LDNode) {
 			LDNode.normalPerVertex = obj;
@@ -163,7 +163,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 					LDNode.coordIndex[f].push(obj[o]);
 				}
 			}
-			console.log("coordindex", LDNode.coordIndex)
+			// console.log("coordindex", LDNode.coordIndex)
 		},
 		"@index" : function(obj, LDNode) {
 			LDNode.index = [];
