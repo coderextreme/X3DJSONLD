@@ -11,7 +11,7 @@
 <Scene><NavigationInfo></NavigationInfo>
 <!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background DEF="background" backUrl="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></Background>
 <Viewpoint position="0 0 40" description="Transparent rose"></Viewpoint>
-<Transform DEF="Rose01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" DEF="frontShader" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
@@ -30,8 +30,8 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!--field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field--><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
+<!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="x_ite" language="GLSL"><field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
 </field>
@@ -96,19 +96,23 @@ ecmascript:
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <![CDATA[
 
-
 ecmascript:
 
 function set_fraction() {
 	var choice = Math.floor(Math.random() * 4);
-	if (choice == 0) {
+	switch (choice) {
+	case 0:
 		a = a + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 1) {
+		break;
+	case 1:
 		b = b + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 2) {
+		break;
+	case 2:
 		c = c + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 3) {
+		break;
+	case 3:
 		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
 	}
 	tdelta = tdelta + 0.5;
 	pdelta = pdelta + 0.5;

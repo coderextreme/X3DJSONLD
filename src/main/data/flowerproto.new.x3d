@@ -20,7 +20,7 @@
                 <Transform DEF='transform'>
                     <Shape>
                         <Appearance>
-                            <Material diffuseColor='0.7 0.7 0.7'/>
+                            <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                             <ComposedShader DEF='shader' language='GLSL'>
                                 <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                                 <ShaderPart>
@@ -40,16 +40,16 @@
                                     </IS>
                                 </ShaderPart>
                                 <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
-                                <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                                <field name='bias' accessType='inputOutput' type='SFFloat' value='10.0'/>
-                                <field name='scale' accessType='inputOutput' type='SFFloat' value='10.0'/>
+                                <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+                                <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                                <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                                 <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-                                <field name='a' accessType='inputOutput' type='SFFloat' value='3.0'/>
+                                <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
                                 <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
-                                <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
-                                <field name='d' accessType='inputOutput' type='SFFloat' value='3.0'/>
-                                <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                                <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                                <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                                <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                                <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+                                <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture'>
                                 <ImageTexture containerField='back' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -62,10 +62,10 @@
                         </Appearance>
                         <Sphere/>
                     </Shape>
-                    <Script DEF='Bounce'>
+                    <Script DEF='Animate'>
                         <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                         <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-                        <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
+                        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
                         <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
@@ -73,6 +73,8 @@
                         <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
 <![CDATA[
+
+
 
 ecmascript:
 			function initialize() {
@@ -146,15 +148,15 @@ ecmascript:
 
 ]]>
                     </Script>
-                    <TimeSensor DEF='TourTime' cycleInterval='0.15' loop='true'/>
-                    <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
-                    <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
-                    <ROUTE fromField='a' fromNode='Bounce' toField='a' toNode='shader'/>
-                    <ROUTE fromField='b' fromNode='Bounce' toField='b' toNode='shader'/>
-                    <ROUTE fromField='c' fromNode='Bounce' toField='c' toNode='shader'/>
-                    <ROUTE fromField='d' fromNode='Bounce' toField='d' toNode='shader'/>
-                    <ROUTE fromField='tdelta' fromNode='Bounce' toField='tdelta' toNode='shader'/>
-                    <ROUTE fromField='pdelta' fromNode='Bounce' toField='pdelta' toNode='shader'/>
+                    <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+                    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+                    <ROUTE fromField='translation_changed' fromNode='Animate' toField='set_translation' toNode='transform'/>
+                    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='shader'/>
+                    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='shader'/>
+                    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='shader'/>
+                    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='shader'/>
+                    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='shader'/>
+                    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='shader'/>
                 </Transform>
             </ProtoBody>
         </ProtoDeclare>

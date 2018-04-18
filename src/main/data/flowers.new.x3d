@@ -12,49 +12,46 @@
     </head>
     <Scene>
         <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+        <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
         <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
         <ProtoDeclare name='flower'>
             <ProtoBody>
-                <Transform DEF='transform'>
+                <Transform DEF='animate_transform'>
                     <Shape>
-                        <!-- <Sphere></Sphere> -->
                         <Appearance>
                             <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                            <ComposedShader language='GLSL'>
-                                <ShaderPart url='"../shaders/gl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"'/>
+                            <ComposedShader DEF='x3dom' language='GLSL'>
+                                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
+                                <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
                                 <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
-                                <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
-                                <field name='cube' accessType='inputOutput' type='SFNode'>
-                                    <ComposedCubeMapTexture USE='texture'/>
-                                </field>
-                                <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                                <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                                <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                                 <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                                 <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                                 <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                                <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
+                                <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
+                                <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                                <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                                <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+                                <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
                             </ComposedShader>
-                            <ComposedShader language='GLSL'>
-                                <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
-                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
-                                <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
+                            <ComposedShader DEF='x_ite' language='GLSL'>
+                                <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
+                                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
                                 <field name='cube' accessType='inputOutput' type='SFNode'>
                                     <ComposedCubeMapTexture USE='texture'/>
                                 </field>
-                                <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                                <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                                <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                                <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-                            </ComposedShader>
-                            <ComposedShader DEF='shader' language='GLSL'>
-                                <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
-                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
-                                <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
-                                <field name='cube' accessType='inputOutput' type='SFNode'>
-                                    <ComposedCubeMapTexture USE='texture'/>
-                                </field>
-                                <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                                <field name='bias' accessType='inputOutput' type='SFFloat' value='10.0'/>
-                                <field name='scale' accessType='inputOutput' type='SFFloat' value='10.0'/>
-                                <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                                <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+                                <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                                <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                                <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
+                                <field name='a' accessType='inputOnly' type='SFFloat' value='10.0'/>
+                                <field name='b' accessType='inputOnly' type='SFFloat' value='1.0'/>
+                                <field name='c' accessType='inputOnly' type='SFFloat' value='20.0'/>
+                                <field name='d' accessType='inputOnly' type='SFFloat' value='20.0'/>
+                                <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+                                <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture'>
                                 <ImageTexture containerField='back' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -65,17 +62,13 @@
                                 <ImageTexture containerField='top' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
                             </ComposedCubeMapTexture>
                         </Appearance>
-                        <IndexedFaceSet DEF='Orbit' convex='false'>
-                            <Coordinate DEF='OrbitCoordinates'/>
-                        </IndexedFaceSet>
+                        <Sphere/>
                     </Shape>
                 </Transform>
-                <Script DEF='Bounce'>
+                <Script DEF='Animate'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-                    <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
-                    <field name='coordinates' accessType='inputOutput' type='MFVec3f'/>
-                    <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
+                    <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
                     <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
@@ -84,8 +77,10 @@
                     <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
 <![CDATA[
 
+
 ecmascript:
-			function newBubble() {
+
+			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
 			    	Math.random() - 0.5,
@@ -97,57 +92,20 @@ ecmascript:
 			    	translation.x + velocity.x,
 				translation.y + velocity.y,
 				translation.z + velocity.z);
-			    if (Math.abs(translation.x) > 10) {
-					newBubble();
-			    } else if (Math.abs(translation.y) > 10) {
-					newBubble();
-			    } else if (Math.abs(translation.z) > 10) {
-					newBubble();
-			    } else {
-					velocity = new SFVec3f(
-						velocity.x + Math.random() * 0.2 - 0.1,
-						velocity.y + Math.random() * 0.2 - 0.1,
-						velocity.z + Math.random() * 0.2 - 0.1
-					);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
 			    }
 			    animate_flowers();
-			}
-
-			function initialize() {
-			     var cis = [];
-			     newBubble();
-			     resolution = 100;
-			     updateCoordinates(resolution);
-			     for ( i = 0; i < resolution-1; i++) {
-				for ( j = 0; j < resolution-1; j++) {
-				     cis.push(i*resolution+j);
-				     cis.push(i*resolution+j+1);
-				     cis.push((i+1)*resolution+j+1);
-				     cis.push((i+1)*resolution+j);
-				     cis.push(-1);
-				}
-			    }
-			     coordIndexes = new MFInt32(cis);
-			}
-
-			function updateCoordinates(resolution) {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (resolution-1);
-			     var crds = [];
-			     for ( i = 0; i < resolution; i++) {
-				for ( j = 0; j < resolution; j++) {
-					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);
-					crds.push(new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					));
-					theta += delta;
-				}
-				phi += delta;
-				coordinates = new MFVec3f(crds);
-			     }
 			}
 
 			function animate_flowers(fraction, eventTime) {
@@ -166,6 +124,8 @@ ecmascript:
 					d += Math.random() * 2 - 1;
 					break;
 				}
+				tdelta += 0.5;
+				pdelta += 0.5;
 				if (a > 1) {
 					a =  0.5;
 				}
@@ -184,29 +144,31 @@ ecmascript:
 				if (d > 10) {
 					d = 4;
 				}
-				resolution = 100;
-				updateCoordinates(resolution);
 			}
-
 
 
 
 ]]>
                 </Script>
-                <TimeSensor DEF='TourTime' cycleInterval='0.15' loop='true'/>
-                <TimeSensor DEF='SongTime' loop='true'/>
-                <Sound maxBack='100.0' maxFront='100.0' minBack='20.0' minFront='20.0'>
-                    <AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
-                </Sound>
-                <ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
-                <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
-                <ROUTE fromField='translation' fromNode='Bounce' toField='set_translation' toNode='transform'/>
-                <!-- <ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/> -->
+                <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+                <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+                <ROUTE fromField='translation_changed' fromNode='Animate' toField='set_translation' toNode='animate_transform'/>
+                <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
+                <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
+                <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
+                <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
+                <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+                <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
+                <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x3dom'/>
+                <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x3dom'/>
+                <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x3dom'/>
+                <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x3dom'/>
+                <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x3dom'/>
+                <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x3dom'/>
             </ProtoBody>
         </ProtoDeclare>
-        <Transform>
-            <ProtoInstance name='flower'/>
-            <!-- <ProtoInstance name="flower"/> <ProtoInstance name="flower"/> -->
-        </Transform>
+        <ProtoInstance name='flower'/>
+        <ProtoInstance name='flower'/>
+        <ProtoInstance name='flower'/>
     </Scene>
 </X3D>

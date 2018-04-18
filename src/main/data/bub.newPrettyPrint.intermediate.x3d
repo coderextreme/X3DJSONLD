@@ -33,7 +33,7 @@
                             </ComposedShader>
                             <ComposedShader DEF='x_ite' language='GLSL' class=''>
                                 <ShaderPart type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"' class=''/>
-                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"' class=''/>
+                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
                                 <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
                                     <ComposedCubeMapTexture USE='texture'/>
                                 </field>

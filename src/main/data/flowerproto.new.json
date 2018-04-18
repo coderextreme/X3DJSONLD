@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 April 2018"
+            "@content":"17 April 2018"
           },
           {
             "@name":"generator",
@@ -85,7 +85,8 @@
                                     "-material":
                                       { "Material":
                                         {
-                                          "@diffuseColor":[0.7,0.7,0.7]
+                                          "@diffuseColor":[0.7,0.7,0.7],
+                                          "@specularColor":[0.5,0.5,0.5]
                                         }
                                       },
                                     "-shaders":[
@@ -147,7 +148,7 @@
                                             },
                                             {
                                               "@name":"chromaticDispertion",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"initializeOnly",
                                               "@type":"SFVec3f",
                                               "@value":[0.98,1,1.033]
                                             },
@@ -155,13 +156,13 @@
                                               "@name":"bias",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":10.0
+                                              "@value":0.5
                                             },
                                             {
                                               "@name":"scale",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":10.0
+                                              "@value":0.5
                                             },
                                             {
                                               "@name":"power",
@@ -173,7 +174,7 @@
                                               "@name":"a",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":3.0
+                                              "@value":10.0
                                             },
                                             {
                                               "@name":"b",
@@ -185,25 +186,25 @@
                                               "@name":"c",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":3.0
+                                              "@value":20.0
                                             },
                                             {
                                               "@name":"d",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":3.0
+                                              "@value":20.0
                                             },
                                             {
                                               "@name":"tdelta",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":0.5
+                                              "@value":0.0
                                             },
                                             {
                                               "@name":"pdelta",
                                               "@accessType":"inputOutput",
                                               "@type":"SFFloat",
-                                              "@value":0.5
+                                              "@value":0.0
                                             }
                                           ]
                                         }
@@ -262,7 +263,7 @@
                           },
                           { "Script":
                             {
-                              "@DEF":"Bounce",
+                              "@DEF":"Animate",
                               "field": [
                                 {
                                   "@name":"translation",
@@ -279,7 +280,7 @@
                                 {
                                   "@name":"set_fraction",
                                   "@accessType":"inputOnly",
-                                  "@type":"SFTime"
+                                  "@type":"SFFloat"
                                 },
                                 {
                                   "@name":"a",
@@ -319,6 +320,8 @@
                                 }
                               ],
                               "#sourceText":[
+"",
+"",
 "",
 "",
 "",
@@ -400,22 +403,22 @@
                           { "TimeSensor":
                             {
                               "@DEF":"TourTime",
-                              "@cycleInterval":0.15,
+                              "@cycleInterval":5.0,
                               "@loop":true
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"cycleTime",
+                              "@fromField":"fraction_changed",
                               "@fromNode":"TourTime",
                               "@toField":"set_fraction",
-                              "@toNode":"Bounce"
+                              "@toNode":"Animate"
                             }
                           },
                           { "ROUTE":
                             {
                               "@fromField":"translation_changed",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"set_translation",
                               "@toNode":"transform"
                             }
@@ -423,7 +426,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"a",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"a",
                               "@toNode":"shader"
                             }
@@ -431,7 +434,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"b",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"b",
                               "@toNode":"shader"
                             }
@@ -439,7 +442,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"c",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"c",
                               "@toNode":"shader"
                             }
@@ -447,7 +450,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"d",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"d",
                               "@toNode":"shader"
                             }
@@ -455,7 +458,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"tdelta",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"tdelta",
                               "@toNode":"shader"
                             }
@@ -463,7 +466,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"pdelta",
-                              "@fromNode":"Bounce",
+                              "@fromNode":"Animate",
                               "@toField":"pdelta",
                               "@toNode":"shader"
                             }

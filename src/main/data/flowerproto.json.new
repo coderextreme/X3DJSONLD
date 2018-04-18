@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "17 April 2018"
         },
         {
           "@name": "generator",
@@ -90,6 +90,11 @@
                                     0.7,
                                     0.7,
                                     0.7
+                                  ],
+                                  "@specularColor": [
+                                    0.5,
+                                    0.5,
+                                    0.5
                                   ]
                                 }
                               },
@@ -160,8 +165,8 @@
                                       },
                                       {
                                         "@name": "chromaticDispertion",
+                                        "@accessType": "initializeOnly",
                                         "@type": "SFVec3f",
-                                        "@accessType": "inputOutput",
                                         "@value": [
                                           0.98,
                                           1,
@@ -172,13 +177,13 @@
                                         "@name": "bias",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 10
+                                        "@value": 0.5
                                       },
                                       {
                                         "@name": "scale",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 10
+                                        "@value": 0.5
                                       },
                                       {
                                         "@name": "power",
@@ -190,7 +195,7 @@
                                         "@name": "a",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 3
+                                        "@value": 10
                                       },
                                       {
                                         "@name": "b",
@@ -202,25 +207,25 @@
                                         "@name": "c",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 3
+                                        "@value": 20
                                       },
                                       {
                                         "@name": "d",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 3
+                                        "@value": 20
                                       },
                                       {
                                         "@name": "tdelta",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 0.5
+                                        "@value": 0
                                       },
                                       {
                                         "@name": "pdelta",
                                         "@type": "SFFloat",
                                         "@accessType": "inputOutput",
-                                        "@value": 0.5
+                                        "@value": 0
                                       }
                                     ],
                                     "-children": [
@@ -268,7 +273,7 @@
                       },
                       {
                         "Script": {
-                          "@DEF": "Bounce",
+                          "@DEF": "Animate",
                           "field": [
                             {
                               "@name": "translation",
@@ -293,7 +298,7 @@
                             {
                               "@name": "set_fraction",
                               "@accessType": "inputOnly",
-                              "@type": "SFTime"
+                              "@type": "SFFloat"
                             },
                             {
                               "@name": "a",
@@ -333,6 +338,8 @@
                             }
                           ],
                           "#sourceText": [
+                            "",
+                            "",
                             "",
                             "ecmascript:",
                             "\t\t\tfunction initialize() {",
@@ -409,21 +416,21 @@
                       {
                         "TimeSensor": {
                           "@DEF": "TourTime",
-                          "@cycleInterval": 0.15,
+                          "@cycleInterval": 5,
                           "@loop": true
                         }
                       },
                       {
                         "ROUTE": {
                           "@fromNode": "TourTime",
-                          "@fromField": "cycleTime",
-                          "@toNode": "Bounce",
+                          "@fromField": "fraction_changed",
+                          "@toNode": "Animate",
                           "@toField": "set_fraction"
                         }
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "translation_changed",
                           "@toNode": "transform",
                           "@toField": "set_translation"
@@ -431,7 +438,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "a",
                           "@toNode": "shader",
                           "@toField": "a"
@@ -439,7 +446,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "b",
                           "@toNode": "shader",
                           "@toField": "b"
@@ -447,7 +454,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "c",
                           "@toNode": "shader",
                           "@toField": "c"
@@ -455,7 +462,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "d",
                           "@toNode": "shader",
                           "@toField": "d"
@@ -463,7 +470,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "tdelta",
                           "@toNode": "shader",
                           "@toField": "tdelta"
@@ -471,7 +478,7 @@
                       },
                       {
                         "ROUTE": {
-                          "@fromNode": "Bounce",
+                          "@fromNode": "Animate",
                           "@fromField": "pdelta",
                           "@toNode": "shader",
                           "@toField": "pdelta"
