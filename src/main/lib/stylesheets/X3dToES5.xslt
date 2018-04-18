@@ -3153,6 +3153,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:choose>
 					<xsl:when test="not(contains(.,'&quot;'))">
 						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 						<xsl:message>
 							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
 							<xsl:text>&#10;</xsl:text>
