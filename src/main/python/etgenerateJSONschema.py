@@ -524,7 +524,7 @@ class ClassPrinter:
                             required.append("@"+field.get("name"))
                         elif field.get("name") == "Scene" :  # fields for X3D
                             required.append(field.get("name"))
-                            required.append("@encoding")
+                            required.append("encoding")
                     except:
                         pass
 

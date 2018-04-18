@@ -13721,7 +13721,7 @@
       "required": [
         "@profile",
         "Scene",
-        "@encoding",
+        "encoding",
         "@version"
       ],
       "additionalProperties": false
