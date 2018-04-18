@@ -66,7 +66,6 @@ Viewpoint12.setDescription("Transparent rose")
 
 Scene9.addChild(Viewpoint12)
 Transform13 = TransformObject()
-Transform13.setDEF("Rose01")
 
 Shape14 = ShapeObject()
 
@@ -193,7 +192,7 @@ field35.setValue("0")
 
 ComposedShader24.addField(field35)
 
-ComposedShader24.addComments(CommentsBlock("""field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"""))
+ComposedShader24.addComments(CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
 ShaderPart36 = ShaderPartObject()
 ShaderPart36.setType("VERTEX")
 ShaderPart36.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])
@@ -201,7 +200,7 @@ ShaderPart36.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextre
 ComposedShader24.addParts(ShaderPart36)
 ShaderPart37 = ShaderPartObject()
 ShaderPart37.setType("FRAGMENT")
-ShaderPart37.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
+ShaderPart37.setUrl(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
 
 ComposedShader24.addParts(ShaderPart37)
 Appearance15.addShaders(ComposedShader24)
@@ -482,19 +481,23 @@ Script69.addField(field76)
 
 Script69.setSourceCode("\n"+
 "\n"+
-"\n"+
 "ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
-"	if (choice == 0) {\n"+
+"	switch (choice) {\n"+
+"	case 0:\n"+
 "		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 1) {\n"+
+"		break;\n"+
+"	case 1:\n"+
 "		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 2) {\n"+
+"		break;\n"+
+"	case 2:\n"+
 "		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 3) {\n"+
+"		break;\n"+
+"	case 3:\n"+
 "		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
 "	}\n"+
 "	tdelta = tdelta + 0.5;\n"+
 "	pdelta = pdelta + 0.5;\n"+

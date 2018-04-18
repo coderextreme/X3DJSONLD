@@ -211,7 +211,7 @@ ShaderPart41.setUrl(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/s
 ComposedShader34.addParts(ShaderPart41)
 ShaderPart42 = ShaderPartObject()
 ShaderPart42.setType("FRAGMENT")
-ShaderPart42.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"])
+ShaderPart42.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])
 
 ComposedShader34.addParts(ShaderPart42)
 Appearance17.addShaders(ComposedShader34)
