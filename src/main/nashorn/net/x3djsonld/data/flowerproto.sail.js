@@ -77,7 +77,7 @@ flowerproto_sail.prototype = {
         .addChild(new TransformObject("transform")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(.7,.7,.7))
+              .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
               .setTexture(new ComposedCubeMapTextureObject("texture")
                 .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
                 .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
@@ -87,20 +87,20 @@ flowerproto_sail.prototype = {
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-                .addComments(Java.to(["",
-"                                <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"                                    <ComposedCubeMapTexture USE=\"texture\"/>",
-"                                </field>"], Java.type("java.lang.String[]")))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("10"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("10"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("3"))
+                .addComments(Java.to([" ",
+"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
+"			  <ComposedCubeMapTexture USE=\"texture\"/>",
+"		  </field>"], Java.type("java.lang.String[]")))
+                .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("3"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("3"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0.5"))
-                .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("20"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("20"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
                 .addParts(new ShaderPartObject()
                   .setIS(new ISObject()
                     .addConnect(new connectObject().setNodeField("url").setProtoField("vertex"))))
@@ -108,7 +108,9 @@ flowerproto_sail.prototype = {
                   .setIS(new ISObject()
                     .addConnect(new connectObject().setNodeField("url").setProtoField("fragment"))))))
             .setGeometry(new SphereObject()))
-          .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
+          .addChild(new ScriptObject("Animate").setSourceCode("\n" + 
+"\n" + 
+"  " + "\n" + 
 "ecmascript:" + "\n" + 
 "			function initialize() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -177,22 +179,22 @@ flowerproto_sail.prototype = {
 "			}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("3"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("3"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0.5")))
-          .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
-          .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("a").setToNode("shader").setToField("a"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("b").setToNode("shader").setToField("b"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("c").setToNode("shader").setToField("c"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("d").setToNode("shader").setToField("d"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
-          .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))));
+          .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
+          .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("shader").setToField("b"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))));
   },
   // end of initialize() method
 
