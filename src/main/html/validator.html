@@ -25,7 +25,7 @@ function validator() {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
 			$.getJSON(data, function(json) {
-				loadSchema(json, "<unknown>", doValidate, function() {
+				loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
@@ -33,7 +33,7 @@ function validator() {
 			});
 		} else {
 			var json = JSON.parse(data);
-			loadSchema(json, "<unknown>", doValidate, function() {
+			loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
 				alert("Valid or user clicked OK");
 			}, function(e) {
 				alert(e);
