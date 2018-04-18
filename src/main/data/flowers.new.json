@@ -90,6 +90,195 @@
                                           "@specularColor":[0.5,0.5,0.5]
                                         }
                                       },
+                                    "-shaders":[
+                                      { "ComposedShader":
+                                        {
+                                          "@DEF":"x3dom",
+                                          "@language":"GLSL",
+                                          "-children":[
+                                            {
+                                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                            }
+                                          ],
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"VERTEX",
+                                                "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"FRAGMENT",
+                                                "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
+                                              }
+                                            }
+                                          ],
+                                          "field": [
+                                            {
+                                              "@name":"cube",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFInt32",
+                                              "@value":0
+                                            },
+                                            {
+                                              "@name":"chromaticDispertion",
+                                              "@accessType":"initializeOnly",
+                                              "@type":"SFVec3f",
+                                              "@value":[0.98,1,1.033]
+                                            },
+                                            {
+                                              "@name":"bias",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"scale",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"power",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":2.0
+                                            },
+                                            {
+                                              "@name":"a",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":10.0
+                                            },
+                                            {
+                                              "@name":"b",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":1.0
+                                            },
+                                            {
+                                              "@name":"c",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":20.0
+                                            },
+                                            {
+                                              "@name":"d",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":20.0
+                                            },
+                                            {
+                                              "@name":"tdelta",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":0.0
+                                            },
+                                            {
+                                              "@name":"pdelta",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFFloat",
+                                              "@value":0.0
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "ComposedShader":
+                                        {
+                                          "@DEF":"x_ite",
+                                          "@language":"GLSL",
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"VERTEX",
+                                                "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"FRAGMENT",
+                                                "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
+                                              }
+                                            }
+                                          ],
+                                          "field": [
+                                            {
+                                              "@name":"cube",
+                                              "@accessType":"inputOutput",
+                                              "@type":"SFNode",
+                                              "-children":[
+                                                { "ComposedCubeMapTexture":
+                                                  {
+                                                    "@USE":"texture"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "@name":"chromaticDispertion",
+                                              "@accessType":"initializeOnly",
+                                              "@type":"SFVec3f",
+                                              "@value":[0.98,1,1.033]
+                                            },
+                                            {
+                                              "@name":"bias",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"scale",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"power",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":2.0
+                                            },
+                                            {
+                                              "@name":"a",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":10.0
+                                            },
+                                            {
+                                              "@name":"b",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":1.0
+                                            },
+                                            {
+                                              "@name":"c",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":20.0
+                                            },
+                                            {
+                                              "@name":"d",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":20.0
+                                            },
+                                            {
+                                              "@name":"tdelta",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":0.0
+                                            },
+                                            {
+                                              "@name":"pdelta",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat",
+                                              "@value":0.0
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
                                     "-texture":
                                       { "ComposedCubeMapTexture":
                                         {
@@ -131,196 +320,7 @@
                                               }
                                             }
                                         }
-                                      },
-                                    "-shaders":[
-                                      { "ComposedShader":
-                                        {
-                                          "@DEF":"x3dom",
-                                          "@language":"GLSL",
-                                          "field": [
-                                            {
-                                              "@name":"cube",
-                                              "@type":"SFInt32",
-                                              "@accessType":"inputOutput",
-                                              "@value":0
-                                            },
-                                            {
-                                              "@name":"chromaticDispertion",
-                                              "@accessType":"initializeOnly",
-                                              "@type":"SFVec3f",
-                                              "@value":[0.98,1.0,1.033]
-                                            },
-                                            {
-                                              "@name":"bias",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"scale",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"power",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":2
-                                            },
-                                            {
-                                              "@name":"a",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":10
-                                            },
-                                            {
-                                              "@name":"b",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":1
-                                            },
-                                            {
-                                              "@name":"c",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":20
-                                            },
-                                            {
-                                              "@name":"d",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":20
-                                            },
-                                            {
-                                              "@name":"tdelta",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":0
-                                            },
-                                            {
-                                              "@name":"pdelta",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
-                                              "@value":0
-                                            }
-                                          ],
-                                          "-children":[
-                                            {
-                                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
-                                            }
-                                          ],
-                                          "-parts":[
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"],
-                                                "@type":"VERTEX"
-                                              }
-                                            },
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],
-                                                "@type":"FRAGMENT"
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      },
-                                      { "ComposedShader":
-                                        {
-                                          "@DEF":"x_ite",
-                                          "@language":"GLSL",
-                                          "field": [
-                                            {
-                                              "@name":"cube",
-                                              "@type":"SFNode",
-                                              "@accessType":"inputOutput",
-                                              "-children":[
-                                                { "ComposedCubeMapTexture":
-                                                  {
-                                                    "@USE":"texture"
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            {
-                                              "@name":"chromaticDispertion",
-                                              "@accessType":"initializeOnly",
-                                              "@type":"SFVec3f",
-                                              "@value":[0.98,1.0,1.033]
-                                            },
-                                            {
-                                              "@name":"bias",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"scale",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"power",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":2
-                                            },
-                                            {
-                                              "@name":"a",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":10
-                                            },
-                                            {
-                                              "@name":"b",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":1
-                                            },
-                                            {
-                                              "@name":"c",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":20
-                                            },
-                                            {
-                                              "@name":"d",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":20
-                                            },
-                                            {
-                                              "@name":"tdelta",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":0
-                                            },
-                                            {
-                                              "@name":"pdelta",
-                                              "@type":"SFFloat",
-                                              "@accessType":"inputOnly",
-                                              "@value":0
-                                            }
-                                          ],
-                                          "-parts":[
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
-                                                "@type":"VERTEX"
-                                              }
-                                            },
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],
-                                                "@type":"FRAGMENT"
-                                              }
-                                            }
-                                          ]
-                                        }
                                       }
-                                    ]
                                   }
                                 },
                               "-geometry":
@@ -356,42 +356,44 @@
                           },
                           {
                             "@name":"a",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
+                            "@type":"SFFloat",
                             "@value":0.5
                           },
                           {
                             "@name":"b",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
+                            "@type":"SFFloat",
                             "@value":0.5
                           },
                           {
                             "@name":"c",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
-                            "@value":3
+                            "@type":"SFFloat",
+                            "@value":3.0
                           },
                           {
                             "@name":"d",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
-                            "@value":3
+                            "@type":"SFFloat",
+                            "@value":3.0
                           },
                           {
                             "@name":"tdelta",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
+                            "@type":"SFFloat",
                             "@value":0.5
                           },
                           {
                             "@name":"pdelta",
-                            "@type":"SFFloat",
                             "@accessType":"inputOutput",
+                            "@type":"SFFloat",
                             "@value":0.5
                           }
                         ],
                         "#sourceText":[
+"",
+"",
 "",
 "",
 "ecmascript:",
@@ -462,6 +464,9 @@
 "\t\t\t\t}",
 "\t\t\t}",
 "",
+"",
+"",
+"",
 ""
 ]
                       }
@@ -469,120 +474,120 @@
                     { "TimeSensor":
                       {
                         "@DEF":"TourTime",
-                        "@cycleInterval":5,
+                        "@cycleInterval":5.0,
                         "@loop":true
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"TourTime",
                         "@fromField":"fraction_changed",
-                        "@toNode":"Animate",
-                        "@toField":"set_fraction"
+                        "@fromNode":"TourTime",
+                        "@toField":"set_fraction",
+                        "@toNode":"Animate"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"translation_changed",
-                        "@toNode":"animate_transform",
-                        "@toField":"set_translation"
+                        "@fromNode":"Animate",
+                        "@toField":"set_translation",
+                        "@toNode":"animate_transform"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"a",
-                        "@toNode":"x_ite",
-                        "@toField":"a"
+                        "@fromNode":"Animate",
+                        "@toField":"a",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"b",
-                        "@toNode":"x_ite",
-                        "@toField":"b"
+                        "@fromNode":"Animate",
+                        "@toField":"b",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"c",
-                        "@toNode":"x_ite",
-                        "@toField":"c"
+                        "@fromNode":"Animate",
+                        "@toField":"c",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"d",
-                        "@toNode":"x_ite",
-                        "@toField":"d"
+                        "@fromNode":"Animate",
+                        "@toField":"d",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"pdelta",
-                        "@toNode":"x_ite",
-                        "@toField":"pdelta"
+                        "@fromNode":"Animate",
+                        "@toField":"pdelta",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"tdelta",
-                        "@toNode":"x_ite",
-                        "@toField":"tdelta"
+                        "@fromNode":"Animate",
+                        "@toField":"tdelta",
+                        "@toNode":"x_ite"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"a",
-                        "@toNode":"x3dom",
-                        "@toField":"a"
+                        "@fromNode":"Animate",
+                        "@toField":"a",
+                        "@toNode":"x3dom"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"b",
-                        "@toNode":"x3dom",
-                        "@toField":"b"
+                        "@fromNode":"Animate",
+                        "@toField":"b",
+                        "@toNode":"x3dom"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"c",
-                        "@toNode":"x3dom",
-                        "@toField":"c"
+                        "@fromNode":"Animate",
+                        "@toField":"c",
+                        "@toNode":"x3dom"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"d",
-                        "@toNode":"x3dom",
-                        "@toField":"d"
+                        "@fromNode":"Animate",
+                        "@toField":"d",
+                        "@toNode":"x3dom"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"pdelta",
-                        "@toNode":"x3dom",
-                        "@toField":"pdelta"
+                        "@fromNode":"Animate",
+                        "@toField":"pdelta",
+                        "@toNode":"x3dom"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromNode":"Animate",
                         "@fromField":"tdelta",
-                        "@toNode":"x3dom",
-                        "@toField":"tdelta"
+                        "@fromNode":"Animate",
+                        "@toField":"tdelta",
+                        "@toNode":"x3dom"
                       }
                     }
                   ]
