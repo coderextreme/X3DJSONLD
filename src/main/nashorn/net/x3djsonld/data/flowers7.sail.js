@@ -114,4 +114,206 @@ flowers7_sail.prototype = {
             .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").se
+            .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("20"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("20"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+          .addShaders(new ComposedShaderObject("x_ite").setLanguage("GLSL")
+            .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
+              .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("power").setType("SFFloat").setValue("2"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("a").setType("SFFloat").setValue("10"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("b").setType("SFFloat").setValue("1"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("c").setType("SFFloat").setValue("20"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("d").setType("SFFloat").setValue("20"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("tdelta").setType("SFFloat").setValue("0"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("pdelta").setType("SFFloat").setValue("0"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"")))))
+        .setGeometry(new SphereObject())))
+    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"        function set_fraction( f, tm ) {" + "\n" + 
+"            var side = Math.floor(f*frontUrls.length);" + "\n" + 
+"            if (side > frontUrls.length-1) {" + "\n" + 
+"                side = 0;" + "\n" + 
+"            }" + "\n" + 
+"            if (side != old) {" + "\n" + 
+"                    old = side;" + "\n" + 
+"                    front[0] = frontUrls[side];" + "\n" + 
+"                    back[0] = backUrls[side];" + "\n" + 
+"                    left[0] = leftUrls[side];" + "\n" + 
+"                    right[0] = rightUrls[side];" + "\n" + 
+"                    top[0] = topUrls[side];" + "\n" + 
+"                    bottom[0] = bottomUrls[side];" + "\n" + 
+"            }" + "\n" + 
+"        }" + "\n")
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_4_53_value))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_4_54_value))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_4_55_value))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("rightUrls").setType("MFString").setValue(this.field_rightUrls_4_56_value))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("topUrls").setType("MFString").setValue(this.field_topUrls_4_57_value))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("bottomUrls").setType("MFString").setValue(this.field_bottomUrls_4_58_value))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("front").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("back").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("left").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("right").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("top").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("bottom").setType("MFString"))
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFInt32").setValue("-1")))
+    .addComments(Java.to(["",
+"            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>",
+"            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"], Java.type("java.lang.String[]")))
+    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"function set_fraction() {" + "\n" + 
+"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
+"	switch (choice) {" + "\n" + 
+"	case 0:" + "\n" + 
+"		a = a + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
+"	case 1:" + "\n" + 
+"		b = b + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
+"	case 2:" + "\n" + 
+"		c = c + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
+"	case 3:" + "\n" + 
+"		d = d + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
+"		break;" + "\n" + 
+"	}" + "\n" + 
+"	tdelta = tdelta + 0.5;" + "\n" + 
+"	pdelta = pdelta + 0.5;" + "\n" + 
+"	if (a < 1) {" + "\n" + 
+"		a = 10;" + "\n" + 
+"	}" + "\n" + 
+"	if (b < 1) {" + "\n" + 
+"		b = 10;" + "\n" + 
+"	}" + "\n" + 
+"	if (c < 1) {" + "\n" + 
+"		c = 4;" + "\n" + 
+"	}" + "\n" + 
+"	if (c > 20) {" + "\n" + 
+"		c = 4;" + "\n" + 
+"	}" + "\n" + 
+"	if (d < 1) {" + "\n" + 
+"		d = 4;" + "\n" + 
+"	}" + "\n" + 
+"	if (d > 20) {" + "\n" + 
+"		d = 4;" + "\n" + 
+"	}" + "\n" + 
+"}" + "\n")
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("20"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("20"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0")))
+    .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
+    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("x_ite").setToField("a"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("x_ite").setToField("b"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("x_ite").setToField("c"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("x_ite").setToField("d"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("x3dom").setToField("a"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("x3dom").setToField("b"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("x3dom").setToField("c"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("x3dom").setToField("d"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
+    .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta")));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return flowers7_sail model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var       metaResult = "";
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		// first list informational meta elements of interest
+		var metaList = this.getX3dModel().getHead().getMetaList();
+		for (var m in metaList) {
+			meta = metaList[m];
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
+			{
+				metaResult += meta.toStringX3D();
+			}
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = metaResult;
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new flowers7_sail();
+		print ("flowers7_sail execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new flowers7_sail().main();

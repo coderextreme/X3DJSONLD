@@ -254,7 +254,8 @@ public class x3dconnectorProto
     {
         X3DObject exampleObject = new x3dconnectorProto().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -266,7 +267,7 @@ public class x3dconnectorProto
 		}
 		if (validate)
 		{
-			System.out.print("x3dconnectorProto self-validation test results: ");
+			System.out.print("Java program \"x3dconnectorProto\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

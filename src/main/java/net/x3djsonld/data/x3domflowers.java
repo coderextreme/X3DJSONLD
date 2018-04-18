@@ -120,7 +120,8 @@ public class x3domflowers
     {
         X3DObject exampleObject = new x3domflowers().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -132,7 +133,7 @@ public class x3domflowers
 		}
 		if (validate)
 		{
-			System.out.print("x3domflowers self-validation test results: ");
+			System.out.print("Java program \"x3domflowers\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

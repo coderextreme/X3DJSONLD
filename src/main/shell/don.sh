@@ -19,12 +19,12 @@ echo compiling
 pushd ../java
 find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
 echo running java
-for i in `find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//'`
+for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
 do
-	echo $i
 	# java -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
-	mkdir -p ../data/`dirname $i`
-	java -cp "${CLASSPATH}" $i ../data/`basename $i`.x3d -validate
+	mkdir -p ../data/`dirname $i` 
+	echo java -cp "${CLASSPATH}" $i ../data/`basename $i`.x3d
+	java -cp "${CLASSPATH}" $i ../data/`basename $i`.x3d
 done
 popd
 echo running jjs

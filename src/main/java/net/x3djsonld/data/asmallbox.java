@@ -124,7 +124,8 @@ public class asmallbox
     {
         X3DObject exampleObject = new asmallbox().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -136,7 +137,7 @@ public class asmallbox
 		}
 		if (validate)
 		{
-			System.out.print("asmallbox self-validation test results: ");
+			System.out.print("Java program \"asmallbox\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

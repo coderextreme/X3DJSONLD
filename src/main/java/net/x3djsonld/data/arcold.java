@@ -260,7 +260,8 @@ public class arcold
     {
         X3DObject exampleObject = new arcold().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -272,7 +273,7 @@ public class arcold
 		}
 		if (validate)
 		{
-			System.out.print("arcold self-validation test results: ");
+			System.out.print("Java program \"arcold\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}
