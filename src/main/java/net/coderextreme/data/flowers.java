@@ -81,6 +81,8 @@ public class flowers {
     }
     public X3DObject initialize() {
 ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("Shaders").setLevel(1))
@@ -92,10 +94,11 @@ ProtoInstanceObject ProtoInstance0 = null;
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers.x3d")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
+        .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new ProtoDeclareObject().setName("flower")
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform")
+            .addChild(new TransformObject().setDEF("animate_transform")
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
@@ -106,45 +109,41 @@ ProtoInstanceObject ProtoInstance0 = null;
                     .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                     .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                     .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFInt32").setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-                      .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
-                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
+                  .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
+                    .addField(new fieldObject().setType("SFInt32").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
                     .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                    .addField(new fieldObject().setType("SFFloat").setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
+                    .addField(new fieldObject().setType("SFFloat").setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
+                    .addField(new fieldObject().setType("SFFloat").setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
+                    .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
+                    .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray()))))
-                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFInt32").setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                  .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
                     .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
                       .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
-                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
+                    .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                    .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                    .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("2"))
+                    .addField(new fieldObject().setType("SFFloat").setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("10"))
+                    .addField(new fieldObject().setType("SFFloat").setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("1"))
+                    .addField(new fieldObject().setType("SFFloat").setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+                    .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+                    .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
+                    .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString14().getArray())))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString15().getArray()))))
-                  .addShaders(new ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFInt32").setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-                      .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
-                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                    .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                    .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString16().getArray())))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString17().getArray())))))
-                .addComments(new CommentsBlock("<Sphere></Sphere>"))
-                .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
-                  .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
-            .addChild(new ScriptObject().setDEF("Bounce")
+                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString15().getArray())))))
+                .setGeometry(new SphereObject())))
+            .addChild(new ScriptObject().setDEF("Animate")
               .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType("SFVec3f").setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new fieldObject().setType("SFTime").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-              .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+              .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("SFFloat").setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType("SFFloat").setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType("SFFloat").setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
@@ -152,8 +151,10 @@ ProtoInstanceObject ProtoInstance0 = null;
               .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .setSourceCode("\n"+
+"\n"+
 "ecmascript:\n"+
-"			function newBubble() {\n"+
+"\n"+
+"			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
 "			    	Math.random() - 0.5,\n"+
@@ -165,57 +166,20 @@ ProtoInstanceObject ProtoInstance0 = null;
 "			    	translation.x + velocity.x,\n"+
 "				translation.y + velocity.y,\n"+
 "				translation.z + velocity.z);\n"+
-"			    if (Math.abs(translation.x) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.y) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else if (Math.abs(translation.z) > 10) {\n"+
-"					newBubble();\n"+
-"			    } else {\n"+
-"					velocity = new SFVec3f(\n"+
-"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
-"						velocity.z + Math.random() * 0.2 - 0.1\n"+
-"					);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
 "			    }\n"+
 "			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     var cis = [];\n"+
-"			     newBubble();\n"+
-"			     resolution = 100;\n"+
-"			     updateCoordinates(resolution);\n"+
-"			     for ( i = 0; i < resolution-1; i++) {\n"+
-"				for ( j = 0; j < resolution-1; j++) {\n"+
-"				     cis.push(i*resolution+j);\n"+
-"				     cis.push(i*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j+1);\n"+
-"				     cis.push((i+1)*resolution+j);\n"+
-"				     cis.push(-1);\n"+
-"				}\n"+
-"			    }\n"+
-"			     coordIndexes = new MFInt32(cis);\n"+
-"			}\n"+
-"\n"+
-"			function updateCoordinates(resolution) {\n"+
-"			     theta = 0.0;\n"+
-"			     phi = 0.0;\n"+
-"			     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var crds = [];\n"+
-"			     for ( i = 0; i < resolution; i++) {\n"+
-"				for ( j = 0; j < resolution; j++) {\n"+
-"					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);\n"+
-"					crds.push(new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					));\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"				coordinates = new MFVec3f(crds);\n"+
-"			     }\n"+
 "			}\n"+
 "\n"+
 "			function animate_flowers(fraction, eventTime) {\n"+
@@ -234,6 +198,8 @@ ProtoInstanceObject ProtoInstance0 = null;
 "					d += Math.random() * 2 - 1;\n"+
 "					break;\n"+
 "				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
 "				if (a > 1) {\n"+
 "					a =  0.5;\n"+
 "				}\n"+
@@ -252,24 +218,28 @@ ProtoInstanceObject ProtoInstance0 = null;
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"				resolution = 100;\n"+
-"				updateCoordinates(resolution);\n"+
 "			}\n"+
 "\n"+
 "\n"+
-"\n"+
 ""))
-            .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
-            .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
-            .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
-              .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString18().getArray()))))
-            .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
-            .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
-            .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))))
-        .addChild(new TransformObject()
-          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
-          .addComments(new CommentsBlock("<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"))))      ;
+            .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
+            .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("translation_changed").setToNode("animate_transform").setToField("set_translation"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("x_ite").setToField("a"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("x_ite").setToField("b"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("x_ite").setToField("c"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("x_ite").setToField("d"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("x3dom").setToField("a"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("x3dom").setToField("b"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("x3dom").setToField("c"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("x3dom").setToField("d"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
+            .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta"))))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
+        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower")))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -334,7 +304,7 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/gl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"});
   }
 }
 protected class MFString13 {
@@ -344,27 +314,12 @@ protected class MFString13 {
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"});
-  }
-}
-protected class MFString16 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"});
-  }
-}
-protected class MFString17 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"});
-  }
-}
-protected class MFString18 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
   }
 }
 }

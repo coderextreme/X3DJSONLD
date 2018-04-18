@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new BackgroundObject().setDEF("background").setBackUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setPosition(Java.to([0,0,40], Java.type("float[]"))).setDescription("Transparent rose"))
-        .addChild(new TransformObject().setDEF("Rose01")
+        .addChild(new TransformObject()
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]"))))
@@ -41,9 +41,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addComments(new CommentsBlock("field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"))
+                .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"], Java.type("java.lang.String[]"))))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], Java.type("java.lang.String[]")))))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], Java.type("java.lang.String[]")))))
               .addShaders(new ComposedShaderObject().setDEF("x_ite").setLanguage("GLSL")
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
                   .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
@@ -107,19 +107,23 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .setSourceCode("\n"+
 "\n"+
-"\n"+
 "ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
-"	if (choice == 0) {\n"+
+"	switch (choice) {\n"+
+"	case 0:\n"+
 "		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 1) {\n"+
+"		break;\n"+
+"	case 1:\n"+
 "		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 2) {\n"+
+"		break;\n"+
+"	case 2:\n"+
 "		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"	} else if (choice == 3) {\n"+
+"		break;\n"+
+"	case 3:\n"+
 "		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
 "	}\n"+
 "	tdelta = tdelta + 0.5;\n"+
 "	pdelta = pdelta + 0.5;\n"+
