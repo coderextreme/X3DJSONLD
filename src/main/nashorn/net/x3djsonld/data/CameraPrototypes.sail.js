@@ -191,9 +191,7 @@ CameraPrototypes_sail.prototype = {
             .addConnect(new connectObject().setNodeField("set_fraction").setProtoField("set_fraction"))))
         .addChild(new ROUTEObject().setFromNode("CameraPositionInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("position"))
         .addChild(new ROUTEObject().setFromNode("CameraOrientationInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("orientation"))
-        .addChild(new ScriptObject("CameraScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraScript" + "\n" + 
@@ -534,8 +532,7 @@ CameraPrototypes_sail.prototype = {
 "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[Camera] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addComments(" binding is controlled externally, all camera operations proceed the same regardless of whether bound or not ")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this Camera"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setAppinfo("Camera position in local transformation frame"))
@@ -616,9 +613,7 @@ CameraPrototypes_sail.prototype = {
         .addField(new fieldObject().setAccessType("outputOnly").setName("isActive").setType("SFBool").setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("enable console output to trace script computations and prototype progress")))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new ScriptObject("CameraShotScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraShotScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraShotScript" + "\n" + 
@@ -712,8 +707,7 @@ CameraPrototypes_sail.prototype = {
 "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraShot"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraShot can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("moves").setType("MFNode").setAppinfo("Set of CameraMovement nodes")
@@ -763,9 +757,7 @@ CameraPrototypes_sail.prototype = {
         .addComments(" First node determines node type of this prototype ")
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events ")
-        .addChild(new ScriptObject("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // CameraMovementScript" + "\n" + 
@@ -856,8 +848,7 @@ CameraPrototypes_sail.prototype = {
 "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraMovement"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraMovement can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("duration").setType("SFFloat").setAppinfo("Duration in seconds for this move"))
@@ -902,9 +893,7 @@ CameraPrototypes_sail.prototype = {
       .setProtoBody(new ProtoBodyObject()
         .addComments(" First node determines node type of this prototype ")
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
-        .addChild(new ScriptObject("OfflineRenderScript").setMustEvaluate(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("OfflineRenderScript").setMustEvaluate(true).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize () // OfflineRenderScript" + "\n" + 
@@ -959,8 +948,7 @@ CameraPrototypes_sail.prototype = {
 "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');" + "\n" + 
 "    else" + "\n" + 
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this OfflineRender"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this OfflineRender can be activated"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("frameRate").setType("SFFloat").setAppinfo("Frames per second recorded for this rendering"))

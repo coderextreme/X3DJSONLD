@@ -79,9 +79,7 @@ geobubbles_sail.prototype = {
           .setMaterial(new MaterialObject().setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7)))))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new GeoPositionInterpolatorObject("TourPosition").setKey(Java.to([0.0,1.0], Java.type("float[]"))).setKeyValue(new MFVec3dObject(Java.to([0.0015708,0.0,4.0,0.0,0.0015708,4.0], Java.type("double[]")))))
-    .addChild(new ScriptObject("RandomTourTime").setSourceCode(
-"<![CDATA[" + "\n" +
-"ecmascript:" + "\n" + 
+    .addChild(new ScriptObject("RandomTourTime").setSourceCode("ecmascript:" + "\n" + 
 "\n" + 
 "               function set_cycle(value) {" + "\n" + 
 "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo" + "\n" + 
@@ -97,8 +95,7 @@ geobubbles_sail.prototype = {
 "                        position = new MFVec3d();" + "\n" + 
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
-"               }" + "]]>"
-)
+"               }")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("val").setType("SFFloat").setValue("0"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("positions").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4"))

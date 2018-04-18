@@ -154,7 +154,8 @@ public class ArchHalf
     {
         X3DObject exampleObject = new ArchHalf().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -166,7 +167,7 @@ public class ArchHalf
 		}
 		if (validate)
 		{
-			System.out.print("ArchHalf self-validation test results: ");
+			System.out.print("Java program \"ArchHalf\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

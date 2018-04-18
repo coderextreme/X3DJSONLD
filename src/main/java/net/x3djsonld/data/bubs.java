@@ -168,7 +168,8 @@ public class bubs
     {
         X3DObject exampleObject = new bubs().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -180,7 +181,7 @@ public class bubs
 		}
 		if (validate)
 		{
-			System.out.print("bubs self-validation test results: ");
+			System.out.print("Java program \"bubs\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -11,7 +11,7 @@
         <meta name='description' content='a flower'/>      
       </head>
   <Scene>
-    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+	<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
 	<Background DEF="background"
 		backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"'
@@ -21,11 +21,11 @@
 		rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"'
 		topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"'
 		></Background> 
-	<Viewpoint position='0 0 40' description="Transparent rose"></Viewpoint>
-	<Transform DEF='Rose01' >
-	<Shape>
-	<Appearance>
-		<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
+	<Viewpoint position='0 0 40' description="Transparent rose"/>
+	<Transform>
+	  <Shape>
+	    <Appearance>
+		<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5"/>
                 <ComposedCubeMapTexture DEF="texture">
                     <ImageTexture DEF="backShader" containerField="back" url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
                     <ImageTexture DEF="bottomShader" containerField="bottom" url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
@@ -36,9 +36,11 @@
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='x3dom' language="GLSL">
                   <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-		  <!--field name='cube' type='SFNode' accessType="inputOutput">
+		  <!-- 
+		       <field name='cube' type='SFNode' accessType="inputOutput">
 			  <ComposedCubeMapTexture USE="texture"/>
-		  </field-->
+		  </field>
+		  -->
 
                   <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
@@ -51,7 +53,7 @@
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
 		  <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		<ComposedShader DEF='x_ite' language="GLSL">
 		  <field name='cube' type='SFNode' accessType="inputOutput">
@@ -71,10 +73,10 @@
 		  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
 		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
-		</Appearance>
-		<Sphere solid="false" radius='1'></Sphere>
-	</Shape>
-      </Transform>
+	    </Appearance>
+	    <Sphere></Sphere>
+	  </Shape>
+        </Transform>
           <Script DEF='UrlSelector' directOutput='true'>
             <field name='frontUrls' type='MFString' accessType='initializeOnly' value='"../resources/images/all_probes/beach_cross/beach_front.png" "../resources/images/all_probes/building_cross/building_front.png" "../resources/images/all_probes/campus_cross/campus_front.png" "../resources/images/all_probes/galileo_cross/galileo_front.png" "../resources/images/all_probes/grace_cross/grace_front.png" "../resources/images/all_probes/kitchen_cross/kitchen_front.png" "../resources/images/all_probes/rnl_cross/rnl_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/uffizi_cross/uffizi_front.png"'/>
             <field name='backUrls' type='MFString' accessType='initializeOnly' value='"../resources/images/all_probes/beach_cross/beach_back.png" "../resources/images/all_probes/building_cross/building_back.png" "../resources/images/all_probes/campus_cross/campus_back.png" "../resources/images/all_probes/galileo_cross/galileo_back.png" "../resources/images/all_probes/grace_cross/grace_back.png" "../resources/images/all_probes/kitchen_cross/kitchen_back.png" "../resources/images/all_probes/rnl_cross/rnl_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/uffizi_cross/uffizi_back.png"'/>
@@ -134,20 +136,24 @@ ecmascript:
                   <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-
 <![CDATA[
 ecmascript:
 
 function set_fraction() {
 	var choice = Math.floor(Math.random() * 4);
-	if (choice == 0) {
+	switch (choice) {
+	case 0:
 		a = a + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 1) {
+		break;
+	case 1:
 		b = b + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 2) {
+		break;
+	case 2:
 		c = c + Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 3) {
+		break;
+	case 3:
 		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
 	}
 	tdelta = tdelta + 0.5;
 	pdelta = pdelta + 0.5;

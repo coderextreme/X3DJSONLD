@@ -9,13 +9,14 @@
     "express": "*",
     "glob": "*",
     "java": "*",
-    "three": "*",
     "jsonlint": "^1.6.3",
     "jvm-npm": "0.1.1",
     "mutation-observer": "*",
     "node-mkdirp": "*",
+    "three": "*",
     "xml2js": "*",
-    "xmldom": "*"
+    "xmldom": "*",
+    "xmlhttprequest": "*"
   },
   "devDependencies": {
     "jsdoc": "*"

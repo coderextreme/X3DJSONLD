@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   <head>
-   <meta name="filename"    content="X3dDocumentMetaToMarkdown.xslt" />
+   <meta name="filename"    content="X3dModelMetaToMarkdown.xslt" />
    <meta name="author"      content="Don Brutzman" />
    <meta name="created"     content="7 April 2018" />
    <meta name="description" content="Read head/meta elements and produce simple markdown of form `attribute` = `value`." />
@@ -19,6 +19,10 @@ Recommended tools:
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+    
+    <!-- Default parameter values can be overridden when invoking this stylesheet -->
+    <xsl:param name="includeSubdirectoryPaths"          ><xsl:text>true</xsl:text></xsl:param>
+    
 	<xsl:strip-space elements="*"/>
 	<xsl:output encoding="UTF-8" media-type="text/text" omit-xml-declaration="yes" method="text"/>
 
@@ -27,7 +31,7 @@ Recommended tools:
 	<xsl:template match="/">
 		<xsl:text>## Model Metadata</xsl:text>
 		<xsl:if test="(string-length($title) > 0)">
-			<xsl:text> </xsl:text>
+			<xsl:text> for </xsl:text>
 			<xsl:value-of select="$title"/>
 		</xsl:if>
 		<xsl:text>&#10;</xsl:text>
@@ -72,6 +76,25 @@ Recommended tools:
 					ends-with($normalizedValue,'.ply') or
 					ends-with($normalizedValue,'.3mf') or
 					ends-with($normalizedValue,'.txt')"/>
+
+                <xsl:variable name="isWebAddress"
+			select="starts-with($normalizedValue,'http') or
+                                starts-with($normalizedValue,'ftp')  or starts-with($normalizedValue,'ftp')"/>
+
+                <xsl:variable name="omitSubdirectoryPath">
+                    <xsl:choose>
+                        <xsl:when test="$isUrl and not($includeSubdirectoryPaths = 'true') and contains($normalizedValue,'/')">
+                            <xsl:for-each select="tokenize($normalizedValue,'/')">
+                                <xsl:if test="(position() = last())">
+                                    <xsl:value-of select="."/>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$normalizedValue"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
 		
 		<xsl:text>| </xsl:text>
 		<xsl:text>`</xsl:text>
@@ -79,9 +102,16 @@ Recommended tools:
 		<xsl:text>`</xsl:text>
 		<xsl:text> | </xsl:text>
 		<xsl:choose>
-			<xsl:when test="$isUrl">
+			<xsl:when test="$isWebAddress or ($isUrl and ($includeSubdirectoryPaths = 'true'))">
 				<xsl:text>[</xsl:text>
 				<xsl:value-of select="$content"/>
+				<xsl:text>](</xsl:text>
+				<xsl:value-of select="$content"/>
+				<xsl:text>)</xsl:text>
+			</xsl:when>
+			<xsl:when test="($isUrl and not($includeSubdirectoryPaths = 'true'))">
+				<xsl:text>[</xsl:text>
+				<xsl:value-of select="$omitSubdirectoryPath"/>
 				<xsl:text>](</xsl:text>
 				<xsl:value-of select="$content"/>
 				<xsl:text>)</xsl:text>

@@ -10,6 +10,7 @@
     </head>
     <Scene>
         <NavigationInfo type='"EXAMINE" "ANY"'/>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
         <Background
             backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
             bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'

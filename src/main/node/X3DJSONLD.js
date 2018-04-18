@@ -158,7 +158,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else {
+						} else if (typeof http !== 'undefined') {
 							http.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
@@ -176,7 +176,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else {
+						} else if (typeof https !== 'undefined') {
 							https.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
@@ -299,7 +299,7 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 		str = y;
 		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 		if (str !== y) {
-			console.error("CDATA Replacing",str,"with",y);
+			// console.error("CDATA Replacing",str,"with",y);
 		}
 	} while (y != str);
 	var cdata = xmlDoc.createCDATASection(y);
@@ -330,7 +330,7 @@ ConvertObject : function(xmlDoc, key, object, element, path, containerField) {
 			/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			console.error("Loading", localArray, "at", path, "into", key);
+			// console.error("Loading", localArray, "at", path, "into", key);
 			this.loadURLs(path, localArray, function(jsobj, path) {
 				// console.error("Read", jsobj);
 				try {

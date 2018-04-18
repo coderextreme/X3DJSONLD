@@ -714,14 +714,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:if test="((local-name() = 'Script') or (local-name() = 'ShaderPart') or (local-name() = 'ShaderProgram')) and
 					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
 			<xsl:text>.setSourceCode(</xsl:text>
-			<xsl:text>&#10;</xsl:text>
-			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
-			<xsl:text>&#10;</xsl:text>
 			<xsl:call-template name="stringify-text-lines">
 			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
 			</xsl:call-template>
-			<xsl:text> + "]]&gt;"</xsl:text><!-- end of CDATA block -->
-			<xsl:text>&#10;</xsl:text>
 			<xsl:text>)</xsl:text>
 		</xsl:if>
 		

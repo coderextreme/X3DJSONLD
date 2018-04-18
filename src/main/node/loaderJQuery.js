@@ -1,6 +1,3 @@
-if (typeof protoExpander !== 'undefined') {
-	protoExpander.setX3DJSONLD(X3DJSONLD);
-}
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
@@ -67,7 +64,6 @@ loadLocalize(lang);
 
 
 
-var intervalId;
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		$('#xml').val(xml.join("\n"));
@@ -77,7 +73,7 @@ function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		try {
-			load_X_ITE_XML(xml);
+			load_X_ITE_XML(xml, "#x_itexml");
 		} catch (e) {
 			alert("Problems with X_ITE xml", e);
 			console.error(e);
@@ -112,12 +108,26 @@ function filter(event) {
 }
 
 var X3DJSON = {};
+
+function runAllRoutes() {
+	for (var r in X3DJSON.runRoutes) {
+		X3DJSON.runRoutes[r]();
+	}
+}
+
 function initializeScripts() {
 	if (typeof X3DJSON !== 'undefined') {
 		delete X3DJSON;
 	}
 	X3DJSON = {};
 	X3DJSON.runRoutes = [];
+    	if ($('#scripting').is(':checked')) {
+		if (typeof X3DJSON.intervalId !== 'undefined') {
+			// console.error("Interval", X3DJSON.intervalId, "cleared");
+			clearInterval(X3DJSON.intervalId);
+		}
+		X3DJSON.intervalId = setInterval(runAllRoutes, 1000 / 60 );
+	}
 }
 
 
@@ -180,7 +190,7 @@ function loadScripts(json, selector, url) {
 			eval(scripts.text);
 		}
 	} catch (e) {
-		console.log(jsonScript+";\n"+scripts.text, e);
+		console.log(scripts.text, e);
 	    
 	}
 	 
@@ -191,7 +201,7 @@ function loadScripts(json, selector, url) {
 			eval(routes.text);
 		}
 	} catch (e) {
-		console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text, e);
+		console.log(routes.text, e);
 	}
 	// event loop
 	X3DJSON.runRoutes.push(function() {
@@ -202,36 +212,26 @@ function loadScripts(json, selector, url) {
 			}
 			x3dom.reload();  // This may be necessary
 		} catch (e) {
-			console.log(jsonScript+";\n"+scripts.text+"\n"+routes.text+"\n"+loop.text, e);
+			console.log(loop.text, e);
 		}
 		__eventTime += 1000 / 60;
 	});
-	if (typeof intervalId !== 'undefined') {
-		// console.error("Interval", intervalId, "cleared");
-		clearInterval(intervalId);
-	}
-	function runAllRoutes() {
-		for (var r in X3DJSON.runRoutes) {
-			X3DJSON.runRoutes[r]();
-		}
-	}
-	intervalId = setInterval(runAllRoutes, 1000 / 60 );
     }
 }
 
-function load_X_ITE_XML(content) {
+function load_X_ITE_XML(content, selector) {
 	X3D(function() {
-		var browser = X3D.getBrowser("#x_itexml");
+		var browser = X3D.getBrowser(selector);
 		browser.replaceWorld(browser.createX3DFromString(content));
 	}, function() {
 		alert("Failed to render XML to X_ITE");
 	});
 }
 
-function load_X_ITE_DOM(element) {
+function load_X_ITE_DOM(element, selector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser("#x_itedom");
+			var browser = X3D.getBrowser(selector);
 			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 				var importedScene = browser.importDocument(element);
 				browser.replaceWorld(importedScene);
@@ -242,10 +242,10 @@ function load_X_ITE_DOM(element) {
 	});
 }
 
-function load_X_ITE_JS(jsobj) {
+function load_X_ITE_JS(jsobj, selector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser("#x_itejson");
+			var browser = X3D.getBrowser(selector);
 			if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 				var importedScene = browser.importJS(jsobj);
 				browser.replaceWorld(importedScene);
@@ -289,12 +289,6 @@ function loadProtoX3D(selector, json, url) {
 		console.error(e);
 	}
     }
-    try {
-	json = flattener(json);
-    } catch (e) {
-	alert("Problems with Flattener", e);
-	console.error(e);
-    }
     
    // console.error("JSON IS NOW", json);
    try {
@@ -307,7 +301,7 @@ function loadProtoX3D(selector, json, url) {
     replaceX3DJSON(selector, json, url, xml, NS, function(child, xmlDoc) {
 	    if (child != null) {
 			try {
-			    load_X_ITE_JS(json);
+			    load_X_ITE_JS(json, "#x_itejson");
 			} catch (e) {
 				alert("Problems with X_ITE DOM", e);
 				console.error(e);
@@ -342,27 +336,10 @@ function loadProtoX3D(selector, json, url) {
 }
 
 function loadX3D(selector, json, url) {
-    if ($('#scripting').is(':checked')) {
-    	initializeScripts();
-    }
-    if ($('#externprototype').is(':checked')) {
-	// Expand Protos
-	try {
-		$.ajaxSetup({
-		  async: false
-		});
-		json = protoExpander.externalPrototypeExpander(url, json);
-		$.ajaxSetup({
-		  async: true
-		});
-		json = loadProtoX3D(selector, json, url);
-	} catch (e) {
-		alert("Problems with ExternProto Expander", e);
-		console.error(e);
+	if ($('#scripting').is(':checked')) {
+		initializeScripts();
 	}
-    } else {
 	json = loadProtoX3D(selector, json, url);
-    }
 }
 
 /**
@@ -374,26 +351,15 @@ function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
 		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
 			try {
-				$.ajaxSetup({
-				  async: false
-				});
-				json = protoExpander.externalPrototypeExpander(url, json);
-				$.ajaxSetup({
-				  async: true
-				});
+			    if ($('#prototype').is(':checked')) {
 				json = protoExpander.prototypeExpander(url, json, "");
-				json = flattener(json);
+			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline", e);
 				console.error(e);
 			}
 		} else {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
-		}
-		if (typeof flattener === 'function') {
-			json = flattener(json);
-		} else {
-			console.error("Perhaps you need to include the Flattener.js?");
 		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, X3DJSONLD, function() {

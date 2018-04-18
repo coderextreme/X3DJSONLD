@@ -177,7 +177,8 @@ public class Table5_18PixelTexture
     {
         X3DObject exampleObject = new Table5_18PixelTexture().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -189,7 +190,7 @@ public class Table5_18PixelTexture
 		}
 		if (validate)
 		{
-			System.out.print("Table5_18PixelTexture self-validation test results: ");
+			System.out.print("Java program \"Table5_18PixelTexture\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

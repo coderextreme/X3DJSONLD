@@ -166,11 +166,8 @@ BindingOperations_sail.prototype = {
       .addChild(new ROUTEObject().setFromNode("TextTouchSensor").setFromField("touchTime").setToNode("Clock").setToField("set_startTime"))
       .addChild(new IntegerSequencerObject("TimingSequencer").setKey(Java.to([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1.0], Java.type("float[]"))).setKeyValue(Java.to([0,1,2,3,4,5,6,7,8,10], Java.type("int[]"))))
       .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("TimingSequencer").setToField("set_fraction"))
-      .addChild(new ScriptObject("BindingSequencerEngine").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
-"        " + "\n" + 
-"ecmascript:" + "\n" + 
+      .addChild(new ScriptObject("BindingSequencerEngine").setSourceCode("\n" + 
+"        ecmascript:" + "\n" + 
 "\n" + 
 "function initialize ()" + "\n" + 
 "{" + "\n" + 
@@ -257,8 +254,7 @@ BindingOperations_sail.prototype = {
 "function view5Bound (inputValue)" + "\n" + 
 "{" + "\n" + 
 "    Browser.print (', view5Bound ' + (inputValue));" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_timeEvent").setType("SFInt32"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("bindView1").setType("SFBool"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("bindView2").setType("SFBool"))

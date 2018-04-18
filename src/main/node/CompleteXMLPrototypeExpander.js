@@ -6,10 +6,6 @@ var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
 var PROTOS = require('./PrototypeExpander')
-PROTOS.setX3DJSONLD(X3DJSONLD);
-
-var FL = require('./Flattener')
-var flattener = FL.flattener;
 
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
@@ -33,9 +29,7 @@ process.argv.shift();
 
 function ProcessJSON(json, file) {
 	// Run it through the prototype expander
-	json = PROTOS.externalPrototypeExpander(file, json);
 	json = PROTOS.prototypeExpander(file, json, "");
-	json = flattener(json);
 
 	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";

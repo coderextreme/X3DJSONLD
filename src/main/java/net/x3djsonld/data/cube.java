@@ -219,7 +219,8 @@ public class cube
     {
         X3DObject exampleObject = new cube().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -231,7 +232,7 @@ public class cube
 		}
 		if (validate)
 		{
-			System.out.print("cube self-validation test results: ");
+			System.out.print("Java program \"cube\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -201,7 +201,8 @@ public class X3dHeaderPrototypeSyntaxExamples
     {
         X3DObject exampleObject = new X3dHeaderPrototypeSyntaxExamples().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -213,7 +214,7 @@ public class X3dHeaderPrototypeSyntaxExamples
 		}
 		if (validate)
 		{
-			System.out.print("X3dHeaderPrototypeSyntaxExamples self-validation test results: ");
+			System.out.print("Java program \"X3dHeaderPrototypeSyntaxExamples\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

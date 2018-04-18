@@ -1923,9 +1923,24 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
 					parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
+        
+        /* whether to include subdirectory paths when creating markdown with  */
+        private boolean includeSubdirectoryPaths = true;
+        
+        /* Set whether to include subdirectory paths when creating markdown (default is true)
+         * @param value whether to omit subdirectory paths when creating markdown (default is true)
+	 * @see X3DObject#toFileModelMetaMarkdown(String)
+	 * @see X3DObject#toStringModelMetaMarkdown(String)
+	 * @see X3DObject#FILE_EXTENSION_MARKDOWN
+	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
+         */
+        public void setIncludeSubdirectoryPaths (boolean value)
+        {
+            includeSubdirectoryPaths = value;
+        }
 
 	/**
-	 * Creatmodel meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
+	 * Create model meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
 	 * @see X3DObject#toStringModelMetaMarkdown()
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
@@ -1969,7 +1984,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
-        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName); // no stylesheet parameters
+        	return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName, "includeSubdirectoryPaths", Boolean.toString(includeSubdirectoryPaths)); // one stylesheet parameter
 	}
 
 	/**

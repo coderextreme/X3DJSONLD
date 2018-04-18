@@ -132,7 +132,7 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	*/
 	classes.log("		var element = document.querySelector(selector);");
 	classes.log("		if (element === null) {");
-	classes.log("			console.error('unDEFed node',node);");
+	classes.log("			console.error('unDEFed node', node, selector);");
 	classes.log("		} else if (arguments.length > 2) {");
 	classes.log("			/*");
 	classes.log("			if (value && typeof value.toString === 'function') {");
@@ -509,7 +509,7 @@ function processSource(lines, classes, mypackage, selector, url) {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
 		}
-		var functions = lines.join("\n").replace(/Browser.println/g, "console.error").replace(/Browser.print/g, "console.error").replace(/Browser.createVrmlFromString[^;]*;/g, "new MFNode();").split("function");
+		var functions = lines.join("\n").replace(/Browser.println/g, "console.error").replace(/Browser.print/g, "console.error").replace(/Browser.createVrmlFromString[^;]*;/g, "new MFNode();").split(/[^"']function[^"']/);
 		var f;
 
 		var fxns = [];
