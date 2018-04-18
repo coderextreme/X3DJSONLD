@@ -241,7 +241,8 @@ public class arc
     {
         X3DObject exampleObject = new arc().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -253,7 +254,7 @@ public class arc
 		}
 		if (validate)
 		{
-			System.out.print("arc self-validation test results: ");
+			System.out.print("Java program \"arc\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

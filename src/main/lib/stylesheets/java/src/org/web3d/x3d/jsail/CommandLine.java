@@ -94,54 +94,56 @@ public class CommandLine
         clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
-    private static boolean convertToVRML97      = false;
-    private static boolean convertToClassicVRML = false;
-    private static boolean convertToX3D         = false;
-    private static boolean convertToXML         = false;
-    private static boolean convertToHTML        = false; // pretty-print documentation
-    private static boolean convertToMarkdown    = false; // model meta information
-    private static boolean convertToTidy        = false;
-    private static boolean convertToJSON        = false;
-    private static boolean convertToJS          = false;
-    private static boolean convertToX3DOM       = false;
-    private static boolean convertToX_ITE       = false;
-    private static boolean convertToEXI         = false;
-    private static boolean convertFromEXI       = false;
-    private static boolean convertToGZIP        = false;
-    private static boolean convertFromGZIP      = false;
-    private static boolean convertToZIP         = false;
-    private static boolean convertFromZIP       = false;
-    private static boolean validateSwitch       = false;
+    private static boolean convertToVRML97          = false;
+    private static boolean convertToClassicVRML     = false;
+    private static boolean convertToX3D             = false;
+    private static boolean convertToXML             = false;
+    private static boolean convertToHTML            = false; // pretty-print documentation
+    private static boolean convertToMarkdown        = false; // model meta information
+    private static boolean includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
+    private static boolean convertToTidy            = false;
+    private static boolean convertToJSON            = false;
+    private static boolean convertToJS              = false;
+    private static boolean convertToX3DOM           = false;
+    private static boolean convertToX_ITE           = false;
+    private static boolean convertToEXI             = false;
+    private static boolean convertFromEXI           = false;
+    private static boolean convertToGZIP            = false;
+    private static boolean convertFromGZIP          = false;
+    private static boolean convertToZIP             = false;
+    private static boolean convertFromZIP           = false;
+    private static boolean validateSwitch           = false;
 				
 	private static String  conversionExtension   = new String();
 
 	/** Reset switch values */
 	private static void initializeSwitches()
 	{
-		convertToVRML97      = false;
-		convertToClassicVRML = false;
-		convertToX3D         = false;
-		convertToXML         = false;
-		convertToHTML        = false;
-		convertToMarkdown    = false;
-		convertToTidy        = false;
-		convertToJSON        = false;
-		convertToJS          = false;
-		convertToX3DOM       = false;
-		convertToX_ITE       = false;
-		convertToEXI         = false;
-		convertFromEXI       = false;
-		convertToGZIP        = false;
-		convertFromGZIP      = false;
-		convertToZIP         = false;
-		convertFromZIP       = false;
-		validateSwitch       = false;
+		convertToVRML97          = false;
+		convertToClassicVRML     = false;
+		convertToX3D             = false;
+		convertToXML             = false;
+		convertToHTML            = false;
+		convertToMarkdown        = false;
+		includeSubdirectoryPaths = true; // special markdown switch
+		convertToTidy            = false;
+		convertToJSON            = false;
+		convertToJS              = false;
+		convertToX3DOM           = false;
+		convertToX_ITE           = false;
+		convertToEXI             = false;
+		convertFromEXI           = false;
+		convertToGZIP            = false;
+		convertFromGZIP          = false;
+		convertToZIP             = false;
+		convertFromZIP           = false;
+		validateSwitch           = false;
 
 		conversionExtension  = new String();
 	}
@@ -246,7 +248,6 @@ public class CommandLine
 					else System.out.println ("parameter: \"" + args[i] + "\" for properties file name root "+ propertiesFileNameRoot);
 					loadProperties = true;
 				}
-
 				else if (args[i].equalsIgnoreCase("-x3d") || args[i].equalsIgnoreCase("-tox3d"))
 				{
 					clearPriorConversionSwitches(args[i]);
@@ -272,11 +273,21 @@ public class CommandLine
 					else conversionExtension = X3DObject.FILE_EXTENSION_HTML;
 					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " pretty-print documentation");
 				}
+				else if (args[i].toLowerCase().contains("markdown") && args[i].toLowerCase().contains("flat")) // special switch
+				{
+					/* model meta information to markdown, used in ModelExchange.nps.edu */
+					clearPriorConversionSwitches(args[i]);
+					includeSubdirectoryPaths = false;
+					convertToMarkdown   = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
+					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown with flattened (omitted) subdirectories");
+				}
 				else if (args[i].equalsIgnoreCase("-md")  || args[i].equalsIgnoreCase("-tomd")  || args[i].equalsIgnoreCase("-markdown") || args[i].equalsIgnoreCase("-tomarkdown"))
 				{
-				    /* model meta information to markdown, used in ModelExchange.nps.edu */
+					/* model meta information to markdown, used in ModelExchange.nps.edu */
 					clearPriorConversionSwitches(args[i]);
-					convertToMarkdown = true;
+					includeSubdirectoryPaths = true;
+					convertToMarkdown   = true;
 					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
 					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown");
 				}
@@ -630,7 +641,8 @@ public class CommandLine
                     }
                     else if (convertToMarkdown) // model meta information
                     {
-                        System.out.println("convert to " + conversionExtension + " model meta information markdown");
+                        System.out.println("convert to " + conversionExtension + " model meta information markdown, include subdirectories in meta links: " + includeSubdirectoryPaths);
+                        loadedX3dModel.setIncludeSubdirectoryPaths(includeSubdirectoryPaths);
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
                              resultFile =       loadedX3dModel.toFileModelMetaMarkdown (resultFileName);
@@ -871,7 +883,8 @@ public class CommandLine
     }
 
     /** 
-	 * Reset all conversions switches to default (false)
+     * Reset all conversions switches to default (false)
+     * @param newCommand provides diagnostic message when prior command gets overridden 
      */
     private static void clearPriorConversionSwitches(String newCommand)
     {
@@ -879,17 +892,18 @@ public class CommandLine
             convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
-        convertToVRML97      = false;
-        convertToClassicVRML = false;
-        convertToX3D         = false;
-        convertToXML         = false;
-        convertToHTML        = false;
-        convertToMarkdown    = false;
-        convertToTidy        = false;
-        convertToJSON        = false;
-        convertToJS          = false;
-        convertToX3DOM       = false;
-        convertToX_ITE       = false;
+        convertToVRML97          = false;
+        convertToClassicVRML     = false;
+        convertToX3D             = false;
+        convertToXML             = false;
+        convertToHTML            = false;
+        convertToMarkdown        = false;
+        includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
+        convertToTidy            = false;
+        convertToJSON            = false;
+        convertToJS              = false;
+        convertToX3DOM           = false;
+        convertToX_ITE           = false;
     }
 
 }

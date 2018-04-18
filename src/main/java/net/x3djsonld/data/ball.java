@@ -188,7 +188,8 @@ public class ball
     {
         X3DObject exampleObject = new ball().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -200,7 +201,7 @@ public class ball
 		}
 		if (validate)
 		{
-			System.out.print("ball self-validation test results: ");
+			System.out.print("Java program \"ball\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -207,7 +207,8 @@ public class mirror2
     {
         X3DObject exampleObject = new mirror2().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -219,7 +220,7 @@ public class mirror2
 		}
 		if (validate)
 		{
-			System.out.print("mirror2 self-validation test results: ");
+			System.out.print("Java program \"mirror2\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

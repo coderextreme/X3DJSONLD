@@ -142,7 +142,8 @@ public class geo
     {
         X3DObject exampleObject = new geo().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -154,7 +155,7 @@ public class geo
 		}
 		if (validate)
 		{
-			System.out.print("geo self-validation test results: ");
+			System.out.print("Java program \"geo\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

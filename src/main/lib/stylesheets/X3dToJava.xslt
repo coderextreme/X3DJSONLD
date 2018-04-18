@@ -256,9 +256,10 @@ POSSIBILITY OF SUCH DAMAGE.
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().getX3dModel();
+        X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -270,8 +271,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		}
 		if (validate)
 		{
-			System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
-			<xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
+			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newClassName"/>
+			<xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

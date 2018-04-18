@@ -217,7 +217,8 @@ public class flowers4
     {
         X3DObject exampleObject = new flowers4().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -229,7 +230,7 @@ public class flowers4
 		}
 		if (validate)
 		{
-			System.out.print("flowers4 self-validation test results: ");
+			System.out.print("Java program \"flowers4\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

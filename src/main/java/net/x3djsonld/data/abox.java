@@ -124,7 +124,8 @@ public class abox
     {
         X3DObject exampleObject = new abox().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -136,7 +137,7 @@ public class abox
 		}
 		if (validate)
 		{
-			System.out.print("abox self-validation test results: ");
+			System.out.print("Java program \"abox\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

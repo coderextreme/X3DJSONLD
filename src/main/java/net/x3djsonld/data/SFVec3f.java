@@ -145,7 +145,8 @@ public class SFVec3f
     {
         X3DObject exampleObject = new SFVec3f().getX3dModel();
 
-        exampleObject.handleArguments(args);
+        if ((args != null) && (args.length > 0))
+			exampleObject.handleArguments(args);
 		boolean validate = (args.length == 0);
 		for (String arg : args)
 		{
@@ -157,7 +158,7 @@ public class SFVec3f
 		}
 		if (validate)
 		{
-			System.out.print("SFVec3f self-validation test results: ");
+			System.out.print("Java program \"SFVec3f\" self-validation test results: ");
 			String validationResults = exampleObject.validationReport();
 			System.out.println(validationResults);
 		}

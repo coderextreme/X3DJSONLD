@@ -74,7 +74,7 @@
 		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 	    </Appearance>
-	    <Sphere subdivision="512,512" solid="false" radius='1'></Sphere>
+	    <Sphere></Sphere>
 	  </Shape>
         </Transform>
           <Script DEF='UrlSelector' directOutput='true'>

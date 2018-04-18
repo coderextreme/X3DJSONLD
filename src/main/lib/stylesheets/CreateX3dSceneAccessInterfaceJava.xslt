@@ -4199,9 +4199,24 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
 					parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
+        
+        /* whether to include subdirectory paths when creating markdown with  */
+        private boolean includeSubdirectoryPaths = true;
+        
+        /* Set whether to include subdirectory paths when creating markdown (default is true)
+         * @param value whether to omit subdirectory paths when creating markdown (default is true)
+	 * @see X3DObject#toFileModelMetaMarkdown(String)
+	 * @see X3DObject#toStringModelMetaMarkdown(String)
+	 * @see X3DObject#FILE_EXTENSION_MARKDOWN
+	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
+         */
+        public void setIncludeSubdirectoryPaths (boolean value)
+        {
+            includeSubdirectoryPaths = value;
+        }
 
 	/**
-	 * Creatmodel meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
+	 * Create model meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
 	 * @see X3DObject#toStringModelMetaMarkdown()
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
@@ -4245,7 +4260,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
-        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName); // no stylesheet parameters
+        	return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName, "includeSubdirectoryPaths", Boolean.toString(includeSubdirectoryPaths)); // one stylesheet parameter
 	}
 
 	/**
@@ -25345,54 +25360,56 @@ import org.web3d.x3d.sai.X3DException;
         clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMD | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
-    private static boolean convertToVRML97      = false;
-    private static boolean convertToClassicVRML = false;
-    private static boolean convertToX3D         = false;
-    private static boolean convertToXML         = false;
-    private static boolean convertToHTML        = false; // pretty-print documentation
-    private static boolean convertToMarkdown    = false; // model meta information
-    private static boolean convertToTidy        = false;
-    private static boolean convertToJSON        = false;
-    private static boolean convertToJS          = false;
-    private static boolean convertToX3DOM       = false;
-    private static boolean convertToX_ITE       = false;
-    private static boolean convertToEXI         = false;
-    private static boolean convertFromEXI       = false;
-    private static boolean convertToGZIP        = false;
-    private static boolean convertFromGZIP      = false;
-    private static boolean convertToZIP         = false;
-    private static boolean convertFromZIP       = false;
-    private static boolean validateSwitch       = false;
+    private static boolean convertToVRML97          = false;
+    private static boolean convertToClassicVRML     = false;
+    private static boolean convertToX3D             = false;
+    private static boolean convertToXML             = false;
+    private static boolean convertToHTML            = false; // pretty-print documentation
+    private static boolean convertToMarkdown        = false; // model meta information
+    private static boolean includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
+    private static boolean convertToTidy            = false;
+    private static boolean convertToJSON            = false;
+    private static boolean convertToJS              = false;
+    private static boolean convertToX3DOM           = false;
+    private static boolean convertToX_ITE           = false;
+    private static boolean convertToEXI             = false;
+    private static boolean convertFromEXI           = false;
+    private static boolean convertToGZIP            = false;
+    private static boolean convertFromGZIP          = false;
+    private static boolean convertToZIP             = false;
+    private static boolean convertFromZIP           = false;
+    private static boolean validateSwitch           = false;
 				
 	private static String  conversionExtension   = new String();
 
 	/** Reset switch values */
 	private static void initializeSwitches()
 	{
-		convertToVRML97      = false;
-		convertToClassicVRML = false;
-		convertToX3D         = false;
-		convertToXML         = false;
-		convertToHTML        = false;
-		convertToMarkdown    = false;
-		convertToTidy        = false;
-		convertToJSON        = false;
-		convertToJS          = false;
-		convertToX3DOM       = false;
-		convertToX_ITE       = false;
-		convertToEXI         = false;
-		convertFromEXI       = false;
-		convertToGZIP        = false;
-		convertFromGZIP      = false;
-		convertToZIP         = false;
-		convertFromZIP       = false;
-		validateSwitch       = false;
+		convertToVRML97          = false;
+		convertToClassicVRML     = false;
+		convertToX3D             = false;
+		convertToXML             = false;
+		convertToHTML            = false;
+		convertToMarkdown        = false;
+		includeSubdirectoryPaths = true; // special markdown switch
+		convertToTidy            = false;
+		convertToJSON            = false;
+		convertToJS              = false;
+		convertToX3DOM           = false;
+		convertToX_ITE           = false;
+		convertToEXI             = false;
+		convertFromEXI           = false;
+		convertToGZIP            = false;
+		convertFromGZIP          = false;
+		convertToZIP             = false;
+		convertFromZIP           = false;
+		validateSwitch           = false;
 
 		conversionExtension  = new String();
 	}
@@ -25497,7 +25514,6 @@ import org.web3d.x3d.sai.X3DException;
 					else System.out.println ("parameter: \"" + args[i] + "\" for properties file name root "+ propertiesFileNameRoot);
 					loadProperties = true;
 				}
-
 				else if (args[i].equalsIgnoreCase("-x3d") || args[i].equalsIgnoreCase("-tox3d"))
 				{
 					clearPriorConversionSwitches(args[i]);
@@ -25523,11 +25539,21 @@ import org.web3d.x3d.sai.X3DException;
 					else conversionExtension = X3DObject.FILE_EXTENSION_HTML;
 					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " pretty-print documentation");
 				}
+				else if (args[i].toLowerCase().contains("markdown") && args[i].toLowerCase().contains("flat")) // special switch
+				{
+					/* model meta information to markdown, used in ModelExchange.nps.edu */
+					clearPriorConversionSwitches(args[i]);
+					includeSubdirectoryPaths = false;
+					convertToMarkdown   = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
+					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown with flattened (omitted) subdirectories");
+				}
 				else if (args[i].equalsIgnoreCase("-md")  || args[i].equalsIgnoreCase("-tomd")  || args[i].equalsIgnoreCase("-markdown") || args[i].equalsIgnoreCase("-tomarkdown"))
 				{
-				    /* model meta information to markdown, used in ModelExchange.nps.edu */
+					/* model meta information to markdown, used in ModelExchange.nps.edu */
 					clearPriorConversionSwitches(args[i]);
-					convertToMarkdown = true;
+					includeSubdirectoryPaths = true;
+					convertToMarkdown   = true;
 					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
 					System.out.println ("parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown");
 				}
@@ -25881,7 +25907,8 @@ import org.web3d.x3d.sai.X3DException;
                     }
                     else if (convertToMarkdown) // model meta information
                     {
-                        System.out.println("convert to " + conversionExtension + " model meta information markdown");
+                        System.out.println("convert to " + conversionExtension + " model meta information markdown, include subdirectories in meta links: " + includeSubdirectoryPaths);
+                        loadedX3dModel.setIncludeSubdirectoryPaths(includeSubdirectoryPaths);
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
                              resultFile =       loadedX3dModel.toFileModelMetaMarkdown (resultFileName);
@@ -26122,7 +26149,8 @@ import org.web3d.x3d.sai.X3DException;
     }
 
     /** 
-	 * Reset all conversions switches to default (false)
+     * Reset all conversions switches to default (false)
+     * @param newCommand provides diagnostic message when prior command gets overridden 
      */
     private static void clearPriorConversionSwitches(String newCommand)
     {
@@ -26130,17 +26158,18 @@ import org.web3d.x3d.sai.X3DException;
             convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
-        convertToVRML97      = false;
-        convertToClassicVRML = false;
-        convertToX3D         = false;
-        convertToXML         = false;
-        convertToHTML        = false;
-        convertToMarkdown    = false;
-        convertToTidy        = false;
-        convertToJSON        = false;
-        convertToJS          = false;
-        convertToX3DOM       = false;
-        convertToX_ITE       = false;
+        convertToVRML97          = false;
+        convertToClassicVRML     = false;
+        convertToX3D             = false;
+        convertToXML             = false;
+        convertToHTML            = false;
+        convertToMarkdown        = false;
+        includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
+        convertToTidy            = false;
+        convertToJSON            = false;
+        convertToJS              = false;
+        convertToX3DOM           = false;
+        convertToX_ITE           = false;
     }
 
 ]]></xsl:text>
