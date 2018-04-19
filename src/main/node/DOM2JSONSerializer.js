@@ -290,7 +290,7 @@ DOM2JSONSerializer.prototype = {
 				}
 			}
 			if (typeof parent !== 'undefined' && typeof mapToMethod !== 'undefined' && (value === "" || value === "children")) {
-				if (typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
+				if (typeof mapToMethod[parent.nodeName] !== 'undefined' && typeof mapToMethod[parent.nodeName][element.nodeName] !== 'undefined') {
 					var tmpvalue = mapToMethod[parent.nodeName][element.nodeName].substring(3,4).toLowerCase()+mapToMethod[parent.nodeName][element.nodeName].substring(4); // lowercase first letter
 					if (tmpvalue !== 'proxy') { // must be set with containerField attribute
 						value = tmpvalue;
@@ -330,7 +330,10 @@ DOM2JSONSerializer.prototype = {
 				fields[fieldName] = subobject[fieldName];
 			} else {
 				fieldName = '-'+attrName;
-				var attrType = fieldTypes[element.nodeName][attrName];
+				var attrType;
+				if (typeof fieldTypes[element.nodeName] !== 'undefined') {
+					attrType = fieldTypes[element.nodeName][attrName];
+				}
 				// console.error(element.nodeName, fieldName, node.nodeName, attrType);
 				if (attrType === "SFNode") {
 					if (typeof fields[fieldName] === 'undefined') {

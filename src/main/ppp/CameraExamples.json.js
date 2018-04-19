@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/CameraExamples.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/CameraExamples.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/CameraExamples.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil = function(node, field,
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil = function(node, field,
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,282 +134,610 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/CameraExamples.json'] === 'undefined') {
+	X3DJSON['Scene../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt");
+	try {
+		this.description = new SFString("SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_position = function (value) {
-		this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting position '+e);
+			console.error('Problems setting position',e);
+		}
 	};
 	this.position_changed = function () {
 		var value = this.position;
 		return value;
 	};
-	this.position = new SFVec3f(-4,4,10);
+	try {
+		this.position = new SFVec3f(-4,4,10);
+	} catch (e) {
+		alert('Problems setting position '+e);
+		console.error('Problems setting position',e);
+	}
 	this.set_orientation = function (value) {
-		this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting orientation '+e);
+			console.error('Problems setting orientation',e);
+		}
 	};
 	this.orientation_changed = function () {
 		var value = this.orientation;
 		return value;
 	};
-	this.orientation = new SFRotation(0,0,1,0);
+	try {
+		this.orientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting orientation '+e);
+		console.error('Problems setting orientation',e);
+	}
 	this.set_fraction = function (value) {
-		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
 	};
 	this.fraction_changed = function () {
 		var value = this.fraction;
 		return value;
 	};
-	this.fraction = undefined;
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		alert('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 	this.set_bind = function (value) {
-		this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting bind '+e);
+			console.error('Problems setting bind',e);
+		}
 	};
 	this.bind_changed = function () {
 		var value = this.bind;
 		return value;
 	};
-	this.bind = undefined;
+	try {
+		this.bind = undefined;
+	} catch (e) {
+		alert('Problems setting bind '+e);
+		console.error('Problems setting bind',e);
+	}
 	this.set_fieldOfView = function (value) {
-		this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fieldOfView '+e);
+			console.error('Problems setting fieldOfView',e);
+		}
 	};
 	this.fieldOfView_changed = function () {
 		var value = this.fieldOfView;
 		return value;
 	};
-	this.fieldOfView = new SFFloat(0.7854);
+	try {
+		this.fieldOfView = new SFFloat(0.7854);
+	} catch (e) {
+		alert('Problems setting fieldOfView '+e);
+		console.error('Problems setting fieldOfView',e);
+	}
 	this.set_nearClipPlane = function (value) {
-		this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting nearClipPlane '+e);
+			console.error('Problems setting nearClipPlane',e);
+		}
 	};
 	this.nearClipPlane_changed = function () {
 		var value = this.nearClipPlane;
 		return value;
 	};
-	this.nearClipPlane = new SFFloat(0.25);
+	try {
+		this.nearClipPlane = new SFFloat(0.25);
+	} catch (e) {
+		alert('Problems setting nearClipPlane '+e);
+		console.error('Problems setting nearClipPlane',e);
+	}
 	this.set_farClipPlane = function (value) {
-		this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting farClipPlane '+e);
+			console.error('Problems setting farClipPlane',e);
+		}
 	};
 	this.farClipPlane_changed = function () {
 		var value = this.farClipPlane;
 		return value;
 	};
-	this.farClipPlane = new SFFloat(0);
+	try {
+		this.farClipPlane = new SFFloat(0);
+	} catch (e) {
+		alert('Problems setting farClipPlane '+e);
+		console.error('Problems setting farClipPlane',e);
+	}
 	this.set_shots = function (value) {
-		this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shots '+e);
+			console.error('Problems setting shots',e);
+		}
 	};
 	this.shots_changed = function () {
 		var value = this.shots;
 		return value;
 	};
-	this.shots = new MFNode();
+	try {
+		this.shots = new MFNode();
+	} catch (e) {
+		alert('Problems setting shots '+e);
+		console.error('Problems setting shots',e);
+	}
 	this.set_filterColor = function (value) {
-		this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting filterColor '+e);
+			console.error('Problems setting filterColor',e);
+		}
 	};
 	this.filterColor_changed = function () {
 		var value = this.filterColor;
 		return value;
 	};
-	this.filterColor = new SFColor(1,1,1);
+	try {
+		this.filterColor = new SFColor(1,1,1);
+	} catch (e) {
+		alert('Problems setting filterColor '+e);
+		console.error('Problems setting filterColor',e);
+	}
 	this.set_filterTransparency = function (value) {
-		this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting filterTransparency '+e);
+			console.error('Problems setting filterTransparency',e);
+		}
 	};
 	this.filterTransparency_changed = function () {
 		var value = this.filterTransparency;
 		return value;
 	};
-	this.filterTransparency = new SFFloat(1);
+	try {
+		this.filterTransparency = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting filterTransparency '+e);
+		console.error('Problems setting filterTransparency',e);
+	}
 	this.set_upVector = function (value) {
-		this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting upVector '+e);
+			console.error('Problems setting upVector',e);
+		}
 	};
 	this.upVector_changed = function () {
 		var value = this.upVector;
 		return value;
 	};
-	this.upVector = new SFVec3f(0,1,0);
+	try {
+		this.upVector = new SFVec3f(0,1,0);
+	} catch (e) {
+		alert('Problems setting upVector '+e);
+		console.error('Problems setting upVector',e);
+	}
 	this.set_fStop = function (value) {
-		this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fStop '+e);
+			console.error('Problems setting fStop',e);
+		}
 	};
 	this.fStop_changed = function () {
 		var value = this.fStop;
 		return value;
 	};
-	this.fStop = new SFFloat(5.6);
+	try {
+		this.fStop = new SFFloat(5.6);
+	} catch (e) {
+		alert('Problems setting fStop '+e);
+		console.error('Problems setting fStop',e);
+	}
 	this.set_focusDistance = function (value) {
-		this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting focusDistance '+e);
+			console.error('Problems setting focusDistance',e);
+		}
 	};
 	this.focusDistance_changed = function () {
 		var value = this.focusDistance;
 		return value;
 	};
-	this.focusDistance = new SFFloat(10);
+	try {
+		this.focusDistance = new SFFloat(10);
+	} catch (e) {
+		alert('Problems setting focusDistance '+e);
+		console.error('Problems setting focusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_totalDuration = function (value) {
-		this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting totalDuration '+e);
+			console.error('Problems setting totalDuration',e);
+		}
 	};
 	this.totalDuration_changed = function () {
 		var value = this.totalDuration;
 		return value;
 	};
-	this.totalDuration = new SFTime();
+	try {
+		this.totalDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting totalDuration '+e);
+		console.error('Problems setting totalDuration',e);
+	}
 	this.set_offlineRender = function (value) {
-		this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting offlineRender '+e);
+			console.error('Problems setting offlineRender',e);
+		}
 	};
 	this.offlineRender_changed = function () {
 		var value = this.offlineRender;
 		return value;
 	};
-	this.offlineRender = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('undefined');
+	try {
+		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
+	} catch (e) {
+		alert('Problems setting offlineRender '+e);
+		console.error('Problems setting offlineRender',e);
+	}
 	this.set_ViewpointNode = function (value) {
-		this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting ViewpointNode '+e);
+			console.error('Problems setting ViewpointNode',e);
+		}
 	};
 	this.ViewpointNode_changed = function () {
 		var value = this.ViewpointNode;
 		return value;
 	};
-	this.ViewpointNode = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint');
+	try {
+		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint');
+	} catch (e) {
+		alert('Problems setting ViewpointNode '+e);
+		console.error('Problems setting ViewpointNode',e);
+	}
 	this.set_NavInfoNode = function (value) {
-		this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting NavInfoNode '+e);
+			console.error('Problems setting NavInfoNode',e);
+		}
 	};
 	this.NavInfoNode_changed = function () {
 		var value = this.NavInfoNode;
 		return value;
 	};
-	this.NavInfoNode = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraNavInfo');
+	try {
+		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo');
+	} catch (e) {
+		alert('Problems setting NavInfoNode '+e);
+		console.error('Problems setting NavInfoNode',e);
+	}
 	this.set_CameraPI = function (value) {
-		this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting CameraPI '+e);
+			console.error('Problems setting CameraPI',e);
+		}
 	};
 	this.CameraPI_changed = function () {
 		var value = this.CameraPI;
 		return value;
 	};
-	this.CameraPI = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator');
+	try {
+		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator');
+	} catch (e) {
+		alert('Problems setting CameraPI '+e);
+		console.error('Problems setting CameraPI',e);
+	}
 	this.set_CameraOI = function (value) {
-		this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting CameraOI '+e);
+			console.error('Problems setting CameraOI',e);
+		}
 	};
 	this.CameraOI_changed = function () {
 		var value = this.CameraOI;
 		return value;
 	};
-	this.CameraOI = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator');
+	try {
+		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator');
+	} catch (e) {
+		alert('Problems setting CameraOI '+e);
+		console.error('Problems setting CameraOI',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 	this.set_animated = function (value) {
-		this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting animated '+e);
+			console.error('Problems setting animated',e);
+		}
 	};
 	this.animated_changed = function () {
 		var value = this.animated;
 		return value;
 	};
-	this.animated = new SFBool(false);
+	try {
+		this.animated = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting animated '+e);
+		console.error('Problems setting animated',e);
+	}
 	this.set_initialized = function (value) {
-		this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialized '+e);
+			console.error('Problems setting initialized',e);
+		}
 	};
 	this.initialized_changed = function () {
 		var value = this.initialized;
 		return value;
 	};
-	this.initialized = new SFBool(false);
+	try {
+		this.initialized = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting initialized '+e);
+		console.error('Problems setting initialized',e);
+	}
 	this.set_shotCount = function (value) {
-		this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotCount '+e);
+			console.error('Problems setting shotCount',e);
+		}
 	};
 	this.shotCount_changed = function () {
 		var value = this.shotCount;
 		return value;
 	};
-	this.shotCount = new SFInt32(0);
+	try {
+		this.shotCount = new SFInt32(0);
+	} catch (e) {
+		alert('Problems setting shotCount '+e);
+		console.error('Problems setting shotCount',e);
+	}
 	this.set_movesCount = function (value) {
-		this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting movesCount '+e);
+			console.error('Problems setting movesCount',e);
+		}
 	};
 	this.movesCount_changed = function () {
 		var value = this.movesCount;
 		return value;
 	};
-	this.movesCount = new SFInt32(0);
+	try {
+		this.movesCount = new SFInt32(0);
+	} catch (e) {
+		alert('Problems setting movesCount '+e);
+		console.error('Problems setting movesCount',e);
+	}
 	this.set_frameCount = function (value) {
-		this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frameCount '+e);
+			console.error('Problems setting frameCount',e);
+		}
 	};
 	this.frameCount_changed = function () {
 		var value = this.frameCount;
 		return value;
 	};
-	this.frameCount = new SFFloat(0);
+	try {
+		this.frameCount = new SFFloat(0);
+	} catch (e) {
+		alert('Problems setting frameCount '+e);
+		console.error('Problems setting frameCount',e);
+	}
 	this.set_startTime = function (value) {
-		this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startTime '+e);
+			console.error('Problems setting startTime',e);
+		}
 	};
 	this.startTime_changed = function () {
 		var value = this.startTime;
 		return value;
 	};
-	this.startTime = new SFTime(0);
+	try {
+		this.startTime = new SFTime(0);
+	} catch (e) {
+		alert('Problems setting startTime '+e);
+		console.error('Problems setting startTime',e);
+	}
 	this.set_priorTraceTime = function (value) {
-		this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting priorTraceTime '+e);
+			console.error('Problems setting priorTraceTime',e);
+		}
 	};
 	this.priorTraceTime_changed = function () {
 		var value = this.priorTraceTime;
 		return value;
 	};
-	this.priorTraceTime = new SFTime(0);
+	try {
+		this.priorTraceTime = new SFTime(0);
+	} catch (e) {
+		alert('Problems setting priorTraceTime '+e);
+		console.error('Problems setting priorTraceTime',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraScript
 {
 //  this.tracePrint ('this.initialize start...');
 
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
 
     // remaining setups deferred to invocation of this.checkShots() method
     // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to functino initialization
     this.alwaysPrint ('this.initialize complete');
 }
-
 ;
 
 	this.checkShots = function (eventValue)
@@ -484,7 +815,7 @@ ecmascript:
                 // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functinos
 
                 // test if difference vector is zero, if so maintain previous rotation
-                var shotVector = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
+                var shotVector = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
                 if (shotVector.length() >= 0)
                 {
                     // default view direction is along -Z axis
@@ -497,9 +828,9 @@ ecmascript:
                 }
 
                 this.tracePrint ('this.proxy.shots[' + i + '].moves[' + j + '].goalAimPoint=' + this.proxy.shots[i].moves[j].goalAimPoint.toString());
-                this.tracePrint ('        X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString());
-                this.tracePrint ('          shotVector     delta=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
-                this.tracePrint ('          shotVector normalize=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
+                this.tracePrint ('        X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString());
+                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
+                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
                 this.tracePrint ('               goalOrientation=' + this.proxy.shots[i].moves[j].goalOrientation.toString());
                 this.tracePrint ('      this.proxy.keyValueOrientation[k+1]=' + this.proxy.keyValueOrientation[k+1].toString() + '');
             }
@@ -539,19 +870,18 @@ ecmascript:
     }
     this.tracePrint ('           this.proxy.animated=' + this.proxy.animated);
     // set node values
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
 
     if (!this.proxy.animated) // output results
     {
-        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
     }
     this.tracePrint ('this.checkShots() complete');
 }
-
 ;
 
 	this.stripBrackets = function (fieldArray)
@@ -565,7 +895,6 @@ ecmascript:
     }
     return outputString;
 }
-
 ;
 
 	this.set_fraction = function (eventValue, timestamp) // input event received for inputOnly field
@@ -581,25 +910,25 @@ ecmascript:
       this.alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
       this.proxy.startTime      = timestamp;
       this.proxy.priorTraceTime = timestamp;
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
       }
    }
    else if ((timestamp - this.proxy.priorTraceTime) >= 1.0) // 1 second trace interval
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
       this.proxy.priorTraceTime = timestamp;
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -609,7 +938,7 @@ ecmascript:
    }
    else if (eventValue == 1)
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
@@ -622,7 +951,6 @@ ecmascript:
       this.proxy.frameCount++;
    }
 }
-
 ;
 
 	this.set_bind = function (eventValue) // input event received for inputOnly field
@@ -642,133 +970,114 @@ ecmascript:
        this.tracePrint ('Camera has been unbound');
    }
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_position = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.position = eventValue;
 }
-
 ;
 
 	this.set_orientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.orientation = eventValue;
 }
-
 ;
 
 	this.set_fieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.fieldOfView = eventValue;
 }
-
 ;
 
 	this.set_nearClipPlane = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.nearClipPlane = eventValue;
 }
-
 ;
 
 	this.set_farClipPlane = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.farClipPlane = eventValue;
 }
-
 ;
 
 	this.set_shots = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.shots = eventValue;
 }
-
 ;
 
 	this.set_filterColor = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.filterColor = eventValue;
 }
-
 ;
 
 	this.set_filterTransparency = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.filterTransparency = eventValue;
 }
-
 ;
 
 	this.set_upVector = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.upVector = eventValue;
 }
-
 ;
 
 	this.set_fStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.fStop = eventValue;
 }
-
 ;
 
 	this.set_focusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.focusDistance = eventValue;
 }
-
 ;
 
 	this.set_offlineRender = function (eventValue) // input event received for inputOutput field
 {
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('undefined', '',  eventValue);
+    X3DJSON.nodeUtil('Scene','undefined', '',  eventValue);
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValueOrientation = eventValue;
 }
-
 ;
 
 	this.set_animated = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.animated = eventValue;
 }
-
 ;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -785,152 +1094,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Simple shot of Camera Zoom");
+	try {
+		this.description = new SFString("Simple shot of Camera Zoom");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(-50,1,-10);
+	try {
+		this.initialPosition = new SFVec3f(-50,1,-10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.initialOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -945,84 +1421,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -1030,13 +1494,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -1053,128 +1516,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Zoom In");
+	try {
+		this.description = new SFString("Camera Zoom In");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-50,1,-15);
+	try {
+		this.goalPosition = new SFVec3f(-50,1,-15);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -1192,7 +1792,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -1202,63 +1801,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -1266,13 +1856,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -1290,128 +1879,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Zoom Out");
+	try {
+		this.description = new SFString("Camera Zoom Out");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-50,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-50,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -1429,7 +2155,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -1439,63 +2164,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -1503,13 +2219,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -1527,128 +2242,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE1000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Pause");
+	try {
+		this.description = new SFString("Camera Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-50,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-50,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -1666,7 +2518,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -1676,63 +2527,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -1740,13 +2582,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -1764,152 +2605,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Zoom_CameraShotScript.DECLCameraMovement_INSTANCE2000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Simple shot of Camera Dolly");
+	try {
+		this.description = new SFString("Simple shot of Camera Dolly");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(-40,1,-10);
+	try {
+		this.initialPosition = new SFVec3f(-40,1,-10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.initialOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -1924,84 +2932,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -2009,13 +3005,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -2032,128 +3027,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Dolly from Right to Left");
+	try {
+		this.description = new SFString("Camera Dolly from Right to Left");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-45,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-45,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -2171,7 +3303,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -2181,63 +3312,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -2245,13 +3367,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -2269,128 +3390,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_DollyMove1_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Dolly from Left to Right");
+	try {
+		this.description = new SFString("Camera Dolly from Left to Right");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-40,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-40,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -2408,7 +3666,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -2418,63 +3675,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -2482,13 +3730,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -2506,128 +3753,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE3000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Pause");
+	try {
+		this.description = new SFString("Camera Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-40,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-40,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -2645,7 +4029,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -2655,63 +4038,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -2719,13 +4093,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -2743,152 +4116,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Dolly_CameraShotScript.DECLCameraMovement_INSTANCE4000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Simple shot of Camera Pan left right and back to center");
+	try {
+		this.description = new SFString("Simple shot of Camera Pan left right and back to center");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(-30,1,-10);
+	try {
+		this.initialPosition = new SFVec3f(-30,1,-10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.initialOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -2903,84 +4443,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -2988,13 +4516,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -3011,128 +4538,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Pan Left");
+	try {
+		this.description = new SFString("Pan Left");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(2);
+	try {
+		this.duration = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-30,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-30,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0.4);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0.4);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -3150,7 +4814,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -3160,63 +4823,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -3224,13 +4878,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -3248,128 +4901,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanLeft_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Pan Right");
+	try {
+		this.description = new SFString("Pan Right");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-30,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-30,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,-0.4);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,-0.4);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -3387,7 +5177,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -3397,63 +5186,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -3461,13 +5241,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -3485,128 +5264,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_PanRight_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Pan back to Center");
+	try {
+		this.description = new SFString("Camera Pan back to Center");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(2);
+	try {
+		this.duration = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-30,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-30,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -3624,7 +5540,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -3634,63 +5549,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -3698,13 +5604,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -3722,128 +5627,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE5000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Pause");
+	try {
+		this.description = new SFString("Camera Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(2);
+	try {
+		this.duration = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-30,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-30,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -3861,7 +5903,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -3871,63 +5912,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -3935,13 +5967,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -3959,152 +5990,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_Pan_CameraShotScript.DECLCameraMovement_INSTANCE6000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Boom");
+	try {
+		this.description = new SFString("Camera Boom");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(-20,1,-10);
+	try {
+		this.initialPosition = new SFVec3f(-20,1,-10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.initialOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -4119,84 +6317,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -4204,13 +6390,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -4227,128 +6412,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Boom Up");
+	try {
+		this.description = new SFString("Camera Boom Up");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-20,5,-10);
+	try {
+		this.goalPosition = new SFVec3f(-20,5,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -4366,7 +6688,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -4376,63 +6697,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -4440,13 +6752,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -4464,128 +6775,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_CameraBoomUp_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Boom Down");
+	try {
+		this.description = new SFString("Camera Boom Down");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-20,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-20,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -4603,7 +7051,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -4613,63 +7060,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -4677,13 +7115,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -4701,128 +7138,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomDown_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Pause");
+	try {
+		this.description = new SFString("Camera Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(2);
+	try {
+		this.duration = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-20,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-20,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -4840,7 +7414,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -4850,63 +7423,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -4914,13 +7478,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -4938,152 +7501,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraBoom_CameraShotScript.DECLCameraMovement_BoomPause_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt");
+	try {
+		this.description = new SFString("Camera Tilt");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.initialPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,0,1,0);
+	try {
+		this.initialOrientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(true);
+	try {
+		this.traceEnabled = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -5098,84 +7828,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -5183,13 +7901,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -5206,128 +7923,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Pause");
+	try {
+		this.description = new SFString("Camera Tilt Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,0);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -5345,7 +8199,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -5355,63 +8208,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -5419,13 +8263,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -5443,128 +8286,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE7000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Left");
+	try {
+		this.description = new SFString("Camera Tilt Left");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,0.785);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,0.785);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -5582,7 +8562,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -5592,63 +8571,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -5656,13 +8626,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -5680,128 +8649,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltDown_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Pause");
+	try {
+		this.description = new SFString("Camera Tilt Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,0.785);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,0.785);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -5819,7 +8925,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -5829,63 +8934,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -5893,13 +8989,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -5917,128 +9012,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltPause_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Right");
+	try {
+		this.description = new SFString("Camera Tilt Right");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,-0.785);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,-0.785);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -6056,7 +9288,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -6066,63 +9297,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -6130,13 +9352,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -6154,128 +9375,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE8000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Pause");
+	try {
+		this.description = new SFString("Camera Tilt Pause");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,-0.785);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,-0.785);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -6293,7 +9651,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -6303,63 +9660,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -6367,13 +9715,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -6391,128 +9738,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_INSTANCE9000_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Camera Tilt Reset");
+	try {
+		this.description = new SFString("Camera Tilt Reset");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(1);
+	try {
+		this.duration = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(-10,1,-10);
+	try {
+		this.goalPosition = new SFVec3f(-10,1,-10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,0);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -6530,7 +10014,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -6540,63 +10023,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -6604,13 +10078,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -6628,128 +10101,265 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltReset_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("Return to home");
+	try {
+		this.description = new SFString("Return to home");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(2);
+	try {
+		this.duration = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(0,2,12);
+	try {
+		this.goalPosition = new SFVec3f(0,2,12);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,0,1,0);
+	try {
+		this.goalOrientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool();
+	try {
+		this.tracking = new SFBool();
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -6767,7 +10377,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -6777,63 +10386,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -6841,13 +10441,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -6865,299 +10464,635 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript.DECLCameraShot_CameraTilt_CameraShotScript.DECLCameraMovement_TiltUp_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("AimPointTest for moving camera tracking moving target");
+	try {
+		this.description = new SFString("AimPointTest for moving camera tracking moving target");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_position = function (value) {
-		this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting position '+e);
+			console.error('Problems setting position',e);
+		}
 	};
 	this.position_changed = function () {
 		var value = this.position;
 		return value;
 	};
-	this.position = new SFVec3f(4,4,10);
+	try {
+		this.position = new SFVec3f(4,4,10);
+	} catch (e) {
+		alert('Problems setting position '+e);
+		console.error('Problems setting position',e);
+	}
 	this.set_orientation = function (value) {
-		this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting orientation '+e);
+			console.error('Problems setting orientation',e);
+		}
 	};
 	this.orientation_changed = function () {
 		var value = this.orientation;
 		return value;
 	};
-	this.orientation = new SFRotation(0,0,1,0);
+	try {
+		this.orientation = new SFRotation(0,0,1,0);
+	} catch (e) {
+		alert('Problems setting orientation '+e);
+		console.error('Problems setting orientation',e);
+	}
 	this.set_fraction = function (value) {
-		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
 	};
 	this.fraction_changed = function () {
 		var value = this.fraction;
 		return value;
 	};
-	this.fraction = undefined;
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		alert('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 	this.set_bind = function (value) {
-		this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting bind '+e);
+			console.error('Problems setting bind',e);
+		}
 	};
 	this.bind_changed = function () {
 		var value = this.bind;
 		return value;
 	};
-	this.bind = undefined;
+	try {
+		this.bind = undefined;
+	} catch (e) {
+		alert('Problems setting bind '+e);
+		console.error('Problems setting bind',e);
+	}
 	this.set_fieldOfView = function (value) {
-		this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fieldOfView '+e);
+			console.error('Problems setting fieldOfView',e);
+		}
 	};
 	this.fieldOfView_changed = function () {
 		var value = this.fieldOfView;
 		return value;
 	};
-	this.fieldOfView = new SFFloat(0.7854);
+	try {
+		this.fieldOfView = new SFFloat(0.7854);
+	} catch (e) {
+		alert('Problems setting fieldOfView '+e);
+		console.error('Problems setting fieldOfView',e);
+	}
 	this.set_nearClipPlane = function (value) {
-		this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting nearClipPlane '+e);
+			console.error('Problems setting nearClipPlane',e);
+		}
 	};
 	this.nearClipPlane_changed = function () {
 		var value = this.nearClipPlane;
 		return value;
 	};
-	this.nearClipPlane = new SFFloat(0.25);
+	try {
+		this.nearClipPlane = new SFFloat(0.25);
+	} catch (e) {
+		alert('Problems setting nearClipPlane '+e);
+		console.error('Problems setting nearClipPlane',e);
+	}
 	this.set_farClipPlane = function (value) {
-		this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting farClipPlane '+e);
+			console.error('Problems setting farClipPlane',e);
+		}
 	};
 	this.farClipPlane_changed = function () {
 		var value = this.farClipPlane;
 		return value;
 	};
-	this.farClipPlane = new SFFloat(0);
+	try {
+		this.farClipPlane = new SFFloat(0);
+	} catch (e) {
+		alert('Problems setting farClipPlane '+e);
+		console.error('Problems setting farClipPlane',e);
+	}
 	this.set_shots = function (value) {
-		this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shots '+e);
+			console.error('Problems setting shots',e);
+		}
 	};
 	this.shots_changed = function () {
 		var value = this.shots;
 		return value;
 	};
-	this.shots = new MFNode();
+	try {
+		this.shots = new MFNode();
+	} catch (e) {
+		alert('Problems setting shots '+e);
+		console.error('Problems setting shots',e);
+	}
 	this.set_filterColor = function (value) {
-		this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting filterColor '+e);
+			console.error('Problems setting filterColor',e);
+		}
 	};
 	this.filterColor_changed = function () {
 		var value = this.filterColor;
 		return value;
 	};
-	this.filterColor = new SFColor(1,1,1);
+	try {
+		this.filterColor = new SFColor(1,1,1);
+	} catch (e) {
+		alert('Problems setting filterColor '+e);
+		console.error('Problems setting filterColor',e);
+	}
 	this.set_filterTransparency = function (value) {
-		this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting filterTransparency '+e);
+			console.error('Problems setting filterTransparency',e);
+		}
 	};
 	this.filterTransparency_changed = function () {
 		var value = this.filterTransparency;
 		return value;
 	};
-	this.filterTransparency = new SFFloat(1);
+	try {
+		this.filterTransparency = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting filterTransparency '+e);
+		console.error('Problems setting filterTransparency',e);
+	}
 	this.set_upVector = function (value) {
-		this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting upVector '+e);
+			console.error('Problems setting upVector',e);
+		}
 	};
 	this.upVector_changed = function () {
 		var value = this.upVector;
 		return value;
 	};
-	this.upVector = new SFVec3f(0,1,0);
+	try {
+		this.upVector = new SFVec3f(0,1,0);
+	} catch (e) {
+		alert('Problems setting upVector '+e);
+		console.error('Problems setting upVector',e);
+	}
 	this.set_fStop = function (value) {
-		this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fStop '+e);
+			console.error('Problems setting fStop',e);
+		}
 	};
 	this.fStop_changed = function () {
 		var value = this.fStop;
 		return value;
 	};
-	this.fStop = new SFFloat(5.6);
+	try {
+		this.fStop = new SFFloat(5.6);
+	} catch (e) {
+		alert('Problems setting fStop '+e);
+		console.error('Problems setting fStop',e);
+	}
 	this.set_focusDistance = function (value) {
-		this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting focusDistance '+e);
+			console.error('Problems setting focusDistance',e);
+		}
 	};
 	this.focusDistance_changed = function () {
 		var value = this.focusDistance;
 		return value;
 	};
-	this.focusDistance = new SFFloat(10);
+	try {
+		this.focusDistance = new SFFloat(10);
+	} catch (e) {
+		alert('Problems setting focusDistance '+e);
+		console.error('Problems setting focusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_totalDuration = function (value) {
-		this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting totalDuration '+e);
+			console.error('Problems setting totalDuration',e);
+		}
 	};
 	this.totalDuration_changed = function () {
 		var value = this.totalDuration;
 		return value;
 	};
-	this.totalDuration = new SFTime();
+	try {
+		this.totalDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting totalDuration '+e);
+		console.error('Problems setting totalDuration',e);
+	}
 	this.set_offlineRender = function (value) {
-		this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting offlineRender '+e);
+			console.error('Problems setting offlineRender',e);
+		}
 	};
 	this.offlineRender_changed = function () {
 		var value = this.offlineRender;
 		return value;
 	};
-	this.offlineRender = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('undefined');
+	try {
+		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
+	} catch (e) {
+		alert('Problems setting offlineRender '+e);
+		console.error('Problems setting offlineRender',e);
+	}
 	this.set_ViewpointNode = function (value) {
-		this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting ViewpointNode '+e);
+			console.error('Problems setting ViewpointNode',e);
+		}
 	};
 	this.ViewpointNode_changed = function () {
 		var value = this.ViewpointNode;
 		return value;
 	};
-	this.ViewpointNode = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint');
+	try {
+		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint');
+	} catch (e) {
+		alert('Problems setting ViewpointNode '+e);
+		console.error('Problems setting ViewpointNode',e);
+	}
 	this.set_NavInfoNode = function (value) {
-		this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting NavInfoNode '+e);
+			console.error('Problems setting NavInfoNode',e);
+		}
 	};
 	this.NavInfoNode_changed = function () {
 		var value = this.NavInfoNode;
 		return value;
 	};
-	this.NavInfoNode = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraNavInfo');
+	try {
+		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo');
+	} catch (e) {
+		alert('Problems setting NavInfoNode '+e);
+		console.error('Problems setting NavInfoNode',e);
+	}
 	this.set_CameraPI = function (value) {
-		this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting CameraPI '+e);
+			console.error('Problems setting CameraPI',e);
+		}
 	};
 	this.CameraPI_changed = function () {
 		var value = this.CameraPI;
 		return value;
 	};
-	this.CameraPI = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator');
+	try {
+		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator');
+	} catch (e) {
+		alert('Problems setting CameraPI '+e);
+		console.error('Problems setting CameraPI',e);
+	}
 	this.set_CameraOI = function (value) {
-		this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting CameraOI '+e);
+			console.error('Problems setting CameraOI',e);
+		}
 	};
 	this.CameraOI_changed = function () {
 		var value = this.CameraOI;
 		return value;
 	};
-	this.CameraOI = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator');
+	try {
+		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator');
+	} catch (e) {
+		alert('Problems setting CameraOI '+e);
+		console.error('Problems setting CameraOI',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 	this.set_animated = function (value) {
-		this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting animated '+e);
+			console.error('Problems setting animated',e);
+		}
 	};
 	this.animated_changed = function () {
 		var value = this.animated;
 		return value;
 	};
-	this.animated = new SFBool(false);
+	try {
+		this.animated = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting animated '+e);
+		console.error('Problems setting animated',e);
+	}
 	this.set_initialized = function (value) {
-		this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialized '+e);
+			console.error('Problems setting initialized',e);
+		}
 	};
 	this.initialized_changed = function () {
 		var value = this.initialized;
 		return value;
 	};
-	this.initialized = new SFBool(false);
+	try {
+		this.initialized = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting initialized '+e);
+		console.error('Problems setting initialized',e);
+	}
 	this.set_shotCount = function (value) {
-		this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotCount '+e);
+			console.error('Problems setting shotCount',e);
+		}
 	};
 	this.shotCount_changed = function () {
 		var value = this.shotCount;
 		return value;
 	};
-	this.shotCount = new SFInt32(0);
+	try {
+		this.shotCount = new SFInt32(0);
+	} catch (e) {
+		alert('Problems setting shotCount '+e);
+		console.error('Problems setting shotCount',e);
+	}
 	this.set_movesCount = function (value) {
-		this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting movesCount '+e);
+			console.error('Problems setting movesCount',e);
+		}
 	};
 	this.movesCount_changed = function () {
 		var value = this.movesCount;
 		return value;
 	};
-	this.movesCount = new SFInt32(0);
+	try {
+		this.movesCount = new SFInt32(0);
+	} catch (e) {
+		alert('Problems setting movesCount '+e);
+		console.error('Problems setting movesCount',e);
+	}
 	this.set_frameCount = function (value) {
-		this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frameCount '+e);
+			console.error('Problems setting frameCount',e);
+		}
 	};
 	this.frameCount_changed = function () {
 		var value = this.frameCount;
 		return value;
 	};
-	this.frameCount = new SFFloat(0);
+	try {
+		this.frameCount = new SFFloat(0);
+	} catch (e) {
+		alert('Problems setting frameCount '+e);
+		console.error('Problems setting frameCount',e);
+	}
 	this.set_startTime = function (value) {
-		this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startTime '+e);
+			console.error('Problems setting startTime',e);
+		}
 	};
 	this.startTime_changed = function () {
 		var value = this.startTime;
 		return value;
 	};
-	this.startTime = new SFTime(0);
+	try {
+		this.startTime = new SFTime(0);
+	} catch (e) {
+		alert('Problems setting startTime '+e);
+		console.error('Problems setting startTime',e);
+	}
 	this.set_priorTraceTime = function (value) {
-		this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting priorTraceTime '+e);
+			console.error('Problems setting priorTraceTime',e);
+		}
 	};
 	this.priorTraceTime_changed = function () {
 		var value = this.priorTraceTime;
 		return value;
 	};
-	this.priorTraceTime = new SFTime(0);
+	try {
+		this.priorTraceTime = new SFTime(0);
+	} catch (e) {
+		alert('Problems setting priorTraceTime '+e);
+		console.error('Problems setting priorTraceTime',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraScript
 {
 //  this.tracePrint ('this.initialize start...');
 
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
 
     // remaining setups deferred to invocation of this.checkShots() method
     // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to functino initialization
     this.alwaysPrint ('this.initialize complete');
 }
-
 ;
 
 	this.checkShots = function (eventValue)
@@ -7235,7 +11170,7 @@ ecmascript:
                 // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functinos
 
                 // test if difference vector is zero, if so maintain previous rotation
-                var shotVector = X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
+                var shotVector = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
                 if (shotVector.length() >= 0)
                 {
                     // default view direction is along -Z axis
@@ -7248,9 +11183,9 @@ ecmascript:
                 }
 
                 this.tracePrint ('this.proxy.shots[' + i + '].moves[' + j + '].goalAimPoint=' + this.proxy.shots[i].moves[j].goalAimPoint.toString());
-                this.tracePrint ('        X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString());
-                this.tracePrint ('          shotVector     delta=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
-                this.tracePrint ('          shotVector normalize=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
+                this.tracePrint ('        X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString());
+                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
+                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
                 this.tracePrint ('               goalOrientation=' + this.proxy.shots[i].moves[j].goalOrientation.toString());
                 this.tracePrint ('      this.proxy.keyValueOrientation[k+1]=' + this.proxy.keyValueOrientation[k+1].toString() + '');
             }
@@ -7290,19 +11225,18 @@ ecmascript:
     }
     this.tracePrint ('           this.proxy.animated=' + this.proxy.animated);
     // set node values
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
+    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
 
     if (!this.proxy.animated) // output results
     {
-        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
     }
     this.tracePrint ('this.checkShots() complete');
 }
-
 ;
 
 	this.stripBrackets = function (fieldArray)
@@ -7316,7 +11250,6 @@ ecmascript:
     }
     return outputString;
 }
-
 ;
 
 	this.set_fraction = function (eventValue, timestamp) // input event received for inputOnly field
@@ -7332,25 +11265,25 @@ ecmascript:
       this.alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
       this.proxy.startTime      = timestamp;
       this.proxy.priorTraceTime = timestamp;
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
       }
    }
    else if ((timestamp - this.proxy.priorTraceTime) >= 1.0) // 1 second trace interval
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
       this.proxy.priorTraceTime = timestamp;
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
+        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -7360,7 +11293,7 @@ ecmascript:
    }
    else if (eventValue == 1)
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
@@ -7373,7 +11306,6 @@ ecmascript:
       this.proxy.frameCount++;
    }
 }
-
 ;
 
 	this.set_bind = function (eventValue) // input event received for inputOnly field
@@ -7393,133 +11325,114 @@ ecmascript:
        this.tracePrint ('Camera has been unbound');
    }
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_position = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.position = eventValue;
 }
-
 ;
 
 	this.set_orientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.orientation = eventValue;
 }
-
 ;
 
 	this.set_fieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.fieldOfView = eventValue;
 }
-
 ;
 
 	this.set_nearClipPlane = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.nearClipPlane = eventValue;
 }
-
 ;
 
 	this.set_farClipPlane = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.farClipPlane = eventValue;
 }
-
 ;
 
 	this.set_shots = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.shots = eventValue;
 }
-
 ;
 
 	this.set_filterColor = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.filterColor = eventValue;
 }
-
 ;
 
 	this.set_filterTransparency = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.filterTransparency = eventValue;
 }
-
 ;
 
 	this.set_upVector = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.upVector = eventValue;
 }
-
 ;
 
 	this.set_fStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.fStop = eventValue;
 }
-
 ;
 
 	this.set_focusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.focusDistance = eventValue;
 }
-
 ;
 
 	this.set_offlineRender = function (eventValue) // input event received for inputOutput field
 {
-    X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('undefined', '',  eventValue);
+    X3DJSON.nodeUtil('Scene','undefined', '',  eventValue);
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValueOrientation = eventValue;
 }
-
 ;
 
 	this.set_animated = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.animated = eventValue;
 }
-
 ;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -7536,152 +11449,319 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("#3 Tracking shot");
+	try {
+		this.description = new SFString("#3 Tracking shot");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_moves = function (value) {
-		this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting moves '+e);
+			console.error('Problems setting moves',e);
+		}
 	};
 	this.moves_changed = function () {
 		var value = this.moves;
 		return value;
 	};
-	this.moves = new MFNode();
+	try {
+		this.moves = new MFNode();
+	} catch (e) {
+		alert('Problems setting moves '+e);
+		console.error('Problems setting moves',e);
+	}
 	this.set_initialPosition = function (value) {
-		this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialPosition '+e);
+			console.error('Problems setting initialPosition',e);
+		}
 	};
 	this.initialPosition_changed = function () {
 		var value = this.initialPosition;
 		return value;
 	};
-	this.initialPosition = new SFVec3f(6,6,10);
+	try {
+		this.initialPosition = new SFVec3f(6,6,10);
+	} catch (e) {
+		alert('Problems setting initialPosition '+e);
+		console.error('Problems setting initialPosition',e);
+	}
 	this.set_initialOrientation = function (value) {
-		this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialOrientation '+e);
+			console.error('Problems setting initialOrientation',e);
+		}
 	};
 	this.initialOrientation_changed = function () {
 		var value = this.initialOrientation;
 		return value;
 	};
-	this.initialOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.initialOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting initialOrientation '+e);
+		console.error('Problems setting initialOrientation',e);
+	}
 	this.set_initialAimPoint = function (value) {
-		this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialAimPoint '+e);
+			console.error('Problems setting initialAimPoint',e);
+		}
 	};
 	this.initialAimPoint_changed = function () {
 		var value = this.initialAimPoint;
 		return value;
 	};
-	this.initialAimPoint = new SFVec3f();
+	try {
+		this.initialAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting initialAimPoint '+e);
+		console.error('Problems setting initialAimPoint',e);
+	}
 	this.set_initialFieldOfView = function (value) {
-		this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFieldOfView '+e);
+			console.error('Problems setting initialFieldOfView',e);
+		}
 	};
 	this.initialFieldOfView_changed = function () {
 		var value = this.initialFieldOfView;
 		return value;
 	};
-	this.initialFieldOfView = new SFFloat();
+	try {
+		this.initialFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFieldOfView '+e);
+		console.error('Problems setting initialFieldOfView',e);
+	}
 	this.set_initialFStop = function (value) {
-		this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFStop '+e);
+			console.error('Problems setting initialFStop',e);
+		}
 	};
 	this.initialFStop_changed = function () {
 		var value = this.initialFStop;
 		return value;
 	};
-	this.initialFStop = new SFFloat();
+	try {
+		this.initialFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFStop '+e);
+		console.error('Problems setting initialFStop',e);
+	}
 	this.set_initialFocusDistance = function (value) {
-		this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting initialFocusDistance '+e);
+			console.error('Problems setting initialFocusDistance',e);
+		}
 	};
 	this.initialFocusDistance_changed = function () {
 		var value = this.initialFocusDistance;
 		return value;
 	};
-	this.initialFocusDistance = new SFFloat();
+	try {
+		this.initialFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting initialFocusDistance '+e);
+		console.error('Problems setting initialFocusDistance',e);
+	}
 	this.set_shotDuration = function (value) {
-		this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting shotDuration '+e);
+			console.error('Problems setting shotDuration',e);
+		}
 	};
 	this.shotDuration_changed = function () {
 		var value = this.shotDuration;
 		return value;
 	};
-	this.shotDuration = new SFTime();
+	try {
+		this.shotDuration = new SFTime();
+	} catch (e) {
+		alert('Problems setting shotDuration '+e);
+		console.error('Problems setting shotDuration',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 	this.set_key = function (value) {
-		this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting key '+e);
+			console.error('Problems setting key',e);
+		}
 	};
 	this.key_changed = function () {
 		var value = this.key;
 		return value;
 	};
-	this.key = new MFFloat();
+	try {
+		this.key = new MFFloat();
+	} catch (e) {
+		alert('Problems setting key '+e);
+		console.error('Problems setting key',e);
+	}
 	this.set_keyValuePosition = function (value) {
-		this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValuePosition '+e);
+			console.error('Problems setting keyValuePosition',e);
+		}
 	};
 	this.keyValuePosition_changed = function () {
 		var value = this.keyValuePosition;
 		return value;
 	};
-	this.keyValuePosition = new MFVec3f();
+	try {
+		this.keyValuePosition = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValuePosition '+e);
+		console.error('Problems setting keyValuePosition',e);
+	}
 	this.set_keyValueOrientation = function (value) {
-		this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValueOrientation '+e);
+			console.error('Problems setting keyValueOrientation',e);
+		}
 	};
 	this.keyValueOrientation_changed = function () {
 		var value = this.keyValueOrientation;
 		return value;
 	};
-	this.keyValueOrientation = new MFRotation();
+	try {
+		this.keyValueOrientation = new MFRotation();
+	} catch (e) {
+		alert('Problems setting keyValueOrientation '+e);
+		console.error('Problems setting keyValueOrientation',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraShotScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -7696,84 +11776,72 @@ ecmascript:
 
 //  this.tracePrint ('... this.initialize() complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_moves = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.moves = eventValue;
 }
-
 ;
 
 	this.set_initialPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialPosition = eventValue;
 }
-
 ;
 
 	this.set_initialOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialOrientation = eventValue;
 }
-
 ;
 
 	this.set_initialAimPoint = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialAimPoint = eventValue;
 }
-
 ;
 
 	this.set_initialFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_initialFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFStop = eventValue;
 }
-
 ;
 
 	this.set_initialFocusDistance = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.initialFocusDistance = eventValue;
 }
-
 ;
 
 	this.set_key = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.key = eventValue;
 }
-
 ;
 
 	this.set_keyValuePosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.keyValuePosition = eventValue;
 }
-
 ;
 
 	this.set_keyValueOrientation = function (eventValue) // input event received for inputOutput field
@@ -7781,13 +11849,12 @@ ecmascript:
     this.proxy.keyValueOrientation = eventValue;
 }
 
-// TODO consider method;
+// TODO consider metho;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
-}
-;
+};
 
 	this.alwaysPrint = function (outputValue)
 {
@@ -7804,131 +11871,268 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("AimPoint 3.1 moving BoxPath");
+	try {
+		this.description = new SFString("AimPoint 3.1 moving BoxPath");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(8);
+	try {
+		this.duration = new SFFloat(8);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(6,6,10);
+	try {
+		this.goalPosition = new SFVec3f(6,6,10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation();
+	try {
+		this.goalOrientation = new SFRotation();
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool(true);
+	try {
+		this.tracking = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -7946,7 +12150,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -7956,63 +12159,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -8020,13 +12214,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -8044,137 +12237,274 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
-}
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']);
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['1_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("AimPoint 3.2 pan right while tracking");
+	try {
+		this.description = new SFString("AimPoint 3.2 pan right while tracking");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(8);
+	try {
+		this.duration = new SFFloat(8);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(40,6,12);
+	try {
+		this.goalPosition = new SFVec3f(40,6,12);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation();
+	try {
+		this.goalOrientation = new SFRotation();
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool(true);
+	try {
+		this.tracking = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -8192,7 +12522,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -8202,63 +12531,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -8266,13 +12586,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -8290,137 +12609,274 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
-}
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']);
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['2_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("AimPoint 3.3 boom up while tracking");
+	try {
+		this.description = new SFString("AimPoint 3.3 boom up while tracking");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(3);
+	try {
+		this.duration = new SFFloat(3);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(40,20,13);
+	try {
+		this.goalPosition = new SFVec3f(40,20,13);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation();
+	try {
+		this.goalOrientation = new SFRotation();
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool(true);
+	try {
+		this.tracking = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f();
+	try {
+		this.goalAimPoint = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -8438,7 +12894,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -8448,63 +12903,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -8512,13 +12958,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -8536,137 +12981,274 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
-}
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']);
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['3_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString("AimPoint 3.4 restore camera back to home");
+	try {
+		this.description = new SFString("AimPoint 3.4 restore camera back to home");
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool();
+	try {
+		this.enabled = new SFBool();
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_duration = function (value) {
-		this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting duration '+e);
+			console.error('Problems setting duration',e);
+		}
 	};
 	this.duration_changed = function () {
 		var value = this.duration;
 		return value;
 	};
-	this.duration = new SFFloat(5);
+	try {
+		this.duration = new SFFloat(5);
+	} catch (e) {
+		alert('Problems setting duration '+e);
+		console.error('Problems setting duration',e);
+	}
 	this.set_goalPosition = function (value) {
-		this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalPosition '+e);
+			console.error('Problems setting goalPosition',e);
+		}
 	};
 	this.goalPosition_changed = function () {
 		var value = this.goalPosition;
 		return value;
 	};
-	this.goalPosition = new SFVec3f(4,4,10);
+	try {
+		this.goalPosition = new SFVec3f(4,4,10);
+	} catch (e) {
+		alert('Problems setting goalPosition '+e);
+		console.error('Problems setting goalPosition',e);
+	}
 	this.set_goalOrientation = function (value) {
-		this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalOrientation '+e);
+			console.error('Problems setting goalOrientation',e);
+		}
 	};
 	this.goalOrientation_changed = function () {
 		var value = this.goalOrientation;
 		return value;
 	};
-	this.goalOrientation = new SFRotation(0,1,0,0);
+	try {
+		this.goalOrientation = new SFRotation(0,1,0,0);
+	} catch (e) {
+		alert('Problems setting goalOrientation '+e);
+		console.error('Problems setting goalOrientation',e);
+	}
 	this.set_tracking = function (value) {
-		this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting tracking '+e);
+			console.error('Problems setting tracking',e);
+		}
 	};
 	this.tracking_changed = function () {
 		var value = this.tracking;
 		return value;
 	};
-	this.tracking = new SFBool(true);
+	try {
+		this.tracking = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting tracking '+e);
+		console.error('Problems setting tracking',e);
+	}
 	this.set_goalAimPoint = function (value) {
-		this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalAimPoint '+e);
+			console.error('Problems setting goalAimPoint',e);
+		}
 	};
 	this.goalAimPoint_changed = function () {
 		var value = this.goalAimPoint;
 		return value;
 	};
-	this.goalAimPoint = new SFVec3f(4,4,0);
+	try {
+		this.goalAimPoint = new SFVec3f(4,4,0);
+	} catch (e) {
+		alert('Problems setting goalAimPoint '+e);
+		console.error('Problems setting goalAimPoint',e);
+	}
 	this.set_goalFieldOfView = function (value) {
-		this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFieldOfView '+e);
+			console.error('Problems setting goalFieldOfView',e);
+		}
 	};
 	this.goalFieldOfView_changed = function () {
 		var value = this.goalFieldOfView;
 		return value;
 	};
-	this.goalFieldOfView = new SFFloat();
+	try {
+		this.goalFieldOfView = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFieldOfView '+e);
+		console.error('Problems setting goalFieldOfView',e);
+	}
 	this.set_goalFStop = function (value) {
-		this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFStop '+e);
+			console.error('Problems setting goalFStop',e);
+		}
 	};
 	this.goalFStop_changed = function () {
 		var value = this.goalFStop;
 		return value;
 	};
-	this.goalFStop = new SFFloat();
+	try {
+		this.goalFStop = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFStop '+e);
+		console.error('Problems setting goalFStop',e);
+	}
 	this.set_goalFocusDistance = function (value) {
-		this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting goalFocusDistance '+e);
+			console.error('Problems setting goalFocusDistance',e);
+		}
 	};
 	this.goalFocusDistance_changed = function () {
 		var value = this.goalFocusDistance;
 		return value;
 	};
-	this.goalFocusDistance = new SFFloat();
+	try {
+		this.goalFocusDistance = new SFFloat();
+	} catch (e) {
+		alert('Problems setting goalFocusDistance '+e);
+		console.error('Problems setting goalFocusDistance',e);
+	}
 	this.set_isActive = function (value) {
-		this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting isActive '+e);
+			console.error('Problems setting isActive',e);
+		}
 	};
 	this.isActive_changed = function () {
 		var value = this.isActive;
 		return value;
 	};
-	this.isActive = new SFBool();
+	try {
+		this.isActive = new SFBool();
+	} catch (e) {
+		alert('Problems setting isActive '+e);
+		console.error('Problems setting isActive',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // CameraMovementScript
 {
 //  this.tracePrint ('this.initialize start...');
@@ -8684,7 +13266,6 @@ ecmascript:
     }
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_goalAimPoint = function (eventValue) // input event received for inputOutput field
@@ -8694,63 +13275,54 @@ ecmascript:
 
     // updated this.proxy.goalOrientation this.proxy.tracking is handled by Camera recomputing the OrientationInterpolator
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_duration = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.duration = eventValue;
 }
-
 ;
 
 	this.set_goalPosition = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalPosition = eventValue;
 }
-
 ;
 
 	this.set_goalOrientation = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalOrientation = eventValue;
 }
-
 ;
 
 	this.set_tracking = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.tracking = eventValue;
 }
-
 ;
 
 	this.set_goalFieldOfView = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFieldOfView = eventValue;
 }
-
 ;
 
 	this.set_goalFStop = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.goalFStop = eventValue;
 }
-
 ;
 
 	this.set_goalFocusDistance = function (eventValue) // input event received for inputOutput field
@@ -8758,13 +13330,12 @@ ecmascript:
     this.proxy.goalFocusDistance = eventValue;
 }
 
-// TODO consider meth;
+// TODO consider met;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -8782,182 +13353,301 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
-}
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']);
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].initialize();
-if (typeof X3DJSON['Script../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'] = {};
 }
 
-X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript.DECLCameraShot_Shot5_CameraShotScript.DECLCameraMovement_MoveAimPoint3']['4_CameraMovementScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CameraExamples.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = function() {
 	this.set_description = function (value) {
-		this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting description '+e);
+			console.error('Problems setting description',e);
+		}
 	};
 	this.description_changed = function () {
 		var value = this.description;
 		return value;
 	};
-	this.description = new SFString();
+	try {
+		this.description = new SFString();
+	} catch (e) {
+		alert('Problems setting description '+e);
+		console.error('Problems setting description',e);
+	}
 	this.set_enabled = function (value) {
-		this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting enabled '+e);
+			console.error('Problems setting enabled',e);
+		}
 	};
 	this.enabled_changed = function () {
 		var value = this.enabled;
 		return value;
 	};
-	this.enabled = new SFBool(true);
+	try {
+		this.enabled = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting enabled '+e);
+		console.error('Problems setting enabled',e);
+	}
 	this.set_frameRate = function (value) {
-		this.proxy.frameRate = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frameRate = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frameRate '+e);
+			console.error('Problems setting frameRate',e);
+		}
 	};
 	this.frameRate_changed = function () {
 		var value = this.frameRate;
 		return value;
 	};
-	this.frameRate = new SFFloat(30);
+	try {
+		this.frameRate = new SFFloat(30);
+	} catch (e) {
+		alert('Problems setting frameRate '+e);
+		console.error('Problems setting frameRate',e);
+	}
 	this.set_frameSize = function (value) {
-		this.proxy.frameSize = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frameSize = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frameSize '+e);
+			console.error('Problems setting frameSize',e);
+		}
 	};
 	this.frameSize_changed = function () {
 		var value = this.frameSize;
 		return value;
 	};
-	this.frameSize = new SFVec2f(640,480);
+	try {
+		this.frameSize = new SFVec2f(640,480);
+	} catch (e) {
+		alert('Problems setting frameSize '+e);
+		console.error('Problems setting frameSize',e);
+	}
 	this.set_pixelAspectRatio = function (value) {
-		this.proxy.pixelAspectRatio = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.pixelAspectRatio = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting pixelAspectRatio '+e);
+			console.error('Problems setting pixelAspectRatio',e);
+		}
 	};
 	this.pixelAspectRatio_changed = function () {
 		var value = this.pixelAspectRatio;
 		return value;
 	};
-	this.pixelAspectRatio = new SFFloat(1.33);
+	try {
+		this.pixelAspectRatio = new SFFloat(1.33);
+	} catch (e) {
+		alert('Problems setting pixelAspectRatio '+e);
+		console.error('Problems setting pixelAspectRatio',e);
+	}
 	this.set_startTime = function (value) {
-		this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startTime '+e);
+			console.error('Problems setting startTime',e);
+		}
 	};
 	this.startTime_changed = function () {
 		var value = this.startTime;
 		return value;
 	};
-	this.startTime = undefined;
+	try {
+		this.startTime = undefined;
+	} catch (e) {
+		alert('Problems setting startTime '+e);
+		console.error('Problems setting startTime',e);
+	}
 	this.set_progress = function (value) {
-		this.proxy.progress = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.progress = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting progress '+e);
+			console.error('Problems setting progress',e);
+		}
 	};
 	this.progress_changed = function () {
 		var value = this.progress;
 		return value;
 	};
-	this.progress = new SFFloat();
+	try {
+		this.progress = new SFFloat();
+	} catch (e) {
+		alert('Problems setting progress '+e);
+		console.error('Problems setting progress',e);
+	}
 	this.set_renderCompleteTime = function (value) {
-		this.proxy.renderCompleteTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.renderCompleteTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting renderCompleteTime '+e);
+			console.error('Problems setting renderCompleteTime',e);
+		}
 	};
 	this.renderCompleteTime_changed = function () {
 		var value = this.renderCompleteTime;
 		return value;
 	};
-	this.renderCompleteTime = new SFTime();
+	try {
+		this.renderCompleteTime = new SFTime();
+	} catch (e) {
+		alert('Problems setting renderCompleteTime '+e);
+		console.error('Problems setting renderCompleteTime',e);
+	}
 	this.set_movieFormat = function (value) {
-		this.proxy.movieFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.movieFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting movieFormat '+e);
+			console.error('Problems setting movieFormat',e);
+		}
 	};
 	this.movieFormat_changed = function () {
 		var value = this.movieFormat;
 		return value;
 	};
-	this.movieFormat = new MFString("mpeg");
+	try {
+		this.movieFormat = new MFString("mpeg");
+	} catch (e) {
+		alert('Problems setting movieFormat '+e);
+		console.error('Problems setting movieFormat',e);
+	}
 	this.set_imageFormat = function (value) {
-		this.proxy.imageFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.imageFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting imageFormat '+e);
+			console.error('Problems setting imageFormat',e);
+		}
 	};
 	this.imageFormat_changed = function () {
 		var value = this.imageFormat;
 		return value;
 	};
-	this.imageFormat = new MFString("png");
+	try {
+		this.imageFormat = new MFString("png");
+	} catch (e) {
+		alert('Problems setting imageFormat '+e);
+		console.error('Problems setting imageFormat',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(false);
+	try {
+		this.traceEnabled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 
 
 ecmascript:
-
 	this.initialize = function () // OfflineRenderScript
 {
 //  this.tracePrint ('this.initialize start...');
 
     this.tracePrint ('... this.initialize complete');
 }
-
 ;
 
 	this.set_description = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.description = eventValue;
 }
-
 ;
 
 	this.set_enabled = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.enabled = eventValue;
 }
-
 ;
 
 	this.set_frameRate = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.frameRate = eventValue;
 }
-
 ;
 
 	this.set_frameSize = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.frameSize = eventValue;
 }
-
 ;
 
 	this.set_pixelAspectRatio = function (eventValue) // input event received for inputOutput field
 {
     this.proxy.pixelAspectRatio = eventValue;
 }
-
 ;
 
 	this.set_startTime = function (eventValue) // input event received for inputOnly field
 {
    // do something with input eventValue;
 }
-
 ;
 
 	this.tracePrint = function (outputValue)
 {
 	if (this.proxy.traceEnabled) this.alwaysPrint (outputValue);
 }
-
 ;
 
 	this.alwaysPrint = function (outputValue)
@@ -8975,346 +13665,454 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
 }
 
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = new X3DJSON['Script../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']();
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = new X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'] = {};
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'],X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']);
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize === "function") X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize();
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize();
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
 		if (property === 'totalDuration') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','fraction'), __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
+X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
+X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
 		if (property === 'totalDuration') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','fraction'), __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
+X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
+X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'] = [];
 }
-X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTouched').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+X3DJSON.nodeUtil('Scene','CameraShapeTouched').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('ViewFrustumToggle').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','ViewFrustumToggle').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxPath').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('BoxTimer').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','BoxTimer').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint').addEventListener('outputchange', function(event) {
+X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.SimpleShots','fraction'), __eventTime);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraTimer.AimPointTest','fraction'), __eventTime);
-			X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','translation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-			X3DJSON['../data/CameraExamples.jsonundefined'].nodeUtil('CameraShapeTransform','rotation',typeof X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj../data/CameraExamples.jsonundefined']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);

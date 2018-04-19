@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/ArchPrototype.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/ArchPrototype.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/ArchPrototype.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil = function(node, field, 
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil = function(node, field, 
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,131 +134,291 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/ArchPrototype.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/ArchPrototype.json'] === 'undefined') {
+	X3DJSON['Scene../data/ArchPrototype.json'] = {};
 }
 
-X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/ArchPrototype.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = function() {
 	this.set_clearSpanWidth = function (value) {
-		this.proxy.clearSpanWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.clearSpanWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting clearSpanWidth '+e);
+			console.error('Problems setting clearSpanWidth',e);
+		}
 	};
 	this.clearSpanWidth_changed = function () {
 		var value = this.clearSpanWidth;
 		return value;
 	};
-	this.clearSpanWidth = new SFFloat(5);
+	try {
+		this.clearSpanWidth = new SFFloat(5);
+	} catch (e) {
+		alert('Problems setting clearSpanWidth '+e);
+		console.error('Problems setting clearSpanWidth',e);
+	}
 	this.set_riseHeight = function (value) {
-		this.proxy.riseHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.riseHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting riseHeight '+e);
+			console.error('Problems setting riseHeight',e);
+		}
 	};
 	this.riseHeight_changed = function () {
 		var value = this.riseHeight;
 		return value;
 	};
-	this.riseHeight = new SFFloat(2.5);
+	try {
+		this.riseHeight = new SFFloat(2.5);
+	} catch (e) {
+		alert('Problems setting riseHeight '+e);
+		console.error('Problems setting riseHeight',e);
+	}
 	this.set_depth = function (value) {
-		this.proxy.depth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.depth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting depth '+e);
+			console.error('Problems setting depth',e);
+		}
 	};
 	this.depth_changed = function () {
 		var value = this.depth;
 		return value;
 	};
-	this.depth = new SFFloat(2);
+	try {
+		this.depth = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting depth '+e);
+		console.error('Problems setting depth',e);
+	}
 	this.set_topAbutmentHeight = function (value) {
-		this.proxy.topAbutmentHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.topAbutmentHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting topAbutmentHeight '+e);
+			console.error('Problems setting topAbutmentHeight',e);
+		}
 	};
 	this.topAbutmentHeight_changed = function () {
 		var value = this.topAbutmentHeight;
 		return value;
 	};
-	this.topAbutmentHeight = new SFFloat(0.6);
+	try {
+		this.topAbutmentHeight = new SFFloat(0.6);
+	} catch (e) {
+		alert('Problems setting topAbutmentHeight '+e);
+		console.error('Problems setting topAbutmentHeight',e);
+	}
 	this.set_pierWidth = function (value) {
-		this.proxy.pierWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.pierWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting pierWidth '+e);
+			console.error('Problems setting pierWidth',e);
+		}
 	};
 	this.pierWidth_changed = function () {
 		var value = this.pierWidth;
 		return value;
 	};
-	this.pierWidth = new SFFloat(1);
+	try {
+		this.pierWidth = new SFFloat(1);
+	} catch (e) {
+		alert('Problems setting pierWidth '+e);
+		console.error('Problems setting pierWidth',e);
+	}
 	this.set_pierHeight = function (value) {
-		this.proxy.pierHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.pierHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting pierHeight '+e);
+			console.error('Problems setting pierHeight',e);
+		}
 	};
 	this.pierHeight_changed = function () {
 		var value = this.pierHeight;
 		return value;
 	};
-	this.pierHeight = new SFFloat(2);
+	try {
+		this.pierHeight = new SFFloat(2);
+	} catch (e) {
+		alert('Problems setting pierHeight '+e);
+		console.error('Problems setting pierHeight',e);
+	}
 	this.set_archHalf = function (value) {
-		this.proxy.archHalf = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.archHalf = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting archHalf '+e);
+			console.error('Problems setting archHalf',e);
+		}
 	};
 	this.archHalf_changed = function () {
 		var value = this.archHalf;
 		return value;
 	};
-	this.archHalf = new SFBool(false);
+	try {
+		this.archHalf = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting archHalf '+e);
+		console.error('Problems setting archHalf',e);
+	}
 	this.set_archHalfExtensionWidth = function (value) {
-		this.proxy.archHalfExtensionWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.archHalfExtensionWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting archHalfExtensionWidth '+e);
+			console.error('Problems setting archHalfExtensionWidth',e);
+		}
 	};
 	this.archHalfExtensionWidth_changed = function () {
 		var value = this.archHalfExtensionWidth;
 		return value;
 	};
-	this.archHalfExtensionWidth = new SFFloat(0);
+	try {
+		this.archHalfExtensionWidth = new SFFloat(0);
+	} catch (e) {
+		alert('Problems setting archHalfExtensionWidth '+e);
+		console.error('Problems setting archHalfExtensionWidth',e);
+	}
 	this.set_onlyIntrados = function (value) {
-		this.proxy.onlyIntrados = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.onlyIntrados = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting onlyIntrados '+e);
+			console.error('Problems setting onlyIntrados',e);
+		}
 	};
 	this.onlyIntrados_changed = function () {
 		var value = this.onlyIntrados;
 		return value;
 	};
-	this.onlyIntrados = new SFBool(false);
+	try {
+		this.onlyIntrados = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting onlyIntrados '+e);
+		console.error('Problems setting onlyIntrados',e);
+	}
 	this.set_archFilled = function (value) {
-		this.proxy.archFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.archFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting archFilled '+e);
+			console.error('Problems setting archFilled',e);
+		}
 	};
 	this.archFilled_changed = function () {
 		var value = this.archFilled;
 		return value;
 	};
-	this.archFilled = new SFBool(false);
+	try {
+		this.archFilled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting archFilled '+e);
+		console.error('Problems setting archFilled',e);
+	}
 	this.set_archHalfFilled = function (value) {
-		this.proxy.archHalfFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.archHalfFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting archHalfFilled '+e);
+			console.error('Problems setting archHalfFilled',e);
+		}
 	};
 	this.archHalfFilled_changed = function () {
 		var value = this.archHalfFilled;
 		return value;
 	};
-	this.archHalfFilled = new SFBool(false);
+	try {
+		this.archHalfFilled = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting archHalfFilled '+e);
+		console.error('Problems setting archHalfFilled',e);
+	}
 	this.set_lintel = function (value) {
-		this.proxy.lintel = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.lintel = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting lintel '+e);
+			console.error('Problems setting lintel',e);
+		}
 	};
 	this.lintel_changed = function () {
 		var value = this.lintel;
 		return value;
 	};
-	this.lintel = new SFBool(false);
+	try {
+		this.lintel = new SFBool(false);
+	} catch (e) {
+		alert('Problems setting lintel '+e);
+		console.error('Problems setting lintel',e);
+	}
 	this.set_computedScale = function (value) {
-		this.proxy.computedScale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.computedScale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting computedScale '+e);
+			console.error('Problems setting computedScale',e);
+		}
 	};
 	this.computedScale_changed = function () {
 		var value = this.computedScale;
 		return value;
 	};
-	this.computedScale = new SFVec3f();
+	try {
+		this.computedScale = new SFVec3f();
+	} catch (e) {
+		alert('Problems setting computedScale '+e);
+		console.error('Problems setting computedScale',e);
+	}
 	this.set_pointOut = function (value) {
-		this.proxy.pointOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.pointOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting pointOut '+e);
+			console.error('Problems setting pointOut',e);
+		}
 	};
 	this.pointOut_changed = function () {
 		var value = this.pointOut;
 		return value;
 	};
-	this.pointOut = new MFVec3f();
+	try {
+		this.pointOut = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting pointOut '+e);
+		console.error('Problems setting pointOut',e);
+	}
 	this.set_indexOut = function (value) {
-		this.proxy.indexOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.indexOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting indexOut '+e);
+			console.error('Problems setting indexOut',e);
+		}
 	};
 	this.indexOut_changed = function () {
 		var value = this.indexOut;
 		return value;
 	};
-	this.indexOut = new MFInt32();
+	try {
+		this.indexOut = new MFInt32();
+	} catch (e) {
+		alert('Problems setting indexOut '+e);
+		console.error('Problems setting indexOut',e);
+	}
 // ArchPrototypeScript.js
 
 // clearSpanWidth SFFloat initializeOnly; user or default input for clearSpanWidth parameter
@@ -278,7 +441,6 @@ X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInst
 // Created:     15 December 2014
 // Revised:     6 February 2015
 // Reference:   ArchModelingDiagrams.pdf
-
 
 	this.initialize = function () {
 
@@ -530,111 +692,130 @@ X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInst
 
     // End OUTPUT 2nd PART:
 }
-/* Not need;
+/* Not nee;
 
-	this.set_clearSpanWidth = function (newValue) {}
-;
+	this.set_clearSpanWidth = function (newValue) {};
 
-	this.set_riseHeight = function (newValue) {}
-;
+	this.set_riseHeight = function (newValue) {};
 
-	this.set_depth = function (newValue) {}
-;
+	this.set_depth = function (newValue) {};
 
-	this.set_topAbutmentHeight = function (newValue) {}
-;
+	this.set_topAbutmentHeight = function (newValue) {};
 
-	this.set_pierWidth = function (newValue) {}
-;
+	this.set_pierWidth = function (newValue) {};
 
-	this.set_pierHeight = function (newValue) {}
-;
+	this.set_pierHeight = function (newValue) {};
 
-	this.set_archHalf = function (newValue) {}
-;
+	this.set_archHalf = function (newValue) {};
 
-	this.set_archHalfExtensionWidth = function (newValue) {}
-;
+	this.set_archHalfExtensionWidth = function (newValue) {};
 
-	this.set_onlyIntrados = function (newValue) {}
-;
+	this.set_onlyIntrados = function (newValue) {};
 
-	this.set_archFilled = function (newValue) {}
-;
+	this.set_archFilled = function (newValue) {};
 
-	this.set_archHalfFilled = function (newValue) {}
-;
+	this.set_archHalfFilled = function (newValue) {};
 
 	this.set_lintel = function (newValue) {}
 */
-        ;
+       ;
 
 };
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] = {};
 }
 
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = new X3DJSON['Script../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']();
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = new X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] = {};
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'],X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize === "function") X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize();
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']);
 }
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'].push(function(property, value) {
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].initialize();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'].push(function(property, value) {
 		if (property === 'computedScale') {
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
 		}
 });
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'] = [];
 }
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'].push(function(property, value) {
 		if (property === 'pointOut') {
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
 		}
 });
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] === 'undefined') {
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'] = [];
 }
-X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'].push(function(property, value) {
 		if (property === 'indexOut') {
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
 		}
 });
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
-			X3DJSON['../data/ArchPrototype.jsonundefined'].nodeUtil('DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj../data/ArchPrototype.jsonundefined']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);

@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "19 April 2018"
         },
         {
           "@name": "generator",
@@ -277,7 +277,7 @@
               "var h = 5;",
               "",
               "function initialize() {",
-              "     resolution = 100;",
+              "     var resolution = 100;",
               "     updateCoordinates(resolution);",
               "     var cis = [];",
               "     for ( i = 0; i < resolution-1; i++) {",
@@ -313,7 +313,7 @@
               "}",
               "",
               "function set_fraction(fraction, eventTime) {",
-              "\tchoice = Math.floor(Math.random() * 4);",
+              "\tvar choice = Math.floor(Math.random() * 4);",
               "\tswitch (choice) {",
               "\tcase 0:",
               "\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
@@ -337,7 +337,7 @@
               "\tif (h < 1) {",
               "\t\th = 4;",
               "\t}",
-              "\tresolution = 100;",
+              "\tvar resolution = 100;",
               "\tupdateCoordinates(resolution);",
               "}",
               ""

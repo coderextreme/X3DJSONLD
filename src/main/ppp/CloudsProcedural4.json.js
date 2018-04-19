@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/CloudsProcedural4.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/CloudsProcedural4.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/CloudsProcedural4.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil = function(node, fie
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil = function(node, fie
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,39 +134,78 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/CloudsProcedural4.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/CloudsProcedural4.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/CloudsProcedural4.json'] === 'undefined') {
+	X3DJSON['Scene../data/CloudsProcedural4.json'] = {};
 }
 
-X3DJSON['Script../data/CloudsProcedural4.jsonundefined']['PixelScript'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = function() {
 	this.set_Cumulus = function (value) {
-		this.proxy.Cumulus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.Cumulus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting Cumulus '+e);
+			console.error('Problems setting Cumulus',e);
+		}
 	};
 	this.Cumulus_changed = function () {
 		var value = this.Cumulus;
 		return value;
 	};
-	this.Cumulus = X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil('Cumulus');
+	try {
+		this.Cumulus = X3DJSON.nodeUtil('Scene','Cumulus');
+	} catch (e) {
+		alert('Problems setting Cumulus '+e);
+		console.error('Problems setting Cumulus',e);
+	}
 	this.set_Cirrus = function (value) {
-		this.proxy.Cirrus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.Cirrus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting Cirrus '+e);
+			console.error('Problems setting Cirrus',e);
+		}
 	};
 	this.Cirrus_changed = function () {
 		var value = this.Cirrus;
 		return value;
 	};
-	this.Cirrus = X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil('Cirrus');
+	try {
+		this.Cirrus = X3DJSON.nodeUtil('Scene','Cirrus');
+	} catch (e) {
+		alert('Problems setting Cirrus '+e);
+		console.error('Problems setting Cirrus',e);
+	}
 	this.set_Fog = function (value) {
-		this.proxy.Fog = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.Fog = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting Fog '+e);
+			console.error('Problems setting Fog',e);
+		}
 	};
 	this.Fog_changed = function () {
 		var value = this.Fog;
 		return value;
 	};
-	this.Fog = new SFNode();
+	try {
+		this.Fog = new SFNode();
+	} catch (e) {
+		alert('Problems setting Fog '+e);
+		console.error('Problems setting Fog',e);
+	}
 
 
 ecmascript:
-
 
 
 	this.cumulustranslation = function () // These values designate the boundary location of the cloud
@@ -177,7 +219,6 @@ ecmascript:
 	return randomt;
 	
 }
-
 
 
 ;
@@ -198,7 +239,6 @@ ecmascript:
 	
 }
 
-
 ;
 
 	this.cirrustranslation = function () // These values designate the boundary location of the cloud
@@ -212,7 +252,6 @@ ecmascript:
 	return randomt;
 	
 }
-
 
 
 ;
@@ -233,7 +272,6 @@ ecmascript:
 	
 }
 
-
 ;
 
 	this.cumulussectiontranslation = function () // These random values place another portion of this.cumulus type cloud
@@ -253,7 +291,6 @@ ecmascript:
 	return randomt;
 	
 }
-
 ;
 
 	this.cirrussectiontranslation = function () // These random values place another portion of this.cirrus type cloud
@@ -274,7 +311,6 @@ ecmascript:
 	
 }
 
-
 ;
 
 	this.rotation = function () // This random value is for the billboard this.rotation not used in this script
@@ -289,13 +325,12 @@ ecmascript:
 	return randomr;
 	
 }
-
 ;
 
 	this.cumulus = function ()
 {
 
-maxi = 20;  // number of clouds
+var maxi = 20;  // number of clouds
 
 maxj = 5; // denotes how many portions affecting the size of the cloud
 
@@ -421,20 +456,19 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil('Cumulus', 'children')[i] = newNode[0];
+X3DJSON.nodeUtil('Scene','Cumulus', 'children')[i] = newNode[0];
 
 
    }
 
 }
-
 ;
 
 	this.cirrus = function ()
 
 {
 
-maxi = 2;  // number of clouds
+var maxi = 2;  // number of clouds
 
 maxj = 5; // denotes how many portions affecting the size of the cloud
 
@@ -545,12 +579,11 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-X3DJSON['../data/CloudsProcedural4.jsonundefined'].nodeUtil('Cirrus', 'children')[i] = newNode[0];
+X3DJSON.nodeUtil('Scene','Cirrus', 'children')[i] = newNode[0];
 
   }
 
 }
-
 
 ;
 
@@ -566,21 +599,33 @@ this.cirrus();
 ;
 
 };
-if (typeof X3DJSON['Obj../data/CloudsProcedural4.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json'] = {};
 }
 
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'] = new X3DJSON['Script../data/CloudsProcedural4.jsonundefined']['PixelScript']();
-if (typeof X3DJSON['Obj../data/CloudsProcedural4.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = new X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'] === 'undefined') {
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript']['ACTION'] = {};
-X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript']['ACTION'],X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript']);
 }
-if (typeof X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'].initialize === "function") X3DJSON['Obj../data/CloudsProcedural4.jsonundefined']['PixelScript'].initialize();
+if (typeof X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CloudsProcedural4.json']['PixelScript'].initialize();
 

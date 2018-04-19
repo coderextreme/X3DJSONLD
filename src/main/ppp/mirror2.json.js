@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/mirror2.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/mirror2.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/mirror2.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/mirror2.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/mirror2.jsonundefined'].nodeUtil = function(node, field, value)
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/mirror2.jsonundefined'].nodeUtil = function(node, field, value)
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,127 +134,277 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/mirror2.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/mirror2.json'] === 'undefined') {
+	X3DJSON['Scene../data/mirror2.json'] = {};
 }
 
-X3DJSON['Script../data/mirror2.jsonundefined']['UrlSelector'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/mirror2.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/mirror2.json']['UrlSelector'] = function() {
 	this.set_frontUrls = function (value) {
-		this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frontUrls '+e);
+			console.error('Problems setting frontUrls',e);
+		}
 	};
 	this.frontUrls_changed = function () {
 		var value = this.frontUrls;
 		return value;
 	};
-	this.frontUrls = new MFString("../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png");
+	try {
+		this.frontUrls = new MFString("../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png");
+	} catch (e) {
+		alert('Problems setting frontUrls '+e);
+		console.error('Problems setting frontUrls',e);
+	}
 	this.set_backUrls = function (value) {
-		this.proxy.backUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.backUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting backUrls '+e);
+			console.error('Problems setting backUrls',e);
+		}
 	};
 	this.backUrls_changed = function () {
 		var value = this.backUrls;
 		return value;
 	};
-	this.backUrls = new MFString("../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png");
+	try {
+		this.backUrls = new MFString("../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png");
+	} catch (e) {
+		alert('Problems setting backUrls '+e);
+		console.error('Problems setting backUrls',e);
+	}
 	this.set_leftUrls = function (value) {
-		this.proxy.leftUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.leftUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting leftUrls '+e);
+			console.error('Problems setting leftUrls',e);
+		}
 	};
 	this.leftUrls_changed = function () {
 		var value = this.leftUrls;
 		return value;
 	};
-	this.leftUrls = new MFString("../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png");
+	try {
+		this.leftUrls = new MFString("../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png");
+	} catch (e) {
+		alert('Problems setting leftUrls '+e);
+		console.error('Problems setting leftUrls',e);
+	}
 	this.set_rightUrls = function (value) {
-		this.proxy.rightUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.rightUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting rightUrls '+e);
+			console.error('Problems setting rightUrls',e);
+		}
 	};
 	this.rightUrls_changed = function () {
 		var value = this.rightUrls;
 		return value;
 	};
-	this.rightUrls = new MFString("../resources/images/all_probes/beach_cross/beach_right.png","../resources/images/all_probes/building_cross/building_right.png","../resources/images/all_probes/campus_cross/campus_right.png","../resources/images/all_probes/galileo_cross/galileo_right.png","../resources/images/all_probes/grace_cross/grace_right.png","../resources/images/all_probes/kitchen_cross/kitchen_right.png","../resources/images/all_probes/rnl_cross/rnl_right.png","../resources/images/all_probes/stpeters_cross/stpeters_right.png","../resources/images/all_probes/uffizi_cross/uffizi_right.png");
+	try {
+		this.rightUrls = new MFString("../resources/images/all_probes/beach_cross/beach_right.png","../resources/images/all_probes/building_cross/building_right.png","../resources/images/all_probes/campus_cross/campus_right.png","../resources/images/all_probes/galileo_cross/galileo_right.png","../resources/images/all_probes/grace_cross/grace_right.png","../resources/images/all_probes/kitchen_cross/kitchen_right.png","../resources/images/all_probes/rnl_cross/rnl_right.png","../resources/images/all_probes/stpeters_cross/stpeters_right.png","../resources/images/all_probes/uffizi_cross/uffizi_right.png");
+	} catch (e) {
+		alert('Problems setting rightUrls '+e);
+		console.error('Problems setting rightUrls',e);
+	}
 	this.set_topUrls = function (value) {
-		this.proxy.topUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.topUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting topUrls '+e);
+			console.error('Problems setting topUrls',e);
+		}
 	};
 	this.topUrls_changed = function () {
 		var value = this.topUrls;
 		return value;
 	};
-	this.topUrls = new MFString("../resources/images/all_probes/beach_cross/beach_top.png","../resources/images/all_probes/building_cross/building_top.png","../resources/images/all_probes/campus_cross/campus_top.png","../resources/images/all_probes/galileo_cross/galileo_top.png","../resources/images/all_probes/grace_cross/grace_top.png","../resources/images/all_probes/kitchen_cross/kitchen_top.png","../resources/images/all_probes/rnl_cross/rnl_top.png","../resources/images/all_probes/stpeters_cross/stpeters_top.png","../resources/images/all_probes/uffizi_cross/uffizi_top.png");
+	try {
+		this.topUrls = new MFString("../resources/images/all_probes/beach_cross/beach_top.png","../resources/images/all_probes/building_cross/building_top.png","../resources/images/all_probes/campus_cross/campus_top.png","../resources/images/all_probes/galileo_cross/galileo_top.png","../resources/images/all_probes/grace_cross/grace_top.png","../resources/images/all_probes/kitchen_cross/kitchen_top.png","../resources/images/all_probes/rnl_cross/rnl_top.png","../resources/images/all_probes/stpeters_cross/stpeters_top.png","../resources/images/all_probes/uffizi_cross/uffizi_top.png");
+	} catch (e) {
+		alert('Problems setting topUrls '+e);
+		console.error('Problems setting topUrls',e);
+	}
 	this.set_bottomUrls = function (value) {
-		this.proxy.bottomUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.bottomUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting bottomUrls '+e);
+			console.error('Problems setting bottomUrls',e);
+		}
 	};
 	this.bottomUrls_changed = function () {
 		var value = this.bottomUrls;
 		return value;
 	};
-	this.bottomUrls = new MFString("../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png");
+	try {
+		this.bottomUrls = new MFString("../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png");
+	} catch (e) {
+		alert('Problems setting bottomUrls '+e);
+		console.error('Problems setting bottomUrls',e);
+	}
 	this.set_front = function (value) {
-		this.proxy.front = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.front = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting front '+e);
+			console.error('Problems setting front',e);
+		}
 	};
 	this.front_changed = function () {
 		var value = this.front;
 		return value;
 	};
-	this.front = undefined;
+	try {
+		this.front = undefined;
+	} catch (e) {
+		alert('Problems setting front '+e);
+		console.error('Problems setting front',e);
+	}
 	this.set_back = function (value) {
-		this.proxy.back = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.back = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting back '+e);
+			console.error('Problems setting back',e);
+		}
 	};
 	this.back_changed = function () {
 		var value = this.back;
 		return value;
 	};
-	this.back = undefined;
+	try {
+		this.back = undefined;
+	} catch (e) {
+		alert('Problems setting back '+e);
+		console.error('Problems setting back',e);
+	}
 	this.set_left = function (value) {
-		this.proxy.left = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.left = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting left '+e);
+			console.error('Problems setting left',e);
+		}
 	};
 	this.left_changed = function () {
 		var value = this.left;
 		return value;
 	};
-	this.left = undefined;
+	try {
+		this.left = undefined;
+	} catch (e) {
+		alert('Problems setting left '+e);
+		console.error('Problems setting left',e);
+	}
 	this.set_right = function (value) {
-		this.proxy.right = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.right = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting right '+e);
+			console.error('Problems setting right',e);
+		}
 	};
 	this.right_changed = function () {
 		var value = this.right;
 		return value;
 	};
-	this.right = undefined;
+	try {
+		this.right = undefined;
+	} catch (e) {
+		alert('Problems setting right '+e);
+		console.error('Problems setting right',e);
+	}
 	this.set_top = function (value) {
-		this.proxy.top = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.top = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting top '+e);
+			console.error('Problems setting top',e);
+		}
 	};
 	this.top_changed = function () {
 		var value = this.top;
 		return value;
 	};
-	this.top = undefined;
+	try {
+		this.top = undefined;
+	} catch (e) {
+		alert('Problems setting top '+e);
+		console.error('Problems setting top',e);
+	}
 	this.set_bottom = function (value) {
-		this.proxy.bottom = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.bottom = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting bottom '+e);
+			console.error('Problems setting bottom',e);
+		}
 	};
 	this.bottom_changed = function () {
 		var value = this.bottom;
 		return value;
 	};
-	this.bottom = undefined;
+	try {
+		this.bottom = undefined;
+	} catch (e) {
+		alert('Problems setting bottom '+e);
+		console.error('Problems setting bottom',e);
+	}
 	this.set_fraction = function (value) {
-		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
 	};
 	this.fraction_changed = function () {
 		var value = this.fraction;
 		return value;
 	};
-	this.fraction = undefined;
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		alert('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 	this.set_old = function (value) {
-		this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting old '+e);
+			console.error('Problems setting old',e);
+		}
 	};
 	this.old_changed = function () {
 		var value = this.old;
 		return value;
 	};
-	this.old = new SFInt32(-1);
+	try {
+		this.old = new SFInt32(-1);
+	} catch (e) {
+		alert('Problems setting old '+e);
+		console.error('Problems setting old',e);
+	}
 
 
 ecmascript:
-        
+       
 	this.set_fraction = function ( f, tm ) {
 	    var side = Math.floor(f*this.proxy.frontUrls.length);
 	    if (side > this.proxy.frontUrls.length-1) {
@@ -272,229 +425,313 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
 }
 
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = new X3DJSON['Script../data/mirror2.jsonundefined']['UrlSelector']();
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = new X3DJSON['Script']['Scene']['../data/mirror2.json']['UrlSelector']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION'] = {};
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION'],X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']);
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION'],X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']);
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].initialize === "function") X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].initialize();
-X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].set_fraction(X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].initialize === "function") X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].initialize();
+X3DJSON.nodeUtil('Scene','Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].set_fraction(X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'].push(function(property, value) {
 		if (property === 'front') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','frontUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','frontUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','frontUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','frontUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'].push(function(property, value) {
 		if (property === 'back') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','backUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','backUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','backUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','backUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'].push(function(property, value) {
 		if (property === 'left') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','leftUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','leftUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','leftUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','leftUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'].push(function(property, value) {
 		if (property === 'right') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','rightUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','rightUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','rightUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','rightUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'].push(function(property, value) {
 		if (property === 'top') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','topUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','topUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','topUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','topUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'].push(function(property, value) {
 		if (property === 'bottom') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','bottomUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','bottomUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','bottomUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','cube','bottomUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['front'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['front'].push(function(property, value) {
 		if (property === 'front') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('frontShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','frontShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('frontShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','frontShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['back'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['back'].push(function(property, value) {
 		if (property === 'back') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('backShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','backShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('backShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','backShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['left'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['left'].push(function(property, value) {
 		if (property === 'left') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('leftShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','leftShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('leftShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','leftShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['right'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['right'].push(function(property, value) {
 		if (property === 'right') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('rightShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','rightShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('rightShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','rightShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['top'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['top'].push(function(property, value) {
 		if (property === 'top') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('topShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','topShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('topShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','topShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'] === 'undefined') {
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'] = [];
 }
-X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector']['ACTION']['bottom'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector']['ACTION']['bottom'].push(function(property, value) {
 		if (property === 'bottom') {
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('bottomShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);
 		}
 });
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('bottomShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
-			X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].set_fraction(X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','frontUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','backUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','leftUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','rightUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','topUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('cube','bottomUrl',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('frontShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].front, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('backShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].back, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('leftShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].left, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('rightShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].right, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('topShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].top, __eventTime);
-			X3DJSON['../data/mirror2.jsonundefined'].nodeUtil('bottomShader','url',typeof X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom_changed() : X3DJSON['Obj../data/mirror2.jsonundefined']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','frontUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','backUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','leftUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','rightUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','topUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','cube','bottomUrl',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','frontShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','backShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','leftShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','rightShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','topShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror2.json']['UrlSelector'].bottom, __eventTime);

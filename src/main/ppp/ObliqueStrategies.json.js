@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/ObliqueStrategies.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/ObliqueStrategies.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil = function(node, fie
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil = function(node, fie
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,75 +134,165 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/ObliqueStrategies.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/ObliqueStrategies.json'] === 'undefined') {
+	X3DJSON['Scene../data/ObliqueStrategies.json'] = {};
 }
 
-X3DJSON['Script../data/ObliqueStrategies.jsonundefined']['TextScript'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/ObliqueStrategies.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = function() {
 	this.set_index = function (value) {
-		this.proxy.index = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.index = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting index '+e);
+			console.error('Problems setting index',e);
+		}
 	};
 	this.index_changed = function () {
 		var value = this.index;
 		return value;
 	};
-	this.index = new SFInt32(0);
+	try {
+		this.index = new SFInt32(0);
+	} catch (e) {
+		alert('Problems setting index '+e);
+		console.error('Problems setting index',e);
+	}
 	this.set_string = function (value) {
-		this.proxy.string = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.string = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting string '+e);
+			console.error('Problems setting string',e);
+		}
 	};
 	this.string_changed = function () {
 		var value = this.string;
 		return value;
 	};
-	this.string = undefined;
+	try {
+		this.string = undefined;
+	} catch (e) {
+		alert('Problems setting string '+e);
+		console.error('Problems setting string',e);
+	}
 	this.set_textToSpeechUrl = function (value) {
-		this.proxy.textToSpeechUrl = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.textToSpeechUrl = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting textToSpeechUrl '+e);
+			console.error('Problems setting textToSpeechUrl',e);
+		}
 	};
 	this.textToSpeechUrl_changed = function () {
 		var value = this.textToSpeechUrl;
 		return value;
 	};
-	this.textToSpeechUrl = new MFString();
+	try {
+		this.textToSpeechUrl = new MFString();
+	} catch (e) {
+		alert('Problems setting textToSpeechUrl '+e);
+		console.error('Problems setting textToSpeechUrl',e);
+	}
 	this.set_newCardTime = function (value) {
-		this.proxy.newCardTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.newCardTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting newCardTime '+e);
+			console.error('Problems setting newCardTime',e);
+		}
 	};
 	this.newCardTime_changed = function () {
 		var value = this.newCardTime;
 		return value;
 	};
-	this.newCardTime = new SFTime();
+	try {
+		this.newCardTime = new SFTime();
+	} catch (e) {
+		alert('Problems setting newCardTime '+e);
+		console.error('Problems setting newCardTime',e);
+	}
 	this.set_selectPreviousCard = function (value) {
-		this.proxy.selectPreviousCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.selectPreviousCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting selectPreviousCard '+e);
+			console.error('Problems setting selectPreviousCard',e);
+		}
 	};
 	this.selectPreviousCard_changed = function () {
 		var value = this.selectPreviousCard;
 		return value;
 	};
-	this.selectPreviousCard = new SFBool();
+	try {
+		this.selectPreviousCard = new SFBool();
+	} catch (e) {
+		alert('Problems setting selectPreviousCard '+e);
+		console.error('Problems setting selectPreviousCard',e);
+	}
 	this.set_selectNextCard = function (value) {
-		this.proxy.selectNextCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.selectNextCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting selectNextCard '+e);
+			console.error('Problems setting selectNextCard',e);
+		}
 	};
 	this.selectNextCard_changed = function () {
 		var value = this.selectNextCard;
 		return value;
 	};
-	this.selectNextCard = new SFBool();
+	try {
+		this.selectNextCard = new SFBool();
+	} catch (e) {
+		alert('Problems setting selectNextCard '+e);
+		console.error('Problems setting selectNextCard',e);
+	}
 	this.set_selectRandomCard = function (value) {
-		this.proxy.selectRandomCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.selectRandomCard = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting selectRandomCard '+e);
+			console.error('Problems setting selectRandomCard',e);
+		}
 	};
 	this.selectRandomCard_changed = function () {
 		var value = this.selectRandomCard;
 		return value;
 	};
-	this.selectRandomCard = new SFBool();
+	try {
+		this.selectRandomCard = new SFBool();
+	} catch (e) {
+		alert('Problems setting selectRandomCard '+e);
+		console.error('Problems setting selectRandomCard',e);
+	}
 	this.set_traceEnabled = function (value) {
-		this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting traceEnabled '+e);
+			console.error('Problems setting traceEnabled',e);
+		}
 	};
 	this.traceEnabled_changed = function () {
 		var value = this.traceEnabled;
 		return value;
 	};
-	this.traceEnabled = new SFBool(true);
+	try {
+		this.traceEnabled = new SFBool(true);
+	} catch (e) {
+		alert('Problems setting traceEnabled '+e);
+		console.error('Problems setting traceEnabled',e);
+	}
 // description: Script methods to load and sequence cards, create text-to-speech url for online retrieval of audio
 // title:       ObliqueStrategiesScript.js    
 // creator:     Don Brutzman, John Kelly, Ben Cheng
@@ -352,7 +445,6 @@ var strategy = []; // TODO BS Contact not supporting this preferred construct
 var scriptName   = 'ObliqueStrategiesScript.js';
 var terseTrace   = false;
 
-
 	this.forcePrint = function (stringValue)
 {
     // console.error, println is the functino to output text on the X3D player's console window
@@ -364,8 +456,7 @@ var terseTrace   = false;
     {
         console.error (                          stringValue + '\n');
     }
-}
-;
+};
 
 	this.tracePrint = function (stringValue)
 {
@@ -374,7 +465,7 @@ var terseTrace   = false;
         this.forcePrint (stringValue);
     }
 }
-// ========;
+// =======;
 
 	this.generateTextToSpeechUrl = function () // TODO add SFBool field to silence, SFString field to choose output language
 {
@@ -382,7 +473,6 @@ var terseTrace   = false;
   this.proxy.textToSpeechUrl = new MFString ('http://translate.google.com/translate_tts?tl=en&q=' + encodeURIComponent(strategy[this.proxy.index]));
   this.tracePrint ('this.generateTextToSpeechUrl() ' + this.proxy.textToSpeechUrl);
 }
-
 ;
 
 	this.produceMFStringCard = function () // internal utility functino
@@ -410,7 +500,6 @@ var terseTrace   = false;
     this.generateTextToSpeechUrl ();
     this.tracePrint ('============================'); // done with this card
 }
-
 ;
 
 	this.selectRandomCard = function (eventValue, timestamp) // eventValue is routed into Script, timestamp parameter optional
@@ -424,7 +513,6 @@ var terseTrace   = false;
     this.proxy.newCardTime = timestamp + 0.1;
   }
 }
-
 ;
 
 	this.selectPreviousCard = function (eventValue, timestamp) // TODO test
@@ -445,7 +533,6 @@ var terseTrace   = false;
     this.proxy.newCardTime = timestamp + 0.1;
   }
 }
-
 ;
 
 	this.selectNextCard = function (eventValue, timestamp) // TODO test
@@ -462,7 +549,6 @@ var terseTrace   = false;
     this.proxy.newCardTime = timestamp + 0.1;
   }
 }
-
 ;
 
 	this.printAllStrategies = function ()
@@ -482,7 +568,7 @@ var terseTrace   = false;
   console.error ('');
   terseTrace = saveTrace; // restore prior value
 }
-// ===============;
+// ==============;
 
 	this.initialize = function () // no parameters allowed
 {
@@ -511,106 +597,142 @@ var terseTrace   = false;
   this.generateTextToSpeechUrl ();
   this.tracePrint ('============================'); // done with this.initialize
 }
-// =======;
+// ======;
 
 };
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
 }
 
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = new X3DJSON['Script../data/ObliqueStrategies.jsonundefined']['TextScript']();
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = new X3DJSON['Script']['Scene']['../data/ObliqueStrategies.json']['TextScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION'] = {};
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION'],X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].initialize === "function") X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].initialize();
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['string'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['string'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']);
 }
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['string'].push(function(property, value) {
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].initialize();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['string'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['string'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['string'].push(function(property, value) {
 		if (property === 'string') {
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('CardText','string',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string, __eventTime);
+			X3DJSON.nodeUtil('Scene','CardText','string',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string, __eventTime);
 		}
 });
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('CardText','string',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string, __eventTime);
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','CardText','string',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'] = [];
 }
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
 		if (property === 'textToSpeechUrl') {
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);
 		}
 });
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['newCardTime'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['newCardTime'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['newCardTime'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['newCardTime'] = [];
 }
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['newCardTime'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['newCardTime'].push(function(property, value) {
 		if (property === 'newCardTime') {
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime, __eventTime);
 		}
 });
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime, __eventTime);
-X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('PreviousTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectPreviousCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime, __eventTime);
+X3DJSON.nodeUtil('Scene','PreviousTextClickedSensor').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('Scene','PreviousTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectPreviousCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
-X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('NextTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectNextCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('Scene','PreviousTextClickedSensor','isActive'), __eventTime);
+X3DJSON.nodeUtil('Scene','NextTextClickedSensor').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectNextCard(X3DJSON.nodeUtil('Scene','NextTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectNextCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
-X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('RandomTextClickedSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectRandomCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectNextCard(X3DJSON.nodeUtil('Scene','NextTextClickedSensor','isActive'), __eventTime);
+X3DJSON.nodeUtil('Scene','RandomTextClickedSensor').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('Scene','RandomTextClickedSensor','isActive'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectRandomCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined'] = {};
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('Scene','RandomTextClickedSensor','isActive'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'] = [];
 }
-X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript']['ACTION']['textToSpeechUrl'].push(function(property, value) {
 		if (property === 'textToSpeechUrl') {
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAnchor','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);
 		}
 });
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('CardText','string',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string_changed() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].string, __eventTime);
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].newCardTime, __eventTime);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectPreviousCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('PreviousTextClickedSensor','isActive'), __eventTime);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectNextCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('NextTextClickedSensor','isActive'), __eventTime);
-			X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].selectRandomCard(X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('RandomTextClickedSensor','isActive'), __eventTime);
-			X3DJSON['../data/ObliqueStrategies.jsonundefined'].nodeUtil('TextToSpeechAnchor','url',typeof X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl() : X3DJSON['Obj../data/ObliqueStrategies.jsonundefined']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAnchor','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('Scene','CardText','string',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string_changed() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].string, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAudioClip','startTime',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].newCardTime, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectPreviousCard(X3DJSON.nodeUtil('Scene','PreviousTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectNextCard(X3DJSON.nodeUtil('Scene','NextTextClickedSensor','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].selectRandomCard(X3DJSON.nodeUtil('Scene','RandomTextClickedSensor','isActive'), __eventTime);
+			X3DJSON.nodeUtil('Scene','TextToSpeechAnchor','url',typeof X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl === "function" ? X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl() : X3DJSON['Obj']['Scene']['../data/ObliqueStrategies.json']['TextScript'].textToSpeechUrl, __eventTime);

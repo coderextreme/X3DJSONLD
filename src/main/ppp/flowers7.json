@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "18 April 2018"
         },
         {
           "@name": "generator",
@@ -100,7 +100,6 @@
         },
         {
           "Transform": {
-            "@DEF": "Rose01",
             "-children": [
               {
                 "Shape": {
@@ -258,7 +257,7 @@
                             ],
                             "-children": [
                               {
-                                "#comment": "field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"
+                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                               }
                             ],
                             "-parts": [
@@ -274,7 +273,7 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
+                                    "../shaders/common.fs",
                                     "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
                                   ],
                                   "@type": "FRAGMENT"
@@ -391,9 +390,7 @@
                     }
                   },
                   "-geometry": {
-                    "Sphere": {
-                      "@solid": false
-                    }
+                    "Sphere": {}
                   }
                 }
               }
@@ -620,19 +617,23 @@
             "#sourceText": [
               "",
               "",
-              "",
               "ecmascript:",
               "",
               "function set_fraction() {",
               "\tvar choice = Math.floor(Math.random() * 4);",
-              "\tif (choice == 0) {",
+              "\tswitch (choice) {",
+              "\tcase 0:",
               "\t\ta = a + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t} else if (choice == 1) {",
+              "\t\tbreak;",
+              "\tcase 1:",
               "\t\tb = b + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t} else if (choice == 2) {",
+              "\t\tbreak;",
+              "\tcase 2:",
               "\t\tc = c + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t} else if (choice == 3) {",
+              "\t\tbreak;",
+              "\tcase 3:",
               "\t\td = d + Math.floor(Math.random() * 2) * 2 - 1;",
+              "\t\tbreak;",
               "\t}",
               "\ttdelta = tdelta + 0.5;",
               "\tpdelta = pdelta + 0.5;",

@@ -45,7 +45,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "19 April 2018"
         },
         {
           "@name": "generator",
@@ -420,7 +420,7 @@
                     "function cumulus()",
                     "{",
                     "",
-                    "maxi = 20;  // number of clouds",
+                    "var maxi = 20;  // number of clouds",
                     "",
                     "maxj = 5; // denotes how many portions affecting the size of the cloud",
                     "",
@@ -557,7 +557,7 @@
                     "",
                     "{",
                     "",
-                    "maxi = 2;  // number of clouds",
+                    "var maxi = 2;  // number of clouds",
                     "",
                     "maxj = 5; // denotes how many portions affecting the size of the cloud",
                     "",

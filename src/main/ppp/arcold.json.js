@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/arcold.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/arcold.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/arcold.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/arcold.jsonundefined'].nodeUtil = function(node, field, value) 
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/arcold.jsonundefined'].nodeUtil = function(node, field, value) 
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,47 +134,97 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/arcold.json'] === 'undefined') {
+	X3DJSON['Scene../data/arcold.json'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] = function() {
 	this.set_translation = function (value) {
-		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
 	};
 	this.translation_changed = function () {
 		var value = this.translation;
 		return value;
 	};
-	this.translation = new SFVec3f(0,0,0);
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
 	this.set_old = function (value) {
-		this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting old '+e);
+			console.error('Problems setting old',e);
+		}
 	};
 	this.old_changed = function () {
 		var value = this.old;
 		return value;
 	};
-	this.old = new SFVec3f(0,0,0);
+	try {
+		this.old = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting old '+e);
+		console.error('Problems setting old',e);
+	}
 	this.set_location = function (value) {
-		this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting location '+e);
+			console.error('Problems setting location',e);
+		}
 	};
 	this.location_changed = function () {
 		var value = this.location;
 		return value;
 	};
-	this.location = undefined;
+	try {
+		this.location = undefined;
+	} catch (e) {
+		alert('Problems setting location '+e);
+		console.error('Problems setting location',e);
+	}
 	this.set_keyValue = function (value) {
-		this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValue '+e);
+			console.error('Problems setting keyValue',e);
+		}
 	};
 	this.keyValue_changed = function () {
 		var value = this.keyValue;
 		return value;
 	};
-	this.keyValue = new MFVec3f();
+	try {
+		this.keyValue = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValue '+e);
+		console.error('Problems setting keyValue',e);
+	}
 
 
 ecmascript:
-		
+	
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -182,64 +235,122 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G1_MB1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] = function() {
 	this.set_translation = function (value) {
-		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
 	};
 	this.translation_changed = function () {
 		var value = this.translation;
 		return value;
 	};
-	this.translation = new SFVec3f(0,0,0);
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
 	this.set_old = function (value) {
-		this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting old '+e);
+			console.error('Problems setting old',e);
+		}
 	};
 	this.old_changed = function () {
 		var value = this.old;
 		return value;
 	};
-	this.old = new SFVec3f(0,0,0);
+	try {
+		this.old = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting old '+e);
+		console.error('Problems setting old',e);
+	}
 	this.set_location = function (value) {
-		this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting location '+e);
+			console.error('Problems setting location',e);
+		}
 	};
 	this.location_changed = function () {
 		var value = this.location;
 		return value;
 	};
-	this.location = undefined;
+	try {
+		this.location = undefined;
+	} catch (e) {
+		alert('Problems setting location '+e);
+		console.error('Problems setting location',e);
+	}
 	this.set_keyValue = function (value) {
-		this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValue '+e);
+			console.error('Problems setting keyValue',e);
+		}
 	};
 	this.keyValue_changed = function () {
 		var value = this.keyValue;
 		return value;
 	};
-	this.keyValue = new MFVec3f();
+	try {
+		this.keyValue = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValue '+e);
+		console.error('Problems setting keyValue',e);
+	}
 
 
 ecmascript:
-		
+	
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -250,64 +361,122 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G2_MB1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] = function() {
 	this.set_translation = function (value) {
-		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
 	};
 	this.translation_changed = function () {
 		var value = this.translation;
 		return value;
 	};
-	this.translation = new SFVec3f(0,0,0);
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
 	this.set_old = function (value) {
-		this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting old '+e);
+			console.error('Problems setting old',e);
+		}
 	};
 	this.old_changed = function () {
 		var value = this.old;
 		return value;
 	};
-	this.old = new SFVec3f(0,0,0);
+	try {
+		this.old = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting old '+e);
+		console.error('Problems setting old',e);
+	}
 	this.set_location = function (value) {
-		this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting location '+e);
+			console.error('Problems setting location',e);
+		}
 	};
 	this.location_changed = function () {
 		var value = this.location;
 		return value;
 	};
-	this.location = undefined;
+	try {
+		this.location = undefined;
+	} catch (e) {
+		alert('Problems setting location '+e);
+		console.error('Problems setting location',e);
+	}
 	this.set_keyValue = function (value) {
-		this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValue '+e);
+			console.error('Problems setting keyValue',e);
+		}
 	};
 	this.keyValue_changed = function () {
 		var value = this.keyValue;
 		return value;
 	};
-	this.keyValue = new MFVec3f();
+	try {
+		this.keyValue = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValue '+e);
+		console.error('Problems setting keyValue',e);
+	}
 
 
 ecmascript:
-		
+	
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -318,64 +487,122 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G3_MB1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] = function() {
 	this.set_translation = function (value) {
-		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
 	};
 	this.translation_changed = function () {
 		var value = this.translation;
 		return value;
 	};
-	this.translation = new SFVec3f(0,0,0);
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
 	this.set_old = function (value) {
-		this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting old '+e);
+			console.error('Problems setting old',e);
+		}
 	};
 	this.old_changed = function () {
 		var value = this.old;
 		return value;
 	};
-	this.old = new SFVec3f(0,0,0);
+	try {
+		this.old = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting old '+e);
+		console.error('Problems setting old',e);
+	}
 	this.set_location = function (value) {
-		this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting location '+e);
+			console.error('Problems setting location',e);
+		}
 	};
 	this.location_changed = function () {
 		var value = this.location;
 		return value;
 	};
-	this.location = undefined;
+	try {
+		this.location = undefined;
+	} catch (e) {
+		alert('Problems setting location '+e);
+		console.error('Problems setting location',e);
+	}
 	this.set_keyValue = function (value) {
-		this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting keyValue '+e);
+			console.error('Problems setting keyValue',e);
+		}
 	};
 	this.keyValue_changed = function () {
 		var value = this.keyValue;
 		return value;
 	};
-	this.keyValue = new MFVec3f();
+	try {
+		this.keyValue = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting keyValue '+e);
+		console.error('Problems setting keyValue',e);
+	}
 
 
 ecmascript:
-		
+	
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -386,79 +613,157 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLpoint_G4_MB1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'] = function() {
 	this.set_startnode = function (value) {
-		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startnode '+e);
+			console.error('Problems setting startnode',e);
+		}
 	};
 	this.startnode_changed = function () {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = new SFNode();
+	try {
+		this.startnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting startnode '+e);
+		console.error('Problems setting startnode',e);
+	}
 	this.set_endnode = function (value) {
-		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endnode '+e);
+			console.error('Problems setting endnode',e);
+		}
 	};
 	this.endnode_changed = function () {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = new SFNode();
+	try {
+		this.endnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting endnode '+e);
+		console.error('Problems setting endnode',e);
+	}
 	this.set_transnode = function (value) {
-		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting transnode '+e);
+			console.error('Problems setting transnode',e);
+		}
 	};
 	this.transnode_changed = function () {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = new SFNode();
+	try {
+		this.transnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting transnode '+e);
+		console.error('Problems setting transnode',e);
+	}
 	this.set_rotscalenode = function (value) {
-		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting rotscalenode '+e);
+			console.error('Problems setting rotscalenode',e);
+		}
 	};
 	this.rotscalenode_changed = function () {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = new SFNode();
+	try {
+		this.rotscalenode = new SFNode();
+	} catch (e) {
+		alert('Problems setting rotscalenode '+e);
+		console.error('Problems setting rotscalenode',e);
+	}
 	this.set_startpoint = function (value) {
-		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startpoint '+e);
+			console.error('Problems setting startpoint',e);
+		}
 	};
 	this.startpoint_changed = function () {
 		var value = this.startpoint;
 		return value;
 	};
-	this.startpoint = undefined;
+	try {
+		this.startpoint = undefined;
+	} catch (e) {
+		alert('Problems setting startpoint '+e);
+		console.error('Problems setting startpoint',e);
+	}
 	this.set_endpoint = function (value) {
-		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endpoint '+e);
+			console.error('Problems setting endpoint',e);
+		}
 	};
 	this.endpoint_changed = function () {
 		var value = this.endpoint;
 		return value;
 	};
-	this.endpoint = undefined;
+	try {
+		this.endpoint = undefined;
+	} catch (e) {
+		alert('Problems setting endpoint '+e);
+		console.error('Problems setting endpoint',e);
+	}
 
             ecmascript:
-        
+       
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -482,7 +787,7 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] 
 		    };
 	    }
 	}
-	;
+;
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
@@ -494,17 +799,17 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] 
 			console.error("this.recompute returned undefined");
 		}
 	}
-        ;
+       ;
 
 	this.initialize = function (){
             this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_startpoint = function (val,t){
             this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
@@ -513,79 +818,157 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] 
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'] = function() {
 	this.set_startnode = function (value) {
-		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startnode '+e);
+			console.error('Problems setting startnode',e);
+		}
 	};
 	this.startnode_changed = function () {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = new SFNode();
+	try {
+		this.startnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting startnode '+e);
+		console.error('Problems setting startnode',e);
+	}
 	this.set_endnode = function (value) {
-		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endnode '+e);
+			console.error('Problems setting endnode',e);
+		}
 	};
 	this.endnode_changed = function () {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = new SFNode();
+	try {
+		this.endnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting endnode '+e);
+		console.error('Problems setting endnode',e);
+	}
 	this.set_transnode = function (value) {
-		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting transnode '+e);
+			console.error('Problems setting transnode',e);
+		}
 	};
 	this.transnode_changed = function () {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = new SFNode();
+	try {
+		this.transnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting transnode '+e);
+		console.error('Problems setting transnode',e);
+	}
 	this.set_rotscalenode = function (value) {
-		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting rotscalenode '+e);
+			console.error('Problems setting rotscalenode',e);
+		}
 	};
 	this.rotscalenode_changed = function () {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = new SFNode();
+	try {
+		this.rotscalenode = new SFNode();
+	} catch (e) {
+		alert('Problems setting rotscalenode '+e);
+		console.error('Problems setting rotscalenode',e);
+	}
 	this.set_startpoint = function (value) {
-		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startpoint '+e);
+			console.error('Problems setting startpoint',e);
+		}
 	};
 	this.startpoint_changed = function () {
 		var value = this.startpoint;
 		return value;
 	};
-	this.startpoint = undefined;
+	try {
+		this.startpoint = undefined;
+	} catch (e) {
+		alert('Problems setting startpoint '+e);
+		console.error('Problems setting startpoint',e);
+	}
 	this.set_endpoint = function (value) {
-		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endpoint '+e);
+			console.error('Problems setting endpoint',e);
+		}
 	};
 	this.endpoint_changed = function () {
 		var value = this.endpoint;
 		return value;
 	};
-	this.endpoint = undefined;
+	try {
+		this.endpoint = undefined;
+	} catch (e) {
+		alert('Problems setting endpoint '+e);
+		console.error('Problems setting endpoint',e);
+	}
 
             ecmascript:
-        
+       
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -609,7 +992,7 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] 
 		    };
 	    }
 	}
-	;
+;
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
@@ -621,17 +1004,17 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] 
 			console.error("this.recompute returned undefined");
 		}
 	}
-        ;
+       ;
 
 	this.initialize = function (){
             this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_startpoint = function (val,t){
             this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
@@ -640,79 +1023,157 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] 
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].initialize();
-if (typeof X3DJSON['Script../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'] = {};
 }
 
-X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/arcold.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'] = function() {
 	this.set_startnode = function (value) {
-		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startnode '+e);
+			console.error('Problems setting startnode',e);
+		}
 	};
 	this.startnode_changed = function () {
 		var value = this.startnode;
 		return value;
 	};
-	this.startnode = new SFNode();
+	try {
+		this.startnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting startnode '+e);
+		console.error('Problems setting startnode',e);
+	}
 	this.set_endnode = function (value) {
-		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endnode '+e);
+			console.error('Problems setting endnode',e);
+		}
 	};
 	this.endnode_changed = function () {
 		var value = this.endnode;
 		return value;
 	};
-	this.endnode = new SFNode();
+	try {
+		this.endnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting endnode '+e);
+		console.error('Problems setting endnode',e);
+	}
 	this.set_transnode = function (value) {
-		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting transnode '+e);
+			console.error('Problems setting transnode',e);
+		}
 	};
 	this.transnode_changed = function () {
 		var value = this.transnode;
 		return value;
 	};
-	this.transnode = new SFNode();
+	try {
+		this.transnode = new SFNode();
+	} catch (e) {
+		alert('Problems setting transnode '+e);
+		console.error('Problems setting transnode',e);
+	}
 	this.set_rotscalenode = function (value) {
-		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting rotscalenode '+e);
+			console.error('Problems setting rotscalenode',e);
+		}
 	};
 	this.rotscalenode_changed = function () {
 		var value = this.rotscalenode;
 		return value;
 	};
-	this.rotscalenode = new SFNode();
+	try {
+		this.rotscalenode = new SFNode();
+	} catch (e) {
+		alert('Problems setting rotscalenode '+e);
+		console.error('Problems setting rotscalenode',e);
+	}
 	this.set_startpoint = function (value) {
-		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting startpoint '+e);
+			console.error('Problems setting startpoint',e);
+		}
 	};
 	this.startpoint_changed = function () {
 		var value = this.startpoint;
 		return value;
 	};
-	this.startpoint = undefined;
+	try {
+		this.startpoint = undefined;
+	} catch (e) {
+		alert('Problems setting startpoint '+e);
+		console.error('Problems setting startpoint',e);
+	}
 	this.set_endpoint = function (value) {
-		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting endpoint '+e);
+			console.error('Problems setting endpoint',e);
+		}
 	};
 	this.endpoint_changed = function () {
 		var value = this.endpoint;
 		return value;
 	};
-	this.endpoint = undefined;
+	try {
+		this.endpoint = undefined;
+	} catch (e) {
+		alert('Problems setting endpoint '+e);
+		console.error('Problems setting endpoint',e);
+	}
 
             ecmascript:
-        
+       
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -736,7 +1197,7 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] 
 		    };
 	    }
 	}
-	;
+;
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 		var trafo = this.recompute(startpoint, endpoint);
@@ -748,17 +1209,17 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] 
 			console.error("this.recompute returned undefined");
 		}
 	}
-        ;
+       ;
 
 	this.initialize = function (){
             this.recompute_and_route(this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_startpoint = function (val,t){
             this.recompute_and_route(val || this.proxy.startnode.translation,this.proxy.endnode.translation);
         }
-        ;
+       ;
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
@@ -767,154 +1228,190 @@ X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] 
 ;
 
 };
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
 
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] = new X3DJSON['Script../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1']();
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'] = new X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1']['ACTION'] = {};
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1']['ACTION'],X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1']);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1']);
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].initialize === "function") X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].initialize();
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].initialize();
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION']['keyValue'] = [];
 }
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1']['ACTION']['keyValue'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
 }
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1']['ACTION']['keyValue'].push(function(property, value) {
-		if (property === 'keyValue') {
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-		}
-});
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
-}, false);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','cycleTime'), __eventTime);
-}, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','cycleTime'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
-}, false);
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION']['keyValue'] = [];
 }
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1']['ACTION']['keyValue'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue, __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','cycleTime'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
 }, false);
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION']['keyValue'] === 'undefined') {
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION']['keyValue'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION']['keyValue'] = [];
 }
-X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1']['ACTION']['keyValue'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue, __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil('Scene','DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue, __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G3_PI1').addEventListener('outputchange', function(event) {
 }, false);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','cycleTime'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','translation'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION']['keyValue'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION']['keyValue'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1']['ACTION']['keyValue'].push(function(property, value) {
+		if (property === 'keyValue') {
+			X3DJSON.nodeUtil('Scene','DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil('Scene','DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue, __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G4_PI1').addEventListener('outputchange', function(event) {
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','translation'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','translation'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','cycleTime'), __eventTime);
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','cycleTime'), __eventTime);
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','cycleTime'), __eventTime);
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G3_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].set_location(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','cycleTime'), __eventTime);
-			X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj../data/arcold.jsonundefined']['DECLpoint_G4_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G2_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G3_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G1_CL1','translation'), __eventTime);
-			X3DJSON['Obj../data/arcold.jsonundefined']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON['../data/arcold.jsonundefined'].nodeUtil('DECLpoint_G4_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G3_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLpoint_G4_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G3_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G4_CL1','translation'), __eventTime);
