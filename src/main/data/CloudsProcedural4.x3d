@@ -70,7 +70,7 @@ function cumulustranslation() // These values designate the boundary location of
 function cumulusscale() // these values scale a cloud within a designated size
 {
 
-	maxscale = 1;
+	var maxscale = 1;
 
 	scale = Math.round(9+maxscale*Math.random());
 	X = 1.5*scale;
@@ -101,7 +101,7 @@ function cirrustranslation() // These values designate the boundary location of 
 function cirrusscale() // these values scale a cloud within a designated size
 {
 
-	maxscale = 1;
+	var maxscale = 1;
 
 	scale = Math.round(9+maxscale*Math.random());
 	X = 1.5*scale;
@@ -168,13 +168,13 @@ function rotation() // This random value is for the billboard rotation not used 
 function cumulus()
 {
 
-maxi = 20;  // number of clouds
+var maxi = 20;  // number of clouds
 
-maxj = 5; // denotes how many portions affecting the size of the cloud
+var maxj = 5; // denotes how many portions affecting the size of the cloud
 
-maxk = 8;  // number of billboards indicating cloud density
+var maxk = 8;  // number of billboards indicating cloud density
 
-sectionradius = 100;  //radius of individual cloud sections
+var sectionradius = 100;  //radius of individual cloud sections
 
 
 
@@ -305,13 +305,13 @@ function cirrus()
 
 {
 
-maxi = 2;  // number of clouds
+var maxi = 2;  // number of clouds
 
-maxj = 5; // denotes how many portions affecting the size of the cloud
+var maxj = 5; // denotes how many portions affecting the size of the cloud
 
-maxk = 8;  // number of billboards indicating cloud density
+var maxk = 8;  // number of billboards indicating cloud density
 
-sectionradius = 1000;  //radius of individual cloud sections
+var sectionradius = 1000;  //radius of individual cloud sections
 
 
 

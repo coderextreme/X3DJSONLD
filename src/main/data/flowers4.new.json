@@ -72,6 +72,11 @@
               "-children":[
                 { "Shape":
                   {
+                    "-children":[
+                      {
+                        "#comment":"<Sphere>"
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {
@@ -82,6 +87,60 @@
                                 "@specularColor":[0.5,0.5,0.5]
                               }
                             },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"shader",
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  }
+                                ]
+                              }
+                            }
+                          ],
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
@@ -122,73 +181,14 @@
                                     }
                                   }
                               }
-                            },
-                          "-shaders":[
-                            { "ComposedShader":
-                              {
-                                "@DEF":"shader",
-                                "@language":"GLSL",
-                                "field": [
-                                  {
-                                    "@name":"cube",
-                                    "@type":"SFInt32",
-                                    "@accessType":"inputOutput",
-                                    "@value":0
-                                  },
-                                  {
-                                    "@name":"chromaticDispertion",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.98,1.0,1.033]
-                                  },
-                                  {
-                                    "@name":"bias",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"scale",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"power",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":2
-                                  }
-                                ],
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"],
-                                      "@type":"VERTEX"
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],
-                                      "@type":"FRAGMENT"
-                                    }
-                                  }
-                                ]
-                              }
                             }
-                          ]
                         }
                       },
-                    "-children":[
-                      {
-                        "#comment":"<Sphere>"
-                      }
-                    ],
                     "-geometry":
                       { "IndexedFaceSet":
                         {
-                          "@convex":false,
                           "@DEF":"Orbit",
+                          "@convex":false,
                           "-coord":
                             { "Coordinate":
                               {
@@ -223,6 +223,8 @@
                 }
               ],
               "#sourceText":[
+"",
+"",
 "",
 "",
 "",
@@ -297,6 +299,9 @@
 "\tvar resolution = 100;",
 "\tupdateCoordinates(resolution);",
 "}",
+"",
+"",
+"",
 ""
 ]
             }
@@ -304,7 +309,7 @@
           { "TimeSensor":
             {
               "@DEF":"Clock",
-              "@cycleInterval":16,
+              "@cycleInterval":16.0,
               "@loop":true
             }
           },

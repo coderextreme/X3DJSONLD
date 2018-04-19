@@ -124,13 +124,13 @@ public class flower {
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
+"     var theta = 0.0;\n"+
+"     var phi = 0.0;\n"+
+"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
 "     var localc = [];\n"+
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
 "		localc.push(new SFVec3f(\n"+
 "			rho * Math.cos(phi) * Math.cos(theta),\n"+
 "			rho * Math.cos(phi) * Math.sin(theta),\n"+
@@ -146,7 +146,7 @@ public class flower {
 "function set_fraction(fraction, eventTime) {\n"+
 "	t += 0.5;\n"+
 "	p += 0.5;\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
+"	var choice = Math.floor(Math.random() * 4);\n"+
 "	switch (choice) {\n"+
 "	case 0:\n"+
 "		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+

@@ -129,7 +129,7 @@ public class flowers4 {
 "var h = 5;\n"+
 "\n"+
 "function initialize() {\n"+
-"     resolution = 100;\n"+
+"     var resolution = 100;\n"+
 "     updateCoordinates(resolution);\n"+
 "     var cis = [];\n"+
 "     for ( i = 0; i < resolution-1; i++) {\n"+
@@ -145,13 +145,13 @@ public class flowers4 {
 "}\n"+
 "\n"+
 "function updateCoordinates(resolution) {\n"+
-"     theta = 0.0;\n"+
-"     phi = 0.0;\n"+
-"     delta = (2 * 3.141592653) / (resolution-1);\n"+
+"     var theta = 0.0;\n"+
+"     var phi = 0.0;\n"+
+"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
 "     var crds = [];\n"+
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
 "		crds.push(new SFVec3f(\n"+
 "			rho * Math.cos(phi) * Math.cos(theta),\n"+
 "			rho * Math.cos(phi) * Math.sin(theta),\n"+
@@ -165,7 +165,7 @@ public class flowers4 {
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
-"	choice = Math.floor(Math.random() * 4);\n"+
+"	var choice = Math.floor(Math.random() * 4);\n"+
 "	switch (choice) {\n"+
 "	case 0:\n"+
 "		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
@@ -189,7 +189,7 @@ public class flowers4 {
 "	if (h < 1) {\n"+
 "		h = 4;\n"+
 "	}\n"+
-"	resolution = 100;\n"+
+"	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}\n"+
 "\n"+

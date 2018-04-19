@@ -67,7 +67,7 @@ var g = 5;
 var h = 5;
 
 function initialize() {
-     resolution = 100;
+     var resolution = 100;
      updateCoordinates(resolution);
      var cis = [];
      for ( i = 0; i < resolution-1; i++) {
@@ -83,13 +83,13 @@ function initialize() {
 }
 
 function updateCoordinates(resolution) {
-     theta = 0.0;
-     phi = 0.0;
-     delta = (2 * 3.141592653) / (resolution-1);
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
      var crds = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
-		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
 		crds.push(new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
@@ -103,7 +103,7 @@ function updateCoordinates(resolution) {
 }
 
 function set_fraction(fraction, eventTime) {
-	choice = Math.floor(Math.random() * 4);
+	var choice = Math.floor(Math.random() * 4);
 	switch (choice) {
 	case 0:
 		e += Math.floor(Math.random() * 2) * 2 - 1;
@@ -127,7 +127,7 @@ function set_fraction(fraction, eventTime) {
 	if (h < 1) {
 		h = 4;
 	}
-	resolution = 100;
+	var resolution = 100;
 	updateCoordinates(resolution);
 }
       ]]></Script>

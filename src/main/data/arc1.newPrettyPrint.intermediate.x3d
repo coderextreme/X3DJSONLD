@@ -2,10 +2,10 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
     <head>
-        <meta name='title' content='x3dconnectorProto' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='title' content='arc1.x3d' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='creator' content='Lost, Doug Sanden I think' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='description' content='a generic proto to connect two objects' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
@@ -36,12 +36,11 @@
 
 
 ecmascript:
-		function set_location(value) {
+               function set_location(value) {
                     old = translation;
-		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
-		    // Browser.println(keyValue);
-		}
+               }
 
 
 
@@ -52,45 +51,51 @@ ecmascript:
                     <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
                     <ROUTE fromField='keyValue' fromNode='MB1' toField='keyValue' toNode='PI1'/>
                     <ROUTE fromField='value_changed' fromNode='PI1' toField='set_translation' toNode='node'/>
+                    <ROUTE fromField='translation_changed' fromNode='MB1' toField='set_translation' toNode='node'/>
                 </Transform>
             </ProtoBody>
         </ProtoDeclare>
+        <Transform DEF='G1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <ProtoInstance name='point' class=''/>
+        </Transform>
+        <Transform DEF='G2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <ProtoInstance name='point' class=''/>
+        </Transform>
+        <Transform DEF='transC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Transform DEF='rotscaleC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                    </Appearance>
+                    <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
+                </Shape>
+            </Transform>
+        </Transform>
         <ProtoDeclare name='x3dconnector' appinfo='' documentation=''>
             <ProtoInterface>
                 <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
                 <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
                 <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
                 <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
             </ProtoInterface>
             <ProtoBody>
-                <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                    <Transform DEF='trans' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                        <Transform DEF='rotscale' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                                <Appearance class=''>
-                                    <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
-                                </Appearance>
-                                <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
-                            </Shape>
-                        </Transform>
-                    </Transform>
-                    <Script DEF='S1' directOutput='false' mustEvaluate='false' url='' class=''>
-                        <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-                        <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-                        <field name='position' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
-                            <Transform USE='trans'/>
-                        </field>
-                        <field name='rotscale' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
-                            <Transform USE='rotscale'/>
-                        </field>
-                        <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                        <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                        <IS>
-                            <connect nodeField='startnode' protoField='startnode'/>
-                            <connect nodeField='endnode' protoField='endnode'/>
-                            <connect nodeField='set_startpoint' protoField='set_startpoint'/>
-                            <connect nodeField='set_endpoint' protoField='set_endpoint'/>
-                        </IS>
+                <Script DEF='S1' directOutput='false' mustEvaluate='false' url='' class=''>
+                    <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                    <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                    <IS>
+                        <connect nodeField='startnode' protoField='startnode'/>
+                        <connect nodeField='endnode' protoField='endnode'/>
+                        <connect nodeField='transnode' protoField='transnode'/>
+                        <connect nodeField='rotscalenode' protoField='rotscalenode'/>
+                        <connect nodeField='set_startpoint' protoField='set_startpoint'/>
+                        <connect nodeField='set_endpoint' protoField='set_endpoint'/>
+                    </IS>
 <![CDATA[
 
             ecmascript:
@@ -109,24 +114,19 @@ ecmascript:
 			    translation : transl,
 			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
 		    };
-	    } else if (typeof SFRotation !== 'undefined') {
+	    } else {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
 			    translation : transl,
 			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
 		    };
-	    } else {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl
-		    };
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      position.translation = trafo.translation;
-	      rotscale.rotation = trafo.rotation;
-	      rotscale.scale = trafo.scale;
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
@@ -141,23 +141,26 @@ ecmascript:
 
 
 ]]>
-                    </Script>
-                </Group>
+                </Script>
             </ProtoBody>
         </ProtoDeclare>
-        <ProtoInstance DEF='G1' name='point' class=''/>
-        <ProtoInstance DEF='G2' name='point' class=''/>
         <ProtoInstance DEF='connector1' name='x3dconnector' class=''>
             <fieldValue name='startnode' value=''>
-                <ProtoInstance USE='G1' class=''/>
+                <Transform USE='G1'/>
             </fieldValue>
             <fieldValue name='endnode' value=''>
-                <ProtoInstance USE='G2' class=''/>
+                <Transform USE='G2'/>
+            </fieldValue>
+            <fieldValue name='transnode' value=''>
+                <Transform USE='transC1'/>
+            </fieldValue>
+            <fieldValue name='rotscalenode' value=''>
+                <Transform USE='rotscaleC1'/>
             </fieldValue>
             <fieldValue name='set_startpoint' value=''/>
             <fieldValue name='set_endpoint' value=''/>
         </ProtoInstance>
-        <ROUTE fromField='translation' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
-        <ROUTE fromField='translation' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
+        <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
+        <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
     </Scene>
 </X3D>

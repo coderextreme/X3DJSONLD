@@ -294,19 +294,23 @@ Script47.addField(field54)
 Script47.setSourceCode("\n"+
 "	    ecmascript:\n"+
 "               function set_cycle(value) {\n"+
+"	       	   try {\n"+
 "                        var ov = lastKey;\n"+
 "                        do {\n"+
 "                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
 "                        } while (lastKey === ov);\n"+
 "                        var vc = lastKey;\n"+
 "\n"+
-"                        orientation_changed = new MFRotation();\n"+
-"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
-"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
 "                        position_changed = new MFVec3f();\n"+
 "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
 "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
-"                    // }\n"+
+"\n"+
+"                        orientation_changed = new MFRotation();\n"+
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
+"		   } catch (e) {\n"+
+"				alert(e);\n"+
+"		   }\n"+
 "               }\n"+
 "")
 Scene11.addChild(Script47)

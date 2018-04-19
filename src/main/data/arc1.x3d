@@ -2,16 +2,15 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
 <head>        
-        <meta name='title' content='x3dconnectorProto'/>
+        <meta name='title' content='arc1.x3d'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
 </head>
 <Scene>
-	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
-	<Background skyColor='0.4 0.4 0.4'/>
-
+    <Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
+    <Background skyColor='0.4 0.4 0.4'/>
     <ProtoDeclare name='point'>
         <ProtoInterface>
             <field accessType='inputOutput' name='translation' type='SFVec3f' value="0 0 0"/>
@@ -26,7 +25,7 @@
                         <Appearance>
                             <Material diffuseColor='1 0 0'/>
                         </Appearance>
-               </Shape>  
+               </Shape>
                <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
                <Script DEF='MB1'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
@@ -35,12 +34,11 @@
                     <field name='keyValue' accessType='inputOutput' type='MFVec3f' value="0 0 0 0 5 0"/>
 <![CDATA[
 ecmascript:
-		function set_location(value) {
+               function set_location(value) {
                     old = translation;
-		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
-		    // Browser.println(keyValue);
-		}
+               }
 ]]>
                 </Script>
                 <TimeSensor DEF='CL1' cycleInterval='3' loop='true'></TimeSensor>
@@ -48,41 +46,49 @@ ecmascript:
                 <ROUTE fromNode='CL1' fromField='fraction_changed' toNode='PI1' toField='set_fraction'/>
                 <ROUTE fromNode='MB1' fromField='keyValue' toNode='PI1' toField='keyValue'/>
                 <ROUTE fromNode='PI1' fromField='value_changed' toNode='node' toField='set_translation'/>
-        </Transform>
-    </ProtoBody>
+		<ROUTE fromNode='MB1' fromField='translation_changed' toNode='node' toField='set_translation' />
+	    </Transform>
+        </ProtoBody>
     </ProtoDeclare>
-    
-    <ProtoDeclare name='x3dconnector'>
-    <ProtoInterface>
-        <field accessType='initializeOnly' name='startnode' type='SFNode'/>
-        <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-        <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
-        <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
-    </ProtoInterface>
-    <ProtoBody>
-      <Group>
-	<Transform DEF='trans' translation="0 0 0">
-	<Transform DEF='rotscale' >
+
+    <Transform DEF="G1">
+	    	<ProtoInstance name="point"/>
+    </Transform>
+    <Transform DEF="G2">
+	    	<ProtoInstance name="point"/>
+    </Transform>
+        
+	<Transform DEF='transC1' >
+	<Transform DEF='rotscaleC1' >
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
 			<Cylinder radius='.05'/>
 		</Shape>
         </Transform>
         </Transform>
+    
+    <ProtoDeclare name='x3dconnector'>
+    <ProtoInterface>
+        <field accessType='initializeOnly' name='startnode' type='SFNode'/>
+        <field accessType='initializeOnly' name='endnode' type='SFNode'/>
+        <field accessType='outputOnly' name='transnode' type='SFNode'/>
+        <field accessType='outputOnly' name='rotscalenode' type='SFNode'/>
+        <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
+        <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
+    </ProtoInterface>
+    <ProtoBody>
         <Script DEF='S1'>
             <field accessType='initializeOnly' name='startnode' type='SFNode'/>
             <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-            <field accessType='inputOutput' name='position' type='SFNode'>
-            	<Transform USE='trans'/>
-	    </field>
-            <field accessType='inputOutput' name='rotscale' type='SFNode'>
-            	<Transform USE='rotscale'/>
-	    </field>
+            <field accessType='initializeOnly' name='transnode' type='SFNode'/>
+            <field accessType='initializeOnly' name='rotscalenode' type='SFNode'/>
             <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
             <IS>
                 <connect nodeField='startnode' protoField='startnode'/>
                 <connect nodeField='endnode' protoField='endnode'/>
+                <connect nodeField='transnode' protoField='transnode'/>
+                <connect nodeField='rotscalenode' protoField='rotscalenode'/>
                 <connect nodeField='set_startpoint' protoField='set_startpoint'/>
                 <connect nodeField='set_endpoint' protoField='set_endpoint'/>
             </IS>
@@ -102,24 +108,19 @@ ecmascript:
 			    translation : transl,
 			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
 		    };
-	    } else if (typeof SFRotation !== 'undefined') {
+	    } else {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
 			    translation : transl,
 			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
 		    };
-	    } else {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl
-		    };
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      position.translation = trafo.translation;
-	      rotscale.rotation = trafo.rotation;
-	      rotscale.scale = trafo.scale;
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
@@ -132,24 +133,27 @@ ecmascript:
         }
             ]]>
         </Script>
-      </Group>
     </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance DEF='G1' name='point'/>
-    <ProtoInstance DEF='G2' name='point'/>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='G1'/>
+		    <Transform USE="G1"/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='G2'/>
+		    <Transform USE="G2"/>
+        </fieldValue>
+        <fieldValue name='transnode'>
+            <Transform USE='transC1'/>
+        </fieldValue>
+        <fieldValue name='rotscalenode'>
+            <Transform USE='rotscaleC1'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
         <fieldValue name='set_endpoint'>
         </fieldValue>
     </ProtoInstance>
-    <ROUTE fromNode='G1' fromField='translation' toNode='connector1' toField='set_startpoint'/>
-    <ROUTE fromNode='G2' fromField='translation' toNode='connector1' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector1' toField='set_startpoint'/>
+    <ROUTE fromNode='G2' fromField='translation_changed' toNode='connector1' toField='set_endpoint'/>
 </Scene>
 </X3D>
