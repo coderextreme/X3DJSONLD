@@ -34,7 +34,7 @@
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
 <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
@@ -98,7 +98,7 @@ ecmascript:
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
 <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
@@ -162,7 +162,7 @@ ecmascript:
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
 <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>

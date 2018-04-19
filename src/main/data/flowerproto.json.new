@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "17 April 2018"
+          "@content": "19 April 2018"
         },
         {
           "@name": "generator",
@@ -371,7 +371,7 @@
                             "\t\t\t}",
                             "",
                             "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                            "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                            "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                             "\t\t\t\tswitch (choice) {",
                             "\t\t\t\tcase 0:",
                             "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",

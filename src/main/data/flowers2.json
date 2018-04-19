@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 April 2018"
+            "@content":"19 April 2018"
           },
           {
             "@name":"generator",
@@ -269,13 +269,13 @@
 "\t\t\t}",
 "",
 "\t\t\tfunction generateCoordinates() {",
-"\t\t\t     theta = 0.0;",
-"\t\t\t     phi = 0.0;",
-"\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
+"\t\t\t     var theta = 0.0;",
+"\t\t\t     var phi = 0.0;",
+"\t\t\t     var delta = (2 * 3.141592653) / (resolution-1);",
 "\t\t\t     var localc = [];",
-"\t\t\t     for ( i = 0; i < resolution; i++) {",
-"\t\t\t\tfor ( j = 0; j < resolution; j++) {",
-"\t\t\t\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+"\t\t\t     for (var i = 0; i < resolution; i++) {",
+"\t\t\t\tfor (var j = 0; j < resolution; j++) {",
+"\t\t\t\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
 "\t\t\t\t\tlocalc.push(new SFVec3f(",
 "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
 "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
@@ -290,7 +290,7 @@
 "\t\t\t}",
 "",
 "\t\t\tfunction set_fraction(fraction, eventTime) {",
-"\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+"\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
 "\t\t\t\tswitch (choice) {",
 "\t\t\t\tcase 0:",
 "\t\t\t\t\te += Math.floor(Math.random() * 2) * 2 - 1;",

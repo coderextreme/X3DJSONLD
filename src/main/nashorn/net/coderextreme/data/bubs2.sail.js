@@ -49,8 +49,8 @@ var ProtoInstance3 = null;
 "    if (typeof velocity === 'undefined') {\n"+
 "		velocity = new SFVec3f(0, 0, 0);\n"+
 "    }\n"+
-"    if (typeof scalevel === 'undefined') {\n"+
-"		scalevel = new SFVec3f(0, 0, 0);\n"+
+"    if (typeof scalvel === 'undefined') {\n"+
+"		scalvel = new SFVec3f(0, 0, 0);\n"+
 "    }\n"+
 "    if (typeof scale === 'undefined') {\n"+
 "		scale = new SFVec3f(1, 1, 1);\n"+

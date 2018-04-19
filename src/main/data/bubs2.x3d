@@ -34,8 +34,8 @@ function set_fraction(value) {
     if (typeof velocity === 'undefined') {
 		velocity = new SFVec3f(0, 0, 0);
     }
-    if (typeof scalevel === 'undefined') {
-		scalevel = new SFVec3f(0, 0, 0);
+    if (typeof scalvel === 'undefined') {
+		scalvel = new SFVec3f(0, 0, 0);
     }
     if (typeof scale === 'undefined') {
 		scale = new SFVec3f(1, 1, 1);
