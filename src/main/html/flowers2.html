@@ -79,6 +79,8 @@ function get(url) {
 var x3dtag = "X3D";
 var scenetag = "Scene";
 
+var scripts = new Scripts();
+
 function getJSON(url) {
   return get(url).then(JSON.parse);
 }
@@ -90,7 +92,7 @@ function getJSON(url) {
 			json = protoExpander.prototypeExpander(url, json, "");
 		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
 				if ($('#scripting').is(':checked')) {
-					loadScripts(json, selector, url);
+					scripts.loadScripts(json, selector, url);
 				}
 			});
 		}).catch(function(err) {
@@ -110,9 +112,6 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		if ($('#scripting').is(':checked')) {
-			initializeScripts();
-		}
 		load_X3DOM('#x3domjson','../data/flowers2.json');
 		load_X_ITE('../data/flowers2.json');
 	});

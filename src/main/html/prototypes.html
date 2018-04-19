@@ -95,6 +95,8 @@
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
+var scripts = new Scripts();
+
 	function load_X3DOM_All(loadObj, url, callback) {
 		loadObj.x3domjson = protoExpander.prototypeExpander(url, loadObj.x3domjson, "");
 		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, xmlDoc, content) {
@@ -147,10 +149,10 @@
 			load_X3DOM_All(loadObj, url, function(element, xmlDoc, json) {
 				if ($('#scripting').is(':checked')) {
 					if (document.querySelector(loadObj.x3domxmlselector)) {
-						loadScripts(json, loadObj.x3domxmlselector, url);
+						scripts.loadScripts(json, loadObj.x3domxmlselector, url);
 					}
 					if (document.querySelector(loadObj.x3domjsonselector)) {
-						loadScripts(json, loadObj.x3domjsonselector, url);
+						scripts.loadScripts(json, loadObj.x3domjsonselector, url);
 					}
 				}
 				loadObj.x3domelement = element;
@@ -199,9 +201,6 @@
 			})
 	}
         function loadScenes(urls) {
-		if ($('#scripting').is(':checked')) {
-			initializeScripts();
-		}
 		loadObj = {};
 		loadObj.x3domjsonselector = "#x3domjson";
 		loadObj.x3domxmlselector = "#x3domxml";

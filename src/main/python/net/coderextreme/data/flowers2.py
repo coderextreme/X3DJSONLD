@@ -242,8 +242,8 @@ Script38.setSourceCode("\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
 "			     var localci = [];\n"+
-"			     for ( i = 0; i < resolution-1; i++) {\n"+
-"				for ( j = 0; j < resolution-1; j++) {\n"+
+"			     for (var i = 0; i < resolution-1; i++) {\n"+
+"				for (var j = 0; j < resolution-1; j++) {\n"+
 "				     localci.push(i*resolution+j);\n"+
 "				     localci.push(i*resolution+j+1);\n"+
 "				     localci.push((i+1)*resolution+j+1);\n"+
