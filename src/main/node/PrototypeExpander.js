@@ -2,11 +2,19 @@ var runAndSend;
 var fs;
 var http;
 var https;
+var DOM2JSONSerializer;
+var fieldTypes;
+var mapToMethod;
+var DOMParser;
 if (typeof require !== 'undefined') {
 	runAndSend = require("./runAndSend");
 	fs = require("fs");
 	http = require("http");
 	https = require("https");
+	DOM2JSONSerializer = require('./DOM2JSONSerializer'),
+	fieldTypes = require('./fieldTypes');
+	mapToMethod = require('./mapToMethod');
+	DOMParser = require('xmldom').DOMParser;
 }
 
 if (typeof require !== 'undefined') {
@@ -944,7 +952,27 @@ PROTOS.prototype = {
 						console.error("async skip of run and send " + filename);
 					} else
 					*/
-					if (typeof convertXmlToJson === 'function') {
+					if (typeof DOM2JSONSerializer === 'function') {
+						try {
+							var doc = null;
+							try {  
+								var domParser = new DOMParser();
+								doc = domParser.parseFromString (data, 'application/xml');
+						
+							} catch (e) {
+								throw e;
+							}
+							var element = doc.documentElement;
+							var serializer = new DOM2JSONSerializer();
+							json = serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
+							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
+						} catch (e) {
+							if (typeof alert === 'function') {
+								alert(e);
+							}
+							console.error("DOM2JSONSerializer Convert failed", e);
+						}
+					} else if (typeof convertXmlToJson === 'function') {
 						try {
 							json = convertXmlToJson(data, filename);
 							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
@@ -952,10 +980,10 @@ PROTOS.prototype = {
 							if (typeof alert === 'function') {
 								alert(e);
 							}
-							console.error("Convert failed", e);
+							console.error("convertXmlToJON Convert failed", e);
 						}
 					} else {
-						console.error("Did not convert XML to JSON.  Oops!")
+						console.error("Did not convert XML to JSON.  Oops!", typeof DOM2JSONSerializer, typeof convertXmlToJson)
 					}
 				}
 			} catch (e) {

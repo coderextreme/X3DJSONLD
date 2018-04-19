@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "18 April 2018"
         },
         {
           "@name": "generator",
@@ -302,7 +302,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -613,7 +613,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -924,7 +924,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }

@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/bubble.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/bubble.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/bubble.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/bubble.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/bubble.jsonundefined'].nodeUtil = function(node, field, value) 
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/bubble.jsonundefined'].nodeUtil = function(node, field, value) 
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,60 +134,118 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/bubble.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/bubble.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/bubble.json'] === 'undefined') {
+	X3DJSON['Scene../data/bubble.json'] = {};
 }
 
-X3DJSON['Script../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/bubble.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/bubble.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] = function() {
 	this.set_scale = function (value) {
-		this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.scale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting scale '+e);
+			console.error('Problems setting scale',e);
+		}
 	};
 	this.scale_changed = function () {
 		var value = this.scale;
 		return value;
 	};
-	this.scale = new SFVec3f(1,1,1);
+	try {
+		this.scale = new SFVec3f(1,1,1);
+	} catch (e) {
+		alert('Problems setting scale '+e);
+		console.error('Problems setting scale',e);
+	}
 	this.set_translation = function (value) {
-		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
 	};
 	this.translation_changed = function () {
 		var value = this.translation;
 		return value;
 	};
-	this.translation = new SFVec3f(0,0,0);
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
 	this.set_velocity = function (value) {
-		this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting velocity '+e);
+			console.error('Problems setting velocity',e);
+		}
 	};
 	this.velocity_changed = function () {
 		var value = this.velocity;
 		return value;
 	};
-	this.velocity = new SFVec3f(0,0,0);
+	try {
+		this.velocity = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting velocity '+e);
+		console.error('Problems setting velocity',e);
+	}
 	this.set_scalvel = function (value) {
-		this.proxy.scalvel = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.scalvel = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting scalvel '+e);
+			console.error('Problems setting scalvel',e);
+		}
 	};
 	this.scalvel_changed = function () {
 		var value = this.scalvel;
 		return value;
 	};
-	this.scalvel = new SFVec3f(0,0,0);
+	try {
+		this.scalvel = new SFVec3f(0,0,0);
+	} catch (e) {
+		alert('Problems setting scalvel '+e);
+		console.error('Problems setting scalvel',e);
+	}
 	this.set_fraction = function (value) {
-		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
 	};
 	this.fraction_changed = function () {
 		var value = this.fraction;
 		return value;
 	};
-	this.fraction = undefined;
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		alert('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 
 ecmascript:
-
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     this.proxy.scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
-
 ;
 
 	this.set_fraction = function (value) {
@@ -228,59 +289,83 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json'] = {};
 }
 
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] = new X3DJSON['Script../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']();
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] = new X3DJSON['Script']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION'] = {};
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION'],X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']);
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].initialize === "function") X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].initialize();
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION'],X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']);
 }
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['translation'].push(function(property, value) {
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].initialize === "function") X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].initialize();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['translation'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] === 'undefined') {
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['scale'] = [];
 }
-X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce']['ACTION']['scale'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce']['ACTION']['scale'].push(function(property, value) {
 		if (property === 'scale') {
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
 		}
 });
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
-X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_bubbleClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_bubbleClock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
-			X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
-			X3DJSON['Obj../data/bubble.jsonundefined']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON['../data/bubble.jsonundefined'].nodeUtil('DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','translation',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_transform','scale',typeof X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale_changed() : X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].scale, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'].set_fraction(X3DJSON.nodeUtil('Scene','DECLBubble_bubbleA_bubbleClock','fraction'), __eventTime);

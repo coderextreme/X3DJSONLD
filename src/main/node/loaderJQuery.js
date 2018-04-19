@@ -62,8 +62,6 @@ function loadLocalize(lang) {
 
 loadLocalize(lang);
 
-
-
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		$('#xml').val(xml.join("\n"));
@@ -75,7 +73,7 @@ function loadXmlBrowsers(xml) {
 		try {
 			load_X_ITE_XML(xml, "#x_itexml");
 		} catch (e) {
-			alert("Problems with X_ITE xml", e);
+			alert("Problems with X_ITE xml "+ e);
 			console.error(e);
 		}
 		// put everthing inside Scene into the browser's Scene's innerHTML
@@ -105,118 +103,6 @@ function filter(event) {
 			$('#file').append($("<option>", { value: opt, text: opt}));
 		});
 	});
-}
-
-var X3DJSON = {};
-
-function runAllRoutes() {
-	for (var r in X3DJSON.runRoutes) {
-		X3DJSON.runRoutes[r]();
-	}
-}
-
-function initializeScripts() {
-	if (typeof X3DJSON !== 'undefined') {
-		delete X3DJSON;
-	}
-	X3DJSON = {};
-	X3DJSON.runRoutes = [];
-    	if ($('#scripting').is(':checked')) {
-		if (typeof X3DJSON.intervalId !== 'undefined') {
-			// console.error("Interval", X3DJSON.intervalId, "cleared");
-			clearInterval(X3DJSON.intervalId);
-		}
-		X3DJSON.intervalId = setInterval(runAllRoutes, 1000 / 60 );
-	}
-}
-
-
-function loadScripts(json, selector, url) {
-    if ($('#scripting').is(':checked')) {
-	// Now generate JavaScript code for Scripts and Routes
-	var classes = new LOG();
-	var routecode = new LOG();
-	var loopItems = new LOG();
-	processScripts(json, classes, undefined, routecode, loopItems, selector, url);
-
-	/*
-	$("#scripts").remove();
-	var scripts = document.createElement('script');
-	*/
-	var scripts = {};
-	scripts.id = "scripts";
-	scripts.type = 'text/javascript';
-	scripts.text = classes.join("\n");
-	   /*
-	$('body').append(scripts);
-	*/
-
-	    /*
-	$("#routes").remove();
-	var routes =  document.createElement('script');
-	*/
-	var routes = {};
-	routes.id = "routes";
-	routes.type = 'text/javascript';
-	routes.text = routecode.join("\n");
-	    /*
-	$('body').append(routes);
-	*/
-
-	var loop = {}
-	loop.id = "loop";
-	loop.type = "text/javascript";
-	loop.text =loopItems.join("\n");
-	// When we zap the source, we prevent animation
-	// zapSource(json);
-
-	
-        // initialize json
-	var __eventTime = 0;
-	var jsonScript = "var myjson = "+JSON.stringify(json, null, 2);
-	try {
-		// TODO eval is evil
-		if (typeof jsonScript != 'undefined') {
-			eval(jsonScript);
-		}
-	} catch (e) {
-		console.log(jsonScript, e);
-	}
-
-        // initialize scripts
-	try {
-		// TODO eval is evil
-		if (typeof scripts.text != 'undefined') {
-			eval(scripts.text);
-		}
-	} catch (e) {
-		console.log(scripts.text, e);
-	    
-	}
-	 
-	// run initializers, initializeOnly routes, and eventHandler initialization, proxies
-	try {
-		// TODO eval is evil
-		if (typeof routes.text != 'undefined') {
-			eval(routes.text);
-		}
-	} catch (e) {
-		console.log(routes.text, e);
-	}
-	// event loop
-	X3DJSON.runRoutes.push(function() {
-		try {
-			// TODO eval is evil
-			if (typeof loop.text != 'undefined') {
-				eval(loop.text);
-			}
-			x3dom.reload();  // This may be necessary
-		} catch (e) {
-			console.log(loop.text, e);
-		}
-		__eventTime += 1000 / 60;
-	});
-    }
 }
 
 function load_X_ITE_XML(content, selector) {
@@ -271,21 +157,17 @@ function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
 	var xml = [];
 	X3DJSONLD.loadX3DJS(document.implementation, json, path, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
-		if (element != null) {
-			next(xml);
-		} else {
-			next(null);
-		}
+		next(xml);
 	}); // does not load path
 }
 
-function loadProtoX3D(selector, json, url) {
+function loadProtoX3D(scripts, selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
 		json = protoExpander.prototypeExpander(url, json, "");
 	} catch (e) {
-		alert("Problems with Proto Expander", e);
+		alert("Problems with Proto Expander "+ e);
 		console.error(e);
 	}
     }
@@ -294,7 +176,7 @@ function loadProtoX3D(selector, json, url) {
    try {
 	$('#json').val(JSON.stringify(json, null, 2));
    } catch (e) {
-	alert("JSON isn't valid", e);
+	alert("JSON isn't valid "+ e);
    }
     var NS = $('#namespace option:selected').text();
     var xml = [];
@@ -303,21 +185,21 @@ function loadProtoX3D(selector, json, url) {
 			try {
 			    load_X_ITE_JS(json, "#x_itejson");
 			} catch (e) {
-				alert("Problems with X_ITE DOM", e);
+				alert("Problems with X_ITE DOM "+ e);
 				console.error(e);
 			}
 			try {
 			    loadXmlBrowsers(xml);
 			} catch (e) {
-				alert("Problems with loading xml browsers", e);
+				alert("Problems with loading xml browsers "+ e);
 				console.error(e);
 			}
 		    if ($('#scripting').is(':checked')) {
 			try {
-				loadScripts(json, "#x3domjson", url);
-				loadScripts(json, "#x3domxml", url);
+				scripts.loadScripts(json, "#x3domjson", url);
+				scripts.loadScripts(json, "#x3domxml", url);
 			} catch (e) {
-				alert("Problems with loading scripts", e);
+				alert("Problems with loading scripts "+ e);
 				console.error(e);
 			}
 		    }
@@ -336,10 +218,11 @@ function loadProtoX3D(selector, json, url) {
 }
 
 function loadX3D(selector, json, url) {
-	if ($('#scripting').is(':checked')) {
-		initializeScripts();
+	let scripts;
+        if ($('#scripting').is(':checked')) {
+		scripts = new Scripts();
 	}
-	json = loadProtoX3D(selector, json, url);
+	json = loadProtoX3D(scripts, selector, json, url);
 }
 
 /**
@@ -355,7 +238,7 @@ function appendInline(element, url, xmlDoc, next) {
 				json = protoExpander.prototypeExpander(url, json, "");
 			    }
 			} catch (e) {
-				alert("Problems with ProtoExpander in appendInline", e);
+				alert("Problems with ProtoExpander in appendInline "+ e);
 				console.error(e);
 			}
 		} else {
@@ -430,7 +313,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 					var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
 					$('#java').val(java);
 				} catch (e) {
-					alert("Problems serializing to JavaScript", e);
+					alert("Problems serializing to JavaScript "+ e);
 					console.error(e);
 				}
 			}
@@ -444,8 +327,6 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 					return false;
 				}
 			}
-			// $(selector+" X3D").remove();
-			// $(selector).append(element);
 			$(selector).empty();
 			$(element.querySelector("Scene")).children().appendTo(selector);
 			// remove all text nodes in scripts (and fields too, sigh)
@@ -454,7 +335,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
 				console.error(e);
-				alert("Problem with x3dom.reload()", e);
+				alert("Problem with x3dom.reload() "+ e);
 			}
 		}
 		next(element, xmlDoc);
@@ -468,13 +349,13 @@ function updateFromJson(json, path) {
 		}
 		$('#json').val(JSON.stringify(json, null, 2));
 	} catch (e) {
-		alert("JSON doesn't parse", e);
+		alert("JSON doesn't parse "+ e);
 		console.error(e);
 	}
 	try {
 		loadX3D("#x3domjson", json, path);
 	} catch (e) {
-		alert("Problems converting and loading JSON", e);
+		alert("Problems converting and loading JSON "+ e);
 		console.error(e);
 	}
 }
@@ -634,12 +515,12 @@ function convertXmlToJson(xmlString, path) {
 			// reload XML parser with original
 			loadXmlBrowsers([xmlString]);
 		} catch (e) {
-			alert("Problems with loading xml browsers with XML", e);
+			alert("Problems with loading xml browsers with XML "+ e);
 			console.error(e);
 		}
     		return json;
 	} catch (e) {
-		alert("Problems serializing to JSON", e);
+		alert("Problems serializing to JSON "+ e);
 		console.error(e);
 	}
     }

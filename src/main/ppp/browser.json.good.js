@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/browser.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/browser.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/browser.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/browser.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/browser.jsonundefined'].nodeUtil = function(node, field, value)
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/browser.jsonundefined'].nodeUtil = function(node, field, value)
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,14 +134,24 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/browser.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/browser.json'] === 'undefined') {
+	X3DJSON['Scene../data/browser.json'] = {};
 }
 
-X3DJSON['Script../data/browser.jsonundefined']['Browser'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/browser.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/browser.json']['Browser'] = function() {
 
 ecmascript:
-                
+               
 	this.initialize = function () {
 		    console.error('DUDES'+'"DUDETTES');
                 }
@@ -146,32 +159,49 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json'] = {};
 }
 
-X3DJSON['Obj../data/browser.jsonundefined']['Browser'] = new X3DJSON['Script../data/browser.jsonundefined']['Browser']();
-if (typeof X3DJSON['Obj../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'] = new X3DJSON['Script']['Scene']['../data/browser.json']['Browser']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Browser'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined']['Browser'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Browser']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined']['Browser']['ACTION'] = {};
-X3DJSON['Obj../data/browser.jsonundefined']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/browser.jsonundefined']['Browser']['ACTION'],X3DJSON['Obj../data/browser.jsonundefined']['Browser']);
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Browser'].initialize === "function") X3DJSON['Obj../data/browser.jsonundefined']['Browser'].initialize();
-if (typeof X3DJSON['Script../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/browser.jsonundefined'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'] = {};
 }
 
-X3DJSON['Script../data/browser.jsonundefined']['Clouds'] = function() {
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Browser']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json']['Browser']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/browser.json']['Browser']['ACTION'],X3DJSON['Obj']['Scene']['../data/browser.json']['Browser']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'].initialize === "function") X3DJSON['Obj']['Scene']['../data/browser.json']['Browser'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/browser.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/browser.json']['Clouds'] = function() {
 
 
 ecmascript:
-
 
 
 	this.cumulustranslation = function () // These values designate the boundary location of the cloud
@@ -185,21 +215,33 @@ var xxx = ' '+' '+
 ;
 
 };
-if (typeof X3DJSON['Obj../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json'] = {};
 }
 
-X3DJSON['Obj../data/browser.jsonundefined']['Clouds'] = new X3DJSON['Script../data/browser.jsonundefined']['Clouds']();
-if (typeof X3DJSON['Obj../data/browser.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'] = new X3DJSON['Script']['Scene']['../data/browser.json']['Clouds']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Clouds'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined']['Clouds'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Clouds']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/browser.jsonundefined']['Clouds']['ACTION'] = {};
-X3DJSON['Obj../data/browser.jsonundefined']['Clouds'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/browser.jsonundefined']['Clouds']['ACTION'],X3DJSON['Obj../data/browser.jsonundefined']['Clouds']);
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds']['ACTION'],X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds']);
 }
-if (typeof X3DJSON['Obj../data/browser.jsonundefined']['Clouds'].initialize === "function") X3DJSON['Obj../data/browser.jsonundefined']['Clouds'].initialize();
+if (typeof X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'].initialize === "function") X3DJSON['Obj']['Scene']['../data/browser.json']['Clouds'].initialize();
 

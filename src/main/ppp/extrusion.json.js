@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/extrusion.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/extrusion.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/extrusion.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/extrusion.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/extrusion.jsonundefined'].nodeUtil = function(node, field, valu
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/extrusion.jsonundefined'].nodeUtil = function(node, field, valu
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,32 +134,62 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/extrusion.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/extrusion.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/extrusion.json'] === 'undefined') {
+	X3DJSON['Scene../data/extrusion.json'] = {};
 }
 
-X3DJSON['Script../data/extrusion.jsonundefined']['MoveCylinder'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/extrusion.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/extrusion.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/extrusion.json']['MoveCylinder'] = function() {
 	this.set_cycle = function (value) {
-		this.proxy.cycle = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.cycle = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting cycle '+e);
+			console.error('Problems setting cycle',e);
+		}
 	};
 	this.cycle_changed = function () {
 		var value = this.cycle;
 		return value;
 	};
-	this.cycle = undefined;
+	try {
+		this.cycle = undefined;
+	} catch (e) {
+		alert('Problems setting cycle '+e);
+		console.error('Problems setting cycle',e);
+	}
 	this.set_spine = function (value) {
-		this.proxy.spine = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.spine = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting spine '+e);
+			console.error('Problems setting spine',e);
+		}
 	};
 	this.spine_changed = function () {
 		var value = this.spine;
 		return value;
 	};
-	this.spine = new MFVec3f([new SFVec3f ( -50 , -50 , 0 ),new SFVec3f ( 50 , 50 , 0 )]);
+	try {
+		this.spine = new MFVec3f([new SFVec3f ( -50 , -50 , 0 ),new SFVec3f ( 50 , 50 , 0 )]);
+	} catch (e) {
+		alert('Problems setting spine '+e);
+		console.error('Problems setting spine',e);
+	}
 
 
 ecmascript:
 
-                
+               
 	this.set_cycle = function (value) {
                         console.error(value);
                         var endA = new SFVec3f(this.proxy.spine[0].x*Math.random()*2, this.proxy.spine[0].y*Math.random()*2, this.proxy.spine[0].z*Math.random()*2);
@@ -167,42 +200,60 @@ ecmascript:
 ;
 
 };
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json'] = {};
 }
 
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'] = new X3DJSON['Script../data/extrusion.jsonundefined']['MoveCylinder']();
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'] = new X3DJSON['Script']['Scene']['../data/extrusion.json']['MoveCylinder']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION'] = {};
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION'],X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']);
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION'],X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']);
 }
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].initialize === "function") X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].initialize();
-X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].set_cycle(X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].initialize === "function") X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].initialize();
+X3DJSON.nodeUtil('Scene','TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].set_cycle(X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined'] = {};
+			X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION']['spine'] === 'undefined') {
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION']['spine'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION']['spine'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION']['spine'] = [];
 }
-X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder']['ACTION']['spine'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder']['ACTION']['spine'].push(function(property, value) {
 		if (property === 'spine') {
-			X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('extrusion','spine',typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed() : X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine, __eventTime);
+			X3DJSON.nodeUtil('Scene','extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine, __eventTime);
 		}
 });
-			X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('extrusion','spine',typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed() : X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine, __eventTime);
-			X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].set_cycle(X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('TourTime','cycleTime'), __eventTime);
-			X3DJSON['../data/extrusion.jsonundefined'].nodeUtil('extrusion','spine',typeof X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine_changed() : X3DJSON['Obj../data/extrusion.jsonundefined']['MoveCylinder'].spine, __eventTime);
+			X3DJSON.nodeUtil('Scene','extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['Scene']['../data/extrusion.json']['MoveCylinder'].spine, __eventTime);

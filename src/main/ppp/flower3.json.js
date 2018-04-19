@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/flower3.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/flower3.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/flower3.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/flower3.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/flower3.jsonundefined'].nodeUtil = function(node, field, value)
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/flower3.jsonundefined'].nodeUtil = function(node, field, value)
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,35 +134,75 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/flower3.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/flower3.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/flower3.json'] === 'undefined') {
+	X3DJSON['Scene../data/flower3.json'] = {};
 }
 
-X3DJSON['Script../data/flower3.jsonundefined']['OrbitScript'] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/flower3.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/flower3.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/flower3.json']['OrbitScript'] = function() {
 	this.set_fraction = function (value) {
-		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
 	};
 	this.fraction_changed = function () {
 		var value = this.fraction;
 		return value;
 	};
-	this.fraction = undefined;
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		alert('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 	this.set_coordinates = function (value) {
-		this.proxy.coordinates = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.coordinates = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting coordinates '+e);
+			console.error('Problems setting coordinates',e);
+		}
 	};
 	this.coordinates_changed = function () {
 		var value = this.coordinates;
 		return value;
 	};
-	this.coordinates = new MFVec3f();
+	try {
+		this.coordinates = new MFVec3f();
+	} catch (e) {
+		alert('Problems setting coordinates '+e);
+		console.error('Problems setting coordinates',e);
+	}
 	this.set_coordIndexes = function (value) {
-		this.proxy.coordIndexes = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.coordIndexes = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting coordIndexes '+e);
+			console.error('Problems setting coordIndexes',e);
+		}
 	};
 	this.coordIndexes_changed = function () {
 		var value = this.coordIndexes;
 		return value;
 	};
-	this.coordIndexes = new MFInt32();
+	try {
+		this.coordIndexes = new MFInt32();
+	} catch (e) {
+		alert('Problems setting coordIndexes '+e);
+		console.error('Problems setting coordIndexes',e);
+	}
 
 ecmascript:
 
@@ -170,7 +213,6 @@ var h = 5;
 var resolution = 100;
 var t = 0;
 var p = 0;
-
 
 	this.initialize = function () {
      this.generateCoordinates(resolution);
@@ -186,7 +228,6 @@ var p = 0;
     }
     this.proxy.coordIndexes = new MFInt32(localci);
 }
-
 ;
 
 	this.generateCoordinates = function (resolution) {
@@ -208,7 +249,6 @@ var p = 0;
      }
      this.proxy.coordinates = new MFVec3f(localc);
 }
-
 ;
 
 	this.set_fraction = function (fraction, eventTime) {
@@ -243,59 +283,83 @@ var p = 0;
 ;
 
 };
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json'] = {};
 }
 
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] = new X3DJSON['Script../data/flower3.jsonundefined']['OrbitScript']();
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] = new X3DJSON['Script']['Scene']['../data/flower3.json']['OrbitScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
 }
-
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION'] = {};
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION'],X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json'] = {};
 }
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].initialize === "function") X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].initialize();
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined'] = {};
-}
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordIndexes'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']);
 }
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].initialize();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordIndexes'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
 		if (property === 'coordIndexes') {
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
 		}
 });
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes, __eventTime);
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined'] = {};
+			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'] = {};
 }
 
-if (typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordinates'] === 'undefined') {
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordinates'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordinates'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordinates'] = [];
 }
-X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
 		if (property === 'coordinates') {
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
 		}
 });
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates, __eventTime);
-X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].set_fraction(X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+X3DJSON.nodeUtil('Scene','Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
 }, false);
-			X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].set_fraction(X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordIndexes, __eventTime);
-			X3DJSON['../data/flower3.jsonundefined'].nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates() : X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj../data/flower3.jsonundefined']['OrbitScript'].set_fraction(X3DJSON['../data/flower3.jsonundefined'].nodeUtil('Clock','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);

@@ -5,10 +5,6 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-if (typeof X3DJSON['../data/text.jsonundefined'] === 'undefined') {
-	X3DJSON['../data/text.jsonundefined'] = {};
-}
-
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -68,12 +64,17 @@ if (typeof document === 'undefined') {
 if (typeof $ !== 'function') {
 	$ = function() { return { attr : function() {}, 0 : null }; };
 }
-X3DJSON['../data/text.jsonundefined'].nodeUtil = function(node, field, value) {
-		var selector = "../data/text.json [DEF='"+node+"']";
+X3DJSON.nodeUtil = function(selector, node, field, value) {
+		if (typeof selector === 'undefined') {
+			selector = '';
+		} else {
+			selector = selector+' ';
+		}
+		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
 		if (element === null) {
-			console.error('unDEFed node',node);
-		} else if (arguments.length > 2) {
+			console.error('unDEFed node', node, selector);
+		} else if (arguments.length > 3) {
 			/*
 			if (value && typeof value.toString === 'function') {
 				value = value.toString();
@@ -91,7 +92,7 @@ X3DJSON['../data/text.jsonundefined'].nodeUtil = function(node, field, value) {
 				console.log(e);
 			}
 			return element;
-		} else if (arguments.length > 1) {
+		} else if (arguments.length > 2) {
 			if (typeof element.getFieldValue === 'function') {
 				value = element.getFieldValue(field);
 			} else {
@@ -108,8 +109,10 @@ X3DJSON['../data/text.jsonundefined'].nodeUtil = function(node, field, value) {
 			*/
 			// console.log('get', node, '.', field,'=',value);
 			return value;
-		} else {
+		} else if (arguments.length > 0) {
 			return $(selector)[0];
+		} else {
+			return;
 		}
 };
 X3DJSON.createProxy = function(action, scriptObject) {
@@ -131,40 +134,72 @@ X3DJSON.createProxy = function(action, scriptObject) {
 	});
 	return proxy;
 };
-if (typeof X3DJSON['Script../data/text.jsonundefined'] === 'undefined') {
-X3DJSON['Script../data/text.jsonundefined'] = {};
+if (typeof X3DJSON['Scene../data/text.json'] === 'undefined') {
+	X3DJSON['Scene../data/text.json'] = {};
 }
 
-X3DJSON['Script../data/text.jsonundefined'][''] = function() {
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/text.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/text.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/text.json'][''] = function() {
 	this.set_frontUrls = function (value) {
-		this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		try {
+			this.proxy.frontUrls = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			alert('Problems setting frontUrls '+e);
+			console.error('Problems setting frontUrls',e);
+		}
 	};
 	this.frontUrls_changed = function () {
 		var value = this.frontUrls;
 		return value;
 	};
-	this.frontUrls = new MFString("rnl_front.png","uffizi_front.png");
+	try {
+		this.frontUrls = new MFString("rnl_front.png","uffizi_front.png");
+	} catch (e) {
+		alert('Problems setting frontUrls '+e);
+		console.error('Problems setting frontUrls',e);
+	}
 
 			    ecmascript:
 			    var me = '"1" ""2" "3"';
 			    
 			
 };
-if (typeof X3DJSON['Obj../data/text.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/text.jsonundefined'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/text.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/text.json'] = {};
 }
 
-X3DJSON['Obj../data/text.jsonundefined'][''] = new X3DJSON['Script../data/text.jsonundefined']['']();
-if (typeof X3DJSON['Obj../data/text.jsonundefined'] === 'undefined') {
-X3DJSON['Obj../data/text.jsonundefined'] = {};
+X3DJSON['Obj']['Scene']['../data/text.json'][''] = new X3DJSON['Script']['Scene']['../data/text.json']['']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj../data/text.jsonundefined'][''] === 'undefined') {
-X3DJSON['Obj../data/text.jsonundefined'][''] = {};
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/text.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/text.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/text.json'][''] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/text.json'][''] = {};
 }
 
-if (typeof X3DJSON['Obj../data/text.jsonundefined']['']['ACTION'] === 'undefined') {
-X3DJSON['Obj../data/text.jsonundefined']['']['ACTION'] = {};
-X3DJSON['Obj../data/text.jsonundefined'][''].proxy = X3DJSON.createProxy(X3DJSON['Obj../data/text.jsonundefined']['']['ACTION'],X3DJSON['Obj../data/text.jsonundefined']['']);
+if (typeof X3DJSON['Obj']['Scene']['../data/text.json']['']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/text.json']['']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/text.json'][''].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/text.json']['']['ACTION'],X3DJSON['Obj']['Scene']['../data/text.json']['']);
 }
-if (typeof X3DJSON['Obj../data/text.jsonundefined'][''].initialize === "function") X3DJSON['Obj../data/text.jsonundefined'][''].initialize();
+if (typeof X3DJSON['Obj']['Scene']['../data/text.json'][''].initialize === "function") X3DJSON['Obj']['Scene']['../data/text.json'][''].initialize();
 

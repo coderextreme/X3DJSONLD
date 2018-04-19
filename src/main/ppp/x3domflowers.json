@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "18 April 2018"
         },
         {
           "@name": "generator",
@@ -45,6 +45,9 @@
       "-children": [
         {
           "NavigationInfo": {}
+        },
+        {
+          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
         },
         {
           "Background": {
@@ -96,6 +99,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -166,8 +174,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -178,13 +186,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -196,7 +204,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -208,25 +216,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -264,7 +272,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE2000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -289,7 +297,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -330,6 +338,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -360,7 +370,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -405,21 +415,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE2000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE2000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_transform",
                               "@toField": "set_translation"
@@ -427,7 +437,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "a"
@@ -435,7 +445,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "b"
@@ -443,7 +453,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "c"
@@ -451,7 +461,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "d"
@@ -459,7 +469,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "tdelta"
@@ -467,7 +477,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "pdelta"
@@ -496,6 +506,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -566,8 +581,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -578,13 +593,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -596,7 +611,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -608,25 +623,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -664,7 +679,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE4000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -689,7 +704,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -730,6 +745,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -760,7 +777,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -805,21 +822,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE4000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE4000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_transform",
                               "@toField": "set_translation"
@@ -827,7 +844,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "a"
@@ -835,7 +852,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "b"
@@ -843,7 +860,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "c"
@@ -851,7 +868,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "d"
@@ -859,7 +876,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "tdelta"
@@ -867,7 +884,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "pdelta"
@@ -896,6 +913,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -966,8 +988,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -978,13 +1000,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -996,7 +1018,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -1008,25 +1030,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -1064,7 +1086,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE6000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1089,7 +1111,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -1130,6 +1152,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1160,7 +1184,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -1205,21 +1229,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE6000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE6000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_transform",
                               "@toField": "set_translation"
@@ -1227,7 +1251,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "a"
@@ -1235,7 +1259,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "b"
@@ -1243,7 +1267,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "c"
@@ -1251,7 +1275,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "d"
@@ -1259,7 +1283,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "tdelta"
@@ -1267,7 +1291,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "pdelta"
@@ -1296,6 +1320,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -1366,8 +1395,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -1378,13 +1407,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -1396,7 +1425,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -1408,25 +1437,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -1464,7 +1493,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE8000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1489,7 +1518,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -1530,6 +1559,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1560,7 +1591,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -1605,21 +1636,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE8000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE8000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_transform",
                               "@toField": "set_translation"
@@ -1627,7 +1658,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "a"
@@ -1635,7 +1666,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "b"
@@ -1643,7 +1674,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "c"
@@ -1651,7 +1682,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "d"
@@ -1659,7 +1690,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "tdelta"
@@ -1667,7 +1698,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "pdelta"
@@ -1696,6 +1727,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -1766,8 +1802,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -1778,13 +1814,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -1796,7 +1832,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -1808,25 +1844,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -1864,7 +1900,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE10000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1889,7 +1925,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -1930,6 +1966,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1960,7 +1998,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -2005,21 +2043,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE10000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE10000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_transform",
                               "@toField": "set_translation"
@@ -2027,7 +2065,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "a"
@@ -2035,7 +2073,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "b"
@@ -2043,7 +2081,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "c"
@@ -2051,7 +2089,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "d"
@@ -2059,7 +2097,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "tdelta"
@@ -2067,7 +2105,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "pdelta"
@@ -2096,6 +2134,11 @@
                                         0.7,
                                         0.7,
                                         0.7
+                                      ],
+                                      "@specularColor": [
+                                        0.5,
+                                        0.5,
+                                        0.5
                                       ]
                                     }
                                   },
@@ -2166,8 +2209,8 @@
                                           },
                                           {
                                             "@name": "chromaticDispertion",
+                                            "@accessType": "initializeOnly",
                                             "@type": "SFVec3f",
-                                            "@accessType": "inputOutput",
                                             "@value": [
                                               0.98,
                                               1,
@@ -2178,13 +2221,13 @@
                                             "@name": "bias",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "scale",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 10
+                                            "@value": 0.5
                                           },
                                           {
                                             "@name": "power",
@@ -2196,7 +2239,7 @@
                                             "@name": "a",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 10
                                           },
                                           {
                                             "@name": "b",
@@ -2208,25 +2251,25 @@
                                             "@name": "c",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "d",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 3
+                                            "@value": 20
                                           },
                                           {
                                             "@name": "tdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           },
                                           {
                                             "@name": "pdelta",
                                             "@type": "SFFloat",
                                             "@accessType": "inputOutput",
-                                            "@value": 0.5
+                                            "@value": 0
                                           }
                                         ],
                                         "-children": [
@@ -2264,7 +2307,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE12000_Animate",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -2289,7 +2332,7 @@
                                 {
                                   "@name": "set_fraction",
                                   "@accessType": "inputOnly",
-                                  "@type": "SFTime"
+                                  "@type": "SFFloat"
                                 },
                                 {
                                   "@name": "a",
@@ -2330,6 +2373,8 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
+                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -2360,7 +2405,7 @@
                                 "\t\t\t}",
                                 "",
                                 "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
                                 "\t\t\t\tswitch (choice) {",
                                 "\t\t\t\tcase 0:",
                                 "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
@@ -2405,21 +2450,21 @@
                           {
                             "TimeSensor": {
                               "@DEF": "DECLFlowerProto_INSTANCE12000_TourTime",
-                              "@cycleInterval": 0.15,
+                              "@cycleInterval": 5,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
                               "@fromNode": "DECLFlowerProto_INSTANCE12000_TourTime",
-                              "@fromField": "cycleTime",
-                              "@toNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromField": "fraction_changed",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "translation_changed",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_transform",
                               "@toField": "set_translation"
@@ -2427,7 +2472,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "a",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "a"
@@ -2435,7 +2480,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "b",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "b"
@@ -2443,7 +2488,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "c",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "c"
@@ -2451,7 +2496,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "d",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "d"
@@ -2459,7 +2504,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "tdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "tdelta"
@@ -2467,7 +2512,7 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Animate",
                               "@fromField": "pdelta",
                               "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "pdelta"

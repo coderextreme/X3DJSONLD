@@ -9,9 +9,10 @@ var Browser = X3DJSONLD.Browser;
 // Bring in prototype expander and script expander
 var PROTOS = require('./PrototypeExpander')
 
-var Script = require('./Script');
-var LOG = Script.LOG;
-var processScripts = Script.processScripts;
+var Scripts = require('./Script');
+var LOG = Scripts.LOG;
+var scripts = new Scripts.Scripts();
+var processScripts = Scripts.processScripts;
 
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
@@ -48,7 +49,7 @@ function ProcessJSON(json, file) {
 		classes.push("if (typeof __eventTime === 'undefined') {");
 		classes.push("	var __eventTime = 0;");
 		classes.push("}");
-		processScripts(json, classes, undefined, routecode, loopItems, file);
+		scripts.processScripts(json, classes, undefined, routecode, loopItems, "Scene", file); // selector is Scene
 		var code = classes.join('\n')
 			.replace(/&lt;/g, '<')
 			.replace(/&gt;/g, '>')
