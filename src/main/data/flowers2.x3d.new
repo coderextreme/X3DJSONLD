@@ -53,8 +53,8 @@
 			function initialize() {
 			     generateCoordinates();
 			     var localci = [];
-			     for ( i = 0; i < resolution-1; i++) {
-				for ( j = 0; j < resolution-1; j++) {
+			     for (var i = 0; i < resolution-1; i++) {
+				for (var j = 0; j < resolution-1; j++) {
 				     localci.push(i*resolution+j);
 				     localci.push(i*resolution+j+1);
 				     localci.push((i+1)*resolution+j+1);
