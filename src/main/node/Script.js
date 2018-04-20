@@ -123,8 +123,8 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof jsonScript != 'undefined') {
-				eval(jsonScript);
 				console.log(jsonScript);
+				eval(jsonScript);
 			}
 		} catch (e) {
 			alert(e);
@@ -135,8 +135,8 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof scripts.text != 'undefined') {
-				eval(scripts.text);
 				console.log(scripts.text);
+				eval(scripts.text);
 			}
 		} catch (e) {
 			alert(e);
@@ -148,8 +148,8 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof routes.text != 'undefined') {
-				eval(routes.text);
 				console.log(routes.text);
+				eval(routes.text);
 			}
 		} catch (e) {
 			alert(e);
@@ -160,8 +160,8 @@ class Scripts {
 			try {
 				// TODO eval is evil
 				if (typeof loop.text != 'undefined') {
-					eval(loop.text);
 					console.log(loop.text);
+					eval(loop.text);
 				}
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
