@@ -54,7 +54,7 @@ var ProtoInstance0 = null;
                       .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
             .addComments(new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
-            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(Java.to(["../node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
+            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(Java.to(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
               .addComments(new CommentsBlock("INPUT PARAMETERS"))
               .addComments(new CommentsBlock("General parameters"))
               .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))

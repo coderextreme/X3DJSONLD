@@ -244,7 +244,7 @@ ProtoBody30.addComments(CommentsBlock("""Subsequent nodes do not render, but sti
 ProtoBody30.addComments(CommentsBlock("""This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"""))
 Script40 = ScriptObject()
 Script40.setDEF("ArchPrototypeScript")
-Script40.setUrl(["../node/ArchPrototypeScript.js"])
+Script40.setUrl(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"])
 
 
 Script40.addComments(CommentsBlock("""INPUT PARAMETERS"""))

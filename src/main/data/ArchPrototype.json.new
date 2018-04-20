@@ -51,7 +51,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 April 2018"
+          "@content": "19 April 2018"
         },
         {
           "@name": "generator",
@@ -261,7 +261,8 @@
                   "Script": {
                     "@DEF": "ArchPrototypeScript",
                     "@url": [
-                      "../node/ArchPrototypeScript.js"
+                      "../node/ArchPrototypeScript.js",
+                      "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"
                     ],
                     "-children": [
                       {

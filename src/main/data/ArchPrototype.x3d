@@ -57,7 +57,7 @@
         </Transform>
         <!-- Subsequent nodes do not render, but still must be a valid X3D subgraph -->
         <!-- This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs -->
-	<Script DEF='ArchPrototypeScript' url='"../node/ArchPrototypeScript.js"'>
+	<Script DEF='ArchPrototypeScript' url='"../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"'>
           <!-- INPUT PARAMETERS -->
           <!-- General parameters -->
           <!-- Parameters to create to create shapes related to arch: put true to apply -->

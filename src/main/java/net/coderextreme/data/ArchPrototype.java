@@ -189,7 +189,7 @@ ProtoInstance0
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../node/ArchPrototypeScript.js"});
+    return new MFStringObject(new java.lang.String[] {"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"});
   }
 }
 protected class MFString1 {

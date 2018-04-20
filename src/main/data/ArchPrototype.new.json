@@ -105,21 +105,21 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference",
                       "@type":"SFFloat",
-                      "@value":4
+                      "@value":4.0
                     },
                     {
                       "@name":"riseHeight",
                       "@accessType":"initializeOnly",
                       "@appinfo":"riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference",
                       "@type":"SFFloat",
-                      "@value":2
+                      "@value":2.0
                     },
                     {
                       "@name":"depth",
                       "@accessType":"initializeOnly",
                       "@appinfo":"depth",
                       "@type":"SFFloat",
-                      "@value":3
+                      "@value":3.0
                     },
                     {
                       "@name":"topAbutmentHeight",
@@ -140,7 +140,7 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"pierHeight: pierHeight=0 means no pierHeight",
                       "@type":"SFFloat",
-                      "@value":1
+                      "@value":1.0
                     },
                     {
                       "@name":"archHalf",
@@ -154,7 +154,7 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.",
                       "@type":"SFFloat",
-                      "@value":0
+                      "@value":0.0
                     },
                     {
                       "@name":"onlyIntrados",
@@ -206,20 +206,6 @@
                                   "#comment":"note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
                                 }
                               ],
-                              "-geometry":
-                                { "IndexedFaceSet":
-                                  {
-                                    "@DEF":"ArchIndex",
-                                    "@convex":false,
-                                    "@solid":false,
-                                    "-coord":
-                                      { "Coordinate":
-                                        {
-                                          "@DEF":"ArchChord"
-                                        }
-                                      }
-                                  }
-                                },
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -239,6 +225,20 @@
                                                 }
                                               ]
                                           }
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"ArchIndex",
+                                    "@convex":false,
+                                    "@solid":false,
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@DEF":"ArchChord"
                                         }
                                       }
                                   }
@@ -461,7 +461,7 @@
                 },
                 {
                   "@name":"clearSpanWidth",
-                  "@value":5
+                  "@value":5.0
                 },
                 {
                   "@name":"riseHeight",
@@ -469,7 +469,7 @@
                 },
                 {
                   "@name":"depth",
-                  "@value":2
+                  "@value":2.0
                 },
                 {
                   "@name":"topAbutmentHeight",
@@ -477,11 +477,11 @@
                 },
                 {
                   "@name":"pierWidth",
-                  "@value":1
+                  "@value":1.0
                 },
                 {
                   "@name":"pierHeight",
-                  "@value":2
+                  "@value":2.0
                 }
               ]
             }
