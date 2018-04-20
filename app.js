@@ -322,7 +322,6 @@ app.get("*.json", function(req, res, next) {
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
-		console.error("Reading", outfile);
 		var data = fs.readFileSync(outfile);
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
