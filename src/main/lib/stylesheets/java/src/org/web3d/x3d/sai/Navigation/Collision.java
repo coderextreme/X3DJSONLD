@@ -128,7 +128,7 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -140,7 +140,7 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	 * @return {@link Collision} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Collision setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public Collision setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -149,12 +149,12 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
@@ -204,7 +204,7 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -213,20 +213,28 @@ public interface Collision extends X3DGroupingNode, X3DSensorNode
 	 * @return {@link Collision} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Collision setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public Collision setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DChildNode instance (using a properly typed node) from initializeOnly SFNode field <i>proxy</i>.
 	 * @return value of proxy field
 	 */
-	public X3DChildNode getProxy(); // acceptable node types: X3DChildNode
+	public X3DChildNode getProxy(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DChildNode instance (using a properly typed node) to initializeOnly SFNode field <i>proxy</i>.
 	 * @param newValue is new value for the proxy field.
 	 * @return {@link Collision} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Collision setProxy(X3DChildNode newValue); // acceptable node types: X3DChildNode
+	public Collision setProxy(X3DChildNode newValue); // acceptable node types #2: X3DChildNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>proxy</i>.
+	 * @see #setProxy(X3DChildNode)
+	 * @param newValue is new value for the proxy field.
+	 * @return {@link Collision} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Collision setProxy(ProtoInstance newValue);
 
 
 	/**

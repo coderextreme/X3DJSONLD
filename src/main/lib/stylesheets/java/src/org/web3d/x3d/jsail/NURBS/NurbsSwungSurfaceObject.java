@@ -248,7 +248,7 @@ public class NurbsSwungSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "geometry";
+	public String containerField_DEFAULT_VALUE = "geometry";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -370,7 +370,6 @@ public class NurbsSwungSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNode
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -460,10 +459,29 @@ setAttribute method invocations).
 			profileCurveProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			profileCurveProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>profileCurve</i>.
+	 * @see #setProfileCurve(X3DNurbsControlCurveNode)
+	 * @param newValue is new value for the profileCurve field.
+	 * @return {@link NurbsSwungSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSwungSurfaceObject setProfileCurve(ProtoInstance newValue)
+	{
+		profileCurveProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) profileCurveProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (profileCurve != null)
+		{
+			((X3DConcreteElement) profileCurve).setParentObject(null); // housekeeping, clear prior object
+			profileCurve = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of profileCurve field.
 	 * @return {@link NurbsSwungSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -589,10 +607,29 @@ setAttribute method invocations).
 			trajectoryCurveProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			trajectoryCurveProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>trajectoryCurve</i>.
+	 * @see #setTrajectoryCurve(X3DNurbsControlCurveNode)
+	 * @param newValue is new value for the trajectoryCurve field.
+	 * @return {@link NurbsSwungSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSwungSurfaceObject setTrajectoryCurve(ProtoInstance newValue)
+	{
+		trajectoryCurveProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) trajectoryCurveProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (trajectoryCurve != null)
+		{
+			((X3DConcreteElement) trajectoryCurve).setParentObject(null); // housekeeping, clear prior object
+			trajectoryCurve = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of trajectoryCurve field.
 	 * @return {@link NurbsSwungSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

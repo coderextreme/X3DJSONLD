@@ -111,7 +111,7 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -120,7 +120,7 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CADFace setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CADFace setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -151,14 +151,22 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Shape|LOD|Transform, from inputOutput SFNode field <i>shape</i>.
 	 * @return value of shape field
 	 */
-	public X3DNode getShape(); // acceptable node types: Shape|LOD|Transform
+	public X3DNode getShape(); // acceptable node types #1:Shape|LOD|Transform
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to Shape|LOD|Transform, to inputOutput SFNode field <i>shape</i>.
 	 * @param newValue is new value for the shape field.
 	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CADFace setShape(X3DNode newValue); // acceptable node types: Shape|LOD|Transform
+	public CADFace setShape(X3DNode newValue); // acceptable node types #2: Shape|LOD|Transform
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>shape</i>.
+	 * @see #setShape(X3DNode)
+	 * @param newValue is new value for the shape field.
+	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CADFace setShape(ProtoInstance newValue);
 
 
 	/**

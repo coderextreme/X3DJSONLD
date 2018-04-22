@@ -61,27 +61,43 @@ public interface X3DRigidJointNode extends X3DNode
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body1</i>.
 	 * @return value of body1 field
 	 */
-	public RigidBody getBody1(); // acceptable node types: RigidBody
+	public RigidBody getBody1(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
 	 * @param newValue is new value for the body1 field.
 	 * @return {@link X3DRigidJointNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DRigidJointNode setBody1(RigidBody newValue); // acceptable node types: RigidBody
+	public X3DRigidJointNode setBody1(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
+	 * @see #setBody1(RigidBody)
+	 * @param newValue is new value for the body1 field.
+	 * @return {@link X3DRigidJointNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DRigidJointNode setBody1(ProtoInstance newValue);
 
 	/**
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body2</i>.
 	 * @return value of body2 field
 	 */
-	public RigidBody getBody2(); // acceptable node types: RigidBody
+	public RigidBody getBody2(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
 	 * @param newValue is new value for the body2 field.
 	 * @return {@link X3DRigidJointNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DRigidJointNode setBody2(RigidBody newValue); // acceptable node types: RigidBody
+	public X3DRigidJointNode setBody2(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
+	 * @see #setBody2(RigidBody)
+	 * @param newValue is new value for the body2 field.
+	 * @return {@link X3DRigidJointNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DRigidJointNode setBody2(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String enumeration results ['"ALL"'|'"NONE"'|'"etc."'] from inputOutput MFString field named <i>forceOutput</i>.
@@ -101,7 +117,7 @@ public interface X3DRigidJointNode extends X3DNode
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -109,7 +125,7 @@ public interface X3DRigidJointNode extends X3DNode
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DRigidJointNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DRigidJointNode setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public X3DRigidJointNode setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

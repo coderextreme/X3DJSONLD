@@ -263,7 +263,7 @@ public class LayerObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "layers";
+	public String containerField_DEFAULT_VALUE = "layers";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -615,7 +615,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -710,10 +709,29 @@ setAttribute method invocations).
 			viewportProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			viewportProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>viewport</i>.
+	 * @see #setViewport(X3DViewportNode)
+	 * @param newValue is new value for the viewport field.
+	 * @return {@link LayerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LayerObject setViewport(ProtoInstance newValue)
+	{
+		viewportProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) viewportProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (viewport != null)
+		{
+			((X3DConcreteElement) viewport).setParentObject(null); // housekeeping, clear prior object
+			viewport = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of viewport field.
 	 * @return {@link LayerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

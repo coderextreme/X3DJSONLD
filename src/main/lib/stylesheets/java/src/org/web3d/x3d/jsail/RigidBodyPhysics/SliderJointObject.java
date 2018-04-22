@@ -330,7 +330,7 @@ public class SliderJointObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "joints";
+	public String containerField_DEFAULT_VALUE = "joints";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -523,10 +523,29 @@ public class SliderJointObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			body1ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			body1ProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
+	 * @see #setBody1(RigidBody)
+	 * @param newValue is new value for the body1 field.
+	 * @return {@link SliderJointObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SliderJointObject setBody1(ProtoInstance newValue)
+	{
+		body1ProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) body1ProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (body1 != null)
+		{
+			((X3DConcreteElement) body1).setParentObject(null); // housekeeping, clear prior object
+			body1 = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of body1 field.
 	 * @return {@link SliderJointObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -610,10 +629,29 @@ setAttribute method invocations).
 			body2ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			body2ProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
+	 * @see #setBody2(RigidBody)
+	 * @param newValue is new value for the body2 field.
+	 * @return {@link SliderJointObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SliderJointObject setBody2(ProtoInstance newValue)
+	{
+		body2ProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) body2ProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (body2 != null)
+		{
+			((X3DConcreteElement) body2).setParentObject(null); // housekeeping, clear prior object
+			body2 = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of body2 field.
 	 * @return {@link SliderJointObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -872,7 +910,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

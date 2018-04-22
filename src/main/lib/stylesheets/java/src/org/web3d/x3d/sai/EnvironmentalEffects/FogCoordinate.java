@@ -82,7 +82,7 @@ public interface FogCoordinate extends X3DGeometricPropertyNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -91,7 +91,7 @@ public interface FogCoordinate extends X3DGeometricPropertyNode
 	 * @return {@link FogCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public FogCoordinate setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public FogCoordinate setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

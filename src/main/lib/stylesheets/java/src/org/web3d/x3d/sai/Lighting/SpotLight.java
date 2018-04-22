@@ -238,7 +238,7 @@ public interface SpotLight extends X3DLightNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -247,7 +247,7 @@ public interface SpotLight extends X3DLightNode
 	 * @return {@link SpotLight} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SpotLight setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public SpotLight setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>on</i>.

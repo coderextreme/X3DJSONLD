@@ -69,7 +69,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -78,7 +78,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	 * @return {@link MultiTextureCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MultiTextureCoordinate setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public MultiTextureCoordinate setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>texCoord</i>.
@@ -87,7 +87,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	 * @see org.web3d.x3d.sai.Texturing.X3DTextureCoordinateNode
 	 * @return value of texCoord field
 	 */
-	public X3DNode[] getTexCoord(); // acceptable node types: X3DTextureCoordinateNode
+	public X3DNode[] getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>texCoord</i>.
@@ -96,7 +96,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	 * @param newValue is new value for the texCoord field.
 	 * @return {@link MultiTextureCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public MultiTextureCoordinate setTexCoord(X3DNode[] newValue); // acceptable node types: X3DTextureCoordinateNode
+	public MultiTextureCoordinate setTexCoord(X3DNode[] newValue); // acceptable node types #2: X3DTextureCoordinateNode
 
 	/**
 	 * Add array of child texCoord nodes to array of existing nodes (if any).
@@ -104,12 +104,12 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureCoordinateNode.
 	 * @param newValue is new value array to be appended the texCoord field.
 	 */
-	public void addTexCoord(X3DNode[] newValue); // acceptable node types: X3DTextureCoordinateNode
+	public void addTexCoord(X3DNode[] newValue); // acceptable node types #3: X3DTextureCoordinateNode
 	/**
 	 * Set single child texCoord node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the texCoord field
 	 */
-	public void setTexCoord(X3DNode newValue); // acceptable node types: X3DTextureCoordinateNode
+	public void setTexCoord(X3DNode newValue); // acceptable node types #5: X3DTextureCoordinateNode
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

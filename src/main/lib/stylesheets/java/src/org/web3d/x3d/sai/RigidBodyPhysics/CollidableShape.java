@@ -128,7 +128,7 @@ public interface CollidableShape extends X3DNBodyCollidableNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -137,7 +137,7 @@ public interface CollidableShape extends X3DNBodyCollidableNode
 	 * @return {@link CollidableShape} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CollidableShape setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CollidableShape setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.
@@ -165,14 +165,22 @@ public interface CollidableShape extends X3DNBodyCollidableNode
 	 * Provide Shape instance (using a properly typed node) from initializeOnly SFNode field <i>shape</i>.
 	 * @return value of shape field
 	 */
-	public Shape getShape(); // acceptable node types: Shape
+	public Shape getShape(); // acceptable node types #1:Shape
 
 	/**
 	 * Assign Shape instance (using a properly typed node) to initializeOnly SFNode field <i>shape</i>.
 	 * @param newValue is new value for the shape field.
 	 * @return {@link CollidableShape} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CollidableShape setShape(Shape newValue); // acceptable node types: Shape
+	public CollidableShape setShape(Shape newValue); // acceptable node types #2: Shape
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>shape</i>.
+	 * @see #setShape(Shape)
+	 * @param newValue is new value for the shape field.
+	 * @return {@link CollidableShape} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CollidableShape setShape(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>translation</i>.

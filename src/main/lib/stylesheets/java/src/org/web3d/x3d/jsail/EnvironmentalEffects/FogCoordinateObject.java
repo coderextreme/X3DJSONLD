@@ -49,10 +49,6 @@ import org.web3d.x3d.jsail.Core.*;
  * <br>
 
  * <br>
- * Note that {@linkplain SFColorObject#ALICEBLUE SFColorObject} provides a variety of color constants.
- * <br>
-
- * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
  * If you are writing Java code for use inside an X3D Script node, compile separate code using only the <i>org.web3d.x3d.sai</i> package instead.
  * @author Don Brutzman and Roy Walmsley
@@ -203,7 +199,7 @@ public class FogCoordinateObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "fogCoord";
+	public String containerField_DEFAULT_VALUE = "fogCoord";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -390,7 +386,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

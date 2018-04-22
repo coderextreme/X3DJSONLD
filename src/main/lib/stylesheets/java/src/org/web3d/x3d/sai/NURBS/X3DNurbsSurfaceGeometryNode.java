@@ -58,21 +58,29 @@ public interface X3DNurbsSurfaceGeometryNode extends X3DParametricGeometryNode
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>controlPoint</i>.
 	 * @return value of controlPoint field
 	 */
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
 	 * @param newValue is new value for the controlPoint field.
 	 * @return {@link X3DNurbsSurfaceGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DNurbsSurfaceGeometryNode setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public X3DNurbsSurfaceGeometryNode setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link X3DNurbsSurfaceGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DNurbsSurfaceGeometryNode setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -80,7 +88,7 @@ public interface X3DNurbsSurfaceGeometryNode extends X3DParametricGeometryNode
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DNurbsSurfaceGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DNurbsSurfaceGeometryNode setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public X3DNurbsSurfaceGeometryNode setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -99,14 +107,22 @@ public interface X3DNurbsSurfaceGeometryNode extends X3DParametricGeometryNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTextureCoordinateNode|NurbsTextureCoordinate, from inputOutput SFNode field <i>texCoord</i>.
 	 * @return value of texCoord field
 	 */
-	public X3DNode getTexCoord(); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public X3DNode getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode|NurbsTextureCoordinate
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTextureCoordinateNode|NurbsTextureCoordinate, to inputOutput SFNode field <i>texCoord</i>.
 	 * @param newValue is new value for the texCoord field.
 	 * @return {@link X3DNurbsSurfaceGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DNurbsSurfaceGeometryNode setTexCoord(X3DNode newValue); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public X3DNurbsSurfaceGeometryNode setTexCoord(X3DNode newValue); // acceptable node types #2: X3DTextureCoordinateNode|NurbsTextureCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link X3DNurbsSurfaceGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DNurbsSurfaceGeometryNode setTexCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>uClosed</i>.

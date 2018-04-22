@@ -119,7 +119,7 @@ public interface GeoLocation extends X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -129,7 +129,7 @@ public interface GeoLocation extends X3DGroupingNode
 	 * @return {@link GeoLocation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoLocation setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public GeoLocation setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -138,12 +138,12 @@ public interface GeoLocation extends X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide array of 3-tuple double results from inputOutput SFVec3d field named <i>geoCoords</i>.
 	 * @return value of geoCoords field
@@ -161,14 +161,22 @@ public interface GeoLocation extends X3DGroupingNode
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @return value of geoOrigin field
 	 */
-	public GeoOrigin getGeoOrigin(); // acceptable node types: GeoOrigin
+	public GeoOrigin getGeoOrigin(); // acceptable node types #1:GeoOrigin
 
 	/**
 	 * Assign GeoOrigin instance (using a properly typed node) (deprecated node, optional) to initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoLocation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoLocation setGeoOrigin(GeoOrigin newValue); // acceptable node types: GeoOrigin
+	public GeoLocation setGeoOrigin(GeoOrigin newValue); // acceptable node types #2: GeoOrigin
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoLocation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoLocation setGeoOrigin(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>geoSystem</i>.
@@ -199,7 +207,7 @@ public interface GeoLocation extends X3DGroupingNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -208,7 +216,7 @@ public interface GeoLocation extends X3DGroupingNode
 	 * @return {@link GeoLocation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoLocation setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoLocation setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

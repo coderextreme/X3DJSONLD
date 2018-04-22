@@ -62,14 +62,22 @@ public interface X3DShapeNode extends X3DChildNode, X3DBoundedObject
 	 * Provide X3DAppearanceNode instance (using a properly typed node) from inputOutput SFNode field <i>appearance</i>.
 	 * @return value of appearance field
 	 */
-	public X3DAppearanceNode getAppearance(); // acceptable node types: X3DAppearanceNode
+	public X3DAppearanceNode getAppearance(); // acceptable node types #1:X3DAppearanceNode
 
 	/**
 	 * Assign X3DAppearanceNode instance (using a properly typed node) to inputOutput SFNode field <i>appearance</i>.
 	 * @param newValue is new value for the appearance field.
 	 * @return {@link X3DShapeNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DShapeNode setAppearance(X3DAppearanceNode newValue); // acceptable node types: X3DAppearanceNode
+	public X3DShapeNode setAppearance(X3DAppearanceNode newValue); // acceptable node types #2: X3DAppearanceNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>appearance</i>.
+	 * @see #setAppearance(X3DAppearanceNode)
+	 * @param newValue is new value for the appearance field.
+	 * @return {@link X3DShapeNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DShapeNode setAppearance(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly SFVec3f field named <i>bboxCenter</i>.
@@ -101,21 +109,29 @@ public interface X3DShapeNode extends X3DChildNode, X3DBoundedObject
 	 * Provide X3DGeometryNode instance (using a properly typed node) from inputOutput SFNode field <i>geometry</i>.
 	 * @return value of geometry field
 	 */
-	public X3DGeometryNode getGeometry(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getGeometry(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link X3DShapeNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DShapeNode setGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public X3DShapeNode setGeometry(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
+	 * @see #setGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the geometry field.
+	 * @return {@link X3DShapeNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DShapeNode setGeometry(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -123,7 +139,7 @@ public interface X3DShapeNode extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DShapeNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DShapeNode setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public X3DShapeNode setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

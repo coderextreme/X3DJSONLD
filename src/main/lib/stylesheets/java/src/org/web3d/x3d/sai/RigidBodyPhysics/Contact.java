@@ -88,27 +88,43 @@ public interface Contact extends X3DNode
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body1</i>.
 	 * @return value of body1 field
 	 */
-	public RigidBody getBody1(); // acceptable node types: RigidBody
+	public RigidBody getBody1(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
 	 * @param newValue is new value for the body1 field.
 	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Contact setBody1(RigidBody newValue); // acceptable node types: RigidBody
+	public Contact setBody1(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
+	 * @see #setBody1(RigidBody)
+	 * @param newValue is new value for the body1 field.
+	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Contact setBody1(ProtoInstance newValue);
 
 	/**
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body2</i>.
 	 * @return value of body2 field
 	 */
-	public RigidBody getBody2(); // acceptable node types: RigidBody
+	public RigidBody getBody2(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
 	 * @param newValue is new value for the body2 field.
 	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Contact setBody2(RigidBody newValue); // acceptable node types: RigidBody
+	public Contact setBody2(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
+	 * @see #setBody2(RigidBody)
+	 * @param newValue is new value for the body2 field.
+	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Contact setBody2(ProtoInstance newValue);
 
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>bounce</i>.
@@ -206,27 +222,43 @@ public interface Contact extends X3DNode
 	 * Provide X3DNBodyCollidableNode instance (using a properly typed node) from inputOutput SFNode field <i>geometry1</i>.
 	 * @return value of geometry1 field
 	 */
-	public X3DNBodyCollidableNode getGeometry1(); // acceptable node types: X3DNBodyCollidableNode
+	public X3DNBodyCollidableNode getGeometry1(); // acceptable node types #1:X3DNBodyCollidableNode
 
 	/**
 	 * Assign X3DNBodyCollidableNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry1</i>.
 	 * @param newValue is new value for the geometry1 field.
 	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Contact setGeometry1(X3DNBodyCollidableNode newValue); // acceptable node types: X3DNBodyCollidableNode
+	public Contact setGeometry1(X3DNBodyCollidableNode newValue); // acceptable node types #2: X3DNBodyCollidableNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry1</i>.
+	 * @see #setGeometry1(X3DNBodyCollidableNode)
+	 * @param newValue is new value for the geometry1 field.
+	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Contact setGeometry1(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DNBodyCollidableNode instance (using a properly typed node) from inputOutput SFNode field <i>geometry2</i>.
 	 * @return value of geometry2 field
 	 */
-	public X3DNBodyCollidableNode getGeometry2(); // acceptable node types: X3DNBodyCollidableNode
+	public X3DNBodyCollidableNode getGeometry2(); // acceptable node types #1:X3DNBodyCollidableNode
 
 	/**
 	 * Assign X3DNBodyCollidableNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry2</i>.
 	 * @param newValue is new value for the geometry2 field.
 	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Contact setGeometry2(X3DNBodyCollidableNode newValue); // acceptable node types: X3DNBodyCollidableNode
+	public Contact setGeometry2(X3DNBodyCollidableNode newValue); // acceptable node types #2: X3DNBodyCollidableNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry2</i>.
+	 * @see #setGeometry2(X3DNBodyCollidableNode)
+	 * @param newValue is new value for the geometry2 field.
+	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Contact setGeometry2(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -234,7 +266,7 @@ public interface Contact extends X3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -243,7 +275,7 @@ public interface Contact extends X3DNode
 	 * @return {@link Contact} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Contact setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public Contact setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>minBounceSpeed</i>.

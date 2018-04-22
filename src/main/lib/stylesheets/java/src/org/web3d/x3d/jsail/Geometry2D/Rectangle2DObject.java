@@ -214,7 +214,7 @@ public class Rectangle2DObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "geometry";
+	public String containerField_DEFAULT_VALUE = "geometry";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -281,7 +281,6 @@ public class Rectangle2DObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

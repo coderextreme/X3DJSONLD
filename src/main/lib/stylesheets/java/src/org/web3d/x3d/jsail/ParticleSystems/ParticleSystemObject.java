@@ -441,7 +441,7 @@ public class ParticleSystemObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -581,10 +581,29 @@ public class ParticleSystemObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			appearanceProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			appearanceProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>appearance</i>.
+	 * @see #setAppearance(X3DAppearanceNode)
+	 * @param newValue is new value for the appearance field.
+	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystemObject setAppearance(ProtoInstance newValue)
+	{
+		appearanceProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) appearanceProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (appearance != null)
+		{
+			((X3DConcreteElement) appearance).setParentObject(null); // housekeeping, clear prior object
+			appearance = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of appearance field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -930,10 +949,29 @@ setAttribute method invocations).
 			colorRampProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			colorRampProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>colorRamp</i>.
+	 * @see #setColorRamp(X3DColorNode)
+	 * @param newValue is new value for the colorRamp field.
+	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystemObject setColorRamp(ProtoInstance newValue)
+	{
+		colorRampProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) colorRampProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (colorRamp != null)
+		{
+			((X3DConcreteElement) colorRamp).setParentObject(null); // housekeeping, clear prior object
+			colorRamp = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of colorRamp field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1063,10 +1101,29 @@ setAttribute method invocations).
 			emitterProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			emitterProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>emitter</i>.
+	 * @see #setEmitter(X3DParticleEmitterNode)
+	 * @param newValue is new value for the emitter field.
+	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystemObject setEmitter(ProtoInstance newValue)
+	{
+		emitterProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) emitterProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (emitter != null)
+		{
+			((X3DConcreteElement) emitter).setParentObject(null); // housekeeping, clear prior object
+			emitter = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of emitter field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1197,10 +1254,29 @@ setAttribute method invocations).
 			geometryProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			geometryProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
+	 * @see #setGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the geometry field.
+	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystemObject setGeometry(ProtoInstance newValue)
+	{
+		geometryProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) geometryProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (geometry != null)
+		{
+			((X3DConcreteElement) geometry).setParentObject(null); // housekeeping, clear prior object
+			geometry = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of geometry field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1461,7 +1537,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -1951,10 +2026,29 @@ setAttribute method invocations).
 			texCoordRampProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			texCoordRampProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>texCoordRamp</i>.
+	 * @see #setTexCoordRamp(TextureCoordinate)
+	 * @param newValue is new value for the texCoordRamp field.
+	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystemObject setTexCoordRamp(ProtoInstance newValue)
+	{
+		texCoordRampProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) texCoordRampProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (texCoordRamp != null)
+		{
+			((X3DConcreteElement) texCoordRamp).setParentObject(null); // housekeeping, clear prior object
+			texCoordRamp = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of texCoordRamp field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

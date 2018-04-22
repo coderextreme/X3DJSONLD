@@ -145,7 +145,7 @@ public interface LOD extends X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -157,7 +157,7 @@ public interface LOD extends X3DGroupingNode
 	 * @return {@link LOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LOD setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public LOD setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -166,12 +166,12 @@ public interface LOD extends X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>forceTransitions</i>.
 	 * <br><br>
@@ -206,7 +206,7 @@ public interface LOD extends X3DGroupingNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -215,7 +215,7 @@ public interface LOD extends X3DGroupingNode
 	 * @return {@link LOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LOD setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public LOD setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of float results from initializeOnly MFFloat field named <i>range</i>.

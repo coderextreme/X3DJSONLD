@@ -385,7 +385,7 @@ public class NurbsTrimmedSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNo
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "geometry";
+	public String containerField_DEFAULT_VALUE = "geometry";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -505,10 +505,29 @@ public class NurbsTrimmedSurfaceObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			controlPointProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			controlPointProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsTrimmedSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsTrimmedSurfaceObject setControlPoint(ProtoInstance newValue)
+	{
+		controlPointProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) controlPointProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (controlPoint != null)
+		{
+			((X3DConcreteElement) controlPoint).setParentObject(null); // housekeeping, clear prior object
+			controlPoint = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of controlPoint field.
 	 * @return {@link NurbsTrimmedSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -594,7 +613,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -736,10 +754,29 @@ setAttribute method invocations).
 			texCoordProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			texCoordProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link NurbsTrimmedSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsTrimmedSurfaceObject setTexCoord(ProtoInstance newValue)
+	{
+		texCoordProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) texCoordProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (texCoord != null)
+		{
+			((X3DConcreteElement) texCoord).setParentObject(null); // housekeeping, clear prior object
+			texCoord = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of texCoord field.
 	 * @return {@link NurbsTrimmedSurfaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

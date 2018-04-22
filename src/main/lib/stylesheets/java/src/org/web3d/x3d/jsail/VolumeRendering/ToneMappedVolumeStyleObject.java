@@ -246,7 +246,7 @@ public class ToneMappedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcrete
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "renderStyle";
+	public String containerField_DEFAULT_VALUE = "renderStyle";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -442,7 +442,6 @@ public class ToneMappedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcrete
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -532,10 +531,29 @@ setAttribute method invocations).
 			surfaceNormalsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			surfaceNormalsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
+	 * @see #setSurfaceNormals(X3DTexture3DNode)
+	 * @param newValue is new value for the surfaceNormals field.
+	 * @return {@link ToneMappedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ToneMappedVolumeStyleObject setSurfaceNormals(ProtoInstance newValue)
+	{
+		surfaceNormalsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) surfaceNormalsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (surfaceNormals != null)
+		{
+			((X3DConcreteElement) surfaceNormals).setParentObject(null); // housekeeping, clear prior object
+			surfaceNormals = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of surfaceNormals field.
 	 * @return {@link ToneMappedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

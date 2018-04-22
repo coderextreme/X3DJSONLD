@@ -132,7 +132,7 @@ public interface VisibilitySensor extends X3DEnvironmentalSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -141,7 +141,7 @@ public interface VisibilitySensor extends X3DEnvironmentalSensorNode
 	 * @return {@link VisibilitySensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public VisibilitySensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public VisibilitySensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results within allowed range of [0,infinity) from initializeOnly SFVec3f field named <i>size</i>.

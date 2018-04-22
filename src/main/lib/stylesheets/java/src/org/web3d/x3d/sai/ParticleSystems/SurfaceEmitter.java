@@ -106,7 +106,7 @@ public interface SurfaceEmitter extends X3DParticleEmitterNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -115,7 +115,7 @@ public interface SurfaceEmitter extends X3DParticleEmitterNode
 	 * @return {@link SurfaceEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SurfaceEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public SurfaceEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>speed</i>.
@@ -147,7 +147,7 @@ public interface SurfaceEmitter extends X3DParticleEmitterNode
  * </ul>
 	 * @return value of surface field
 	 */
-	public X3DGeometryNode getSurface(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getSurface(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to initializeOnly SFNode field <i>surface</i>.
@@ -156,7 +156,15 @@ public interface SurfaceEmitter extends X3DParticleEmitterNode
 	 * @param newValue is new value for the surface field.
 	 * @return {@link SurfaceEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public SurfaceEmitter setSurface(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public SurfaceEmitter setSurface(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>surface</i>.
+	 * @see #setSurface(X3DGeometryNode)
+	 * @param newValue is new value for the surface field.
+	 * @return {@link SurfaceEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SurfaceEmitter setSurface(ProtoInstance newValue);
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>surfaceArea</i>.

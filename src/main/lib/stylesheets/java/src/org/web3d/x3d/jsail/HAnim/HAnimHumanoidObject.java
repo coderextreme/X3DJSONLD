@@ -429,7 +429,7 @@ public class HAnimHumanoidObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -1097,7 +1097,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -2247,10 +2246,29 @@ setAttribute method invocations).
 			skinCoordProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			skinCoordProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>skinCoord</i>.
+	 * @see #setSkinCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the skinCoord field.
+	 * @return {@link HAnimHumanoidObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public HAnimHumanoidObject setSkinCoord(ProtoInstance newValue)
+	{
+		skinCoordProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) skinCoordProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (skinCoord != null)
+		{
+			((X3DConcreteElement) skinCoord).setParentObject(null); // housekeeping, clear prior object
+			skinCoord = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of skinCoord field.
 	 * @return {@link HAnimHumanoidObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -2342,10 +2360,29 @@ setAttribute method invocations).
 			skinNormalProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			skinNormalProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>skinNormal</i>.
+	 * @see #setSkinNormal(X3DNormalNode)
+	 * @param newValue is new value for the skinNormal field.
+	 * @return {@link HAnimHumanoidObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public HAnimHumanoidObject setSkinNormal(ProtoInstance newValue)
+	{
+		skinNormalProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) skinNormalProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (skinNormal != null)
+		{
+			((X3DConcreteElement) skinNormal).setParentObject(null); // housekeeping, clear prior object
+			skinNormal = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of skinNormal field.
 	 * @return {@link HAnimHumanoidObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

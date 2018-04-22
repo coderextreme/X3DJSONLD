@@ -296,7 +296,7 @@ public interface RigidBody extends X3DNode
 	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DNBodyCollidableNode
 	 * @return value of geometry field
 	 */
-	public X3DNode[] getGeometry(); // acceptable node types: X3DNBodyCollidableNode
+	public X3DNode[] getGeometry(); // acceptable node types #1:X3DNBodyCollidableNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>geometry</i>.
@@ -305,7 +305,7 @@ public interface RigidBody extends X3DNode
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public RigidBody setGeometry(X3DNode[] newValue); // acceptable node types: X3DNBodyCollidableNode
+	public RigidBody setGeometry(X3DNode[] newValue); // acceptable node types #2: X3DNBodyCollidableNode
 
 	/**
 	 * Add array of child geometry nodes to array of existing nodes (if any).
@@ -313,12 +313,12 @@ public interface RigidBody extends X3DNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNBodyCollidableNode.
 	 * @param newValue is new value array to be appended the geometry field.
 	 */
-	public void addGeometry(X3DNode[] newValue); // acceptable node types: X3DNBodyCollidableNode
+	public void addGeometry(X3DNode[] newValue); // acceptable node types #3: X3DNBodyCollidableNode
 	/**
 	 * Set single child geometry node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the geometry field
 	 */
-	public void setGeometry(X3DNode newValue); // acceptable node types: X3DNBodyCollidableNode
+	public void setGeometry(X3DNode newValue); // acceptable node types #5: X3DNBodyCollidableNode
 	/**
 	 * Provide array of float results from inputOutput SFMatrix3f field named <i>inertia</i>.
 	 * <br><br>
@@ -402,14 +402,22 @@ public interface RigidBody extends X3DNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Sphere|Box|Cone, from inputOutput SFNode field <i>massDensityModel</i>.
 	 * @return value of massDensityModel field
 	 */
-	public X3DNode getMassDensityModel(); // acceptable node types: Sphere|Box|Cone
+	public X3DNode getMassDensityModel(); // acceptable node types #1:Sphere|Box|Cone
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to Sphere|Box|Cone, to inputOutput SFNode field <i>massDensityModel</i>.
 	 * @param newValue is new value for the massDensityModel field.
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public RigidBody setMassDensityModel(X3DNode newValue); // acceptable node types: Sphere|Box|Cone
+	public RigidBody setMassDensityModel(X3DNode newValue); // acceptable node types #2: Sphere|Box|Cone
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>massDensityModel</i>.
+	 * @see #setMassDensityModel(X3DNode)
+	 * @param newValue is new value for the massDensityModel field.
+	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public RigidBody setMassDensityModel(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -417,7 +425,7 @@ public interface RigidBody extends X3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -426,7 +434,7 @@ public interface RigidBody extends X3DNode
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public RigidBody setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public RigidBody setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>orientation</i>.

@@ -167,7 +167,7 @@ public interface MovieTexture extends X3DSoundSourceNode, X3DTexture2DNode, X3DU
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -176,7 +176,7 @@ public interface MovieTexture extends X3DSoundSourceNode, X3DTexture2DNode, X3DU
 	 * @return {@link MovieTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MovieTexture setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public MovieTexture setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide double value in seconds from inputOutput SFTime field named <i>pauseTime</i>.
@@ -351,7 +351,7 @@ public interface MovieTexture extends X3DSoundSourceNode, X3DTexture2DNode, X3DU
 	 * @return value of textureProperties field
 	 */
 	@Override
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
@@ -359,7 +359,15 @@ public interface MovieTexture extends X3DSoundSourceNode, X3DTexture2DNode, X3DU
 	 * @return {@link MovieTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MovieTexture setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public MovieTexture setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link MovieTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public MovieTexture setTextureProperties(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.

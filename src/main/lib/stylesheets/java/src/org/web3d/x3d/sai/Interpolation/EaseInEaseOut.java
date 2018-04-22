@@ -109,7 +109,7 @@ public interface EaseInEaseOut extends X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -118,7 +118,7 @@ public interface EaseInEaseOut extends X3DChildNode
 	 * @return {@link EaseInEaseOut} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public EaseInEaseOut setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public EaseInEaseOut setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>modifiedFraction_changed</i>.

@@ -232,7 +232,7 @@ public class MetadataStringObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "metadata";
+	public String containerField_DEFAULT_VALUE = "metadata";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -318,7 +318,6 @@ public class MetadataStringObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

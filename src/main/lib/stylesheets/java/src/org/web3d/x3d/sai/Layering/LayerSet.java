@@ -96,7 +96,7 @@ public interface LayerSet extends X3DNode
 	 * @see org.web3d.x3d.sai.Layering.X3DLayerNode
 	 * @return value of layers field
 	 */
-	public X3DNode[] getLayers(); // acceptable node types: X3DLayerNode
+	public X3DNode[] getLayers(); // acceptable node types #1:X3DLayerNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>layers</i>.
@@ -107,7 +107,7 @@ public interface LayerSet extends X3DNode
 	 * @param newValue is new value for the layers field.
 	 * @return {@link LayerSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public LayerSet setLayers(X3DNode[] newValue); // acceptable node types: X3DLayerNode
+	public LayerSet setLayers(X3DNode[] newValue); // acceptable node types #2: X3DLayerNode
 
 	/**
 	 * Add array of child layers nodes to array of existing nodes (if any).
@@ -115,19 +115,19 @@ public interface LayerSet extends X3DNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DLayerNode.
 	 * @param newValue is new value array to be appended the layers field.
 	 */
-	public void addLayers(X3DNode[] newValue); // acceptable node types: X3DLayerNode
+	public void addLayers(X3DNode[] newValue); // acceptable node types #3: X3DLayerNode
 	/**
 	 * Set single child layers node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the layers field
 	 */
-	public void setLayers(X3DNode newValue); // acceptable node types: X3DLayerNode
+	public void setLayers(X3DNode newValue); // acceptable node types #5: X3DLayerNode
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -136,7 +136,7 @@ public interface LayerSet extends X3DNode
 	 * @return {@link LayerSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LayerSet setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public LayerSet setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of int results within allowed range of [0,infinity) from initializeOnly MFInt32 field named <i>order</i>.

@@ -84,7 +84,7 @@ public interface NurbsSwungSurface extends X3DParametricGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -93,20 +93,28 @@ public interface NurbsSwungSurface extends X3DParametricGeometryNode
 	 * @return {@link NurbsSwungSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsSwungSurface setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsSwungSurface setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DNurbsControlCurveNode instance (using a properly typed node) from inputOutput SFNode field <i>profileCurve</i>.
 	 * @return value of profileCurve field
 	 */
-	public X3DNurbsControlCurveNode getProfileCurve(); // acceptable node types: X3DNurbsControlCurveNode
+	public X3DNurbsControlCurveNode getProfileCurve(); // acceptable node types #1:X3DNurbsControlCurveNode
 
 	/**
 	 * Assign X3DNurbsControlCurveNode instance (using a properly typed node) to inputOutput SFNode field <i>profileCurve</i>.
 	 * @param newValue is new value for the profileCurve field.
 	 * @return {@link NurbsSwungSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSwungSurface setProfileCurve(X3DNurbsControlCurveNode newValue); // acceptable node types: X3DNurbsControlCurveNode
+	public NurbsSwungSurface setProfileCurve(X3DNurbsControlCurveNode newValue); // acceptable node types #2: X3DNurbsControlCurveNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>profileCurve</i>.
+	 * @see #setProfileCurve(X3DNurbsControlCurveNode)
+	 * @param newValue is new value for the profileCurve field.
+	 * @return {@link NurbsSwungSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSwungSurface setProfileCurve(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -133,14 +141,22 @@ public interface NurbsSwungSurface extends X3DParametricGeometryNode
 	 * Provide X3DNurbsControlCurveNode instance (using a properly typed node) from inputOutput SFNode field <i>trajectoryCurve</i>.
 	 * @return value of trajectoryCurve field
 	 */
-	public X3DNurbsControlCurveNode getTrajectoryCurve(); // acceptable node types: X3DNurbsControlCurveNode
+	public X3DNurbsControlCurveNode getTrajectoryCurve(); // acceptable node types #1:X3DNurbsControlCurveNode
 
 	/**
 	 * Assign X3DNurbsControlCurveNode instance (using a properly typed node) to inputOutput SFNode field <i>trajectoryCurve</i>.
 	 * @param newValue is new value for the trajectoryCurve field.
 	 * @return {@link NurbsSwungSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSwungSurface setTrajectoryCurve(X3DNurbsControlCurveNode newValue); // acceptable node types: X3DNurbsControlCurveNode
+	public NurbsSwungSurface setTrajectoryCurve(X3DNurbsControlCurveNode newValue); // acceptable node types #2: X3DNurbsControlCurveNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>trajectoryCurve</i>.
+	 * @see #setTrajectoryCurve(X3DNurbsControlCurveNode)
+	 * @param newValue is new value for the trajectoryCurve field.
+	 * @return {@link NurbsSwungSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSwungSurface setTrajectoryCurve(ProtoInstance newValue);
 
 
 	/**

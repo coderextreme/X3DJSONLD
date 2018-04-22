@@ -100,14 +100,22 @@ public interface ShadedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * Provide X3DMaterialNode instance (using a properly typed node) from inputOutput SFNode field <i>material</i>.
 	 * @return value of material field
 	 */
-	public X3DMaterialNode getMaterial(); // acceptable node types: X3DMaterialNode
+	public X3DMaterialNode getMaterial(); // acceptable node types #1:X3DMaterialNode
 
 	/**
 	 * Assign X3DMaterialNode instance (using a properly typed node) to inputOutput SFNode field <i>material</i>.
 	 * @param newValue is new value for the material field.
 	 * @return {@link ShadedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ShadedVolumeStyle setMaterial(X3DMaterialNode newValue); // acceptable node types: X3DMaterialNode
+	public ShadedVolumeStyle setMaterial(X3DMaterialNode newValue); // acceptable node types #2: X3DMaterialNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>material</i>.
+	 * @see #setMaterial(X3DMaterialNode)
+	 * @param newValue is new value for the material field.
+	 * @return {@link ShadedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ShadedVolumeStyle setMaterial(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -115,7 +123,7 @@ public interface ShadedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -124,7 +132,7 @@ public interface ShadedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return {@link ShadedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ShadedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ShadedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String enumeration value ['Henyey-Greenstein'|'NONE'|'etc.'] from initializeOnly SFString field named <i>phaseFunction</i>.
@@ -168,14 +176,22 @@ public interface ShadedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>surfaceNormals</i>.
 	 * @return value of surfaceNormals field
 	 */
-	public X3DTexture3DNode getSurfaceNormals(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getSurfaceNormals(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
 	 * @param newValue is new value for the surfaceNormals field.
 	 * @return {@link ShadedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ShadedVolumeStyle setSurfaceNormals(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public ShadedVolumeStyle setSurfaceNormals(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
+	 * @see #setSurfaceNormals(X3DTexture3DNode)
+	 * @param newValue is new value for the surfaceNormals field.
+	 * @return {@link ShadedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ShadedVolumeStyle setSurfaceNormals(ProtoInstance newValue);
 
 
 	/**

@@ -84,7 +84,7 @@ public interface ComposedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -93,7 +93,7 @@ public interface ComposedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return {@link ComposedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ComposedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ComposedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>renderStyle</i>.
@@ -102,7 +102,7 @@ public interface ComposedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @see org.web3d.x3d.sai.VolumeRendering.X3DComposableVolumeRenderStyleNode
 	 * @return value of renderStyle field
 	 */
-	public X3DNode[] getRenderStyle(); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public X3DNode[] getRenderStyle(); // acceptable node types #1:X3DComposableVolumeRenderStyleNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>renderStyle</i>.
@@ -111,7 +111,7 @@ public interface ComposedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @param newValue is new value for the renderStyle field.
 	 * @return {@link ComposedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedVolumeStyle setRenderStyle(X3DNode[] newValue); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public ComposedVolumeStyle setRenderStyle(X3DNode[] newValue); // acceptable node types #2: X3DComposableVolumeRenderStyleNode
 
 	/**
 	 * Add array of child renderStyle nodes to array of existing nodes (if any).
@@ -119,12 +119,12 @@ public interface ComposedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DComposableVolumeRenderStyleNode.
 	 * @param newValue is new value array to be appended the renderStyle field.
 	 */
-	public void addRenderStyle(X3DNode[] newValue); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public void addRenderStyle(X3DNode[] newValue); // acceptable node types #3: X3DComposableVolumeRenderStyleNode
 	/**
 	 * Set single child renderStyle node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the renderStyle field
 	 */
-	public void setRenderStyle(X3DNode newValue); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public void setRenderStyle(X3DNode newValue); // acceptable node types #5: X3DComposableVolumeRenderStyleNode
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

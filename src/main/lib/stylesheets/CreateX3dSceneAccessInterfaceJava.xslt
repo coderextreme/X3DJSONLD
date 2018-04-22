@@ -1102,8 +1102,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:if test="not($isInterface = 'true') and
 						  (   contains($name, 'FColor')            or contains($name, 'Background')           or 
 						   starts-with($name, 'ColorChaser')       or starts-with($name, 'ColorDamper')       or contains($name, 'Light')      or 
-						   starts-with($name, 'ColorInterpolator') or starts-with($name, 'ParticleSystem')    or contains($name, 'Fog')        or
-						   starts-with($name, 'Fog')               or starts-with($name, 'TextureProperties') or contains($name, 'Material')   or
+						   starts-with($name, 'ColorInterpolator') or starts-with($name, 'ParticleSystem')    or 
+						   ($name = 'Fog') or ($name = 'LocalFog') or
+						   starts-with($name, 'TextureProperties') or contains($name, 'Material')   or
 						   starts-with($name, 'FillProperties')    or starts-with($name, 'LineProperties')    or starts-with($name, 'MultiTexture') or
 						   starts-with($name, 'EdgeEnhancementVolumeStyle') or starts-with($name, 'CartoonVolumeStyle') or
 						   starts-with($name, 'OpacityMapVolumeStyle')      or starts-with($name, 'ToneMappedVolumeStyle'))">
@@ -2399,7 +2400,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								<xsl:text>
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "</xsl:text>
+	public String containerField_DEFAULT_VALUE = "</xsl:text>
 								<xsl:value-of select="InterfaceDefinition/containerFieldDefault/@name"/>
 								<xsl:text>";
 </xsl:text>
@@ -2703,6 +2704,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">X3D ClassicVRML Encoding</a>
 	 */
 	public static final String FILE_EXTENSION_CLASSICVRML = ".x3dv";
+	/**
+	 * File extension for X3D Compressed Binary Encoding, with dot prepended: <i>.x3db</i>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/X3D_Binary.html">X3D Compressed Binary Encoding Encoding</a>
+	 */
+	public static final String FILE_EXTENSION_X3DB = ".x3db";
 										
 	/**
 	 * File extension for VRML97 Encoding, with dot prepended: <i>.wrl</i>
@@ -2860,9 +2866,9 @@ public static boolean isFileNameNMTOKEN(String fileName)
 {
     String strippedFileName = fileName;
     if (strippedFileName.contains("/"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/")  + 1);
     if (strippedFileName.contains("\\"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\") + 1);
 
     return SFStringObject.isNMTOKEN(strippedFileName);
 }
@@ -2877,11 +2883,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 {
     String strippedFileName = fileName;
     if (strippedFileName.contains("/"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/")   + 1);
     if (strippedFileName.contains("\\"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\")  + 1);
     if (strippedFileName.contains(".")) // strip file extension
-       strippedFileName = strippedFileName.substring(0, strippedFileName.lastIndexOf("."));
+       strippedFileName = strippedFileName.substring(0, strippedFileName.lastIndexOf(".") + 1);
 
     return SFStringObject.meetsX3dNamingConventions(strippedFileName);
 }
@@ -4185,10 +4191,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
+		String className = fileName.substring(0,fileName.indexOf(".java"));
+		if (className.contains("/"))
+			className = className.substring(fileName.lastIndexOf("/")  + 1); // strip path
+		if (className.contains("\\/"))
+			className = className.substring(fileName.lastIndexOf("\\") + 1); // strip path
 
 		// XSLT stylesheet parameter names and values
 		String parameterName1  = "className";
-		String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
+		String parameterValue1 =  className;
 		String parameterName2  = "";
 		String parameterValue2 = "";
 		if (includeWeb3dLicense)
@@ -5101,105 +5112,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	{
 		String fileName = new String();
 		File   newFile;
-						
+
 		CommandLine.setLoadedX3dModel(this); // initialize using this object
 
 		CommandLine.run(args);
-
-/* prior code block, can delete after further testing
-		if (args.length == 2)
-			fileName = args[1];
-		if ((args.length == 0) || args[0].toLowerCase().contains("help"))
-        {
-			return org.web3d.x3d.jsail.CommandLine.USAGE; // TODO add synonyms below
-		}
-		else if (args[0].toLowerCase().startsWith("valid"))
-		{
-			return validationReport();
-		}
-		else if (args[0].toLowerCase().startsWith("x3dv") && !fileName.isEmpty())
-		{
-			newFile = toFileClassicVRML(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3dv")) // and no filename
-		{
-			return toStringClassicVRML();
-		}
-		else if (args[0].toLowerCase().startsWith("x3dom") && !fileName.isEmpty())
-		{
-			newFile = toFileX3DOM(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3d") && !fileName.isEmpty())
-		{
-			newFile = toFileX3D(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3d"))
-		{
-			return toStringX3D();
-		}
-		else if (args[0].toLowerCase().startsWith("vrml") && !fileName.isEmpty())
-		{
-			newFile = toFileVRML97(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("vrml")) // and no filename
-		{
-			return toStringVRML97();
-		}
-		else if (args[0].toLowerCase().startsWith("json") && !fileName.isEmpty())
-		{
-                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
-			newFile = toFileJSON(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("json")) // and no filename
-		{
-                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
-			return toStringJSON();
-		}
-		else if ((args[0].toLowerCase().startsWith("js") || args[0].toLowerCase().startsWith("javascript")) && !fileName.isEmpty())
-		{
-			newFile = toFileJavaScript(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("html") && !fileName.isEmpty())
-		{
-			newFile = toFileHtmlDocumentation(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("html"))
-		{
-			return "TODO (not supported)";
-		}
-		else if ((args[0].toLowerCase().startsWith("x_ite") || args[0].toLowerCase().startsWith("cobweb")) && !fileName.isEmpty())
-		{
-			newFile = toFileX_ITE(fileName + X3DObject.FILE_EXTENSION_X3D, fileName + X3DObject.FILE_EXTENSION_HTML);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else // no valid switch found
-		{
-			return org.web3d.x3d.jsail.CommandLine.USAGE;
-		}
-*/
 	}
 ]]></xsl:text>
 								</xsl:when>
@@ -5440,7 +5356,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="@name"/>
 										<xsl:text>":
 				return "org.web3d.x3d.jsail.</xsl:text>
-										<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+										<xsl:value-of select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
 										<xsl:text>.</xsl:text>
 										<xsl:value-of select="@name"/>
 										<xsl:text>Object";</xsl:text>
@@ -5940,7 +5856,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:when test="($isInterface = 'true')">
 										<xsl:text>;</xsl:text>
 										<xsl:if test="(string-length(@acceptableNodeTypes) > 1)">
-											<xsl:text> // acceptable node types: </xsl:text>
+											<xsl:text> // acceptable node types #1:</xsl:text>
 											<xsl:value-of select="@acceptableNodeTypes"/>
 										</xsl:if>
 										<xsl:text>&#10;</xsl:text>
@@ -6784,7 +6700,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>;</xsl:text>
 										<!-- note that node type cannot be constrained further here because this method implements/overrides an SAI interface -->
 										<xsl:if test="(string-length(@acceptableNodeTypes) > 1)">
-											<xsl:text> // acceptable node types: </xsl:text>
+											<xsl:text> // acceptable node types #2: </xsl:text>
 											<xsl:value-of select="@acceptableNodeTypes"/>
 										</xsl:if>
 										<xsl:text>&#10;</xsl:text>
@@ -7324,8 +7240,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = null;
-		}
-</xsl:text>
+		}</xsl:text>
 													</xsl:if>
 												</xsl:if>
 											</xsl:otherwise>
@@ -7339,6 +7254,90 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:otherwise>
 								</xsl:choose>
 								<xsl:text>&#10;</xsl:text>
+								
+								<!-- SFNode thoroughness: setFieldName(ProtoInstance newValue) -->
+								<xsl:if test="(@type = 'SFNode') and not(@name = 'metadata') and not($isX3dStatement = 'true')">
+									<xsl:text>	/**</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	 * Assign ProtoInstance (using a properly typed node) to </xsl:text>
+									<xsl:value-of select="@accessType"/>
+									<xsl:text> </xsl:text>
+									<xsl:value-of select="@type"/>
+									<xsl:text> field </xsl:text>
+									<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+									<xsl:value-of select="@name"/>
+									<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+									<xsl:text>.</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	 * @see #set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(</xsl:text>
+									<xsl:value-of select="$javaPrimitiveType"/>
+									<xsl:text>)</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	 * @param </xsl:text>
+									<xsl:value-of select="$newValue"/>
+									<xsl:text> is new value for the </xsl:text>
+									<xsl:value-of select="@name"/>
+									<xsl:text> field.</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	 * @return {@link </xsl:text>
+									<xsl:value-of select="$thisClassName"/>
+									<xsl:text>} - namely </xsl:text>
+									<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+									<xsl:text>this</xsl:text>
+									<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+									<xsl:text> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).</xsl:text>
+									<!-- https://en.wikipedia.org/wiki/Pipeline_(software) -->
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	 */</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<!-- also have setFieldName(ProtoInstance newValue) for SFNode fields -->
+									<xsl:text>	public </xsl:text>
+									<xsl:value-of select="$thisClassName"/>
+									<xsl:text> </xsl:text>
+									<xsl:text>set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(ProtoInstance </xsl:text>
+									<xsl:value-of select="$newValue"/>
+									<xsl:text>)</xsl:text>
+									<xsl:choose>
+										<xsl:when test="($isInterface = 'true')">
+											<xsl:text>;</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>	{</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>		</xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text>ProtoInstance = (ProtoInstanceObject)</xsl:text>
+											<xsl:value-of select="$newValue"/>
+											<xsl:text>;</xsl:text>
+											<xsl:text>
+		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> != null)
+		{
+			((X3DConcreteElement) </xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text>ProtoInstance</xsl:text>
+											<xsl:text>).setParentObject(this); // parentTest15.5</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>	    }</xsl:text>
+														<xsl:text>
+		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> != null)
+		{
+			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParentObject(null); // housekeeping, clear prior object
+			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> = null;
+		}
+</xsl:text>
+											<xsl:text>	    return this;</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>	}</xsl:text>
+										</xsl:otherwise>
+									</xsl:choose>
+									<xsl:text>&#10;</xsl:text>
+								</xsl:if>
 
 								<!-- additional field utility methods for concrete classes -->
 
@@ -8349,7 +8348,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:when test="($isInterface = 'true')">
 											<xsl:text>;</xsl:text>
 											<xsl:if test="(string-length(@acceptableNodeTypes) > 1)">
-												<xsl:text> // acceptable node types: </xsl:text>
+												<xsl:text> // acceptable node types #3: </xsl:text>
 												<xsl:value-of select="@acceptableNodeTypes"/>
 											</xsl:if>
 											<xsl:text>&#10;</xsl:text>
@@ -8463,7 +8462,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>);</xsl:text>
 													<xsl:if test="(@type = 'MFNode') and (string-length(@acceptableNodeTypes) > 0)">
-														<xsl:text> // acceptable node types: </xsl:text>
+														<xsl:text> // acceptable node types #4:</xsl:text>
 														<xsl:value-of select="@acceptableNodeTypes"/>
 													</xsl:if>
 												</xsl:otherwise>
@@ -8603,7 +8602,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:when test="($isInterface = 'true')">
 											<xsl:text>;</xsl:text>
 											<xsl:if test="(string-length(@acceptableNodeTypes) > 1)">
-												<xsl:text> // acceptable node types: </xsl:text>
+												<xsl:text> // acceptable node types #5: </xsl:text>
 												<xsl:value-of select="@acceptableNodeTypes"/>
 											</xsl:if>
 											<xsl:text>&#10;</xsl:text>
@@ -8771,7 +8770,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>);</xsl:text>
 													<xsl:if test="(@type = 'MFNode') and (string-length(@acceptableNodeTypes) > 0)">
-														<xsl:text> // acceptable node types: </xsl:text>
+														<xsl:text> // acceptable node types #6:</xsl:text>
 														<xsl:value-of select="@acceptableNodeTypes"/>
 													</xsl:if>
 													<xsl:text>		((X3DConcreteElement) </xsl:text>
@@ -25360,9 +25359,9 @@ import org.web3d.x3d.sai.X3DException;
         clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJava | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJava | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
@@ -25374,6 +25373,7 @@ import org.web3d.x3d.sai.X3DException;
     private static boolean convertToMarkdown        = false; // model meta information
     private static boolean includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
     private static boolean convertToTidy            = false;
+    private static boolean convertToJava            = false;
     private static boolean convertToJSON            = false;
     private static boolean convertToJS              = false;
     private static boolean convertToX3DOM           = false;
@@ -25399,6 +25399,7 @@ import org.web3d.x3d.sai.X3DException;
 		convertToMarkdown        = false;
 		includeSubdirectoryPaths = true; // special markdown switch
 		convertToTidy            = false;
+		convertToJava            = false;
 		convertToJSON            = false;
 		convertToJS              = false;
 		convertToX3DOM           = false;
@@ -25573,6 +25574,13 @@ import org.web3d.x3d.sai.X3DException;
 					conversionExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to ClassicVRML encoding");
 				}
+				else  if (args[i].equalsIgnoreCase("-java") || args[i].equalsIgnoreCase("-tojava"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToJava = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_JAVA;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to Java source code");
+				}
 				else  if (args[i].equalsIgnoreCase("-json") || args[i].equalsIgnoreCase("-tojson"))
 				{
 					clearPriorConversionSwitches(args[i]);
@@ -25717,9 +25725,9 @@ import org.web3d.x3d.sai.X3DException;
 					if (resultFileName.isEmpty())
 					{
 						 resultFileName = "Validation" + X3DObject.FILE_EXTENSION_TEXT; // be prepared with default name
-						 System.out.println ("parameter: \"" + args[i] + "\"  for model validation");
+						 System.out.println ("parameter: \"" + args[i] + "\" for model validation");
 					}
-					else System.out.println ("parameter: \"" + args[i] + "\"  for model validation to result file");
+					else System.out.println ("parameter: \"" + args[i] + "\" for model validation to result file");
 				}
 				else  if (args[i].equalsIgnoreCase("-page") || args[i].equalsIgnoreCase("-X3DJSAIL"))
 				{
@@ -25861,6 +25869,16 @@ import org.web3d.x3d.sai.X3DException;
                         if  (convertToFile)
                               resultFile =      loadedX3dModel.toFileJSON (resultFileName);
                         else System.out.println(loadedX3dModel.toStringJSON());
+                	ConfigurationProperties.setXsltEngine(presetXsltEngine);
+                    }
+                    else if (convertToJava)
+                    {
+                        String presetXsltEngine = ConfigurationProperties.getXsltEngine();
+                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
+                        System.out.println("convert to Java:");
+                        if  (convertToFile)
+                              resultFile =      loadedX3dModel.toFileJava (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringJava());
                 	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
                     else if (convertToJS)
@@ -26155,7 +26173,7 @@ import org.web3d.x3d.sai.X3DException;
     private static void clearPriorConversionSwitches(String newCommand)
     {
         if (convertToVRML97 || convertToClassicVRML || convertToX3D   || convertToXML || convertToHTML || convertToMarkdown || convertToTidy ||
-            convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
+            convertToJava   || convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
         convertToVRML97          = false;
@@ -26166,6 +26184,7 @@ import org.web3d.x3d.sai.X3DException;
         convertToMarkdown        = false;
         includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
         convertToTidy            = false;
+        convertToJava            = false;
         convertToJSON            = false;
         convertToJS              = false;
         convertToX3DOM           = false;
@@ -28077,7 +28096,7 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
 									((SceneObject)elementObject).addLayerSet ((LayerSetObject) childX3dElement);
 							else if (nodeName.equals("Scene"))
-									((SceneObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((SceneObject)elementObject).addChild((X3DChildNode) childX3dElement);
 							// CommentsBlock handled by case org.w3c.dom.Node.COMMENT_NODE
 					
 							// proto and field handling begins here to avoid possible subsequent missteps
@@ -28090,13 +28109,13 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("ExternProtoDeclare") && childElementName.equals("field"))
 									((ExternProtoDeclareObject)elementObject).addField((fieldObject) childX3dElement);
 							else if (nodeName.equals("ProtoBody"))
-									((ProtoBodyObject)elementObject).addChildren ((X3DNode) childX3dElement); // note looser node type
+									((ProtoBodyObject)elementObject).addChildren((X3DNode) childX3dElement); // note looser node type
 							else if (childElementName.equals("ProtoBody"))
 									((ProtoDeclareObject)elementObject).setProtoBody((ProtoBodyObject) childX3dElement);
 							else if (nodeName.equals("field"))
-									((fieldObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((fieldObject)elementObject).addChild((X3DNode) childX3dElement);
 							else if (nodeName.equals("fieldValue"))
-									((fieldValueObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((fieldValueObject)elementObject).addChild((X3DChildNode) childX3dElement);
 							else if (childElementName.equals("fieldValue"))
 									((ProtoInstanceObject)elementObject).setFieldValue((fieldValueObject) childX3dElement);
 							else if (nodeName.equals("ShaderProgram") && childElementName.equals("field"))
@@ -28183,6 +28202,7 @@ import org.web3d.x3d.sai.X3DException;
 
 							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart"))
 									((ComposedShaderObject)elementObject).addParts ((ShaderPartObject) childX3dElement);
+							
 							// TODO ComposedShaderObject design missing utility method to add ProtoInstance to typed array
 							else if (nodeName.equals("ComposedShader") && protoInstanceNodeType.equals("ShaderPart")) // TODO is this correct type?
 							{
@@ -28232,6 +28252,25 @@ import org.web3d.x3d.sai.X3DException;
 									)
 									((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
 
+							// IndexedFaceSet, TriangleSet, QuadSet etc.
+							else if (nodeName.endsWith("Set") && childElementName.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal"))
+									((ElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.equals("ElevationGrid") && protoInstanceNodeType.equals("Normal"))
+									((ElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("Normal"))
+									((GeoElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.equals("GeoElevationGrid") && protoInstanceNodeType.equals("Normal"))
+									((GeoElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Coordinate"))
 									((IndexedFaceSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && protoInstanceNodeType.contains("Coordinate"))
@@ -28247,10 +28286,20 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Coordinate"))
 									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
+							else if (nodeName.equals("PointSet") && childElementName.contains("Coordinate"))
+									((PointSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Coordinate"))
+									((PointSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Color"))
 									((IndexedFaceSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("IndexedLineSet") && protoInstanceNodeType.contains("Color"))
 									((IndexedFaceSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("PointSet") && childElementName.contains("Color"))
+									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Color"))
+									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Color"))
 									((IndexedLineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
@@ -28260,12 +28309,12 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("LineSet") && childElementName.contains("Color"))
 									((LineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Color"))
-									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("ViewpointGroup") && childElementName.equals("Viewpoint"))
-									((ViewpointGroupObject)elementObject).addChild ((ViewpointObject) childX3dElement);
+									((ViewpointGroupObject)elementObject).addChild((ViewpointObject) childX3dElement);
 							else if (nodeName.equals("ViewpointGroup") && protoInstanceNodeType.equals("Viewpoint"))
-									((ViewpointGroupObject)elementObject).addChild ((ProtoInstanceObject) childX3dElement);
+									((ViewpointGroupObject)elementObject).addChild((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("Text") && childElementName.equals("FontStyle"))
 									((TextObject)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
@@ -28919,7 +28968,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			((@name = 'name') and not($elementName = 'meta') and not(starts-with($elementName,'Metadata')) and not(starts-with($elementName,'CAD')))"/>
 	</xsl:variable>
 
-	<!-- debug diagnostic-->
+	<!-- debug diagnostic 
         <xsl:if test="($debug = 'true')">
             <xsl:message>	
                     <xsl:text>set-newValue-validity-checks: name=</xsl:text>
@@ -28940,7 +28989,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
                     <xsl:value-of select="$tupleSize"/>
             </xsl:message>
         </xsl:if>
-	
+	-->
 	<xsl:choose>
 		<xsl:when test="($isArrayType='true')">
 			<xsl:text>  int i = 0;</xsl:text>

@@ -109,7 +109,7 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return value of body1 field
 	 */
 	@Override
-	public RigidBody getBody1(); // acceptable node types: RigidBody
+	public RigidBody getBody1(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
@@ -117,7 +117,15 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return {@link SingleAxisHingeJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SingleAxisHingeJoint setBody1(RigidBody newValue); // acceptable node types: RigidBody
+	public SingleAxisHingeJoint setBody1(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
+	 * @see #setBody1(RigidBody)
+	 * @param newValue is new value for the body1 field.
+	 * @return {@link SingleAxisHingeJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SingleAxisHingeJoint setBody1(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>body1AnchorPoint</i>.
@@ -129,7 +137,7 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return value of body2 field
 	 */
 	@Override
-	public RigidBody getBody2(); // acceptable node types: RigidBody
+	public RigidBody getBody2(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
@@ -137,7 +145,15 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return {@link SingleAxisHingeJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SingleAxisHingeJoint setBody2(RigidBody newValue); // acceptable node types: RigidBody
+	public SingleAxisHingeJoint setBody2(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
+	 * @see #setBody2(RigidBody)
+	 * @param newValue is new value for the body2 field.
+	 * @return {@link SingleAxisHingeJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SingleAxisHingeJoint setBody2(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>body2AnchorPoint</i>.
@@ -188,7 +204,7 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -197,7 +213,7 @@ public interface SingleAxisHingeJoint extends X3DRigidJointNode
 	 * @return {@link SingleAxisHingeJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SingleAxisHingeJoint setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public SingleAxisHingeJoint setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value unit axis, angle (in radians) from inputOutput SFFloat field named <i>minAngle</i>.

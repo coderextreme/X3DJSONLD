@@ -68,14 +68,22 @@ public interface Text extends X3DGeometryNode
 	 * Provide X3DFontStyleNode instance (using a properly typed node) from inputOutput SFNode field <i>fontStyle</i>.
 	 * @return value of fontStyle field
 	 */
-	public X3DFontStyleNode getFontStyle(); // acceptable node types: X3DFontStyleNode
+	public X3DFontStyleNode getFontStyle(); // acceptable node types #1:X3DFontStyleNode
 
 	/**
 	 * Assign X3DFontStyleNode instance (using a properly typed node) to inputOutput SFNode field <i>fontStyle</i>.
 	 * @param newValue is new value for the fontStyle field.
 	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Text setFontStyle(X3DFontStyleNode newValue); // acceptable node types: X3DFontStyleNode
+	public Text setFontStyle(X3DFontStyleNode newValue); // acceptable node types #2: X3DFontStyleNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>fontStyle</i>.
+	 * @see #setFontStyle(X3DFontStyleNode)
+	 * @param newValue is new value for the fontStyle field.
+	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Text setFontStyle(ProtoInstance newValue);
 
 	/**
 	 * Provide array of float results within allowed range of [0,infinity) from inputOutput MFFloat field named <i>length</i>.
@@ -129,7 +137,7 @@ public interface Text extends X3DGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -138,7 +146,7 @@ public interface Text extends X3DGeometryNode
 	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Text setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public Text setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>origin</i>.

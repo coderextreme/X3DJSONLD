@@ -66,7 +66,7 @@ public interface TextureCoordinate3D extends X3DTextureCoordinateNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -75,7 +75,7 @@ public interface TextureCoordinate3D extends X3DTextureCoordinateNode
 	 * @return {@link TextureCoordinate3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public TextureCoordinate3D setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public TextureCoordinate3D setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results from inputOutput MFVec3f field named <i>point</i>.

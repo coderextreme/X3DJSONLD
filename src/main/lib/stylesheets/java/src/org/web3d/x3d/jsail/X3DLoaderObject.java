@@ -659,7 +659,7 @@ public class X3DLoaderObject
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
 									((SceneObject)elementObject).addLayerSet ((LayerSetObject) childX3dElement);
 							else if (nodeName.equals("Scene"))
-									((SceneObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((SceneObject)elementObject).addChild((X3DChildNode) childX3dElement);
 							// CommentsBlock handled by case org.w3c.dom.Node.COMMENT_NODE
 					
 							// proto and field handling begins here to avoid possible subsequent missteps
@@ -672,13 +672,13 @@ public class X3DLoaderObject
 							else if (nodeName.equals("ExternProtoDeclare") && childElementName.equals("field"))
 									((ExternProtoDeclareObject)elementObject).addField((fieldObject) childX3dElement);
 							else if (nodeName.equals("ProtoBody"))
-									((ProtoBodyObject)elementObject).addChildren ((X3DNode) childX3dElement); // note looser node type
+									((ProtoBodyObject)elementObject).addChildren((X3DNode) childX3dElement); // note looser node type
 							else if (childElementName.equals("ProtoBody"))
 									((ProtoDeclareObject)elementObject).setProtoBody((ProtoBodyObject) childX3dElement);
 							else if (nodeName.equals("field"))
-									((fieldObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((fieldObject)elementObject).addChild((X3DNode) childX3dElement);
 							else if (nodeName.equals("fieldValue"))
-									((fieldValueObject)elementObject).addChild ((X3DChildNode) childX3dElement);
+									((fieldValueObject)elementObject).addChild((X3DChildNode) childX3dElement);
 							else if (childElementName.equals("fieldValue"))
 									((ProtoInstanceObject)elementObject).setFieldValue((fieldValueObject) childX3dElement);
 							else if (nodeName.equals("ShaderProgram") && childElementName.equals("field"))
@@ -765,6 +765,7 @@ public class X3DLoaderObject
 
 							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart"))
 									((ComposedShaderObject)elementObject).addParts ((ShaderPartObject) childX3dElement);
+							
 							// TODO ComposedShaderObject design missing utility method to add ProtoInstance to typed array
 							else if (nodeName.equals("ComposedShader") && protoInstanceNodeType.equals("ShaderPart")) // TODO is this correct type?
 							{
@@ -814,6 +815,25 @@ public class X3DLoaderObject
 									)
 									((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
 
+							// IndexedFaceSet, TriangleSet, QuadSet etc.
+							else if (nodeName.endsWith("Set") && childElementName.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal"))
+									((ElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.equals("ElevationGrid") && protoInstanceNodeType.equals("Normal"))
+									((ElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("Normal"))
+									((GeoElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.equals("GeoElevationGrid") && protoInstanceNodeType.equals("Normal"))
+									((GeoElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Coordinate"))
 									((IndexedFaceSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && protoInstanceNodeType.contains("Coordinate"))
@@ -829,10 +849,20 @@ public class X3DLoaderObject
 							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Coordinate"))
 									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
+							else if (nodeName.equals("PointSet") && childElementName.contains("Coordinate"))
+									((PointSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Coordinate"))
+									((PointSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Color"))
 									((IndexedFaceSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("IndexedLineSet") && protoInstanceNodeType.contains("Color"))
 									((IndexedFaceSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("PointSet") && childElementName.contains("Color"))
+									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Color"))
+									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Color"))
 									((IndexedLineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
@@ -842,12 +872,12 @@ public class X3DLoaderObject
 							else if (nodeName.equals("LineSet") && childElementName.contains("Color"))
 									((LineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Color"))
-									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("ViewpointGroup") && childElementName.equals("Viewpoint"))
-									((ViewpointGroupObject)elementObject).addChild ((ViewpointObject) childX3dElement);
+									((ViewpointGroupObject)elementObject).addChild((ViewpointObject) childX3dElement);
 							else if (nodeName.equals("ViewpointGroup") && protoInstanceNodeType.equals("Viewpoint"))
-									((ViewpointGroupObject)elementObject).addChild ((ProtoInstanceObject) childX3dElement);
+									((ViewpointGroupObject)elementObject).addChild((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("Text") && childElementName.equals("FontStyle"))
 									((TextObject)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);

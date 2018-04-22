@@ -137,7 +137,7 @@ public interface CADPart extends X3DProductStructureChildNode, X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: CADFace
+	public X3DNode[] getChildren(); // acceptable node types #1:CADFace
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -147,7 +147,7 @@ public interface CADPart extends X3DProductStructureChildNode, X3DGroupingNode
 	 * @return {@link CADPart} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CADPart setChildren(X3DNode[] newValue); // acceptable node types: CADFace
+	public CADPart setChildren(X3DNode[] newValue); // acceptable node types #2: CADFace
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -156,19 +156,19 @@ public interface CADPart extends X3DProductStructureChildNode, X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: CADFace
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: CADFace
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: CADFace
+	public void setChildren(X3DNode newValue); // acceptable node types #5: CADFace
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -177,7 +177,7 @@ public interface CADPart extends X3DProductStructureChildNode, X3DGroupingNode
 	 * @return {@link CADPart} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CADPart setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CADPart setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.

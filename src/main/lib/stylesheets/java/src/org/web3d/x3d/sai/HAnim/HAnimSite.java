@@ -143,7 +143,7 @@ public interface HAnimSite extends X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -153,7 +153,7 @@ public interface HAnimSite extends X3DGroupingNode
 	 * @return {@link HAnimSite} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimSite setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public HAnimSite setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -162,19 +162,19 @@ public interface HAnimSite extends X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -183,7 +183,7 @@ public interface HAnimSite extends X3DGroupingNode
 	 * @return {@link HAnimSite} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimSite setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public HAnimSite setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String enumeration value ['cervicale'|'crotch'|'l_acromion'|'l_asis'|'l_axilla_ant'|'l_axilla_post'|'l_calcaneous_post'|'l_clavicale'|'l_dactylion'|'l_digit2'|'l_femoral_lateral_epicn'|'l_femoral_medial_epicn'|'l_forefoot_tip'|'l_gonion'|'l_hand_tip'|'l_humeral_lateral_epicn'|'l_humeral_medial_epicn'|'l_iliocristale'|'l_index_distal_tip'|'l_infraorbitale'|'l_knee_crease'|'l_lateral_malleolus'|'l_medial_malleolus'|'l_metacarpal_pha2'|'l_metacarpal_pha5'|'l_metatarsal_pha1'|'l_metatarsal_pha5'|'l_middle_distal_tip'|'l_neck_base'|'l_olecranon'|'l_pinky_distal_tip'|'l_psis'|'l_radial_styloid'|'l_radiale'|'l_rib10'|'l_ring_distal_tip'|'l_sphyrion'|'l_thelion'|'l_thumb_distal_tip'|'l_tragion'|'l_trochanterion'|'l_ulnar_styloid'|'navel'|'nuchale'|'r_acromion'|'r_asis'|'r_axilla_ant'|'r_axilla_post'|'r_calcaneous_post'|'r_clavicale'|'r_dactylion'|'r_digit2'|'r_femoral_lateral_epicn'|'r_femoral_medial_epicn'|'r_forefoot_tip'|'r_gonion'|'r_hand_tip'|'r_humeral_lateral_epicn'|'r_humeral_medial_epicn'|'r_iliocristale'|'r_index_distal_tip'|'r_infraorbitale'|'r_knee_crease'|'r_lateral_malleolus'|'r_medial_malleolus'|'r_metacarpal_pha2'|'r_metacarpal_pha5'|'r_metatarsal_pha1'|'r_metatarsal_pha5'|'r_middle_distal_tip'|'r_neck_base'|'r_olecranon'|'r_pinky_distal_tip'|'r_psis'|'r_radial_styloid'|'r_radiale'|'r_rib10'|'r_ring_distal_tip'|'r_sphyrion'|'r_thelion'|'r_thumb_distal_tip'|'r_tragion'|'r_trochanterion'|'r_ulnar_styloid'|'rib10_midspine'|'sellion'|'skull_tip'|'substernale'|'supramenton'|'suprasternale'|'waist_preferred_post'] from inputOutput SFString field named <i>name</i>.

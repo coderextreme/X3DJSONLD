@@ -363,7 +363,7 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -373,7 +373,7 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	 * @return {@link EspduTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public EspduTransform setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public EspduTransform setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -382,12 +382,12 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>collideTime</i>.
 	 * <br><br>
@@ -1032,7 +1032,7 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -1041,7 +1041,7 @@ public interface EspduTransform extends X3DGroupingNode, X3DNetworkSensorNode
 	 * @return {@link EspduTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public EspduTransform setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public EspduTransform setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>multicastRelayHost</i>.

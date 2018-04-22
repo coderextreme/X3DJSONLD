@@ -68,7 +68,7 @@ public interface ImageTexture3D extends X3DTexture3DNode, X3DUrlObject
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -77,7 +77,7 @@ public interface ImageTexture3D extends X3DTexture3DNode, X3DUrlObject
 	 * @return {@link ImageTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ImageTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ImageTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatR</i>.
@@ -144,7 +144,7 @@ public interface ImageTexture3D extends X3DTexture3DNode, X3DUrlObject
 	 * @return value of textureProperties field
 	 */
 	@Override
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
@@ -152,7 +152,15 @@ public interface ImageTexture3D extends X3DTexture3DNode, X3DUrlObject
 	 * @return {@link ImageTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ImageTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public ImageTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link ImageTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ImageTexture3D setTextureProperties(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.

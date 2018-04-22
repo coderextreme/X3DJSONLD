@@ -226,7 +226,7 @@ public interface Background extends X3DBackgroundNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -235,7 +235,7 @@ public interface Background extends X3DBackgroundNode
 	 * @return {@link Background} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Background setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public Background setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>rightUrl</i>.

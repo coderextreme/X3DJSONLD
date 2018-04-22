@@ -73,7 +73,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return value of attrib field
 	 */
 	@Override
-	public X3DNode[] getAttrib(); // acceptable node types: X3DVertexAttributeNode
+	public X3DNode[] getAttrib(); // acceptable node types #1:X3DVertexAttributeNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>attrib</i>.
@@ -83,7 +83,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setAttrib(X3DNode[] newValue); // acceptable node types: X3DVertexAttributeNode
+	public IndexedTriangleFanSet setAttrib(X3DNode[] newValue); // acceptable node types #2: X3DVertexAttributeNode
 
 	/**
 	 * Add array of child attrib nodes to array of existing nodes (if any).
@@ -92,12 +92,12 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @param newValue is new value array to be appended the attrib field.
 	 */
 	@Override
-	public void addAttrib(X3DNode[] newValue); // acceptable node types: X3DVertexAttributeNode
+	public void addAttrib(X3DNode[] newValue); // acceptable node types #3: X3DVertexAttributeNode
 	/**
 	 * Set single child attrib node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the attrib field
 	 */
-	public void setAttrib(X3DNode newValue); // acceptable node types: X3DVertexAttributeNode
+	public void setAttrib(X3DNode newValue); // acceptable node types #5: X3DVertexAttributeNode
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>ccw</i>.
 	 * <br><br>
@@ -125,7 +125,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return value of color field
 	 */
 	@Override
-	public X3DColorNode getColor(); // acceptable node types: X3DColorNode
+	public X3DColorNode getColor(); // acceptable node types #1:X3DColorNode
 
 	/**
 	 * Assign X3DColorNode instance (using a properly typed node) using RGB values [0..1] to inputOutput SFNode field <i>color</i>.
@@ -133,7 +133,15 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setColor(X3DColorNode newValue); // acceptable node types: X3DColorNode
+	public IndexedTriangleFanSet setColor(X3DColorNode newValue); // acceptable node types #2: X3DColorNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>color</i>.
+	 * @see #setColor(X3DColorNode)
+	 * @param newValue is new value for the color field.
+	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedTriangleFanSet setColor(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>colorPerVertex</i>.
@@ -164,7 +172,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return value of coord field
 	 */
 	@Override
-	public X3DCoordinateNode getCoord(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getCoord(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
@@ -172,14 +180,22 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setCoord(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public IndexedTriangleFanSet setCoord(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedTriangleFanSet setCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide FogCoordinate instance (using a properly typed node) from inputOutput SFNode field <i>fogCoord</i>.
 	 * @return value of fogCoord field
 	 */
 	@Override
-	public FogCoordinate getFogCoord(); // acceptable node types: FogCoordinate
+	public FogCoordinate getFogCoord(); // acceptable node types #1:FogCoordinate
 
 	/**
 	 * Assign FogCoordinate instance (using a properly typed node) to inputOutput SFNode field <i>fogCoord</i>.
@@ -187,7 +203,15 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setFogCoord(FogCoordinate newValue); // acceptable node types: FogCoordinate
+	public IndexedTriangleFanSet setFogCoord(FogCoordinate newValue); // acceptable node types #2: FogCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>fogCoord</i>.
+	 * @see #setFogCoord(FogCoordinate)
+	 * @param newValue is new value for the fogCoord field.
+	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedTriangleFanSet setFogCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide array of int results within allowed range of [-1,infinity) from initializeOnly MFInt32 field named <i>index</i>.
@@ -215,7 +239,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -224,14 +248,14 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public IndexedTriangleFanSet setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DNormalNode instance (using a properly typed node) from inputOutput SFNode field <i>normal</i>.
 	 * @return value of normal field
 	 */
 	@Override
-	public X3DNormalNode getNormal(); // acceptable node types: X3DNormalNode
+	public X3DNormalNode getNormal(); // acceptable node types #1:X3DNormalNode
 
 	/**
 	 * Assign X3DNormalNode instance (using a properly typed node) to inputOutput SFNode field <i>normal</i>.
@@ -239,7 +263,15 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setNormal(X3DNormalNode newValue); // acceptable node types: X3DNormalNode
+	public IndexedTriangleFanSet setNormal(X3DNormalNode newValue); // acceptable node types #2: X3DNormalNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>normal</i>.
+	 * @see #setNormal(X3DNormalNode)
+	 * @param newValue is new value for the normal field.
+	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedTriangleFanSet setNormal(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>normalPerVertex</i>.
@@ -291,7 +323,7 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return value of texCoord field
 	 */
 	@Override
-	public X3DTextureCoordinateNode getTexCoord(); // acceptable node types: X3DTextureCoordinateNode
+	public X3DTextureCoordinateNode getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode
 
 	/**
 	 * Assign X3DTextureCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
@@ -299,7 +331,15 @@ public interface IndexedTriangleFanSet extends X3DComposedGeometryNode
 	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedTriangleFanSet setTexCoord(X3DTextureCoordinateNode newValue); // acceptable node types: X3DTextureCoordinateNode
+	public IndexedTriangleFanSet setTexCoord(X3DTextureCoordinateNode newValue); // acceptable node types #2: X3DTextureCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DTextureCoordinateNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link IndexedTriangleFanSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedTriangleFanSet setTexCoord(ProtoInstance newValue);
 
 
 	/**

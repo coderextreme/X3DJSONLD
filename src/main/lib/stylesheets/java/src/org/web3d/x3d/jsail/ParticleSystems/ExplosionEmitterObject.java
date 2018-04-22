@@ -246,7 +246,7 @@ public class ExplosionEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "emitter";
+	public String containerField_DEFAULT_VALUE = "emitter";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -385,7 +385,6 @@ public class ExplosionEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

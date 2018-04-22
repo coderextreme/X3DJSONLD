@@ -220,7 +220,7 @@ public class BoundedPhysicsModelObject extends org.web3d.x3d.jsail.X3DConcreteNo
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "physics";
+	public String containerField_DEFAULT_VALUE = "physics";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -344,10 +344,29 @@ public class BoundedPhysicsModelObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			geometryProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			geometryProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
+	 * @see #setGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the geometry field.
+	 * @return {@link BoundedPhysicsModelObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BoundedPhysicsModelObject setGeometry(ProtoInstance newValue)
+	{
+		geometryProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) geometryProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (geometry != null)
+		{
+			((X3DConcreteElement) geometry).setParentObject(null); // housekeeping, clear prior object
+			geometry = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of geometry field.
 	 * @return {@link BoundedPhysicsModelObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -433,7 +452,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

@@ -107,7 +107,7 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -115,7 +115,7 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DPickSensorNode setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public X3DPickSensorNode setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of String enumeration results with quoted value(s) ["ALL","NONE","TERRAIN",...] from inputOutput MFString field named <i>objectType</i>.
@@ -137,19 +137,27 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of pickedGeometry field
 	 */
-	public X3DNode[] getPickedGeometry(); // acceptable node types: X3DChildNode
+	public X3DNode[] getPickedGeometry(); // acceptable node types #1:X3DChildNode
 	/**
 	 * Provide X3DGeometryNode instance (using a properly typed node) from inputOutput SFNode field <i>pickingGeometry</i>.
 	 * @return value of pickingGeometry field
 	 */
-	public X3DGeometryNode getPickingGeometry(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getPickingGeometry(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>pickingGeometry</i>.
 	 * @param newValue is new value for the pickingGeometry field.
 	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DPickSensorNode setPickingGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public X3DPickSensorNode setPickingGeometry(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>pickingGeometry</i>.
+	 * @see #setPickingGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the pickingGeometry field.
+	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DPickSensorNode setPickingGeometry(ProtoInstance newValue);
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
@@ -160,7 +168,7 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * @see org.web3d.x3d.jsail.Networking.InlineObject
 	 * @return value of pickTarget field
 	 */
-	public X3DNode[] getPickTarget(); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public X3DNode[] getPickTarget(); // acceptable node types #1:X3DGroupingNode|X3DShapeNode|Inline
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
@@ -169,7 +177,7 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * @param newValue is new value for the pickTarget field.
 	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DPickSensorNode setPickTarget(X3DNode[] newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public X3DPickSensorNode setPickTarget(X3DNode[] newValue); // acceptable node types #2: X3DGroupingNode|X3DShapeNode|Inline
 
 	/**
 	 * Add array of child pickTarget nodes to array of existing nodes (if any).
@@ -177,12 +185,12 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value array to be appended the pickTarget field.
 	 */
-	public void addPickTarget(X3DNode[] newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public void addPickTarget(X3DNode[] newValue); // acceptable node types #3: X3DGroupingNode|X3DShapeNode|Inline
 	/**
 	 * Set single child pickTarget node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the pickTarget field
 	 */
-	public void setPickTarget(X3DNode newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public void setPickTarget(X3DNode newValue); // acceptable node types #5: X3DGroupingNode|X3DShapeNode|Inline
 	/**
 	 * Provide String enumeration value ['ANY'|'CLOSEST'|'ALL'|'ALL_SORTED'|'etc.'] from initializeOnly SFString field named <i>sortOrder</i>.
 	 * @return value of sortOrder field

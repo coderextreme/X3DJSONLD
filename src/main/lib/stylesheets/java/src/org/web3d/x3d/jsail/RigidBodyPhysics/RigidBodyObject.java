@@ -443,7 +443,7 @@ public class RigidBodyObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "bodies";
+	public String containerField_DEFAULT_VALUE = "bodies";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -1585,10 +1585,29 @@ setAttribute method invocations).
 			massDensityModelProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			massDensityModelProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>massDensityModel</i>.
+	 * @see #setMassDensityModel(X3DNode)
+	 * @param newValue is new value for the massDensityModel field.
+	 * @return {@link RigidBodyObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public RigidBodyObject setMassDensityModel(ProtoInstance newValue)
+	{
+		massDensityModelProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) massDensityModelProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (massDensityModel != null)
+		{
+			((X3DConcreteElement) massDensityModel).setParentObject(null); // housekeeping, clear prior object
+			massDensityModel = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of massDensityModel field.
 	 * @return {@link RigidBodyObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1674,7 +1693,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

@@ -101,7 +101,7 @@ public interface ProjectionVolumeStyle extends X3DVolumeRenderStyleNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -110,7 +110,7 @@ public interface ProjectionVolumeStyle extends X3DVolumeRenderStyleNode
 	 * @return {@link ProjectionVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ProjectionVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ProjectionVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String enumeration value ['MAX'|'MIN'|'AVERAGE'] from inputOutput SFString field named <i>type</i>.

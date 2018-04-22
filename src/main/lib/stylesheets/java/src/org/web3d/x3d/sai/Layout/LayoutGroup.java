@@ -127,7 +127,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -139,7 +139,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LayoutGroup setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public LayoutGroup setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -148,12 +148,12 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide X3DLayoutNode instance (using a properly typed node) from inputOutput SFNode field <i>layout</i>.
 	 * <br><br>
@@ -161,7 +161,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 
 	 * @return value of layout field
 	 */
-	public X3DLayoutNode getLayout(); // acceptable node types: X3DLayoutNode
+	public X3DLayoutNode getLayout(); // acceptable node types #1:X3DLayoutNode
 
 	/**
 	 * Assign X3DLayoutNode instance (using a properly typed node) to inputOutput SFNode field <i>layout</i>.
@@ -170,7 +170,15 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @param newValue is new value for the layout field.
 	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public LayoutGroup setLayout(X3DLayoutNode newValue); // acceptable node types: X3DLayoutNode
+	public LayoutGroup setLayout(X3DLayoutNode newValue); // acceptable node types #2: X3DLayoutNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>layout</i>.
+	 * @see #setLayout(X3DLayoutNode)
+	 * @param newValue is new value for the layout field.
+	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LayoutGroup setLayout(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -178,7 +186,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -187,7 +195,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LayoutGroup setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public LayoutGroup setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DViewportNode instance (using a properly typed node) from inputOutput SFNode field <i>viewport</i>.
@@ -196,7 +204,7 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 
 	 * @return value of viewport field
 	 */
-	public X3DViewportNode getViewport(); // acceptable node types: X3DViewportNode
+	public X3DViewportNode getViewport(); // acceptable node types #1:X3DViewportNode
 
 	/**
 	 * Assign X3DViewportNode instance (using a properly typed node) to inputOutput SFNode field <i>viewport</i>.
@@ -205,7 +213,15 @@ public interface LayoutGroup extends X3DNode, X3DGroupingNode
 	 * @param newValue is new value for the viewport field.
 	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public LayoutGroup setViewport(X3DViewportNode newValue); // acceptable node types: X3DViewportNode
+	public LayoutGroup setViewport(X3DViewportNode newValue); // acceptable node types #2: X3DViewportNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>viewport</i>.
+	 * @see #setViewport(X3DViewportNode)
+	 * @param newValue is new value for the viewport field.
+	 * @return {@link LayoutGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LayoutGroup setViewport(ProtoInstance newValue);
 
 
 	/**

@@ -69,14 +69,22 @@ public interface CollisionSensor extends X3DSensorNode
 	 * Provide CollisionCollection instance (using a properly typed node) from inputOutput SFNode field <i>collider</i>.
 	 * @return value of collider field
 	 */
-	public CollisionCollection getCollider(); // acceptable node types: CollisionCollection
+	public CollisionCollection getCollider(); // acceptable node types #1:CollisionCollection
 
 	/**
 	 * Assign CollisionCollection instance (using a properly typed node) to inputOutput SFNode field <i>collider</i>.
 	 * @param newValue is new value for the collider field.
 	 * @return {@link CollisionSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CollisionSensor setCollider(CollisionCollection newValue); // acceptable node types: CollisionCollection
+	public CollisionSensor setCollider(CollisionCollection newValue); // acceptable node types #2: CollisionCollection
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>collider</i>.
+	 * @see #setCollider(CollisionCollection)
+	 * @param newValue is new value for the collider field.
+	 * @return {@link CollisionSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CollisionSensor setCollider(ProtoInstance newValue);
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>contacts</i>.
@@ -85,7 +93,7 @@ public interface CollisionSensor extends X3DSensorNode
 	 * @see org.web3d.x3d.jsail.RigidBodyPhysics.ContactObject
 	 * @return value of contacts field
 	 */
-	public X3DNode[] getContacts(); // acceptable node types: Contact
+	public X3DNode[] getContacts(); // acceptable node types #1:Contact
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
 	 * <br><br>
@@ -113,7 +121,7 @@ public interface CollisionSensor extends X3DSensorNode
 	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DNBodyCollidableNode
 	 * @return value of intersections field
 	 */
-	public X3DNode[] getIntersections(); // acceptable node types: X3DNBodyCollidableNode
+	public X3DNode[] getIntersections(); // acceptable node types #1:X3DNBodyCollidableNode
 	/**
 	 * Provide boolean value from outputOnly SFBool field named <i>isActive</i>.
 	 * <br><br>
@@ -131,7 +139,7 @@ public interface CollisionSensor extends X3DSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -140,7 +148,7 @@ public interface CollisionSensor extends X3DSensorNode
 	 * @return {@link CollisionSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CollisionSensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CollisionSensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

@@ -65,7 +65,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of controlPoint field
 	 */
 	@Override
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
@@ -73,7 +73,15 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsTrimmedSurface setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public NurbsTrimmedSurface setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsTrimmedSurface setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -81,7 +89,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -90,7 +98,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsTrimmedSurface setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsTrimmedSurface setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -120,7 +128,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of texCoord field
 	 */
 	@Override
-	public X3DNode getTexCoord(); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public X3DNode getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode|NurbsTextureCoordinate
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTextureCoordinateNode|NurbsTextureCoordinate, to inputOutput SFNode field <i>texCoord</i>.
@@ -128,7 +136,15 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsTrimmedSurface setTexCoord(X3DNode newValue); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public NurbsTrimmedSurface setTexCoord(X3DNode newValue); // acceptable node types #2: X3DTextureCoordinateNode|NurbsTextureCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsTrimmedSurface setTexCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>trimmingContour</i>.
@@ -137,7 +153,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @see org.web3d.x3d.jsail.NURBS.Contour2DObject
 	 * @return value of trimmingContour field
 	 */
-	public X3DNode[] getTrimmingContour(); // acceptable node types: Contour2D
+	public X3DNode[] getTrimmingContour(); // acceptable node types #1:Contour2D
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>trimmingContour</i>.
@@ -146,7 +162,7 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * @param newValue is new value for the trimmingContour field.
 	 * @return {@link NurbsTrimmedSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsTrimmedSurface setTrimmingContour(X3DNode[] newValue); // acceptable node types: Contour2D
+	public NurbsTrimmedSurface setTrimmingContour(X3DNode[] newValue); // acceptable node types #2: Contour2D
 
 	/**
 	 * Add array of child trimmingContour nodes to array of existing nodes (if any).
@@ -154,12 +170,12 @@ public interface NurbsTrimmedSurface extends X3DNurbsSurfaceGeometryNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to Contour2D.
 	 * @param newValue is new value array to be appended the trimmingContour field.
 	 */
-	public void addTrimmingContour(X3DNode[] newValue); // acceptable node types: Contour2D
+	public void addTrimmingContour(X3DNode[] newValue); // acceptable node types #3: Contour2D
 	/**
 	 * Set single child trimmingContour node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the trimmingContour field
 	 */
-	public void setTrimmingContour(X3DNode newValue); // acceptable node types: Contour2D
+	public void setTrimmingContour(X3DNode newValue); // acceptable node types #5: Contour2D
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>uClosed</i>.
 	 * <br><br>

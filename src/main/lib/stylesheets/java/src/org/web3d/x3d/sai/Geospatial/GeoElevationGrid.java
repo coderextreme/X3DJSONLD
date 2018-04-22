@@ -93,14 +93,22 @@ public interface GeoElevationGrid extends X3DGeometryNode
 	 * Provide X3DColorNode instance (using a properly typed node) using RGB values [0..1] from inputOutput SFNode field <i>color</i>.
 	 * @return value of color field
 	 */
-	public X3DColorNode getColor(); // acceptable node types: X3DColorNode
+	public X3DColorNode getColor(); // acceptable node types #1:X3DColorNode
 
 	/**
 	 * Assign X3DColorNode instance (using a properly typed node) using RGB values [0..1] to inputOutput SFNode field <i>color</i>.
 	 * @param newValue is new value for the color field.
 	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoElevationGrid setColor(X3DColorNode newValue); // acceptable node types: X3DColorNode
+	public GeoElevationGrid setColor(X3DColorNode newValue); // acceptable node types #2: X3DColorNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>color</i>.
+	 * @see #setColor(X3DColorNode)
+	 * @param newValue is new value for the color field.
+	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoElevationGrid setColor(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>colorPerVertex</i>.
@@ -165,14 +173,22 @@ public interface GeoElevationGrid extends X3DGeometryNode
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @return value of geoOrigin field
 	 */
-	public GeoOrigin getGeoOrigin(); // acceptable node types: GeoOrigin
+	public GeoOrigin getGeoOrigin(); // acceptable node types #1:GeoOrigin
 
 	/**
 	 * Assign GeoOrigin instance (using a properly typed node) (deprecated node, optional) to initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoElevationGrid setGeoOrigin(GeoOrigin newValue); // acceptable node types: GeoOrigin
+	public GeoElevationGrid setGeoOrigin(GeoOrigin newValue); // acceptable node types #2: GeoOrigin
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoElevationGrid setGeoOrigin(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>geoSystem</i>.
@@ -224,7 +240,7 @@ public interface GeoElevationGrid extends X3DGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -233,20 +249,28 @@ public interface GeoElevationGrid extends X3DGeometryNode
 	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoElevationGrid setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoElevationGrid setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DNormalNode instance (using a properly typed node) from inputOutput SFNode field <i>normal</i>.
 	 * @return value of normal field
 	 */
-	public X3DNormalNode getNormal(); // acceptable node types: X3DNormalNode
+	public X3DNormalNode getNormal(); // acceptable node types #1:X3DNormalNode
 
 	/**
 	 * Assign X3DNormalNode instance (using a properly typed node) to inputOutput SFNode field <i>normal</i>.
 	 * @param newValue is new value for the normal field.
 	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoElevationGrid setNormal(X3DNormalNode newValue); // acceptable node types: X3DNormalNode
+	public GeoElevationGrid setNormal(X3DNormalNode newValue); // acceptable node types #2: X3DNormalNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>normal</i>.
+	 * @see #setNormal(X3DNormalNode)
+	 * @param newValue is new value for the normal field.
+	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoElevationGrid setNormal(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>normalPerVertex</i>.
@@ -293,14 +317,22 @@ public interface GeoElevationGrid extends X3DGeometryNode
 	 * Provide X3DTextureCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>texCoord</i>.
 	 * @return value of texCoord field
 	 */
-	public X3DTextureCoordinateNode getTexCoord(); // acceptable node types: X3DTextureCoordinateNode
+	public X3DTextureCoordinateNode getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode
 
 	/**
 	 * Assign X3DTextureCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
 	 * @param newValue is new value for the texCoord field.
 	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoElevationGrid setTexCoord(X3DTextureCoordinateNode newValue); // acceptable node types: X3DTextureCoordinateNode
+	public GeoElevationGrid setTexCoord(X3DTextureCoordinateNode newValue); // acceptable node types #2: X3DTextureCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DTextureCoordinateNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link GeoElevationGrid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoElevationGrid setTexCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide int value within allowed range of [0,infinity) from initializeOnly SFInt32 field named <i>xDimension</i>.

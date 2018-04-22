@@ -121,7 +121,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -130,7 +130,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	 * @return {@link ComposedShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ComposedShader setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ComposedShader setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>parts</i>.
@@ -139,7 +139,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	 * @see org.web3d.x3d.jsail.Shaders.ShaderPartObject
 	 * @return value of parts field
 	 */
-	public X3DNode[] getParts(); // acceptable node types: ShaderPart
+	public X3DNode[] getParts(); // acceptable node types #1:ShaderPart
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>parts</i>.
@@ -148,7 +148,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	 * @param newValue is new value for the parts field.
 	 * @return {@link ComposedShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedShader setParts(X3DNode[] newValue); // acceptable node types: ShaderPart
+	public ComposedShader setParts(X3DNode[] newValue); // acceptable node types #2: ShaderPart
 
 	/**
 	 * Add array of child parts nodes to array of existing nodes (if any).
@@ -156,12 +156,12 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderPart.
 	 * @param newValue is new value array to be appended the parts field.
 	 */
-	public void addParts(X3DNode[] newValue); // acceptable node types: ShaderPart
+	public void addParts(X3DNode[] newValue); // acceptable node types #3: ShaderPart
 	/**
 	 * Set single child parts node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the parts field
 	 */
-	public void setParts(X3DNode newValue); // acceptable node types: ShaderPart
+	public void setParts(X3DNode newValue); // acceptable node types #5: ShaderPart
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

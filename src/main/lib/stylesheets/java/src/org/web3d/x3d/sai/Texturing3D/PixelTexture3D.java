@@ -83,7 +83,7 @@ public interface PixelTexture3D extends X3DTexture3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -92,7 +92,7 @@ public interface PixelTexture3D extends X3DTexture3DNode
 	 * @return {@link PixelTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public PixelTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public PixelTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatR</i>.
@@ -159,7 +159,7 @@ public interface PixelTexture3D extends X3DTexture3DNode
 	 * @return value of textureProperties field
 	 */
 	@Override
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
@@ -167,7 +167,15 @@ public interface PixelTexture3D extends X3DTexture3DNode
 	 * @return {@link PixelTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public PixelTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public PixelTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link PixelTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public PixelTexture3D setTextureProperties(ProtoInstance newValue);
 
 
 	/**

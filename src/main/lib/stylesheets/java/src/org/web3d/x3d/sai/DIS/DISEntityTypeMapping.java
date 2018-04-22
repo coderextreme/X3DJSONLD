@@ -161,7 +161,7 @@ public interface DISEntityTypeMapping extends X3DInfoNode, X3DUrlObject
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -170,7 +170,7 @@ public interface DISEntityTypeMapping extends X3DInfoNode, X3DUrlObject
 	 * @return {@link DISEntityTypeMapping} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public DISEntityTypeMapping setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public DISEntityTypeMapping setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide int value within allowed range of [0,255] from initializeOnly SFInt32 field named <i>specific</i>.

@@ -112,7 +112,7 @@ public interface ConeEmitter extends X3DParticleEmitterNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -121,7 +121,7 @@ public interface ConeEmitter extends X3DParticleEmitterNode
 	 * @return {@link ConeEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ConeEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ConeEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>position</i>.

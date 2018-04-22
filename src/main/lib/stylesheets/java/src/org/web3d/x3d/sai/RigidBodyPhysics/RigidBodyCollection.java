@@ -87,7 +87,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @see org.web3d.x3d.jsail.RigidBodyPhysics.RigidBodyObject
 	 * @return value of bodies field
 	 */
-	public X3DNode[] getBodies(); // acceptable node types: RigidBody
+	public X3DNode[] getBodies(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>bodies</i>.
@@ -96,7 +96,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @param newValue is new value for the bodies field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public RigidBodyCollection setBodies(X3DNode[] newValue); // acceptable node types: RigidBody
+	public RigidBodyCollection setBodies(X3DNode[] newValue); // acceptable node types #2: RigidBody
 
 	/**
 	 * Add array of child bodies nodes to array of existing nodes (if any).
@@ -104,24 +104,32 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to RigidBody.
 	 * @param newValue is new value array to be appended the bodies field.
 	 */
-	public void addBodies(X3DNode[] newValue); // acceptable node types: RigidBody
+	public void addBodies(X3DNode[] newValue); // acceptable node types #3: RigidBody
 	/**
 	 * Set single child bodies node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the bodies field
 	 */
-	public void setBodies(X3DNode newValue); // acceptable node types: RigidBody
+	public void setBodies(X3DNode newValue); // acceptable node types #5: RigidBody
 	/**
 	 * Provide CollisionCollection instance (using a properly typed node) from initializeOnly SFNode field <i>collider</i>.
 	 * @return value of collider field
 	 */
-	public CollisionCollection getCollider(); // acceptable node types: CollisionCollection
+	public CollisionCollection getCollider(); // acceptable node types #1:CollisionCollection
 
 	/**
 	 * Assign CollisionCollection instance (using a properly typed node) to initializeOnly SFNode field <i>collider</i>.
 	 * @param newValue is new value for the collider field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public RigidBodyCollection setCollider(CollisionCollection newValue); // acceptable node types: CollisionCollection
+	public RigidBodyCollection setCollider(CollisionCollection newValue); // acceptable node types #2: CollisionCollection
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>collider</i>.
+	 * @see #setCollider(CollisionCollection)
+	 * @param newValue is new value for the collider field.
+	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public RigidBodyCollection setCollider(ProtoInstance newValue);
 
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>constantForceMix</i>.
@@ -302,7 +310,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DRigidJointNode
 	 * @return value of joints field
 	 */
-	public X3DNode[] getJoints(); // acceptable node types: X3DRigidJointNode
+	public X3DNode[] getJoints(); // acceptable node types #1:X3DRigidJointNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>joints</i>.
@@ -311,7 +319,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @param newValue is new value for the joints field.
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public RigidBodyCollection setJoints(X3DNode[] newValue); // acceptable node types: X3DRigidJointNode
+	public RigidBodyCollection setJoints(X3DNode[] newValue); // acceptable node types #2: X3DRigidJointNode
 
 	/**
 	 * Add array of child joints nodes to array of existing nodes (if any).
@@ -319,12 +327,12 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DRigidJointNode.
 	 * @param newValue is new value array to be appended the joints field.
 	 */
-	public void addJoints(X3DNode[] newValue); // acceptable node types: X3DRigidJointNode
+	public void addJoints(X3DNode[] newValue); // acceptable node types #3: X3DRigidJointNode
 	/**
 	 * Set single child joints node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the joints field
 	 */
-	public void setJoints(X3DNode newValue); // acceptable node types: X3DRigidJointNode
+	public void setJoints(X3DNode newValue); // acceptable node types #5: X3DRigidJointNode
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>maxCorrectionSpeed</i>.
 	 * <br><br>
@@ -349,7 +357,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -358,7 +366,7 @@ public interface RigidBodyCollection extends X3DChildNode
 	 * @return {@link RigidBodyCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public RigidBodyCollection setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public RigidBodyCollection setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>preferAccuracy</i>.

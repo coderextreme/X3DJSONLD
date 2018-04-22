@@ -66,7 +66,7 @@ public interface PolylineEmitter extends X3DParticleEmitterNode
  * </ul>
 	 * @return value of coord field
 	 */
-	public X3DCoordinateNode getCoord(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getCoord(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
@@ -75,7 +75,15 @@ public interface PolylineEmitter extends X3DParticleEmitterNode
 	 * @param newValue is new value for the coord field.
 	 * @return {@link PolylineEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public PolylineEmitter setCoord(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public PolylineEmitter setCoord(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link PolylineEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public PolylineEmitter setCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide array of int results within allowed range of [-1,infinity) from initializeOnly MFInt32 field named <i>coordIndex</i>.
@@ -144,7 +152,7 @@ public interface PolylineEmitter extends X3DParticleEmitterNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -153,7 +161,7 @@ public interface PolylineEmitter extends X3DParticleEmitterNode
 	 * @return {@link PolylineEmitter} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public PolylineEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public PolylineEmitter setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>speed</i>.

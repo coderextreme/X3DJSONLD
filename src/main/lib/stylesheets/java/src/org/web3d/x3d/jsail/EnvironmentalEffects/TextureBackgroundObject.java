@@ -323,7 +323,7 @@ public class TextureBackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -483,10 +483,29 @@ public class TextureBackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode
 			backTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			backTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>backTexture</i>.
+	 * @see #setBackTexture(X3DNode)
+	 * @param newValue is new value for the backTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setBackTexture(ProtoInstance newValue)
+	{
+		backTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) backTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (backTexture != null)
+		{
+			((X3DConcreteElement) backTexture).setParentObject(null); // housekeeping, clear prior object
+			backTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of backTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -596,10 +615,29 @@ setAttribute method invocations).
 			bottomTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			bottomTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>bottomTexture</i>.
+	 * @see #setBottomTexture(X3DNode)
+	 * @param newValue is new value for the bottomTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setBottomTexture(ProtoInstance newValue)
+	{
+		bottomTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) bottomTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (bottomTexture != null)
+		{
+			((X3DConcreteElement) bottomTexture).setParentObject(null); // housekeeping, clear prior object
+			bottomTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of bottomTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -695,10 +733,29 @@ setAttribute method invocations).
 			frontTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			frontTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>frontTexture</i>.
+	 * @see #setFrontTexture(X3DNode)
+	 * @param newValue is new value for the frontTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setFrontTexture(ProtoInstance newValue)
+	{
+		frontTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) frontTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (frontTexture != null)
+		{
+			((X3DConcreteElement) frontTexture).setParentObject(null); // housekeeping, clear prior object
+			frontTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of frontTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -977,10 +1034,29 @@ setAttribute method invocations).
 			leftTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			leftTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>leftTexture</i>.
+	 * @see #setLeftTexture(X3DNode)
+	 * @param newValue is new value for the leftTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setLeftTexture(ProtoInstance newValue)
+	{
+		leftTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) leftTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (leftTexture != null)
+		{
+			((X3DConcreteElement) leftTexture).setParentObject(null); // housekeeping, clear prior object
+			leftTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of leftTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1067,7 +1143,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -1168,10 +1243,29 @@ setAttribute method invocations).
 			rightTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			rightTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>rightTexture</i>.
+	 * @see #setRightTexture(X3DNode)
+	 * @param newValue is new value for the rightTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setRightTexture(ProtoInstance newValue)
+	{
+		rightTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) rightTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (rightTexture != null)
+		{
+			((X3DConcreteElement) rightTexture).setParentObject(null); // housekeeping, clear prior object
+			rightTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of rightTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1435,10 +1529,29 @@ setAttribute method invocations).
 			topTextureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			topTextureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>topTexture</i>.
+	 * @see #setTopTexture(X3DNode)
+	 * @param newValue is new value for the topTexture field.
+	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackgroundObject setTopTexture(ProtoInstance newValue)
+	{
+		topTextureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) topTextureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (topTexture != null)
+		{
+			((X3DConcreteElement) topTexture).setParentObject(null); // housekeeping, clear prior object
+			topTexture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of topTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

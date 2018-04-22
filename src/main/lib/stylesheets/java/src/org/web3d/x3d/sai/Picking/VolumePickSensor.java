@@ -146,7 +146,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -155,7 +155,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return {@link VolumePickSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public VolumePickSensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public VolumePickSensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of String enumeration results with quoted value(s) ["ALL","NONE","TERRAIN",...] from inputOutput MFString field named <i>objectType</i>.
@@ -193,7 +193,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return value of pickedGeometry field
 	 */
 	@Override
-	public X3DNode[] getPickedGeometry(); // acceptable node types: X3DChildNode
+	public X3DNode[] getPickedGeometry(); // acceptable node types #1:X3DChildNode
 	/**
 	 * Provide X3DGeometryNode instance (using a properly typed node) from inputOutput SFNode field <i>pickingGeometry</i>.
 	 * <br><br>
@@ -202,7 +202,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return value of pickingGeometry field
 	 */
 	@Override
-	public X3DGeometryNode getPickingGeometry(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getPickingGeometry(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>pickingGeometry</i>.
@@ -212,7 +212,15 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return {@link VolumePickSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public VolumePickSensor setPickingGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public VolumePickSensor setPickingGeometry(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>pickingGeometry</i>.
+	 * @see #setPickingGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the pickingGeometry field.
+	 * @return {@link VolumePickSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public VolumePickSensor setPickingGeometry(ProtoInstance newValue);
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
@@ -227,7 +235,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return value of pickTarget field
 	 */
 	@Override
-	public X3DNode[] getPickTarget(); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public X3DNode[] getPickTarget(); // acceptable node types #1:X3DGroupingNode|X3DShapeNode|Inline
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
@@ -239,7 +247,7 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @return {@link VolumePickSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public VolumePickSensor setPickTarget(X3DNode[] newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public VolumePickSensor setPickTarget(X3DNode[] newValue); // acceptable node types #2: X3DGroupingNode|X3DShapeNode|Inline
 
 	/**
 	 * Add array of child pickTarget nodes to array of existing nodes (if any).
@@ -248,12 +256,12 @@ public interface VolumePickSensor extends X3DPickSensorNode
 	 * @param newValue is new value array to be appended the pickTarget field.
 	 */
 	@Override
-	public void addPickTarget(X3DNode[] newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public void addPickTarget(X3DNode[] newValue); // acceptable node types #3: X3DGroupingNode|X3DShapeNode|Inline
 	/**
 	 * Set single child pickTarget node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the pickTarget field
 	 */
-	public void setPickTarget(X3DNode newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
+	public void setPickTarget(X3DNode newValue); // acceptable node types #5: X3DGroupingNode|X3DShapeNode|Inline
 	/**
 	 * Provide String enumeration value ['ANY'|'CLOSEST'|'ALL'|'ALL_SORTED'|'etc.'] from initializeOnly SFString field named <i>sortOrder</i>.
 	 * <br><br>

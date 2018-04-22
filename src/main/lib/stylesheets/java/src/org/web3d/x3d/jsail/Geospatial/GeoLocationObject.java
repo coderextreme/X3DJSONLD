@@ -297,7 +297,7 @@ public class GeoLocationObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -783,10 +783,29 @@ setAttribute method invocations).
 			geoOriginProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			geoOriginProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoLocationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoLocationObject setGeoOrigin(ProtoInstance newValue)
+	{
+		geoOriginProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) geoOriginProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (geoOrigin != null)
+		{
+			((X3DConcreteElement) geoOrigin).setParentObject(null); // housekeeping, clear prior object
+			geoOrigin = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of geoOrigin field.
 	 * @return {@link GeoLocationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1004,7 +1023,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

@@ -87,7 +87,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
  * </ul>
 	 * @return value of geometry field
 	 */
-	public X3DGeometryNode getGeometry(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getGeometry(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
@@ -96,7 +96,15 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link BoundedPhysicsModel} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public BoundedPhysicsModel setGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public BoundedPhysicsModel setGeometry(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
+	 * @see #setGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the geometry field.
+	 * @return {@link BoundedPhysicsModel} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BoundedPhysicsModel setGeometry(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -104,7 +112,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -113,7 +121,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 	 * @return {@link BoundedPhysicsModel} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public BoundedPhysicsModel setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public BoundedPhysicsModel setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

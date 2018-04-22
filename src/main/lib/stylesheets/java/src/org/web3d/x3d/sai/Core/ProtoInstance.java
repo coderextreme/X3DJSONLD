@@ -73,7 +73,7 @@ public interface ProtoInstance extends X3DPrototypeInstance, X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -82,7 +82,7 @@ public interface ProtoInstance extends X3DPrototypeInstance, X3DChildNode
 	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ProtoInstance setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ProtoInstance setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.

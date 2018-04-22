@@ -94,7 +94,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
 <span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">6 September 2016</span>'/&gt;
 </span><br />
 
-<span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">31 January 2018</span>'/&gt;
+<span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">21 April 2018</span>'/&gt;
 </span><br />
 
 <span title="meta 'generator' provides name of authoring tool or translation tool producing this scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D Java Scene Access Interface Library (X3DJSAIL)</span>'/&gt;
@@ -234,11 +234,11 @@ https://savage.nps.edu/X3dValidator?url=<a href="http://www.web3d.org/specificat
                   class="idName">OrbitClock</a>,
 <a title="go to this Shape node" href="#ProxyShape" class="idName">ProxyShape</a>,
 <a title="go to this LayerSet node"
-                  href="#scene.addChildLayerSetObjectTest"
-                  class="idName">scene.addChildLayerSetObjectTest</a>,
+                  href="#scene.addChildLayerSetTest"
+                  class="idName">scene.addChildLayerSetTest</a>,
 <a title="go to this MetadataString node"
-                  href="#scene.addChildMetadataObject"
-                  class="idName">scene.addChildMetadataObject</a>,
+                  href="#scene.addChildMetadata"
+                  class="idName">scene.addChildMetadata</a>,
 <a title="go to this TimeSensor node" href="#SpinClock" class="idName">SpinClock</a>,
 <a title="go to this OrientationInterpolator node"
                   href="#SpinInterpolator"
@@ -303,11 +303,11 @@ https://savage.nps.edu/X3dValidator?url=<a href="http://www.web3d.org/specificat
                   href="#WorldInfoDEF"
                   class="idName">WorldInfoDEF</a>'/&gt;
 </span><br />
-<a name="scene.addChildMetadataObject"> </a> 
-&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildMetadataObject</span>'&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&#160;<span class="attribute">name</span>='<span class="value">test</span>'&#160;<span class="attribute">value</span>='<span class="value">"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"</span>'/&gt;
+<a name="scene.addChildMetadata"> </a> 
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildMetadata</span>'&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&#160;<span class="attribute">name</span>='<span class="value">test</span>'&#160;<span class="attribute">value</span>='<span class="value">"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"</span>'/&gt;
 <br />
-<a name="scene.addChildLayerSetObjectTest"> </a> 
-&lt;<span class="element">LayerSet</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildLayerSetObjectTest</span>'&#160;<span class="attribute">containerField</span>='<span class="value">children</span>'/&gt;
+<a name="scene.addChildLayerSetTest"> </a> 
+&lt;<span class="element">LayerSet</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildLayerSetTest</span>'&#160;<span class="attribute">containerField</span>='<span class="value">children</span>'/&gt;
 <br />
 <a name="LogoGeometryTransform"> </a> 
 <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">LogoGeometryTransform</span> node:&#160;
@@ -354,6 +354,9 @@ https://savage.nps.edu/X3dValidator?url=<a href="http://www.web3d.org/specificat
 
 <span title="IndexedLineSet is a geometry node">&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">coordIndex</span>='<span class="value">0 1 2 3 4 0</span>'&gt;
 </span><div class="indent">
+                     <span title="XML comment">&lt;!-- Coordinate 3-tuple point count: 6 --&gt;</span>
+<br />
+
 <span title="Coordinate defines a set of 3D coordinate triplet values">&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">point</span>='<span class="value">0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0</span>'/&gt;
 </span></div><span title="IndexedLineSet is a geometry node">&lt;/<span class="element">IndexedLineSet</span>&gt;
 </span></div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
@@ -432,12 +435,13 @@ https://savage.nps.edu/X3dValidator?url=<a href="http://www.web3d.org/specificat
 <a name="ProxyShape"> </a> 
 <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ProxyShape</span>'&#160;<span class="attribute">containerField</span>='<span class="value">proxy</span>'&gt;
 </span><div class="indent">
-                        <span title="XML comment">&lt;!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&amp;quot;Immel did it!\&amp;quot;"' --&gt;</span>
-<br /><span title="XML comment">&lt;!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) --&gt;</span>
+                        <span title="XML comment">&lt;!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&amp;quot;Immel did it!\&amp;quot;"' --&gt;</span>
+<br /><span title="XML comment">&lt;!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&amp;quot;Immel did it!\&amp;quot;" ""' --&gt;</span>
+<br /><span title="XML comment">&lt;!-- alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \"Immel did it!\""}) --&gt;</span>
 <br /><span title="XML comment">&lt;!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html --&gt;</span>
 <br />
 
-<span title="Text is a geometry primitive node">&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"One, Two, Three" "" "He said, \"Immel did it!\""</span>'/&gt;
+<span title="Text is a geometry primitive node">&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"One, Two, Text" "" "He said, \"Immel did it!\" \"\""</span>'/&gt;
 </span></div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
 </span></div><span title="Collision detects camera-to-object contact using current view and NavigationInfo avatarSize">&lt;/<span class="element">Collision</span>&gt;
 </span><br /><span title="XML comment">&lt;!-- It's a beautiful world --&gt;</span>
@@ -1037,11 +1041,11 @@ function clockTrigger (timeValue)
                class="idName">OrbitClock</a>,
 <a title="go to this Shape node" href="#ProxyShape" class="idName">ProxyShape</a>,
 <a title="go to this LayerSet node"
-               href="#scene.addChildLayerSetObjectTest"
-               class="idName">scene.addChildLayerSetObjectTest</a>,
+               href="#scene.addChildLayerSetTest"
+               class="idName">scene.addChildLayerSetTest</a>,
 <a title="go to this MetadataString node"
-               href="#scene.addChildMetadataObject"
-               class="idName">scene.addChildMetadataObject</a>,
+               href="#scene.addChildMetadata"
+               class="idName">scene.addChildMetadata</a>,
 <a title="go to this TimeSensor node" href="#SpinClock" class="idName">SpinClock</a>,
 <a title="go to this OrientationInterpolator node"
                href="#SpinInterpolator"

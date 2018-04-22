@@ -105,7 +105,7 @@ public interface GeoOrigin extends X3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -114,7 +114,7 @@ public interface GeoOrigin extends X3DNode
 	 * @return {@link GeoOrigin} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoOrigin setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoOrigin setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>rotateYUp</i>.

@@ -303,7 +303,7 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -627,10 +627,29 @@ public class IsoSurfaceVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteN
 			gradientsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			gradientsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>gradients</i>.
+	 * @see #setGradients(X3DTexture3DNode)
+	 * @param newValue is new value for the gradients field.
+	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IsoSurfaceVolumeDataObject setGradients(ProtoInstance newValue)
+	{
+		gradientsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) gradientsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (gradients != null)
+		{
+			((X3DConcreteElement) gradients).setParentObject(null); // housekeeping, clear prior object
+			gradients = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of gradients field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -716,7 +735,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -1112,10 +1130,29 @@ setAttribute method invocations).
 			voxelsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			voxelsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IsoSurfaceVolumeDataObject setVoxels(ProtoInstance newValue)
+	{
+		voxelsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) voxelsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (voxels != null)
+		{
+			((X3DConcreteElement) voxels).setParentObject(null); // housekeeping, clear prior object
+			voxels = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of voxels field.
 	 * @return {@link IsoSurfaceVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

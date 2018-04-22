@@ -243,7 +243,7 @@ public class GeneratedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcre
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "texture";
+	public String containerField_DEFAULT_VALUE = "texture";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -317,7 +317,6 @@ public class GeneratedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcre
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -450,10 +449,29 @@ setAttribute method invocations).
 			texturePropertiesProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			texturePropertiesProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link GeneratedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeneratedCubeMapTextureObject setTextureProperties(ProtoInstance newValue)
+	{
+		texturePropertiesProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) texturePropertiesProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (textureProperties != null)
+		{
+			((X3DConcreteElement) textureProperties).setParentObject(null); // housekeeping, clear prior object
+			textureProperties = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of textureProperties field.
 	 * @return {@link GeneratedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

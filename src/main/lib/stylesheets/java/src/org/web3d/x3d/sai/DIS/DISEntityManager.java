@@ -110,7 +110,7 @@ public interface DISEntityManager extends X3DChildNode
 	 * @see org.web3d.x3d.jsail.DIS.DISEntityTypeMappingObject
 	 * @return value of mapping field
 	 */
-	public X3DNode[] getMapping(); // acceptable node types: DISEntityTypeMapping
+	public X3DNode[] getMapping(); // acceptable node types #1:DISEntityTypeMapping
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>mapping</i>.
@@ -119,7 +119,7 @@ public interface DISEntityManager extends X3DChildNode
 	 * @param newValue is new value for the mapping field.
 	 * @return {@link DISEntityManager} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public DISEntityManager setMapping(X3DNode[] newValue); // acceptable node types: DISEntityTypeMapping
+	public DISEntityManager setMapping(X3DNode[] newValue); // acceptable node types #2: DISEntityTypeMapping
 
 	/**
 	 * Add array of child mapping nodes to array of existing nodes (if any).
@@ -127,19 +127,19 @@ public interface DISEntityManager extends X3DChildNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to DISEntityTypeMapping.
 	 * @param newValue is new value array to be appended the mapping field.
 	 */
-	public void addMapping(X3DNode[] newValue); // acceptable node types: DISEntityTypeMapping
+	public void addMapping(X3DNode[] newValue); // acceptable node types #3: DISEntityTypeMapping
 	/**
 	 * Set single child mapping node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the mapping field
 	 */
-	public void setMapping(X3DNode newValue); // acceptable node types: DISEntityTypeMapping
+	public void setMapping(X3DNode newValue); // acceptable node types #5: DISEntityTypeMapping
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -148,7 +148,7 @@ public interface DISEntityManager extends X3DChildNode
 	 * @return {@link DISEntityManager} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public DISEntityManager setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public DISEntityManager setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide int value from inputOutput SFInt32 field named <i>port</i>.

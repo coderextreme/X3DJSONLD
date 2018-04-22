@@ -43,7 +43,7 @@ Warning: toFileStylesheetConversion(X3dToJson.xslt) is overwriting prior file ./
         <meta content="../license.html" name="license"/>
         <meta
             content="tested sat: name value cannot contain embedded space character" name="SpecialTest"/>
-        <meta content="16 April 2018" name="translated"/>
+        <meta content="09 April 2018" name="translated"/>
         <meta
             content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html" name="generator"/>
         <meta

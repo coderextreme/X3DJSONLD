@@ -353,7 +353,7 @@ public class BlendedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "renderStyle";
+	public String containerField_DEFAULT_VALUE = "renderStyle";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -520,7 +520,6 @@ public class BlendedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNod
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -610,10 +609,29 @@ setAttribute method invocations).
 			renderStyleProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			renderStyleProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
+	 * @see #setRenderStyle(X3DComposableVolumeRenderStyleNode)
+	 * @param newValue is new value for the renderStyle field.
+	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyleObject setRenderStyle(ProtoInstance newValue)
+	{
+		renderStyleProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) renderStyleProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (renderStyle != null)
+		{
+			((X3DConcreteElement) renderStyle).setParentObject(null); // housekeeping, clear prior object
+			renderStyle = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of renderStyle field.
 	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -697,10 +715,29 @@ setAttribute method invocations).
 			voxelsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			voxelsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyleObject setVoxels(ProtoInstance newValue)
+	{
+		voxelsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) voxelsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (voxels != null)
+		{
+			((X3DConcreteElement) voxels).setParentObject(null); // housekeeping, clear prior object
+			voxels = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of voxels field.
 	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1004,10 +1041,29 @@ setAttribute method invocations).
 			weightTransferFunction1ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			weightTransferFunction1ProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction1</i>.
+	 * @see #setWeightTransferFunction1(X3DTexture2DNode)
+	 * @param newValue is new value for the weightTransferFunction1 field.
+	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyleObject setWeightTransferFunction1(ProtoInstance newValue)
+	{
+		weightTransferFunction1ProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) weightTransferFunction1ProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (weightTransferFunction1 != null)
+		{
+			((X3DConcreteElement) weightTransferFunction1).setParentObject(null); // housekeeping, clear prior object
+			weightTransferFunction1 = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of weightTransferFunction1 field.
 	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1091,10 +1147,29 @@ setAttribute method invocations).
 			weightTransferFunction2ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			weightTransferFunction2ProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction2</i>.
+	 * @see #setWeightTransferFunction2(X3DTexture2DNode)
+	 * @param newValue is new value for the weightTransferFunction2 field.
+	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyleObject setWeightTransferFunction2(ProtoInstance newValue)
+	{
+		weightTransferFunction2ProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) weightTransferFunction2ProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (weightTransferFunction2 != null)
+		{
+			((X3DConcreteElement) weightTransferFunction2).setParentObject(null); // housekeeping, clear prior object
+			weightTransferFunction2 = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of weightTransferFunction2 field.
 	 * @return {@link BlendedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

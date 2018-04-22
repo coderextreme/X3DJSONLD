@@ -276,7 +276,7 @@ public class LineSetObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "geometry";
+	public String containerField_DEFAULT_VALUE = "geometry";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -532,10 +532,29 @@ setAttribute method invocations).
 			colorProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			colorProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>color</i>.
+	 * @see #setColor(X3DColorNode)
+	 * @param newValue is new value for the color field.
+	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LineSetObject setColor(ProtoInstance newValue)
+	{
+		colorProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) colorProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (color != null)
+		{
+			((X3DConcreteElement) color).setParentObject(null); // housekeeping, clear prior object
+			color = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of color field.
 	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -619,10 +638,29 @@ setAttribute method invocations).
 			coordProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			coordProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LineSetObject setCoord(ProtoInstance newValue)
+	{
+		coordProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) coordProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (coord != null)
+		{
+			((X3DConcreteElement) coord).setParentObject(null); // housekeeping, clear prior object
+			coord = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of coord field.
 	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -706,10 +744,29 @@ setAttribute method invocations).
 			fogCoordProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			fogCoordProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>fogCoord</i>.
+	 * @see #setFogCoord(FogCoordinate)
+	 * @param newValue is new value for the fogCoord field.
+	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LineSetObject setFogCoord(ProtoInstance newValue)
+	{
+		fogCoordProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) fogCoordProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (fogCoord != null)
+		{
+			((X3DConcreteElement) fogCoord).setParentObject(null); // housekeeping, clear prior object
+			fogCoord = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of fogCoord field.
 	 * @return {@link LineSetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -795,7 +852,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

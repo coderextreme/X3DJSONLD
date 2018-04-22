@@ -119,14 +119,22 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>gradients</i>.
 	 * @return value of gradients field
 	 */
-	public X3DTexture3DNode getGradients(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getGradients(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>gradients</i>.
 	 * @param newValue is new value for the gradients field.
 	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IsoSurfaceVolumeData setGradients(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public IsoSurfaceVolumeData setGradients(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>gradients</i>.
+	 * @see #setGradients(X3DTexture3DNode)
+	 * @param newValue is new value for the gradients field.
+	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IsoSurfaceVolumeData setGradients(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -134,7 +142,7 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -143,7 +151,7 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IsoSurfaceVolumeData setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public IsoSurfaceVolumeData setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>renderStyle</i>.
@@ -152,7 +160,7 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * @see org.web3d.x3d.sai.VolumeRendering.X3DVolumeRenderStyleNode
 	 * @return value of renderStyle field
 	 */
-	public X3DNode[] getRenderStyle(); // acceptable node types: X3DVolumeRenderStyleNode
+	public X3DNode[] getRenderStyle(); // acceptable node types #1:X3DVolumeRenderStyleNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>renderStyle</i>.
@@ -161,7 +169,7 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * @param newValue is new value for the renderStyle field.
 	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IsoSurfaceVolumeData setRenderStyle(X3DNode[] newValue); // acceptable node types: X3DVolumeRenderStyleNode
+	public IsoSurfaceVolumeData setRenderStyle(X3DNode[] newValue); // acceptable node types #2: X3DVolumeRenderStyleNode
 
 	/**
 	 * Add array of child renderStyle nodes to array of existing nodes (if any).
@@ -169,12 +177,12 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVolumeRenderStyleNode.
 	 * @param newValue is new value array to be appended the renderStyle field.
 	 */
-	public void addRenderStyle(X3DNode[] newValue); // acceptable node types: X3DVolumeRenderStyleNode
+	public void addRenderStyle(X3DNode[] newValue); // acceptable node types #3: X3DVolumeRenderStyleNode
 	/**
 	 * Set single child renderStyle node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the renderStyle field
 	 */
-	public void setRenderStyle(X3DNode newValue); // acceptable node types: X3DVolumeRenderStyleNode
+	public void setRenderStyle(X3DNode newValue); // acceptable node types #5: X3DVolumeRenderStyleNode
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>surfaceTolerance</i>.
 	 * @return value of surfaceTolerance field
@@ -205,14 +213,22 @@ public interface IsoSurfaceVolumeData extends X3DVolumeDataNode
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>voxels</i>.
 	 * @return value of voxels field
 	 */
-	public X3DTexture3DNode getVoxels(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getVoxels(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
 	 * @param newValue is new value for the voxels field.
 	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IsoSurfaceVolumeData setVoxels(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public IsoSurfaceVolumeData setVoxels(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link IsoSurfaceVolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IsoSurfaceVolumeData setVoxels(ProtoInstance newValue);
 
 
 	/**

@@ -1,4 +1,4 @@
-## Model Metadata HelloWorldProgramOutput.x3d
+## Model Metadata for HelloWorldProgramOutput.x3d
 
 | attribute     | value       |
 | ------------: | :---------- |
@@ -7,9 +7,9 @@
 | `reference` | [http://www.web3d.org/specifications/java/X3DJSAIL.html](http://www.web3d.org/specifications/java/X3DJSAIL.html) |
 | `generator` | HelloWorldProgramOutput.java |
 | `created` | 6 September 2016 |
-| `modified` | 31 January 2018 |
+| `modified` | 21 April 2018 |
 | `generator` | X3D Java Scene Access Interface Library (X3DJSAIL) |
-| `generator` | http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java |
+| `generator` | [http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java](http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java) |
 | `generator` | Netbeans http://www.netbeans.org |
 | `creator` | Don Brutzman |
 | `reference` | [https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d](https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d) |

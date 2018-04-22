@@ -251,7 +251,7 @@ public class ProtoInstanceObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	/** Constructor for ProtoInstanceObject to initialize member variables with default values. */
 	public ProtoInstanceObject()
@@ -383,7 +383,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

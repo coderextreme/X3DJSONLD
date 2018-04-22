@@ -210,7 +210,7 @@ public interface CylinderSensor extends X3DDragSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -219,7 +219,7 @@ public interface CylinderSensor extends X3DDragSensorNode
 	 * @return {@link CylinderSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CylinderSensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CylinderSensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value unit axis, angle (in radians) within allowed range of (-6.2832,6.2832) from inputOutput SFFloat field named <i>minAngle</i>.

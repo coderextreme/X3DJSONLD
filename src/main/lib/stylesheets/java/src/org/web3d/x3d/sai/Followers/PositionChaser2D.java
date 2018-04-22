@@ -131,7 +131,7 @@ public interface PositionChaser2D extends X3DChaserNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -140,7 +140,7 @@ public interface PositionChaser2D extends X3DChaserNode
 	 * @return {@link PositionChaser2D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public PositionChaser2D setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public PositionChaser2D setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 2-tuple float results from outputOnly SFVec2f field named <i>value_changed</i>.
