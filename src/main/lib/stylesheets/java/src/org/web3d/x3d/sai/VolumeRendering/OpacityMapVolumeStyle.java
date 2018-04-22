@@ -82,7 +82,7 @@ public interface OpacityMapVolumeStyle extends X3DComposableVolumeRenderStyleNod
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -91,20 +91,28 @@ public interface OpacityMapVolumeStyle extends X3DComposableVolumeRenderStyleNod
 	 * @return {@link OpacityMapVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public OpacityMapVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public OpacityMapVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|X3DTexture3DNode, from inputOutput SFNode field <i>transferFunction</i>.
 	 * @return value of transferFunction field
 	 */
-	public X3DNode getTransferFunction(); // acceptable node types: X3DTexture2DNode|X3DTexture3DNode
+	public X3DNode getTransferFunction(); // acceptable node types #1:X3DTexture2DNode|X3DTexture3DNode
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|X3DTexture3DNode, to inputOutput SFNode field <i>transferFunction</i>.
 	 * @param newValue is new value for the transferFunction field.
 	 * @return {@link OpacityMapVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public OpacityMapVolumeStyle setTransferFunction(X3DNode newValue); // acceptable node types: X3DTexture2DNode|X3DTexture3DNode
+	public OpacityMapVolumeStyle setTransferFunction(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>transferFunction</i>.
+	 * @see #setTransferFunction(X3DNode)
+	 * @param newValue is new value for the transferFunction field.
+	 * @return {@link OpacityMapVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public OpacityMapVolumeStyle setTransferFunction(ProtoInstance newValue);
 
 
 	/**

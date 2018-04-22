@@ -1213,7 +1213,7 @@ and
 		</sequential>
 	</macrodef>
 
-   <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
+   <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >
 		<echo message="==========================================="/>
         <echo message="translation input: test/text.x3d"/>
         <echo message="..expected output: test/text.json"/>
@@ -1260,7 +1260,23 @@ and
 		-->
     </target>
     
-    <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
+    <target name="test.X3dToJava.xslt" depends="test.mkdir" description="Test X3dToJava.xslt stylesheet using Saxon" >
+        <echo message="==========================================="/>
+        <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
+        <echo message="..expected output: test/HelloWorldProgramOutput.java"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <!-- <arg value="-t"/>  timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
+            <arg value="-o:test/HelloWorldProgramOutput.java"/> <!-- output-doc -->
+            <arg value="-s:test/HelloWorldProgramOutput.x3d"/>  <!-- source-doc -->
+            <arg value="-xsl:X3dToJava.xslt"/> <!-- style-doc -->
+            <arg value="className=HelloWorldProgramOutput"/> <!-- parameter -->
+        </java>
+		<echo message="TODO compile and run self-validation test"/>
+    </target>
+    
+    <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >
         <echo message="==========================================="/>
         <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
         <echo message="..expected output: test/HelloWorldProgramOutput.json"/>

@@ -142,14 +142,22 @@ public interface GeoViewpoint extends X3DViewpointNode
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @return value of geoOrigin field
 	 */
-	public GeoOrigin getGeoOrigin(); // acceptable node types: GeoOrigin
+	public GeoOrigin getGeoOrigin(); // acceptable node types #1:GeoOrigin
 
 	/**
 	 * Assign GeoOrigin instance (using a properly typed node) (deprecated node, optional) to initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoViewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoViewpoint setGeoOrigin(GeoOrigin newValue); // acceptable node types: GeoOrigin
+	public GeoViewpoint setGeoOrigin(GeoOrigin newValue); // acceptable node types #2: GeoOrigin
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoViewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoViewpoint setGeoOrigin(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>geoSystem</i>.
@@ -211,7 +219,7 @@ public interface GeoViewpoint extends X3DViewpointNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -220,7 +228,7 @@ public interface GeoViewpoint extends X3DViewpointNode
 	 * @return {@link GeoViewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoViewpoint setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoViewpoint setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>orientation</i>.

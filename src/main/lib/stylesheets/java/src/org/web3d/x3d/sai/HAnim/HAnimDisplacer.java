@@ -113,7 +113,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -122,7 +122,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	 * @return {@link HAnimDisplacer} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimDisplacer setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public HAnimDisplacer setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String enumeration value ['sellion'|'r_infraorbitale'|'l_infraorbitale'|'supramenton'|'r_tragion'|'r_gonion'|'l_tragion'|'l_gonion'|'nuchale'|'r_clavicale'|'suprasternale'|'l_clavicale'|'r_thelion'|'l_thelion'|'substernale'|'r_rib10'|'r_asis'|'l_rib10'|'l_asis'|'r_iliocristale'|'r_trochanterion'|'l_iliocristale'|'l_trochanterion'|'cervicale'|'rib10_midspine'|'r_psis'|'l_psis'|'waist_preferred_post'|'r_acromion'|'r_axilla_ant'|'r_radial_styloid'|'r_axilla_post'|'r_olecranon'|'r_humeral_lateral_epicn'|'r_humeral_medial_epicn'|'r_radiale'|'r_metacarpal_pha2'|'r_dactylion'|'r_ulnar_styloid'|'r_metacarpal_pha5'|'l_acromion'|'l_axilla_ant'|'l_radial_styloid'|'l_axilla_post'|'l_olecranon'|'l_humeral_lateral_epicn'|'l_humeral_medial_epicn'|'l_radiale'|'l_metacarpal_pha2'|'l_dactylion'|'l_ulnar_styloid'|'l_metacarpal_pha5'|'r_knee_crease'|'r_femoral_lateral_epicn'|'r_femoral_medial_epicn'|'r_metatarsal_pha5'|'r_lateral_malleolus'|'r_medial_malleolus'|'r_sphyrion'|'r_metatarsal_pha1'|'r_calcaneous_post'|'r_digit2'|'l_knee_crease'|'l_femoral_lateral_epicn'|'l_femoral_medial_epicn'|'l_metatarsal_pha5'|'l_lateral_malleolus'|'l_medial_malleolus'|'l_sphyrion'|'l_metatarsal_pha1'|'l_calcaneous_post'|'l_digit2'|'crotch'|'r_neck_base'|'l_neck_base'|'navel'] from inputOutput SFString field named <i>name</i>.

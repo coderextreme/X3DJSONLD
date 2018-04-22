@@ -77,7 +77,7 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * @see org.web3d.x3d.sai.Shaders.X3DVertexAttributeNode
 	 * @return value of attrib field
 	 */
-	public X3DNode[] getAttrib(); // acceptable node types: X3DVertexAttributeNode
+	public X3DNode[] getAttrib(); // acceptable node types #1:X3DVertexAttributeNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>attrib</i>.
@@ -86,7 +86,7 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * @param newValue is new value for the attrib field.
 	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IndexedLineSet setAttrib(X3DNode[] newValue); // acceptable node types: X3DVertexAttributeNode
+	public IndexedLineSet setAttrib(X3DNode[] newValue); // acceptable node types #2: X3DVertexAttributeNode
 
 	/**
 	 * Add array of child attrib nodes to array of existing nodes (if any).
@@ -94,24 +94,32 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVertexAttributeNode.
 	 * @param newValue is new value array to be appended the attrib field.
 	 */
-	public void addAttrib(X3DNode[] newValue); // acceptable node types: X3DVertexAttributeNode
+	public void addAttrib(X3DNode[] newValue); // acceptable node types #3: X3DVertexAttributeNode
 	/**
 	 * Set single child attrib node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the attrib field
 	 */
-	public void setAttrib(X3DNode newValue); // acceptable node types: X3DVertexAttributeNode
+	public void setAttrib(X3DNode newValue); // acceptable node types #5: X3DVertexAttributeNode
 	/**
 	 * Provide X3DColorNode instance (using a properly typed node) using RGB values [0..1] from inputOutput SFNode field <i>color</i>.
 	 * @return value of color field
 	 */
-	public X3DColorNode getColor(); // acceptable node types: X3DColorNode
+	public X3DColorNode getColor(); // acceptable node types #1:X3DColorNode
 
 	/**
 	 * Assign X3DColorNode instance (using a properly typed node) using RGB values [0..1] to inputOutput SFNode field <i>color</i>.
 	 * @param newValue is new value for the color field.
 	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IndexedLineSet setColor(X3DColorNode newValue); // acceptable node types: X3DColorNode
+	public IndexedLineSet setColor(X3DColorNode newValue); // acceptable node types #2: X3DColorNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>color</i>.
+	 * @see #setColor(X3DColorNode)
+	 * @param newValue is new value for the color field.
+	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedLineSet setColor(ProtoInstance newValue);
 
 	/**
 	 * Provide array of int results using RGB values [0..1] from initializeOnly MFInt32 field named <i>colorIndex</i>.
@@ -161,14 +169,22 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
 	 * @return value of coord field
 	 */
-	public X3DCoordinateNode getCoord(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getCoord(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
 	 * @param newValue is new value for the coord field.
 	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IndexedLineSet setCoord(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public IndexedLineSet setCoord(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedLineSet setCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide array of int results within allowed range of [-1,infinity) from initializeOnly MFInt32 field named <i>coordIndex</i>.
@@ -196,14 +212,22 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * Provide FogCoordinate instance (using a properly typed node) from inputOutput SFNode field <i>fogCoord</i>.
 	 * @return value of fogCoord field
 	 */
-	public FogCoordinate getFogCoord(); // acceptable node types: FogCoordinate
+	public FogCoordinate getFogCoord(); // acceptable node types #1:FogCoordinate
 
 	/**
 	 * Assign FogCoordinate instance (using a properly typed node) to inputOutput SFNode field <i>fogCoord</i>.
 	 * @param newValue is new value for the fogCoord field.
 	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public IndexedLineSet setFogCoord(FogCoordinate newValue); // acceptable node types: FogCoordinate
+	public IndexedLineSet setFogCoord(FogCoordinate newValue); // acceptable node types #2: FogCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>fogCoord</i>.
+	 * @see #setFogCoord(FogCoordinate)
+	 * @param newValue is new value for the fogCoord field.
+	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public IndexedLineSet setFogCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -211,7 +235,7 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -220,7 +244,7 @@ public interface IndexedLineSet extends X3DGeometryNode
 	 * @return {@link IndexedLineSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public IndexedLineSet setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public IndexedLineSet setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 
 	/**

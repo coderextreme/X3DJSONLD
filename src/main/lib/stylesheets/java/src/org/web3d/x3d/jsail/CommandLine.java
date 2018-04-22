@@ -94,9 +94,9 @@ public class CommandLine
         clearLoadedX3dModel ();
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJava | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toHTML | -toMarkdown | -toTidy | -toClassicVrml | -toJava | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
@@ -108,6 +108,7 @@ public class CommandLine
     private static boolean convertToMarkdown        = false; // model meta information
     private static boolean includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
     private static boolean convertToTidy            = false;
+    private static boolean convertToJava            = false;
     private static boolean convertToJSON            = false;
     private static boolean convertToJS              = false;
     private static boolean convertToX3DOM           = false;
@@ -133,6 +134,7 @@ public class CommandLine
 		convertToMarkdown        = false;
 		includeSubdirectoryPaths = true; // special markdown switch
 		convertToTidy            = false;
+		convertToJava            = false;
 		convertToJSON            = false;
 		convertToJS              = false;
 		convertToX3DOM           = false;
@@ -307,6 +309,13 @@ public class CommandLine
 					conversionExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to ClassicVRML encoding");
 				}
+				else  if (args[i].equalsIgnoreCase("-java") || args[i].equalsIgnoreCase("-tojava"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToJava = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_JAVA;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to Java source code");
+				}
 				else  if (args[i].equalsIgnoreCase("-json") || args[i].equalsIgnoreCase("-tojson"))
 				{
 					clearPriorConversionSwitches(args[i]);
@@ -451,9 +460,9 @@ public class CommandLine
 					if (resultFileName.isEmpty())
 					{
 						 resultFileName = "Validation" + X3DObject.FILE_EXTENSION_TEXT; // be prepared with default name
-						 System.out.println ("parameter: \"" + args[i] + "\"  for model validation");
+						 System.out.println ("parameter: \"" + args[i] + "\" for model validation");
 					}
-					else System.out.println ("parameter: \"" + args[i] + "\"  for model validation to result file");
+					else System.out.println ("parameter: \"" + args[i] + "\" for model validation to result file");
 				}
 				else  if (args[i].equalsIgnoreCase("-page") || args[i].equalsIgnoreCase("-X3DJSAIL"))
 				{
@@ -595,6 +604,16 @@ public class CommandLine
                         if  (convertToFile)
                               resultFile =      loadedX3dModel.toFileJSON (resultFileName);
                         else System.out.println(loadedX3dModel.toStringJSON());
+                	ConfigurationProperties.setXsltEngine(presetXsltEngine);
+                    }
+                    else if (convertToJava)
+                    {
+                        String presetXsltEngine = ConfigurationProperties.getXsltEngine();
+                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
+                        System.out.println("convert to Java:");
+                        if  (convertToFile)
+                              resultFile =      loadedX3dModel.toFileJava (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringJava());
                 	ConfigurationProperties.setXsltEngine(presetXsltEngine);
                     }
                     else if (convertToJS)
@@ -889,7 +908,7 @@ public class CommandLine
     private static void clearPriorConversionSwitches(String newCommand)
     {
         if (convertToVRML97 || convertToClassicVRML || convertToX3D   || convertToXML || convertToHTML || convertToMarkdown || convertToTidy ||
-            convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
+            convertToJava   || convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
         convertToVRML97          = false;
@@ -900,6 +919,7 @@ public class CommandLine
         convertToMarkdown        = false;
         includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
         convertToTidy            = false;
+        convertToJava            = false;
         convertToJSON            = false;
         convertToJS              = false;
         convertToX3DOM           = false;

@@ -128,7 +128,7 @@ public interface MultiTexture extends X3DTextureNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -137,7 +137,7 @@ public interface MultiTexture extends X3DTextureNode
 	 * @return {@link MultiTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MultiTexture setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public MultiTexture setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of String enumeration results ['"ADD"'|'"ADDSIGNED"'|'"ADDSIGNED2X"'|'"ADDSMOOTH"'|'"BLENDCURRENTALPHA"'|'"BLENDDIFFUSEALPHA"'|'"BLENDFACTORALPHA"'|'"BLENDTEXTUREALPHA"'|'"DOTPRODUCT3"'|'"MODULATE"'|'"MODULATE2X"'|'"MODULATE4X"'|'"MODULATEALPHA_ADDCOLOR"'|'"MODULATEINVALPHA_ADDCOLOR"'|'"MODULATEINVCOLOR_ADDALPHA"'|'"OFF"'|'"REPLACE"'|'"SELECTARG1"'|'"SELECTARG2"'|'"SUBTRACT"'|'"etc."'] from inputOutput MFString field named <i>mode</i>.
@@ -189,7 +189,7 @@ public interface MultiTexture extends X3DTextureNode
 	 * @see org.web3d.x3d.sai.Texturing.X3DTextureNode
 	 * @return value of texture field
 	 */
-	public X3DNode[] getTexture(); // acceptable node types: X3DTextureNode
+	public X3DNode[] getTexture(); // acceptable node types #1:X3DTextureNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>texture</i>.
@@ -198,7 +198,7 @@ public interface MultiTexture extends X3DTextureNode
 	 * @param newValue is new value for the texture field.
 	 * @return {@link MultiTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public MultiTexture setTexture(X3DNode[] newValue); // acceptable node types: X3DTextureNode
+	public MultiTexture setTexture(X3DNode[] newValue); // acceptable node types #2: X3DTextureNode
 
 	/**
 	 * Add array of child texture nodes to array of existing nodes (if any).
@@ -206,12 +206,12 @@ public interface MultiTexture extends X3DTextureNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureNode.
 	 * @param newValue is new value array to be appended the texture field.
 	 */
-	public void addTexture(X3DNode[] newValue); // acceptable node types: X3DTextureNode
+	public void addTexture(X3DNode[] newValue); // acceptable node types #3: X3DTextureNode
 	/**
 	 * Set single child texture node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the texture field
 	 */
-	public void setTexture(X3DNode newValue); // acceptable node types: X3DTextureNode
+	public void setTexture(X3DNode newValue); // acceptable node types #5: X3DTextureNode
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

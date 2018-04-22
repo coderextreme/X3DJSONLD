@@ -69,7 +69,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -78,7 +78,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	 * @return {@link MultiTextureTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MultiTextureTransform setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public MultiTextureTransform setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>textureTransform</i>.
@@ -87,7 +87,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	 * @see org.web3d.x3d.sai.Texturing.X3DTextureTransformNode
 	 * @return value of textureTransform field
 	 */
-	public X3DNode[] getTextureTransform(); // acceptable node types: X3DTextureTransformNode
+	public X3DNode[] getTextureTransform(); // acceptable node types #1:X3DTextureTransformNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>textureTransform</i>.
@@ -96,7 +96,7 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	 * @param newValue is new value for the textureTransform field.
 	 * @return {@link MultiTextureTransform} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public MultiTextureTransform setTextureTransform(X3DNode[] newValue); // acceptable node types: X3DTextureTransformNode
+	public MultiTextureTransform setTextureTransform(X3DNode[] newValue); // acceptable node types #2: X3DTextureTransformNode
 
 	/**
 	 * Add array of child textureTransform nodes to array of existing nodes (if any).
@@ -104,12 +104,12 @@ public interface MultiTextureTransform extends X3DTextureTransformNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureTransformNode.
 	 * @param newValue is new value array to be appended the textureTransform field.
 	 */
-	public void addTextureTransform(X3DNode[] newValue); // acceptable node types: X3DTextureTransformNode
+	public void addTextureTransform(X3DNode[] newValue); // acceptable node types #3: X3DTextureTransformNode
 	/**
 	 * Set single child textureTransform node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the textureTransform field
 	 */
-	public void setTextureTransform(X3DNode newValue); // acceptable node types: X3DTextureTransformNode
+	public void setTextureTransform(X3DNode newValue); // acceptable node types #5: X3DTextureTransformNode
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

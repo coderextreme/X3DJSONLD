@@ -61,7 +61,7 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of controlPoint field
 	 */
 	@Override
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
@@ -69,7 +69,15 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsPatchSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsPatchSurface setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public NurbsPatchSurface setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsPatchSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsPatchSurface setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -77,7 +85,7 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -86,7 +94,7 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsPatchSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsPatchSurface setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsPatchSurface setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -116,7 +124,7 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return value of texCoord field
 	 */
 	@Override
-	public X3DNode getTexCoord(); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public X3DNode getTexCoord(); // acceptable node types #1:X3DTextureCoordinateNode|NurbsTextureCoordinate
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTextureCoordinateNode|NurbsTextureCoordinate, to inputOutput SFNode field <i>texCoord</i>.
@@ -124,7 +132,15 @@ public interface NurbsPatchSurface extends X3DNurbsSurfaceGeometryNode
 	 * @return {@link NurbsPatchSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsPatchSurface setTexCoord(X3DNode newValue); // acceptable node types: X3DTextureCoordinateNode|NurbsTextureCoordinate
+	public NurbsPatchSurface setTexCoord(X3DNode newValue); // acceptable node types #2: X3DTextureCoordinateNode|NurbsTextureCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texCoord</i>.
+	 * @see #setTexCoord(X3DNode)
+	 * @param newValue is new value for the texCoord field.
+	 * @return {@link NurbsPatchSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsPatchSurface setTexCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>uClosed</i>.

@@ -285,7 +285,7 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -583,7 +583,6 @@ public class SegmentedVolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -920,10 +919,29 @@ setAttribute method invocations).
 			segmentIdentifiersProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			segmentIdentifiersProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>segmentIdentifiers</i>.
+	 * @see #setSegmentIdentifiers(X3DTexture3DNode)
+	 * @param newValue is new value for the segmentIdentifiers field.
+	 * @return {@link SegmentedVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SegmentedVolumeDataObject setSegmentIdentifiers(ProtoInstance newValue)
+	{
+		segmentIdentifiersProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) segmentIdentifiersProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (segmentIdentifiers != null)
+		{
+			((X3DConcreteElement) segmentIdentifiers).setParentObject(null); // housekeeping, clear prior object
+			segmentIdentifiers = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of segmentIdentifiers field.
 	 * @return {@link SegmentedVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1007,10 +1025,29 @@ setAttribute method invocations).
 			voxelsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			voxelsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link SegmentedVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SegmentedVolumeDataObject setVoxels(ProtoInstance newValue)
+	{
+		voxelsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) voxelsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (voxels != null)
+		{
+			((X3DConcreteElement) voxels).setParentObject(null); // housekeeping, clear prior object
+			voxels = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of voxels field.
 	 * @return {@link SegmentedVolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

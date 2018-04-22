@@ -211,19 +211,27 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of children field
 	 */
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 	/**
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @return value of geoOrigin field
 	 */
-	public GeoOrigin getGeoOrigin(); // acceptable node types: GeoOrigin
+	public GeoOrigin getGeoOrigin(); // acceptable node types #1:GeoOrigin
 
 	/**
 	 * Assign GeoOrigin instance (using a properly typed node) (deprecated node, optional) to initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoLOD setGeoOrigin(GeoOrigin newValue); // acceptable node types: GeoOrigin
+	public GeoLOD setGeoOrigin(GeoOrigin newValue); // acceptable node types #2: GeoOrigin
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoLOD setGeoOrigin(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>geoSystem</i>.
@@ -259,7 +267,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -268,7 +276,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoLOD setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoLOD setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from initializeOnly SFFloat field named <i>range</i>.
@@ -297,7 +305,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of rootNode field
 	 */
-	public X3DNode[] getRootNode(); // acceptable node types: X3DChildNode
+	public X3DNode[] getRootNode(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to initializeOnly MFNode field <i>rootNode</i>.
@@ -306,7 +314,7 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the rootNode field.
 	 * @return {@link GeoLOD} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoLOD setRootNode(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public GeoLOD setRootNode(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of child rootNode nodes to array of existing nodes (if any).
@@ -314,12 +322,12 @@ public interface GeoLOD extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @param newValue is new value array to be appended the rootNode field.
 	 */
-	public void addRootNode(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addRootNode(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single child rootNode node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the rootNode field
 	 */
-	public void setRootNode(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setRootNode(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>rootUrl</i>.
 	 * <br><br>

@@ -141,7 +141,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @return value of children field
 	 */
 	@Override
-	public X3DNode[] getChildren(); // acceptable node types: X3DChildNode
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DChildNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
@@ -151,7 +151,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimSegment setChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public HAnimSegment setChildren(X3DNode[] newValue); // acceptable node types #2: X3DChildNode
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -160,12 +160,12 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DChildNode
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
 	 * <br><br>
@@ -175,7 +175,7 @@ public interface HAnimSegment extends X3DGroupingNode
  * </ul>
 	 * @return value of coord field
 	 */
-	public X3DCoordinateNode getCoord(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getCoord(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
@@ -184,7 +184,15 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @param newValue is new value for the coord field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimSegment setCoord(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public HAnimSegment setCoord(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public HAnimSegment setCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>displacers</i>.
@@ -198,7 +206,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimDisplacerObject
 	 * @return value of displacers field
 	 */
-	public X3DNode[] getDisplacers(); // acceptable node types: HAnimDisplacer
+	public X3DNode[] getDisplacers(); // acceptable node types #1:HAnimDisplacer
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>displacers</i>.
@@ -209,7 +217,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @param newValue is new value for the displacers field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimSegment setDisplacers(X3DNode[] newValue); // acceptable node types: HAnimDisplacer
+	public HAnimSegment setDisplacers(X3DNode[] newValue); // acceptable node types #2: HAnimDisplacer
 
 	/**
 	 * Add array of child displacers nodes to array of existing nodes (if any).
@@ -217,12 +225,12 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimDisplacer.
 	 * @param newValue is new value array to be appended the displacers field.
 	 */
-	public void addDisplacers(X3DNode[] newValue); // acceptable node types: HAnimDisplacer
+	public void addDisplacers(X3DNode[] newValue); // acceptable node types #3: HAnimDisplacer
 	/**
 	 * Set single child displacers node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the displacers field
 	 */
-	public void setDisplacers(X3DNode newValue); // acceptable node types: HAnimDisplacer
+	public void setDisplacers(X3DNode newValue); // acceptable node types #5: HAnimDisplacer
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>mass</i>.
 	 * <br><br>
@@ -247,7 +255,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -256,7 +264,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimSegment setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public HAnimSegment setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of float results within allowed range of [0,infinity) from inputOutput MFFloat field named <i>momentsOfInertia</i>.

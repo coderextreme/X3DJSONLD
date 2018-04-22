@@ -281,7 +281,7 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "renderStyle";
+	public String containerField_DEFAULT_VALUE = "renderStyle";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -458,10 +458,29 @@ public class ShadedVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcreteNode
 			materialProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			materialProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>material</i>.
+	 * @see #setMaterial(X3DMaterialNode)
+	 * @param newValue is new value for the material field.
+	 * @return {@link ShadedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ShadedVolumeStyleObject setMaterial(ProtoInstance newValue)
+	{
+		materialProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) materialProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (material != null)
+		{
+			((X3DConcreteElement) material).setParentObject(null); // housekeeping, clear prior object
+			material = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of material field.
 	 * @return {@link ShadedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -547,7 +566,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -724,10 +742,29 @@ setAttribute method invocations).
 			surfaceNormalsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			surfaceNormalsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
+	 * @see #setSurfaceNormals(X3DTexture3DNode)
+	 * @param newValue is new value for the surfaceNormals field.
+	 * @return {@link ShadedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ShadedVolumeStyleObject setSurfaceNormals(ProtoInstance newValue)
+	{
+		surfaceNormalsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) surfaceNormalsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (surfaceNormals != null)
+		{
+			((X3DConcreteElement) surfaceNormals).setParentObject(null); // housekeeping, clear prior object
+			surfaceNormals = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of surfaceNormals field.
 	 * @return {@link ShadedVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

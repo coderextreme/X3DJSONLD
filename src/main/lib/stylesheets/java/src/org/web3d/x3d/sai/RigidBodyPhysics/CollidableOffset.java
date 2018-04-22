@@ -106,14 +106,22 @@ public interface CollidableOffset extends X3DNBodyCollidableNode
 	 * Provide X3DNBodyCollidableNode instance (using a properly typed node) from initializeOnly SFNode field <i>collidable</i>.
 	 * @return value of collidable field
 	 */
-	public X3DNBodyCollidableNode getCollidable(); // acceptable node types: X3DNBodyCollidableNode
+	public X3DNBodyCollidableNode getCollidable(); // acceptable node types #1:X3DNBodyCollidableNode
 
 	/**
 	 * Assign X3DNBodyCollidableNode instance (using a properly typed node) to initializeOnly SFNode field <i>collidable</i>.
 	 * @param newValue is new value for the collidable field.
 	 * @return {@link CollidableOffset} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CollidableOffset setCollidable(X3DNBodyCollidableNode newValue); // acceptable node types: X3DNBodyCollidableNode
+	public CollidableOffset setCollidable(X3DNBodyCollidableNode newValue); // acceptable node types #2: X3DNBodyCollidableNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>collidable</i>.
+	 * @see #setCollidable(X3DNBodyCollidableNode)
+	 * @param newValue is new value for the collidable field.
+	 * @return {@link CollidableOffset} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CollidableOffset setCollidable(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -141,7 +149,7 @@ public interface CollidableOffset extends X3DNBodyCollidableNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -150,7 +158,7 @@ public interface CollidableOffset extends X3DNBodyCollidableNode
 	 * @return {@link CollidableOffset} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CollidableOffset setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CollidableOffset setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from inputOutput SFRotation field named <i>rotation</i>.

@@ -259,7 +259,7 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -543,7 +543,6 @@ public class VolumeDataObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -633,10 +632,29 @@ setAttribute method invocations).
 			renderStyleProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			renderStyleProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
+	 * @see #setRenderStyle(X3DVolumeRenderStyleNode)
+	 * @param newValue is new value for the renderStyle field.
+	 * @return {@link VolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public VolumeDataObject setRenderStyle(ProtoInstance newValue)
+	{
+		renderStyleProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) renderStyleProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (renderStyle != null)
+		{
+			((X3DConcreteElement) renderStyle).setParentObject(null); // housekeeping, clear prior object
+			renderStyle = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of renderStyle field.
 	 * @return {@link VolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -720,10 +738,29 @@ setAttribute method invocations).
 			voxelsProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			voxelsProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link VolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public VolumeDataObject setVoxels(ProtoInstance newValue)
+	{
+		voxelsProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) voxelsProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (voxels != null)
+		{
+			((X3DConcreteElement) voxels).setParentObject(null); // housekeeping, clear prior object
+			voxels = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of voxels field.
 	 * @return {@link VolumeDataObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

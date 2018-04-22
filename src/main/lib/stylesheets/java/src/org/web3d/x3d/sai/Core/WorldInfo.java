@@ -84,7 +84,7 @@ public interface WorldInfo extends X3DInfoNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -93,7 +93,7 @@ public interface WorldInfo extends X3DInfoNode
 	 * @return {@link WorldInfo} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public WorldInfo setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public WorldInfo setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>title</i>.

@@ -81,7 +81,7 @@ public interface SliderJoint extends X3DRigidJointNode
 	 * @return value of body1 field
 	 */
 	@Override
-	public RigidBody getBody1(); // acceptable node types: RigidBody
+	public RigidBody getBody1(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
@@ -89,14 +89,22 @@ public interface SliderJoint extends X3DRigidJointNode
 	 * @return {@link SliderJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SliderJoint setBody1(RigidBody newValue); // acceptable node types: RigidBody
+	public SliderJoint setBody1(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body1</i>.
+	 * @see #setBody1(RigidBody)
+	 * @param newValue is new value for the body1 field.
+	 * @return {@link SliderJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SliderJoint setBody1(ProtoInstance newValue);
 
 	/**
 	 * Provide RigidBody instance (using a properly typed node) from inputOutput SFNode field <i>body2</i>.
 	 * @return value of body2 field
 	 */
 	@Override
-	public RigidBody getBody2(); // acceptable node types: RigidBody
+	public RigidBody getBody2(); // acceptable node types #1:RigidBody
 
 	/**
 	 * Assign RigidBody instance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
@@ -104,7 +112,15 @@ public interface SliderJoint extends X3DRigidJointNode
 	 * @return {@link SliderJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SliderJoint setBody2(RigidBody newValue); // acceptable node types: RigidBody
+	public SliderJoint setBody2(RigidBody newValue); // acceptable node types #2: RigidBody
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>body2</i>.
+	 * @see #setBody2(RigidBody)
+	 * @param newValue is new value for the body2 field.
+	 * @return {@link SliderJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SliderJoint setBody2(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String enumeration results ['"ALL"'|'"NONE"'|'"etc."'] from inputOutput MFString field named <i>forceOutput</i>.
@@ -152,7 +168,7 @@ public interface SliderJoint extends X3DRigidJointNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -161,7 +177,7 @@ public interface SliderJoint extends X3DRigidJointNode
 	 * @return {@link SliderJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public SliderJoint setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public SliderJoint setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value from inputOutput SFFloat field named <i>minSeparation</i>.

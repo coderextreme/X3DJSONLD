@@ -65,7 +65,7 @@ public interface ImageCubeMapTexture extends X3DEnvironmentTextureNode, X3DUrlOb
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -74,20 +74,28 @@ public interface ImageCubeMapTexture extends X3DEnvironmentTextureNode, X3DUrlOb
 	 * @return {@link ImageCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ImageCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ImageCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
 	 * @return value of textureProperties field
 	 */
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
 	 * @param newValue is new value for the textureProperties field.
 	 * @return {@link ImageCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ImageCubeMapTexture setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public ImageCubeMapTexture setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link ImageCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ImageCubeMapTexture setTextureProperties(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>url</i>.

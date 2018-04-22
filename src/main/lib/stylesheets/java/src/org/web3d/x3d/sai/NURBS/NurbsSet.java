@@ -116,7 +116,7 @@ public interface NurbsSet extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.sai.NURBS.X3DNurbsSurfaceGeometryNode
 	 * @return value of geometry field
 	 */
-	public X3DNode[] getGeometry(); // acceptable node types: X3DNurbsSurfaceGeometryNode
+	public X3DNode[] getGeometry(); // acceptable node types #1:X3DNurbsSurfaceGeometryNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>geometry</i>.
@@ -125,7 +125,7 @@ public interface NurbsSet extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link NurbsSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSet setGeometry(X3DNode[] newValue); // acceptable node types: X3DNurbsSurfaceGeometryNode
+	public NurbsSet setGeometry(X3DNode[] newValue); // acceptable node types #2: X3DNurbsSurfaceGeometryNode
 
 	/**
 	 * Add array of child geometry nodes to array of existing nodes (if any).
@@ -133,19 +133,19 @@ public interface NurbsSet extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNurbsSurfaceGeometryNode.
 	 * @param newValue is new value array to be appended the geometry field.
 	 */
-	public void addGeometry(X3DNode[] newValue); // acceptable node types: X3DNurbsSurfaceGeometryNode
+	public void addGeometry(X3DNode[] newValue); // acceptable node types #3: X3DNurbsSurfaceGeometryNode
 	/**
 	 * Set single child geometry node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the geometry field
 	 */
-	public void setGeometry(X3DNode newValue); // acceptable node types: X3DNurbsSurfaceGeometryNode
+	public void setGeometry(X3DNode newValue); // acceptable node types #5: X3DNurbsSurfaceGeometryNode
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -154,7 +154,7 @@ public interface NurbsSet extends X3DChildNode, X3DBoundedObject
 	 * @return {@link NurbsSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsSet setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsSet setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of (0,infinity) from inputOutput SFFloat field named <i>tessellationScale</i>.

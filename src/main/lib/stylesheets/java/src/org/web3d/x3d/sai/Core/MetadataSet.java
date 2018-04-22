@@ -69,7 +69,7 @@ public interface MetadataSet extends X3DNode, X3DMetadataObject
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -78,7 +78,7 @@ public interface MetadataSet extends X3DNode, X3DMetadataObject
 	 * @return {@link MetadataSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public MetadataSet setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public MetadataSet setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -134,7 +134,7 @@ public interface MetadataSet extends X3DNode, X3DMetadataObject
 	 * @see org.web3d.x3d.sai.Core.X3DMetadataObject
 	 * @return value of value field
 	 */
-	public X3DNode[] getValue(); // acceptable node types: X3DMetadataObject
+	public X3DNode[] getValue(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>value</i>.
@@ -144,7 +144,7 @@ public interface MetadataSet extends X3DNode, X3DMetadataObject
 	 * @param newValue is new value for the value field.
 	 * @return {@link MetadataSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public MetadataSet setValue(X3DNode[] newValue); // acceptable node types: X3DMetadataObject
+	public MetadataSet setValue(X3DNode[] newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Add array of child value nodes to array of existing nodes (if any).
@@ -152,13 +152,13 @@ public interface MetadataSet extends X3DNode, X3DMetadataObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DMetadataObject.
 	 * @param newValue is new value array to be appended the value field.
 	 */
-	public void addValue(X3DNode[] newValue); // acceptable node types: X3DMetadataObject
+	public void addValue(X3DNode[] newValue); // acceptable node types #3: X3DMetadataObject
 	/**
 	 * Set single child value node, replacing prior array of existing nodes (if any).
  * <i>Warning:</i> this method can only accept Metadata* nodes.
 	 * @param newValue is new node for the value field
 	 */
-	public void setValue(X3DNode newValue); // acceptable node types: X3DMetadataObject
+	public void setValue(X3DNode newValue); // acceptable node types #5: X3DMetadataObject
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

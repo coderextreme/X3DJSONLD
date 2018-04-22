@@ -64,7 +64,7 @@ public interface GeneratedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -73,7 +73,7 @@ public interface GeneratedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * @return {@link GeneratedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeneratedCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeneratedCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide int value within allowed range of (0,infinity) from initializeOnly SFInt32 field named <i>size</i>.
@@ -97,14 +97,22 @@ public interface GeneratedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
 	 * @return value of textureProperties field
 	 */
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
 	 * @param newValue is new value for the textureProperties field.
 	 * @return {@link GeneratedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeneratedCubeMapTexture setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public GeneratedCubeMapTexture setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link GeneratedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeneratedCubeMapTexture setTextureProperties(ProtoInstance newValue);
 
 	/**
 	 * Provide String enumeration value ['NONE'|'NEXT_FRAME_ONLY'|'ALWAYS'] from inputOutput SFString field named <i>update</i>.

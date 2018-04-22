@@ -295,7 +295,7 @@ public class ComposedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcret
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "texture";
+	public String containerField_DEFAULT_VALUE = "texture";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -401,10 +401,29 @@ public class ComposedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcret
 			backProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			backProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>back</i>.
+	 * @see #setBack(X3DTexture2DNode)
+	 * @param newValue is new value for the back field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setBack(ProtoInstance newValue)
+	{
+		backProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) backProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (back != null)
+		{
+			((X3DConcreteElement) back).setParentObject(null); // housekeeping, clear prior object
+			back = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of back field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -490,10 +509,29 @@ setAttribute method invocations).
 			bottomProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			bottomProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>bottom</i>.
+	 * @see #setBottom(X3DTexture2DNode)
+	 * @param newValue is new value for the bottom field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setBottom(ProtoInstance newValue)
+	{
+		bottomProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) bottomProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (bottom != null)
+		{
+			((X3DConcreteElement) bottom).setParentObject(null); // housekeeping, clear prior object
+			bottom = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of bottom field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -579,10 +617,29 @@ setAttribute method invocations).
 			frontProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			frontProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>front</i>.
+	 * @see #setFront(X3DTexture2DNode)
+	 * @param newValue is new value for the front field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setFront(ProtoInstance newValue)
+	{
+		frontProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) frontProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (front != null)
+		{
+			((X3DConcreteElement) front).setParentObject(null); // housekeeping, clear prior object
+			front = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of front field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -668,10 +725,29 @@ setAttribute method invocations).
 			leftProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			leftProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>left</i>.
+	 * @see #setLeft(X3DTexture2DNode)
+	 * @param newValue is new value for the left field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setLeft(ProtoInstance newValue)
+	{
+		leftProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) leftProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (left != null)
+		{
+			((X3DConcreteElement) left).setParentObject(null); // housekeeping, clear prior object
+			left = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of left field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -758,7 +834,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -849,10 +924,29 @@ setAttribute method invocations).
 			rightProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			rightProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>right</i>.
+	 * @see #setRight(X3DTexture2DNode)
+	 * @param newValue is new value for the right field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setRight(ProtoInstance newValue)
+	{
+		rightProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) rightProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (right != null)
+		{
+			((X3DConcreteElement) right).setParentObject(null); // housekeeping, clear prior object
+			right = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of right field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -938,10 +1032,29 @@ setAttribute method invocations).
 			topProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			topProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>top</i>.
+	 * @see #setTop(X3DTexture2DNode)
+	 * @param newValue is new value for the top field.
+	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTextureObject setTop(ProtoInstance newValue)
+	{
+		topProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) topProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (top != null)
+		{
+			((X3DConcreteElement) top).setParentObject(null); // housekeeping, clear prior object
+			top = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of top field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

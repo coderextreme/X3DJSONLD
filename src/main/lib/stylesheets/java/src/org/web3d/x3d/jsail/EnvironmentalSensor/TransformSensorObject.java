@@ -278,7 +278,7 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -522,7 +522,6 @@ public class TransformSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -720,10 +719,29 @@ setAttribute method invocations).
 			targetObjectProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			targetObjectProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>targetObject</i>.
+	 * @see #setTargetObject(X3DNode)
+	 * @param newValue is new value for the targetObject field.
+	 * @return {@link TransformSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TransformSensorObject setTargetObject(ProtoInstance newValue)
+	{
+		targetObjectProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) targetObjectProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (targetObject != null)
+		{
+			((X3DConcreteElement) targetObject).setParentObject(null); // housekeeping, clear prior object
+			targetObject = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of targetObject field.
 	 * @return {@link TransformSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

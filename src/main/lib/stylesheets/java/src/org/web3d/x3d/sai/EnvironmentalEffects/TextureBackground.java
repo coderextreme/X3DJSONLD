@@ -63,14 +63,22 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>backTexture</i>.
 	 * @return value of backTexture field
 	 */
-	public X3DNode getBackTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getBackTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>backTexture</i>.
 	 * @param newValue is new value for the backTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setBackTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setBackTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>backTexture</i>.
+	 * @see #setBackTexture(X3DNode)
+	 * @param newValue is new value for the backTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setBackTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide double value in seconds from outputOnly SFTime field named <i>bindTime</i>.
@@ -87,27 +95,43 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>bottomTexture</i>.
 	 * @return value of bottomTexture field
 	 */
-	public X3DNode getBottomTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getBottomTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>bottomTexture</i>.
 	 * @param newValue is new value for the bottomTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setBottomTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setBottomTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>bottomTexture</i>.
+	 * @see #setBottomTexture(X3DNode)
+	 * @param newValue is new value for the bottomTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setBottomTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>frontTexture</i>.
 	 * @return value of frontTexture field
 	 */
-	public X3DNode getFrontTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getFrontTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>frontTexture</i>.
 	 * @param newValue is new value for the frontTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setFrontTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setFrontTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>frontTexture</i>.
+	 * @see #setFrontTexture(X3DNode)
+	 * @param newValue is new value for the frontTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setFrontTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide array of float results unit axis, angle (in radians) within allowed range of [0,1.5708] from inputOutput MFFloat field named <i>groundAngle</i>.
@@ -172,14 +196,22 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>leftTexture</i>.
 	 * @return value of leftTexture field
 	 */
-	public X3DNode getLeftTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getLeftTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>leftTexture</i>.
 	 * @param newValue is new value for the leftTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setLeftTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setLeftTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>leftTexture</i>.
+	 * @see #setLeftTexture(X3DNode)
+	 * @param newValue is new value for the leftTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setLeftTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -187,7 +219,7 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -196,20 +228,28 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public TextureBackground setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public TextureBackground setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>rightTexture</i>.
 	 * @return value of rightTexture field
 	 */
-	public X3DNode getRightTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getRightTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>rightTexture</i>.
 	 * @param newValue is new value for the rightTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setRightTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setRightTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>rightTexture</i>.
+	 * @see #setRightTexture(X3DNode)
+	 * @param newValue is new value for the rightTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setRightTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide array of float results unit axis, angle (in radians) within allowed range of [0,3.1416] from inputOutput MFFloat field named <i>skyAngle</i>.
@@ -262,14 +302,22 @@ public interface TextureBackground extends X3DBackgroundNode
 	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, from inputOutput SFNode field <i>topTexture</i>.
 	 * @return value of topTexture field
 	 */
-	public X3DNode getTopTexture(); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public X3DNode getTopTexture(); // acceptable node types #1:X3DTexture2DNode|MultiTexture
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DTexture2DNode|MultiTexture, to inputOutput SFNode field <i>topTexture</i>.
 	 * @param newValue is new value for the topTexture field.
 	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TextureBackground setTopTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode|MultiTexture
+	public TextureBackground setTopTexture(X3DNode newValue); // acceptable node types #2: X3DTexture2DNode|MultiTexture
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>topTexture</i>.
+	 * @see #setTopTexture(X3DNode)
+	 * @param newValue is new value for the topTexture field.
+	 * @return {@link TextureBackground} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TextureBackground setTopTexture(ProtoInstance newValue);
 
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>transparency</i>.

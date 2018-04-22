@@ -106,7 +106,7 @@ public interface CollisionCollection extends X3DNode
 	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DNBodyCollidableNode
 	 * @return value of collidables field
 	 */
-	public X3DNode[] getCollidables(); // acceptable node types: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
+	public X3DNode[] getCollidables(); // acceptable node types #1:X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode, to inputOutput MFNode field <i>collidables</i>.
@@ -115,7 +115,7 @@ public interface CollisionCollection extends X3DNode
 	 * @param newValue is new value for the collidables field.
 	 * @return {@link CollisionCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CollisionCollection setCollidables(X3DNode[] newValue); // acceptable node types: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
+	public CollisionCollection setCollidables(X3DNode[] newValue); // acceptable node types #2: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
 
 	/**
 	 * Add array of child collidables nodes to array of existing nodes (if any).
@@ -123,12 +123,12 @@ public interface CollisionCollection extends X3DNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode.
 	 * @param newValue is new value array to be appended the collidables field.
 	 */
-	public void addCollidables(X3DNode[] newValue); // acceptable node types: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
+	public void addCollidables(X3DNode[] newValue); // acceptable node types #3: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
 	/**
 	 * Set single child collidables node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the collidables field
 	 */
-	public void setCollidables(X3DNode newValue); // acceptable node types: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
+	public void setCollidables(X3DNode newValue); // acceptable node types #5: X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
 	 * <br><br>
@@ -171,7 +171,7 @@ public interface CollisionCollection extends X3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -180,7 +180,7 @@ public interface CollisionCollection extends X3DNode
 	 * @return {@link CollisionCollection} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CollisionCollection setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CollisionCollection setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>minBounceSpeed</i>.

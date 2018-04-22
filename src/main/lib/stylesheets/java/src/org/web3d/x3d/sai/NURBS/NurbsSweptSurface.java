@@ -82,14 +82,22 @@ public interface NurbsSweptSurface extends X3DParametricGeometryNode
 	 * Provide X3DNurbsControlCurveNode instance (using a properly typed node) from inputOutput SFNode field <i>crossSectionCurve</i>.
 	 * @return value of crossSectionCurve field
 	 */
-	public X3DNurbsControlCurveNode getCrossSectionCurve(); // acceptable node types: X3DNurbsControlCurveNode
+	public X3DNurbsControlCurveNode getCrossSectionCurve(); // acceptable node types #1:X3DNurbsControlCurveNode
 
 	/**
 	 * Assign X3DNurbsControlCurveNode instance (using a properly typed node) to inputOutput SFNode field <i>crossSectionCurve</i>.
 	 * @param newValue is new value for the crossSectionCurve field.
 	 * @return {@link NurbsSweptSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSweptSurface setCrossSectionCurve(X3DNurbsControlCurveNode newValue); // acceptable node types: X3DNurbsControlCurveNode
+	public NurbsSweptSurface setCrossSectionCurve(X3DNurbsControlCurveNode newValue); // acceptable node types #2: X3DNurbsControlCurveNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>crossSectionCurve</i>.
+	 * @see #setCrossSectionCurve(X3DNurbsControlCurveNode)
+	 * @param newValue is new value for the crossSectionCurve field.
+	 * @return {@link NurbsSweptSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSweptSurface setCrossSectionCurve(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -97,7 +105,7 @@ public interface NurbsSweptSurface extends X3DParametricGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -106,7 +114,7 @@ public interface NurbsSweptSurface extends X3DParametricGeometryNode
 	 * @return {@link NurbsSweptSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsSweptSurface setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsSweptSurface setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>solid</i>.
@@ -133,14 +141,22 @@ public interface NurbsSweptSurface extends X3DParametricGeometryNode
 	 * Provide NurbsCurve instance (using a properly typed node) from inputOutput SFNode field <i>trajectoryCurve</i>.
 	 * @return value of trajectoryCurve field
 	 */
-	public NurbsCurve getTrajectoryCurve(); // acceptable node types: NurbsCurve
+	public NurbsCurve getTrajectoryCurve(); // acceptable node types #1:NurbsCurve
 
 	/**
 	 * Assign NurbsCurve instance (using a properly typed node) to inputOutput SFNode field <i>trajectoryCurve</i>.
 	 * @param newValue is new value for the trajectoryCurve field.
 	 * @return {@link NurbsSweptSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSweptSurface setTrajectoryCurve(NurbsCurve newValue); // acceptable node types: NurbsCurve
+	public NurbsSweptSurface setTrajectoryCurve(NurbsCurve newValue); // acceptable node types #2: NurbsCurve
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>trajectoryCurve</i>.
+	 * @see #setTrajectoryCurve(NurbsCurve)
+	 * @param newValue is new value for the trajectoryCurve field.
+	 * @return {@link NurbsSweptSurface} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSweptSurface setTrajectoryCurve(ProtoInstance newValue);
 
 
 	/**

@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 14 April 2018 </td>
+			<td> 21 April 2018 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -149,7 +149,7 @@ public class HelloWorldProgramOutput
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("14 April 2018"))
+    .addMeta(new metaObject().setName("modified").setContent("21 April 2018"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -167,22 +167,22 @@ public class HelloWorldProgramOutput
   .setScene(new SceneObject()
     .addChild(new ViewpointGroupObject().setDescription("Available viewpoints")
       .addChild(new ViewpointObject("DefaultView").setDescription("Hello X3DJSAIL"))
-      .addChild(new ViewpointObject("TopDownView").setDescription("top-down view from above").setPosition(0.0f,100.0f,0.0f).setOrientation(1.0f,0.0f,0.0f,-1.570796f)))
+      .addChild(new ViewpointObject("TopDownView").setDescription("top-down view from above").setPosition(new SFVec3fObject(new float[] {0.0f,100.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,-1.570796f}))))
     .addChild(new WorldInfoObject("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
     .addChild(new WorldInfoObject().setUSE("WorldInfoDEF"))
     .addChild(new WorldInfoObject().setUSE("WorldInfoDEF"))
     .addMetadata(new MetadataStringObject("scene.addChildMetadata").setName("test").setValue(new MFStringObject("\"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding\"")))
     .addLayerSet(new LayerSetObject("scene.addChildLayerSetTest"))
-    .addChild(new TransformObject("LogoGeometryTransform").setTranslation(0.0f,1.5f,0.0f)
+    .addChild(new TransformObject("LogoGeometryTransform").setTranslation(new SFVec3fObject(new float[] {0.0f,1.5f,0.0f}))
       .addChild(new AnchorObject().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new MFStringObject("\"../X3DJSAIL.html\" \"http://www.web3d.org/specifications/java/X3DJSAIL.html\""))
         .addChild(new ShapeObject("BoxShape")
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject("GreenMaterial").setDiffuseColor(0.0f,1.0f,1.0f).setTransparency(0.1f).setEmissiveColor(0.8f,0.0f,0.0f))
+            .setMaterial(new MaterialObject("GreenMaterial").setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,1.0f})).setTransparency(0.1f).setEmissiveColor(new SFColorObject(new float[] {0.8f,0.0f,0.0f})))
             .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
           .setGeometry(new BoxObject("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
     .addChild(new ShapeObject("LineShape")
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject().setEmissiveColor(0.6f,0.19607843f,0.8f)))
+        .setMaterial(new MaterialObject().setEmissiveColor(new SFColorObject(new float[] {0.6f,0.19607843f,0.8f}))))
       .setGeometry(new IndexedLineSetObject().setCoordIndex(new int[] {0,1,2,3,4,0})
         .addComments(" Coordinate 3-tuple point count: 6 ")
         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,1.5f,0.0f,2.0f,1.5f,0.0f,2.0f,1.5f,-2.0f,-2.0f,1.5f,-2.0f,-2.0f,1.5f,0.0f,0.0f,1.5f,0.0f})))))
@@ -190,7 +190,7 @@ public class HelloWorldProgramOutput
     .addChild(new TimeSensorObject("OrbitClock").setCycleInterval(8.0).setLoop(true))
     .addChild(new ROUTEObject().setFromNode("OrbitClock").setFromField("fraction_changed").setToNode("BoxPathAnimator").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("BoxPathAnimator").setFromField("value_changed").setToNode("LogoGeometryTransform").setToField("set_translation"))
-    .addChild(new TransformObject("TextTransform").setTranslation(0.0f,-1.5f,0.0f)
+    .addChild(new TransformObject("TextTransform").setTranslation(new SFVec3fObject(new float[] {0.0f,-1.5f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setUSE("GreenMaterial")))
@@ -242,7 +242,7 @@ public class HelloWorldProgramOutput
         .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setValue("true")))
       .setProtoBody(new ProtoBodyObject()
         .addComments(" Initial node of ProtoBody determines prototype node type ")
-        .addChild(new MaterialObject().setShininess(0.127273f).setAmbientIntensity(0.25f).setSpecularColor(0.276305f,0.11431f,0.139857f).setDiffuseColor(0.282435f,0.085159f,0.134462f))
+        .addChild(new MaterialObject().setShininess(0.127273f).setAmbientIntensity(0.25f).setSpecularColor(new SFColorObject(new float[] {0.276305f,0.11431f,0.139857f})).setDiffuseColor(new SFColorObject(new float[] {0.282435f,0.085159f,0.134462f})))
         .addComments(" [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\" ")
         .addComments(" presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types ")
         .addChild(new TouchSensorObject().setDescription("within ProtoBody")
@@ -349,11 +349,11 @@ public class HelloWorldProgramOutput
       .addComments(" MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 ")
       .addComments(" ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= ")
       .addComments(" SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344 "))
-    .addChild(new SoundObject().setLocation(0.0f,1.6f,0.0f)
+    .addChild(new SoundObject().setLocation(new SFVec3fObject(new float[] {0.0f,1.6f,0.0f}))
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
       .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject("\"chimes.wav\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
         .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
-    .addChild(new SoundObject().setLocation(0.0f,1.6f,0.0f)
+    .addChild(new SoundObject().setLocation(new SFVec3fObject(new float[] {0.0f,1.6f,0.0f}))
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
       .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject("\"mpgsys.mpg\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
         .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
@@ -370,7 +370,7 @@ public class HelloWorldProgramOutput
       .setAppearance(new AppearanceObject("TransparentAppearance")
         .setMaterial(new MaterialObject().setTransparency(1.0f)))
       .setGeometry(new ExtrusionObject("ExampleExtrusion"))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -397,22 +397,45 @@ public class HelloWorldProgramOutput
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new HelloWorldProgramOutput().getX3dModel();
+        X3DObject thisExampleX3dObject = new HelloWorldProgramOutput().getX3dModel();
 
-        exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"HelloWorldProgramOutput\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
-			System.out.print("HelloWorldProgramOutput self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			System.out.print("Java program \"HelloWorldProgramOutput\" self-validation test results: ");
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -236,7 +236,7 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -448,7 +448,6 @@ public class CADFaceObject extends org.web3d.x3d.jsail.X3DConcreteNode implement
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -597,10 +596,29 @@ setAttribute method invocations).
 			shapeProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			shapeProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>shape</i>.
+	 * @see #setShape(X3DNode)
+	 * @param newValue is new value for the shape field.
+	 * @return {@link CADFaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CADFaceObject setShape(ProtoInstance newValue)
+	{
+		shapeProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) shapeProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (shape != null)
+		{
+			((X3DConcreteElement) shape).setParentObject(null); // housekeeping, clear prior object
+			shape = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of shape field.
 	 * @return {@link CADFaceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

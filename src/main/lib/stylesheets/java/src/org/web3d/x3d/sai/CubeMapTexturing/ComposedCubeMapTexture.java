@@ -67,53 +67,85 @@ public interface ComposedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>back</i>.
 	 * @return value of back field
 	 */
-	public X3DTexture2DNode getBack(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getBack(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>back</i>.
 	 * @param newValue is new value for the back field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setBack(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setBack(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>back</i>.
+	 * @see #setBack(X3DTexture2DNode)
+	 * @param newValue is new value for the back field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setBack(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>bottom</i>.
 	 * @return value of bottom field
 	 */
-	public X3DTexture2DNode getBottom(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getBottom(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>bottom</i>.
 	 * @param newValue is new value for the bottom field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setBottom(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setBottom(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>bottom</i>.
+	 * @see #setBottom(X3DTexture2DNode)
+	 * @param newValue is new value for the bottom field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setBottom(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>front</i>.
 	 * @return value of front field
 	 */
-	public X3DTexture2DNode getFront(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getFront(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>front</i>.
 	 * @param newValue is new value for the front field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setFront(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setFront(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>front</i>.
+	 * @see #setFront(X3DTexture2DNode)
+	 * @param newValue is new value for the front field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setFront(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>left</i>.
 	 * @return value of left field
 	 */
-	public X3DTexture2DNode getLeft(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getLeft(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>left</i>.
 	 * @param newValue is new value for the left field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setLeft(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setLeft(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>left</i>.
+	 * @see #setLeft(X3DTexture2DNode)
+	 * @param newValue is new value for the left field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setLeft(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -121,7 +153,7 @@ public interface ComposedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -130,33 +162,49 @@ public interface ComposedCubeMapTexture extends X3DEnvironmentTextureNode
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ComposedCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ComposedCubeMapTexture setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>right</i>.
 	 * @return value of right field
 	 */
-	public X3DTexture2DNode getRight(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getRight(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>right</i>.
 	 * @param newValue is new value for the right field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setRight(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setRight(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>right</i>.
+	 * @see #setRight(X3DTexture2DNode)
+	 * @param newValue is new value for the right field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setRight(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>top</i>.
 	 * @return value of top field
 	 */
-	public X3DTexture2DNode getTop(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getTop(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>top</i>.
 	 * @param newValue is new value for the top field.
 	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedCubeMapTexture setTop(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedCubeMapTexture setTop(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>top</i>.
+	 * @see #setTop(X3DTexture2DNode)
+	 * @param newValue is new value for the top field.
+	 * @return {@link ComposedCubeMapTexture} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedCubeMapTexture setTop(ProtoInstance newValue);
 
 
 	/**

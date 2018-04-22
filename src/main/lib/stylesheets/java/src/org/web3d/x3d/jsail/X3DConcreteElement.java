@@ -448,15 +448,15 @@ public abstract class X3DConcreteElement
 			case "Group":
 				return "org.web3d.x3d.jsail.Grouping.GroupObject";
 			case "HAnimDisplacer":
-				return "org.web3d.x3d.jsail.H-Anim.HAnimDisplacerObject";
+				return "org.web3d.x3d.jsail.HAnim.HAnimDisplacerObject";
 			case "HAnimHumanoid":
-				return "org.web3d.x3d.jsail.H-Anim.HAnimHumanoidObject";
+				return "org.web3d.x3d.jsail.HAnim.HAnimHumanoidObject";
 			case "HAnimJoint":
-				return "org.web3d.x3d.jsail.H-Anim.HAnimJointObject";
+				return "org.web3d.x3d.jsail.HAnim.HAnimJointObject";
 			case "HAnimSegment":
-				return "org.web3d.x3d.jsail.H-Anim.HAnimSegmentObject";
+				return "org.web3d.x3d.jsail.HAnim.HAnimSegmentObject";
 			case "HAnimSite":
-				return "org.web3d.x3d.jsail.H-Anim.HAnimSiteObject";
+				return "org.web3d.x3d.jsail.HAnim.HAnimSiteObject";
 			case "ImageCubeMapTexture":
 				return "org.web3d.x3d.jsail.CubeMapTexturing.ImageCubeMapTextureObject";
 			case "ImageTexture":

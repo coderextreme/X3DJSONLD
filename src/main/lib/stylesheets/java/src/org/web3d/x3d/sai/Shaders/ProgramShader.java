@@ -120,7 +120,7 @@ public interface ProgramShader extends X3DShaderNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -129,7 +129,7 @@ public interface ProgramShader extends X3DShaderNode
 	 * @return {@link ProgramShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ProgramShader setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ProgramShader setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>programs</i>.
@@ -138,7 +138,7 @@ public interface ProgramShader extends X3DShaderNode
 	 * @see org.web3d.x3d.jsail.Shaders.ShaderProgramObject
 	 * @return value of programs field
 	 */
-	public X3DNode[] getPrograms(); // acceptable node types: ShaderProgram
+	public X3DNode[] getPrograms(); // acceptable node types #1:ShaderProgram
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>programs</i>.
@@ -147,7 +147,7 @@ public interface ProgramShader extends X3DShaderNode
 	 * @param newValue is new value for the programs field.
 	 * @return {@link ProgramShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ProgramShader setPrograms(X3DNode[] newValue); // acceptable node types: ShaderProgram
+	public ProgramShader setPrograms(X3DNode[] newValue); // acceptable node types #2: ShaderProgram
 
 	/**
 	 * Add array of child programs nodes to array of existing nodes (if any).
@@ -155,12 +155,12 @@ public interface ProgramShader extends X3DShaderNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderProgram.
 	 * @param newValue is new value array to be appended the programs field.
 	 */
-	public void addPrograms(X3DNode[] newValue); // acceptable node types: ShaderProgram
+	public void addPrograms(X3DNode[] newValue); // acceptable node types #3: ShaderProgram
 	/**
 	 * Set single child programs node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the programs field
 	 */
-	public void setPrograms(X3DNode newValue); // acceptable node types: ShaderProgram
+	public void setPrograms(X3DNode newValue); // acceptable node types #5: ShaderProgram
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

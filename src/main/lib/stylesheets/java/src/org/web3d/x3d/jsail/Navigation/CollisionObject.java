@@ -305,7 +305,7 @@ public class CollisionObject extends org.web3d.x3d.jsail.X3DConcreteNode impleme
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -818,7 +818,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -909,10 +908,29 @@ setAttribute method invocations).
 			proxyProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			proxyProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>proxy</i>.
+	 * @see #setProxy(X3DChildNode)
+	 * @param newValue is new value for the proxy field.
+	 * @return {@link CollisionObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CollisionObject setProxy(ProtoInstance newValue)
+	{
+		proxyProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) proxyProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (proxy != null)
+		{
+			((X3DConcreteElement) proxy).setParentObject(null); // housekeeping, clear prior object
+			proxy = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of proxy field.
 	 * @return {@link CollisionObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

@@ -73,7 +73,7 @@ public interface GeoMetadata extends X3DInfoNode, X3DUrlObject
 	 * @see org.web3d.x3d.sai.Core.X3DNode
 	 * @return value of data field
 	 */
-	public X3DNode[] getData(); // acceptable node types: X3DNode
+	public X3DNode[] getData(); // acceptable node types #1:X3DNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>data</i>.
@@ -84,7 +84,7 @@ public interface GeoMetadata extends X3DInfoNode, X3DUrlObject
 	 * @param newValue is new value for the data field.
 	 * @return {@link GeoMetadata} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoMetadata setData(X3DNode[] newValue); // acceptable node types: X3DNode
+	public GeoMetadata setData(X3DNode[] newValue); // acceptable node types #2: X3DNode
 
 	/**
 	 * Add array of child data nodes to array of existing nodes (if any).
@@ -92,19 +92,19 @@ public interface GeoMetadata extends X3DInfoNode, X3DUrlObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNode.
 	 * @param newValue is new value array to be appended the data field.
 	 */
-	public void addData(X3DNode[] newValue); // acceptable node types: X3DNode
+	public void addData(X3DNode[] newValue); // acceptable node types #3: X3DNode
 	/**
 	 * Set single child data node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the data field
 	 */
-	public void setData(X3DNode newValue); // acceptable node types: X3DNode
+	public void setData(X3DNode newValue); // acceptable node types #5: X3DNode
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -113,7 +113,7 @@ public interface GeoMetadata extends X3DInfoNode, X3DUrlObject
 	 * @return {@link GeoMetadata} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoMetadata setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoMetadata setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of String results from inputOutput MFString field named <i>summary</i>.

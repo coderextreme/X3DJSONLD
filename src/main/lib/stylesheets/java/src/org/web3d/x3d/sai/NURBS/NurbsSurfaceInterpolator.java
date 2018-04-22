@@ -64,14 +64,22 @@ public interface NurbsSurfaceInterpolator extends X3DChildNode
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>controlPoint</i>.
 	 * @return value of controlPoint field
 	 */
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
 	 * @param newValue is new value for the controlPoint field.
 	 * @return {@link NurbsSurfaceInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsSurfaceInterpolator setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public NurbsSurfaceInterpolator setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsSurfaceInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsSurfaceInterpolator setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
@@ -79,7 +87,7 @@ public interface NurbsSurfaceInterpolator extends X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -88,7 +96,7 @@ public interface NurbsSurfaceInterpolator extends X3DChildNode
 	 * @return {@link NurbsSurfaceInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsSurfaceInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsSurfaceInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>normal_changed</i>.

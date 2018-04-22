@@ -278,7 +278,7 @@ public class PolylineEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "emitter";
+	public String containerField_DEFAULT_VALUE = "emitter";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -388,10 +388,29 @@ public class PolylineEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode i
 			coordProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			coordProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * @see #setCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the coord field.
+	 * @return {@link PolylineEmitterObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public PolylineEmitterObject setCoord(ProtoInstance newValue)
+	{
+		coordProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) coordProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (coord != null)
+		{
+			((X3DConcreteElement) coord).setParentObject(null); // housekeeping, clear prior object
+			coord = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of coord field.
 	 * @return {@link PolylineEmitterObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -687,7 +706,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

@@ -310,7 +310,7 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -695,7 +695,6 @@ public class SoundObject extends org.web3d.x3d.jsail.X3DConcreteNode implements 
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -919,10 +918,29 @@ setAttribute method invocations).
 			sourceProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			sourceProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>source</i>.
+	 * @see #setSource(X3DSoundSourceNode)
+	 * @param newValue is new value for the source field.
+	 * @return {@link SoundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SoundObject setSource(ProtoInstance newValue)
+	{
+		sourceProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) sourceProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (source != null)
+		{
+			((X3DConcreteElement) source).setParentObject(null); // housekeeping, clear prior object
+			source = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of source field.
 	 * @return {@link SoundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

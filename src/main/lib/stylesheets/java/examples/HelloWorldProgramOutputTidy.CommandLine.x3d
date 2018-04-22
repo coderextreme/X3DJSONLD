@@ -15,7 +15,7 @@
     <meta content='http://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='14 April 2018' name='modified'/>
+    <meta content='21 April 2018' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -39,8 +39,8 @@
     <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
-    <MetadataString DEF='scene.addChildMetadataObject' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"' name='test' containerField='metadata'/>
-    <LayerSet DEF='scene.addChildLayerSetObjectTest' containerField='children'/>
+    <MetadataString DEF='scene.addChildMetadata' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"' name='test' containerField='metadata'/>
+    <LayerSet DEF='scene.addChildLayerSetTest' containerField='children'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
       <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "http://www.web3d.org/specifications/java/X3DJSAIL.html"'>
         <Shape DEF='BoxShape'>
@@ -57,6 +57,7 @@
         <Material emissiveColor='0.6 0.19607843 0.8'/>
       </Appearance>
       <IndexedLineSet coordIndex='0 1 2 3 4 0'>
+        <!-- Coordinate 3-tuple point count: 6 -->
         <Coordinate point='0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0'/>
       </IndexedLineSet>
     </Shape>
@@ -82,10 +83,11 @@
       <Collision>
         <!-- test containerField='proxy' -->
         <Shape DEF='ProxyShape' containerField='proxy'>
-          <!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' -->
-          <!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) -->
+          <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"' -->
+          <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""' -->
+          <!-- alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \"Immel did it!\""}) -->
           <!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
-          <Text string='"One, Two, Three" "" "He said, \"Immel did it!\""'/>
+          <Text string='"One, Two, Text" "" "He said, \"Immel did it!\" \"\""'/>
         </Shape>
       </Collision>
       <!-- It's a beautiful world -->

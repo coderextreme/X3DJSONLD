@@ -79,14 +79,22 @@ public interface NurbsCurve extends X3DParametricGeometryNode
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>controlPoint</i>.
 	 * @return value of controlPoint field
 	 */
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
 	 * @param newValue is new value for the controlPoint field.
 	 * @return {@link NurbsCurve} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsCurve setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public NurbsCurve setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsCurve} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsCurve setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide array of double results from initializeOnly MFDouble field named <i>knot</i>.
@@ -112,7 +120,7 @@ public interface NurbsCurve extends X3DParametricGeometryNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -121,7 +129,7 @@ public interface NurbsCurve extends X3DParametricGeometryNode
 	 * @return {@link NurbsCurve} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsCurve setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsCurve setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide int value within allowed range of [2,infinity) from initializeOnly SFInt32 field named <i>order</i>.

@@ -104,7 +104,7 @@ public interface CartoonVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -113,7 +113,7 @@ public interface CartoonVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return {@link CartoonVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public CartoonVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public CartoonVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results using RGBA values [0..1] using RGBA values [0..1] from inputOutput SFColorRGBA field named <i>orthogonalColor</i>.
@@ -161,14 +161,22 @@ public interface CartoonVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>surfaceNormals</i>.
 	 * @return value of surfaceNormals field
 	 */
-	public X3DTexture3DNode getSurfaceNormals(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getSurfaceNormals(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
 	 * @param newValue is new value for the surfaceNormals field.
 	 * @return {@link CartoonVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public CartoonVolumeStyle setSurfaceNormals(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public CartoonVolumeStyle setSurfaceNormals(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>surfaceNormals</i>.
+	 * @see #setSurfaceNormals(X3DTexture3DNode)
+	 * @param newValue is new value for the surfaceNormals field.
+	 * @return {@link CartoonVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CartoonVolumeStyle setSurfaceNormals(ProtoInstance newValue);
 
 
 	/**

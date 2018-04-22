@@ -86,7 +86,7 @@ public interface BlendedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -95,33 +95,49 @@ public interface BlendedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public BlendedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public BlendedVolumeStyle setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DComposableVolumeRenderStyleNode instance (using a properly typed node) from inputOutput SFNode field <i>renderStyle</i>.
 	 * @return value of renderStyle field
 	 */
-	public X3DComposableVolumeRenderStyleNode getRenderStyle(); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public X3DComposableVolumeRenderStyleNode getRenderStyle(); // acceptable node types #1:X3DComposableVolumeRenderStyleNode
 
 	/**
 	 * Assign X3DComposableVolumeRenderStyleNode instance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
 	 * @param newValue is new value for the renderStyle field.
 	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public BlendedVolumeStyle setRenderStyle(X3DComposableVolumeRenderStyleNode newValue); // acceptable node types: X3DComposableVolumeRenderStyleNode
+	public BlendedVolumeStyle setRenderStyle(X3DComposableVolumeRenderStyleNode newValue); // acceptable node types #2: X3DComposableVolumeRenderStyleNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
+	 * @see #setRenderStyle(X3DComposableVolumeRenderStyleNode)
+	 * @param newValue is new value for the renderStyle field.
+	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyle setRenderStyle(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>voxels</i>.
 	 * @return value of voxels field
 	 */
-	public X3DTexture3DNode getVoxels(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getVoxels(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
 	 * @param newValue is new value for the voxels field.
 	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public BlendedVolumeStyle setVoxels(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public BlendedVolumeStyle setVoxels(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyle setVoxels(ProtoInstance newValue);
 
 	/**
 	 * Provide float value within allowed range of [0,1] from inputOutput SFFloat field named <i>weightConstant1</i>.
@@ -207,27 +223,43 @@ public interface BlendedVolumeStyle extends X3DComposableVolumeRenderStyleNode
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>weightTransferFunction1</i>.
 	 * @return value of weightTransferFunction1 field
 	 */
-	public X3DTexture2DNode getWeightTransferFunction1(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getWeightTransferFunction1(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction1</i>.
 	 * @param newValue is new value for the weightTransferFunction1 field.
 	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public BlendedVolumeStyle setWeightTransferFunction1(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public BlendedVolumeStyle setWeightTransferFunction1(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction1</i>.
+	 * @see #setWeightTransferFunction1(X3DTexture2DNode)
+	 * @param newValue is new value for the weightTransferFunction1 field.
+	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyle setWeightTransferFunction1(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture2DNode instance (using a properly typed node) from inputOutput SFNode field <i>weightTransferFunction2</i>.
 	 * @return value of weightTransferFunction2 field
 	 */
-	public X3DTexture2DNode getWeightTransferFunction2(); // acceptable node types: X3DTexture2DNode
+	public X3DTexture2DNode getWeightTransferFunction2(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DTexture2DNode instance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction2</i>.
 	 * @param newValue is new value for the weightTransferFunction2 field.
 	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public BlendedVolumeStyle setWeightTransferFunction2(X3DTexture2DNode newValue); // acceptable node types: X3DTexture2DNode
+	public BlendedVolumeStyle setWeightTransferFunction2(X3DTexture2DNode newValue); // acceptable node types #2: X3DTexture2DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>weightTransferFunction2</i>.
+	 * @see #setWeightTransferFunction2(X3DTexture2DNode)
+	 * @param newValue is new value for the weightTransferFunction2 field.
+	 * @return {@link BlendedVolumeStyle} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public BlendedVolumeStyle setWeightTransferFunction2(ProtoInstance newValue);
 
 
 	/**

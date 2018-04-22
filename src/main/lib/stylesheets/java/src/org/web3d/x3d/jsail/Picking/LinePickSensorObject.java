@@ -364,7 +364,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -640,7 +640,6 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -944,10 +943,29 @@ setAttribute method invocations).
 			pickingGeometryProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			pickingGeometryProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>pickingGeometry</i>.
+	 * @see #setPickingGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the pickingGeometry field.
+	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LinePickSensorObject setPickingGeometry(ProtoInstance newValue)
+	{
+		pickingGeometryProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) pickingGeometryProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (pickingGeometry != null)
+		{
+			((X3DConcreteElement) pickingGeometry).setParentObject(null); // housekeeping, clear prior object
+			pickingGeometry = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of pickingGeometry field.
 	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

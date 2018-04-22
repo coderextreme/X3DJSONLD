@@ -264,7 +264,7 @@ public class CollidableOffsetObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -482,10 +482,29 @@ public class CollidableOffsetObject extends org.web3d.x3d.jsail.X3DConcreteNode 
 			collidableProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			collidableProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>collidable</i>.
+	 * @see #setCollidable(X3DNBodyCollidableNode)
+	 * @param newValue is new value for the collidable field.
+	 * @return {@link CollidableOffsetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public CollidableOffsetObject setCollidable(ProtoInstance newValue)
+	{
+		collidableProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) collidableProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (collidable != null)
+		{
+			((X3DConcreteElement) collidable).setParentObject(null); // housekeeping, clear prior object
+			collidable = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of collidable field.
 	 * @return {@link CollidableOffsetObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -610,7 +629,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

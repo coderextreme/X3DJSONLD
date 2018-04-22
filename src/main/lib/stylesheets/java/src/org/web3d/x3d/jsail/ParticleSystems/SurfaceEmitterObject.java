@@ -268,7 +268,7 @@ public class SurfaceEmitterObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "emitter";
+	public String containerField_DEFAULT_VALUE = "emitter";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -501,7 +501,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -642,10 +641,29 @@ setAttribute method invocations).
 			surfaceProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			surfaceProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>surface</i>.
+	 * @see #setSurface(X3DGeometryNode)
+	 * @param newValue is new value for the surface field.
+	 * @return {@link SurfaceEmitterObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public SurfaceEmitterObject setSurface(ProtoInstance newValue)
+	{
+		surfaceProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) surfaceProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (surface != null)
+		{
+			((X3DConcreteElement) surface).setParentObject(null); // housekeeping, clear prior object
+			surface = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of surface field.
 	 * @return {@link SurfaceEmitterObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

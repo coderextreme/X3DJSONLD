@@ -135,7 +135,7 @@ public interface TransformSensor extends X3DEnvironmentalSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -144,7 +144,7 @@ public interface TransformSensor extends X3DEnvironmentalSensorNode
 	 * @return {@link TransformSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public TransformSensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public TransformSensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 4-tuple float results unit axis, angle (in radians) from outputOnly SFRotation field named <i>orientation_changed</i>.
@@ -193,7 +193,7 @@ public interface TransformSensor extends X3DEnvironmentalSensorNode
 
 	 * @return value of targetObject field
 	 */
-	public X3DNode getTargetObject(); // acceptable node types: X3DGroupingNode|X3DShapeNode
+	public X3DNode getTargetObject(); // acceptable node types #1:X3DGroupingNode|X3DShapeNode
 
 	/**
 	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to X3DGroupingNode|X3DShapeNode, to inputOutput SFNode field <i>targetObject</i>.
@@ -202,7 +202,15 @@ public interface TransformSensor extends X3DEnvironmentalSensorNode
 	 * @param newValue is new value for the targetObject field.
 	 * @return {@link TransformSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public TransformSensor setTargetObject(X3DNode newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode
+	public TransformSensor setTargetObject(X3DNode newValue); // acceptable node types #2: X3DGroupingNode|X3DShapeNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>targetObject</i>.
+	 * @see #setTargetObject(X3DNode)
+	 * @param newValue is new value for the targetObject field.
+	 * @return {@link TransformSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public TransformSensor setTargetObject(ProtoInstance newValue);
 
 
 	/**

@@ -64,7 +64,7 @@ public interface TextureCoordinateGenerator extends X3DTextureCoordinateNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -73,7 +73,7 @@ public interface TextureCoordinateGenerator extends X3DTextureCoordinateNode
 	 * @return {@link TextureCoordinateGenerator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public TextureCoordinateGenerator setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public TextureCoordinateGenerator setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String enumeration value ['SPHERE'|'CAMERASPACENORMAL'|'CAMERASPACEPOSITION'|'CAMERASPACEREFLECTIONVECTOR'|'SPHERE-LOCAL'|'COORD'|'COORD-EYE'|'NOISE'|'NOISE-EYE'|'SPHERE-REFLECT'|'SPHERE-REFLECT-LOCAL'] from inputOutput SFString field named <i>mode</i>.

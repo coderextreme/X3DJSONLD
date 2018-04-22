@@ -68,7 +68,7 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -77,7 +77,7 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * @return {@link ComposedTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ComposedTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ComposedTexture3D setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatR</i>.
@@ -146,7 +146,7 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * @see org.web3d.x3d.sai.Texturing.X3DTexture2DNode
 	 * @return value of texture field
 	 */
-	public X3DNode[] getTexture(); // acceptable node types: X3DTexture2DNode
+	public X3DNode[] getTexture(); // acceptable node types #1:X3DTexture2DNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>texture</i>.
@@ -155,7 +155,7 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * @param newValue is new value for the texture field.
 	 * @return {@link ComposedTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ComposedTexture3D setTexture(X3DNode[] newValue); // acceptable node types: X3DTexture2DNode
+	public ComposedTexture3D setTexture(X3DNode[] newValue); // acceptable node types #2: X3DTexture2DNode
 
 	/**
 	 * Add array of child texture nodes to array of existing nodes (if any).
@@ -163,18 +163,18 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTexture2DNode.
 	 * @param newValue is new value array to be appended the texture field.
 	 */
-	public void addTexture(X3DNode[] newValue); // acceptable node types: X3DTexture2DNode
+	public void addTexture(X3DNode[] newValue); // acceptable node types #3: X3DTexture2DNode
 	/**
 	 * Set single child texture node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the texture field
 	 */
-	public void setTexture(X3DNode newValue); // acceptable node types: X3DTexture2DNode
+	public void setTexture(X3DNode newValue); // acceptable node types #5: X3DTexture2DNode
 	/**
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
 	 * @return value of textureProperties field
 	 */
 	@Override
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
@@ -182,7 +182,15 @@ public interface ComposedTexture3D extends X3DTexture3DNode
 	 * @return {@link ComposedTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ComposedTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public ComposedTexture3D setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link ComposedTexture3D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ComposedTexture3D setTextureProperties(ProtoInstance newValue);
 
 
 	/**

@@ -67,14 +67,22 @@ public interface GeoPositionInterpolator extends X3DInterpolatorNode
 	 * Provide GeoOrigin instance (using a properly typed node) (deprecated node, optional) from initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @return value of geoOrigin field
 	 */
-	public GeoOrigin getGeoOrigin(); // acceptable node types: GeoOrigin
+	public GeoOrigin getGeoOrigin(); // acceptable node types #1:GeoOrigin
 
 	/**
 	 * Assign GeoOrigin instance (using a properly typed node) (deprecated node, optional) to initializeOnly SFNode field <i>geoOrigin</i>.
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoPositionInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public GeoPositionInterpolator setGeoOrigin(GeoOrigin newValue); // acceptable node types: GeoOrigin
+	public GeoPositionInterpolator setGeoOrigin(GeoOrigin newValue); // acceptable node types #2: GeoOrigin
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>geoOrigin</i>.
+	 * @see #setGeoOrigin(GeoOrigin)
+	 * @param newValue is new value for the geoOrigin field.
+	 * @return {@link GeoPositionInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public GeoPositionInterpolator setGeoOrigin(ProtoInstance newValue);
 
 	/**
 	 * Provide array of String results from initializeOnly MFString field named <i>geoSystem</i>.
@@ -162,7 +170,7 @@ public interface GeoPositionInterpolator extends X3DInterpolatorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -171,7 +179,7 @@ public interface GeoPositionInterpolator extends X3DInterpolatorNode
 	 * @return {@link GeoPositionInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public GeoPositionInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public GeoPositionInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide array of 3-tuple float results from outputOnly SFVec3f field named <i>value_changed</i>.

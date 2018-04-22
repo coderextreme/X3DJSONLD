@@ -427,6 +427,11 @@ public class X3DObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">X3D ClassicVRML Encoding</a>
 	 */
 	public static final String FILE_EXTENSION_CLASSICVRML = ".x3dv";
+	/**
+	 * File extension for X3D Compressed Binary Encoding, with dot prepended: <i>.x3db</i>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/X3D_Binary.html">X3D Compressed Binary Encoding Encoding</a>
+	 */
+	public static final String FILE_EXTENSION_X3DB = ".x3db";
 										
 	/**
 	 * File extension for VRML97 Encoding, with dot prepended: <i>.wrl</i>
@@ -584,9 +589,9 @@ public static boolean isFileNameNMTOKEN(String fileName)
 {
     String strippedFileName = fileName;
     if (strippedFileName.contains("/"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/")  + 1);
     if (strippedFileName.contains("\\"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\") + 1);
 
     return SFStringObject.isNMTOKEN(strippedFileName);
 }
@@ -601,11 +606,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 {
     String strippedFileName = fileName;
     if (strippedFileName.contains("/"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("/")   + 1);
     if (strippedFileName.contains("\\"))
-        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\"));
+        strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\")  + 1);
     if (strippedFileName.contains(".")) // strip file extension
-       strippedFileName = strippedFileName.substring(0, strippedFileName.lastIndexOf("."));
+       strippedFileName = strippedFileName.substring(0, strippedFileName.lastIndexOf(".") + 1);
 
     return SFStringObject.meetsX3dNamingConventions(strippedFileName);
 }
@@ -1909,10 +1914,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
+		String className = fileName.substring(0,fileName.indexOf(".java"));
+		if (className.contains("/"))
+			className = className.substring(fileName.lastIndexOf("/")  + 1); // strip path
+		if (className.contains("\\/"))
+			className = className.substring(fileName.lastIndexOf("\\") + 1); // strip path
 
 		// XSLT stylesheet parameter names and values
 		String parameterName1  = "className";
-		String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
+		String parameterValue1 =  className;
 		String parameterName2  = "";
 		String parameterValue2 = "";
 		if (includeWeb3dLicense)
@@ -2825,105 +2835,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	{
 		String fileName = new String();
 		File   newFile;
-						
+
 		CommandLine.setLoadedX3dModel(this); // initialize using this object
 
 		CommandLine.run(args);
-
-/* prior code block, can delete after further testing
-		if (args.length == 2)
-			fileName = args[1];
-		if ((args.length == 0) || args[0].toLowerCase().contains("help"))
-        {
-			return org.web3d.x3d.jsail.CommandLine.USAGE; // TODO add synonyms below
-		}
-		else if (args[0].toLowerCase().startsWith("valid"))
-		{
-			return validationReport();
-		}
-		else if (args[0].toLowerCase().startsWith("x3dv") && !fileName.isEmpty())
-		{
-			newFile = toFileClassicVRML(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3dv")) // and no filename
-		{
-			return toStringClassicVRML();
-		}
-		else if (args[0].toLowerCase().startsWith("x3dom") && !fileName.isEmpty())
-		{
-			newFile = toFileX3DOM(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3d") && !fileName.isEmpty())
-		{
-			newFile = toFileX3D(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("x3d"))
-		{
-			return toStringX3D();
-		}
-		else if (args[0].toLowerCase().startsWith("vrml") && !fileName.isEmpty())
-		{
-			newFile = toFileVRML97(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("vrml")) // and no filename
-		{
-			return toStringVRML97();
-		}
-		else if (args[0].toLowerCase().startsWith("json") && !fileName.isEmpty())
-		{
-                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
-			newFile = toFileJSON(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("json")) // and no filename
-		{
-                	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
-			return toStringJSON();
-		}
-		else if ((args[0].toLowerCase().startsWith("js") || args[0].toLowerCase().startsWith("javascript")) && !fileName.isEmpty())
-		{
-			newFile = toFileJavaScript(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("html") && !fileName.isEmpty())
-		{
-			newFile = toFileHtmlDocumentation(fileName);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else if (args[0].toLowerCase().startsWith("html"))
-		{
-			return "TODO (not supported)";
-		}
-		else if ((args[0].toLowerCase().startsWith("x_ite") || args[0].toLowerCase().startsWith("cobweb")) && !fileName.isEmpty())
-		{
-			newFile = toFileX_ITE(fileName + X3DObject.FILE_EXTENSION_X3D, fileName + X3DObject.FILE_EXTENSION_HTML);
-			if  (newFile != null)
-				 return newFile.getAbsolutePath();
-			else return "file not saved";
-		}
-		else // no valid switch found
-		{
-			return org.web3d.x3d.jsail.CommandLine.USAGE;
-		}
-*/
 	}
 
 	// ==== Accessor methods: strongly typed get/set methods for compile-time strictness

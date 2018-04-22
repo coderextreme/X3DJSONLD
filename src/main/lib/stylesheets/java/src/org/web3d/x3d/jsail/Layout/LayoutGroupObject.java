@@ -293,7 +293,7 @@ public class LayoutGroupObject extends org.web3d.x3d.jsail.X3DConcreteNode imple
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "children";
+	public String containerField_DEFAULT_VALUE = "children";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -740,10 +740,29 @@ setAttribute method invocations).
 			layoutProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			layoutProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>layout</i>.
+	 * @see #setLayout(X3DLayoutNode)
+	 * @param newValue is new value for the layout field.
+	 * @return {@link LayoutGroupObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LayoutGroupObject setLayout(ProtoInstance newValue)
+	{
+		layoutProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) layoutProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (layout != null)
+		{
+			((X3DConcreteElement) layout).setParentObject(null); // housekeeping, clear prior object
+			layout = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of layout field.
 	 * @return {@link LayoutGroupObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -829,7 +848,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -924,10 +942,29 @@ setAttribute method invocations).
 			viewportProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			viewportProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>viewport</i>.
+	 * @see #setViewport(X3DViewportNode)
+	 * @param newValue is new value for the viewport field.
+	 * @return {@link LayoutGroupObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public LayoutGroupObject setViewport(ProtoInstance newValue)
+	{
+		viewportProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) viewportProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (viewport != null)
+		{
+			((X3DConcreteElement) viewport).setParentObject(null); // housekeeping, clear prior object
+			viewport = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of viewport field.
 	 * @return {@link LayoutGroupObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

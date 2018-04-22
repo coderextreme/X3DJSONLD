@@ -216,7 +216,7 @@ public class OpacityMapVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcrete
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "renderStyle";
+	public String containerField_DEFAULT_VALUE = "renderStyle";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -334,7 +334,6 @@ public class OpacityMapVolumeStyleObject extends org.web3d.x3d.jsail.X3DConcrete
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -434,10 +433,29 @@ setAttribute method invocations).
 			transferFunctionProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			transferFunctionProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>transferFunction</i>.
+	 * @see #setTransferFunction(X3DNode)
+	 * @param newValue is new value for the transferFunction field.
+	 * @return {@link OpacityMapVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public OpacityMapVolumeStyleObject setTransferFunction(ProtoInstance newValue)
+	{
+		transferFunctionProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) transferFunctionProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (transferFunction != null)
+		{
+			((X3DConcreteElement) transferFunction).setParentObject(null); // housekeeping, clear prior object
+			transferFunction = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of transferFunction field.
 	 * @return {@link OpacityMapVolumeStyleObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

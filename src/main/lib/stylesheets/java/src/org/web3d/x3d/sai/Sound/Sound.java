@@ -157,7 +157,7 @@ public interface Sound extends X3DSoundNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -166,7 +166,7 @@ public interface Sound extends X3DSoundNode
 	 * @return {@link Sound} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public Sound setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public Sound setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>minBack</i>.
@@ -226,14 +226,22 @@ public interface Sound extends X3DSoundNode
 	 * Provide X3DSoundSourceNode instance (using a properly typed node) from inputOutput SFNode field <i>source</i>.
 	 * @return value of source field
 	 */
-	public X3DSoundSourceNode getSource(); // acceptable node types: X3DSoundSourceNode
+	public X3DSoundSourceNode getSource(); // acceptable node types #1:X3DSoundSourceNode
 
 	/**
 	 * Assign X3DSoundSourceNode instance (using a properly typed node) to inputOutput SFNode field <i>source</i>.
 	 * @param newValue is new value for the source field.
 	 * @return {@link Sound} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public Sound setSource(X3DSoundSourceNode newValue); // acceptable node types: X3DSoundSourceNode
+	public Sound setSource(X3DSoundSourceNode newValue); // acceptable node types #2: X3DSoundSourceNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>source</i>.
+	 * @see #setSource(X3DSoundSourceNode)
+	 * @param newValue is new value for the source field.
+	 * @return {@link Sound} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public Sound setSource(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>spatialize</i>.

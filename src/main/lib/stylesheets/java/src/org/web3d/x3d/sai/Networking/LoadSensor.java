@@ -120,7 +120,7 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -129,7 +129,7 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * @return {@link LoadSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public LoadSensor setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public LoadSensor setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value from outputOnly SFFloat field named <i>progress</i>.
@@ -167,7 +167,7 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * @see org.web3d.x3d.sai.Networking.X3DUrlObject
 	 * @return value of watchList field
 	 */
-	public X3DNode[] getWatchList(); // acceptable node types: X3DUrlObject
+	public X3DNode[] getWatchList(); // acceptable node types #1:X3DUrlObject
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>watchList</i>.
@@ -176,7 +176,7 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * @param newValue is new value for the watchList field.
 	 * @return {@link LoadSensor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public LoadSensor setWatchList(X3DNode[] newValue); // acceptable node types: X3DUrlObject
+	public LoadSensor setWatchList(X3DNode[] newValue); // acceptable node types #2: X3DUrlObject
 
 	/**
 	 * Add array of child watchList nodes to array of existing nodes (if any).
@@ -184,12 +184,12 @@ public interface LoadSensor extends X3DNetworkSensorNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DUrlObject.
 	 * @param newValue is new value array to be appended the watchList field.
 	 */
-	public void addWatchList(X3DNode[] newValue); // acceptable node types: X3DUrlObject
+	public void addWatchList(X3DNode[] newValue); // acceptable node types #3: X3DUrlObject
 	/**
 	 * Set single child watchList node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the watchList field
 	 */
-	public void setWatchList(X3DNode newValue); // acceptable node types: X3DUrlObject
+	public void setWatchList(X3DNode newValue); // acceptable node types #5: X3DUrlObject
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

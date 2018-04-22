@@ -218,7 +218,7 @@ public class MultiTextureTransformObject extends org.web3d.x3d.jsail.X3DConcrete
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "textureTransform";
+	public String containerField_DEFAULT_VALUE = "textureTransform";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -290,7 +290,6 @@ public class MultiTextureTransformObject extends org.web3d.x3d.jsail.X3DConcrete
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 

@@ -296,7 +296,7 @@ public class AppearanceObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 
 	/** containerField describes typical field relationship of a node to its parent.
 	 * Usage is not ordinarily needed when using this API, default value is provided for informational purposes. */
-	String containerField_DEFAULT_VALUE = "appearance";
+	public String containerField_DEFAULT_VALUE = "appearance";
 
 	// String constants for field names usable in ROUTE statements
 
@@ -401,10 +401,29 @@ public class AppearanceObject extends org.web3d.x3d.jsail.X3DConcreteNode implem
 			fillPropertiesProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			fillPropertiesProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>fillProperties</i>.
+	 * @see #setFillProperties(FillProperties)
+	 * @param newValue is new value for the fillProperties field.
+	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public AppearanceObject setFillProperties(ProtoInstance newValue)
+	{
+		fillPropertiesProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) fillPropertiesProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (fillProperties != null)
+		{
+			((X3DConcreteElement) fillProperties).setParentObject(null); // housekeeping, clear prior object
+			fillProperties = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of fillProperties field.
 	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -488,10 +507,29 @@ setAttribute method invocations).
 			linePropertiesProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			linePropertiesProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>lineProperties</i>.
+	 * @see #setLineProperties(LineProperties)
+	 * @param newValue is new value for the lineProperties field.
+	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public AppearanceObject setLineProperties(ProtoInstance newValue)
+	{
+		linePropertiesProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) linePropertiesProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (lineProperties != null)
+		{
+			((X3DConcreteElement) lineProperties).setParentObject(null); // housekeeping, clear prior object
+			lineProperties = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of lineProperties field.
 	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -575,10 +613,29 @@ setAttribute method invocations).
 			materialProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			materialProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>material</i>.
+	 * @see #setMaterial(X3DMaterialNode)
+	 * @param newValue is new value for the material field.
+	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public AppearanceObject setMaterial(ProtoInstance newValue)
+	{
+		materialProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) materialProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (material != null)
+		{
+			((X3DConcreteElement) material).setParentObject(null); // housekeeping, clear prior object
+			material = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of material field.
 	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -665,7 +722,6 @@ setAttribute method invocations).
 			metadataProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			metadataProtoInstance = null;
 		}
-
 		return this;
 	}
 
@@ -913,10 +969,29 @@ setAttribute method invocations).
 			textureProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			textureProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>texture</i>.
+	 * @see #setTexture(X3DTextureNode)
+	 * @param newValue is new value for the texture field.
+	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public AppearanceObject setTexture(ProtoInstance newValue)
+	{
+		textureProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) textureProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (texture != null)
+		{
+			((X3DConcreteElement) texture).setParentObject(null); // housekeeping, clear prior object
+			texture = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of texture field.
 	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -1000,10 +1075,29 @@ setAttribute method invocations).
 			textureTransformProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			textureTransformProtoInstance = null;
 		}
-
 		return this;
 	}
 
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>textureTransform</i>.
+	 * @see #setTextureTransform(X3DTextureTransformNode)
+	 * @param newValue is new value for the textureTransform field.
+	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public AppearanceObject setTextureTransform(ProtoInstance newValue)
+	{
+		textureTransformProtoInstance = (ProtoInstanceObject)newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) textureTransformProtoInstance).setParentObject(this); // parentTest15.5
+	    }
+		if (textureTransform != null)
+		{
+			((X3DConcreteElement) textureTransform).setParentObject(null); // housekeeping, clear prior object
+			textureTransform = null;
+		}
+	    return this;
+	}
 	/**
 	 * Utility method to clear SFNode value of textureTransform field.
 	 * @return {@link AppearanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive

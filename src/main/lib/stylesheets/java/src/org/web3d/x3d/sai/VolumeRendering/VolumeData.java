@@ -129,7 +129,7 @@ public interface VolumeData extends X3DVolumeDataNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -138,33 +138,49 @@ public interface VolumeData extends X3DVolumeDataNode
 	 * @return {@link VolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public VolumeData setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public VolumeData setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide X3DVolumeRenderStyleNode instance (using a properly typed node) from inputOutput SFNode field <i>renderStyle</i>.
 	 * @return value of renderStyle field
 	 */
-	public X3DVolumeRenderStyleNode getRenderStyle(); // acceptable node types: X3DVolumeRenderStyleNode
+	public X3DVolumeRenderStyleNode getRenderStyle(); // acceptable node types #1:X3DVolumeRenderStyleNode
 
 	/**
 	 * Assign X3DVolumeRenderStyleNode instance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
 	 * @param newValue is new value for the renderStyle field.
 	 * @return {@link VolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public VolumeData setRenderStyle(X3DVolumeRenderStyleNode newValue); // acceptable node types: X3DVolumeRenderStyleNode
+	public VolumeData setRenderStyle(X3DVolumeRenderStyleNode newValue); // acceptable node types #2: X3DVolumeRenderStyleNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>renderStyle</i>.
+	 * @see #setRenderStyle(X3DVolumeRenderStyleNode)
+	 * @param newValue is new value for the renderStyle field.
+	 * @return {@link VolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public VolumeData setRenderStyle(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DTexture3DNode instance (using a properly typed node) from inputOutput SFNode field <i>voxels</i>.
 	 * @return value of voxels field
 	 */
-	public X3DTexture3DNode getVoxels(); // acceptable node types: X3DTexture3DNode
+	public X3DTexture3DNode getVoxels(); // acceptable node types #1:X3DTexture3DNode
 
 	/**
 	 * Assign X3DTexture3DNode instance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
 	 * @param newValue is new value for the voxels field.
 	 * @return {@link VolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public VolumeData setVoxels(X3DTexture3DNode newValue); // acceptable node types: X3DTexture3DNode
+	public VolumeData setVoxels(X3DTexture3DNode newValue); // acceptable node types #2: X3DTexture3DNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>voxels</i>.
+	 * @see #setVoxels(X3DTexture3DNode)
+	 * @param newValue is new value for the voxels field.
+	 * @return {@link VolumeData} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public VolumeData setVoxels(ProtoInstance newValue);
 
 
 	/**

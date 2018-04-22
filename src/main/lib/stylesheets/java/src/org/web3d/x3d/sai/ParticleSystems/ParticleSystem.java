@@ -77,7 +77,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return value of appearance field
 	 */
 	@Override
-	public X3DAppearanceNode getAppearance(); // acceptable node types: X3DAppearanceNode
+	public X3DAppearanceNode getAppearance(); // acceptable node types #1:X3DAppearanceNode
 
 	/**
 	 * Assign X3DAppearanceNode instance (using a properly typed node) to inputOutput SFNode field <i>appearance</i>.
@@ -87,7 +87,15 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ParticleSystem setAppearance(X3DAppearanceNode newValue); // acceptable node types: X3DAppearanceNode
+	public ParticleSystem setAppearance(X3DAppearanceNode newValue); // acceptable node types #2: X3DAppearanceNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>appearance</i>.
+	 * @see #setAppearance(X3DAppearanceNode)
+	 * @param newValue is new value for the appearance field.
+	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystem setAppearance(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from initializeOnly SFVec3f field named <i>bboxCenter</i>.
@@ -170,7 +178,7 @@ public interface ParticleSystem extends X3DShapeNode
  * </ul>
 	 * @return value of colorRamp field
 	 */
-	public X3DColorNode getColorRamp(); // acceptable node types: X3DColorNode
+	public X3DColorNode getColorRamp(); // acceptable node types #1:X3DColorNode
 
 	/**
 	 * Assign X3DColorNode instance (using a properly typed node) using RGB values [0..1] to initializeOnly SFNode field <i>colorRamp</i>.
@@ -179,7 +187,15 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @param newValue is new value for the colorRamp field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ParticleSystem setColorRamp(X3DColorNode newValue); // acceptable node types: X3DColorNode
+	public ParticleSystem setColorRamp(X3DColorNode newValue); // acceptable node types #2: X3DColorNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>colorRamp</i>.
+	 * @see #setColorRamp(X3DColorNode)
+	 * @param newValue is new value for the colorRamp field.
+	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystem setColorRamp(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>createParticles</i>.
@@ -208,7 +224,7 @@ public interface ParticleSystem extends X3DShapeNode
 
 	 * @return value of emitter field
 	 */
-	public X3DParticleEmitterNode getEmitter(); // acceptable node types: X3DParticleEmitterNode
+	public X3DParticleEmitterNode getEmitter(); // acceptable node types #1:X3DParticleEmitterNode
 
 	/**
 	 * Assign X3DParticleEmitterNode instance (using a properly typed node) to initializeOnly SFNode field <i>emitter</i>.
@@ -217,7 +233,15 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @param newValue is new value for the emitter field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ParticleSystem setEmitter(X3DParticleEmitterNode newValue); // acceptable node types: X3DParticleEmitterNode
+	public ParticleSystem setEmitter(X3DParticleEmitterNode newValue); // acceptable node types #2: X3DParticleEmitterNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>emitter</i>.
+	 * @see #setEmitter(X3DParticleEmitterNode)
+	 * @param newValue is new value for the emitter field.
+	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystem setEmitter(ProtoInstance newValue);
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>enabled</i>.
@@ -248,7 +272,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return value of geometry field
 	 */
 	@Override
-	public X3DGeometryNode getGeometry(); // acceptable node types: X3DGeometryNode
+	public X3DGeometryNode getGeometry(); // acceptable node types #1:X3DGeometryNode
 
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
@@ -258,7 +282,15 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ParticleSystem setGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
+	public ParticleSystem setGeometry(X3DGeometryNode newValue); // acceptable node types #2: X3DGeometryNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
+	 * @see #setGeometry(X3DGeometryNode)
+	 * @param newValue is new value for the geometry field.
+	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystem setGeometry(ProtoInstance newValue);
 
 	/**
 	 * Provide String enumeration value ['LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY'] from initializeOnly SFString field named <i>geometryType</i>.
@@ -342,7 +374,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -351,7 +383,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ParticleSystem setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ParticleSystem setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide float value within allowed range of [0,infinity) from inputOutput SFFloat field named <i>particleLifetime</i>.
@@ -402,7 +434,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @see org.web3d.x3d.sai.ParticleSystems.X3DParticlePhysicsModelNode
 	 * @return value of physics field
 	 */
-	public X3DNode[] getPhysics(); // acceptable node types: X3DParticlePhysicsModelNode
+	public X3DNode[] getPhysics(); // acceptable node types #1:X3DParticlePhysicsModelNode
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to initializeOnly MFNode field <i>physics</i>.
@@ -413,7 +445,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @param newValue is new value for the physics field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ParticleSystem setPhysics(X3DNode[] newValue); // acceptable node types: X3DParticlePhysicsModelNode
+	public ParticleSystem setPhysics(X3DNode[] newValue); // acceptable node types #2: X3DParticlePhysicsModelNode
 
 	/**
 	 * Add array of child physics nodes to array of existing nodes (if any).
@@ -421,12 +453,12 @@ public interface ParticleSystem extends X3DShapeNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value array to be appended the physics field.
 	 */
-	public void addPhysics(X3DNode[] newValue); // acceptable node types: X3DParticlePhysicsModelNode
+	public void addPhysics(X3DNode[] newValue); // acceptable node types #3: X3DParticlePhysicsModelNode
 	/**
 	 * Set single child physics node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the physics field
 	 */
-	public void setPhysics(X3DNode newValue); // acceptable node types: X3DParticlePhysicsModelNode
+	public void setPhysics(X3DNode newValue); // acceptable node types #5: X3DParticlePhysicsModelNode
 	/**
 	 * Provide array of float results within allowed range of [0,infinity) from initializeOnly MFFloat field named <i>texCoordKey</i>.
 	 * <br><br>
@@ -459,7 +491,7 @@ public interface ParticleSystem extends X3DShapeNode
  * </ul>
 	 * @return value of texCoordRamp field
 	 */
-	public TextureCoordinate getTexCoordRamp(); // acceptable node types: TextureCoordinate
+	public TextureCoordinate getTexCoordRamp(); // acceptable node types #1:TextureCoordinate
 
 	/**
 	 * Assign TextureCoordinate instance (using a properly typed node) to initializeOnly SFNode field <i>texCoordRamp</i>.
@@ -468,7 +500,15 @@ public interface ParticleSystem extends X3DShapeNode
 	 * @param newValue is new value for the texCoordRamp field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ParticleSystem setTexCoordRamp(TextureCoordinate newValue); // acceptable node types: TextureCoordinate
+	public ParticleSystem setTexCoordRamp(TextureCoordinate newValue); // acceptable node types #2: TextureCoordinate
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>texCoordRamp</i>.
+	 * @see #setTexCoordRamp(TextureCoordinate)
+	 * @param newValue is new value for the texCoordRamp field.
+	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ParticleSystem setTexCoordRamp(ProtoInstance newValue);
 
 
 	/**

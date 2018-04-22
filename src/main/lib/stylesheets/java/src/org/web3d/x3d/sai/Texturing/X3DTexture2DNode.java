@@ -59,7 +59,7 @@ public interface X3DTexture2DNode extends X3DTextureNode
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -67,7 +67,7 @@ public interface X3DTexture2DNode extends X3DTextureNode
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DTexture2DNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DTexture2DNode setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public X3DTexture2DNode setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from initializeOnly SFBool field named <i>repeatS</i>.
@@ -99,14 +99,22 @@ public interface X3DTexture2DNode extends X3DTextureNode
 	 * Provide TextureProperties instance (using a properly typed node) from initializeOnly SFNode field <i>textureProperties</i>.
 	 * @return value of textureProperties field
 	 */
-	public TextureProperties getTextureProperties(); // acceptable node types: TextureProperties
+	public TextureProperties getTextureProperties(); // acceptable node types #1:TextureProperties
 
 	/**
 	 * Assign TextureProperties instance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
 	 * @param newValue is new value for the textureProperties field.
 	 * @return {@link X3DTexture2DNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public X3DTexture2DNode setTextureProperties(TextureProperties newValue); // acceptable node types: TextureProperties
+	public X3DTexture2DNode setTextureProperties(TextureProperties newValue); // acceptable node types #2: TextureProperties
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to initializeOnly SFNode field <i>textureProperties</i>.
+	 * @see #setTextureProperties(TextureProperties)
+	 * @param newValue is new value for the textureProperties field.
+	 * @return {@link X3DTexture2DNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public X3DTexture2DNode setTextureProperties(ProtoInstance newValue);
 
 
 	/**

@@ -169,7 +169,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimJointObject
 	 * @return value of joints field
 	 */
-	public X3DNode[] getJoints(); // acceptable node types: HAnimJoint
+	public X3DNode[] getJoints(); // acceptable node types #1:HAnimJoint
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>joints</i>.
@@ -180,7 +180,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the joints field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setJoints(X3DNode[] newValue); // acceptable node types: HAnimJoint
+	public HAnimHumanoid setJoints(X3DNode[] newValue); // acceptable node types #2: HAnimJoint
 
 	/**
 	 * Add array of child joints nodes to array of existing nodes (if any).
@@ -188,19 +188,19 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint.
 	 * @param newValue is new value array to be appended the joints field.
 	 */
-	public void addJoints(X3DNode[] newValue); // acceptable node types: HAnimJoint
+	public void addJoints(X3DNode[] newValue); // acceptable node types #3: HAnimJoint
 	/**
 	 * Set single child joints node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the joints field
 	 */
-	public void setJoints(X3DNode newValue); // acceptable node types: HAnimJoint
+	public void setJoints(X3DNode newValue); // acceptable node types #5: HAnimJoint
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -209,7 +209,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public HAnimHumanoid setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public HAnimHumanoid setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide String value from inputOutput SFString field named <i>name</i>.
@@ -306,7 +306,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimSegmentObject
 	 * @return value of segments field
 	 */
-	public X3DNode[] getSegments(); // acceptable node types: HAnimSegment
+	public X3DNode[] getSegments(); // acceptable node types #1:HAnimSegment
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>segments</i>.
@@ -317,7 +317,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the segments field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSegments(X3DNode[] newValue); // acceptable node types: HAnimSegment
+	public HAnimHumanoid setSegments(X3DNode[] newValue); // acceptable node types #2: HAnimSegment
 
 	/**
 	 * Add array of child segments nodes to array of existing nodes (if any).
@@ -325,12 +325,12 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSegment.
 	 * @param newValue is new value array to be appended the segments field.
 	 */
-	public void addSegments(X3DNode[] newValue); // acceptable node types: HAnimSegment
+	public void addSegments(X3DNode[] newValue); // acceptable node types #3: HAnimSegment
 	/**
 	 * Set single child segments node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the segments field
 	 */
-	public void setSegments(X3DNode newValue); // acceptable node types: HAnimSegment
+	public void setSegments(X3DNode newValue); // acceptable node types #5: HAnimSegment
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>sites</i>.
 	 * <br><br>
@@ -346,7 +346,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of sites field
 	 */
-	public X3DNode[] getSites(); // acceptable node types: HAnimSite
+	public X3DNode[] getSites(); // acceptable node types #1:HAnimSite
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>sites</i>.
@@ -357,7 +357,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the sites field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSites(X3DNode[] newValue); // acceptable node types: HAnimSite
+	public HAnimHumanoid setSites(X3DNode[] newValue); // acceptable node types #2: HAnimSite
 
 	/**
 	 * Add array of child sites nodes to array of existing nodes (if any).
@@ -365,12 +365,12 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value array to be appended the sites field.
 	 */
-	public void addSites(X3DNode[] newValue); // acceptable node types: HAnimSite
+	public void addSites(X3DNode[] newValue); // acceptable node types #3: HAnimSite
 	/**
 	 * Set single child sites node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the sites field
 	 */
-	public void setSites(X3DNode newValue); // acceptable node types: HAnimSite
+	public void setSites(X3DNode newValue); // acceptable node types #5: HAnimSite
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to HAnimJoint|HAnimSite, from inputOutput MFNode field <i>skeleton</i>.
 	 * <br><br>
@@ -385,7 +385,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of skeleton field
 	 */
-	public X3DNode[] getSkeleton(); // acceptable node types: HAnimJoint|HAnimSite
+	public X3DNode[] getSkeleton(); // acceptable node types #1:HAnimJoint|HAnimSite
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to HAnimJoint|HAnimSite, to inputOutput MFNode field <i>skeleton</i>.
@@ -396,7 +396,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the skeleton field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSkeleton(X3DNode[] newValue); // acceptable node types: HAnimJoint|HAnimSite
+	public HAnimHumanoid setSkeleton(X3DNode[] newValue); // acceptable node types #2: HAnimJoint|HAnimSite
 
 	/**
 	 * Add array of child skeleton nodes to array of existing nodes (if any).
@@ -404,12 +404,12 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimJoint|HAnimSite.
 	 * @param newValue is new value array to be appended the skeleton field.
 	 */
-	public void addSkeleton(X3DNode[] newValue); // acceptable node types: HAnimJoint|HAnimSite
+	public void addSkeleton(X3DNode[] newValue); // acceptable node types #3: HAnimJoint|HAnimSite
 	/**
 	 * Set single child skeleton node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the skeleton field
 	 */
-	public void setSkeleton(X3DNode newValue); // acceptable node types: HAnimJoint|HAnimSite
+	public void setSkeleton(X3DNode newValue); // acceptable node types #5: HAnimJoint|HAnimSite
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to Group|Transform|Shape|IndexedFaceSet, from inputOutput MFNode field <i>skin</i>.
 	 * <br><br>
@@ -426,7 +426,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.Geometry3D.IndexedFaceSetObject
 	 * @return value of skin field
 	 */
-	public X3DNode[] getSkin(); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
+	public X3DNode[] getSkin(); // acceptable node types #1:Group|Transform|Shape|IndexedFaceSet
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to Group|Transform|Shape|IndexedFaceSet, to inputOutput MFNode field <i>skin</i>.
@@ -437,7 +437,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the skin field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSkin(X3DNode[] newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
+	public HAnimHumanoid setSkin(X3DNode[] newValue); // acceptable node types #2: Group|Transform|Shape|IndexedFaceSet
 
 	/**
 	 * Add array of child skin nodes to array of existing nodes (if any).
@@ -445,12 +445,12 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to Group|Transform|Shape|IndexedFaceSet.
 	 * @param newValue is new value array to be appended the skin field.
 	 */
-	public void addSkin(X3DNode[] newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
+	public void addSkin(X3DNode[] newValue); // acceptable node types #3: Group|Transform|Shape|IndexedFaceSet
 	/**
 	 * Set single child skin node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the skin field
 	 */
-	public void setSkin(X3DNode newValue); // acceptable node types: Group|Transform|Shape|IndexedFaceSet
+	public void setSkin(X3DNode newValue); // acceptable node types #5: Group|Transform|Shape|IndexedFaceSet
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>skinCoord</i>.
 	 * <br><br>
@@ -462,7 +462,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
  * </ul>
 	 * @return value of skinCoord field
 	 */
-	public X3DCoordinateNode getSkinCoord(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getSkinCoord(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>skinCoord</i>.
@@ -471,7 +471,15 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the skinCoord field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSkinCoord(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public HAnimHumanoid setSkinCoord(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>skinCoord</i>.
+	 * @see #setSkinCoord(X3DCoordinateNode)
+	 * @param newValue is new value for the skinCoord field.
+	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public HAnimHumanoid setSkinCoord(ProtoInstance newValue);
 
 	/**
 	 * Provide X3DNormalNode instance (using a properly typed node) from inputOutput SFNode field <i>skinNormal</i>.
@@ -483,7 +491,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
  * </ul>
 	 * @return value of skinNormal field
 	 */
-	public X3DNormalNode getSkinNormal(); // acceptable node types: X3DNormalNode
+	public X3DNormalNode getSkinNormal(); // acceptable node types #1:X3DNormalNode
 
 	/**
 	 * Assign X3DNormalNode instance (using a properly typed node) to inputOutput SFNode field <i>skinNormal</i>.
@@ -492,7 +500,15 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the skinNormal field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setSkinNormal(X3DNormalNode newValue); // acceptable node types: X3DNormalNode
+	public HAnimHumanoid setSkinNormal(X3DNormalNode newValue); // acceptable node types #2: X3DNormalNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>skinNormal</i>.
+	 * @see #setSkinNormal(X3DNormalNode)
+	 * @param newValue is new value for the skinNormal field.
+	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public HAnimHumanoid setSkinNormal(ProtoInstance newValue);
 
 	/**
 	 * Provide array of 3-tuple float results from inputOutput SFVec3f field named <i>translation</i>.
@@ -549,7 +565,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @see org.web3d.x3d.jsail.HAnim.HAnimSiteObject
 	 * @return value of viewpoints field
 	 */
-	public X3DNode[] getViewpoints(); // acceptable node types: HAnimSite
+	public X3DNode[] getViewpoints(); // acceptable node types #1:HAnimSite
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>viewpoints</i>.
@@ -560,7 +576,7 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * @param newValue is new value for the viewpoints field.
 	 * @return {@link HAnimHumanoid} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public HAnimHumanoid setViewpoints(X3DNode[] newValue); // acceptable node types: HAnimSite
+	public HAnimHumanoid setViewpoints(X3DNode[] newValue); // acceptable node types #2: HAnimSite
 
 	/**
 	 * Add array of child viewpoints nodes to array of existing nodes (if any).
@@ -568,12 +584,12 @@ public interface HAnimHumanoid extends X3DChildNode, X3DBoundedObject
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimSite.
 	 * @param newValue is new value array to be appended the viewpoints field.
 	 */
-	public void addViewpoints(X3DNode[] newValue); // acceptable node types: HAnimSite
+	public void addViewpoints(X3DNode[] newValue); // acceptable node types #3: HAnimSite
 	/**
 	 * Set single child viewpoints node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the viewpoints field
 	 */
-	public void setViewpoints(X3DNode newValue); // acceptable node types: HAnimSite
+	public void setViewpoints(X3DNode newValue); // acceptable node types #5: HAnimSite
 
 	/**
 	 * Assign String value to inputOutput SFString field named <i>DEF</i>.

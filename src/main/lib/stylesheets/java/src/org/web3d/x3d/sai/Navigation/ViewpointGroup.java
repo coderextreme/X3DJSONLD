@@ -88,7 +88,7 @@ public interface ViewpointGroup extends X3DChildNode
 	 * @see org.web3d.x3d.jsail.Navigation.ViewpointGroupObject
 	 * @return value of children field
 	 */
-	public X3DNode[] getChildren(); // acceptable node types: X3DViewpointNode|ViewpointGroup
+	public X3DNode[] getChildren(); // acceptable node types #1:X3DViewpointNode|ViewpointGroup
 
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DViewpointNode|ViewpointGroup, to inputOutput MFNode field <i>children</i>.
@@ -97,7 +97,7 @@ public interface ViewpointGroup extends X3DChildNode
 	 * @param newValue is new value for the children field.
 	 * @return {@link ViewpointGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public ViewpointGroup setChildren(X3DNode[] newValue); // acceptable node types: X3DViewpointNode|ViewpointGroup
+	public ViewpointGroup setChildren(X3DNode[] newValue); // acceptable node types #2: X3DViewpointNode|ViewpointGroup
 
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
@@ -105,12 +105,12 @@ public interface ViewpointGroup extends X3DChildNode
 	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DViewpointNode|ViewpointGroup.
 	 * @param newValue is new value array to be appended the children field.
 	 */
-	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DViewpointNode|ViewpointGroup
+	public void addChildren(X3DNode[] newValue); // acceptable node types #3: X3DViewpointNode|ViewpointGroup
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
 	 * @param newValue is new node for the children field
 	 */
-	public void setChildren(X3DNode newValue); // acceptable node types: X3DViewpointNode|ViewpointGroup
+	public void setChildren(X3DNode newValue); // acceptable node types #5: X3DViewpointNode|ViewpointGroup
 	/**
 	 * Provide String value from inputOutput SFString field named <i>description</i>.
 	 * <br><br>
@@ -157,7 +157,7 @@ public interface ViewpointGroup extends X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -166,7 +166,7 @@ public interface ViewpointGroup extends X3DChildNode
 	 * @return {@link ViewpointGroup} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public ViewpointGroup setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public ViewpointGroup setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide boolean value from inputOutput SFBool field named <i>retainUserOffsets</i>.

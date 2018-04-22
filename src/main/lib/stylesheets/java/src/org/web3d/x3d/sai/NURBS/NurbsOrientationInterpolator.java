@@ -64,14 +64,22 @@ public interface NurbsOrientationInterpolator extends X3DChildNode
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>controlPoint</i>.
 	 * @return value of controlPoint field
 	 */
-	public X3DCoordinateNode getControlPoint(); // acceptable node types: X3DCoordinateNode
+	public X3DCoordinateNode getControlPoint(); // acceptable node types #1:X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
 	 * @param newValue is new value for the controlPoint field.
 	 * @return {@link NurbsOrientationInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
-	public NurbsOrientationInterpolator setControlPoint(X3DCoordinateNode newValue); // acceptable node types: X3DCoordinateNode
+	public NurbsOrientationInterpolator setControlPoint(X3DCoordinateNode newValue); // acceptable node types #2: X3DCoordinateNode
+
+	/**
+	 * Assign ProtoInstance (using a properly typed node) to inputOutput SFNode field <i>controlPoint</i>.
+	 * @see #setControlPoint(X3DCoordinateNode)
+	 * @param newValue is new value for the controlPoint field.
+	 * @return {@link NurbsOrientationInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public NurbsOrientationInterpolator setControlPoint(ProtoInstance newValue);
 
 	/**
 	 * Provide array of double results from initializeOnly MFDouble field named <i>knot</i>.
@@ -97,7 +105,7 @@ public interface NurbsOrientationInterpolator extends X3DChildNode
 	 * @return value of metadata field
 	 */
 	@Override
-	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
+	public X3DMetadataObject getMetadata(); // acceptable node types #1:X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -106,7 +114,7 @@ public interface NurbsOrientationInterpolator extends X3DChildNode
 	 * @return {@link NurbsOrientationInterpolator} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	@Override
-	public NurbsOrientationInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types: X3DMetadataObject
+	public NurbsOrientationInterpolator setMetadata(X3DMetadataObject newValue); // acceptable node types #2: X3DMetadataObject
 
 	/**
 	 * Provide int value within allowed range of [2,infinity) from inputOutput SFInt32 field named <i>order</i>.
