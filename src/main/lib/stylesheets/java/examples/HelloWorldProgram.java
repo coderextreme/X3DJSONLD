@@ -78,7 +78,7 @@ public class HelloWorldProgram
 	public static void main(String[] args)
 	{
 		HelloWorldProgram thisProgram = new HelloWorldProgram ();
-                thisProgram.validate(); // trace invocation
+     // thisProgram.validate(); // trace invocation
 	}
         
 	private String validate()
@@ -300,8 +300,15 @@ public class HelloWorldProgram
 		{
 			String exiModelValidation = exiModel.validate();
 			if    (exiModelValidation.isEmpty())
-				   exiModelValidation += "success";
-			System.out.println ("exiModel.validate() results: " + exiModelValidation);
+			{
+				exiModelValidation += "success";
+				System.out.println ("exiModel.validate() results: success");
+			}
+			else
+			{
+				System.out.println ("exiModel.validate() results:");
+				System.out.println (exiModelValidation);
+			}
 		}
 		System.out.println ("===========================================");
 		System.out.println ("Test toFileEXI() with OpenEXI: not yet implemented");
@@ -369,6 +376,13 @@ public class HelloWorldProgram
 		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.zip", "-fromZIP", "-toFile", "HelloWorldProgramOutput.CommandLine.unzipped.x3d"};
 		System.out.println ("CommandLine " + Arrays.toString(args));
 		CommandLine.run (args); // run these commands
+		System.out.println ("===========================================");
+		ConfigurationProperties.setDebugModeActive(true);
+        String results = x3dModel.validate(); // trace invocation
+		if  (results.isEmpty())
+			 results += "success";
+		else results = "\n" + results;
+		System.out.println ("x3dModel.validate() results with ConfigurationProperties.setDebugModeActive(true): " + results);
 		System.out.println ("===========================================");
 		System.out.println ("HelloWorldProgram complete.");
 	}

@@ -100,6 +100,10 @@ public class ConfigurationProperties
 	 */
 	public static final String WARNING_CONFIGURATION_X3DJSAIL = "WARNING_CONFIGURATION_X3DJSAIL";
 
+	/** Warning message if model information is unexpected or missing.
+	 */
+	public static final String WARNING_MESSAGE = "WARNING_MESSAGE";
+
 	/** Error message if an illegal value is provided as a method parameter.
 	 */
 	public static final String ERROR_ILLEGAL_VALUE = "ERROR_ILLEGAL_VALUE";
@@ -113,6 +117,10 @@ public class ConfigurationProperties
 	/** Error message if a field is required but no value is found.
 	 */
 	public static final String ERROR_VALUE_NOT_FOUND = "ERROR_VALUE_NOT_FOUND";
+	
+	/** Error message if a node is required but no reference is found.
+	 */
+	public static final String ERROR_NODE_NOT_FOUND = "ERROR_NODE_NOT_FOUND";
 	
 	/** Error message if incorrect field accessType value encountered.
 	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()

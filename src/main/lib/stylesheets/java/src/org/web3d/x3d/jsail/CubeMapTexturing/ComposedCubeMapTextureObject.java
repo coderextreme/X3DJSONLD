@@ -410,6 +410,7 @@ public class ComposedCubeMapTextureObject extends org.web3d.x3d.jsail.X3DConcret
 	 * @param newValue is new value for the back field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setBack(ProtoInstance newValue)
 	{
 		backProtoInstance = (ProtoInstanceObject)newValue;
@@ -518,6 +519,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the bottom field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setBottom(ProtoInstance newValue)
 	{
 		bottomProtoInstance = (ProtoInstanceObject)newValue;
@@ -626,6 +628,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the front field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setFront(ProtoInstance newValue)
 	{
 		frontProtoInstance = (ProtoInstanceObject)newValue;
@@ -734,6 +737,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the left field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setLeft(ProtoInstance newValue)
 	{
 		leftProtoInstance = (ProtoInstanceObject)newValue;
@@ -933,6 +937,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the right field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setRight(ProtoInstance newValue)
 	{
 		rightProtoInstance = (ProtoInstanceObject)newValue;
@@ -1041,6 +1046,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the top field.
 	 * @return {@link ComposedCubeMapTextureObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ComposedCubeMapTextureObject setTop(ProtoInstance newValue)
 	{
 		topProtoInstance = (ProtoInstanceObject)newValue;
@@ -1665,7 +1671,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1684,7 +1690,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1835,9 +1841,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (backProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) backProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (bottom != null)
 		{
 			referenceNode = ((X3DConcreteElement) bottom).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (bottomProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) bottomProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -1847,9 +1865,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (frontProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) frontProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (left != null)
 		{
 			referenceNode = ((X3DConcreteElement) left).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (leftProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) leftProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -1859,15 +1889,33 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (right != null)
 		{
 			referenceNode = ((X3DConcreteElement) right).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (rightProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) rightProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (top != null)
 		{
 			referenceNode = ((X3DConcreteElement) top).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (topProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) topProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2167,9 +2215,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='CubeMapTexturing' level='1'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"CubeMapTexturing\").setLevel(1);";
+					"' for parent X3D model containing 'ComposedCubeMapTexture' node, add head statement <component name='CubeMapTexturing' level='1'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"CubeMapTexturing\").setLevel(1);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

@@ -723,13 +723,15 @@ public class CommandLine
 						// note that validation already performed as part of prior conversions
                         String outputValidationText = loadedX3dModel.validate();
                             
-                        System.out.println("validate results:");
                         if (!convertToFile)
                         {
                             if  (outputValidationText.isEmpty())
-                                 outputValidationText = "success, no problems noted";
-                            else System.out.println();
-                            System.out.println(outputValidationText);
+                                 outputValidationText = "validate results:success, no problems noted";
+                            else
+							{
+								System.out.println(    "validate results:");
+								System.out.println(outputValidationText);
+							}
                             return;
                         }
                         else if (convertToFile && outputValidationText.isEmpty())

@@ -42,46 +42,62 @@ import java.util.*;
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
  * 
-Description of a single profile, which is a collection of components.
-A profile defines the player or tool support needed for a particular scene.
+Description of a single component.1188311883
+A component description contains useful pieces of information about
+the requirements. Of primary importance is the specification component name and level.
+Additional information includes title and URL for the component provider.
  * 
  * @author Don Brutzman and Roy Walmsley
- * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#ProfileInfo" target="_blank">SAI Java Specification: B.6.2 ProfileInfo</a>
- * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#PROFILEStatement" target="blank">X3D Abstract Specification: 7.2.5.3 PROFILE statement</a>
- * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProfileInfo" target="_blank">X3D Tooltips: ProfileInfo</a>
+ * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Component" target="_blank">SAI Java Specification: B.6.1 ComponentInfo</a>
+ * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#COMPONENTStatement" target="blank">X3D Abstract Specification: 7.2.5.4 COMPONENT statement</a>
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Component" target="_blank">X3D Tooltips: Component</a>
  * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
  */
-public interface ProfileInfo
+public interface Component
 {
     /**
      * Get the name of this component.
-     *
      * @return name The name of the component
      */
 	public String getName();
 				
     /**
-     * Get the title of this component. This is a long-form version that can
-     * be used in a UI.
+     * Get the level of the component. A level is always greater than zero.
+     * The level information may represent one of two things, depending on
+     * how the component info was created. When created as part of a file that
+     * is requesting a specific level of support, the level will indicate the
+     * requested level, not the maximum available on the system. When this is
+     * returned from a query of the system to see what components are available
+     * then the level is maximum supported by the implementation.
      *
-     * @return The title string of this component
+     * @return The level value for the component
+	 */
+	public int getLevel();
+				
+    /**
+     * Get the title of this component. This is a long-form version that can
+     * be used in a UI. If no title is set, will return null.
+     *
+     * @return The title string of the component
      */
 	public String getTitle();
 				
     /**
-     * Get the list of defined components for this profile. A profile will
-     * always have one or more components.
+     * Get the URL of the provider. This is used for user interface information
+     * to point an end user at someone who has implemented this bit of
+     * functionality. It is not used by the system to download the component
+     * or its definition.
      *
-     * @return An array of Component definitions for this profile
+     * @return The URL of the provider as a string
      */
-	public Component[] getComponents();
-
+	public String getProviderURL();
+				
     /**
      * Return a formatted string version of this component that conforms to
      * the X3D specification for X3D file encoding. The string will start
-     * with the <code>PROFILE</code> keyword, as per specification.
+     * with the <code>COMPONENT</code> keyword, as per specification.
      *
-     * @return A correctly formatted string
+     * @return A correctly formatted string.
      */
 	public String toX3DString(); // TODO re-check: toStringX3D
 }
