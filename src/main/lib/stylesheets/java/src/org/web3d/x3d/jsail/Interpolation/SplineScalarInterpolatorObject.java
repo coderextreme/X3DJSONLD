@@ -1396,7 +1396,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1415,7 +1415,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1491,6 +1491,12 @@ setAttribute method invocations).
 		if (metadata != null)
 		{
 			referenceNode = ((X3DConcreteElement) metadata).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -1608,9 +1614,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='Interpolation' level='4'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"Interpolation\").setLevel(4);";
+					"' for parent X3D model containing 'SplineScalarInterpolator' node, add head statement <component name='Interpolation' level='4'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"Interpolation\").setLevel(4);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

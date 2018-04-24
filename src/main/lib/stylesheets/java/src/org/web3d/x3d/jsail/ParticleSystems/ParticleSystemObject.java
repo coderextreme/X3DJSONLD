@@ -590,6 +590,7 @@ public class ParticleSystemObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	 * @param newValue is new value for the appearance field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ParticleSystemObject setAppearance(ProtoInstance newValue)
 	{
 		appearanceProtoInstance = (ProtoInstanceObject)newValue;
@@ -958,6 +959,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the colorRamp field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ParticleSystemObject setColorRamp(ProtoInstance newValue)
 	{
 		colorRampProtoInstance = (ProtoInstanceObject)newValue;
@@ -1110,6 +1112,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the emitter field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ParticleSystemObject setEmitter(ProtoInstance newValue)
 	{
 		emitterProtoInstance = (ProtoInstanceObject)newValue;
@@ -1263,6 +1266,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ParticleSystemObject setGeometry(ProtoInstance newValue)
 	{
 		geometryProtoInstance = (ProtoInstanceObject)newValue;
@@ -1819,7 +1823,7 @@ setAttribute method invocations).
 			}
 			else throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof X3DParticlePhysicsModelNode; newValue=" + Arrays.toString(newValue));
 		}
-}
+	}
 
 	/**
 	 * Set single child physics node, replacing prior array of existing nodes (if any).
@@ -2035,6 +2039,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the texCoordRamp field.
 	 * @return {@link ParticleSystemObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ParticleSystemObject setTexCoordRamp(ProtoInstance newValue)
 	{
 		texCoordRampProtoInstance = (ProtoInstanceObject)newValue;
@@ -2883,7 +2888,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2902,7 +2907,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -3062,9 +3067,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (appearanceProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) appearanceProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (colorRamp != null)
 		{
 			referenceNode = ((X3DConcreteElement) colorRamp).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (colorRampProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) colorRampProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -3074,21 +3091,45 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
-		if (geometry != null)
+		if (emitterProtoInstance != null)
 		{
-			referenceNode = ((X3DConcreteElement) geometry).findNodeByDEF(DEFvalue);
+			referenceNode = ((X3DConcreteElement) emitterProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
 		if (geometry != null)
 		{
 			referenceNode = ((X3DConcreteElement) geometry).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (geometryProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) geometryProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (geometry != null)
+		{
+			referenceNode = ((X3DConcreteElement) geometry).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (geometryProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) geometryProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
 		if (metadata != null)
 		{
 			referenceNode = ((X3DConcreteElement) metadata).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -3104,6 +3145,12 @@ setAttribute method invocations).
 		if (texCoordRamp != null)
 		{
 			referenceNode = ((X3DConcreteElement) texCoordRamp).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (texCoordRampProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) texCoordRampProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -3439,9 +3486,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='ParticleSystems' level='2'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"ParticleSystems\").setLevel(2);";
+					"' for parent X3D model containing 'ParticleSystem' node, add head statement <component name='ParticleSystems' level='2'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"ParticleSystems\").setLevel(2);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

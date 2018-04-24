@@ -492,6 +492,7 @@ public class TextureBackgroundObject extends org.web3d.x3d.jsail.X3DConcreteNode
 	 * @param newValue is new value for the backTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setBackTexture(ProtoInstance newValue)
 	{
 		backTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -624,6 +625,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the bottomTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setBottomTexture(ProtoInstance newValue)
 	{
 		bottomTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -742,6 +744,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the frontTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setFrontTexture(ProtoInstance newValue)
 	{
 		frontTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -1043,6 +1046,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the leftTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setLeftTexture(ProtoInstance newValue)
 	{
 		leftTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -1252,6 +1256,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the rightTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setRightTexture(ProtoInstance newValue)
 	{
 		rightTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -1538,6 +1543,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the topTexture field.
 	 * @return {@link TextureBackgroundObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public TextureBackgroundObject setTopTexture(ProtoInstance newValue)
 	{
 		topTextureProtoInstance = (ProtoInstanceObject)newValue;
@@ -2303,7 +2309,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2322,7 +2328,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2473,9 +2479,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (backTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) backTextureProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (bottomTexture != null)
 		{
 			referenceNode = ((X3DConcreteElement) bottomTexture).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (bottomTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) bottomTextureProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2485,9 +2503,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (frontTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) frontTextureProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (leftTexture != null)
 		{
 			referenceNode = ((X3DConcreteElement) leftTexture).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (leftTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) leftTextureProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2497,15 +2527,33 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (rightTexture != null)
 		{
 			referenceNode = ((X3DConcreteElement) rightTexture).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (rightTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) rightTextureProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (topTexture != null)
 		{
 			referenceNode = ((X3DConcreteElement) topTexture).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (topTextureProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) topTextureProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2815,9 +2863,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='EnvironmentalEffects' level='3'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"EnvironmentalEffects\").setLevel(3);";
+					"' for parent X3D model containing 'TextureBackground' node, add head statement <component name='EnvironmentalEffects' level='3'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"EnvironmentalEffects\").setLevel(3);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

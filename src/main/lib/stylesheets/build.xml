@@ -586,7 +586,7 @@ and
 		<!-- TODO also provide option in archive build file to download current version -->
 		<!-- TODO are exificient and nagasena/openexi needed? -->
 		<!-- ===================================================================== -->
-		<echo>Provide Java X3DJSAIL support in X3D Example Archives:</echo>
+		<echo>Copy ${jsai.full.archive.jar.name} to lib/ subdirectories in X3D Example Archives:</echo>
 		<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Basic/lib"                  verbose="true"/>
     	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/ConformanceNist/lib"        verbose="true"/>
     	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Vrml2Sourcebook/lib"        verbose="true"/>
@@ -881,7 +881,7 @@ and
      </target>
     
     <target name="test"
-        depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon,test.X3dModelMetaToMarkdown.saxon" description="Perform stylesheet test tasks" >
+        depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon,test.X3dModelMetaToMarkdown.saxon,test.X3dToJava.xslt" description="Perform stylesheet test tasks" >
         <!-- TODO:  ,
                  test.X3dToVrml97.xslt, test.X3dToX3dvClassicVrmlEncoding.xslt, test.X3dToXhtml.xslt -->
         <!-- TODO:  test.X3dExtrusionToSvgViaXslt1.1.xslt -->
@@ -964,30 +964,55 @@ and
         <xslt style="X3dToXhtml.xslt" in="${examples.dir}/HelloWorld.x3d" out="test/HelloWorld.xslt.html"/>
     </target>
     
-    <target name="test.X3DJSAIL" depends="" description="Test X3DJSAIL" >
+    <target name="test.X3DJSAIL" depends="test.X3dToJava.xslt" description="Test X3DJSAIL" >
 		<echo message="==========================================="/>
 		<echo message="helpful invocations for CommandLine debugging"/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -help"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="-help"/>
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -properties ${java.examples.dir}/X3DJSAIL.properties"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="-properties"/>
             <arg value="${java.examples.dir}/X3DJSAIL.properties"/>
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/HelloWorldProgramOutput.x3d -toZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toZIP"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         </java>
 		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/flowers4.x3d -toJava -toFile ${java.examples.dir}/flowers4.java"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/flowers4.x3d"/><!-- input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/flowers4.java"/>
+        </java>
+		<echo message="compile flowers4.java source..."/>
+        <javac srcdir ="${java.examples.dir}"
+			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="${java.examples.dir}"
+                 debug="on"
+               verbose="false"
+               includeantruntime="false" fork="${fork}">
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<!-- self-validation test -->
+		<echo message="test flowers4 execution and self-validation:"/>
+		<java classname="flowers4" 
+			  dir="${java.examples.dir}"
+			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/flowers4.x3d -toJSON -toFile ${java.examples.dir}/flowers4.json"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/flowers4.x3d"/><!-- input model -->
             <arg value="-toJSON"/>
             <arg value="-toFile"/>
@@ -995,7 +1020,7 @@ and
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toGZIP"/>
             <arg value="-toFile"/>
@@ -1003,7 +1028,7 @@ and
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toX3D"/>
             <arg value="-toFile"/>
@@ -1011,7 +1036,7 @@ and
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toXML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.xml"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toXML"/>
             <arg value="-toFile"/>
@@ -1019,7 +1044,7 @@ and
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -toHTML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.html (pretty print)"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toHTML"/><!-- pretty print documentation -->
             <arg value="-toFile"/>
@@ -1027,7 +1052,7 @@ and
         </java>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -markdown -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-markdown"/>
             <arg value="-toFile"/>
@@ -1038,14 +1063,14 @@ and
         </concat>
 		<echo message="==========================================="/>
 		<echo message="org.web3d.x3d.jsail.CommandLine -tidy -toFile ${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-tidy"/><!-- cleaned-up version -->
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
         </java>
 		<echo message="==========================================="/>
-		<echo message="test HelloWorldProgram.java compilation..."/>
+		<echo message="compile HelloWorldProgram.java source..."/>
         <javac srcdir ="${java.examples.dir}"
 			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
                destdir="${java.examples.dir}"
@@ -1065,7 +1090,7 @@ and
 			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
 		<echo message="==========================================="/>
-		<echo message="test HelloWorldProgramOutput.java compilation..."/>
+		<echo message="compile HelloWorldProgramOutput.java source..."/>
 		<echo message="     (i.e. new source program which was just produced by HelloWorldProgram execution)"/>
         <javac srcdir ="${java.examples.dir}"
 			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
@@ -1262,18 +1287,87 @@ and
     
     <target name="test.X3dToJava.xslt" depends="test.mkdir" description="Test X3dToJava.xslt stylesheet using Saxon" >
         <echo message="==========================================="/>
-        <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
-        <echo message="..expected output: test/HelloWorldProgramOutput.java"/>
+		<echo message="org.web3d.x3d.jsail.CommandLine test/ball.x3d -toJava -toFile test/ball.java"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="test/ball.x3d"/><!-- input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="test/ball.java"/>
+        </java>
+		<echo message="compile ball.java source..."/>
+        <javac srcdir ="test"
+			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="test"
+                 debug="on"
+               verbose="false"
+               includeantruntime="false" fork="${fork}">
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<!-- self-validation test -->
+		<echo message="test ball execution and self-validation:"/>
+		<java classname="ball" 
+			  dir="test"
+			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+        <echo message="==========================================="/>
+        <echo message="org.web3d.x3d.jsail.CommandLine test/Box.x3d -toJava -toFile test/Box.java"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="test/Box.x3d"/><!-- input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="test/Box.java"/>
+        </java>
+		<echo message="compile..."/>
+        <javac includes="Box.java" 
+			    srcdir ="test"
+			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="test"
+                  debug="on"
+                verbose="false"
+                includeantruntime="false" fork="${fork}">
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<!-- self-validation test -->
+		<echo message="test Box execution and self-validation:"/>
+		<java classname="Box" 
+			  dir="test"
+			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+        <echo message="==========================================="/>
+        <echo message="translation input: test/CameraExamples.x3d"/>
+        <echo message="..expected output: test/CameraExamples.java"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
-            <arg value="-o:test/HelloWorldProgramOutput.java"/> <!-- output-doc -->
-            <arg value="-s:test/HelloWorldProgramOutput.x3d"/>  <!-- source-doc -->
+            <arg value="-s:test/CameraExamples.x3d"/>  <!-- source-doc -->
+            <arg value="-o:test/CameraExamples.java"/> <!-- output-doc -->
             <arg value="-xsl:X3dToJava.xslt"/> <!-- style-doc -->
-            <arg value="className=HelloWorldProgramOutput"/> <!-- parameter -->
+            <arg value="className=CameraExamples"/> <!-- parameter -->
         </java>
-		<echo message="TODO compile and run self-validation test"/>
+		<echo message="compile..."/>
+        <javac includes="CameraExamples.java" 
+			    srcdir ="test"
+			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="test"
+                  debug="on"
+                verbose="false"
+                includeantruntime="false" fork="${fork}">
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<!-- self-validation test -->
+		<echo message="test CameraExamples execution and self-validation:"/>
+		<java classname="CameraExamples" 
+			  dir="test"
+			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+		<echo message="==========================================="/>
     </target>
     
     <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >

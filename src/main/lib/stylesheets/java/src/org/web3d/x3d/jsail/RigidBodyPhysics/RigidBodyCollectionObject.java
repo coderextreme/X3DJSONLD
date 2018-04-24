@@ -663,7 +663,7 @@ public class RigidBodyCollectionObject extends org.web3d.x3d.jsail.X3DConcreteNo
 			}
 			else throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof RigidBody; newValue=" + Arrays.toString(newValue));
 		}
-}
+	}
 
 	/**
 	 * Set single child bodies node, replacing prior array of existing nodes (if any).
@@ -752,6 +752,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the collider field.
 	 * @return {@link RigidBodyCollectionObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public RigidBodyCollectionObject setCollider(ProtoInstance newValue)
 	{
 		colliderProtoInstance = (ProtoInstanceObject)newValue;
@@ -1314,7 +1315,7 @@ setAttribute method invocations).
 			}
 			else throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof X3DRigidJointNode; newValue=" + Arrays.toString(newValue));
 		}
-}
+	}
 
 	/**
 	 * Set single child joints node, replacing prior array of existing nodes (if any).
@@ -2249,7 +2250,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2268,7 +2269,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2386,6 +2387,12 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (colliderProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) colliderProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		for (X3DRigidJointNode element : joints) // MFNode
 		{
 			if (element instanceof org.web3d.x3d.jsail.X3DConcreteNode)
@@ -2398,6 +2405,12 @@ setAttribute method invocations).
 		if (metadata != null)
 		{
 			referenceNode = ((X3DConcreteElement) metadata).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2589,9 +2602,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='RigidBodyPhysics' level='2'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"RigidBodyPhysics\").setLevel(2);";
+					"' for parent X3D model containing 'RigidBodyCollection' node, add head statement <component name='RigidBodyPhysics' level='2'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"RigidBodyPhysics\").setLevel(2);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

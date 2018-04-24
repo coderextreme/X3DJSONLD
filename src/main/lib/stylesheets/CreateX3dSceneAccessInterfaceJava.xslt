@@ -5294,7 +5294,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -5312,7 +5312,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -7292,6 +7292,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 */</xsl:text>
 									<xsl:text>&#10;</xsl:text>
+									<xsl:if test="not($isInterface = 'true')">
+										<xsl:text>	@Override</xsl:text>
+										<xsl:text>&#10;</xsl:text>
+									</xsl:if>
 									<!-- also have setFieldName(ProtoInstance newValue) for SFNode fields -->
 									<xsl:text>	public </xsl:text>
 									<xsl:value-of select="$thisClassName"/>
@@ -8476,7 +8480,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												</xsl:when>
 												<!-- requirement to match SAI interfaces prevents adding further support -->
 											</xsl:choose>
-											<xsl:text>}</xsl:text>
+											<xsl:text>	}</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:otherwise>
@@ -9464,7 +9468,40 @@ setAttribute method invocations).
 		setContainerFieldOverride(containerFieldName);
 		return this;
 	}
-		 
+
+	/**
+	 * Utility method to find original ProtoInstance name if this ProtoInstance is a USE node (which does not include name).
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public String getOriginalName()
+	{
+		if (!getName().isEmpty())
+		    return getName();
+
+		String          originalName = getName();
+		X3DConcreteNode originalProtoInstanceNode;
+		if (originalName.isEmpty())
+		{
+			originalProtoInstanceNode = findAncestorSceneObject().findNodeByDEF(getUSE());
+			if (originalProtoInstanceNode == null)
+			{
+				String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
+						": unable to locate reference ProtoInstance DEF='" + getUSE() + "' for ProtoInstance USE='" + getUSE() + "'";
+				validationResult.append(errorNotice);
+				throw new InvalidProtoException(errorNotice); // report error
+			}
+			else if (!(originalProtoInstanceNode instanceof ProtoInstanceObject))
+			{
+				String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
+						": unable to locate correct node reference, ProtoInstance USE='" + getUSE() + "' mistakenly matches " + originalProtoInstanceNode.getClass() + " DEF='" + getUSE() + "'";
+				validationResult.append(errorNotice);
+				throw new InvalidProtoException(errorNotice); // report error
+			}
+			originalName = ((ProtoInstanceObject)originalProtoInstanceNode).getName();
+		}
+		return originalName;
+	}
+
 	/**
 	 * Determine whether a corresponding ProtoDeclare with same name is connected in this scene graph.
 	 * @see #hasExternProtoDeclare
@@ -9477,7 +9514,8 @@ setAttribute method invocations).
 		// check for corresponding declaration
 		if  (findAncestorSceneObject() == null)
 			 return false;
-		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
 		{
 			 referenceProtoDeclare = (ProtoDeclareObject) matchingDeclaration;
@@ -9498,7 +9536,8 @@ setAttribute method invocations).
 		// check for corresponding declaration
 		if  (findAncestorSceneObject() == null)
 			 return false;
-		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME); 
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
 		{
 			 referenceExternProtoDeclare = (ExternProtoDeclareObject) matchingDeclaration;
@@ -9622,29 +9661,33 @@ setAttribute method invocations).
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-							   "ProtoInstance name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+							   "ProtoInstance name='" + getOriginalName() + "' must first be connected to SceneObject scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 				return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + "_PrototypeNotFound"; // node type not found
 			}
 			else return errorNotice;
 		}
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
 		X3DConcreteElement matchingDeclaration = null;
 		if (findAncestorSceneObject() != null)
-			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
 		{
 			// added matching methods for getNodeType() in ProtoDeclare, ProtoBody
 			return ((ProtoDeclareObject) matchingDeclaration).getNodeType();
 		}
-		matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME);
+		matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME);
 		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
 		{
 			return ((ExternProtoDeclareObject) matchingDeclaration).getNodeType();
 		}
 		else
 		{
-			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-						   "ProtoInstance name='" + getName() + "' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.";
+			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": ";
+			if  (isUSE())
+				 errorNotice += "ProtoInstance USE='" + getUSE();
+			else errorNotice += "ProtoInstance name='" + getName();
+			errorNotice += "' has no corresponding ProtoDeclare or ExternProtoDeclare to provide type.";
 			validationResult.append(errorNotice).append("\n");
 			return errorNotice; // node type not found
 		}]]></xsl:text>
@@ -11373,7 +11416,7 @@ setAttribute method invocations).
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -11392,7 +11435,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -11581,6 +11624,16 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}</xsl:text>
+										<!-- also check SFNode protoInstance member objects -->
+										<xsl:if test="not(@name = 'head') and not(@name = 'Scene') and not(@name = 'ProtoInterface') and not(@name = 'ProtoBody')">
+											<xsl:text>
+		if (</xsl:text><xsl:value-of select="@name"/><xsl:text>ProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) </xsl:text><xsl:value-of select="@name"/><xsl:text>ProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}</xsl:text>
+										</xsl:if>
 									</xsl:when>
 									<xsl:when test="(@type = 'MFNode') and 
 													not(($isFieldX3dStatement = 'true') or starts-with(@name,'field'))">
@@ -11719,6 +11772,16 @@ setAttribute method invocations).
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
 		// TODO duplicate name checks in setValue() method</xsl:text>
+											<xsl:if test="(@name = 'meta')">
+												<xsl:text>
+		if (getName().equalsIgnoreCase("error") || getName().equalsIgnoreCase("warning") || getName().equalsIgnoreCase("info"))
+		{
+			String warningNotice = ConfigurationProperties.WARNING_MESSAGE + 
+									", " + NAME + " name=\"" + getName() + "\" content=\"" + getContent() + "\"";
+			validationResult.append(warningNotice).append("\n");
+			throw new InvalidFieldValueException(warningNotice); // report meta warning
+		}</xsl:text>
+											</xsl:if>
 										</xsl:when>
 									</xsl:choose>
 									<xsl:text>&#10;		</xsl:text><!-- indent -->
@@ -11795,14 +11858,47 @@ setAttribute method invocations).
 								<!-- ProtoInstance name checks -->
 								<xsl:if test="($name = 'ProtoInstance') and (@name = 'name')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (getName().isEmpty() && !isUSE())
+        if (getName().isEmpty() && !isUSE())
         {
 			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
 			validationResult.append(errorNotice);
 			throw new InvalidProtoException(errorNotice); // report error
         }
-		// check for corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
-		if (!getName().isEmpty() && getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+		if (!getName().isEmpty() && isUSE())
+        {
+			String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		String originalName = getOriginalName(); // call once here, for efficiency and also to allow separate changes
+
+		// check for presence of corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
+		if (ConfigurationProperties.isDebugModeActive() && hasProtoDeclare())
+		{
+			if  (isUSE())
+			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ProtoDeclare").append("\n");
+			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ProtoDeclare").append("\n");
+		}
+		else if (ConfigurationProperties.isDebugModeActive() && hasExternProtoDeclare())
+		{
+			if  (isUSE())
+			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ExternProtoDeclare").append("\n");
+			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ExternProtoDeclare").append("\n");
+		}
+		else if (hasProtoDeclare() && hasExternProtoDeclare())
+		{
+			String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE +
+					"ProtoInstance " + getName() + " has both corresponding ProtoDeclare and ExternProtoDeclare";
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        {
+			String errorNotice = getNodeType();
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
         {
 			String errorNotice = getNodeType();
 			validationResult.append(errorNotice);
@@ -12250,12 +12346,13 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name=']]></xsl:text><xsl:value-of select="$componentName"/>
+					"' for parent X3D model containing ']]></xsl:text><xsl:value-of select="$name"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[' node, add head statement <component name=']]></xsl:text><xsl:value-of select="$componentName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[' level=']]></xsl:text>
 					<xsl:value-of select="$componentLevel"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA['/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"]]></xsl:text><xsl:value-of select="$componentName"/>
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"]]></xsl:text><xsl:value-of select="$componentName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[\").setLevel(]]></xsl:text>
 					<xsl:value-of select="$componentLevel"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[);";
@@ -23632,15 +23729,16 @@ arguments are interpreted as follows:
 		<!-- TODO: specification  definitions for other statements; add accessor methods for setting values -->
 
 		<xsl:call-template name="generateSourceFile">
-			<xsl:with-param name="name"><xsl:text>ComponentInfo</xsl:text></xsl:with-param>
+			<xsl:with-param name="name"><xsl:text>Component</xsl:text></xsl:with-param>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
 			<xsl:with-param name="extends"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
+			<!-- TODO fix name in SAI: Component rather than ComponentInfo -->
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.6.1 ComponentInfo</xsl:text></xsl:with-param>
-			<xsl:with-param name="saiJavaSpecificationRelativeUrl"><xsl:text>abstracts.html#ComponentInfo</xsl:text></xsl:with-param>
+			<xsl:with-param name="saiJavaSpecificationRelativeUrl"><xsl:text>abstracts.html#Component</xsl:text></xsl:with-param>
 			<xsl:with-param name="saiAbstractSpecificationSection"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="x3dAbstractSpecificationSection"><xsl:text>7.2.5.4 COMPONENT statement</xsl:text></xsl:with-param>
@@ -23748,9 +23846,9 @@ A profile defines the player or tool support needed for a particular scene.
      * Get the list of defined components for this profile. A profile will
      * always have one or more components.
      *
-     * @return An array of ComponentInfo definitions for this profile
+     * @return An array of Component definitions for this profile
      */
-	public ComponentInfo[] getComponents();
+	public Component[] getComponents();
 
     /**
      * Return a formatted string version of this component that conforms to
@@ -25988,13 +26086,15 @@ import org.web3d.x3d.sai.X3DException;
 						// note that validation already performed as part of prior conversions
                         String outputValidationText = loadedX3dModel.validate();
                             
-                        System.out.println("validate results:");
                         if (!convertToFile)
                         {
                             if  (outputValidationText.isEmpty())
-                                 outputValidationText = "success, no problems noted";
-                            else System.out.println();
-                            System.out.println(outputValidationText);
+                                 outputValidationText = "validate results:success, no problems noted";
+                            else
+							{
+								System.out.println(    "validate results:");
+								System.out.println(outputValidationText);
+							}
                             return;
                         }
                         else if (convertToFile && outputValidationText.isEmpty())
@@ -26271,6 +26371,10 @@ and showing default attribute values.</p>
 	 */
 	public static final String WARNING_CONFIGURATION_X3DJSAIL = "WARNING_CONFIGURATION_X3DJSAIL";
 
+	/** Warning message if model information is unexpected or missing.
+	 */
+	public static final String WARNING_MESSAGE = "WARNING_MESSAGE";
+
 	/** Error message if an illegal value is provided as a method parameter.
 	 */
 	public static final String ERROR_ILLEGAL_VALUE = "ERROR_ILLEGAL_VALUE";
@@ -26284,6 +26388,10 @@ and showing default attribute values.</p>
 	/** Error message if a field is required but no value is found.
 	 */
 	public static final String ERROR_VALUE_NOT_FOUND = "ERROR_VALUE_NOT_FOUND";
+	
+	/** Error message if a node is required but no reference is found.
+	 */
+	public static final String ERROR_NODE_NOT_FOUND = "ERROR_NODE_NOT_FOUND";
 	
 	/** Error message if incorrect field accessType value encountered.
 	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
@@ -28096,7 +28204,7 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
 									((SceneObject)elementObject).addLayerSet ((LayerSetObject) childX3dElement);
 							else if (nodeName.equals("Scene"))
-									((SceneObject)elementObject).addChild((X3DChildNode) childX3dElement);
+									((SceneObject)elementObject).addChildren((X3DNode) childX3dElement);
 							// CommentsBlock handled by case org.w3c.dom.Node.COMMENT_NODE
 					
 							// proto and field handling begins here to avoid possible subsequent missteps
@@ -28113,9 +28221,9 @@ import org.web3d.x3d.sai.X3DException;
 							else if (childElementName.equals("ProtoBody"))
 									((ProtoDeclareObject)elementObject).setProtoBody((ProtoBodyObject) childX3dElement);
 							else if (nodeName.equals("field"))
-									((fieldObject)elementObject).addChild((X3DNode) childX3dElement);
+									((fieldObject)elementObject).addChild((X3DNode) childX3dElement); // TODO duplicative addChildren
 							else if (nodeName.equals("fieldValue"))
-									((fieldValueObject)elementObject).addChild((X3DChildNode) childX3dElement);
+									((fieldValueObject)elementObject).addChild((X3DNode) childX3dElement); // TODO duplicative addChildren
 							else if (childElementName.equals("fieldValue"))
 									((ProtoInstanceObject)elementObject).setFieldValue((fieldValueObject) childX3dElement);
 							else if (nodeName.equals("ShaderProgram") && childElementName.equals("field"))
@@ -28127,7 +28235,9 @@ import org.web3d.x3d.sai.X3DException;
 					
 							else if (nodeName.equals("Collision") && (containerField.equals("proxy")))
 									((CollisionObject)elementObject).setProxy ((X3DChildNode) childX3dElement);
-				// TODO what about ProtoInstance proxy?  unnecessary?
+							else if (nodeName.equals("Collision")  && childElementName.equals("ProtoInstance") && (containerField.equals("proxy")))
+									((CollisionObject)elementObject).setProxy ((ProtoInstance) childX3dElement);
+
 							else if (nodeName.equals("Collision") && (protoInstanceNodeType.equals("proxy")))
 									((CollisionObject)elementObject).setProxy ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("MetadataSet") && childElementName.startsWith("Metadata") && (!containerField.equals("metadata")))
@@ -28252,16 +28362,6 @@ import org.web3d.x3d.sai.X3DException;
 									)
 									((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
 
-							// IndexedFaceSet, TriangleSet, QuadSet etc.
-							else if (nodeName.endsWith("Set") && childElementName.equals("Normal"))
-									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.equals("Normal"))
-									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("TextureCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
-
 							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal"))
 									((ElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
 							else if (nodeName.equals("ElevationGrid") && protoInstanceNodeType.equals("Normal"))
@@ -28270,6 +28370,56 @@ import org.web3d.x3d.sai.X3DException;
 									((GeoElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && protoInstanceNodeType.equals("Normal"))
 									((GeoElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+					
+							else if (nodeName.equals("HAnimHumanoid") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSite")) && containerField.equals("skeleton"))
+									((HAnimHumanoidObject)elementObject).addSkeleton((X3DNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("HAnimSite")) && containerField.equals("skeleton"))
+									((HAnimHumanoidObject)elementObject).addSkeleton((X3DNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && containerField.equals("skin"))
+									((HAnimHumanoidObject)elementObject).addSkin((X3DNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimJoint") && containerField.equals("joints"))
+									((HAnimHumanoidObject)elementObject).addJoints((HAnimJointObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimJoint") && containerField.equals("joints"))
+				// TODO				((HAnimHumanoidObject)elementObject).addJoints((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSegment") && containerField.equals("segments"))
+									((HAnimHumanoidObject)elementObject).addSegments((HAnimSegmentObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSegment") && containerField.equals("joints"))
+				// TODO				((HAnimHumanoidObject)elementObject).addSegments((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("sites"))
+									((HAnimHumanoidObject)elementObject).addSites((HAnimSiteObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSite") && containerField.equals("sites"))
+				// TODO				((HAnimHumanoidObject)elementObject).addSites((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("viewpoints"))
+									((HAnimHumanoidObject)elementObject).addViewpoints((HAnimSiteObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSite") && containerField.equals("viewpoints"))
+				// TODO				((HAnimHumanoidObject)elementObject).addViewpoints((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.contains("Coordinate"))
+									((HAnimHumanoidObject)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.contains("Coordinate"))
+									((HAnimHumanoidObject)elementObject).setSkinCoord ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("Normal"))
+									((HAnimHumanoidObject)elementObject).setSkinNormal ((X3DNormalNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("Normal"))
+									((HAnimHumanoidObject)elementObject).setSkinNormal ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("HAnimJoint") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSegment") || childElementName.equals("HAnimSite")) && containerField.equals("children"))
+									((HAnimJointObject)elementObject).addChildren((X3DNode) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("HAnimSite")) && containerField.equals("children"))
+				// TODO				((HAnimJointObject)elementObject).addChildren((X3DNode) childX3dElement);
+							else if (nodeName.equals("HAnimJoint") && childElementName.equals("HAnimDisplacer") && containerField.equals("displacers"))
+									((HAnimJointObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimJoint") && protoInstanceNodeType.equals("HAnimDisplacer") && containerField.equals("displacers"))
+				// TODO				((HAnimJointObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("HAnimSegment") && childElementName.equals("HAnimDisplacer") && containerField.equals("displacers"))
+									((HAnimSegmentObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
+				// TODO		else if (nodeName.equals("HAnimSegment") && protoInstanceNodeType.equals("HAnimDisplacer") && containerField.equals("displacers"))
+				// TODO				((HAnimSegmentObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("HAnimSegment") && childElementName.contains("Coordinate"))
+									((HAnimSegmentObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.equals("HAnimSegment") && protoInstanceNodeType.contains("Coordinate"))
+									((HAnimSegmentObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Coordinate"))
 									((IndexedFaceSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
@@ -28311,6 +28461,28 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Color"))
 									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
+							// X3DComposedGeometryNode IFS, TriangleSet, QuadSet etc.  Note this block must follow (Indexed)LineSet and PointSet tests.
+							else if (nodeName.endsWith("Set") && childElementName.contains("Color"))
+									((X3DComposedGeometryNode)elementObject).setColor((X3DColorNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("Color"))
+									((X3DComposedGeometryNode)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("Coordinate"))
+									((X3DComposedGeometryNode)elementObject).setCoord((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("Coordinate"))
+									((X3DComposedGeometryNode)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("FogCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setFogCoord((FogCoordinateObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("FogCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.equals("Normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("TextureCoordinate"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("ViewpointGroup") && childElementName.equals("Viewpoint"))
 									((ViewpointGroupObject)elementObject).addChild((ViewpointObject) childX3dElement);
 							else if (nodeName.equals("ViewpointGroup") && protoInstanceNodeType.equals("Viewpoint"))
@@ -28320,6 +28492,11 @@ import org.web3d.x3d.sai.X3DException;
 									((TextObject)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
 							else if (nodeName.equals("Text") && protoInstanceNodeType.equals("FontStyle"))
 									((TextObject)elementObject).setFontStyle ((ProtoInstanceObject) childX3dElement);
+					
+							else if (nodeName.equals("MultiTexture") && childElementName.contains("Texture") && containerField.equals("texture"))
+									((MultiTextureObject)elementObject).addTexture((X3DTextureNode) childX3dElement);
+				// TODO		else if (nodeName.equals("MultiTexture") && protoInstanceNodeType.contains("Texture") && containerField.equals("texture"))
+				// TODO				((MultiTextureObject)elementObject).addTexture((ProtoInstanceObject) childX3dElement);
 
 							else if (childElementName.equals("IS"))
 									((X3DConcreteNode)elementObject).setIS ((ISObject) childX3dElement);
@@ -29596,6 +29773,18 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			</xsl:choose>
 			<xsl:text>		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
 			<xsl:text>&#10;</xsl:text>
+			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
+				<xsl:text>		</xsl:text>
+				<xsl:text>String savedValue = </xsl:text><xsl:value-of select="$newValue"/><xsl:text>; // save invocation value
+		if      (</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.endsWith("_tip"))
+			</xsl:text><xsl:value-of select="$newValue"/><xsl:text> = </xsl:text><xsl:value-of select="$newValue"/><xsl:text>.substring(0,</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.lastIndexOf("_tip"));
+		else if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.endsWith("_view"))
+			</xsl:text><xsl:value-of select="$newValue"/><xsl:text> = </xsl:text><xsl:value-of select="$newValue"/><xsl:text>.substring(0,</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.lastIndexOf("_view"));
+		else if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.endsWith("_pt"))
+			</xsl:text><xsl:value-of select="$newValue"/><xsl:text> = </xsl:text><xsl:value-of select="$newValue"/><xsl:text>.substring(0,</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.lastIndexOf("_pt"));
+		else </xsl:text><xsl:value-of select="$newValue"/><xsl:text> = ""; // missing necessary suffix
+</xsl:text>
+			</xsl:if>
 			<xsl:text>		</xsl:text>
 			<xsl:text>if (!(</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -29630,6 +29819,12 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			</xsl:for-each>
 			<xsl:text>)) {</xsl:text>
 			<xsl:text>&#10;</xsl:text>
+			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>			</xsl:text>
+				<xsl:value-of select="$newValue"/><xsl:text> = savedValue; // restore invocation value</xsl:text>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
 			<xsl:text>			throw new org.web3d.x3d.sai.InvalidFieldValueException</xsl:text>
 			<xsl:text>("</xsl:text>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
@@ -29650,6 +29845,11 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			</xsl:choose>
 			<xsl:text> + "\"</xsl:text>
 			<xsl:text> has illegal value, must use a valid enumeration string.</xsl:text>
+			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
+				<xsl:text>" +</xsl:text>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>			"HAnimSite name must end in \"_tip\" \"_view\" or \"_pt\".</xsl:text>
+			</xsl:if>
 			<xsl:text>");</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>		}</xsl:text>

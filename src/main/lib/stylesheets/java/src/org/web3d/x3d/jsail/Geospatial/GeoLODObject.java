@@ -1216,6 +1216,7 @@ setAttribute method invocations).
 	 * @param newValue is new value for the geoOrigin field.
 	 * @return {@link GeoLODObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public GeoLODObject setGeoOrigin(ProtoInstance newValue)
 	{
 		geoOriginProtoInstance = (ProtoInstanceObject)newValue;
@@ -1668,7 +1669,7 @@ setAttribute method invocations).
 			}
 			else throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof X3DChildNode; newValue=" + Arrays.toString(newValue));
 		}
-}
+	}
 
 	/**
 	 * Set single child rootNode node, replacing prior array of existing nodes (if any).
@@ -2436,7 +2437,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2455,7 +2456,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -2555,9 +2556,21 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (geoOriginProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) geoOriginProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		if (metadata != null)
 		{
 			referenceNode = ((X3DConcreteElement) metadata).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
 			if (referenceNode != null)
 				return referenceNode;
 		}
@@ -2726,9 +2739,9 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" invalid X3D profile='" + modelProfile +
-					"' for parent X3D model, add element <componentInfo name='Geospatial' level='1'/>\n" +
-					"or source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponentInfo(\"Geospatial\").setLevel(1);";
+					"' for parent X3D model containing 'GeoLOD' node, add head statement <component name='Geospatial' level='1'/>\n" +
+					"or Java source-code assignment: " +
+					" findAncestorX3DObject().getHead().addComponent(\"Geospatial\").setLevel(1);";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldException(errorNotice); // report error
 			}

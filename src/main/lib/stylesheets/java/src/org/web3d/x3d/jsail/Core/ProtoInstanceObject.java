@@ -702,7 +702,40 @@ setAttribute method invocations).
 		setContainerFieldOverride(containerFieldName);
 		return this;
 	}
-		 
+
+	/**
+	 * Utility method to find original ProtoInstance name if this ProtoInstance is a USE node (which does not include name).
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public String getOriginalName()
+	{
+		if (!getName().isEmpty())
+		    return getName();
+
+		String          originalName = getName();
+		X3DConcreteNode originalProtoInstanceNode;
+		if (originalName.isEmpty())
+		{
+			originalProtoInstanceNode = findAncestorSceneObject().findNodeByDEF(getUSE());
+			if (originalProtoInstanceNode == null)
+			{
+				String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
+						": unable to locate reference ProtoInstance DEF='" + getUSE() + "' for ProtoInstance USE='" + getUSE() + "'";
+				validationResult.append(errorNotice);
+				throw new InvalidProtoException(errorNotice); // report error
+			}
+			else if (!(originalProtoInstanceNode instanceof ProtoInstanceObject))
+			{
+				String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
+						": unable to locate correct node reference, ProtoInstance USE='" + getUSE() + "' mistakenly matches " + originalProtoInstanceNode.getClass() + " DEF='" + getUSE() + "'";
+				validationResult.append(errorNotice);
+				throw new InvalidProtoException(errorNotice); // report error
+			}
+			originalName = ((ProtoInstanceObject)originalProtoInstanceNode).getName();
+		}
+		return originalName;
+	}
+
 	/**
 	 * Determine whether a corresponding ProtoDeclare with same name is connected in this scene graph.
 	 * @see #hasExternProtoDeclare
@@ -715,7 +748,8 @@ setAttribute method invocations).
 		// check for corresponding declaration
 		if  (findAncestorSceneObject() == null)
 			 return false;
-		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
 		{
 			 referenceProtoDeclare = (ProtoDeclareObject) matchingDeclaration;
@@ -736,7 +770,8 @@ setAttribute method invocations).
 		// check for corresponding declaration
 		if  (findAncestorSceneObject() == null)
 			 return false;
-		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME); 
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
 		{
 			 referenceExternProtoDeclare = (ExternProtoDeclareObject) matchingDeclaration;
@@ -791,29 +826,33 @@ setAttribute method invocations).
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-							   "ProtoInstance name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+							   "ProtoInstance name='" + getOriginalName() + "' must first be connected to SceneObject scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 				return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + "_PrototypeNotFound"; // node type not found
 			}
 			else return errorNotice;
 		}
+		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here 
 		X3DConcreteElement matchingDeclaration = null;
 		if (findAncestorSceneObject() != null)
-			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
 		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
 		{
 			// added matching methods for getNodeType() in ProtoDeclare, ProtoBody
 			return ((ProtoDeclareObject) matchingDeclaration).getNodeType();
 		}
-		matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME);
+		matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME);
 		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
 		{
 			return ((ExternProtoDeclareObject) matchingDeclaration).getNodeType();
 		}
 		else
 		{
-			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-						   "ProtoInstance name='" + getName() + "' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.";
+			errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": ";
+			if  (isUSE())
+				 errorNotice += "ProtoInstance USE='" + getUSE();
+			else errorNotice += "ProtoInstance name='" + getName();
+			errorNotice += "' has no corresponding ProtoDeclare or ExternProtoDeclare to provide type.";
 			validationResult.append(errorNotice).append("\n");
 			return errorNotice; // node type not found
 		}
@@ -1032,7 +1071,7 @@ setAttribute method invocations).
 
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1051,7 +1090,7 @@ setAttribute method invocations).
 								
 	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
-	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
+	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
 	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
 	 * <br ><br >
@@ -1137,6 +1176,12 @@ setAttribute method invocations).
 			if (referenceNode != null)
 				return referenceNode;
 		}
+		if (metadataProtoInstance != null)
+		{
+			referenceNode = ((X3DConcreteElement) metadataProtoInstance).findNodeByDEF(DEFvalue);
+			if (referenceNode != null)
+				return referenceNode;
+		}
 		return null; // not found
 	}
 	/**
@@ -1162,14 +1207,47 @@ setAttribute method invocations).
 
 		setName(getName()); // exercise field checks, simple types
 
-		if (getName().isEmpty() && !isUSE())
+        if (getName().isEmpty() && !isUSE())
         {
 			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
 			validationResult.append(errorNotice);
 			throw new InvalidProtoException(errorNotice); // report error
         }
-		// check for corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
-		if (!getName().isEmpty() && getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+		if (!getName().isEmpty() && isUSE())
+        {
+			String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		String originalName = getOriginalName(); // call once here, for efficiency and also to allow separate changes
+
+		// check for presence of corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
+		if (ConfigurationProperties.isDebugModeActive() && hasProtoDeclare())
+		{
+			if  (isUSE())
+			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ProtoDeclare").append("\n");
+			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ProtoDeclare").append("\n");
+		}
+		else if (ConfigurationProperties.isDebugModeActive() && hasExternProtoDeclare())
+		{
+			if  (isUSE())
+			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ExternProtoDeclare").append("\n");
+			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ExternProtoDeclare").append("\n");
+		}
+		else if (hasProtoDeclare() && hasExternProtoDeclare())
+		{
+			String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE +
+					"ProtoInstance " + getName() + " has both corresponding ProtoDeclare and ExternProtoDeclare";
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        {
+			String errorNotice = getNodeType();
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
         {
 			String errorNotice = getNodeType();
 			validationResult.append(errorNotice);
