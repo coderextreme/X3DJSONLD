@@ -8,7 +8,7 @@ parameter: "-toJava" for conversion to Java source code
 parameter: "-toFile" "test/ball.java" for result file name root test/ball
 convert to Java:
 Warning: toFileStylesheetConversion(X3dToJava.xslt) is overwriting prior file test/ball.java
-file conversion successful: ball.java (15618 bytes)
+file conversion successful: ball.java (15620 bytes)
 compile ball.java source...
 Compiling 1 source file to E:\x3d-code\www.web3d.org\x3d\stylesheets\test
 test ball execution and self-validation:
@@ -18,12 +18,9 @@ org.web3d.x3d.jsail.CommandLine test/Box.x3d -toJava -toFile test/Box.java
 parameter: source file Box.x3d filesize 4151 bytes
 parameter: "-toJava" for conversion to Java source code
 parameter: "-toFile" "test/Box.java" for result file name root test/Box
-[X3DLoaderObject error] ProtoInstance anyShape found but node type is unknown and containerField is children, unable to add to scene graph
-[X3DLoaderObject error] ProtoInstance anyShape found but node type is unknown and containerField is children, unable to add to scene graph
-[X3DLoaderObject error] ProtoInstance anyShape found but node type is unknown and containerField is children, unable to add to scene graph
 convert to Java:
 Warning: toFileStylesheetConversion(X3dToJava.xslt) is overwriting prior file test/Box.java
-file conversion successful: Box.java (8833 bytes)
+file conversion successful: Box.java (9709 bytes)
 compile...
 Compiling 1 source file to E:\x3d-code\www.web3d.org\x3d\stylesheets\test
 test Box execution and self-validation:
@@ -74,10 +71,9 @@ parameter: source file flowers4.x3d filesize 7176 bytes
 parameter: "-toJava" for conversion to Java source code
 parameter: "-toFile" "java/examples/flowers4.java" for result file name root java/examples/flowers4
 convert to Java:
-Warning: toFileStylesheetConversion(X3dToJava.xslt) is overwriting prior file java/examples/flowers4.java
-file conversion successful: flowers4.java (14279 bytes)
+file conversion successful: flowers4.java (14281 bytes)
 compile flowers4.java source...
-Compiling 3 source files to E:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples
+Compiling 6 source files to E:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples
 test flowers4 execution and self-validation:
 Java program "flowers4" self-validation test results: success
 ===========================================
@@ -139,7 +135,7 @@ file conversion successful: HelloWorldProgramOutput.CommandLine.md (2112 bytes)
 | `reference` | [http://www.web3d.org/specifications/java/X3DJSAIL.html](http://www.web3d.org/specifications/java/X3DJSAIL.html) |
 | `generator` | HelloWorldProgramOutput.java |
 | `created` | 6 September 2016 |
-| `modified` | 22 April 2018 |
+| `modified` | 23 April 2018 |
 | `generator` | X3D Java Scene Access Interface Library (X3DJSAIL) |
 | `generator` | [http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java](http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java) |
 | `generator` | Netbeans http://www.netbeans.org |
@@ -161,7 +157,7 @@ parameter: "-tidy" for producing X3D-Tidy cleanup of .x3d
 parameter: "-toFile" "java/examples/HelloWorldProgramOutputTidy.CommandLine.x3d" for result file name root java/examples/HelloWorldProgramOutputTidy.CommandLine
 convert to X3D Tidy cleaned-up version
 Warning: toFileStylesheetConversion(X3dTidy.xslt) is overwriting prior file java/examples/HelloWorldProgramOutputTidy.CommandLine.x3d
-*** revision: &lt;meta name='modified' content='22 April 2018'/&gt;
+*** revision: &lt;meta name='modified' content='24 April 2018'/&gt;
   &lt;Inline DEF='inlineSceneDef'&gt;
     original url='"someOtherScene.x3d"'
 *** revision  url='"someOtherScene.x3d" "http://www.web3d.org/specifications/java/examples/someOtherScene.x3d" "someOtherScene.wrl" "http://www.web3d.org/specifications/java/examples/someOtherScene.wrl"'
@@ -208,7 +204,7 @@ x3dModel.toStringX3D()
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='22 April 2018'/>
+        <meta name='modified' content='24 April 2018'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -504,7 +500,7 @@ x3dModel.toStringXML()
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='22 April 2018'/>
+        <meta name='modified' content='24 April 2018'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -795,7 +791,7 @@ META "description" "Example HelloWorldProgram creates an X3D model using the X3D
 META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 META "generator" "HelloWorldProgramOutput.java"
 META "created" "6 September 2016"
-META "modified" "22 April 2018"
+META "modified" "24 April 2018"
 META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 META "generator" "Netbeans http://www.netbeans.org"
@@ -1193,7 +1189,7 @@ x3dModel.toStringVRML97()
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "22 April 2018"
+#META "modified" "24 April 2018"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -1595,7 +1591,7 @@ E:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.
 ===========================================
 Create .x3d (X3D XML Encoding) cleaned-up version of model using X3D Tidy
 Warning: toFileStylesheetConversion(X3dTidy.xslt) is overwriting prior file HelloWorldProgramOutputTidy.x3d
-*** revision: &lt;meta name='modified' content='22 April 2018'/&gt;
+*** revision: &lt;meta name='modified' content='24 April 2018'/&gt;
   &lt;Inline DEF='inlineSceneDef'&gt;
     original url='"someOtherScene.x3d"'
 *** revision  url='"someOtherScene.x3d" "http://www.web3d.org/specifications/java/examples/someOtherScene.x3d" "someOtherScene.wrl" "http://www.web3d.org/specifications/java/examples/someOtherScene.wrl"'
@@ -1680,7 +1676,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 22 April 2018 </td>
+			<td> 24 April 2018 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -1780,7 +1776,7 @@ public class temporaryJavaOutputFile
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("22 April 2018"))
+    .addMeta(new metaObject().setName("modified").setContent("24 April 2018"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -2059,7 +2055,7 @@ public class temporaryJavaOutputFile
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"temporaryJavaOutputFile\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"temporaryJavaOutputFile\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
@@ -2149,7 +2145,7 @@ Script DEF=MaterialModulatorScript contains CDATA source-code text, copied as "#
           },
           {
             "@name":"modified",
-            "@content":"22 April 2018"
+            "@content":"24 April 2018"
           },
           {
             "@name":"generator",
@@ -2209,7 +2205,7 @@ Script DEF=MaterialModulatorScript contains CDATA source-code text, copied as "#
           },
           {
             "@name":"translated",
-            "@content":"22 April 2018"
+            "@content":"24 April 2018"
           },
           {
             "@name":"generator",
@@ -3211,7 +3207,7 @@ Test success: x3dLoader.loadX3DfromXML(HelloWorldProgramOutput.x3d), x3dLoader.g
     <meta content='http://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='22 April 2018' name='modified'/>
+    <meta content='24 April 2018' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -3515,7 +3511,7 @@ Test toFileEXI() with OpenEXI: not yet implemented
 Test fromFileEXI() with OpenEXI: not yet implemented
 ===========================================
 Test toFileGZIP()
-HelloWorldProgramOutput.gz  filesize 5299 bytes, compression 25.28% of original
+HelloWorldProgramOutput.gz  filesize 5300 bytes, compression 25.29% of original
 ===========================================
 Test toFileZip()
 HelloWorldProgramOutput.zip filesize 5547 bytes, compression 26.47% of original
@@ -3572,10 +3568,10 @@ parameter: "-toGZIP" for conversion to compressed GZIP containing model
 parameter: "-toFile" "HelloWorldProgramOutput.CommandLine.x3d.gz" for result file name root HelloWorldProgramOutput.CommandLine.x3d
 convert to GZIP:
 source: HelloWorldProgramOutput.x3d filesize 20958 bytes
-result: HelloWorldProgramOutput.CommandLine.x3d.gz  filesize 5299 bytes, compression 25.28% of original
+result: HelloWorldProgramOutput.CommandLine.x3d.gz  filesize 5300 bytes, compression 25.29% of original
 ===========================================
 CommandLine [HelloWorldProgramOutput.CommandLine.x3d.gz, -fromGZIP]
-parameter: source file HelloWorldProgramOutput.CommandLine.x3d.gz filesize 5299 bytes
+parameter: source file HelloWorldProgramOutput.CommandLine.x3d.gz filesize 5300 bytes
 parameter: "-fromGZIP" for conversion from compressed GZIP containing model
   fromFileGZIP() output modelFileName HelloWorldProgramOutput.CommandLine.x3d
 Warning: fromFileGZIP() is overwriting prior file HelloWorldProgramOutput.CommandLine.x3d
@@ -3642,4 +3638,4 @@ HelloWorldProgramOutput.ReloadedDOM.x3d
 1 file(s) have been successfully validated.
 matches HelloWorldProgramOutput.x3d: true
 ===========================================
-BUILD SUCCESSFUL (total time: 1 minute 28 seconds)
+BUILD SUCCESSFUL (total time: 1 minute 26 seconds)

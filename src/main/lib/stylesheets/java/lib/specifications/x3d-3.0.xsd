@@ -559,7 +559,8 @@ Open-source license:
 			<xs:enumeration value="Geometry3D">
 				<xs:annotation>
 					<xs:appinfo>
-						The Geometry3D component defines how three-dimensional geometry is specified and what shapes are available.
+						The Geometry3D component describes how three-dimensional geometry is specified and defines ElevationGrid, Extrusion, IndexedFaceSet, and most
+						primitive geometry nodes (Box, Cone, Cylinder, Sphere).
 					</xs:appinfo>
 					<xs:documentation source="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry3D.html"/>
 				</xs:annotation>

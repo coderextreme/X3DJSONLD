@@ -11774,7 +11774,7 @@ setAttribute method invocations).
 		// TODO duplicate name checks in setValue() method</xsl:text>
 											<xsl:if test="(@name = 'meta')">
 												<xsl:text>
-		if (getName().equalsIgnoreCase("error") || getName().equalsIgnoreCase("warning") || getName().equalsIgnoreCase("info"))
+		if (getName().equalsIgnoreCase("error") || getName().equalsIgnoreCase("warning") || getName().equalsIgnoreCase("hint") || getName().equalsIgnoreCase("info"))
 		{
 			String warningNotice = ConfigurationProperties.WARNING_MESSAGE + 
 									", " + NAME + " name=\"" + getName() + "\" content=\"" + getContent() + "\"";
@@ -26081,15 +26081,18 @@ import org.web3d.x3d.sai.X3DException;
 						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
 						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
                     }
-                    else if (validateSwitch && !convertToEXI && !convertToGZIP && !convertToZIP)
+                    if (validateSwitch)
                     {
 						// note that validation already performed as part of prior conversions
                         String outputValidationText = loadedX3dModel.validate();
                             
                         if (!convertToFile)
                         {
-                            if  (outputValidationText.isEmpty())
-                                 outputValidationText = "validate results:success, no problems noted";
+                            if (outputValidationText.isEmpty())
+							{
+                                outputValidationText = "validate results: success, no problems noted";
+								System.out.println(outputValidationText);
+							}
                             else
 							{
 								System.out.println(    "validate results:");
@@ -27688,7 +27691,8 @@ import org.web3d.x3d.sai.X3DException;
 	
 	private X3DConcreteElement holdCopyElementObject; // remember elementObject, trying to keep from falling out of scope
 				
-	private String  currentProtoNameValue = new String(); // remember name attribute for current ProtoDeclare element
+	private String  currentProtoDeclareNameValue       = new String(); // remember name attribute for current ProtoDeclare element
+	private String  currentExternProtoDeclareNameValue = new String(); // remember name attribute for current ExternProtoDeclare element
 	private boolean currentProtoNodeTypeFound = false;
 	private Map<String,String> protoNameToNodeTypesHashMap = new HashMap<>();
 	private Map<String,String> protoDEFtoNodeTypesHashMap = new HashMap<>();
@@ -28017,7 +28021,13 @@ import org.web3d.x3d.sai.X3DException;
 					if (elementObject instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) // remember prototype declarations
 					{
 						// inspect DOM to find ProtoDeclare name
-						currentProtoNameValue = node.getAttributes().getNamedItem("name").getNodeValue();
+						currentProtoDeclareNameValue = node.getAttributes().getNamedItem("name").getNodeValue();
+						currentProtoNodeTypeFound = false;
+					}
+					if (elementObject instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject) // remember external prototype declarations
+					{
+						// inspect DOM to find ExternProtoDeclare name
+						currentExternProtoDeclareNameValue = node.getAttributes().getNamedItem("name").getNodeValue();
 						currentProtoNodeTypeFound = false;
 					}
 				}
@@ -28103,7 +28113,31 @@ import org.web3d.x3d.sai.X3DException;
 								if (!currentProtoNodeTypeFound)
 								{
 									currentProtoNodeTypeFound = true;
-									protoNameToNodeTypesHashMap.put(currentProtoNameValue, childElementName);
+									protoNameToNodeTypesHashMap.put(currentProtoDeclareNameValue, childElementName);
+									// debug trace
+									if (ConfigurationProperties.isDebugModeActive())
+									{
+										System.out.println ("[X3DLoaderObject] ProtoBody/ProtoDeclare name='" + currentProtoDeclareNameValue +
+										"' childElementName='" + childElementName + 
+										"' protoNameToNodeTypesHashMap.keySet()=" + protoNameToNodeTypesHashMap.keySet() + 
+										"' protoNameToNodeTypesHashMap.values()=" + protoNameToNodeTypesHashMap.values());
+									}
+								}
+							}
+							else if      (nodeName.equals("ExternProtoDeclare"))
+							{
+								// note ExternProtoDeclare type when found
+								if (!currentProtoNodeTypeFound)
+								{
+									currentProtoNodeTypeFound = true;
+									protoNameToNodeTypesHashMap.put(currentExternProtoDeclareNameValue, "ExternProtoDeclare");
+									// debug trace
+									if (ConfigurationProperties.isDebugModeActive())
+									{
+										System.out.println ("[X3DLoaderObject] ExternProtoDeclare name='" + currentExternProtoDeclareNameValue +
+												"' protoNameToNodeTypesHashMap.keySet()=" + protoNameToNodeTypesHashMap.keySet() + 
+												"' protoNameToNodeTypesHashMap.values()=" + protoNameToNodeTypesHashMap.values());
+									}
 								}
 							}
 							else if (childElementName.equals("ProtoInstance"))
@@ -28111,17 +28145,27 @@ import org.web3d.x3d.sai.X3DException;
 								// use DOM to find name for this element
 								if (children.item(i).getAttributes().getNamedItem("name") != null)
 									childProtoInstanceName = children.item(i).getAttributes().getNamedItem("name").getNodeValue();
-						        // containerField already found
-								protoInstanceNodeType = protoNameToNodeTypesHashMap.get(currentProtoNameValue);
-				
-								if (children.item(i).getAttributes().getNamedItem("DEF") != null)			// DOM
+						        
+								// containerField already found
+// TODO confirm, remove:		protoInstanceNodeType = protoNameToNodeTypesHashMap.get(currentProtoDeclareNameValue);
+								protoInstanceNodeType = protoNameToNodeTypesHashMap.get(childProtoInstanceName);
+								// debug trace
+								if (ConfigurationProperties.isDebugModeActive())
+								{
+									System.out.println ("[X3DLoaderObject] ProtoInstance name='" + childProtoInstanceName +
+											"' protoInstanceNodeType='" + protoInstanceNodeType  + 
+											"' protoNameToNodeTypesHashMap.keySet()=" + protoNameToNodeTypesHashMap.keySet() + 
+											"' protoNameToNodeTypesHashMap.values()=" + protoNameToNodeTypesHashMap.values());
+								}
+
+								if (children.item(i).getAttributes().getNamedItem("DEF") != null)		// DOM
 								{
 									// save node type for this ProtoInstance DEF so that ProtoInstance USE can find it later
 									String childProtoInstanceDEF = children.item(i).getAttributes().getNamedItem("DEF").getNodeValue();
 									protoDEFtoNodeTypesHashMap.put(childProtoInstanceDEF, protoInstanceNodeType);
 									protoContainerFieldHashMap.put(childProtoInstanceDEF, containerField);
 								}
-								else if (children.item(i).getAttributes().getNamedItem("USE") != null)
+								else if (children.item(i).getAttributes().getNamedItem("USE") != null)	// DOM
 								{
 									// ProtoInstance USE syntax does not include name, must find it via original DEF
 									childProtoInstanceUSE = children.item(i).getAttributes().getNamedItem("USE").getNodeValue();
@@ -28194,7 +28238,18 @@ import org.web3d.x3d.sai.X3DException;
 							else if (childElementName.equals("component"))
 									((headObject)elementObject).addComponent ((componentObject) childX3dElement);
 							else if (childElementName.equals("meta"))
+							{
 									((headObject)elementObject).addMeta ((metaObject) childX3dElement);
+									String metaName    = new String();
+									String metaContent = new String();
+									// use DOM to find name and content for this element, then post any error/warning/info for this document
+									if (children.item(i).getAttributes().getNamedItem("name") != null)
+										metaName    = children.item(i).getAttributes().getNamedItem("name").getNodeValue();
+									if (children.item(i).getAttributes().getNamedItem("content") != null)
+										metaContent = children.item(i).getAttributes().getNamedItem("content").getNodeValue();
+									if (metaName.equalsIgnoreCase("error") || metaName.equalsIgnoreCase("warning") || metaName.equalsIgnoreCase("hint") || metaName.equalsIgnoreCase("info"))
+									System.out.println ("[X3DLoaderObject] <meta name='" + metaName + "' content='" + metaContent + "'/>");
+							}
 							else if (childElementName.equals("unit"))
 									((headObject)elementObject).addUnit ((unitObject) childX3dElement);
 							else if (childElementName.equals("Scene"))
@@ -28235,60 +28290,96 @@ import org.web3d.x3d.sai.X3DException;
 					
 							else if (nodeName.equals("Collision") && (containerField.equals("proxy")))
 									((CollisionObject)elementObject).setProxy ((X3DChildNode) childX3dElement);
-							else if (nodeName.equals("Collision")  && childElementName.equals("ProtoInstance") && (containerField.equals("proxy")))
+							else if (nodeName.equals("Collision")  && childElementName.equals("ProtoInstance") && (containerField.equals("proxy"))) // Shape and grouping nodes
 									((CollisionObject)elementObject).setProxy ((ProtoInstance) childX3dElement);
 
-							else if (nodeName.equals("Collision") && (protoInstanceNodeType.equals("proxy")))
-									((CollisionObject)elementObject).setProxy ((ProtoInstanceObject) childX3dElement);
+							// TODO better checks for metadata containerField
 							else if (nodeName.equals("MetadataSet") && childElementName.startsWith("Metadata") && (!containerField.equals("metadata")))
 									((MetadataSetObject)elementObject).addValue ((X3DMetadataObject) childX3dElement);
 							else if (childElementName.startsWith("Metadata"))
 									((X3DConcreteNode)elementObject).setMetadata ((X3DMetadataObject) childX3dElement);
-							else if (protoInstanceNodeType.equals("Metadata"))
+							else if ((protoInstanceNodeType.equals("Metadata") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("metadata")))
 									((X3DConcreteNode)elementObject).setMetadata ((ProtoInstanceObject) childX3dElement);
 					
 							else if (childElementName.equals("Appearance"))
 									((ShapeObject)elementObject).setAppearance ((X3DAppearanceNode) childX3dElement);
-							else if (protoInstanceNodeType.equals("Appearance"))
+							else if ((protoInstanceNodeType.equals("Appearance") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("appearance")))
 									((ShapeObject)elementObject).setAppearance ((ProtoInstanceObject) childX3dElement);
 					
 							else if (childElementName.equals("Material"))
 									((AppearanceObject)elementObject).setMaterial ((MaterialObject) childX3dElement);
-							else if (protoInstanceNodeType.equals("Material"))
+							else if ((protoInstanceNodeType.equals("Material") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("material")))
 									((AppearanceObject)elementObject).setMaterial ((ProtoInstanceObject) childX3dElement);
 					
-							else if (childElementName.equals("LineProperties"))
+							else if (nodeName.equals("Appearance") && childElementName.equals("LineProperties") && (containerField.equals("lineProperties")))
 									((AppearanceObject)elementObject).setLineProperties ((LinePropertiesObject) childX3dElement);
-							else if (protoInstanceNodeType.equals("LineProperties"))
+							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.equals("LineProperties") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("lineProperties")))
 									((AppearanceObject)elementObject).setLineProperties ((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("Appearance") && childElementName.equals("FillProperties"))
+									((AppearanceObject)elementObject).setFillProperties ((FillPropertiesObject) childX3dElement);
+							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.equals("FillProperties") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fillProperties")))
+									((AppearanceObject)elementObject).setFillProperties ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("backTexture")))
+									((TextureBackgroundObject)elementObject).setBackTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setBackTexture ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("bottomTexture")))
+									((TextureBackgroundObject)elementObject).setBottomTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setBottomTexture ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("frontTexture")))
+									((TextureBackgroundObject)elementObject).setFrontTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setFrontTexture ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("leftTexture")))
+									((TextureBackgroundObject)elementObject).setLeftTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setLeftTexture ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("rightTexture")))
+									((TextureBackgroundObject)elementObject).setRightTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setRightTexture ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("topTexture")))
+									((TextureBackgroundObject)elementObject).setTopTexture ((X3DTexture2DNode) childX3dElement);
+							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((TextureBackgroundObject)elementObject).setTopTexture ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("Sound") && (childElementName.equals("AudioClip") || childElementName.equals("MovieTexture")))
 									((SoundObject)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
+							else if (nodeName.equals("Sound") && (protoInstanceNodeType.equals("AudioClip") || protoInstanceNodeType.equals("MovieTexture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("source")))
+									((SoundObject)elementObject).setSource ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("front"))
 									((ComposedCubeMapTextureObject)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("front"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("front"))
 									((ComposedCubeMapTextureObject)elementObject).setFront ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("back"))
 									((ComposedCubeMapTextureObject)elementObject).setBack ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("back"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("back"))
 									((ComposedCubeMapTextureObject)elementObject).setBack ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("left"))
 									((ComposedCubeMapTextureObject)elementObject).setLeft ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("left"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("left"))
 									((ComposedCubeMapTextureObject)elementObject).setLeft ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("right"))
 									((ComposedCubeMapTextureObject)elementObject).setRight ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("right"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("right"))
 									((ComposedCubeMapTextureObject)elementObject).setRight ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("top"))
 									((ComposedCubeMapTextureObject)elementObject).setTop ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("top"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("top"))
 									((ComposedCubeMapTextureObject)elementObject).setTop ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && containerField.equals("bottom"))
 									((ComposedCubeMapTextureObject)elementObject).setBottom ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && protoInstanceNodeType.equals("Texture") && containerField.equals("bottom"))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("bottom"))
 									((ComposedCubeMapTextureObject)elementObject).setBottom ((ProtoInstanceObject) childX3dElement);
+							// these checks follow preceding containerField-specific tests
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture"))
 							{
 										errorNotice = "[X3DLoaderObject error] parent " + nodeName + " has child " + childElementName + " with invalid containerField='" + containerField + "' (must have value of front, back, left, right, top or bottom)";
@@ -28300,30 +28391,30 @@ import org.web3d.x3d.sai.X3DException;
 										validationResult.append(errorNotice).append("\n");
 							}
 					
-							else if (childElementName.endsWith("Texture"))
+							else if (nodeName.equals("Appearance") && childElementName.endsWith("Texture") && containerField.equals("texture"))
 									((AppearanceObject)elementObject).setTexture ((X3DTextureNode) childX3dElement);
-							else if (protoInstanceNodeType.equals("Texture"))
+							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texture"))
 									((AppearanceObject)elementObject).setTexture ((ProtoInstanceObject) childX3dElement);
 
-							else if (childElementName.contains("TextureTransform"))
+							else if (nodeName.equals("Appearance") && childElementName.contains("TextureTransform") && containerField.equals("textureTransform"))
 									((AppearanceObject)elementObject).setTextureTransform ((X3DTextureTransformNode) childX3dElement);
-							else if (protoInstanceNodeType.equals("TextureTransform"))
+							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.contains("TextureTransform") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("textureTransform"))
 									((AppearanceObject)elementObject).setTextureTransform ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart"))
+							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart") && containerField.equals("parts"))
 									((ComposedShaderObject)elementObject).addParts ((ShaderPartObject) childX3dElement);
 							
 							// TODO ComposedShaderObject design missing utility method to add ProtoInstance to typed array
-							else if (nodeName.equals("ComposedShader") && protoInstanceNodeType.equals("ShaderPart")) // TODO is this correct type?
+							else if (nodeName.equals("ComposedShader") && (protoInstanceNodeType.equals("ShaderPart") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("parts")) // TODO is this correct type?
 							{
 //									((ComposedShaderObject)elementObject).addParts ((ProtoInstanceObject) childX3dElement);
 									errorNotice = "[X3DLoaderObject error] parent " + nodeName + " design shortfall, has no addParts(ProtoInstance) utility method";
 									validationResult.append(errorNotice).append("\n");
 							}
-							else if (nodeName.equals("ProgramShader") && childElementName.equals("ShaderProgram"))
+							else if (nodeName.equals("ProgramShader") && childElementName.equals("ShaderProgram") && containerField.equals("programs"))
 									((ProgramShaderObject)elementObject).addPrograms ((ShaderProgramObject) childX3dElement);
 							// TODO ProgramShaderObject design missing utility method to add ProtoInstance to typed array
-							else if (nodeName.equals("ProgramShader") && protoInstanceNodeType.equals("ShaderProgram")) // TODO is this correct type?
+							else if (nodeName.equals("ProgramShader") && (protoInstanceNodeType.equals("ShaderProgram") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("programs")) // TODO is this correct type?
 							{
 //									((ProgramShaderObject)elementObject).addPrograms ((ProtoInstanceObject) childX3dElement);
 									errorNotice = "[X3DLoaderObject error] parent " + nodeName + " design shortfall, has no addParts(ProtoInstance) utility method";
@@ -28335,167 +28426,174 @@ import org.web3d.x3d.sai.X3DException;
 				// TODO		else if (protoInstanceNodeType.equals("Shader"))
 				// fix				((AppearanceObject)elementObject).addShaders ((ProtoInstanceObject) childX3dElement);
 
-							else if (childElementName.equals("Box") || childElementName.equals("Cone") || childElementName.equals("Cylinder") ||
-									 childElementName.equals("Sphere") || childElementName.equals("Text") || childElementName.equals("IndexedFaceSet") ||
-									 childElementName.equals("Arc2d") || childElementName.equals("ArcClose2d") || childElementName.equals("Circle2D") ||
-									 childElementName.equals("Disk2D") || childElementName.equals("Polyline2D") || childElementName.equals("Polypoint2D") ||
-									 childElementName.equals("Rectangle2D ") || childElementName.equals("TriangleSet2D") ||
-									 childElementName.equals("ElevationGrid") || childElementName.equals("Extrusion") || childElementName.equals("GeoElevationGrid") ||
-									 childElementName.equals("IndexedLineSet") || childElementName.equals("IndexedPointSet") || childElementName.equals("IndexedQuadSet") ||
-									 childElementName.equals("LineSet") || childElementName.equals("PointSet") || childElementName.equals("QuadSet") ||
-									 childElementName.equals("IndexedTriangleFanSet") || childElementName.equals("IndexedTriangleSet") || childElementName.equals("IndexedTriangleStripSet") ||
-									 childElementName.equals("TriangleFanSet") || childElementName.equals("TriangleSet") || childElementName.equals("TriangleStripSet") ||
-									 childElementName.equals("NurbsCurve") || childElementName.equals("NurbsSweptSurface") || childElementName.equals("NurbsSwungSurface")
+							else if ((childElementName.equals("Box") || childElementName.equals("Cone") || childElementName.equals("Cylinder") ||
+									  childElementName.equals("Sphere") || childElementName.equals("Text") || childElementName.equals("IndexedFaceSet") ||
+									  childElementName.equals("Arc2d") || childElementName.equals("ArcClose2d") || childElementName.equals("Circle2D") ||
+									  childElementName.equals("Disk2D") || childElementName.equals("Polyline2D") || childElementName.equals("Polypoint2D") ||
+									  childElementName.equals("Rectangle2D") || childElementName.equals("TriangleSet2D") ||
+									  childElementName.equals("ElevationGrid") || childElementName.equals("Extrusion") || childElementName.equals("GeoElevationGrid") ||
+									  childElementName.equals("IndexedLineSet") || childElementName.equals("IndexedPointSet") || childElementName.equals("IndexedQuadSet") ||
+									  childElementName.equals("LineSet") || childElementName.equals("PointSet") || childElementName.equals("QuadSet") ||
+									  childElementName.equals("IndexedTriangleFanSet") || childElementName.equals("IndexedTriangleSet") || childElementName.equals("IndexedTriangleStripSet") ||
+									  childElementName.equals("TriangleFanSet") || childElementName.equals("TriangleSet") || childElementName.equals("TriangleStripSet") ||
+									  childElementName.equals("NurbsCurve") || childElementName.equals("NurbsSweptSurface") || childElementName.equals("NurbsSwungSurface")
+									 ) && containerField.equals("geometry")
 									)
-									((ShapeObject)elementObject).setGeometry ((X3DGeometryNode) childX3dElement);
-							else if (protoInstanceNodeType.equals("Box") || protoInstanceNodeType.equals("Cone") || protoInstanceNodeType.equals("Cylinder") ||
-									 protoInstanceNodeType.equals("Sphere") || protoInstanceNodeType.equals("Text") || protoInstanceNodeType.equals("IndexedFaceSet") ||
-									 protoInstanceNodeType.equals("Arc2d") || protoInstanceNodeType.equals("ArcClose2d") || protoInstanceNodeType.equals("Circle2D") ||
-									 protoInstanceNodeType.equals("Disk2D") || protoInstanceNodeType.equals("Polyline2D") || protoInstanceNodeType.equals("Polypoint2D") ||
-									 protoInstanceNodeType.equals("Rectangle2D ") || protoInstanceNodeType.equals("TriangleSet2D") ||
-									 protoInstanceNodeType.equals("ElevationGrid") || protoInstanceNodeType.equals("Extrusion") || protoInstanceNodeType.equals("GeoElevationGrid") ||
-									 protoInstanceNodeType.equals("IndexedLineSet") || protoInstanceNodeType.equals("IndexedPointSet") || protoInstanceNodeType.equals("IndexedQuadSet") ||
-									 protoInstanceNodeType.equals("LineSet") || protoInstanceNodeType.equals("PointSet") || protoInstanceNodeType.equals("QuadSet") ||
-									 protoInstanceNodeType.equals("IndexedTriangleFanSet") || protoInstanceNodeType.equals("IndexedTriangleSet") || protoInstanceNodeType.equals("IndexedTriangleStripSet") ||
-									 protoInstanceNodeType.equals("TriangleFanSet") || protoInstanceNodeType.equals("TriangleSet") || protoInstanceNodeType.equals("TriangleStripSet") ||
-									 protoInstanceNodeType.equals("NurbsCurve") || protoInstanceNodeType.equals("NurbsSweptSurface") || protoInstanceNodeType.equals("NurbsSwungSurface")
-									)
-									((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
+									  ((ShapeObject)elementObject).setGeometry ((X3DGeometryNode) childX3dElement);
 
-							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal"))
+							else if ((protoInstanceNodeType.equals("Box") || protoInstanceNodeType.equals("Cone") || protoInstanceNodeType.equals("Cylinder") ||
+									  protoInstanceNodeType.equals("Sphere") || protoInstanceNodeType.equals("Text") || protoInstanceNodeType.equals("IndexedFaceSet") ||
+									  protoInstanceNodeType.equals("Arc2d") || protoInstanceNodeType.equals("ArcClose2d") || protoInstanceNodeType.equals("Circle2D") ||
+									  protoInstanceNodeType.equals("Disk2D") || protoInstanceNodeType.equals("Polyline2D") || protoInstanceNodeType.equals("Polypoint2D") ||
+									  protoInstanceNodeType.equals("Rectangle2D ") || protoInstanceNodeType.equals("TriangleSet2D") ||
+									  protoInstanceNodeType.equals("ElevationGrid") || protoInstanceNodeType.equals("Extrusion") || protoInstanceNodeType.equals("GeoElevationGrid") ||
+									  protoInstanceNodeType.equals("IndexedLineSet") || protoInstanceNodeType.equals("IndexedPointSet") || protoInstanceNodeType.equals("IndexedQuadSet") ||
+									  protoInstanceNodeType.equals("LineSet") || protoInstanceNodeType.equals("PointSet") || protoInstanceNodeType.equals("QuadSet") ||
+									  protoInstanceNodeType.equals("IndexedTriangleFanSet") || protoInstanceNodeType.equals("IndexedTriangleSet") || protoInstanceNodeType.equals("IndexedTriangleStripSet") ||
+									  protoInstanceNodeType.equals("TriangleFanSet") || protoInstanceNodeType.equals("TriangleSet") || protoInstanceNodeType.equals("TriangleStripSet") ||
+									  protoInstanceNodeType.equals("NurbsCurve") || protoInstanceNodeType.equals("NurbsSweptSurface") || protoInstanceNodeType.equals("NurbsSwungSurface") ||
+									  protoInstanceNodeType.equals("ExternProtoDeclare")
+									 ) && containerField.equals("geometry")
+									)
+									  ((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal") && containerField.equals("normal"))
 									((ElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
-							else if (nodeName.equals("ElevationGrid") && protoInstanceNodeType.equals("Normal"))
+							else if (nodeName.equals("ElevationGrid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("normal"))
 									((ElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("Normal"))
+							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("Normal") && containerField.equals("normal"))
 									((GeoElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
-							else if (nodeName.equals("GeoElevationGrid") && protoInstanceNodeType.equals("Normal"))
+							else if (nodeName.equals("GeoElevationGrid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("normal"))
 									((GeoElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
 					
+							else if (nodeName.equals("CADFace") && (childElementName.equals("Shape") || childElementName.equals("LOD") || childElementName.equals("Transform")) && containerField.equals("shape"))
+									((CADFaceObject)elementObject).setShape((X3DNode) childX3dElement);
+							else if (nodeName.equals("CADFace") && (protoInstanceNodeType.equals("Shape") || protoInstanceNodeType.equals("LOD") || protoInstanceNodeType.equals("Transform") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("shape"))
+									((CADFaceObject)elementObject).setShape((ProtoInstanceObject) childX3dElement);
+
 							else if (nodeName.equals("HAnimHumanoid") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSite")) && containerField.equals("skeleton"))
 									((HAnimHumanoidObject)elementObject).addSkeleton((X3DNode) childX3dElement);
-							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("HAnimSite")) && containerField.equals("skeleton"))
-									((HAnimHumanoidObject)elementObject).addSkeleton((X3DNode) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skeleton"))
+									((HAnimHumanoidObject)elementObject).addSkeleton((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && containerField.equals("skin"))
 									((HAnimHumanoidObject)elementObject).addSkin((X3DNode) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimJoint") && containerField.equals("joints"))
 									((HAnimHumanoidObject)elementObject).addJoints((HAnimJointObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimJoint") && containerField.equals("joints"))
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("joints"))
 				// TODO				((HAnimHumanoidObject)elementObject).addJoints((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSegment") && containerField.equals("segments"))
 									((HAnimHumanoidObject)elementObject).addSegments((HAnimSegmentObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSegment") && containerField.equals("joints"))
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("joints"))
 				// TODO				((HAnimHumanoidObject)elementObject).addSegments((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("sites"))
 									((HAnimHumanoidObject)elementObject).addSites((HAnimSiteObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSite") && containerField.equals("sites"))
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("sites"))
 				// TODO				((HAnimHumanoidObject)elementObject).addSites((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("viewpoints"))
 									((HAnimHumanoidObject)elementObject).addViewpoints((HAnimSiteObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("HAnimSite") && containerField.equals("viewpoints"))
+				// TODO		else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("viewpoints"))
 				// TODO				((HAnimHumanoidObject)elementObject).addViewpoints((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("HAnimHumanoid") && childElementName.contains("Coordinate"))
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.contains("Coordinate") && containerField.equals("skinCoord"))
 									((HAnimHumanoidObject)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.contains("Coordinate"))
+							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinCoord"))
 									((HAnimHumanoidObject)elementObject).setSkinCoord ((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("Normal"))
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("Normal") && containerField.equals("skinNormal"))
 									((HAnimHumanoidObject)elementObject).setSkinNormal ((X3DNormalNode) childX3dElement);
-							else if (nodeName.equals("HAnimHumanoid") && protoInstanceNodeType.equals("Normal"))
+							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinNormal"))
 									((HAnimHumanoidObject)elementObject).setSkinNormal ((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("HAnimJoint") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSegment") || childElementName.equals("HAnimSite")) && containerField.equals("children"))
 									((HAnimJointObject)elementObject).addChildren((X3DNode) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("HAnimSite")) && containerField.equals("children"))
+				// TODO		else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare"))) && containerField.equals("children"))
 				// TODO				((HAnimJointObject)elementObject).addChildren((X3DNode) childX3dElement);
 							else if (nodeName.equals("HAnimJoint") && childElementName.equals("HAnimDisplacer") && containerField.equals("displacers"))
 									((HAnimJointObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimJoint") && protoInstanceNodeType.equals("HAnimDisplacer") && containerField.equals("displacers"))
+				// TODO		else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("displacers"))
 				// TODO				((HAnimJointObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
 
 							else if (nodeName.equals("HAnimSegment") && childElementName.equals("HAnimDisplacer") && containerField.equals("displacers"))
 									((HAnimSegmentObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
-				// TODO		else if (nodeName.equals("HAnimSegment") && protoInstanceNodeType.equals("HAnimDisplacer") && containerField.equals("displacers"))
+				// TODO		else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("displacers"))
 				// TODO				((HAnimSegmentObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("HAnimSegment") && childElementName.contains("Coordinate"))
+							else if (nodeName.equals("HAnimSegment") && childElementName.contains("Coordinate") && containerField.equals("coord"))
 									((HAnimSegmentObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("HAnimSegment") && protoInstanceNodeType.contains("Coordinate"))
+							else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("coord"))
 									((HAnimSegmentObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Coordinate"))
-									((IndexedFaceSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("IndexedFaceSet") && protoInstanceNodeType.contains("Coordinate"))
-									((IndexedFaceSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
-
-							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Coordinate"))
+							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Coordinate") && containerField.equals("coord"))
 									((IndexedLineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("IndexedLineSet") && protoInstanceNodeType.contains("Coordinate"))
+							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("coord"))
 									((IndexedLineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("LineSet") && childElementName.contains("Coordinate"))
+							else if (nodeName.equals("LineSet") && childElementName.contains("Coordinate") && containerField.equals("coord"))
 									((LineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Coordinate"))
+							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("coord"))
 									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("PointSet") && childElementName.contains("Coordinate"))
+							else if (nodeName.equals("PointSet") && childElementName.contains("Coordinate") && containerField.equals("coord"))
 									((PointSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Coordinate"))
+							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("coord"))
 									((PointSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("IndexedFaceSet") && childElementName.contains("Color"))
-									((IndexedFaceSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("IndexedLineSet") && protoInstanceNodeType.contains("Color"))
-									((IndexedFaceSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
-
-							else if (nodeName.equals("PointSet") && childElementName.contains("Color"))
-									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("PointSet") && protoInstanceNodeType.contains("Color"))
-									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
-
-							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Color"))
+							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Color") && containerField.equals("color"))
 									((IndexedLineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("IndexedLineSet") && protoInstanceNodeType.contains("Color"))
+							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
 									((IndexedLineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("LineSet") && childElementName.contains("Color"))
+							else if (nodeName.equals("LineSet") && childElementName.contains("Color") && containerField.equals("color"))
 									((LineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("LineSet") && protoInstanceNodeType.contains("Color"))
+							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
 									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
-							// X3DComposedGeometryNode IFS, TriangleSet, QuadSet etc.  Note this block must follow (Indexed)LineSet and PointSet tests.
-							else if (nodeName.endsWith("Set") && childElementName.contains("Color"))
-									((X3DComposedGeometryNode)elementObject).setColor((X3DColorNode) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("Color"))
-									((X3DComposedGeometryNode)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && childElementName.contains("Coordinate"))
-									((X3DComposedGeometryNode)elementObject).setCoord((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("Coordinate"))
-									((X3DComposedGeometryNode)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && childElementName.contains("FogCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setFogCoord((FogCoordinateObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("FogCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && childElementName.equals("Normal"))
-									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.equals("Normal"))
-									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
-							else if (nodeName.endsWith("Set") && protoInstanceNodeType.contains("TextureCoordinate"))
-									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.equals("PointSet") && childElementName.contains("Color") && containerField.equals("color"))
+									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
+									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("ViewpointGroup") && childElementName.equals("Viewpoint"))
+
+							else if (nodeName.equals("MultiTextureCoordinate") && childElementName.contains("TextureCoordinate") && containerField.equals("texCoord"))
+									((MultiTextureCoordinateObject)elementObject).setTexCoord ((X3DTextureCoordinateNode) childX3dElement);
+							else if (nodeName.equals("MultiTextureCoordinate") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texCoord"))
+									((MultiTextureCoordinateObject)elementObject).setTexCoord ((ProtoInstanceObject) childX3dElement);
+
+							// X3DComposedGeometryNode for IndexedFaceSet, TriangleSet, QuadSet etc.
+							// Note this block must follow (Indexed)LineSet, PointSet and MultiTextureCoordinate tests.
+							// Note that FogCoordinate and TextureCoordinate tests must precede Texture and Coordinate tests.
+							else if (nodeName.endsWith("Set") && childElementName.contains("FogCoordinate") && containerField.equals("fogCoord"))
+									((X3DComposedGeometryNode)elementObject).setFogCoord((FogCoordinateObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("fogCoord"))
+									((X3DComposedGeometryNode)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("TextureCoordinate") && containerField.equals("texCoord"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texCoord"))
+									((X3DComposedGeometryNode)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("Color") && containerField.equals("color"))
+									((X3DComposedGeometryNode)elementObject).setColor((X3DColorNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
+									((X3DComposedGeometryNode)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.contains("Coordinate") && containerField.equals("coord"))
+									((X3DComposedGeometryNode)elementObject).setCoord((X3DCoordinateNode) childX3dElement);
+							else if (nodeName.endsWith("Set") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("coord"))
+									((X3DComposedGeometryNode)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && childElementName.equals("Normal") && containerField.equals("normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
+							else if (nodeName.endsWith("Set") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("normal"))
+									((X3DComposedGeometryNode)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+
+							else if (nodeName.equals("ViewpointGroup") && childElementName.equals("Viewpoint") && containerField.equals("children"))
 									((ViewpointGroupObject)elementObject).addChild((ViewpointObject) childX3dElement);
-							else if (nodeName.equals("ViewpointGroup") && protoInstanceNodeType.equals("Viewpoint"))
+							else if (nodeName.equals("ViewpointGroup") && (protoInstanceNodeType.equals("Viewpoint") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("children"))
 									((ViewpointGroupObject)elementObject).addChild((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("Text") && childElementName.equals("FontStyle"))
+							else if (nodeName.equals("Text") && childElementName.equals("FontStyle") && containerField.equals("fontStyle"))
 									((TextObject)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
-							else if (nodeName.equals("Text") && protoInstanceNodeType.equals("FontStyle"))
+							else if (nodeName.equals("Text") && (protoInstanceNodeType.equals("FontStyle") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("fontStyle"))
 									((TextObject)elementObject).setFontStyle ((ProtoInstanceObject) childX3dElement);
 					
 							else if (nodeName.equals("MultiTexture") && childElementName.contains("Texture") && containerField.equals("texture"))
 									((MultiTextureObject)elementObject).addTexture((X3DTextureNode) childX3dElement);
-				// TODO		else if (nodeName.equals("MultiTexture") && protoInstanceNodeType.contains("Texture") && containerField.equals("texture"))
+				// TODO		else if (nodeName.equals("MultiTexture") && (protoInstanceNodeType.contains("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texture"))
 				// TODO				((MultiTextureObject)elementObject).addTexture((ProtoInstanceObject) childX3dElement);
 
 							else if (childElementName.equals("IS"))
@@ -28510,13 +28608,14 @@ import org.web3d.x3d.sai.X3DException;
 					
 							// default fallback works for majority of parent-child relationships but throws exception otherwise
 							else	((X3DGroupingNode)elementObject).addChildren(new X3DNode[] { (X3DNode) childX3dElement } ); // default fallback
+
 							// making it this far without exception means satisfactory parent-child relationship found
 						}
 						catch (Exception e)
 						{
 							// TODO logging
 							errorNotice = "[X3DLoaderObject error] Incorrectly handled object construction, current elementObject=" + nodeName + 
-										  " (" + elementObject.getElementName() + "), child=" + childElementName + ", " + e;
+										  " (" + elementObject.getElementName() +"), child=" + childElementName + ", " + e;
 							validationResult.append(errorNotice).append("\n");
 							System.err.println(errorNotice);
 							e.printStackTrace(); // further diagnosis needed, DOM loader errors are tricky

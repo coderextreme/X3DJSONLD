@@ -290,7 +290,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"]]></xsl:text><xsl:value-of select="$newClassName"/>
+			System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
