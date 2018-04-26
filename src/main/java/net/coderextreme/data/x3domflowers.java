@@ -96,6 +96,7 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
+        .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new GroupObject()
           .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject(new MFString6().getArray()))
