@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 April 2018"
+          "@content": "25 April 2018"
         },
         {
           "@name": "generator",
@@ -293,13 +293,13 @@
               "}",
               "",
               "function updateCoordinates(resolution) {",
-              "     theta = 0.0;",
-              "     phi = 0.0;",
-              "     delta = (2 * 3.141592653) / (resolution-1);",
+              "     var theta = 0.0;",
+              "     var phi = 0.0;",
+              "     var delta = (2 * 3.141592653) / (resolution-1);",
               "     var crds = [];",
               "     for ( i = 0; i < resolution; i++) {",
               "     \tfor ( j = 0; j < resolution; j++) {",
-              "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+              "\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
               "\t\tcrds.push(new SFVec3f(",
               "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
               "\t\t\trho * Math.cos(phi) * Math.sin(theta),",

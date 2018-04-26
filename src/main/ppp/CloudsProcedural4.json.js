@@ -226,7 +226,7 @@ ecmascript:
 	this.cumulusscale = function () // these values scale a cloud within a designated size
 {
 
-	maxscale = 1;
+	var maxscale = 1;
 
 	scale = Math.round(9+maxscale*Math.random());
 	X = 1.5*scale;
@@ -259,7 +259,7 @@ ecmascript:
 	this.cirrusscale = function () // these values scale a cloud within a designated size
 {
 
-	maxscale = 1;
+	var maxscale = 1;
 
 	scale = Math.round(9+maxscale*Math.random());
 	X = 1.5*scale;
@@ -332,11 +332,11 @@ ecmascript:
 
 var maxi = 20;  // number of clouds
 
-maxj = 5; // denotes how many portions affecting the size of the cloud
+var maxj = 5; // denotes how many portions affecting the size of the cloud
 
-maxk = 8;  // number of billboards indicating cloud density
+var maxk = 8;  // number of billboards indicating cloud density
 
-sectionradius = 100;  //radius of individual cloud sections
+var sectionradius = 100;  //radius of individual cloud sections
 
 
 
@@ -470,11 +470,11 @@ X3DJSON.nodeUtil('Scene','Cumulus', 'children')[i] = newNode[0];
 
 var maxi = 2;  // number of clouds
 
-maxj = 5; // denotes how many portions affecting the size of the cloud
+var maxj = 5; // denotes how many portions affecting the size of the cloud
 
-maxk = 8;  // number of billboards indicating cloud density
+var maxk = 8;  // number of billboards indicating cloud density
 
-sectionradius = 1000;  //radius of individual cloud sections
+var sectionradius = 1000;  //radius of individual cloud sections
 
 
 

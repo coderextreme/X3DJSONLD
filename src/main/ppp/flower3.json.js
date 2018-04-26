@@ -231,13 +231,13 @@ var p = 0;
 ;
 
 	this.generateCoordinates = function (resolution) {
-     theta = 0.0;
-     phi = 0.0;
-     delta = (2 * 3.141592653) / (resolution-1);
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
      var localc = [];
-     for ( i = 0; i < resolution; i++) {
-     	for ( j = 0; j < resolution; j++) {
-		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+     for (var  i = 0; i < resolution; i++) {
+     	for (var  j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
 		localc.push(new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
@@ -254,7 +254,7 @@ var p = 0;
 	this.set_fraction = function (fraction, eventTime) {
 	t += 0.5;
 	p += 0.5;
-	choice = Math.floor(Math.random() * 4);
+	var choice = Math.floor(Math.random() * 4);
 	switch (choice) {
 	case 0:
 		e += Math.floor(Math.random() * 2) * 2 - 1;
