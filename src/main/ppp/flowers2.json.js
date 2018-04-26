@@ -307,8 +307,8 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE_OrbitScr
 	this.initialize = function () {
 			     this.generateCoordinates();
 			     var localci = [];
-			     for ( i = 0; i < this.proxy.resolution-1; i++) {
-				for ( j = 0; j < this.proxy.resolution-1; j++) {
+			     for (var i = 0; i < this.proxy.resolution-1; i++) {
+				for (var j = 0; j < this.proxy.resolution-1; j++) {
 				     localci.push(i*this.proxy.resolution+j);
 				     localci.push(i*this.proxy.resolution+j+1);
 				     localci.push((i+1)*this.proxy.resolution+j+1);
@@ -322,13 +322,13 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE_OrbitScr
 		;
 
 	this.generateCoordinates = function () {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (this.proxy.resolution-1);
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (this.proxy.resolution-1);
 			     var localc = [];
-			     for ( i = 0; i < this.proxy.resolution; i++) {
-				for ( j = 0; j < this.proxy.resolution; j++) {
-					rho = this.proxy.e + this.proxy.f * Math.cos(this.proxy.g * theta) * Math.cos(this.proxy.h * phi);
+			     for (var i = 0; i < this.proxy.resolution; i++) {
+				for (var j = 0; j < this.proxy.resolution; j++) {
+					var rho = this.proxy.e + this.proxy.f * Math.cos(this.proxy.g * theta) * Math.cos(this.proxy.h * phi);
 					localc.push(new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
@@ -345,7 +345,7 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE_OrbitScr
 		;
 
 	this.set_fraction = function (fraction, eventTime) {
-				choice = Math.floor(Math.random() * 4);
+				var choice = Math.floor(Math.random() * 4);
 				switch (choice) {
 				case 0:
 					this.proxy.e += Math.floor(Math.random() * 2) * 2 - 1;
@@ -575,8 +575,8 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE1000_Orbi
 	this.initialize = function () {
 			     this.generateCoordinates();
 			     var localci = [];
-			     for ( i = 0; i < this.proxy.resolution-1; i++) {
-				for ( j = 0; j < this.proxy.resolution-1; j++) {
+			     for (var i = 0; i < this.proxy.resolution-1; i++) {
+				for (var j = 0; j < this.proxy.resolution-1; j++) {
 				     localci.push(i*this.proxy.resolution+j);
 				     localci.push(i*this.proxy.resolution+j+1);
 				     localci.push((i+1)*this.proxy.resolution+j+1);
@@ -590,13 +590,13 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE1000_Orbi
 		;
 
 	this.generateCoordinates = function () {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (this.proxy.resolution-1);
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (this.proxy.resolution-1);
 			     var localc = [];
-			     for ( i = 0; i < this.proxy.resolution; i++) {
-				for ( j = 0; j < this.proxy.resolution; j++) {
-					rho = this.proxy.e + this.proxy.f * Math.cos(this.proxy.g * theta) * Math.cos(this.proxy.h * phi);
+			     for (var i = 0; i < this.proxy.resolution; i++) {
+				for (var j = 0; j < this.proxy.resolution; j++) {
+					var rho = this.proxy.e + this.proxy.f * Math.cos(this.proxy.g * theta) * Math.cos(this.proxy.h * phi);
 					localc.push(new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
@@ -613,7 +613,7 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE1000_Orbi
 		;
 
 	this.set_fraction = function (fraction, eventTime) {
-				choice = Math.floor(Math.random() * 4);
+				var choice = Math.floor(Math.random() * 4);
 				switch (choice) {
 				case 0:
 					this.proxy.e += Math.floor(Math.random() * 2) * 2 - 1;

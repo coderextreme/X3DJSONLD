@@ -233,11 +233,11 @@ var p = 0;
 	this.generateCoordinates = function (resolution) {
      var theta = 0.0;
      var phi = 0.0;
-     delta = (2 * 3.141592653) / (resolution-1);
+     var delta = (2 * 3.141592653) / (resolution-1);
      var localc = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
-		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
 		localc.push(new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
