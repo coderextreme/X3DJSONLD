@@ -112,7 +112,7 @@ class Scripts {
 		var loop = {}
 		loop.id = "loop";
 		loop.type = "text/javascript";
-		loop.text =loopItems.join("\n");
+		loop.text = loopItems.join("\n");
 		// When we zap the source, we prevent animation
 		// zapSource(json);
 
@@ -123,7 +123,7 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof jsonScript != 'undefined') {
-				console.log(jsonScript);
+				//console.log(jsonScript);
 				eval(jsonScript);
 			}
 		} catch (e) {
@@ -135,7 +135,7 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof scripts.text != 'undefined') {
-				console.log(scripts.text);
+				//console.log(scripts.text);
 				eval(scripts.text);
 			}
 		} catch (e) {
@@ -148,7 +148,7 @@ class Scripts {
 		try {
 			// TODO eval is evil
 			if (typeof routes.text != 'undefined') {
-				console.log(routes.text);
+				//console.log(routes.text);
 				eval(routes.text);
 			}
 		} catch (e) {
@@ -160,7 +160,7 @@ class Scripts {
 			try {
 				// TODO eval is evil
 				if (typeof loop.text != 'undefined') {
-					console.log(loop.text);
+					//console.log(loop.text);
 					eval(loop.text);
 				}
 				x3dom.reload();  // This may be necessary
@@ -504,7 +504,6 @@ class Scripts {
 		} else if (type.indexOf("MFVec2") === 0) {
 			num = 2;
 		} else if (type.indexOf("MFVec3") === 0) {
-			console.log("/* NUM is 3*/", "/*"+flat+"*/");
 			num = 3;
 		} else if (type.indexOf("MFVec4") === 0) {
 			num = 4;
