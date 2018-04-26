@@ -25,12 +25,12 @@ var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
 	json = PROTOS.prototypeExpander(file, json, "");
-	console.log(JSON.stringify(json));
+	// console.log(JSON.stringify(json));
 	var outfile = file.replace(/data/, "ppp");
 	try {
 		fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
 	} catch (e) {
-		console.error("Error creating ppp");
+		// console.error("Error creating ppp");
 	}
 	fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
 
@@ -57,7 +57,7 @@ function ProcessJSON(json, file) {
 		var route = routecode.join('\n');
 		var loop = loopItems.join('\n');
 		var totalcode = code+"\n"+route+"\n"+loop;
-		console.log(totalcode);
+		// console.log(totalcode);
 		try {
 			eval(totalcode);
 			fs.writeFileSync(outfile+".good.js", totalcode);

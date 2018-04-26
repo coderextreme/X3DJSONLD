@@ -629,7 +629,7 @@ PROTOS.prototype = {
 
 	readCode : function (data, fileExt, protoexp, done, p, newobject) {
 		if (typeof data !== 'undefined') {
-			console.log(data);
+			// console.log(data);
 			newobject[p]["#sourceText"] = data.split(/\r?\n/);
 			delete newobject[p]["@url"];
 		}
@@ -909,7 +909,7 @@ PROTOS.prototype = {
 			if (typeof alert === 'function') {
 				// alert("ProtoDeclare is still null or undefined ",filename + " " + protoname + " " + JSON.stringify(json));
 			}
-			console.error("ProtoDeclare is still null or undefined",filename, protoname, JSON.stringify(json));
+			console.error("ProtoDeclare is still null or undefined",filename, protoname);//, JSON.stringify(json));
 		} else {
 			var name = obj["@name"];
 			var appinfo = obj["@appinfo"];
