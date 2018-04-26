@@ -169,20 +169,20 @@ public class HelloWorld
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
     .addChild(new WorldInfoObject().setTitle("Hello world!"))
     .addChild(new GroupObject()
-      .addChild(new ViewpointObject("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0f,-1.0f,0.0f).setPosition(0.0f,-1.0f,7.0f))
-      .addChild(new TransformObject().setRotation(0.0f,1.0f,0.0f,3.0f)
+      .addChild(new ViewpointObject("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(new SFVec3fObject(new float[] {0.0f,-1.0f,0.0f})).setPosition(new SFVec3fObject(new float[] {0.0f,-1.0f,7.0f})))
+      .addChild(new TransformObject().setRotation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,3.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new SphereObject())
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(0.1f,0.5f,1.0f))
+            .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(new SFColorObject(new float[] {0.1f,0.5f,1.0f})))
             .setTexture(new ImageTextureObject("ImageCloudlessEarth").setUrl(new MFStringObject("\"earth-topo.png\" \"earth-topo.jpg\" \"earth-topo-small.gif\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif\""))))))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject("TextMessage").setString(new MFStringObject("\"Hello\" \"world!\""))
             .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -209,23 +209,45 @@ public class HelloWorld
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new HelloWorld().getX3dModel();
+        X3DObject thisExampleX3dObject = new HelloWorld().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"HelloWorld\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"HelloWorld\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

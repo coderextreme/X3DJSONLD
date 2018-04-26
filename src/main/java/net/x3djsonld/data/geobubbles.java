@@ -81,15 +81,15 @@ public class geobubbles
   .setScene(new SceneObject()
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
-    .addChild(new GeoViewpointObject("Tour").setDescription("Tour Views").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
+    .addChild(new GeoViewpointObject("Tour").setDescription("Tour Views").setPosition(new SFVec3dObject(new float[] {0.0f,0.0f,4.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f})))
     .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject())
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(0.5f,0.5f,0.5f).setDiffuseColor(0.7f,0.7f,0.7f)))))
+          .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {0.5f,0.5f,0.5f})).setDiffuseColor(new SFColorObject(new float[] {0.7f,0.7f,0.7f}))))))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
-    .addChild(new GeoPositionInterpolatorObject("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3dObject(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0})))
+    .addChild(new GeoPositionInterpolatorObject("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3dObject(new float[] {0.0015708f,0.0f,4.0f,0.0f,0.0015708f,4.0f})))
     .addChild(new ScriptObject("RandomTourTime").setSourceCode("ecmascript:" + "\n" + 
 "\n" + 
 "               function set_cycle(value) {" + "\n" + 
@@ -115,7 +115,7 @@ public class geobubbles
     .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
     .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -142,23 +142,45 @@ public class geobubbles
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new geobubbles().getX3dModel();
+        X3DObject thisExampleX3dObject = new geobubbles().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"geobubbles\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"geobubbles\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

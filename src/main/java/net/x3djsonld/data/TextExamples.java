@@ -97,23 +97,23 @@ public class TextExamples
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.0f,0.0f}))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"Compare special character escaping\""))
           .setFontStyle(new FontStyleObject("testFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8f)))
         .setAppearance(new AppearanceObject("LightBlueAppearance")
-          .setMaterial(new MaterialObject().setDiffuseColor(0.1f,0.7f,0.7f)))))
-    .addChild(new TransformObject().setTranslation(-3.0f,0.0f,0.0f)
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.1f,0.7f,0.7f}))))))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-3.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
           .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
         .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance"))))
-    .addChild(new TransformObject().setTranslation(3.0f,0.0f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {3.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
           .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
         .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance")))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -140,23 +140,45 @@ public class TextExamples
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new TextExamples().getX3dModel();
+        X3DObject thisExampleX3dObject = new TextExamples().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"TextExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"TextExamples\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

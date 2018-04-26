@@ -124,12 +124,12 @@ public class CameraPrototypes
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addComments(" =============== Camera ============== ")
-    .addChild(new ProtoDeclareObject().setName("Camera").setAppinfo(ProtoDeclare_Camera_3_16_appinfo)
+    .addChild(new ProtoDeclareObject().setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.")
       .setProtoInterface(new ProtoInterfaceObject()
         .addComments(" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields ")
         .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this Camera"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setValue("0 0 10").setAppinfo(field_position_5_17_appinfo))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("orientation").setType("SFRotation").setValue("0 0 1 0").setAppinfo(field_orientation_5_18_appinfo))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setValue("0 0 10").setAppinfo("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("orientation").setType("SFRotation").setValue("0 0 1 0").setAppinfo("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("fieldOfView").setType("SFFloat").setValue("0.7854").setAppinfo("pi/4"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat").setAppinfo("input fraction drives interpolators"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_bind").setType("SFBool").setAppinfo("input event binds or unbinds this Camera"))
@@ -732,7 +732,7 @@ public class CameraPrototypes
             .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
         .addComments(" Add any ROUTEs here, going from Script to other nodes within ProtoBody ")))
     .addComments(" =============== CameraMovement ============== ")
-    .addChild(new ProtoDeclareObject().setName("CameraMovement").setAppinfo(ProtoDeclare_CameraMovement_3_174_appinfo)
+    .addChild(new ProtoDeclareObject().setName("CameraMovement").setAppinfo("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraMovement"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setValue("true").setAppinfo("Whether this CameraMovement can be activated"))
@@ -869,7 +869,7 @@ public class CameraPrototypes
             .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
         .addComments(" Add any ROUTEs here, going from Script to other nodes within ProtoBody ")))
     .addComments(" =============== OfflineRender ============== ")
-    .addChild(new ProtoDeclareObject().setName("OfflineRender").setAppinfo(ProtoDeclare_OfflineRender_3_215_appinfo)
+    .addChild(new ProtoDeclareObject().setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).")
       .setProtoInterface(new ProtoInterfaceObject()
         .addComments(" TODO non-photorealistic rendering (NPR) parameters ")
         .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this OfflineRender"))
@@ -971,30 +971,12 @@ public class CameraPrototypes
     .addChild(new AnchorObject().setDescription("launch CameraExample scene").setUrl(new MFStringObject("\"CameraExamples.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d\" \"CameraExamples.wrl\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl\""))
       .addChild(new TransformObject()
         .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(Text_6_254_string)
+          .setGeometry(new TextObject().setString(new MFStringObject("\"CameraPrototypes.x3d\" \"defines multiple prototype nodes\" \"\" \"Click on this text to see\" \"CameraExamples.x3d scene\""))
             .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,0.2f)))))));
-  }
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,0.2f}))))))));
+    }
 	// end of initialize() method
-
-	/** Large attribute array: ProtoDeclare appinfo field, scene-graph level=3, element #16, 31 total values */
-	private SFStringObject ProtoDeclare_Camera_3_16_appinfo = new SFStringObject("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #17, 16 total values */
-	private SFStringObject field_position_5_17_appinfo = new SFStringObject("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #18, 16 total values */
-	private SFStringObject field_orientation_5_18_appinfo = new SFStringObject("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
-
-	/** Large attribute array: ProtoDeclare appinfo field, scene-graph level=3, element #174, 14 total values */
-	private SFStringObject ProtoDeclare_CameraMovement_3_174_appinfo = new SFStringObject("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.");
-
-	/** Large attribute array: ProtoDeclare appinfo field, scene-graph level=3, element #215, 20 total values */
-	private SFStringObject ProtoDeclare_OfflineRender_3_215_appinfo = new SFStringObject("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).");
-
-	/** Large attribute array: Text string field, scene-graph level=6, element #254, 14 total values */
-	private MFStringObject Text_6_254_string = new MFStringObject(new MFStringObject("\"CameraPrototypes.x3d\" \"defines multiple prototype nodes\" \"\" \"Click on this text to see\" \"CameraExamples.x3d scene\""));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -1020,23 +1002,45 @@ public class CameraPrototypes
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new CameraPrototypes().getX3dModel();
+        X3DObject thisExampleX3dObject = new CameraPrototypes().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"CameraPrototypes\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"CameraPrototypes\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -101,13 +101,13 @@ public class HeadsUpDisplayPrototype
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("Displayed subscene positioned as a HUD.")
           .addComments(" default is null array of nodes "))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("dragChildren").setType("MFNode").setAppinfo(field_dragChildren_5_12_appinfo)
+        .addField(new fieldObject().setAccessType("inputOutput").setName("dragChildren").setType("MFNode").setAppinfo("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.")
           .addComments(" default is null array of nodes "))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("locationOffset").setType("SFVec3f").setValue("-2 -2 0").setAppinfo("Modified screen location and distance (for size)."))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
-          .addChild(new ProximitySensorObject("WhereSensor").setSize(1000000000.0f,1000000000.0f,1000000000.0f)
+          .addChild(new ProximitySensorObject("WhereSensor").setSize(new SFVec3fObject(new float[] {1000000000.0f,1000000000.0f,1000000000.0f}))
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("center").setProtoField("locationOffset"))))
           .addChild(new TransformObject("FixedLocation")
@@ -115,7 +115,7 @@ public class HeadsUpDisplayPrototype
               .addChild(new TransformObject("LocationOffset")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("translation").setProtoField("locationOffset")))
-                .addChild(new TransformObject().setTranslation(0.0f,0.0f,-10.0f)
+                .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,0.0f,-10.0f}))
                   .addChild(new GroupObject()
                     .setIS(new ISObject()
                       .addConnect(new connectObject().setNodeField("children").setProtoField("children"))))
@@ -187,17 +187,11 @@ public class HeadsUpDisplayPrototype
     .addChild(new AnchorObject().setDescription("HeadsUpDisplayExample").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"HeadsUpDisplayExample.x3d\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d\" \"HeadsUpDisplayExample.wrl\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl\""))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,1.0f).setEmissiveColor(0.0f,1.0f,1.0f)))
-        .setGeometry(new TextObject().setString(Text_5_61_string)
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,1.0f})).setEmissiveColor(new SFColorObject(new float[] {0.0f,1.0f,1.0f}))))
+        .setGeometry(new TextObject().setString(new MFStringObject("\"HeadsUpDisplayPrototype.x3d\" \"is a Prototype definition file.\" \"\" \"To see an example scene using this node\" \"click this text to view\" \"HeadsUpDisplayExample.x3d\""))
           .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8f))))));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #12, 28 total values */
-	private SFStringObject field_dragChildren_5_12_appinfo = new SFStringObject("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.");
-
-	/** Large attribute array: Text string field, scene-graph level=5, element #61, 21 total values */
-	private MFStringObject Text_5_61_string = new MFStringObject(new MFStringObject("\"HeadsUpDisplayPrototype.x3d\" \"is a Prototype definition file.\" \"\" \"To see an example scene using this node\" \"click this text to view\" \"HeadsUpDisplayExample.x3d\""));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -223,23 +217,45 @@ public class HeadsUpDisplayPrototype
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new HeadsUpDisplayPrototype().getX3dModel();
+        X3DObject thisExampleX3dObject = new HeadsUpDisplayPrototype().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"HeadsUpDisplayPrototype\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"HeadsUpDisplayPrototype\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

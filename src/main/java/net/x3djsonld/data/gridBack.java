@@ -104,25 +104,12 @@ public class gridBack
   .setScene(new SceneObject()
     .addChild(new ShapeObject()
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject().setAmbientIntensity(0.01f).setShininess(0.05f).setDiffuseColor(1.0f,1.0f,1.0f)))
-      .setGeometry(new IndexedFaceSetObject().setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(new int[] {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0}).setCoordIndex(IndexedFaceSet_4_15_coordIndex)
-        .setCoord(new CoordinateObject().setPoint(Coordinate_5_15_point))
+        .setMaterial(new MaterialObject().setAmbientIntensity(0.01f).setShininess(0.05f).setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f}))))
+      .setGeometry(new IndexedFaceSetObject().setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(new int[] {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0}).setCoordIndex(new int[] {0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1})
+        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-5.25f,5.25f,0.0f,-3.75f,5.25f,0.0f,-2.25f,5.25f,0.0f,-0.75f,5.25f,0.0f,0.75f,5.25f,0.0f,2.25f,5.25f,0.0f,3.75f,5.25f,0.0f,5.25f,5.25f,0.0f,-5.25f,3.75f,0.0f,-3.75f,3.75f,0.0f,-2.25f,3.75f,0.0f,-0.75f,3.75f,0.0f,0.75f,3.75f,0.0f,2.25f,3.75f,0.0f,3.75f,3.75f,0.0f,5.25f,3.75f,0.0f,-5.25f,2.25f,0.0f,-3.75f,2.25f,0.0f,-2.25f,2.25f,0.0f,-0.75f,2.25f,0.0f,0.75f,2.25f,0.0f,2.25f,2.25f,0.0f,3.75f,2.25f,0.0f,5.25f,2.25f,0.0f,-5.25f,0.75f,0.0f,-3.75f,0.75f,0.0f,-2.25f,0.75f,0.0f,-0.75f,0.75f,0.0f,0.75f,0.75f,0.0f,2.25f,0.75f,0.0f,3.75f,0.75f,0.0f,5.25f,0.75f,0.0f,-5.25f,-0.75f,0.0f,-3.75f,-0.75f,0.0f,-2.25f,-0.75f,0.0f,-0.75f,-0.75f,0.0f,0.75f,-0.75f,0.0f,2.25f,-0.75f,0.0f,3.75f,-0.75f,0.0f,5.25f,-0.75f,0.0f,-5.25f,-2.25f,0.0f,-3.75f,-2.25f,0.0f,-2.25f,-2.25f,0.0f,-0.75f,-2.25f,0.0f,0.75f,-2.25f,0.0f,2.25f,-2.25f,0.0f,3.75f,-2.25f,0.0f,5.25f,-2.25f,0.0f,-5.25f,-3.75f,0.0f,-3.75f,-3.75f,0.0f,-2.25f,-3.75f,0.0f,-0.75f,-3.75f,0.0f,0.75f,-3.75f,0.0f,2.25f,-3.75f,0.0f,3.75f,-3.75f,0.0f,5.25f,-3.75f,0.0f,-5.25f,-5.25f,0.0f,-3.75f,-5.25f,0.0f,-2.25f,-5.25f,0.0f,-0.75f,-5.25f,0.0f,0.75f,-5.25f,0.0f,2.25f,-5.25f,0.0f,3.75f,-5.25f,0.0f,5.25f,-5.25f,0.0f})))
         .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f}))))));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=4, element #15, 245 total numbers */
-	private MFInt32Object IndexedFaceSet_4_15_coordIndex = new MFInt32Object(new int[] {0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1});
-
-	/** Large attribute array: Coordinate point field, scene-graph level=5, element #15, 192 total numbers made up of 64 3-tuple values */
-	private MFVec3fObject Coordinate_5_15_point = new MFVec3fObject() /* splitting up long array to improve readability */
-	.append(new MFVec3fObject(new float[] {-5.25f,5.25f,0.0f,-3.75f,5.25f,0.0f,-2.25f,5.25f,0.0f,-0.75f,5.25f,0.0f,0.75f,5.25f,0.0f,2.25f,5.25f,0.0f,3.75f,5.25f,0.0f,5.25f,5.25f,0.0f,-5.25f,3.75f,0.0f,-3.75f,3.75f,0.0f}))
-	.append(new MFVec3fObject(new float[] {-2.25f,3.75f,0.0f,-0.75f,3.75f,0.0f,0.75f,3.75f,0.0f,2.25f,3.75f,0.0f,3.75f,3.75f,0.0f,5.25f,3.75f,0.0f,-5.25f,2.25f,0.0f,-3.75f,2.25f,0.0f,-2.25f,2.25f,0.0f,-0.75f,2.25f,0.0f}))
-	.append(new MFVec3fObject(new float[] {0.75f,2.25f,0.0f,2.25f,2.25f,0.0f,3.75f,2.25f,0.0f,5.25f,2.25f,0.0f,-5.25f,0.75f,0.0f,-3.75f,0.75f,0.0f,-2.25f,0.75f,0.0f,-0.75f,0.75f,0.0f,0.75f,0.75f,0.0f,2.25f,0.75f,0.0f}))
-	.append(new MFVec3fObject(new float[] {3.75f,0.75f,0.0f,5.25f,0.75f,0.0f,-5.25f,-0.75f,0.0f,-3.75f,-0.75f,0.0f,-2.25f,-0.75f,0.0f,-0.75f,-0.75f,0.0f,0.75f,-0.75f,0.0f,2.25f,-0.75f,0.0f,3.75f,-0.75f,0.0f,5.25f,-0.75f,0.0f}))
-	.append(new MFVec3fObject(new float[] {-5.25f,-2.25f,0.0f,-3.75f,-2.25f,0.0f,-2.25f,-2.25f,0.0f,-0.75f,-2.25f,0.0f,0.75f,-2.25f,0.0f,2.25f,-2.25f,0.0f,3.75f,-2.25f,0.0f,5.25f,-2.25f,0.0f,-5.25f,-3.75f,0.0f,-3.75f,-3.75f,0.0f}))
-	.append(new MFVec3fObject(new float[] {-2.25f,-3.75f,0.0f,-0.75f,-3.75f,0.0f,0.75f,-3.75f,0.0f,2.25f,-3.75f,0.0f,3.75f,-3.75f,0.0f,5.25f,-3.75f,0.0f,-5.25f,-5.25f,0.0f,-3.75f,-5.25f,0.0f,-2.25f,-5.25f,0.0f,-0.75f,-5.25f,0.0f}))
-	.append(new MFVec3fObject(new float[] {0.75f,-5.25f,0.0f,2.25f,-5.25f,0.0f,3.75f,-5.25f,0.0f,5.25f,-5.25f,0.0f}));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -148,23 +135,45 @@ public class gridBack
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new gridBack().getX3dModel();
+        X3DObject thisExampleX3dObject = new gridBack().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"gridBack\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"gridBack\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

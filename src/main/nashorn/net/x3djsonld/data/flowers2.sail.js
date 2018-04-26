@@ -130,8 +130,8 @@ flowers2_sail.prototype = {
 "			function initialize() {" + "\n" + 
 "			     generateCoordinates();" + "\n" + 
 "			     var localci = [];" + "\n" + 
-"			     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
-"				for ( j = 0; j < resolution-1; j++) {" + "\n" + 
+"			     for (var i = 0; i < resolution-1; i++) {" + "\n" + 
+"				for (var j = 0; j < resolution-1; j++) {" + "\n" + 
 "				     localci.push(i*resolution+j);" + "\n" + 
 "				     localci.push(i*resolution+j+1);" + "\n" + 
 "				     localci.push((i+1)*resolution+j+1);" + "\n" + 
@@ -143,13 +143,13 @@ flowers2_sail.prototype = {
 "			}" + "\n" + 
 "\n" + 
 "			function generateCoordinates() {" + "\n" + 
-"			     theta = 0.0;" + "\n" + 
-"			     phi = 0.0;" + "\n" + 
-"			     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
+"			     var theta = 0.0;" + "\n" + 
+"			     var phi = 0.0;" + "\n" + 
+"			     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
 "			     var localc = [];" + "\n" + 
-"			     for ( i = 0; i < resolution; i++) {" + "\n" + 
-"				for ( j = 0; j < resolution; j++) {" + "\n" + 
-"					rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
+"			     for (var i = 0; i < resolution; i++) {" + "\n" + 
+"				for (var j = 0; j < resolution; j++) {" + "\n" + 
+"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
 "					localc.push(new SFVec3f(" + "\n" + 
 "						rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
 "						rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
@@ -164,7 +164,7 @@ flowers2_sail.prototype = {
 "			}" + "\n" + 
 "\n" + 
 "			function set_fraction(fraction, eventTime) {" + "\n" + 
-"				choice = Math.floor(Math.random() * 4);" + "\n" + 
+"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
 "				switch (choice) {" + "\n" + 
 "				case 0:" + "\n" + 
 "					e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 

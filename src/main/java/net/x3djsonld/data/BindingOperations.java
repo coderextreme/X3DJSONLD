@@ -128,31 +128,31 @@ public class BindingOperations
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject("View1").setDescription("Viewpoint 1").setCenterOfRotation(-6.0f,0.0f,0.0f).setPosition(-6.0f,0.0f,5.0f))
-    .addChild(new ViewpointObject("View2").setDescription("Viewpoint 2").setCenterOfRotation(-2.0f,0.0f,0.0f).setPosition(-2.0f,0.0f,5.0f))
-    .addChild(new ViewpointObject("View3").setDescription("Viewpoint 3").setCenterOfRotation(2.0f,0.0f,0.0f).setPosition(2.0f,0.0f,5.0f))
-    .addChild(new ViewpointObject("View4").setDescription("Viewpoint 4").setCenterOfRotation(6.0f,0.0f,0.0f).setPosition(6.0f,0.0f,5.0f))
+    .addChild(new ViewpointObject("View1").setDescription("Viewpoint 1").setCenterOfRotation(new SFVec3fObject(new float[] {-6.0f,0.0f,0.0f})).setPosition(new SFVec3fObject(new float[] {-6.0f,0.0f,5.0f})))
+    .addChild(new ViewpointObject("View2").setDescription("Viewpoint 2").setCenterOfRotation(new SFVec3fObject(new float[] {-2.0f,0.0f,0.0f})).setPosition(new SFVec3fObject(new float[] {-2.0f,0.0f,5.0f})))
+    .addChild(new ViewpointObject("View3").setDescription("Viewpoint 3").setCenterOfRotation(new SFVec3fObject(new float[] {2.0f,0.0f,0.0f})).setPosition(new SFVec3fObject(new float[] {2.0f,0.0f,5.0f})))
+    .addChild(new ViewpointObject("View4").setDescription("Viewpoint 4").setCenterOfRotation(new SFVec3fObject(new float[] {6.0f,0.0f,0.0f})).setPosition(new SFVec3fObject(new float[] {6.0f,0.0f,5.0f})))
     .addComments(" Script initialization ought to first bind view5 below. ")
     .addChild(new GroupObject()
-      .addChild(new TransformObject("Text1").setTranslation(-6.0f,0.0f,0.0f)
+      .addChild(new TransformObject("Text1").setTranslation(new SFVec3fObject(new float[] {-6.0f,0.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"View\" \"# 1\""))
             .setFontStyle(new FontStyleObject("CenterJustify").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f)))))
-      .addChild(new TransformObject("Text2").setTranslation(-2.0f,0.0f,0.0f)
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f}))))))
+      .addChild(new TransformObject("Text2").setTranslation(new SFVec3fObject(new float[] {-2.0f,0.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"View\" \"# 2\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f)))))
-      .addChild(new TransformObject("Text3").setTranslation(2.0f,0.0f,0.0f)
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f}))))))
+      .addChild(new TransformObject("Text3").setTranslation(new SFVec3fObject(new float[] {2.0f,0.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"View\" \"# 3\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f)))))
-      .addChild(new TransformObject("Text4").setTranslation(6.0f,0.0f,0.0f)
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.0f,1.0f}))))))
+      .addChild(new TransformObject("Text4").setTranslation(new SFVec3fObject(new float[] {6.0f,0.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"View\" \"# 4\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
@@ -160,16 +160,16 @@ public class BindingOperations
             .setMaterial(new MaterialObject())))))
     .addComments(" The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. ")
     .addComments(" It does not need to be studied in this chapter. ")
-    .addChild(new TransformObject().setTranslation(0.0f,-3.0f,8.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-3.0f,8.0f}))
       .addComments(" notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. ")
-      .addChild(new ViewpointObject("ClickToAnimateView").setDescription("Select animation sequence").setPosition(0.0f,0.0f,7.0f))
+      .addChild(new ViewpointObject("ClickToAnimateView").setDescription("Select animation sequence").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,7.0f})))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"Click here to animate\""))
           .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"BEGIN\""))))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.8f,0.4f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.8f,0.4f,0.0f})))))
       .addChild(new ShapeObject()
-        .setGeometry(new BoxObject().setSize(7.0f,1.0f,0.02f))
+        .setGeometry(new BoxObject().setSize(new SFVec3fObject(new float[] {7.0f,1.0f,0.02f})))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setTransparency(1f))))
       .addChild(new TouchSensorObject("TextTouchSensor").setDescription("Click to begin animating viewpoint selections"))
@@ -290,7 +290,7 @@ public class BindingOperations
       .addChild(new ROUTEObject().setFromNode("View2").setFromField("isBound").setToNode("BindingSequencerEngine").setToField("view2Bound"))
       .addChild(new ROUTEObject().setFromNode("View3").setFromField("isBound").setToNode("BindingSequencerEngine").setToField("view3Bound"))
       .addChild(new ROUTEObject().setFromNode("View4").setFromField("isBound").setToNode("BindingSequencerEngine").setToField("view4Bound"))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -317,23 +317,45 @@ public class BindingOperations
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new BindingOperations().getX3dModel();
+        X3DObject thisExampleX3dObject = new BindingOperations().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"BindingOperations\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"BindingOperations\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

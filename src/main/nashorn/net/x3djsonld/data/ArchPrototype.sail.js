@@ -156,7 +156,7 @@ ArchPrototype_sail.prototype = {
                   .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs ")
-        .addChild(new ScriptObject("ArchPrototypeScript").setUrl(new MFStringObject("\"../node/ArchPrototypeScript.js\""))
+        .addChild(new ScriptObject("ArchPrototypeScript").setUrl(new MFStringObject("\"../node/ArchPrototypeScript.js\" \"https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js\""))
           .addComments(" INPUT PARAMETERS ")
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")

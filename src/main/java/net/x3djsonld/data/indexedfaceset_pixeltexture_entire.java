@@ -120,11 +120,11 @@ public class indexedfaceset_pixeltexture_entire
     .addMeta(new metaObject().setName("license").setContent("../../license.html")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Front View"))
-    .addChild(new ViewpointObject().setDescription("Rear View").setPosition(0.0f,0.0f,-10.0f).setOrientation(0.0f,1.0f,0.0f,3.14f))
-    .addChild(new ViewpointObject().setDescription("Top View").setPosition(0.0f,10.0f,0.0f).setOrientation(1.0f,0.0f,0.0f,-1.57f))
-    .addChild(new ViewpointObject().setDescription("Bottom View").setPosition(0.0f,-10.0f,0.0f).setOrientation(1.0f,0.0f,0.0f,1.57f))
-    .addChild(new ViewpointObject().setDescription("Right View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(10.0f,0.0f,0.0f))
-    .addChild(new ViewpointObject().setDescription("Left View").setPosition(-10.0f,0.0f,0.0f).setOrientation(0.0f,1.0f,0.0f,-1.57f))
+    .addChild(new ViewpointObject().setDescription("Rear View").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,-10.0f})).setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,3.14f})))
+    .addChild(new ViewpointObject().setDescription("Top View").setPosition(new SFVec3fObject(new float[] {0.0f,10.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,-1.57f})))
+    .addChild(new ViewpointObject().setDescription("Bottom View").setPosition(new SFVec3fObject(new float[] {0.0f,-10.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57f})))
+    .addChild(new ViewpointObject().setDescription("Right View").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,1.57f})).setPosition(new SFVec3fObject(new float[] {10.0f,0.0f,0.0f})))
+    .addChild(new ViewpointObject().setDescription("Left View").setPosition(new SFVec3fObject(new float[] {-10.0f,0.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,-1.57f})))
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
     .addChild(new ShapeObject()
       .setAppearance(new AppearanceObject()
@@ -132,7 +132,7 @@ public class indexedfaceset_pixeltexture_entire
         .setTexture(new PixelTextureObject().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
       .setGeometry(new IndexedFaceSetObject().setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1})
         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-2.0f,1.5f,1.0f,-2.0f,-1.5f,1.0f,2.0f,1.5f,1.0f,2.0f,-1.5f,1.0f,2.0f,1.5f,-1.0f,2.0f,-1.5f,-1.0f,-2.0f,1.5f,-1.0f,-2.0f,-1.5f,-1.0f}))))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -159,23 +159,45 @@ public class indexedfaceset_pixeltexture_entire
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new indexedfaceset_pixeltexture_entire().getX3dModel();
+        X3DObject thisExampleX3dObject = new indexedfaceset_pixeltexture_entire().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"indexedfaceset_pixeltexture_entire\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"indexedfaceset_pixeltexture_entire\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

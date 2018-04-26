@@ -77,13 +77,13 @@ public class arc4
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
     .addChild(new TransformObject("DECLpoint_G1_node")
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.1f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new PositionInterpolatorObject("DECLpoint_G1_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
       .addChild(new ScriptObject("DECLpoint_G1_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
@@ -106,7 +106,7 @@ public class arc4
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.1f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new PositionInterpolatorObject("DECLpoint_G2_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
       .addChild(new ScriptObject("DECLpoint_G2_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
@@ -130,7 +130,7 @@ public class arc4
         .addChild(new TransformObject("DECLx3dconnector_connector1_rotscale")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(0.5f)))
+              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f})).setTransparency(0.5f)))
             .setGeometry(new CylinderObject().setRadius(0.05f)))))
       .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
@@ -204,7 +204,7 @@ public class arc4
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))))
     .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
     .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -231,23 +231,45 @@ public class arc4
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new arc4().getX3dModel();
+        X3DObject thisExampleX3dObject = new arc4().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"arc4\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"arc4\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

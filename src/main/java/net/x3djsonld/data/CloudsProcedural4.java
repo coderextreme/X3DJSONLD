@@ -99,21 +99,21 @@ public class CloudsProcedural4
     .addMeta(new metaObject().setName("TODO").setContent("fix links")))
   .setScene(new SceneObject()
     .addComments(" A png image file for the cloud texture must be designated in the ecmascript node. ")
-    .addChild(new ViewpointObject().setDescription("Main").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(50000.0f,1000.0f,42000.0f).setJump(false))
-    .addChild(new ViewpointObject().setDescription("Light House Tower").setOrientation(0.0f,1.0f,0.0f,1.3f).setPosition(45000.0f,1290.0f,44000.0f).setJump(false))
-    .addChild(new ViewpointObject().setDescription("centerWest").setOrientation(0.0f,1.0f,0.0f,2.5f).setPosition(48000.0f,1000.0f,20000.0f).setJump(false))
+    .addChild(new ViewpointObject().setDescription("Main").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,1.57f})).setPosition(new SFVec3fObject(new float[] {50000.0f,1000.0f,42000.0f})).setJump(false))
+    .addChild(new ViewpointObject().setDescription("Light House Tower").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,1.3f})).setPosition(new SFVec3fObject(new float[] {45000.0f,1290.0f,44000.0f})).setJump(false))
+    .addChild(new ViewpointObject().setDescription("centerWest").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,2.5f})).setPosition(new SFVec3fObject(new float[] {48000.0f,1000.0f,20000.0f})).setJump(false))
     .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})).setSkyColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})))
-    .addChild(new DirectionalLightObject().setDirection(-1.0f,0.0f,0.0f).setAmbientIntensity(1f).setGlobal(true))
+    .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {-1.0f,0.0f,0.0f})).setAmbientIntensity(1f).setGlobal(true))
     .addChild(new GroupObject("Terrain")
-      .addChild(new TransformObject().setTranslation(25000.0f,0.0f,25000.0f).setScale(50.0f,50.0f,50.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {25000.0f,0.0f,25000.0f})).setScale(new SFVec3fObject(new float[] {50.0f,50.0f,50.0f}))
         .addChild(new InlineObject().setUrl(new MFStringObject("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
-      .addChild(new TransformObject().setRotation(1.0f,0.0f,0.0f,1.57f).setTranslation(25000.0f,0.0f,25000.0f)
+      .addChild(new TransformObject().setRotation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57f})).setTranslation(new SFVec3fObject(new float[] {25000.0f,0.0f,25000.0f}))
         .addChild(new ShapeObject()
-          .setGeometry(new Rectangle2DObject().setSize(77000.0f,55000.0f))
+          .setGeometry(new Rectangle2DObject().setSize(new SFVec2fObject(new float[] {77000.0f,55000.0f})))
           .setAppearance(new AppearanceObject()
             .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
     .addChild(new GroupObject("Placemarks")
-      .addChild(new TransformObject().setTranslation(45000.0f,30.0f,44000.0f).setScale(50.0f,50.0f,50.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {45000.0f,30.0f,44000.0f})).setScale(new SFVec3fObject(new float[] {50.0f,50.0f,50.0f}))
         .addChild(new InlineObject().setUrl(new MFStringObject("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
     .addChild(new GroupObject("Clouds")
       .addChild(new TransformObject("Cumulus"))
@@ -141,7 +141,7 @@ public class CloudsProcedural4
 "function cumulusscale() // these values scale a cloud within a designated size" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"	maxscale = 1;" + "\n" + 
+"	var maxscale = 1;" + "\n" + 
 "\n" + 
 "	scale = Math.round(9+maxscale*Math.random());" + "\n" + 
 "	X = 1.5*scale;" + "\n" + 
@@ -172,7 +172,7 @@ public class CloudsProcedural4
 "function cirrusscale() // these values scale a cloud within a designated size" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"	maxscale = 1;" + "\n" + 
+"	var maxscale = 1;" + "\n" + 
 "\n" + 
 "	scale = Math.round(9+maxscale*Math.random());" + "\n" + 
 "	X = 1.5*scale;" + "\n" + 
@@ -239,13 +239,13 @@ public class CloudsProcedural4
 "function cumulus()" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"maxi = 20;  // number of clouds" + "\n" + 
+"var maxi = 20;  // number of clouds" + "\n" + 
 "\n" + 
-"maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
+"var maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
 "\n" + 
-"maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
+"var maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
 "\n" + 
-"sectionradius = 100;  //radius of individual cloud sections" + "\n" + 
+"var sectionradius = 100;  //radius of individual cloud sections" + "\n" + 
 "\n" + 
 "\n" + 
 "\n" + 
@@ -376,13 +376,13 @@ public class CloudsProcedural4
 "\n" + 
 "{" + "\n" + 
 "\n" + 
-"maxi = 2;  // number of clouds" + "\n" + 
+"var maxi = 2;  // number of clouds" + "\n" + 
 "\n" + 
-"maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
+"var maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
 "\n" + 
-"maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
+"var maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
 "\n" + 
-"sectionradius = 1000;  //radius of individual cloud sections" + "\n" + 
+"var sectionradius = 1000;  //radius of individual cloud sections" + "\n" + 
 "\n" + 
 "\n" + 
 "\n" + 
@@ -507,8 +507,8 @@ public class CloudsProcedural4
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
           .addChild(new TransformObject().setUSE("Cirrus")))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
-      .addChild(new DirectionalLightObject().setDirection(-1.0f,-1.0f,0.0f).setAmbientIntensity(1f).setColor(1.0f,0.0f,0.0f).setGlobal(true))));
-  }
+      .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {-1.0f,-1.0f,0.0f})).setAmbientIntensity(1f).setColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})).setGlobal(true))));
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -535,23 +535,45 @@ public class CloudsProcedural4
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new CloudsProcedural4().getX3dModel();
+        X3DObject thisExampleX3dObject = new CloudsProcedural4().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"CloudsProcedural4\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"CloudsProcedural4\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

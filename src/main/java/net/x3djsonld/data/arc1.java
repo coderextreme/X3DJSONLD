@@ -24,7 +24,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d">arc1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -36,7 +36,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -71,13 +71,13 @@ public class arc1
 	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
+    .addMeta(new metaObject().setName("title").setContent("arc1.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
     .addChild(new ProtoDeclareObject().setName("point")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -89,17 +89,16 @@ public class arc1
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject().setRadius(0.1f))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
+              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
           .addChild(new PositionInterpolatorObject("PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
           .addChild(new ScriptObject("MB1").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
-"		function set_location(value) {" + "\n" + 
+"               function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n")
+"               }" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -108,22 +107,28 @@ public class arc1
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
           .addChild(new ROUTEObject().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
-          .addChild(new ROUTEObject().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
+          .addChild(new ROUTEObject().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation"))
+          .addChild(new ROUTEObject().setFromNode("MB1").setFromField("translation_changed").setToNode("node").setToField("set_translation")))))
+    .addChild(new TransformObject("G1")
+      .addChild(new ProtoInstanceObject().setName("point")))
+    .addChild(new TransformObject("G2")
+      .addChild(new ProtoInstanceObject().setName("point")))
+    .addChild(new TransformObject("transC1")
+      .addChild(new TransformObject("rotscaleC1")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f}))))
+          .setGeometry(new CylinderObject().setRadius(.05f)))))
     .addChild(new ProtoDeclareObject().setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("transnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("rotscalenode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
-          .addChild(new TransformObject("trans")
-            .addChild(new TransformObject("rotscale")
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(0.2f,0.7f,0.7f)))
-                .setGeometry(new CylinderObject().setRadius(.05f)))))
-          .addChild(new ScriptObject("S1").setSourceCode("\n" + 
+        .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
@@ -140,24 +145,19 @@ public class arc1
 "			    translation : transl," + "\n" + 
 "			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
 "		    };" + "\n" + 
-"	    } else if (typeof SFRotation !== 'undefined') {" + "\n" + 
+"	    } else {" + "\n" + 
 "		    return {" + "\n" + 
 "			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
 "			    translation : transl," + "\n" + 
 "			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
 "		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl" + "\n" + 
-"		    };" + "\n" + 
 "	    }" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      position.translation = trafo.translation;" + "\n" + 
-"	      rotscale.rotation = trafo.rotation;" + "\n" + 
-"	      rotscale.scale = trafo.scale;" + "\n" + 
+"	      transnode.translation = trafo.translation;" + "\n" + 
+"	      rotscalenode.rotation = trafo.rotation;" + "\n" + 
+"	      rotscalenode.scale = trafo.scale;" + "\n" + 
 "	}" + "\n" + 
 "        function initialize(){" + "\n" + 
 "            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
@@ -168,31 +168,33 @@ public class arc1
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
-            .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-            .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")
-              .addChild(new TransformObject().setUSE("trans")))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("rotscale").setType("SFNode")
-              .addChild(new TransformObject().setUSE("rotscale")))
-            .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-            .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
-            .setIS(new ISObject()
-              .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
-              .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
-              .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
-              .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))))))
-    .addChild(new ProtoInstanceObject("G1", "point").setDEF("G1").setName("point"))
-    .addChild(new ProtoInstanceObject("G2", "point").setDEF("G2").setName("point"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
+          .setIS(new ISObject()
+            .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
+            .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
+            .addConnect(new connectObject().setNodeField("transnode").setProtoField("transnode"))
+            .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
+            .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
+            .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
     .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new ProtoInstanceObject().setUSE("G1")))
+        .addChild(new TransformObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new ProtoInstanceObject().setUSE("G2")))
+        .addChild(new TransformObject().setUSE("G2")))
+      .addFieldValue(new fieldValueObject().setName("transnode")
+        .addChild(new TransformObject().setUSE("transC1")))
+      .addFieldValue(new fieldValueObject().setName("rotscalenode")
+        .addChild(new TransformObject().setUSE("rotscaleC1")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint")));
-  }
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")));
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -219,23 +221,45 @@ public class arc1
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new arc1().getX3dModel();
+        X3DObject thisExampleX3dObject = new arc1().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"arc1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"arc1\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

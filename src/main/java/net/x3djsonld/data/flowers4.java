@@ -87,7 +87,7 @@ public class flowers4
     .addChild(new TransformObject("transform")
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
+          .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {.5f,.5f,.5f})).setDiffuseColor(new SFColorObject(new float[] {.7f,.7f,.7f})))
           .setTexture(new ComposedCubeMapTextureObject()
             .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
             .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
@@ -118,7 +118,7 @@ public class flowers4
 "var h = 5;" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
-"     resolution = 100;" + "\n" + 
+"     var resolution = 100;" + "\n" + 
 "     updateCoordinates(resolution);" + "\n" + 
 "     var cis = [];" + "\n" + 
 "     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
@@ -134,13 +134,13 @@ public class flowers4
 "}" + "\n" + 
 "\n" + 
 "function updateCoordinates(resolution) {" + "\n" + 
-"     theta = 0.0;" + "\n" + 
-"     phi = 0.0;" + "\n" + 
-"     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
+"     var theta = 0.0;" + "\n" + 
+"     var phi = 0.0;" + "\n" + 
+"     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
 "     var crds = [];" + "\n" + 
 "     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution; j++) {" + "\n" + 
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
+"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
 "		crds.push(new SFVec3f(" + "\n" + 
 "			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
 "			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
@@ -154,7 +154,7 @@ public class flowers4
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 
-"	choice = Math.floor(Math.random() * 4);" + "\n" + 
+"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
 "	switch (choice) {" + "\n" + 
 "	case 0:" + "\n" + 
 "		e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
@@ -178,7 +178,7 @@ public class flowers4
 "	if (h < 1) {" + "\n" + 
 "		h = 4;" + "\n" + 
 "	}" + "\n" + 
-"	resolution = 100;" + "\n" + 
+"	var resolution = 100;" + "\n" + 
 "	updateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
@@ -188,7 +188,7 @@ public class flowers4
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("set_point"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -215,23 +215,45 @@ public class flowers4
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new flowers4().getX3dModel();
+        X3DObject thisExampleX3dObject = new flowers4().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"flowers4\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"flowers4\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -24,7 +24,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d">arc1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -36,7 +36,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -71,122 +71,73 @@ public class arc2
 	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
+    .addMeta(new metaObject().setName("title").setContent("arc1.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
-    .addChild(new TransformObject("DECLpoint_G1_node")
-      .addChild(new ShapeObject()
-        .setGeometry(new SphereObject().setRadius(0.1f))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G1_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-      .addChild(new ScriptObject("DECLpoint_G1_MB1").setSourceCode("\n" + 
+    .addChild(new TransformObject("G1")
+      .addChild(new TransformObject("DECLpoint_INSTANCE_node")
+        .addChild(new ShapeObject()
+          .setGeometry(new SphereObject().setRadius(0.1f))
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
+        .addChild(new PositionInterpolatorObject("DECLpoint_INSTANCE_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
+        .addChild(new ScriptObject("DECLpoint_INSTANCE_MB1").setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
-"		function set_location(value) {" + "\n" + 
+"               function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-      .addChild(new TimeSensorObject("DECLpoint_G1_CL1").setCycleInterval(3).setLoop(true))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("cycleTime").setToNode("DECLpoint_G1_MB1").setToField("set_location"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G1_PI1").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_MB1").setFromField("keyValue").setToNode("DECLpoint_G1_PI1").setToField("keyValue"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_PI1").setFromField("value_changed").setToNode("DECLpoint_G1_node").setToField("set_translation")))
-    .addChild(new TransformObject("DECLpoint_G2_node")
-      .addChild(new ShapeObject()
-        .setGeometry(new SphereObject().setRadius(0.1f))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G2_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-      .addChild(new ScriptObject("DECLpoint_G2_MB1").setSourceCode("\n" + 
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
+"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
+"               }" + "\n")
+          .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+          .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
+          .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addChild(new TimeSensorObject("DECLpoint_INSTANCE_CL1").setCycleInterval(3).setLoop(true))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE_PI1").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE_PI1").setToField("keyValue"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))))
+    .addChild(new TransformObject("G2")
+      .addChild(new TransformObject("DECLpoint_INSTANCE1000_node")
+        .addChild(new ShapeObject()
+          .setGeometry(new SphereObject().setRadius(0.1f))
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
+        .addChild(new PositionInterpolatorObject("DECLpoint_INSTANCE1000_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
+        .addChild(new ScriptObject("DECLpoint_INSTANCE1000_MB1").setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
-"		function set_location(value) {" + "\n" + 
+"               function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-      .addChild(new TimeSensorObject("DECLpoint_G2_CL1").setCycleInterval(3).setLoop(true))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("cycleTime").setToNode("DECLpoint_G2_MB1").setToField("set_location"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G2_PI1").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_MB1").setFromField("keyValue").setToNode("DECLpoint_G2_PI1").setToField("keyValue"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_PI1").setFromField("value_changed").setToNode("DECLpoint_G2_node").setToField("set_translation")))
-    .addChild(new TransformObject("DECLpoint_G3_node")
-      .addChild(new ShapeObject()
-        .setGeometry(new SphereObject().setRadius(0.1f))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G3_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-      .addChild(new ScriptObject("DECLpoint_G3_MB1").setSourceCode("\n" + 
-"\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"		function set_location(value) {" + "\n" + 
-"                    old = translation;" + "\n" + 
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-      .addChild(new TimeSensorObject("DECLpoint_G3_CL1").setCycleInterval(3).setLoop(true))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G3_CL1").setFromField("cycleTime").setToNode("DECLpoint_G3_MB1").setToField("set_location"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G3_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G3_PI1").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G3_MB1").setFromField("keyValue").setToNode("DECLpoint_G3_PI1").setToField("keyValue"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G3_PI1").setFromField("value_changed").setToNode("DECLpoint_G3_node").setToField("set_translation")))
-    .addChild(new TransformObject("DECLpoint_G4_node")
-      .addChild(new ShapeObject()
-        .setGeometry(new SphereObject().setRadius(0.1f))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G4_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-      .addChild(new ScriptObject("DECLpoint_G4_MB1").setSourceCode("\n" + 
-"\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"		function set_location(value) {" + "\n" + 
-"                    old = translation;" + "\n" + 
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-      .addChild(new TimeSensorObject("DECLpoint_G4_CL1").setCycleInterval(3).setLoop(true))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G4_CL1").setFromField("cycleTime").setToNode("DECLpoint_G4_MB1").setToField("set_location"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G4_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G4_PI1").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G4_MB1").setFromField("keyValue").setToNode("DECLpoint_G4_PI1").setToField("keyValue"))
-      .addChild(new ROUTEObject().setFromNode("DECLpoint_G4_PI1").setFromField("value_changed").setToNode("DECLpoint_G4_node").setToField("set_translation")))
-    .addChild(new GroupObject()
-      .addChild(new TransformObject("DECLx3dconnector_connector1_trans")
-        .addChild(new TransformObject("DECLx3dconnector_connector1_rotscale")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(0.5f)))
-            .setGeometry(new CylinderObject().setRadius(0.05f)))))
-      .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
+"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
+"               }" + "\n")
+          .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+          .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
+          .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addChild(new TimeSensorObject("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3).setLoop(true))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("keyValue"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE1000_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))
+        .addChild(new ROUTEObject().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))))
+    .addChild(new TransformObject("transC1")
+      .addChild(new TransformObject("rotscaleC1")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f})).setTransparency(0.5f)))
+          .setGeometry(new CylinderObject().setRadius(0.05f)))))
+    .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
 "\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
@@ -204,24 +155,19 @@ public class arc2
 "			    translation : transl," + "\n" + 
 "			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
 "		    };" + "\n" + 
-"	    } else if (typeof SFRotation !== 'undefined') {" + "\n" + 
+"	    } else {" + "\n" + 
 "		    return {" + "\n" + 
 "			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
 "			    translation : transl," + "\n" + 
 "			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
 "		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl" + "\n" + 
-"		    };" + "\n" + 
 "	    }" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      position.translation = trafo.translation;" + "\n" + 
-"	      rotscale.rotation = trafo.rotation;" + "\n" + 
-"	      rotscale.scale = trafo.scale;" + "\n" + 
+"	      transC1.translation = trafo.translation;" + "\n" + 
+"	      rotscaleC1.rotation = trafo.rotation;" + "\n" + 
+"	      rotscaleC1.scale = trafo.scale;" + "\n" + 
 "	}" + "\n" + 
 "        function initialize(){" + "\n" + 
 "            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
@@ -232,143 +178,19 @@ public class arc2
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_trans")))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscale").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_rotscale")))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))))
-    .addChild(new GroupObject()
-      .addChild(new TransformObject("DECLx3dconnector_connector2_trans")
-        .addChild(new TransformObject("DECLx3dconnector_connector2_rotscale")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(0.5f)))
-            .setGeometry(new CylinderObject().setRadius(0.05f)))))
-      .addChild(new ScriptObject("DECLx3dconnector_connector2_S1").setSourceCode("\n" + 
-"\n" + 
-"            ecmascript:" + "\n" + 
-"        function recompute(startpoint,endpoint){" + "\n" + 
-"	    if (typeof endpoint === 'undefined') {" + "\n" + 
-"		return;" + "\n" + 
-"	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else if (typeof SFRotation !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
-"	}" + "\n" + 
-"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      position.translation = trafo.translation;" + "\n" + 
-"	      rotscale.rotation = trafo.rotation;" + "\n" + 
-"	      rotscale.scale = trafo.scale;" + "\n" + 
-"	}" + "\n" + 
-"        function initialize(){" + "\n" + 
-"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_startpoint(val,t){" + "\n" + 
-"            recompute_and_route(val,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_endpoint(val,t){" + "\n" + 
-"            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector2_trans")))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscale").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector2_rotscale")))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))))
-    .addChild(new GroupObject()
-      .addChild(new TransformObject("DECLx3dconnector_connector3_trans")
-        .addChild(new TransformObject("DECLx3dconnector_connector3_rotscale")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(0.5f)))
-            .setGeometry(new CylinderObject().setRadius(0.05f)))))
-      .addChild(new ScriptObject("DECLx3dconnector_connector3_S1").setSourceCode("\n" + 
-"\n" + 
-"            ecmascript:" + "\n" + 
-"        function recompute(startpoint,endpoint){" + "\n" + 
-"	    if (typeof endpoint === 'undefined') {" + "\n" + 
-"		return;" + "\n" + 
-"	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else if (typeof SFRotation !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
-"	}" + "\n" + 
-"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      position.translation = trafo.translation;" + "\n" + 
-"	      rotscale.rotation = trafo.rotation;" + "\n" + 
-"	      rotscale.scale = trafo.scale;" + "\n" + 
-"	}" + "\n" + 
-"        function initialize(){" + "\n" + 
-"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_startpoint(val,t){" + "\n" + 
-"            recompute_and_route(val,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_endpoint(val,t){" + "\n" + 
-"            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector3_trans")))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscale").setType("SFNode")
-          .addChild(new TransformObject().setUSE("DECLx3dconnector_connector3_rotscale")))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector2_S1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G3_node").setFromField("translation").setToNode("DECLx3dconnector_connector2_S1").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector3_S1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("DECLpoint_G4_node").setFromField("translation").setToNode("DECLx3dconnector_connector3_S1").setToField("set_endpoint")));
-  }
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode")
+        .addChild(new TransformObject().setUSE("G1")))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode")
+        .addChild(new TransformObject().setUSE("G2")))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("transC1").setType("SFNode")
+        .addChild(new TransformObject().setUSE("transC1")))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscaleC1").setType("SFNode")
+        .addChild(new TransformObject().setUSE("rotscaleC1")))
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -395,23 +217,45 @@ public class arc2
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new arc2().getX3dModel();
+        X3DObject thisExampleX3dObject = new arc2().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"arc2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"arc2\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

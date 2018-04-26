@@ -104,7 +104,7 @@ public class TextSpecialCharacters
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.0f,1.0f,1.0f})))
-    .addChild(new ViewpointObject().setDescription("Default View").setPosition(0.0f,0.0f,15.0f))
+    .addChild(new ViewpointObject().setDescription("Default View").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,15.0f})))
     .addChild(new ShapeObject()
       .addComments(" Empty string \"\" means to skip a line ")
       .addComments(" The ampersand escape characters are based on XML rules ")
@@ -114,15 +114,12 @@ public class TextSpecialCharacters
       .addComments(" quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" ")
       .addComments(" backslash \\ is used as escape character for \" (and itself) in X3D ")
       .addComments(" character entities are listed in HTML specification and are good for any XML ")
-      .setGeometry(new TextObject("DefaultText").setString(DefaultText_4_15_string)
+      .setGeometry(new TextObject("DefaultText").setString(new MFStringObject("\"Character entity substitutions:\"         \"empty string \\\"\\\" skips a line:\"         \"\"         \"apostrophe  '  is &apos;\"          \"ampersand & is &amp;\"         \"quote mark  \\\"  is &quot;\"         \"backslash \\\\ is X3D escape character\"         \"double backslash \\\\\\\\ is X3D backslash \\\\ character\"         \"Pi Π is &#928; XML character entity\""))
         .setFontStyle(new FontStyleObject("CenteredFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject("DefaultMaterial").setDiffuseColor(0.2f,0.2f,0.2f)))));
-  }
+        .setMaterial(new MaterialObject("DefaultMaterial").setDiffuseColor(new SFColorObject(new float[] {0.2f,0.2f,0.2f}))))));
+    }
 	// end of initialize() method
-
-	/** Large attribute array: Text DEF='DefaultText' string field, scene-graph level=4, element #15, 44 total values */
-	private MFStringObject DefaultText_4_15_string = new MFStringObject(new MFStringObject("\"Character entity substitutions:\"         \"empty string \\\"\\\" skips a line:\"         \"\"         \"apostrophe  '  is &apos;\"          \"ampersand & is &amp;\"         \"quote mark  \\\"  is &quot;\"         \"backslash \\\\ is X3D escape character\"         \"double backslash \\\\\\\\ is X3D backslash \\\\ character\"         \"Pi Π is &#928; XML character entity\""));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -148,23 +145,45 @@ public class TextSpecialCharacters
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new TextSpecialCharacters().getX3dModel();
+        X3DObject thisExampleX3dObject = new TextSpecialCharacters().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"TextSpecialCharacters\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"TextSpecialCharacters\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

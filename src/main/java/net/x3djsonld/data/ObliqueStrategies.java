@@ -187,19 +187,19 @@ public class ObliqueStrategies
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.419608f,0.427451f,1.0f})))
-    .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f).setScale(0.4f,0.4f,0.4f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.0f,0.0f})).setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f}))
       .addChild(new TouchSensorObject("RandomTextClickedSensor").setDescription("Select to see a new strategy"))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"Oblique Strategies\" \"\" \"(Over One Hundred Worthwhile Dilemmas)\" \"\" \"by Brian Eno and Peter Schmidt\""))
           .setFontStyle(new FontStyleObject("MessageFont").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setFamily(new MFStringObject("\"SANS\"")).setStyle("BOLD")))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))
-      .addChild(new TransformObject().setScale(10.0f,3.0f,1.0f)
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))
+      .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {10.0f,3.0f,1.0f}))
         .addChild(new ShapeObject("HeadlineClickSurface")
           .setGeometry(new IndexedFaceSetObject().setSolid(false).setCoordIndex(new int[] {0,1,2,3,-1})
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {1.0f,1.0f,0.0f,1.0f,-1.0f,0.0f,-1.0f,-1.0f,0.0f,-1.0f,1.0f,0.0f}))))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setShininess(0.07f).setAmbientIntensity(0.245763f).setSpecularColor(0.336735f,0.051091f,0.051091f).setDiffuseColor(0.34773f,0.090909f,0.005289f).setTransparency(0.8f))))))
+            .setMaterial(new MaterialObject().setShininess(0.07f).setAmbientIntensity(0.245763f).setSpecularColor(new SFColorObject(new float[] {0.336735f,0.051091f,0.051091f})).setDiffuseColor(new SFColorObject(new float[] {0.34773f,0.090909f,0.005289f})).setTransparency(0.8f))))))
     .addChild(new ScriptObject("TextScript").setUrl(new MFStringObject("\"../node/ObliqueStrategiesScript.js\""))
       .addComments(" initialize() method includes unit test to printAllStrategies() to console ")
       .addComments(" TODO insert field definitions here (index string_changed previous next random) and then animate! ")
@@ -211,12 +211,12 @@ public class ObliqueStrategies
       .addField(new fieldObject().setAccessType("inputOnly").setName("selectNextCard").setType("SFBool"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("selectRandomCard").setType("SFBool"))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("true").setAppinfo("controls console tracing")))
-    .addChild(new TransformObject("CardTransform").setTranslation(0.0f,-1.5f,0.0f).setScale(0.4f,0.4f,0.4f)
+    .addChild(new TransformObject("CardTransform").setTranslation(new SFVec3fObject(new float[] {0.0f,-1.5f,0.0f})).setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f}))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject("CardText")
           .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setFamily(new MFStringObject("\"SANS\"")).setStyle("BOLD")))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))
       .addChild(new ROUTEObject().setFromNode("TextScript").setFromField("string_changed").setToNode("CardText").setToField("string"))
       .addChild(new SoundObject("CardSoundSpatialization").setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
         .addComments(" Make sure the sound source AudioClip is audible at the user location ")
@@ -226,49 +226,49 @@ public class ObliqueStrategies
         .setSource(new AudioClipObject("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFStringObject("\"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium\" \"translate_tts_mp3FileFormatNotSupported.wav\""))))
       .addChild(new ROUTEObject().setFromNode("TextScript").setFromField("textToSpeechUrl").setToNode("TextToSpeechAudioClip").setToField("url"))
       .addChild(new ROUTEObject().setFromNode("TextScript").setFromField("newCardTime").setToNode("TextToSpeechAudioClip").setToField("startTime")))
-    .addChild(new TransformObject().setTranslation(-3.2f,2.5f,0.0f).setScale(0.4f,0.4f,0.4f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-3.2f,2.5f,0.0f})).setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f}))
       .addChild(new TouchSensorObject("PreviousTextClickedSensor").setDescription("Select to see previous strategy"))
       .addChild(new ROUTEObject().setFromNode("PreviousTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectPreviousCard"))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"previous\""))
           .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
         .setAppearance(new AppearanceObject("InterfaceAppearance")
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.6f))))
-      .addChild(new TransformObject().setScale(2.0f,0.6f,1.0f)
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.6f})))))
+      .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {2.0f,0.6f,1.0f}))
         .addChild(new ShapeObject("TransparentClickSurface")
           .addComments(" support Selectable Text with a scalable IFS ")
           .setGeometry(new IndexedFaceSetObject().setSolid(false).setCoordIndex(new int[] {0,1,2,3,-1})
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {1.0f,1.0f,0.0f,1.0f,-1.0f,0.0f,-1.0f,-1.0f,0.0f,-1.0f,1.0f,0.0f}))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setTransparency(1f))))))
-    .addChild(new TransformObject().setScale(0.4f,0.4f,0.4f).setTranslation(3.5f,2.5f,0.0f)
+    .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f})).setTranslation(new SFVec3fObject(new float[] {3.5f,2.5f,0.0f}))
       .addChild(new TouchSensorObject("NextTextClickedSensor").setDescription("Select to see next strategy"))
       .addChild(new ROUTEObject().setFromNode("NextTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectNextCard"))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"next\""))
           .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
         .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
-      .addChild(new TransformObject().setScale(1.2f,0.6f,1.0f)
+      .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {1.2f,0.6f,1.0f}))
         .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))
-    .addChild(new TransformObject().setTranslation(-3.3f,-0.5f,0.0f).setScale(0.4f,0.4f,0.4f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-3.3f,-0.5f,0.0f})).setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f}))
       .addChild(new TouchSensorObject().setUSE("RandomTextClickedSensor"))
       .addChild(new ROUTEObject().setFromNode("RandomTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectRandomCard"))
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"random\""))
           .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
         .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
-      .addChild(new TransformObject().setScale(1.8f,0.6f,1.0f)
+      .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {1.8f,0.6f,1.0f}))
         .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))
-    .addChild(new TransformObject().setScale(0.4f,0.4f,0.4f).setTranslation(3.3f,-0.5f,0.0f)
+    .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.4f,0.4f,0.4f})).setTranslation(new SFVec3fObject(new float[] {3.3f,-0.5f,0.0f}))
       .addChild(new AnchorObject("TextToSpeechAnchor").setDescription("text to speech in browser").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change\""))
         .addChild(new ROUTEObject().setFromNode("TextScript").setFromField("textToSpeechUrl").setToNode("TextToSpeechAnchor").setToField("url"))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"speech\""))
             .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
           .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
-        .addChild(new TransformObject().setScale(1.8f,0.6f,1.0f)
+        .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {1.8f,0.6f,1.0f}))
           .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -295,23 +295,45 @@ public class ObliqueStrategies
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new ObliqueStrategies().getX3dModel();
+        X3DObject thisExampleX3dObject = new ObliqueStrategies().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"ObliqueStrategies\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"ObliqueStrategies\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

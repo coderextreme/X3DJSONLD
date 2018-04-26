@@ -123,17 +123,17 @@ public class X3dHeaderPrototypeSyntaxExamples
         .addField(new fieldObject().setAccessType("inputOutput").setName("onlyColor").setType("SFColor").setValue("1 0 0")))
       .setProtoBody(new ProtoBodyObject()
         .addComments(" Override default diffuseColor value 0.8 0.8 0.8 ")
-        .addChild(new MaterialObject().setDiffuseColor(0.0f,0.0f,0.0f)
+        .addChild(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.0f,0.0f}))
           .addComments(" Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. ")
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("emissiveColor").setProtoField("onlyColor"))))))
     .addChild(new ProtoDeclareObject().setName("ShiftGroupUp2m")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("children").setType("MFNode")
-          .addChild(new GroupObject("DefaultNodeValue").setBboxSize(2.0f,2.0f,2.0f)
+          .addChild(new GroupObject("DefaultNodeValue").setBboxSize(new SFVec3fObject(new float[] {2.0f,2.0f,2.0f}))
             .addComments(" Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" "))))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
+        .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.0f,0.0f}))
           .addChild(new GroupObject()
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("children").setProtoField("children")))))))
@@ -144,8 +144,8 @@ public class X3dHeaderPrototypeSyntaxExamples
       .addChild(new ShapeObject()
         .setGeometry(new BoxObject())
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.6f,0.4f,0.2f)))))
-    .addChild(new TransformObject("TransformExampleUSE").setRotation(0.0f,1.0f,0.0f,0.78f).setTranslation(0.0f,2.5f,0.0f)
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.6f,0.4f,0.2f}))))))
+    .addChild(new TransformObject("TransformExampleUSE").setRotation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,0.78f})).setTranslation(new SFVec3fObject(new float[] {0.0f,2.5f,0.0f}))
       .addChild(new GroupObject().setUSE("ExampleChildElement")))
     .addChild(new CollisionObject()
       .setProxy(new ShapeObject()
@@ -154,7 +154,7 @@ public class X3dHeaderPrototypeSyntaxExamples
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
       .addChild(new GroupObject().setUSE("ExampleChildElement")))
-    .addChild(new TransformObject().setTranslation(0.0f,-2.5f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.5f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new ProtoInstanceObject().setName("EmissiveMaterial")
@@ -172,7 +172,7 @@ public class X3dHeaderPrototypeSyntaxExamples
     .addChild(new PositionInterpolatorObject("StayInPlace").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("StayInPlace").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("StayInPlace").setFromField("value_changed").setToNode("someInlineRoot").setToField("set_translation")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -199,23 +199,45 @@ public class X3dHeaderPrototypeSyntaxExamples
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new X3dHeaderPrototypeSyntaxExamples().getX3dModel();
+        X3DObject thisExampleX3dObject = new X3dHeaderPrototypeSyntaxExamples().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"X3dHeaderPrototypeSyntaxExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"X3dHeaderPrototypeSyntaxExamples\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }
