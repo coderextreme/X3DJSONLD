@@ -718,15 +718,18 @@ public class CommandLine
 						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
 						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
                     }
-                    else if (validateSwitch && !convertToEXI && !convertToGZIP && !convertToZIP)
+                    if (validateSwitch)
                     {
 						// note that validation already performed as part of prior conversions
                         String outputValidationText = loadedX3dModel.validate();
                             
                         if (!convertToFile)
                         {
-                            if  (outputValidationText.isEmpty())
-                                 outputValidationText = "validate results:success, no problems noted";
+                            if (outputValidationText.isEmpty())
+							{
+                                outputValidationText = "validate results: success, no problems noted";
+								System.out.println(outputValidationText);
+							}
                             else
 							{
 								System.out.println(    "validate results:");
