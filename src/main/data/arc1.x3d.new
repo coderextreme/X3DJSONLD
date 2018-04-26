@@ -53,8 +53,8 @@ ecmascript:
 </Transform>
 <ProtoDeclare name="x3dconnector"><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
+<field name="transnode" accessType="inputOutput" type="SFNode"></field>
+<field name="rotscalenode" accessType="inputOutput" type="SFNode"></field>
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
