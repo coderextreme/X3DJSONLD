@@ -76,14 +76,14 @@ public class bubble
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Bubble in action").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
+    .addChild(new ViewpointObject().setDescription("Bubble in action").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,4.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f})))
     .addChild(new ProtoDeclareObject().setName("Bubble")
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject("transform")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject().setRadius(0.25f))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+              .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
           .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -140,7 +140,7 @@ public class bubble
           .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
           .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
     .addChild(new ProtoInstanceObject("bubbleA", "Bubble").setDEF("bubbleA").setName("Bubble")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -167,23 +167,45 @@ public class bubble
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new bubble().getX3dModel();
+        X3DObject thisExampleX3dObject = new bubble().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"bubble\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"bubble\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

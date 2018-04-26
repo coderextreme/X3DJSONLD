@@ -77,13 +77,13 @@ public class bubs3
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Bubbles in action").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
+    .addChild(new ViewpointObject().setDescription("Bubbles in action").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,4.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f})))
     .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild(new TransformObject("DECLBubble_bubbleA")
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new ScriptObject("DECLBubble_bubbleA_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -138,7 +138,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new ScriptObject("DECLBubble_bubbleB_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -193,7 +193,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new ScriptObject("DECLBubble_bubbleC_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -248,7 +248,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
       .addChild(new ScriptObject("DECLBubble_bubbleD_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -299,7 +299,7 @@ public class bubs3
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -326,23 +326,45 @@ public class bubs3
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new bubs3().getX3dModel();
+        X3DObject thisExampleX3dObject = new bubs3().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"bubs3\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"bubs3\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

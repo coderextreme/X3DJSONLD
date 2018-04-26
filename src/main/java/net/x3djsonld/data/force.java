@@ -93,13 +93,13 @@ public class force
             .addChild(new ShapeObject()
               .setGeometry(new SphereObject())
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-            .addChild(new TransformObject().setTranslation(1.0f,0.0f,0.0f)
+                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {1.0f,0.0f,0.0f}))
               .addChild(new ShapeObject()
                 .setGeometry(new TextObject().setString(new MFStringObject("\"Node\""))
                   .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(5f)))
                 .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
+                  .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.0f,1.0f})))))))
           .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
           .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 "\n" + 
@@ -126,9 +126,9 @@ public class force
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
           .addChild(new ShapeObject()
-            .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_7_40_crossSection))
+            .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
+              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f})))))
           .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -159,8 +159,8 @@ public class force
               .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
               .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB"))))
           .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
-    .addChild(new TransformObject("HoldsContent").setScale(0.1f,0.1f,0.1f)
-      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMinPosition(-50.0f,-50.0f).setMaxPosition(50.0f,50.0f))
+    .addChild(new TransformObject("HoldsContent").setScale(new SFVec3fObject(new float[] {0.1f,0.1f,0.1f}))
+      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMinPosition(new SFVec2fObject(new float[] {-50.0f,-50.0f})).setMaxPosition(new SFVec2fObject(new float[] {50.0f,50.0f})))
       .addChild(new ProtoInstanceObject("nodeA", "node").setDEF("nodeA").setName("node")
         .addFieldValue(new fieldValueObject().setName("position").setValue("0.0 0.0 0.0")))
       .addChild(new ProtoInstanceObject("nodeB", "node").setDEF("nodeB").setName("node")
@@ -212,13 +212,8 @@ public class force
     .addChild(new ROUTEObject().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("set_positionB"))
     .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
     .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=7, element #40, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject extrusion_7_40_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f}));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -244,23 +239,45 @@ public class force
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new force().getX3dModel();
+        X3DObject thisExampleX3dObject = new force().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"force\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"force\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

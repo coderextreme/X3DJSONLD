@@ -74,7 +74,7 @@ public class rubikOnFire
     .addMeta(new metaObject().setName("description").setContent("a white rubik cube")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(0.0f,0.0f,12.0f))
+    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,12.0f})))
     .addChild(new ProtoDeclareObject().setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("xtranslation").setType("SFVec3f").setValue("0.0 0.0 0.0"))
@@ -88,7 +88,7 @@ public class rubikOnFire
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("geometry").setProtoField("myShape")))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f)))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f}))))))))
     .addChild(new ProtoDeclareObject().setName("three")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("ytranslation").setType("SFVec3f").setValue("0.0 0.0 0.0"))
@@ -155,8 +155,8 @@ public class rubikOnFire
     .addChild(new ProtoInstanceObject().setName("twentyseven")
       .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
-        .addChild(new BoxObject().setSize(1.0f,1.0f,1.0f)))));
-  }
+        .addChild(new BoxObject().setSize(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f}))))));
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -183,23 +183,45 @@ public class rubikOnFire
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new rubikOnFire().getX3dModel();
+        X3DObject thisExampleX3dObject = new rubikOnFire().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"rubikOnFire\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"rubikOnFire\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

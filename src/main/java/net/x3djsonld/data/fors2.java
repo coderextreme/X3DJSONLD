@@ -100,7 +100,7 @@ public class fors2
             .setAppearance(new AppearanceObject()
               .addComments("comment before Material")
               .addComments("comment after Material")
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f)))))
+              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f}))))))
         .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
         .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
@@ -125,9 +125,9 @@ public class fors2
         .addField(new fieldObject().setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new ShapeObject()
-          .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,0.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_6_34_crossSection))
+          .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,0.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f})))))
         .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
 "\n" + 
@@ -158,7 +158,7 @@ public class fors2
             .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
             .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB"))))
         .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-    .addChild(new TransformObject().setScale(0.1f,0.1f,0.1f)
+    .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.1f,0.1f,0.1f}))
       .addChild(new ProtoInstanceObject("nodeA", "node").setDEF("nodeA").setName("node")
         .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50")))
       .addChild(new ProtoInstanceObject("nodeB", "node").setDEF("nodeB").setName("node")
@@ -168,13 +168,8 @@ public class fors2
         .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"))))
     .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
     .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=6, element #34, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject extrusion_6_34_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -200,23 +195,45 @@ public class fors2
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new fors2().getX3dModel();
+        X3DObject thisExampleX3dObject = new fors2().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"fors2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"fors2\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

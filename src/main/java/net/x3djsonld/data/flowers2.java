@@ -99,9 +99,9 @@ public class flowers2
     .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(0.0f,0.0f,50.0f))
+    .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,50.0f})))
     .addChild(new GroupObject()
-      .addChild(new DirectionalLightObject().setDirection(1.0f,1.0f,1.0f))
+      .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f})))
       .addChild(new ProtoDeclareObject().setName("orbit")
         .setProtoInterface(new ProtoInterfaceObject()
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("-8 0 0"))
@@ -141,8 +141,8 @@ public class flowers2
 "			function initialize() {" + "\n" + 
 "			     generateCoordinates();" + "\n" + 
 "			     var localci = [];" + "\n" + 
-"			     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
-"				for ( j = 0; j < resolution-1; j++) {" + "\n" + 
+"			     for (var i = 0; i < resolution-1; i++) {" + "\n" + 
+"				for (var j = 0; j < resolution-1; j++) {" + "\n" + 
 "				     localci.push(i*resolution+j);" + "\n" + 
 "				     localci.push(i*resolution+j+1);" + "\n" + 
 "				     localci.push((i+1)*resolution+j+1);" + "\n" + 
@@ -154,13 +154,13 @@ public class flowers2
 "			}" + "\n" + 
 "\n" + 
 "			function generateCoordinates() {" + "\n" + 
-"			     theta = 0.0;" + "\n" + 
-"			     phi = 0.0;" + "\n" + 
-"			     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
+"			     var theta = 0.0;" + "\n" + 
+"			     var phi = 0.0;" + "\n" + 
+"			     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
 "			     var localc = [];" + "\n" + 
-"			     for ( i = 0; i < resolution; i++) {" + "\n" + 
-"				for ( j = 0; j < resolution; j++) {" + "\n" + 
-"					rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
+"			     for (var i = 0; i < resolution; i++) {" + "\n" + 
+"				for (var j = 0; j < resolution; j++) {" + "\n" + 
+"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
 "					localc.push(new SFVec3f(" + "\n" + 
 "						rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
 "						rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
@@ -175,7 +175,7 @@ public class flowers2
 "			}" + "\n" + 
 "\n" + 
 "			function set_fraction(fraction, eventTime) {" + "\n" + 
-"				choice = Math.floor(Math.random() * 4);" + "\n" + 
+"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
 "				switch (choice) {" + "\n" + 
 "				case 0:" + "\n" + 
 "					e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
@@ -227,7 +227,7 @@ public class flowers2
         .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0 0.5 1"))
         .addFieldValue(new fieldValueObject().setName("specularColor").setValue("0 0.5 1"))
         .addFieldValue(new fieldValueObject().setName("transparency").setValue("0.5")))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -254,23 +254,45 @@ public class flowers2
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new flowers2().getX3dModel();
+        X3DObject thisExampleX3dObject = new flowers2().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"flowers2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"flowers2\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

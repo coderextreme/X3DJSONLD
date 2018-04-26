@@ -86,13 +86,13 @@ public class bubbles
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
     .addChild(new ViewpointObject("Tour").setDescription("Tour Views"))
-    .addChild(new ViewpointObject().setDescription("sphere in road").setPosition(0.0f,0.0f,4.0f))
+    .addChild(new ViewpointObject().setDescription("sphere in road").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,4.0f})))
     .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png\"")))
     .addChild(new TransformObject("Rose01")
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject())
         .setAppearance(new AppearanceObject("_01_-_Default")
-          .setMaterial(new MaterialObject().setSpecularColor(0.5f,0.5f,0.5f).setDiffuseColor(0.7f,0.7f,0.7f))
+          .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {0.5f,0.5f,0.5f})).setDiffuseColor(new SFColorObject(new float[] {0.7f,0.7f,0.7f})))
           .setTexture(new ComposedCubeMapTextureObject()
             .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png\"")))
             .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png\"")))
@@ -122,19 +122,23 @@ public class bubbles
     .addChild(new ScriptObject("RandomTourTime").setSourceCode("\n" + 
 "	    ecmascript:" + "\n" + 
 "               function set_cycle(value) {" + "\n" + 
+"	       	   try {" + "\n" + 
 "                        var ov = lastKey;" + "\n" + 
 "                        do {" + "\n" + 
 "                            lastKey = Math.round(Math.random()*(positions.length-1));" + "\n" + 
 "                        } while (lastKey === ov);" + "\n" + 
 "                        var vc = lastKey;" + "\n" + 
+"\n" + 
+"                        position_changed = new MFVec3f();" + "\n" + 
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
 "                        " + "\n" + 
 "                        orientation_changed = new MFRotation();" + "\n" + 
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);" + "\n" + 
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);" + "\n" + 
-"                        position_changed = new MFVec3f();" + "\n" + 
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
-"                    // }" + "\n" + 
+"		   } catch (e) {" + "\n" + 
+"				alert(e);" + "\n" + 
+"		   }" + "\n" + 
 "               }")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("lastKey").setType("SFFloat").setValue("0"))
@@ -150,7 +154,7 @@ public class bubbles
     .addChild(new ROUTEObject().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
     .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -177,23 +181,45 @@ public class bubbles
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new bubbles().getX3dModel();
+        X3DObject thisExampleX3dObject = new bubbles().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"bubbles\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"bubbles\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

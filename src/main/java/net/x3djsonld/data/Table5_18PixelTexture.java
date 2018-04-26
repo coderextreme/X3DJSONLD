@@ -111,44 +111,44 @@ public class Table5_18PixelTexture
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})))
-    .addChild(new TransformObject("Checkerboard").setTranslation(0.0f,0.0f,-10.0f)
+    .addChild(new TransformObject("Checkerboard").setTranslation(new SFVec3fObject(new float[] {0.0f,0.0f,-10.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setTextureTransform(new TextureTransformObject().setScale(500.0f,500.0f))
+          .setTextureTransform(new TextureTransformObject().setScale(new SFVec2fObject(new float[] {500.0f,500.0f})))
           .setTexture(new PixelTextureObject().setImage(new int[] {2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD})))
-        .setGeometry(new BoxObject().setSize(1000.0f,1000.0f,.01f))))
-    .addChild(new ViewpointObject().setDescription("View All").setPosition(0.0f,0.0f,20.0f))
-    .addChild(new ViewpointObject().setDescription("Empty Image").setPosition(0.0f,5.0f,5.0f))
-    .addChild(new TransformObject("EmptyImage").setTranslation(0.0f,5.0f,0.0f).setRotation(1.0f,1.0f,0.0f,1.0f)
+        .setGeometry(new BoxObject().setSize(new SFVec3fObject(new float[] {1000.0f,1000.0f,.01f})))))
+    .addChild(new ViewpointObject().setDescription("View All").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,20.0f})))
+    .addChild(new ViewpointObject().setDescription("Empty Image").setPosition(new SFVec3fObject(new float[] {0.0f,5.0f,5.0f})))
+    .addChild(new TransformObject("EmptyImage").setTranslation(new SFVec3fObject(new float[] {0.0f,5.0f,0.0f})).setRotation(new SFRotationObject(new float[] {1.0f,1.0f,0.0f,1.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject()))
         .setGeometry(new BoxObject("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("Black and white PixelTexture").setPosition(-5.0f,0.0f,5.0f))
-    .addChild(new TransformObject("BW").setTranslation(-5.0f,0.0f,0.0f).setRotation(1.0f,1.0f,0.0f,1.0f)
+    .addChild(new ViewpointObject().setDescription("Black and white PixelTexture").setPosition(new SFVec3fObject(new float[] {-5.0f,0.0f,5.0f})))
+    .addChild(new TransformObject("BW").setTranslation(new SFVec3fObject(new float[] {-5.0f,0.0f,0.0f})).setRotation(new SFRotationObject(new float[] {1.0f,1.0f,0.0f,1.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject().setImage(new int[] {1,2,1,0xFF,0x00})))
         .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("Black and white with Alpha PixelTexture").setPosition(5.0f,0.0f,5.0f))
-    .addChild(new TransformObject("AlphaBW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,0.0f,0.0f)
+    .addChild(new ViewpointObject().setDescription("Black and white with Alpha PixelTexture").setPosition(new SFVec3fObject(new float[] {5.0f,0.0f,5.0f})))
+    .addChild(new TransformObject("AlphaBW").setRotation(new SFRotationObject(new float[] {1.0f,1.0f,0.0f,1.0f})).setTranslation(new SFVec3fObject(new float[] {5.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject().setImage(new int[] {2,1,2,0xCCFF,0x2277})))
         .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("RGB PixelTexture").setPosition(-5.0f,-5.0f,5.0f))
-    .addChild(new TransformObject("RGB").setTranslation(-5.0f,-5.0f,0.0f).setRotation(1.0f,1.0f,0.0f,1.0f)
+    .addChild(new ViewpointObject().setDescription("RGB PixelTexture").setPosition(new SFVec3fObject(new float[] {-5.0f,-5.0f,5.0f})))
+    .addChild(new TransformObject("RGB").setTranslation(new SFVec3fObject(new float[] {-5.0f,-5.0f,0.0f})).setRotation(new SFRotationObject(new float[] {1.0f,1.0f,0.0f,1.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject().setImage(new int[] {2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00})))
         .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("RGB with Alpha PixelTexture").setPosition(5.0f,-5.0f,5.0f))
-    .addChild(new TransformObject("AlphaRGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,-5.0f,0.0f)
+    .addChild(new ViewpointObject().setDescription("RGB with Alpha PixelTexture").setPosition(new SFVec3fObject(new float[] {5.0f,-5.0f,5.0f})))
+    .addChild(new TransformObject("AlphaRGB").setRotation(new SFRotationObject(new float[] {1.0f,1.0f,0.0f,1.0f})).setTranslation(new SFVec3fObject(new float[] {5.0f,-5.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject().setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
         .setGeometry(new BoxObject().setUSE("StandardBox")))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -175,23 +175,45 @@ public class Table5_18PixelTexture
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new Table5_18PixelTexture().getX3dModel();
+        X3DObject thisExampleX3dObject = new Table5_18PixelTexture().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"Table5_18PixelTexture\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"Table5_18PixelTexture\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

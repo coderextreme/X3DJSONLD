@@ -117,24 +117,24 @@ public class PixelTextureComponentExamples
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.1f,0.1f,0.4f})))
-    .addChild(new ViewpointObject().setDescription("Table 5.18 SFImage component examples").setPosition(0.0f,0.0f,14.0f))
-    .addChild(new TransformObject().setTranslation(-6.0f,0.0f,0.0f)
+    .addChild(new ViewpointObject().setDescription("Table 5.18 SFImage component examples").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,14.0f})))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-6.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject("ZeroComponents")))
         .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"0\""))
             .setFontStyle(new FontStyleObject("CenterJustify").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance(new AppearanceObject("TextMaterial")
-            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
-    .addChild(new TransformObject().setTranslation(-3.0f,0.0f,0.0f)
+            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-3.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject("OneComponent").setImage(new int[] {1,2,1,0xFF,0x00})))
         .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"1\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
@@ -144,44 +144,41 @@ public class PixelTextureComponentExamples
         .setAppearance(new AppearanceObject()
           .setTexture(new PixelTextureObject("TwoComponents").setImage(new int[] {2,1,2,0xCCFF,0x2277})))
         .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"2\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
           .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
-    .addChild(new TransformObject().setTranslation(3.0f,0.0f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {3.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .addComments(" note 0x000000 = 0 ")
           .setTexture(new PixelTextureObject("ThreeComponents").setImage(new int[] {2,4,3,0xFF0000,0xFF00,0x000000,0,0,0,0xFFFFFF,0xFFFF00})))
         .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"3\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
           .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
-    .addChild(new TransformObject().setTranslation(6.0f,0.0f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {6.0f,0.0f,0.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .addComments(" Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 ")
           .setTexture(new PixelTextureObject("FourComponents").setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
         .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.0f,0.0f}))
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"4\""))
             .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
           .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
     .addComments(" Background from PixelTextureBW.x3d ")
-    .addChild(new TransformObject().setTranslation(0.0f,6.0f,-2.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,6.0f,-2.0f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(PixelTexture_6_68_image)))
-        .setGeometry(new BoxObject().setSize(16.0f,16.0f,.1f)))));
-  }
+          .setTexture(new PixelTextureObject().setImage(new int[] {8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc})))
+        .setGeometry(new BoxObject().setSize(new SFVec3fObject(new float[] {16.0f,16.0f,.1f}))))));
+    }
 	// end of initialize() method
-
-	/** Large attribute array: PixelTexture image field, scene-graph level=6, element #68, 67 total numbers */
-	private SFImageObject PixelTexture_6_68_image = new SFImageObject(new int[] {8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc});
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -207,23 +204,45 @@ public class PixelTextureComponentExamples
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new PixelTextureComponentExamples().getX3dModel();
+        X3DObject thisExampleX3dObject = new PixelTextureComponentExamples().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"PixelTextureComponentExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"PixelTextureComponentExamples\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

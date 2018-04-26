@@ -152,7 +152,7 @@ flowers_sail.prototype = {
 "			}" + "\n" + 
 "\n" + 
 "			function animate_flowers(fraction, eventTime) {" + "\n" + 
-"				choice = Math.floor(Math.random() * 4);" + "\n" + 
+"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
 "				switch (choice) {" + "\n" + 
 "				case 0:" + "\n" + 
 "					a += Math.random() * 0.2 - 0.1;" + "\n" + 

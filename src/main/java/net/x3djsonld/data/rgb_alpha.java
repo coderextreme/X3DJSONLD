@@ -141,31 +141,31 @@ public class rgb_alpha
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
     .addChild(new GroupObject()
-      .addChild(new TransformObject().setTranslation(6.14221f,0.0694613f,-0.000999451f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {6.14221f,0.0694613f,-0.000999451f}))
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
             .setTexture(new PixelTextureObject("RgbOpacityCheckerboard").setImage(new int[] {2,2,4,0xFF0000FF,0xFFFF0000,0xFFFF0000,0xFF0000FF})))
           .setGeometry(new BoxObject())))
-      .addChild(new TransformObject().setTranslation(-4.85443f,0.0694381f,-0.00149918f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-4.85443f,0.0694381f,-0.00149918f}))
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
             .setTexture(new PixelTextureObject().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new SphereObject())))
-      .addChild(new TransformObject().setTranslation(-1.47341f,0.036672f,-0.00175095f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-1.47341f,0.036672f,-0.00175095f}))
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
             .setTexture(new PixelTextureObject().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new ConeObject())))
-      .addChild(new TransformObject().setTranslation(2.31094f,0.0694206f,-0.00187683f)
+      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {2.31094f,0.0694206f,-0.00187683f}))
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
             .setTexture(new PixelTextureObject().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new CylinderObject())))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -192,23 +192,45 @@ public class rgb_alpha
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new rgb_alpha().getX3dModel();
+        X3DObject thisExampleX3dObject = new rgb_alpha().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"rgb_alpha\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"rgb_alpha\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

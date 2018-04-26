@@ -85,57 +85,57 @@ public class CoordinateAxes
           .addChild(new ShapeObject()
             .setGeometry(new CylinderObject("ArrowCylinder").setRadius(.025f).setTop(false))
             .setAppearance(new AppearanceObject("Green")
-              .setMaterial(new MaterialObject().setEmissiveColor(.05f,.2f,.05f).setDiffuseColor(.1f,.6f,.1f))))
-          .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
+              .setMaterial(new MaterialObject().setEmissiveColor(new SFColorObject(new float[] {.05f,.2f,.05f})).setDiffuseColor(new SFColorObject(new float[] {.1f,.6f,.1f})))))
+          .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.0f,0.0f}))
             .addChild(new ShapeObject()
               .setGeometry(new ConeObject("ArrowCone").setBottomRadius(.05f).setHeight(.1f))
               .setAppearance(new AppearanceObject().setUSE("Green")))))
-        .addChild(new TransformObject().setTranslation(0.0f,1.08f,0.0f)
+        .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.08f,0.0f}))
           .addChild(new BillboardObject()
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject("LABEL_APPEARANCE")
-                .setMaterial(new MaterialObject().setEmissiveColor(.33f,.33f,.1f).setDiffuseColor(1.0f,1.0f,.3f)))
+                .setMaterial(new MaterialObject().setEmissiveColor(new SFColorObject(new float[] {.33f,.33f,.1f})).setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,.3f}))))
               .setGeometry(new TextObject().setString(new MFStringObject("\"Y\""))
                 .setFontStyle(new FontStyleObject("LABEL_FONT").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setFamily(new MFStringObject("\"SANS\"")).setSize(.2f)))))))
-      .addChild(new TransformObject().setRotation(0.0f,0.0f,1.0f,-1.57079f)
+      .addChild(new TransformObject().setRotation(new SFRotationObject(new float[] {0.0f,0.0f,1.0f,-1.57079f}))
         .addComments(" Horizontal X arrow and label ")
         .addChild(new GroupObject()
           .addChild(new GroupObject("ArrowRed")
             .addChild(new ShapeObject()
               .setGeometry(new CylinderObject().setUSE("ArrowCylinder"))
               .setAppearance(new AppearanceObject("Red")
-                .setMaterial(new MaterialObject().setEmissiveColor(.33f,0.0f,0.0f).setDiffuseColor(.7f,.1f,.1f))))
-            .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
+                .setMaterial(new MaterialObject().setEmissiveColor(new SFColorObject(new float[] {.33f,0.0f,0.0f})).setDiffuseColor(new SFColorObject(new float[] {.7f,.1f,.1f})))))
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.0f,0.0f}))
               .addChild(new ShapeObject()
                 .setGeometry(new ConeObject().setUSE("ArrowCone"))
                 .setAppearance(new AppearanceObject().setUSE("Red")))))
-          .addChild(new TransformObject().setTranslation(.072f,1.1f,0.0f).setRotation(0.0f,0.0f,1.0f,1.57079f)
+          .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {.072f,1.1f,0.0f})).setRotation(new SFRotationObject(new float[] {0.0f,0.0f,1.0f,1.57079f}))
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild(new BillboardObject()
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
                 .setGeometry(new TextObject().setString(new MFStringObject("\"X\""))
                   .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))
-      .addChild(new TransformObject().setRotation(1.0f,0.0f,0.0f,1.57079f)
+      .addChild(new TransformObject().setRotation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57079f}))
         .addComments(" Perpendicular Z arrow and label, note right-hand rule ")
         .addChild(new GroupObject()
           .addChild(new GroupObject("ArrowBlue")
             .addChild(new ShapeObject()
               .setGeometry(new CylinderObject().setUSE("ArrowCylinder"))
               .setAppearance(new AppearanceObject("Blue")
-                .setMaterial(new MaterialObject().setEmissiveColor(.1f,.1f,.33f).setDiffuseColor(.3f,.3f,1.0f))))
-            .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
+                .setMaterial(new MaterialObject().setEmissiveColor(new SFColorObject(new float[] {.1f,.1f,.33f})).setDiffuseColor(new SFColorObject(new float[] {.3f,.3f,1.0f})))))
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.0f,0.0f}))
               .addChild(new ShapeObject()
                 .setGeometry(new ConeObject().setUSE("ArrowCone"))
                 .setAppearance(new AppearanceObject().setUSE("Blue")))))
-          .addChild(new TransformObject().setTranslation(0.0f,1.1f,.072f).setRotation(1.0f,0.0f,0.0f,-1.57079f)
+          .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,1.1f,.072f})).setRotation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,-1.57079f}))
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild(new BillboardObject()
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
                 .setGeometry(new TextObject().setString(new MFStringObject("\"Z\""))
                   .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -162,23 +162,45 @@ public class CoordinateAxes
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new CoordinateAxes().getX3dModel();
+        X3DObject thisExampleX3dObject = new CoordinateAxes().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"CoordinateAxes\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"CoordinateAxes\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

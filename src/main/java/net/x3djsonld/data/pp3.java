@@ -96,32 +96,32 @@ public class pp3
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
           .addComments("left")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
+          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(0.7f,1.0f,0.0f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(Extrusion_8_12_crossSection)))
+                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(new SFColorObject(new float[] {0.7f,1.0f,0.0f}))))
+              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
             .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
           .addComments("right")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
+          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.7f,1.0f).setTransparency(0.5f)))
-              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(Extrusion_8_17_crossSection).setSpine(new MFVec3fObject(new float[] {1.5f,0.0f,0.0f,2.5f,0.0f,0.0f}))))
-            .addChild(new TransformObject().setTranslation(2.0f,0.0f,0.0f)
+                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.7f,1.0f})).setTransparency(0.5f)))
+              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})).setSpine(new MFVec3fObject(new float[] {1.5f,0.0f,0.0f,2.5f,0.0f,0.0f}))))
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {2.0f,0.0f,0.0f}))
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(1.0f,1.0f,1.0f)))
+                  .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f}))))
                 .setGeometry(new TextObject("RightString").setString(new MFStringObject("\"r\"")))))
             .addChild(new StringSensorObject("RightSensor").setEnabled(false))
             .addChild(new TouchSensorObject("RightTouch").setDescription("touch to activate")))
           .addComments("up")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
+          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.7f,1.0f).setTransparency(0.5f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,1.5f,0.0f,0.0f,2.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(Extrusion_8_29_crossSection)))
-            .addChild(new TransformObject().setTranslation(-0.5f,2.0f,0.0f)
+                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.7f,1.0f})).setTransparency(0.5f)))
+              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,1.5f,0.0f,0.0f,2.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-0.5f,2.0f,0.0f}))
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
@@ -129,19 +129,19 @@ public class pp3
             .addChild(new StringSensorObject("UpSensor").setEnabled(false))
             .addChild(new TouchSensorObject("UpTouch").setDescription("touch to activate")))
           .addComments("down")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
+          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(0.7f,1.0f,0.0f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,-2.5f,0.0f,0.0f,-1.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(Extrusion_8_41_crossSection)))
+                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(new SFColorObject(new float[] {0.7f,1.0f,0.0f}))))
+              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,-2.5f,0.0f,0.0f,-1.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
             .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
           .addComments("center")
           .addChild(new TransformObject()
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.7f)))
+                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.7f}))))
               .setGeometry(new SphereObject()))
-            .addChild(new TransformObject().setTranslation(-0.5f,0.0f,1.0f).setScale(0.5f,0.5f,0.5f)
+            .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-0.5f,0.0f,1.0f})).setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
@@ -194,35 +194,15 @@ public class pp3
         .addChild(new ROUTEObject().setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
         .addChild(new ROUTEObject().setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
     .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(0.0f,5.0f,12.0f).setOrientation(1.0f,0.0f,0.0f,-0.4f))
-    .addChild(new TransformObject().setTranslation(0.0f,-2.5f,0.0f)
+    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(new SFVec3fObject(new float[] {0.0f,5.0f,12.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,-0.4f})))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.5f,0.0f}))
       .addChild(new ProtoInstanceObject().setName("Process")))
     .addChild(new TransformObject()
       .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject().setTranslation(0.0f,2.5f,0.0f)
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.5f,0.0f}))
       .addChild(new ProtoInstanceObject().setName("Process"))));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #12, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject Extrusion_8_12_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
-
-	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #17, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject Extrusion_8_17_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
-
-	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #29, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject Extrusion_8_29_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
-
-	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #41, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject Extrusion_8_41_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f}))
-	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}));
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -248,23 +228,45 @@ public class pp3
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new pp3().getX3dModel();
+        X3DObject thisExampleX3dObject = new pp3().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"pp3\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"pp3\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

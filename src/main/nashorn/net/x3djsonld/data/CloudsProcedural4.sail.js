@@ -130,7 +130,7 @@ CloudsProcedural4_sail.prototype = {
 "function cumulusscale() // these values scale a cloud within a designated size" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"	maxscale = 1;" + "\n" + 
+"	var maxscale = 1;" + "\n" + 
 "\n" + 
 "	scale = Math.round(9+maxscale*Math.random());" + "\n" + 
 "	X = 1.5*scale;" + "\n" + 
@@ -161,7 +161,7 @@ CloudsProcedural4_sail.prototype = {
 "function cirrusscale() // these values scale a cloud within a designated size" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"	maxscale = 1;" + "\n" + 
+"	var maxscale = 1;" + "\n" + 
 "\n" + 
 "	scale = Math.round(9+maxscale*Math.random());" + "\n" + 
 "	X = 1.5*scale;" + "\n" + 
@@ -228,13 +228,13 @@ CloudsProcedural4_sail.prototype = {
 "function cumulus()" + "\n" + 
 "{" + "\n" + 
 "\n" + 
-"maxi = 20;  // number of clouds" + "\n" + 
+"var maxi = 20;  // number of clouds" + "\n" + 
 "\n" + 
-"maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
+"var maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
 "\n" + 
-"maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
+"var maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
 "\n" + 
-"sectionradius = 100;  //radius of individual cloud sections" + "\n" + 
+"var sectionradius = 100;  //radius of individual cloud sections" + "\n" + 
 "\n" + 
 "\n" + 
 "\n" + 
@@ -365,13 +365,13 @@ CloudsProcedural4_sail.prototype = {
 "\n" + 
 "{" + "\n" + 
 "\n" + 
-"maxi = 2;  // number of clouds" + "\n" + 
+"var maxi = 2;  // number of clouds" + "\n" + 
 "\n" + 
-"maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
+"var maxj = 5; // denotes how many portions affecting the size of the cloud" + "\n" + 
 "\n" + 
-"maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
+"var maxk = 8;  // number of billboards indicating cloud density" + "\n" + 
 "\n" + 
-"sectionradius = 1000;  //radius of individual cloud sections" + "\n" + 
+"var sectionradius = 1000;  //radius of individual cloud sections" + "\n" + 
 "\n" + 
 "\n" + 
 "\n" + 

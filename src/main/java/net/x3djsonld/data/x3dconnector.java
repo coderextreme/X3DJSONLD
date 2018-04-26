@@ -76,27 +76,27 @@ public class x3dconnector
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
     .addChild(new TransformObject("G1")
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.7f,0.2f,0.2f)))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.7f,0.2f,0.2f}))))
         .setGeometry(new SphereObject().setRadius(.1f)))
       .addChild(new PlaneSensorObject("PS1").setDescription("Grab to move"))
       .addChild(new ROUTEObject().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-    .addChild(new TransformObject("G2").setTranslation(1.0f,-1.0f,.01f)
+    .addChild(new TransformObject("G2").setTranslation(new SFVec3fObject(new float[] {1.0f,-1.0f,.01f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.2f)))
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.2f}))))
         .setGeometry(new SphereObject().setRadius(.1f)))
-      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(1.0f,-1.0f,.01f))
+      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(new SFVec3fObject(new float[] {1.0f,-1.0f,.01f})))
       .addChild(new ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
     .addChild(new TransformObject("transC1")
       .addChild(new TransformObject("rotscaleC1")
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(0.2f,0.7f,0.7f)))
+            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f}))))
           .setGeometry(new CylinderObject().setRadius(.05f)))))
     .addChild(new ProtoDeclareObject().setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -173,7 +173,7 @@ public class x3dconnector
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -200,23 +200,45 @@ public class x3dconnector
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new x3dconnector().getX3dModel();
+        X3DObject thisExampleX3dObject = new x3dconnector().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"x3dconnector\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"x3dconnector\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

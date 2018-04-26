@@ -105,7 +105,7 @@ public class ArchPrototype
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("ArchPrototype").setAppinfo(ProtoDeclare_ArchPrototype_3_13_appinfo)
+    .addChild(new ProtoDeclareObject().setName("ArchPrototype").setAppinfo("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.")
       .setProtoInterface(new ProtoInterfaceObject()
         .addComments(" COLOR OF ARCH ")
         .addField(new fieldObject().setAccessType("inputOutput").setName("diffuseColor").setType("SFColor").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
@@ -119,12 +119,12 @@ public class ArchPrototype
         .addField(new fieldObject().setAccessType("initializeOnly").setName("pierWidth").setType("SFFloat").setValue("0.5").setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("pierHeight").setType("SFFloat").setValue("1").setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
         .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setValue("false").setAppinfo(field_archHalf_5_21_appinfo))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setValue("0").setAppinfo(field_archHalfExtensionWidth_5_22_appinfo))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setValue("false").setAppinfo(field_onlyIntrados_5_23_appinfo))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setValue("false").setAppinfo(field_archFilled_5_24_appinfo))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setValue("false").setAppinfo(field_archHalfFilled_5_25_appinfo))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("lintel").setType("SFBool").setValue("false").setAppinfo(field_lintel_5_26_appinfo)))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setValue("false").setAppinfo("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setValue("0").setAppinfo("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setValue("false").setAppinfo("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true."))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setValue("false").setAppinfo("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose."))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setValue("false").setAppinfo("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width."))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("lintel").setType("SFBool").setValue("false").setAppinfo("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.")))
       .setProtoBody(new ProtoBodyObject()
         .addComments(" First node determines node type of this prototype ")
         .addComments(" IndexedFaceset creates arch ")
@@ -140,7 +140,7 @@ public class ArchPrototype
                   .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs ")
-        .addChild(new ScriptObject("ArchPrototypeScript").setUrl(new MFStringObject("\"../node/ArchPrototypeScript.js\""))
+        .addChild(new ScriptObject("ArchPrototypeScript").setUrl(new MFStringObject("\"../node/ArchPrototypeScript.js\" \"https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js\""))
           .addComments(" INPUT PARAMETERS ")
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
@@ -157,7 +157,7 @@ public class ArchPrototype
           .addField(new fieldObject().setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setAppinfo("user or default input for archFilled parameter"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setAppinfo("user or default input for archHalfFilled parameter"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("lintel").setType("SFBool").setAppinfo("user or default input for lintel parameter"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("computedScale").setType("SFVec3f").setAppinfo(field_computedScale_6_49_appinfo))
+          .addField(new fieldObject().setAccessType("outputOnly").setName("computedScale").setType("SFVec3f").setAppinfo("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("pointOut").setType("MFVec3f").setAppinfo("send computed points to the Coordinate node"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("indexOut").setType("MFInt32").setAppinfo("send computed indices to the IndexedFaceSet node"))
           .setIS(new ISObject()
@@ -187,32 +187,8 @@ public class ArchPrototype
       .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2")))
     .addComments(" Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) ")
     .addChild(new InlineObject("CoordinateAxes").setUrl(new MFStringObject("\"../data/CoordinateAxes.x3d\""))));
-  }
+    }
 	// end of initialize() method
-
-	/** Large attribute array: ProtoDeclare appinfo field, scene-graph level=3, element #13, 39 total values */
-	private SFStringObject ProtoDeclare_ArchPrototype_3_13_appinfo = new SFStringObject("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #21, 26 total values */
-	private SFStringObject field_archHalf_5_21_appinfo = new SFStringObject("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #22, 30 total values */
-	private SFStringObject field_archHalfExtensionWidth_5_22_appinfo = new SFStringObject("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #23, 20 total values */
-	private SFStringObject field_onlyIntrados_5_23_appinfo = new SFStringObject("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #24, 15 total values */
-	private SFStringObject field_archFilled_5_24_appinfo = new SFStringObject("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #25, 28 total values */
-	private SFStringObject field_archHalfFilled_5_25_appinfo = new SFStringObject("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #26, 21 total values */
-	private SFStringObject field_lintel_5_26_appinfo = new SFStringObject("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.");
-
-	/** Large attribute array: field appinfo field, scene-graph level=6, element #49, 29 total values */
-	private SFStringObject field_computedScale_6_49_appinfo = new SFStringObject("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth");
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -238,23 +214,45 @@ public class ArchPrototype
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new ArchPrototype().getX3dModel();
+        X3DObject thisExampleX3dObject = new ArchPrototype().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"ArchPrototype\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"ArchPrototype\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

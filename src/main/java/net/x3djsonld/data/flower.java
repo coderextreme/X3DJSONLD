@@ -41,13 +41,13 @@ public class flower
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new DirectionalLightObject().setDirection(0.0f,-0.8f,-0.2f).setIntensity(0.5f))
+    .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {0.0f,-0.8f,-0.2f})).setIntensity(0.5f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.000f,1.000f,1.000f})))
-    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0f,0.0f,50.0f))
-    .addChild(new TransformObject().setTranslation(0.0f,-1.0f,1.0f).setRotation(0.0f,1.0f,0.0f,3.1415926f).setScale(1.5f,1.5f,1.5f)
+    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,50.0f})))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-1.0f,1.0f})).setRotation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,3.1415926f})).setScale(new SFVec3fObject(new float[] {1.5f,1.5f,1.5f}))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setDiffuseColor(0.9f,0.3f,0.3f)))
+          .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(new SFColorObject(new float[] {0.8f,0.8f,0.8f})).setDiffuseColor(new SFColorObject(new float[] {0.9f,0.3f,0.3f}))))
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
@@ -77,13 +77,13 @@ public class flower
 "}" + "\n" + 
 "\n" + 
 "function generateCoordinates(resolution) {" + "\n" + 
-"     theta = 0.0;" + "\n" + 
-"     phi = 0.0;" + "\n" + 
-"     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
+"     var theta = 0.0;" + "\n" + 
+"     var phi = 0.0;" + "\n" + 
+"     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
 "     var localc = [];" + "\n" + 
 "     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution; j++) {" + "\n" + 
-"		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
+"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
 "		localc.push(new SFVec3f(" + "\n" + 
 "			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
 "			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
@@ -99,7 +99,7 @@ public class flower
 "function set_fraction(fraction, eventTime) {" + "\n" + 
 "	t += 0.5;" + "\n" + 
 "	p += 0.5;" + "\n" + 
-"	choice = Math.floor(Math.random() * 4);" + "\n" + 
+"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
 "	switch (choice) {" + "\n" + 
 "	case 0:" + "\n" + 
 "		e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
@@ -140,7 +140,7 @@ public class flower
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
     .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
-  }
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -167,23 +167,45 @@ public class flower
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new flower().getX3dModel();
+        X3DObject thisExampleX3dObject = new flower().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"flower\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"flower\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }

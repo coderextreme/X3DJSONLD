@@ -88,15 +88,13 @@ public class ExtrusionHeart
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Extrusion Heart").setPosition(0.0f,-4.0f,0.0f).setOrientation(1.0f,0.0f,0.0f,1.57f))
-    .addChild(new TransformObject().setTranslation(0.0f,-0.5f,0.0f)
+    .addChild(new ViewpointObject().setDescription("Extrusion Heart").setPosition(new SFVec3fObject(new float[] {0.0f,-4.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57f})))
+    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-0.5f,0.0f}))
       .addChild(new ShapeObject()
-        .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.1f,0.0f,0.0f,0.5f,0.0f,0.0f,0.9f,0.0f,0.0f,1.0f,0.0f})).setCrossSection(new MFVec2fObject() /* splitting up long array to improve readability */
-.append(new MFVec2fObject(new float[] {0.0f,0.8f,0.2f,1.0f,0.7f,0.95f,1.0f,0.5f,0.8f,0.0f,0.5f,-0.3f,0.0f,-0.7f,-0.5f,-0.3f,-0.8f,0.0f,-1.0f,0.5f}))
-.append(new MFVec2fObject(new float[] {-0.7f,0.95f,-0.2f,1.0f,0.0f,0.8f}))).setScale(new MFVec2fObject(new float[] {0.01f,0.01f,0.8f,0.8f,1.0f,1.0f,0.8f,0.8f,0.01f,0.01f})).setCreaseAngle(3.14159f).setSolid(false))
+        .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.1f,0.0f,0.0f,0.5f,0.0f,0.0f,0.9f,0.0f,0.0f,1.0f,0.0f})).setCrossSection(new MFVec2fObject(new float[] {0.0f,0.8f,0.2f,1.0f,0.7f,0.95f,1.0f,0.5f,0.8f,0.0f,0.5f,-0.3f,0.0f,-0.7f,-0.5f,-0.3f,-0.8f,0.0f,-1.0f,0.5f,-0.7f,0.95f,-0.2f,1.0f,0.0f,0.8f})).setScale(new MFVec2fObject(new float[] {0.01f,0.01f,0.8f,0.8f,1.0f,1.0f,0.8f,0.8f,0.01f,0.01f})).setCreaseAngle(3.14159f).setSolid(false))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.8f,0.3f,0.3f))))));
-  }
+          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.8f,0.3f,0.3f})))))));
+    }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -123,23 +121,45 @@ public class ExtrusionHeart
      */
     public static void main(String args[])
     {
-        X3DObject exampleObject = new ExtrusionHeart().getX3dModel();
+        X3DObject thisExampleX3dObject = new ExtrusionHeart().getX3dModel();
 
-        if ((args != null) && (args.length > 0))
-			exampleObject.handleArguments(args);
-		boolean validate = (args.length == 0);
-		for (String arg : args)
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
 		{
-			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			for (String arg : args)
 			{
-				validate = true;
-				break;
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
 			}
 		}
+		if      (argumentsLoadNewModel)
+			System.out.print("WARNING: \"ExtrusionHeart\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dObject.handleArguments(args);
+
 		if (validate)
 		{
 			System.out.print("Java program \"ExtrusionHeart\" self-validation test results: ");
-			String validationResults = exampleObject.validationReport();
+			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
     }
