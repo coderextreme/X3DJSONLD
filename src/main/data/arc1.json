@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 April 2018"
+            "@content":"26 April 2018"
           },
           {
             "@name":"generator",
@@ -281,12 +281,12 @@
                     },
                     {
                       "@name":"transnode",
-                      "@accessType":"initializeOnly",
+                      "@accessType":"inputOutput",
                       "@type":"SFNode"
                     },
                     {
                       "@name":"rotscalenode",
-                      "@accessType":"initializeOnly",
+                      "@accessType":"inputOutput",
                       "@type":"SFNode"
                     },
                     {

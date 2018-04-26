@@ -75,8 +75,8 @@ ecmascript:
             <ProtoInterface>
                 <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
                 <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-                <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-                <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='transnode' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='rotscalenode' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''/>
                 <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
                 <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
             </ProtoInterface>

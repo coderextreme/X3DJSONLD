@@ -61,7 +61,7 @@
                         <ImageTexture DEF='topShader' containerField='top' repeatS='true' repeatT='true' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"' class=''/>
                     </ComposedCubeMapTexture>
                 </Appearance>
-                <Sphere radius='1.0' solid='false' class=''/>
+                <Sphere radius='1.0' solid='true' class=''/>
             </Shape>
         </Transform>
         <Script DEF='UrlSelector' directOutput='true' mustEvaluate='false' url='' class=''>

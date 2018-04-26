@@ -49,7 +49,7 @@
 <ShaderPart url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere containerField="geometry" solid="false"></Sphere>
+<Sphere containerField="geometry"></Sphere>
 </Shape>
 </Transform>
 <Script DEF="UrlSelector" directOutput="true"><field name="frontUrls" type="MFString" accessType="initializeOnly" value="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;../resources/images/all_probes/building_cross/building_front.png&quot; &quot;../resources/images/all_probes/campus_cross/campus_front.png&quot; &quot;../resources/images/all_probes/galileo_cross/galileo_front.png&quot; &quot;../resources/images/all_probes/grace_cross/grace_front.png&quot; &quot;../resources/images/all_probes/kitchen_cross/kitchen_front.png&quot; &quot;../resources/images/all_probes/rnl_cross/rnl_front.png&quot; &quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;../resources/images/all_probes/uffizi_cross/uffizi_front.png&quot;"></field>
