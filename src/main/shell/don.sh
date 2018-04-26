@@ -24,8 +24,8 @@ for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\
 do
 	# java -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
 	mkdir -p ../data/`dirname $i` 
-	echo '$' java $i ../data/`basename $i`.x3d
-	java -cp "${CLASSPATH}" $i ../data/`basename $i`.x3d
+	echo '$' java $i -validate ../data/`basename $i`.x3d
+	java -cp "${CLASSPATH}" $i -validate ../data/`basename $i`.x3d
 done
 popd
 echo running jjs
