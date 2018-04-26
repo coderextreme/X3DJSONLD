@@ -38,6 +38,8 @@ Scene7 = SceneObject()
 NavigationInfo8 = NavigationInfoObject()
 
 Scene7.addChild(NavigationInfo8)
+
+Scene7.addComments(CommentsBlock("""Images courtesy of Paul Debevec's Light Probe Image Gallery"""))
 Background9 = BackgroundObject()
 Background9.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 Background9.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])

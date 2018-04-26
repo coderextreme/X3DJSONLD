@@ -301,7 +301,6 @@ ComposedShader38.addParts(ShaderPart52)
 Appearance15.addShaders(ComposedShader38)
 Shape14.setAppearance(Appearance15)
 Sphere53 = SphereObject()
-Sphere53.setSolid(False)
 
 Shape14.setGeometry(Sphere53)
 Transform13.addChild(Shape14)
