@@ -50,7 +50,7 @@ public class X3DJSONLD {
 	}
 
 	public void CDATACreateFunction(Document document, Element element, JsonArray value) {
-		System.err.println("GOT HERE IN CDATA");
+		// System.err.println("GOT HERE IN CDATA");
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < value.size(); i++) {
 			if (i > 0) {
@@ -59,7 +59,7 @@ public class X3DJSONLD {
 			sb.append(stripQuotes(value.get(i).toString()));
 		}
 		String y = sb.toString();
-		System.err.println("CDATA Replacing "+y);
+		// System.err.println("CDATA Replacing "+y);
 		String str = stripQuotes(y);
 		str = str
 			.replaceAll("&lt;", "<")
@@ -68,7 +68,7 @@ public class X3DJSONLD {
 			.replaceAll("&quot;", "\"")
 			.replaceAll("'([^'\r\n]*)\n([^']*)'", "'$1\\n$2'");
 		if (!str.equals(y)) {
-		System.err.println("with            "+y);
+		// System.err.println("with            "+y);
 		} else {
 		// System.err.println("ok");
 		}
@@ -84,7 +84,7 @@ public class X3DJSONLD {
 			if (key.substring(0,1).equals("@")) {
 				convertJsonValue(document, object.get(key), key, element, containerField);
 			} else if (key.substring(0,1).equals("-")) {
-				System.err.println("converting children at "+key);
+				// System.err.println("converting children at "+key);
 				convertJsonValue(document, object.get(key), key, element, key.substring(1));
 			} else if (key.equals("#comment")) {
 				if (object.get(key) instanceof JsonArray) {
@@ -98,7 +98,7 @@ public class X3DJSONLD {
 						element.appendChild(child);
 				}
 			} else if (key.equals("#sourceText")) {
-				System.err.println("FOUND SOURCE");
+				// System.err.println("FOUND SOURCE");
 				CDATACreateFunction(document, element, (JsonArray)object.get(key));
 			} else if (key.equals("connect") || key.equals("fieldValue") || key.equals("field") || key.equals("meta") || key.equals("component") || key.equals("unit")) {
 				JsonArray array = (JsonArray)object.get(key);
@@ -111,7 +111,7 @@ public class X3DJSONLD {
 
 	public String CommentStringToXML(String str) {
 		String y = str;
-		System.err.println("X3DJSONLD comment replacing "+ y);
+		// System.err.println("X3DJSONLD comment replacing "+ y);
 		str = stripQuotes(y);
 		str = " "+str+" ";
 		String x;
@@ -128,9 +128,9 @@ public class X3DJSONLD {
 			str = x.replaceAll("\"\"", "\" \"");
 		} while (!x.equals(str));
 		if (!y.equals(str)) {
-		System.err.println("with                        "+ str);
+		// System.err.println("with                        "+ str);
 		} else {
-		System.err.println("ok");
+		// System.err.println("ok");
 		}
 		return str;
 	}
@@ -139,7 +139,7 @@ public class X3DJSONLD {
 		String y = str;
 		// System.err.println("X3DJSONLD jsonstring replacing "+ y);
 		if (!y.equals(str)) {
-		System.err.println("with                           "+ str);
+		// System.err.println("with                           "+ str);
 		} else {
 		// System.err.println("ok");
 		}
@@ -148,12 +148,12 @@ public class X3DJSONLD {
 
 	public String fixXML(String str, String version) {
 		String y = str;
-		System.err.println("fixXML replacing "+ y);
+		// System.err.println("fixXML replacing "+ y);
 		str = str.replace("?>", "?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D "+version+"//EN\" \"http://www.web3d.org/specifications/x3d-"+version+".dtd\">\n");
 		if (!y.equals(str)) {
-		System.err.println("with             "+ str);
+		// System.err.println("with             "+ str);
 		} else {
-		System.err.println("ok");
+		// System.err.println("ok");
 		}
 		return str;
 	}
@@ -244,7 +244,7 @@ public class X3DJSONLD {
 		if (parentkey.substring(0,1).equals("@")) {
 			elementSetAttribute(element, parentkey.substring(1), localArray);
 		} else if (parentkey.equals("#sourceText")) {
-			System.err.println("FOUND SOURCE");
+			// System.err.println("FOUND SOURCE");
 			CDATACreateFunction(document, element, array);
 		}
 	}
@@ -291,7 +291,7 @@ public class X3DJSONLD {
 			X3DJSONLD loader = new X3DJSONLD();
 			JsonObject jsobj = loader.readJsonFile(new File(args[0]));
 			Document document = loader.loadJsonIntoDocument(jsobj);
-			System.out.println(loader.serializeDOM(loader.getX3DVersion(jsobj), document));
+			// System.out.println(loader.serializeDOM(loader.getX3DVersion(jsobj), document));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
