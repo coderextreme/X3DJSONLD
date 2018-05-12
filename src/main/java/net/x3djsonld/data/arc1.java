@@ -123,8 +123,8 @@ public class arc1
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("outputOnly").setName("transnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("outputOnly").setName("rotscalenode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscalenode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
@@ -238,7 +238,7 @@ public class arc1
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
@@ -252,7 +252,7 @@ public class arc1
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"arc1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"arc1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 

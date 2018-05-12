@@ -122,7 +122,7 @@ public class MFString
     .addMeta(new metaObject().setName("created").setContent("13 July 2003"))
     .addMeta(new metaObject().setName("modified").setContent("27 November 2015"))
     .addMeta(new metaObject().setName("reference").setContent("http://www.fas.org/man/dod-101/sys/ac/f-16.htm"))
-    .addMeta(new metaObject().setName("permission").setContent("Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY"))
+    .addMeta(new metaObject().setName("permission").setContent(new SFStringObject(/*0.invocation*/)))
     .addMeta(new metaObject().setName("reference").setContent("The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated."))
     .addMeta(new metaObject().setName("drawing").setContent("\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\""))
     .addMeta(new metaObject().setName("Image").setContent("\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\""))
@@ -148,7 +148,7 @@ public class MFString
         .addChild(new ShapeObject("MainBodyAndWingEdges")
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {.1796f,.1914f,.2382f}))))
-          .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.5f).setSolid(false).setNormalIndex(IndexedFaceSet_6_31_normalIndex).setCoordIndex(IndexedFaceSet_6_31_coordIndex)
+          .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.5f).setSolid(false).setNormalIndex(getIndexedFaceSet_6_31_normalIndex()).setCoordIndex(getIndexedFaceSet_6_31_coordIndex())
             .setCoord(new CoordinateObject().setUSE("coordinates"))
             .setNormal(new NormalObject().setUSE("normalVector"))))
         .addChild(new ShapeObject("ExhaustExitFlatPanel")
@@ -328,73 +328,107 @@ public class MFString
     }
 	// end of initialize() method
 
-		/* Define subarrays using type float[] */
-		private float[] getcoordinates_7_19_point_1 ()
+		/** Define subarrays using type float[] */
+		private float[] getcoordinates_7_19_point_1()
 		{
 			float[] value = {-0.32f,0.36f,-4.91f,-0.38f,0.43f,-4.21f,0.0f,0.6f,-4.2f,0.0f,0.5f,-4.9f,-0.5f,0.0f,-4.9f,-0.6f,0.0f,-4.2f,1.0f,0.0f,5.8f,1.0f,0.0f,5.3f,2.8f,-0.4f,6.3f,2.8f,-0.4f,6.61f,0.31f,-0.36f,-4.9f,0.4f,-0.35f,-4.2f,0.0f,-0.4f,-4.2f,0.0f,-0.4f,-4.9f,-0.31f,-0.36f,-4.9f,-0.4f,-0.35f,-4.2f,0.5f,0.0f,-4.9f,0.6f,0.0f,-4.2f,0.32f,0.36f,-4.91f,0.38f,0.43f,-4.21f,-1.0f,0.0f,5.8f,-1.0f,0.0f,5.3f,-2.8f,-0.4f,6.3f,-2.8f,-0.4f,6.61f,0.0f,-0.1f,-7.0f,-0.31f,-0.36f,-4.9f,-0.5f,0.0f,-4.9f,0.0f,-0.1f,-7.0f,0.0f,-0.4f,-4.9f,0.31f,-0.36f,-4.9f,0.5f,0.0f,-4.9f,0.32f,0.36f,-4.91f,-0.27f,0.93f,-3.51f,0.0f,1.1f,-3.6f,-0.33f,0.5f,-3.41f,-0.34f,0.9f,-1.73f,0.0f,0.9f,-1.0f,0.0f,1.1f,-1.8f,-0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0.0f,0.9f,-1.0f,0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0.27f,0.93f,-3.51f,0.33f,0.5f,-3.41f,0.0f,1.3f,-2.8f,0.45f,1.02f,-2.68f,0.38f,0.64f,-1.68f,0.53f,0.5f,-2.56f,-0.53f,0.5f,-2.56f,-0.45f,1.02f,-2.68f,-0.53f,0.75f,0.0f,-0.56f,0.66f,2.8f,0.0f,0.7f,2.8f,0.0f,0.8f,0.0f,-1.1f,0.3f,0.0f,-1.0f,0.3f,2.8f,-0.37f,0.57f,4.9f,0.0f,0.59f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0.0f,7.0f,-0.5f,0.49f,7.0f,-0.5f,0.49f,7.0f,0.0f,0.7f,7.0f,-1.4f,0.0f,0.0f,-1.4f,0.0f,3.9f,-1.4f,0.0f,3.9f,-1.0f,0.0f,3.9f,-1.0f,0.3f,2.8f,-1.0f,0.3f,4.9f,-0.59f,0.65f,-0.77f,-0.8f,0.3f,-0.6f,-1.4f,0.0f,-0.7f,-1.0f,-0.1f,2.8f,-0.7f,-0.7f,-2.5f,-0.5f,-0.9f,-2.5f,-0.5f,-0.9f,-0.6f,-0.7f,-0.7f,-0.6f,0.0f,-1.0f,-2.5f,0.0f,-1.0f,-0.6f,-0.72f,-0.12f,-2.5f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-1.4f,0.0f,0.0f,-1.4f,0.0f,-0.7f,-0.7f,-0.1f,4.9f,-1.0f,-0.1f,4.9f,-0.5f,-0.9f,4.9f,-0.7f,-0.7f,4.9f,0.0f,-1.0f,4.9f,-0.7f,-0.1f,4.9f,-0.5f,-0.5f,7.0f,-0.7f,0.0f,7.0f,0.0f,-0.7f,7.0f,-1.0f,0.0f,7.4f,-2.8f,-0.4f,7.1f,-2.57f,-0.32f,7.42f};
 			return value;
 		}
-		private float[] getcoordinates_7_19_point_2 ()
+		private float[] getcoordinates_7_19_point_2()
 		{
 			float[] value = {-4.9f,0.1f,4.0f,-5.1f,0.1f,4.0f,-5.1f,-0.1f,4.0f,-4.9f,-0.1f,4.0f,-5.1f,0.1f,1.6f,-5.1f,-0.1f,1.6f,-4.9f,0.1f,2.8f,-4.9f,-0.1f,2.8f,-0.58f,-0.83f,3.6f,-0.72f,-1.4f,3.9f,-0.69f,-1.32f,4.9f,-0.58f,-0.83f,4.9f,0.58f,-0.83f,3.6f,0.72f,-1.4f,3.9f,0.69f,-1.32f,4.9f,0.58f,-0.83f,4.9f,4.9f,-0.1f,2.8f,5.1f,-0.1f,1.6f,5.1f,-0.1f,4.0f,4.9f,-0.1f,4.0f,-0.8f,0.0f,-2.5f,4.9f,0.1f,4.0f,5.1f,0.1f,4.0f,5.1f,0.1f,1.6f,4.9f,0.1f,2.8f,0.59f,0.65f,-0.77f,0.8f,0.3f,-0.6f,0.8f,0.0f,-2.5f,-0.8f,0.0f,-2.5f,0.8f,-0.3f,-0.6f,0.72f,-0.12f,-2.5f,0.8f,0.0f,-2.5f,1.0f,0.0f,7.4f,2.8f,-0.4f,7.1f,2.57f,-0.32f,7.42f,-0.7f,0.0f,7.4f,0.5f,-0.9f,4.9f,0.7f,-0.7f,4.9f,0.5f,-0.5f,7.0f,-4.9f,0.0f,2.8f,-4.9f,0.0f,3.9f,0.7f,-0.1f,4.9f,0.7f,0.0f,7.0f,1.4f,0.0f,0.0f,4.9f,0.0f,2.8f,4.9f,0.0f,3.9f,1.4f,0.0f,3.9f,1.4f,0.0f,-0.7f,1.4f,0.0f,-0.7f,0.7f,-0.7f,-0.6f,0.8f,-0.3f,-0.6f,0.5f,-0.9f,-0.6f,1.0f,-0.1f,4.9f,1.0f,0.3f,4.9f,0.7f,0.0f,7.4f,0.7f,0.3f,4.9f,0.7f,-0.1f,4.9f,0.56f,0.66f,2.8f,0.53f,0.75f,0.0f,1.0f,0.3f,2.8f,1.1f,0.3f,0.0f,0.37f,0.57f,4.9f,0.7f,0.3f,4.9f,0.5f,0.49f,7.0f,0.7f,0.0f,7.0f,0.5f,0.49f,7.0f,1.4f,0.0f,3.9f,1.4f,0.0f,0.0f,1.0f,0.3f,2.8f,1.0f,0.0f,3.9f,1.0f,-0.1f,2.8f,0.5f,-0.9f,-2.5f,0.7f,-0.7f,-2.5f,0.8f,-0.3f,-2.5f,0.8f,-0.3f,-2.5f,1.0f,0.3f,3.9f,0.59f,0.65f,-0.77f,0.0f,0.7f,2.8f,0.0f,1.4f,4.5f,0.0f,0.59f,4.9f,0.0f,3.5f,6.8f,0.0f,3.5f,8.1f,0.0f,1.4f,7.3f,0.0f,0.7f,7.0f,0.0f,0.7f,7.3f,-1.0f,0.3f,3.9f,0.0f,0.35f,7.7f,-0.25f,0.24f,7.7f,-0.35f,0.0f,7.7f,-0.25f,-0.25f,7.7f,0.0f,-0.35f,7.7f,0.25f,-0.25f,7.7f,0.35f,0.0f,7.7f,0.25f,0.24f,7.7f,0.0f,-0.2f,-2.5f,0.7f,-0.7f,-2.5f,0.5f,-0.9f,-2.5f,0.0f,-1.0f,-2.5f,-0.5f,-0.9f,-2.5f,-0.7f,-0.7f,-2.5f};
 			return value;
 		}
-		private float[] getcoordinates_7_19_point_3 ()
+		private float[] getcoordinates_7_19_point_3()
 		{
 			float[] value = {0.0f,-0.2f,-2.5f,-0.72f,-0.12f,-2.5f,0.72f,-0.12f,-2.5f,0.25f,0.24f,7.7f,0.35f,0.0f,7.7f,-0.35f,0.0f,7.7f,-0.25f,0.24f,7.7f};
 			return value;
 		}
 
-		/** Large attribute array: Coordinate DEF='coordinates' point field, scene-graph level=7, element #19, 621 total numbers made up of 207 3-tuple values
-		 * Provide large array value via a separate method, in order to avoid 'code too large' Java compilation errors. 
-		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
-		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
-		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
-		 */
-		private MFVec3fObject getcoordinates_7_19_point ()
-		{
-				/* splitting up long array to improve readability */
-				MFVec3fObject coordinates_7_19_point = new MFVec3fObject()
-				.append(new MFVec3fObject(getcoordinates_7_19_point_1()))
-				.append(new MFVec3fObject(getcoordinates_7_19_point_2()))
-				.append(new MFVec3fObject(getcoordinates_7_19_point_3()));
 
-			return coordinates_7_19_point;
-		}
-
-		/* Define subarrays using type float[] */
-		private float[] getnormalVector_7_20_vector_1 ()
+		/** Define subarrays using type float[] */
+		private float[] getnormalVector_7_20_vector_1()
 		{
 			float[] value = {-0.68f,0.714f,-0.166f,-0.689f,0.721f,-0.072f,0.0f,0.965f,-0.26f,0.0f,0.985f,-0.175f,-0.99f,-0.016f,-0.138f,-0.999f,-0.022f,-0.037f,0.567f,-0.819f,-0.093f,0.561f,-0.828f,0.0f,0.0f,-1.0f,0.0f,0.0f,-0.997f,-0.071f,-0.567f,-0.819f,-0.093f,-0.561f,-0.828f,0.0f,0.99f,-0.016f,-0.138f,0.999f,-0.022f,-0.037f,0.68f,0.714f,-0.166f,0.689f,0.721f,-0.072f,-0.351f,0.889f,-0.294f,-0.868f,-0.459f,-0.19f,-0.13f,-0.982f,-0.14f,0.13f,-0.982f,-0.14f,0.868f,-0.459f,-0.19f,0.872f,0.431f,-0.231f,-0.834f,0.445f,-0.327f,0.0f,0.929f,-0.369f,-0.88f,0.401f,-0.256f,-0.799f,0.577f,0.169f,-0.58f,0.798f,0.164f,0.0f,0.998f,0.065f,-0.862f,0.486f,0.146f,0.886f,0.219f,0.408f,0.799f,0.577f,0.169f,0.834f,0.445f,-0.327f,0.88f,0.401f,-0.256f,-0.0f,0.995f,-0.096f,0.842f,0.534f,-0.08f,0.862f,0.486f,0.146f,0.833f,0.549f,-0.073f,-0.833f,0.549f,-0.073f,-0.842f,0.534f,-0.08f,-0.485f,0.87f,-0.089f,-0.37f,0.929f,0.0f,0.0f,1.0f,0.0f,-0.0f,1.0f,-0.01f,-0.592f,0.796f,-0.125f,-0.573f,0.818f,0.05f,-0.37f,0.929f,-0.01f,0.0f,1.0f,-0.025f,-0.487f,0.873f,0.036f,-0.923f,0.381f,0.05f,-0.683f,0.704f,0.195f,0.0f,0.99f,0.14f,-0.707f,0.707f,0.0f,-0.385f,0.912f,0.141f,0.0f,0.966f,0.259f,-0.563f,0.826f,-0.037f,-0.661f,0.738f,-0.138f,-0.521f,0.846f,-0.115f,0.0f,-0.996f,0.09f,-0.773f,-0.436f,-0.461f,-0.42f,-0.781f,-0.463f,-0.474f,-0.881f,0.0f,-0.871f,-0.492f,0.0f,0.0f,-0.891f,-0.455f,-0.917f,0.399f,0.0f,-0.881f,0.074f,-0.467f,-0.902f,-0.429f,-0.039f,-0.09f,-0.995f,0.05f,-0.451f,-0.892f,0.0f,-0.28f,-0.959f,0.04f,-0.468f,-0.878f,0.097f,-0.877f,-0.474f,0.085f,0.0f,-0.997f,0.072f,-0.693f,-0.72f,0.045f,-0.79f,-0.562f,0.244f,-0.968f,0.003f,0.25f,0.0f,-0.966f,0.257f,0.0f,0.0f,1.0f,-1.0f,0.0f,0.0f,0.987f,0.0f,-0.16f,1.0f,0.0f,0.0f,-0.831f,-0.551f,-0.08f,0.563f,0.826f,-0.037f,0.661f,0.738f,-0.138f,0.998f,-0.037f,-0.049f,-0.987f,0.0f,-0.16f,-0.998f,-0.037f,-0.049f,0.831f,-0.551f,-0.08f,0.0f,-0.999f,0.04f,0.0f,0.993f,0.12f,0.468f,-0.878f,0.097f,0.877f,-0.474f,0.085f,0.79f,-0.562f,0.244f,-0.419f,-0.897f,-0.14f,0.693f,-0.72f,0.045f,0.968f,0.003f,0.25f,0.521f,0.846f,-0.115f,0.419f,-0.897f,-0.14f,0.871f,-0.492f,0.0f,0.902f,-0.429f,-0.039f,0.474f,-0.881f,0.0f};
 			return value;
 		}
-		private float[] getnormalVector_7_20_vector_2 ()
+		private float[] getnormalVector_7_20_vector_2()
 		{
 			float[] value = {0.37f,0.929f,0.0f,0.485f,0.87f,-0.089f,0.573f,0.818f,0.05f,0.592f,0.796f,-0.125f,0.37f,0.929f,-0.01f,0.487f,0.873f,0.036f,0.923f,0.381f,0.05f,0.683f,0.704f,0.195f,0.385f,0.912f,0.141f,0.707f,0.707f,0.0f,0.42f,-0.781f,-0.463f,0.773f,-0.436f,-0.461f,0.917f,0.399f,0.0f,0.881f,0.074f,-0.467f,0.09f,-0.995f,0.05f,0.451f,-0.892f,0.0f,0.28f,-0.959f,0.04f,0.42f,0.901f,-0.11f,0.0f,0.666f,0.746f,-0.481f,0.468f,0.741f,-0.674f,0.0f,0.738f,-0.475f,-0.475f,0.741f,0.0f,-0.674f,0.738f,0.475f,-0.475f,0.741f,0.674f,0.0f,0.738f,0.481f,0.468f,0.741f,0.0f,0.0f,-1.0f,0.0f,-0.893f,-0.45f,-0.901f,-0.224f,-0.372f,0.901f,-0.224f,-0.372f,0.841f,0.34f,0.421f,-0.841f,0.34f,0.421f};
 			return value;
 		}
 
-		/** Large attribute array: Normal DEF='normalVector' vector field, scene-graph level=7, element #20, 396 total numbers made up of 132 3-tuple values
-		 * Provide large array value via a separate method, in order to avoid 'code too large' Java compilation errors. 
+
+		/** Define subarrays using type int[] */
+		private int[] getIndexedFaceSet_6_31_coordIndex_1()
+		{
+			int[] value = {51,52,53,54,-1,55,56,52,51,-1,52,57,58,53,-1,56,59,57,52,-1,60,61,62,-1,57,59,63,-1,57,63,64,-1,58,57,64,-1,56,55,65,66,-1,67,68,69,-1,69,70,60,-1,71,54,36,-1,51,54,71,-1,72,51,71,-1,55,51,72,-1,72,73,55,-1,65,55,73,-1,68,67,74,-1,75,76,77,78,-1,76,79,80,77,-1,81,82,83,-1,84,75,78,85,-1,83,74,67,-1,67,86,87,83,-1,74,88,89,-1,88,74,83,-1,78,77,90,91,-1,77,80,92,90,-1,85,91,93,-1,85,78,91,-1,94,95,93,-1,94,93,91,-1,91,96,94,-1,96,91,90,-1,90,92,96,-1,100,101,102,103,-1,101,104,105,102,-1,104,106,107,105,-1,106,100,103,107,-1,106,104,101,100,-1,103,102,105,107,-1,116,117,118,119,-1,120,81,83,-1,121,122,123,124,-1,116,119,121,124,-1,48,125,126,127,-1,117,116,124,123,-1,128,72,71,49,-1,118,117,123,122,-1,119,118,122,121,-1,129,130,131,-1,89,88,135,97,-1,60,70,97,135,-1,70,89,97,-1,96,92,136,-1,136,137,96,-1,138,96,137,-1,120,83,87,-1,128,73,72,-1,137,141,138,-1,141,142,138,-1,126,147,127,-1,148,129,131,-1,137,149,150,-1,141,137,150,-1,136,92,80,151,-1,137,136,151,149,-1,132,152,153,-1,154,132,153,155,-1,132,154,156,152,-1,54,53,157,158,-1,158,157,159,160,-1,53,58,161,157,-1,157,161,162,159,-1,163,164,155,-1,165,162,161,-1,64,165,161,-1,64,161,58,-1,166,167,160,159,-1,168,169,146,-1,155,153,168,-1,36,54,125,-1,125,54,158,-1,125,158,126,-1,126,158,160,-1,160,147,126,-1,147,160,167,-1,170,146,169,-1,149,151,171,172,-1,151,80,79,171,-1,129,173,130,-1,150,149,172,174,-1,146,170,129,-1,129,148,143,146,-1,152,156,170,-1,129,170,156,-1,156,154,164,-1,154,155,164,-1,168,175,169,-1,175,153,152,169,-1,152,170,169,-1,48,47,125,-1,41,40,176,-1,71,38,49,-1,71,36,38,-1,61,135,88,-1,61,60,135,-1,68,185,69,-1,68,74,89,-1,68,89,70,185,-1};
+			return value;
+		}
+
+
+		/** Define subarrays using type int[] */
+		private int[] getIndexedFaceSet_6_31_normalIndex_1()
+		{
+			int[] value = {39,40,41,42,-1,43,44,40,39,-1,40,45,46,41,-1,44,47,45,40,-1,48,48,48,-1,45,47,49,-1,45,49,50,-1,46,45,50,-1,44,43,51,52,-1,53,53,53,-1,41,41,41,-1,54,42,26,-1,39,42,54,-1,55,39,54,-1,43,39,55,-1,55,56,43,-1,51,43,56,-1,57,57,57,-1,58,59,60,61,-1,59,62,8,60,-1,63,63,63,-1,64,58,61,65,-1,66,66,66,-1,67,67,67,67,-1,8,8,8,-1,68,68,68,-1,61,60,69,70,-1,60,8,71,69,-1,65,70,72,-1,65,61,70,-1,73,74,72,-1,73,72,70,-1,70,75,73,-1,75,70,69,-1,69,71,75,-1,76,76,76,76,-1,77,77,77,77,-1,78,78,78,78,-1,79,79,79,79,-1,41,41,41,41,-1,8,8,8,8,-1,8,8,8,8,-1,80,80,80,-1,41,41,41,41,-1,77,77,77,77,-1,36,81,82,83,-1,84,84,84,84,-1,85,55,54,37,-1,79,79,79,79,-1,76,76,76,76,-1,86,86,86,-1,87,87,87,87,-1,88,88,88,88,-1,77,77,77,-1,75,71,89,-1,89,90,75,-1,91,75,90,-1,92,92,92,-1,85,56,55,-1,90,93,91,-1,93,94,91,-1,82,95,83,-1,96,96,96,-1,90,97,98,-1,93,90,98,-1,89,71,8,99,-1,90,89,99,97,-1,79,79,79,-1,88,88,88,88,-1,87,87,87,87,-1,42,41,100,101,-1,101,100,102,103,-1,41,46,104,100,-1,100,104,105,102,-1,106,106,106,-1,107,105,104,-1,50,107,104,-1,50,104,46,-1,108,109,103,102,-1,53,53,53,-1,41,41,41,-1,26,42,81,-1,81,42,101,-1,81,101,82,-1,82,101,103,-1,103,95,82,-1,95,103,109,-1,57,57,57,-1,97,99,110,111,-1,99,8,62,110,-1,112,112,112,-1,98,97,111,113,-1,114,114,114,-1,115,115,115,115,-1,8,8,8,-1,116,116,116,-1,77,77,77,-1,77,77,77,-1,79,79,79,-1,79,79,79,79,-1,79,79,79,-1,36,35,81,-1,117,117,117,-1,54,28,37,-1,54,26,28,-1,79,79,79,-1,79,79,79,-1,77,77,77,-1,77,77,77,-1,77,77,77,77,-1};
+			return value;
+		}
+
+		/** Large attribute array: Coordinate DEF='coordinates' point field, scene-graph level=7, element #19, 621 total numbers made up of 207 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getnormalVector_7_20_vector ()
+		private MFVec3fObject getcoordinates_7_19_point()
 		{
-				/* splitting up long array to improve readability */
-				MFVec3fObject normalVector_7_20_vector = new MFVec3fObject()
+			MFVec3fObject coordinates_7_19_point = new MFVec3fObject()/*2.finalize*/
+				.append(new MFVec3fObject(getcoordinates_7_19_point_1()))
+				.append(new MFVec3fObject(getcoordinates_7_19_point_2()))
+				.append(new MFVec3fObject(getcoordinates_7_19_point_3()));
+			return coordinates_7_19_point;
+		}
+		/** Large attribute array: Normal DEF='normalVector' vector field, scene-graph level=7, element #20, 396 total numbers made up of 132 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3fObject getnormalVector_7_20_vector()
+		{
+			MFVec3fObject normalVector_7_20_vector = new MFVec3fObject()/*2.finalize*/
 				.append(new MFVec3fObject(getnormalVector_7_20_vector_1()))
 				.append(new MFVec3fObject(getnormalVector_7_20_vector_2()));
-
 			return normalVector_7_20_vector;
 		}
-
-		/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=6, element #31, 482 total numbers */
-		MFInt32Object IndexedFaceSet_6_31_coordIndex = new MFInt32Object(new int[] {51,52,53,54,-1,55,56,52,51,-1,52,57,58,53,-1,56,59,57,52,-1,60,61,62,-1,57,59,63,-1,57,63,64,-1,58,57,64,-1,56,55,65,66,-1,67,68,69,-1,69,70,60,-1,71,54,36,-1,51,54,71,-1,72,51,71,-1,55,51,72,-1,72,73,55,-1,65,55,73,-1,68,67,74,-1,75,76,77,78,-1,76,79,80,77,-1,81,82,83,-1,84,75,78,85,-1,83,74,67,-1,67,86,87,83,-1,74,88,89,-1,88,74,83,-1,78,77,90,91,-1,77,80,92,90,-1,85,91,93,-1,85,78,91,-1,94,95,93,-1,94,93,91,-1,91,96,94,-1,96,91,90,-1,90,92,96,-1,100,101,102,103,-1,101,104,105,102,-1,104,106,107,105,-1,106,100,103,107,-1,106,104,101,100,-1,103,102,105,107,-1,116,117,118,119,-1,120,81,83,-1,121,122,123,124,-1,116,119,121,124,-1,48,125,126,127,-1,117,116,124,123,-1,128,72,71,49,-1,118,117,123,122,-1,119,118,122,121,-1,129,130,131,-1,89,88,135,97,-1,60,70,97,135,-1,70,89,97,-1,96,92,136,-1,136,137,96,-1,138,96,137,-1,120,83,87,-1,128,73,72,-1,137,141,138,-1,141,142,138,-1,126,147,127,-1,148,129,131,-1,137,149,150,-1,141,137,150,-1,136,92,80,151,-1,137,136,151,149,-1,132,152,153,-1,154,132,153,155,-1,132,154,156,152,-1,54,53,157,158,-1,158,157,159,160,-1,53,58,161,157,-1,157,161,162,159,-1,163,164,155,-1,165,162,161,-1,64,165,161,-1,64,161,58,-1,166,167,160,159,-1,168,169,146,-1,155,153,168,-1,36,54,125,-1,125,54,158,-1,125,158,126,-1,126,158,160,-1,160,147,126,-1,147,160,167,-1,170,146,169,-1,149,151,171,172,-1,151,80,79,171,-1,129,173,130,-1,150,149,172,174,-1,146,170,129,-1,129,148,143,146,-1,152,156,170,-1,129,170,156,-1,156,154,164,-1,154,155,164,-1,168,175,169,-1,175,153,152,169,-1,152,170,169,-1,48,47,125,-1,41,40,176,-1,71,38,49,-1,71,36,38,-1,61,135,88,-1,61,60,135,-1,68,185,69,-1,68,74,89,-1,68,89,70,185,-1});
-
-		/** Large attribute array: IndexedFaceSet normalIndex field, scene-graph level=6, element #31, 482 total numbers */
-		MFInt32Object IndexedFaceSet_6_31_normalIndex = new MFInt32Object(new int[] {39,40,41,42,-1,43,44,40,39,-1,40,45,46,41,-1,44,47,45,40,-1,48,48,48,-1,45,47,49,-1,45,49,50,-1,46,45,50,-1,44,43,51,52,-1,53,53,53,-1,41,41,41,-1,54,42,26,-1,39,42,54,-1,55,39,54,-1,43,39,55,-1,55,56,43,-1,51,43,56,-1,57,57,57,-1,58,59,60,61,-1,59,62,8,60,-1,63,63,63,-1,64,58,61,65,-1,66,66,66,-1,67,67,67,67,-1,8,8,8,-1,68,68,68,-1,61,60,69,70,-1,60,8,71,69,-1,65,70,72,-1,65,61,70,-1,73,74,72,-1,73,72,70,-1,70,75,73,-1,75,70,69,-1,69,71,75,-1,76,76,76,76,-1,77,77,77,77,-1,78,78,78,78,-1,79,79,79,79,-1,41,41,41,41,-1,8,8,8,8,-1,8,8,8,8,-1,80,80,80,-1,41,41,41,41,-1,77,77,77,77,-1,36,81,82,83,-1,84,84,84,84,-1,85,55,54,37,-1,79,79,79,79,-1,76,76,76,76,-1,86,86,86,-1,87,87,87,87,-1,88,88,88,88,-1,77,77,77,-1,75,71,89,-1,89,90,75,-1,91,75,90,-1,92,92,92,-1,85,56,55,-1,90,93,91,-1,93,94,91,-1,82,95,83,-1,96,96,96,-1,90,97,98,-1,93,90,98,-1,89,71,8,99,-1,90,89,99,97,-1,79,79,79,-1,88,88,88,88,-1,87,87,87,87,-1,42,41,100,101,-1,101,100,102,103,-1,41,46,104,100,-1,100,104,105,102,-1,106,106,106,-1,107,105,104,-1,50,107,104,-1,50,104,46,-1,108,109,103,102,-1,53,53,53,-1,41,41,41,-1,26,42,81,-1,81,42,101,-1,81,101,82,-1,82,101,103,-1,103,95,82,-1,95,103,109,-1,57,57,57,-1,97,99,110,111,-1,99,8,62,110,-1,112,112,112,-1,98,97,111,113,-1,114,114,114,-1,115,115,115,115,-1,8,8,8,-1,116,116,116,-1,77,77,77,-1,77,77,77,-1,79,79,79,-1,79,79,79,79,-1,79,79,79,-1,36,35,81,-1,117,117,117,-1,54,28,37,-1,54,26,28,-1,79,79,79,-1,79,79,79,-1,77,77,77,-1,77,77,77,-1,77,77,77,77,-1});
+		/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=6, element #31, 482 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFInt32Object getIndexedFaceSet_6_31_coordIndex()
+		{
+			MFInt32Object IndexedFaceSet_6_31_coordIndex = new MFInt32Object()/*2.finalize*/
+				.append(new MFInt32Object(getIndexedFaceSet_6_31_coordIndex_1()));
+			return IndexedFaceSet_6_31_coordIndex;
+		}
+		/** Large attribute array: IndexedFaceSet normalIndex field, scene-graph level=6, element #31, 482 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFInt32Object getIndexedFaceSet_6_31_normalIndex()
+		{
+			MFInt32Object IndexedFaceSet_6_31_normalIndex = new MFInt32Object()/*2.finalize*/
+				.append(new MFInt32Object(getIndexedFaceSet_6_31_normalIndex_1()));
+			return IndexedFaceSet_6_31_normalIndex;
+		}
 
 	/** The initialized model object, created within initialize() method. */
 	private X3DObject x3dModel;
@@ -437,7 +471,7 @@ public class MFString
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
@@ -451,7 +485,7 @@ public class MFString
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"MFString\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"MFString\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 

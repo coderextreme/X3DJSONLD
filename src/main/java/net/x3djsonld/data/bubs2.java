@@ -205,7 +205,7 @@ public class bubs2
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
@@ -219,7 +219,7 @@ public class bubs2
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"bubs2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"bubs2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
