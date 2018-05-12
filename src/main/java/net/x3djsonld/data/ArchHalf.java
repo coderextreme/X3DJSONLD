@@ -99,41 +99,58 @@ public class ArchHalf
   .setScene(new SceneObject()
     .addChild(new ShapeObject("Arch")
       .addComments(" note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly ")
-      .setGeometry(new IndexedFaceSetObject("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(ArchIndex_4_12_coordIndex)
+      .setGeometry(new IndexedFaceSetObject("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(getArchIndex_4_12_coordIndex())
         .setCoord(new CoordinateObject("ArchChord").setPoint(getArchChord_5_12_point())))
       .setAppearance(new AppearanceObject()
         .setMaterial(new MaterialObject("MaterialNode").setDiffuseColor(new SFColorObject(new float[] {1.0f,0.75f,0.25f}))))));
     }
 	// end of initialize() method
 
-		/** Large attribute array: IndexedFaceSet DEF='ArchIndex' coordIndex field, scene-graph level=4, element #12, 318 total numbers */
-		MFInt32Object ArchIndex_4_12_coordIndex = new MFInt32Object(new int[] {31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,144,-1,149,31,144,147,-1,134,147,144,145,-1,145,144,62,141,-1,132,133,141,62,-1,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,143,-1,148,94,143,146,-1,142,128,146,143,-1,140,125,143,142,-1,125,126,127,140,-1,31,94,95,32,-1,32,95,96,33,-1,33,96,97,34,-1,34,97,98,35,-1,35,98,99,36,-1,36,99,100,37,-1,37,100,101,38,-1,38,101,102,39,-1,39,102,103,40,-1,40,103,104,41,-1,41,104,105,42,-1,42,105,106,43,-1,43,106,107,44,-1,44,107,108,45,-1,45,108,109,46,-1,46,109,110,47,-1,47,110,111,48,-1,48,111,112,49,-1,49,112,113,50,-1,50,113,114,51,-1,51,114,115,52,-1,52,115,116,53,-1,53,116,117,54,-1,54,117,118,55,-1,55,118,119,56,-1,56,119,120,57,-1,57,120,121,58,-1,58,121,122,59,-1,59,122,123,60,-1,60,123,124,61,-1,61,124,125,62,-1,148,149,147,146,-1,146,147,134,128,-1,128,134,145,142,-1,140,141,145,142,-1,127,133,141,140,-1,127,126,132,133,-1,126,132,62,125,-1,31,94,143,144,-1,142,143,144,145,-1,140,125,62,141,-1,31,94,148,149,-1});
+		/** Define subarrays using type int[] */
+		private int[] getArchIndex_4_12_coordIndex_1()
+		{
+			int[] value = {31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,144,-1,149,31,144,147,-1,134,147,144,145,-1,145,144,62,141,-1,132,133,141,62,-1,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,143,-1,148,94,143,146,-1,142,128,146,143,-1,140,125,143,142,-1,125,126,127,140,-1,31,94,95,32,-1,32,95,96,33,-1,33,96,97,34,-1,34,97,98,35,-1,35,98,99,36,-1,36,99,100,37,-1,37,100,101,38,-1,38,101,102,39,-1,39,102,103,40,-1,40,103,104,41,-1,41,104,105,42,-1,42,105,106,43,-1,43,106,107,44,-1,44,107,108,45,-1,45,108,109,46,-1,46,109,110,47,-1,47,110,111,48,-1,48,111,112,49,-1,49,112,113,50,-1,50,113,114,51,-1,51,114,115,52,-1,52,115,116,53,-1,53,116,117,54,-1,54,117,118,55,-1,55,118,119,56,-1,56,119,120,57,-1,57,120,121,58,-1,58,121,122,59,-1,59,122,123,60,-1,60,123,124,61,-1,61,124,125,62,-1,148,149,147,146,-1,146,147,134,128,-1,128,134,145,142,-1,140,141,145,142,-1,127,133,141,140,-1,127,126,132,133,-1,126,132,62,125,-1,31,94,143,144,-1,142,143,144,145,-1,140,125,62,141,-1,31,94,148,149,-1};
+			return value;
+		}
 
-		/* Define subarrays using type float[] */
-		private float[] getArchChord_5_12_point_1 ()
+
+		/** Define subarrays using type float[] */
+		private float[] getArchChord_5_12_point_1()
 		{
 			float[] value = {2.0f,0.0f,0.0f,1.9974984355438178f,0.1f,0.0f,1.98997487421324f,0.2f,0.0f,1.977371993328519f,0.3f,0.0f,1.9595917942265423f,0.4f,0.0f,1.9364916731037084f,0.5f,0.0f,1.9078784028338912f,0.6f,0.0f,1.8734993995195193f,0.7f,0.0f,1.833030277982336f,0.8f,0.0f,1.786057109949175f,0.9f,0.0f,1.7320508075688775f,1.0f,0.0f,1.6703293088490067f,1.1f,0.0f,1.60f,1.2f,0.0f,1.5198684153570664f,1.3f,0.0f,1.42828568570857f,1.4f,0.0f,1.3228756555322953f,1.5f,0.0f,1.20f,1.6f,0.0f,1.0535653752852738f,1.7f,0.0f,0.9020947843768965f,1.785f,0.0f,0.7599342076785332f,1.85f,0.0f,0.6244997998398398f,1.9f,0.0f,0.5425633603552677f,1.925f,0.0f,0.4444097208657794f,1.95f,0.0f,0.36181625170796194f,1.967f,0.0f,0.2821347195933173f,1.98f,0.0f,0.19974984355438343f,1.99f,0.0f,0.16718552568927703f,1.993f,0.0f,0.14133294025102578f,1.995f,0.0f,0.10950342460398415f,1.997f,0.0f,0.08942035562443252f,1.998f,0.0f,0.06323764701505419f,1.999f,0.0f,0.0f,2.0f,0.0f,-0.06323764701505419f,1.999f,0.0f,-0.08942035562443252f,1.998f,0.0f,-0.10950342460398415f,1.997f,0.0f,-0.14133294025102578f,1.995f,0.0f,-0.16718552568927703f,1.993f,0.0f,-0.19974984355438343f,1.99f,0.0f,-0.2821347195933173f,1.98f,0.0f,-0.36181625170796194f,1.967f,0.0f,-0.4444097208657794f,1.95f,0.0f,-0.5425633603552677f,1.925f,0.0f,-0.6244997998398398f,1.9f,0.0f,-0.7599342076785332f,1.85f,0.0f,-0.9020947843768965f,1.785f,0.0f,-1.0535653752852738f,1.7f,0.0f,-1.20f,1.6f,0.0f,-1.3228756555322953f,1.5f,0.0f,-1.42828568570857f,1.4f,0.0f,-1.5198684153570664f,1.3f,0.0f,-1.60f,1.2f,0.0f,-1.6703293088490067f,1.1f,0.0f,-1.7320508075688775f,1.0f,0.0f,-1.786057109949175f,0.9f,0.0f,-1.833030277982336f,0.8f,0.0f,-1.8734993995195193f,0.7f,0.0f,-1.9078784028338912f,0.6f,0.0f,-1.9364916731037084f,0.5f,0.0f,-1.9595917942265423f,0.4f,0.0f,-1.977371993328519f,0.3f,0.0f,-1.98997487421324f,0.2f,0.0f,-1.9974984355438178f,0.1f,0.0f,-2.0f,0.0f,0.0f,2.0f,0.0f,3.0f,1.9974984355438178f,0.1f,3.0f,1.98997487421324f,0.2f,3.0f,1.977371993328519f,0.3f,3.0f,1.9595917942265423f,0.4f,3.0f,1.9364916731037084f,0.5f,3.0f,1.9078784028338912f,0.6f,3.0f,1.8734993995195193f,0.7f,3.0f,1.833030277982336f,0.8f,3.0f,1.786057109949175f,0.9f,3.0f,1.7320508075688775f,1.0f,3.0f,1.6703293088490067f,1.1f,3.0f,1.60f,1.2f,3.0f,1.5198684153570664f,1.3f,3.0f,1.42828568570857f,1.4f,3.0f,1.3228756555322953f,1.5f,3.0f,1.20f,1.6f,3.0f,1.0535653752852738f,1.7f,3.0f,0.9020947843768965f,1.785f,3.0f,0.7599342076785332f,1.85f,3.0f,0.6244997998398398f,1.9f,3.0f,0.5425633603552677f,1.925f,3.0f,0.4444097208657794f,1.95f,3.0f,0.36181625170796194f,1.967f,3.0f,0.2821347195933173f,1.98f,3.0f,0.19974984355438343f,1.99f,3.0f,0.16718552568927703f,1.993f,3.0f,0.14133294025102578f,1.995f,3.0f,0.10950342460398415f,1.997f,3.0f,0.08942035562443252f,1.998f,3.0f,0.06323764701505419f,1.999f,3.0f,0.0f,2.0f,3.0f,-0.06323764701505419f,1.999f,3.0f,-0.08942035562443252f,1.998f,3.0f,-0.10950342460398415f,1.997f,3.0f,-0.14133294025102578f,1.995f,3.0f,-0.16718552568927703f,1.993f,3.0f};
 			return value;
 		}
-		private float[] getArchChord_5_12_point_2 ()
+		private float[] getArchChord_5_12_point_2()
 		{
 			float[] value = {-0.19974984355438343f,1.99f,3.0f,-0.2821347195933173f,1.98f,3.0f,-0.36181625170796194f,1.967f,3.0f,-0.4444097208657794f,1.95f,3.0f,-0.5425633603552677f,1.925f,3.0f,-0.6244997998398398f,1.9f,3.0f,-0.7599342076785332f,1.85f,3.0f,-0.9020947843768965f,1.785f,3.0f,-1.0535653752852738f,1.7f,3.0f,-1.20f,1.6f,3.0f,-1.3228756555322953f,1.5f,3.0f,-1.42828568570857f,1.4f,3.0f,-1.5198684153570664f,1.3f,3.0f,-1.60f,1.2f,3.0f,-1.6703293088490067f,1.1f,3.0f,-1.7320508075688775f,1.0f,3.0f,-1.786057109949175f,0.9f,3.0f,-1.833030277982336f,0.8f,3.0f,-1.8734993995195193f,0.7f,3.0f,-1.9078784028338912f,0.6f,3.0f,-1.9364916731037084f,0.5f,3.0f,-1.9595917942265423f,0.4f,3.0f,-1.977371993328519f,0.3f,3.0f,-1.98997487421324f,0.2f,3.0f,-1.9974984355438178f,0.1f,3.0f,-2.0f,0.0f,3.0f,-2.0f,-1.0f,3.0f,-2.5f,-1.0f,3.0f,-2.5f,2.5f,3.0f,2.5f,2.5f,3.0f,2.5f,-1.0f,3.0f,2.0f,-1.0f,3.0f,-2.0f,-1.0f,0.0f,-2.5f,-1.0f,0.0f,-2.5f,2.5f,0.0f,2.5f,2.5f,0.0f,2.5f,-1.0f,0.0f,2.0f,-1.0f,0.0f,2.5f,0.0f,3.0f,2.5f,0.0f,0.0f,-2.5f,0.0f,3.0f,-2.5f,0.0f,0.0f,-2.5f,2.0f,3.0f,-2.0f,2.0f,3.0f,-2.0f,2.0f,0.0f,-2.5f,2.0f,0.0f,-2.0f,2.5f,3.0f,-2.0f,2.5f,0.0f,0.0f,2.5f,3.0f,0.0f,2.5f,0.0f,2.0f,2.0f,3.0f,2.5f,2.0f,3.0f,2.5f,2.0f,0.0f,2.0f,2.0f,0.0f,2.0f,2.5f,3.0f,2.0f,2.5f,0.0f};
 			return value;
 		}
 
-		/** Large attribute array: Coordinate DEF='ArchChord' point field, scene-graph level=5, element #12, 468 total numbers made up of 156 3-tuple values
-		 * Provide large array value via a separate method, in order to avoid 'code too large' Java compilation errors. 
+		/** Large attribute array: IndexedFaceSet DEF='ArchIndex' coordIndex field, scene-graph level=4, element #12, 318 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getArchChord_5_12_point ()
+		private MFInt32Object getArchIndex_4_12_coordIndex()
 		{
-				/* splitting up long array to improve readability */
-				MFVec3fObject ArchChord_5_12_point = new MFVec3fObject()
+			MFInt32Object ArchIndex_4_12_coordIndex = new MFInt32Object()/*2.finalize*/
+				.append(new MFInt32Object(getArchIndex_4_12_coordIndex_1()));
+			return ArchIndex_4_12_coordIndex;
+		}
+		/** Large attribute array: Coordinate DEF='ArchChord' point field, scene-graph level=5, element #12, 468 total numbers made up of 156 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3fObject getArchChord_5_12_point()
+		{
+			MFVec3fObject ArchChord_5_12_point = new MFVec3fObject()/*2.finalize*/
 				.append(new MFVec3fObject(getArchChord_5_12_point_1()))
 				.append(new MFVec3fObject(getArchChord_5_12_point_2()));
-
 			return ArchChord_5_12_point;
 		}
 
@@ -178,7 +195,7 @@ public class ArchHalf
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
@@ -192,7 +209,7 @@ public class ArchHalf
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.print("WARNING: \"ArchHalf\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"ArchHalf\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 

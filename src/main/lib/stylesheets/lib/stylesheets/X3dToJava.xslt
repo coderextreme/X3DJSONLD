@@ -204,6 +204,12 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:with-param name="className"     ><xsl:value-of select="normalize-space($className)"/></xsl:with-param><!-- orginal -->
 		</xsl:call-template>
 		
+		<!-- debug
+		<xsl:message>
+			<xsl:text>root: create initialize() body to build scene-graph nodes and attributes programmatically</xsl:text>
+		</xsl:message>
+		-->
+		
 		<xsl:text>public class </xsl:text>
 		<xsl:value-of select="$newClassName"/>
 		<xsl:text><![CDATA[
@@ -225,11 +231,29 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:text><![CDATA[    }
 	// end of initialize() method
 ]]></xsl:text>
+			<!-- debug
+			<xsl:message>
+				<xsl:text>======================================================================</xsl:text>
+			</xsl:message>
+			<xsl:message>
+				<xsl:text>======================================================================</xsl:text>
+			</xsl:message>
+			<xsl:message>
+				<xsl:text>root: end of initialize() method, begin expose-large-attribute-methods on Scene</xsl:text>
+			</xsl:message>
+			-->
 		
-		<!-- capture large attributes (if any) as data structures -->
-		<xsl:call-template name="expose-large-attributes">
-			<xsl:with-param name="childNodes" select="//Scene"/>
-			<xsl:with-param name="nodeNumber"  select="1"/>
+		<!-- walk scene graph: tail recursion on each contained node to initialize all large attributes as data structures -->
+		<xsl:call-template name="expose-large-attribute-methods">
+			<xsl:with-param name="childNodes" select="//Scene"/><!-- initialize from root of Scene -->
+			<xsl:with-param name="nodeNumber" select="1"/>
+			<xsl:with-param name="processingPass"><xsl:text>1.subarrays</xsl:text></xsl:with-param>
+			<xsl:with-param name="indent"><xsl:text>		</xsl:text></xsl:with-param><!-- tab characters -->
+		</xsl:call-template>
+		<xsl:call-template name="expose-large-attribute-methods">
+			<xsl:with-param name="childNodes" select="//Scene"/><!-- initialize from root of Scene -->
+			<xsl:with-param name="nodeNumber" select="1"/>
+			<xsl:with-param name="processingPass"><xsl:text>2.finalize</xsl:text></xsl:with-param>
 			<xsl:with-param name="indent"><xsl:text>		</xsl:text></xsl:with-param><!-- tab characters -->
 		</xsl:call-template>
 
@@ -942,6 +966,20 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:if test="(local-name() = 'X3D')">
 			<xsl:text>;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
+		</xsl:if>
+		<xsl:if test="(local-name() = 'head')">
+			<xsl:for-each select="meta[(@name='error') or (@name = 'warning') or (@name = 'info') or (@name = 'TODO')]">
+				<xsl:message>
+					<xsl:text disable-output-escaping="yes">[</xsl:text><!-- &lt; -->
+					<xsl:text>meta</xsl:text>
+					<xsl:text disable-output-escaping="yes">]</xsl:text><!-- &gt; -->
+					<xsl:text> name='</xsl:text>
+					<xsl:value-of select="@name"/>
+					<xsl:text>' content='</xsl:text>
+					<xsl:value-of select="@content"/>
+					<xsl:text>'</xsl:text>
+				</xsl:message>
+			</xsl:for-each>
 		</xsl:if>
 		
     </xsl:template>
@@ -1876,7 +1914,19 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-			<xsl:variable name="numbersPerGroup" select="($tupleSize * $tupleSplitSize)"/>
+			<xsl:variable name="numbersPerGroup">
+				<xsl:choose>
+					<xsl:when test="contains($attributeType,'Int32')">
+						<xsl:text>1000</xsl:text>
+					</xsl:when>
+					<xsl:when test="contains($attributeType,'Float')">
+						<xsl:text>1000</xsl:text>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="($tupleSize * $tupleSplitSize)"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
 			<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
 			<xsl:variable name="isNumeric" select="(string-length(translate(.,'0123456789+-Ee. ','')) = 0)"/>
                 
@@ -1939,10 +1989,10 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:choose>
 			</xsl:variable>
 				
-			<xsl:variable name="normalizedArray" select="normalize-space(translate(.,',',' '))"/>
-			<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedArray,'0123456789+-Ee.',''))"/>
+			<xsl:variable name="normalizedAttribute" select="normalize-space(translate(.,',',' '))"/>
+			<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedAttribute,'0123456789+-Ee.',''))"/>
 			<xsl:variable name="tupleCount" select="($numberCount div $tupleSize)"/>
-			<xsl:variable name="numberArray" select="tokenize($normalizedArray,' ')"/>
+			<xsl:variable name="attributeArray" select="tokenize($normalizedAttribute,' ')"/>
 			
 			<xsl:if test="not(starts-with(name(),'xsd:')) and not(name() = 'containerField')">
 				<!-- attribute of interest found, show it -->
@@ -1969,8 +2019,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$attributeSplitSize"/>
 					<xsl:text>, $numbersPerGroup=</xsl:text>
 					<xsl:value-of select="$numbersPerGroup"/>
-					<xsl:text>, count($numberArray)=</xsl:text>
-					<xsl:value-of select="count($numberArray)"/>
+					<xsl:text>, count($attributeArray)=</xsl:text>
+					<xsl:value-of select="count($attributeArray)"/>
 					<xsl:text>, value='</xsl:text>
 					<xsl:value-of select="substring(.,1,20)"/>
 					<xsl:if test="(string-length(.) > 20)">
@@ -1990,14 +2040,15 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:value-of select="substring(name(),2)"/>
 				<xsl:text>(</xsl:text>
 				
-				<xsl:variable name="nodeNumber"    select="count(../preceding::*) + 1"/>
+				<xsl:variable name="nodeNumber"    select="count(../preceding::*) + 1"/><!-- unique value -->
 				<xsl:variable name="elementName" select="local-name(..)"/>
 				<xsl:variable name="DEF"         select="../@DEF"/>
 				<xsl:variable name="level"       select="count(ancestor::*)"/>
 				<xsl:variable name="attributeName" select="local-name()"/>
 				<xsl:variable name="isLargeAttribute" 
-							  select="not($elementName = 'meta') and
-									 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
+							select="(string-length(normalize-space(.)) > $attributeSplitSize) and
+									not($elementName = 'meta') and
+									not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
 				<xsl:variable name="dataObjectName">
 					<xsl:choose>
 						<xsl:when test="(string-length(normalize-space($DEF)) > 0)">
@@ -2021,13 +2072,10 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$attributeName"/>
 				</xsl:variable>
 				<xsl:choose>
-					<xsl:when test="$isLargeAttribute and ($tupleSize > 1)">
+					<xsl:when test="$isLargeAttribute">
 						<xsl:text>get</xsl:text>
 						<xsl:value-of select="$dataObjectName"/>
 						<xsl:text>()</xsl:text>
-					</xsl:when>
-					<xsl:when test="$isLargeAttribute">
-						<xsl:value-of select="$dataObjectName"/>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:call-template name="output-attribute-value">
@@ -2035,7 +2083,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							<xsl:with-param name="attributeType"  select="$attributeType"/>
 							<xsl:with-param name="indent"         select="$indent"/>
 							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
-							<xsl:with-param name="processingPass"><xsl:text>fullAttribute</xsl:text></xsl:with-param>
+							<xsl:with-param name="processingPass"><xsl:text>0.invocation</xsl:text></xsl:with-param>
 						</xsl:call-template>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -2279,16 +2327,30 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template name="java-float-numbers">
+    <xsl:template name="java-array-values">
 		<!-- TODO omit trailing zeroes -->
+		<!-- TODO booleans -->
         <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         <xsl:param name="inputType"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
 		<!-- change space characters to commas to support the recursion algorithm -->
 		<xsl:variable name="arrayString" select="translate(normalize-space($inputString),' ',',')"/>
+		<!-- debug
+		<xsl:if test="contains($inputType,'Int32')">
+			<xsl:message>
+				<xsl:text>java-array-values $inputType='</xsl:text>
+				<xsl:value-of select="$inputType"/>
+				<xsl:text>'</xsl:text>
+			</xsl:message>
+		</xsl:if>
+		-->
 		
         <xsl:choose>
+            <xsl:when test="contains($inputType,'Int32')">
+				<!-- integer array already prepared, all done -->
+				<xsl:value-of select="$arrayString"/>
+            </xsl:when>
             <xsl:when test="not(contains($arrayString,','))">
 				<!-- last number, all done -->
 				<xsl:value-of select="$arrayString"/>
@@ -2307,7 +2369,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:if>
                 <xsl:text>f</xsl:text><!-- indicate that this number is a float -->
                 <xsl:text>,</xsl:text>
-                <xsl:call-template name="java-float-numbers"> <!-- tail recursion -->
+                <xsl:call-template name="java-array-values"> <!-- tail recursion -->
                     <xsl:with-param name="inputString" select="substring-after($arrayString,',')"/>
                     <xsl:with-param name="inputType" select="$inputType"/>
                 </xsl:call-template>
@@ -3322,8 +3384,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:param name="attributeType"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="dataObjectName"><xsl:text></xsl:text></xsl:param>
-		<xsl:param name="processingPass"><xsl:text>fullAttribute</xsl:text></xsl:param>
+		<xsl:param name="processingPass"><xsl:text>0.invocation</xsl:text></xsl:param>
 
+		<xsl:variable name="processingPassFound" select="(string-length(normalize-space($processingPass)) > 0)"/>
 		<xsl:variable name="tupleSize">
 			<xsl:call-template name="tuple-size">
 				<xsl:with-param name="type">
@@ -3331,87 +3394,236 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:with-param>
 			</xsl:call-template>
 		</xsl:variable>
-		<xsl:variable name="numbersPerGroup" select="($tupleSize * $tupleSplitSize)"/>
-		<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
-		<xsl:variable name="isNumeric" select="(string-length(translate(.,'0123456789+-Ee. ','')) = 0)"/>
-			
-		<xsl:variable name="normalizedArray" select="normalize-space(translate(.,',',' '))"/>
-		<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedArray,'0123456789+-Ee.',''))"/>
-		<xsl:variable name="tupleCount" select="($numberCount div $tupleSize)"/>
-		<xsl:variable name="numberArray" select="tokenize($normalizedArray,' ')"/>
-		
-		<xsl:variable name="attributeEncoding">
+		<xsl:variable name="numbersPerGroup">
 			<xsl:choose>
-				<xsl:when test="($numberCount > 5000)">
-					<xsl:text>String</xsl:text>
+				<xsl:when test="contains($attributeType,'Int32')">
+					<xsl:text>1000</xsl:text>
+				</xsl:when>
+				<xsl:when test="contains($attributeType,'Float')">
+					<xsl:text>1000</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:text>float</xsl:text>
+					<xsl:value-of select="($tupleSize * $tupleSplitSize)"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+		<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
+		<xsl:variable name="isNumeric" select="(string-length(translate(.,'0123456789+-Ee. ','')) = 0)"/>
+			
+		<xsl:variable name="normalizedAttribute" select="normalize-space(translate(.,',',' '))"/>
+		<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedAttribute,'0123456789+-Ee.',''))"/>
+		<xsl:variable name="tupleCount" select="($numberCount div $tupleSize)"/>
+		<xsl:variable name="attributeArray" select="tokenize($normalizedAttribute,' ')"/>
+
+		<xsl:variable name="isLargeAttribute" 
+			        select="(string-length(normalize-space($inputString)) > $attributeSplitSize)"/>
+
+		<xsl:variable name="attributeEncoding">
+			<xsl:choose>
+				<xsl:when test="contains($attributeType,'Int32')">
+					<xsl:text>int[]</xsl:text>
+				</xsl:when>
+				<xsl:when test="contains($attributeType,'Bool')">
+					<xsl:text>bool[]</xsl:text>
+				</xsl:when>
+				<xsl:when test="false()">
+					<xsl:text>String</xsl:text><!-- safety net if testing shows it is needed -->
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>float[]</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<!-- debug
+		<xsl:message>
+				<xsl:text>output-attribute-value $dataObjectName='</xsl:text>
+				<xsl:value-of select="$dataObjectName"/>
+				<xsl:text>', $attributeType='</xsl:text>
+				<xsl:value-of select="$attributeType"/>
+				<xsl:text>', $processingPass='</xsl:text>
+				<xsl:value-of select="$processingPass"/>
+				<xsl:text>'</xsl:text>
+				<xsl:if test="not($processingPassFound)">
+					<xsl:text> *ERROR* $processingPassFound'</xsl:text>
+					<xsl:value-of select="$processingPassFound"/>
+					<xsl:text>'</xsl:text>
+				</xsl:if>
+		</xsl:message>
+		-->
 
 		<xsl:choose>
 			<!-- starts-with($attributeType, 'MFColor') or ($attributeType = 'MFRotation') or
 							contains($attributeType,'MFVec2f') or contains($attributeType,'MFVec3f') or contains($attributeType,'MFVec4f') or
 							contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f') -->
-			<xsl:when test="($tupleSize > 1)">
-				<xsl:if test="($processingPass = 'fullAttribute')">
+			<xsl:when test="($tupleSize > 1) or ($isLargeAttribute)">
+				<xsl:if test="($processingPass = '0.invocation')">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
 					<xsl:text>Object(</xsl:text>
 				</xsl:if>
 				<xsl:choose>
+					<!-- larger tupleCount -->
 					<xsl:when test="($tupleCount > $tupleSplitSize)">
+						<xsl:message>
+							<xsl:text>[Large $tupleCount found: </xsl:text>
+							<xsl:value-of select="local-name(..)"/>
+							<xsl:text> </xsl:text>
+							<xsl:value-of select="local-name(.)"/>
+							<xsl:text>, $tupleCount=</xsl:text>
+							<xsl:value-of select="$tupleCount"/>
+							<xsl:text>, $tupleSplitSize=</xsl:text>
+							<xsl:value-of select="$tupleSplitSize"/>
+							<xsl:text>, $attributeSplitSize=</xsl:text>
+							<xsl:value-of select="$attributeSplitSize"/>
+							<xsl:text>, string-length=</xsl:text>
+							<xsl:value-of select="string-length(normalize-space(.))"/>
+							<xsl:text>]</xsl:text>
+						</xsl:message>
 						<xsl:choose>
-							<xsl:when test="($processingPass = 'fullAttribute')">
-								<xsl:message>
-									<xsl:text>[Large tuple found: </xsl:text>
-									<xsl:value-of select="local-name(..)"/>
-									<xsl:text> </xsl:text>
-									<xsl:value-of select="local-name(.)"/>
-									<xsl:text>, $tupleCount=</xsl:text>
-									<xsl:value-of select="$tupleCount"/>
-									<xsl:text>, $tupleSplitSize=</xsl:text>
-									<xsl:value-of select="$tupleSplitSize"/>
-									<xsl:text>, $attributeSplitSize=</xsl:text>
-									<xsl:value-of select="$attributeSplitSize"/>
-									<xsl:text>, string-length=</xsl:text>
-									<xsl:value-of select="string-length(normalize-space(.))"/>
-									<xsl:text>]</xsl:text>
-								</xsl:message>
-								<xsl:text>)</xsl:text>
+							<xsl:when test="not($processingPassFound)">
+								<xsl:text> *ERROR* $processingPass undefined</xsl:text>
 							</xsl:when>
-							<xsl:when test="($processingPass = 'subarrays')">
-								<xsl:text>&#10;</xsl:text>
-								<xsl:value-of select="$indent"/>
-								<xsl:value-of select="$indent"/>
-								<xsl:text>/* Define subarrays using type </xsl:text>
+							<xsl:when test="($processingPass = '0.invocation.finalize')">
+								<xsl:text>)</xsl:text>
+								<xsl:text>/*large tupleCount*/</xsl:text>
+							</xsl:when>
+							<xsl:when test="($processingPass = '1.subarrays')">
+								<!-- nothing needed -->
+							</xsl:when>
+							<xsl:when test="($processingPass = '2.finalize')">
+								<xsl:text>)/*2.finalize*/</xsl:text>
+							</xsl:when>
+						</xsl:choose>
+						
+						<!-- iterate over large-attribute splits.  couldn't figure out clean expression for group size = $numbersPerGroup, even-numbered groups hold last number in attribute array -->
+						<xsl:for-each-group select="$attributeArray" group-adjacent="((position() mod $numbersPerGroup) != 0)">
+							
+							<xsl:variable name="subArrayName">
+								<xsl:value-of select="$dataObjectName"/>
+								<xsl:text>_</xsl:text>
+								<!-- two groups are output on one line, so count them together -->
+								<xsl:value-of select="((position() + 1) div 2)"/>
+							</xsl:variable>
+							<!-- debug
+							<xsl:message>
+									<xsl:text>$subArrayName='</xsl:text>
+									<xsl:value-of select="$subArrayName"/>
+									<xsl:text>',</xsl:text>
+									<xsl:if test="((position() mod 2) != 0)">
+										<xsl:text>  </xsl:text>
+									</xsl:if>
+									<xsl:text> $processingPass='</xsl:text>
+									<xsl:value-of select="$processingPass"/>
+									<xsl:text>', $numbersPerGroup='</xsl:text>
+									<xsl:value-of select="$numbersPerGroup"/>
+									<xsl:text>', position()='</xsl:text>
+									<xsl:value-of select="position()"/>
+									<xsl:text>', count(current-group())='</xsl:text>
+									<xsl:value-of select="count(current-group())"/>
+									<xsl:text>'</xsl:text>
+							</xsl:message>
+							-->
+							
+							<xsl:choose>
+								<xsl:when test="($processingPass = '0.invocation') and (position() = 1)">
+									<xsl:text>/*0.invocation*/</xsl:text>
+									<!--
+									<xsl:text>get</xsl:text>
+									<xsl:value-of select="$dataObjectName"/>
+									<xsl:text>(</xsl:text>
+									-->
+									<xsl:text>)</xsl:text>
+								</xsl:when>
+								<!-- remaining even-numbered items in sequence of current-group() splits contains a single value, finish data object -->
+								<xsl:when test="($processingPass = '0.invocation')">
+									<!-- no further action in this step -->
+								</xsl:when>
+								<!-- TODO filter trouble
+								<xsl:when test="($processingPass = '1.subarrays') and ($tupleCount > $tupleSplitSize)">
+									
+								</xsl:when> -->
+								<!-- declare each subarray data object at start of odd-numbered groups -->
+								<xsl:when test="($processingPass = '1.subarrays') and ((position() mod 2) != 0)">
+									<xsl:if test="(position() = 1)">
+										<xsl:text>&#10;</xsl:text>
+										<xsl:value-of select="$indent"/>
+										<xsl:value-of select="$indent"/>
+										<xsl:text>/** Define subarrays using type </xsl:text>
+											<xsl:choose>
+												<xsl:when test="($attributeEncoding = 'String')">
+													<xsl:text>String</xsl:text>
+												</xsl:when>
+												<xsl:otherwise>
+													<!--<xsl:text>float[]</xsl:text>-->
+													<xsl:value-of select="$attributeEncoding"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										<xsl:text> */</xsl:text>
+										<xsl:text>&#10;</xsl:text>
+									</xsl:if>
+									<!-- now repeat for each group -->
+									<xsl:value-of select="$indent"/>
+									<xsl:value-of select="$indent"/>
+									<xsl:text>private </xsl:text>
 									<xsl:choose>
 										<xsl:when test="($attributeEncoding = 'String')">
 											<xsl:text>String</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
-											<xsl:text>float[]</xsl:text>
+											<!--<xsl:text>float[]</xsl:text>-->
+											<xsl:value-of select="$attributeEncoding"/>
 										</xsl:otherwise>
 									</xsl:choose>
-								<xsl:text> */</xsl:text>
-								<xsl:text>&#10;</xsl:text>
-							</xsl:when>
-						</xsl:choose>
-						
-						<!-- couldn't figure out clean expression for group size = $numbersPerGroup, even partitions appear singly -->
-						<xsl:for-each-group select="$numberArray" group-adjacent="((position() mod ($numbersPerGroup)) != 0)">
-							
-							<xsl:variable name="subArrayName">
-								<xsl:value-of select="$dataObjectName"/>
-								<xsl:text>_</xsl:text>
-								<!-- two groups are output on one line, count them together -->
-								<xsl:value-of select="((position() + 1) div 2)"/>
-							</xsl:variable>
-							
-							<xsl:choose>
-								<xsl:when test="(count(current-group()) > 1) and ($processingPass = 'fullAttribute')">
+									<xsl:text> get</xsl:text>
+									<xsl:value-of select="$subArrayName"/>
+									<xsl:text>()</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	</xsl:text><!-- indent tab character -->
+									<xsl:text>	</xsl:text><!-- indent tab character -->
+									<xsl:text>{</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>	</xsl:text><!-- indent tab character -->
+									<xsl:text>	</xsl:text><!-- indent tab character -->
+									<xsl:text>	</xsl:text><!-- indent tab character -->
+									<xsl:choose>
+										<xsl:when test="($attributeEncoding = 'String')">
+											<xsl:text>String</xsl:text>
+										</xsl:when>
+										<xsl:otherwise>
+											<!--<xsl:text>float[]</xsl:text>-->
+											<xsl:value-of select="$attributeEncoding"/>
+										</xsl:otherwise>
+									</xsl:choose>
+									<xsl:text> value = </xsl:text>
+									<xsl:choose>
+										<xsl:when test="($attributeEncoding = 'String')">
+											<xsl:text>"</xsl:text>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:text>{</xsl:text>
+										</xsl:otherwise>
+									</xsl:choose>
+									
+									<xsl:call-template name="java-array-values">
+										<xsl:with-param name="inputString">
+											<xsl:value-of select="current-group()"/>
+										</xsl:with-param>
+										<xsl:with-param name="inputType" select="$attributeType"/>
+									</xsl:call-template>
+								</xsl:when>
+								<!-- remaining even-numbered items in sequence of current-group() splits contains a single value, finish data object -->
+								<xsl:when test="($processingPass = '1.subarrays')">
+									<xsl:text>,</xsl:text>
+									<xsl:call-template name="java-array-values">
+										<xsl:with-param name="inputString">
+											<xsl:value-of select="current-group()"/>
+										</xsl:with-param>
+										<xsl:with-param name="inputType" select="$attributeType"/>
+									</xsl:call-template>
+								</xsl:when>
+								<!-- invoke data object at start of odd-numbered groups -->
+								<xsl:when test="($processingPass = '2.finalize') and ((position() mod 2) != 0)">
+									<!-- more than one number appears in current group of attribute values -->
 									<xsl:text>&#10;</xsl:text>
 									<xsl:value-of select="$indent"/>
 									<xsl:value-of select="$indent"/>
@@ -3433,12 +3645,21 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:value-of select="$subArrayName"/>
 									<xsl:text>()</xsl:text>
 									<xsl:text>))</xsl:text>
+									<!-- debug
+									<xsl:text> // trace 3 </xsl:text>
+									<xsl:value-of select="$dataObjectName"/>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:message>
+										<xsl:text>// trace 3 </xsl:text>
+										<xsl:value-of select="$dataObjectName"/>
+									</xsl:message>
+									-->
 									<!--
 									<xsl:text>new </xsl:text>
 									<xsl:value-of select="$attributeType"/>
 									<xsl:text>Object(</xsl:text>
 									<xsl:text>new float[] {</xsl:text>
-									<xsl:call-template name="java-float-numbers">
+									<xsl:call-template name="java-array-values">
 										<xsl:with-param name="inputString">
 											<xsl:value-of select="current-group()"/>
 										</xsl:with-param>
@@ -3446,80 +3667,19 @@ POSSIBILITY OF SUCH DAMAGE.
 									</xsl:call-template>
 									-->
 								</xsl:when>
-								<xsl:when test="(count(current-group()) > 1) and ($processingPass = 'subarrays')">
-									<!--
-									<xsl:value-of select="$attributeType"/>
-									<xsl:text>Object </xsl:text>
-									-->
-									<xsl:value-of select="$indent"/>
-									<xsl:value-of select="$indent"/>
-									<xsl:text>private </xsl:text>
-									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
-											<xsl:text>String</xsl:text>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:text>float[]</xsl:text>
-										</xsl:otherwise>
-									</xsl:choose>
-									<xsl:text> get</xsl:text>
-									<xsl:value-of select="$subArrayName"/>
-									<xsl:text> ()</xsl:text>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text>	</xsl:text><!-- indent tab character -->
-									<xsl:text>	</xsl:text><!-- indent tab character -->
-									<xsl:text>{</xsl:text>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text>	</xsl:text><!-- indent tab character -->
-									<xsl:text>	</xsl:text><!-- indent tab character -->
-									<xsl:text>	</xsl:text><!-- indent tab character -->
-									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
-											<xsl:text>String</xsl:text>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:text>float[]</xsl:text>
-										</xsl:otherwise>
-									</xsl:choose>
-									<xsl:text> value = </xsl:text>
-									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
-											<xsl:text>"</xsl:text>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:text>{</xsl:text>
-										</xsl:otherwise>
-									</xsl:choose>
-									
-									<xsl:call-template name="java-float-numbers">
-										<xsl:with-param name="inputString">
-											<xsl:value-of select="current-group()"/>
-										</xsl:with-param>
-										<xsl:with-param name="inputType" select="$attributeType"/>
-									</xsl:call-template>
-								</xsl:when>
-								<xsl:when test="($processingPass = 'fullAttribute')">
-									<!-- nothing else for this attribute pass -->
-								</xsl:when>
-								<xsl:when test="($processingPass = 'subarrays')">
-									<!-- last item in sequence for preceding current-group() appears singly -->
-									<xsl:text>,</xsl:text>
-									<xsl:call-template name="java-float-numbers">
-										<xsl:with-param name="inputString">
-											<xsl:value-of select="current-group()"/>
-										</xsl:with-param>
-										<xsl:with-param name="inputType" select="$attributeType"/>
-									</xsl:call-template>
-								</xsl:when>
-								<xsl:when test="($processingPass = 'fullAttribute')">
-									<!-- nothing else -->
+								<!-- even-numbered items in sequence of current-group() splits contains a single value, finish data object -->
+								<xsl:when test="($processingPass = '2.finalize')">
+									<!-- nothing else for this step -->
 								</xsl:when>
 							</xsl:choose>
 							
-							<!-- close invocation when all done -->
+							<!-- close method invocation when all done with group -->
 							<xsl:if test="(count(current-group()) = 1) or (count(current-group()) &lt; $numbersPerGroup - 1)">
 								<xsl:choose>
-									<xsl:when test="($processingPass = 'subarrays')">
+									<!--TODO filter problem 
+									<xsl:when test="($processingPass = '1.subarrays') and ($tupleCount > $tupleSplitSize)">
+									</xsl:when>-->
+									<xsl:when test="($processingPass = '1.subarrays')">
 										<xsl:choose>
 											<xsl:when test="($attributeEncoding = 'String')">
 												<xsl:text>"</xsl:text>
@@ -3543,7 +3703,7 @@ POSSIBILITY OF SUCH DAMAGE.
 										<xsl:text>}</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:when>
-									<xsl:when test="($processingPass = 'fullAttribute')">
+									<xsl:when test="(($processingPass = '0.invocation') or ($processingPass = '2.finalize'))">
 									<!--
 										<xsl:text>)/*full*/</xsl:text>
 									-->
@@ -3551,26 +3711,33 @@ POSSIBILITY OF SUCH DAMAGE.
 								</xsl:choose>
 							</xsl:if>
 						</xsl:for-each-group>
-						<xsl:if test="($processingPass = 'fullAttribute')">
+						<xsl:if test="($processingPass = '1.subarrays')">
+							<!--
 							<xsl:text>;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
-							<xsl:text>	</xsl:text><!-- indent tab character -->
-							<xsl:text>	</xsl:text><!-- indent tab character -->
-							<xsl:text>	</xsl:text><!-- indent tab character -->
+							<xsl:text>	</xsl:text>
+							<xsl:text>	</xsl:text>
+							<xsl:text>	</xsl:text>
 							<xsl:text>return </xsl:text>
 							<xsl:value-of select="$dataObjectName"/>
 							<xsl:text>;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
-							<xsl:text>	</xsl:text><!-- indent tab character -->
-							<xsl:text>	</xsl:text><!-- indent tab character -->
+							<xsl:text>	</xsl:text> 
+							<xsl:text>	</xsl:text>
 							<xsl:text>}</xsl:text>
 							<xsl:text>&#10;</xsl:text>
+							<xsl:text> // trace 0 </xsl:text>
+							<xsl:value-of select="$dataObjectName"/>
+							<xsl:text>&#10;</xsl:text>
+							-->
 						</xsl:if>
 					</xsl:when>
-					<xsl:otherwise>
+					<!-- smaller tupleCount -->
+					<xsl:when test="($processingPass = '0.invocation') or 
+									($processingPass = '2.finalize')">
 						<xsl:text>new float[] {</xsl:text>
-						<xsl:call-template name="java-float-numbers">
+						<xsl:call-template name="java-array-values">
 							<xsl:with-param name="inputString">
 								<xsl:value-of select="."/>
 							</xsl:with-param>
@@ -3578,11 +3745,11 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:call-template>
 						<xsl:text>}</xsl:text>
 						<xsl:text>)</xsl:text>
-					</xsl:otherwise>
+					</xsl:when>
 				</xsl:choose>
 			</xsl:when>
-			<xsl:when test="($processingPass = 'subarrays')">
-				<!-- done -->
+			<xsl:when test="($processingPass = '1.subarrays')">
+				<!-- done with first pass, avoid performing next steps -->
 			</xsl:when>
 			<xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string')">
 				<xsl:text>"</xsl:text>
@@ -3666,7 +3833,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 			<xsl:when test="($attributeType = 'MFFloat')">
 				<xsl:text>new float[] {</xsl:text>
-				<xsl:call-template name="java-float-numbers">
+				<xsl:call-template name="java-array-values">
 					<xsl:with-param name="inputString">
 						<xsl:value-of select="."/>
 					</xsl:with-param>
@@ -3683,23 +3850,18 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:call-template>
 				<xsl:text>}</xsl:text>
 			</xsl:when>
+			<!-- making sure all types handled, otherwise this is an unreachable block if ($tupleSize > 1) handled earlier -->
 			<xsl:when test="($attributeType = 'SFVec2f') or ($attributeType = 'SFVec3f') or ($attributeType = 'SFVec4f') or
+							($attributeType = 'SFVec2d') or ($attributeType = 'SFVec3d') or ($attributeType = 'SFVec4d') or
 							($attributeType = 'SFRotation') or starts-with($attributeType, 'SFColor')">
-				<xsl:call-template name="java-float-numbers">
+				<xsl:call-template name="java-array-values">
 					<xsl:with-param name="inputString">
 						<xsl:value-of select="."/>
 					</xsl:with-param>
 					<xsl:with-param name="inputType" select="$attributeType"/>
 				</xsl:call-template>
 			</xsl:when>
-			<xsl:when test="($attributeType = 'SFVec2d') or ($attributeType = 'SFVec3d') or ($attributeType = 'SFVec4d')">
-				<xsl:call-template name="java-float-numbers">
-					<xsl:with-param name="inputString">
-						<xsl:value-of select="."/>
-					</xsl:with-param>
-					<xsl:with-param name="inputType" select="$attributeType"/>
-				</xsl:call-template>
-			</xsl:when>
+			<!-- making sure all types handled, otherwise this is an unreachable block if ($tupleSize > 1) handled earlier -->
 			<xsl:when test="contains($attributeType,'MFVec2d') or contains($attributeType,'MFVec3d') or contains($attributeType,'MFVec4d') or
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
@@ -3714,6 +3876,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>}</xsl:text>
 				<xsl:text>)</xsl:text>
 			</xsl:when>
+			<!-- safety net to report problem -->
 			<xsl:otherwise>
 				<xsl:value-of select="."/>
 				<xsl:message>
@@ -3736,21 +3899,59 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:template>
 	
 	<!-- capture large attributes if any -->
-	<xsl:template name="expose-large-attributes">
+	<xsl:template name="expose-large-attribute-methods">
 		<xsl:param name="childNodes"/>
 		<xsl:param name="nodeNumber"><xsl:text></xsl:text></xsl:param>
+		<xsl:param name="processingPass"><xsl:text>0.invocation</xsl:text></xsl:param>
 		<xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
 		
-		<xsl:variable name="elementName" select="local-name()"/>
-		<xsl:variable name="DEF"         select="@DEF"/>
-		<xsl:variable name="level"       select="count(ancestor::*) + 1"/>
+		<xsl:variable name="elementName"         select="local-name()"/>
+		<xsl:variable name="DEF"                 select="@DEF"/>
+		<xsl:variable name="level"               select="count(ancestor::*) + 1"/>
+		<xsl:variable name="processingPassFound" select="(string-length(normalize-space($processingPass)) > 0)"/>
 		
 		<xsl:for-each select="@*">
 			<xsl:variable name="attributeName" select="local-name()"/>
 			<xsl:variable name="isLargeAttribute" 
-						  select="not($elementName = 'meta') and
-								 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
-			<xsl:if test="$isLargeAttribute">
+						select="(string-length(normalize-space(.)) > $attributeSplitSize) and
+								not($elementName = 'meta') and
+								not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
+			<!-- debug checking for specific attribute
+			<xsl:if test="(local-name()='point')">
+				<xsl:variable name="traceMessage">
+					<xsl:text>trace 6: check consistent variable computation. </xsl:text>
+					<xsl:value-of select="local-name(..)"/>
+					<xsl:text> DEF='</xsl:text>
+					<xsl:value-of select="../@DEF"/>
+					<xsl:text>' </xsl:text>
+					<xsl:value-of select="local-name()"/>
+					<xsl:text> field</xsl:text>
+					<xsl:text>, $isLargeAttribute='</xsl:text>
+					<xsl:value-of select="$isLargeAttribute"/>
+					<xsl:text>', $processingPass='</xsl:text>
+					<xsl:value-of select="$processingPass"/>
+					<xsl:text>', $processingPassFound='</xsl:text>
+					<xsl:value-of select="string($processingPassFound)"/>
+					<xsl:text>'</xsl:text>
+				</xsl:variable>
+				<xsl:message>
+					<xsl:value-of select="$traceMessage"/>
+				</xsl:message>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>// </xsl:text>
+				<xsl:value-of select="$traceMessage"/>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
+			-->
+			<xsl:if test="not($processingPassFound)">
+				<xsl:message>
+					<xsl:text> *ERROR* $processingPass undefined</xsl:text>
+				</xsl:message>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>// *ERROR* $processingPass undefined</xsl:text>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
+			<xsl:if test="$isLargeAttribute and ($processingPassFound)">
 				<xsl:variable name="attributeType">
 					<xsl:call-template name="attribute-type"/>
 				</xsl:variable>
@@ -3765,6 +3966,9 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:variable name="numberOfValues"     select="($embeddedSpaceCount + 1)"/>
 				<xsl:variable name="numberOfTuples"     select="($numberOfValues div $tupleSize)"/>
 				
+				<xsl:variable name="composeAttributeArraysIntoSingleMethod" select="($tupleSize > 1) or $isLargeAttribute"/>
+				
+				<!-- unique name for Java data object representing this attribute -->
 				<xsl:variable name="dataObjectName">
 					<xsl:choose>
 						<xsl:when test="(string-length(normalize-space($DEF)) > 0)">
@@ -3788,7 +3992,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$attributeName"/>
 				</xsl:variable>
 
-				<!-- output data structure -->
 				<xsl:variable name="dataObjectJavadoc">
 					<xsl:text>/** Large attribute array: </xsl:text>
 					<xsl:value-of select="$elementName"/>
@@ -3825,107 +4028,166 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:text>-tuple </xsl:text>
 						<xsl:text>values</xsl:text>
 					</xsl:if>
+					<xsl:text>.</xsl:text>
+					<xsl:choose>
+						<xsl:when test="$composeAttributeArraysIntoSingleMethod">
+							<!-- javadoc continuation when appropriate -->
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> * Reassemble split array as single method to improve readability and runnability.</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. </xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> * Individual Java methods (including aggregated initializations) are limited to 64KB.</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:value-of select="$indent"/>
+							<xsl:text> */</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+							<!-- finish $dataObjectJavadoc -->
+							<xsl:text> */</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:variable>
-
-				<xsl:message>
-					<xsl:value-of select="$dataObjectJavadoc"/>
-				</xsl:message>
 
 				<xsl:variable name="includesFieldTypeObject" select="
 						starts-with($attributeType, 'MFColor') or ($attributeType = 'MFRotation') or
 						contains($attributeType,'MFVec2f') or contains($attributeType,'MFVec3f') or contains($attributeType,'MFVec4f') or
-						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f') or
 						contains($attributeType,'MFVec2d') or contains($attributeType,'MFVec3d') or contains($attributeType,'MFVec4d') or
+						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f') or
 						contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')"/>
 				
-				<xsl:call-template name="output-attribute-value">
-					<xsl:with-param name="inputString"    select="."/>
-					<xsl:with-param name="attributeType"  select="$attributeType"/>
-					<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
-					<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
-					<xsl:with-param name="processingPass"><xsl:text>subarrays</xsl:text></xsl:with-param>
-				</xsl:call-template>
-				<xsl:text>&#10;</xsl:text>
-				
-				<xsl:text>	</xsl:text><!-- indent tab character -->
-				<xsl:text>	</xsl:text><!-- indent tab character -->
-				<xsl:value-of select="$dataObjectJavadoc"/>
 				<xsl:choose>
-					<xsl:when test="$isLargeAttribute and ($tupleSize > 1)">
+					<xsl:when test="($processingPass = '1.subarrays')">
+						<!-- <xsl:text>// trace 6.2&#10;</xsl:text> -->
+						<!-- output data structure for this attribute -->
+						<xsl:call-template name="output-attribute-value">
+							<xsl:with-param name="inputString"    select="."/>
+							<xsl:with-param name="attributeType"  select="$attributeType"/>
+							<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
+							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
+							<xsl:with-param name="processingPass"><xsl:text>1.subarrays</xsl:text></xsl:with-param>
+						</xsl:call-template>
 						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:text> * Provide large array value via a separate method, in order to avoid 'code too large' Java compilation errors. </xsl:text>
-						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:text> * Individual Java methods (including aggregated initializations) are limited to 64KB.</xsl:text>
-						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:text> * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java</xsl:text>
-						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:text> * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error</xsl:text>
-						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:text> */</xsl:text>
-						<xsl:text>&#10;</xsl:text>
+						<!-- <xsl:text>// trace 6.3&#10;</xsl:text> -->
+					</xsl:when>
+					<xsl:when test="($processingPass = '2.finalize')">
+						<!-- <xsl:text>// trace 6.4&#10;</xsl:text>
+						<xsl:message>
+							<xsl:value-of select="substring-before($dataObjectJavadoc,'tuple values')"/>
+							<xsl:text>tuple values...</xsl:text>
+						</xsl:message>
+						-->
+						<xsl:text>	</xsl:text><!-- indent tab character -->
+						<xsl:text>	</xsl:text><!-- indent tab character -->
+						<xsl:value-of select="$dataObjectJavadoc"/>
+
 						<xsl:value-of select="$indent"/>
 						<xsl:text>private </xsl:text>
 						<xsl:value-of select="$attributeType"/>
 						<xsl:text>Object get</xsl:text>
 						<xsl:value-of select="$dataObjectName"/>
-						<xsl:text> ()</xsl:text>
+						<xsl:text>()</xsl:text>
 						<xsl:text>&#10;</xsl:text>
 						<xsl:value-of select="$indent"/>
 						<xsl:text>{</xsl:text>
 						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
-						<xsl:value-of select="$indent"/>
-						<xsl:text>/* splitting up long array to improve readability */</xsl:text>
-						<xsl:text>&#10;</xsl:text>
-						<xsl:value-of select="$indent"/>
+
+						<xsl:text>	</xsl:text><!-- indent tab character -->
+						<xsl:text>	</xsl:text><!-- indent tab character -->
+						<xsl:text>	</xsl:text><!-- indent tab character -->
+						<xsl:value-of select="$attributeType"/>
+						<xsl:text>Object </xsl:text>
+						<xsl:value-of select="$dataObjectName"/>
+						<xsl:text> = </xsl:text>
+						<xsl:if test="true() or not($includesFieldTypeObject)">
+							<xsl:text>new </xsl:text>
+							<xsl:value-of select="$attributeType"/>
+							<xsl:text>Object(</xsl:text>
+						</xsl:if>
+						<!-- output data structure for this attribute -->
+						<xsl:call-template name="output-attribute-value">
+							<xsl:with-param name="inputString"    select="."/>
+							<xsl:with-param name="attributeType"  select="$attributeType"/>
+							<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
+							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
+							<xsl:with-param name="processingPass"><xsl:text>2.finalize</xsl:text></xsl:with-param>
+						</xsl:call-template>
+						<xsl:if test="not($includesFieldTypeObject) and not($isLargeAttribute)">
+							<xsl:text>)</xsl:text>
+						</xsl:if>
+						<xsl:choose>
+							<xsl:when test="$isLargeAttribute">
+								<xsl:text>;</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+								<xsl:text>	</xsl:text><!-- indent tab character -->
+								<xsl:text>	</xsl:text><!-- indent tab character -->
+								<xsl:text>	</xsl:text><!-- indent tab character -->
+								<xsl:text>return </xsl:text>
+								<xsl:value-of select="$dataObjectName"/>
+								<xsl:text>;</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+								<xsl:text>	</xsl:text><!-- indent tab character -->
+								<xsl:text>	</xsl:text><!-- indent tab character -->
+								<xsl:text>}</xsl:text><!-- // trace 1 -->
+								<xsl:text>&#10;</xsl:text>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>;</xsl:text><!-- // trace 2 -->
+								<xsl:text>&#10;</xsl:text>
+							</xsl:otherwise>
+						</xsl:choose>
+						<!-- 	<xsl:text>// trace 6.5&#10;</xsl:text> -->
 					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text> */</xsl:text>
-						<xsl:text>&#10;</xsl:text>
-					</xsl:otherwise>
 				</xsl:choose>
-				
-				<xsl:text>	</xsl:text><!-- indent tab character -->
-				<xsl:text>	</xsl:text><!-- indent tab character -->
-				<xsl:value-of select="$attributeType"/>
-				<xsl:text>Object </xsl:text>
-				<xsl:value-of select="$dataObjectName"/>
-				<xsl:text> = </xsl:text>
-				<xsl:if test="not($includesFieldTypeObject)">
-					<xsl:text>new </xsl:text>
-					<xsl:value-of select="$attributeType"/>
-					<xsl:text>Object(</xsl:text>
-				</xsl:if>
-				<xsl:call-template name="output-attribute-value">
-					<xsl:with-param name="inputString"    select="."/>
-					<xsl:with-param name="attributeType"  select="$attributeType"/>
-					<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
-					<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
-					<xsl:with-param name="processingPass"><xsl:text>fullAttribute</xsl:text></xsl:with-param>
-				</xsl:call-template>
-				<xsl:if test="not($includesFieldTypeObject)">
-					<xsl:text>)</xsl:text>
-				</xsl:if>
-				<xsl:if test="($tupleSize = 1)">
-					<xsl:text>;</xsl:text>
-					<xsl:text>&#10;</xsl:text>
-				</xsl:if>
 				
 			</xsl:if><!-- large attribute found -->
 		</xsl:for-each>
-		<xsl:for-each select="*">
-			<!-- recursion on latest node -->
-			<xsl:call-template name="expose-large-attributes">
-				<xsl:with-param name="childNodes" select="."/>
-				<xsl:with-param name="nodeNumber"   select="count(preceding::*) + 1"/>
-				<xsl:with-param name="indent"     select="$indent"/>
-			</xsl:call-template>
-		</xsl:for-each>
+		
+	<xsl:if test="($processingPassFound)"><!-- safety check -->
+	</xsl:if>
+			<!-- walk scene graph: tail recursion on each contained node to initialize all large attributes as data structures -->
+			<xsl:for-each select="*">
+				<!-- debug
+				<xsl:message>
+						<xsl:text>trace 5: expose-large-attribute-methods tail recursion on </xsl:text>
+						<xsl:value-of select="local-name()"/>
+						<xsl:if test="(string-length(@DEF) > 0)">
+							<xsl:text> DEF='</xsl:text>
+							<xsl:value-of select="@DEF"/>
+							<xsl:text>'</xsl:text>
+						</xsl:if>
+				</xsl:message>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>// trace 5, $processingPass='</xsl:text>
+				<xsl:value-of select="$processingPass"/>
+				<xsl:text>' </xsl:text>
+				<xsl:value-of select="local-name()"/>
+				<xsl:if test="(string-length(@DEF) > 0)">
+					<xsl:text> DEF='</xsl:text>
+					<xsl:value-of select="@DEF"/>
+					<xsl:text>'</xsl:text>
+				</xsl:if>
+				<xsl:text>&#10;</xsl:text>
+				-->
+				<!-- tail recurse to walk scene graph -->
+				<xsl:call-template name="expose-large-attribute-methods">
+					<xsl:with-param name="childNodes" select="*"/>
+					<xsl:with-param name="nodeNumber"   select="count(preceding::*) + 1"/><!-- unique value -->
+					<xsl:with-param name="processingPass"><xsl:value-of select="$processingPass"/></xsl:with-param>
+					<xsl:with-param name="indent"     select="$indent"/>
+				</xsl:call-template>
+			</xsl:for-each>
 	</xsl:template>
 
     <!-- print-indent keeps track of indenting level -->
