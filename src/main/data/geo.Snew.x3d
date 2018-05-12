@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+      <head>
+	      <component name="Shaders" level="1"/>
+	      <component name="CubeMapTexturing" level="1"/>
+        <meta name="title" content="geo.x3d"/>
+        <meta name="creator" content="John Carlson"/>
+        <meta name="generator" content="manual"/>
+        <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/geo.x3d"/>
+        <meta name="description" content="a sphere"/>      
+      </head>
+    <Scene>
+        <NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"/>
+        <Viewpoint DEF="Tour" description="Tour Views"/>
+        <!--Viewpoint position='0 0 4' description='sphere in road'/-->
+	<Background backUrl="&quot;resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;" bottomUrl="&quot;resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;" frontUrl="&quot;resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;" leftUrl="&quot;resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;" rightUrl="&quot;resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;" topUrl="&quot;resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;"/>
+        <Transform>
+            <Shape>
+                <Sphere/>
+                <Appearance>
+                    <Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"/>
+                    <ComposedCubeMapTexture DEF="texture">
+			    <ImageTexture url="&quot;resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;" containerField="back"/>
+			    <ImageTexture url="&quot;resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;" containerField="bottom"/>
+			    <ImageTexture url="&quot;resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;" containerField="front"/>
+			    <ImageTexture url="&quot;resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;" containerField="left"/>
+			    <ImageTexture url="&quot;resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;" containerField="right"/>
+			    <ImageTexture url="&quot;resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;" containerField="top"/>
+                    </ComposedCubeMapTexture>
+		    <ComposedShader language="GLSL">
+			  <field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"/>
+			  <field name="cube" type="SFNode" accessType="inputOutput">
+				<ComposedCubeMapTexture USE="texture"/>
+			  </field>
+			  <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"/>
+			  <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"/>
+			  <field name="power" accessType="inputOutput" type="SFFloat" value="2"/>
+			  <ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX" containerField="parts"/>
+			  <ShaderPart DEF="common" url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" containerField="parts" type="FRAGMENT"/>
+		    </ComposedShader>
+		    <ComposedShader language="GLSL">
+			  <field name="chromaticDispertion" accessType="initializeOnly" type="SFVec3f" value="0.98 1 1.033"/>
+			  <field name="cube" type="SFNode" accessType="initializeOnly">
+				<ComposedCubeMapTexture USE="texture"/>
+			  </field>
+			  <field name="bias" accessType="initializeOnly" type="SFFloat" value="0.5"/>
+			  <field name="scale" accessType="initializeOnly" type="SFFloat" value="0.5"/>
+			  <field name="power" accessType="initializeOnly" type="SFFloat" value="2"/>
+			  <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX" containerField="parts"/>
+			  <ShaderPart USE="common"/>
+		    </ComposedShader>
+                </Appearance>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>
