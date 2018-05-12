@@ -8873,6 +8873,12 @@
             "-joints": {
               "$ref": "#/definitions/-HAnimJointMFNode"
             },
+            "@loa": {
+              "maximum": 4,
+              "minimum": -1,
+              "default": -1,
+              "type": "integer"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -9014,6 +9020,9 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
             "IS": {
               "$ref": "#/definitions/IS"
             },
@@ -9044,11 +9053,9 @@
                 "type": "number"
               }
             },
-            "-children": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSegment|HAnimSiteMFNode"
-            },
-            "-displacers": {
-              "$ref": "#/definitions/-HAnimDisplacerMFNode"
+            "@frameCount": {
+              "minimum": 0,
+              "type": "integer"
             },
             "@limitOrientation": {
               "type": "array",
@@ -9076,6 +9083,7 @@
             },
             "@llimit": {
               "type": "array",
+              "minItems": 3,
               "items": {
                 "type": "number"
               }
@@ -9084,150 +9092,6 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "enum": [
-                "HumanoidRoot",
-                "sacroiliac",
-                "l_hip",
-                "l_knee",
-                "l_ankle",
-                "l_subtalar",
-                "l_midtarsal",
-                "l_metatarsal",
-                "r_hip",
-                "r_knee",
-                "r_ankle",
-                "r_subtalar",
-                "r_midtarsal",
-                "r_metatarsal",
-                "vl5",
-                "vl4",
-                "vl3",
-                "vl2",
-                "vl1",
-                "vt12",
-                "vt11",
-                "vt10",
-                "vt9",
-                "vt8",
-                "vt7",
-                "vt6",
-                "vt5",
-                "vt4",
-                "vt3",
-                "vt2",
-                "vt1",
-                "vc7",
-                "vc6",
-                "vc5",
-                "vc4",
-                "vc3",
-                "vc2",
-                "vc1",
-                "skullbase",
-                "l_eyelid_joint",
-                "r_eyelid_joint",
-                "l_eyeball_joint",
-                "r_eyeball_joint",
-                "l_eyebrow_joint",
-                "r_eyebrow_joint",
-                "temporomandibular",
-                "l_sternoclavicular",
-                "l_acromioclavicular",
-                "l_shoulder",
-                "l_elbow",
-                "l_wrist",
-                "l_thumb1",
-                "l_thumb2",
-                "l_thumb3",
-                "l_index0",
-                "l_index1",
-                "l_index2",
-                "l_index3",
-                "l_middle0",
-                "l_middle1",
-                "l_middle2",
-                "l_middle3",
-                "l_ring0",
-                "l_ring1",
-                "l_ring2",
-                "l_ring3",
-                "l_pinky0",
-                "l_pinky1",
-                "l_pinky2",
-                "l_pinky3",
-                "r_sternoclavicular",
-                "r_acromioclavicular",
-                "r_shoulder",
-                "r_elbow",
-                "r_wrist",
-                "r_thumb1",
-                "r_thumb2",
-                "r_thumb3",
-                "r_index0",
-                "r_index1",
-                "r_index2",
-                "r_index3",
-                "r_middle0",
-                "r_middle1",
-                "r_middle2",
-                "r_middle3",
-                "r_ring0",
-                "r_ring1",
-                "r_ring2",
-                "r_ring3",
-                "r_pinky0",
-                "r_pinky1",
-                "r_pinky2",
-                "r_pinky3",
-                "l_carpometacarpal_joint_2",
-                "l_metacarpophalangeal_joint_2",
-                "l_carpal_proximal_interphalangeal_joint_2",
-                "l_carpal_distal_interphalangeal_joint_2",
-                "l_midcarpal_joint_3",
-                "l_carpometacarpal_joint_3",
-                "l_metacarpophalangeal_joint_3",
-                "l_carpal_proximal_interphalangeal_joint_3",
-                "l_carpal_distal_interphalangeal_joint_3",
-                "l_midcarpal_joint_45",
-                "l_carpometacarpal_joint_4",
-                "l_metacarpophalangeal_joint_4",
-                "l_carpal_proximal_interphalangeal_joint_4",
-                "l_carpal_distal_interphalangeal_joint_4",
-                "l_carpometacarpal_joint_5",
-                "l_metacarpophalangeal_joint_5",
-                "l_carpal_proximal_interphalangeal_joint_5",
-                "l_carpal_distal_interphalangeal_joint_5",
-                "r_radiocarpal_joint",
-                "r_midcarpal_joint_12",
-                "r_carpometacarpal_joint_1",
-                "r_metacarpophalangeal_joint_1",
-                "r_carpal_interphalangeal_joint_1",
-                "r_carpometacarpal_joint_2",
-                "r_metacarpophalangeal_joint_2",
-                "r_carpal_proximal_interphalangeal_joint_2",
-                "r_carpal_distal_interphalangeal_joint_2",
-                "r_midcarpal_joint_3",
-                "r_carpometacarpal_joint_3",
-                "r_metacarpophalangeal_joint_3",
-                "r_carpal_proximal_interphalangeal_joint_3",
-                "r_carpal_distal_interphalangeal_joint_3",
-                "r_midcarpal_joint_45",
-                "r_carpometacarpal_joint_4",
-                "r_metacarpophalangeal_joint_4",
-                "r_carpal_proximal_interphalangeal_joint_4",
-                "r_carpal_distal_interphalangeal_joint_4",
-                "r_carpometacarpal_joint_5",
-                "r_metacarpophalangeal_joint_5",
-                "r_carpal_proximal_interphalangeal_joint_5",
-                "r_carpal_distal_interphalangeal_joint_5",
-                "l_tarsometatarsal_joint",
-                "l_metatarsophalangeal_joint",
-                "l_tarsal_interphalangeal_joint",
-                "r_talocrural_joint",
-                "r_tarsometatarsal_joint",
-                "r_metatarsophalangeal_joint",
-                "r_tarsal_interphalangeal_joint"
-              ],
               "type": "string"
             },
             "@rotation": {
@@ -9321,6 +9185,99 @@
               }
             },
             "@ulimit": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "number"
+              }
+            },
+            "@DEF": {
+              "type": "string"
+            },
+            "@class": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "HAnimMotion": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channels": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "@channelsEnabled": {
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            },
+            "@description": {
+              "type": "string"
+            },
+            "@frameCount": {
+              "type": "integer"
+            },
+            "@frameTime": {
+              "exclusiveMinimum": 0,
+              "default": 0.1,
+              "type": "number"
+            },
+            "@joints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "@loa": {
+              "maximum": 4,
+              "minimum": -1,
+              "default": -1,
+              "type": "integer"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@values": {
               "type": "array",
               "items": {
                 "type": "number"
@@ -24553,6 +24510,9 @@
           "HAnimJoint": {
             "$ref": "#/definitions/HAnimJoint"
           },
+          "HAnimMotion": {
+            "$ref": "#/definitions/HAnimMotion"
+          },
           "Inline": {
             "$ref": "#/definitions/Inline"
           },
@@ -25330,6 +25290,9 @@
         "HAnimJoint": {
           "$ref": "#/definitions/HAnimJoint"
         },
+        "HAnimMotion": {
+          "$ref": "#/definitions/HAnimMotion"
+        },
         "Inline": {
           "$ref": "#/definitions/Inline"
         },
@@ -26086,6 +26049,9 @@
           "HAnimJoint": {
             "$ref": "#/definitions/HAnimJoint"
           },
+          "HAnimMotion": {
+            "$ref": "#/definitions/HAnimMotion"
+          },
           "Inline": {
             "$ref": "#/definitions/Inline"
           },
@@ -26535,31 +26501,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-HAnimJoint|HAnimSegment|HAnimSiteMFNode": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "HAnimJoint": {
-            "$ref": "#/definitions/HAnimJoint"
-          },
-          "HAnimSegment": {
-            "$ref": "#/definitions/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/definitions/HAnimSite"
-          },
-          "ProtoInstance": {
-            "$ref": "#/definitions/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-HAnimDisplacerMFNode": {
       "type": "array",
@@ -27767,6 +27708,9 @@
           },
           "HAnimJoint": {
             "$ref": "#/definitions/HAnimJoint"
+          },
+          "HAnimMotion": {
+            "$ref": "#/definitions/HAnimMotion"
           },
           "Inline": {
             "$ref": "#/definitions/Inline"

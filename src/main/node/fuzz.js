@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var schema = fs.readFileSync("x3d-3.3-JSONSchema.json");
+var schema = fs.readFileSync("x3d-4.0-JSONSchema.json");
 var root = JSON.parse(schema.toString());
 
 function generateObject(schemajson, n, node, force) {
@@ -15,18 +15,19 @@ function generateObject(schemajson, n, node, force) {
 		if (typeof ref !== 'undefined') {
 			var definition = ref.replace(/.*\//, "");
 			var def = root.definitions[definition];
-			obj =  generateObject(def, n+1, node+" > ref "+ref, false);
+			obj =  generateObject(def, n+1, node+" > ref "+ref, force);
 		} else if (typeof oneOf !== 'undefined') {
 			var index = Math.floor(oneOf.length * Math.random());
 			obj = generateObject(oneOf[index], n+1, node+" > oneof "+index, true);
 		} else if (type === "object") {
 			obj = {};
 			for (var prop in schemajson.properties) {
-				obj[prop] = generateObject(schemajson.properties[prop], n+1, node+" > prop "+prop, false);
+				obj[prop] = generateObject(schemajson.properties[prop], n+1, node+" > prop "+prop, schemajson.required ? schemajson.required.indexOf(prop) >= 0 : false);
 			}
 		} else if (type === "array") {
 			obj = [];
 			var items = schemajson.items;
+			var additems = schemajson.additionalItems;
 			// console.error("items", items);
 			var minItems = schemajson.minItems;
 			if (typeof minItems === 'undefined') {
@@ -40,6 +41,8 @@ function generateObject(schemajson, n, node, force) {
 				var item;
 				if (typeof items[i] !== 'undefined') {
 					item = generateObject(items[i], n+1, node+" > items[] "+i, true);
+				} else if (typeof additems !== 'undefined') {
+					item = generateObject(additems,    n+1, node+" > items "+i+" ~"+JSON.stringify(additems)+"~", true);
 				} else {
 					item = generateObject(items,    n+1, node+" > items "+i+" ~"+JSON.stringify(items)+"~", true);
 				}
@@ -52,6 +55,8 @@ function generateObject(schemajson, n, node, force) {
 				obj = enumer[Math.floor(Math.random()*enumer.length)];
 			} else if (schemajson.format === 'uri') {
 				obj =  "http://coderextreme.net/X3DJSONLD";
+			} else if (schemajson.format === 'uri-reference') {
+				obj =  "../X3DJSONLD";
 			} else {
 				obj =  "JWC WAS HERE";
 			}
@@ -59,6 +64,8 @@ function generateObject(schemajson, n, node, force) {
 			// console.error("integer", schemajson.default);
 			var minimum = schemajson.minimum;
 			var maximum = schemajson.maximum;
+			var exclusiveMinimum = schemajson.exclusiveMinimum;
+			var exclusiveMaximum = schemajson.exclusiveMaximum;
 			if (typeof minimum !== 'undefined' &&
 			    typeof maximum !== 'undefined') {
 				var range = maximum - minimum;
@@ -67,6 +74,10 @@ function generateObject(schemajson, n, node, force) {
 				obj =  minimum;
 			} else if (typeof maximum !== 'undefined') {
 				obj =  maximum;
+			} else if (typeof exclusiveMinimum !== 'undefined') {
+				obj = exclusiveMinimum + 1;
+			} else if (typeof exclusiveMaximum !== 'undefined') {
+				obj = exclusiveMaximum - 1;
 			} else if (typeof schemajson.default!== 'undefined') {
 				obj =  schemajson.default;
 			} else {
@@ -76,6 +87,8 @@ function generateObject(schemajson, n, node, force) {
 			// console.error("number", schemajson.default);
 			var minimum = schemajson.minimum;
 			var maximum = schemajson.maximum;
+			var exclusiveMinimum = schemajson.exclusiveMinimum;
+			var exclusiveMaximum = schemajson.exclusiveMaximum;
 			if (typeof minimum !== 'undefined' &&
 			    typeof maximum !== 'undefined') {
 				var range = maximum - minimum;
@@ -84,6 +97,10 @@ function generateObject(schemajson, n, node, force) {
 				obj =  minimum;
 			} else if (typeof maximum !== 'undefined') {
 				obj =  maximum;
+			} else if (typeof exclusiveMinimum !== 'undefined') {
+				obj = exclusiveMinimum + 0.000000001;
+			} else if (typeof exclusiveMaximum !== 'undefined') {
+				obj = exclusiveMaximum - 0.000000001;
 			} else if (typeof schemajson.default !== 'undefined') {
 				obj =  schemajson.default;
 			} else {
@@ -106,4 +123,4 @@ function generateObject(schemajson, n, node, force) {
 }
 
 var obj = generateObject(root, 0, "$schema", true);
-console.obj(JSON.stringify(obj));
+console.log(JSON.stringify(obj));
