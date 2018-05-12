@@ -2,7 +2,7 @@
 <!-- X3D Object Model X3dUnifiedObjectModel-3.3.xml-->
 <!-- Online at http://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2018-04-15-07:00 18:58:24.54-07:00 -->
+<!-- Generated 2018-04-27-07:00 00:20:26.344-07:00 -->
 <X3DObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                 version="3.3"
                 xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -81,7 +81,7 @@
          <enumeration value="Geometry2D"
                       appinfo="The Geometry2D component defines how two-dimensional geometry is specified and what shapes are available."/>
          <enumeration value="Geometry3D"
-                      appinfo="The Geometry3D component defines how three-dimensional geometry is specified and what shapes are available."/>
+                      appinfo="The Geometry3D component describes how three-dimensional geometry is specified and defines ElevationGrid, Extrusion, IndexedFaceSet, and most primitive geometry nodes (Box, Cone, Cylinder, Sphere)."/>
          <enumeration value="Geospatial"
                       appinfo="The Geospatial component defines how to associate real-world locations in an X3D scene and specifies nodes particularly tuned for geospatial applications."/>
          <enumeration value="Grouping"
