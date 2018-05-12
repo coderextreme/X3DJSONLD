@@ -18,9 +18,9 @@ function StripNumberSerializer() {
 
 
 StripNumberSerializer.prototype = {
-	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+	serializeToString : function(xml, element, clazz, mapToMethod, fieldTypes) {
 		element = this.subSerializeToString(element, fieldTypes, 0, mapToMethod);
-		return this.serializeDOM(element);
+		return this.serializeDOM(element, xml);
 	},
 
 	descendSubArray: function (values, convert) {
@@ -32,9 +32,6 @@ StripNumberSerializer.prototype = {
 
 
 	descendFields: function(element, fieldTypes) {
-		/*
-		var str1 = XMLSerializer.serializeToString(element);
-		*/
 		var attrType = "";
 		var fieldAttrType = this.descendAttribute(element, "type");
 		// console.error("field attr type", fieldAttrType);
@@ -69,9 +66,6 @@ StripNumberSerializer.prototype = {
 						continue;
 					}
 					var nv = element.attributes[a].nodeValue;
-					/*
-					console.log(nv);
-					*/
 					if (attrType === "SFInt32") {
 						element.setAttribute(attr, parseInt(nv));
 					} else if (attrType === "SFFloat" ||
@@ -114,16 +108,6 @@ StripNumberSerializer.prototype = {
 						attrType === "MFDouble") {
 						element.setAttribute(attr, this.descendSubArray(nv.split(/[ ,]+/), parseFloat));
 					}
-					/*
-					if (nv != element.attributes[a].nodeValue) {
-						console.log("\n**\n"+element.attributes[a].nodeValue);
-						var str2 = XMLSerializer.serializeToString(element);
-						// if (str1 != str2)
-						{
-							console.log("\n**\n"+str2);
-						}
-					}
-					*/
 				}
 			} catch (e) {
 				console.error(e);
@@ -210,15 +194,16 @@ StripNumberSerializer.prototype = {
 			if (element.childNodes.hasOwnProperty(cn)) {
 				var node = element.childNodes[cn];
 				if (node.nodeType === 1) {
-					element.childNodes[cn] = this.subSerializeToString(node, fieldTypes, n+1, mapToMethod);
+					this.subSerializeToString(node, fieldTypes, n+1, mapToMethod);
 				}
 			}
 		}
 		return element;
 	},
 
-	serializeDOM : function(element) {
-		var version = "3.3";
+	serializeDOM : function(element, xmlstr) {
+		var m = xmlstr.match(/([34].[0123])/);
+		var version = m[1];
 		var encoding = "UTF-8";
 		var xml = '';
 		xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';

@@ -281,7 +281,7 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 			child = xmlDoc.createElement(key);
 		}
 	}
-	if (typeof containerField !== 'undefined') {
+	if (typeof containerField !== 'undefined' && key.toLowerCase() != containerField.toLowerCase()) {
 		this.elementSetAttribute(child, 'containerField', containerField);
 	}
 	return child;

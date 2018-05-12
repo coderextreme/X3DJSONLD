@@ -23,7 +23,7 @@ function serializeXML(str, serializer, co, mapToMethod, fieldTypes) {
 		throw e;
 	}
 	var element = doc.documentElement;
-	str = new serializer().serializeToString(null, element, co, mapToMethod, fieldTypes)
+	str = new serializer().serializeToString(str, element, co, mapToMethod, fieldTypes)
 	return str;
 }
 
