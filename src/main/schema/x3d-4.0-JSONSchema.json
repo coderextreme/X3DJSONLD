@@ -9254,13 +9254,18 @@
             "@description": {
               "type": "string"
             },
-            "@frameCount": {
-              "type": "integer"
+            "@enabled": {
+              "default": false,
+              "type": "boolean"
             },
-            "@frameTime": {
+            "@frameDuration": {
               "exclusiveMinimum": 0,
               "default": 0.1,
               "type": "number"
+            },
+            "@frameNumber": {
+              "minimum": 0,
+              "type": "integer"
             },
             "@joints": {
               "type": "array",
