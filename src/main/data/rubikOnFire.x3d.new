@@ -16,7 +16,7 @@
 </IS>
 <Shape><IS><connect nodeField="geometry" protoField="myShape"></connect>
 </IS>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>

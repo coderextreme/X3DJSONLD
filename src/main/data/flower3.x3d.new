@@ -4,7 +4,7 @@
 <DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"></DirectionalLight>
 <Background skyColor="1 1 1"></Background>
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
-<Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
+<Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance><Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
 <IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>

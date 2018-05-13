@@ -7,19 +7,19 @@
 <meta name="description" content="test \n text"></meta>
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><Transform><Shape><Text containerField="geometry" string="&quot;Node\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+<Scene><Transform><Shape><Text containerField="geometry" string="&quot;Node\&quot;\&quot;\&quot;&quot;"><FontStyle></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material"></Material>
+<Appearance><Material></Material>
 </Appearance>
 </Shape>
-<Shape><Text containerField="geometry" string="&quot;Node2&quot; &quot;\\&quot; &quot;\\\\&quot; &quot;Node2&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+<Shape><Text containerField="geometry" string="&quot;Node2&quot; &quot;\\&quot; &quot;\\\\&quot; &quot;Node2&quot;"><FontStyle></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material"></Material>
+<Appearance><Material></Material>
 </Appearance>
 </Shape>
-<Shape><Text containerField="geometry" string="&quot;Node3 \\\\ \\ &quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+<Shape><Text containerField="geometry" string="&quot;Node3 \\\\ \\ &quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material"></Material>
+<Appearance><Material></Material>
 </Appearance>
 </Shape>
 <Script><field name="frontUrls" type="MFString" accessType="initializeOnly" value="&quot;rnl_front.png&quot; &quot;uffizi_front.png&quot;"></field>
