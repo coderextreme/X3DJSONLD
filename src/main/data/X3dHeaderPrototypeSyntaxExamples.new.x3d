@@ -92,7 +92,7 @@
         <Transform translation='0 -2.5 0'>
             <Shape>
                 <Appearance>
-                    <ProtoInstance name='EmissiveMaterial' containerField='material'>
+                    <ProtoInstance name='EmissiveMaterial'>
                         <fieldValue name='onlyColor' value='0.2 0.6 0.6'/>
                     </ProtoInstance>
                 </Appearance>
