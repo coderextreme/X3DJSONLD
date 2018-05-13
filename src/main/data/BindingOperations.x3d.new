@@ -20,39 +20,39 @@
 <Viewpoint DEF="View2" centerOfRotation="-2 0 0" description="Viewpoint 2" position="-2 0 5"></Viewpoint>
 <Viewpoint DEF="View3" centerOfRotation="2 0 0" description="Viewpoint 3" position="2 0 5"></Viewpoint>
 <Viewpoint DEF="View4" centerOfRotation="6 0 0" description="Viewpoint 4" position="6 0 5"></Viewpoint>
-<!--Script initialization ought to first bind view5 below.--><Group><Transform DEF="Text1" translation="-6 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 1&quot;"><FontStyle containerField="fontStyle" DEF="CenterJustify" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<!--Script initialization ought to first bind view5 below.--><Group><Transform DEF="Text1" translation="-6 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 1&quot;"><FontStyle DEF="CenterJustify" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+<Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
-<Transform DEF="Text2" translation="-2 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 2&quot;"><FontStyle containerField="fontStyle" USE="CenterJustify"></FontStyle>
+<Transform DEF="Text2" translation="-2 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 2&quot;"><FontStyle USE="CenterJustify"></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
-<Transform DEF="Text3" translation="2 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 3&quot;"><FontStyle containerField="fontStyle" USE="CenterJustify"></FontStyle>
+<Transform DEF="Text3" translation="2 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 3&quot;"><FontStyle USE="CenterJustify"></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
+<Appearance><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
-<Transform DEF="Text4" translation="6 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 4&quot;"><FontStyle containerField="fontStyle" USE="CenterJustify"></FontStyle>
+<Transform DEF="Text4" translation="6 0 0"><Shape><Text containerField="geometry" string="&quot;View&quot; &quot;# 4&quot;"><FontStyle USE="CenterJustify"></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material"></Material>
+<Appearance><Material></Material>
 </Appearance>
 </Shape>
 </Transform>
 </Group>
 <!--The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.--><!--It does not need to be studied in this chapter.--><Transform translation="0 -3 8"><!--notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.--><Viewpoint DEF="ClickToAnimateView" description="Select animation sequence" position="0 0 7"></Viewpoint>
-<Shape><Text containerField="geometry" string="&quot;Click here to animate&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;BEGIN&quot;"></FontStyle>
+<Shape><Text containerField="geometry" string="&quot;Click here to animate&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;BEGIN&quot;"></FontStyle>
 </Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.8 0.4 0"></Material>
+<Appearance><Material diffuseColor="0.8 0.4 0"></Material>
 </Appearance>
 </Shape>
 <Shape><Box containerField="geometry" size="7 1 0.02"></Box>
-<Appearance containerField="appearance"><Material containerField="material" transparency="1"></Material>
+<Appearance><Material transparency="1"></Material>
 </Appearance>
 </Shape>
 <TouchSensor DEF="TextTouchSensor" description="Click to begin animating viewpoint selections"></TouchSensor>

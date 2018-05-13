@@ -10,7 +10,7 @@
 <Viewpoint description="Cubes on Fire" position="0 0 12"></Viewpoint>
 <ProtoDeclare name="anyShape"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
@@ -23,7 +23,7 @@
 </ProtoDeclare>
 <ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
@@ -47,7 +47,7 @@
 </ProtoDeclare>
 <ProtoInstance name="three" DEF="threepi"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
 <fieldValue name="myShape"><Shape DEF="box"><Box containerField="geometry" size="1 1 1"></Box>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 </fieldValue>

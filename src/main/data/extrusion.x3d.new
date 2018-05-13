@@ -8,7 +8,7 @@
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
 <Scene><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" spine="-50 -50 0 50 50 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <TimeSensor DEF="TourTime" loop="true"></TimeSensor>

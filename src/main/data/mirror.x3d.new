@@ -17,7 +17,7 @@
 <ImageTexture containerField="topTexture" DEF="topBack" url="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottomTexture" DEF="bottomBack" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
 </TextureBackground>
-<Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<Transform><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" DEF="frontShader" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>

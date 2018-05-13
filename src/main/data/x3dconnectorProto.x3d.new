@@ -8,47 +8,47 @@
 </head>
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<Transform DEF="G1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.2 0.2"></Material>
+<Transform DEF="G1"><Shape><Appearance><Material diffuseColor="0.7 0.2 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS1"></PlaneSensor>
 <ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+<Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" offset="1 -1 0.01" DEF="PS2"></PlaneSensor>
 <ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="G3" translation="1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+<Transform DEF="G3" translation="1 1 0.01"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" offset="1 1 0.01" DEF="PS3"></PlaneSensor>
 <ROUTE fromNode="PS3" fromField="translation_changed" toNode="G3" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="G4" translation="-1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+<Transform DEF="G4" translation="-1 1 0.01"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" offset="-1 1 0.01" DEF="PS4"></PlaneSensor>
 <ROUTE fromNode="PS4" fromField="translation_changed" toNode="G4" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
-<Transform DEF="transC2"><Transform DEF="rotscaleC2"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC2"><Transform DEF="rotscaleC2"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
-<Transform DEF="transC3"><Transform DEF="rotscaleC3"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC3"><Transform DEF="rotscaleC3"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>

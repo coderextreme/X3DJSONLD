@@ -18,7 +18,7 @@
 <Group DEF="Terrain"><Transform scale="50 50 50" translation="25000 0 25000"><Inline url="&quot;MontereyBayLargeMesh.x3d&quot; &quot;https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d&quot; &quot;MontereyBayLargeMesh.wrl&quot; &quot;https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl&quot;"></Inline>
 </Transform>
 <Transform rotation="1 0 0 1.57" translation="25000 0 25000"><Shape><Rectangle2D containerField="geometry" size="77000 55000"></Rectangle2D>
-<Appearance containerField="appearance"><ImageTexture containerField="texture" url="&quot;ocean.png&quot; &quot;https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png&quot;"></ImageTexture>
+<Appearance><ImageTexture containerField="texture" url="&quot;ocean.png&quot; &quot;https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png&quot;"></ImageTexture>
 </Appearance>
 </Shape>
 </Transform>

@@ -9,13 +9,13 @@
 </head>
 <Scene><ProtoDeclare name="node"><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
+<ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
 <Shape><Sphere containerField="geometry"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 1"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="0 0 1"></Material>
 </Appearance>
@@ -44,12 +44,13 @@ ecmascript:
 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"></ROUTE>
 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
+</Group>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoDeclare name="cylinder"><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<ProtoBody><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
 <Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
@@ -86,6 +87,7 @@ ecmascript:
 
 ]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
+</Group>
 </ProtoBody>
 </ProtoDeclare>
 <Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
@@ -93,11 +95,52 @@ ecmascript:
 </ProtoInstance>
 <ProtoInstance name="node" DEF="nodeB"><fieldValue name="position" value="50 50 50"></fieldValue>
 </ProtoInstance>
+<ProtoInstance name="node" DEF="nodeC"><fieldValue name="position" value="-50 -50 -50"></fieldValue>
+</ProtoInstance>
+<ProtoInstance name="node" DEF="nodeD"><fieldValue name="position" value="50 50 -50"></fieldValue>
+</ProtoInstance>
 <ProtoInstance name="cylinder" DEF="linkA"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
 <fieldValue name="set_positionB" value="50 50 50"></fieldValue>
 </ProtoInstance>
+<ProtoInstance name="cylinder" DEF="linkB"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
+<fieldValue name="set_positionB" value="-50 -50 -50"></fieldValue>
+</ProtoInstance>
+<ProtoInstance name="cylinder" DEF="linkC"><fieldValue name="set_positionA" value="50 50 50"></fieldValue>
+<fieldValue name="set_positionB" value="50 50 -50"></fieldValue>
+</ProtoInstance>
 </Transform>
+<Script DEF="clickHandler"><field name="counter" accessType="inputOutput" value="0" type="SFInt32"></field>
+<field name="node_changed" accessType="outputOnly" type="SFNode"></field>
+<field name="add_node" accessType="inputOnly" value="false" type="SFBool"></field>
+<!--<field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"></Transform> </field>--><![CDATA[
+	
+ecmascript:
+	function add_node(value) {
+                // Browser.print('hey ', counter);
+                counter = counter++;
+		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
+			{ "ProtoInstance":
+				{ "@name":"node",
+				  "@DEF":"node'+counter+'",
+				  "fieldValue": [
+					{
+						 "@name":"position",
+						 "@value":[0.0,0.0,0.0]
+					}
+				  ]
+				}
+			});
+
+        }
+	
+
+]]></Script>
+<ROUTE fromNode="clickGenerator" fromField="isActive" toNode="clickHandler" toField="add_node"></ROUTE>
 <ROUTE fromNode="nodeA" fromField="position" toNode="linkA" toField="set_positionA"></ROUTE>
 <ROUTE fromNode="nodeB" fromField="position" toNode="linkA" toField="set_positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position" toNode="linkB" toField="set_positionA"></ROUTE>
+<ROUTE fromNode="nodeC" fromField="position" toNode="linkB" toField="set_positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position" toNode="linkC" toField="set_positionA"></ROUTE>
+<ROUTE fromNode="nodeD" fromField="position" toNode="linkC" toField="set_positionB"></ROUTE>
 </Scene>
 </X3D>
