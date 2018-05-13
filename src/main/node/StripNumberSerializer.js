@@ -75,9 +75,7 @@ StripNumberSerializer.prototype = {
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
-						attrType === "SFImage"||
-						attrType === "SFColorRGBA"||
-						attrType === "MFColorRGBA") {
+						attrType === "SFImage") {
 						element.setAttribute(attr, this.descendSubArray(nv.split(/[ ,]+/), parseInt));
 					} else if (
 						attrType === "SFColor"||
@@ -105,6 +103,8 @@ StripNumberSerializer.prototype = {
 						attrType === "SFMatrix4d"||
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"||
+						attrType === "SFColorRGBA"||
+						attrType === "MFColorRGBA"||
 						attrType === "MFDouble") {
 						element.setAttribute(attr, this.descendSubArray(nv.split(/[ ,]+/), parseFloat));
 					}

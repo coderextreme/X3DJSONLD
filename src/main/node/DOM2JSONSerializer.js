@@ -178,9 +178,7 @@ DOM2JSONSerializer.prototype = {
 						} else if (
 							attrType === "MFInt32"||
 							attrType === "MFImage"||
-							attrType === "SFImage"||
-							attrType === "SFColorRGBA"||
-							attrType === "MFColorRGBA") {
+							attrType === "SFImage") {
 							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseInt);
 						} else if (
 							attrType === "SFColor"||
@@ -208,6 +206,8 @@ DOM2JSONSerializer.prototype = {
 							attrType === "SFMatrix4d"||
 							attrType === "MFMatrix3d"||
 							attrType === "MFMatrix4d"||
+							attrType === "SFColorRGBA"||
+							attrType === "MFColorRGBA"||
 							attrType === "MFDouble") {
 							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseFloat);
 						} else if (
