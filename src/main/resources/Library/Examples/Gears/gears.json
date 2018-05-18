@@ -53,7 +53,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Rotor",
-              "@url":["Rotor.x3d"],
+              "@url":["Rotor.json"],
               "field": [
                 {
                   "@name":"enabled",
