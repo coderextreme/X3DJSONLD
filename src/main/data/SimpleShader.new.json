@@ -108,127 +108,60 @@
     },
     "Scene": {
         "-children":[
-          { "Transform":
+          { "ProtoDeclare":
             {
-              "@DEF":"TR",
-              "-children":[
-                { "Shape":
-                  {
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.5,0.5,0.9]
-                              }
-                            },
-                          "-shaders":[
-                            { "ComposedShader":
-                              {
-                                "@language":"GLSL",
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"VERTEX",
-                                      "#sourceText":[
-"",
-"",
-"",
-"",
-"#ifdef GL_ES",
-"  precision mediump float;",
-"#endif",
-"",
-"// the vertex shader is small enough we can uri it here",
-"// but the link also contains a 'toon.vs' for those interested",
-"",
-"    varying vec3 x3domnormal;",
-"    attribute vec3 normal;",
-"    attribute vec3 position;",
-"    uniform mat4 normalMatrix;",
-"    uniform mat4 modelViewProjectionMatrix;",
-"    void main()",
-"    {",
-"        x3domnormal=mat3(normalMatrix)*normal;",
-"        gl_Position=modelViewProjectionMatrix * vec4(position, 1.0);",
-"    }",
-"",
-"",
-"",
-"",
-""
-]
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"FRAGMENT",
-                                      "#sourceText":[
-"",
-"",
-"",
-"",
-"#ifdef GL_ES",
-"  precision mediump float;",
-"#endif",
-"",
-"varying vec3 x3domnormal;",
-"uniform vec3 decis;",
-"uniform vec3 light0_Location;",
-"",
-"void main()",
-"{",
-"        float intensity;",
-"        vec4 color;",
-"        vec3 n = normalize(x3domnormal);",
-"",
-"        intensity = dot(light0_Location,n);",
-"",
-"        if (intensity > decis[0])",
-"                color = vec4(0.0,0.5,0.5,1.0);",
-"        else if (intensity > decis[1])",
-"                color = vec4(0.6,0.3,0.3,1.0);",
-"        else if (intensity > decis[2])",
-"                color = vec4(1.0,0.2,0.2,1.0);",
-"        else",
-"                color = vec4(0.0,0.4,0.0,1.0);",
-"",
-"        gl_FragColor = color;",
-"}",
-"",
-"",
-"",
-"",
-""
-]
-                                    }
-                                  }
-                                ],
-                                "field": [
+              "@name":"myPrototype",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"myInputRange",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.95,0.44,0.22]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"TR",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-appearance":
+                                { "Appearance":
                                   {
-                                    "@name":"decis",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.95,0.44,0.22]
-                                  }
-                                ]
-                              }
-                            },
-                            { "ComposedShader":
-                              {
-                                "@language":"GLSL",
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"VERTEX",
-                                      "#sourceText":[
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[0.5,0.5,0.9]
+                                        }
+                                      },
+                                    "-shaders":[
+                                      { "ComposedShader":
+                                        {
+                                          "@language":"GLSL",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"decis",
+                                                  "@protoField":"myInputRange"
+                                                }
+                                              ],
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"decis",
+                                                  "@protoField":"myInputRange"
+                                                }
+                                              ]
+                                          },
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"VERTEX",
+                                                "#sourceText":[
 "",
-"",
-"",
-"",
-"# toon.vs",
-"# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.vs",
 "",
 "// the vertex shader is small enough we can uri it here",
 "// but the link also contains a 'toon.vs' for those interested",
@@ -240,23 +173,16 @@
 "        gl_Position=ftransform();",
 "    }",
 "",
-"",
-"",
-"",
 ""
 ]
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"FRAGMENT",
-                                      "#sourceText":[
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"FRAGMENT",
+                                                "#sourceText":[
 "",
 "",
-"",
-"",
-"# toon.fs",
-"# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.fs",
 "varying vec3 normal;",
 "uniform vec3 decis;",
 "",
@@ -280,37 +206,32 @@
 "        gl_FragColor = color;",
 "}",
 "",
-"",
-"",
-"",
 ""
 ]
-                                    }
-                                  }
-                                ],
-                                "field": [
-                                  {
-                                    "@name":"decis",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.95,0.44,0.22]
-                                  }
-                                ]
-                              }
-                            },
-                            { "ComposedShader":
-                              {
-                                "@DEF":"Cobweb",
-                                "@language":"GLSL",
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"VERTEX",
-                                      "#sourceText":[
+                                              }
+                                            }
+                                          ],
+                                          "field": [
+                                            {
+                                              "@name":"decis",
+                                              "@accessType":"initializeOnly",
+                                              "@type":"SFVec3f"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "ComposedShader":
+                                        {
+                                          "@DEF":"Cobweb",
+                                          "@language":"GLSL",
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"VERTEX",
+                                                "#sourceText":[
 "",
 "",
-"",
-"                  data:text/plain;charset=utf-8,",
+"data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
@@ -330,22 +251,18 @@
 "\tgl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;",
 "}",
 "",
-"",
-"",
-"",
 ""
 ]
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@DEF":"_1",
-                                      "@type":"FRAGMENT",
-                                      "#sourceText":[
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@DEF":"_1",
+                                                "@type":"FRAGMENT",
+                                                "#sourceText":[
 "",
 "",
-"",
-"                  data:text/plain;charset=utf-8,",
+"data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
@@ -372,38 +289,39 @@
 "\t\tcolor = vec4(0.0,0.4,0.0,1.0);",
 "",
 "\tgl_FragColor = color;",
-"} ",
-"",
-"",
-"",
+"}",
 "",
 ""
 ]
-                                    }
+                                              }
+                                            }
+                                          ],
+                                          "field": [
+                                            {
+                                              "@name":"decis",
+                                              "@accessType":"initializeOnly",
+                                              "@type":"SFVec3f",
+                                              "@value":[0.95,0.77,0.44]
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
                                   }
-                                ],
-                                "field": [
+                                },
+                              "-geometry":
+                                { "Sphere":
                                   {
-                                    "@name":"decis",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.95,0.77,0.44]
+                                    "@radius":1.75
                                   }
-                                ]
-                              }
+                                }
                             }
-                          ]
-                        }
-                      },
-                    "-geometry":
-                      { "Sphere":
-                        {
-                          "@radius":1.75
-                        }
+                          }
+                        ]
                       }
-                  }
-                }
-              ]
+                    }
+                  ]
+              }
             }
           },
           { "WorldInfo":
@@ -490,6 +408,11 @@
                     ]
                   }
                 }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"myPrototype"
             }
           }
         ]
