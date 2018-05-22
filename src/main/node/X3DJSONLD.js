@@ -291,7 +291,7 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
  * a way to create a CDATA function or script in HTML, by using a DOM parser.
  */
 CDATACreateFunction : function(xmlDoc, element, str) {
-	var y = str.replace(/\\"/g, "\\\"")
+	var y = str.trim().replace(/\\"/g, "\\\"")
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
 		.replace(/&amp;/g, "&");
