@@ -4,6 +4,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+var ProtoInstance0 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("Shaders").setLevel(1))
@@ -28,77 +29,20 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html")))
       .setScene(new SceneObject()
-        .addChild(new TransformObject().setDEF("TR")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.5,0.5,0.9], Java.type("float[]"))))
-              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.44 0.22"))
-                .addParts(new ShaderPartObject().setType("VERTEX")
-                  .setSourceCode("\n"+
-"\n"+
-"#ifdef GL_ES\n"+
-"  precision mediump float;\n"+
-"#endif\n"+
-"\n"+
-"// the vertex shader is small enough we can uri it here\n"+
-"// but the link also contains a 'toon.vs' for those interested\n"+
-"\n"+
-"    varying vec3 x3domnormal;\n"+
-"    attribute vec3 normal;\n"+
-"    attribute vec3 position;\n"+
-"    uniform mat4 normalMatrix;\n"+
-"    uniform mat4 modelViewProjectionMatrix;\n"+
-"    void main()\n"+
-"    {\n"+
-"        x3domnormal=mat3(normalMatrix)*normal;\n"+
-"        gl_Position=modelViewProjectionMatrix * vec4(position, 1.0);\n"+
-"    }\n"+
-"\n"+
-"\n"+
-""))
-                .addParts(new ShaderPartObject().setType("FRAGMENT")
-                  .setSourceCode("\n"+
-"\n"+
-"#ifdef GL_ES\n"+
-"  precision mediump float;\n"+
-"#endif\n"+
-"\n"+
-"varying vec3 x3domnormal;\n"+
-"uniform vec3 decis;\n"+
-"uniform vec3 light0_Location;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"        float intensity;\n"+
-"        vec4 color;\n"+
-"        vec3 n = normalize(x3domnormal);\n"+
-"\n"+
-"        intensity = dot(light0_Location,n);\n"+
-"\n"+
-"        if (intensity > decis[0])\n"+
-"                color = vec4(0.0,0.5,0.5,1.0);\n"+
-"        else if (intensity > decis[1])\n"+
-"                color = vec4(0.6,0.3,0.3,1.0);\n"+
-"        else if (intensity > decis[2])\n"+
-"                color = vec4(1.0,0.2,0.2,1.0);\n"+
-"        else\n"+
-"                color = vec4(0.0,0.4,0.0,1.0);\n"+
-"\n"+
-"        gl_FragColor = color;\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")))
-              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.44 0.22"))
-                .addParts(new ShaderPartObject().setType("VERTEX")
-                  .setSourceCode("\n"+
-"\n"+
-"# toon.vs\n"+
-"# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.vs\n"+
-"\n"+
-"// the vertex shader is small enough we can uri it here\n"+
+        .addChild(new ProtoDeclareObject().setName("myPrototype")
+          .setProtoInterface(new ProtoInterfaceObject()
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("myInputRange").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.44 0.22")))
+          .setProtoBody(new ProtoBodyObject()
+            .addChild(new TransformObject().setDEF("TR")
+              .addChild(new ShapeObject()
+                .setAppearance(new AppearanceObject()
+                  .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.5,0.5,0.9], Java.type("float[]"))))
+                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+                    .setIS(new ISObject()
+                      .addConnect(new connectObject().setNodeField("decis").setProtoField("myInputRange")))
+                    .addParts(new ShaderPartObject().setType("VERTEX")
+                      .setSourceCode("// the vertex shader is small enough we can uri it here\n"+
 "// but the link also contains a 'toon.vs' for those interested\n"+
 "\n"+
 "    varying vec3 normal;\n"+
@@ -106,16 +50,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "    {\n"+
 "        normal=gl_NormalMatrix*gl_Normal;\n"+
 "        gl_Position=ftransform();\n"+
-"    }\n"+
-"\n"+
-"\n"+
-""))
-                .addParts(new ShaderPartObject().setType("FRAGMENT")
-                  .setSourceCode("\n"+
-"\n"+
-"# toon.fs\n"+
-"# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.fs\n"+
-"varying vec3 normal;\n"+
+"    }"))
+                    .addParts(new ShaderPartObject().setType("FRAGMENT")
+                      .setSourceCode("varying vec3 normal;\n"+
 "uniform vec3 decis;\n"+
 "\n"+
 "void main()\n"+
@@ -136,15 +73,11 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                color = vec4(0.0,0.4,0.0,1.0);\n"+
 "\n"+
 "        gl_FragColor = color;\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")))
-              .addShaders(new ComposedShaderObject().setDEF("Cobweb").setLanguage("GLSL")
-                .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
-                .addParts(new ShaderPartObject().setType("VERTEX")
-                  .setSourceCode("\n"+
-"                  data:text/plain;charset=utf-8,\n"+
+"}")))
+                  .addShaders(new ComposedShaderObject().setDEF("Cobweb").setLanguage("GLSL")
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
+                    .addParts(new ShaderPartObject().setType("VERTEX")
+                      .setSourceCode("data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -162,13 +95,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	normal = x3d_NormalMatrix * x3d_Normal;\n"+
 "	\n"+
 "	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setDEF("_1")
-                  .setSourceCode("\n"+
-"                  data:text/plain;charset=utf-8,\n"+
+"}"))
+                    .addParts(new ShaderPartObject().setType("FRAGMENT").setDEF("_1")
+                      .setSourceCode("data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -195,11 +124,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		color = vec4(0.0,0.4,0.0,1.0);\n"+
 "\n"+
 "	gl_FragColor = color;\n"+
-"} \n"+
-"\n"+
-"\n"+
-""))))
-            .setGeometry(new SphereObject().setRadius(1.75))))
+"}"))))
+                .setGeometry(new SphereObject().setRadius(1.75))))))
         .addChild(new WorldInfoObject().setTitle("SimpleShader")
           .setMetadata(new MetadataSetObject().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
             .addValue(new MetadataSetObject().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
@@ -210,5 +136,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addValue(new MetadataSetObject().setName("Viewpoint").setDEF("Viewpoint").setReference("http://titania.create3000.de")
               .addValue(new MetadataDoubleObject().setName("position").setDEF("position").setReference("http://titania.create3000.de").setValue(Java.to([6.24067728185014,0.00250837343276661,2.92117542307615], Java.type("double[]"))))
               .addValue(new MetadataDoubleObject().setName("orientation").setDEF("orientation").setReference("http://titania.create3000.de").setValue(Java.to([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191], Java.type("double[]"))))
-              .addValue(new MetadataDoubleObject().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(Java.to([-0.808320198626341,-0.358072370409949,0.22817191560906], Java.type("double[]"))))))))      ;
+              .addValue(new MetadataDoubleObject().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(Java.to([-0.808320198626341,-0.358072370409949,0.22817191560906], Java.type("double[]")))))))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("myPrototype")))      ;
     X3D0.toFileX3D("../data/SimpleShader.new.x3d");

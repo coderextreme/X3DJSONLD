@@ -22,70 +22,13 @@
 <meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
 <meta name="license" content="../../license.html"></meta>
 </head>
-<Scene><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
-<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
-<ShaderPart type="VERTEX"><![CDATA[
-
-#ifdef GL_ES
-  precision mediump float;
-#endif
-
-// the vertex shader is small enough we can uri it here
-// but the link also contains a 'toon.vs' for those interested
-
-    varying vec3 x3domnormal;
-    attribute vec3 normal;
-    attribute vec3 position;
-    uniform mat4 normalMatrix;
-    uniform mat4 modelViewProjectionMatrix;
-    void main()
-    {
-        x3domnormal=mat3(normalMatrix)*normal;
-        gl_Position=modelViewProjectionMatrix * vec4(position, 1.0);
-    }
-
-
-]]></ShaderPart>
-<ShaderPart type="FRAGMENT"><![CDATA[
-
-#ifdef GL_ES
-  precision mediump float;
-#endif
-
-varying vec3 x3domnormal;
-uniform vec3 decis;
-uniform vec3 light0_Location;
-
-void main()
-{
-        float intensity;
-        vec4 color;
-        vec3 n = normalize(x3domnormal);
-
-        intensity = dot(light0_Location,n);
-
-        if (intensity > decis[0])
-                color = vec4(0.0,0.5,0.5,1.0);
-        else if (intensity > decis[1])
-                color = vec4(0.6,0.3,0.3,1.0);
-        else if (intensity > decis[2])
-                color = vec4(1.0,0.2,0.2,1.0);
-        else
-                color = vec4(0.0,0.4,0.0,1.0);
-
-        gl_FragColor = color;
-}
-
-
-]]></ShaderPart>
-</ComposedShader>
-<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
-<ShaderPart type="VERTEX"><![CDATA[
-
-# toon.vs
-# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.vs
-
-// the vertex shader is small enough we can uri it here
+<Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
+</ProtoInterface>
+<ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
+<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
+<IS><connect nodeField="decis" protoField="myInputRange"></connect>
+</IS>
+<ShaderPart type="VERTEX"><![CDATA[// the vertex shader is small enough we can uri it here
 // but the link also contains a 'toon.vs' for those interested
 
     varying vec3 normal;
@@ -93,15 +36,8 @@ void main()
     {
         normal=gl_NormalMatrix*gl_Normal;
         gl_Position=ftransform();
-    }
-
-
-]]></ShaderPart>
-<ShaderPart type="FRAGMENT"><![CDATA[
-
-# toon.fs
-# http://www.web3d.org/x3d/content/examples/Basic/Shaders/toon.fs
-varying vec3 normal;
+    }]]></ShaderPart>
+<ShaderPart type="FRAGMENT"><![CDATA[varying vec3 normal;
 uniform vec3 decis;
 
 void main()
@@ -122,14 +58,10 @@ void main()
                 color = vec4(0.0,0.4,0.0,1.0);
 
         gl_FragColor = color;
-}
-
-
-]]></ShaderPart>
+}]]></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="Cobweb" language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.77 0.44"></field>
-<ShaderPart type="VERTEX"><![CDATA[
-                  data:text/plain;charset=utf-8,
+<ShaderPart type="VERTEX"><![CDATA[data:text/plain;charset=utf-8,
 
 precision mediump float;
 
@@ -147,12 +79,8 @@ void main()
 	normal = x3d_NormalMatrix * x3d_Normal;
 	
 	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-}
-
-
-]]></ShaderPart>
-<ShaderPart DEF="_1" type="FRAGMENT"><![CDATA[
-                  data:text/plain;charset=utf-8,
+}]]></ShaderPart>
+<ShaderPart DEF="_1" type="FRAGMENT"><![CDATA[data:text/plain;charset=utf-8,
 
 precision mediump float;
 
@@ -179,15 +107,14 @@ void main()
 		color = vec4(0.0,0.4,0.0,1.0);
 
 	gl_FragColor = color;
-} 
-
-
-]]></ShaderPart>
+}]]></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" radius="1.75"></Sphere>
 </Shape>
 </Transform>
+</ProtoBody>
+</ProtoDeclare>
 <WorldInfo title="SimpleShader"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="nodes" DEF="nodes" reference="http://titania.create3000.de"><!--NULL--></MetadataSet>
 </MetadataSet>
 <MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;"></MetadataString>
@@ -198,5 +125,6 @@ void main()
 </MetadataSet>
 </MetadataSet>
 </WorldInfo>
+<ProtoInstance name="myPrototype"></ProtoInstance>
 </Scene>
 </X3D>
