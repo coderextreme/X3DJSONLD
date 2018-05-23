@@ -539,25 +539,30 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
  * returns an element in callback or null if error - the element
  * to append or insert into the DOM.
  */
-loadX3DJS : function(DOMImplementation, jsobj, path, xml, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+loadX3DJS : function(DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	this.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, this, function() {
-		var version = jsobj.X3D["@version"];
-       		var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
-		var xmlDoc = DOMImplementation.createDocument(null, "X3D", docType);
-
-		xmlDoc.insertBefore(xmlDoc.createProcessingInstruction('xml', 'version="1.0" encoding="'+jsobj.X3D["encoding"]+'"'), docType);
-		var child = X3DJSONLD.CreateElement(xmlDoc, 'X3D', NS);
-		child.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-		X3DJSONLD.ConvertToX3DOM(xmlDoc, jsobj, "", child, path);
-		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-			xml.push(X3DJSONLD.serializeDOM(jsobj, child, true));
-		}
+		var child, xmlDoc, xml;
+		[ child, xmlDoc, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
+		log.push(xml);
 		callback(child, xmlDoc, X3DJSONLD);
 	}, function(e) {
 		console.error(e);
 		callback(null, null, X3DJSONLD);
 	});
+},
+
+loadJsonIntoXml: function(DOMImplementation, jsobj, path) {
+		var version = jsobj.X3D["@version"];
+       		var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
+		var xmlDoc = DOMImplementation.createDocument(null, "X3D", docType);
+
+		xmlDoc.insertBefore(xmlDoc.createProcessingInstruction('xml', 'version="1.0" encoding="'+jsobj.X3D["encoding"]+'"'), docType);
+		var child = this.CreateElement(xmlDoc, 'X3D', this.x3djsonNS);
+		child.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+		this.ConvertToX3DOM(xmlDoc, jsobj, "", child, path);
+		var xml = this.serializeDOM(jsobj, child, true);
+		return [ child, xmlDoc, xml ];
 },
 
 /**
