@@ -50,8 +50,6 @@
                 </field>
                 <field name='Fog' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
 <![CDATA[
-
-
 ecmascript:
 
 
@@ -433,9 +431,6 @@ cumulus();
 
 cirrus();
 }
-
-
-
 ]]>
             </Script>
             <DirectionalLight ambientIntensity='1.0' color='1 0 0' direction='-1 -1 0' global='true' intensity='1.0' on='true' class=''/>

@@ -34,54 +34,6 @@
                     <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='0.5 0.5 0.9' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
-                            <ComposedShader language='GLSL' class=''>
-                                <IS>
-                                    <connect nodeField='decis' protoField='myInputRange'/>
-                                </IS>
-                                <ShaderPart type='VERTEX' url='' class=''>
-<![CDATA[
-// the vertex shader is small enough we can uri it here
-// but the link also contains a 'toon.vs' for those interested
-
-    varying vec3 normal;
-    void main()
-    {
-        normal=gl_NormalMatrix*gl_Normal;
-        gl_Position=ftransform();
-    }
-]]>
-                                </ShaderPart>
-                                <ShaderPart type='FRAGMENT' url='' class=''>
-<![CDATA[
-varying vec3 normal;
-uniform vec3 decis;
-
-void main()
-{
-        float intensity;
-        vec4 color;
-        vec3 n = normalize(normal);
-
-        intensity = dot(vec3(gl_LightSource[0].position),n);
-
-        if (intensity > decis[0])
-                color = vec4(0.0,0.5,0.5,1.0);
-        else if (intensity > decis[1])
-                color = vec4(0.6,0.3,0.3,1.0);
-        else if (intensity > decis[2])
-                color = vec4(1.0,0.2,0.2,1.0);
-        else
-                color = vec4(0.0,0.4,0.0,1.0);
-
-        gl_FragColor = color;
-}
-]]>
-                                </ShaderPart>
-                                <field name='decis' accessType='initializeOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                                <IS>
-                                    <connect nodeField='decis' protoField='myInputRange'/>
-                                </IS>
-                            </ComposedShader>
                             <ComposedShader DEF='Cobweb' language='GLSL' class=''>
                                 <ShaderPart type='VERTEX' url='' class=''>
 <![CDATA[

@@ -94,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 May 2018"
+            "@content":"23 May 2018"
           },
           {
             "@name":"generator",
@@ -141,81 +141,6 @@
                                     "-shaders":[
                                       { "ComposedShader":
                                         {
-                                          "@language":"GLSL",
-                                          "field": [
-                                            {
-                                              "@name":"decis",
-                                              "@accessType":"initializeOnly",
-                                              "@type":"SFVec3f"
-                                            }
-                                          ],
-                                          "IS": {
-                                              "connect": [
-                                                {
-                                                  "@nodeField":"decis",
-                                                  "@protoField":"myInputRange"
-                                                }
-                                              ]
-                                          },
-                                          "-parts":[
-                                            { "ShaderPart":
-                                              {
-                                                "@type":"VERTEX",
-                                                "#sourceText":[
-"",
-"",
-"// the vertex shader is small enough we can uri it here",
-"// but the link also contains a 'toon.vs' for those interested",
-"",
-"    varying vec3 normal;",
-"    void main()",
-"    {",
-"        normal=gl_NormalMatrix*gl_Normal;",
-"        gl_Position=ftransform();",
-"    }",
-"",
-""
-]
-                                              }
-                                            },
-                                            { "ShaderPart":
-                                              {
-                                                "@type":"FRAGMENT",
-                                                "#sourceText":[
-"",
-"",
-"varying vec3 normal;",
-"uniform vec3 decis;",
-"",
-"void main()",
-"{",
-"        float intensity;",
-"        vec4 color;",
-"        vec3 n = normalize(normal);",
-"",
-"        intensity = dot(vec3(gl_LightSource[0].position),n);",
-"",
-"        if (intensity > decis[0])",
-"                color = vec4(0.0,0.5,0.5,1.0);",
-"        else if (intensity > decis[1])",
-"                color = vec4(0.6,0.3,0.3,1.0);",
-"        else if (intensity > decis[2])",
-"                color = vec4(1.0,0.2,0.2,1.0);",
-"        else",
-"                color = vec4(0.0,0.4,0.0,1.0);",
-"",
-"        gl_FragColor = color;",
-"}",
-"",
-""
-]
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      },
-                                      { "ComposedShader":
-                                        {
                                           "@DEF":"Cobweb",
                                           "@language":"GLSL",
                                           "field": [
@@ -231,7 +156,8 @@
                                               {
                                                 "@type":"VERTEX",
                                                 "#sourceText":[
-"data:text/plain;charset=utf-8,",
+"",
+"                  data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
@@ -249,7 +175,9 @@
 "\tnormal = x3d_NormalMatrix * x3d_Normal;",
 "\t",
 "\tgl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;",
-"}"
+"}",
+"",
+""
 ]
                                               }
                                             },
@@ -258,7 +186,8 @@
                                                 "@DEF":"_1",
                                                 "@type":"FRAGMENT",
                                                 "#sourceText":[
-"data:text/plain;charset=utf-8,",
+"",
+"                  data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
@@ -285,7 +214,9 @@
 "\t\tcolor = vec4(0.0,0.4,0.0,1.0);",
 "",
 "\tgl_FragColor = color;",
-"}"
+"} ",
+"",
+""
 ]
                                               }
                                             }
