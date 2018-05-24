@@ -39,16 +39,13 @@
                     <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                     <field name='keyValue' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
 <![CDATA[
-
- ecmascript:
+ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
-
-
 ]]>
                 </Script>
                 <TimeSensor DEF='nodeClock' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
@@ -79,8 +76,7 @@
                         <connect nodeField='set_endB' protoField='positionB'/>
                     </IS>
 <![CDATA[
-
- ecmascript:
+ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === "undefined") {
@@ -102,8 +98,6 @@
 		    Browser.print('\n'+'"');
                     spine = value;
                 }
-
-
 ]]>
                 </Script>
                 <ROUTE fromField='spine' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>

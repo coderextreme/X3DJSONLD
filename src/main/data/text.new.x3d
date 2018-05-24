@@ -38,12 +38,8 @@
             <Script>
                 <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
-
-			    ecmascript:
+ecmascript:
 			    var me = '"1" ""2" "\n3"';
-			    
-			
-
 ]]>
             </Script>
         </Transform>

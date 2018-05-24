@@ -11,20 +11,14 @@
     <Scene>
         <Script DEF='Browser'>
 <![CDATA[
-
 ecmascript:
                 function initialize() {
 		    Browser.print('DUDES\n'+'"DUDETTES');
                 }
-
-
-
 ]]>
         </Script>
         <Script DEF='Clouds'>
 <![CDATA[
-
-
 ecmascript:
 
 
@@ -35,9 +29,6 @@ var xxx = ' '+' '+
 '    ' + '               	\n';
 
 }
-
-
-
 ]]>
         </Script>
     </Scene>
