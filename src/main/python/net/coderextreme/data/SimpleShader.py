@@ -142,80 +142,21 @@ Material31.setDiffuseColor([0.5,0.5,0.9])
 
 Appearance30.setMaterial(Material31)
 ComposedShader32 = ComposedShaderObject()
+ComposedShader32.setDEF("Cobweb")
 ComposedShader32.setLanguage("GLSL")
 
 field33 = fieldObject()
 field33.setType(fieldObject.TYPE_SFVEC3F)
 field33.setName("decis")
 field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field33.setValue("0.95 0.77 0.44")
 
 ComposedShader32.addField(field33)
-IS34 = ISObject()
-
-connect35 = connectObject()
-connect35.setNodeField("decis")
-connect35.setProtoField("myInputRange")
-
-IS34.addConnect(connect35)
-ComposedShader32.setIS(IS34)
-ShaderPart36 = ShaderPartObject()
-ShaderPart36.setType("VERTEX")
+ShaderPart34 = ShaderPartObject()
+ShaderPart34.setType("VERTEX")
 
 
-ShaderPart36.setSourceCode("// the vertex shader is small enough we can uri it here\n"+
-"// but the link also contains a 'toon.vs' for those interested\n"+
-"\n"+
-"    varying vec3 normal;\n"+
-"    void main()\n"+
-"    {\n"+
-"        normal=gl_NormalMatrix*gl_Normal;\n"+
-"        gl_Position=ftransform();\n"+
-"    }")
-ComposedShader32.addParts(ShaderPart36)
-ShaderPart37 = ShaderPartObject()
-ShaderPart37.setType("FRAGMENT")
-
-
-ShaderPart37.setSourceCode("varying vec3 normal;\n"+
-"uniform vec3 decis;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"        float intensity;\n"+
-"        vec4 color;\n"+
-"        vec3 n = normalize(normal);\n"+
-"\n"+
-"        intensity = dot(vec3(gl_LightSource[0].position),n);\n"+
-"\n"+
-"        if (intensity > decis[0])\n"+
-"                color = vec4(0.0,0.5,0.5,1.0);\n"+
-"        else if (intensity > decis[1])\n"+
-"                color = vec4(0.6,0.3,0.3,1.0);\n"+
-"        else if (intensity > decis[2])\n"+
-"                color = vec4(1.0,0.2,0.2,1.0);\n"+
-"        else\n"+
-"                color = vec4(0.0,0.4,0.0,1.0);\n"+
-"\n"+
-"        gl_FragColor = color;\n"+
-"}")
-ComposedShader32.addParts(ShaderPart37)
-Appearance30.addShaders(ComposedShader32)
-ComposedShader38 = ComposedShaderObject()
-ComposedShader38.setDEF("Cobweb")
-ComposedShader38.setLanguage("GLSL")
-
-field39 = fieldObject()
-field39.setType(fieldObject.TYPE_SFVEC3F)
-field39.setName("decis")
-field39.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-field39.setValue("0.95 0.77 0.44")
-
-ComposedShader38.addField(field39)
-ShaderPart40 = ShaderPartObject()
-ShaderPart40.setType("VERTEX")
-
-
-ShaderPart40.setSourceCode("data:text/plain;charset=utf-8,\n"+
+ShaderPart34.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -234,13 +175,13 @@ ShaderPart40.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "	\n"+
 "	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;\n"+
 "}")
-ComposedShader38.addParts(ShaderPart40)
-ShaderPart41 = ShaderPartObject()
-ShaderPart41.setType("FRAGMENT")
-ShaderPart41.setDEF("_1")
+ComposedShader32.addParts(ShaderPart34)
+ShaderPart35 = ShaderPartObject()
+ShaderPart35.setType("FRAGMENT")
+ShaderPart35.setDEF("_1")
 
 
-ShaderPart41.setSourceCode("data:text/plain;charset=utf-8,\n"+
+ShaderPart35.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -268,85 +209,85 @@ ShaderPart41.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "\n"+
 "	gl_FragColor = color;\n"+
 "}")
-ComposedShader38.addParts(ShaderPart41)
-Appearance30.addShaders(ComposedShader38)
+ComposedShader32.addParts(ShaderPart35)
+Appearance30.addShaders(ComposedShader32)
 Shape29.setAppearance(Appearance30)
-Sphere42 = SphereObject()
-Sphere42.setRadius(1.75)
+Sphere36 = SphereObject()
+Sphere36.setRadius(1.75)
 
-Shape29.setGeometry(Sphere42)
+Shape29.setGeometry(Sphere36)
 Transform28.addChild(Shape29)
 ProtoBody27.addChild(Transform28)
 ProtoDeclare24.setProtoBody(ProtoBody27)
 Scene23.addChild(ProtoDeclare24)
-WorldInfo43 = WorldInfoObject()
-WorldInfo43.setTitle("SimpleShader")
+WorldInfo37 = WorldInfoObject()
+WorldInfo37.setTitle("SimpleShader")
 
-MetadataSet44 = MetadataSetObject()
-MetadataSet44.setName("Titania")
-MetadataSet44.setDEF("Titania")
-MetadataSet44.setReference("http://titania.create3000.de")
+MetadataSet38 = MetadataSetObject()
+MetadataSet38.setName("Titania")
+MetadataSet38.setDEF("Titania")
+MetadataSet38.setReference("http://titania.create3000.de")
 
-MetadataSet45 = MetadataSetObject()
-MetadataSet45.setName("Selection")
-MetadataSet45.setDEF("Selection")
-MetadataSet45.setReference("http://titania.create3000.de")
+MetadataSet39 = MetadataSetObject()
+MetadataSet39.setName("Selection")
+MetadataSet39.setDEF("Selection")
+MetadataSet39.setReference("http://titania.create3000.de")
 
-MetadataSet46 = MetadataSetObject()
-MetadataSet46.setName("nodes")
-MetadataSet46.setDEF("nodes")
-MetadataSet46.setReference("http://titania.create3000.de")
+MetadataSet40 = MetadataSetObject()
+MetadataSet40.setName("nodes")
+MetadataSet40.setDEF("nodes")
+MetadataSet40.setReference("http://titania.create3000.de")
 
 
-MetadataSet46.addComments(CommentsBlock("""NULL"""))
-MetadataSet45.addValue(MetadataSet46)
-MetadataSet44.addValue(MetadataSet45)
-MetadataSet47 = MetadataSetObject()
-MetadataSet47.setName("NavigationInfo")
-MetadataSet47.setDEF("NavigationInfo")
-MetadataSet47.setReference("http://titania.create3000.de")
+MetadataSet40.addComments(CommentsBlock("""NULL"""))
+MetadataSet39.addValue(MetadataSet40)
+MetadataSet38.addValue(MetadataSet39)
+MetadataSet41 = MetadataSetObject()
+MetadataSet41.setName("NavigationInfo")
+MetadataSet41.setDEF("NavigationInfo")
+MetadataSet41.setReference("http://titania.create3000.de")
 
-MetadataString48 = MetadataStringObject()
-MetadataString48.setName("type")
-MetadataString48.setDEF("type")
-MetadataString48.setReference("http://titania.create3000.de")
-MetadataString48.setValue(["EXAMINE"])
+MetadataString42 = MetadataStringObject()
+MetadataString42.setName("type")
+MetadataString42.setDEF("type")
+MetadataString42.setReference("http://titania.create3000.de")
+MetadataString42.setValue(["EXAMINE"])
 
-MetadataSet47.addValue(MetadataString48)
-MetadataSet44.addValue(MetadataSet47)
-MetadataSet49 = MetadataSetObject()
-MetadataSet49.setName("Viewpoint")
-MetadataSet49.setDEF("Viewpoint")
-MetadataSet49.setReference("http://titania.create3000.de")
+MetadataSet41.addValue(MetadataString42)
+MetadataSet38.addValue(MetadataSet41)
+MetadataSet43 = MetadataSetObject()
+MetadataSet43.setName("Viewpoint")
+MetadataSet43.setDEF("Viewpoint")
+MetadataSet43.setReference("http://titania.create3000.de")
 
-MetadataDouble50 = MetadataDoubleObject()
-MetadataDouble50.setName("position")
-MetadataDouble50.setDEF("position")
-MetadataDouble50.setReference("http://titania.create3000.de")
-MetadataDouble50.setValue([6.24067728185014,0.00250837343276661,2.92117542307615])
+MetadataDouble44 = MetadataDoubleObject()
+MetadataDouble44.setName("position")
+MetadataDouble44.setDEF("position")
+MetadataDouble44.setReference("http://titania.create3000.de")
+MetadataDouble44.setValue([6.24067728185014,0.00250837343276661,2.92117542307615])
 
-MetadataSet49.addValue(MetadataDouble50)
-MetadataDouble51 = MetadataDoubleObject()
-MetadataDouble51.setName("orientation")
-MetadataDouble51.setDEF("orientation")
-MetadataDouble51.setReference("http://titania.create3000.de")
-MetadataDouble51.setValue([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])
+MetadataSet43.addValue(MetadataDouble44)
+MetadataDouble45 = MetadataDoubleObject()
+MetadataDouble45.setName("orientation")
+MetadataDouble45.setDEF("orientation")
+MetadataDouble45.setReference("http://titania.create3000.de")
+MetadataDouble45.setValue([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])
 
-MetadataSet49.addValue(MetadataDouble51)
-MetadataDouble52 = MetadataDoubleObject()
-MetadataDouble52.setName("centerOfRotation")
-MetadataDouble52.setDEF("centerOfRotation")
-MetadataDouble52.setReference("http://titania.create3000.de")
-MetadataDouble52.setValue([-0.808320198626341,-0.358072370409949,0.22817191560906])
+MetadataSet43.addValue(MetadataDouble45)
+MetadataDouble46 = MetadataDoubleObject()
+MetadataDouble46.setName("centerOfRotation")
+MetadataDouble46.setDEF("centerOfRotation")
+MetadataDouble46.setReference("http://titania.create3000.de")
+MetadataDouble46.setValue([-0.808320198626341,-0.358072370409949,0.22817191560906])
 
-MetadataSet49.addValue(MetadataDouble52)
-MetadataSet44.addValue(MetadataSet49)
-WorldInfo43.setMetadata(MetadataSet44)
-Scene23.addChild(WorldInfo43)
-ProtoInstance53 = ProtoInstanceObject()
-ProtoInstance53.setName("myPrototype")
+MetadataSet43.addValue(MetadataDouble46)
+MetadataSet38.addValue(MetadataSet43)
+WorldInfo37.setMetadata(MetadataSet38)
+Scene23.addChild(WorldInfo37)
+ProtoInstance47 = ProtoInstanceObject()
+ProtoInstance47.setName("myPrototype")
 
-Scene23.addChild(ProtoInstance53)
+Scene23.addChild(ProtoInstance47)
 X3D0.setScene(Scene23)
 
 X3D0.toFileX3D("../data/SimpleShader.new.x3d")

@@ -180,9 +180,7 @@ field37.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 
 Script32.addField(field37)
 
-Script32.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script32.setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -562,10 +560,7 @@ Script32.setSourceCode("\n"+
 "cumulus();\n"+
 "\n"+
 "cirrus();\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 Group28.addChild(Script32)
 DirectionalLight38 = DirectionalLightObject()
 DirectionalLight38.setAmbientIntensity(1)

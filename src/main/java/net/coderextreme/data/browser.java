@@ -89,18 +89,12 @@ public class browser {
         .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
       .setScene(new SceneObject()
         .addChild(new ScriptObject().setDEF("Browser")
-          .setSourceCode("\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }\n"+
-"\n"+
-"\n"+
-""))
+"                }"))
         .addChild(new ScriptObject().setDEF("Clouds")
-          .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -109,10 +103,7 @@ public class browser {
 "'	Transform		\\n'+\n"+
 "'    ' + '               	\\n';\n"+
 "\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")))      ;
+"}")))      ;
     return X3D0;
     }
 }

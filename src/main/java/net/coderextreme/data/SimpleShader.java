@@ -113,43 +113,6 @@ ProtoInstanceObject ProtoInstance0 = null;
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.5f,0.5f,0.9f}))
-                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFVec3f").setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                    .setIS(new ISObject()
-                      .addConnect(new connectObject().setNodeField("decis").setProtoField("myInputRange")))
-                    .addParts(new ShaderPartObject().setType("VERTEX")
-                      .setSourceCode("// the vertex shader is small enough we can uri it here\n"+
-"// but the link also contains a 'toon.vs' for those interested\n"+
-"\n"+
-"    varying vec3 normal;\n"+
-"    void main()\n"+
-"    {\n"+
-"        normal=gl_NormalMatrix*gl_Normal;\n"+
-"        gl_Position=ftransform();\n"+
-"    }"))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT")
-                      .setSourceCode("varying vec3 normal;\n"+
-"uniform vec3 decis;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"        float intensity;\n"+
-"        vec4 color;\n"+
-"        vec3 n = normalize(normal);\n"+
-"\n"+
-"        intensity = dot(vec3(gl_LightSource[0].position),n);\n"+
-"\n"+
-"        if (intensity > decis[0])\n"+
-"                color = vec4(0.0,0.5,0.5,1.0);\n"+
-"        else if (intensity > decis[1])\n"+
-"                color = vec4(0.6,0.3,0.3,1.0);\n"+
-"        else if (intensity > decis[2])\n"+
-"                color = vec4(1.0,0.2,0.2,1.0);\n"+
-"        else\n"+
-"                color = vec4(0.0,0.4,0.0,1.0);\n"+
-"\n"+
-"        gl_FragColor = color;\n"+
-"}")))
                   .addShaders(new ComposedShaderObject().setDEF("Cobweb").setLanguage("GLSL")
                     .addField(new fieldObject().setType("SFVec3f").setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
                     .addParts(new ShaderPartObject().setType("VERTEX")

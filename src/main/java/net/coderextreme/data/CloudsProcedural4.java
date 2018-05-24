@@ -119,9 +119,7 @@ public class CloudsProcedural4 {
             .addField(new fieldObject().setType("SFNode").setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cirrus")))
             .addField(new fieldObject().setType("SFNode").setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-            .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -501,10 +499,7 @@ public class CloudsProcedural4 {
 "cumulus();\n"+
 "\n"+
 "cirrus();\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
           .addChild(new DirectionalLightObject().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
     return X3D0;
     }
