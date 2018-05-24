@@ -43,9 +43,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cirrus")))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-            .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -425,9 +423,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "cumulus();\n"+
 "\n"+
 "cirrus();\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
           .addChild(new DirectionalLightObject().setAmbientIntensity(1).setColor(Java.to([1,0,0], Java.type("float[]"))).setDirection(Java.to([-1,-1,0], Java.type("float[]"))).setGlobal(true))))      ;
     X3D0.toFileX3D("../data/CloudsProcedural4.new.x3d");
