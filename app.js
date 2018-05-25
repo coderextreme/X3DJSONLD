@@ -210,7 +210,7 @@ app.get("/files", function(req, res, next) {
 				console.error(file);
 			}
 		});
-	glob('src/main/Examples/**', function( err, files ) {
+	glob('src/main/Library/**', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
