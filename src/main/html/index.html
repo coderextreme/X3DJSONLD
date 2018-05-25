@@ -217,8 +217,8 @@ Use Namespace: <select id="namespace">
 <tr>
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
-		<Scene id="x3domjson">
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
+		<Scene>
 		</Scene>
     </X3D>
     <X3DCanvas id='x_itejson' cache='false'>
@@ -292,7 +292,7 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
-		loadJson('../data/ball.json'); // does load ball.json
+		loadJson('../data/flipp.json'); // does load ball.json
 	});
     </script>
 </html>
