@@ -20,6 +20,7 @@ var DOMImplementation = new xmldom.DOMImplementation();
 var convertJSON = require('./convertJSON.js');
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
+var loadX3DJS = convertJSON.loadX3DJS;
 
 var x3dom = require('./fields.js');
 
@@ -36,7 +37,7 @@ function ProcessJSON(json, file) {
 
 	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";
-	X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
 		var classes = new LOG();
 		var routecode = new LOG();
 		var loopItems = new LOG();

@@ -13,6 +13,7 @@ var DOMImplementation = new xmldom.DOMImplementation();
 var convertJSON = require('./convertJSON.js');
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
+var loadX3DJS = convertJSON.loadX3DJS;
 var DOMSerializer = require('./DOMSerializer.js');
 var serializer = new DOMSerializer();
 
@@ -33,7 +34,7 @@ function ProcessJSON(json, file) {
 
 	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";
-	X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
 		var str = serializer.serializeToString(json, element);
 		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 		try {
