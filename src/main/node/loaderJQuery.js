@@ -329,7 +329,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 				}
 			}
 			$(selector).empty();
-			$(element.querySelector("Scene")).children().appendTo(selector);
+			$(element.querySelector("Scene")).appendTo(selector);
 			// remove all text nodes in scripts (and fields too, sigh)
 			$(selector+" Script").empty();
 			try {

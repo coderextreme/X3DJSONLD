@@ -539,9 +539,9 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
  * returns child element, xml document, xml string.
  */
 loadJsonIntoXml: function(DOMImplementation, jsobj, path) {
-		var child  = this.loadJsonIntoDom(DOMImplementation, jsobj, path);
-		var xml = this.serializeDOM(jsobj, child, true);
-		return [ child, xml ];
+	var child  = this.loadJsonIntoDom(DOMImplementation, jsobj, path);
+	var xml = this.serializeDOM(jsobj, child, true);
+	return [ child, xml ];
 },
 
 /*
@@ -553,15 +553,20 @@ loadJsonIntoXml: function(DOMImplementation, jsobj, path) {
  * returns child element, xml document.
  */
 loadJsonIntoDom: function(DOMImplementation, jsobj, path) {
-		var version = jsobj.X3D["@version"];
-       		var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
-		var xmlDoc = DOMImplementation.createDocument(null, "X3D", docType);
+	var xmlDoc = this.prepareDocument(DOMImplementation, jsobj);
+	var child = this.CreateElement(xmlDoc, 'X3D', this.x3djsonNS);
+	child.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+	this.ConvertToX3DOM(xmlDoc, jsobj, "", child, path);
+	return child;
+},
 
-		xmlDoc.insertBefore(xmlDoc.createProcessingInstruction('xml', 'version="1.0" encoding="'+jsobj.X3D["encoding"]+'"'), docType);
-		var child = this.CreateElement(xmlDoc, 'X3D', this.x3djsonNS);
-		child.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-		this.ConvertToX3DOM(xmlDoc, jsobj, "", child, path);
-		return child;
+prepareDocument: function(DOMImplementation, jsobj) {
+	var version = jsobj.X3D["@version"];
+       	var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
+	var xmlDoc = DOMImplementation.createDocument(null, "X3D", docType);
+
+	xmlDoc.insertBefore(xmlDoc.createProcessingInstruction('xml', 'version="1.0" encoding="'+jsobj.X3D["encoding"]+'"'), docType);
+	return xmlDoc;
 },
 
 /**
