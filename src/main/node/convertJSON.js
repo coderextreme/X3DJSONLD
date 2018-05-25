@@ -115,6 +115,31 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	}
 }
 
+/**
+ * Load X3D JSON into an element.
+ * DOMImplementation - normally document.implementation
+ * jsobj - the JavaScript object to convert to XML and DOM.
+ * path - the path of the JSON file.
+ * log - the output xml string array (optional).
+ * NS - a namespace for X_ITE (optional) -- stripped out.
+ * loadSchema -- the loadSchema function
+ * doValidate -- the doValidate function
+ * X3DJSONLD -- X3DJSONLD
+ * callback -- returns the element whose scene children to append or insert into the DOM.
+ */
+function loadX3DJS(DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+	X3DJSONLD.x3djsonNS = NS;
+	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
+		var child, xml;
+		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
+		log.push(xml);
+		callback(child);
+	}, function(e) {
+		console.error(e);
+		callback(null);
+	});
+}
+
 function convertJSON(options) {
 
 	var files = process.argv;
@@ -140,7 +165,7 @@ function convertJSON(options) {
 		}
 		var xml = new LOG();
 		var NS = "http://www.web3d.org/specifications/x3d";
-		X3DJSONLD.loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+		loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}
@@ -195,7 +220,7 @@ function convertJSON(options) {
  */
 function replaceX3DJSON(parent, json, url, xml, NS, next) {
 
-	X3DJSONLD.loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(child) {
+	loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(child) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);
@@ -211,6 +236,7 @@ if (typeof module === 'object')  {
 		replaceX3DJSON: replaceX3DJSON,
 		convertJSON: convertJSON,
 		loadSchema: loadSchema,
+		loadX3DJS: loadX3DJS,
 		doValidate: doValidate
 	};
 }
