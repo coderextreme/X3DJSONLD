@@ -28,6 +28,7 @@
 
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/loadValidate.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script><!--for loadSchema and doValidate-->
     
     <script type="text/javascript">
@@ -38,7 +39,7 @@
 
 	function importInto_X_ITE(json) {
 		var xml = [];
-		X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
+		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
 			load_X_ITE_DOM(jsDOM, "#x_itedom");
 		});
 	}
