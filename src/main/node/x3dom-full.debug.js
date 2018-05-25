@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'd7faee0428fc852869886eda1dc2e2a348ba11aa' - b'Fri May 25 11:47:40 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'9bebe20015dfb7a52ad87073ced60236b13bbcd7' - b'Fri May 25 17:43:51 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -11386,9 +11386,11 @@ x3dom.Runtime.prototype.toggleProjection = function( perspViewID, orthoViewID )
  * 		scene - scene element to substitute
  */
 x3dom.Runtime.prototype.replaceWorld = function(scene) {
-    var oldScene = this.doc.querySelector("Scene");
-    this.doc.replaceChild(scene, oldScene);
-    x3dom.reload();
+    var current = this.doc.querySelector('Scene');
+    this.doc.replaceChild(scene, current);
+    //also replace header node
+    this.canvas.doc.load(this.doc, 0);
+    this.canvas.doc.needRender = true;
 };
 
 /**
@@ -11441,9 +11443,20 @@ x3dom.Runtime.prototype.createX3DFromJS = function(jsobject, optionalURL) {
  * Returns:
  * 		The x3d element
  */
-x3dom.Runtime.prototype.createX3DFromString = function(json, optionalURL) {
-	var jsobject = JSON.parse(json);
-	return x3dom.Runtime.prototype.createX3DFromJS(json, optionalURL);
+x3dom.Runtime.prototype.createX3DFromString = function(jsonOrXML, optionalURL) {
+    try {
+	    var jsobject = JSON.parse(jsonOrXML);
+	    return this.createX3DFromJS(jsonOrXML, optionalURL);
+    } catch {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(jsonOrXML, 'application/xml');
+        var scene = doc.querySelector('X3D');
+        if (scene == null) {
+            doc = parser.parseFromString(jsonOrXML, 'text/html');
+            scene = doc.querySelector('X3D');
+        }
+        return scene;
+    }
 };
 
 /*
@@ -35335,7 +35348,7 @@ x3dom.registerNodeType(
                     this._indexOffset = [];
                     this._mesh._primType = 'TRIANGLESTRIP';
 
-                    var indexOffset = [ 0 ];
+                    var i, indexOffset = [ 0 ];
 
                     for (i=0; i<indexes.length; i++)
                     {
@@ -35427,7 +35440,8 @@ x3dom.registerNodeType(
                             n1 = p1;
                             n2 = p2;
                             n3 = p3;
-                        } else if (!normPerVert) {
+                        } else //if (!normPerVert)
+                        {
                             n1 = n2 = n3 = faceCnt;
                         }
 
@@ -35439,7 +35453,8 @@ x3dom.registerNodeType(
                             c1 = p1;
                             c2 = p2;
                             c3 = p3;
-                        } else if (!colPerVert) {
+                        } else //if (!colPerVert)
+                        {
                             c1 = c2 = c3 = faceCnt;
                         }
 
@@ -35642,7 +35657,8 @@ x3dom.registerNodeType(
                                     n1 = p1;
                                     n2 = p2;
                                     n3 = p3;
-                                } else if (!normPerVert) {
+                                } else //if (!normPerVert)
+                                {
                                     n1 = n2 = n3 = faceCnt;
                                 }
 
@@ -35654,7 +35670,8 @@ x3dom.registerNodeType(
                                     c1 = p1;
                                     c2 = p2;
                                     c3 = p3;
-                                } else if (!colPerVert) {
+                                } else //if (!colPerVert)
+                                {
                                     c1 = c2 = c3 = faceCnt;
                                 }
 
@@ -35756,23 +35773,23 @@ x3dom.registerNodeType(
 
                             this._mesh._positions[0] = positions.toGL();
 
-                            if (hasNormal) {
-                                this._mesh._normals[0] = normals.toGL();
-                            }
-                            else {
+                            //if (hasNormal) { // always false here, since true is above
+                            //    this._mesh._normals[0] = normals.toGL();
+                            //}
+                            //else {
                                 this._mesh.calcNormals(Math.PI);
-                            }
-                            if (hasTexCoord) {
-                                this._mesh._texCoords[0] = texCoords.toGL();
-                                this._mesh._numTexComponents = numTexComponents;
-                            }
-                            else {
+                            //}
+                            //if (hasTexCoord) { // always false here, since true is above
+                            //    this._mesh._texCoords[0] = texCoords.toGL();
+                            //    this._mesh._numTexComponents = numTexComponents;
+                            //}
+                            //else {
                                 this._mesh.calcTexCoords(texMode);
-                            }
-                            if (hasColor) {
-                                this._mesh._colors[0] = colors.toGL();
-                                this._mesh._numColComponents = numColComponents;
-                            }
+                            //}
+                            //if (hasColor) { // always false here, since true is above
+                            //    this._mesh._colors[0] = colors.toGL();
+                            //    this._mesh._numColComponents = numColComponents;
+                            //}
 
                         }
 
@@ -35947,7 +35964,7 @@ x3dom.registerNodeType(
                             this._mesh._texCoords[0].push(tex[t2].x);
                             this._mesh._texCoords[0].push(tex[t2].y);
                             if (numTexComponents === 3) {
-                                this._mesh._texCoords[0].tex(col[t2].z);
+                                this._mesh._texCoords[0].push(tex[t2].z);
                             }
                             this._mesh._texCoords[0].push(tex[t3].x);
                             this._mesh._texCoords[0].push(tex[t3].y);
