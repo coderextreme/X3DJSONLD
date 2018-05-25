@@ -1,0 +1,475 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Full",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"comment",
+            "@content":"World of Titania"
+          },
+          {
+            "@name":"created",
+            "@content":"Mon, 04 Jan 2016 06:29:42 GMT"
+          },
+          {
+            "@name":"creator",
+            "@content":"Holger Seelig"
+          },
+          {
+            "@name":"generator",
+            "@content":"Titania V1.2.2, http://titania.create3000.de"
+          },
+          {
+            "@name":"modified",
+            "@content":"Mon, 04 Jan 2016 08:10:10 GMT"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 May 2018"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"LineTrail",
+              "@url":["https://cdn.rawgit.com/create3000/Titania/master/Library/Tests/Interpolation/LineTrail.wrl"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"cycleInterval",
+                  "@accessType":"inputOutput",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"resetTime",
+                  "@accessType":"inputOutput",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"point",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"dimension",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@title":"OrientationChaser",
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"Titania",
+                    "@DEF":"Titania",
+                    "@reference":"http://titania.create3000.de",
+                    "-value":[
+                      { "MetadataSet":
+                        {
+                          "@name":"NavigationInfo",
+                          "@DEF":"NavigationInfo",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataString":
+                              {
+                                "@name":"type",
+                                "@DEF":"type",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":["EXAMINE"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Viewpoint",
+                          "@DEF":"Viewpoint",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataDouble":
+                              {
+                                "@name":"position",
+                                "@DEF":"position",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[-1.26207339763641,-3.20390677452087,-3.62576198577881]
+                              }
+                            },
+                            { "MetadataDouble":
+                              {
+                                "@name":"orientation",
+                                "@DEF":"orientation",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0.00718989036977291,-0.937747418880463,0.347243458032608,2.86365866661072]
+                              }
+                            },
+                            { "MetadataDouble":
+                              {
+                                "@name":"centerOfRotation",
+                                "@DEF":"centerOfRotation",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0,0,0]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":[", ","NONEANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.2,0.2,0.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@position":[0,0,5]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"LineTrail",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@emissiveColor":[0,0.8,0.8]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "ProtoInstance":
+                  {
+                    "@name":"LineTrail",
+                    "@DEF":"Trail",
+                    "fieldValue": [
+                      {
+                        "@name":"enabled",
+                        "@value":false
+                      },
+                      {
+                        "@name":"cycleInterval",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"point",
+                        "@value":[0,0,1]
+                      },
+                      {
+                        "@name":"dimension",
+                        "@value":100
+                      }
+                    ]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Sphere",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":0.5
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"Touch"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Cone",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Cone_1",
+                    "@translation":[0,0,0.192283],
+                    "@rotation":[1,0,0,1.5708],
+                    "@scale":[0.770473,0.770473,0.770473],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"ConeMaterial"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"IndexedLineSet",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@colorPerVertex":false,
+                                "@colorIndex":[0,1,2],
+                                "@coordIndex":[0,1,-1,2,3,-1,4,5,-1],
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@color":[1,0,0,0,1,0,0,0,1]
+                                    }
+                                  },
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-1,0,0,1,0,0,0,-1,0,0,1,0,0,0,-1,0,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"FollowerScript",
+              "field": [
+                {
+                  "@name":"set_time",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_active",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_rotation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"color_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"point_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"touchSensor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "TouchSensor":
+                      {
+                        "@USE":"Touch"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"timeSensor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "TimeSensor":
+                      {
+                        "@DEF":"_1",
+                        "@cycleInterval":2
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"interpolator",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"_2",
+                        "@key":[0,1],
+                        "@keyValue":[0,0,1,0,0,0,1,0]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "#sourceText":[
+"",
+"vrmlscript:",
+"",
+"function initialize ()",
+"{",
+"\ttimeSensor .stopTime  = 0;",
+"\ttimeSensor .startTime = 0;",
+"",
+"\tinterpolator .keyValue [0] = new SFRotation ();",
+"\tinterpolator .keyValue [1] = new SFRotation ();",
+"}",
+"",
+"function set_time (value, time)",
+"{",
+"\ttimeSensor .stopTime  = time;",
+"\ttimeSensor .startTime = time;",
+"",
+"\tinterpolator .keyValue [0] = interpolator .value_changed;",
+"\tinterpolator .keyValue [1] = new SFRotation (new SFVec3f (0.1, 0.1, 0.9), touchSensor .hitPoint_changed);",
+"}",
+"",
+"function set_active (value)",
+"{",
+"\tif (value)",
+"\t\tcolor_changed = new SFColor (0.8, 0, 0);",
+"\t",
+"\telse",
+"\t\tcolor_changed = new SFColor (0.8, 0.8, 0.8);",
+"}",
+"",
+"function set_rotation (value)",
+"{",
+"\tpoint_changed = value .multVec (new SFVec3f (0, 0, 1));",
+"}",
+"",
+""
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Touch",
+              "@fromField":"touchTime",
+              "@toNode":"FollowerScript",
+              "@toField":"set_time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"FollowerScript",
+              "@fromField":"color_changed",
+              "@toNode":"ConeMaterial",
+              "@toField":"set_diffuseColor"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"FollowerScript",
+              "@fromField":"point_changed",
+              "@toNode":"Trail",
+              "@toField":"set_point"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_2",
+              "@fromField":"value_changed",
+              "@toNode":"FollowerScript",
+              "@toField":"set_rotation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_2",
+              "@fromField":"value_changed",
+              "@toNode":"Cone",
+              "@toField":"set_rotation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_1",
+              "@fromField":"isActive",
+              "@toNode":"Trail",
+              "@toField":"set_enabled"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_1",
+              "@fromField":"isActive",
+              "@toNode":"FollowerScript",
+              "@toField":"set_active"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_1",
+              "@fromField":"fraction_changed",
+              "@toNode":"_2",
+              "@toField":"set_fraction"
+            }
+          }
+        ]
+    }
+  }
+}

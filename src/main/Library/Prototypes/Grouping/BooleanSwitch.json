@@ -1,0 +1,170 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Full",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"comment",
+            "@content":"World of Titania"
+          },
+          {
+            "@name":"created",
+            "@content":"Sun, 20 Sep 2015 06:48:37 GMT"
+          },
+          {
+            "@name":"creator",
+            "@content":"Holger Seelig"
+          },
+          {
+            "@name":"generator",
+            "@content":"Titania V1.1.0, http://titania.create3000.de"
+          },
+          {
+            "@name":"modified",
+            "@content":"Sun, 20 Sep 2015 06:48:37 GMT"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 May 2018"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"BooleanSwitch",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"whichChoice",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"addChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removeChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Switch":
+                      {
+                        "@DEF":"Switch",
+                        "@whichChoice":-1,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"addChildren",
+                                "@protoField":"addChildren"
+                              },
+                              {
+                                "@nodeField":"removeChildren",
+                                "@protoField":"removeChildren"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"whichChoice",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"group",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Switch":
+                                {
+                                  "@USE":"Switch"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"whichChoice",
+                                "@protoField":"whichChoice"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"",
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tset_whichChoice (whichChoice);",
+"}",
+"",
+"function set_whichChoice (value)",
+"{",
+"\tgroup .whichChoice = value",
+"}",
+"",
+""
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}

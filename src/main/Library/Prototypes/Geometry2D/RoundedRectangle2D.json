@@ -1,0 +1,200 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Full",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"comment",
+            "@content":"World of Titania"
+          },
+          {
+            "@name":"created",
+            "@content":"Sun, 20 Sep 2015 06:48:36 GMT"
+          },
+          {
+            "@name":"creator",
+            "@content":"Holger Seelig"
+          },
+          {
+            "@name":"generator",
+            "@content":"Titania V1.1.0, http://titania.create3000.de"
+          },
+          {
+            "@name":"modified",
+            "@content":"Sun, 20 Sep 2015 06:48:36 GMT"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 May 2018"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"RoundedRectangle2D",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"cornerRadius",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"size",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec2f",
+                      "@value":[2,2]
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"Geometry",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              }
+                            ]
+                        },
+                        "-coord":
+                          { "Coordinate":
+                            {
+                            }
+                          }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"RoundedRectangle2D",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"cornerRadius",
+                            "@accessType":"inputOutput",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"size",
+                            "@accessType":"inputOutput",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"cornerDimension",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":10
+                          },
+                          {
+                            "@name":"geometry",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "IndexedFaceSet":
+                                {
+                                  "@USE":"Geometry"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cornerRadius",
+                                "@protoField":"cornerRadius"
+                              },
+                              {
+                                "@nodeField":"size",
+                                "@protoField":"size"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"",
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\teventsProcessed ();",
+"}",
+"",
+"function eventsProcessed ()",
+"{",
+"\tvar radius = Math .min (Math .min (cornerRadius, size .x / 2), size .y / 2);",
+"",
+"\tvar point         = new SFVec3f (radius, 0, 0);",
+"\tvar startRotation = new SFRotation (0, 0, 1, 0);",
+"\tvar endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);",
+"\tvar corner        = new MFVec3f ();",
+"\tvar coordIndex    = new MFInt32 ();",
+"\tvar points        = new MFVec3f ();",
+"",
+"\tfor (var i = 0; i < cornerDimension * 4; ++ i)",
+"\t\tcoordIndex [coordIndex .length] = i;",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++i)",
+"\t\tcorner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);",
+"\t",
+"\tvar translation = new SFVec3f (size .x / 2 - radius, size .y / 2 - radius, 0);",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++ i)",
+"\t\tpoints [points .length] = corner [i] .add (translation);",
+"",
+"\tvar translation = new SFVec3f (-size .x / 2 + radius, size .y / 2 - radius, 0);",
+"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++ i)",
+"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
+"",
+"\tvar translation = new SFVec3f (-size .x / 2 + radius, -size .y / 2 + radius, 0);",
+"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI);",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++ i)",
+"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
+"",
+"\tvar translation = new SFVec3f (size .x / 2 - radius, -size .y / 2 + radius, 0);",
+"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++ i)",
+"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
+"",
+"\tgeometry .coord .point = points;\t",
+"\tgeometry .coordIndex   = coordIndex;",
+"}",
+"",
+""
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}
