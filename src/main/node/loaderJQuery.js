@@ -184,6 +184,7 @@ function loadProtoX3D(scripts, selector, json, url) {
 	    if (child != null) {
 			try {
 			    load_X_ITE_JS(json, "#x_itejson");
+			    // load_X_ITE_DOM(child.cloneNode(true), "#x_itedom");
 			} catch (e) {
 				alert("Problems with X_ITE DOM "+ e);
 				console.error(e);
