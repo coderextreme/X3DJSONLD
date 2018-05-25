@@ -358,8 +358,7 @@ field74.setValue("-1")
 
 Script63.addField(field74)
 
-Script63.setSourceCode("\n"+
-"        ecmascript:\n"+
+Script63.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -446,10 +445,7 @@ Script63.setSourceCode("\n"+
 "function view5Bound (inputValue)\n"+
 "{\n"+
 "    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 Transform47.addChild(Script63)
 
 Transform47.addComments(CommentsBlock("""drive Script with TimeSensor clock"""))

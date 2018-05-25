@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -199,17 +199,13 @@
                             }
                           ],
                           "#sourceText": [
-                            "",
-                            "",
                             "ecmascript:",
                             "\t\t\t\t\tfunction set_cycle(value) {",
                             "                                                old = translation;",
                             "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                             "                                                keyValue = new MFVec3f([old, translation]);",
                             "\t\t\t\t\t\t// Browser.println(translation);",
-                            "\t\t\t\t\t}",
-                            "",
-                            ""
+                            "\t\t\t\t\t}"
                           ]
                         }
                       },
@@ -389,8 +385,6 @@
                             ]
                           },
                           "#sourceText": [
-                            "",
-                            "",
                             "ecmascript:",
                             "",
                             "                function set_endA(value) {",
@@ -411,9 +405,7 @@
                             "",
                             "                function set_spine(value) {",
                             "                    spine = value;",
-                            "                }",
-                            "",
-                            ""
+                            "                }"
                           ]
                         }
                       },
@@ -622,8 +614,6 @@
               }
             ],
             "#sourceText": [
-              "",
-              "\t",
               "ecmascript:",
               "\tfunction add_node(value) {",
               "                // Browser.print('hey ', counter);",
@@ -641,9 +631,7 @@
               "\t\t\t\t}",
               "\t\t\t});",
               "",
-              "        }",
-              "\t",
-              ""
+              "        }"
             ]
           }
         },

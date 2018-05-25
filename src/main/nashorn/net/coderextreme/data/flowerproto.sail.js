@@ -60,10 +60,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+                .setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -128,11 +125,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"\n"+
-""))
+"			}"))
               .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
               .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
               .addChild(new ROUTEObject().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))

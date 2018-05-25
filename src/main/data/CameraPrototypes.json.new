@@ -63,7 +63,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -773,8 +773,6 @@
                       ]
                     },
                     "#sourceText": [
-                      "",
-                      "",
                       "ecmascript:",
                       "function initialize () // CameraScript",
                       "{",
@@ -1114,9 +1112,7 @@
                       "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');",
                       "    else",
                       "         Browser.print ('[Camera] ' + outputString + '\n');",
-                      "}",
-                      "",
-                      ""
+                      "}"
                     ]
                   }
                 },
@@ -1430,8 +1426,6 @@
                       ]
                     },
                     "#sourceText": [
-                      "",
-                      "",
                       "ecmascript:",
                       "function initialize () // CameraShotScript",
                       "{",
@@ -1524,9 +1518,7 @@
                       "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');",
                       "    else",
                       "         Browser.print ('[CameraShot] ' + outputString + '\n');",
-                      "}",
-                      "",
-                      ""
+                      "}"
                     ]
                   }
                 },
@@ -1786,8 +1778,6 @@
                       ]
                     },
                     "#sourceText": [
-                      "",
-                      "",
                       "ecmascript:",
                       "function initialize () // CameraMovementScript",
                       "{",
@@ -1877,9 +1867,7 @@
                       "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');",
                       "    else",
                       "         Browser.print ('[CameraMovement] ' + outputString + '\n');",
-                      "}",
-                      "",
-                      ""
+                      "}"
                     ]
                   }
                 },
@@ -2115,8 +2103,6 @@
                       ]
                     },
                     "#sourceText": [
-                      "",
-                      "",
                       "ecmascript:",
                       "function initialize () // OfflineRenderScript",
                       "{",
@@ -2170,9 +2156,7 @@
                       "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');",
                       "    else",
                       "         Browser.print ('[OfflineRender] ' + outputString + '\n');",
-                      "}",
-                      "",
-                      ""
+                      "}"
                     ]
                   }
                 },

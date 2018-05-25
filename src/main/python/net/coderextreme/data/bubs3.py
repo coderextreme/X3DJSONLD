@@ -110,9 +110,7 @@ field21.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script16.addField(field21)
 
-Script16.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script16.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -150,11 +148,7 @@ Script16.setSourceCode("\n"+
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}\n"+
-"\n"+
-"			\n"+
-"\n"+
-"")
+"}")
 Transform11.addChild(Script16)
 TimeSensor22 = TimeSensorObject()
 TimeSensor22.setDEF("DECLBubble_bubbleA_bubbleClock")
@@ -240,9 +234,7 @@ field36.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script31.addField(field36)
 
-Script31.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script31.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -280,11 +272,7 @@ Script31.setSourceCode("\n"+
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}\n"+
-"\n"+
-"			\n"+
-"\n"+
-"")
+"}")
 Transform26.addChild(Script31)
 TimeSensor37 = TimeSensorObject()
 TimeSensor37.setDEF("DECLBubble_bubbleB_bubbleClock")
@@ -370,9 +358,7 @@ field51.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script46.addField(field51)
 
-Script46.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script46.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -410,11 +396,7 @@ Script46.setSourceCode("\n"+
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}\n"+
-"\n"+
-"			\n"+
-"\n"+
-"")
+"}")
 Transform41.addChild(Script46)
 TimeSensor52 = TimeSensorObject()
 TimeSensor52.setDEF("DECLBubble_bubbleC_bubbleClock")
@@ -500,9 +482,7 @@ field66.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script61.addField(field66)
 
-Script61.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script61.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -540,11 +520,7 @@ Script61.setSourceCode("\n"+
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}\n"+
-"\n"+
-"			\n"+
-"\n"+
-"")
+"}")
 Transform56.addChild(Script61)
 TimeSensor67 = TimeSensorObject()
 TimeSensor67.setDEF("DECLBubble_bubbleD_bubbleClock")

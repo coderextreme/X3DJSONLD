@@ -60,9 +60,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
@@ -128,10 +126,7 @@ ecmascript:
 				if (d > 10) {
 					d = 4;
 				}
-			}
-
-
-]]></Script>
+			}]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Animate" fromField="translation_changed" toNode="animate_transform" toField="set_translation"></ROUTE>

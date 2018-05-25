@@ -58,8 +58,7 @@
 </Group>
 <Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
 <field name="rightlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	rightlines = new MFString("");
@@ -67,13 +66,10 @@ function initialize() {
 
 function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
-}
-
-]]></Script>
+}]]></Script>
 <Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
 <field name="uplines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	uplines = new MFString("");
@@ -81,13 +77,10 @@ function initialize() {
 
 function set_upstring(upstr) {
 	uplines = new MFString(upstr);
-}
-
-]]></Script>
+}]]></Script>
 <Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
 <field name="centerlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	centerlines = new MFString("");
@@ -95,9 +88,7 @@ function initialize() {
 
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
-}
-
-]]></Script>
+}]]></Script>
 <ROUTE fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"></ROUTE>
 <ROUTE fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"></ROUTE>
 <ROUTE fromField="isOver" fromNode="CenterTouch" toField="set_enabled" toNode="CenterSensor"></ROUTE>

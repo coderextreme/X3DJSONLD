@@ -182,10 +182,7 @@ field36.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script33.addField(field36)
 
-Script33.setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+Script33.setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -255,9 +252,7 @@ Script33.setSourceCode("\n"+
 "	}\n"+
 "	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 Scene9.addChild(Script33)
 TimeSensor37 = TimeSensorObject()
 TimeSensor37.setDEF("Clock")

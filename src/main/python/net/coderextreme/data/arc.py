@@ -121,18 +121,13 @@ field26.setValue("0 0 0 0 5 0")
 
 Script22.addField(field26)
 
-Script22.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script22.setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}\n"+
-"\n"+
-"\n"+
-"")
+"		}")
 Transform14.addChild(Script22)
 TimeSensor27 = TimeSensorObject()
 TimeSensor27.setDEF("CL1")
@@ -299,8 +294,7 @@ connect59.setProtoField("set_endpoint")
 IS55.addConnect(connect59)
 Script46.setIS(IS55)
 
-Script46.setSourceCode("\n"+
-"            ecmascript:\n"+
+Script46.setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -343,10 +337,7 @@ Script46.setSourceCode("\n"+
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }\n"+
-"\n"+
-"\n"+
-"")
+"        }")
 Group39.addChild(Script46)
 ProtoBody38.addChild(Group39)
 ProtoDeclare32.setProtoBody(ProtoBody38)

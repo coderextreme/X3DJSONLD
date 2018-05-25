@@ -276,8 +276,7 @@ field62.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script60.addField(field62)
 
-Script60.setSourceCode("\n"+
-"ecmascript:\n"+
+Script60.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -285,9 +284,7 @@ Script60.setSourceCode("\n"+
 "\n"+
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 ProtoBody12.addChild(Script60)
 Script63 = ScriptObject()
 Script63.setDEF("UpSingleToMultiString")
@@ -305,8 +302,7 @@ field65.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script63.addField(field65)
 
-Script63.setSourceCode("\n"+
-"ecmascript:\n"+
+Script63.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -314,9 +310,7 @@ Script63.setSourceCode("\n"+
 "\n"+
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 ProtoBody12.addChild(Script63)
 Script66 = ScriptObject()
 Script66.setDEF("CenterSingleToMultiString")
@@ -334,8 +328,7 @@ field68.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script66.addField(field68)
 
-Script66.setSourceCode("\n"+
-"ecmascript:\n"+
+Script66.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
@@ -343,9 +336,7 @@ Script66.setSourceCode("\n"+
 "\n"+
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 ProtoBody12.addChild(Script66)
 ROUTE69 = ROUTEObject()
 ROUTE69.setFromField("enteredText")

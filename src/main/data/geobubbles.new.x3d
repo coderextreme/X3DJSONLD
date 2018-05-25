@@ -47,7 +47,6 @@ ecmascript:
                         position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
                         position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
                }
-
 ]]>
         </Script>
         <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>

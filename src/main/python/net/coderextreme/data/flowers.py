@@ -365,9 +365,7 @@ field64.setValue("0.5")
 
 Script55.addField(field64)
 
-Script55.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script55.setSourceCode("ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
@@ -433,10 +431,7 @@ Script55.setSourceCode("\n"+
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"")
+"			}")
 ProtoBody13.addChild(Script55)
 TimeSensor65 = TimeSensorObject()
 TimeSensor65.setDEF("TourTime")

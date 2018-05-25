@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -394,8 +394,6 @@
                         "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "",
 "\t\t\tfunction initialize() {",
@@ -463,9 +461,6 @@
 "\t\t\t\t\td = 4;",
 "\t\t\t\t}",
 "\t\t\t}",
-"",
-"",
-"",
 "",
 ""
 ]

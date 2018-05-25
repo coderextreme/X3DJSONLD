@@ -63,8 +63,7 @@
             <field name='set_orientation' accessType='inputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
             <field name='orientation_changed' accessType='outputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
 <![CDATA[
-
-	    ecmascript:
+ecmascript:
                function set_cycle(value) {
 	       	   try {
                         var ov = lastKey;
@@ -84,7 +83,6 @@
 				alert(e);
 		   }
                }
-
 ]]>
         </Script>
         <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>

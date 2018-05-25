@@ -72,8 +72,6 @@
                 <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
                 <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='-1'/>
 <![CDATA[
-
-
 ecmascript:
         function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
@@ -91,9 +89,6 @@ ecmascript:
 		    bottom_changed[0] = bottomUrls[side];
             }
         }
-
-
-
 ]]>
             </Script>
             <TimeSensor DEF='Clock' cycleInterval='45.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>

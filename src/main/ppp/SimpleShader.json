@@ -1,0 +1,335 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.2",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "component": [
+        {
+          "@name": "Shaders",
+          "@level": 1
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "SimpleShader.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Simple shader example"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Stewart"
+        },
+        {
+          "@name": "translator",
+          "@content": "Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"
+        },
+        {
+          "@name": "created",
+          "@content": "26 May 2009"
+        },
+        {
+          "@name": "translated",
+          "@content": "15 October 2009"
+        },
+        {
+          "@name": "modified",
+          "@content": "24 April 2017"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.opengl.org/wiki/Fragment_Shader"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D shader example"
+        },
+        {
+          "@name": "reference",
+          "@content": "originals/simpleShader.x3dv"
+        },
+        {
+          "@name": "reference",
+          "@content": "ShaderTutorialInstantReality.pdf"
+        },
+        {
+          "@name": "generator",
+          "@content": "Titania V3.0.3, http://titania.create3000.de"
+        },
+        {
+          "@name": "comment",
+          "@content": "World of Titania"
+        },
+        {
+          "@name": "outputStyle",
+          "@content": "nicest"
+        },
+        {
+          "@name": "warning",
+          "@content": "under development"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
+        },
+        {
+          "@name": "license",
+          "@content": "../../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "24 May 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {
+          "WorldInfo": {
+            "@title": "SimpleShader",
+            "-metadata": {
+              "MetadataSet": {
+                "@name": "Titania",
+                "@DEF": "Titania",
+                "@reference": "http://titania.create3000.de",
+                "-value": [
+                  {
+                    "MetadataSet": {
+                      "@name": "Selection",
+                      "@DEF": "Selection",
+                      "@reference": "http://titania.create3000.de",
+                      "-value": [
+                        {
+                          "MetadataSet": {
+                            "@name": "nodes",
+                            "@DEF": "nodes",
+                            "@reference": "http://titania.create3000.de",
+                            "-children": [
+                              {
+                                "#comment": "NULL"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataSet": {
+                      "@name": "NavigationInfo",
+                      "@DEF": "NavigationInfo",
+                      "@reference": "http://titania.create3000.de",
+                      "-value": [
+                        {
+                          "MetadataString": {
+                            "@name": "type",
+                            "@DEF": "type",
+                            "@reference": "http://titania.create3000.de",
+                            "@value": [
+                              "EXAMINE"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataSet": {
+                      "@name": "Viewpoint",
+                      "@DEF": "Viewpoint",
+                      "@reference": "http://titania.create3000.de",
+                      "-value": [
+                        {
+                          "MetadataDouble": {
+                            "@name": "position",
+                            "@DEF": "position",
+                            "@reference": "http://titania.create3000.de",
+                            "@value": [
+                              6.24067728185014,
+                              0.00250837343276661,
+                              2.92117542307615
+                            ]
+                          }
+                        },
+                        {
+                          "MetadataDouble": {
+                            "@name": "orientation",
+                            "@DEF": "orientation",
+                            "@reference": "http://titania.create3000.de",
+                            "@value": [
+                              -0.110173424710488,
+                              0.990158061907379,
+                              -0.0863065984000336,
+                              1.21146676119191
+                            ]
+                          }
+                        },
+                        {
+                          "MetadataDouble": {
+                            "@name": "centerOfRotation",
+                            "@DEF": "centerOfRotation",
+                            "@reference": "http://titania.create3000.de",
+                            "@value": [
+                              -0.808320198626341,
+                              -0.358072370409949,
+                              0.22817191560906
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLmyPrototype_INSTANCE_TR",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.5,
+                            0.5,
+                            0.9
+                          ]
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLmyPrototype_INSTANCE_Cobweb",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "decis",
+                                "@accessType": "initializeOnly",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.95,
+                                  0.77,
+                                  0.44
+                                ]
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@type": "VERTEX",
+                                  "#sourceText": [
+                                    "",
+                                    "                  data:text/plain;charset=utf-8,",
+                                    "",
+                                    "precision mediump float;",
+                                    "",
+                                    "uniform mat4 x3d_ProjectionMatrix;",
+                                    "uniform mat4 x3d_ModelViewMatrix;",
+                                    "uniform mat3 x3d_NormalMatrix;",
+                                    "",
+                                    "attribute vec4 x3d_Vertex;",
+                                    "attribute vec3 x3d_Normal;",
+                                    "",
+                                    "varying vec3 normal;",
+                                    "",
+                                    "void main()",
+                                    "{",
+                                    "\tnormal = x3d_NormalMatrix * x3d_Normal;",
+                                    "\t",
+                                    "\tgl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;",
+                                    "}",
+                                    "",
+                                    ""
+                                  ]
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@DEF": "DECLmyPrototype_INSTANCE__1",
+                                  "@type": "FRAGMENT",
+                                  "#sourceText": [
+                                    "",
+                                    "                  data:text/plain;charset=utf-8,",
+                                    "",
+                                    "precision mediump float;",
+                                    "",
+                                    "uniform vec3 x3d_LightDirection [x3d_MaxLights];",
+                                    "",
+                                    "varying vec3 normal;",
+                                    "uniform vec3 decis;",
+                                    "",
+                                    "void main()",
+                                    "{",
+                                    "\tfloat intensity;",
+                                    "\tvec4 color;",
+                                    "\tvec3 n = normalize (normal);",
+                                    "",
+                                    "\tintensity = abs (dot (x3d_LightDirection [0], n));",
+                                    "",
+                                    "\tif (intensity > decis[0])",
+                                    "\t\tcolor = vec4(0.0,0.5,0.5,1.0);",
+                                    "\telse if (intensity > decis[1])",
+                                    "\t\tcolor = vec4(0.6,0.3,0.3,1.0);",
+                                    "\telse if (intensity > decis[2])",
+                                    "\t\tcolor = vec4(1.0,0.2,0.2,1.0);",
+                                    "\telse",
+                                    "\t\tcolor = vec4(0.0,0.4,0.0,1.0);",
+                                    "",
+                                    "\tgl_FragColor = color;",
+                                    "} ",
+                                    "",
+                                    ""
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 1.75
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

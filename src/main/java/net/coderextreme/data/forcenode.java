@@ -120,18 +120,13 @@ ProtoInstanceObject ProtoInstance6 = null;
                 .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                 .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+                .setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
-"					}\n"+
-"\n"+
-"\n"+
-""))
+"					}"))
               .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
               .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
               .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
@@ -154,9 +149,7 @@ ProtoInstanceObject ProtoInstance6 = null;
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
                   .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
-                .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+                .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
@@ -176,10 +169,7 @@ ProtoInstanceObject ProtoInstance6 = null;
 "\n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
-"                }\n"+
-"\n"+
-"\n"+
-""))
+"                }"))
               .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
         .addChild(new TransformObject().setDEF("HoldsContent").setScale(new float[] {0.1f,0.1f,0.1f})
           .addChild(new PlaneSensorObject().setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
@@ -195,9 +185,7 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addField(new fieldObject().setType("SFNode").setName("node_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("SFBool").setName("add_node").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("false"))
           .addComments(new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
-          .setSourceCode("\n"+
-"	\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+
@@ -214,10 +202,7 @@ ProtoInstanceObject ProtoInstance6 = null;
 "				}\n"+
 "			});\n"+
 "\n"+
-"        }\n"+
-"	\n"+
-"\n"+
-""))
+"        }"))
         .addChild(new ROUTEObject().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))

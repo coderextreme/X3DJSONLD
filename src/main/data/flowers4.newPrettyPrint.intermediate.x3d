@@ -46,9 +46,6 @@
             <field name='coordinates' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value=''/>
             <field name='coordIndexes' accessType='outputOnly' appinfo='' documentation='' type='MFInt32' value=''/>
 <![CDATA[
-
-
-
 ecmascript:
 
 var e = 5;
@@ -120,8 +117,6 @@ function set_fraction(fraction, eventTime) {
 	var resolution = 100;
 	updateCoordinates(resolution);
 }
-
-
 ]]>
         </Script>
         <TimeSensor DEF='Clock' cycleInterval='16.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>

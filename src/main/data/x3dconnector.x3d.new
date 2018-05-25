@@ -48,8 +48,7 @@
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[
-            ecmascript:
+<![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -87,10 +86,7 @@
         }
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
-        }
-
-
-]]></Script>
+        }]]></Script>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><Transform USE="G1"></Transform>

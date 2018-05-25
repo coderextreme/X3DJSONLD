@@ -89,8 +89,7 @@ field18.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script13.addField(field18)
 
-Script13.setSourceCode("\n"+
-"ecmascript:\n"+
+Script13.setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -120,11 +119,7 @@ Script13.setSourceCode("\n"+
 "\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"\n"+
-"")
+"			}")
 Scene6.addChild(Script13)
 TimeSensor19 = TimeSensorObject()
 TimeSensor19.setDEF("TourTime")

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -120,19 +120,12 @@
                           "#sourceText":[
 "",
 "",
-"",
-"",
-"",
 "ecmascript:",
 "               function set_location(value) {",
 "                    old = translation;",
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
 "                    keyValue = new MFVec3f(old, translation);",
 "               }",
-"",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -258,19 +251,12 @@
                           "#sourceText":[
 "",
 "",
-"",
-"",
-"",
 "ecmascript:",
 "               function set_location(value) {",
 "                    old = translation;",
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
 "                    keyValue = new MFVec3f(old, translation);",
 "               }",
-"",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -431,9 +417,7 @@
               "#sourceText":[
 "",
 "",
-"",
-"",
-"            ecmascript:",
+"ecmascript:",
 "        function recompute(startpoint,endpoint){",
 "\t    if (typeof endpoint === 'undefined') {",
 "\t\treturn;",
@@ -472,10 +456,6 @@
 "        function set_endpoint(val,t){",
 "            recompute_and_route(startnode.translation,val);",
 "        }",
-"",
-"",
-"",
-"",
 "",
 ""
 ]

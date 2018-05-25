@@ -136,8 +136,7 @@ Script18.setSourceCode("ecmascript:\n"+
 "                        position = new MFVec3d();\n"+
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
-"               }\n"+
-"")
+"               }")
 Scene8.addChild(Script18)
 ROUTE23 = ROUTEObject()
 ROUTE23.setFromNode("TourTime")

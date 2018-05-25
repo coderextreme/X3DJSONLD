@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -161,7 +161,6 @@
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);",
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);",
 "               }",
-"",
 "",
 ""
 ]

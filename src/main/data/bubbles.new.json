@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -330,8 +330,7 @@
               "#sourceText":[
 "",
 "",
-"",
-"\t    ecmascript:",
+"ecmascript:",
 "               function set_cycle(value) {",
 "\t       \t   try {",
 "                        var ov = lastKey;",
@@ -351,7 +350,6 @@
 "\t\t\t\talert(e);",
 "\t\t   }",
 "               }",
-"",
 "",
 ""
 ]

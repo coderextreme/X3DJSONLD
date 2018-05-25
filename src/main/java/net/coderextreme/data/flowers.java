@@ -150,9 +150,7 @@ ProtoInstanceObject ProtoInstance2 = null;
               .addField(new fieldObject().setType("SFFloat").setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new fieldObject().setType("SFFloat").setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType("SFFloat").setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
@@ -218,10 +216,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"			}\n"+
-"\n"+
-"\n"+
-""))
+"			}"))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Animate").setFromField("translation_changed").setToNode("animate_transform").setToField("set_translation"))

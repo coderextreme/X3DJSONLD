@@ -59,8 +59,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFROTATION).setName("set_orientation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFROTATION).setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("\n"+
-"	    ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "	       	   try {\n"+
 "                        var ov = lastKey;\n"+
@@ -79,8 +78,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		   } catch (e) {\n"+
 "				alert(e);\n"+
 "		   }\n"+
-"               }\n"+
-""))
+"               }"))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))

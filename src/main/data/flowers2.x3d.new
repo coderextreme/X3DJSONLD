@@ -40,9 +40,7 @@
 <field name="g" accessType="outputOnly" type="SFFloat" value="5"></field>
 <field name="h" accessType="outputOnly" type="SFFloat" value="5"></field>
 <field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
-<![CDATA[
-			
-			ecmascript:
+<![CDATA[ecmascript:
 
 			var e = 5;
 			var f = 5;
@@ -115,9 +113,7 @@
 					h = 4;
 				}
 				generateCoordinates();
-			}
-			      
-]]></Script>
+			}]]></Script>
 <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex"></ROUTE>
 <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"></ROUTE>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"></ROUTE>

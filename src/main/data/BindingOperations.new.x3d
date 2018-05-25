@@ -103,8 +103,7 @@
                 <field name='view4Bound' accessType='inputOnly' type='SFBool'/>
                 <field name='priorInputvalue' accessType='initializeOnly' type='SFInt32' value='-1'/>
 <![CDATA[
-
-        ecmascript:
+ecmascript:
 
 function initialize ()
 {
@@ -192,9 +191,6 @@ function view5Bound (inputValue)
 {
     Browser.print (', view5Bound ' + (inputValue));
 }
-
-
-
 ]]>
             </Script>
             <!-- drive Script with TimeSensor clock -->

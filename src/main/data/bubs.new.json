@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -132,7 +132,6 @@
                               "#sourceText":[
 "",
 "",
-"",
 "ecmascript:",
 "function initialize() {",
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -172,9 +171,6 @@
 "\tinitialize();",
 "    }",
 "}",
-"",
-"\t\t\t",
-"",
 "",
 ""
 ]

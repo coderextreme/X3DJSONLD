@@ -245,8 +245,7 @@ field47.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script44.addField(field47)
 
-Script44.setSourceCode("\n"+
-"ecmascript:\n"+
+Script44.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -270,10 +269,7 @@ Script44.setSourceCode("\n"+
 "				velocity.y += Math.random() * 0.2 - 0.1;\n"+
 "				velocity.z += Math.random() * 0.2 - 0.1;\n"+
 "			    }\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"")
+"			}")
 ProtoBody14.addChild(Script44)
 TimeSensor48 = TimeSensorObject()
 TimeSensor48.setDEF("TourTime")

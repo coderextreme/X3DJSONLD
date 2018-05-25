@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -145,8 +145,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
-                    "",
                     "ecmascript:",
                     "",
                     "                function set_cycle(value) {",
@@ -154,9 +152,7 @@
                     "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);",
                     "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);",
                     "\t\t        spine = new MFVec3f([endA, endB]);",
-                    "                }",
-                    "",
-                    ""
+                    "                }"
                   ]
                 }
               },

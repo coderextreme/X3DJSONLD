@@ -229,9 +229,7 @@ field46.setValue("50")
 
 Script38.addField(field46)
 
-Script38.setSourceCode("\n"+
-"			\n"+
-"			ecmascript:\n"+
+Script38.setSourceCode("ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
 "			var f = 5;\n"+
@@ -304,9 +302,7 @@ Script38.setSourceCode("\n"+
 "					h = 4;\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
-"			}\n"+
-"			      \n"+
-"")
+"			}")
 Group23.addChild(Script38)
 ROUTE47 = ROUTEObject()
 ROUTE47.setFromNode("OrbitScript")

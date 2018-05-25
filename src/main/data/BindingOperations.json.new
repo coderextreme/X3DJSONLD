@@ -67,7 +67,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -521,8 +521,7 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
-                    "        ecmascript:",
+                    "ecmascript:",
                     "",
                     "function initialize ()",
                     "{",
@@ -609,9 +608,7 @@
                     "function view5Bound (inputValue)",
                     "{",
                     "    Browser.print (', view5Bound ' + (inputValue));",
-                    "}",
-                    "",
-                    ""
+                    "}"
                   ]
                 }
               },

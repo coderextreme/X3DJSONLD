@@ -286,10 +286,7 @@ field54.setValue("0.5")
 
 Script45.addField(field54)
 
-Script45.setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+Script45.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -354,11 +351,7 @@ Script45.setSourceCode("\n"+
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"\n"+
-"")
+"			}")
 Transform15.addChild(Script45)
 TimeSensor55 = TimeSensorObject()
 TimeSensor55.setDEF("TourTime")

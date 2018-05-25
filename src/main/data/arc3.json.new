@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -147,15 +147,13 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}",
-                    ""
+                    "\t\t}"
                   ]
                 }
               },
@@ -288,15 +286,13 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
                     "\t\t    // Browser.println(keyValue);",
-                    "\t\t}",
-                    ""
+                    "\t\t}"
                   ]
                 }
               },
@@ -446,7 +442,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "        function recompute(startpoint,endpoint){",
                     "\t    if (typeof endpoint === 'undefined') {",
@@ -490,8 +485,7 @@
                     "        }",
                     "        function set_endpoint(val,t){",
                     "            recompute_and_route(startnode.translation,val);",
-                    "        }",
-                    ""
+                    "        }"
                   ]
                 }
               }

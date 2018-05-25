@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -426,8 +426,6 @@
               "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "        function set_fraction( f, tm ) {",
 "            var side = Math.floor(f*frontUrls.length);",
@@ -444,9 +442,6 @@
 "                    bottom[0] = bottomUrls[side];",
 "            }",
 "        }",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -505,8 +500,6 @@
               "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "",
 "function set_fraction() {",
@@ -546,9 +539,6 @@
 "\t\td = 4;",
 "\t}",
 "}",
-"",
-"",
-"",
 "",
 ""
 ]

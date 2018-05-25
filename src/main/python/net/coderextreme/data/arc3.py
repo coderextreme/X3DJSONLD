@@ -98,16 +98,13 @@ field20.setValue("0 0 0 0 5 0")
 
 Script16.addField(field20)
 
-Script16.setSourceCode("\n"+
-"ecmascript:\n"+
+Script16.setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}\n"+
-"\n"+
-"")
+"		}")
 Transform10.addChild(Script16)
 TimeSensor21 = TimeSensorObject()
 TimeSensor21.setDEF("DECLpoint_G1_CL1")
@@ -198,16 +195,13 @@ field36.setValue("0 0 0 0 5 0")
 
 Script32.addField(field36)
 
-Script32.setSourceCode("\n"+
-"ecmascript:\n"+
+Script32.setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}\n"+
-"\n"+
-"")
+"		}")
 Transform26.addChild(Script32)
 TimeSensor37 = TimeSensorObject()
 TimeSensor37.setDEF("DECLpoint_G2_CL1")
@@ -325,8 +319,7 @@ field59.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script49.addField(field59)
 
-Script49.setSourceCode("\n"+
-"ecmascript:\n"+
+Script49.setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -369,9 +362,7 @@ Script49.setSourceCode("\n"+
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }\n"+
-"\n"+
-"")
+"        }")
 Group42.addChild(Script49)
 Scene7.addChild(Group42)
 ROUTE60 = ROUTEObject()
