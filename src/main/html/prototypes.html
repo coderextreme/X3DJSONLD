@@ -92,6 +92,7 @@
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/loadValidate.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 
@@ -99,7 +100,7 @@ var scripts = new Scripts();
 
 	function load_X3DOM_All(loadObj, url, callback) {
 		loadObj.x3domjson = protoExpander.prototypeExpander(url, loadObj.x3domjson, "");
-		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, xmlDoc, content) {
+		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, content) {
 			load_X3DOM_XML(content, loadObj.x3domxmlselector);
 			try {
 				x3dom.reload();  // This may be necessary
@@ -108,24 +109,24 @@ var scripts = new Scripts();
 				alert("Problem with x3dom.reload()", e);
 			}
 			if (typeof callback === 'function') {
-				callback(element, xmlDoc, loadObj.x3domjson);
+				callback(element, loadObj.x3domjson);
 			}
 		});
 	}
 	function load_X_ITE_All(loadObj, url, callback) {
 		var xml = [];
-		X3DJSONLD.loadX3DJS(document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+		loadX3DJS(document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 			load_X_ITE_DOM(element, loadObj.x_itehtmlselector); // loads into X_ITE element on page.
 			load_X_ITE_JS(loadObj.x_itejson, loadObj.x_itejsonselector); // loads into X_ITE element on page.
 			load_X_ITE_XML(getXmlString(element), loadObj.x_itexmlselector); // loads into X_ITE element on page.
-			callback(element, xmlDoc, loadObj.x_itejson);
+			callback(element, loadObj.x_itejson);
 		})
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
 		var xml = [];
-		X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 			load_X3DOM_DOM(element, selector);
-			callback(element, xmlDoc, xml.join("\n"));
+			callback(element, xml.join("\n"));
 		});
 	}
 	function load_X3DOM_DOM(element, selector) {
@@ -146,7 +147,7 @@ var scripts = new Scripts();
 					loadObj.x3domjson["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
 			}
-			load_X3DOM_All(loadObj, url, function(element, xmlDoc, json) {
+			load_X3DOM_All(loadObj, url, function(element, json) {
 				if ($('#scripting').is(':checked')) {
 					if (document.querySelector(loadObj.x3domxmlselector)) {
 						scripts.loadScripts(json, loadObj.x3domxmlselector, url);
@@ -156,7 +157,6 @@ var scripts = new Scripts();
 					}
 				}
 				loadObj.x3domelement = element;
-				loadObj.x3domxmlDoc = xmlDoc;
 				loadObj.x3domjson = json;
 				callback(true);
 			});
@@ -173,9 +173,8 @@ var scripts = new Scripts();
 					loadObj.x_itejson["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
 			}
-			load_X_ITE_All(loadObj, url,  function(element, xmlDoc, json) {
+			load_X_ITE_All(loadObj, url,  function(element, json) {
 				loadObj.x_iteelement = element;
-				loadObj.x_itexmlDoc = xmlDoc;
 				loadObj.x_itejson = json;
 				callback(true);
 			});

@@ -1,12 +1,14 @@
-var fs = require('fs');
-var Ajv = require('ajv');
-var ajv = new Ajv();
-var localize = require('ajv-i18n');
-var X3DJSONLD = require('./X3DJSONLD.js');
+if (typeof require === 'function') {
+	var fs = require('fs');
+	var Ajv = require('ajv');
+	var ajv = new Ajv();
+	var localize = require('ajv-i18n');
+	var X3DJSONLD = require('./X3DJSONLD.js');
+}
 
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
-var validate = function() { return false; }
+var validate = { };
 
 function doValidate(json, validated_version, file, X3DJSONLD, success, failure, e) {
 	var retval = false;
@@ -48,10 +50,10 @@ function doValidate(json, validated_version, file, X3DJSONLD, success, failure, 
 				error += " file: " + file + "\n";
 			}
 		}
-		if (typeof confirm !== 'function') {
-			var confirm = function(error) {
+		if (typeof window === 'object' && typeof window.confirm !== 'function') {
+			window.confirm = function(error) {
 				return false;
-			}
+			};
 		}
 
 		retval = (valid || confirm(error));
@@ -85,7 +87,7 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
 		var ajv = new Ajv({allErrors:true, verbose:true});
-		      if (typeof $ === 'object') {
+		      if (typeof $ === 'function') {
 			      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 				      validated_version = addSchema(ajv, schemajson, version);
 				      doValidate(json, validated_version, file, X3DJSONLD, success, undefined);

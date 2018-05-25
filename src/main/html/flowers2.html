@@ -39,6 +39,7 @@
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/loadValidate.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
@@ -87,7 +88,7 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
-		        replaceX3DJSON(selector, json, url, xml, "", function(element, xmlDoc) {
+		        replaceX3DJSON(selector, json, url, xml, "", function(element) {
 				if ($('#scripting').is(':checked')) {
 					scripts.loadScripts(json, selector, url);
 				}
@@ -100,7 +101,7 @@ function getJSON(url) {
 	function load_X_ITE(url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
-			X3DJSONLD.loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element, xmlDoc) {
+			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 				load_X_ITE_DOM(element, "#x_itedom"); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {
