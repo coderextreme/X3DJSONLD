@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'f03268f61631a5d91ad7a2ffe621f7bcd2afdc00' - b'Thu May 17 14:15:56 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'd7faee0428fc852869886eda1dc2e2a348ba11aa' - b'Fri May 25 11:47:40 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -1035,8 +1035,8 @@ x3dom.DownloadManager = {
       
       //insert requests
       for (k = 0; k < urls.length; ++k) {
-        if (!onloadCallbacks[k] === undefined || !priorities[k] === undefined) {
-          x3dom.debug.logError('DownloadManager: No onload callback and / or priority specified. Ignoring request for \"' + url + '\"');
+        if (onloadCallbacks[k] == undefined || priorities[k] == undefined) { // == also checks for null
+          x3dom.debug.logError('DownloadManager: No onload callback and / or priority specified. Ignoring request for \"' + urls[k] + '\"');
           continue;
         }
         else {
@@ -4037,7 +4037,7 @@ x3dom.Utils.createCompressedTexture2D = function(gl, doc, src, bgnd, crossOrigin
 
   //start loading
 
-  ddsXhr = new XMLHttpRequest();
+  var ddsXhr = new XMLHttpRequest();
 
   var ext = gl.getExtension('WEBGL_compressed_texture_s3tc');
 
@@ -4066,7 +4066,7 @@ x3dom.Utils.tryCompressedTexture2D = function(texture, gl, doc, src, bgnd, cross
 {
   //start loading
 
-  ddsXhr = new XMLHttpRequest();
+  var ddsXhr = new XMLHttpRequest();
 
   var ext = gl.getExtension('WEBGL_compressed_texture_s3tc');
 
@@ -5140,6 +5140,7 @@ x3dom.Utils.forbiddenBySOP = function (uri_string) {
     Scheme = Scheme || document.location.protocol;
     return !(Port === originPort && Host === document.location.host && Scheme === document.location.protocol);
 };
+
 /*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
@@ -11369,6 +11370,82 @@ x3dom.Runtime.prototype.toggleProjection = function( perspViewID, orthoViewID )
     return (persp._vf.isActive) ? 0 : 1;
 };
 
+/**
+ * APIFunction: replaceWorld
+ *
+ * Replaces the current scene element
+ *
+ * For example:
+ *
+ *   > var element, x3d, jsobject, optionalUrl;
+ *   > element = document.getElementById('the_x3delement');
+ *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
+ *   > element.runtime.replaceWorld(x3d.querySelector("Scene"));
+ *
+ * Parameters:
+ * 		scene - scene element to substitute
+ */
+x3dom.Runtime.prototype.replaceWorld = function(scene) {
+    var oldScene = this.doc.querySelector("Scene");
+    this.doc.replaceChild(scene, oldScene);
+    x3dom.reload();
+};
+
+/**
+ * APIFunction: createX3dFromJS
+ *
+ * Creates a x3d element from a JSON JavaScript X3D object
+ *
+ * For example:
+ *
+ *   > var element, x3d, jsobject, optionalUrl;
+ *   > element = document.getElementById('the_x3delement');
+ *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
+ *   > element.runtime.replaceWorld(x3d.querySelector("Scene"));
+ *
+ * Parameters:
+ * 		jsobject -- JavaScript JSON object of X3D object
+ * 		optionalURL -- if specified, does a PROTO expansion on jsobject.
+ * 			JSON ExternProtoDeclare's are loaded relative to this
+ * 			URL.
+ *
+ * Returns:
+ * 		The x3d element
+ */
+x3dom.Runtime.prototype.createX3DFromJS = function(jsobject, optionalURL) {
+	if (optionalURL) {
+		jsobject = x3dom.protoExpander.prototypeExpander(optionalURL, jsobject);
+	}
+	var jsonParser = new x3dom.JSONParser();
+	return jsonParser.parseJavaScript(jsobject);
+};
+
+/**
+ * APIFunction: createX3dFromString
+ *
+ * Creates a x3d element from a JSON String
+ *
+ * For example:
+ *
+ *   > var element, x3d, json, optionalUrl;
+ *   > element = document.getElementById('the_x3delement');
+ *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
+ *   > element.runtime.replaceWorld(x3d.querySelector("Scene"));
+ *
+ * Parameters:
+ * 		json -- JSON of X3D object
+ * 		optionalURL -- if specified, does a PROTO expansion on json.
+ * 			JSON ExternProtoDeclare's are loaded relative to this
+ * 			URL.
+ *
+ * Returns:
+ * 		The x3d element
+ */
+x3dom.Runtime.prototype.createX3DFromString = function(json, optionalURL) {
+	var jsobject = JSON.parse(json);
+	return x3dom.Runtime.prototype.createX3DFromJS(json, optionalURL);
+};
+
 /*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
@@ -15171,13 +15248,13 @@ x3dom.Mesh.prototype.splitMesh = function(primStride, checkMultiIndIndices)
     var pStride;
     var isMultiInd;
 
-    if (typeof primStride === undefined) {
+    if (primStride === undefined) {
         pStride = 3;
     } else {
         pStride = primStride;
     }
 
-    if (typeof checkMultiIndIndices === undefined) {
+    if (checkMultiIndIndices === undefined) {
         checkMultiIndIndices = false;
     }
 
@@ -19695,7 +19772,7 @@ x3dom.JSONParser.prototype.CreateElement = function(key, containerField) {
 	 * a way to create a CDATA function or script in HTML, by using a DOM parser.
 	 */
 x3dom.JSONParser.prototype.CDATACreateFunction = function(document, element, str) {
-		var y = str.replace(/\\"/g, "\\\"")
+		var y = str.trim().replace(/\\"/g, "\\\"")
 			.replace(/&lt;/g, "<")
 			.replace(/&gt;/g, ">")
 			.replace(/&amp;/g, "&");
@@ -19858,7 +19935,6 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function(object, parentkey, element,
 		if (isArray) {
 			if (parentkey.startsWith('@')) {
 				if (arrayOfStrings) {
-					arrayOfStrings = false;
 					for (var str in localArray) {
 						localArray[str] = this.SFStringToXML(localArray[str]);
 					}
@@ -19868,7 +19944,6 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function(object, parentkey, element,
 					this.elementSetAttribute(element, parentkey.substr(1),localArray.join(" "));
 				}
 			}
-			isArray = false;
 		}
 		return element;
 	};
@@ -25488,8 +25563,10 @@ x3dom.gfx_webgl = (function () {
         var q = 0, q6;
         var textures, t;
         var vertices, positionBuffer;
-        var texCoordBuffer, normalBuffer, colorBuffer;
+        var texCoords, texCoordBuffer;
         var indicesBuffer, indexArray;
+        var normals, normalBuffer ;
+        var colors, colorBuffer;
 
         var shape = drawable.shape;
         var geoNode = shape._cf.geometry.node;
@@ -29025,7 +29102,7 @@ x3dom.gfx_webgl = (function () {
             if (slights[p]._vf.shadowIntensity > 0.0) {
 
                 var lightMatrix = viewarea.getLightMatrix()[p];
-                shadowMaps = scene._webgl.fboShadow[shadowCount];
+                var shadowMaps = scene._webgl.fboShadow[shadowCount];
                 var offset = Math.max(0.0, Math.min(1.0, slights[p]._vf.shadowOffset));
 
                 if (!x3dom.isa(slights[p], x3dom.nodeTypes.PointLight)) {
@@ -44020,7 +44097,7 @@ x3dom.registerNodeType(
                 var frustum =  new x3dom.fields.FrustumVolume( projMatrix.mult(viewMatrix) );
 
                 var selection = [];
-                var volumes = this._partVolume;
+                var id, volumes = this._partVolume;
                 for(id in volumes){
                     if(!volumes.hasOwnProperty(id))
                         continue;
@@ -46861,8 +46938,6 @@ x3dom.registerNodeType(
         }
     )
 );
-
-
 x3dom.DefaultNavigation = function(navigationNode)
 {
     this.navi = navigationNode;
@@ -46892,7 +46967,7 @@ x3dom.DefaultNavigation.prototype.zoom = function(view, zoomAmount)
     var d = (view._scene._lastMax.subtract(view._scene._lastMin)).length();
     d = ((d < x3dom.fields.Eps) ? 1 : d) * navi._vf.speed;
 
-    vec = new x3dom.fields.SFVec3f(0, 0, d*(zoomAmount)/view._height);
+    var vec = new x3dom.fields.SFVec3f(0, 0, d*(zoomAmount)/view._height);
 
     if (x3dom.isa(viewpoint, x3dom.nodeTypes.OrthoViewpoint))
     {
@@ -46910,7 +46985,7 @@ x3dom.DefaultNavigation.prototype.zoom = function(view, zoomAmount)
         }
 
         view._movement = view._movement.add(vec);
-        mat = view.getViewpointMatrix().mult(view._transMat);
+        var mat = view.getViewpointMatrix().mult(view._transMat);
         //TODO; move real distance along viewing ray
         view._transMat = mat.inverse().
                             mult(x3dom.fields.SFMatrix4f.translation(view._movement)).
@@ -46925,11 +47000,11 @@ x3dom.DefaultNavigation.prototype.moveForward = function(view)
     if (navi.getType() === "game")
     {
         var avatarRadius = 0.25;
-        var avatarHeight = 1.6;
+        //var avatarHeight = 1.6; // not used
 
         if (navi._vf.avatarSize.length > 2) {
             avatarRadius = navi._vf.avatarSize[0];
-            avatarHeight = navi._vf.avatarSize[1];
+            //avatarHeight = navi._vf.avatarSize[1]; // not used
         }
 
         var speed = 5 * view._deltaT * navi._vf.speed;
@@ -47670,7 +47745,7 @@ x3dom.TurntableNavigation.prototype.constructor = x3dom.TurntableNavigation;
 
 x3dom.TurntableNavigation.prototype.onDrag = function(view, x, y, buttonState)
 {
-    navi = this.navi;
+    var navi = this.navi;
     
     if (!view._flyMat)
         this.initTurnTable(view, false);
@@ -47826,7 +47901,7 @@ x3dom.TurntableNavigation.prototype.zoom = function(view, zoomAmount)
     view._from = view._flyMat.e3(); // eye
 
     // zoom in/out
-    cor = view._at;
+    var cor = view._at;
 
     var lastDir  = cor.subtract(view._from);
     var lastDirL = lastDir.length();
@@ -48187,6 +48262,7 @@ x3dom.TurntableNavigation.prototype.onDoubleClick = function (view, x, y)
     x3dom.debug.logInfo("New camera position:  " + view._from);
     this.animateTo(view, view._flyMat.inverse(), view.getViewMatrix());
 };
+
 /** @namespace x3dom */
 /*
  * X3DOM JavaScript Library
@@ -56373,7 +56449,7 @@ x3dom.registerNodeType(
             {
                 var textures = [];
 
-                var index = this.getIndexTexture();
+                var i, index = this.getIndexTexture();
                 if(index) textures.push(index);
 
                 for(i=0; i<this.numCoordinateTextures(); i++) {
@@ -56395,6 +56471,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -65791,14 +65868,14 @@ x3dom.registerNodeType(
                     this.vrcSinglePassShaderVertex._vf.url[0] = this.vertexShaderText();;
 
                     this.vrcSinglePassShaderFragment._vf.type = 'fragment';
-                    shaderText =
-                    this.fragmentPreamble+
-                    this.defaultUniformsShaderText(this.vrcVolumeTexture._vf.numberOfSlices, this.vrcVolumeTexture._vf.slicesOverX, this.vrcVolumeTexture._vf.slicesOverY)+
-                    this.styleUniformsShaderText()+
-                    this.styleShaderText()+
-                    this.texture3DFunctionShaderText+
-                    this.normalFunctionShaderText()+
-                    this.lightEquationShaderText();
+                    var shaderText =
+                        this.fragmentPreamble+
+                        this.defaultUniformsShaderText(this.vrcVolumeTexture._vf.numberOfSlices, this.vrcVolumeTexture._vf.slicesOverX, this.vrcVolumeTexture._vf.slicesOverY)+
+                        this.styleUniformsShaderText()+
+                        this.styleShaderText()+
+                        this.texture3DFunctionShaderText+
+                        this.normalFunctionShaderText()+
+                        this.lightEquationShaderText();
                     shaderText += "void main()\n"+
                     "{\n"+
                     "  vec3 cam_pos = vec3(modelViewMatrixInverse[3][0], modelViewMatrixInverse[3][1], modelViewMatrixInverse[3][2]);\n"+
@@ -65942,6 +66019,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * MEDX3DOM JavaScript Library
@@ -66728,15 +66806,15 @@ x3dom.registerNodeType(
                     this.vrcSinglePassShaderVertex._vf.url[0] = this.vertexShaderText();
 
                     this.vrcSinglePassShaderFragment._vf.type = 'fragment';
-                    shaderText =
-                    this.fragmentPreamble+
-                    this.defaultUniformsShaderText(this.vrcVolumeTexture._vf.numberOfSlices, this.vrcVolumeTexture._vf.slicesOverX, this.vrcVolumeTexture._vf.slicesOverY)+
-                    this.styleUniformsShaderText()+
-                    this.styleShaderText()+
-                    this.texture3DFunctionShaderText+
-                    this.normalFunctionShaderText()+
-                    this.lightEquationShaderText()+
-                    this.defaultLoopFragmentShaderText(this.inlineStyleShaderText(), this.lightAssigment(), this.initializeValues());
+                    var shaderText =
+                        this.fragmentPreamble+
+                        this.defaultUniformsShaderText(this.vrcVolumeTexture._vf.numberOfSlices, this.vrcVolumeTexture._vf.slicesOverX, this.vrcVolumeTexture._vf.slicesOverY)+
+                        this.styleUniformsShaderText()+
+                        this.styleShaderText()+
+                        this.texture3DFunctionShaderText+
+                        this.normalFunctionShaderText()+
+                        this.lightEquationShaderText()+
+                        this.defaultLoopFragmentShaderText(this.inlineStyleShaderText(), this.lightAssigment(), this.initializeValues());
                     this.vrcSinglePassShaderFragment._vf.url[0] = shaderText;
 
                     this.vrcSinglePassShader.addChild(this.vrcSinglePassShaderVertex, 'parts');
@@ -66806,6 +66884,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * MEDX3DOM JavaScript Library
@@ -68212,7 +68291,7 @@ x3dom.registerNodeType(
 
                         this._mesh._colors[0] = [];
 
-                        var indexes = this._vf.index;
+                        var i, indexes = this._vf.index;
                         for (i=0; i < indexes.length; ++i)
                         {
                             if ((i > 0) && (i % 3 === 0 )) {
@@ -68280,6 +68359,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -68510,7 +68590,7 @@ x3dom.registerNodeType(
 
                         this._mesh._colors[0] = [];
 
-                        var indexes = this._vf.index;
+                        var i, indexes = this._vf.index;
                         for (i=0; i < indexes.length; ++i)
                         {
                             if ((i > 0) && (i % 3 === 0 )) {
