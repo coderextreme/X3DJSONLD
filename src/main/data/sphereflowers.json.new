@@ -79,7 +79,7 @@
                 "ExternProtoDeclare": {
                   "@name": "FlowerProto",
                   "@url": [
-                    "../data/flowerproto.x3d#FlowerProto"
+                    "../data/flowerproto.json#FlowerProto"
                   ],
                   "field": [
                     {

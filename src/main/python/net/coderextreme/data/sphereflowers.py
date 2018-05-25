@@ -51,7 +51,7 @@ Group10 = GroupObject()
 
 ExternProtoDeclare11 = ExternProtoDeclareObject()
 ExternProtoDeclare11.setName("FlowerProto")
-ExternProtoDeclare11.setUrl(["../data/flowerproto.x3d#FlowerProto"])
+ExternProtoDeclare11.setUrl(["../data/flowerproto.json#FlowerProto"])
 
 field12 = fieldObject()
 field12.setType(fieldObject.TYPE_MFSTRING)
