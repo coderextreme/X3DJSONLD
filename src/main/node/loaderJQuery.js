@@ -328,16 +328,22 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 					return false;
 				}
 			}
-			$(selector).empty();
-			$(element.querySelector("Scene")).appendTo(selector);
-			// remove all text nodes in scripts (and fields too, sigh)
-			$(selector+" Script").empty();
-			try {
-				x3dom.reload();  // This may be necessary
-			} catch (e) {
-				console.error(e);
-				alert("Problem with x3dom.reload() "+ e);
+			var doc = document.querySelector(selector);
+			/*
+			while (doc.firstChild) {
+			    doc.removeChild(doc.firstChild);
 			}
+			doc.appendChild(element.querySelector("Scene"));
+			*/
+			// remove all text nodes in scripts (and fields too, sigh)
+			try {
+				if (doc.hasRuntime && doc.runtime.ready) {
+					doc.runtime.replaceWorld(element.querySelector("Scene"));
+				}
+			} catch (e) {
+				alert(e);
+			}
+			$(selector+" Script").empty();
 		}
 		next(element);
 	});
@@ -403,7 +409,7 @@ function loadPly(url) {
 
 function loadImage(url) {
 	var slash = url.lastIndexOf("/");
-	console.error("Image URL attempt at", url, slash);
+	// console.error("Image URL attempt at", url, slash);
 	if (slash >= 0) {
 		// load the default viewpoint as an image
 		var dot = url.lastIndexOf(".");
@@ -412,7 +418,7 @@ function loadImage(url) {
 		var ext = url.substr(dot);
 		var file = url.substr(slash, url.length - slash - ext.length);
 		var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
-		console.error("setting image src to", png)
+		// console.error("setting image src to", png)
 		$('#image').attr('src', png);
 
 /*
