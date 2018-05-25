@@ -532,12 +532,15 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 
 /**
  * Load X3D JSON into an element.
+ * DOMImplementation - normally document.implementation
  * jsobj - the JavaScript object to convert to XML and DOM.
  * path - the path of the JSON file.
- * xml - the output xml string array (optional).
+ * log - the output xml string array (optional).
  * NS - a namespace for X_ITE (optional) -- stripped out.
- * returns an element in callback or null if error - the element
- * to append or insert into the DOM.
+ * loadSchema -- the loadSchema function
+ * doValidate -- the doValidate function
+ * X3DJSONLD -- X3DJSONLD
+ * callback -- returns an element, the xmldoc created and X3DJSONLD in callback or null if error - the element to append or insert into the DOM.
  */
 loadX3DJS : function(DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	this.x3djsonNS = NS;
@@ -552,6 +555,12 @@ loadX3DJS : function(DOMImplementation, jsobj, path, log, NS, loadSchema, doVali
 	});
 },
 
+/*
+ * Load X3D JSON into an element.
+ * DOMImplementation - normally document.implementation
+ * jsobj - the JavaScript object to convert to XML and DOM.
+ * path - the path of the JSON file.
+ */
 loadJsonIntoXml: function(DOMImplementation, jsobj, path) {
 		var version = jsobj.X3D["@version"];
        		var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);

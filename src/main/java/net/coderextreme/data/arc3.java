@@ -101,16 +101,13 @@ public class arc3 {
             .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new fieldObject().setType("SFTime").setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}\n"+
-"\n"+
-""))
+"		}"))
           .addChild(new TimeSensorObject().setDEF("DECLpoint_G1_CL1").setCycleInterval(3d).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("cycleTime").setToNode("DECLpoint_G1_MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G1_PI1").setToField("set_fraction"))
@@ -127,16 +124,13 @@ public class arc3 {
             .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new fieldObject().setType("SFTime").setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}\n"+
-"\n"+
-""))
+"		}"))
           .addChild(new TimeSensorObject().setDEF("DECLpoint_G2_CL1").setCycleInterval(3d).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("cycleTime").setToNode("DECLpoint_G2_MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G2_PI1").setToField("set_fraction"))
@@ -160,8 +154,7 @@ public class arc3 {
               .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_rotscale")))
             .addField(new fieldObject().setType("SFVec3f").setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFVec3f").setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .setSourceCode("\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -204,9 +197,7 @@ public class arc3 {
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }\n"+
-"\n"+
-"")))
+"        }")))
         .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
     return X3D0;

@@ -246,8 +246,7 @@ connect52.setProtoField("set_endpoint")
 IS46.addConnect(connect52)
 Script39.setIS(IS46)
 
-Script39.setSourceCode("\n"+
-"            ecmascript:\n"+
+Script39.setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -285,10 +284,7 @@ Script39.setSourceCode("\n"+
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }\n"+
-"\n"+
-"\n"+
-"")
+"        }")
 ProtoBody38.addChild(Script39)
 ProtoDeclare30.setProtoBody(ProtoBody38)
 Scene7.addChild(ProtoDeclare30)

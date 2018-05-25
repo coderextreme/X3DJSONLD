@@ -77,8 +77,7 @@ var ProtoInstance2 = null;
             .addChild(new ScriptObject().setDEF("RightSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -86,14 +85,11 @@ var ProtoInstance2 = null;
 "\n"+
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
-"}\n"+
-"\n"+
-""))
+"}"))
             .addChild(new ScriptObject().setDEF("UpSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -101,14 +97,11 @@ var ProtoInstance2 = null;
 "\n"+
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
-"}\n"+
-"\n"+
-""))
+"}"))
             .addChild(new ScriptObject().setDEF("CenterSingleToMultiString")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
@@ -116,9 +109,7 @@ var ProtoInstance2 = null;
 "\n"+
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
-"}\n"+
-"\n"+
-""))
+"}"))
             .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
             .addChild(new ROUTEObject().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))
             .addChild(new ROUTEObject().setFromField("isOver").setFromNode("CenterTouch").setToField("set_enabled").setToNode("CenterSensor"))

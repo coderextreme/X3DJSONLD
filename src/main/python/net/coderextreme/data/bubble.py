@@ -106,8 +106,7 @@ field22.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 
 Script17.addField(field22)
 
-Script17.setSourceCode("\n"+
-"ecmascript:\n"+
+Script17.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -151,9 +150,7 @@ Script17.setSourceCode("\n"+
 "		translation.z = 0;\n"+
 "		initialize();\n"+
 "	}\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 Transform12.addChild(Script17)
 TimeSensor23 = TimeSensorObject()
 TimeSensor23.setDEF("bubbleClock")

@@ -62,18 +62,13 @@ var ProtoInstance12 = null;
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                 .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+                .setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(translation);\n"+
-"		}\n"+
-"\n"+
-"\n"+
-""))
+"		}"))
               .addChild(new TimeSensorObject().setDEF("CL1").setCycleInterval(3).setLoop(true))
               .addChild(new ROUTEObject().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
               .addChild(new ROUTEObject().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
@@ -103,8 +98,7 @@ var ProtoInstance12 = null;
                 .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
                 .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("\n"+
-"            ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -146,10 +140,7 @@ var ProtoInstance12 = null;
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
-"        }\n"+
-"\n"+
-"\n"+
-""))))
+"        }"))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("point").setDEF("G1"))
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("point").setDEF("G2"))
         .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("point").setDEF("G3"))

@@ -121,9 +121,7 @@
 <connect nodeField="offlineRender" protoField="offlineRender"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraScript
 {
 //  tracePrint ('initialize start...');
@@ -462,10 +460,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');
     else
          Browser.print ('[Camera] ' + outputString + '\n');
-}
-
-
-]]></Script>
+}]]></Script>
 <ROUTE fromField="position" fromNode="CameraScript" toField="position" toNode="CameraViewpoint"></ROUTE>
 <ROUTE fromField="orientation" fromNode="CameraScript" toField="orientation" toNode="CameraViewpoint"></ROUTE>
 <ROUTE fromField="isActive" fromNode="CameraScript" toField="set_bind" toNode="CameraViewpoint"></ROUTE>
@@ -514,9 +509,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraShotScript
 {
 //  tracePrint ('initialize start...');
@@ -608,10 +601,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');
     else
          Browser.print ('[CameraShot] ' + outputString + '\n');
-}
-
-
-]]></Script>
+}]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>
 <!--=============== CameraMovement ==============--><ProtoDeclare name="CameraMovement" appinfo="CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView."><ProtoInterface><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this CameraMovement" type="SFString"></field>
@@ -652,9 +642,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraMovementScript
 {
 //  tracePrint ('initialize start...');
@@ -743,10 +731,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');
     else
          Browser.print ('[CameraMovement] ' + outputString + '\n');
-}
-
-
-]]></Script>
+}]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>
 <!--=============== OfflineRender ==============--><ProtoDeclare name="OfflineRender" appinfo="OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)."><ProtoInterface><!--TODO non-photorealistic rendering (NPR) parameters--><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this OfflineRender" type="SFString"></field>
@@ -784,9 +769,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="imageFormat" protoField="imageFormat"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // OfflineRenderScript
 {
 //  tracePrint ('initialize start...');
@@ -839,10 +822,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');
     else
          Browser.print ('[OfflineRender] ' + outputString + '\n');
-}
-
-
-]]></Script>
+}]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>
 <!--=============== Launch Prototype Example ==============--><Background skyColor="0.282353 0.380392 0.470588"></Background>

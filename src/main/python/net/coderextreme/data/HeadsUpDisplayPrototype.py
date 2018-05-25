@@ -238,9 +238,7 @@ connect50.setProtoField("traceEnabled")
 IS49.addConnect(connect50)
 Script40.setIS(IS49)
 
-Script40.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script40.setSourceCode("ecmascript:\n"+
 "\n"+
 "function tracePrint (text)\n"+
 "{\n"+
@@ -274,10 +272,7 @@ Script40.setSourceCode("\n"+
 "{\n"+
 "	planeSensorTranslation = value;\n"+
 "	tracePrint('planeSensorTranslation=' + value);\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 Group32.addChild(Script40)
 ROUTE51 = ROUTEObject()
 ROUTE51.setFromField("isActive")

@@ -36,8 +36,7 @@
                         position = new MFVec3d();
                         position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
                         position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-               }
-]]></Script>
+               }]]></Script>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="RandomTourTime" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="RandomTourTime" fromField="position" toNode="TourPosition" toField="keyValue"></ROUTE>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="TourPosition" toField="set_fraction"></ROUTE>

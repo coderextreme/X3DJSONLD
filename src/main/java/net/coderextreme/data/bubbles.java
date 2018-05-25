@@ -135,8 +135,7 @@ public class bubbles {
           .addField(new fieldObject().setType("MFVec3f").setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("MFRotation").setName("set_orientation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("MFRotation").setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("\n"+
-"	    ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "	       	   try {\n"+
 "                        var ov = lastKey;\n"+
@@ -155,8 +154,7 @@ public class bubbles {
 "		   } catch (e) {\n"+
 "				alert(e);\n"+
 "		   }\n"+
-"               }\n"+
-""))
+"               }"))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))

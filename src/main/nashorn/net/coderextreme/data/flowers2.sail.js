@@ -54,9 +54,7 @@ var ProtoInstance1 = null;
                   .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("g").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
                   .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("h").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
                   .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("resolution").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
-                  .setSourceCode("\n"+
-"			\n"+
-"			ecmascript:\n"+
+                  .setSourceCode("ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
 "			var f = 5;\n"+
@@ -129,9 +127,7 @@ var ProtoInstance1 = null;
 "					h = 4;\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
-"			}\n"+
-"			      \n"+
-""))
+"			}"))
                 .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
                 .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
                 .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))

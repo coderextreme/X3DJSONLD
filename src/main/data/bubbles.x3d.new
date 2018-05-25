@@ -52,8 +52,7 @@
 <field name="position_changed" accessType="outputOnly" type="MFVec3f"></field>
 <field name="set_orientation" accessType="inputOnly" type="MFRotation"></field>
 <field name="orientation_changed" accessType="outputOnly" type="MFRotation"></field>
-<![CDATA[
-	    ecmascript:
+<![CDATA[ecmascript:
                function set_cycle(value) {
 	       	   try {
                         var ov = lastKey;
@@ -72,8 +71,7 @@
 		   } catch (e) {
 				alert(e);
 		   }
-               }
-]]></Script>
+               }]]></Script>
 <ROUTE fromNode="TourTime" fromField="cycleTime_changed" toNode="RandomTourTime" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="RandomTourTime" fromField="orientation_changed" toNode="TourOrientation" toField="set_keyValue"></ROUTE>
 <ROUTE fromNode="RandomTourTime" fromField="position_changed" toNode="TourPosition" toField="set_keyValue"></ROUTE>

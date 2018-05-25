@@ -762,9 +762,7 @@ connect125.setProtoField("traceEnabled")
 IS107.addConnect(connect125)
 Script70.setIS(IS107)
 
-Script70.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script70.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1103,10 +1101,7 @@ Script70.setSourceCode("\n"+
 "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[Camera] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 ProtoBody42.addChild(Script70)
 ROUTE126 = ROUTEObject()
 ROUTE126.setFromField("position")
@@ -1426,9 +1421,7 @@ connect174.setProtoField("traceEnabled")
 IS162.addConnect(connect174)
 Script146.setIS(IS162)
 
-Script146.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script146.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1520,10 +1513,7 @@ Script146.setSourceCode("\n"+
 "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 ProtoBody145.addChild(Script146)
 
 ProtoBody145.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
@@ -1793,9 +1783,7 @@ connect215.setProtoField("traceEnabled")
 IS203.addConnect(connect215)
 Script190.setIS(IS203)
 
-Script190.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script190.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1884,10 +1872,7 @@ Script190.setSourceCode("\n"+
 "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 ProtoBody189.addChild(Script190)
 
 ProtoBody189.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
@@ -2134,9 +2119,7 @@ connect253.setProtoField("traceEnabled")
 IS242.addConnect(connect253)
 Script230.setIS(IS242)
 
-Script230.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script230.setSourceCode("ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -2189,10 +2172,7 @@ Script230.setSourceCode("\n"+
 "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 ProtoBody229.addChild(Script230)
 
 ProtoBody229.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))

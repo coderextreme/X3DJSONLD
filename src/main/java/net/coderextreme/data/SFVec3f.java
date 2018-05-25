@@ -99,8 +99,7 @@ public class SFVec3f {
           .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFVec3f").setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFTime").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .setSourceCode("\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -130,11 +129,7 @@ public class SFVec3f {
 "\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
-"			}\n"+
-"\n"+
-"\n"+
-"\n"+
-""))
+"			}"))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;

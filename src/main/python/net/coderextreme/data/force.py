@@ -141,18 +141,13 @@ field32.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script28.addField(field32)
 
-Script28.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script28.setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
-"					}\n"+
-"\n"+
-"\n"+
-"")
+"					}")
 Group13.addChild(Script28)
 TimeSensor33 = TimeSensorObject()
 TimeSensor33.setDEF("nodeClock")
@@ -266,9 +261,7 @@ connect54.setProtoField("set_positionB")
 IS52.addConnect(connect54)
 Script48.setIS(IS52)
 
-Script48.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script48.setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
@@ -288,10 +281,7 @@ Script48.setSourceCode("\n"+
 "\n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
-"                }\n"+
-"\n"+
-"\n"+
-"")
+"                }")
 Group43.addChild(Script48)
 ROUTE55 = ROUTEObject()
 ROUTE55.setFromNode("MoveCylinder")
@@ -426,9 +416,7 @@ Script75.addField(field78)
 
 Script75.addComments(CommentsBlock("""<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
 
-Script75.setSourceCode("\n"+
-"	\n"+
-"ecmascript:\n"+
+Script75.setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+
@@ -445,10 +433,7 @@ Script75.setSourceCode("\n"+
 "				}\n"+
 "			});\n"+
 "\n"+
-"        }\n"+
-"	\n"+
-"\n"+
-"")
+"        }")
 Scene8.addChild(Script75)
 ROUTE79 = ROUTEObject()
 ROUTE79.setFromNode("clickGenerator")

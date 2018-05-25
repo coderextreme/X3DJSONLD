@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -378,7 +378,6 @@
                         "#sourceText":[
 "",
 "",
-"",
 "ecmascript:",
 "",
 "function initialize() {",
@@ -388,8 +387,6 @@
 "function set_rightstring(rightstr) {",
 "\trightlines = new MFString(rightstr);",
 "}",
-"",
-"",
 "",
 ""
 ]
@@ -413,7 +410,6 @@
                         "#sourceText":[
 "",
 "",
-"",
 "ecmascript:",
 "",
 "function initialize() {",
@@ -423,8 +419,6 @@
 "function set_upstring(upstr) {",
 "\tuplines = new MFString(upstr);",
 "}",
-"",
-"",
 "",
 ""
 ]
@@ -448,7 +442,6 @@
                         "#sourceText":[
 "",
 "",
-"",
 "ecmascript:",
 "",
 "function initialize() {",
@@ -458,8 +451,6 @@
 "function set_centerstring(centerstr) {",
 "\tcenterlines = new MFString(centerstr);",
 "}",
-"",
-"",
 "",
 ""
 ]

@@ -401,9 +401,7 @@ field68.setValue("-1")
 
 Script54.addField(field68)
 
-Script54.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script54.setSourceCode("ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "            var side = Math.floor(f*frontUrls.length);\n"+
 "            if (side > frontUrls.length-1) {\n"+
@@ -418,10 +416,7 @@ Script54.setSourceCode("\n"+
 "                    top[0] = topUrls[side];\n"+
 "                    bottom[0] = bottomUrls[side];\n"+
 "            }\n"+
-"        }\n"+
-"\n"+
-"\n"+
-"")
+"        }")
 Scene9.addChild(Script54)
 
 Scene9.addComments(CommentsBlock("""<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"""))
@@ -478,9 +473,7 @@ field76.setValue("0")
 
 Script69.addField(field76)
 
-Script69.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script69.setSourceCode("ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
@@ -518,10 +511,7 @@ Script69.setSourceCode("\n"+
 "	if (d > 20) {\n"+
 "		d = 4;\n"+
 "	}\n"+
-"}\n"+
-"\n"+
-"\n"+
-"")
+"}")
 Scene9.addChild(Script69)
 TimeSensor77 = TimeSensorObject()
 TimeSensor77.setDEF("TourTime")

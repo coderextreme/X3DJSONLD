@@ -79,8 +79,7 @@ Script12.addField(field15)
 
 Script12.addComments(CommentsBlock("""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"""))
 
-Script12.setSourceCode("\n"+
-"ecmascript:\n"+
+Script12.setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -153,9 +152,7 @@ Script12.setSourceCode("\n"+
 "		h = 4;\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
-"}\n"+
-"\n"+
-"")
+"}")
 Scene1.addChild(Script12)
 TimeSensor16 = TimeSensorObject()
 TimeSensor16.setDEF("Clock")

@@ -186,18 +186,13 @@ field44.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script40.addField(field44)
 
-Script40.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script40.setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(translation);\n"+
-"		}\n"+
-"\n"+
-"\n"+
-"")
+"		}")
 Transform32.addChild(Script40)
 TimeSensor45 = TimeSensorObject()
 TimeSensor45.setDEF("CL1")
@@ -355,8 +350,7 @@ connect72.setProtoField("set_endpoint")
 IS66.addConnect(connect72)
 Script59.setIS(IS66)
 
-Script59.setSourceCode("\n"+
-"            ecmascript:\n"+
+Script59.setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -398,10 +392,7 @@ Script59.setSourceCode("\n"+
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
-"        }\n"+
-"\n"+
-"\n"+
-"")
+"        }")
 ProtoBody58.addChild(Script59)
 ProtoDeclare50.setProtoBody(ProtoBody58)
 Scene7.addChild(ProtoDeclare50)

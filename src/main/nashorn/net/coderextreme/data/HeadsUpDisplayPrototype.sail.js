@@ -57,9 +57,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translationOffsetChanged").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
                           .setIS(new ISObject()
                             .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-                          .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+                          .setSourceCode("ecmascript:\n"+
 "\n"+
 "function tracePrint (text)\n"+
 "{\n"+
@@ -93,10 +91,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "{\n"+
 "	planeSensorTranslation = value;\n"+
 "	tracePrint('planeSensorTranslation=' + value);\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
                         .addChild(new ROUTEObject().setFromField("isActive").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorIsActive").setToNode("VisibilityControlScript"))
                         .addChild(new ROUTEObject().setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorTranslation").setToNode("VisibilityControlScript"))
                         .addChild(new ROUTEObject().setFromField("isActive").setFromNode("MovementVisibilitySensor").setToField("setIsVisible").setToNode("VisibilityControlScript")))))

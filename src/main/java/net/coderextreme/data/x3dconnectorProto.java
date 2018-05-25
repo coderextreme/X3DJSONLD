@@ -162,8 +162,7 @@ ProtoInstanceObject ProtoInstance2 = null;
                 .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
                 .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("\n"+
-"            ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -201,10 +200,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }\n"+
-"\n"+
-"\n"+
-""))))
+"        }"))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))
         .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3"))

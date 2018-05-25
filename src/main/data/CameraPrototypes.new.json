@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2018"
+            "@content":"24 May 2018"
           },
           {
             "@name":"generator",
@@ -727,8 +727,6 @@
                         "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "function initialize () // CameraScript",
 "{",
@@ -1070,9 +1068,6 @@
 "         Browser.print ('[Camera] ' + outputString + '\n');",
 "}",
 "",
-"",
-"",
-"",
 ""
 ]
                       }
@@ -1376,8 +1371,6 @@
                         "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "function initialize () // CameraShotScript",
 "{",
@@ -1471,9 +1464,6 @@
 "    else",
 "         Browser.print ('[CameraShot] ' + outputString + '\n');",
 "}",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -1724,8 +1714,6 @@
                         "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "function initialize () // CameraMovementScript",
 "{",
@@ -1816,9 +1804,6 @@
 "    else",
 "         Browser.print ('[CameraMovement] ' + outputString + '\n');",
 "}",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -2051,8 +2036,6 @@
                         "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "function initialize () // OfflineRenderScript",
 "{",
@@ -2107,9 +2090,6 @@
 "    else",
 "         Browser.print ('[OfflineRender] ' + outputString + '\n');",
 "}",
-"",
-"",
-"",
 "",
 ""
 ]

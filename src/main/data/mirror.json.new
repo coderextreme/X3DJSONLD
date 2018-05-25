@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -491,8 +491,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
-                    "",
                     "ecmascript:",
                     "        function set_fraction( f, tm ) {",
                     "\t    var side = Math.floor(f*frontUrls.length);",
@@ -509,9 +507,7 @@
                     "\t\t    top_changed[0] = topUrls[side];",
                     "\t\t    bottom_changed[0] = bottomUrls[side];",
                     "            }",
-                    "        }",
-                    "",
-                    ""
+                    "        }"
                   ]
                 }
               },

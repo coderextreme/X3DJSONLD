@@ -159,8 +159,6 @@
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 function initialize () // CameraScript
 {
@@ -501,9 +499,6 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[Camera] ' + outputString + '\n');
 }
-
-
-
 ]]>
                 </Script>
                 <ROUTE fromField='position' fromNode='CameraScript' toField='position' toNode='CameraViewpoint'/>
@@ -565,8 +560,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 function initialize () // CameraShotScript
 {
@@ -660,9 +653,6 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[CameraShot] ' + outputString + '\n');
 }
-
-
-
 ]]>
                 </Script>
                 <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->
@@ -716,8 +706,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 function initialize () // CameraMovementScript
 {
@@ -808,9 +796,6 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[CameraMovement] ' + outputString + '\n');
 }
-
-
-
 ]]>
                 </Script>
                 <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->
@@ -861,8 +846,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 function initialize () // OfflineRenderScript
 {
@@ -917,9 +900,6 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[OfflineRender] ' + outputString + '\n');
 }
-
-
-
 ]]>
                 </Script>
                 <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->

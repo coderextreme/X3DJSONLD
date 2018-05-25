@@ -291,8 +291,7 @@ field54.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 
 Script47.addField(field54)
 
-Script47.setSourceCode("\n"+
-"	    ecmascript:\n"+
+Script47.setSourceCode("ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "	       	   try {\n"+
 "                        var ov = lastKey;\n"+
@@ -311,8 +310,7 @@ Script47.setSourceCode("\n"+
 "		   } catch (e) {\n"+
 "				alert(e);\n"+
 "		   }\n"+
-"               }\n"+
-"")
+"               }")
 Scene11.addChild(Script47)
 ROUTE55 = ROUTEObject()
 ROUTE55.setFromNode("TourTime")

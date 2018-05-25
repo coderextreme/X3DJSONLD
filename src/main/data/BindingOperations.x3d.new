@@ -71,8 +71,7 @@
 <field name="view3Bound" accessType="inputOnly" type="SFBool"></field>
 <field name="view4Bound" accessType="inputOnly" type="SFBool"></field>
 <field name="priorInputvalue" accessType="initializeOnly" type="SFInt32" value="-1"></field>
-<![CDATA[
-        ecmascript:
+<![CDATA[ecmascript:
 
 function initialize ()
 {
@@ -159,10 +158,7 @@ function view4Bound (inputValue)
 function view5Bound (inputValue)
 {
     Browser.print (', view5Bound ' + (inputValue));
-}
-
-
-]]></Script>
+}]]></Script>
 <!--drive Script with TimeSensor clock--><ROUTE fromField="value_changed" fromNode="TimingSequencer" toField="set_timeEvent" toNode="BindingSequencerEngine"></ROUTE>
 <!--Script will bind and unbind Viewpoint nodes--><ROUTE fromField="bindView1" fromNode="BindingSequencerEngine" toField="set_bind" toNode="View1"></ROUTE>
 <ROUTE fromField="bindView2" fromNode="BindingSequencerEngine" toField="set_bind" toNode="View2"></ROUTE>

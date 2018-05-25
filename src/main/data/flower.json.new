@@ -138,7 +138,6 @@
               }
             ],
             "#sourceText": [
-              "",
               "ecmascript:",
               "",
               "var e = 5;",
@@ -212,8 +211,7 @@
               "\t\th = 4;",
               "\t}",
               "\tgenerateCoordinates(resolution);",
-              "}",
-              ""
+              "}"
             ]
           }
         },

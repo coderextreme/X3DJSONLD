@@ -40,9 +40,7 @@
 <field name="translationOffsetChanged" accessType="outputOnly" type="SFVec3f"></field>
 <IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 
 function tracePrint (text)
 {
@@ -76,10 +74,7 @@ function setPlaneSensorTranslation (value, timeStamp)
 {
 	planeSensorTranslation = value;
 	tracePrint('planeSensorTranslation=' + value);
-}
-
-
-]]></Script>
+}]]></Script>
 <ROUTE fromField="isActive" fromNode="PlaneMovementSensor" toField="setPlaneSensorIsActive" toNode="VisibilityControlScript"></ROUTE>
 <ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="setPlaneSensorTranslation" toNode="VisibilityControlScript"></ROUTE>
 <ROUTE fromField="isActive" fromNode="MovementVisibilitySensor" toField="setIsVisible" toNode="VisibilityControlScript"></ROUTE>

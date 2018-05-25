@@ -17,18 +17,13 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
-		}
-
-
-
-]]></Script>
+		}]]></Script>
 <TimeSensor DEF="DECLpoint_G1_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="cycleTime" toNode="DECLpoint_G1_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="fraction_changed" toNode="DECLpoint_G1_PI1" toField="set_fraction"></ROUTE>
@@ -44,18 +39,13 @@ ecmascript:
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
-		}
-
-
-
-]]></Script>
+		}]]></Script>
 <TimeSensor DEF="DECLpoint_G2_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="fraction_changed" toNode="DECLpoint_G2_PI1" toField="set_fraction"></ROUTE>
@@ -76,8 +66,7 @@ ecmascript:
 </field>
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		    if (typeof Quaternion !== 'undefined') {
@@ -137,9 +126,7 @@ ecmascript:
         }
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
-        }
-
-]]></Script>
+        }]]></Script>
 </Group>
 <ROUTE fromNode="DECLpoint_G1_node" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_node" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>

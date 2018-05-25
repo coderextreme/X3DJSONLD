@@ -159,8 +159,7 @@ public class BindingOperations {
             .addField(new fieldObject().setType("SFBool").setName("view3Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFBool").setName("view4Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFInt32").setName("priorInputvalue").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode("\n"+
-"        ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -247,10 +246,7 @@ public class BindingOperations {
 "function view5Bound (inputValue)\n"+
 "{\n"+
 "    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
           .addComments(new CommentsBlock("drive Script with TimeSensor clock"))
           .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("TimingSequencer").setToField("set_timeEvent").setToNode("BindingSequencerEngine"))
           .addComments(new CommentsBlock("Script will bind and unbind Viewpoint nodes"))

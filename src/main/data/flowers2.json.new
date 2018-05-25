@@ -43,7 +43,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 May 2018"
+          "@content": "24 May 2018"
         },
         {
           "@name": "generator",
@@ -289,9 +289,7 @@
                                   }
                                 ],
                                 "#sourceText": [
-                                  "",
-                                  "\t\t\t",
-                                  "\t\t\tecmascript:",
+                                  "ecmascript:",
                                   "",
                                   "\t\t\tvar e = 5;",
                                   "\t\t\tvar f = 5;",
@@ -364,8 +362,7 @@
                                   "\t\t\t\t\th = 4;",
                                   "\t\t\t\t}",
                                   "\t\t\t\tgenerateCoordinates();",
-                                  "\t\t\t}",
-                                  "\t\t\t      "
+                                  "\t\t\t}"
                                 ]
                               }
                             },

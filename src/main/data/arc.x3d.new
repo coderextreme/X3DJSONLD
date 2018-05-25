@@ -21,18 +21,13 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
-		}
-
-
-]]></Script>
+		}]]></Script>
 <TimeSensor DEF="CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="CL1" fromField="cycleTime" toNode="MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="CL1" fromField="fraction_changed" toNode="PI1" toField="set_fraction"></ROUTE>
@@ -65,8 +60,7 @@ ecmascript:
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[
-            ecmascript:
+<![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -109,10 +103,7 @@ ecmascript:
         }
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
-        }
-
-
-]]></Script>
+        }]]></Script>
 </Group>
 </ProtoBody>
 </ProtoDeclare>

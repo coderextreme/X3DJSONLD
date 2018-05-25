@@ -68,8 +68,6 @@
                                                 <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                                             </IS>
 <![CDATA[
-
-
 ecmascript:
 
 function tracePrint (text)
@@ -105,9 +103,6 @@ function setPlaneSensorTranslation (value, timeStamp)
 	planeSensorTranslation = value;
 	tracePrint('planeSensorTranslation=' + value);
 }
-
-
-
 ]]>
                                         </Script>
                                         <ROUTE fromField='isActive' fromNode='PlaneMovementSensor' toField='setPlaneSensorIsActive' toNode='VisibilityControlScript'/>

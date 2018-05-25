@@ -73,9 +73,6 @@
                         <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
 <![CDATA[
-
-
-
 ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
@@ -142,10 +139,6 @@ ecmascript:
 					d = 4;
 				}
 			}
-
-
-
-
 ]]>
                     </Script>
                     <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>

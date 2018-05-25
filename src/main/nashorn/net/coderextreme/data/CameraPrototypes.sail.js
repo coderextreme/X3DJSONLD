@@ -141,9 +141,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("totalDuration").setProtoField("totalDuration"))
                 .addConnect(new connectObject().setNodeField("offlineRender").setProtoField("offlineRender"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -482,10 +480,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[Camera] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
             .addChild(new ROUTEObject().setFromField("position").setFromNode("CameraScript").setToField("position").setToNode("CameraViewpoint"))
             .addChild(new ROUTEObject().setFromField("orientation").setFromNode("CameraScript").setToField("orientation").setToNode("CameraViewpoint"))
             .addChild(new ROUTEObject().setFromField("isActive").setFromNode("CameraScript").setToField("set_bind").setToNode("CameraViewpoint"))
@@ -538,9 +533,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("shotDuration").setProtoField("shotDuration"))
                 .addConnect(new connectObject().setNodeField("isActive").setProtoField("isActive"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -632,10 +625,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
             .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
         .addComments(new CommentsBlock("=============== CameraMovement =============="))
         .addChild(new ProtoDeclareObject().setName("CameraMovement").setAppinfo("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.")
@@ -682,9 +672,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("goalFocusDistance").setProtoField("goalFocusDistance"))
                 .addConnect(new connectObject().setNodeField("isActive").setProtoField("isActive"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -773,10 +761,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
             .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
         .addComments(new CommentsBlock("=============== OfflineRender =============="))
         .addChild(new ProtoDeclareObject().setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).")
@@ -820,9 +805,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("movieFormat").setProtoField("movieFormat"))
                 .addConnect(new connectObject().setNodeField("imageFormat").setProtoField("imageFormat"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -875,10 +858,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');\n"+
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
-"}\n"+
-"\n"+
-"\n"+
-""))
+"}"))
             .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
         .addComments(new CommentsBlock("=============== Launch Prototype Example =============="))
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.282353,0.380392,0.470588], Java.type("float[]"))))

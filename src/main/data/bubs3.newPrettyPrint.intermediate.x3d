@@ -26,8 +26,6 @@
                 <field name='scalvel' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                 <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
 <![CDATA[
-
-
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -67,10 +65,6 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
-
-
 ]]>
             </Script>
             <TimeSensor DEF='DECLBubble_bubbleA_bubbleClock' cycleInterval='10.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
@@ -92,8 +86,6 @@ function set_fraction(value) {
                 <field name='scalvel' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                 <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
 <![CDATA[
-
-
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -133,10 +125,6 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
-
-
 ]]>
             </Script>
             <TimeSensor DEF='DECLBubble_bubbleB_bubbleClock' cycleInterval='10.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
@@ -158,8 +146,6 @@ function set_fraction(value) {
                 <field name='scalvel' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                 <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
 <![CDATA[
-
-
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -199,10 +185,6 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
-
-
 ]]>
             </Script>
             <TimeSensor DEF='DECLBubble_bubbleC_bubbleClock' cycleInterval='10.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
@@ -224,8 +206,6 @@ function set_fraction(value) {
                 <field name='scalvel' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                 <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
 <![CDATA[
-
-
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -265,10 +245,6 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
-
-
 ]]>
             </Script>
             <TimeSensor DEF='DECLBubble_bubbleD_bubbleClock' cycleInterval='10.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
