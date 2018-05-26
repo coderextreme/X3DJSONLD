@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -101,7 +101,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["txt.x3d"],
+                          "@url":["txt.json"],
                           "@bboxSize":[17.3429,3.18392,0.140415],
                           "@bboxCenter":[-0.0362263,1.98502,0.203821]
                         }
@@ -168,7 +168,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["invaders.x3d"],
+                                            "@url":["invaders.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -184,7 +184,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["benhur.x3d"],
+                                            "@url":["benhur.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996755]
                                           }
@@ -200,7 +200,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["flashgordon.x3d"],
+                                            "@url":["flashgordon.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996755]
                                           }
@@ -216,7 +216,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["mothra.x3d"],
+                                            "@url":["mothra.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -232,7 +232,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["tiffany.x3d"],
+                                            "@url":["tiffany.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -534,7 +534,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["dollars.x3d"],
+                                            "@url":["dollars.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -550,7 +550,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["dracula.x3d"],
+                                            "@url":["dracula.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -566,7 +566,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["metropolis.x3d"],
+                                            "@url":["metropolis.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996754]
                                           }
@@ -582,7 +582,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["clockwork.x3d"],
+                                            "@url":["clockwork.json"],
                                             "@bboxSize":[13.1266,18.69,0.199351],
                                             "@bboxCenter":[-0.0362258,0.00826502,0.0996755]
                                           }
@@ -806,7 +806,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["mib.x3d"],
+                                "@url":["mib.json"],
                                 "@bboxSize":[10.2643,18.8276,0],
                                 "@bboxCenter":[-0.0020256,-0.0385637,0.0279587]
                               }
@@ -878,7 +878,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["hud_fov1-2_demo.x3d"],
+                    "@url":["hud_fov1-2_demo.json"],
                     "@bboxSize":[100,10,100],
                     "@bboxCenter":[0,0.5,0]
                   }
@@ -934,7 +934,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["cinemaxx-scout1.x3d"],
+                          "@url":["cinemaxx-scout1.json"],
                           "@bboxSize":[25,25,25],
                           "@bboxCenter":[0,1,0]
                         }

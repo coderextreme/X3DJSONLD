@@ -49,7 +49,7 @@
                 { "Inline":
                   {
                     "@DEF":"Bonus",
-                    "@url":["bonus-yellow-level2.x3d"]
+                    "@url":["bonus-yellow-level2.json"]
                   }
                 }
               ]

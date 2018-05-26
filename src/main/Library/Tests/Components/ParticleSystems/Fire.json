@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Grid",
-              "@url":[", ","GridTool.x3dv#Gridfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/GridTool.x3dv#Grid"],
+              "@url":[", ","GridTool.json#Gridfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/GridTool.json#Grid"],
               "field": [
                 {
                   "@name":"translation",

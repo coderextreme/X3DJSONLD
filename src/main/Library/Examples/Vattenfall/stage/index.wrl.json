@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"World",
-              "@url":["World_proto.x3d"],
+              "@url":["World_proto.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -93,7 +93,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.x3d"],
+              "@url":["Bool_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -116,7 +116,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -139,7 +139,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Import",
-              "@url":["Import_proto.x3d"],
+              "@url":["Import_proto.json"],
               "field": [
                 {
                   "@name":"url",

@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"CountDown",
-              "@url":["CountDown_proto.x3d"],
+              "@url":["CountDown_proto.json"],
               "field": [
                 {
                   "@name":"offset",
@@ -78,7 +78,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Time2MFString",
-              "@url":["Time2MFString_proto.x3d"],
+              "@url":["Time2MFString_proto.json"],
               "field": [
                 {
                   "@name":"set_time",
@@ -430,7 +430,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_3",
-                                                  "@url":["ham-tottier.x3d"],
+                                                  "@url":["ham-tottier.json"],
                                                   "@bboxSize":[0.180247,0.0155499,0.175728],
                                                   "@bboxCenter":[0,-3.22983e-06,0]
                                                 }
@@ -438,7 +438,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_4",
-                                                  "@url":["ham-gurke.x3d"],
+                                                  "@url":["ham-gurke.json"],
                                                   "@bboxSize":[0.147983,0.00474552,0.102927],
                                                   "@bboxCenter":[0.000954397,-5.3551e-08,-0.000806626]
                                                 }
@@ -446,7 +446,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_5",
-                                                  "@url":["ham-tomate.x3d"],
+                                                  "@url":["ham-tomate.json"],
                                                   "@bboxSize":[0.092927,0.00474568,0.15098],
                                                   "@bboxCenter":[-7.82497e-05,-1.37486e-07,0.000793424]
                                                 }
@@ -454,7 +454,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_6",
-                                                  "@url":["ham-cheese.x3d"],
+                                                  "@url":["ham-cheese.json"],
                                                   "@bboxSize":[0.182589,0.0268456,0.182589],
                                                   "@bboxCenter":[0,3.80073e-06,0]
                                                 }
@@ -462,7 +462,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_7",
-                                                  "@url":["ham-zwiebel.x3d"],
+                                                  "@url":["ham-zwiebel.json"],
                                                   "@bboxSize":[0.0887386,0.00477273,0.0997977],
                                                   "@bboxCenter":[-3.72529e-09,1.77231e-06,-9.07108e-07]
                                                 }
@@ -470,7 +470,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_8",
-                                                  "@url":["ham-ketchup.x3d"],
+                                                  "@url":["ham-ketchup.json"],
                                                   "@bboxSize":[0.0757356,0.0134014,0.0757356],
                                                   "@bboxCenter":[0,3.71039e-06,0]
                                                 }
@@ -478,7 +478,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_9",
-                                                  "@url":["ham-deckel.x3d"],
+                                                  "@url":["ham-deckel.json"],
                                                   "@bboxSize":[0.205598,0.0672368,0.200442],
                                                   "@bboxCenter":[0,0.0336184,0]
                                                 }

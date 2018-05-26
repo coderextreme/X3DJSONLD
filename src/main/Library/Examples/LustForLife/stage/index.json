@@ -893,7 +893,7 @@
                                                               "-children":[
                                                                 { "Inline":
                                                                   {
-                                                                    "@url":["ei.x3d"],
+                                                                    "@url":["ei.json"],
                                                                     "@bboxSize":[12.4482,13.601,7.48383],
                                                                     "@bboxCenter":[7.8503,6.81211,8.18435]
                                                                   }
@@ -4413,7 +4413,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["3-innen.x3d"],
+                                                                          "@url":["3-innen.json"],
                                                                           "@bboxSize":[31.293,15.249,24.5372],
                                                                           "@bboxCenter":[6.94291,7.61762,-6.19605]
                                                                         }

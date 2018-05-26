@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MFVec3f",
-              "@url":["MFVec3f.x3dv"],
+              "@url":["MFVec3f.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",
@@ -72,7 +72,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MFVec2f",
-              "@url":["MFVec2f.x3dv"],
+              "@url":["MFVec2f.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",

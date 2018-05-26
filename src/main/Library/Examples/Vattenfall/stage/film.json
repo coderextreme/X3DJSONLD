@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Scene",
-              "@url":["Scene_proto.x3d"],
+              "@url":["Scene_proto.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -88,7 +88,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -120,42 +120,42 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["film1.x3d"],
+                    "@url":["film1.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film2.x3d"],
+                    "@url":["film2.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film3.x3d"],
+                    "@url":["film3.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film4.x3d"],
+                    "@url":["film4.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film5.x3d"],
+                    "@url":["film5.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film6.x3d"],
+                    "@url":["film6.json"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }

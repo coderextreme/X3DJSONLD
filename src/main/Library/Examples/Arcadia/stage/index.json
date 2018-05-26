@@ -6587,7 +6587,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["mount.x3d"],
+                                            "@url":["mount.json"],
                                             "@bboxSize":[68.9251,65.6877,67.5461],
                                             "@bboxCenter":[0.876749,32.3308,1.45545]
                                           }
@@ -6892,7 +6892,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.x3d"],
+                                      "@url":["saule.json"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -6943,7 +6943,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.x3d"],
+                                      "@url":["saule.json"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -6994,7 +6994,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.x3d"],
+                                      "@url":["saule.json"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -8237,7 +8237,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["temple.x3d"],
+                                      "@url":["temple.json"],
                                       "@bboxSize":[51.7798,22.3794,51.7798],
                                       "@bboxCenter":[4.76837e-06,11.1897,-4.76837e-06]
                                     }

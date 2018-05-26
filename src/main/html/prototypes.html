@@ -137,8 +137,7 @@ var scripts = new Scripts();
 		*/
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
-			var scene = element.querySelector("Scene");
-			doc.runtime.replaceWorld(scene);
+			doc.runtime.replaceWorld(element);
 		}
 		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
@@ -147,8 +146,7 @@ var scripts = new Scripts();
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
 			var element = doc.runtime.createX3DFromString(xml, url);
-			var scene = element.querySelector("Scene");
-			doc.runtime.replaceWorld(scene);
+			doc.runtime.replaceWorld(element);
 		}
 		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();

@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Rotor",
-              "@url":[", ","../../../Titania/share/titania/Library/Prototypes/Engines/Rotor/Rotor.x3dvfile:///usr/share/titania/Library/Prototypes/Engines/Rotor/Rotor.x3dv"],
+              "@url":[", ","../../../Titania/share/titania/Library/Prototypes/Engines/Rotor/Rotor.jsonfile:///usr/share/titania/Library/Prototypes/Engines/Rotor/Rotor.json"],
               "field": [
                 {
                   "@name":"enabled",

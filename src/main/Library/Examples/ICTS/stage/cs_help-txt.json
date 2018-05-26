@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.x3d"],
+              "@url":["Switcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -83,7 +83,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",

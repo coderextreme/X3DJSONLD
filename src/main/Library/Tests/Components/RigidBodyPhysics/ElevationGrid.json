@@ -102,7 +102,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFVec3f",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.x3d, ","https://rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.x3dhttp://rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.json, ","http://cdn.rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.json, ","https://rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.jsonhttp://rawgit.com/create3000/Library/1.0.3/Prototypes/Fields/SFVec3f.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",
@@ -125,7 +125,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFRotation",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Fields/SFRotation.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",

@@ -537,7 +537,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["dachaufbau.x3d"],
+                                            "@url":["dachaufbau.json"],
                                             "@bboxSize":[3.194,3.771,2.726],
                                             "@bboxCenter":[0.87,6.2115,-5.923]
                                           }
@@ -623,7 +623,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["dachfenster_small.x3d"],
+                                                  "@url":["dachfenster_small.json"],
                                                   "@bboxSize":[3.794,4.164,0.942],
                                                   "@bboxCenter":[1.221,6.483,0.946]
                                                 }
@@ -660,7 +660,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["dachfenster.x3d"],
+                                                        "@url":["dachfenster.json"],
                                                         "@bboxSize":[3.808,4.164,1.414],
                                                         "@bboxCenter":[1.214,6.483,-8.26]
                                                       }
@@ -725,7 +725,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["dachfenster_big.x3d"],
+                                                        "@url":["dachfenster_big.json"],
                                                         "@bboxSize":[3.801,4.164,1.884],
                                                         "@bboxCenter":[1.2175,6.483,14.492]
                                                       }
@@ -756,7 +756,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["windows.x3d"],
+                                "@url":["windows.json"],
                                 "@bboxSize":[0.0700001,1.076,34.006],
                                 "@bboxCenter":[-1.109,2.737,7.845]
                               }
@@ -772,7 +772,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["side.x3d"],
+                          "@url":["side.json"],
                           "@bboxSize":[9.093,10.8052,0.581],
                           "@bboxCenter":[3.2845,5.44741,-9.7105]
                         }
@@ -786,7 +786,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["tower.x3d"],
+                          "@url":["tower.json"],
                           "@bboxSize":[3.782,17.2999,3.521],
                           "@bboxCenter":[-0.863,8.67204,3.0775]
                         }
@@ -948,7 +948,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["bogengang.x3d"],
+                    "@url":["bogengang.json"],
                     "@bboxSize":[0.409529,1.7596,35.24],
                     "@bboxCenter":[-1.08176,0.901999,7.925]
                   }
@@ -1375,7 +1375,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["side.x3d"],
+                          "@url":["side.json"],
                           "@bboxSize":[9.093,10.8052,0.581],
                           "@bboxCenter":[3.2845,5.44741,-9.7105]
                         }

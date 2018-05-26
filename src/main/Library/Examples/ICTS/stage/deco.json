@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.x3d"],
+              "@url":["Switcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -112,7 +112,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["statue.x3d"],
+                                            "@url":["statue.json"],
                                             "@bboxSize":[2.53738,8.17662,1.36748],
                                             "@bboxCenter":[-0.000528336,1.06796,0.197238]
                                           }
@@ -192,7 +192,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["katze.x3d"],
+                                            "@url":["katze.json"],
                                             "@bboxSize":[8.13439,3.42439,1.81039],
                                             "@bboxCenter":[0.239496,1.51194,5.96046e-08]
                                           }
@@ -237,7 +237,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["katze.x3d"],
+                                            "@url":["katze.json"],
                                             "@bboxSize":[8.13439,3.42439,1.81039],
                                             "@bboxCenter":[0.239496,1.51194,5.96046e-08]
                                           }

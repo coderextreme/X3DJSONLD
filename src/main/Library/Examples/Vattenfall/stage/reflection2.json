@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"ReflectiveTextureTransform",
-              "@url":["ReflectiveTextureTransform_proto.x3d"],
+              "@url":["ReflectiveTextureTransform_proto.json"],
               "field": [
                 {
                   "@name":"translation",
@@ -141,7 +141,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["cube.x3d"],
+                          "@url":["cube.json"],
                           "@bboxSize":[1,1,1]
                         }
                       }

@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"TestExternProto",
-              "@url":[", ","ExternProto.x3d#TestExternProtofile:///home/holger/Projekte/Cobweb/excite/tests/Components/Scripting/ExternProto.x3d#TestExternProto"],
+              "@url":[", ","ExternProto.json#TestExternProtofile:///home/holger/Projekte/Cobweb/excite/tests/Components/Scripting/ExternProto.json#TestExternProto"],
               "field": [
                 {
                   "@name":"enabled",

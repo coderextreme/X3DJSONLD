@@ -53,7 +53,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["helpScout.x3d"],
+                    "@url":["helpScout.json"],
                     "@bboxSize":[5,3.8,5]
                   }
                 }
@@ -93,7 +93,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["cs_help-txt.x3d"],
+                                                              "@url":["cs_help-txt.json"],
                                                               "@bboxSize":[0.537486,0.144576,0.0317884],
                                                               "@bboxCenter":[0.00359547,-0.0934332,-0.276017]
                                                             }

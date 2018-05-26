@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Dolphin",
-              "@url":["DolphinPROTO.x3d"],
+              "@url":["DolphinPROTO.json"],
               "field": [
                 {
                   "@name":"set_fraction",

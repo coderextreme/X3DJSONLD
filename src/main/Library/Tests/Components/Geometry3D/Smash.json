@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Torus",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/Torus.json"],
               "field": [
                 {
                   "@name":"minorRadius",
@@ -82,7 +82,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"IcoSphere",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.json"],
               "field": [
                 {
                   "@name":"type",
@@ -110,7 +110,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"QuadSphere",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/QuadSphere.json"],
               "field": [
                 {
                   "@name":"uDimension",

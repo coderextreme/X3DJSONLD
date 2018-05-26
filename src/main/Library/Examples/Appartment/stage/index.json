@@ -149,7 +149,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["flat-notex-anim.x3d"],
+                    "@url":["flat-notex-anim.json"],
                     "@bboxSize":[14.5935,3.71493,8.13908],
                     "@bboxCenter":[-1.73584,0.298679,1.59514]
                   }

@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bonus",
-              "@url":["Bonus_proto__2.x3d"],
+              "@url":["Bonus_proto__2.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -184,7 +184,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["infra.x3d"],
+                                      "@url":["infra.json"],
                                       "@bboxSize":[255.127,62.9611,205.413],
                                       "@bboxCenter":[-0.579529,27.3204,-18.7703]
                                     }
@@ -208,7 +208,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["door.x3d"],
+                                                  "@url":["door.json"],
                                                   "@bboxSize":[2.38792,3.96457,1.08412],
                                                   "@bboxCenter":[4.70877e-06,1.48219,-0.000151873]
                                                 }
@@ -227,7 +227,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -249,7 +249,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -271,7 +271,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -293,7 +293,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -315,7 +315,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -337,7 +337,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -360,7 +360,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -383,7 +383,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -406,7 +406,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["door.x3d"],
+                                                        "@url":["door.json"],
                                                         "@bboxSize":[2.38792,3.48724,1.08408],
                                                         "@bboxCenter":[7.62939e-06,1.72085,-0.00013411]
                                                       }
@@ -3645,21 +3645,21 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_20",
-                                                  "@url":["bonus-yellow-level2.x3d"],
+                                                  "@url":["bonus-yellow-level2.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_21",
-                                                  "@url":["bonus-yellow-level1.x3d"],
+                                                  "@url":["bonus-yellow-level1.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_22",
-                                                  "@url":["bonus-yellow-level0.x3d"],
+                                                  "@url":["bonus-yellow-level0.json"],
                                                   "@bboxSize":[2.56134,2.5771,2.55945],
                                                   "@bboxCenter":[0.0193291,-0.0103654,-0.0202757]
                                                 }
@@ -3678,21 +3678,21 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_23",
-                                                  "@url":["bonus-pink-level2.x3d"],
+                                                  "@url":["bonus-pink-level2.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_24",
-                                                  "@url":["bonus-pink-level1.x3d"],
+                                                  "@url":["bonus-pink-level1.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_25",
-                                                  "@url":["bonus-pink-level0.x3d"],
+                                                  "@url":["bonus-pink-level0.json"],
                                                   "@bboxSize":[2.56134,2.5771,2.55945],
                                                   "@bboxCenter":[0.0193291,-0.0103654,-0.0202757]
                                                 }
@@ -3711,21 +3711,21 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_26",
-                                                  "@url":["bonus-time-level2.x3d"],
+                                                  "@url":["bonus-time-level2.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_27",
-                                                  "@url":["bonus-time-level1.x3d"],
+                                                  "@url":["bonus-time-level1.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_28",
-                                                  "@url":["bonus-time-level0.x3d"],
+                                                  "@url":["bonus-time-level0.json"],
                                                   "@bboxSize":[2.56134,2.5771,2.55945],
                                                   "@bboxCenter":[0.0193291,-0.0103654,-0.0202757]
                                                 }
@@ -3744,21 +3744,21 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_29",
-                                                  "@url":["bonus-key-level2.x3d"],
+                                                  "@url":["bonus-key-level2.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_30",
-                                                  "@url":["bonus-key-level1.x3d"],
+                                                  "@url":["bonus-key-level1.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_31",
-                                                  "@url":["bonus-key-level0.x3d"],
+                                                  "@url":["bonus-key-level0.json"],
                                                   "@bboxSize":[2.56134,2.5771,2.55945],
                                                   "@bboxCenter":[0.0193291,-0.0103654,-0.0202757]
                                                 }
@@ -3777,21 +3777,21 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_32",
-                                                  "@url":["bonus-map-level2.x3d"],
+                                                  "@url":["bonus-map-level2.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_33",
-                                                  "@url":["bonus-map-level1.x3d"],
+                                                  "@url":["bonus-map-level1.json"],
                                                   "@bboxSize":[1.41731,1.41731,1.41731]
                                                 }
                                               },
                                               { "Inline":
                                                 {
                                                   "@DEF":"_34",
-                                                  "@url":["bonus-map-level0.x3d"],
+                                                  "@url":["bonus-map-level0.json"],
                                                   "@bboxSize":[2.56134,2.5771,2.55945],
                                                   "@bboxCenter":[0.0193291,-0.0103654,-0.0202757]
                                                 }

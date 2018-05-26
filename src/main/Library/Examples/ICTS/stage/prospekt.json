@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"isOver",
-              "@url":["isOver_proto.x3d"],
+              "@url":["isOver_proto.json"],
               "field": [
                 {
                   "@name":"set_isOver",
@@ -68,7 +68,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"True",
-              "@url":["True_proto.x3d"],
+              "@url":["True_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -86,7 +86,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -109,7 +109,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.x3d"],
+              "@url":["BoolSwitch_proto.json"],
               "field": [
                 {
                   "@name":"isActive",
@@ -645,7 +645,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["book.x3d"],
+                                                        "@url":["book.json"],
                                                         "@bboxSize":[0.6,0.1,0.4]
                                                       }
                                                     }

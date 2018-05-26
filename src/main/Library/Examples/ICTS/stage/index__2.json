@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.x3d"],
+              "@url":["Console_proto.json"],
               "field": [
                 {
                   "@name":"string",
@@ -58,7 +58,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"AutoViewpoint",
-              "@url":["AutoViewpoint_proto.x3d"],
+              "@url":["AutoViewpoint_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -111,7 +111,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"AnimContainer",
-              "@url":["AnimContainer_proto.x3d"],
+              "@url":["AnimContainer_proto.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -129,7 +129,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RandomSwitcher",
-              "@url":["RandomSwitcher_proto.x3d"],
+              "@url":["RandomSwitcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -157,7 +157,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.x3d"],
+              "@url":["BoolSwitch_proto.json"],
               "field": [
                 {
                   "@name":"isActive",
@@ -175,7 +175,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Enable",
-              "@url":["Enable_proto.x3d"],
+              "@url":["Enable_proto.json"],
               "field": [
                 {
                   "@name":"enable",
@@ -198,7 +198,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LoadURL",
-              "@url":["LoadURL_proto.x3d"],
+              "@url":["LoadURL_proto.json"],
               "field": [
                 {
                   "@name":"url",
@@ -221,7 +221,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LoadVrmlFromURL",
-              "@url":["LoadVrmlFromURL_proto.x3d"],
+              "@url":["LoadVrmlFromURL_proto.json"],
               "field": [
                 {
                   "@name":"url",
@@ -259,7 +259,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.x3d"],
+              "@url":["Delay_proto.json"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -297,7 +297,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -320,7 +320,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.x3d"],
+              "@url":["Bool_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -343,7 +343,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"IntCountDown",
-              "@url":["IntCountDown_proto.x3d"],
+              "@url":["IntCountDown_proto.json"],
               "field": [
                 {
                   "@name":"startValue",
@@ -381,7 +381,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Digit",
-              "@url":["Digit_proto.x3d"],
+              "@url":["Digit_proto.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -399,7 +399,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.x3d"],
+              "@url":["Switcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -437,7 +437,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"IntCounter",
-              "@url":["IntCounter_proto.x3d"],
+              "@url":["IntCounter_proto.json"],
               "field": [
                 {
                   "@name":"startValue",
@@ -475,7 +475,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MultInt",
-              "@url":["MultInt_proto.x3d"],
+              "@url":["MultInt_proto.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -498,7 +498,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"False",
-              "@url":["False_proto.x3d"],
+              "@url":["False_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -516,7 +516,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"EnableTouch",
-              "@url":["EnableTouch_proto.x3d"],
+              "@url":["EnableTouch_proto.json"],
               "field": [
                 {
                   "@name":"touchTime",
@@ -539,7 +539,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"AnimCollisionX",
-              "@url":["AnimCollisionX_proto.x3d"],
+              "@url":["AnimCollisionX_proto.json"],
               "field": [
                 {
                   "@name":"bbox",
@@ -572,7 +572,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":["Not_proto.x3d"],
+              "@url":["Not_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -2396,7 +2396,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["scene.x3d"],
+                                            "@url":["scene.json"],
                                             "@bboxSize":[400,200,400],
                                             "@bboxCenter":[0,40,0]
                                           }
@@ -4191,7 +4191,7 @@
                                                               "-children":[
                                                                 { "Inline":
                                                                   {
-                                                                    "@url":["fb-tormann.x3d"],
+                                                                    "@url":["fb-tormann.json"],
                                                                     "@bboxSize":[1.27817,2.09218,1.88713],
                                                                     "@bboxCenter":[-0.139086,1.05999,0.079486]
                                                                   }

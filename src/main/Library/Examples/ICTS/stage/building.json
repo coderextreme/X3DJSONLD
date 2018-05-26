@@ -229,7 +229,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["deco.x3d"],
+                          "@url":["deco.json"],
                           "@bboxSize":[79.18,8.643,80.31],
                           "@bboxCenter":[40.37,4.268,-39.8]
                         }

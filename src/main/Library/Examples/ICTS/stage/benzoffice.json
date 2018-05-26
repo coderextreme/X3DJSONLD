@@ -1802,7 +1802,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["infowall.x3d"],
+                                                  "@url":["infowall.json"],
                                                   "@bboxSize":[8.65831,7.07873,16.0367],
                                                   "@bboxCenter":[0.623284,0.119948,0.0731559]
                                                 }
@@ -2525,7 +2525,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["tresen.x3d"],
+                                                        "@url":["tresen.json"],
                                                         "@bboxSize":[5.66685,1.61279,3.55296],
                                                         "@bboxCenter":[-0.00234461,0.00441408,0.236422]
                                                       }
@@ -2562,7 +2562,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["prospekt.x3d"],
+                                                        "@url":["prospekt.json"],
                                                         "@bboxSize":[3.5,3.5,3.5]
                                                       }
                                                     }
@@ -2581,7 +2581,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["infowall2.x3d"],
+                                            "@url":["infowall2.json"],
                                             "@bboxSize":[0.0264416,3.49957,12.3725],
                                             "@bboxCenter":[14.8485,2.95436,-2.06621]
                                           }
@@ -2714,7 +2714,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["car.x3d"],
+                                                  "@url":["car.json"],
                                                   "@bboxSize":[8,8,8]
                                                 }
                                               }

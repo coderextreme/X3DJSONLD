@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFFloat2SFInt32",
-              "@url":["SFFloat2SFInt32_proto.x3d"],
+              "@url":["SFFloat2SFInt32_proto.json"],
               "field": [
                 {
                   "@name":"set_SFFloat",
@@ -63,7 +63,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"ToggleAnim",
-              "@url":["ToggleAnim_proto.x3d"],
+              "@url":["ToggleAnim_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
