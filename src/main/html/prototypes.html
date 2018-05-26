@@ -75,8 +75,8 @@
 				X3DOM
 			</td>
 			<td colspan="2">
-    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
-		<Scene>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
+		<Scene id="x3domjson">
 		</Scene>
     </X3D>
 			</td>
@@ -103,7 +103,7 @@ var scripts = new Scripts();
 		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, content) {
 			load_X3DOM_XML(content, loadObj.x3domxmlselector);
 			try {
-				x3dom.reload();  // This may be necessary
+				// x3dom.reload();  // This may be necessary
 			} catch (e) {
 				console.error(e);
 				alert("Problem with x3dom.reload()", e);
@@ -115,7 +115,7 @@ var scripts = new Scripts();
 	}
 	function load_X_ITE_All(loadObj, url, callback) {
 		var xml = [];
-		loadX3DJS_X_ITE(loadObj.x_itehtmlselector, document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+		loadX3DJS(document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 			load_X_ITE_DOM(element, loadObj.x_itehtmlselector); // loads into X_ITE element on page.
 			load_X_ITE_JS(loadObj.x_itejson, loadObj.x_itejsonselector); // loads into X_ITE element on page.
 			load_X_ITE_XML(getXmlString(element), loadObj.x_itexmlselector); // loads into X_ITE element on page.
@@ -124,7 +124,7 @@ var scripts = new Scripts();
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
 		var xml = [];
-		loadX3DJS_X3DOM(selector, document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 			load_X3DOM_DOM(element, selector);
 			callback(element, xml.join("\n"));
 		});
@@ -182,10 +182,14 @@ var scripts = new Scripts();
 	}
 	function loadPromise(url, loadObj, browser) {
 		return new Promise(function(resolve, reject) {
-			if (browser === "x_ite") {
-				load_X_ITE(url, resolve, loadObj);
+			if (url) {
+				if (browser === "x_ite") {
+					load_X_ITE(url, resolve, loadObj);
+				} else {
+					load_X3DOM(url, resolve, loadObj);
+				}
 			} else {
-				load_X3DOM(url, resolve, loadObj);
+				reject();
 			}
 		});
 	}
@@ -203,8 +207,8 @@ var scripts = new Scripts();
 		loadObj = {};
 		loadObj.x3domjsonselector = "#x3domjson";
 		loadObj.x3domxmlselector = "#x3domxml";
-		$(loadObj.x3domjsonselector).empty();
-		$(loadObj.x3domxmlselector).empty();
+		// $(loadObj.x3domjsonselector).empty();
+		// $(loadObj.x3domxmlselector).empty();
 		loadObj.x_itehtmlselector = "#x_itedom";
 		loadObj.x_itejsonselector = "#x_itejson";
 		loadObj.x_itexmlselector = "#x_itexml";
