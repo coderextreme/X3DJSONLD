@@ -32,9 +32,8 @@ function ProcessJSON(json, file) {
 	// Run it through the prototype expander
 	json = PROTOS.prototypeExpander(file, json, "");
 
-	var xml = new LOG();
 	var NS = "http://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
+	loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		var str = serializer.serializeToString(json, element);
 		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 		try {

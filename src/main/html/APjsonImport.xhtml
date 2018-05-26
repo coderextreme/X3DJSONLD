@@ -9,8 +9,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
 <script type="text/javascript" src="../node/x_ite.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
     <style type="text/css">
-    X3DCanvas {
+    X3DCanvas, X3D {
         background:#000;
 	width: 300px;
 	height:150px;
@@ -136,6 +138,10 @@ Use Namespace: <select id="namespace">
 		</X3D>
 		<p>Your browser may not support all features required by X_ITE!</p>
 	</X3DCanvas>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
+		<Scene>
+		</Scene>
+    </X3D>
 </td>
 </tr>
 </table>
@@ -150,12 +156,12 @@ Use Namespace: <select id="namespace">
     <script type="text/javascript">
 	var url = "../data/ExtrusionHeart.json";  // providing a fake path
 	var selector = "#x_itedom";
-	var xml = [], NS;
+	var NS;
 	if ($('#prototype').is(':checked')) {
 		test_json = protoExpander.prototypeExpander(url, test_json, "");
 	        $('textarea#json').val(JSON.stringify(test_json, null, 2));
 	}
-	loadX3DJS_X_ITE(selector, document.implementation, test_json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(json_element) {
+	loadX3DJS_X_ITE(selector, document.implementation, test_json, url, "", loadSchema, doValidate, X3DJSONLD, function(json_element) {
 		X3D(function(){
 			load_X_ITE_DOM(json_element, selector);
 		});

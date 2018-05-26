@@ -75,14 +75,14 @@
 				X3DOM
 			</td>
 			<td colspan="2">
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
-		<Scene id="x3domjson">
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
+		<Scene>
 		</Scene>
     </X3D>
 			</td>
 			<td>
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
-		<Scene id="x3domxml">
+    <X3D id="x3domxml" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='450px' height='225px' backend='webgl'>
+		<Scene>
 		</Scene>
     </X3D>
 			</td>
@@ -100,8 +100,8 @@ var scripts = new Scripts();
 
 	function load_X3DOM_All(loadObj, url, callback) {
 		loadObj.x3domjson = protoExpander.prototypeExpander(url, loadObj.x3domjson, "");
-		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, content) {
-			load_X3DOM_XML(content, loadObj.x3domxmlselector);
+		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, xml) {
+			load_X3DOM_XML(xml, url, loadObj.x3domxmlselector);
 			try {
 				// x3dom.reload();  // This may be necessary
 			} catch (e) {
@@ -111,30 +111,46 @@ var scripts = new Scripts();
 			if (typeof callback === 'function') {
 				callback(element, loadObj.x3domjson);
 			}
+			
 		});
 	}
 	function load_X_ITE_All(loadObj, url, callback) {
 		var xml = [];
-		loadX3DJS(document.implementation, loadObj.x_itejson, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+		loadX3DJS(document.implementation, loadObj.x_itejson, url, "", loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 			load_X_ITE_DOM(element, loadObj.x_itehtmlselector); // loads into X_ITE element on page.
 			load_X_ITE_JS(loadObj.x_itejson, loadObj.x_itejsonselector); // loads into X_ITE element on page.
-			load_X_ITE_XML(getXmlString(element), loadObj.x_itexmlselector); // loads into X_ITE element on page.
+			load_X_ITE_XML(xml, loadObj.x_itexmlselector); // loads into X_ITE element on page.
 			callback(element, loadObj.x_itejson);
 		})
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
-		var xml = [];
-		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+		loadX3DJS_X3DOM(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			load_X3DOM_DOM(element, selector);
-			callback(element, xml.join("\n"));
+			callback(element, xml);
 		});
 	}
 	function load_X3DOM_DOM(element, selector) {
-		$(element.querySelector("Scene")).children().appendTo(selector);
+		/*
+		$(selector).empty();
+		$(element.querySelector("X3D")).children().appendTo(selector);
+		*/
+		var doc = document.querySelector(selector);
+		if (doc.hasRuntime && doc.runtime.ready) {
+			var scene = element.querySelector("Scene");
+			doc.runtime.replaceWorld(scene);
+		}
+		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
 	}
-	function load_X3DOM_XML(content, selector) {
-		$(selector).get()[0].innerHTML = content.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
+	function load_X3DOM_XML(xml, url, selector) {
+		var doc = document.querySelector(selector);
+		if (doc.hasRuntime && doc.runtime.ready) {
+			var element = doc.runtime.createX3DFromString(xml, url);
+			var scene = element.querySelector("Scene");
+			doc.runtime.replaceWorld(scene);
+		}
+		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
 	}
 	function load_X3DOM(url, callback, loadObj) {
