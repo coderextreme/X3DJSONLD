@@ -4,7 +4,7 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
-<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.min.js"></script>
+<script type="text/javascript" src="../node/x_ite.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
     <style type="text/css">
@@ -34,13 +34,14 @@
     <script type="text/javascript">
 	    
     	var url = "../data/ball.json";
+	var selector = "#x_itedom";
     
 	$.getJSON(url, importInto_X_ITE);
 
 	function importInto_X_ITE(json) {
 		var xml = [];
-		loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
-			load_X_ITE_DOM(jsDOM, "#x_itedom");
+		loadX3DJS_X_ITE(selector, document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
+			load_X_ITE_DOM(jsDOM, selector);
 		});
 	}
     </script>

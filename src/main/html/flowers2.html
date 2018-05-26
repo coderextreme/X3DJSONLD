@@ -7,7 +7,7 @@
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.css"/>
-<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.1.5/dist/x_ite.min.js"></script>
+<script type="text/javascript" src="../node/x_ite.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
     <style type="text/css">
     X3DCanvas {
@@ -98,11 +98,11 @@ function getJSON(url) {
 			console.log(err);
 		});
 	}
-	function load_X_ITE(url) {
+	function load_X_ITE(selector, url) {
 		getJSON(url).then(function(json) {
 			var xml = [];
-			loadX3DJS(document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
-				load_X_ITE_DOM(element, "#x_itedom"); // reloads X_ITE element on page.
+			loadX3DJS_X_ITE(selector, document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+				load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {
 			alert("Scene Load failed");
@@ -110,8 +110,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('#x3domjson','../data/flowers2.json');
-		load_X_ITE('../data/flowers2.json');
+		load_X3DOM('#x3domjson', '../data/flowers2.json');
+		load_X_ITE("#x_itedom", '../data/flowers2.json');
 	});
     </script>
 </html>
