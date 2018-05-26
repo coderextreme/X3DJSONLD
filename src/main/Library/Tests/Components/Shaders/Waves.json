@@ -53,7 +53,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFNode",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv, ","http://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv, ","https://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dvhttp://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json, ","http://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json, ","https://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.jsonhttp://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",

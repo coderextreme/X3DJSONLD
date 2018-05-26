@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.x3d"],
+              "@url":["Console_proto.json"],
               "field": [
                 {
                   "@name":"string",
@@ -58,7 +58,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.x3d"],
+              "@url":["Bool_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -81,7 +81,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -104,7 +104,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"AnimCtrl",
-              "@url":["AnimCtrl_proto.x3d"],
+              "@url":["AnimCtrl_proto.json"],
               "field": [
                 {
                   "@name":"start",
@@ -132,7 +132,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"IntCountDown",
-              "@url":["IntCountDown_proto.x3d"],
+              "@url":["IntCountDown_proto.json"],
               "field": [
                 {
                   "@name":"startValue",
@@ -170,7 +170,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Digit",
-              "@url":["Digit_proto.x3d"],
+              "@url":["Digit_proto.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -188,7 +188,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MediaCtrl",
-              "@url":["MediaCtrl_proto.x3d"],
+              "@url":["MediaCtrl_proto.json"],
               "field": [
                 {
                   "@name":"reset",
@@ -221,7 +221,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.x3d"],
+              "@url":["BoolSwitch_proto.json"],
               "field": [
                 {
                   "@name":"isActive",
@@ -239,7 +239,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.x3d"],
+              "@url":["Delay_proto.json"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -277,7 +277,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"CountDown",
-              "@url":["CountDown_proto.x3d"],
+              "@url":["CountDown_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -315,7 +315,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"DigitalClock",
-              "@url":["DigitalClock_proto.x3d"],
+              "@url":["DigitalClock_proto.json"],
               "field": [
                 {
                   "@name":"time",
@@ -338,7 +338,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Time",
-              "@url":["Time_proto.x3d"],
+              "@url":["Time_proto.json"],
               "field": [
                 {
                   "@name":"time",
@@ -361,7 +361,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"False",
-              "@url":["False_proto.x3d"],
+              "@url":["False_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -379,7 +379,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Matrix",
-              "@url":["Matrix_proto.x3d"],
+              "@url":["Matrix_proto.json"],
               "field": [
                 {
                   "@name":"size",
@@ -397,7 +397,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Ghost",
-              "@url":["Ghost_proto.x3d"],
+              "@url":["Ghost_proto.json"],
               "field": [
                 {
                   "@name":"startPosition",
@@ -460,7 +460,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RandomTime",
-              "@url":["RandomTime_proto.x3d"],
+              "@url":["RandomTime_proto.json"],
               "field": [
                 {
                   "@name":"minTime",
@@ -488,7 +488,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.x3d"],
+              "@url":["Gate_proto.json"],
               "field": [
                 {
                   "@name":"offset",
@@ -521,7 +521,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bonus",
-              "@url":["Bonus_proto.x3d"],
+              "@url":["Bonus_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -868,7 +868,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["building.x3d"],
+                                            "@url":["building.json"],
                                             "@bboxSize":[80,10.65,80.36],
                                             "@bboxCenter":[40,5.27,-39.82]
                                           }
@@ -925,7 +925,7 @@
                                                                                 "-children":[
                                                                                   { "Inline":
                                                                                     {
-                                                                                      "@url":["hudflame.x3d"],
+                                                                                      "@url":["hudflame.json"],
                                                                                       "@bboxSize":[1.35777,1.35777,0.0905364],
                                                                                       "@bboxCenter":[0,0.678885,0.0452682]
                                                                                     }
@@ -3432,7 +3432,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy.x3d"],
+                                                                                "@url":["mummy.json"],
                                                                                 "@bboxSize":[6.67,6.67,6.67]
                                                                               }
                                                                             }
@@ -3469,7 +3469,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy-freeze.x3d"],
+                                                                                "@url":["mummy-freeze.json"],
                                                                                 "@bboxSize":[4.9,4.9,4.9]
                                                                               }
                                                                             }
@@ -3604,7 +3604,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy.x3d"],
+                                                                                "@url":["mummy.json"],
                                                                                 "@bboxSize":[6.67,6.67,6.67]
                                                                               }
                                                                             }
@@ -3641,7 +3641,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy-freeze.x3d"],
+                                                                                "@url":["mummy-freeze.json"],
                                                                                 "@bboxSize":[4.9,4.9,4.9]
                                                                               }
                                                                             }
@@ -3778,7 +3778,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy.x3d"],
+                                                                                "@url":["mummy.json"],
                                                                                 "@bboxSize":[6.67,6.67,6.67]
                                                                               }
                                                                             }
@@ -3815,7 +3815,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy-freeze.x3d"],
+                                                                                "@url":["mummy-freeze.json"],
                                                                                 "@bboxSize":[4.9,4.9,4.9]
                                                                               }
                                                                             }
@@ -3956,7 +3956,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy.x3d"],
+                                                                                "@url":["mummy.json"],
                                                                                 "@bboxSize":[6.67,6.67,6.67]
                                                                               }
                                                                             }
@@ -3976,7 +3976,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["mummy-freeze.x3d"],
+                                                                                "@url":["mummy-freeze.json"],
                                                                                 "@bboxSize":[4.9,4.9,4.9]
                                                                               }
                                                                             }

@@ -1213,7 +1213,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["glanz.x3d"],
+                          "@url":["glanz.json"],
                           "@bboxSize":[100,100,100]
                         }
                       },

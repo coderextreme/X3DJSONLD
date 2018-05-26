@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LineTrail",
-              "@url":["LineTrail.x3dv"],
+              "@url":["LineTrail.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -82,7 +82,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFVec3f",
-              "@url":["SFVec3f.x3dv"],
+              "@url":["SFVec3f.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",
@@ -105,7 +105,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFVec2f",
-              "@url":["SFVec2f.x3dv"],
+              "@url":["SFVec2f.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",
@@ -128,7 +128,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFFloat",
-              "@url":["SFFloat.x3dv"],
+              "@url":["SFFloat.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",

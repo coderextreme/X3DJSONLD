@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Rotor",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.x3d, ","https://rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.x3dhttp://rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.json, ","http://cdn.rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.json, ","https://rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.jsonhttp://rawgit.com/create3000/Library/1.0.2/Prototypes/Engines/Rotor.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -222,7 +222,7 @@
                                   { "Inline":
                                     {
                                       "@DEF":"_2",
-                                      "@url":["EXPORT.x3d"]
+                                      "@url":["EXPORT.json"]
                                     }
                                   }
                                 ]

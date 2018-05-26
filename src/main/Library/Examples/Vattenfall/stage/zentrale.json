@@ -2569,7 +2569,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["empfang.x3d"],
+                          "@url":["empfang.json"],
                           "@bboxSize":[16.8942,3.84035,17.7319],
                           "@bboxCenter":[-15.1166,1.90052,-8.06509]
                         }

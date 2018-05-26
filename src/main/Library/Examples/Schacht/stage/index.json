@@ -2327,7 +2327,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["random-voices.x3d"],
+                    "@url":["random-voices.json"],
                     "@bboxSize":[1,1,1]
                   }
                 }
@@ -2345,7 +2345,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["schachtbild-l.x3d"],
+                          "@url":["schachtbild-l.json"],
                           "@bboxSize":[12.57,8.426,0]
                         }
                       }
@@ -2358,7 +2358,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["schachtbild-m.x3d"],
+                          "@url":["schachtbild-m.json"],
                           "@bboxSize":[12.57,8.426,0]
                         }
                       }
@@ -2372,7 +2372,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["schachtbild-r.x3d"],
+                          "@url":["schachtbild-r.json"],
                           "@bboxSize":[12.57,8.426,0]
                         }
                       }

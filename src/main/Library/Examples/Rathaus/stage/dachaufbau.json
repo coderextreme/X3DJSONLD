@@ -127,7 +127,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["zierkegel.x3d"],
+                                            "@url":["zierkegel.json"],
                                             "@bboxSize":[0.19,0.357,0.223],
                                             "@bboxCenter":[-0.632,6.2545,-7.1155]
                                           }

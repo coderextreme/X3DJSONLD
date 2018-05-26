@@ -633,7 +633,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":[", ","../Geometry3D/Beethoven.x3dzfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/Beethoven.x3dz"]
+                                            "@url":[", ","../Geometry3D/Beethoven.jsonzfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/Beethoven.jsonz"]
                                           }
                                         }
                                       ]

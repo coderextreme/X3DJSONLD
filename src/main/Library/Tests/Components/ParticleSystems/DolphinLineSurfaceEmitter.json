@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Dolphin",
-              "@url":[", ","Dolphin.x3d#Dolphinfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Dolphin.x3d#Dolphin"],
+              "@url":[", ","Dolphin.json#Dolphinfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Dolphin.json#Dolphin"],
               "field": [
                 {
                   "@name":"set_fraction",

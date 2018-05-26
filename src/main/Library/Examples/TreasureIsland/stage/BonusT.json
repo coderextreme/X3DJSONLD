@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bonus",
-              "@url":["Bonus_proto__2.x3d"],
+              "@url":["Bonus_proto__2.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -108,7 +108,7 @@
                                       { "Inline":
                                         {
                                           "@DEF":"_1",
-                                          "@url":["bonus-yellow-level2.x3d"]
+                                          "@url":["bonus-yellow-level2.json"]
                                         }
                                       }
                                     ]
@@ -119,7 +119,7 @@
                                       { "Inline":
                                         {
                                           "@DEF":"_2",
-                                          "@url":["bonus-yellow-level1.x3d"]
+                                          "@url":["bonus-yellow-level1.json"]
                                         }
                                       }
                                     ]
@@ -130,7 +130,7 @@
                                       { "Inline":
                                         {
                                           "@DEF":"_3",
-                                          "@url":["bonus-yellow-level0.x3d"]
+                                          "@url":["bonus-yellow-level0.json"]
                                         }
                                       }
                                     ]

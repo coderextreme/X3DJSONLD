@@ -238,7 +238,7 @@
                             { "Anchor":
                               {
                                 "@description":"Information",
-                                "@url":["../building.x3d"],
+                                "@url":["../building.json"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":
@@ -351,7 +351,7 @@
                             { "Anchor":
                               {
                                 "@description":"Floor plan",
-                                "@url":["../info.x3d"],
+                                "@url":["../info.json"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":
@@ -537,7 +537,7 @@
                             { "Anchor":
                               {
                                 "@description":"Mieter im BIC",
-                                "@url":["../buero.x3d"],
+                                "@url":["../buero.json"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":

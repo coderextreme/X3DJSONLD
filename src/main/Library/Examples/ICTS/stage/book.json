@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":["Not_proto.x3d"],
+              "@url":["Not_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",

@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Pyramid",
-              "@url":[", ","Pyramid.x3d#Pyramidfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Scripting/Pyramid.x3d#Pyramid"],
+              "@url":[", ","Pyramid.json#Pyramidfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Scripting/Pyramid.json#Pyramid"],
               "field": [
                 {
                   "@name":"metadata",
@@ -156,7 +156,7 @@
                       { "Inline":
                         {
                           "@DEF":"Inline",
-                          "@url":[", ","../Geometry3D/box.x3dfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/box.x3d"]
+                          "@url":[", ","../Geometry3D/box.jsonfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/box.json"]
                         }
                       },
                       { "Script":
@@ -266,7 +266,7 @@
                       { "Inline":
                         {
                           "@DEF":"Inline_1",
-                          "@url":[", ","../Geometry3D/box.x3dfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/box.x3d"]
+                          "@url":[", ","../Geometry3D/box.jsonfile:///home/holger/Projekte/Cobweb/excite/tests/Components/Geometry3D/box.json"]
                         }
                       },
                       { "Script":

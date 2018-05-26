@@ -71,7 +71,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BooleanSwitch",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -802,7 +802,7 @@
           { "Inline":
             {
               "@DEF":"_8",
-              "@url":["../Core/EXPORT.x3d"]
+              "@url":["../Core/EXPORT.json"]
             }
           },
           { "ProtoInstance":

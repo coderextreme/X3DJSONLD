@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.x3d"],
+              "@url":["Console_proto.json"],
               "field": [
                 {
                   "@name":"string",
@@ -62,7 +62,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Float",
-              "@url":["Float_proto.x3d"],
+              "@url":["Float_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -843,7 +843,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["mcdonalds-scout1.x3d"],
+                                "@url":["mcdonalds-scout1.json"],
                                 "@bboxSize":[7,3.9,7],
                                 "@bboxCenter":[0,0.05,2.38419e-07]
                               }
@@ -1356,7 +1356,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hamburger-c.x3d"],
+                                "@url":["hamburger-c.json"],
                                 "@bboxSize":[6.6625,6.66251,6.6625],
                                 "@bboxCenter":[0,-1.19209e-07,-0.459672]
                               }

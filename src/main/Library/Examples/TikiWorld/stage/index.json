@@ -1466,7 +1466,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["tikimod1.x3d"],
+                                            "@url":["tikimod1.json"],
                                             "@bboxSize":[2.23577,7.27344,2.23095],
                                             "@bboxCenter":[-0.108955,3.63672,0.173414]
                                           }
@@ -1482,7 +1482,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["tikimod1.x3d"],
+                                            "@url":["tikimod1.json"],
                                             "@bboxSize":[2.23577,7.27344,2.23095],
                                             "@bboxCenter":[-0.108955,3.63672,0.173414]
                                           }
@@ -1498,7 +1498,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["tikimod1.x3d"],
+                                            "@url":["tikimod1.json"],
                                             "@bboxSize":[2.23577,7.27344,2.23095],
                                             "@bboxCenter":[-0.108955,3.63672,0.173414]
                                           }
@@ -1904,7 +1904,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["baum1.x3d"],
+                                                        "@url":["baum1.json"],
                                                         "@bboxSize":[9.10599,4.72347,8.30301],
                                                         "@bboxCenter":[0.648559,2.35412,-0.0245941]
                                                       }
@@ -2232,7 +2232,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["baum1.x3d"],
+                                                  "@url":["baum1.json"],
                                                   "@bboxSize":[9.10599,4.72347,8.30301],
                                                   "@bboxCenter":[0.648559,2.35412,-0.0245941]
                                                 }
@@ -2365,7 +2365,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["tikigitter.x3d"],
+                                                  "@url":["tikigitter.json"],
                                                   "@bboxSize":[1.99887,3.79993,0.620143],
                                                   "@bboxCenter":[0.017874,0.288345,-0.0515845]
                                                 }
@@ -2383,7 +2383,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["skulljump.x3d"],
+                                                  "@url":["skulljump.json"],
                                                   "@bboxSize":[4.39647,2.428,1.37241],
                                                   "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                 }
@@ -2399,7 +2399,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["indio_wurf.x3d"],
+                                                  "@url":["indio_wurf.json"],
                                                   "@bboxSize":[1.15579,9.73061,9.37082],
                                                   "@bboxCenter":[0.00164762,-1.36784,-1.49606]
                                                 }
@@ -2669,7 +2669,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["skulljump.x3d"],
+                                                        "@url":["skulljump.json"],
                                                         "@bboxSize":[4.39647,2.428,1.37241],
                                                         "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                       }
@@ -2685,7 +2685,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["skulljump.x3d"],
+                                                        "@url":["skulljump.json"],
                                                         "@bboxSize":[4.39647,2.428,1.37241],
                                                         "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                       }
@@ -2701,7 +2701,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["skulljump.x3d"],
+                                                        "@url":["skulljump.json"],
                                                         "@bboxSize":[4.39647,2.428,1.37241],
                                                         "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                       }
@@ -2721,7 +2721,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["indio_wurf.x3d"],
+                                                  "@url":["indio_wurf.json"],
                                                   "@bboxSize":[1.15579,9.73061,9.37082],
                                                   "@bboxCenter":[0.00164762,-1.36784,-1.49606]
                                                 }
@@ -3801,7 +3801,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["indio_wurf.x3d"],
+                                                  "@url":["indio_wurf.json"],
                                                   "@bboxSize":[1.15579,9.73061,9.37082],
                                                   "@bboxCenter":[0.00164762,-1.36784,-1.49606]
                                                 }
@@ -3854,7 +3854,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -3897,7 +3897,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -3940,7 +3940,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -3983,7 +3983,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -4026,7 +4026,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -4069,7 +4069,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -4112,7 +4112,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -4155,7 +4155,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["jump_pf.x3d"],
+                                                              "@url":["jump_pf.json"],
                                                               "@bboxSize":[4.40433,5.41358,4.59533],
                                                               "@bboxCenter":[-0.0841987,1.40367,-0.0643344]
                                                             }
@@ -4304,7 +4304,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["indio_wurf.x3d"],
+                                                  "@url":["indio_wurf.json"],
                                                   "@bboxSize":[1.15579,9.73061,9.37082],
                                                   "@bboxCenter":[0.00164762,-1.36784,-1.49606]
                                                 }
@@ -5564,7 +5564,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["skulljump.x3d"],
+                                                  "@url":["skulljump.json"],
                                                   "@bboxSize":[4.39647,2.428,1.37241],
                                                   "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                 }
@@ -5767,7 +5767,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["skulljump.x3d"],
+                                                        "@url":["skulljump.json"],
                                                         "@bboxSize":[4.39647,2.428,1.37241],
                                                         "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                       }
@@ -5783,7 +5783,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["skulljump.x3d"],
+                                                        "@url":["skulljump.json"],
                                                         "@bboxSize":[4.39647,2.428,1.37241],
                                                         "@bboxCenter":[-2.38419e-07,0.91374,0]
                                                       }
@@ -5806,7 +5806,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["wasserkiste.x3d"],
+                                                        "@url":["wasserkiste.json"],
                                                         "@bboxSize":[1.99999,5.6602,1.99999],
                                                         "@bboxCenter":[-1.13249e-06,2.82745,-8.9407e-08]
                                                       }
@@ -5822,7 +5822,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["wasserkiste.x3d"],
+                                                        "@url":["wasserkiste.json"],
                                                         "@bboxSize":[1.99999,5.6602,1.99999],
                                                         "@bboxCenter":[-1.13249e-06,2.82745,-8.9407e-08]
                                                       }
@@ -5839,7 +5839,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["wasserkiste.x3d"],
+                                                        "@url":["wasserkiste.json"],
                                                         "@bboxSize":[1.99999,5.6602,1.99999],
                                                         "@bboxCenter":[-1.13249e-06,2.82745,-8.9407e-08]
                                                       }
@@ -5855,7 +5855,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["wasserkiste.x3d"],
+                                                        "@url":["wasserkiste.json"],
                                                         "@bboxSize":[1.99999,5.6602,1.99999],
                                                         "@bboxCenter":[-1.13249e-06,2.82745,-8.9407e-08]
                                                       }
@@ -7375,7 +7375,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["schaum.x3d"],
+                                                        "@url":["schaum.json"],
                                                         "@bboxSize":[1,1,1]
                                                       }
                                                     }
@@ -7391,7 +7391,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["schaum.x3d"],
+                                                        "@url":["schaum.json"],
                                                         "@bboxSize":[1,1,1]
                                                       }
                                                     }
@@ -7407,7 +7407,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["wasserfall.x3d"],
+                                                        "@url":["wasserfall.json"],
                                                         "@bboxSize":[55.4813,102.5,24.0402],
                                                         "@bboxCenter":[-194.196,252.561,268.546]
                                                       }
@@ -8086,7 +8086,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["tikiboat.x3d"],
+                                                  "@url":["tikiboat.json"],
                                                   "@bboxSize":[3.13158,3.13158,5.1827],
                                                   "@bboxCenter":[0.0439634,1.3358,0.767748]
                                                 }

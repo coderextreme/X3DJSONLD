@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Slider",
-              "@url":["Slider_proto.x3d"],
+              "@url":["Slider_proto.json"],
               "field": [
                 {
                   "@name":"set_translation",

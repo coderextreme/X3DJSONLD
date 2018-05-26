@@ -6057,7 +6057,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["gate.x3d"],
+                          "@url":["gate.json"],
                           "@bboxSize":[7.63379,11.2538,11.2551],
                           "@bboxCenter":[0.00292969,-0.15992,0.000648499]
                         }
@@ -6236,7 +6236,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["jet.x3d"],
+                                      "@url":["jet.json"],
                                       "@bboxSize":[7.23904,1.89486,7.1349],
                                       "@bboxCenter":[0.358663,0.919555,0.010988]
                                     }

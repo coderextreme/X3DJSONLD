@@ -64,7 +64,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -85,7 +85,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -106,7 +106,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -127,7 +127,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -148,7 +148,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -169,7 +169,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -190,7 +190,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hupfpilz.x3d"],
+                                "@url":["hupfpilz.json"],
                                 "@bboxSize":[5.41069,6.87135,5.41068],
                                 "@bboxCenter":[31.5365,106.54,-26.9564]
                               }
@@ -203,7 +203,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["pilzhaus.x3d"],
+                    "@url":["pilzhaus.json"],
                     "@bboxSize":[1161.95,580.974,1161.95],
                     "@bboxCenter":[4.58313,143.655,1.2912]
                   }

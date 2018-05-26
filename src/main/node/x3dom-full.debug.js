@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'9bebe20015dfb7a52ad87073ced60236b13bbcd7' - b'Fri May 25 17:43:51 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'95793949f6c206d50523b7b7cc35d531f1bf15d8' - b'Sat May 26 02:24:43 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -11380,15 +11380,18 @@ x3dom.Runtime.prototype.toggleProjection = function( perspViewID, orthoViewID )
  *   > var element, x3d, jsobject, optionalUrl;
  *   > element = document.getElementById('the_x3delement');
  *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
- *   > element.runtime.replaceWorld(x3d.querySelector("Scene"));
+ *   > element.runtime.replaceWorld(x3d);
  *
  * Parameters:
  * 		scene - scene element to substitute
  */
-x3dom.Runtime.prototype.replaceWorld = function(scene) {
+x3dom.Runtime.prototype.replaceWorld = function(x3d) {
+    var currentHead = this.doc.querySelector('head');
+    if (currentHead != null) currentHead.remove();
+    var head = x3d.querySelector("head");
+    if (head != null) this.doc.insertAdjacentElement('afterBegin', head);
     var current = this.doc.querySelector('Scene');
-    this.doc.replaceChild(scene, current);
-    //also replace header node
+    this.doc.replaceChild(x3d.querySelector("Scene"), current);
     this.canvas.doc.load(this.doc, 0);
     this.canvas.doc.needRender = true;
 };

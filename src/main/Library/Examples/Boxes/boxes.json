@@ -183,7 +183,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MFInt32",
-              "@url":[", ","MFInt32.x3dhttp://titania.create3000.de/Library/Prototypes/0.1/Fields/MFInt32.x3d"],
+              "@url":[", ","MFInt32.jsonhttp://titania.create3000.de/Library/Prototypes/0.1/Fields/MFInt32.json"],
               "field": [
                 {
                   "@name":"set_triggerTime",

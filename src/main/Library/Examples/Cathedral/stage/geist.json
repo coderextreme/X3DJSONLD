@@ -97,7 +97,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["kind.x3d"],
+                          "@url":["kind.json"],
                           "@bboxSize":[1.07902,1.63698,1.60866],
                           "@bboxCenter":[0.0186297,0.692334,-0.0573816]
                         }
@@ -111,7 +111,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["geist-tv1.x3d"],
+                                "@url":["geist-tv1.json"],
                                 "@bboxSize":[0.337524,0.291134,0.19459],
                                 "@bboxCenter":[7.45058e-08,0.145567,4.47035e-08]
                               }
@@ -223,7 +223,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["cube.x3d"],
+                          "@url":["cube.json"],
                           "@bboxSize":[1,1,1]
                         }
                       }

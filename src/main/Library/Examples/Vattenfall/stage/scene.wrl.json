@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Scene",
-              "@url":["Scene_proto.x3d"],
+              "@url":["Scene_proto.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -88,7 +88,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.x3d"],
+              "@url":["Bool_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -111,7 +111,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -134,7 +134,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"World",
-              "@url":["World_proto.x3d"],
+              "@url":["World_proto.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -182,7 +182,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Import",
-              "@url":["Import_proto.x3d"],
+              "@url":["Import_proto.json"],
               "field": [
                 {
                   "@name":"url",
@@ -220,7 +220,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"ReflectiveTextureTransform",
-              "@url":["ReflectiveTextureTransform_proto.x3d"],
+              "@url":["ReflectiveTextureTransform_proto.json"],
               "field": [
                 {
                   "@name":"translation",
@@ -255,7 +255,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["buildings-right.x3d"],
+                          "@url":["buildings-right.json"],
                           "@bboxSize":[42.4232,23.8456,13.0343],
                           "@bboxCenter":[44.7297,12.1006,4.15363]
                         }
@@ -269,7 +269,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["buildings-left.x3d"],
+                          "@url":["buildings-left.json"],
                           "@bboxSize":[33.9371,20,73.3346],
                           "@bboxCenter":[-50.913,9.44531,-25.889]
                         }
@@ -283,7 +283,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["mainstreet.x3d"],
+                          "@url":["mainstreet.json"],
                           "@bboxSize":[132.772,0.579302,40.4072],
                           "@bboxCenter":[-0.602219,0.281511,29.8155]
                         }
@@ -301,7 +301,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["veag-floor.x3d"],
+                                "@url":["veag-floor.json"],
                                 "@bboxSize":[60.677,0.201622,61.9307],
                                 "@bboxCenter":[-4.083,0.309971,-20.56]
                               }
@@ -337,7 +337,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["strassenlampe.x3d"],
+                                            "@url":["strassenlampe.json"],
                                             "@bboxSize":[3.16888,4.84553,4.95361],
                                             "@bboxCenter":[-0.0152445,2.42276,-1.47681]
                                           }
@@ -436,7 +436,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["zentrale.x3d"],
+                                "@url":["zentrale.json"],
                                 "@bboxSize":[54.0314,23.902,57.7956],
                                 "@bboxCenter":[0.116342,11.7653,-21.754]
                               }
@@ -831,7 +831,7 @@
           },
           { "Inline":
             {
-              "@url":["background.x3d"],
+              "@url":["background.json"],
               "@bboxSize":[19.4378,19.4378,19.4378]
             }
           },
@@ -954,7 +954,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["reflection2.x3d"],
+                    "@url":["reflection2.json"],
                     "@bboxSize":[1020.62,1020.62,1020.62],
                     "@bboxCenter":[-1.52588e-05,1.52588e-05,0]
                   }

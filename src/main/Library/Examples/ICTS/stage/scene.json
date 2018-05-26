@@ -478,7 +478,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["pololow.x3d"],
+                                "@url":["pololow.json"],
                                 "@bboxSize":[2.70251,0.990366,1.34988],
                                 "@bboxCenter":[1.49608e-05,0.495183,3.48687e-06]
                               }
@@ -787,7 +787,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["ad.x3d"],
+                                "@url":["ad.json"],
                                 "@bboxSize":[22.025,1.045,12.7965],
                                 "@bboxCenter":[-4.29153e-06,0.519136,-0.482112]
                               }
@@ -953,7 +953,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["people.x3d"],
+                                      "@url":["people.json"],
                                       "@bboxSize":[5,4.08028,5]
                                     }
                                   }
@@ -966,7 +966,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["people.x3d"],
+                                      "@url":["people.json"],
                                       "@bboxSize":[5,4.08028,5]
                                     }
                                   }
@@ -979,7 +979,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["people.x3d"],
+                                      "@url":["people.json"],
                                       "@bboxSize":[5,4.08028,5]
                                     }
                                   }
@@ -992,7 +992,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["people.x3d"],
+                                      "@url":["people.json"],
                                       "@bboxSize":[5,4.08028,5]
                                     }
                                   }
@@ -1005,7 +1005,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["people.x3d"],
+                                      "@url":["people.json"],
                                       "@bboxSize":[5,4.08028,5]
                                     }
                                   }

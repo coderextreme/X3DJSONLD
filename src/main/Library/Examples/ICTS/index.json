@@ -48,7 +48,7 @@
         "-children":[
           { "Inline":
             {
-              "@url":["stage/index.x3d"]
+              "@url":["stage/index.json"]
             }
           }
         ]

@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RandomSwitcher",
-              "@url":["RandomSwitcher_proto.x3d"],
+              "@url":["RandomSwitcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -73,7 +73,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"NegSFVec3f",
-              "@url":["NegSFVec3f_proto.x3d"],
+              "@url":["NegSFVec3f_proto.json"],
               "field": [
                 {
                   "@name":"set_SFVec3f",

@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Random",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Random/Random_proto.x3dRandom_proto.x3d"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Random/Random_proto.jsonRandom_proto.json"],
               "field": [
                 {
                   "@name":"value",

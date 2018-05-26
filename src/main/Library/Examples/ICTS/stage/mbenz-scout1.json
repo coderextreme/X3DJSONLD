@@ -53,7 +53,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["else_demo__2.x3d"],
+                    "@url":["else_demo__2.json"],
                     "@bboxSize":[5,3.8,5]
                   }
                 }
@@ -93,7 +93,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["window-mbenz.x3d"],
+                                                              "@url":["window-mbenz.json"],
                                                               "@bboxSize":[1.288,0.8863,0.060779],
                                                               "@bboxCenter":[5.06639e-07,-2.23517e-07,-0.320511]
                                                             }

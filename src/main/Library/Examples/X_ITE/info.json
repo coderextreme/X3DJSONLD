@@ -57,7 +57,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Rotor",
-              "@url":["library/Rotor.x3dv"],
+              "@url":["library/Rotor.json"],
               "field": [
                 {
                   "@name":"enabled",
@@ -536,7 +536,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["library/logo.x3dv"]
+                                                        "@url":["library/logo.json"]
                                                       }
                                                     }
                                                   ]

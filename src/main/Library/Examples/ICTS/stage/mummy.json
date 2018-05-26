@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Random",
-              "@url":["Random_proto.x3d"],
+              "@url":["Random_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -73,7 +73,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"MediaCtrl",
-              "@url":["MediaCtrl_proto.x3d"],
+              "@url":["MediaCtrl_proto.json"],
               "field": [
                 {
                   "@name":"reset",
@@ -106,7 +106,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RandomSwitcher",
-              "@url":["RandomSwitcher_proto.x3d"],
+              "@url":["RandomSwitcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -866,7 +866,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["fire.x3d"],
+                          "@url":["fire.json"],
                           "@bboxSize":[6.67,6.67,6.67]
                         }
                       }
@@ -883,7 +883,7 @@
           },
           { "Inline":
             {
-              "@url":["mummy_snd.x3d"],
+              "@url":["mummy_snd.json"],
               "@bboxSize":[1,1,1]
             }
           }

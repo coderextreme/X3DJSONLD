@@ -263,7 +263,7 @@
           },
           { "Inline":
             {
-              "@url":["canyonv.x3d"]
+              "@url":["canyonv.json"]
             }
           },
           { "Viewpoint":
@@ -328,7 +328,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -341,7 +341,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -354,7 +354,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -367,7 +367,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -380,7 +380,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -393,7 +393,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -406,7 +406,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -419,7 +419,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["seaweed.x3d"]
+                          "@url":["seaweed.json"]
                         }
                       }
                     ]
@@ -455,7 +455,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["skeleton.x3d"]
+                          "@url":["skeleton.json"]
                         }
                       }
                     ]
@@ -471,7 +471,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -484,7 +484,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -497,7 +497,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -510,7 +510,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -523,7 +523,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -536,7 +536,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -549,7 +549,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -562,7 +562,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -575,7 +575,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -588,7 +588,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -601,7 +601,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -614,7 +614,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -627,7 +627,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -640,7 +640,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -653,7 +653,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -666,7 +666,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -679,7 +679,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -692,7 +692,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -705,7 +705,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble.x3d"]
+                    "@url":["bubble.json"]
                   }
                 }
               ]
@@ -718,7 +718,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -731,7 +731,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -744,7 +744,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -757,7 +757,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -770,7 +770,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -783,7 +783,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -796,7 +796,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -809,7 +809,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -822,7 +822,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -835,7 +835,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -848,7 +848,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -861,7 +861,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -874,7 +874,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -887,7 +887,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -900,7 +900,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -913,7 +913,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -926,7 +926,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -939,7 +939,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -952,7 +952,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -965,7 +965,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -978,7 +978,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -991,7 +991,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1004,7 +1004,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1017,7 +1017,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1030,7 +1030,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1043,7 +1043,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1056,7 +1056,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["bubble2.x3d"]
+                    "@url":["bubble2.json"]
                   }
                 }
               ]
@@ -1188,7 +1188,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["gullswim.x3d"]
+                                "@url":["gullswim.json"]
                               }
                             }
                           ]
@@ -1267,7 +1267,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["gullswim.x3d"]
+                                "@url":["gullswim.json"]
                               }
                             }
                           ]
@@ -1346,7 +1346,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["fishswim.x3d"]
+                                "@url":["fishswim.json"]
                               }
                             }
                           ]
@@ -1411,7 +1411,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["fishswim.x3d"]
+                                "@url":["fishswim.json"]
                               }
                             }
                           ]
@@ -5951,7 +5951,7 @@
                                         },
                                         { "Inline":
                                           {
-                                            "@url":["fishswim.x3d"]
+                                            "@url":["fishswim.json"]
                                           }
                                         }
                                       ]

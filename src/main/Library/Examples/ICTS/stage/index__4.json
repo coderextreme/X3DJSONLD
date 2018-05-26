@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.x3d"],
+              "@url":["Console_proto.json"],
               "field": [
                 {
                   "@name":"string",
@@ -58,7 +58,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.x3d"],
+              "@url":["BoolSwitch_proto.json"],
               "field": [
                 {
                   "@name":"isActive",
@@ -76,7 +76,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.x3d"],
+              "@url":["Bool_proto.json"],
               "field": [
                 {
                   "@name":"startTime",
@@ -99,7 +99,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"DigitalClock",
-              "@url":["DigitalClock_proto.x3d"],
+              "@url":["DigitalClock_proto.json"],
               "field": [
                 {
                   "@name":"time",
@@ -122,7 +122,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SubTime",
-              "@url":["SubTime_proto.x3d"],
+              "@url":["SubTime_proto.json"],
               "field": [
                 {
                   "@name":"time",
@@ -145,7 +145,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Time",
-              "@url":["Time_proto.x3d"],
+              "@url":["Time_proto.json"],
               "field": [
                 {
                   "@name":"time",
@@ -168,7 +168,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.x3d"],
+              "@url":["Switcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -206,7 +206,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Digit",
-              "@url":["Digit_proto.x3d"],
+              "@url":["Digit_proto.json"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -224,7 +224,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.x3d"],
+              "@url":["Gate_proto.json"],
               "field": [
                 {
                   "@name":"offset",
@@ -257,7 +257,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.x3d"],
+              "@url":["Delay_proto.json"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -478,7 +478,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["benzoffice.x3d"],
+                                "@url":["benzoffice.json"],
                                 "@bboxSize":[38.8425,13.6749,22.9095],
                                 "@bboxCenter":[4.36904,0.0062058,-0.675996]
                               }
@@ -541,7 +541,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["mbenz-scout1.x3d"],
+                          "@url":["mbenz-scout1.json"],
                           "@bboxSize":[25,25,25],
                           "@bboxCenter":[0,1,0]
                         }

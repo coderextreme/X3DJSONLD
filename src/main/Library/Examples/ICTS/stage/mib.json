@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",

@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Random",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Random/Random_proto.x3dRandom_proto.x3d"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Random/Random_proto.jsonRandom_proto.json"],
               "field": [
                 {
                   "@name":"value",
@@ -83,7 +83,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Import",
-              "@url":[", ","Import_proto.x3dhttp://vr.create3000.tv/vrml/protos1.1/Import/Import_proto.x3d"],
+              "@url":[", ","Import_proto.jsonhttp://vr.create3000.tv/vrml/protos1.1/Import/Import_proto.json"],
               "field": [
                 {
                   "@name":"url",
@@ -121,7 +121,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"World",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/World/World_proto.x3dWorld_proto.x3d"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/World/World_proto.jsonWorld_proto.json"],
               "field": [
                 {
                   "@name":"enabled",

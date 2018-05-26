@@ -53,7 +53,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["else_demo.x3d"],
+                    "@url":["else_demo.json"],
                     "@bboxSize":[8.02745,8.02745,8.02745]
                   }
                 }
@@ -93,7 +93,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["window-cinemaxx.x3d"],
+                                                              "@url":["window-cinemaxx.json"],
                                                               "@bboxSize":[1.288,0.8863,0.060779],
                                                               "@bboxCenter":[5.06639e-07,-2.23517e-07,-0.320511]
                                                             }

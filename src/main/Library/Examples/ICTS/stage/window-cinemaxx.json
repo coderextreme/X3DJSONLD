@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.x3d"],
+              "@url":["BoolSwitch_proto.json"],
               "field": [
                 {
                   "@name":"isActive",
@@ -63,7 +63,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"isOver",
-              "@url":["isOver_proto.x3d"],
+              "@url":["isOver_proto.json"],
               "field": [
                 {
                   "@name":"set_isOver",
@@ -86,7 +86,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"True",
-              "@url":["True_proto.x3d"],
+              "@url":["True_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -104,7 +104,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.x3d"],
+              "@url":["Switcher_proto.json"],
               "field": [
                 {
                   "@name":"minValue",
@@ -142,7 +142,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.x3d"],
+              "@url":["Gate_proto.json"],
               "field": [
                 {
                   "@name":"offset",
@@ -175,7 +175,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":["Not_proto.x3d"],
+              "@url":["Not_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -220,7 +220,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["else.x3d"],
+                                "@url":["else.json"],
                                 "@bboxSize":[0.0412831,0.0412831,0],
                                 "@bboxCenter":[-0.240425,-0.171864,-0.297753]
                               }
@@ -260,7 +260,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["zoom-button.gif.x3d"],
+                                                  "@url":["zoom-button.gif.json"],
                                                   "@bboxSize":[0.0111772,0.0107642,0],
                                                   "@bboxCenter":[0.18564,-0.0653136,-0.29764]
                                                 }
@@ -301,7 +301,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["zoom.x3d"],
+                                                                                "@url":["zoom.json"],
                                                                                 "@bboxSize":[0.000743108,0.000743108,0],
                                                                                 "@bboxCenter":[0,0,0.00636301]
                                                                               }
@@ -421,7 +421,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["cinemaxx.x3d"],
+                                                  "@url":["cinemaxx.json"],
                                                   "@bboxSize":[0.360011,0.120031,0.00349],
                                                   "@bboxCenter":[3.7998e-07,-4.65661e-07,-0.298245]
                                                 }
@@ -532,7 +532,7 @@
                                                           },
                                                           { "Inline":
                                                             {
-                                                              "@url":["border.x3d"],
+                                                              "@url":["border.json"],
                                                               "@bboxSize":[0.37516,0.141366,5.85616e-05],
                                                               "@bboxCenter":[0.00364155,-6.55651e-07,-0.299961]
                                                             }
@@ -565,7 +565,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["close-button.x3d"],
+                                                                          "@url":["close-button.json"],
                                                                           "@bboxSize":[0.0111772,0.0107642,0],
                                                                           "@bboxCenter":[0.18564,0.0653424,-0.29764]
                                                                         }
@@ -592,7 +592,7 @@
                                                                                 "-children":[
                                                                                   { "Inline":
                                                                                     {
-                                                                                      "@url":["close.x3d"],
+                                                                                      "@url":["close.json"],
                                                                                       "@bboxSize":[0.0162762,0.0162762,0],
                                                                                       "@bboxCenter":[0.183659,0.0636474,-0.296069]
                                                                                     }
@@ -670,7 +670,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["move.x3d"],
+                                                              "@url":["move.json"],
                                                               "@bboxSize":[0.0313628,0.0313628,0],
                                                               "@bboxCenter":[0,0,0.005]
                                                             }

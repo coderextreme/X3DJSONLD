@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"False",
-              "@url":["False_proto.x3d"],
+              "@url":["False_proto.json"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -67,7 +67,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LoadVrmlFromURL",
-              "@url":["LoadVrmlFromURL_proto.x3d"],
+              "@url":["LoadVrmlFromURL_proto.json"],
               "field": [
                 {
                   "@name":"url",
@@ -100,7 +100,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.x3d"],
+              "@url":["Int_proto.json"],
               "field": [
                 {
                   "@name":"startTime",

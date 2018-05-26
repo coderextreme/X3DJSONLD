@@ -73,7 +73,7 @@
                       },
                       { "Inline":
                         {
-                          "@url":["cube.x3d"],
+                          "@url":["cube.json"],
                           "@bboxSize":[1,1,1]
                         }
                       }
