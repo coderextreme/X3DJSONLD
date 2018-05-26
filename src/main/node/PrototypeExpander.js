@@ -1138,12 +1138,16 @@ PROTOS.prototype = {
 								});
 						
 							} else {
-								var request = new XMLHttpRequest();
-								request.open('GET', url, false);  // `false` makes the request synchronous
-								request.send(null);
-								if (request.status === 200) {
-									var data = request.responseText;
-									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+								try {
+									var request = new XMLHttpRequest();
+									request.open('GET', url, false);  // `false` makes the request synchronous
+									request.send(null);
+									if (request.status === 200) {
+										var data = request.responseText;
+										loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
+									}
+								} catch (e) {
+									console.error(e);
 								}
 							}
 						} else if (protocol === "https") {
