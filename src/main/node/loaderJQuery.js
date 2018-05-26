@@ -64,7 +64,7 @@ loadLocalize(lang);
 
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
-		$('#xml').val(xml.join("\n"));
+		$('#xml').val(xml);
 	}
 	// DISPLAY XML in X3DOM
 	xml = $('#xml').val();
@@ -153,23 +153,22 @@ if (typeof mapToMethod !== 'undefined') {
 	}
 }
 
-function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
-			log.push(xml);
-			callback(child);
+			callback(child, xml);
 		}
 	}, function(e) {
 		console.error(e);
-		callback(null);
+		callback(null, null);
 	});
 }
 
-function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		X3D(function() {
@@ -178,8 +177,7 @@ function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, log, NS, load
 				if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 					var child = browser.importJS(jsobj);
 					var xml = X3DJSONLD.serializeDOM(jsobj, child.dom, true);
-					log.push(xml);
-					callback(child.dom);
+					callback(child.dom, xml);
 				}
 			}
 		}, function() {
@@ -187,14 +185,13 @@ function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, log, NS, load
 		});
 	}, function(e) {
 		console.error(e);
-		callback(null);
+		callback(null, null);
 	});
 }
 
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	var xml = [];
-	loadX3DJS_X3DOM("#x3domjson", document.implementation, json, path, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
+	loadX3DJS(document.implementation, json, path, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }
@@ -217,8 +214,7 @@ function loadProtoX3D(scripts, selector, json, url) {
 	alert("JSON isn't valid "+ e);
    }
     var NS = $('#namespace option:selected').text();
-    var xml = [];
-    replaceX3DJSON(selector, json, url, xml, NS, function(child) {
+    replaceX3DJSON(selector, json, url, NS, function(child, xml) {
 	    if (child != null) {
 			try {
 			    load_X_ITE_JS(json, "#x_itejson");
@@ -311,13 +307,12 @@ function loadInline(selector, url, xmlDoc) {
  * selector (string) -- css selector
  * json (json object) -- json to convert to DOM
  * url -- name of path/filename json loaded from
- * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
  * next -- to return the element or null
  * returns element loaded
  */
-function appendX3DJSON2Selector(x3dele, selector, json, url, xml, NS, next) {
-	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
+function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
+	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
@@ -336,14 +331,13 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, xml, NS, next) {
  * selector (string) -- css selector
  * json (json object) -- json to convert to DOM
  * url -- name of path/filename json loaded from
- * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
  * next -- to return the element and xmlDoc or null, null
- * returns element loaded
+ * returns element loaded and xml
  */
-function replaceX3DJSON(selector, json, url, xml, NS, next) {
+function replaceX3DJSON(selector, json, url, NS, next) {
 
-	loadX3DJS_X3DOM(selector, document.implementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(element) {
+	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
@@ -374,7 +368,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			// remove all text nodes in scripts (and fields too, sigh)
 			$(selector+" Script").empty();
 		}
-		next(element);
+		next(element, xml);
 	});
 }
 
@@ -482,7 +476,7 @@ function loadJson(url) {
 function updateXml(json, path) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
-		$('#xml').val(xml.join("\n"));
+		$('#xml').val(xml);
 	}, path);
 }
 
@@ -549,7 +543,7 @@ function convertXmlToJson(xmlString, path) {
 		json = JSON.parse(json);
 		try {
 			// reload XML parser with original
-			loadXmlBrowsers([xmlString]);
+			loadXmlBrowsers(xmlString);
 		} catch (e) {
 			alert("Problems with loading xml browsers with XML "+ e);
 			console.error(e);
@@ -607,7 +601,7 @@ function convertXmlToJson(xmlString, path) {
 			return json;
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers. Works better if you use node.js as a web server and run the command node app.js from webroot after running npm install"+e);
-			loadXmlBrowsers([xmlString]);
+			loadXmlBrowsers(xmlString);
 		}
 	    }, "xml")
 	    .fail(function(jqXHR, textStatus, errorThrown) {

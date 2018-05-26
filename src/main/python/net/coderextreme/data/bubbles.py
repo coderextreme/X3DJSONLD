@@ -308,7 +308,9 @@ Script47.setSourceCode("ecmascript:\n"+
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
 "		   } catch (e) {\n"+
+"		   	if (typeof alert === 'function') {\n"+
 "				alert(e);\n"+
+"			}\n"+
 "		   }\n"+
 "               }")
 Scene11.addChild(Script47)

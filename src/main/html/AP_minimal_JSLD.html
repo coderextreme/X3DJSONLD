@@ -38,8 +38,7 @@
 	$.getJSON(url, importInto_X_ITE);
 
 	function importInto_X_ITE(json) {
-		var xml = [];
-		loadX3DJS_X_ITE(selector, document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
+		loadX3DJS_X_ITE(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
 			load_X_ITE_DOM(jsDOM, selector);
 		});
 	}

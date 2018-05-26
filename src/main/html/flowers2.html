@@ -86,9 +86,8 @@ function getJSON(url) {
 
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
-			var xml = [];
 			json = protoExpander.prototypeExpander(url, json, "");
-		        replaceX3DJSON(selector, json, url, xml, "", function(element) {
+		        replaceX3DJSON(selector, json, url, "", function(element) {
 				if ($('#scripting').is(':checked')) {
 					scripts.loadScripts(json, selector, url);
 				}
@@ -100,8 +99,7 @@ function getJSON(url) {
 	}
 	function load_X_ITE(selector, url) {
 		getJSON(url).then(function(json) {
-			var xml = [];
-			loadX3DJS_X_ITE(selector, document.implementation, json, url, xml, "", loadSchema, doValidate, X3DJSONLD, function(element) {
+			loadX3DJS_X_ITE(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(element) {
 				load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {

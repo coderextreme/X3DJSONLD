@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"26 May 2018"
           },
           {
             "@name":"generator",
@@ -347,7 +347,9 @@
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
 "\t\t   } catch (e) {",
+"\t\t   \tif (typeof alert === 'function') {",
 "\t\t\t\talert(e);",
+"\t\t\t}",
 "\t\t   }",
 "               }",
 "",

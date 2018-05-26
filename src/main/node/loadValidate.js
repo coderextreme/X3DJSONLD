@@ -109,23 +109,21 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
  * DOMImplementation - normally document.implementation
  * jsobj - the JavaScript object to convert to XML and DOM.
  * path - the path of the JSON file.
- * log - the output xml string array (optional).
  * NS - a namespace for X_ITE (optional) -- stripped out.
  * loadSchema -- the loadSchema function
  * doValidate -- the doValidate function
  * X3DJSONLD -- X3DJSONLD
  * callback -- returns the element whose scene children to append or insert into the DOM.
  */
-function loadX3DJS(DOMImplementation, jsobj, path, log, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+function loadX3DJS(DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		var child, xml;
 		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
-		log.push(xml);
-		callback(child);
+		callback(child, xml);
 	}, function(e) {
 		console.error(e);
-		callback(null);
+		callback(null, null);
 	});
 }
 
@@ -137,21 +135,20 @@ function loadX3DJS(DOMImplementation, jsobj, path, log, NS, loadSchema, doValida
  * parent -- parent DOM element
  * json (json object) -- json to convert to DOM
  * url -- name of path/filename json loaded from
- * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
  * next -- to return the element or null
- * returns element loaded
+ * returns element loaded, followed by xml
  */
-function replaceX3DJSON(parent, json, url, xml, NS, next) {
+function replaceX3DJSON(parent, json, url, NS, next) {
 
-	loadX3DJS(DOMImplementation, json, url, xml, NS, loadSchema, doValidate, X3DJSONLD, function(child) {
+	loadX3DJS(DOMImplementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(child, xml) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);
 			}
 			parent.appendChild(child);
 		}
-		next(child);
+		next(child, xml);
 	});
 }
 
