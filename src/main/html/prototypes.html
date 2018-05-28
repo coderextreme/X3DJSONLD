@@ -135,7 +135,13 @@ var scripts = new Scripts();
 	function load_X3DOM_JSON(jsobj, selector) {
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
-			doc.runtime.loadJS(jsobj);
+		    var x3d = doc.runtime.createX3DFromJS(jsobject, optionalURL)
+		    if (x3d != null) {
+			    doc.runtime.replaceWorld(x3d);
+		    } else {
+			    x3dom.debug.logError("loadJS: could not fetch or parse " + jsobject);
+		    }
+
 		}
 		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
