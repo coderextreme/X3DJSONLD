@@ -125,19 +125,15 @@ var scripts = new Scripts();
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
 		loadX3DJS_X3DOM(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+			load_X3DOM_JSON(json, selector);
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-			load_X3DOM_DOM(element, selector);
 			callback(element, xml);
 		});
 	}
-	function load_X3DOM_DOM(element, selector) {
-		/*
-		$(selector).empty();
-		$(element.querySelector("X3D")).children().appendTo(selector);
-		*/
+	function load_X3DOM_JSON(jsobj, selector) {
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
-			doc.runtime.replaceWorld(element);
+			doc.runtime.loadJS(jsobj);
 		}
 		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
