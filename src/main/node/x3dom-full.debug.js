@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'032300e90fdcc6d00819b3cfa4881b34227b6c36' - b'Mon May 28 16:09:52 2018 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'6e057fe90d2c445b4d57545323d5d95871c16163' - b'Tue May 29 21:46:01 2018 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -11379,7 +11379,7 @@ x3dom.Runtime.prototype.toggleProjection = function( perspViewID, orthoViewID )
  *
  *   > var element, x3d, jsobject, optionalUrl;
  *   > element = document.getElementById('the_x3delement');
- *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
+ *   > x3d = element.runtime.createX3DFromJS(jsobject, optionalUrl);
  *   > element.runtime.replaceWorld(x3d);
  *
  * Parameters:
@@ -11431,7 +11431,7 @@ x3dom.Runtime.prototype.replaceWorld = function(x3d) {
  *
  *   > var element, x3d, jsobject, optionalUrl;
  *   > element = document.getElementById('the_x3delement');
- *   > x3d = element.runtime.createX3dFromJS(jsobject, optionalUrl);
+ *   > x3d = element.runtime.createX3DFromJS(jsobject, optionalUrl);
  *   > element.runtime.replaceWorld(x3d);
  *
  * Parameters:
@@ -11452,7 +11452,7 @@ x3dom.Runtime.prototype.createX3DFromJS = function(jsobject, optionalURL) {
 };
 
 /**
- * APIFunction: createX3dFromString
+ * APIFunction: createX3DFromString
  *
  * Creates a x3d element from a JSON or XML String
  *
@@ -11460,7 +11460,7 @@ x3dom.Runtime.prototype.createX3DFromJS = function(jsobject, optionalURL) {
  *
  *   > var element, x3d, jsonOrXML, optionalUrl;
  *   > element = document.getElementById('the_x3delement');
- *   > x3d = element.runtime.createX3dFromString(jsonOrXML, optionalUrl);
+ *   > x3d = element.runtime.createX3DFromString(jsonOrXML, optionalUrl);
  *   > element.runtime.replaceWorld(x3d);
  *
  * Parameters:
@@ -11488,7 +11488,7 @@ x3dom.Runtime.prototype.createX3DFromString = function(jsonOrXML, optionalURL) {
     }
 };
 /**
- * APIFunction: createX3dFromURLPromise
+ * APIFunction: createX3DFromURLPromise
  *
  * Creates a Promise resolved to the x3d element from a Url
  *
@@ -11552,35 +11552,6 @@ x3dom.Runtime.prototype.loadURL = function(url, optionalURL) {
         if (x3d != null) that.replaceWorld(x3d);
         else x3dom.debug.logError("loadURL: could not fetch or parse " + url);
     });
-};
-
-/**
- * APIFunction: loadJS
- *
- * loads a scene URL with js content.
- *
- * Example:
- *
- *   > var element, jsobject , optionalUrl;
- *   > element.runtime.loadJS(jsobject, optionalUrl);
- *
- * Parameters:
- * 		jsobject -- JSON object as JavaScript
- * 		optionalURL -- if specified, does a PROTO expansion on jsobject, only.
- * 			JSON ExternProtoDeclare's are loaded relative to this
- * 			URL.
- *
- * Returns:
- * 		undefined
- */
-x3dom.Runtime.prototype.loadJS = function(jsobject, optionalURL) {
-    that = this;
-    var x3d = this.createX3DFromJS(jsobject, optionalURL)
-    if (x3d != null) {
-	    that.replaceWorld(x3d);
-    } else {
-	    x3dom.debug.logError("loadJS: could not fetch or parse " + jsobject);
-    }
 };
 
 /*

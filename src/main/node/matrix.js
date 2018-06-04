@@ -57,11 +57,23 @@ class Matrix extends Array {
 			new Matrix(this[2][0], this[2][1], this[2][2], this[2][3]),
 			new Matrix(this[3][0], this[3][1], this[3][2], this[3][3]));
 	}
+	static invertquaternion(x, y, z, r) {
+		x = parseFloat(x);
+		y = parseFloat(y);
+		z = parseFloat(z);
+		r = parseFloat(r);
+		return Matrix.quaternion(-x, -y, -z, r);
+	}
 	static quaternion(x, y, z, r) {
 		x = parseFloat(x);
 		y = parseFloat(y);
 		z = parseFloat(z);
 		r = parseFloat(r);
+		var n = Math.sqrt(x*x+y*y+z*z+r*r);
+		x = x / n;
+		y = y / n;
+		z = z / n;
+		r = r / n;
 		return new Matrix(
 			new Matrix(x, -y, -z, -r),
 		  	new Matrix(y,  x, -r,  z),
