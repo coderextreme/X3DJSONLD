@@ -8966,7 +8966,12 @@
               }
             },
             "@version": {
-              "default": "2.2",
+              "enum": [
+                "1.0",
+                "1.1",
+                "2.0"
+              ],
+              "default": "2.0",
               "type": "string"
             },
             "-viewpoints": {
