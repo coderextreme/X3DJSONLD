@@ -363,7 +363,12 @@ function replaceX3DJSON(selector, json, url, NS, next) {
 			}
 			var doc = document.querySelector(selector);
 			if (doc.hasRuntime && doc.runtime.ready) {
-				doc.runtime.replaceWorld(element);
+				try {
+					doc.runtime.replaceWorld(element);
+				} catch (e) {
+					alert(e);
+					console.error(e);
+				}
 			}
 			// remove all text nodes in scripts (and fields too, sigh)
 			$(selector+" Script").empty();

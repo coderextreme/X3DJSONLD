@@ -498,7 +498,9 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 			transform = transform.matmatmult(CNode.translation);
 		}
 		if (CNode.quaternion) {
-			transform = transform.matmatmult(CNode.quaternion);
+			var quat = CNode.quaternion;
+			var invquat = Matrix.invertquaternion(quat[0], quat[1], quat[2], quat[3]);
+			transform = quat.matmatmult(transform).matmatmult(invquat);
 		}
 		if (CNode.scale) {
 			transform = transform.matmatmult(CNode.scale);

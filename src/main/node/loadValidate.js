@@ -50,9 +50,9 @@ function doValidate(json, validated_version, file, X3DJSONLD, success, failure, 
 				error += " file: " + file + "\n";
 			}
 		}
-		if (typeof window === 'object' && typeof window.confirm !== 'function') {
-			window.confirm = function(error) {
-				return false;
+		if (typeof confirm !== 'function') {
+			confirm = function(error) {
+				return true;
 			};
 		}
 
