@@ -127,15 +127,29 @@ var scripts = new Scripts();
 	}
 	function load_X3DOM_JS(json, selector, url, callback) {
 		loadX3DJS_X3DOM(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(element, xml) {
-			load_X3DOM_JSON(json, selector);
+			load_X3DOM_JSON(json, selector, url);
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			callback(element, xml);
 		});
 	}
-	function load_X3DOM_JSON(jsobj, selector) {
+	function load_X3DOM_JSON(jsobj, selector, optionalURL) {
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
+			/*
 			doc.runtime.loadJS(jsobj);
+			*/
+			    var x3d = doc.runtime.createX3DFromJS(jsobj, optionalURL)
+			    if (x3d != null) {
+				    try {
+				    	doc.runtime.replaceWorld(x3d);
+				    } catch (e) {
+					    console.error(e);
+					    alert(e);
+				    }
+			    } else {
+				    x3dom.debug.logError("loadJS: could not fetch or parse " + jsobj);
+			    }
+
 		}
 		// remove all text nodes in scripts (and fields too, sigh)
 		$(selector+" Script").empty();
