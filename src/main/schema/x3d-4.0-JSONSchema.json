@@ -8923,6 +8923,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-motions": {
+              "$ref": "#/definitions/-HAnimMotionMFNode"
+            },
             "@name": {
               "type": "string"
             },
@@ -9004,7 +9007,7 @@
             "-skinBindingCoords": {
               "$ref": "#/definitions/-X3DCoordinateNodeMFNode"
             },
-            "-skinBindingNormal": {
+            "-skinBindingNormals": {
               "$ref": "#/definitions/-X3DNormalNodeMFNode"
             },
             "-skinCoord": {
@@ -26630,6 +26633,25 @@
           },
           "HAnimJoint": {
             "$ref": "#/definitions/HAnimJoint"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "-HAnimMotionMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "HAnimMotion": {
+            "$ref": "#/definitions/HAnimMotion"
           },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
