@@ -42,7 +42,7 @@ function convertX3dToJson(res, infile, outfile, next) {
 		var element = doc.documentElement;
 		console.error("Calling converter "+serializer+" on "+infile);
 		var serializer = new DOM2JSONSerializer();
-		var str = new serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
+		var str = new serializer.serializeToString(null, element, outfile, mapToMethod, fieldTypes);
 		var json = JSON.parse(str);
 		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		send(res, json, "text/json", next);
