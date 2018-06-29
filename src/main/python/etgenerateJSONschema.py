@@ -1,5 +1,6 @@
 import xml.etree.ElementTree
 import sys
+import re
 
 PY3 = sys.version_info[0] == 3
 
@@ -120,6 +121,12 @@ class ClassPrinter:
 '''
             return str
         str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
+#        try:
+#            if regex[field.get("type")] is not None:
+#                str += '\t\t\t\t\t\t"pattern" : "/' + regex[field.get("type")].replace("\\", "\\\\") + '/",\n'
+#        except KeyError:
+#            pass
+
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
                 try:
@@ -361,6 +368,8 @@ class ClassPrinter:
                                 else:
                                     str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                         str += '\t\t\t\t\t\t}'
+        if str[-2] == ',':
+            str = str[:-2] + '\n' # strip off comma
         str += '\t\t\t\t\t},\n'
         return str
 
@@ -1526,7 +1535,13 @@ code = '''{
 soup = xml.etree.ElementTree.parse(sys.stdin).getroot()
 
 classes = {}
+regex = {}
 containerFields = {}
+
+fts = soup.iter("FieldType")
+for ft in fts:
+    if ft.get('regex') != "":
+        regex[ft.get('type')] = ft.get('regex')
 
 ants = soup.iter("AbstractNodeType")
 for ant in ants:
