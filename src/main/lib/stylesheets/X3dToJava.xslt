@@ -300,7 +300,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
@@ -1916,7 +1916,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:variable>
 			<xsl:variable name="numbersPerGroup">
 				<xsl:choose>
-					<xsl:when test="contains($attributeType,'Int32')">
+					<xsl:when test="contains($attributeType,'Int32') or contains($attributeType,'Image')">
 						<xsl:text>1000</xsl:text>
 					</xsl:when>
 					<xsl:when test="contains($attributeType,'Float')">
@@ -2049,6 +2049,11 @@ POSSIBILITY OF SUCH DAMAGE.
 							select="(string-length(normalize-space(.)) > $attributeSplitSize) and
 									not($elementName = 'meta') and
 									not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
+				<!-- substitute enumerations where appropriate to encourage best practice -->
+				<xsl:variable name="attributeValueSubstitution">
+					<xsl:call-template name="alternative-attributeValueSubstitution"/>
+				</xsl:variable>
+				<!-- determine corresponding Java class name -->
 				<xsl:variable name="dataObjectName">
 					<xsl:choose>
 						<xsl:when test="(string-length(normalize-space($DEF)) > 0)">
@@ -2081,6 +2086,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:call-template name="output-attribute-value">
 							<xsl:with-param name="inputString"    select="."/>
 							<xsl:with-param name="attributeType"  select="$attributeType"/>
+							<xsl:with-param name="attributeValueSubstitution" select="$attributeValueSubstitution"/>
 							<xsl:with-param name="indent"         select="$indent"/>
 							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
 							<xsl:with-param name="processingPass"><xsl:text>0.invocation</xsl:text></xsl:with-param>
@@ -2337,7 +2343,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<!-- change space characters to commas to support the recursion algorithm -->
 		<xsl:variable name="arrayString" select="translate(normalize-space($inputString),' ',',')"/>
 		<!-- debug
-		<xsl:if test="contains($inputType,'Int32')">
+		<xsl:if test="contains($inputType,'Int32') or contains($inputType,'Image')">
 			<xsl:message>
 				<xsl:text>java-array-values $inputType='</xsl:text>
 				<xsl:value-of select="$inputType"/>
@@ -2347,7 +2353,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		-->
 		
         <xsl:choose>
-            <xsl:when test="contains($inputType,'Int32')">
+            <xsl:when test="contains($inputType,'Int32') or contains($inputType,'Image')">
 				<!-- integer array already prepared, all done -->
 				<xsl:value-of select="$arrayString"/>
             </xsl:when>
@@ -3382,6 +3388,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	<xsl:template name="output-attribute-value">
 		<xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="attributeType"><xsl:text></xsl:text></xsl:param>
+		<xsl:param name="attributeValueSubstitution"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="dataObjectName"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="processingPass"><xsl:text>0.invocation</xsl:text></xsl:param>
@@ -3398,6 +3405,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:choose>
 				<xsl:when test="contains($attributeType,'Int32')">
 					<xsl:text>1000</xsl:text>
+				</xsl:when>
+				<xsl:when test="contains($attributeType,'Image')">
+					<xsl:text>0</xsl:text><!-- do not split, set method is performing size checks -->
 				</xsl:when>
 				<xsl:when test="contains($attributeType,'Float')">
 					<xsl:text>1000</xsl:text>
@@ -3418,16 +3428,16 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:variable name="isLargeAttribute" 
 			        select="(string-length(normalize-space($inputString)) > $attributeSplitSize)"/>
 
-		<xsl:variable name="attributeEncoding">
+		<xsl:variable name="attributeJavaType">
 			<xsl:choose>
-				<xsl:when test="contains($attributeType,'Int32')">
+				<xsl:when test="contains($attributeType,'Int32') or contains($attributeType,'Image')">
 					<xsl:text>int[]</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($attributeType,'Bool')">
 					<xsl:text>bool[]</xsl:text>
 				</xsl:when>
 				<xsl:when test="false()">
-					<xsl:text>String</xsl:text><!-- safety net if testing shows it is needed -->
+					<xsl:text>String</xsl:text><!-- false() - safety net if testing shows it is needed -->
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:text>float[]</xsl:text>
@@ -3455,7 +3465,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<!-- starts-with($attributeType, 'MFColor') or ($attributeType = 'MFRotation') or
 							contains($attributeType,'MFVec2f') or contains($attributeType,'MFVec3f') or contains($attributeType,'MFVec4f') or
 							contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f') -->
-			<xsl:when test="($tupleSize > 1) or ($isLargeAttribute)">
+			<xsl:when test="(starts-with($attributeType, 'MF') and ($tupleSize > 1)) or ($isLargeAttribute)">
 				<xsl:if test="($processingPass = '0.invocation')">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
@@ -3463,7 +3473,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:if>
 				<xsl:choose>
 					<!-- larger tupleCount -->
-					<xsl:when test="($tupleCount > $tupleSplitSize)">
+					<xsl:when test="($tupleCount > $tupleSplitSize) and ($numbersPerGroup > 0)">
 						<xsl:message>
 							<xsl:text>[Large $tupleCount found: </xsl:text>
 							<xsl:value-of select="local-name(..)"/>
@@ -3550,12 +3560,11 @@ POSSIBILITY OF SUCH DAMAGE.
 										<xsl:value-of select="$indent"/>
 										<xsl:text>/** Define subarrays using type </xsl:text>
 											<xsl:choose>
-												<xsl:when test="($attributeEncoding = 'String')">
+												<xsl:when test="($attributeJavaType = 'String')">
 													<xsl:text>String</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
-													<!--<xsl:text>float[]</xsl:text>-->
-													<xsl:value-of select="$attributeEncoding"/>
+													<xsl:value-of select="$attributeJavaType"/>
 												</xsl:otherwise>
 											</xsl:choose>
 										<xsl:text> */</xsl:text>
@@ -3566,12 +3575,11 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:value-of select="$indent"/>
 									<xsl:text>private </xsl:text>
 									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
+										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>String</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
-											<!--<xsl:text>float[]</xsl:text>-->
-											<xsl:value-of select="$attributeEncoding"/>
+											<xsl:value-of select="$attributeJavaType"/>
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:text> get</xsl:text>
@@ -3586,17 +3594,16 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:text>	</xsl:text><!-- indent tab character -->
 									<xsl:text>	</xsl:text><!-- indent tab character -->
 									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
+										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>String</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
-											<!--<xsl:text>float[]</xsl:text>-->
-											<xsl:value-of select="$attributeEncoding"/>
+											<xsl:value-of select="$attributeJavaType"/>
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:text> value = </xsl:text>
 									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
+										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>"</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
@@ -3634,7 +3641,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:value-of select="$attributeType"/>
 									<xsl:text>Object(</xsl:text>
 									<xsl:choose>
-										<xsl:when test="($attributeEncoding = 'String')">
+										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>).setValueByString(</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
@@ -3681,7 +3688,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									</xsl:when>-->
 									<xsl:when test="($processingPass = '1.subarrays')">
 										<xsl:choose>
-											<xsl:when test="($attributeEncoding = 'String')">
+											<xsl:when test="($attributeJavaType = 'String')">
 												<xsl:text>"</xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
@@ -3736,7 +3743,14 @@ POSSIBILITY OF SUCH DAMAGE.
 					<!-- smaller tupleCount -->
 					<xsl:when test="($processingPass = '0.invocation') or 
 									($processingPass = '2.finalize')">
-						<xsl:text>new float[] {</xsl:text>
+						<xsl:choose>
+							<xsl:when test="contains($attributeType,'Int32') or contains($attributeType,'Image')">
+								<xsl:text>new int[] {</xsl:text>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>new float[] {</xsl:text>
+							</xsl:otherwise>
+						</xsl:choose>
 						<xsl:call-template name="java-array-values">
 							<xsl:with-param name="inputString">
 								<xsl:value-of select="."/>
@@ -3750,6 +3764,10 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 			<xsl:when test="($processingPass = '1.subarrays')">
 				<!-- done with first pass, avoid performing next steps -->
+			</xsl:when>
+			<xsl:when test="(string-length($attributeValueSubstitution) > 0)">
+				<!-- not "." since attributeValue substitution has occurred -->
+				<xsl:value-of select="$attributeValueSubstitution"/>
 			</xsl:when>
 			<xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string')">
 				<xsl:text>"</xsl:text>
@@ -3916,8 +3934,34 @@ POSSIBILITY OF SUCH DAMAGE.
 						select="(string-length(normalize-space(.)) > $attributeSplitSize) and
 								not($elementName = 'meta') and
 								not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
+				<!-- substitute enumerations where appropriate to encourage best practice -->
+				<xsl:variable name="attributeValueSubstitution">
+					<xsl:call-template name="alternative-attributeValueSubstitution"/>
+				</xsl:variable>
+				
+			<!-- debug checking for specific attribute 
+			<xsl:if test="(local-name()='profile') or (local-name()='version') or (local-name()='name')">
+				<xsl:variable name="traceMessage">
+					<xsl:text>trace 6.1: check attribute value substitution. </xsl:text>
+					<xsl:value-of select="local-name(..)"/>
+					<xsl:text> </xsl:text>
+					<xsl:value-of select="local-name()"/>
+					<xsl:text>='</xsl:text>
+					<xsl:value-of select="."/>
+					<xsl:text>', $attributeValueSubstitution=</xsl:text>
+					<xsl:value-of select="$attributeValueSubstitution"/>
+				</xsl:variable>
+				<xsl:message>
+					<xsl:value-of select="$traceMessage"/>
+				</xsl:message>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>// </xsl:text>
+				<xsl:value-of select="$traceMessage"/>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
+			-->
 			<!-- debug checking for specific attribute
-			<xsl:if test="(local-name()='point')">
+			<xsl:if test="(local-name()='profile')">
 				<xsl:variable name="traceMessage">
 					<xsl:text>trace 6: check consistent variable computation. </xsl:text>
 					<xsl:value-of select="local-name(..)"/>
@@ -4074,6 +4118,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:call-template name="output-attribute-value">
 							<xsl:with-param name="inputString"    select="."/>
 							<xsl:with-param name="attributeType"  select="$attributeType"/>
+							<xsl:with-param name="attributeValueSubstitution" select="$attributeValueSubstitution"/>
 							<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
 							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
 							<xsl:with-param name="processingPass"><xsl:text>1.subarrays</xsl:text></xsl:with-param>
@@ -4119,6 +4164,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:call-template name="output-attribute-value">
 							<xsl:with-param name="inputString"    select="."/>
 							<xsl:with-param name="attributeType"  select="$attributeType"/>
+							<xsl:with-param name="attributeValueSubstitution" select="$attributeValueSubstitution"/>
 							<xsl:with-param name="indent"><xsl:text>	</xsl:text></xsl:with-param><!-- tab character -->
 							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
 							<xsl:with-param name="processingPass"><xsl:text>2.finalize</xsl:text></xsl:with-param>
@@ -4188,6 +4234,59 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:with-param name="indent"     select="$indent"/>
 				</xsl:call-template>
 			</xsl:for-each>
+	</xsl:template>
+
+    <xsl:template name="alternative-attributeValueSubstitution">
+		
+		<xsl:variable name="elementName"   select="local-name(..)"/>
+		<xsl:variable name="attributeName" select="local-name()"/>
+		<xsl:variable name="attributeValue">
+			<xsl:value-of select="normalize-space(.)"/>
+		</xsl:variable>
+		<xsl:variable name="attributeValueUpperCase">
+			<!-- native netbeans 8 still not supporting XSLT 2! 
+			<xsl:value-of select="translate($attributeValue,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+			-->
+			<xsl:value-of select="upper-case($attributeValue)"/>
+		</xsl:variable>
+		<xsl:variable name="NAME"><!-- brevity -->
+			<xsl:value-of select="$attributeValueUpperCase"/>
+		</xsl:variable>
+		
+		<xsl:choose>
+			<xsl:when test="($elementName = 'X3D') and ($attributeName = 'profile')">
+				<xsl:text>X3DObject.PROFILE_</xsl:text>
+				<xsl:value-of select="$attributeValueUpperCase"/>
+			</xsl:when>
+			<xsl:when test="($elementName = 'X3D') and ($attributeName = 'version')">
+				<xsl:text>X3DObject.VERSION_</xsl:text>
+				<xsl:value-of select="translate(.,'.','_')"/>
+			</xsl:when>
+			<xsl:when test="($elementName = 'meta') and 
+				(($NAME = 'ACCESSRIGHTS') or ($NAME = 'CONTRIBUTOR') or ($NAME = 'CREATED') or ($NAME = 'CREATOR') or
+                 ($NAME = 'DESCRIPTION') or ($NAME = 'DRAWING') or ($NAME = 'ERROR') or ($NAME = 'GENERATOR') or
+                 ($NAME = 'HINT') or ($NAME = 'IDENTIFIER') or ($NAME = 'IMAGE') or ($NAME = 'INFO') or
+                 ($NAME = 'LICENSE') or ($NAME = 'MODIFIED') or ($NAME = 'MOVINGIMAGE') or ($NAME = 'PHOTO') or
+                 ($NAME = 'REFERENCE') or ($NAME = 'REQUIRES') or ($NAME = 'RIGHTS') or ($NAME = 'ROBOTS') or
+                 ($NAME = 'SOUND') or ($NAME = 'SPECIFICATIONSECTION') or ($NAME = 'SPECIFICATIONURL') or ($NAME = 'SUBJECT') or
+                 ($NAME = 'TEXT') or ($NAME = 'TITLE') or ($NAME = 'TODO') or ($NAME = 'TRANSLATOR') or
+                 ($NAME = 'TRANSLATED') or ($NAME = 'VERSION') or ($NAME = 'WARNING'))">
+				<xsl:text>metaObject.NAME_</xsl:text>
+				<xsl:value-of select="$attributeValueUpperCase"/>
+				<!-- pad whitespace for readability of source code -->
+				<!-- https://stackoverflow.com/questions/5089096/how-to-show-a-character-n-times-in-xslt -->
+				<xsl:for-each select="0 to (12 - string-length($attributeValueUpperCase))">
+					<xsl:text> </xsl:text>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="($elementName = 'FontStyle') and ($attributeName = 'justify')">
+				<xsl:text>FontStyleObject.JUSTIFY_</xsl:text>
+				<xsl:value-of select="translate($attributeValue,' &quot;','_')"/><!-- replace space character, strip quotes -->
+			</xsl:when>
+			<xsl:otherwise>
+				<!-- intentionally empty -->
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
     <!-- print-indent keeps track of indenting level -->

@@ -2,9 +2,9 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 		version="2.0"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:fn="http://www.w3.org/2005/xpath-functions"
-        extension-element-prefixes="xs">
+	xmlns:fn="http://www.w3.org/2005/xpath-functions">
             <!--
+        extension-element-prefixes="xs"
         extension-element-prefixes="saxon xs">
                 saxon:trace="true"
                 xmlns:saxon="http://icl.com/saxon"
@@ -176,7 +176,8 @@ TODO:
         <xsl:text>' has no type definition</xsl:text>
       </xsl:message>
     </xsl:if>
-    <xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))">
+    <xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))
+					and not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name')">
       <xsl:message>
         <xsl:text>*** [Warning] </xsl:text>
         <xsl:value-of select="$elementName"/>
@@ -230,7 +231,7 @@ TODO:
         <xsl:value-of select="$elementName"/>
         <xsl:text> attribute '</xsl:text>
         <xsl:value-of select="$attributeName"/>
-        <xsl:text>' has no corresponding accessType enumeration defined</xsl:text>
+        <xsl:text>' has no corresponding *AccessTypes enumeration defined</xsl:text>
       </xsl:message>
     </xsl:when>
     <!-- corresponding accessType is found here -->

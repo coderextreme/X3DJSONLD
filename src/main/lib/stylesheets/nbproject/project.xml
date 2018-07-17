@@ -74,6 +74,7 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3">
             <compilation-unit>
                 <package-root>java/lib</package-root>
+                <classpath mode="compile">C:\apache-ant-1.10.3\lib\junit-jupiter-api.jar;C:\apache-ant-1.10.3\lib\junit-jupiter-engine.jar;C:\apache-ant-1.10.3\lib\junit-platform-commons.jar;C:\apache-ant-1.10.3\lib\junit-platform-engine.jar;C:\apache-ant-1.10.3\lib\junit-platform-launcher.jar</classpath>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>

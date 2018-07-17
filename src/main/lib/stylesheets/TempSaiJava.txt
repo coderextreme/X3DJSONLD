@@ -1,7 +1,7 @@
-<!-- X3D Object Model X3dUnifiedObjectModel-3.3.xml-->
-<!-- Online at http://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
-<!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2018-04-15-07:00 18:58:24.54-07:00 -->
+<!-- X3D Object Model X3dUnifiedObjectModel-4.0.xml-->
+<!-- Online at http://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
+<!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
+<!-- Generated 2018-07-08-07:00 07:26:14.884-07:00 -->
 <SimpleTypeEnumerations/>
 <FieldTypes/>
 <AbstractObjectTypes/>
