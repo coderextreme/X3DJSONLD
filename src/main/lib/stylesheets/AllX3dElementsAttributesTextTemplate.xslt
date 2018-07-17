@@ -14,8 +14,9 @@
 <!-- TODO authors can edit this example to customize all transformation rules -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-                xmlns:xs ="http://www.w3.org/2001/XMLSchema" extension-element-prefixes="xs"
+                xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	        xmlns:fn ="http://www.w3.org/2005/xpath-functions">
+	<!--  extension-element-prefixes="xs" -->
     <xsl:output method="text"/> <!-- output methods:  xml html text -->
     
     <!-- ======================================================= -->

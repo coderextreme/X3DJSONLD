@@ -1,4 +1,4 @@
-load('nashorn/node/X3Dautoclass.js');
+load('classpath:nashorn/node/X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -23,7 +23,7 @@ var ProtoInstance3 = null;
         .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-        .addMeta(new metaObject().setName("modified").setContent("7 April 2018"))
+        .addMeta(new metaObject().setName("modified").setContent("15 July 2018"))
         .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -228,7 +228,8 @@ var ProtoInstance3 = null;
           .addComments(new CommentsBlock("SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0"))
           .addComments(new CommentsBlock("MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7"))
           .addComments(new CommentsBlock("... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="))
-          .addComments(new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344")))
+          .addComments(new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true"))
+          .addComments(new CommentsBlock("regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value")))
         .addChild(new SoundObject().setLocation(Java.to([0,1.6,0], Java.type("float[]")))
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
           .setSource(new AudioClipObject().setDescription("chimes").setUrl(Java.to(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"], Java.type("java.lang.String[]")))
@@ -237,7 +238,7 @@ var ProtoInstance3 = null;
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
           .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(Java.to(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"], Java.type("java.lang.String[]")))
             .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
-            .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""))))
+            .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""))))
         .addComments(new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"))
         .addComments(new CommentsBlock("Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"))
         .addComments(new CommentsBlock("Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"))
@@ -254,5 +255,5 @@ ProtoInstance0
               .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
               .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
-    X3D0.toFileX3D("nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.x3d");
-    X3D0.toFileJSON("nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.json");
+    X3D0.toFileX3D("../nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.x3d");
+    X3D0.toFileJSON("../nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.json");

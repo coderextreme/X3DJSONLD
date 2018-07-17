@@ -75,6 +75,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="fixMFStringQuotes"           ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixGeoSystemMetadata"        ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixMetaNamesMatchDublinCore" ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="omitObsoleteAttributes"      ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
     <xsl:param name="replaceBlackEmissiveColor"   ><xsl:text>true</xsl:text></xsl:param>
     <!-- Expand local url array to include online addresses -->
     <xsl:param name="fixUrlAdditionHttpAddresses" ><xsl:text>true</xsl:text></xsl:param>
@@ -493,279 +494,561 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:when test="(count(* | comment() | text()[string-length(normalize-space(.)) > 0]) > 0) or 
                             (((local-name()='HAnimSegment') or (local-name()='HAnimSite')) and not(string-length(@USE) > 0) and 
                              (($HAnimSkeletonIllustrate='true') or ($HAnimSiteIllustrate='true')))">
-                <!-- open tag for current element, which itself is a parent -->
-                <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-                <xsl:value-of select="local-name()"/>
-                <!-- handle attribute(s) if any -->
-                <xsl:call-template name="process-attributes-in-order"/>
-                <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-		
-                <!-- handle current node and its children, if any -->
                 <xsl:choose>
-                    <xsl:when test="(local-name()='Script') and (string-length(normalize-space(text())) > 0) and not(string-length(@USE) > 0)">
-                        <!-- handle Script nodes -->
-						
-						<!-- handle children of current node first, without special treatment -->
-						<xsl:apply-templates select="* | comment()"/>
-								
-                        <xsl:variable name="scriptLength">
-                            <xsl:call-template name="find-position-last-character-before-whitespace">
-                                <xsl:with-param name="string" select="."/>
-                            </xsl:call-template>
-                        </xsl:variable>
-                        <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+                    <xsl:when test="(local-name()='HAnimSegment') and (local-name(..)='HAnimJoint') and (count(../Transform) = 1) and not(preceding-sibling::HAnimSegment)">
+                        <!-- this HAnimSegment already handled by following case for mismatched positioning -->
+                        <xsl:message>
+                            <xsl:text disable-output-escaping="yes">*** skip repetition for mismatched positioning of HAnimSegment child geometry</xsl:text>
+                        </xsl:message>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- open tag for current element, which itself is a parent -->
+                        <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <!-- handle attribute(s) if any -->
+                        <xsl:call-template name="process-attributes-in-order"/>
+                        <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
 
-                        <xsl:variable name="ScriptReference">
-                            <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-                            <xsl:value-of select="local-name()"/>
-                            <xsl:if test="@DEF">
-                            <xsl:text> DEF='</xsl:text>
-                            <xsl:value-of select="@DEF"/>
-                            <xsl:text>'</xsl:text>
-                            </xsl:if>
-                            <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
-                        </xsl:variable>
+                        <!-- handle current node and its children, if any -->
+                        <xsl:choose>
+                            <xsl:when test="(local-name()='Script') and (string-length(normalize-space(text())) > 0) and not(string-length(@USE) > 0)">
+                                <!-- handle Script nodes -->
 
-                        <xsl:for-each select="text()">
-                            <xsl:choose>
-                                <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
-                                <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
-                                <xsl:when test="starts-with(normalize-space(.),'ecmascript') or 
-                                                starts-with(normalize-space(.),'javascript') or 
-                                             (string-length(normalize-space(.)) > 1)">
-                                    <!-- avoid adding an additional line feed each time this code block is processed -->
+                                <!-- handle children of current node first, without special treatment -->
+                                <xsl:apply-templates select="* | comment()"/>
+
+                                <xsl:variable name="scriptLength">
+                                    <xsl:call-template name="find-position-last-character-before-whitespace">
+                                        <xsl:with-param name="string" select="."/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+
+                                <xsl:variable name="ScriptReference">
+                                    <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:if test="@DEF">
+                                    <xsl:text> DEF='</xsl:text>
+                                    <xsl:value-of select="@DEF"/>
+                                    <xsl:text>'</xsl:text>
+                                    </xsl:if>
+                                    <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+                                </xsl:variable>
+
+                                <xsl:for-each select="text()">
                                     <xsl:choose>
-                                        <xsl:when test="starts-with(normalize-space(.),'ecmascript:')">
-                                            <xsl:text>ecmascript:</xsl:text>
-                                            <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript:')" disable-output-escaping="yes"/>
-                                        </xsl:when>
-                                        <!-- append missing colon -->
-                                        <xsl:when test="starts-with(normalize-space(.),'ecmascript ')">
-                                            <xsl:text>ecmascript:</xsl:text>
-                                            <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
-                                            <xsl:message>
-                                                <xsl:text>*** error: change </xsl:text>
-                                                <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
-                                                <xsl:text> CDATA prefix from 'ecmascript' to 'ecmascript:' </xsl:text>
-                                            </xsl:message>
-                                        </xsl:when>
-                                        <xsl:when test="(starts-with(normalize-space(.),'javascript') and ($changeJavascriptEcmascript = 'true')) and
-                                                        (not(//meta[contains(@name,'Tidy')][contains(@content,'changeJavascriptEcmascript=false')]))">
-                                            <xsl:text>ecmascript:</xsl:text>
+                                        <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
+                                        <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
+                                        <xsl:when test="starts-with(normalize-space(.),'ecmascript') or 
+                                                        starts-with(normalize-space(.),'javascript') or 
+                                                     (string-length(normalize-space(.)) > 1)">
+                                            <!-- avoid adding an additional line feed each time this code block is processed -->
                                             <xsl:choose>
-                                                <xsl:when test="starts-with(normalize-space(.),'javascript:')">
-                                                    <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript:')" disable-output-escaping="yes"/>
+                                                <xsl:when test="starts-with(normalize-space(.),'ecmascript:')">
+                                                    <xsl:text>ecmascript:</xsl:text>
+                                                    <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript:')" disable-output-escaping="yes"/>
                                                 </xsl:when>
-                                                <!-- otherwise started with javascript but no colon -->
+                                                <!-- append missing colon -->
+                                                <xsl:when test="starts-with(normalize-space(.),'ecmascript ')">
+                                                    <xsl:text>ecmascript:</xsl:text>
+                                                    <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
+                                                    <xsl:message>
+                                                        <xsl:text>*** error: change </xsl:text>
+                                                        <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
+                                                        <xsl:text> CDATA prefix from 'ecmascript' to 'ecmascript:' </xsl:text>
+                                                    </xsl:message>
+                                                </xsl:when>
+                                                <xsl:when test="(starts-with(normalize-space(.),'javascript') and ($changeJavascriptEcmascript = 'true')) and
+                                                                (not(//meta[contains(@name,'Tidy')][contains(@content,'changeJavascriptEcmascript=false')]))">
+                                                    <xsl:text>ecmascript:</xsl:text>
+                                                    <xsl:choose>
+                                                        <xsl:when test="starts-with(normalize-space(.),'javascript:')">
+                                                            <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript:')" disable-output-escaping="yes"/>
+                                                        </xsl:when>
+                                                        <!-- otherwise started with javascript but no colon -->
+                                                        <xsl:otherwise>
+                                                             <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript')" disable-output-escaping="yes"/>
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+                                                    <xsl:message>
+                                                        <xsl:text>*** error: change </xsl:text>
+                                                        <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
+                                                        <xsl:text> CDATA prefix from 'javascript:' to 'ecmascript:' </xsl:text>
+                                                    </xsl:message>
+                                                </xsl:when>
+                                                <xsl:when test="not(starts-with(normalize-space(.),'ecmascript:') and ($insertMissingEcmascript = 'true')) and
+                                                                (not(//meta[contains(@name,'Tidy')][contains(@content,'insertMissingEcmascript=false')]))">
+                                                    <xsl:text>ecmascript:</xsl:text>
+
+                                                    <xsl:value-of select="." disable-output-escaping="yes"/>
+                                                    <xsl:message>
+                                                        <xsl:text>*** error: </xsl:text>
+                                                        <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
+                                                        <xsl:text> CDATA prefix, insert missing 'ecmascript:' prefix </xsl:text>
+                                                    </xsl:message>
+                                                </xsl:when>
                                                 <xsl:otherwise>
-                                                     <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript')" disable-output-escaping="yes"/>
+                                                    <xsl:value-of select="." disable-output-escaping="yes"/>
+                                                    <xsl:if test="string-length(normalize-space(.)) > 0">
+                                                        <xsl:message>
+                                                            <xsl:text>*** warning, </xsl:text>
+                                                            <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
+                                                            <xsl:text> has questionable CDATA section </xsl:text>
+                                                        </xsl:message>
+                                                    </xsl:if>
                                                 </xsl:otherwise>
                                             </xsl:choose>
-                                            <xsl:message>
-                                                <xsl:text>*** error: change </xsl:text>
-                                                <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
-                                                <xsl:text> CDATA prefix from 'javascript:' to 'ecmascript:' </xsl:text>
-                                            </xsl:message>
+                                            <!--
+                                            <xsl:call-template name="escape-lessthan-characters">
+                                                <xsl:with-param name="inputString" select=""/>
+                                            </xsl:call-template>
+                                            -->
                                         </xsl:when>
-                                        <xsl:when test="not(starts-with(normalize-space(.),'ecmascript:') and ($insertMissingEcmascript = 'true')) and
-                                                        (not(//meta[contains(@name,'Tidy')][contains(@content,'insertMissingEcmascript=false')]))">
-                                            <xsl:text>ecmascript:</xsl:text>
+                                        <!-- usable text found, need to convert '<' to &lt; -->
+                                        <xsl:otherwise>
+                                            <xsl:call-template name="escape-lessthan-characters">
+                                                <xsl:with-param name="inputString" select="."/>
+                                            </xsl:call-template>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                            </xsl:when>
+                            <!-- TODO Handle HAnim nodes following patterns established in X3dToXhtml.xslt generation of HAnim table. -->
 
-                                            <xsl:value-of select="." disable-output-escaping="yes"/>
-                                            <xsl:message>
-                                                <xsl:text>*** error: </xsl:text>
-                                                <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
-                                                <xsl:text> CDATA prefix, insert missing 'ecmascript:' prefix </xsl:text>
-                                            </xsl:message>
+                            <!-- apparently not needed 
+                            <xsl:when test="(local-name()='HAnimHumanoid') and not(string-length(@USE) > 0)">
+
+                            </xsl:when>
+                            <xsl:when test="(local-name()='HAnimJoint') and not(string-length(@USE) > 0)">
+
+                            </xsl:when>
+                            -->
+                            <xsl:when test="(local-name()='HAnimHumanoid') and not(string-length(@USE) > 0) and not($HAnimGeometryRemove='true')">
+                                <!-- first handle children of current node (including USE node) without special treatment -->
+                                <xsl:apply-templates select="* | comment()"/> <!--  | text() -->
+                                <xsl:variable name="hanimHumanoidName" select="@name"/>
+                                <!-- find and add any missing joints, segments, sites USE nodes at top level of this HAnimHumanoid -->
+                                <xsl:for-each select="//*[(local-name() = 'HAnimJoint') or (local-name() = 'HAnimSegment') or (local-name() = 'HAnimSite')]">
+                                    <xsl:sort select="local-name()" order="ascending"/>
+                                    <!--
+                                    <xsl:message>
+                                        <xsl:text>*** trace: </xsl:text>
+                                        <xsl:value-of select="local-name()"/>
+                                        <xsl:text> DEF='</xsl:text>
+                                        <xsl:value-of select="@DEF"/>
+                                        <xsl:text>' containerField='</xsl:text>
+                                        <xsl:value-of select="@containerField"/>
+                                        <xsl:text>'</xsl:text>
+                                    </xsl:message>
+                                    -->
+                                    <xsl:choose>
+                                        <!-- check this skeleton node, all should have DEF and none should have USE -->
+                                        <xsl:when test="not(parent::*[local-name() = 'HAnimHumanoid']) and (parent::*[local-name() = 'HAnimSite'][@containerField = 'viewpoints'])">
+                                            <xsl:if test="not(string-length(@DEF) > 0)">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: no DEF found for skeleton descendant node &lt;</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> name='</xsl:text>
+                                                    <xsl:value-of select="@name"/>
+                                                    <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                </xsl:message>
+                                            </xsl:if>
+                                            <xsl:if test="(string-length(@USE) > 0)">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: unexpected USE found for skeleton descendant node &lt;</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> USE='</xsl:text>
+                                                    <xsl:value-of select="@USE"/>
+                                                    <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <!-- check top-level USE node, check if corresponding DEF node found -->
+                                        <xsl:when test="(parent::*[local-name() = 'HAnimHumanoid']) and (string-length(@USE) > 0)">
+                                            <xsl:variable name="currentNodeType" select="local-name()"/>
+                                            <xsl:variable name="currentNodeUSE"  select="@USE"/>
+                                            <xsl:if test="not(..//*[local-name() = $currentNodeType][@DEF = $currentNodeUSE])">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: no corresponding &lt;</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> DEF='</xsl:text>
+                                                    <xsl:value-of select="$currentNodeUSE"/>
+                                                    <xsl:text disable-output-escaping="yes">'/&gt; found for &lt;HAnimHumanoid name='</xsl:text>
+                                                    <xsl:value-of select="$hanimHumanoidName"/>
+                                                    <xsl:text disable-output-escaping="yes">'&gt; &lt;</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> USE='</xsl:text>
+                                                    <xsl:value-of select="$currentNodeUSE"/>
+                                                    <xsl:text>' containerField='</xsl:text>
+                                                    <xsl:value-of select="@containerField"/>
+                                                    <xsl:text disable-output-escaping="yes">'/&gt; &gt;/HAnimHumanoid&lt;</xsl:text>
+                                                </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <!-- check top-level HAnimSite node, special case -->
+                                        <xsl:when test="(parent::*[local-name() = 'HAnimHumanoid']) and (local-name() = 'HAnimSite')">
+                                            <xsl:if test="not(Viewpoint)">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: no child Viewpoint found for top-level &lt;</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> DEF='</xsl:text>
+                                                    <xsl:value-of select="@DEF"/>
+                                                    <xsl:text> name='</xsl:text>
+                                                    <xsl:value-of select="@name"/>
+                                                    <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                </xsl:message>
+                                            </xsl:if>
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            <xsl:value-of select="." disable-output-escaping="yes"/>
-                                            <xsl:if test="string-length(normalize-space(.)) > 0">
-                                                <xsl:message>
-                                                    <xsl:text>*** warning, </xsl:text>
-                                                    <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
-                                                    <xsl:text> has questionable CDATA section </xsl:text>
-                                                </xsl:message>
+                                            <xsl:variable name="nodeType" select="local-name()"/>
+                                            <xsl:variable name="nodeDEF"  select="@DEF"/>
+                                            <xsl:variable name="expectedContainerField">
+                                                <xsl:choose>
+                                                    <xsl:when test="(local-name() = 'HAnimJoint')">
+                                                        <xsl:text>joints</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:when test="(local-name() = 'HAnimSegment')">
+                                                        <xsl:text>segments</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:when test="(local-name() = 'HAnimSite')">
+                                                        <xsl:text>sites</xsl:text>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                            </xsl:variable>
+                                            <xsl:if test="not(ancestor::*[local-name() = 'HAnimHumanoid']/*[local-name() = $nodeType][@containerField = $expectedContainerField][@USE = $nodeDEF])">
+                                                <xsl:choose>
+                                                    <xsl:when test="(string-length(@DEF) = 0)">
+                                                        <!-- no DEF node found for this skeleton node, simply report it -->
+                                                        <xsl:message>
+                                                            <xsl:text disable-output-escaping="yes">*** error: DEF missing for skeleton node &lt;</xsl:text>
+                                                            <xsl:value-of select="local-name()"/>
+                                                            <xsl:text> name='</xsl:text>
+                                                            <xsl:value-of select="@name"/>
+                                                            <xsl:text>' containerField='</xsl:text>
+                                                            <xsl:value-of select="@containerField"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                            <xsl:text> within </xsl:text>
+                                                            <xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
+                                                            <xsl:value-of select="$hanimHumanoidName"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                        </xsl:message>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <!-- no top-level USE node found for this skeleton node, so add it -->
+                                                        <xsl:message>
+                                                            <xsl:text disable-output-escaping="yes">*** error: no top-level &lt;</xsl:text>
+                                                            <xsl:value-of select="local-name()"/>
+                                                            <xsl:text> USE='</xsl:text>
+                                                            <xsl:value-of select="@DEF"/>
+                                                            <xsl:text>' containerField='</xsl:text>
+                                                            <xsl:value-of select="$expectedContainerField"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                            <xsl:text> was found, adding it to </xsl:text>
+                                                            <xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
+                                                            <xsl:value-of select="$hanimHumanoidName"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                        </xsl:message>
+                                                        <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+                                                        <xsl:value-of select="local-name()"/>
+                                                        <xsl:text> USE='</xsl:text>
+                                                        <xsl:value-of select="@DEF"/>
+                                                        <xsl:text>' containerField='</xsl:text>
+                                                        <xsl:value-of select="$expectedContainerField"/>
+                                                        <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                        <xsl:text>&#10;</xsl:text>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
                                             </xsl:if>
                                         </xsl:otherwise>
                                     </xsl:choose>
-                                    <!--
-                                    <xsl:call-template name="escape-lessthan-characters">
-                                        <xsl:with-param name="inputString" select=""/>
-                                    </xsl:call-template>
-                                    -->
-                                </xsl:when>
-                                <!-- usable text found, need to convert '<' to &lt; -->
-                                <xsl:otherwise>
-                                    <xsl:call-template name="escape-lessthan-characters">
-                                        <xsl:with-param name="inputString" select="."/>
-                                    </xsl:call-template>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:for-each>
-                        <xsl:text>&#10;</xsl:text>
-                        <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
-                        <xsl:text>&#10;</xsl:text>
-                    </xsl:when>
-                    <!-- TODO Handle HAnim nodes following patterns established in X3dToXhtml.xslt generation of HAnim table. -->
-                    
-                    <!-- apparently not needed 
-                    <xsl:when test="(local-name()='HAnimHumanoid') and not(string-length(@USE) > 0)">
-                        
-                    </xsl:when>
-                    <xsl:when test="(local-name()='HAnimJoint') and not(string-length(@USE) > 0)">
-                        
-                    </xsl:when>
-                    -->
-                    <xsl:when test="(local-name()='HAnimHumanoid') and not(string-length(@USE) > 0) and not($HAnimGeometryRemove='true')">
-						<!-- first handle children of current node (including USE node) without special treatment -->
-						<xsl:apply-templates select="* | comment()"/> <!--  | text() -->
-						<xsl:variable name="hanimHumanoidName" select="@name"/>
-						<!-- find and add any missing joints, segments, sites USE nodes at top level of this HAnimHumanoid -->
-						<xsl:for-each select="//*[(local-name() = 'HAnimJoint') or (local-name() = 'HAnimSegment') or (local-name() = 'HAnimSite')]">
-							<xsl:sort select="local-name()"/>
-							<!--
-							<xsl:message>
-								<xsl:text>*** trace: </xsl:text>
-								<xsl:value-of select="local-name()"/>
-								<xsl:text> DEF='</xsl:text>
-								<xsl:value-of select="@DEF"/>
-								<xsl:text>' containerField='</xsl:text>
-								<xsl:value-of select="@containerField"/>
-								<xsl:text>'</xsl:text>
-							</xsl:message>
-							-->
-							<xsl:choose>
-								<!-- check this skeleton node, all should have DEF and none should have USE -->
-								<xsl:when test="not(parent::*[local-name() = 'HAnimHumanoid']) and (parent::*[local-name() = 'HAnimSite'][@containerField = 'viewpoints'])">
-									<xsl:if test="not(string-length(@DEF) > 0)">
-										<xsl:message>
-											<xsl:text>*** error: no DEF found for skeleton descendant node &lt;</xsl:text>
-											<xsl:value-of select="local-name()"/>
-											<xsl:text> name='</xsl:text>
-											<xsl:value-of select="@name"/>
-											<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-										</xsl:message>
-									</xsl:if>
-									<xsl:if test="(string-length(@USE) > 0)">
-										<xsl:message>
-											<xsl:text>*** error: unexpected USE found for skeleton descendant node &lt;</xsl:text>
-											<xsl:value-of select="local-name()"/>
-											<xsl:text> USE='</xsl:text>
-											<xsl:value-of select="@USE"/>
-											<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-										</xsl:message>
-									</xsl:if>
-								</xsl:when>
-								<!-- check top-level USE node, check if corresponding DEF node found -->
-								<xsl:when test="(parent::*[local-name() = 'HAnimHumanoid']) and (string-length(@USE) > 0)">
-									<xsl:variable name="currentNodeType" select="local-name()"/>
-									<xsl:variable name="currentNodeUSE"  select="@USE"/>
-									<xsl:if test="not(..//*[local-name() = $currentNodeType][@DEF = $currentNodeUSE])">
-										<xsl:message>
-											<xsl:text>*** error: no corresponding &lt;</xsl:text>
-											<xsl:value-of select="local-name()"/>
-											<xsl:text> DEF='</xsl:text>
-											<xsl:value-of select="$currentNodeUSE"/>
-											<xsl:text disable-output-escaping="yes">'/&gt; found for &lt;HAnimHumanoid name='</xsl:text>
-											<xsl:value-of select="$hanimHumanoidName"/>
-											<xsl:text disable-output-escaping="yes">'&gt; &lt;</xsl:text>
-											<xsl:value-of select="local-name()"/>
-											<xsl:text> USE='</xsl:text>
-											<xsl:value-of select="$currentNodeUSE"/>
-											<xsl:text>' containerField='</xsl:text>
-											<xsl:value-of select="@containerField"/>
-											<xsl:text disable-output-escaping="yes">'/&gt; &gt;/HAnimHumanoid&lt;</xsl:text>
-										</xsl:message>
-									</xsl:if>
-								</xsl:when>
-								<!-- check top-level HAnimSite node, special case -->
-								<xsl:when test="(parent::*[local-name() = 'HAnimHumanoid']) and (local-name() = 'HAnimSite')">
-									<xsl:if test="not(Viewpoint)">
-										<xsl:message>
-											<xsl:text>*** error: no child Viewpoint found for top-level &lt;</xsl:text>
-											<xsl:value-of select="local-name()"/>
-											<xsl:text> DEF='</xsl:text>
-											<xsl:value-of select="@DEF"/>
-											<xsl:text> name='</xsl:text>
-											<xsl:value-of select="@name"/>
-											<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-										</xsl:message>
-									</xsl:if>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:variable name="nodeType" select="local-name()"/>
-									<xsl:variable name="nodeDEF"  select="@DEF"/>
-									<xsl:variable name="expectedContainerField">
-										<xsl:choose>
-											<xsl:when test="(local-name() = 'HAnimJoint')">
-												<xsl:text>joints</xsl:text>
-											</xsl:when>
-											<xsl:when test="(local-name() = 'HAnimSegment')">
-												<xsl:text>segments</xsl:text>
-											</xsl:when>
-											<xsl:when test="(local-name() = 'HAnimSite')">
-												<xsl:text>sites</xsl:text>
-											</xsl:when>
-										</xsl:choose>
-									</xsl:variable>
-									<xsl:if test="not(ancestor::*[local-name() = 'HAnimHumanoid']/*[local-name() = $nodeType][@containerField = $expectedContainerField][@USE = $nodeDEF])">
-										<xsl:choose>
-											<xsl:when test="(string-length(@DEF) = 0)">
-												<!-- no DEF node found for this skeleton node, simply report it -->
-												<xsl:message>
-													<xsl:text disable-output-escaping="yes">*** error: DEF missing for skeleton node &lt;</xsl:text>
-													<xsl:value-of select="local-name()"/>
-													<xsl:text> name='</xsl:text>
-													<xsl:value-of select="@name"/>
-													<xsl:text>' containerField='</xsl:text>
-													<xsl:value-of select="@containerField"/>
-													<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-													<xsl:text> within </xsl:text>
-													<xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
-													<xsl:value-of select="$hanimHumanoidName"/>
-													<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-												</xsl:message>
-											</xsl:when>
-											<xsl:otherwise>
-												<!-- no top-level USE node found for this skeleton node, so add it -->
-												<xsl:message>
-													<xsl:text disable-output-escaping="yes">*** error: no top-level &lt;</xsl:text>
-													<xsl:value-of select="local-name()"/>
-													<xsl:text> USE='</xsl:text>
-													<xsl:value-of select="@DEF"/>
-													<xsl:text>' containerField='</xsl:text>
-													<xsl:value-of select="$expectedContainerField"/>
-													<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-													<xsl:text> was found, adding it to </xsl:text>
-													<xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
-													<xsl:value-of select="$hanimHumanoidName"/>
-													<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-												</xsl:message>
-												<xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-												<xsl:value-of select="local-name()"/>
-												<xsl:text> USE='</xsl:text>
-												<xsl:value-of select="@DEF"/>
-												<xsl:text>' containerField='</xsl:text>
-												<xsl:value-of select="$expectedContainerField"/>
-												<xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-												<xsl:text>&#10;</xsl:text>
-											</xsl:otherwise>
-										</xsl:choose>
-									</xsl:if>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:for-each>
-                    </xsl:when>
-                    <xsl:when test="($HAnimGeometryRemove='true')">
+                                </xsl:for-each>
+                            </xsl:when>
+                            <xsl:when test="($HAnimGeometryRemove='true')">
 
-                        <xsl:choose>
-                            <xsl:when test="ancestor::HAnimHumanoid">
-                                <!-- handle only HAnim children of current node (including USE node), stripping Shape and Grouping nodes, etc. -->
-                                <xsl:apply-templates select="*[starts-with(local-name(),'HAnim')] | Viewpoint |
-                                                             comment()[not(contains(.,'visualization shape')) and not(contains(.,'visualization sphere')) and not(contains(.,'visualization line segment'))]"/> <!--  | text() -->
+                                <xsl:choose>
+                                    <xsl:when test="ancestor::HAnimHumanoid">
+                                        <!-- handle only HAnim children of current node (including USE node), stripping Shape and Grouping nodes, etc. -->
+                                        <xsl:apply-templates select="*[starts-with(local-name(),'HAnim')] | Viewpoint |
+                                                                     comment()[not(contains(.,'visualization shape')) and not(contains(.,'visualization sphere')) and not(contains(.,'visualization line segment'))]"/> <!--  | text() -->
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <!-- handle children of current node (including USE node) without special treatment -->
+                                        <xsl:apply-templates select="* | comment()"/> <!--  | text() -->
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:when>
+                            <xsl:when test="(local-name()='HAnimJoint') and not(string-length(@USE) > 0) and (count(Transform) = 1)">
+                                <!-- mismatched positioning of HAnimSegment child geometry relative to parent HAnimJoint -->
+                                <xsl:message>
+                                    <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:text> DEF='</xsl:text>
+                                    <xsl:value-of select="@DEF"/>
+                                    <xsl:text>' name='</xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                    <xsl:text>' center='</xsl:text>
+                                    <xsl:value-of select="@center"/>
+                                    <xsl:text disable-output-escaping="yes">'&gt; contains immediate child </xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&lt;Transform</xsl:text>
+                                    <xsl:text> DEF='</xsl:text>
+                                    <xsl:value-of select="Transform/@DEF"/>
+                                    <xsl:text>' translation='</xsl:text>
+                                    <xsl:value-of select="Transform/@translation"/>
+                                    <xsl:text disable-output-escaping="yes">'&gt; node, moving it into first child &lt;HAnimSegment</xsl:text>
+                                    <xsl:text> DEF='</xsl:text>
+                                    <xsl:value-of select="HAnimSegment[1]/@DEF"/>
+                                    <xsl:text>' name='</xsl:text>
+                                    <xsl:value-of select="HAnimSegment[1]/@name"/>
+                                    <xsl:text>'&gt;</xsl:text>
+                                </xsl:message>
+                                <!-- corrected constructs -->
+                                <xsl:variable name="firstHAnimSegmentName">
+                                    <xsl:choose>
+                                        <xsl:when test="(string-length(HAnimSegment[1]/@name) > 0)">
+                                            <xsl:value-of select="HAnimSegment[1]/@name"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:message>
+                                                <xsl:text disable-output-escaping="yes">*** error: missing that first child, also inserted &lt;HAnimSegment name='</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">segmentNameNeededTODO-</xsl:text>
+                                                <xsl:value-of select="count(preceding::*)"/><!-- unique -->
+                                                <xsl:text disable-output-escaping="yes">'&gt;</xsl:text>
+                                            </xsl:message>
+                                            <xsl:text>segmentNameNeededTODO-</xsl:text>
+                                            <xsl:value-of select="count(preceding::*)"/><!-- unique -->
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="firstHAnimSegmentDEF">
+                                    <xsl:choose>
+                                        <xsl:when test="(string-length(HAnimSegment[1]/@DEF) > 0)">
+                                            <xsl:value-of select="HAnimSegment[1]/@DEF"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <!-- debug 
+                                            <xsl:message>
+                                                <xsl:text>    DEF='</xsl:text>
+                                                <xsl:value-of select="substring-before(ancestor::HAnimHumanoid/@DEF,'_')"/>
+                                                <xsl:text>_</xsl:text>
+                                                <xsl:value-of select="$firstHAnimSegmentName"/>
+                                                <xsl:text disable-output-escaping="yes">'&gt;</xsl:text>
+                                            </xsl:message>
+                                            -->
+                                            <xsl:value-of select="substring-before(ancestor::HAnimHumanoid/@DEF,'_')"/>
+                                            <xsl:text>_</xsl:text>
+                                            <xsl:value-of select="$firstHAnimSegmentName"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:text disable-output-escaping="yes">&lt;HAnimSegment DEF='</xsl:text>
+                                <xsl:value-of select="$firstHAnimSegmentDEF"/>
+                                <xsl:text disable-output-escaping="yes">' name='</xsl:text>
+                                <xsl:value-of select="$firstHAnimSegmentName"/>
+                                <xsl:text disable-output-escaping="yes">'</xsl:text>
+                                <xsl:apply-templates select="HAnimSegment[1]/@*[not(local-name()='DEF')][not(local-name()='name')]"/>
+                                <xsl:text disable-output-escaping="yes">&gt; </xsl:text>
+                                <xsl:apply-templates select="Transform"/><!-- move current too-high child Transform into subtree -->
+                                <xsl:apply-templates select="HAnimSegment[1]/Transform"/><!-- plus any other contained Transform nodes go here, side by side -->
+                                <xsl:apply-templates select="HAnimSegment[1]/*[not(local-name() = 'Transform')]"/><!-- plus any other contained children nodes -->
+                                <xsl:text disable-output-escaping="yes">&lt;/HAnimSegment&gt;</xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test="HAnimSegment">
+                                        <xsl:apply-templates select="*[preceding-sibling::HAnimSegment[1]][not(local-name() = 'Transform')]"/>
+                                        <xsl:apply-templates select="*[following-sibling::HAnimSegment[1]][not(local-name() = 'Transform')]"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:apply-templates select="*[not(local-name() = 'Transform')]"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <!-- then recurse on others
+                                <xsl:apply-templates select="*[not((local-name='HAnimSegment') and (@name = $firstHAnimSegmentName)) and not(local-name() = 'Transform')]"/>< ! - - remainder of subtree -->
+                            </xsl:when>
+                            <xsl:when test="(local-name()='HAnimSegment') and not(string-length(@USE) > 0) and ($HAnimSkeletonIllustrate='true')">
+                                <!-- tooltip for HAnimJoint visualization (embedded in HAnimSegment) -->
+                                <xsl:variable name="HanimJointTooltip">
+                                    <xsl:value-of select="local-name(..)"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="../@name"/>
+                                        <xsl:text>, </xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                </xsl:variable>
+                                <!-- If no geometry found, insert suggested HAnimJointShape -->
+                                <xsl:if test="not(Transform/Shape)">
+                                    <!-- draw Joint shape -->
+                                    <xsl:comment>
+                                        <xsl:text>&lt;</xsl:text>
+                                        <xsl:value-of select="local-name(..)"/>
+                                        <xsl:text> name='</xsl:text>
+                                        <xsl:value-of select="../@name"/>
+                                        <xsl:text>'/&gt; visualization sphere is placed within &lt;</xsl:text>
+                                        <xsl:value-of select="local-name()"/>
+                                        <xsl:text> name='</xsl:text>
+                                        <xsl:value-of select="@name"/>
+                                        <xsl:text>'/&gt; </xsl:text>
+                                    </xsl:comment>
+                                    <xsl:text>&#10;</xsl:text>
+                                    <TouchSensor description='{$HanimJointTooltip}'/>
+                                    <Transform translation='{../@center}'>
+                                        <xsl:choose>
+                                            <xsl:when test="not(//*[@DEF='HAnimJointShape']) and (local-name(../..)='HAnimHumanoid')">
+                                                <Shape DEF='HAnimJointShape'>
+                                                    <Sphere radius='0.006'/> 
+                                                    <xsl:choose>
+                                                        <xsl:when test="not(//*[@DEF='HAnimJointAppearance']) and (position() = 1) and (count(preceding::HAnimJoint) = 0)">
+                                                            <Appearance DEF='HAnimJointAppearance'>
+                                                                <Material diffuseColor='{$jointColor}' transparency='0.5'/> 
+                                                            </Appearance>
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <Appearance USE='HAnimJointAppearance'/>  
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+                                                </Shape>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <Shape USE='HAnimJointShape'/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </Transform>
+                                </xsl:if>
+                                <!-- Insert suggested LineSet visualization -->
+                                <xsl:if test="not(Shape/LineSet) and not(Shape/IndexedLineSet)">
+                                    <!-- draw line segment from beginning to end of segment; note ILS is not pickable and will not show the tooltip -->
+
+                                    <xsl:apply-templates select="comment()"/>
+                                    <!-- draw line geometry from parent Joint to peer points, if any -->
+                                    <xsl:for-each select="../HAnimJoint">
+                                        <xsl:text>&#10;</xsl:text>
+                                        <xsl:comment> 
+                                            <xsl:text>HAnimSegment visualization line segment from parent &lt;</xsl:text>
+                                            <xsl:value-of select="local-name(..)"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="../@name"/>
+                                            <xsl:text>'/&gt; to &lt;</xsl:text>
+                                            <xsl:value-of select="local-name()"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="@name"/>
+                                            <xsl:text>'/&gt; </xsl:text>
+                                       </xsl:comment>
+                                        <xsl:text>&#10;</xsl:text>
+                                        <Shape>
+                                            <!-- LineSet visualization -->
+                                            <LineSet vertexCount='2'>
+                                                <Coordinate point='{../@center}, {@center}'/>
+                                                <!-- Color for line geometry -->
+                                                <xsl:choose>
+                                                    <xsl:when test="not(//*[@DEF='HAnimSegmentLineColorRGBA']) and (position() = 1) and (local-name(../..)='HAnimHumanoid') and (count(preceding::HAnimJoint) = 0)">
+                                                        <!-- use transparency to indicate parent/child of line segment -->
+                                                        <ColorRGBA DEF='HAnimSegmentLineColorRGBA' color='{$segmentColor} 1, {$segmentColor} 0'/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>  
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </LineSet>
+                                        </Shape>
+                                    </xsl:for-each>
+                                    <!-- draw line geometry from parent Joint to peer sites, if any -->
+                                    <xsl:for-each select="HAnimSite[not(Viewpoint)]"> <!-- no Viewpoint child -->
+                                        <xsl:text>&#10;</xsl:text>
+                                        <xsl:comment> 
+                                            <xsl:text>HAnimSite visualization line segment from ancestor &lt;</xsl:text>
+                                            <xsl:value-of select="local-name(../..)"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="../../@name"/>
+                                            <xsl:text>'/&gt; to &lt;</xsl:text>
+                                            <xsl:value-of select="local-name()"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="@name"/>
+                                            <xsl:text>'/&gt;</xsl:text>
+                                        </xsl:comment>
+                                        <xsl:text>&#10;</xsl:text>
+                                        <Shape>
+                                            <!-- LineSet visualization -->
+                                            <LineSet vertexCount='2'>
+                                                <Coordinate point='{../../@center}, {@translation}'/>
+                                                <!-- Color for line geometry -->
+                                                <xsl:choose>
+                                                    <xsl:when test="not(//*[@DEF='HAnimSiteLineColorRGBA']) and (position() = 1) and (local-name(../../../..)='HAnimHumanoid') and (count(preceding::HAnimSite) = 0)">
+                                                        <!-- use transparency to indicate parent/child of line segment -->
+                                                        <ColorRGBA DEF='HAnimSiteLineColorRGBA' color='{$siteColor} 1, {$siteColor} 0'/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <ColorRGBA USE='HAnimSiteLineColorRGBA'/>  
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </LineSet>
+                                        </Shape>
+                                    </xsl:for-each>
+                                    <xsl:for-each select="HAnimSite[Viewpoint]"> <!-- HAnimSite with Viewpoint child -->
+                                        <xsl:text>&#10;</xsl:text>
+                                        <xsl:comment> 
+                                            <xsl:text>HAnimSite/Viewpoint visualization line segment from ancestor &lt;</xsl:text>
+                                            <xsl:value-of select="local-name(../..)"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="../../@name"/>
+                                            <xsl:text>'/&gt; to &lt;</xsl:text>
+                                            <xsl:value-of select="local-name()"/>
+                                            <xsl:text> name='</xsl:text>
+                                            <xsl:value-of select="@name"/>
+                                            <xsl:text>'/&gt;</xsl:text>
+                                        </xsl:comment>
+                                        <xsl:text>&#10;</xsl:text>
+                                        <Shape>
+                                            <!-- LineSet visualization -->
+                                            <LineSet vertexCount='2'>
+                                                <Coordinate point='{../../@center}, {@translation}'/>
+                                                <!-- Color for line geometry -->
+                                                <xsl:choose>
+                                                    <xsl:when test="not(//*[@DEF='HAnimSiteViewpointLineColorRGBA']) and (position() = 1) and (count(preceding::HAnimSite/Viewpoint) = 0)"> <!-- and ((local-name(..)='HAnimHumanoid') or (local-name(../../../..)='HAnimHumanoid'))  -->
+                                                        <!-- use transparency to indicate parent/child of line segment -->
+                                                        <ColorRGBA DEF='HAnimSiteViewpointLineColorRGBA' color='{$siteViewpointColor} 1, {$siteViewpointColor} 0'/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <ColorRGBA USE='HAnimSiteViewpointLineColorRGBA'/>  
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </LineSet>
+                                        </Shape>
+                                        <!-- TODO need to account for Viewpoint position, direction -->
+                                    </xsl:for-each>
+                                </xsl:if>
+
+                                <xsl:apply-templates select="*"/>
+                            </xsl:when>
+                            <!--
+                            <xsl:when test="(local-name(..)='HAnimHumanoid') and (local-name()='HAnimSite') and (Viewpoint) and not(string-length(@USE) > 0)">
+
+                            </xsl:when>
+                            -->
+                            <xsl:when test="(local-name()='HAnimSite') and not(string-length(@USE) > 0) and (($HAnimSkeletonIllustrate='true') or ($HAnimSiteIllustrate='true'))">
+                                <xsl:apply-templates select="comment()"/>
+                                <xsl:comment> HAnimSite visualization shape </xsl:comment>
+                                <!-- tooltip for HAnimSite visualization -->
+                                <TouchSensor description='{local-name()} {@name}'/>
+                                <xsl:choose>
+                                    <xsl:when test="not(//*[@DEF='HAnimSiteShape']) and (position() = 1) and (count(preceding::HAnimSite) = 0)">
+                                        <Shape DEF='HAnimSiteShape'> 
+                                            <IndexedFaceSet DEF='DiamondIFS' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
+                                                <Coordinate point='0 0.008 0 -0.008 0 0 0 0 0.008 0.008 0 0 0 0 -0.008 0 -0.008 0'/>
+                                            </IndexedFaceSet>
+                                            <Appearance> 
+                                                <Material diffuseColor='{$siteColor}'/> 
+                                            </Appearance> 
+                                        </Shape>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <Shape USE='HAnimSiteShape'/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:apply-templates select="*"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <!-- handle children of current node (including USE node) without special treatment -->
@@ -773,207 +1056,18 @@ POSSIBILITY OF SUCH DAMAGE.
                             </xsl:otherwise>
                         </xsl:choose>
 
-                    </xsl:when>
-                    <xsl:when test="(local-name()='HAnimSegment') and not(string-length(@USE) > 0) and ($HAnimSkeletonIllustrate='true')">
-                        <!-- tooltip for HAnimJoint visualization (embedded in HAnimSegment) -->
-                        <xsl:variable name="HanimJointTooltip">
-                            <xsl:value-of select="local-name(..)"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="../@name"/>
-                                <xsl:text>, </xsl:text>
-                            <xsl:value-of select="local-name()"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="@name"/>
-                        </xsl:variable>
-                        <!-- If no geometry found, insert suggested HAnimJointShape -->
-                        <xsl:if test="not(Transform/Shape)">
-                            <!-- draw Joint shape -->
-                            <xsl:comment>
-                                <xsl:text>&lt;</xsl:text>
-                                <xsl:value-of select="local-name(..)"/>
-                                <xsl:text> name='</xsl:text>
-                                <xsl:value-of select="../@name"/>
-                                <xsl:text>'/&gt; visualization sphere is placed within &lt;</xsl:text>
-                                <xsl:value-of select="local-name()"/>
-                                <xsl:text> name='</xsl:text>
-                                <xsl:value-of select="@name"/>
-                                <xsl:text>'/&gt; </xsl:text>
-                            </xsl:comment>
-                            <xsl:text>&#10;</xsl:text>
-                            <TouchSensor description='{$HanimJointTooltip}'/>
-                            <Transform translation='{../@center}'>
-                                <xsl:choose>
-                                    <xsl:when test="not(//*[@DEF='HAnimJointShape']) and (local-name(../..)='HAnimHumanoid')">
-                                        <Shape DEF='HAnimJointShape'>
-                                            <Sphere radius='0.006'/> 
-                                            <xsl:choose>
-                                                <xsl:when test="not(//*[@DEF='HAnimJointAppearance']) and (position() = 1) and (count(preceding::HAnimJoint) = 0)">
-                                                    <Appearance DEF='HAnimJointAppearance'>
-                                                        <Material diffuseColor='{$jointColor}' transparency='0.5'/> 
-                                                    </Appearance>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <Appearance USE='HAnimJointAppearance'/>  
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                        </Shape>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <Shape USE='HAnimJointShape'/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </Transform>
-                        </xsl:if>
-                        <!-- Insert suggested LineSet visualization -->
-                        <xsl:if test="not(Shape/LineSet) and not(Shape/IndexedLineSet)">
-                            <!-- draw line segment from beginning to end of segment; note ILS is not pickable and will not show the tooltip -->
-                            
-                            <xsl:apply-templates select="comment()"/>
-                            <!-- draw line geometry from parent Joint to peer points, if any -->
-                            <xsl:for-each select="../HAnimJoint">
-                                <xsl:text>&#10;</xsl:text>
-                                <xsl:comment> 
-                                    <xsl:text>HAnimSegment visualization line segment from parent &lt;</xsl:text>
-                                    <xsl:value-of select="local-name(..)"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="../@name"/>
-                                    <xsl:text>'/&gt; to &lt;</xsl:text>
-                                    <xsl:value-of select="local-name()"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="@name"/>
-                                    <xsl:text>'/&gt; </xsl:text>
-                               </xsl:comment>
-                                <xsl:text>&#10;</xsl:text>
-                                <Shape>
-                                    <!-- LineSet visualization -->
-                                    <LineSet vertexCount='2'>
-                                        <Coordinate point='{../@center}, {@center}'/>
-                                        <!-- Color for line geometry -->
-                                        <xsl:choose>
-                                            <xsl:when test="not(//*[@DEF='HAnimSegmentLineColorRGBA']) and (position() = 1) and (local-name(../..)='HAnimHumanoid') and (count(preceding::HAnimJoint) = 0)">
-                                                <!-- use transparency to indicate parent/child of line segment -->
-                                                <ColorRGBA DEF='HAnimSegmentLineColorRGBA' color='{$segmentColor} 1, {$segmentColor} 0'/>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>  
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </LineSet>
-                                </Shape>
-                            </xsl:for-each>
-                            <!-- draw line geometry from parent Joint to peer sites, if any -->
-                            <xsl:for-each select="HAnimSite[not(Viewpoint)]"> <!-- no Viewpoint child -->
-                                <xsl:text>&#10;</xsl:text>
-                                <xsl:comment> 
-                                    <xsl:text>HAnimSite visualization line segment from ancestor &lt;</xsl:text>
-                                    <xsl:value-of select="local-name(../..)"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="../../@name"/>
-                                    <xsl:text>'/&gt; to &lt;</xsl:text>
-                                    <xsl:value-of select="local-name()"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="@name"/>
-                                    <xsl:text>'/&gt;</xsl:text>
-                                </xsl:comment>
-                                <xsl:text>&#10;</xsl:text>
-                                <Shape>
-                                    <!-- LineSet visualization -->
-                                    <LineSet vertexCount='2'>
-                                        <Coordinate point='{../../@center}, {@translation}'/>
-                                        <!-- Color for line geometry -->
-                                        <xsl:choose>
-                                            <xsl:when test="not(//*[@DEF='HAnimSiteLineColorRGBA']) and (position() = 1) and (local-name(../../../..)='HAnimHumanoid') and (count(preceding::HAnimSite) = 0)">
-                                                <!-- use transparency to indicate parent/child of line segment -->
-                                                <ColorRGBA DEF='HAnimSiteLineColorRGBA' color='{$siteColor} 1, {$siteColor} 0'/>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <ColorRGBA USE='HAnimSiteLineColorRGBA'/>  
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </LineSet>
-                                </Shape>
-                            </xsl:for-each>
-                            <xsl:for-each select="HAnimSite[Viewpoint]"> <!-- HAnimSite with Viewpoint child -->
-                                <xsl:text>&#10;</xsl:text>
-                                <xsl:comment> 
-                                    <xsl:text>HAnimSite/Viewpoint visualization line segment from ancestor &lt;</xsl:text>
-                                    <xsl:value-of select="local-name(../..)"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="../../@name"/>
-                                    <xsl:text>'/&gt; to &lt;</xsl:text>
-                                    <xsl:value-of select="local-name()"/>
-                                    <xsl:text> name='</xsl:text>
-                                    <xsl:value-of select="@name"/>
-                                    <xsl:text>'/&gt;</xsl:text>
-                                </xsl:comment>
-                                <xsl:text>&#10;</xsl:text>
-                                <Shape>
-                                    <!-- LineSet visualization -->
-                                    <LineSet vertexCount='2'>
-                                        <Coordinate point='{../../@center}, {@translation}'/>
-                                        <!-- Color for line geometry -->
-                                        <xsl:choose>
-                                            <xsl:when test="not(//*[@DEF='HAnimSiteViewpointLineColorRGBA']) and (position() = 1) and (count(preceding::HAnimSite/Viewpoint) = 0)"> <!-- and ((local-name(..)='HAnimHumanoid') or (local-name(../../../..)='HAnimHumanoid'))  -->
-                                                <!-- use transparency to indicate parent/child of line segment -->
-                                                <ColorRGBA DEF='HAnimSiteViewpointLineColorRGBA' color='{$siteViewpointColor} 1, {$siteViewpointColor} 0'/>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <ColorRGBA USE='HAnimSiteViewpointLineColorRGBA'/>  
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </LineSet>
-                                </Shape>
-                                <!-- TODO need to account for Viewpoint position, direction -->
-                            </xsl:for-each>
-                        </xsl:if>
-                        
-                        <xsl:apply-templates select="*"/>
-                    </xsl:when>
-                    <!--
-                    <xsl:when test="(local-name(..)='HAnimHumanoid') and (local-name()='HAnimSite') and (Viewpoint) and not(string-length(@USE) > 0)">
-                        
-                    </xsl:when>
-                    -->
-                    <xsl:when test="(local-name()='HAnimSite') and not(string-length(@USE) > 0) and (($HAnimSkeletonIllustrate='true') or ($HAnimSiteIllustrate='true'))">
-                        <xsl:apply-templates select="comment()"/>
-                        <xsl:comment> HAnimSite visualization shape </xsl:comment>
-                        <!-- tooltip for HAnimSite visualization -->
-                        <TouchSensor description='{local-name()} {@name}'/>
-                        <xsl:choose>
-                            <xsl:when test="not(//*[@DEF='HAnimSiteShape']) and (position() = 1) and (count(preceding::HAnimSite) = 0)">
-                                <Shape DEF='HAnimSiteShape'> 
-                                    <IndexedFaceSet DEF='DiamondIFS' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
-                                        <Coordinate point='0 0.008 0 -0.008 0 0 0 0 0.008 0.008 0 0 0 0 -0.008 0 -0.008 0'/>
-                                    </IndexedFaceSet>
-                                    <Appearance> 
-                                        <Material diffuseColor='{$siteColor}'/> 
-                                    </Appearance> 
-                                </Shape>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <Shape USE='HAnimSiteShape'/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                        
-                        <xsl:apply-templates select="*"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <!-- handle children of current node (including USE node) without special treatment -->
-                        <xsl:apply-templates select="* | comment()"/> <!--  | text() -->
+                        <!-- indent -->
+                        <xsl:for-each select="ancestor::*">
+                            <xsl:text>  </xsl:text>
+                        </xsl:for-each>
+                        <!-- close tag for this element -->
+                        <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <!-- current node and contained content complete -->
                     </xsl:otherwise>
                 </xsl:choose>
-                
-                <!-- indent -->
-                <xsl:for-each select="ancestor::*">
-                    <xsl:text>  </xsl:text>
-                </xsl:for-each>
-                <!-- close tag for this element -->
-                <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
-                <xsl:value-of select="local-name()"/>
-                <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-
-                <!-- current node and contained content complete -->
             </xsl:when>
             <!-- no longer performed due to schema change: insert name of ProtoInstance if missing for a USE node -->
             <xsl:otherwise>
@@ -2352,7 +2446,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:variable name="fieldValueType"    select="concat($fieldValueType1,$fieldValueType2)"/>
 			<xsl:variable name="isMFString"
 					    select="
-					((local-name()='value') and ((../@type='MFString') or (contains(local-name(../..),'Proto') and ($fieldValueType='MFString')))) or
+				   (((local-name()='value') and ((../@type='MFString') or (contains(local-name(../..),'Proto') and ($fieldValueType='MFString')))) or
 					 (local-name()='url') or ends-with(local-name(),'Url') or
 					 (  ../@name = 'url') or ends-with(  ../@name,  'Url') or (local-name()='geoSystem') or
 					($attributeName='forceOutput') or
@@ -2371,7 +2465,25 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='NavigationInfo' and ($attributeName='type' or $attributeName='transitionType')) or
 					($parentElementName='Text' and $attributeName='string') or
 					($parentElementName='UniversalJoint' and $attributeName='forceOutput') or
-					($parentElementName='WorldInfo' and $attributeName='info')"/>
+					($parentElementName='WorldInfo' and $attributeName='info'))
+                   and not(($attributeName='name') or ($attributeName='type') or ($attributeName='accessType'))"/>
+            <!-- debug
+            <xsl:message>
+                <xsl:text>*** debug: </xsl:text>
+                <xsl:value-of select="$parentElementName"/>
+                <xsl:if test="(../@name) and not($attributeName = 'name')">
+                    <xsl:text> name='</xsl:text>
+                    <xsl:value-of select="../@name"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$attributeName"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>' $isMFString=</xsl:text>
+                <xsl:value-of select="$isMFString"/>
+            </xsl:message>
+            -->
             <xsl:if test="(local-name(..)='X3D' and local-name()='noNamespaceSchemaLocation')">
                 <!-- xmlns:xsd attribute typically not seen, so insert it -->
                 <xsl:text>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'</xsl:text>
@@ -2528,8 +2640,18 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
-                <!-- fix wrapper quotes -->
-                <xsl:when test="((local-name(..)='Viewpoint' or contains(local-name(..),'Sensor')) and (local-name(.)='description')) and starts-with(.,'&quot;') and (substring(.,string-length(.)) = '&quot;')">
+                <!-- fix wrapper quotes in SFString/String attributes -->
+                <xsl:when test="((local-name()='description') or (local-name()='name') or (local-name()='content') or (((local-name()='type') and not(local-name(..)='NavigationInfo'))) or (local-name()='accessType') or 
+                                 (starts-with(local-name(..),'field') and contains(../@type,'SFString'))) and
+                                starts-with(normalize-space(.),'&quot;') and (substring(normalize-space(.),string-length(normalize-space(.))) = '&quot;')">
+                    <xsl:message>
+                        <xsl:text>*** found wrapper quotation marks around SFString value, removing them (hint: use &amp;quot; to sidestep this check if needed)</xsl:text>
+                        <xsl:text>(firstCharacter=</xsl:text>
+                        <xsl:value-of select="substring(.,1,1)"/>
+                        <xsl:text>, lastCharacter=</xsl:text>
+                        <xsl:value-of select="substring(.,string-length(.))"/>
+                        <xsl:text>)</xsl:text>
+                    </xsl:message>
                     <xsl:call-template name="escape-special-characters">
                         <xsl:with-param name="inputString" select="substring(.,2,(string-length(.)-2))"/>
                     </xsl:call-template>
@@ -2709,6 +2831,51 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>'</xsl:text>
                     </xsl:message>
 					<!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
+                </xsl:when>
+                <xsl:when test="(local-name() = 'translation') and (local-name(..) = 'Transform') and (local-name(../..) = 'HAnimSegment') and (local-name(../../..) = 'HAnimJoint')
+                              and not(. = ../../../@center)">
+                        <!-- mismatched positioning of HAnimSegment child geometry relative to parent HAnimJoint -->
+                        <xsl:message>
+                            <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
+                            <xsl:value-of select="local-name(../../..)"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../../../@DEF"/>
+                            <xsl:text>' name='</xsl:text>
+                            <xsl:value-of select="../../../@name"/>
+                            <xsl:text>' center='</xsl:text>
+                            <xsl:value-of select="../../../@center"/>
+                            <xsl:text disable-output-escaping="yes">'&gt;&lt;</xsl:text>
+                            <xsl:value-of select="local-name(../..)"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../../@DEF"/>
+                            <xsl:text>' name='</xsl:text>
+                            <xsl:value-of select="../../@name"/>
+                            <xsl:text disable-output-escaping="yes">'&gt;&lt;</xsl:text>
+                            <xsl:value-of select="local-name(..)"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../@DEF"/>
+                            <xsl:text>' translation='</xsl:text>
+                            <xsl:value-of select="."/>
+                            <xsl:text>&gt; values do not match, replacing prior translation value with grandparent center value</xsl:text>
+                        </xsl:message>
+                        <!-- corrected value -->
+                        <xsl:value-of select="../../../@center"/>
+                </xsl:when>
+                <xsl:when test="($omitObsoleteAttributes = 'true') and (local-name(..) = 'GeoViewpoint') and ((local-name() = 'headlight') or (local-name() = 'navType'))">
+                        <xsl:message>
+                            <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
+                            <xsl:value-of select="local-name(..)"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../@DEF"/>
+                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                            <xsl:text>&gt; defines obsolete attribute value(s)</xsl:text>
+                            <xsl:text> headlight='</xsl:text>
+                            <xsl:value-of select="../@headlight"/>
+                            <xsl:text>' navType='</xsl:text>
+                            <xsl:value-of select="../@navType"/>
+                            <xsl:text>', now omitted</xsl:text>
+                        </xsl:message>
+                    <!-- omit value, canonicalization will remove attribute -->
                 </xsl:when>
                 <!-- new fixes: other new attribute-value rules go here -->
                 <!-- TODO add other MFString attributes, handle fixMFStringQuotes setting accordingly -->
@@ -3404,7 +3571,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:when test="(normalize-space($value) = '*enter date*')">
                         <xsl:value-of select="$value"/>
                         <xsl:message>
-                            <xsl:text>*** fix-date-format: found template default, need to fix </xsl:text>
+                            <xsl:text>*** fix-date-format: found template default, need to enter a value in content attribute </xsl:text>
                             <xsl:text> &lt;</xsl:text>
                             <xsl:value-of select="local-name(..)"/>
                             <xsl:if test="string-length(../@name) > 0">
@@ -3430,11 +3597,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:value-of select="$value1"/>
                         <xsl:text> </xsl:text>
                         <xsl:choose>
-                            <xsl:when test="($value2 >= 50) and ($value2 &lt;= 99)">
+                            <xsl:when test="(number($value2) >= 50) and (number($value2) &lt;= 99)">
                                 <xsl:text>19</xsl:text>
                                 <xsl:value-of select="$value2"/>
                             </xsl:when>
-                            <xsl:when test="($value2 >= 0) and ($value2 &lt;= 50)">
+                            <xsl:when test="(number($value2) >= 0) and (number($value2) &lt;= 50)">
                                 <xsl:text>20</xsl:text>
                                 <xsl:value-of select="$value2"/>
                             </xsl:when>

@@ -185,12 +185,49 @@ Recommended tool:
 		</xsl:element>
         
         <xsl:element name="FieldTypes">
-            <xsl:for-each select="//xs:schema/xs:simpleType[starts-with(@name, 'SF') or starts-with(@name, 'MF')]">
+            <xsl:for-each select="//xs:schema/xs:simpleType[starts-with(@name, 'SF') or starts-with(@name, 'MF') or starts-with(@name, 'bboxSize')]">
                 <xsl:sort select="substring(@name, 3)"/>
                 <xsl:sort select="substring(@name, 1, 2)" order="descending"/>
                 <xsl:variable name="fieldType" select="@name"/>
+				<!--
+	<xs:simpleType name="SFBool">
+		<xs:annotation>
+			<xs:appinfo>
+				<xs:attribute name="defaultValue" type="SFBool" default="true"/>
+				-->
+				<xsl:if test="not(xs:annotation/xs:appinfo/xs:attribute[@name = 'defaultValue']/@type = $fieldType)">
+					<xsl:message>
+						<xsl:text>*** Error, X3D XML schema simpleType </xsl:text>
+						<xsl:value-of select="$fieldType"/>
+						<xsl:text> has mistaken type='</xsl:text>
+						<xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name = 'defaultValue']/@type"/>
+						<xsl:text>'</xsl:text>
+					</xsl:message>
+				</xsl:if>
+                <xsl:variable name="defaultValue" select="xs:annotation/xs:appinfo/xs:attribute[@name = 'defaultValue']/@default"/>
+                <xsl:variable name="regularExpression">
+					<xsl:choose>
+						<xsl:when test="(string-length(xs:restriction/xs:pattern/@value) > 0)">
+							<xsl:value-of select="xs:restriction/xs:pattern/@value"/>
+						</xsl:when>
+						<xsl:when test="(string-length(xs:annotation/xs:appinfo/xs:pattern/@value) > 0)">
+							<xsl:value-of select="xs:annotation/xs:appinfo/xs:pattern/@value"/>
+						</xsl:when>
+						<xsl:when test="($fieldType = 'SFNode') or ($fieldType = 'MFNode')">
+							<!-- ignore -->
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:message>
+								<xsl:text>*** No regular expression pattern found for </xsl:text>
+								<xsl:value-of select="$fieldType"/>
+							</xsl:message>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
                 <xsl:element name="FieldType">
                     <xsl:attribute name="type" select="$fieldType"/>
+                    <xsl:attribute name="defaultValue" select="$defaultValue"/>
+                    <xsl:attribute name="regex" select="$regularExpression"/>
                     <xsl:element name="InterfaceDefinition">
                         <xsl:if test="string-length(normalize-space(xs:annotation/xs:documentation/text())) > 0">
                             <xsl:attribute name="specificationSection" select="normalize-space(xs:annotation/xs:documentation/text())"/>
@@ -381,8 +418,9 @@ Recommended tool:
 							</xsl:for-each>
                         </xsl:for-each>
                         <xsl:if test="xs:complexContent/xs:extension/xs:attribute[@name='containerField']">
-                            <xsl:element name="containerFieldDefault">
-                                <xsl:attribute name="name" select="xs:complexContent/xs:extension/xs:attribute[@name='containerField']/@default"/>
+                            <xsl:element name="containerField">
+                                <xsl:attribute name="default" select="xs:complexContent/xs:extension/xs:attribute[@name='containerField']/@default"/>
+                                <xsl:attribute name="type" select="xs:complexContent/xs:extension/xs:attribute[@name='containerField']/@type"/>
                             </xsl:element>
                         </xsl:if>
                         <xsl:variable name="contentModelGroups" select="//xs:schema/xs:complexType[@name=$greatGrandParentNodeType]//xs:group[(@ref != 'ChildContentModelSceneGraphStructure')]
@@ -564,14 +602,16 @@ Recommended tool:
 							</xsl:for-each>
                         </xsl:for-each>
                         <xsl:if test="xs:complexType//xs:attribute[@name='containerField']">
-                            <xsl:element name="containerFieldDefault">
+                            <xsl:element name="containerField">
                                 <xsl:choose>
                                     <xsl:when test="xs:complexType//xs:attribute[@name='containerField']/@default">
-                                        <xsl:attribute name="name" select="xs:complexType//xs:attribute[@name='containerField']/@default"/>
+                                        <xsl:attribute name="default" select="xs:complexType//xs:attribute[@name='containerField']/@default"/>
+                                        <xsl:attribute name="type" select="xs:complexType//xs:attribute[@name='containerField']/@type"/>
                                         <xsl:for-each select="xs:complexType//xs:attribute[@name='containerField']/xs:simpleType/xs:restriction/xs:enumeration">
                                             <xsl:sort select="xs:complexType//xs:attribute[@name='containerField']/@default"/>
                                             <xsl:element name="enumeration">
                                                 <xsl:attribute name="value" select="@value"/>
+                                                <xsl:attribute name="appinfo" select="xs:annotation/xs:appinfo"/>
                                             </xsl:element>
                                         </xsl:for-each>
                                     </xsl:when>

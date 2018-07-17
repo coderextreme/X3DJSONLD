@@ -122,12 +122,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='start'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end1' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='end1'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder1'/>
@@ -135,12 +133,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector2'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='start'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end2' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='end2'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder2'/>
@@ -148,12 +144,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector3'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='start'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end3' name='point'>
-            </ProtoInstance>
+            <ProtoInstance USE='end3'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder3'/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- All X3D elements and attributes, with default values, as defined in X3D Schema version 3.3 -->
+<!-- All X3D elements and attributes, with default values, as defined in X3D Schema version 4.0 -->
 <AllX3dElementsAttributes>
 
 <Anchor bboxCenter='0 0 0' bboxSize='-1 -1 -1' description='' parameter='' url='' containerField='children'/>
@@ -90,8 +90,9 @@
 <GeoViewpoint centerOfRotation='0 0 0' description='' fieldOfView='0.7854' geoSystem='"GD" "WE"' jump='true' orientation='0 0 1 0' position='0 0 100000' retainUserOffsets='false' speedFactor='1.0' containerField='children'/>
 <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' containerField='children'/>
 <HAnimDisplacer coordIndex='' displacements='' name='' weight='0.0' containerField='displacers'/>
-<HAnimHumanoid bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' info='' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' version='2.0' containerField='children'/>
-<HAnimJoint bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' limitOrientation='0 0 1 0' llimit='' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skinCoordIndex='' skinCoordWeight='' stiffness='1 1 1' translation='0 0 0' ulimit='' containerField='children'/>
+<HAnimHumanoid bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' info='' jointBindingPositions='0 0 0' jointBindingRotations='0 0 1 0' jointBindingScales='0 0 0' loa='-1' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skeletalConfiguration='BASIC' translation='0 0 0' version='2.0' containerField='children'/>
+<HAnimJoint bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' limitOrientation='0 0 1 0' llimit='0 0 0' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skinCoordIndex='' skinCoordWeight='' stiffness='1 1 1' translation='0 0 0' ulimit='0 0 0' containerField='children'/>
+<HAnimMotion channels='' channelsEnabled='' description='' enabled='false' endFrame='-1' frameDuration='0.1' frameIncrement='1' frameIndex='0' joints='' loa='-1' loop='false' startFrame='0' values='' containerField='motions'/>
 <HAnimSegment bboxCenter='0 0 0' bboxSize='-1 -1 -1' centerOfMass='0 0 0' mass='0' momentsOfInertia='0 0 0 0 0 0 0 0 0' name='' containerField='children'/>
 <HAnimSite bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' containerField='children'/>
 <head/>
@@ -252,6 +253,6 @@
 <VolumePickSensor enabled='true' intersectionType='BOUNDS' matchCriterion='MATCH_ANY' objectType='"ALL"' sortOrder='CLOSEST' containerField='children'/>
 <WindPhysicsModel direction='1 0 0' enabled='true' gustiness='0.1' speed='0.1' turbulence='0' containerField='physics'/>
 <WorldInfo info='' title='' containerField='children'/>
-<X3D profile='' version='3.3'/>
+<X3D profile='' version='4.0'/>
 
 </AllX3dElementsAttributes>

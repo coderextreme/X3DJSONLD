@@ -1677,7 +1677,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="isBehaviorNode" select="(local-name()='ROUTE') or (local-name()='Script') or
+        <xsl:variable name="isBehaviorNode" select="(local-name()='ROUTE') or (local-name()='Script')  or (local-name()='ShaderPart') or (local-name()='ShaderProgram') or
                         ((local-name()='field') and (local-name(..)='Script')) or
                         contains(local-name(),'Filter') or contains(local-name(),'Interpolator') or contains(local-name(),'Sensor') or
                         contains(local-name(),'Sequencer') or contains(local-name(),'Trigger')"/>
@@ -1705,7 +1705,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <!-- apply tooltips for each node -->              
             <xsl:choose>
                 <!-- check for existence of children -->
-                <xsl:when test="boolean(* | comment() ) or (local-name()='Script') or $containsTextData">
+                <xsl:when test="boolean(* | comment() ) or (local-name()='Script')  or (local-name()='ShaderPart') or (local-name()='ShaderProgram') or $containsTextData">
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;span title="</xsl:text>
                         <xsl:value-of select="$elementTooltip"/>
@@ -1793,7 +1793,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:apply-templates select="* | comment()" />
                         <xsl:choose>
                             <!-- Script node:  output script source, preserve CDATA delimiters around contained code -->
-                            <xsl:when test="local-name()='Script' and normalize-space(.) and (not (normalize-space(.)='' or normalize-space(.)=' '))">
+                            <xsl:when test="((local-name()='Script') or (local-name()='ShaderPart') or (local-name()='ShaderProgram')) 
+                                             and normalize-space(.) and (not (normalize-space(.)='' or normalize-space(.)=' '))">
                                 <xsl:if test="($lineBreaks='true')">
                                     <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                                 </xsl:if>
