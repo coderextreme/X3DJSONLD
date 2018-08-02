@@ -266,7 +266,7 @@ DOM2JSONSerializer.prototype = {
 						}
 						if (typeof parentName !== 'undefined') {
 							if (typeof this.fieldTypeMapping[parentName] === 'undefined') {
-								this.fieldTypeMapping[parentName] = []
+								this.fieldTypeMapping[parentName] = {};
 							}
 							// console.error("parent2", parentName, "DEF", def, "fieldName", fieldName);
 							this.fieldTypeMapping[parentName][fieldName] = value;
