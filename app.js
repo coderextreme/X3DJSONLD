@@ -18,6 +18,7 @@ var fieldTypes = require("./src/main/node/fieldTypes");
 
 
 var www = config.x3dcode;
+var examples = config.examples;
 
 
 app.use(express.static('/'));
@@ -166,6 +167,14 @@ app.get("/files", function(req, res, next) {
 				console.error(file);
 			}
 		});
+	glob(www+'/**/*.x3d', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file.substr(www.length, file.length-www.length));
+				console.error(file);
+			}
+		});
 	glob(www+'/**/*.json', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
@@ -228,6 +237,7 @@ app.get("/files", function(req, res, next) {
 	});
 	});
 	});
+	});
 });
 
 function magic(path, type) {
@@ -239,12 +249,14 @@ function magic(path, type) {
 		}
 		console.error("Requested", url);
 		var wind = url.indexOf("www.web3d.org");
-		if (wind > 0) {
+		if (wind >= 0) {
 			url = url.substring(wind);
-			url = www + "/" + url;
+			var cwind = examples.indexOf("www.web3d.org");
+			url = examples.substr(0, cwind) + url;
 		} else {
 			url = __dirname+"/"+url;
 		}
+		console.error("Reading", url);
 		var data = fs.readFileSync(url);
 		if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
 			sendNoNext(res, data, type);
@@ -252,7 +264,7 @@ function magic(path, type) {
 			sendNoNext(res, data.toString(), type);
 		}
 	} catch (e) {
-		console.error("Couldn't read", url);
+		console.error(e, "Couldn't read", url);
 		next();
 	}
     });
