@@ -163,23 +163,26 @@ and
     -->
     </target>
 	
-    <property name="javac.verbose"            value="-verbose"/>
-    <property name="java.dir"                 value="java"/>
-    <property name="java.classes.dir"         value="${java.dir}/classes"/>
-    <property name="java.examples.dir"        value="${java.dir}/examples"/>
-    <property name="java.jars.dir"            value="${java.dir}/jars"/>
-    <property name="java.lib.dir"             value="${java.dir}/lib"/>
-    <property name="java.src.dir"             value="${java.dir}/src"/>
-    <property name="nashorn.dir"              value="nashorn"/>
-    <property name="src.org.web3d.x3d.jsail"  value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
-    <property name="src.org.web3d.x3d.sai"    value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
-    <property name="src.org.web3d.x3d.tests"  value="${java.src.dir}/org/web3d/x3d/tests"/><!-- tests      -->
+    <property name="javac.verbose"               value="-verbose"/>
+    
+    <property name="X3DJSAIL.relative.dir"       value="java"/>
+    <property name="java.dir"                 location="java"/>
+    <property name="java.classes.dir"         location="${X3DJSAIL.relative.dir}/classes"/>
+    <property name="java.examples.dir"        location="${X3DJSAIL.relative.dir}/examples"/>
+    <property name="java.jars.dir"            location="${X3DJSAIL.relative.dir}/jars"/>
+    <property name="java.lib.dir"             location="${X3DJSAIL.relative.dir}/lib"/>
+    <property name="java.src.dir"             location="${X3DJSAIL.relative.dir}/src"/>
+    <property name="nashorn.dir"              location="nashorn"/>
+
+    <property name="src.org.web3d.x3d.jsail"       value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
+    <property name="src.org.web3d.x3d.sai"         value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
+    <property name="src.org.web3d.x3d.tests"       value="${java.src.dir}/org/web3d/x3d/tests"/><!-- tests      -->
     <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
     <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
 	
     <property name="javadoc.additionalparam" value=""/>
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
-    <property name="javadoc.dir"             value="${java.dir}/javadoc"/>
+    <property name="javadoc.dir"             value="${X3DJSAIL.relative.dir}/javadoc"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
     <property name="javadoc.copyright"       value="Copyright &#169;2005-2017 &lt;a href='http://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../../../../license.html'&gt;open-source license&lt;/a&gt;, free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Java%20SAI%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
@@ -198,7 +201,7 @@ and
 	<property name="junit5.version"             value="1.2.0" description="latest supported version"/>
 	<property name="jupiter.version"            value="5.2.0" description="latest supported version"/>
 	<property name="opentest4j"                 value="opentest4j"/>
-	<property name="opentest4j.version"                 value="1.1.0"/>
+	<property name="opentest4j.version"         value="1.1.0"/>
 	<property name="junit-platform-commons"     value="junit-platform-commons"/>
 	<property name="junit-platform-engine"      value="junit-platform-engine"/>
 	<property name="junit-platform-launcher"    value="junit-platform-launcher"/>
@@ -214,7 +217,7 @@ and
 	<target name="get.junit5.jars" description="Get latest versions of JUnit5 .jar test suite">
             <ant antfile="java/build.xml" target="antVersionCheck"/>
             <echo message="get junit5 .jar files if not already available) and install in ANT_HOME/lib=${env.ANT_HOME}/lib"/>
-            <echo message="Retrieving JUnit5 version ${junit5.version}, note version number gets stripped from destination file name"/>
+            <echo message="Retrieving JUnit5 version ${junit5.version} and jupiter version ${jupiter.version}, note version number gets stripped from destination file name"/>
             <mkdir dir="${junit5.dir}"/>
             <mkdir dir="${junit5.dir}/jupiter"/>
 
@@ -236,8 +239,6 @@ and
              dest="${junit5.dir}/jupiter/${junit-jupiter-api}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${junit5.site}/jupiter/${junit-jupiter-engine}/${jupiter.version}/${junit-jupiter-engine}-${jupiter.version}.jar"
              dest="${junit5.dir}/jupiter/${junit-jupiter-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
-        
-	
 	</target>
 
     <target name="create.X3DJSAIL" depends="" description="Build API for X3D Java Scene Authoring Interface Library (X3DJSAIL) from X3D Object Model" >
@@ -314,9 +315,9 @@ and
             <arg value="-o:TempSaiJava.txt"/> <!-- output-doc -->
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dUnifiedObjectModel}"/> <!-- source-doc -->
             <arg value="-xsl:CreateX3dSceneAccessInterfaceJava.xslt"/> <!-- style-doc -->
-            <arg value="targetDirectory=${java.dir}"/> <!-- stylesheet parameter -->
+            <arg value="targetDirectory=${X3DJSAIL.relative.dir}"/> <!-- stylesheet parameter -->
         </java>
-        <copy file="${java.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
+        <copy file="${X3DJSAIL.relative.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
         <!-- precise cleanup of directories occurred earlier -->
 		<!-- empty classpath to ensure internal consistency of package compilation -->
         <echo message="Compiling org.web3d.x3d.sai interfaces"/>
@@ -339,6 +340,14 @@ and
             <compilerarg value="-Xlint"/>
         </javac>
         <echo message="Compiling org.web3d.x3d.java test classes"/>
+        
+        <antcall target="compile.X3DJSAIL.tests"/>
+        <antcall target="create.X3DJSAIL.javadoc"/>
+        <antcall target="create.X3DJSAIL.jars"/>
+	</target>
+	
+	<target name="compile.X3DJSAIL.tests">
+        <echo message="Compiling org.web3d.x3d.java test classes"/>
         <javac  srcdir="${src.org.web3d.x3d.tests}"
                destdir="${java.classes.dir}"
                  debug="on"
@@ -347,16 +356,13 @@ and
 			<classpath refid="junit5.classpath"/>
             <compilerarg value="-Xlint"/>
         </javac>
-		
-            <antcall target="create.X3DJSAIL.javadoc"/>
-            <antcall target="create.X3DJSAIL.jars"/>
 	</target>
 	
 	<target name="create.X3DJSAIL.javadoc">
         <echo message="Preparing javadoc:"/>
         <delete dir="${javadoc.dir}" failonerror="false"/>
         <mkdir  dir="${javadoc.dir}"/>
-        <copy file="${java.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
+        <copy file="${X3DJSAIL.relative.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
         <!-- javadoc options http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#CHDFDACB -->
         <javadoc     destdir="${javadoc.dir}"
                       author="${javadoc.author}"
@@ -539,13 +545,14 @@ and
               <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
               <attribute name="Sealed" value="true"/>
             </manifest>
-            <fileset dir="${java.dir}">
+            <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
                 <exclude name="build/**/*"/><!-- TODO mysteriously caused by HelloWorldProgram.java testing -->
             </fileset>
             <fileset dir="${java.classes.dir}">
                 <include name="**/*.class"/>
+                <!-- avoid test cases to facilitate test debugging -->
                 <exclude name="**/tests/**/*.class"/>
                 <exclude name="javadoc.redirect.html"/>
                 <exclude name="jars"/>
@@ -591,7 +598,7 @@ and
                -->
             </manifest>
             <!-- everything -->
-            <fileset dir="${java.dir}">
+            <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
                 <include name="draftJavaLanguageBindingAnnexes/**/*"/>
@@ -621,7 +628,7 @@ and
                 <exclude name="${openexi-nagasena.jar}"/>
                 <exclude name="${exificient.jar}"/>
             </fileset>
-            <fileset dir="${java.dir}">
+            <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="${nashorn.dir}/**/*"/>
                 <exclude name="test.bat"/>
                 <exclude name="${nashorn.dir}/examples"/>
@@ -700,7 +707,7 @@ and
 		<copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
 		<copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
 		<copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
-        <copy todir="${java.dir}/draftJavaLanguageBindingAnnexes"><!-- verbose="true" -->
+        <copy todir="${X3DJSAIL.relative.dir}/draftJavaLanguageBindingAnnexes"><!-- verbose="true" -->
 			<fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
 				<include name="Part2/**/*"/>
 				<include name="Images/*.gif"/>
@@ -710,7 +717,7 @@ and
 	</target>
 
     <target name="view.BuildSpecificationLanguageBindingJava.local" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
-        <property name="javadocPath" location="${java.dir}/javadoc/index.html"/>
+        <property name="javadocPath" location="${X3DJSAIL.relative.dir}/javadoc/index.html"/>
         <nbbrowse url="file:///${javadocPath}" />
         <property name="abstractPath" location="../../specifications/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
         <nbbrowse url="file:///${abstractPath}" />
@@ -1062,12 +1069,21 @@ and
         <xslt style="X3dToXhtml.xslt" in="${examples.dir}/HelloWorld.x3d" out="test/HelloWorld.xslt.html"/>
     </target>
     
-    <target name="test.X3DJSAIL" depends="test.X3dToJava.xslt" description="Test X3DJSAIL" >
-        <!--
+    <target name="test.X3DJSAIL.unitTests" depends="compile.X3DJSAIL.tests" description="Test X3DJSAIL unit tests" >
         <echo message="==========================================="/>
 		<echo message="ant antfile=java/build.xml target=test.junit5"/>
-        <ant antfile="java/build.xml" target="test.junit5"/>
+        <ant antfile="java/build.xml" target="test.junit5.directly"/>
+        <!-- not yet working:
+        <ant antfile="java/build.xml" target="test.junit5.ant"/>
         -->
+    </target>
+    
+    <target name="test.X3DJSAIL" depends="test.X3DJSAIL.unitTests,test.X3dToJava.xslt" description="Test X3DJSAIL" >
+        <echo message="==========================================="/>
+		<echo message="Preliminary cleanups"/>
+        <delete file="${java.examples.dir}/CleatClamp.MeshLab.log.txt" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp.MeshLabLauncher.MeshLab.log.txt" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp.RoundTrip.MeshLab.log.txt" verbose="true"/>
         <echo message="==========================================="/>
 		<echo message="ant antfile=java/nashorn/build.xml target=test.nashorn (direct invocation)"/>
         <ant antfile="java/nashorn/build.xml" target="test.nashorn"/>
@@ -1094,12 +1110,14 @@ and
             <arg value="-help"/>
         </java>
         <echo message="==========================================="/>
+        <echo message="Convert CleatClamp.stl to .x3d version ..."/>
         <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp.MeshLabLauncher.x3d"/>
         <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/CleatClamp.stl"/>                 <!--  input model -->
             <arg value="${java.examples.dir}/CleatClamp.MeshLabLauncher.x3d"/> <!-- output model -->
         </java>
         <echo message="==========================================="/>
+        <echo message="... and then back to .stl"/>
         <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp.MeshLabLauncher.stl"/>
         <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="${java.examples.dir}/CleatClamp.stl"/>                 <!--  input model -->
@@ -1211,13 +1229,13 @@ and
 			<compilerarg value="-Xlint"/>
 			-->
         </javac>
+		<echo message="==========================================="/>
 		<!-- self-validation test -->
 		<echo message="test HelloWorldProgram execution and self-validation:"/>
 		<java classname="HelloWorldProgram" 
 			  dir="${java.examples.dir}"
 			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
-		<echo message="==========================================="/>
 		<echo message="compile HelloWorldProgramOutput.java source..."/>
 		<echo message="     (i.e. new source program which was just produced by HelloWorldProgram execution)"/>
         <javac  srcdir="${java.examples.dir}"
@@ -1531,6 +1549,40 @@ and
 		<!-- self-validation test -->
 		<echo message="test CameraExamples execution and self-validation:"/>
 		<java classname="CameraExamples" 
+			  dir="test"
+			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+    </target>
+    
+    <target name="test.TestSurface" >
+		<echo message="==========================================="/>
+        <echo message="translation input: test/TestSurface.x3d"/>
+        <echo message="..expected output: test/TestSurface.java"/>
+        <delete file="test/TestSurface.java" failonerror="false"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <!-- <arg value="-t"/>  timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
+            <arg value="-s:test/TestSurface.x3d"/>  <!-- source-doc -->
+            <arg value="-o:test/TestSurface.java"/> <!-- output-doc -->
+            <arg value="-xsl:X3dToJava.xslt"/> <!-- style-doc -->
+            <arg value="className=TestSurface"/> <!-- parameter -->
+        </java>
+		<echo message="compile..."/>
+        <javac includes="TestSurface.java" 
+			     srcdir="test"
+			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="test"
+                  debug="on"
+                verbose="false"
+                includeantruntime="false" fork="${fork}">
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<!-- self-validation test -->
+		<echo message="test TestSurface execution and self-validation:"/>
+		<java classname="TestSurface" 
 			  dir="test"
 			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
@@ -1953,11 +2005,11 @@ and
         <!-- upload products and .jar files first for rapid deployment -->
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.specifications}/" password="${password.web3d}" verbose="true">
             <fileset dir=".">
-                <include name="${java.dir}/.htaccess"/>
-                <include name="${java.dir}/*.*"/>
-                <include name="${java.dir}/images/*.*"/>
-                <include name="${java.dir}/examples/**/*.*"/>
-                <include name="${java.dir}/references/**/*"/>
+                <include name="${X3DJSAIL.relative.dir}/.htaccess"/>
+                <include name="${X3DJSAIL.relative.dir}/*.*"/>
+                <include name="${X3DJSAIL.relative.dir}/images/*.*"/>
+                <include name="${X3DJSAIL.relative.dir}/examples/**/*.*"/>
+                <include name="${X3DJSAIL.relative.dir}/references/**/*"/>
                 <exclude name="**nbproject/*"/>
 			</fileset>
         </scp>
@@ -1970,12 +2022,12 @@ and
             <fileset dir=".">
                 <include name="${nashorn.dir}/*"/>
                 <include name="test.bat"/>
-                <include name="${java.dir}/.htaccess"/>
-                <include name="${java.dir}/README.txt"/>
-                <include name="${java.dir}/javadoc/*"/>
+                <include name="${X3DJSAIL.relative.dir}/.htaccess"/>
+                <include name="${X3DJSAIL.relative.dir}/README.txt"/>
+                <include name="${X3DJSAIL.relative.dir}/javadoc/*"/>
                 <include name="${java.lib.dir}/*"/>
                 <include name="${java.src.dir}/*"/>
-                <include name="${java.dir}/**/*"/>
+                <include name="${X3DJSAIL.relative.dir}/**/*"/>
                 <exclude name="${java.jars.dir}/*.jar"/>
 			</fileset>
         </scp>

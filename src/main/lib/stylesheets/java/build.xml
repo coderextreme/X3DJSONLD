@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+
+<!--
+  Copyright (c) 2000-2018 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the names of the Naval Postgraduate School (NPS)
+      Modeling Virtual Environments and Simulation (MOVES) Institute
+      (http://www.nps.edu and http://www.MovesInstitute.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<project name="X3DJSAIL: X3D Java SAI Library" default="default" basedir=".">
+    <description>Builds, tests, and runs the X3DJSAIL project.</description>
+	
+    <property name="javac.verbose"            value="true"/>
+
+    <!-- properties common to all build files and archives ======================================== -->
+    <property environment="env"/>
+
+    <!-- java jvmarg parameters ignored on server unless forked -->
+    <property name="fork"                value="true"/>
+    
+	<!-- Netbeans > Tools > Options > Java > Ant                                              -->
+    <!-- and then pointing to C:\apache-ant-1.10.4 (or somesuch locally installed directory)  -->
+
+    <!-- ANT Contrib archive at http://sourceforge.net/projects/ant-contrib/files    (v1.0b3) -->
+    <!-- must have ant-contrib-1.0b3.jar in ANT_HOME/lib (or else specify path)               -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+    
+    <!-- jslint4java: a Java wrapper around Douglas Crockford's jslint tool. -->
+    <!-- https://code.google.com/p/jslint4java -->
+    <!-- http://docs.jslint4java.googlecode.com/git/2.0.5/ant.html -->
+	<!-- http://happygiraffe.github.io/jslint4java/cli.html -->
+    <!-- http://kaatz-media.com/2011/10/06/uberprufen-von-javascript-dateien-ant-und-jslint-jenkins-using-ant-on-jenkins-for-jslint -->
+    <!-- TODO bug report: https://code.google.com/p/jslint4java/issues/detail?id=101 -->
+    <property name="jslint.jar"     value="../lib/jslint4java-2.0.5.jar"/>
+    <taskdef name="jslint" 
+        classname="com.googlecode.jslint4java.ant.JSLintTask"
+        classpath="${jslint.jar}" />
+    <property name="jslint.options" value="white"/>
+    <!-- unused options: ass,bitwise,browser,closure,continue,debug,devel,eqeq,es5,evil,forin,indent,maxerr,maxlen,newcap,node,nomen,passfail,plusplus,predef,properties,regexp,rhino,sloppy,stupid,sub,todo,unparam,vars,warnings, -->
+
+	<!-- https://github.com/fge/json-schema-validator -->
+	<!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
+	<!-- fix double-hyphen switch when running on command line: -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
+    <property name="json-schema-validator.jar"     value="../lib/json-schema-validator-2.2.6-lib.jar"/>
+
+    <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <property name="saxon.dir"               value="lib" description="relative path"/>
+    <property name="saxon.jar"               value="saxon9he.jar"/>
+
+    <!-- http://openexi.sourceforge.net -->
+    <!-- https://sourceforge.net/projects/openexi/files -->
+    <property name="openexi.dir"             value="lib" description="relative path"/>
+	<property name="openexi.jar"             value="nagasena.jar"/>
+    
+    <!-- https://exificient.github.io/java -->
+    <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
+    <property name="exificient.dir"          value="lib" description="relative path"/>
+    <property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
+
+    <property name="javac.verbose"              value="-verbose"/>
+    <property name="java.dir"                location="."/>
+    <property name="java.classes.dir"        location="classes"/>
+    <property name="java.examples.dir"       location="examples"/>
+    <property name="java.jars.dir"           location="${java.dir}/jars"/>
+    <property name="java.lib.dir"            location="lib"/>
+    <property name="java.src.dir"            location="${java.dir}/src"/>
+    <property name="java.classes.dir"        location="${java.dir}/classes"/>
+    <property name="nashorn.dir"             location="nashorn"/>
+	
+    <property name=    "src.org.web3d.x3d.jsail"   value=    "${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
+    <property name=    "src.org.web3d.x3d.sai"     value=    "${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
+    <property name=    "src.org.web3d.x3d.tests"   value=    "${java.src.dir}/org/web3d/x3d/tests"/><!-- tests      -->
+    <property name="classes.org.web3d.x3d.tests"   value="${java.classes.dir}/org/web3d/x3d/tests"/><!-- tests compiled -->
+    <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
+    <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
+	
+    <target name="all" depends="compile.examples,run.examples"/>
+
+    <target name="build" depends="">
+		<!-- TODO fix or omit -->
+		<ant antfile="../build.xml" target="create.X3DJSAIL"/>
+		<antcall target="compile.examples"/>
+		<antcall target="run.examples"/>
+    </target>
+
+    <target name="compile.examples">
+		<javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
+			   classpath="jars/X3DJSAIL.3.3.full.jar" includeantruntime="false" fork="${fork}"/>
+    </target>
+
+    <target name="run.examples">
+        <java classname="HelloWorldProgram" dir="classes" fork="${fork}">
+             <classpath>
+                <pathelement location="jars/X3DJSAIL.3.3.full.jar"/>
+                <pathelement path="classes"/>
+             </classpath>
+        </java>
+    </target>
+
+    <target name="view.javadoc.local" description="view local javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible.  other Ant approachs have to be customized for each OS -->
+    </target>
+
+    <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
+        <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
+    </target>
+
+	<antversion property="antversionOK" atleast="1.10.4"/>
+	
+	<target name="antVersionCheck" unless="antversionOK">
+		<echo message="${ant.version} must be at least 1.10.4 to run build.xml test.junit5 for X3DJSAIL"/>
+	</target>
+	
+	<target name="test.junit5.directly" description="Test X3DJSAIL using JUnit5, direct invocation of code" depends="antVersionCheck">
+        <java classname="org.web3d.x3d.tests.FieldObjectTests" fork="${fork}">
+             <classpath>
+                <pathelement location="${java.classes.dir}" />
+                <pathelement location="${env.ANT_HOME}/lib/junit-platform-commons.jar" />
+                <pathelement location="${env.ANT_HOME}/lib/junit-platform-engine.jar" />
+                <pathelement location="${env.ANT_HOME}/lib/junit-platform-launcher.jar" />
+                <pathelement location="${env.ANT_HOME}/lib/opentest4j-1.1.0.jar" />
+                <pathelement location="${env.ANT_HOME}/lib/jupiter/junit-jupiter-api.jar" />
+                <pathelement location="${env.ANT_HOME}/lib/jupiter/junit-jupiter-engine.jar" />
+             </classpath>
+        </java>
+	</target>
+	
+	<target name="test.junit5.ant" description="Test X3DJSAIL using JUnit5 via Ant junitlauncher" depends="antVersionCheck">
+		<!-- https://junit.org/junit5/docs/current/user-guide/#running-tests-build-ant -->
+		<!-- https://ant.apache.org/manual/Tasks/junitlauncher.html -->
+		<!-- junit5 requires Ant version 1.10.4 -->
+		<!-- Note that junit jars go in ANT_HOME/lib, not in project, for example C:\apache-ant-1.10.4\lib -->
+		
+		<echo message="==========================================="/>
+		<echo message="ant ${ant.version} build.xml test.junit5 for X3DJSAIL"/>
+		
+		<!-- Project property: jars/junit5 folder for *.jar -->
+		
+		<path id="junit.engine.jupiter.classpath">
+			<pathelement location="${env.ANT_HOME}/lib" />
+			<pathelement location="${env.ANT_HOME}/lib/jupiter" />
+			<pathelement location="${java.classes.dir}" />
+		</path>
+		
+		<property name="output.dir" value="classes"/>
+		
+		<!-- The location where you have your compiled classes ${src.org.web3d.x3d.tests}-->
+		<!-- 
+		<echo message="$test.classpath=${test.classpath}"/>
+		... -->
+		<echo message="compiling tests..."/>
+		<mkdir     dir="${java.dir}/classes/org/web3d/x3d/tests"/>
+		<javac destdir="${java.dir}/classes/org/web3d/x3d/tests" 
+			    srcdir=    "${java.dir}/src/org/web3d/x3d/tests" debug="on" verbose="${javac.verbose}" 
+			classpath="${junit.engine.jupiter.classpath}" includeantruntime="false" failonerror="false" fork="${fork}"/>
+
+		<echo message="running tests..."/>
+		<junitlauncher>
+			<!--<classpath refid="junit.engine.jupiter.classpath"/>-->
+            <classpath>
+                <pathelement location="${classes.org.web3d.x3d.tests}"/><!-- java.classes.dir -->
+                <pathelement location="${java.classes.dir}" />
+            </classpath>
+			<test name="org.web3d.x3d.tests.FieldObjectTests" methods="fieldObjectInitializationsTest" haltOnFailure="true"/>
+                <!--
+            <testclasses outputdir="${output.dir}">
+                <fileset dir="${classes.org.web3d.x3d.tests}"/>
+				<listener type="legacy-brief" sendSysOut="true"/>
+                <listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/>
+            </testclasses>
+				-->
+		</junitlauncher>
+
+		<echo message="junitlauncher task complete"/>
+		<echo message="==========================================="/>
+    </target>
+
+    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
+        <echo message="==========================================="/>
+        <echo message="ant nashorn/build.xml test.nashorn"/>
+        <ant antfile="nashorn/build.xml" target="test.nashorn"/>
+        <echo message="==========================================="/>
+    </target>
+	
+</project>
