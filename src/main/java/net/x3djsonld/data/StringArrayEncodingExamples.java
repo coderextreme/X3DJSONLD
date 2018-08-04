@@ -105,23 +105,23 @@ public class StringArrayEncodingExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("StringArrayEncodingExamples.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Demonstrate simple X3D MFString (string array) encoding."))
-    .addMeta(new metaObject().setName("created").setContent("27 May 2017"))
-    .addMeta(new metaObject().setName("modified").setContent("27 May 2017"))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("reference").setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
-    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
-    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
-    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
-    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
-    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
-    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("StringArrayEncodingExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Demonstrate simple X3D MFString (string array) encoding."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("27 May 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("27 May 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject("EntryView").setDescription("Hello MFString syntax"))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.6f,1.0f,0.8f})))
@@ -129,9 +129,9 @@ public class StringArrayEncodingExamples
       .setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Three\" \"\" \"He said, \\\"Immel did it!\\\"\""))
         .addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
         .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-        .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setStyle("BOLD")))
+        .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setStyle("BOLD")))
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.6f,0.4f,0.2f}))))));
+        .setMaterial(new MaterialObject().setDiffuseColor(0.6f,0.4f,0.2f)))));
     }
 	// end of initialize() method
 
@@ -176,7 +176,7 @@ public class StringArrayEncodingExamples
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

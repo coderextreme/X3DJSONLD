@@ -86,34 +86,34 @@ public class CloudsProcedural4
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.2")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_2)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
-    .addMeta(new metaObject().setName("creator").setContent("Capt Darren W. Murphy"))
-    .addMeta(new metaObject().setName("created").setContent("1 November 2007"))
-    .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
-    .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-    .addMeta(new metaObject().setName("TODO").setContent("fix links")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("CloudsProcedural4.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Capt Darren W. Murphy"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("1 November 2007"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("14 January 2014"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../../license.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TODO         ).setContent("fix links")))
   .setScene(new SceneObject()
     .addComments(" A png image file for the cloud texture must be designated in the ecmascript node. ")
-    .addChild(new ViewpointObject().setDescription("Main").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,1.57f})).setPosition(new SFVec3fObject(new float[] {50000.0f,1000.0f,42000.0f})).setJump(false))
-    .addChild(new ViewpointObject().setDescription("Light House Tower").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,1.3f})).setPosition(new SFVec3fObject(new float[] {45000.0f,1290.0f,44000.0f})).setJump(false))
-    .addChild(new ViewpointObject().setDescription("centerWest").setOrientation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,2.5f})).setPosition(new SFVec3fObject(new float[] {48000.0f,1000.0f,20000.0f})).setJump(false))
+    .addChild(new ViewpointObject().setDescription("Main").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(50000.0f,1000.0f,42000.0f).setJump(false))
+    .addChild(new ViewpointObject().setDescription("Light House Tower").setOrientation(0.0f,1.0f,0.0f,1.3f).setPosition(45000.0f,1290.0f,44000.0f).setJump(false))
+    .addChild(new ViewpointObject().setDescription("centerWest").setOrientation(0.0f,1.0f,0.0f,2.5f).setPosition(48000.0f,1000.0f,20000.0f).setJump(false))
     .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})).setSkyColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})))
-    .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {-1.0f,0.0f,0.0f})).setAmbientIntensity(1f).setGlobal(true))
+    .addChild(new DirectionalLightObject().setDirection(-1.0f,0.0f,0.0f).setAmbientIntensity(1f).setGlobal(true))
     .addChild(new GroupObject("Terrain")
-      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {25000.0f,0.0f,25000.0f})).setScale(new SFVec3fObject(new float[] {50.0f,50.0f,50.0f}))
+      .addChild(new TransformObject().setTranslation(25000.0f,0.0f,25000.0f).setScale(50.0f,50.0f,50.0f)
         .addChild(new InlineObject().setUrl(new MFStringObject("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
-      .addChild(new TransformObject().setRotation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57f})).setTranslation(new SFVec3fObject(new float[] {25000.0f,0.0f,25000.0f}))
+      .addChild(new TransformObject().setRotation(1.0f,0.0f,0.0f,1.57f).setTranslation(25000.0f,0.0f,25000.0f)
         .addChild(new ShapeObject()
-          .setGeometry(new Rectangle2DObject().setSize(new SFVec2fObject(new float[] {77000.0f,55000.0f})))
+          .setGeometry(new Rectangle2DObject().setSize(77000.0f,55000.0f))
           .setAppearance(new AppearanceObject()
             .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
     .addChild(new GroupObject("Placemarks")
-      .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {45000.0f,30.0f,44000.0f})).setScale(new SFVec3fObject(new float[] {50.0f,50.0f,50.0f}))
+      .addChild(new TransformObject().setTranslation(45000.0f,30.0f,44000.0f).setScale(50.0f,50.0f,50.0f)
         .addChild(new InlineObject().setUrl(new MFStringObject("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
     .addChild(new GroupObject("Clouds")
       .addChild(new TransformObject("Cumulus"))
@@ -507,7 +507,7 @@ public class CloudsProcedural4
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
           .addChild(new TransformObject().setUSE("Cirrus")))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
-      .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {-1.0f,-1.0f,0.0f})).setAmbientIntensity(1f).setColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})).setGlobal(true))));
+      .addChild(new DirectionalLightObject().setDirection(-1.0f,-1.0f,0.0f).setAmbientIntensity(1f).setColor(1.0f,0.0f,0.0f).setGlobal(true))));
     }
 	// end of initialize() method
 
@@ -552,7 +552,7 @@ public class CloudsProcedural4
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

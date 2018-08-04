@@ -77,26 +77,26 @@ public class flipp
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("generator").setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
-    .addMeta(new metaObject().setName("title").setContent("flipp.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("flipper flopping around"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("Yvonne Jung, metadata by John Carlson"))
-    .addMeta(new metaObject().setName("translated").setContent("13 March 2016"))
-    .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("flipp.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("flipper flopping around"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Yvonne Jung, metadata by John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED   ).setContent("13 March 2016"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject("cam0").setDescription("cam0 description").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,800.0f})))
-    .addChild(new ViewpointObject("cam1").setDescription("cam1 description").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,2000.0f})))
-    .addChild(new ViewpointObject("cam2").setDescription("cam2 description").setPosition(new SFVec3fObject(new float[] {0.0f,200.0f,1000.0f})))
+    .addChild(new ViewpointObject("cam0").setDescription("cam0 description").setPosition(0.0f,0.0f,800.0f))
+    .addChild(new ViewpointObject("cam1").setDescription("cam1 description").setPosition(0.0f,0.0f,2000.0f))
+    .addChild(new ViewpointObject("cam2").setDescription("cam2 description").setPosition(0.0f,200.0f,1000.0f))
     .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})).setSkyColor(new MFColorObject(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})).setGroundAngle(new float[] {0.9f,1.5f,1.57f}).setSkyAngle(new float[] {0.9f,1.5f,1.57f}))
     .addChild(new NavigationInfoObject("user01").setSpeed(50f))
     .addChild(new FogObject())
-    .addChild(new TransformObject("trans").setRotation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,0.78f}))
+    .addChild(new TransformObject("trans").setRotation(1.0f,0.0f,0.0f,0.78f)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject("mat").setDiffuseColor(new SFColorObject(new float[] {0.337255f,0.4f,0.788235f})).setAmbientIntensity(0.508497f).setSpecularColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f}))))
+          .setMaterial(new MaterialObject("mat").setDiffuseColor(0.337255f,0.4f,0.788235f).setAmbientIntensity(0.508497f).setSpecularColor(1.0f,1.0f,1.0f)))
         .setGeometry(new IndexedFaceSetObject().setCreaseAngle(2f).setCoordIndex(getIndexedFaceSet_5_17_coordIndex())
           .setCoord(new CoordinateObject("pointList").setPoint(getpointList_6_17_point())))))
     .addChild(new TimeSensorObject("ts").setCycleInterval(2).setLoop(true))
@@ -284,7 +284,7 @@ public class flipp
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

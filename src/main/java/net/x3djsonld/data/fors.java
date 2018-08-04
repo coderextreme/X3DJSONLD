@@ -73,14 +73,14 @@ public class fors
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-    .addMeta(new metaObject().setName("title").setContent("force.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
-    .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John W Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("December 13 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("force.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("beginnings of a force directed graph in 3D"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("node")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -92,13 +92,13 @@ public class fors
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
-          .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {1.0f,0.0f,0.0f}))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
+          .addChild(new TransformObject().setTranslation(1.0f,0.0f,0.0f)
             .addChild(new ShapeObject()
               .setGeometry(new TextObject().setString(new MFStringObject("\"Node\""))
-                .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(5f)))
+                .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(5f)))
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.0f,1.0f})))))))
+                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
         .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
         .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 "\n" + 
@@ -126,7 +126,7 @@ public class fors
         .addChild(new ShapeObject()
           .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f})))))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
         .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -157,8 +157,8 @@ public class fors
             .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
             .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB"))))
         .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-    .addChild(new TransformObject("HoldsContent").setScale(new SFVec3fObject(new float[] {0.1f,0.1f,0.1f}))
-      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMinPosition(new SFVec2fObject(new float[] {-50.0f,-50.0f})).setMaxPosition(new SFVec2fObject(new float[] {50.0f,50.0f})))
+    .addChild(new TransformObject("HoldsContent").setScale(0.1f,0.1f,0.1f)
+      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMinPosition(-50.0f,-50.0f).setMaxPosition(50.0f,50.0f))
       .addChild(new ProtoInstanceObject("nodeA", "node").setDEF("nodeA").setName("node")
         .addFieldValue(new fieldValueObject().setName("position").setValue("0.0 0.0 0.0")))
       .addChild(new ProtoInstanceObject("nodeB", "node").setDEF("nodeB").setName("node")
@@ -212,7 +212,7 @@ public class fors
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

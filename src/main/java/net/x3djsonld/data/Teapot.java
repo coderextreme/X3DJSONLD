@@ -86,31 +86,31 @@ public class Teapot
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("description").setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("creator").setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("created").setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("modified").setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("generator").setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("generator").setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName("license").setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
   .setScene(new SceneObject()
-    .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.3f,0.3f,0.3f}))
+    .addChild(new TransformObject().setScale(0.3f,0.3f,0.3f)
       .addChild(new GroupObject("MooringBuoyWithHook")
         .addChild(new TransformObject("Hook")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject("Black_mat").setDiffuseColor(new SFColorObject(new float[] {0.0f,0.0f,0.0f}))))
+              .setMaterial(new MaterialObject("Black_mat").setDiffuseColor(0.0f,0.0f,0.0f)))
             .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.524f).setColorIndex(new int[] {}).setNormalIndex(new int[] {}).setTexCoordIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_14_coordIndex())
               .setCoord(new CoordinateObject().setPoint(getCoordinate_8_14_point())))))
         .addChild(new TransformObject("MooringBuoy")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject("default_mat").setDiffuseColor(new SFColorObject(new float[] {0.50196f,0.50196f,0.50196f})).setAmbientIntensity(1.0f).setShininess(1.0f))
+              .setMaterial(new MaterialObject("default_mat").setDiffuseColor(0.50196f,0.50196f,0.50196f).setAmbientIntensity(1.0f).setShininess(1.0f))
               .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg\""))))
             .setGeometry(new IndexedFaceSetObject().setCreaseAngle(1.047f).setColorIndex(new int[] {}).setNormalIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_21_coordIndex()).setTexCoordIndex(getIndexedFaceSet_7_21_texCoordIndex())
               .setCoord(new CoordinateObject().setPoint(getCoordinate_8_21_point()))
@@ -345,7 +345,7 @@ public class Teapot
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

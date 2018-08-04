@@ -69,14 +69,14 @@ public class text
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-    .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("test \\n text"))
-    .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John W Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("December 13 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("text.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("test \\n text"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new SceneObject()
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
@@ -142,7 +142,7 @@ public class text
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

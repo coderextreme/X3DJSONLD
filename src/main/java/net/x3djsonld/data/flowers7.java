@@ -71,24 +71,24 @@ public class flowers7
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
     .addComponent(new componentObject().setName("Shaders").setLevel(1))
     .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("flowers7.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a flower")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("flowers7.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a flower")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
     .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
     .addChild(new BackgroundObject("background").setBackUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\"")))
-    .addChild(new ViewpointObject().setDescription("Transparent rose").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,40.0f})))
+    .addChild(new ViewpointObject().setDescription("Transparent rose").setPosition(0.0f,0.0f,40.0f))
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {.5f,.5f,.5f})).setDiffuseColor(new SFColorObject(new float[] {.7f,.7f,.7f})))
+          .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
           .setTexture(new ComposedCubeMapTextureObject("texture")
             .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")))
             .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")))
@@ -162,7 +162,7 @@ public class flowers7
       .addField(new fieldObject().setAccessType("inputOutput").setName("bottom").setType("MFString"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFInt32").setValue("-1")))
-    .addComments("*** warning: very large comment found (1362 characters), truncated to 1000 characters").addComments(new String[] {"",
+    .addComments(new String[] {"",
 "            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>",
 "            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>",
@@ -173,7 +173,10 @@ public class flowers7
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>",
-"            <ROUTE fromNod"})
+"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
+"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"})
     .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -280,7 +283,7 @@ public class flowers7
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
