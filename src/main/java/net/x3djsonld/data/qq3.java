@@ -77,44 +77,44 @@ public class qq3
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("qq3.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("translator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("11 Jan 2015"))
-    .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-    .addMeta(new metaObject().setName("description").setContent("12 extrusions to test prototype expander"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("manual")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("qq3.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR   ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("11 Jan 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("05 May 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("12 extrusions to test prototype expander"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/x3d/qq3.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("Process")
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
           .addComments(" left ")
-          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
+          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject("ShapeLeftDown")
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.7f,1.0f,0.0f}))))
+                .setMaterial(new MaterialObject().setDiffuseColor(0.7f,1.0f,0.0f)))
               .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})))))
           .addComments(" right ")
-          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
+          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject("ShapeUpRight")
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.7f,1.0f}))))
+                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.7f,1.0f)))
               .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3fObject(new float[] {1.5f,0.0f,0.0f,2.5f,0.0f,0.0f})))))
           .addComments(" up ")
-          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
+          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject().setUSE("ShapeUpRight")))
           .addComments(" down ")
-          .addChild(new TransformObject().setScale(new SFVec3fObject(new float[] {0.5f,0.5f,0.5f}))
+          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject().setUSE("ShapeLeftDown"))))))
-    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(new SFVec3fObject(new float[] {0.0f,5.0f,12.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,-0.4f})))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-2.5f,0.0f}))
+    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(0.0f,5.0f,12.0f).setOrientation(1.0f,0.0f,0.0f,-0.4f))
+    .addChild(new TransformObject().setTranslation(0.0f,-2.5f,0.0f)
       .addChild(new ProtoInstanceObject().setName("Process")))
     .addChild(new TransformObject()
       .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.5f,0.0f}))
+    .addChild(new TransformObject().setTranslation(0.0f,2.5f,0.0f)
       .addChild(new ProtoInstanceObject().setName("Process"))));
     }
 	// end of initialize() method
@@ -160,7 +160,7 @@ public class qq3
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

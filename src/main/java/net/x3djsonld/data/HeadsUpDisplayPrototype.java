@@ -85,17 +85,17 @@ public class HeadsUpDisplayPrototype
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("9 November 2003"))
-    .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
-    .addMeta(new metaObject().setName("subject").setContent("HUD Heads Up Display"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("9 November 2003"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("14 January 2014"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT      ).setContent("HUD Heads Up Display"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../../license.html")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -107,7 +107,7 @@ public class HeadsUpDisplayPrototype
         .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
-          .addChild(new ProximitySensorObject("WhereSensor").setSize(new SFVec3fObject(new float[] {1000000000.0f,1000000000.0f,1000000000.0f}))
+          .addChild(new ProximitySensorObject("WhereSensor").setSize(1000000000.0f,1000000000.0f,1000000000.0f)
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("center").setProtoField("locationOffset"))))
           .addChild(new TransformObject("FixedLocation")
@@ -115,7 +115,7 @@ public class HeadsUpDisplayPrototype
               .addChild(new TransformObject("LocationOffset")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("translation").setProtoField("locationOffset")))
-                .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,0.0f,-10.0f}))
+                .addChild(new TransformObject().setTranslation(0.0f,0.0f,-10.0f)
                   .addChild(new GroupObject()
                     .setIS(new ISObject()
                       .addConnect(new connectObject().setNodeField("children").setProtoField("children"))))
@@ -187,9 +187,9 @@ public class HeadsUpDisplayPrototype
     .addChild(new AnchorObject().setDescription("HeadsUpDisplayExample").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"HeadsUpDisplayExample.x3d\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d\" \"HeadsUpDisplayExample.wrl\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl\""))
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,1.0f})).setEmissiveColor(new SFColorObject(new float[] {0.0f,1.0f,1.0f}))))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,1.0f).setEmissiveColor(0.0f,1.0f,1.0f)))
         .setGeometry(new TextObject().setString(new MFStringObject("\"HeadsUpDisplayPrototype.x3d\" \"is a Prototype definition file.\" \"\" \"To see an example scene using this node\" \"click this text to view\" \"HeadsUpDisplayExample.x3d\""))
-          .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8f))))));
+          .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f))))));
     }
 	// end of initialize() method
 
@@ -234,7 +234,7 @@ public class HeadsUpDisplayPrototype
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

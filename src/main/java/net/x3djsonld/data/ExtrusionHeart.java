@@ -77,23 +77,23 @@ public class ExtrusionHeart
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("ExtrusionHeart.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Simple extrusion of a Valentine heart."))
-    .addMeta(new metaObject().setName("creator").setContent("Class participants in course Introduction to VRML/X3D."))
-    .addMeta(new metaObject().setName("created").setContent("14 February 2001"))
-    .addMeta(new metaObject().setName("modified").setContent("27 November 2015"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("ExtrusionHeart.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Simple extrusion of a Valentine heart."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Class participants in course Introduction to VRML/X3D."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("14 February 2001"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("27 November 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Extrusion Heart").setPosition(new SFVec3fObject(new float[] {0.0f,-4.0f,0.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,1.57f})))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-0.5f,0.0f}))
+    .addChild(new ViewpointObject().setDescription("Extrusion Heart").setPosition(0.0f,-4.0f,0.0f).setOrientation(1.0f,0.0f,0.0f,1.57f))
+    .addChild(new TransformObject().setTranslation(0.0f,-0.5f,0.0f)
       .addChild(new ShapeObject()
         .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.1f,0.0f,0.0f,0.5f,0.0f,0.0f,0.9f,0.0f,0.0f,1.0f,0.0f})).setCrossSection(new MFVec2fObject(new float[] {0.0f,0.8f,0.2f,1.0f,0.7f,0.95f,1.0f,0.5f,0.8f,0.0f,0.5f,-0.3f,0.0f,-0.7f,-0.5f,-0.3f,-0.8f,0.0f,-1.0f,0.5f,-0.7f,0.95f,-0.2f,1.0f,0.0f,0.8f})).setScale(new MFVec2fObject(new float[] {0.01f,0.01f,0.8f,0.8f,1.0f,1.0f,0.8f,0.8f,0.01f,0.01f})).setCreaseAngle(3.14159f).setSolid(false))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.8f,0.3f,0.3f})))))));
+          .setMaterial(new MaterialObject().setDiffuseColor(0.8f,0.3f,0.3f))))));
     }
 	// end of initialize() method
 
@@ -138,7 +138,7 @@ public class ExtrusionHeart
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

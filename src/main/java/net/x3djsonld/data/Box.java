@@ -65,16 +65,16 @@ public class Box
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("box.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("3 boxes")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("box.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("3 boxes")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Cubes on Fire").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,12.0f})))
+    .addChild(new ViewpointObject().setDescription("Cubes on Fire").setPosition(0.0f,0.0f,12.0f))
     .addChild(new ProtoDeclareObject().setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("xtranslation").setType("SFVec3f").setValue("0 0 0"))
@@ -82,7 +82,7 @@ public class Box
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -95,7 +95,7 @@ public class Box
           .addChild(new ShapeObject()
             .setGeometry(new CylinderObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -116,10 +116,10 @@ public class Box
       .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
         .addChild(new ShapeObject("box")
-          .setGeometry(new BoxObject().setSize(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f})))
+          .setGeometry(new BoxObject().setSize(1.0f,1.0f,1.0f))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f})))))))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.0f,0.0f}))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))))
+    .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
       .addChild(new ShapeObject().setUSE("box"))));
     }
 	// end of initialize() method
@@ -165,7 +165,7 @@ public class Box
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

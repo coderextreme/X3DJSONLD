@@ -98,21 +98,21 @@ public class HeadsUpDisplayExample
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("HeadsUpDisplayExample.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."))
-    .addMeta(new metaObject().setName("creator").setContent("Leonard Daly and Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("15 July 2006"))
-    .addMeta(new metaObject().setName("modified").setContent("24 October 2016"))
-    .addMeta(new metaObject().setName("reference").setContent("HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
-    .addMeta(new metaObject().setName("rights").setContent("Copyright 2006, Daly Realism and Don Brutzman"))
-    .addMeta(new metaObject().setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("HeadsUpDisplayExample.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Leonard Daly and Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("15 July 2006"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("24 October 2016"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("http://X3dGraphics.com"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_RIGHTS       ).setContent("Copyright 2006, Daly Realism and Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT      ).setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addComments(" Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n ")
     .addChild(new ExternProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(new MFStringObject("\"HeadsUpDisplayPrototype.x3d#HeadsUpDisplay\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay\" \"HeadsUpDisplayPrototype.wrl#HeadsUpDisplay\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay\""))
@@ -129,9 +129,9 @@ public class HeadsUpDisplayExample
       .addFieldValue(new fieldValueObject().setName("children")
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"HUD text stays fixed\" \"while user navigates\""))
-            .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.3f)))
+            .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(0.3f)))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.894118f,0.819608f,1.0f})))))))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.894118f,0.819608f,1.0f))))))
     .addChild(new InlineObject().setUrl(new MFStringObject("\"../HelloWorld.x3d\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d\" \"../HelloWorld.wrl\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl\""))));
     }
 	// end of initialize() method
@@ -177,7 +177,7 @@ public class HeadsUpDisplayExample
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

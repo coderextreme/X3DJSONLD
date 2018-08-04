@@ -84,31 +84,31 @@ public class TextExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("TextExamples.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("7 April 2001"))
-    .addMeta(new metaObject().setName("modified").setContent("26 April 2016"))
-    .addMeta(new metaObject().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
-    .addMeta(new metaObject().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("TextExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Show different escape-character text examples for embedded quotation marks."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("7 April 2001"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("26 April 2016"))
+    .addMeta(new metaObject().setName(metaObject.NAME_WARNING      ).setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
+    .addMeta(new metaObject().setName(metaObject.NAME_WARNING      ).setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,2.0f,0.0f}))
+    .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"Compare special character escaping\""))
-          .setFontStyle(new FontStyleObject("testFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8f)))
+          .setFontStyle(new FontStyleObject("testFontStyle").setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f)))
         .setAppearance(new AppearanceObject("LightBlueAppearance")
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.1f,0.7f,0.7f}))))))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {-3.0f,0.0f,0.0f}))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.1f,0.7f,0.7f)))))
+    .addChild(new TransformObject().setTranslation(-3.0f,0.0f,0.0f)
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
           .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
         .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance"))))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {3.0f,0.0f,0.0f}))
+    .addChild(new TransformObject().setTranslation(3.0f,0.0f,0.0f)
       .addChild(new ShapeObject()
         .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
           .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
@@ -157,7 +157,7 @@ public class TextExamples
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

@@ -106,22 +106,22 @@ public class CameraPrototypes
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.2")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_2)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("CameraPrototypes.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman and Jeff Weekley"))
-    .addMeta(new metaObject().setName("created").setContent("16 March 2009"))
-    .addMeta(new metaObject().setName("modified").setContent("25 October 2016"))
-    .addMeta(new metaObject().setName("TODO").setContent("Schematron rules, backed up by initialize() checks"))
-    .addMeta(new metaObject().setName("reference").setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
-    .addMeta(new metaObject().setName("subject").setContent("Camera nodes for Viewpoint navigation control"))
-    .addMeta(new metaObject().setName("reference").setContent("CameraExamples.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("CameraPrototypes.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Don Brutzman and Jeff Weekley"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("16 March 2009"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("25 October 2016"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TODO         ).setContent("Schematron rules, backed up by initialize() checks"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT      ).setContent("Camera nodes for Viewpoint navigation control"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("CameraExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addComments(" =============== Camera ============== ")
     .addChild(new ProtoDeclareObject().setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.")
@@ -972,9 +972,9 @@ public class CameraPrototypes
       .addChild(new TransformObject()
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"CameraPrototypes.x3d\" \"defines multiple prototype nodes\" \"\" \"Click on this text to see\" \"CameraExamples.x3d scene\""))
-            .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
+            .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE)))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,0.2f}))))))));
+            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,0.2f)))))));
     }
 	// end of initialize() method
 
@@ -1019,7 +1019,7 @@ public class CameraPrototypes
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

@@ -70,24 +70,24 @@ public class geobubbles
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
     .addComponent(new componentObject().setName("Geospatial").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("geo bubbles")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("geobubbles.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("geo bubbles")))
   .setScene(new SceneObject()
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
-    .addChild(new GeoViewpointObject("Tour").setDescription("Tour Views").setPosition(new SFVec3dObject(new double[] {0.0f,0.0f,4.0f})).setOrientation(new SFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f})))
+    .addChild(new GeoViewpointObject("Tour").setDescription("Tour Views").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
     .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject())
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {0.5f,0.5f,0.5f})).setDiffuseColor(new SFColorObject(new float[] {0.7f,0.7f,0.7f}))))))
+          .setMaterial(new MaterialObject().setSpecularColor(0.5f,0.5f,0.5f).setDiffuseColor(0.7f,0.7f,0.7f)))))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new GeoPositionInterpolatorObject("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3dObject(new float[] {0.0015708f,0.0f,4.0f,0.0f,0.0015708f,4.0f})))
     .addChild(new ScriptObject("RandomTourTime").setSourceCode("ecmascript:" + "\n" + 
@@ -159,7 +159,7 @@ public class geobubbles
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

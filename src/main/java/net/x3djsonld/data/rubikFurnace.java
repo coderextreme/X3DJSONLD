@@ -65,16 +65,16 @@ public class rubikFurnace
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("rubikFurnace.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a green rubik cube")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("rubikFurnace.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a green rubik cube")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,12.0f})))
+    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(0.0f,0.0f,12.0f))
     .addChild(new ProtoDeclareObject().setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("xtranslation").setType("SFVec3f").setValue("0.0 0.0 0.0"))
@@ -82,7 +82,7 @@ public class rubikFurnace
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -95,7 +95,7 @@ public class rubikFurnace
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -119,7 +119,7 @@ public class rubikFurnace
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -143,7 +143,7 @@ public class rubikFurnace
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f})))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
@@ -164,9 +164,9 @@ public class rubikFurnace
       .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
         .addChild(new ShapeObject()
-          .setGeometry(new BoxObject().setSize(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f})))
+          .setGeometry(new BoxObject().setSize(1.0f,1.0f,1.0f))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,1.0f,0.0f}))))))));
+            .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f)))))));
     }
 	// end of initialize() method
 
@@ -211,7 +211,7 @@ public class rubikFurnace
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

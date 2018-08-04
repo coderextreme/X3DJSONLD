@@ -69,22 +69,22 @@ public class arc2
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("arc1.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("arc1.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Lost, Doug Sanden I think"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
     .addChild(new TransformObject("G1")
       .addChild(new TransformObject("DECLpoint_INSTANCE_node")
         .addChild(new ShapeObject()
           .setGeometry(new SphereObject().setRadius(0.1f))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
+            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
         .addChild(new PositionInterpolatorObject("DECLpoint_INSTANCE_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
         .addChild(new ScriptObject("DECLpoint_INSTANCE_MB1").setSourceCode("\n" + 
 "\n" + 
@@ -110,7 +110,7 @@ public class arc2
         .addChild(new ShapeObject()
           .setGeometry(new SphereObject().setRadius(0.1f))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,0.0f,0.0f})))))
+            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
         .addChild(new PositionInterpolatorObject("DECLpoint_INSTANCE1000_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
         .addChild(new ScriptObject("DECLpoint_INSTANCE1000_MB1").setSourceCode("\n" + 
 "\n" + 
@@ -135,7 +135,7 @@ public class arc2
       .addChild(new TransformObject("rotscaleC1")
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f})).setTransparency(0.5f)))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(0.5f)))
           .setGeometry(new CylinderObject().setRadius(0.05f)))))
     .addChild(new ScriptObject("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
 "\n" + 
@@ -234,7 +234,7 @@ public class arc2
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

@@ -65,16 +65,16 @@ public class rubikOnFire
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("rubikOnFire.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a white rubik cube")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("rubikOnFire.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a white rubik cube")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,12.0f})))
+    .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(0.0f,0.0f,12.0f))
     .addChild(new ProtoDeclareObject().setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("xtranslation").setType("SFVec3f").setValue("0.0 0.0 0.0"))
@@ -88,7 +88,7 @@ public class rubikOnFire
             .setIS(new ISObject()
               .addConnect(new connectObject().setNodeField("geometry").setProtoField("myShape")))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {1.0f,1.0f,1.0f}))))))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f)))))))
     .addChild(new ProtoDeclareObject().setName("three")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("ytranslation").setType("SFVec3f").setValue("0.0 0.0 0.0"))
@@ -155,7 +155,7 @@ public class rubikOnFire
     .addChild(new ProtoInstanceObject().setName("twentyseven")
       .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"))
       .addFieldValue(new fieldValueObject().setName("myShape")
-        .addChild(new BoxObject().setSize(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f}))))));
+        .addChild(new BoxObject().setSize(1.0f,1.0f,1.0f)))));
     }
 	// end of initialize() method
 
@@ -200,7 +200,7 @@ public class rubikOnFire
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

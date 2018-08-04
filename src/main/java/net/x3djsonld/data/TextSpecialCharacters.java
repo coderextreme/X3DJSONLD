@@ -89,22 +89,22 @@ public class TextSpecialCharacters
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("TextSpecialCharacters.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("12 July 2008"))
-    .addMeta(new metaObject().setName("modified").setContent("2 April 2017"))
-    .addMeta(new metaObject().setName("reference").setContent("Character entity references in HTML 4"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.w3.org/TR/REC-html40/sgml/entities.html"))
-    .addMeta(new metaObject().setName("rights").setContent("Copyright (c) Don Brutzman and Leonard Daly, 2008"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("TextSpecialCharacters.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("12 July 2008"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("2 April 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("Character entity references in HTML 4"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("http://www.w3.org/TR/REC-html40/sgml/entities.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_RIGHTS       ).setContent("Copyright (c) Don Brutzman and Leonard Daly, 2008"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.0f,1.0f,1.0f})))
-    .addChild(new ViewpointObject().setDescription("Default View").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,15.0f})))
+    .addChild(new ViewpointObject().setDescription("Default View").setPosition(0.0f,0.0f,15.0f))
     .addChild(new ShapeObject()
       .addComments(" Empty string \"\" means to skip a line ")
       .addComments(" The ampersand escape characters are based on XML rules ")
@@ -115,9 +115,9 @@ public class TextSpecialCharacters
       .addComments(" backslash \\ is used as escape character for \" (and itself) in X3D ")
       .addComments(" character entities are listed in HTML specification and are good for any XML ")
       .setGeometry(new TextObject("DefaultText").setString(new MFStringObject("\"Character entity substitutions:\"         \"empty string \\\"\\\" skips a line:\"         \"\"         \"apostrophe  '  is &apos;\"          \"ampersand & is &amp;\"         \"quote mark  \\\"  is &quot;\"         \"backslash \\\\ is X3D escape character\"         \"double backslash \\\\\\\\ is X3D backslash \\\\ character\"         \"Pi Π is &#928; XML character entity\""))
-        .setFontStyle(new FontStyleObject("CenteredFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
+        .setFontStyle(new FontStyleObject("CenteredFontStyle").setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE)))
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject("DefaultMaterial").setDiffuseColor(new SFColorObject(new float[] {0.2f,0.2f,0.2f}))))));
+        .setMaterial(new MaterialObject("DefaultMaterial").setDiffuseColor(0.2f,0.2f,0.2f)))));
     }
 	// end of initialize() method
 
@@ -162,7 +162,7 @@ public class TextSpecialCharacters
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

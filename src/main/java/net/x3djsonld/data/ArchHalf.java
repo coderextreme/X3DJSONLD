@@ -84,25 +84,25 @@ public class ArchHalf
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("ArchHalf.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
-    .addMeta(new metaObject().setName("creator").setContent("Michele Foti, Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("15 December 2014"))
-    .addMeta(new metaObject().setName("modified").setContent("16 February 2016"))
-    .addMeta(new metaObject().setName("reference").setContent("ArchModelingDiagrams.pdf"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("ArchHalf.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Michele Foti, Don Brutzman"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("15 December 2014"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("16 February 2016"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("ArchModelingDiagrams.pdf"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE    ).setContent("https://en.wikipedia.org/wiki/Arch"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new ShapeObject("Arch")
       .addComments(" note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly ")
       .setGeometry(new IndexedFaceSetObject("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(getArchIndex_4_12_coordIndex())
         .setCoord(new CoordinateObject("ArchChord").setPoint(getArchChord_5_12_point())))
       .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject("MaterialNode").setDiffuseColor(new SFColorObject(new float[] {1.0f,0.75f,0.25f}))))));
+        .setMaterial(new MaterialObject("MaterialNode").setDiffuseColor(1.0f,0.75f,0.25f)))));
     }
 	// end of initialize() method
 
@@ -195,7 +195,7 @@ public class ArchHalf
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

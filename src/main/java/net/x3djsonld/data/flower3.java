@@ -38,16 +38,16 @@ public class flower3
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {0.0f,-0.8f,-0.2f})).setIntensity(0.5f))
+    .addChild(new DirectionalLightObject().setDirection(0.0f,-0.8f,-0.2f).setIntensity(0.5f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.000f,1.000f,1.000f})))
-    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,50.0f})))
-    .addChild(new TransformObject("OrbitTransform").setTranslation(new SFVec3fObject(new float[] {8.0f,0.0f,0.0f}))
+    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0f,0.0f,50.0f))
+    .addChild(new TransformObject("OrbitTransform").setTranslation(8.0f,0.0f,0.0f)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.0f,0.5f,1.0f})).setSpecularColor(new SFColorObject(new float[] {0.0f,0.5f,1.0f}))))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.5f,1.0f).setSpecularColor(0.0f,0.5f,1.0f)))
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new CoordinateObject("OrbitCoordinates")))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
@@ -184,7 +184,7 @@ public class flower3
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

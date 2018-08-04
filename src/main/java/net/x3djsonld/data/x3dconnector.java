@@ -68,35 +68,35 @@ public class x3dconnector
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
-    .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("x3dconnectorProto"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Lost, Doug Sanden I think"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,5.0f})))
+    .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
     .addChild(new TransformObject("G1")
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.7f,0.2f,0.2f}))))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.7f,0.2f,0.2f)))
         .setGeometry(new SphereObject().setRadius(.1f)))
       .addChild(new PlaneSensorObject("PS1").setDescription("Grab to move"))
       .addChild(new ROUTEObject().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-    .addChild(new TransformObject("G2").setTranslation(new SFVec3fObject(new float[] {1.0f,-1.0f,.01f}))
+    .addChild(new TransformObject("G2").setTranslation(1.0f,-1.0f,.01f)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.2f}))))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.2f)))
         .setGeometry(new SphereObject().setRadius(.1f)))
-      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(new SFVec3fObject(new float[] {1.0f,-1.0f,.01f})))
+      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(1.0f,-1.0f,.01f))
       .addChild(new ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
     .addChild(new TransformObject("transC1")
       .addChild(new TransformObject("rotscaleC1")
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(new SFColorObject(new float[] {0.2f,0.7f,0.7f}))))
+            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(0.2f,0.7f,0.7f)))
           .setGeometry(new CylinderObject().setRadius(.05f)))))
     .addChild(new ProtoDeclareObject().setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -217,7 +217,7 @@ public class x3dconnector
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

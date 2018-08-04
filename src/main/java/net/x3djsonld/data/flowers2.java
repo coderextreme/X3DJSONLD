@@ -86,22 +86,22 @@ public class flowers2
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("flowers2.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("flowers2.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
     .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
-    .addMeta(new metaObject().setName("modified").setContent("21 March 2018"))
-    .addMeta(new metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("manually written"))
-    .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("23 January 2005"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("21 March 2018"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manually written"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,50.0f})))
+    .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(0.0f,0.0f,50.0f))
     .addChild(new GroupObject()
-      .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {1.0f,1.0f,1.0f})))
+      .addChild(new DirectionalLightObject().setDirection(1.0f,1.0f,1.0f))
       .addChild(new ProtoDeclareObject().setName("orbit")
         .setProtoInterface(new ProtoInterfaceObject()
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("-8 0 0"))
@@ -271,7 +271,7 @@ public class flowers2
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

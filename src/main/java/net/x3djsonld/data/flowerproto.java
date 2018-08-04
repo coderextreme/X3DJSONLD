@@ -69,15 +69,15 @@ public class flowerproto
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
     .addComponent(new componentObject().setName("Shaders").setLevel(1))
     .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("flowerproto.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("description").setContent("A flower proto with configurable shaders"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("flowerproto.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("A flower proto with configurable shaders"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("FlowerProto")
       .setProtoInterface(new ProtoInterfaceObject()
@@ -87,7 +87,7 @@ public class flowerproto
         .addChild(new TransformObject("transform")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setSpecularColor(new SFColorObject(new float[] {.5f,.5f,.5f})).setDiffuseColor(new SFColorObject(new float[] {.7f,.7f,.7f})))
+              .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
               .setTexture(new ComposedCubeMapTextureObject("texture")
                 .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
                 .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
@@ -249,7 +249,7 @@ public class flowerproto
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||

@@ -38,16 +38,16 @@ public class flower
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new DirectionalLightObject().setDirection(new SFVec3fObject(new float[] {0.0f,-0.8f,-0.2f})).setIntensity(0.5f))
+    .addChild(new DirectionalLightObject().setDirection(0.0f,-0.8f,-0.2f).setIntensity(0.5f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.000f,1.000f,1.000f})))
-    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(new SFVec3fObject(new float[] {0.0f,0.0f,50.0f})))
-    .addChild(new TransformObject().setTranslation(new SFVec3fObject(new float[] {0.0f,-1.0f,1.0f})).setRotation(new SFRotationObject(new float[] {0.0f,1.0f,0.0f,3.1415926f})).setScale(new SFVec3fObject(new float[] {1.5f,1.5f,1.5f}))
+    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0f,0.0f,50.0f))
+    .addChild(new TransformObject().setTranslation(0.0f,-1.0f,1.0f).setRotation(0.0f,1.0f,0.0f,3.1415926f).setScale(1.5f,1.5f,1.5f)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(new SFColorObject(new float[] {0.8f,0.8f,0.8f})).setDiffuseColor(new SFColorObject(new float[] {0.9f,0.3f,0.3f}))))
+          .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setDiffuseColor(0.9f,0.3f,0.3f)))
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
@@ -184,7 +184,7 @@ public class flower
 				}
 				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					//  arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
 					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
