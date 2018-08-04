@@ -470,7 +470,14 @@ class Scripts {
 				for (var key in firstNode) {
 					var USE = firstNode[key]["@USE"];
 				}
-				return this.nodeUtil(selector)+USE+"')";
+				if (typeof USE === 'string') {
+					return this.nodeUtil(selector)+USE+"')";
+				} else {
+					for (var key in firstNode) {
+						var DEF = firstNode[key]["@DEF"];
+					}
+					return this.nodeUtil(selector)+DEF+"')";
+				}
 			}
 		}
 		if (!str) {
@@ -691,6 +698,11 @@ class Scripts {
 						var firstNode = children[0];
 						for (var key in firstNode) {
 							var USE = firstNode[key]["@USE"];
+						}
+						if (typeof USE !== 'string') {
+							for (var key in firstNode) {
+								USE = firstNode[key]["@DEF"];
+							}
 						}
 						var pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?[ \t\r\n]*=([^;]*);';
 						body = body.replace(new RegExp(pattern, 'g'), "$1"+this.nodeUtil(selector)+USE+"', '$2', $3);");

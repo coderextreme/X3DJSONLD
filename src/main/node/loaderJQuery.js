@@ -370,8 +370,10 @@ function replaceX3DJSON(selector, json, url, NS, next) {
 					console.error(e);
 				}
 			}
-			// remove all text nodes in scripts (and fields too, sigh)
-			$(selector+" Script").empty();
+			// remove all text nodes and CDATA in scripts (keep fields)
+			$(selector+" Script").contents().filter(function () {
+			     return this.nodeType === 3 || this.nodeType === 4;
+			}).remove();
 		}
 		next(element, xml);
 	});
