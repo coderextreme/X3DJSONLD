@@ -70,7 +70,7 @@ var json = { "X3D": {
           },
           {
             "@name":"modified",
-            "@content":"15 July 2018"
+            "@content":"28 July 2018"
           },
           {
             "@name":"generator",
@@ -130,7 +130,7 @@ var json = { "X3D": {
           },
           {
             "@name":"translated",
-            "@content":"17 July 2018"
+            "@content":"31 July 2018"
           },
           {
             "@name":"generator",

@@ -1568,7 +1568,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			</xsl:choose>
 					
 			<xsl:if test="not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
-                          not(starts-with($name, 'X3DConcrete')) and not($isUtilityClass = 'true')">
+                          not(starts-with($name, 'X3DConcrete')) and not($isUtilityClass = 'true') and
+                          not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not(($isUtilityClass = 'true'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** required by internal interface, empty list provided since no children array present in this class */
     private ArrayList<String> commentsList; 
@@ -1706,25 +1707,25 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							</xsl:if>
 							<xsl:if test="($name = 'field') or ($name = 'fieldValue')">
 								<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** Default boolean value for this field type is an empty array. */
+	/** Default value for this field type is an empty array. */
 	private static final boolean[] DEFAULT_VALUE_BOOLEAN = new boolean[0]; // initialize as empty array
 
 	/** boolean array, typed value holder */
 	private boolean[] valueArrayBoolean;
 
-	/** Default integer value for this field type is an empty array. */
+	/** Default value for this field type is an empty array. */
 	private static final int[] DEFAULT_VALUE_INTEGER = new int[0]; // initialize as empty array
 
 	/** int array, typed value holder */
 	private int[] valueArrayInteger;
 
-	/** Default float value for this field type is an empty array. */
+	/** Default value for this field type is an empty array. */
 	private static final float[] DEFAULT_VALUE_FLOAT = new float[0]; // initialize as empty array
 								
 	/** float array, typed value holder */	
 	private float[] valueArrayFloat;
 									
-	/** Default double value for this field type is an empty array. */
+	/** Default value for this field type is an empty array. */
 	private static final double[] DEFAULT_VALUE_DOUBLE = new double[0]; // initialize as empty array
 									
 	/** double array, typed value holder */	
@@ -3963,9 +3964,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 }
                 try {
 					ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-					 engine.eval("load('classpath:"+intermediateJSFileName+"');");
+					    engine.eval("load('"+intermediateJSFileName+"');");
 					if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-							intermediateJSFilePath.toFile().deleteOnExit();
+						intermediateJSFilePath.toFile().deleteOnExit();
 					engine.eval("print('Hello World!');");
                 }
                 catch (ScriptException exception)
@@ -15893,10 +15894,14 @@ method invocations on the same node object).
 				<xsl:when test="($fieldName = 'SFTime')">
 					<xsl:value-of select="$fieldName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[ = Double.parseDouble(newValue);
+]]></xsl:text>
+                    <!-- negative time values are allowed
+					<xsl:text disable-output-escaping="yes"><![CDATA[
 			if ((SFTime < 0.0) && (SFTime != DEFAULT_VALUE)) // initial value check
 			{
 				SFTime = ]]></xsl:text><xsl:value-of select="$defaultValueExpression"/><xsl:text>
 			}</xsl:text>
+                    -->
 				</xsl:when>
 				<!-- http://stackoverflow.com/questions/225337/how-do-i-split-a-string-with-any-whitespace-chars-as-delimiters -->
 				<xsl:when test="($fieldName = 'SFVec2d')">
@@ -20995,7 +21000,7 @@ setAttribute method invocations).
 						<!-- TODO also write type-specific addOffset methods -->
 						</xsl:when>
 						<xsl:when test="contains($fieldName,'MFVec') or contains($fieldName,'Matrix') or 
-												($fieldName = 'MFInt32') or ($fieldName = 'MFFloat') or ($fieldName = 'MFDouble')">
+										($fieldName = 'MFInt32') or ($fieldName = 'MFFloat') or ($fieldName = 'MFDouble')">
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Multiply scaleFactor times all values in this field type.
@@ -21027,6 +21032,30 @@ setAttribute method invocations).
 						<!-- TODO also write type-specific addOffset methods -->
 						</xsl:when>
 					</xsl:choose>
+					<xsl:text>
+	/**
+	 * Determine whether current value matches DEFAULT_VALUE
+	 * @see #DEFAULT_VALUE
+	 * @return whether current value matches DEFAULT_VALUE
+	 */
+    public boolean isDefaultValue()
+    {
+        return </xsl:text>
+            <xsl:choose>
+                <xsl:when test="starts-with($fieldName, 'MF')">
+                    <xsl:text>Arrays.equals(</xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                    <xsl:text>, DEFAULT_VALUE);</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>(</xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                    <xsl:text> == DEFAULT_VALUE);</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+			<xsl:text>
+    }
+</xsl:text>
 					
 					<!-- class implementation definitions are complete -->
 				</xsl:with-param>
@@ -26075,6 +26104,17 @@ import org.web3d.x3d.sai.X3DException;
 		run(args);
 	}
 
+    /** Utility run() method provided for test purposes, allowing invocation with a single String (rather than a String[] array).
+	 * When invoked without parameters then reports results of validate() self-checks to system output.
+     * @param arguments the command line arguments
+     * @see #run(String[])
+     */
+                
+    public static void run(String arguments)
+    {
+		run(arguments.split("(\\s)")); // split single string into string array
+	}
+
     /** Default run() method provided for test purposes, first initializing ConfigurationProperties then reading properties file (if any) and processing arguments.
 	 * When invoked without parameters then reports results of validate() self-checks to system output.
      * @param args the command line arguments
@@ -26110,6 +26150,10 @@ import org.web3d.x3d.sai.X3DException;
 		{
 			for (int i=0; i<=args.length-1; i++)
 			{
+				if  (args[i].trim().isEmpty())
+				{
+                    continue; // skip empty arguments
+                }
 				if  (!args[i].startsWith("-"))
 				{
 					if (!sourceFileName.isEmpty())
@@ -26880,9 +26924,6 @@ import java.io.*;</xsl:text></xsl:with-param>
 		<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="javadocBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[<p>
-
-</p>
-<p>
 <a href="../../../../../X3DJSAIL.html#property" target="blank">Utility methods</a>
 and 
 <a href="../../../../../X3DJSAIL.html#CommandLine" target="blank">command-line support</a>
@@ -27279,7 +27320,7 @@ and showing default attribute values.</p>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_MACOS = "/Applications/Blender";
+	public static final String BLENDER_PATH_DEFAULT_MACOS = "/Applications/Blender"; // TODO confirm/correct
 
 	/** Default Blender path default for Linux operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -27287,7 +27328,7 @@ and showing default attribute values.</p>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_LINUX = "";
+	public static final String BLENDER_PATH_DEFAULT_LINUX = "/usr/bin/blender"; // TODO confirm/correct
 				
 	/** Get preference for XSLT transformation engine to use: {@link XSLT_ENGINE_SAXON} or {@link XSLT_ENGINE_NATIVE_JAVA}.
 	 * @return String constant regarding current configuration: XSLT_ENGINE_SAXON (default) or XSLT_ENGINE_NATIVE_JAVA
@@ -27313,6 +27354,45 @@ and showing default attribute values.</p>
 	}
 
 // ==========================================================================================
+	
+    /** Default name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
+     * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
+     * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see MeshLabLauncher#checkMeshLabPath()
+	 */
+	private static String meshLabServerExecutableName_DEFAULT = "meshlabserver";
+	 
+	/** Actual name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
+     * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
+     * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see MeshLabLauncher#checkMeshLabPath()
+	 */
+	private static String meshLabServerExecutableName = meshLabServerExecutableName_DEFAULT;
+			
+	/** Get directory path for location of <code>meshlabserver</code> program:  <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
+	 * @return name of meshlabserver program
+     * @see MeshLabLauncher#checkMeshLabPath()
+	 */
+	public static final String getMeshLabServerExecutableName()
+	{
+        final String OPERATING_SYSTEM_NAME = System.getProperty("os.name");
+                
+        if (OPERATING_SYSTEM_NAME.toLowerCase(Locale.ENGLISH).contains("windows"))
+        {
+            if (meshLabServerExecutableName.equals(meshLabServerExecutableName_DEFAULT))
+            {
+                meshLabServerExecutableName += ".exe";
+            }
+        }
+		return meshLabServerExecutableName;
+	}
+	/** Set meshLabServerExecutableName for alternate name of <code>meshlabserver</code> program.
+	 * @param newValue is new value to assign
+     */
+	public static final void setMeshLabServerExecutableName(String newValue)
+	{
+		meshLabServerExecutableName = newValue;
+    }
 	 
 	/** MeshLab path on local system for command-line MeshLab invocation.
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
@@ -27336,7 +27416,7 @@ and showing default attribute values.</p>
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
 	 */		
-	public static final String MESHLAB_PATH_DEFAULT_MACOS = "/Applications/meshlab.app/Contents/MacOS/meshlabserver";
+	public static final String MESHLAB_PATH_DEFAULT_MACOS = "/Applications/meshlab.app/Contents/MacOS/meshlabserver"; // TODO confirm/correct
 
 	/** Default MeshLab path default for Linux operating system, possibly unneeded if <code>meshlabserver</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -27345,7 +27425,7 @@ and showing default attribute values.</p>
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
 	 */		
-	public static final String MESHLAB_PATH_DEFAULT_LINUX = ""; // TODO fix
+	public static final String MESHLAB_PATH_DEFAULT_LINUX = "/usr/bin/meshlab"; // TODO confirm/correct
 				
 	/** Get directory path for location of <code>meshlabserver</code> program.
 	 * @return directory path for location of meshlabserver program
@@ -27360,16 +27440,17 @@ and showing default attribute values.</p>
 	public static final void setMeshLabPath(String newValue)
 	{
 		meshLabPath = newValue;
-        if  (meshLabPath.endsWith("meshlabserver")) // strip executable if needed, save path only
+        
+        if  (meshLabPath.endsWith(getMeshLabServerExecutableName())) // strip executable if needed, save path only
         {
-             meshLabPath = meshLabPath.substring(0,meshLabPath.lastIndexOf("meshlabserver"));
+             meshLabPath = meshLabPath.substring(0,meshLabPath.lastIndexOf(getMeshLabServerExecutableName()));
         }
         if (!meshLabPath.endsWith("\\") || !meshLabPath.endsWith("/"))
         {
              meshLabPath = meshLabPath + "/";
         }
 		// verify meshlabserver found, throw exception otherwise
-        File meshLabServerFile = new File(meshLabPath, "meshlabserver");
+        File meshLabServerFile = new File(meshLabPath, getMeshLabServerExecutableName());
 		if (!meshLabServerFile.exists())
 		{
 			String errorNotice = "Invalid setMeshLabPath(String newValue) invocation, newValue='" + newValue + 
@@ -29220,9 +29301,9 @@ import org.web3d.x3d.sai.X3DException;
 				// TODO		else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("viewpoints"))
 				// TODO				((HAnimHumanoidObject)elementObject).addViewpoints((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("HAnimHumanoid") && childElementName.contains("Coordinate") && containerField.equals("skinCoord"))
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.startsWith("Coordinate") && containerField.equals("skinCoord"))
 									((HAnimHumanoidObject)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinCoord"))
+							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinCoord"))
 									((HAnimHumanoidObject)elementObject).setSkinCoord ((ProtoInstanceObject) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("Normal") && containerField.equals("skinNormal"))
 									((HAnimHumanoidObject)elementObject).setSkinNormal ((X3DNormalNode) childX3dElement);
@@ -29242,41 +29323,40 @@ import org.web3d.x3d.sai.X3DException;
 									((HAnimSegmentObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
 				// TODO		else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("displacers") || containerField.isEmpty()))
 				// TODO				((HAnimSegmentObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("HAnimSegment") && childElementName.contains("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("HAnimSegment") && childElementName.startsWith("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
 									((HAnimSegmentObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((HAnimSegmentObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedLineSet") && childElementName.startsWith("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
 									((IndexedLineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((IndexedLineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("LineSet") && childElementName.contains("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("LineSet") && childElementName.startsWith("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
 									((LineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("PointSet") && childElementName.contains("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("PointSet") && childElementName.startsWith("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
 									((PointSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((PointSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("IndexedLineSet") && childElementName.contains("Color") && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedLineSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
 									((IndexedLineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
 									((IndexedLineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("LineSet") && childElementName.contains("Color") && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("LineSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
 									((LineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
 									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
 
-							else if (nodeName.equals("PointSet") && childElementName.contains("Color") && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("PointSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
 									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
 									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
-
 
 							else if (nodeName.equals("MultiTextureCoordinate") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
 									((MultiTextureCoordinateObject)elementObject).setTexCoord ((X3DTextureCoordinateNode) childX3dElement);
@@ -29328,46 +29408,46 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleStripSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
 														
-							else if (nodeName.endsWith("Set") && childElementName.contains("Color") && (containerField.equals("color") || containerField.isEmpty()))
+							else if (nodeName.endsWith("Set") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
 									((X3DComposedGeometryNode)elementObject).setColor((X3DColorNode) childX3dElement);
-							else if (nodeName.equals("IndexedFaceSetObject") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedFaceSetObject") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedFaceSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedQuadSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleFanSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleStripSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((QuadSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleFanSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleStripSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
 							
-							else if (nodeName.endsWith("Set") && childElementName.contains("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
+							else if (nodeName.endsWith("Set") && childElementName.startsWith("Coordinate") && (containerField.equals("coord") || containerField.isEmpty()))
 									((X3DComposedGeometryNode)elementObject).setCoord((X3DCoordinateNode) childX3dElement);
-							else if (nodeName.equals("IndexedFaceSetObject") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedFaceSetObject") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedFaceSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedQuadSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleFanSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((IndexedTriangleStripSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((QuadSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleFanSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
-							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
+							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.startsWith("Coordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
 									((TriangleStripSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
 							
 							else if (nodeName.endsWith("Set") && childElementName.equals("Normal") && containerField.equals("normal"))
@@ -30122,9 +30202,12 @@ import org.web3d.x3d.sai.InvalidDocumentException;</xsl:with-param>
 		<xsl:with-param name="implementationBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
     /**
-     * Check MeshLab local path and reset to operating system default, if necessary.
+     * Check MeshLab local path and also executable name, reset to operating system defaults if necessary.
+     * Eexecutable name: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see ConfigurationProperties#getMeshLabServerExecutableName()
+     * @see ConfigurationProperties#setMeshLabServerExecutableName(String)
      */
     public static void checkMeshLabPath()
     {
@@ -30326,6 +30409,8 @@ import org.web3d.x3d.sai.InvalidDocumentException;</xsl:with-param>
     /**
      * TODO: Use MeshLab to export geometry to STL
      * @param modelToExport X3D model of interest
+     * @param path directory path for X3D model of interest
+     * @param fileName file name for X3D model of interest
      * @return plain-text STL file
      * @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
@@ -30395,7 +30480,7 @@ import org.web3d.x3d.sai.InvalidDocumentException;</xsl:with-param>
     public static String getMeshLabVersion()
     {
         return "MeshLab version is not a currently supported feature. See https://meshLab.net\n" +
-               executeCommand("meshlabserver").replaceAll("\r\n", "\n"); // avoid double newlines
+               executeCommand(ConfigurationProperties.getMeshLabServerExecutableName()).replaceAll("\r\n", "\n"); // avoid double newlines
     }
     /**
      * Determine if MeshLab is locally available.
@@ -30405,7 +30490,7 @@ import org.web3d.x3d.sai.InvalidDocumentException;</xsl:with-param>
      */
     public static boolean hasMeshLab()
     {
-        String meshLabHelp = executeCommand("meshlabserver");
+        String meshLabHelp = executeCommand(ConfigurationProperties.getMeshLabServerExecutableName());
         return ((meshLabHelp != null) && meshLabHelp.contains("meshlabserver [logargs] [args]"));
     }
     /**
@@ -30423,7 +30508,7 @@ import org.web3d.x3d.sai.InvalidDocumentException;</xsl:with-param>
     }
     /**
      * Set name of MeshLab trace log file produced during most recent MeshLab operation.
-     * @value new path and file name for meshLabTraceLogFilePath
+     * @param value new path and file name for meshLabTraceLogFilePath
      */
     public static void setPriorMeshLabTraceLogFilePath(String value)
     {
@@ -31627,11 +31712,10 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text>			</xsl:text>
-				<xsl:value-of select="$newValue"/><xsl:text> = savedValue; // restore invocation value</xsl:text>
+				<xsl:value-of select="$newValue"/><xsl:text> = savedValue; // restore invocation value with suffix (if any)</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
-			<xsl:text>			throw new org.web3d.x3d.sai.InvalidFieldValueException</xsl:text>
-			<xsl:text>("</xsl:text>
+			<xsl:text>			String warningMessage = "Warning: </xsl:text>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="@name"/>
@@ -31649,13 +31733,17 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:text> + "\"</xsl:text>
-			<xsl:text> has illegal value, must use a valid enumeration string.</xsl:text>
+			<xsl:text> has an unrecognized value not matching any of the enumeration constants.";</xsl:text>
 			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
-				<xsl:text>" +</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+				<xsl:text> 			if (!</xsl:text><xsl:value-of select="$newValue"/><xsl:text disable-output-escaping="yes"><![CDATA[.endsWith("_tip") && ]]></xsl:text>
+				    <xsl:text>!</xsl:text><xsl:value-of select="$newValue"/><xsl:text disable-output-escaping="yes"><![CDATA[.endsWith("_view") && ]]></xsl:text>
+				    <xsl:text>!</xsl:text><xsl:value-of select="$newValue"/><xsl:text disable-output-escaping="yes"><![CDATA[.endsWith("_pt"))]]></xsl:text>
 				<xsl:text>&#10;</xsl:text>
-				<xsl:text>			"HAnimSite name must end in \"_tip\" \"_view\" or \"_pt\".</xsl:text>
+				<xsl:text>			    warningMessage += " Also note that HAnimSite name must end in \"_tip\" \"_view\" or \"_pt\".";</xsl:text>
+                <xsl:text>&#10;</xsl:text>
 			</xsl:if>
-			<xsl:text>");</xsl:text>
+			<xsl:text>			System.out.println(warningMessage);</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>		}</xsl:text>
 			<xsl:text>&#10;</xsl:text>

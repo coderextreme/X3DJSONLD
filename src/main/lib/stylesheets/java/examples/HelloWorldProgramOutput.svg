@@ -1,0 +1,37 @@
+
+
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
+
+
+
+ecmascript:
+function initialize ()
+{
+newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+if (!enabled) return;
+red   = newColor.r;
+green = newColor.g;
+blue  = newColor.b;
+
+// note different modulation rates for each color component, % is modulus operator
+newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor='
++ newColor.toString() + '\n');
+	}
+}
+

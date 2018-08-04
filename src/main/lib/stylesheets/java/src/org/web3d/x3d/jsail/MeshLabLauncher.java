@@ -74,9 +74,12 @@ import org.web3d.x3d.sai.InvalidDocumentException;
 public class MeshLabLauncher
 {
     /**
-     * Check MeshLab local path and reset to operating system default, if necessary.
+     * Check MeshLab local path and also executable name, reset to operating system defaults if necessary.
+     * Eexecutable name: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see ConfigurationProperties#getMeshLabServerExecutableName()
+     * @see ConfigurationProperties#setMeshLabServerExecutableName(String)
      */
     public static void checkMeshLabPath()
     {
@@ -278,6 +281,8 @@ public class MeshLabLauncher
     /**
      * TODO: Use MeshLab to export geometry to STL
      * @param modelToExport X3D model of interest
+     * @param path directory path for X3D model of interest
+     * @param fileName file name for X3D model of interest
      * @return plain-text STL file
      * @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
      * @see <a href="http://www.MeshLab.net" target="_blank">MeshLab</a>
@@ -347,7 +352,7 @@ public class MeshLabLauncher
     public static String getMeshLabVersion()
     {
         return "MeshLab version is not a currently supported feature. See https://meshLab.net\n" +
-               executeCommand("meshlabserver").replaceAll("\r\n", "\n"); // avoid double newlines
+               executeCommand(ConfigurationProperties.getMeshLabServerExecutableName()).replaceAll("\r\n", "\n"); // avoid double newlines
     }
     /**
      * Determine if MeshLab is locally available.
@@ -357,7 +362,7 @@ public class MeshLabLauncher
      */
     public static boolean hasMeshLab()
     {
-        String meshLabHelp = executeCommand("meshlabserver");
+        String meshLabHelp = executeCommand(ConfigurationProperties.getMeshLabServerExecutableName());
         return ((meshLabHelp != null) && meshLabHelp.contains("meshlabserver [logargs] [args]"));
     }
     /**
@@ -375,7 +380,7 @@ public class MeshLabLauncher
     }
     /**
      * Set name of MeshLab trace log file produced during most recent MeshLab operation.
-     * @value new path and file name for meshLabTraceLogFilePath
+     * @param value new path and file name for meshLabTraceLogFilePath
      */
     public static void setPriorMeshLabTraceLogFilePath(String value)
     {

@@ -1,0 +1,3 @@
+Mesh C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.stl loaded has 8736 vn 2912 fn
+output mesh  C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.MeshLab.x3d
+Mesh C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.stl saved as C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.MeshLab.x3d (8736 vn 2912 fn)
