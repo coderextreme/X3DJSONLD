@@ -5,6 +5,7 @@ var glob = require( 'glob' );
 var config = require("./src/main/node/config");
 var port = process.env.PORT || 3000;
 var path = require('path');
+var DOMParser = require('xmldom').DOMParser;
 
 var fs = require("fs");
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
@@ -39,17 +40,17 @@ function convertX3dToJson(res, infile, outfile, next) {
 		var data = fs.readFileSync(infile);
 		var doc = null;
 		var domParser = new DOMParser();
-		doc = domParser.parseFromString (data, 'application/xml');
+		doc = domParser.parseFromString (data.toString(), 'application/xml');
 		var element = doc.documentElement;
 		console.error("Calling converter "+serializer+" on "+infile);
 		var serializer = new DOM2JSONSerializer();
-		var str = new serializer.serializeToString(null, element, outfile, mapToMethod, fieldTypes);
+		var str = serializer.serializeToString(null, element, outfile, mapToMethod, fieldTypes);
 		var json = JSON.parse(str);
 		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		send(res, json, "text/json", next);
 	} catch (e) {
 		next();
-		console.error("Problems converting", infile, "to", outfile);
+		console.error(e, "Problems converting", infile, "to", outfile);
 	}
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
@@ -102,6 +103,7 @@ app.post("/convert", function(req, res, next) {
 */
 
 
+/*
 app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
@@ -128,6 +130,7 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
+*/
 
 app.get("/www.web3d.org/*.wrl", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
@@ -270,6 +273,7 @@ function magic(path, type) {
     });
 }
 
+/*
 function processX3d(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.error("X3D url", url);
@@ -284,7 +288,6 @@ function processX3d(req, res, next) {
 	convertX3dToJson(res, infile, outfile, next);
 }
 
-/*
 app.get("*.x3d#*", processX3d);
 app.get("*.x3d", processX3d);
 */
