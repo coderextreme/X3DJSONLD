@@ -9153,7 +9153,7 @@
             },
             "@name": {
               "enum": [
-                "HumanoidRoot",
+                "humanoidroot",
                 "sacroiliac",
                 "l_hip",
                 "l_knee",

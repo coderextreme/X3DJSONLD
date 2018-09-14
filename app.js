@@ -298,6 +298,8 @@ magic("*.JPG", "image/jpeg");
 magic("*.jpeg", "image/jpeg");
 magic("*.png", "image/png");
 magic("*.mpg", "video/mpeg");
+magic("*.mp4", "video/mp4");
+magic("*.ogv", "video/ogg");
 magic("*.wav", "audio/wav");
 magic("*.mp3", "audio/mpeg3");
 magic("*.ply", "application/octet-stream");
