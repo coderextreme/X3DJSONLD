@@ -94,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2018"
+            "@content":"14 September 2018"
           },
           {
             "@name":"generator",
@@ -156,7 +156,8 @@
                                               {
                                                 "@type":"VERTEX",
                                                 "#sourceText":[
-"data:text/plain;charset=utf-8,",
+"",
+"                  data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
@@ -185,7 +186,8 @@
                                                 "@DEF":"_1",
                                                 "@type":"FRAGMENT",
                                                 "#sourceText":[
-"data:text/plain;charset=utf-8,",
+"",
+"                  data:text/plain;charset=utf-8,",
 "",
 "precision mediump float;",
 "",
