@@ -9081,7 +9081,10 @@
             },
             "@llimit": {
               "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
@@ -9090,7 +9093,7 @@
             },
             "@name": {
               "enum": [
-                "HumanoidRoot",
+                "humanoidroot",
                 "sacroiliac",
                 "l_hip",
                 "l_knee",
@@ -9260,7 +9263,11 @@
               }
             },
             "@stiffness": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
               "items": {
                 "default": 1,
                 "maximum": 1,
@@ -9279,7 +9286,10 @@
             },
             "@ulimit": {
               "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
