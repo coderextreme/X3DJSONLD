@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 April 2018"
+            "@content":"17 October 2018"
           },
           {
             "@name":"generator",
@@ -139,8 +139,6 @@
                               "#sourceText":[
 "",
 "",
-"",
-"",
 "ecmascript:",
 "\t\tfunction set_location(value) {",
 "                    old = translation;",
@@ -148,9 +146,6 @@
 "                    keyValue = new MFVec3f([old, translation]);",
 "\t\t    // Browser.println(keyValue);",
 "\t\t}",
-"",
-"",
-"",
 "",
 ""
 ]
@@ -342,8 +337,7 @@
                               "#sourceText":[
 "",
 "",
-"",
-"            ecmascript:",
+"ecmascript:",
 "        function recompute(startpoint,endpoint){",
 "\t    if (typeof endpoint === 'undefined') {",
 "\t\treturn;",
@@ -387,9 +381,6 @@
 "        function set_endpoint(val,t){",
 "            recompute_and_route(startnode.translation,val);",
 "        }",
-"",
-"",
-"",
 "",
 ""
 ]
