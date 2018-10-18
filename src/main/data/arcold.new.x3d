@@ -63,8 +63,6 @@
                         <field name='set_location' accessType='inputOnly' type='SFTime'/>
                         <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
-
-
 ecmascript:
 		function set_location(value) {
                     old = translation;
@@ -72,9 +70,6 @@ ecmascript:
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(translation);
 		}
-
-
-
 ]]>
                     </Script>
                     <TimeSensor DEF='CL1' cycleInterval='3.0' loop='true'/>
@@ -112,8 +107,7 @@ ecmascript:
                         <connect nodeField='set_endpoint' protoField='set_endpoint'/>
                     </IS>
 <![CDATA[
-
-            ecmascript:
+ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -156,9 +150,6 @@ ecmascript:
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val || endnode.translation);
         }
-
-
-
 ]]>
                 </Script>
             </ProtoBody>

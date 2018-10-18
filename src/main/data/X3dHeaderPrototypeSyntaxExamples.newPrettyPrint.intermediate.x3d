@@ -92,7 +92,7 @@
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
-                    <ProtoInstance name='EmissiveMaterial' class=''>
+                    <ProtoInstance name='EmissiveMaterial' containerField='material' class=''>
                         <fieldValue name='onlyColor' value='0.2 0.6 0.6'/>
                     </ProtoInstance>
                 </Appearance>
