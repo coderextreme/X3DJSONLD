@@ -25,6 +25,12 @@ convertJSON([
 	extension : ".x3d.new",
 	},
 	{ 
+	serializer : './NodeSerializer.js',
+	folder : "../node/net/coderextreme/",
+	extension : ".js",
+	codeOutput : "../",
+	},
+	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".sail.js",
