@@ -1,0 +1,51 @@
+var java = require('java');
+var autoclass = require('../../../X3Dautoclass.js');
+var ConfigurationProperties = autoclass.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
+ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
+ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setStripTrailingZeroesSync(true);
+      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
+      .setHeadSync(new autoclass.head()
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("HelloWorld.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("Simple X3D scene example: Hello World!"))
+        .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("30 October 2000"))
+        .addMetaSync(new autoclass.meta().setNameSync("modified").setContentSync("14 April 2017"))
+        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Don Brutzman"))
+        .addMetaSync(new autoclass.meta().setNameSync("Image").setContentSync("HelloWorld.tall.png"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://en.wikipedia.org/wiki/Hello_world"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://www.HelloWorldExample.net"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://www.web3D.org"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("license").setContentSync("http://www.web3d.org/x3d/content/examples/license.html"))
+        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("HelloWorld.wrl"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("HelloWorld.x3dv"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("HelloWorld.x3db"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("HelloWorld.xhtml"))
+        .addMetaSync(new autoclass.meta().setNameSync("reference").setContentSync("HelloWorld.json"))
+        .addCommentsSync(new autoclass.CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON")))
+      .setSceneSync(new autoclass.Scene()
+        .addCommentsSync(new autoclass.CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)"))
+        .addChildSync(new autoclass.WorldInfo().setTitleSync("Hello world!"))
+        .addChildSync(new autoclass.Group()
+          .addChildSync(new autoclass.Viewpoint().setDEFSync("ViewUpClose").setCenterOfRotationSync(java.newArray("float", [java.newFloat(0), java.newFloat(-1), java.newFloat(0)])).setDescriptionSync("Hello world!").setPositionSync(java.newArray("float", [java.newFloat(0), java.newFloat(-1), java.newFloat(7)])))
+          .addChildSync(new autoclass.Transform().setRotationSync(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(3)]))
+            .addChildSync(new autoclass.Shape()
+              .setGeometrySync(new autoclass.Sphere())
+              .setAppearanceSync(new autoclass.Appearance()
+                .setMaterialSync(new autoclass.Material().setDEFSync("MaterialLightBlue").setDiffuseColorSync(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.5), java.newFloat(1)])))
+                .setTextureSync(new autoclass.ImageTexture().setDEFSync("ImageCloudlessEarth").setUrlSync(java.newArray("java.lang.String", ["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]))))))
+          .addChildSync(new autoclass.Transform().setTranslationSync(java.newArray("float", [java.newFloat(0), java.newFloat(-2), java.newFloat(0)]))
+            .addChildSync(new autoclass.Shape()
+              .setGeometrySync(new autoclass.Text().setDEFSync("TextMessage").setStringSync(java.newArray("java.lang.String", ["Hello","world!"]))
+                .setFontStyleSync(new autoclass.FontStyle().setJustifySync(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"]))))
+              .setAppearanceSync(new autoclass.Appearance()
+                .setMaterialSync(new autoclass.Material().setUSESync("MaterialLightBlue")))))))      ;
+    X3D0.toFileX3D("../data/HelloWorld.new.x3d");

@@ -1,0 +1,52 @@
+var java = require('java');
+var autoclass = require('../../../X3Dautoclass.js');
+var ConfigurationProperties = autoclass.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
+ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
+ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setStripTrailingZeroesSync(true);
+      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
+      .setHeadSync(new autoclass.head()
+        .addComponentSync(new autoclass.component().setNameSync("Shaders").setLevelSync(1))
+        .addComponentSync(new autoclass.component().setNameSync("CubeMapTexturing").setLevelSync(1))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("geo.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
+        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
+        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/geo.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("a sphere")))
+      .setSceneSync(new autoclass.Scene()
+        .addChildSync(new autoclass.NavigationInfo().setTypeSync(java.newArray("java.lang.String", ["ANY","EXAMINE","FLY","LOOKAT"])))
+        .addChildSync(new autoclass.Viewpoint().setDEFSync("Tour").setDescriptionSync("Tour Views"))
+        .addCommentsSync(new autoclass.CommentsBlock("Viewpoint position='0 0 4' description='sphere in road'/"))
+        .addChildSync(new autoclass.Background().setBackUrlSync(java.newArray("java.lang.String", ["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])).setBottomUrlSync(java.newArray("java.lang.String", ["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])).setFrontUrlSync(java.newArray("java.lang.String", ["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])).setLeftUrlSync(java.newArray("java.lang.String", ["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])).setRightUrlSync(java.newArray("java.lang.String", ["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])).setTopUrlSync(java.newArray("java.lang.String", ["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])))
+        .addChildSync(new autoclass.Transform()
+          .addChildSync(new autoclass.Shape()
+            .setGeometrySync(new autoclass.Sphere())
+            .setAppearanceSync(new autoclass.Appearance()
+              .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColorSync(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
+              .setTextureSync(new autoclass.ComposedCubeMapTexture().setDEFSync("texture")
+                .setBackSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])))
+                .setBottomSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])))
+                .setFrontSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])))
+                .setLeftSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])))
+                .setRightSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])))
+                .setTopSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]))))
+              .addShadersSync(new autoclass.ComposedShader().setLanguageSync("GLSL")
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("chromaticDispertion").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.98 1 1.033"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("cube").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
+                  .addChildSync(new autoclass.ComposedCubeMapTexture().setUSESync("texture")))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("bias").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.5"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("scale").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.5"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("power").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("2"))
+                .addPartsSync(new autoclass.ShaderPart().setTypeSync("VERTEX").setUrlSync(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
+                .addPartsSync(new autoclass.ShaderPart().setTypeSync("FRAGMENT").setDEFSync("common").setUrlSync(java.newArray("java.lang.String", ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))))
+              .addShadersSync(new autoclass.ComposedShader().setLanguageSync("GLSL")
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("chromaticDispertion").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValueSync("0.98 1 1.033"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("cube").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY)
+                  .addChildSync(new autoclass.ComposedCubeMapTexture().setUSESync("texture")))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("bias").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValueSync("0.5"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("scale").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValueSync("0.5"))
+                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("power").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValueSync("2"))
+                .addPartsSync(new autoclass.ShaderPart().setTypeSync("VERTEX").setUrlSync(java.newArray("java.lang.String", ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])))
+                .addPartsSync(new autoclass.ShaderPart().setUSESync("common")))))))      ;
+    X3D0.toFileX3D("../data/geo.new.x3d");
