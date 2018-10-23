@@ -152,19 +152,26 @@ class ClassPrinter:
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
-                    if field.get('additionalEnumerationValuesAllowed') is None:
-                        for enum in enumerations:
-                            val = enum.get("value")
-                            if ' ' in val:
-                                val = '"'+val.replace('"', '\\"')+'"'
-                            elif not '"' in val:
-                                val = '"'+val+'"'
-                            enums.append(val)
-                        if enums != []:
-                            str += '\t\t\t\t\t\t"enum": [\n'
-                            str += '\t\t\t\t\t\t\t'
-                            str += ',\n\t\t\t\t\t\t\t'.join(enums)
-                            str += '\n\t\t\t\t\t\t],\n'
+                    for enum in enumerations:
+                        val = enum.get("value")
+                        if ' ' in val:
+                            val = '"'+val.replace('"', '\\"')+'"'
+                        elif not '"' in val:
+                            val = '"'+val+'"'
+                        enums.append(val)
+                    if enums != []:
+                        if field.get('additionalEnumerationValuesAllowed') == "true":
+                            str += '\t\t\t\t\t\t"anyOf" : [ {\n'
+                        str += '\t\t\t\t\t\t"enum": [\n'
+                        str += '\t\t\t\t\t\t\t'
+                        str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                        str += '\n\t\t\t\t\t\t]'
+                        if field.get('additionalEnumerationValuesAllowed') == "true":
+                            str += '},\n'
+                            str += '\t\t\t\t\t\t{ "type" : "string" }\n'
+                            str += '\t\t\t\t\t\t],\n'
+                        else:
+                            str += ',\n'
 
 
                 try:  # default value
@@ -187,22 +194,40 @@ class ClassPrinter:
                     #   str += '\t\t\t\t\t"default":'+'['+field.get("default").replace(' ',',')+'],\n'
                 except:
                     pass
-            str += '\t\t\t\t\t\t"type":"'
+            if field.get('additionalEnumerationValuesAllowed') == "false" or field.get('additionalEnumeratrionValuesAllowed') is None:
+                str += '\t\t\t\t\t\t"type":"'
+                if field.get("type") == "SFBool":
+                    str += 'boolean"\n'
+                elif field.get("type") == "SFDouble":
+                    str += 'number"\n'
+                elif field.get("type") == "SFTime":
+                    str += 'number"\n'
+                elif field.get("type") == "SFFloat":
+                    str += 'number"\n'
+                elif field.get("type") == "SFInt32":
+                    str += 'integer"\n'
+                elif field.get("type") == "SFNode":
+                    str += 'object"\n'
+                elif field.get("type") == "SFString":
+                    str += 'string"\n'
+                else:
+                    str += 'array",\n'
             if field.get("type") == "SFBool":
-                str += 'boolean"\n'
+                pass
             elif field.get("type") == "SFDouble":
-                str += 'number"\n'
+                pass
             elif field.get("type") == "SFTime":
-                str += 'number"\n'
+                pass
             elif field.get("type") == "SFFloat":
-                str += 'number"\n'
+                pass
             elif field.get("type") == "SFInt32":
-                str += 'integer"\n'
+                pass
             elif field.get("type") == "SFNode":
-                str += 'object"\n'
+                pass
             elif field.get("type") == "SFString":
-                str += 'string"\n'
+                pass
             else:
+                str += '\t\t\t\t\t\t"type":"'
                 str += 'array",\n'
                 if field.get("name").endswith("url") or field.get("name").endswith("Url"):
                     str += '\t\t\t\t\t\t"minItems" : 1,\n'
@@ -270,7 +295,7 @@ class ClassPrinter:
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
-                    if field.get('additionalEnumerationValuesAllowed') is None:
+                    if field.get('additionalEnumerationValuesAllowed') == "true":
                         for enum in enumerations:
                             val = enum.get("value")
                             if ' ' in val:
