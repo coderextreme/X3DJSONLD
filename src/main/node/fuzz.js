@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var schema = fs.readFileSync("x3d-4.0-JSONSchema.json");
+var schema = fs.readFileSync("../schema/x3d-4.0-JSONSchema.json");
 var root = JSON.parse(schema.toString());
 
 function generateObject(schemajson, n, node, force) {
@@ -10,6 +10,7 @@ function generateObject(schemajson, n, node, force) {
 	if (n < Math.floor(Math.random() * 15) + 10 || force) {
 		var ref = schemajson["$ref"];
 		var oneOf = schemajson.oneOf;
+		var anyOf = schemajson.anyOf;
 		var type = schemajson.type;
 
 		if (typeof ref !== 'undefined') {
@@ -109,6 +110,12 @@ function generateObject(schemajson, n, node, force) {
 		} else if (type === "boolean") {
 			// console.error("boolean");
 			obj =  Math.random() < 0.5 ? false : true;
+		} else if (typeof anyOf !== 'undefined') {
+			var numschema = Math.floor(anyOf.length * Math.random());
+			for (var index in schemajson) {
+				var index = Math.floor(anyOf.length * Math.random());
+				obj = generateObject(anyOf[index], n+1, node+" > anyof "+index, true);
+			}
 		} else {
 			obj = [];
 			// console.error(type);
