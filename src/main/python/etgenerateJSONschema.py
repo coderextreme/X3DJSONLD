@@ -295,14 +295,14 @@ class ClassPrinter:
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
-                    if field.get('additionalEnumerationValuesAllowed') == "true":
-                        for enum in enumerations:
-                            val = enum.get("value")
-                            if ' ' in val:
-                                val = '"'+val.replace('"', '\\"')+'"'
-                            elif not '"' in val:
-                                val = '"'+val+'"'
-                            enums.append(val)
+                    #  if field.get('additionalEnumerationValuesAllowed') == "true":
+                    for enum in enumerations:
+                        val = enum.get("value")
+                        if ' ' in val:
+                            val = '"'+val.replace('"', '\\"')+'"'
+                        elif not '"' in val:
+                            val = '"'+val+'"'
+                        enums.append(val)
 
                 allTheSame = True
                 firstValue = None
