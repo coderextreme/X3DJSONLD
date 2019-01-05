@@ -1553,9 +1553,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -5755,9 +5762,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -7226,10 +7240,17 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "SERIF",
                 "type": "string"
@@ -11543,10 +11564,17 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "ALL",
                 "type": "string"
@@ -12675,9 +12703,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -12941,10 +12976,17 @@
             "@function": {
               "type": "array",
               "items": {
-                "enum": [
-                  "COMPLEMENT",
-                  "ALPHAREPLICATE",
-                  ""
+                "anyOf": [
+                  {
+                    "enum": [
+                      "COMPLEMENT",
+                      "ALPHAREPLICATE",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -12955,27 +12997,34 @@
             "@mode": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ADD",
-                  "ADDSIGNED",
-                  "ADDSIGNED2X",
-                  "ADDSMOOTH",
-                  "BLENDCURRENTALPHA",
-                  "BLENDDIFFUSEALPHA",
-                  "BLENDFACTORALPHA",
-                  "BLENDTEXTUREALPHA",
-                  "DOTPRODUCT3",
-                  "MODULATE",
-                  "MODULATE2X",
-                  "MODULATE4X",
-                  "MODULATEALPHA_ADDCOLOR",
-                  "MODULATEINVALPHA_ADDCOLOR",
-                  "MODULATEINVCOLOR_ADDALPHA",
-                  "OFF",
-                  "REPLACE",
-                  "SELECTARG1",
-                  "SELECTARG2",
-                  "SUBTRACT"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ADD",
+                      "ADDSIGNED",
+                      "ADDSIGNED2X",
+                      "ADDSMOOTH",
+                      "BLENDCURRENTALPHA",
+                      "BLENDDIFFUSEALPHA",
+                      "BLENDFACTORALPHA",
+                      "BLENDTEXTUREALPHA",
+                      "DOTPRODUCT3",
+                      "MODULATE",
+                      "MODULATE2X",
+                      "MODULATE4X",
+                      "MODULATEALPHA_ADDCOLOR",
+                      "MODULATEINVALPHA_ADDCOLOR",
+                      "MODULATEINVCOLOR_ADDALPHA",
+                      "OFF",
+                      "REPLACE",
+                      "SELECTARG1",
+                      "SELECTARG2",
+                      "SUBTRACT"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -12983,11 +13032,18 @@
             "@source": {
               "type": "array",
               "items": {
-                "enum": [
-                  "DIFFUSE",
-                  "FACTOR",
-                  "SPECULAR",
-                  ""
+                "anyOf": [
+                  {
+                    "enum": [
+                      "DIFFUSE",
+                      "FACTOR",
+                      "SPECULAR",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -13207,10 +13263,17 @@
             "@transitionType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "TELEPORT",
-                  "LINEAR",
-                  "ANIMATE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "TELEPORT",
+                      "LINEAR",
+                      "ANIMATE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "LINEAR",
                 "type": "string"
@@ -15241,10 +15304,17 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "ALL",
                 "type": "string"
@@ -15838,10 +15908,17 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "ALL",
                 "type": "string"
@@ -16835,10 +16912,17 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "ALL",
                 "type": "string"
@@ -18182,10 +18266,17 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "SERIF",
                 "type": "string"
@@ -19183,9 +19274,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -19287,9 +19385,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -23024,9 +23129,16 @@
             "@forceOutput": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "NONE",
                 "type": "string"
@@ -23748,10 +23860,17 @@
             "@objectType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ALL",
-                  "NONE",
-                  "TERRAIN"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "ALL",
                 "type": "string"

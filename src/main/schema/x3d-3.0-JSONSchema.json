@@ -4064,10 +4064,17 @@
             "@family": {
               "type": "array",
               "items": {
-                "enum": [
-                  "SANS",
-                  "SERIF",
-                  "TYPEWRITER"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "SERIF",
                 "type": "string"
@@ -7990,10 +7997,17 @@
             "@function": {
               "type": "array",
               "items": {
-                "enum": [
-                  "COMPLEMENT",
-                  "ALPHAREPLICATE",
-                  ""
+                "anyOf": [
+                  {
+                    "enum": [
+                      "COMPLEMENT",
+                      "ALPHAREPLICATE",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -8004,27 +8018,34 @@
             "@mode": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ADD",
-                  "ADDSIGNED",
-                  "ADDSIGNED2X",
-                  "ADDSMOOTH",
-                  "BLENDCURRENTALPHA",
-                  "BLENDDIFFUSEALPHA",
-                  "BLENDFACTORALPHA",
-                  "BLENDTEXTUREALPHA",
-                  "DOTPRODUCT3",
-                  "MODULATE",
-                  "MODULATE2X",
-                  "MODULATE4X",
-                  "MODULATEALPHA_ADDCOLOR",
-                  "MODULATEINVALPHA_ADDCOLOR",
-                  "MODULATEINVCOLOR_ADDALPHA",
-                  "OFF",
-                  "REPLACE",
-                  "SELECTARG1",
-                  "SELECTARG2",
-                  "SUBTRACT"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ADD",
+                      "ADDSIGNED",
+                      "ADDSIGNED2X",
+                      "ADDSMOOTH",
+                      "BLENDCURRENTALPHA",
+                      "BLENDDIFFUSEALPHA",
+                      "BLENDFACTORALPHA",
+                      "BLENDTEXTUREALPHA",
+                      "DOTPRODUCT3",
+                      "MODULATE",
+                      "MODULATE2X",
+                      "MODULATE4X",
+                      "MODULATEALPHA_ADDCOLOR",
+                      "MODULATEINVALPHA_ADDCOLOR",
+                      "MODULATEINVCOLOR_ADDALPHA",
+                      "OFF",
+                      "REPLACE",
+                      "SELECTARG1",
+                      "SELECTARG2",
+                      "SUBTRACT"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -8032,11 +8053,18 @@
             "@source": {
               "type": "array",
               "items": {
-                "enum": [
-                  "DIFFUSE",
-                  "FACTOR",
-                  "SPECULAR",
-                  ""
+                "anyOf": [
+                  {
+                    "enum": [
+                      "DIFFUSE",
+                      "FACTOR",
+                      "SPECULAR",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "type": "string"
               }
@@ -8256,10 +8284,17 @@
             "@transitionType": {
               "type": "array",
               "items": {
-                "enum": [
-                  "TELEPORT",
-                  "LINEAR",
-                  "ANIMATE"
+                "anyOf": [
+                  {
+                    "enum": [
+                      "TELEPORT",
+                      "LINEAR",
+                      "ANIMATE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
                 ],
                 "default": "LINEAR",
                 "type": "string"

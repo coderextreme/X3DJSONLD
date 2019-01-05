@@ -167,7 +167,7 @@ class ClassPrinter:
                         str += ',\n\t\t\t\t\t\t\t'.join(enums)
                         str += '\n\t\t\t\t\t\t]'
                         if field.get('additionalEnumerationValuesAllowed') == "true":
-                            str += '},\n'
+                            str += '\t\t\t\t\t\t},\n'
                             str += '\t\t\t\t\t\t{ "type" : "string" }\n'
                             str += '\t\t\t\t\t\t],\n'
                         else:
@@ -333,17 +333,25 @@ class ClassPrinter:
                     if field.get("name").endswith("url") or field.get("name").endswith("Url"):
                         str += '\t\t\t\t\t\t"format":"uri-reference",\n'
                     if enums != []:
+                        if field.get('additionalEnumerationValuesAllowed') == "true":
+                            str += '\t\t\t\t\t\t"anyOf" : [ {\n'
                         str += '\t\t\t\t\t\t\t"enum": [\n'
                         str += '\t\t\t\t\t\t\t\t'
                         str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
-                        str += '\n\t\t\t\t\t\t\t],\n'
+                        str += '\n\t\t\t\t\t\t\t]\n'
+                        if field.get('additionalEnumerationValuesAllowed') == "true":
+                            str += '\t\t\t\t\t\t},\n'
+                            str += '\t\t\t\t\t\t{ "type" : "string" }\n'
+                            str += '\t\t\t\t\t\t],\n'
+                        else:
+                            str += ',\n'
                     if firstValue is not None:
                         if field.get("type") == "MFString":
                             str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                         else:
                             str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                     str += self.printTypeMinMax(field)
-                    str += '\t\t\t\t\t\t}\n'
+                    str += '\t\t\t\t\t\t}'
                 else:
                     firstTime = True
                     str += '[\n'
