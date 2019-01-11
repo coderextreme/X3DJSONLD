@@ -2332,7 +2332,7 @@
               "$ref": "#/definitions/IS"
             },
             "-children": {
-              "$ref": "#/definitions/-NurbsCurve2D|ContourPolyline2DMFNode"
+              "$ref": "#/definitions/-NurbsCurve2D%7CContourPolyline2DMFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -5425,10 +5425,10 @@
               "$ref": "#/definitions/-HAnimSiteMFNode"
             },
             "-skeleton": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint%7CHAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-Group|Transform|Shape|IndexedFaceSetMFNode"
+              "$ref": "#/definitions/-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode"
             },
             "-skinCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
@@ -5530,7 +5530,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSegment|HAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode"
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
@@ -8778,7 +8778,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
             },
             "@uClosed": {
               "default": false,
@@ -9396,7 +9396,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
             },
             "-trimmingContour": {
               "$ref": "#/definitions/-Contour2DMFNode"
@@ -11782,16 +11782,16 @@
               "$ref": "#/definitions/IS"
             },
             "-backTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "@bindTime": {
               "type": "number"
             },
             "-bottomTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "-frontTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "@groundAngle": {
               "type": "array",
@@ -11814,13 +11814,13 @@
               "type": "boolean"
             },
             "-leftTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-rightTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "@set_bind": {
               "type": "boolean"
@@ -11844,7 +11844,7 @@
               }
             },
             "-topTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
             },
             "@transparency": {
               "maximum": 1,
@@ -13737,7 +13737,7 @@
       "type": "object",
       "properties": {
         "-children": {
-          "$ref": "#/definitions/-X3DChildNode|X3DMetadataObjectMFNode"
+          "$ref": "#/definitions/-X3DChildNode%7CX3DMetadataObjectMFNode"
         }
       },
       "additionalProperties": false
