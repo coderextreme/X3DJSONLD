@@ -7,11 +7,18 @@ var mapToMethod2 = require('./mapToMethod2.js');
 var fieldTypes = require('./fieldTypes.js');
 var DOMParser = require('xmldom').DOMParser;
 
+if (typeof mapToMethod2 !== 'undefined') {
+	for (var map in mapToMethod2) {
+		Object.assign(mapToMethod[map], mapToMethod2[map]);
+	}
+}
+/*
 for (var par in mapToMethod2) {
 	for (var child in mapToMethod2[par]) {
 		mapToMethod[par][child] = mapToMethod2[par][child];
 	}
 }
+*/
 
 function serializeXML(str, serializer, co, mapToMethod, fieldTypes) {
 	var doc = null;

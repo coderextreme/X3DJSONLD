@@ -1,4 +1,5 @@
-from bs4 import BeautifulSoup
+import xml.etree.ElementTree
+import re
 import sys
 
 PY3 = sys.version_info[0] == 3
@@ -20,33 +21,33 @@ class ClassPrinter:
             self.name = node
             self.node = False
         else:
-            self.name = node["name"]
+            self.name = node.get("name")
             self.node = node
 
     def findParents(self):
         if self.node:
-            inhers = self.node.find_all("Inheritance")
-            for inher in inhers:
-                self.parents.update({ inher['baseType'] : 1} )
-                self.parents.update(classes[inher['baseType']].findParents())
-    
-            addinhers = self.node.find_all("AdditionalInheritance")
+            addinhers = self.node.iter("AdditionalInheritance")
             for addinher in addinhers:
-                self.parents.update({ addinher['baseType'] : 1} )
-                self.parents.update(classes[addinher['baseType']].findParents())
+                self.parents.update({ addinher.get('baseType') : 1} )
+                self.parents.update(classes[addinher.get('baseType')].findParents())
 
+            inhers = self.node.iter("Inheritance")
+            for inher in inhers:
+                self.parents.update({ inher.get('baseType') : 1} )
+                self.parents.update(classes[inher.get('baseType')].findParents())
+    
             return self.parents;
 
     def findChildren(self):
         if self.node:
-            inhers = self.node.find_all("Inheritance")
-            for inher in inhers:
-                classes[inher['baseType']].children.append(self.name)
-    
-            addinhers = self.node.find_all("AdditionalInheritance")
+            addinhers = self.node.iter("AdditionalInheritance")
             for addinher in addinhers:
-                classes[addinher['baseType']].children.append(self.name)
+                classes[addinher.get('baseType')].children.append(self.name)
 
+            inhers = self.node.iter("Inheritance")
+            for inher in inhers:
+                classes[inher.get('baseType')].children.append(self.name)
+    
             return self.children;
 
     def listChildren(self, fieldName, fieldType):
@@ -84,45 +85,45 @@ class ClassPrinter:
                 pass
         str += '"'+self.name+'" : {\n'
         if self.node:
-            fields = self.node.find_all("field")
+            fields = self.node.iter("field")
             for field in fields:
-                if field["type"] == "MFNode" or field["type"] == "SFNode":
-                    acnts = field["acceptableNodeTypes"].split("|")
+                if field.get("type") == "MFNode" or field.get("type") == "SFNode":
+                    acnts = field.get("acceptableNodeTypes").split("|")
                     for acnt in acnts:
-                        str += classes[acnt].listChildren(field["name"], field["type"])
-                        str += classes[acnt].listParents(field["name"], field["type"])
+                        str += classes[acnt].listChildren(field.get("name"), field.get("type"))
+                        str += classes[acnt].listParents(field.get("name"), field.get("type"))
         str += '},\n'
         self.printed = True
         return str
 
 code = "var mapToMethod = {"
 
-soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-3.3.xml"), "xml")
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
 classes = {}
 
-ants = soup.find_all("AbstractNodeType")
+ants = soup.iter("AbstractNodeType")
 for ant in ants:
-    classes[ant['name']] = ClassPrinter(ant, {})
+    classes[ant.get('name')] = ClassPrinter(ant, {})
 
 classes["X3DConcreteNode"] = ClassPrinter("X3DConcreteNode", {})
 classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {})
 
-aots = soup.find_all("AbstractObjectType")
+aots = soup.iter("AbstractObjectType")
 for aot in aots:
-    classes[aot['name']] = ClassPrinter(aot, {})
+    classes[aot.get('name')] = ClassPrinter(aot, {})
 
-cns = soup.find_all("ConcreteNode")
+cns = soup.iter("ConcreteNode")
 for cn in cns:
-    classes[cn['name']] = ClassPrinter(cn, { "X3DConcreteNode" : 1, "X3DChildNode" : 1 })
-    classes["X3DConcreteNode"].children.append(cn["name"])
-    classes["X3DChildNode"].children.append(cn["name"])
+    classes[cn.get('name')] = ClassPrinter(cn, { "X3DConcreteNode" : 1, "X3DChildNode" : 1 })
+    classes["X3DConcreteNode"].children.append(cn.get("name"))
+    classes["X3DChildNode"].children.append(cn.get("name"))
 
-sts = soup.find_all("Statement")
+sts = soup.iter("Statement")
 for st in sts:
-    classes[st['name']] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 })
-    classes["X3DConcreteStatement"].children.append(st["name"])
-    classes["X3DChildNode"].children.append(st["name"])
+    classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 })
+    classes["X3DConcreteStatement"].children.append(st.get("name"))
+    classes["X3DChildNode"].children.append(st.get("name"))
 
 for k,v in classes.items():
     v.findChildren()
