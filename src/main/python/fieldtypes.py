@@ -1,15 +1,15 @@
-from bs4 import BeautifulSoup
+import xml.etree.ElementTree
 
 class ClassPrinter:
     def __init__(self, node, metaInfo):
         self.node = node
         self.parents = []
-        inhers = self.node.find_all("Inheritance")
-        for inher in inhers:
-            self.parents.append(inher['baseType'])
-        addinhers = self.node.find_all("AdditionalInheritance")
+        addinhers = self.node.iter("AdditionalInheritance")
         for addinher in addinhers:
-            self.parents.append(addinher['baseType'])
+            self.parents.append(addinher.get('baseType'))
+        inhers = self.node.iter("Inheritance")
+        for inher in inhers:
+            self.parents.append(inher.get('baseType'))
         self.metaInfo = metaInfo
         self.printed = False
 
@@ -22,35 +22,35 @@ class ClassPrinter:
                 str += classes[parent].printClass()
             except:
                 pass
-        str += '"'+self.node['name']+'" : {\n'
-        fields = self.node.find_all("field")
+        str += '"'+self.node.get('name')+'" : {\n'
+        fields = self.node.iter("field")
         for field in fields:
-            str += '\t"' + field["name"] + '" : "'+field["type"]+'",\n';
+            str += '\t"' + field.get("name") + '" : "'+field.get("type")+'",\n';
         str += '},\n'
         self.printed = True
         return str
 
 code = "var fieldTypes = {"
 
-soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-3.3.xml"), "xml")
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-3.3.xml")).getroot()
 
 classes = {}
 
-ants = soup.find_all("AbstractNodeType")
+ants = soup.iter("AbstractNodeType")
 for ant in ants:
-    classes[ant['name']] = ClassPrinter(ant, "")
+    classes[ant.get('name')] = ClassPrinter(ant, "")
 
-aots = soup.find_all("AbstractObjectType")
+aots = soup.iter("AbstractObjectType")
 for aot in aots:
-    classes[aot['name']] = ClassPrinter(aot, "")
+    classes[aot.get('name')] = ClassPrinter(aot, "")
 
-cns = soup.find_all("ConcreteNode")
+cns = soup.iter("ConcreteNode")
 for cn in cns:
-    classes[cn['name']] = ClassPrinter(cn, "Object")
+    classes[cn.get('name')] = ClassPrinter(cn, "Object")
 
-sts = soup.find_all("Statement")
+sts = soup.iter("Statement")
 for st in sts:
-    classes[st['name']] = ClassPrinter(st, "Object")
+    classes[st.get('name')] = ClassPrinter(st, "Object")
 
 for k,v in classes.items():
     code += v.printClass()
