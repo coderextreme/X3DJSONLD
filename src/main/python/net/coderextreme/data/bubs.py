@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("bubs.x3d")
@@ -32,19 +30,19 @@ meta6.setName("identifier")
 meta6.setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")
 
 head1.addMeta(meta6)
+
 X3D0.setHead(head1)
 Scene7 = SceneObject()
-
 NavigationInfo8 = NavigationInfoObject()
 NavigationInfo8.setType(["EXAMINE"])
 
-Scene7.addChild(NavigationInfo8)
+Scene7.addChildren(NavigationInfo8)
 Viewpoint9 = ViewpointObject()
 Viewpoint9.setPosition([0,0,4])
 Viewpoint9.setOrientation([1,0,0,0])
 Viewpoint9.setDescription("Bubbles in action")
 
-Scene7.addChild(Viewpoint9)
+Scene7.addChildren(Viewpoint9)
 Background10 = BackgroundObject()
 Background10.setBackUrl(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])
 Background10.setBottomUrl(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])
@@ -53,69 +51,65 @@ Background10.setLeftUrl(["../resources/images/LF.png","https://coderextreme.net/
 Background10.setRightUrl(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])
 Background10.setTopUrl(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])
 
-Scene7.addChild(Background10)
+Scene7.addChildren(Background10)
 ProtoDeclare11 = ProtoDeclareObject()
 ProtoDeclare11.setName("Bubble")
-
 ProtoBody12 = ProtoBodyObject()
-
 Transform13 = TransformObject()
 Transform13.setDEF("transform")
-
 Shape14 = ShapeObject()
-
 Sphere15 = SphereObject()
 Sphere15.setRadius(0.25)
 
 Shape14.setGeometry(Sphere15)
 Appearance16 = AppearanceObject()
-
 Material17 = MaterialObject()
 Material17.setDiffuseColor([1,0,0])
 Material17.setTransparency(0.2)
 
 Appearance16.setMaterial(Material17)
+
 Shape14.setAppearance(Appearance16)
-Transform13.addChild(Shape14)
+
+Transform13.addChildren(Shape14)
 Script18 = ScriptObject()
 Script18.setDEF("bounce")
-
 field19 = fieldObject()
-field19.setType(fieldObject.TYPE_SFVEC3F)
 field19.setName("scale")
-field19.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field19.setAccessType("inputOutput")
+field19.setType("SFVec3f")
 field19.setValue("1 1 1")
 
 Script18.addField(field19)
 field20 = fieldObject()
-field20.setType(fieldObject.TYPE_SFVEC3F)
 field20.setName("translation")
-field20.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field20.setAccessType("inputOutput")
+field20.setType("SFVec3f")
 field20.setValue("0 0 0")
 
 Script18.addField(field20)
 field21 = fieldObject()
-field21.setType(fieldObject.TYPE_SFVEC3F)
 field21.setName("velocity")
-field21.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field21.setAccessType("inputOutput")
+field21.setType("SFVec3f")
 field21.setValue("0 0 0")
 
 Script18.addField(field21)
 field22 = fieldObject()
-field22.setType(fieldObject.TYPE_SFVEC3F)
 field22.setName("scalvel")
-field22.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field22.setAccessType("inputOutput")
+field22.setType("SFVec3f")
 field22.setValue("0 0 0")
 
 Script18.addField(field22)
 field23 = fieldObject()
-field23.setType(fieldObject.TYPE_SFFLOAT)
 field23.setName("set_fraction")
-field23.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field23.setAccessType("inputOnly")
+field23.setType("SFFloat")
 
 Script18.addField(field23)
 
-Script18.setSourceCode("ecmascript:\n"+
+Script18.setSourceCode('''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -153,58 +147,62 @@ Script18.setSourceCode("ecmascript:\n"+
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}")
-Transform13.addChild(Script18)
+"}''')
+
+Transform13.addChildren(Script18)
 TimeSensor24 = TimeSensorObject()
 TimeSensor24.setDEF("bubbleClock")
 TimeSensor24.setCycleInterval(10)
 TimeSensor24.setLoop(True)
 
-Transform13.addChild(TimeSensor24)
+Transform13.addChildren(TimeSensor24)
 ROUTE25 = ROUTEObject()
 ROUTE25.setFromNode("bounce")
 ROUTE25.setFromField("translation_changed")
 ROUTE25.setToNode("transform")
 ROUTE25.setToField("set_translation")
 
-Transform13.addChild(ROUTE25)
+Transform13.addChildren(ROUTE25)
 ROUTE26 = ROUTEObject()
 ROUTE26.setFromNode("bounce")
 ROUTE26.setFromField("scale_changed")
 ROUTE26.setToNode("transform")
 ROUTE26.setToField("set_scale")
 
-Transform13.addChild(ROUTE26)
+Transform13.addChildren(ROUTE26)
 ROUTE27 = ROUTEObject()
 ROUTE27.setFromNode("bubbleClock")
 ROUTE27.setFromField("fraction_changed")
 ROUTE27.setToNode("bounce")
 ROUTE27.setToField("set_fraction")
 
-Transform13.addChild(ROUTE27)
-ProtoBody12.addChild(Transform13)
+Transform13.addChildren(ROUTE27)
+
+ProtoBody12.addChildren(Transform13)
+
 ProtoDeclare11.setProtoBody(ProtoBody12)
-Scene7.addChild(ProtoDeclare11)
+
+Scene7.addChildren(ProtoDeclare11)
 ProtoInstance28 = ProtoInstanceObject()
 ProtoInstance28.setName("Bubble")
 ProtoInstance28.setDEF("bubbleA")
 
-Scene7.addChild(ProtoInstance28)
+Scene7.addChildren(ProtoInstance28)
 ProtoInstance29 = ProtoInstanceObject()
 ProtoInstance29.setName("Bubble")
 ProtoInstance29.setDEF("bubbleB")
 
-Scene7.addChild(ProtoInstance29)
+Scene7.addChildren(ProtoInstance29)
 ProtoInstance30 = ProtoInstanceObject()
 ProtoInstance30.setName("Bubble")
 ProtoInstance30.setDEF("bubbleC")
 
-Scene7.addChild(ProtoInstance30)
+Scene7.addChildren(ProtoInstance30)
 ProtoInstance31 = ProtoInstanceObject()
 ProtoInstance31.setName("Bubble")
 ProtoInstance31.setDEF("bubbleD")
 
-Scene7.addChild(ProtoInstance31)
-X3D0.setScene(Scene7)
+Scene7.addChildren(ProtoInstance31)
 
+X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/bubs.new.x3d")

@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("ObliqueStrategies.x3d")
@@ -137,30 +135,27 @@ meta27.setName("license")
 meta27.setContent("../license.html")
 
 head1.addMeta(meta27)
+
 X3D0.setHead(head1)
 Scene28 = SceneObject()
-
 NavigationInfo29 = NavigationInfoObject()
 
-Scene28.addChild(NavigationInfo29)
+Scene28.addChildren(NavigationInfo29)
 Background30 = BackgroundObject()
 Background30.setSkyColor([0.419608,0.427451,1])
 
-Scene28.addChild(Background30)
+Scene28.addChildren(Background30)
 Transform31 = TransformObject()
 Transform31.setScale([0.4,0.4,0.4])
 Transform31.setTranslation([0,1,0])
-
 TouchSensor32 = TouchSensorObject()
 TouchSensor32.setDEF("RandomTextClickedSensor")
 TouchSensor32.setDescription("Select to see a new strategy")
 
-Transform31.addChild(TouchSensor32)
+Transform31.addChildren(TouchSensor32)
 Shape33 = ShapeObject()
-
 Text34 = TextObject()
 Text34.setString(["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"])
-
 FontStyle35 = FontStyleObject()
 FontStyle35.setDEF("MessageFont")
 FontStyle35.setFamily(["SANS"])
@@ -168,32 +163,31 @@ FontStyle35.setJustify(["MIDDLE","MIDDLE"])
 FontStyle35.setStyle("BOLD")
 
 Text34.setFontStyle(FontStyle35)
+
 Shape33.setGeometry(Text34)
 Appearance36 = AppearanceObject()
-
 Material37 = MaterialObject()
 Material37.setDiffuseColor([1,1,1])
 
 Appearance36.setMaterial(Material37)
+
 Shape33.setAppearance(Appearance36)
-Transform31.addChild(Shape33)
+
+Transform31.addChildren(Shape33)
 Transform38 = TransformObject()
 Transform38.setScale([10,3,1])
-
 Shape39 = ShapeObject()
 Shape39.setDEF("HeadlineClickSurface")
-
 IndexedFaceSet40 = IndexedFaceSetObject()
 IndexedFaceSet40.setCoordIndex([0,1,2,3,-1])
 IndexedFaceSet40.setSolid(False)
-
 Coordinate41 = CoordinateObject()
 Coordinate41.setPoint([1,1,0,1,-1,0,-1,-1,0,-1,1,0])
 
 IndexedFaceSet40.setCoord(Coordinate41)
+
 Shape39.setGeometry(IndexedFaceSet40)
 Appearance42 = AppearanceObject()
-
 Material43 = MaterialObject()
 Material43.setAmbientIntensity(0.245763)
 Material43.setDiffuseColor([0.34773,0.090909,0.005289])
@@ -202,326 +196,323 @@ Material43.setSpecularColor([0.336735,0.051091,0.051091])
 Material43.setTransparency(0.8)
 
 Appearance42.setMaterial(Material43)
+
 Shape39.setAppearance(Appearance42)
-Transform38.addChild(Shape39)
-Transform31.addChild(Transform38)
-Scene28.addChild(Transform31)
+
+Transform38.addChildren(Shape39)
+
+Transform31.addChildren(Transform38)
+
+Scene28.addChildren(Transform31)
 Script44 = ScriptObject()
 Script44.setDEF("TextScript")
 Script44.setUrl(["../node/ObliqueStrategiesScript.js"])
-
-
-Script44.addComments(CommentsBlock("""initialize() method includes unit test to printAllStrategies() to console"""))
-
-Script44.addComments(CommentsBlock("""TODO insert field definitions here (index string_changed previous next random) and then animate!"""))
+#initialize() method includes unit test to printAllStrategies() to console
+#TODO insert field definitions here (index string_changed previous next random) and then animate!
 field45 = fieldObject()
-field45.setType(fieldObject.TYPE_SFINT32)
 field45.setName("index")
-field45.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field45.setAccessType("initializeOnly")
 field45.setAppinfo("index for active strategy card, -1 means no selection")
+field45.setType("SFInt32")
 field45.setValue("0")
 
 Script44.addField(field45)
 field46 = fieldObject()
-field46.setType(fieldObject.TYPE_MFSTRING)
 field46.setName("string_changed")
-field46.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field46.setAccessType("outputOnly")
 field46.setAppinfo("latest strategy card value")
+field46.setType("MFString")
 
 Script44.addField(field46)
 field47 = fieldObject()
-field47.setType(fieldObject.TYPE_MFSTRING)
 field47.setName("textToSpeechUrl")
-field47.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field47.setAccessType("outputOnly")
 field47.setAppinfo("url to invoke Google Translate")
+field47.setType("MFString")
 
 Script44.addField(field47)
 field48 = fieldObject()
-field48.setType(fieldObject.TYPE_SFTIME)
 field48.setName("newCardTime")
-field48.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field48.setAccessType("outputOnly")
 field48.setAppinfo("activate Sound node")
+field48.setType("SFTime")
 
 Script44.addField(field48)
 field49 = fieldObject()
-field49.setType(fieldObject.TYPE_SFBOOL)
 field49.setName("selectPreviousCard")
-field49.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field49.setAccessType("inputOnly")
+field49.setType("SFBool")
 
 Script44.addField(field49)
 field50 = fieldObject()
-field50.setType(fieldObject.TYPE_SFBOOL)
 field50.setName("selectNextCard")
-field50.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field50.setAccessType("inputOnly")
+field50.setType("SFBool")
 
 Script44.addField(field50)
 field51 = fieldObject()
-field51.setType(fieldObject.TYPE_SFBOOL)
 field51.setName("selectRandomCard")
-field51.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field51.setAccessType("inputOnly")
+field51.setType("SFBool")
 
 Script44.addField(field51)
 field52 = fieldObject()
-field52.setType(fieldObject.TYPE_SFBOOL)
 field52.setName("traceEnabled")
-field52.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field52.setAccessType("initializeOnly")
 field52.setAppinfo("controls console tracing")
+field52.setType("SFBool")
 field52.setValue("true")
 
 Script44.addField(field52)
-Scene28.addChild(Script44)
+
+Scene28.addChildren(Script44)
 Transform53 = TransformObject()
 Transform53.setDEF("CardTransform")
 Transform53.setScale([0.4,0.4,0.4])
 Transform53.setTranslation([0,-1.5,0])
-
 Shape54 = ShapeObject()
-
 Text55 = TextObject()
 Text55.setDEF("CardText")
-
 FontStyle56 = FontStyleObject()
 FontStyle56.setFamily(["SANS"])
 FontStyle56.setJustify(["MIDDLE","MIDDLE"])
 FontStyle56.setStyle("BOLD")
 
 Text55.setFontStyle(FontStyle56)
+
 Shape54.setGeometry(Text55)
 Appearance57 = AppearanceObject()
-
 Material58 = MaterialObject()
 Material58.setDiffuseColor([1,1,1])
 
 Appearance57.setMaterial(Material58)
+
 Shape54.setAppearance(Appearance57)
-Transform53.addChild(Shape54)
+
+Transform53.addChildren(Shape54)
 ROUTE59 = ROUTEObject()
 ROUTE59.setFromField("string_changed")
 ROUTE59.setFromNode("TextScript")
 ROUTE59.setToField("string")
 ROUTE59.setToNode("CardText")
 
-Transform53.addChild(ROUTE59)
+Transform53.addChildren(ROUTE59)
 Sound60 = SoundObject()
 Sound60.setDEF("CardSoundSpatialization")
 Sound60.setMaxBack(100)
 Sound60.setMaxFront(100)
 Sound60.setMinBack(20)
 Sound60.setMinFront(20)
-
-
-Sound60.addComments(CommentsBlock("""Make sure the sound source AudioClip is audible at the user location"""))
-
-Sound60.addComments(CommentsBlock("""Not all X3D players seem to use the .mp3"""))
-
-Sound60.addComments(CommentsBlock("""&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"""))
-
-Sound60.addComments(CommentsBlock("""%20 is space character used in uri/url encoding"""))
+#Make sure the sound source AudioClip is audible at the user location
+#Not all X3D players seem to use the .mp3
+#&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
+#%20 is space character used in uri/url encoding
 AudioClip61 = AudioClipObject()
 AudioClip61.setDEF("TextToSpeechAudioClip")
 AudioClip61.setDescription("sends strategy text google translate")
 AudioClip61.setUrl(["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"])
 
 Sound60.setSource(AudioClip61)
-Transform53.addChild(Sound60)
+
+Transform53.addChildren(Sound60)
 ROUTE62 = ROUTEObject()
 ROUTE62.setFromField("textToSpeechUrl")
 ROUTE62.setFromNode("TextScript")
 ROUTE62.setToField("url")
 ROUTE62.setToNode("TextToSpeechAudioClip")
 
-Transform53.addChild(ROUTE62)
+Transform53.addChildren(ROUTE62)
 ROUTE63 = ROUTEObject()
 ROUTE63.setFromField("newCardTime")
 ROUTE63.setFromNode("TextScript")
 ROUTE63.setToField("startTime")
 ROUTE63.setToNode("TextToSpeechAudioClip")
 
-Transform53.addChild(ROUTE63)
-Scene28.addChild(Transform53)
+Transform53.addChildren(ROUTE63)
+
+Scene28.addChildren(Transform53)
 Transform64 = TransformObject()
 Transform64.setScale([0.4,0.4,0.4])
 Transform64.setTranslation([-3.2,2.5,0])
-
 TouchSensor65 = TouchSensorObject()
 TouchSensor65.setDEF("PreviousTextClickedSensor")
 TouchSensor65.setDescription("Select to see previous strategy")
 
-Transform64.addChild(TouchSensor65)
+Transform64.addChildren(TouchSensor65)
 ROUTE66 = ROUTEObject()
 ROUTE66.setFromField("isActive")
 ROUTE66.setFromNode("PreviousTextClickedSensor")
 ROUTE66.setToField("selectPreviousCard")
 ROUTE66.setToNode("TextScript")
 
-Transform64.addChild(ROUTE66)
+Transform64.addChildren(ROUTE66)
 Shape67 = ShapeObject()
-
 Text68 = TextObject()
 Text68.setString(["previous"])
-
 FontStyle69 = FontStyleObject()
 FontStyle69.setUSE("MessageFont")
 
 Text68.setFontStyle(FontStyle69)
+
 Shape67.setGeometry(Text68)
 Appearance70 = AppearanceObject()
 Appearance70.setDEF("InterfaceAppearance")
-
 Material71 = MaterialObject()
 Material71.setDiffuseColor([1,0,0.6])
 
 Appearance70.setMaterial(Material71)
+
 Shape67.setAppearance(Appearance70)
-Transform64.addChild(Shape67)
+
+Transform64.addChildren(Shape67)
 Transform72 = TransformObject()
 Transform72.setScale([2,0.6,1])
-
 Shape73 = ShapeObject()
 Shape73.setDEF("TransparentClickSurface")
-
-
-Shape73.addComments(CommentsBlock("""support Selectable Text with a scalable IFS"""))
+#support Selectable Text with a scalable IFS
 IndexedFaceSet74 = IndexedFaceSetObject()
 IndexedFaceSet74.setCoordIndex([0,1,2,3,-1])
 IndexedFaceSet74.setSolid(False)
-
 Coordinate75 = CoordinateObject()
 Coordinate75.setPoint([1,1,0,1,-1,0,-1,-1,0,-1,1,0])
 
 IndexedFaceSet74.setCoord(Coordinate75)
+
 Shape73.setGeometry(IndexedFaceSet74)
 Appearance76 = AppearanceObject()
-
 Material77 = MaterialObject()
 Material77.setTransparency(1)
 
 Appearance76.setMaterial(Material77)
+
 Shape73.setAppearance(Appearance76)
-Transform72.addChild(Shape73)
-Transform64.addChild(Transform72)
-Scene28.addChild(Transform64)
+
+Transform72.addChildren(Shape73)
+
+Transform64.addChildren(Transform72)
+
+Scene28.addChildren(Transform64)
 Transform78 = TransformObject()
 Transform78.setScale([0.4,0.4,0.4])
 Transform78.setTranslation([3.5,2.5,0])
-
 TouchSensor79 = TouchSensorObject()
 TouchSensor79.setDEF("NextTextClickedSensor")
 TouchSensor79.setDescription("Select to see next strategy")
 
-Transform78.addChild(TouchSensor79)
+Transform78.addChildren(TouchSensor79)
 ROUTE80 = ROUTEObject()
 ROUTE80.setFromField("isActive")
 ROUTE80.setFromNode("NextTextClickedSensor")
 ROUTE80.setToField("selectNextCard")
 ROUTE80.setToNode("TextScript")
 
-Transform78.addChild(ROUTE80)
+Transform78.addChildren(ROUTE80)
 Shape81 = ShapeObject()
-
 Text82 = TextObject()
 Text82.setString(["next"])
-
 FontStyle83 = FontStyleObject()
 FontStyle83.setUSE("MessageFont")
 
 Text82.setFontStyle(FontStyle83)
+
 Shape81.setGeometry(Text82)
 Appearance84 = AppearanceObject()
 Appearance84.setUSE("InterfaceAppearance")
 
 Shape81.setAppearance(Appearance84)
-Transform78.addChild(Shape81)
+
+Transform78.addChildren(Shape81)
 Transform85 = TransformObject()
 Transform85.setScale([1.2,0.6,1])
-
 Shape86 = ShapeObject()
 Shape86.setUSE("TransparentClickSurface")
 
-Transform85.addChild(Shape86)
-Transform78.addChild(Transform85)
-Scene28.addChild(Transform78)
+Transform85.addChildren(Shape86)
+
+Transform78.addChildren(Transform85)
+
+Scene28.addChildren(Transform78)
 Transform87 = TransformObject()
 Transform87.setScale([0.4,0.4,0.4])
 Transform87.setTranslation([-3.3,-0.5,0])
-
 TouchSensor88 = TouchSensorObject()
 TouchSensor88.setUSE("RandomTextClickedSensor")
 
-Transform87.addChild(TouchSensor88)
+Transform87.addChildren(TouchSensor88)
 ROUTE89 = ROUTEObject()
 ROUTE89.setFromField("isActive")
 ROUTE89.setFromNode("RandomTextClickedSensor")
 ROUTE89.setToField("selectRandomCard")
 ROUTE89.setToNode("TextScript")
 
-Transform87.addChild(ROUTE89)
+Transform87.addChildren(ROUTE89)
 Shape90 = ShapeObject()
-
 Text91 = TextObject()
 Text91.setString(["random"])
-
 FontStyle92 = FontStyleObject()
 FontStyle92.setUSE("MessageFont")
 
 Text91.setFontStyle(FontStyle92)
+
 Shape90.setGeometry(Text91)
 Appearance93 = AppearanceObject()
 Appearance93.setUSE("InterfaceAppearance")
 
 Shape90.setAppearance(Appearance93)
-Transform87.addChild(Shape90)
+
+Transform87.addChildren(Shape90)
 Transform94 = TransformObject()
 Transform94.setScale([1.8,0.6,1])
-
 Shape95 = ShapeObject()
 Shape95.setUSE("TransparentClickSurface")
 
-Transform94.addChild(Shape95)
-Transform87.addChild(Transform94)
-Scene28.addChild(Transform87)
+Transform94.addChildren(Shape95)
+
+Transform87.addChildren(Transform94)
+
+Scene28.addChildren(Transform87)
 Transform96 = TransformObject()
 Transform96.setScale([0.4,0.4,0.4])
 Transform96.setTranslation([3.3,-0.5,0])
-
 Anchor97 = AnchorObject()
 Anchor97.setDEF("TextToSpeechAnchor")
 Anchor97.setDescription("text to speech in browser")
 Anchor97.setParameter(["target=_blank"])
 Anchor97.setUrl(["http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"])
-
 ROUTE98 = ROUTEObject()
 ROUTE98.setFromField("textToSpeechUrl")
 ROUTE98.setFromNode("TextScript")
 ROUTE98.setToField("url")
 ROUTE98.setToNode("TextToSpeechAnchor")
 
-Anchor97.addChild(ROUTE98)
+Anchor97.addChildren(ROUTE98)
 Shape99 = ShapeObject()
-
 Text100 = TextObject()
 Text100.setString(["speech"])
-
 FontStyle101 = FontStyleObject()
 FontStyle101.setUSE("MessageFont")
 
 Text100.setFontStyle(FontStyle101)
+
 Shape99.setGeometry(Text100)
 Appearance102 = AppearanceObject()
 Appearance102.setUSE("InterfaceAppearance")
 
 Shape99.setAppearance(Appearance102)
-Anchor97.addChild(Shape99)
+
+Anchor97.addChildren(Shape99)
 Transform103 = TransformObject()
 Transform103.setScale([1.8,0.6,1])
-
 Shape104 = ShapeObject()
 Shape104.setUSE("TransparentClickSurface")
 
-Transform103.addChild(Shape104)
-Anchor97.addChild(Transform103)
-Transform96.addChild(Anchor97)
-Scene28.addChild(Transform96)
-X3D0.setScene(Scene28)
+Transform103.addChildren(Shape104)
 
+Anchor97.addChildren(Transform103)
+
+Transform96.addChildren(Anchor97)
+
+Scene28.addChildren(Transform96)
+
+X3D0.setScene(Scene28)
 X3D0.toFileX3D("../data/ObliqueStrategies.new.x3d")

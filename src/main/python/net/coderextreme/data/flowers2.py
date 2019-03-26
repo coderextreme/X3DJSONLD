@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.0")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("flowers2.x3d")
@@ -52,92 +50,83 @@ meta10.setName("license")
 meta10.setContent("http://www.web3d.org/x3d/content/examples/license.html")
 
 head1.addMeta(meta10)
+
 X3D0.setHead(head1)
 Scene11 = SceneObject()
-
 NavigationInfo12 = NavigationInfoObject()
 
-Scene11.addChild(NavigationInfo12)
+Scene11.addChildren(NavigationInfo12)
 Viewpoint13 = ViewpointObject()
 Viewpoint13.setDescription("Two mathematical orbitals")
 Viewpoint13.setPosition([0,0,50])
 
-Scene11.addChild(Viewpoint13)
+Scene11.addChildren(Viewpoint13)
 Group14 = GroupObject()
-
 DirectionalLight15 = DirectionalLightObject()
 DirectionalLight15.setDirection([1,1,1])
 
-Group14.addChild(DirectionalLight15)
+Group14.addChildren(DirectionalLight15)
 ProtoDeclare16 = ProtoDeclareObject()
 ProtoDeclare16.setName("orbit")
-
 ProtoInterface17 = ProtoInterfaceObject()
-
 field18 = fieldObject()
-field18.setType(fieldObject.TYPE_SFVEC3F)
 field18.setName("translation")
-field18.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field18.setAccessType("inputOutput")
+field18.setType("SFVec3f")
 field18.setValue("-8 0 0")
 
 ProtoInterface17.addField(field18)
 field19 = fieldObject()
-field19.setType(fieldObject.TYPE_SFCOLOR)
 field19.setName("diffuseColor")
-field19.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field19.setAccessType("inputOutput")
+field19.setType("SFColor")
 field19.setValue("1 0.5 0")
 
 ProtoInterface17.addField(field19)
 field20 = fieldObject()
-field20.setType(fieldObject.TYPE_SFCOLOR)
 field20.setName("specularColor")
-field20.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field20.setAccessType("inputOutput")
+field20.setType("SFColor")
 field20.setValue("1 0.5 0")
 
 ProtoInterface17.addField(field20)
 field21 = fieldObject()
-field21.setType(fieldObject.TYPE_SFFLOAT)
 field21.setName("transparency")
-field21.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field21.setAccessType("inputOutput")
+field21.setType("SFFloat")
 field21.setValue("0.75")
 
 ProtoInterface17.addField(field21)
+
 ProtoDeclare16.setProtoInterface(ProtoInterface17)
 ProtoBody22 = ProtoBodyObject()
-
 Group23 = GroupObject()
-
 TimeSensor24 = TimeSensorObject()
 TimeSensor24.setDEF("Clock")
 TimeSensor24.setCycleInterval(16)
 TimeSensor24.setLoop(True)
 
-Group23.addChild(TimeSensor24)
+Group23.addChildren(TimeSensor24)
 OrientationInterpolator25 = OrientationInterpolatorObject()
 OrientationInterpolator25.setDEF("OrbitPath")
 OrientationInterpolator25.setKey([0,0.5,1])
 OrientationInterpolator25.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
 
-Group23.addChild(OrientationInterpolator25)
+Group23.addChildren(OrientationInterpolator25)
 Transform26 = TransformObject()
 Transform26.setDEF("OrbitTransform")
-
 IS27 = ISObject()
-
 connect28 = connectObject()
 connect28.setNodeField("translation")
 connect28.setProtoField("translation")
 
 IS27.addConnect(connect28)
+
 Transform26.setIS(IS27)
 Shape29 = ShapeObject()
-
 Appearance30 = AppearanceObject()
-
 Material31 = MaterialObject()
-
 IS32 = ISObject()
-
 connect33 = connectObject()
 connect33.setNodeField("diffuseColor")
 connect33.setProtoField("diffuseColor")
@@ -153,83 +142,86 @@ connect35.setNodeField("transparency")
 connect35.setProtoField("transparency")
 
 IS32.addConnect(connect35)
-Material31.setIS(IS32)
-Appearance30.setMaterial(Material31)
-Shape29.setAppearance(Appearance30)
 
-Shape29.addComments(CommentsBlock("""<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""))
+Material31.setIS(IS32)
+
+Appearance30.setMaterial(Material31)
+
+Shape29.setAppearance(Appearance30)
+#<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 IndexedFaceSet36 = IndexedFaceSetObject()
 IndexedFaceSet36.setCcw(False)
 IndexedFaceSet36.setConvex(False)
 IndexedFaceSet36.setCoordIndex([0,1,2,-1])
 IndexedFaceSet36.setDEF("Orbit")
-
 Coordinate37 = CoordinateObject()
 Coordinate37.setDEF("OrbitCoordinates")
 Coordinate37.setPoint([0,0,1,0,1,0,1,0,0])
 
 IndexedFaceSet36.setCoord(Coordinate37)
+
 Shape29.setGeometry(IndexedFaceSet36)
-Transform26.addChild(Shape29)
-Group23.addChild(Transform26)
+
+Transform26.addChildren(Shape29)
+
+Group23.addChildren(Transform26)
 Script38 = ScriptObject()
 Script38.setDEF("OrbitScript")
-
 field39 = fieldObject()
-field39.setType(fieldObject.TYPE_SFFLOAT)
 field39.setName("set_fraction")
-field39.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field39.setAccessType("inputOnly")
+field39.setType("SFFloat")
 
 Script38.addField(field39)
 field40 = fieldObject()
-field40.setType(fieldObject.TYPE_MFVEC3F)
 field40.setName("coordinates")
-field40.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field40.setAccessType("outputOnly")
+field40.setType("MFVec3f")
 
 Script38.addField(field40)
 field41 = fieldObject()
-field41.setType(fieldObject.TYPE_MFINT32)
 field41.setName("coordIndexes")
-field41.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field41.setAccessType("outputOnly")
+field41.setType("MFInt32")
 
 Script38.addField(field41)
 field42 = fieldObject()
-field42.setType(fieldObject.TYPE_SFFLOAT)
 field42.setName("e")
-field42.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field42.setAccessType("outputOnly")
+field42.setType("SFFloat")
 field42.setValue("5")
 
 Script38.addField(field42)
 field43 = fieldObject()
-field43.setType(fieldObject.TYPE_SFFLOAT)
 field43.setName("f")
-field43.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field43.setAccessType("outputOnly")
+field43.setType("SFFloat")
 field43.setValue("5")
 
 Script38.addField(field43)
 field44 = fieldObject()
-field44.setType(fieldObject.TYPE_SFFLOAT)
 field44.setName("g")
-field44.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field44.setAccessType("outputOnly")
+field44.setType("SFFloat")
 field44.setValue("5")
 
 Script38.addField(field44)
 field45 = fieldObject()
-field45.setType(fieldObject.TYPE_SFFLOAT)
 field45.setName("h")
-field45.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field45.setAccessType("outputOnly")
+field45.setType("SFFloat")
 field45.setValue("5")
 
 Script38.addField(field45)
 field46 = fieldObject()
-field46.setType(fieldObject.TYPE_SFINT32)
 field46.setName("resolution")
-field46.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field46.setAccessType("inputOutput")
+field46.setType("SFInt32")
 field46.setValue("50")
 
 Script38.addField(field46)
 
-Script38.setSourceCode("ecmascript:\n"+
+Script38.setSourceCode('''ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
 "			var f = 5;\n"+
@@ -302,49 +294,52 @@ Script38.setSourceCode("ecmascript:\n"+
 "					h = 4;\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
-"			}")
-Group23.addChild(Script38)
+"			}''')
+
+Group23.addChildren(Script38)
 ROUTE47 = ROUTEObject()
 ROUTE47.setFromNode("OrbitScript")
 ROUTE47.setFromField("coordIndexes")
 ROUTE47.setToNode("Orbit")
 ROUTE47.setToField("coordIndex")
 
-Group23.addChild(ROUTE47)
+Group23.addChildren(ROUTE47)
 ROUTE48 = ROUTEObject()
 ROUTE48.setFromNode("OrbitScript")
 ROUTE48.setFromField("coordinates")
 ROUTE48.setToNode("OrbitCoordinates")
 ROUTE48.setToField("point")
 
-Group23.addChild(ROUTE48)
+Group23.addChildren(ROUTE48)
 ROUTE49 = ROUTEObject()
 ROUTE49.setFromNode("Clock")
 ROUTE49.setFromField("fraction_changed")
 ROUTE49.setToNode("OrbitScript")
 ROUTE49.setToField("set_fraction")
 
-Group23.addChild(ROUTE49)
+Group23.addChildren(ROUTE49)
 ROUTE50 = ROUTEObject()
 ROUTE50.setFromNode("OrbitPath")
 ROUTE50.setFromField("value_changed")
 ROUTE50.setToNode("OrbitTransform")
 ROUTE50.setToField("rotation")
 
-Group23.addChild(ROUTE50)
+Group23.addChildren(ROUTE50)
 ROUTE51 = ROUTEObject()
 ROUTE51.setFromNode("Clock")
 ROUTE51.setFromField("fraction_changed")
 ROUTE51.setToNode("OrbitPath")
 ROUTE51.setToField("set_fraction")
 
-Group23.addChild(ROUTE51)
-ProtoBody22.addChild(Group23)
+Group23.addChildren(ROUTE51)
+
+ProtoBody22.addChildren(Group23)
+
 ProtoDeclare16.setProtoBody(ProtoBody22)
-Group14.addChild(ProtoDeclare16)
+
+Group14.addChildren(ProtoDeclare16)
 ProtoInstance52 = ProtoInstanceObject()
 ProtoInstance52.setName("orbit")
-
 fieldValue53 = fieldValueObject()
 fieldValue53.setName("translation")
 fieldValue53.setValue("-8 0 0")
@@ -365,10 +360,10 @@ fieldValue56.setName("transparency")
 fieldValue56.setValue("0.75")
 
 ProtoInstance52.addFieldValue(fieldValue56)
-Group14.addChild(ProtoInstance52)
+
+Group14.addChildren(ProtoInstance52)
 ProtoInstance57 = ProtoInstanceObject()
 ProtoInstance57.setName("orbit")
-
 fieldValue58 = fieldValueObject()
 fieldValue58.setName("translation")
 fieldValue58.setValue("8 0 0")
@@ -389,8 +384,10 @@ fieldValue61.setName("transparency")
 fieldValue61.setValue("0.5")
 
 ProtoInstance57.addFieldValue(fieldValue61)
-Group14.addChild(ProtoInstance57)
-Scene11.addChild(Group14)
-X3D0.setScene(Scene11)
 
+Group14.addChildren(ProtoInstance57)
+
+Scene11.addChildren(Group14)
+
+X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/flowers2.new.x3d")

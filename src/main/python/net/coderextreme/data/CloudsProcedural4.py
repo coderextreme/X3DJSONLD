@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.2")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("CloudsProcedural4.x3d")
@@ -52,135 +50,132 @@ meta10.setName("TODO")
 meta10.setContent("fix links")
 
 head1.addMeta(meta10)
+
 X3D0.setHead(head1)
 Scene11 = SceneObject()
-
-
-Scene11.addComments(CommentsBlock("""A png image file for the cloud texture must be designated in the ecmascript node."""))
+#A png image file for the cloud texture must be designated in the ecmascript node.
 Viewpoint12 = ViewpointObject()
 Viewpoint12.setDescription("Main")
 Viewpoint12.setJump(False)
 Viewpoint12.setOrientation([0,1,0,1.57])
 Viewpoint12.setPosition([50000,1000,42000])
 
-Scene11.addChild(Viewpoint12)
+Scene11.addChildren(Viewpoint12)
 Viewpoint13 = ViewpointObject()
 Viewpoint13.setDescription("Light House Tower")
 Viewpoint13.setJump(False)
 Viewpoint13.setOrientation([0,1,0,1.3])
 Viewpoint13.setPosition([45000,1290,44000])
 
-Scene11.addChild(Viewpoint13)
+Scene11.addChildren(Viewpoint13)
 Viewpoint14 = ViewpointObject()
 Viewpoint14.setDescription("centerWest")
 Viewpoint14.setJump(False)
 Viewpoint14.setOrientation([0,1,0,2.5])
 Viewpoint14.setPosition([48000,1000,20000])
 
-Scene11.addChild(Viewpoint14)
+Scene11.addChildren(Viewpoint14)
 Background15 = BackgroundObject()
 Background15.setGroundColor([0,0,1])
 Background15.setSkyColor([0,0,1])
 
-Scene11.addChild(Background15)
+Scene11.addChildren(Background15)
 DirectionalLight16 = DirectionalLightObject()
 DirectionalLight16.setAmbientIntensity(1)
 DirectionalLight16.setDirection([-1,0,0])
 DirectionalLight16.setGlobal(True)
 
-Scene11.addChild(DirectionalLight16)
+Scene11.addChildren(DirectionalLight16)
 Group17 = GroupObject()
 Group17.setDEF("Terrain")
-
 Transform18 = TransformObject()
 Transform18.setScale([50,50,50])
 Transform18.setTranslation([25000,0,25000])
-
 Inline19 = InlineObject()
 Inline19.setUrl(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"])
 
-Transform18.addChild(Inline19)
-Group17.addChild(Transform18)
+Transform18.addChildren(Inline19)
+
+Group17.addChildren(Transform18)
 Transform20 = TransformObject()
 Transform20.setRotation([1,0,0,1.57])
 Transform20.setTranslation([25000,0,25000])
-
 Shape21 = ShapeObject()
-
 Rectangle2D22 = Rectangle2DObject()
 Rectangle2D22.setSize([77000,55000])
 
 Shape21.setGeometry(Rectangle2D22)
 Appearance23 = AppearanceObject()
-
 ImageTexture24 = ImageTextureObject()
 ImageTexture24.setUrl(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])
 
 Appearance23.setTexture(ImageTexture24)
+
 Shape21.setAppearance(Appearance23)
-Transform20.addChild(Shape21)
-Group17.addChild(Transform20)
-Scene11.addChild(Group17)
+
+Transform20.addChildren(Shape21)
+
+Group17.addChildren(Transform20)
+
+Scene11.addChildren(Group17)
 Group25 = GroupObject()
 Group25.setDEF("Placemarks")
-
 Transform26 = TransformObject()
 Transform26.setScale([50,50,50])
 Transform26.setTranslation([45000,30,44000])
-
 Inline27 = InlineObject()
 Inline27.setUrl(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])
 
-Transform26.addChild(Inline27)
-Group25.addChild(Transform26)
-Scene11.addChild(Group25)
+Transform26.addChildren(Inline27)
+
+Group25.addChildren(Transform26)
+
+Scene11.addChildren(Group25)
 Group28 = GroupObject()
 Group28.setDEF("Clouds")
-
 Transform29 = TransformObject()
 Transform29.setDEF("Cumulus")
 
-Group28.addChild(Transform29)
+Group28.addChildren(Transform29)
 Transform30 = TransformObject()
 Transform30.setDEF("Cirrus")
 
-Group28.addChild(Transform30)
+Group28.addChildren(Transform30)
 Transform31 = TransformObject()
 Transform31.setDEF("Fog")
 
-Group28.addChild(Transform31)
+Group28.addChildren(Transform31)
 Script32 = ScriptObject()
 Script32.setDEF("PixelScript")
 Script32.setDirectOutput(True)
-
 field33 = fieldObject()
-field33.setType(fieldObject.TYPE_SFNODE)
 field33.setName("Cumulus")
-field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-
+field33.setAccessType("initializeOnly")
+field33.setType("SFNode")
 Transform34 = TransformObject()
 Transform34.setUSE("Cumulus")
 
-field33.addChild(Transform34)
+field33.addChildren(Transform34)
+
 Script32.addField(field33)
 field35 = fieldObject()
-field35.setType(fieldObject.TYPE_SFNODE)
 field35.setName("Cirrus")
-field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-
+field35.setAccessType("initializeOnly")
+field35.setType("SFNode")
 Transform36 = TransformObject()
 Transform36.setUSE("Cirrus")
 
-field35.addChild(Transform36)
+field35.addChildren(Transform36)
+
 Script32.addField(field35)
 field37 = fieldObject()
-field37.setType(fieldObject.TYPE_SFNODE)
 field37.setName("Fog")
-field37.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field37.setAccessType("initializeOnly")
+field37.setType("SFNode")
 
 Script32.addField(field37)
 
-Script32.setSourceCode("ecmascript:\n"+
+Script32.setSourceCode('''ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -560,16 +555,18 @@ Script32.setSourceCode("ecmascript:\n"+
 "cumulus();\n"+
 "\n"+
 "cirrus();\n"+
-"}")
-Group28.addChild(Script32)
+"}''')
+
+Group28.addChildren(Script32)
 DirectionalLight38 = DirectionalLightObject()
 DirectionalLight38.setAmbientIntensity(1)
 DirectionalLight38.setColor([1,0,0])
 DirectionalLight38.setDirection([-1,-1,0])
 DirectionalLight38.setGlobal(True)
 
-Group28.addChild(DirectionalLight38)
-Scene11.addChild(Group28)
-X3D0.setScene(Scene11)
+Group28.addChildren(DirectionalLight38)
 
+Scene11.addChildren(Group28)
+
+X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/CloudsProcedural4.new.x3d")

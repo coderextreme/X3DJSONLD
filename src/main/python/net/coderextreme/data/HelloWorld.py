@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("HelloWorld.x3d")
@@ -122,36 +120,30 @@ meta24.setName("reference")
 meta24.setContent("HelloWorld.json")
 
 head1.addMeta(meta24)
+#Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
 
-head1.addComments(CommentsBlock("""Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"""))
 X3D0.setHead(head1)
 Scene25 = SceneObject()
-
-
-Scene25.addComments(CommentsBlock("""Example scene to illustrate X3D nodes and fields (XML elements and attributes)"""))
+#Example scene to illustrate X3D nodes and fields (XML elements and attributes)
 WorldInfo26 = WorldInfoObject()
 WorldInfo26.setTitle("Hello world!")
 
-Scene25.addChild(WorldInfo26)
+Scene25.addChildren(WorldInfo26)
 Group27 = GroupObject()
-
 Viewpoint28 = ViewpointObject()
 Viewpoint28.setDEF("ViewUpClose")
 Viewpoint28.setCenterOfRotation([0,-1,0])
 Viewpoint28.setDescription("Hello world!")
 Viewpoint28.setPosition([0,-1,7])
 
-Group27.addChild(Viewpoint28)
+Group27.addChildren(Viewpoint28)
 Transform29 = TransformObject()
 Transform29.setRotation([0,1,0,3])
-
 Shape30 = ShapeObject()
-
 Sphere31 = SphereObject()
 
 Shape30.setGeometry(Sphere31)
 Appearance32 = AppearanceObject()
-
 Material33 = MaterialObject()
 Material33.setDEF("MaterialLightBlue")
 Material33.setDiffuseColor([0.1,0.5,1])
@@ -162,33 +154,37 @@ ImageTexture34.setDEF("ImageCloudlessEarth")
 ImageTexture34.setUrl(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])
 
 Appearance32.setTexture(ImageTexture34)
+
 Shape30.setAppearance(Appearance32)
-Transform29.addChild(Shape30)
-Group27.addChild(Transform29)
+
+Transform29.addChildren(Shape30)
+
+Group27.addChildren(Transform29)
 Transform35 = TransformObject()
 Transform35.setTranslation([0,-2,0])
-
 Shape36 = ShapeObject()
-
 Text37 = TextObject()
 Text37.setDEF("TextMessage")
 Text37.setString(["Hello","world!"])
-
 FontStyle38 = FontStyleObject()
 FontStyle38.setJustify(["MIDDLE","MIDDLE"])
 
 Text37.setFontStyle(FontStyle38)
+
 Shape36.setGeometry(Text37)
 Appearance39 = AppearanceObject()
-
 Material40 = MaterialObject()
 Material40.setUSE("MaterialLightBlue")
 
 Appearance39.setMaterial(Material40)
-Shape36.setAppearance(Appearance39)
-Transform35.addChild(Shape36)
-Group27.addChild(Transform35)
-Scene25.addChild(Group27)
-X3D0.setScene(Scene25)
 
+Shape36.setAppearance(Appearance39)
+
+Transform35.addChildren(Shape36)
+
+Group27.addChildren(Transform35)
+
+Scene25.addChildren(Group27)
+
+X3D0.setScene(Scene25)
 X3D0.toFileX3D("../data/HelloWorld.new.x3d")

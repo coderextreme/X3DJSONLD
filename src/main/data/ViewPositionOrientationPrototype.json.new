@@ -1,0 +1,417 @@
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "3.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ViewPositionOrientationPrototype.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "Leonard Daly and Don Brutzman"
+        },
+        {
+          "@name": "translator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "1 November 2000"
+        },
+        {
+          "@name": "modified",
+          "@content": "27 May 2017"
+        },
+        {
+          "@name": "description",
+          "@content": "ViewPositionOrientation prototype provides local position and orientation as user navigates, with optional console output"
+        },
+        {
+          "@name": "info",
+          "@content": "Note fix: metadata is no longer an allowed ProtoDeclare field name, since ProtoInstance already includes a metadata field"
+        },
+        {
+          "@name": "reference",
+          "@content": "ViewPositionOrientationExample.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIExample.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIPrototype.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.realism.com/Web3D/Examples#WhereAmI"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.realism.com/vrml/Example/WhereAmI/WhereAmI_Proto.wrl"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "12 February 2019"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "#comment": "Thanks to Leonard Daly for the original design of this prototype"
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ViewPositionOrientation",
+            "@appinfo": "ViewPositionOrientation provides provides console output of local position and orientation as user navigates",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "enabled",
+                  "@accessType": "inputOutput",
+                  "@appinfo": "Whether or not ViewPositionOrientation sends output to console",
+                  "@type": "SFBool",
+                  "@value": true
+                },
+                {
+                  "@name": "traceEnabled",
+                  "@accessType": "initializeOnly",
+                  "@appinfo": "Output internal trace messages for debugging this node, intended for developer use only",
+                  "@type": "SFBool",
+                  "@value": true
+                },
+                {
+                  "@name": "set_traceEnabled",
+                  "@accessType": "inputOnly",
+                  "@appinfo": "Ability to turn output tracing on/off at runtime",
+                  "@type": "SFBool"
+                },
+                {
+                  "@name": "position_changed",
+                  "@accessType": "outputOnly",
+                  "@appinfo": "Output local position",
+                  "@type": "SFVec3f"
+                },
+                {
+                  "@name": "orientation_changed",
+                  "@accessType": "outputOnly",
+                  "@appinfo": "Output local orientation",
+                  "@type": "SFRotation"
+                },
+                {
+                  "@name": "outputViewpointString",
+                  "@accessType": "outputOnly",
+                  "@appinfo": "MFString value of new Viewpoint, suitable for use in string field of a Text node",
+                  "@type": "MFString"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "ProximitySensor": {
+                    "@DEF": "WhereSensor",
+                    "@size": [
+                      1000000000,
+                      1000000000,
+                      1000000000
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "enabled",
+                          "@protoField": "enabled"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "#comment": "it's a big old world out there! large box likely handles most use cases."
+                },
+                {
+                  "Script": {
+                    "@DEF": "OutputPositionOrientation",
+                    "field": [
+                      {
+                        "@name": "traceEnabled",
+                        "@accessType": "initializeOnly",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@name": "set_traceEnabled",
+                        "@accessType": "inputOnly",
+                        "@type": "SFBool"
+                      },
+                      {
+                        "@name": "set_position",
+                        "@accessType": "inputOnly",
+                        "@type": "SFVec3f"
+                      },
+                      {
+                        "@name": "set_orientation",
+                        "@accessType": "inputOnly",
+                        "@type": "SFRotation"
+                      },
+                      {
+                        "@name": "position",
+                        "@accessType": "initializeOnly",
+                        "@type": "SFVec3f",
+                        "@value": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "@name": "orientation",
+                        "@accessType": "initializeOnly",
+                        "@type": "SFRotation",
+                        "@value": [
+                          0,
+                          1,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "@name": "position_changed",
+                        "@accessType": "outputOnly",
+                        "@type": "SFVec3f"
+                      },
+                      {
+                        "@name": "orientation_changed",
+                        "@accessType": "outputOnly",
+                        "@type": "SFRotation"
+                      },
+                      {
+                        "@name": "outputViewpointString",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "traceEnabled",
+                          "@protoField": "traceEnabled"
+                        },
+                        {
+                          "@nodeField": "set_traceEnabled",
+                          "@protoField": "set_traceEnabled"
+                        },
+                        {
+                          "@nodeField": "position_changed",
+                          "@protoField": "position_changed"
+                        },
+                        {
+                          "@nodeField": "orientation_changed",
+                          "@protoField": "orientation_changed"
+                        },
+                        {
+                          "@nodeField": "outputViewpointString",
+                          "@protoField": "outputViewpointString"
+                        }
+                      ]
+                    },
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function roundoff (value, digits) // for local use only",
+                      "{",
+                      "\tvar resolution = 1;",
+                      "\tfor (i = 1; i <= digits; i++ )",
+                      "\t{",
+                      "\t\tresolution *= 10;",
+                      "\t}",
+                      "\treturn Math.round (value*resolution) / resolution; // round to resolution",
+                      "}",
+                      "function outputViewpoint ()",
+                      "{",
+                      "  var holdString = ",
+                      "        '<Viewpoint position=\"' +",
+                      "\t\troundoff (position.x, 1) + ' ' +",
+                      "\t\troundoff (position.y, 1) + ' ' +",
+                      "\t\troundoff (position.z, 1) +",
+                      "        '\" orientation=\"' +",
+                      "\t\troundoff (orientation.x, 3) + ' ' +",
+                      "\t\troundoff (orientation.y, 3) + ' ' +",
+                      "\t\troundoff (orientation.z, 3) + ' ' +",
+                      "\t\troundoff (orientation.angle, 4) + '\"/>' ;",
+                      "   tracePrint (holdString);",
+                      "   outputViewpointString = new MFString (holdString);",
+                      "}",
+                      "function set_position (value)",
+                      "{",
+                      "\tposition = value; // save persistent value",
+                      "\tposition_changed = position; // output event",
+                      "\toutputViewpoint ();",
+                      "}",
+                      "function set_orientation (value)",
+                      "{",
+                      "\torientation = value; // save persistent value",
+                      "\torientation_changed = orientation; // output event",
+                      "\toutputViewpoint ();",
+                      "}",
+                      "function set_traceEnabled (value)",
+                      "{",
+                      "\ttraceEnabled = value;",
+                      "\talwaysPrint ('traceEnabled=' + traceEnabled);",
+                      "}",
+                      "function alwaysPrint (text)",
+                      "{",
+                      "\tBrowser.print ('[ViewPositionOrientation] ' + text + '\n');",
+                      "}",
+                      "function tracePrint (text)",
+                      "{",
+                      "\tif (traceEnabled) alwaysPrint (text);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromField": "position_changed",
+                    "@fromNode": "WhereSensor",
+                    "@toField": "set_position",
+                    "@toNode": "OutputPositionOrientation"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromField": "orientation_changed",
+                    "@fromNode": "WhereSensor",
+                    "@toField": "set_orientation",
+                    "@toNode": "OutputPositionOrientation"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "#comment": "===================="
+        },
+        {
+          "Viewpoint": {
+            "@description": "ViewPositionOrientation prototype",
+            "@position": [
+              0,
+              0,
+              14
+            ]
+          }
+        },
+        {
+          "Anchor": {
+            "@description": "ViewPositionOrientation Example",
+            "@parameter": [
+              "target=_blank"
+            ],
+            "@url": [
+              "ViewPositionOrientationExample.x3d",
+              "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.x3d",
+              "ViewPositionOrientationExample.wrl",
+              "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.wrl"
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "ViewPositionOrientationPrototype",
+                        "is a prototype definition file",
+                        "",
+                        "Click this text to see",
+                        "ViewPositionOrientationExample"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@size": 1.2
+                        }
+                      }
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.6,
+                            0.8,
+                            0.4
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "#comment": "Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"
+              },
+              {
+                "Shape": {
+                  "-children": [
+                    {
+                      "#comment": "Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible."
+                    }
+                  ],
+                  "-geometry": {
+                    "Box": {
+                      "@size": [
+                        16,
+                        7,
+                        0.001
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@transparency": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+  }
+}
