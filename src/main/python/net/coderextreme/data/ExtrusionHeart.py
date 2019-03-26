@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.0")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("ExtrusionHeart.x3d")
@@ -47,20 +45,18 @@ meta9.setName("license")
 meta9.setContent("../license.html")
 
 head1.addMeta(meta9)
+
 X3D0.setHead(head1)
 Scene10 = SceneObject()
-
 Viewpoint11 = ViewpointObject()
 Viewpoint11.setDescription("Extrusion Heart")
 Viewpoint11.setOrientation([1,0,0,1.57])
 Viewpoint11.setPosition([0,-4,0])
 
-Scene10.addChild(Viewpoint11)
+Scene10.addChildren(Viewpoint11)
 Transform12 = TransformObject()
 Transform12.setTranslation([0,-0.5,0])
-
 Shape13 = ShapeObject()
-
 Extrusion14 = ExtrusionObject()
 Extrusion14.setCreaseAngle(3.14159)
 Extrusion14.setCrossSection([0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8])
@@ -70,14 +66,16 @@ Extrusion14.setSpine([0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0])
 
 Shape13.setGeometry(Extrusion14)
 Appearance15 = AppearanceObject()
-
 Material16 = MaterialObject()
 Material16.setDiffuseColor([0.8,0.3,0.3])
 
 Appearance15.setMaterial(Material16)
-Shape13.setAppearance(Appearance15)
-Transform12.addChild(Shape13)
-Scene10.addChild(Transform12)
-X3D0.setScene(Scene10)
 
+Shape13.setAppearance(Appearance15)
+
+Transform12.addChildren(Shape13)
+
+Scene10.addChildren(Transform12)
+
+X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/ExtrusionHeart.new.x3d")

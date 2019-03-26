@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("SFVec3f.x3d")
@@ -27,69 +25,68 @@ meta5.setName("identifier")
 meta5.setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")
 
 head1.addMeta(meta5)
+
 X3D0.setHead(head1)
 Scene6 = SceneObject()
-
 NavigationInfo7 = NavigationInfoObject()
 
-Scene6.addChild(NavigationInfo7)
+Scene6.addChildren(NavigationInfo7)
 Transform8 = TransformObject()
 Transform8.setDEF("transform")
-
 Shape9 = ShapeObject()
-
 Appearance10 = AppearanceObject()
-
 Material11 = MaterialObject()
 Material11.setDiffuseColor([0.7,0.7,0.7])
 Material11.setSpecularColor([0.5,0.5,0.5])
 
 Appearance10.setMaterial(Material11)
+
 Shape9.setAppearance(Appearance10)
 Sphere12 = SphereObject()
 
 Shape9.setGeometry(Sphere12)
-Transform8.addChild(Shape9)
-Scene6.addChild(Transform8)
+
+Transform8.addChildren(Shape9)
+
+Scene6.addChildren(Transform8)
 Script13 = ScriptObject()
 Script13.setDEF("Bounce")
-
 field14 = fieldObject()
-field14.setType(fieldObject.TYPE_SFVEC3F)
 field14.setName("set_translation")
-field14.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field14.setAccessType("inputOnly")
+field14.setType("SFVec3f")
 field14.setValue("0 0 0")
 
 Script13.addField(field14)
 field15 = fieldObject()
-field15.setType(fieldObject.TYPE_SFVEC3F)
 field15.setName("translation_changed")
-field15.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field15.setAccessType("outputOnly")
+field15.setType("SFVec3f")
 field15.setValue("0 0 0")
 
 Script13.addField(field15)
 field16 = fieldObject()
-field16.setType(fieldObject.TYPE_SFVEC3F)
 field16.setName("translation")
-field16.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field16.setAccessType("inputOutput")
+field16.setType("SFVec3f")
 field16.setValue("0 0 0")
 
 Script13.addField(field16)
 field17 = fieldObject()
-field17.setType(fieldObject.TYPE_SFVEC3F)
 field17.setName("velocity")
-field17.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+field17.setAccessType("inputOutput")
+field17.setType("SFVec3f")
 field17.setValue("0 0 0")
 
 Script13.addField(field17)
 field18 = fieldObject()
-field18.setType(fieldObject.TYPE_SFTIME)
 field18.setName("set_fraction")
-field18.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field18.setAccessType("inputOnly")
+field18.setType("SFTime")
 
 Script13.addField(field18)
 
-Script13.setSourceCode("ecmascript:\n"+
+Script13.setSourceCode('''ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -119,28 +116,29 @@ Script13.setSourceCode("ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
-"			}")
-Scene6.addChild(Script13)
+"			}''')
+
+Scene6.addChildren(Script13)
 TimeSensor19 = TimeSensorObject()
 TimeSensor19.setDEF("TourTime")
 TimeSensor19.setCycleInterval(0.15)
 TimeSensor19.setLoop(True)
 
-Scene6.addChild(TimeSensor19)
+Scene6.addChildren(TimeSensor19)
 ROUTE20 = ROUTEObject()
 ROUTE20.setFromNode("TourTime")
 ROUTE20.setFromField("cycleTime")
 ROUTE20.setToNode("Bounce")
 ROUTE20.setToField("set_fraction")
 
-Scene6.addChild(ROUTE20)
+Scene6.addChildren(ROUTE20)
 ROUTE21 = ROUTEObject()
 ROUTE21.setFromNode("Bounce")
 ROUTE21.setFromField("translation_changed")
 ROUTE21.setToNode("transform")
 ROUTE21.setToField("set_translation")
 
-Scene6.addChild(ROUTE21)
-X3D0.setScene(Scene6)
+Scene6.addChildren(ROUTE21)
 
+X3D0.setScene(Scene6)
 X3D0.toFileX3D("../data/SFVec3f.new.x3d")

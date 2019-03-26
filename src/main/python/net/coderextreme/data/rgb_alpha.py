@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("3.0")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("rgb_alpha.x3d")
@@ -97,22 +95,18 @@ meta19.setName("license")
 meta19.setContent("../../license.html")
 
 head1.addMeta(meta19)
+
 X3D0.setHead(head1)
 Scene20 = SceneObject()
-
 NavigationInfo21 = NavigationInfoObject()
 NavigationInfo21.setType(["EXAMINE","WALK","FLY","ANY"])
 
-Scene20.addChild(NavigationInfo21)
+Scene20.addChildren(NavigationInfo21)
 Group22 = GroupObject()
-
 Transform23 = TransformObject()
 Transform23.setTranslation([6.14221,0.0694613,-0.000999451])
-
 Shape24 = ShapeObject()
-
 Appearance25 = AppearanceObject()
-
 Material26 = MaterialObject()
 
 Appearance25.setMaterial(Material26)
@@ -121,19 +115,19 @@ PixelTexture27.setDEF("RgbOpacityCheckerboard")
 PixelTexture27.setImage([2,2,4,-16776961,-65536,-65536,-16776961])
 
 Appearance25.setTexture(PixelTexture27)
+
 Shape24.setAppearance(Appearance25)
 Box28 = BoxObject()
 
 Shape24.setGeometry(Box28)
-Transform23.addChild(Shape24)
-Group22.addChild(Transform23)
+
+Transform23.addChildren(Shape24)
+
+Group22.addChildren(Transform23)
 Transform29 = TransformObject()
 Transform29.setTranslation([-4.85443,0.0694381,-0.00149918])
-
 Shape30 = ShapeObject()
-
 Appearance31 = AppearanceObject()
-
 Material32 = MaterialObject()
 
 Appearance31.setMaterial(Material32)
@@ -141,19 +135,19 @@ PixelTexture33 = PixelTextureObject()
 PixelTexture33.setUSE("RgbOpacityCheckerboard")
 
 Appearance31.setTexture(PixelTexture33)
+
 Shape30.setAppearance(Appearance31)
 Sphere34 = SphereObject()
 
 Shape30.setGeometry(Sphere34)
-Transform29.addChild(Shape30)
-Group22.addChild(Transform29)
+
+Transform29.addChildren(Shape30)
+
+Group22.addChildren(Transform29)
 Transform35 = TransformObject()
 Transform35.setTranslation([-1.47341,0.036672,-0.00175095])
-
 Shape36 = ShapeObject()
-
 Appearance37 = AppearanceObject()
-
 Material38 = MaterialObject()
 
 Appearance37.setMaterial(Material38)
@@ -161,19 +155,19 @@ PixelTexture39 = PixelTextureObject()
 PixelTexture39.setUSE("RgbOpacityCheckerboard")
 
 Appearance37.setTexture(PixelTexture39)
+
 Shape36.setAppearance(Appearance37)
 Cone40 = ConeObject()
 
 Shape36.setGeometry(Cone40)
-Transform35.addChild(Shape36)
-Group22.addChild(Transform35)
+
+Transform35.addChildren(Shape36)
+
+Group22.addChildren(Transform35)
 Transform41 = TransformObject()
 Transform41.setTranslation([2.31094,0.0694206,-0.00187683])
-
 Shape42 = ShapeObject()
-
 Appearance43 = AppearanceObject()
-
 Material44 = MaterialObject()
 
 Appearance43.setMaterial(Material44)
@@ -181,13 +175,17 @@ PixelTexture45 = PixelTextureObject()
 PixelTexture45.setUSE("RgbOpacityCheckerboard")
 
 Appearance43.setTexture(PixelTexture45)
+
 Shape42.setAppearance(Appearance43)
 Cylinder46 = CylinderObject()
 
 Shape42.setGeometry(Cylinder46)
-Transform41.addChild(Shape42)
-Group22.addChild(Transform41)
-Scene20.addChild(Group22)
-X3D0.setScene(Scene20)
 
+Transform41.addChildren(Shape42)
+
+Group22.addChildren(Transform41)
+
+Scene20.addChildren(Group22)
+
+X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/rgb_alpha.new.x3d")

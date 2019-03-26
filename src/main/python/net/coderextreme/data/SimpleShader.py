@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.2")
-
 head1 = headObject()
-
 component2 = componentObject()
 component2.setName("Shaders")
 component2.setLevel(1)
@@ -112,31 +110,26 @@ meta22.setName("license")
 meta22.setContent("../../license.html")
 
 head1.addMeta(meta22)
+
 X3D0.setHead(head1)
 Scene23 = SceneObject()
-
 ProtoDeclare24 = ProtoDeclareObject()
 ProtoDeclare24.setName("myPrototype")
-
 ProtoInterface25 = ProtoInterfaceObject()
-
 field26 = fieldObject()
-field26.setType(fieldObject.TYPE_SFVEC3F)
 field26.setName("myInputRange")
-field26.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field26.setAccessType("initializeOnly")
+field26.setType("SFVec3f")
 field26.setValue("0.95 0.44 0.22")
 
 ProtoInterface25.addField(field26)
+
 ProtoDeclare24.setProtoInterface(ProtoInterface25)
 ProtoBody27 = ProtoBodyObject()
-
 Transform28 = TransformObject()
 Transform28.setDEF("TR")
-
 Shape29 = ShapeObject()
-
 Appearance30 = AppearanceObject()
-
 Material31 = MaterialObject()
 Material31.setDiffuseColor([0.5,0.5,0.9])
 
@@ -144,19 +137,17 @@ Appearance30.setMaterial(Material31)
 ComposedShader32 = ComposedShaderObject()
 ComposedShader32.setDEF("Cobweb")
 ComposedShader32.setLanguage("GLSL")
-
 field33 = fieldObject()
-field33.setType(fieldObject.TYPE_SFVEC3F)
 field33.setName("decis")
-field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field33.setAccessType("initializeOnly")
+field33.setType("SFVec3f")
 field33.setValue("0.95 0.77 0.44")
 
 ComposedShader32.addField(field33)
 ShaderPart34 = ShaderPartObject()
 ShaderPart34.setType("VERTEX")
 
-
-ShaderPart34.setSourceCode("data:text/plain;charset=utf-8,\n"+
+ShaderPart34.setSourceCode('''data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -174,14 +165,14 @@ ShaderPart34.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "	normal = x3d_NormalMatrix * x3d_Normal;\n"+
 "	\n"+
 "	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;\n"+
-"}")
+"}''')
+
 ComposedShader32.addParts(ShaderPart34)
 ShaderPart35 = ShaderPartObject()
-ShaderPart35.setType("FRAGMENT")
 ShaderPart35.setDEF("_1")
+ShaderPart35.setType("FRAGMENT")
 
-
-ShaderPart35.setSourceCode("data:text/plain;charset=utf-8,\n"+
+ShaderPart35.setSourceCode('''data:text/plain;charset=utf-8,\n"+
 "\n"+
 "precision mediump float;\n"+
 "\n"+
@@ -208,45 +199,48 @@ ShaderPart35.setSourceCode("data:text/plain;charset=utf-8,\n"+
 "		color = vec4(0.0,0.4,0.0,1.0);\n"+
 "\n"+
 "	gl_FragColor = color;\n"+
-"}")
+"}''')
+
 ComposedShader32.addParts(ShaderPart35)
+
 Appearance30.addShaders(ComposedShader32)
+
 Shape29.setAppearance(Appearance30)
 Sphere36 = SphereObject()
 Sphere36.setRadius(1.75)
 
 Shape29.setGeometry(Sphere36)
-Transform28.addChild(Shape29)
-ProtoBody27.addChild(Transform28)
+
+Transform28.addChildren(Shape29)
+
+ProtoBody27.addChildren(Transform28)
+
 ProtoDeclare24.setProtoBody(ProtoBody27)
-Scene23.addChild(ProtoDeclare24)
+
+Scene23.addChildren(ProtoDeclare24)
 WorldInfo37 = WorldInfoObject()
 WorldInfo37.setTitle("SimpleShader")
-
 MetadataSet38 = MetadataSetObject()
 MetadataSet38.setName("Titania")
 MetadataSet38.setDEF("Titania")
 MetadataSet38.setReference("http://titania.create3000.de")
-
 MetadataSet39 = MetadataSetObject()
 MetadataSet39.setName("Selection")
 MetadataSet39.setDEF("Selection")
 MetadataSet39.setReference("http://titania.create3000.de")
-
 MetadataSet40 = MetadataSetObject()
 MetadataSet40.setName("nodes")
 MetadataSet40.setDEF("nodes")
 MetadataSet40.setReference("http://titania.create3000.de")
+#NULL
 
-
-MetadataSet40.addComments(CommentsBlock("""NULL"""))
 MetadataSet39.addValue(MetadataSet40)
+
 MetadataSet38.addValue(MetadataSet39)
 MetadataSet41 = MetadataSetObject()
 MetadataSet41.setName("NavigationInfo")
 MetadataSet41.setDEF("NavigationInfo")
 MetadataSet41.setReference("http://titania.create3000.de")
-
 MetadataString42 = MetadataStringObject()
 MetadataString42.setName("type")
 MetadataString42.setDEF("type")
@@ -254,12 +248,12 @@ MetadataString42.setReference("http://titania.create3000.de")
 MetadataString42.setValue(["EXAMINE"])
 
 MetadataSet41.addValue(MetadataString42)
+
 MetadataSet38.addValue(MetadataSet41)
 MetadataSet43 = MetadataSetObject()
 MetadataSet43.setName("Viewpoint")
 MetadataSet43.setDEF("Viewpoint")
 MetadataSet43.setReference("http://titania.create3000.de")
-
 MetadataDouble44 = MetadataDoubleObject()
 MetadataDouble44.setName("position")
 MetadataDouble44.setDEF("position")
@@ -281,13 +275,16 @@ MetadataDouble46.setReference("http://titania.create3000.de")
 MetadataDouble46.setValue([-0.808320198626341,-0.358072370409949,0.22817191560906])
 
 MetadataSet43.addValue(MetadataDouble46)
+
 MetadataSet38.addValue(MetadataSet43)
+
 WorldInfo37.setMetadata(MetadataSet38)
-Scene23.addChild(WorldInfo37)
+
+Scene23.addChildren(WorldInfo37)
 ProtoInstance47 = ProtoInstanceObject()
 ProtoInstance47.setName("myPrototype")
 
-Scene23.addChild(ProtoInstance47)
-X3D0.setScene(Scene23)
+Scene23.addChildren(ProtoInstance47)
 
+X3D0.setScene(Scene23)
 X3D0.toFileX3D("../data/SimpleShader.new.x3d")

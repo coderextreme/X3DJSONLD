@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("StringArrayEncodingExamples.x3d")
@@ -82,41 +80,39 @@ meta16.setName("license")
 meta16.setContent("../license.html")
 
 head1.addMeta(meta16)
+
 X3D0.setHead(head1)
 Scene17 = SceneObject()
-
 Viewpoint18 = ViewpointObject()
 Viewpoint18.setDEF("EntryView")
 Viewpoint18.setDescription("Hello MFString syntax")
 
-Scene17.addChild(Viewpoint18)
+Scene17.addChildren(Viewpoint18)
 Background19 = BackgroundObject()
 Background19.setSkyColor([0.6,1,0.8])
 
-Scene17.addChild(Background19)
+Scene17.addChildren(Background19)
 Shape20 = ShapeObject()
-
 Text21 = TextObject()
 Text21.setString(["One, Two, Three","","He said, \"Immel did it!\""])
-
-
-Text21.addComments(CommentsBlock("""alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"""))
-
-Text21.addComments(CommentsBlock("""alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"""))
+#alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
+#alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
 FontStyle22 = FontStyleObject()
 FontStyle22.setJustify(["MIDDLE","MIDDLE"])
 FontStyle22.setStyle("BOLD")
 
 Text21.setFontStyle(FontStyle22)
+
 Shape20.setGeometry(Text21)
 Appearance23 = AppearanceObject()
-
 Material24 = MaterialObject()
 Material24.setDiffuseColor([0.6,0.4,0.2])
 
 Appearance23.setMaterial(Material24)
-Shape20.setAppearance(Appearance23)
-Scene17.addChild(Shape20)
-X3D0.setScene(Scene17)
 
+Shape20.setAppearance(Appearance23)
+
+Scene17.addChildren(Shape20)
+
+X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/StringArrayEncodingExamples.new.x3d")

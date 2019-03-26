@@ -1,38 +1,33 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-
 Scene1 = SceneObject()
-
 NavigationInfo2 = NavigationInfoObject()
 
-Scene1.addChild(NavigationInfo2)
+Scene1.addChildren(NavigationInfo2)
 DirectionalLight3 = DirectionalLightObject()
 DirectionalLight3.setDirection([0,-0.8,-0.2])
 DirectionalLight3.setIntensity(0.5)
 
-Scene1.addChild(DirectionalLight3)
+Scene1.addChildren(DirectionalLight3)
 Background4 = BackgroundObject()
 Background4.setSkyColor([1,1,1])
 
-Scene1.addChild(Background4)
+Scene1.addChildren(Background4)
 Viewpoint5 = ViewpointObject()
 Viewpoint5.setDescription("One mathematical orbital")
 Viewpoint5.setPosition([0,0,50])
 
-Scene1.addChild(Viewpoint5)
+Scene1.addChildren(Viewpoint5)
 Transform6 = TransformObject()
 Transform6.setTranslation([0,-1,1])
 Transform6.setRotation([0,1,0,3.1415926])
 Transform6.setScale([1.5,1.5,1.5])
-
 Shape7 = ShapeObject()
-
 Appearance8 = AppearanceObject()
-
 Material9 = MaterialObject()
 Material9.setTransparency(0.1)
 Material9.setDiffuseColor([0.9,0.3,0.3])
@@ -40,46 +35,47 @@ Material9.setSpecularColor([0.8,0.8,0.8])
 Material9.setShininess(0.145)
 
 Appearance8.setMaterial(Material9)
+
 Shape7.setAppearance(Appearance8)
 IndexedFaceSet10 = IndexedFaceSetObject()
 IndexedFaceSet10.setCcw(False)
 IndexedFaceSet10.setConvex(False)
 IndexedFaceSet10.setCoordIndex([0,1,2,-1])
 IndexedFaceSet10.setDEF("Orbit")
-
 Coordinate11 = CoordinateObject()
 Coordinate11.setDEF("OrbitCoordinates")
 Coordinate11.setPoint([0,0,1,0,1,0,1,0,0])
 
 IndexedFaceSet10.setCoord(Coordinate11)
+
 Shape7.setGeometry(IndexedFaceSet10)
-Transform6.addChild(Shape7)
-Scene1.addChild(Transform6)
+
+Transform6.addChildren(Shape7)
+
+Scene1.addChildren(Transform6)
 Script12 = ScriptObject()
 Script12.setDEF("OrbitScript")
-
 field13 = fieldObject()
-field13.setType(fieldObject.TYPE_SFFLOAT)
 field13.setName("set_fraction")
-field13.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field13.setAccessType("inputOnly")
+field13.setType("SFFloat")
 
 Script12.addField(field13)
 field14 = fieldObject()
-field14.setType(fieldObject.TYPE_MFVEC3F)
 field14.setName("coordinates")
-field14.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field14.setAccessType("outputOnly")
+field14.setType("MFVec3f")
 
 Script12.addField(field14)
 field15 = fieldObject()
-field15.setType(fieldObject.TYPE_MFINT32)
 field15.setName("coordIndexes")
-field15.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field15.setAccessType("outputOnly")
+field15.setType("MFInt32")
 
 Script12.addField(field15)
+#<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
 
-Script12.addComments(CommentsBlock("""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"""))
-
-Script12.setSourceCode("ecmascript:\n"+
+Script12.setSourceCode('''ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -152,35 +148,36 @@ Script12.setSourceCode("ecmascript:\n"+
 "		h = 4;\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
-"}")
-Scene1.addChild(Script12)
+"}''')
+
+Scene1.addChildren(Script12)
 TimeSensor16 = TimeSensorObject()
 TimeSensor16.setDEF("Clock")
 TimeSensor16.setCycleInterval(16)
 TimeSensor16.setLoop(True)
 
-Scene1.addChild(TimeSensor16)
+Scene1.addChildren(TimeSensor16)
 ROUTE17 = ROUTEObject()
 ROUTE17.setFromNode("OrbitScript")
 ROUTE17.setFromField("coordIndexes")
 ROUTE17.setToNode("Orbit")
 ROUTE17.setToField("coordIndex")
 
-Scene1.addChild(ROUTE17)
+Scene1.addChildren(ROUTE17)
 ROUTE18 = ROUTEObject()
 ROUTE18.setFromNode("OrbitScript")
 ROUTE18.setFromField("coordinates")
 ROUTE18.setToNode("OrbitCoordinates")
 ROUTE18.setToField("point")
 
-Scene1.addChild(ROUTE18)
+Scene1.addChildren(ROUTE18)
 ROUTE19 = ROUTEObject()
 ROUTE19.setFromNode("Clock")
 ROUTE19.setFromField("fraction_changed")
 ROUTE19.setToNode("OrbitScript")
 ROUTE19.setToField("set_fraction")
 
-Scene1.addChild(ROUTE19)
-X3D0.setScene(Scene1)
+Scene1.addChildren(ROUTE19)
 
+X3D0.setScene(Scene1)
 X3D0.toFileX3D("../data/flower.new.x3d")

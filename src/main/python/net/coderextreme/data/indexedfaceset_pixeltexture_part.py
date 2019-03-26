@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject()
+X3D0 = X3DObject()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("3.0")
-
 head1 = headObject()
-
 meta2 = metaObject()
 meta2.setName("title")
 meta2.setContent("indexedfaceset_pixeltexture_part.x3d")
@@ -107,51 +105,49 @@ meta21.setName("license")
 meta21.setContent("../../license.html")
 
 head1.addMeta(meta21)
+
 X3D0.setHead(head1)
 Scene22 = SceneObject()
-
 Viewpoint23 = ViewpointObject()
 Viewpoint23.setDescription("Front View")
 
-Scene22.addChild(Viewpoint23)
+Scene22.addChildren(Viewpoint23)
 Viewpoint24 = ViewpointObject()
 Viewpoint24.setDescription("Rear View")
 Viewpoint24.setOrientation([0,1,0,3.14])
 Viewpoint24.setPosition([0,0,-10])
 
-Scene22.addChild(Viewpoint24)
+Scene22.addChildren(Viewpoint24)
 Viewpoint25 = ViewpointObject()
 Viewpoint25.setDescription("Top View")
 Viewpoint25.setOrientation([1,0,0,-1.57])
 Viewpoint25.setPosition([0,10,0])
 
-Scene22.addChild(Viewpoint25)
+Scene22.addChildren(Viewpoint25)
 Viewpoint26 = ViewpointObject()
 Viewpoint26.setDescription("Bottom View")
 Viewpoint26.setOrientation([1,0,0,1.57])
 Viewpoint26.setPosition([0,-10,0])
 
-Scene22.addChild(Viewpoint26)
+Scene22.addChildren(Viewpoint26)
 Viewpoint27 = ViewpointObject()
 Viewpoint27.setDescription("Right View")
 Viewpoint27.setOrientation([0,1,0,1.57])
 Viewpoint27.setPosition([10,0,0])
 
-Scene22.addChild(Viewpoint27)
+Scene22.addChildren(Viewpoint27)
 Viewpoint28 = ViewpointObject()
 Viewpoint28.setDescription("Left View")
 Viewpoint28.setOrientation([0,1,0,-1.57])
 Viewpoint28.setPosition([-10,0,0])
 
-Scene22.addChild(Viewpoint28)
+Scene22.addChildren(Viewpoint28)
 NavigationInfo29 = NavigationInfoObject()
 NavigationInfo29.setType(["EXAMINE","WALK","FLY","ANY"])
 
-Scene22.addChild(NavigationInfo29)
+Scene22.addChildren(NavigationInfo29)
 Shape30 = ShapeObject()
-
 Appearance31 = AppearanceObject()
-
 Material32 = MaterialObject()
 
 Appearance31.setMaterial(Material32)
@@ -159,13 +155,13 @@ PixelTexture33 = PixelTextureObject()
 PixelTexture33.setImage([2,2,4,-16776961,16711935,-1,-65281])
 
 Appearance31.setTexture(PixelTexture33)
+
 Shape30.setAppearance(Appearance31)
 IndexedFaceSet34 = IndexedFaceSetObject()
 IndexedFaceSet34.setColorPerVertex(False)
 IndexedFaceSet34.setCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])
 IndexedFaceSet34.setCreaseAngle(0.5)
 IndexedFaceSet34.setTexCoordIndex([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])
-
 Color35 = ColorObject()
 Color35.setColor([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0])
 
@@ -178,8 +174,10 @@ TextureCoordinate37 = TextureCoordinateObject()
 TextureCoordinate37.setPoint([0.5,1,0.5,0.5,1,1,1,0.5])
 
 IndexedFaceSet34.setTexCoord(TextureCoordinate37)
-Shape30.setGeometry(IndexedFaceSet34)
-Scene22.addChild(Shape30)
-X3D0.setScene(Scene22)
 
+Shape30.setGeometry(IndexedFaceSet34)
+
+Scene22.addChildren(Shape30)
+
+X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_part.new.x3d")
