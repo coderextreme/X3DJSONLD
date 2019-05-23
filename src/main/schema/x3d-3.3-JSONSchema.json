@@ -9170,7 +9170,7 @@
               "anyOf": [
                 {
                   "enum": [
-                    "humanoidroot",
+                    "humanoid_root",
                     "sacroiliac",
                     "l_hip",
                     "l_knee",
@@ -9660,97 +9660,82 @@
               "anyOf": [
                 {
                   "enum": [
-                    "cervicale",
-                    "crotch",
-                    "l_acromion",
-                    "l_asis",
-                    "l_axilla_ant",
-                    "l_axilla_post",
-                    "l_calcaneous_post",
-                    "l_clavicale",
-                    "l_dactylion",
-                    "l_digit2",
-                    "l_femoral_lateral_epicn",
-                    "l_femoral_medial_epicn",
-                    "l_forefoot_tip",
-                    "l_gonion",
-                    "l_hand_tip",
-                    "l_humeral_lateral_epicn",
-                    "l_humeral_medial_epicn",
-                    "l_iliocristale",
-                    "l_index_distal_tip",
+                    "sellion",
+                    "r_infraorbitale",
                     "l_infraorbitale",
-                    "l_knee_crease",
-                    "l_lateral_malleolus",
-                    "l_medial_malleolus",
-                    "l_metacarpal_pha2",
-                    "l_metacarpal_pha5",
-                    "l_metatarsal_pha1",
-                    "l_metatarsal_pha5",
-                    "l_middle_distal_tip",
-                    "l_neck_base",
-                    "l_olecranon",
-                    "l_pinky_distal_tip",
-                    "l_psis",
-                    "l_radial_styloid",
-                    "l_radiale",
-                    "l_rib10",
-                    "l_ring_distal_tip",
-                    "l_sphyrion",
-                    "l_thelion",
-                    "l_thumb_distal_tip",
-                    "l_tragion",
-                    "l_trochanterion",
-                    "l_ulnar_styloid",
-                    "navel",
-                    "nuchale",
-                    "r_acromion",
-                    "r_asis",
-                    "r_axilla_ant",
-                    "r_axilla_post",
-                    "r_calcaneous_post",
-                    "r_clavicale",
-                    "r_dactylion",
-                    "r_digit2",
-                    "r_femoral_lateral_epicn",
-                    "r_femoral_medial_epicn",
-                    "r_forefoot_tip",
+                    "supramenton",
+                    "r_tragion",
                     "r_gonion",
-                    "r_hand_tip",
+                    "l_tragion",
+                    "l_gonion",
+                    "nuchale",
+                    "r_clavicale",
+                    "suprasternale",
+                    "l_clavicale",
+                    "r_thelion",
+                    "l_thelion",
+                    "substernale",
+                    "r_rib10",
+                    "r_asis",
+                    "l_rib10",
+                    "l_asis",
+                    "r_iliocristale",
+                    "r_trochanterion",
+                    "l_iliocristale",
+                    "l_trochanterion",
+                    "cervicale",
+                    "rib10_midspine",
+                    "r_psis",
+                    "l_psis",
+                    "waist_preferred_post",
+                    "r_acromion",
+                    "r_axilla_ant",
+                    "r_radial_styloid",
+                    "r_axilla_post",
+                    "r_olecranon",
                     "r_humeral_lateral_epicn",
                     "r_humeral_medial_epicn",
-                    "r_iliocristale",
-                    "r_index_distal_tip",
-                    "r_infraorbitale",
+                    "r_radiale",
+                    "r_metacarpal_pha2",
+                    "r_dactylion",
+                    "r_ulnar_styloid",
+                    "r_metacarpal_pha5",
+                    "l_acromion",
+                    "l_axilla_ant",
+                    "l_radial_styloid",
+                    "l_axilla_post",
+                    "l_olecranon",
+                    "l_humeral_lateral_epicn",
+                    "l_humeral_medial_epicn",
+                    "l_radiale",
+                    "l_metacarpal_pha2",
+                    "l_dactylion",
+                    "l_ulnar_styloid",
+                    "l_metacarpal_pha5",
                     "r_knee_crease",
+                    "r_femoral_lateral_epicn",
+                    "r_femoral_medial_epicn",
+                    "r_metatarsal_pha5",
                     "r_lateral_malleolus",
                     "r_medial_malleolus",
-                    "r_metacarpal_pha2",
-                    "r_metacarpal_pha5",
-                    "r_metatarsal_pha1",
-                    "r_metatarsal_pha5",
-                    "r_middle_distal_tip",
-                    "r_neck_base",
-                    "r_olecranon",
-                    "r_pinky_distal_tip",
-                    "r_psis",
-                    "r_radial_styloid",
-                    "r_radiale",
-                    "r_rib10",
-                    "r_ring_distal_tip",
                     "r_sphyrion",
-                    "r_thelion",
-                    "r_thumb_distal_tip",
-                    "r_tragion",
-                    "r_trochanterion",
-                    "r_ulnar_styloid",
-                    "rib10_midspine",
-                    "sellion",
-                    "skull_tip",
-                    "substernale",
-                    "supramenton",
-                    "suprasternale",
-                    "waist_preferred_post"
+                    "r_metatarsal_pha1",
+                    "r_calcaneous_post",
+                    "r_digit2",
+                    "l_knee_crease",
+                    "l_femoral_lateral_epicn",
+                    "l_femoral_medial_epicn",
+                    "l_metatarsal_pha5",
+                    "l_lateral_malleolus",
+                    "l_medial_malleolus",
+                    "l_sphyrion",
+                    "l_metatarsal_pha1",
+                    "l_calcaneous_post",
+                    "l_digit2",
+                    "crotch",
+                    "r_neck_base",
+                    "l_neck_base",
+                    "navel"
                   ]
                 },
                 {
@@ -24387,6 +24372,7 @@
                   "created",
                   "creator",
                   "description",
+                  "disclaimer",
                   "drawing",
                   "error",
                   "generator",
@@ -24394,19 +24380,24 @@
                   "identifier",
                   "Image",
                   "info",
+                  "information",
+                  "isVersionOf",
                   "keywords",
                   "license",
                   "mediator",
                   "modified",
+                  "movie",
                   "MovingImage",
+                  "original",
                   "photo",
+                  "photograph",
                   "publisher",
                   "reference",
                   "requires",
                   "rights",
                   "robots",
-                  "source",
                   "Sound",
+                  "source",
                   "specificationSection",
                   "specificationUrl",
                   "subject",
@@ -24430,7 +24421,8 @@
           }
         },
         "required": [
-          "@content"
+          "@content",
+          "@name"
         ],
         "additionalProperties": false
       }
@@ -25332,7 +25324,7 @@
       },
       "additionalProperties": false
     },
-    "-Shape|LOD|TransformSFNode": {
+    "-Shape%7CLOD%7CTransformSFNode": {
       "type": "object",
       "properties": {
         "Shape": {
@@ -25765,7 +25757,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNodeMFNode": {
+    "-X3DNBodyCollisionSpaceNode%7CX3DNBodyCollidableNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -25942,7 +25934,7 @@
         "additionalProperties": false
       }
     },
-    "-NurbsCurve2D|ContourPolyline2DMFNode": {
+    "-NurbsCurve2D%7CContourPolyline2DMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26870,7 +26862,7 @@
         "additionalProperties": false
       }
     },
-    "-HAnimJoint|HAnimSiteMFNode": {
+    "-HAnimJoint%7CHAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26892,7 +26884,7 @@
         "additionalProperties": false
       }
     },
-    "-Group|Transform|Shape|IndexedFaceSetMFNode": {
+    "-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26938,7 +26930,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint|HAnimSegment|HAnimSiteMFNode": {
+    "-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27074,7 +27066,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode|X3DShapeNode|InlineMFNode": {
+    "-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27350,7 +27342,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode": {
+    "-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode": {
       "type": "object",
       "properties": {
         "MultiTextureCoordinate": {
@@ -27445,7 +27437,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTexture2DNode|X3DTexture3DNodeSFNode": {
+    "-X3DTexture2DNode%7CX3DTexture3DNodeSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -27567,7 +27559,7 @@
         "additionalProperties": false
       }
     },
-    "-Sphere|Box|ConeSFNode": {
+    "-Sphere%7CBox%7CConeSFNode": {
       "type": "object",
       "properties": {
         "Sphere": {
@@ -27668,7 +27660,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DTexture2DNode|MultiTextureSFNode": {
+    "-X3DTexture2DNode%7CMultiTextureSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -27689,7 +27681,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode|X3DShapeNodeSFNode": {
+    "-X3DGroupingNode%7CX3DShapeNodeSFNode": {
       "type": "object",
       "properties": {
         "Viewport": {
@@ -27761,7 +27753,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DViewpointNode|ViewpointGroupMFNode": {
+    "-X3DViewpointNode%7CViewpointGroupMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27828,7 +27820,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DChildNode|X3DMetadataObject|LayerSetMFNode": {
+    "-X3DChildNode%7CX3DMetadataObject%7CLayerSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
