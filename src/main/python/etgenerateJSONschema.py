@@ -582,7 +582,7 @@ class ClassPrinter:
                                 str += '\t\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes").replace("|", "%7C") + field.get("type") +'"\n'
                                 str += '\t\t\t\t\t},\n'
                                 # container fields
-                                cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes") + field.get("type") + '" : {\n'
+                                cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "%7C") + field.get("type") + '" : {\n'
                                 if field.get("type") == "MFNode":
                                     cf += '\t\t\t\t\t\t"type": "array",\n'
                                     cf += '\t\t\t\t\t\t"minItems": 1,\n'
