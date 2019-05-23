@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function JavaScriptSerializer () {
+function NodeSerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -12,7 +12,7 @@ this.postcode = [];
 }
 
 
-JavaScriptSerializer.prototype = {
+NodeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
@@ -369,5 +369,5 @@ JavaScriptSerializer.prototype = {
 
 
 if (typeof module === 'object')  {
-	module.exports = JavaScriptSerializer;
+	module.exports = NodeSerializer;
 }
