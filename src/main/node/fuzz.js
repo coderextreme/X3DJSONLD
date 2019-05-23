@@ -59,7 +59,7 @@ function generateObject(schemajson, n, node, force) {
 			} else if (schemajson.format === 'uri-reference') {
 				obj =  "../X3DJSONLD";
 			} else {
-				obj =  "JWC WAS HERE";
+				obj =  Math.random().toString(36).substring(7);
 			}
 		} else if (type === "integer") {
 			// console.error("integer", schemajson.default);
