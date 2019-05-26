@@ -2358,7 +2358,7 @@
               "type": "string"
             },
             "-shape": {
-              "$ref": "#/definitions/-Shape%7CLOD%7CTransformSFNode"
+              "$ref": "#/definitions/-Shape+LOD+TransformSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -3214,7 +3214,7 @@
               "type": "number"
             },
             "-collidables": {
-              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode%7CX3DNBodyCollidableNodeMFNode"
+              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode+X3DNBodyCollidableNodeMFNode"
             },
             "@enabled": {
               "default": true,
@@ -3403,7 +3403,7 @@
               }
             },
             "-collidables": {
-              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode%7CX3DNBodyCollidableNodeMFNode"
+              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode+X3DNBodyCollidableNodeMFNode"
             },
             "@enabled": {
               "default": true,
@@ -4565,7 +4565,7 @@
               "$ref": "#/definitions/IS"
             },
             "-children": {
-              "$ref": "#/definitions/-NurbsCurve2D%7CContourPolyline2DMFNode"
+              "$ref": "#/definitions/-NurbsCurve2D+ContourPolyline2DMFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -9125,10 +9125,10 @@
               "type": "string"
             },
             "-skeleton": {
-              "$ref": "#/definitions/-HAnimJoint%7CHAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint+HAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode"
+              "$ref": "#/definitions/-Group+Transform+Shape+IndexedFaceSetMFNode"
             },
             "-skinBindingCoords": {
               "$ref": "#/definitions/-X3DCoordinateNodeMFNode"
@@ -9236,7 +9236,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint+HAnimSegment+HAnimSiteMFNode"
             },
             "@description": {
               "type": "string"
@@ -11987,7 +11987,7 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode+X3DShapeNode+InlineMFNode"
             },
             "@sortOrder": {
               "anyOf": [
@@ -14136,7 +14136,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode"
             },
             "@uClosed": {
               "default": false,
@@ -14754,7 +14754,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode"
             },
             "-trimmingContour": {
               "$ref": "#/definitions/-Contour2DMFNode"
@@ -14870,7 +14870,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-transferFunction": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CX3DTexture3DNodeSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+X3DTexture3DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -16317,7 +16317,7 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode+X3DShapeNode+InlineMFNode"
             },
             "@sortOrder": {
               "anyOf": [
@@ -17409,7 +17409,7 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode+X3DShapeNode+InlineMFNode"
             },
             "@sortOrder": {
               "anyOf": [
@@ -18277,7 +18277,7 @@
               "type": "number"
             },
             "-massDensityModel": {
-              "$ref": "#/definitions/-Sphere%7CBox%7CConeSFNode"
+              "$ref": "#/definitions/-Sphere+Box+ConeSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -21332,16 +21332,16 @@
               "$ref": "#/definitions/IS"
             },
             "-backTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@bindTime": {
               "type": "number"
             },
             "-bottomTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "-frontTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@groundAngle": {
               "type": "array",
@@ -21364,13 +21364,13 @@
               "type": "boolean"
             },
             "-leftTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-rightTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@set_bind": {
               "type": "boolean"
@@ -21394,7 +21394,7 @@
               }
             },
             "-topTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@transparency": {
               "maximum": 1,
@@ -22730,7 +22730,7 @@
               }
             },
             "-targetObject": {
-              "$ref": "#/definitions/-X3DGroupingNode%7CX3DShapeNodeSFNode"
+              "$ref": "#/definitions/-X3DGroupingNode+X3DShapeNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -23830,7 +23830,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-X3DViewpointNode%7CViewpointGroupMFNode"
+              "$ref": "#/definitions/-X3DViewpointNode+ViewpointGroupMFNode"
             },
             "@description": {
               "type": "string"
@@ -24357,7 +24357,7 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode+X3DShapeNode+InlineMFNode"
             },
             "@sortOrder": {
               "anyOf": [
@@ -24995,7 +24995,7 @@
       "type": "object",
       "properties": {
         "-children": {
-          "$ref": "#/definitions/-X3DChildNode%7CX3DMetadataObject%7CLayerSetMFNode"
+          "$ref": "#/definitions/-X3DChildNode+X3DMetadataObject+LayerSetMFNode"
         }
       },
       "additionalProperties": false
@@ -25829,7 +25829,7 @@
       },
       "additionalProperties": false
     },
-    "-Shape%7CLOD%7CTransformSFNode": {
+    "-Shape+LOD+TransformSFNode": {
       "type": "object",
       "properties": {
         "Shape": {
@@ -26265,7 +26265,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DNBodyCollisionSpaceNode%7CX3DNBodyCollidableNodeMFNode": {
+    "-X3DNBodyCollisionSpaceNode+X3DNBodyCollidableNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26442,7 +26442,7 @@
         "additionalProperties": false
       }
     },
-    "-NurbsCurve2D%7CContourPolyline2DMFNode": {
+    "-NurbsCurve2D+ContourPolyline2DMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27395,7 +27395,7 @@
         "additionalProperties": false
       }
     },
-    "-HAnimJoint%7CHAnimSiteMFNode": {
+    "-HAnimJoint+HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27417,7 +27417,7 @@
         "additionalProperties": false
       }
     },
-    "-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode": {
+    "-Group+Transform+Shape+IndexedFaceSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27507,7 +27507,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode": {
+    "-HAnimJoint+HAnimSegment+HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27643,7 +27643,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode%7CX3DShapeNode%7CInlineMFNode": {
+    "-X3DGroupingNode+X3DShapeNode+InlineMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27919,7 +27919,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode": {
+    "-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode": {
       "type": "object",
       "properties": {
         "MultiTextureCoordinate": {
@@ -28014,7 +28014,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTexture2DNode%7CX3DTexture3DNodeSFNode": {
+    "-X3DTexture2DNode+X3DTexture3DNodeSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -28136,7 +28136,7 @@
         "additionalProperties": false
       }
     },
-    "-Sphere%7CBox%7CConeSFNode": {
+    "-Sphere+Box+ConeSFNode": {
       "type": "object",
       "properties": {
         "Sphere": {
@@ -28237,7 +28237,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DTexture2DNode%7CMultiTextureSFNode": {
+    "-X3DTexture2DNode+MultiTextureSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -28258,7 +28258,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode%7CX3DShapeNodeSFNode": {
+    "-X3DGroupingNode+X3DShapeNodeSFNode": {
       "type": "object",
       "properties": {
         "Viewport": {
@@ -28330,7 +28330,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DViewpointNode%7CViewpointGroupMFNode": {
+    "-X3DViewpointNode+ViewpointGroupMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -28397,7 +28397,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DChildNode%7CX3DMetadataObject%7CLayerSetMFNode": {
+    "-X3DChildNode+X3DMetadataObject+LayerSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
