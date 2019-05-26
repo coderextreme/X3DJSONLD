@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="ViewPositionOrientationPrototype.x3d"></meta>
+<meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
+<meta name="translator" content="Don Brutzman"></meta>
+<meta name="created" content="1 November 2000"></meta>
+<meta name="modified" content="27 May 2017"></meta>
+<meta name="description" content="ViewPositionOrientation prototype provides local position and orientation as user navigates, with optional console output"></meta>
+<meta name="info" content="Note fix: metadata is no longer an allowed ProtoDeclare field name, since ProtoInstance already includes a metadata field"></meta>
+<meta name="reference" content="ViewPositionOrientationExample.x3d"></meta>
+<meta name="reference" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIExample.x3d"></meta>
+<meta name="reference" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIPrototype.x3d"></meta>
+<meta name="reference" content="http://www.realism.com/Web3D/Examples#WhereAmI"></meta>
+<meta name="reference" content="http://www.realism.com/vrml/Example/WhereAmI/WhereAmI_Proto.wrl"></meta>
+<meta name="identifier" content="https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../../license.html"></meta>
+</head>
+<Scene><!--Thanks to Leonard Daly for the original design of this prototype--><ProtoDeclare name="ViewPositionOrientation" appinfo="ViewPositionOrientation provides provides console output of local position and orientation as user navigates"><ProtoInterface><field name="enabled" accessType="inputOutput" appinfo="Whether or not ViewPositionOrientation sends output to console" type="SFBool" value="true"></field>
+<field name="traceEnabled" accessType="initializeOnly" appinfo="Output internal trace messages for debugging this node, intended for developer use only" type="SFBool" value="true"></field>
+<field name="set_traceEnabled" accessType="inputOnly" appinfo="Ability to turn output tracing on/off at runtime" type="SFBool"></field>
+<field name="position_changed" accessType="outputOnly" appinfo="Output local position" type="SFVec3f"></field>
+<field name="orientation_changed" accessType="outputOnly" appinfo="Output local orientation" type="SFRotation"></field>
+<field name="outputViewpointString" accessType="outputOnly" appinfo="MFString value of new Viewpoint, suitable for use in string field of a Text node" type="MFString"></field>
+</ProtoInterface>
+<ProtoBody><ProximitySensor DEF="WhereSensor" size="1000000000 1000000000 1000000000"><IS><connect nodeField="enabled" protoField="enabled"></connect>
+</IS>
+</ProximitySensor>
+<!--it's a big old world out there! large box likely handles most use cases.--><Script DEF="OutputPositionOrientation"><field name="traceEnabled" accessType="initializeOnly" type="SFBool"></field>
+<field name="set_traceEnabled" accessType="inputOnly" type="SFBool"></field>
+<field name="set_position" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_orientation" accessType="inputOnly" type="SFRotation"></field>
+<field name="position" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<field name="orientation" accessType="initializeOnly" type="SFRotation" value="0 1 0 0"></field>
+<field name="position_changed" accessType="outputOnly" type="SFVec3f"></field>
+<field name="orientation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="outputViewpointString" accessType="outputOnly" type="MFString"></field>
+<IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
+<connect nodeField="set_traceEnabled" protoField="set_traceEnabled"></connect>
+<connect nodeField="position_changed" protoField="position_changed"></connect>
+<connect nodeField="orientation_changed" protoField="orientation_changed"></connect>
+<connect nodeField="outputViewpointString" protoField="outputViewpointString"></connect>
+</IS>
+<![CDATA[ecmascript:
+
+function roundoff (value, digits) // for local use only
+{
+	var resolution = 1;
+	for (i = 1; i <= digits; i++ )
+	{
+		resolution *= 10;
+	}
+	return Math.round (value*resolution) / resolution; // round to resolution
+}
+function outputViewpoint ()
+{
+  var holdString = 
+        '<Viewpoint position="' +
+		roundoff (position.x, 1) + ' ' +
+		roundoff (position.y, 1) + ' ' +
+		roundoff (position.z, 1) +
+        '" orientation="' +
+		roundoff (orientation.x, 3) + ' ' +
+		roundoff (orientation.y, 3) + ' ' +
+		roundoff (orientation.z, 3) + ' ' +
+		roundoff (orientation.angle, 4) + '"></Viewpoint>' ;
+   tracePrint (holdString);
+   outputViewpointString = new MFString (holdString);
+}
+function set_position (value)
+{
+	position = value; // save persistent value
+	position_changed = position; // output event
+	outputViewpoint ();
+}
+function set_orientation (value)
+{
+	orientation = value; // save persistent value
+	orientation_changed = orientation; // output event
+	outputViewpoint ();
+}
+function set_traceEnabled (value)
+{
+	traceEnabled = value;
+	alwaysPrint ('traceEnabled=' + traceEnabled);
+}
+function alwaysPrint (text)
+{
+	Browser.print ('[ViewPositionOrientation] ' + text + '\n');
+}
+function tracePrint (text)
+{
+	if (traceEnabled) alwaysPrint (text);
+}]]></Script>
+<ROUTE fromField="position_changed" fromNode="WhereSensor" toField="set_position" toNode="OutputPositionOrientation"></ROUTE>
+<ROUTE fromField="orientation_changed" fromNode="WhereSensor" toField="set_orientation" toNode="OutputPositionOrientation"></ROUTE>
+</ProtoBody>
+</ProtoDeclare>
+<!--====================--><Viewpoint description="ViewPositionOrientation prototype" position="0 0 14"></Viewpoint>
+<Anchor description="ViewPositionOrientation Example" parameter="&quot;target=_blank&quot;" url="&quot;ViewPositionOrientationExample.x3d&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.x3d&quot; &quot;ViewPositionOrientationExample.wrl&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.wrl&quot;"><Shape><Text containerField="geometry" string="&quot;ViewPositionOrientationPrototype&quot; &quot;is a prototype definition file&quot; &quot;&quot; &quot;Click this text to see&quot; &quot;ViewPositionOrientationExample&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="1.2"></FontStyle>
+</Text>
+<Appearance><Material diffuseColor="0.6 0.8 0.4"></Material>
+</Appearance>
+</Shape>
+<!--Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip--><Shape><!--Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.--><Box containerField="geometry" size="16 7 0.001"></Box>
+<Appearance><Material transparency="1"></Material>
+</Appearance>
+</Shape>
+</Anchor>
+</Scene>
+</X3D>

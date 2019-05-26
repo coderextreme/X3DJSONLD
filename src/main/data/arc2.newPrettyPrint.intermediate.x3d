@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
-    <head>
-        <meta name='title' content='arc1.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='creator' content='Lost, Doug Sanden I think' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='description' content='a generic proto to connect two objects' dir='' http_equiv='' lang='' scheme=''/>
-    </head>
-    <Scene>
-        <Viewpoint centerOfRotation='0 0 0' description='Only Viewpoint' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 5' retainUserOffsets='false' class=''/>
-        <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0.4 0.4 0.4' topUrl='' transparency='0.0' class=''/>
-        <Transform DEF='G1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-            <Transform DEF='DECLpoint_INSTANCE_node' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                    <Appearance class=''>
-                        <Material ambientIntensity='0.2' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
-                    </Appearance>
-                    <Sphere radius='0.1' solid='true' class=''/>
-                </Shape>
-                <PositionInterpolator DEF='DECLpoint_INSTANCE_PI1' key='0 1' keyValue='0 0 0 0 5 0' class=''/>
-                <Script DEF='DECLpoint_INSTANCE_MB1' directOutput='false' mustEvaluate='false' url='' class=''>
-                    <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
-                    <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
+  <head>
+    <meta content='arc1.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='Lost, Doug Sanden I think' dir='' http_equiv='' lang='' name='creator' scheme=''/>
+    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
+    <meta content='a generic proto to connect two objects' dir='' http_equiv='' lang='' name='description' scheme=''/>
+  </head>
+  <Scene>
+    <Viewpoint centerOfRotation='0 0 0' class='' description='Only Viewpoint' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 5' retainUserOffsets='false'/>
+    <Background backUrl='' bottomUrl='' class='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0.4 0.4 0.4' topUrl='' transparency='0.0'/>
+    <Transform DEF='G1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+      <Transform DEF='DECLpoint_INSTANCE_node' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+          <Appearance class=''>
+            <Material ambientIntensity='0.2' class='' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          </Appearance>
+          <Sphere class='' radius='0.1' solid='true'/>
+        </Shape>
+        <PositionInterpolator DEF='DECLpoint_INSTANCE_PI1' class='' key='0 1' keyValue='0 0 0 0 5 0'/>
+        <Script DEF='DECLpoint_INSTANCE_MB1' class='' directOutput='false' mustEvaluate='false' url=''>
+          <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
+          <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
                function set_location(value) {
@@ -33,29 +33,29 @@ ecmascript:
                     keyValue = new MFVec3f(old, translation);
                }
 ]]>
-                </Script>
-                <TimeSensor DEF='DECLpoint_INSTANCE_CL1' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
-                <ROUTE fromField='cycleTime' fromNode='DECLpoint_INSTANCE_CL1' toField='set_location' toNode='DECLpoint_INSTANCE_MB1'/>
-                <ROUTE fromField='fraction_changed' fromNode='DECLpoint_INSTANCE_CL1' toField='set_fraction' toNode='DECLpoint_INSTANCE_PI1'/>
-                <ROUTE fromField='keyValue' fromNode='DECLpoint_INSTANCE_MB1' toField='keyValue' toNode='DECLpoint_INSTANCE_PI1'/>
-                <ROUTE fromField='value_changed' fromNode='DECLpoint_INSTANCE_PI1' toField='set_translation' toNode='DECLpoint_INSTANCE_node'/>
-                <ROUTE fromField='translation_changed' fromNode='DECLpoint_INSTANCE_MB1' toField='set_translation' toNode='DECLpoint_INSTANCE_node'/>
-            </Transform>
-        </Transform>
-        <Transform DEF='G2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-            <Transform DEF='DECLpoint_INSTANCE1000_node' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                    <Appearance class=''>
-                        <Material ambientIntensity='0.2' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
-                    </Appearance>
-                    <Sphere radius='0.1' solid='true' class=''/>
-                </Shape>
-                <PositionInterpolator DEF='DECLpoint_INSTANCE1000_PI1' key='0 1' keyValue='0 0 0 0 5 0' class=''/>
-                <Script DEF='DECLpoint_INSTANCE1000_MB1' directOutput='false' mustEvaluate='false' url='' class=''>
-                    <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
-                    <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
+        </Script>
+        <TimeSensor DEF='DECLpoint_INSTANCE_CL1' class='' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+        <ROUTE fromField='cycleTime' fromNode='DECLpoint_INSTANCE_CL1' toField='set_location' toNode='DECLpoint_INSTANCE_MB1'/>
+        <ROUTE fromField='fraction_changed' fromNode='DECLpoint_INSTANCE_CL1' toField='set_fraction' toNode='DECLpoint_INSTANCE_PI1'/>
+        <ROUTE fromField='keyValue' fromNode='DECLpoint_INSTANCE_MB1' toField='keyValue' toNode='DECLpoint_INSTANCE_PI1'/>
+        <ROUTE fromField='value_changed' fromNode='DECLpoint_INSTANCE_PI1' toField='set_translation' toNode='DECLpoint_INSTANCE_node'/>
+        <ROUTE fromField='translation_changed' fromNode='DECLpoint_INSTANCE_MB1' toField='set_translation' toNode='DECLpoint_INSTANCE_node'/>
+      </Transform>
+    </Transform>
+    <Transform DEF='G2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+      <Transform DEF='DECLpoint_INSTANCE1000_node' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+          <Appearance class=''>
+            <Material ambientIntensity='0.2' class='' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          </Appearance>
+          <Sphere class='' radius='0.1' solid='true'/>
+        </Shape>
+        <PositionInterpolator DEF='DECLpoint_INSTANCE1000_PI1' class='' key='0 1' keyValue='0 0 0 0 5 0'/>
+        <Script DEF='DECLpoint_INSTANCE1000_MB1' class='' directOutput='false' mustEvaluate='false' url=''>
+          <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
+          <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
                function set_location(value) {
@@ -64,40 +64,40 @@ ecmascript:
                     keyValue = new MFVec3f(old, translation);
                }
 ]]>
-                </Script>
-                <TimeSensor DEF='DECLpoint_INSTANCE1000_CL1' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
-                <ROUTE fromField='cycleTime' fromNode='DECLpoint_INSTANCE1000_CL1' toField='set_location' toNode='DECLpoint_INSTANCE1000_MB1'/>
-                <ROUTE fromField='fraction_changed' fromNode='DECLpoint_INSTANCE1000_CL1' toField='set_fraction' toNode='DECLpoint_INSTANCE1000_PI1'/>
-                <ROUTE fromField='keyValue' fromNode='DECLpoint_INSTANCE1000_MB1' toField='keyValue' toNode='DECLpoint_INSTANCE1000_PI1'/>
-                <ROUTE fromField='value_changed' fromNode='DECLpoint_INSTANCE1000_PI1' toField='set_translation' toNode='DECLpoint_INSTANCE1000_node'/>
-                <ROUTE fromField='translation_changed' fromNode='DECLpoint_INSTANCE1000_MB1' toField='set_translation' toNode='DECLpoint_INSTANCE1000_node'/>
-            </Transform>
-        </Transform>
-        <Transform DEF='transC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-            <Transform DEF='rotscaleC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                    <Appearance class=''>
-                        <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
-                    </Appearance>
-                    <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
-                </Shape>
-            </Transform>
-        </Transform>
-        <Script DEF='DECLx3dconnector_connector1_S1' directOutput='false' mustEvaluate='false' url='' class=''>
-            <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
-                <Transform USE='G1'/>
-            </field>
-            <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
-                <Transform USE='G2'/>
-            </field>
-            <field name='transC1' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
-                <Transform USE='transC1'/>
-            </field>
-            <field name='rotscaleC1' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
-                <Transform USE='rotscaleC1'/>
-            </field>
-            <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-            <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+        </Script>
+        <TimeSensor DEF='DECLpoint_INSTANCE1000_CL1' class='' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+        <ROUTE fromField='cycleTime' fromNode='DECLpoint_INSTANCE1000_CL1' toField='set_location' toNode='DECLpoint_INSTANCE1000_MB1'/>
+        <ROUTE fromField='fraction_changed' fromNode='DECLpoint_INSTANCE1000_CL1' toField='set_fraction' toNode='DECLpoint_INSTANCE1000_PI1'/>
+        <ROUTE fromField='keyValue' fromNode='DECLpoint_INSTANCE1000_MB1' toField='keyValue' toNode='DECLpoint_INSTANCE1000_PI1'/>
+        <ROUTE fromField='value_changed' fromNode='DECLpoint_INSTANCE1000_PI1' toField='set_translation' toNode='DECLpoint_INSTANCE1000_node'/>
+        <ROUTE fromField='translation_changed' fromNode='DECLpoint_INSTANCE1000_MB1' toField='set_translation' toNode='DECLpoint_INSTANCE1000_node'/>
+      </Transform>
+    </Transform>
+    <Transform DEF='transC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+      <Transform DEF='rotscaleC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+          <Appearance class=''>
+            <Material ambientIntensity='0.2' class='' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5'/>
+          </Appearance>
+          <Cylinder bottom='true' class='' height='2.0' radius='0.05' side='true' solid='true' top='true'/>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Script DEF='DECLx3dconnector_connector1_S1' class='' directOutput='false' mustEvaluate='false' url=''>
+      <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
+        <Transform USE='G1'/>
+      </field>
+      <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
+        <Transform USE='G2'/>
+      </field>
+      <field name='transC1' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
+        <Transform USE='transC1'/>
+      </field>
+      <field name='rotscaleC1' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''>
+        <Transform USE='rotscaleC1'/>
+      </field>
+      <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+      <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
 <![CDATA[
 ecmascript:
         function recompute(startpoint,endpoint){
@@ -139,8 +139,8 @@ ecmascript:
             recompute_and_route(startnode.translation,val);
         }
 ]]>
-        </Script>
-        <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='DECLx3dconnector_connector1_S1'/>
-        <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='DECLx3dconnector_connector1_S1'/>
-    </Scene>
+    </Script>
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='DECLx3dconnector_connector1_S1'/>
+    <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='DECLx3dconnector_connector1_S1'/>
+  </Scene>
 </X3D>

@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
 <X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'>
-    <head>
-        <meta name='title' content='CloudsProcedural4.x3d'/>
-        <meta name='description' content='X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.'/>
-        <meta name='creator' content='Capt Darren W. Murphy'/>
-        <meta name='created' content='1 November 2007'/>
-        <meta name='modified' content='14 January 2014'/>
-        <meta name='identifier' content='https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d'/>
-        <meta name='generator' content='X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html'/>
-        <meta name='license' content='../../license.html'/>
-        <meta name='TODO' content='fix links'/>
-    </head>
-    <Scene>
-        <!-- A png image file for the cloud texture must be designated in the ecmascript node. -->
-        <Viewpoint description='Main' jump='false' orientation='0 1 0 1.57' position='50000 1000 42000'/>
-        <Viewpoint description='Light House Tower' jump='false' orientation='0 1 0 1.3' position='45000 1290 44000'/>
-        <Viewpoint description='centerWest' jump='false' orientation='0 1 0 2.5' position='48000 1000 20000'/>
-        <Background groundColor='0 0 1' skyColor='0 0 1'/>
-        <DirectionalLight ambientIntensity='1.0' direction='-1 0 0' global='true'/>
-        <Group DEF='Terrain'>
-            <Transform scale='50 50 50' translation='25000 0 25000'>
-                <Inline url='"MontereyBayLargeMesh.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d" "MontereyBayLargeMesh.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"'/>
-            </Transform>
-            <Transform rotation='1 0 0 1.57' translation='25000 0 25000'>
-                <Shape>
-                    <Appearance>
-                        <ImageTexture url='"ocean.png" "https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"'/>
-                    </Appearance>
-                    <Rectangle2D size='77000 55000'/>
-                </Shape>
-            </Transform>
-        </Group>
-        <Group DEF='Placemarks'>
-            <Transform scale='50 50 50' translation='45000 30 44000'>
-                <Inline url='"Lighthouse.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d" "Lighthouse.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"'/>
-            </Transform>
-        </Group>
-        <Group DEF='Clouds'>
-            <Transform DEF='Cumulus'/>
-            <Transform DEF='Cirrus'/>
-            <Transform DEF='Fog'/>
-            <Script DEF='PixelScript' directOutput='true'>
-                <field name='Cumulus' accessType='initializeOnly' type='SFNode'>
-                    <Transform USE='Cumulus'/>
-                </field>
-                <field name='Cirrus' accessType='initializeOnly' type='SFNode'>
-                    <Transform USE='Cirrus'/>
-                </field>
-                <field name='Fog' accessType='initializeOnly' type='SFNode'/>
+  <head>
+    <meta content='CloudsProcedural4.x3d' name='title'/>
+    <meta content='X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.' name='description'/>
+    <meta content='Capt Darren W. Murphy' name='creator'/>
+    <meta content='1 November 2007' name='created'/>
+    <meta content='14 January 2014' name='modified'/>
+    <meta content='https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d' name='identifier'/>
+    <meta content='X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html' name='generator'/>
+    <meta content='../../license.html' name='license'/>
+    <meta content='fix links' name='TODO'/>
+  </head>
+  <Scene>
+    <!-- A png image file for the cloud texture must be designated in the ecmascript node. -->
+    <Viewpoint description='Main' jump='false' orientation='0 1 0 1.57' position='50000 1000 42000'/>
+    <Viewpoint description='Light House Tower' jump='false' orientation='0 1 0 1.3' position='45000 1290 44000'/>
+    <Viewpoint description='centerWest' jump='false' orientation='0 1 0 2.5' position='48000 1000 20000'/>
+    <Background groundColor='0 0 1' skyColor='0 0 1'/>
+    <DirectionalLight ambientIntensity='1.0' direction='-1 0 0' global='true'/>
+    <Group DEF='Terrain'>
+      <Transform scale='50 50 50' translation='25000 0 25000'>
+        <Inline url='"MontereyBayLargeMesh.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d" "MontereyBayLargeMesh.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"'/>
+      </Transform>
+      <Transform rotation='1 0 0 1.57' translation='25000 0 25000'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url='"ocean.png" "https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"'/>
+          </Appearance>
+          <Rectangle2D size='77000 55000'/>
+        </Shape>
+      </Transform>
+    </Group>
+    <Group DEF='Placemarks'>
+      <Transform scale='50 50 50' translation='45000 30 44000'>
+        <Inline url='"Lighthouse.x3d" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d" "Lighthouse.wrl" "https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"'/>
+      </Transform>
+    </Group>
+    <Group DEF='Clouds'>
+      <Transform DEF='Cumulus'/>
+      <Transform DEF='Cirrus'/>
+      <Transform DEF='Fog'/>
+      <Script DEF='PixelScript' directOutput='true'>
+        <field name='Cumulus' accessType='initializeOnly' type='SFNode'>
+          <Transform USE='Cumulus'/>
+        </field>
+        <field name='Cirrus' accessType='initializeOnly' type='SFNode'>
+          <Transform USE='Cirrus'/>
+        </field>
+        <field name='Fog' accessType='initializeOnly' type='SFNode'/>
 <![CDATA[
 ecmascript:
 
@@ -432,8 +432,8 @@ cumulus();
 cirrus();
 }
 ]]>
-            </Script>
-            <DirectionalLight ambientIntensity='1.0' color='1 0 0' direction='-1 -1 0' global='true'/>
-        </Group>
-    </Scene>
+      </Script>
+      <DirectionalLight ambientIntensity='1.0' color='1 0 0' direction='-1 -1 0' global='true'/>
+    </Group>
+  </Scene>
 </X3D>

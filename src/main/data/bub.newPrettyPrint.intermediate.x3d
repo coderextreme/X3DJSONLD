@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
-    <head>
-        <component name='Shaders' level='1'/>
-        <component name='CubeMapTexturing' level='1'/>
-        <meta name='title' content='bub.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='description' content='3 prismatic spheres' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/bub.x3d' dir='' http_equiv='' lang='' scheme=''/>
-    </head>
-    <Scene>
-        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
-        <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' groundAngle='' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' transparency='0.0' class=''/>
-        <Viewpoint centerOfRotation='0 0 0' description='Look at the bubbles flying' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 20' retainUserOffsets='false' class=''/>
-        <ProtoDeclare name='Bubble' appinfo='' documentation=''>
-            <ProtoBody>
-                <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-                    <Shape DEF='myShape' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                        <Appearance class=''>
-                            <!-- <ComposedShader DEF='gl' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language="GLSL"> <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> -->
-                            <!-- <ComposedShader DEF='instant' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> -->
-                            <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
-                            <ComposedShader DEF='x3dom' language='GLSL' class=''>
-                                <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' class=''/>
-                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
-                                <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
-                                <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
-                                <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                                <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                                <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                            </ComposedShader>
-                            <ComposedShader DEF='x_ite' language='GLSL' class=''>
-                                <ShaderPart type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"' class=''/>
-                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
-                                <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
-                                    <ComposedCubeMapTexture USE='texture'/>
-                                </field>
-                                <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
-                                <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                                <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                                <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                            </ComposedShader>
-                            <ComposedCubeMapTexture DEF='texture' class=''>
-                                <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
-                                <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
-                                <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
-                                <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
-                                <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
-                                <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
-                            </ComposedCubeMapTexture>
-                        </Appearance>
-                        <Sphere radius='1.0' solid='true' class=''/>
-                    </Shape>
-                </Transform>
-                <Script DEF='Bounce' directOutput='false' mustEvaluate='false' url='' class=''>
-                    <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                    <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
+  <head>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <meta content='bub.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
+    <meta content='3 prismatic spheres' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' name='generator' scheme=''/>
+    <meta content='https://coderextreme.net/X3DJSONLD/bub.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
+  </head>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' class='' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0'/>
+    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' class='' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' groundAngle='' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' transparency='0.0'/>
+    <Viewpoint centerOfRotation='0 0 0' class='' description='Look at the bubbles flying' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 20' retainUserOffsets='false'/>
+    <ProtoDeclare name='Bubble' appinfo='' documentation=''>
+      <ProtoBody>
+        <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+          <Shape DEF='myShape' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+            <Appearance class=''>
+              <!-- <ComposedShader DEF='gl' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language="GLSL"> <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> -->
+              <!-- <ComposedShader DEF='instant' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> -->
+              <Material ambientIntensity='0.2' class='' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0'/>
+              <ComposedShader DEF='x3dom' class='' language='GLSL'>
+                <ShaderPart class='' type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
+                <ShaderPart class='' type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+                <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
+                <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+                <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+              </ComposedShader>
+              <ComposedShader DEF='x_ite' class='' language='GLSL'>
+                <ShaderPart class='' type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"'/>
+                <ShaderPart class='' type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+                <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
+                  <ComposedCubeMapTexture USE='texture'/>
+                </field>
+                <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+                <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+              </ComposedShader>
+              <ComposedCubeMapTexture DEF='texture' class=''>
+                <ImageTexture containerField='back' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+                <ImageTexture containerField='bottom' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                <ImageTexture containerField='front' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+                <ImageTexture containerField='left' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+                <ImageTexture containerField='right' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+                <ImageTexture containerField='top' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+              </ComposedCubeMapTexture>
+            </Appearance>
+            <Sphere class='' radius='1.0' solid='true'/>
+          </Shape>
+        </Transform>
+        <Script DEF='Bounce' class='' directOutput='false' mustEvaluate='false' url=''>
+          <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+          <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
 <![CDATA[
 ecmascript:
 			function initialize() {
@@ -85,14 +85,14 @@ ecmascript:
 			    }
 			}
 ]]>
-                </Script>
-                <TimeSensor DEF='TourTime' cycleInterval='0.15' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
-                <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
-                <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
-            </ProtoBody>
-        </ProtoDeclare>
-        <ProtoInstance name='Bubble' class=''/>
-        <ProtoInstance name='Bubble' class=''/>
-        <ProtoInstance name='Bubble' class=''/>
-    </Scene>
+        </Script>
+        <TimeSensor DEF='TourTime' class='' cycleInterval='0.15' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+        <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
+        <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoInstance name='Bubble' class=''/>
+    <ProtoInstance name='Bubble' class=''/>
+    <ProtoInstance name='Bubble' class=''/>
+  </Scene>
 </X3D>
