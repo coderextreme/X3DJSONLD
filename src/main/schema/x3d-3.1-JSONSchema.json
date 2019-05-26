@@ -2022,7 +2022,7 @@
               "type": "string"
             },
             "-shape": {
-              "$ref": "#/definitions/-Shape%7CLOD%7CTransformSFNode"
+              "$ref": "#/definitions/-Shape+LOD+TransformSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -2923,7 +2923,7 @@
               "$ref": "#/definitions/IS"
             },
             "-children": {
-              "$ref": "#/definitions/-NurbsCurve2D%7CContourPolyline2DMFNode"
+              "$ref": "#/definitions/-NurbsCurve2D+ContourPolyline2DMFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -6229,10 +6229,10 @@
               "$ref": "#/definitions/-HAnimSiteMFNode"
             },
             "-skeleton": {
-              "$ref": "#/definitions/-HAnimJoint%7CHAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint+HAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode"
+              "$ref": "#/definitions/-Group+Transform+Shape+IndexedFaceSetMFNode"
             },
             "-skinCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
@@ -6334,7 +6334,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint+HAnimSegment+HAnimSiteMFNode"
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
@@ -10041,7 +10041,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode"
             },
             "@uClosed": {
               "default": false,
@@ -10659,7 +10659,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode"
             },
             "-trimmingContour": {
               "$ref": "#/definitions/-Contour2DMFNode"
@@ -13543,16 +13543,16 @@
               "$ref": "#/definitions/IS"
             },
             "-backTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@bindTime": {
               "type": "number"
             },
             "-bottomTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "-frontTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@groundAngle": {
               "type": "array",
@@ -13575,13 +13575,13 @@
               "type": "boolean"
             },
             "-leftTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-rightTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@set_bind": {
               "type": "boolean"
@@ -13605,7 +13605,7 @@
               }
             },
             "-topTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode%7CMultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode+MultiTextureSFNode"
             },
             "@transparency": {
               "maximum": 1,
@@ -15878,7 +15878,7 @@
       "type": "object",
       "properties": {
         "-children": {
-          "$ref": "#/definitions/-X3DChildNode%7CX3DMetadataObjectMFNode"
+          "$ref": "#/definitions/-X3DChildNode+X3DMetadataObjectMFNode"
         }
       },
       "additionalProperties": false
@@ -16329,7 +16329,7 @@
       },
       "additionalProperties": false
     },
-    "-Shape%7CLOD%7CTransformSFNode": {
+    "-Shape+LOD+TransformSFNode": {
       "type": "object",
       "properties": {
         "Shape": {
@@ -16665,7 +16665,7 @@
         "additionalProperties": false
       }
     },
-    "-NurbsCurve2D%7CContourPolyline2DMFNode": {
+    "-NurbsCurve2D+ContourPolyline2DMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -17334,7 +17334,7 @@
         "additionalProperties": false
       }
     },
-    "-HAnimJoint%7CHAnimSiteMFNode": {
+    "-HAnimJoint+HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -17356,7 +17356,7 @@
         "additionalProperties": false
       }
     },
-    "-Group%7CTransform%7CShape%7CIndexedFaceSetMFNode": {
+    "-Group+Transform+Shape+IndexedFaceSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -17402,7 +17402,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint%7CHAnimSegment%7CHAnimSiteMFNode": {
+    "-HAnimJoint+HAnimSegment+HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -17634,7 +17634,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNode%7CNurbsTextureCoordinateSFNode": {
+    "-X3DTextureCoordinateNode+NurbsTextureCoordinateSFNode": {
       "type": "object",
       "properties": {
         "MultiTextureCoordinate": {
@@ -17895,7 +17895,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DTexture2DNode%7CMultiTextureSFNode": {
+    "-X3DTexture2DNode+MultiTextureSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -17916,7 +17916,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DChildNode%7CX3DMetadataObjectMFNode": {
+    "-X3DChildNode+X3DMetadataObjectMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
