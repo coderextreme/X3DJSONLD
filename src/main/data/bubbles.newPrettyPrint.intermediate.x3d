@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
-    <head>
-        <component name='EnvironmentalEffects' level='1'/>
-        <component name='EnvironmentalEffects' level='3'/>
-        <component name='Shaders' level='1'/>
-        <component name='CubeMapTexturing' level='1'/>
-        <meta name='title' content='bubbles.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/bubbles.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='description' content='not sure what this is' dir='' http_equiv='' lang='' scheme=''/>
-    </head>
-    <Scene>
-        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE"' visibilityLimit='0.0' class=''/>
-        <Viewpoint DEF='Tour' centerOfRotation='0 0 0' description='Tour Views' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 10' retainUserOffsets='false' class=''/>
-        <Viewpoint centerOfRotation='0 0 0' description='sphere in road' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 4' retainUserOffsets='false' class=''/>
-        <Background backUrl='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"' groundAngle='' leftUrl='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"' transparency='0.0' class=''/>
-        <Transform DEF='Rose01' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
-            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                <Appearance DEF='_01_-_Default' class=''>
-                    <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
-                    <ComposedShader DEF='x_ite' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
-                        <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
-                        <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
-                        <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                        <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                        <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                    </ComposedShader>
-                    <ComposedShader DEF='x3dom' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' class=''/>
-                        <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
-                        <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
-                        <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                        <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
-                        <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
-                    </ComposedShader>
-                    <ComposedCubeMapTexture class=''>
-                        <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"' class=''/>
-                        <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"' class=''/>
-                        <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"' class=''/>
-                        <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"' class=''/>
-                        <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"' class=''/>
-                        <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"' class=''/>
-                    </ComposedCubeMapTexture>
-                </Appearance>
-                <Sphere radius='1.0' solid='true' class=''/>
-            </Shape>
-        </Transform>
-        <TimeSensor DEF='TourTime' cycleInterval='5.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
-        <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10' class=''/>
-        <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416' class=''/>
-        <Script DEF='RandomTourTime' directOutput='false' mustEvaluate='false' url='' class=''>
-            <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
-            <field name='lastKey' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.0'/>
-            <field name='orientations' accessType='inputOutput' appinfo='' documentation='' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'/>
-            <field name='positions' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'/>
-            <field name='position_changed' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
-            <field name='set_orientation' accessType='inputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
-            <field name='orientation_changed' accessType='outputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
+  <head>
+    <component name='EnvironmentalEffects' level='1'/>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <meta content='bubbles.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
+    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
+    <meta content='https://coderextreme.net/X3DJSONLD/bubbles.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
+    <meta content='not sure what this is' dir='' http_equiv='' lang='' name='description' scheme=''/>
+  </head>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' class='' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE"' visibilityLimit='0.0'/>
+    <Viewpoint DEF='Tour' centerOfRotation='0 0 0' class='' description='Tour Views' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 10' retainUserOffsets='false'/>
+    <Viewpoint centerOfRotation='0 0 0' class='' description='sphere in road' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 4' retainUserOffsets='false'/>
+    <Background backUrl='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"' class='' frontUrl='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"' groundAngle='' leftUrl='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"' transparency='0.0'/>
+    <Transform DEF='Rose01' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+        <Appearance DEF='_01_-_Default' class=''>
+          <Material ambientIntensity='0.2' class='' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0'/>
+          <ComposedShader DEF='x_ite' class='' language='GLSL'>
+            <ShaderPart class='' type='VERTEX' url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
+            <ShaderPart class='' type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+            <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
+            <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+          </ComposedShader>
+          <ComposedShader DEF='x3dom' class='' language='GLSL'>
+            <ShaderPart class='' type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
+            <ShaderPart class='' type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+            <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
+            <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+          </ComposedShader>
+          <ComposedCubeMapTexture class=''>
+            <ImageTexture containerField='back' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"'/>
+            <ImageTexture containerField='bottom' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"'/>
+            <ImageTexture containerField='front' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"'/>
+            <ImageTexture containerField='left' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"'/>
+            <ImageTexture containerField='right' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"'/>
+            <ImageTexture containerField='top' class='' repeatS='true' repeatT='true' url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"'/>
+          </ComposedCubeMapTexture>
+        </Appearance>
+        <Sphere class='' radius='1.0' solid='true'/>
+      </Shape>
+    </Transform>
+    <TimeSensor DEF='TourTime' class='' cycleInterval='5.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+    <PositionInterpolator DEF='TourPosition' class='' key='0 1' keyValue='0 0 10 0 0 -10'/>
+    <OrientationInterpolator DEF='TourOrientation' class='' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'/>
+    <Script DEF='RandomTourTime' class='' directOutput='false' mustEvaluate='false' url=''>
+      <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
+      <field name='lastKey' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.0'/>
+      <field name='orientations' accessType='inputOutput' appinfo='' documentation='' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'/>
+      <field name='positions' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'/>
+      <field name='position_changed' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
+      <field name='set_orientation' accessType='inputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
+      <field name='orientation_changed' accessType='outputOnly' appinfo='' documentation='' type='MFRotation' value=''/>
 <![CDATA[
 ecmascript:
                function set_cycle(value) {
@@ -86,13 +86,13 @@ ecmascript:
 		   }
                }
 ]]>
-        </Script>
-        <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
-        <ROUTE fromField='orientation_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourOrientation'/>
-        <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
-        <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourOrientation'/>
-        <ROUTE fromField='value_changed' fromNode='TourOrientation' toField='set_orientation' toNode='Tour'/>
-        <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>
-        <ROUTE fromField='value_changed' fromNode='TourPosition' toField='set_position' toNode='Tour'/>
-    </Scene>
+    </Script>
+    <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
+    <ROUTE fromField='orientation_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourOrientation'/>
+    <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourOrientation'/>
+    <ROUTE fromField='value_changed' fromNode='TourOrientation' toField='set_orientation' toNode='Tour'/>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>
+    <ROUTE fromField='value_changed' fromNode='TourPosition' toField='set_position' toNode='Tour'/>
+  </Scene>
 </X3D>

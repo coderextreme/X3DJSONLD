@@ -159,13 +159,13 @@ function set_centerstring(centerstr) {
 <Viewpoint description='Process pipes' orientation='1 0 0 -0.4' position='0 5 12'>
 </Viewpoint>
 <Transform translation='0 -2.5 0'>
-<ProtoInstance name='Process'/>
+<ProtoInstance name='Process' containerField="children"/>
 </Transform>
 <Transform>
-<ProtoInstance name='Process'/>
+<ProtoInstance name='Process' containerField="children"/>
 </Transform>
 <Transform translation='0 2.5 0'>
-<ProtoInstance name='Process'/>
+<ProtoInstance name='Process' containerField="children"/>
 </Transform>
 </Scene>
 </X3D>
