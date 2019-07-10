@@ -20,13 +20,12 @@ PythonSerializer.prototype = {
 		var str = "";
 		str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
 
-		str += "from jnius import autoclass\n";
-		str += "from X3Dautoclass import *\n";
+		str += "from x3dpsail import *\n";
 
 		stack.unshift(this.preno);
 		this.preno++;
 		str += element.nodeName+stack[0]+" = "+element.nodeName;
-		str += "Object()\n";
+		str += "()\n";
 		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
 		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.x3d\")\n";
 		stack.shift();
@@ -262,7 +261,7 @@ PythonSerializer.prototype = {
 				this.preno++;
 				var ch = "";
 				ch += node.nodeName+stack[0]+" = "+node.nodeName;
-				ch += "Object()\n";
+				ch += "()\n";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += "\n"
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
