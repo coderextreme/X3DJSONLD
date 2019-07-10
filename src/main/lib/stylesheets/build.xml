@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2000-2018 held by the author(s).  All rights reserved.
+  Copyright (c) 2000-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -40,7 +40,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <property name="access.properties.filename"  value="../content/examples/access.properties"/>
     <property file="${access.properties.filename}"/>
-
+    
     <!-- properties common to all build files and archives ======================================== -->
     <property environment="env"/>
 
@@ -61,46 +61,56 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- jslint4java: a Java wrapper around Douglas Crockford's jslint tool. -->
     <!-- https://code.google.com/p/jslint4java -->
     <!-- http://docs.jslint4java.googlecode.com/git/2.0.5/ant.html -->
-	<!-- http://happygiraffe.github.io/jslint4java/cli.html -->
+    <!-- http://happygiraffe.github.io/jslint4java/cli.html -->
     <!-- http://kaatz-media.com/2011/10/06/uberprufen-von-javascript-dateien-ant-und-jslint-jenkins-using-ant-on-jenkins-for-jslint -->
     <!-- TODO bug report: https://code.google.com/p/jslint4java/issues/detail?id=101 -->
     <property name="jslint.jar"     value="lib/jslint4java-2.0.5.jar"/>
     <taskdef name="jslint" 
-        classname="com.googlecode.jslint4java.ant.JSLintTask"
-        classpath="${jslint.jar}" />
+             classname="com.googlecode.jslint4java.ant.JSLintTask"
+             classpath="${jslint.jar}" />
     <property name="jslint.options" value="white"/>
     <!-- unused options: ass,bitwise,browser,closure,continue,debug,devel,eqeq,es5,evil,forin,indent,maxerr,maxlen,newcap,node,nomen,passfail,plusplus,predef,properties,regexp,rhino,sloppy,stupid,sub,todo,unparam,vars,warnings, -->
 
-	<!-- https://github.com/fge/json-schema-validator -->
-	<!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
-	<!-- fix double-hyphen switch when running on command line: -->
-	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
-	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
-	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
+    <!-- https://github.com/fge/json-schema-validator -->
+    <!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
+    <!-- fix double-hyphen switch when running on command line: -->
+    <!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
+    <!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
+    <!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
     <property name="json-schema-validator.jar"     value="lib/json-schema-validator-2.2.6-lib.jar"/>
+    
+    <!-- Alternate validation library candidate: https://github.com/everit-org/json-schema -->
+    <!-- TODO stable ant invocation needed, see  https://github.com/everit-org/json-schema/issues/257 -->
 
     <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE jar download handled in X3DJSAIL build -->
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
     <property name="saxon.jar"           value="saxon9he.jar"/>
 
     <!-- http://openexi.sourceforge.net -->
     <!-- https://sourceforge.net/projects/openexi/files -->
-    <property name="openexi.dir"    value="C:\java\openexi\exi\trunk\nagasena\build" description="local path"/>
-	<property name="openexi.jar"    value="nagasena.jar"/>
+    <property name="openexi.dir"      value="C:\java\openexi\exi\trunk\nagasena\build" description="local development path"/>
+    <!-- updates in local lib directory are copied when building jar -->
+    <property name="nagasena.jar"     value="nagasena.jar"/>
+    <property name="nagasena-rta.jar" value="nagasena-rta.jar"/>
     
     <!-- https://exificient.github.io/java -->
     <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
-    <property name="exificient.dir" value="C:\java\exificient\exificient-gui\target" description="local path"/>
-	<property name="exificient.jar" value="exificient-gui-jar-with-dependencies.jar"/>
+    <property name="exificient.dir" value="C:\java\exificient\exificient-gui\target" description="local development path"/>
+    <property name="exificient.jar" value="exificient-gui-jar-with-dependencies.jar"/>
+    
+    <!-- X3D Canonicalization (C14N) -->
+    <property name="c14n.dir"        value="../tools/canonical/dist/lib"              description="local development path"/>
+    <property name="c14n.jar"        value="X3dC14n.jar"/>
 
     <!-- ant jar manifest properties -->
-    <property name="user.name"                value="Don Brutzman, brutzman@nps.edu"/>
+    <property name="user.name.build" value="Don Brutzman, brutzman@nps.edu"/>
 
     <target name="get.saxon" description="get saxon.jar if not checked out" depends="get.saxon.check" unless="saxon.found"> 
-        <echo message="get saxon.jar if not checked out"/>
+        <echo message="get tested saxon.jar from project version control if not already checked out locally"/>
         <mkdir dir="${saxon.dir}"/>
         <get src="http://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${saxon.jar}"
-            dest="${saxon.dir}/${saxon.jar}" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="${saxon.dir}/${saxon.jar}" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
     <target name="get.saxon.check">
         <condition property="saxon.found" else="false">
@@ -132,51 +142,53 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="build" 
-         depends="validate,BuildX3dUnifiedObjectModel.saxon.all,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
-     description="compile and test XSLT stylesheets">
+            depends="validate,BuildX3dUnifiedObjectModel.saxon.all,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
+            description="compile and test XSLT stylesheets">
     </target>
 
     <target name="diagnostics" description="Ant diagnostics, shows jars and classpaths">
         <diagnostics/>
         <!-- Hudson project description:
-<p>
-This project runs the
-<a href="http://ant.apache.org/manual/Tasks/diagnostics.html">Ant diagnostics</a>
-command on the SavageDefense Hudson server.  This task documents all local ant settings and environment variables.
-</p>
-<p>
-Additional information about
-<a href="http://ant.apache.org">Ant</a>
-is available via the
-<a href="http://ant.apache.org/manual">Ant Manual</a>.
-</p>
-<p>
-Additional information about this
-<a href="http://hudson-ci.org">Hudson</a>
-server is available under the top-level
-<a href="../../manage">Manage Hudson</a>
-command, specifically
-<a href="../../systemInfo">System Information (Properties)</a>
-and
-<a href="../../log">System Log Recorders</a>.
-</p>
-    -->
+    <p>
+    This project runs the
+    <a href="http://ant.apache.org/manual/Tasks/diagnostics.html">Ant diagnostics</a>
+    command on the SavageDefense Hudson server.  This task documents all local ant settings and environment variables.
+    </p>
+    <p>
+    Additional information about
+    <a href="http://ant.apache.org">Ant</a>
+    is available via the
+    <a href="http://ant.apache.org/manual">Ant Manual</a>.
+    </p>
+    <p>
+    Additional information about this
+    <a href="http://hudson-ci.org">Hudson</a>
+    server is available under the top-level
+    <a href="../../manage">Manage Hudson</a>
+    command, specifically
+    <a href="../../systemInfo">System Information (Properties)</a>
+    and
+    <a href="../../log">System Log Recorders</a>.
+    </p>
+        -->
     </target>
 	
     <property name="javac.verbose"               value="-verbose"/>
     
     <property name="X3DJSAIL.relative.dir"       value="java"/>
-    <property name="java.dir"                 location="java"/>
     <property name="java.classes.dir"         location="${X3DJSAIL.relative.dir}/classes"/>
     <property name="java.examples.dir"        location="${X3DJSAIL.relative.dir}/examples"/>
     <property name="java.jars.dir"            location="${X3DJSAIL.relative.dir}/jars"/>
     <property name="java.lib.dir"             location="${X3DJSAIL.relative.dir}/lib"/>
     <property name="java.src.dir"             location="${X3DJSAIL.relative.dir}/src"/>
-    <property name="nashorn.dir"              location="nashorn"/>
+    <property name="src.org.web3d.x3d.tests"     value="${X3DJSAIL.relative.dir}/tests"/><!-- tests -->
+    <property name="nashorn.dir"                 value="nashorn"/>
 
-    <property name="src.org.web3d.x3d.jsail"       value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
-    <property name="src.org.web3d.x3d.sai"         value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
-    <property name="src.org.web3d.x3d.tests"       value="${java.src.dir}/org/web3d/x3d/tests"/><!-- tests      -->
+    <property name="src.org.web3d.x3d.jsail"       value="${java.src.dir}/org/web3d/x3d/jsail"/>      <!-- concretes  -->
+    <property name="src.org.web3d.x3d.sai"         value="${java.src.dir}/org/web3d/x3d/sai"/>        <!-- interfaces -->
+    <property name="src.org.web3d.x3d.util"        value="${java.src.dir}/org/web3d/x3d/util"/>       <!-- utilities -->
+    <property name="src.org.web3d.x3d.util.exi"    value="${java.src.dir}/org/web3d/x3d/util/exi"/>   <!-- utilities EXI -->
+    <property name="src.org.web3d.x3d.util.x3duom" value="${java.src.dir}/org/web3d/x3d/util/x3duom"/><!-- JAXB-generated classes and X3DUOM classes -->
     <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
     <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
 	
@@ -189,57 +201,70 @@ and
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
     <property name="javadoc.private"         value="false"/>
+    <property name="javadoc.source"          value="${ant.java.version}"/>
     <property name="javadoc.splitindex"      value="true"/>
     <property name="javadoc.breakiterator"   value="true"/>
     <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
     <property name="javadoc.version"         value="true"/>
     <property name="javadoc.windowtitle"     value="X3DJSAIL, X3D Java Scene Access Interface Library"/>
-    <property name="javadoc.doctitle"        value="X3DJSAIL, X3D Java Scene Access Interface Library"/>
+    <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
 	
-	<property name="junit5.dir"              location="${env.ANT_HOME}/lib" description="do not create local copies of junit for project"/>
-	<property name="junit5.site"                value="http://central.maven.org/maven2/org/junit" description="Maven repository"/>
-	<property name="junit5.version"             value="1.2.0" description="latest supported version"/>
-	<property name="jupiter.version"            value="5.2.0" description="latest supported version"/>
-	<property name="opentest4j"                 value="opentest4j"/>
-	<property name="opentest4j.version"         value="1.1.0"/>
-	<property name="junit-platform-commons"     value="junit-platform-commons"/>
-	<property name="junit-platform-engine"      value="junit-platform-engine"/>
-	<property name="junit-platform-launcher"    value="junit-platform-launcher"/>
-	<property name="junit-jupiter-api"          value="junit-jupiter-api"/>
-	<property name="junit-jupiter-engine"       value="junit-jupiter-engine"/>
+    <property name="junit5.dir"              location="${X3DJSAIL.relative.dir}/lib/support"   description="do not create local copies of junit for project"/>
+    <property name="junit5.jupiter.dir"      location="${junit5.dir}/jupiter" description="do not create local copies of junit for project"/>
+    <property name="junit5.site"                value="http://central.maven.org/maven2/org/junit" description="Maven repository"/>
+    <property name="junit5.version"             value="1.3.1" description="latest supported version"/>
+    <property name="jupiter.version"            value="5.3.1" description="latest supported version"/>
+    <property name="opentest4j"                 value="opentest4j"/>
+    <!-- opentest4j 1.1.1 failing -->
+    <property name="opentest4j.version"         value="1.1.0" description="latest supported version"/>
+    <property name="junit-platform-commons"     value="junit-platform-commons"/>
+    <property name="junit-platform-engine"      value="junit-platform-engine"/>
+    <property name="junit-platform-launcher"    value="junit-platform-launcher"/>
+    <property name="junit-jupiter-api"          value="junit-jupiter-api"/>
+    <property name="junit-jupiter-engine"       value="junit-jupiter-engine"/>
 	
     <path id="junit5.classpath">
         <fileset dir="${junit5.dir}">
-			<include name="**/*.jar" />
-		</fileset>
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${junit5.jupiter.dir}">
+            <include name="**/*.jar" />
+        </fileset>
     </path>
 	
-	<target name="get.junit5.jars" description="Get latest versions of JUnit5 .jar test suite">
-            <ant antfile="java/build.xml" target="antVersionCheck"/>
-            <echo message="get junit5 .jar files if not already available) and install in ANT_HOME/lib=${env.ANT_HOME}/lib"/>
-            <echo message="Retrieving JUnit5 version ${junit5.version} and jupiter version ${jupiter.version}, note version number gets stripped from destination file name"/>
-            <mkdir dir="${junit5.dir}"/>
-            <mkdir dir="${junit5.dir}/jupiter"/>
+    <target name="get.junit5.jars" description="Get latest versions of JUnit5 .jar test suite">
+        <ant antfile="java/build.xml" target="antVersionCheck"/>
+        <echo message="get junit5 .jar files if not already available) and install in ANT_HOME/lib=${env.ANT_HOME}/lib"/>
+        <echo message="Retrieving JUnit5 version ${junit5.version} and jupiter version ${jupiter.version}, note version number gets stripped from destination file name"/>
+        <mkdir dir="${junit5.dir}"/>
+        <mkdir dir="${junit5.dir}/jupiter"/>
 
-		<!-- http://central.maven.org/maven2/org/junit/platform/junit-platform-commons/1.2.0/junit-platform-commons-1.2.0.jar -->
+        <!-- http://central.maven.org/maven2/org/junit/platform/junit-platform-commons/1.2.0/junit-platform-commons-1.2.0.jar -->
         <get src="${junit5.site}/platform/${junit-platform-commons}/${junit5.version}/${junit-platform-commons}-${junit5.version}.jar"
              dest="${junit5.dir}/${junit-platform-commons}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
-		<get src="${junit5.site}/platform/${junit-platform-engine}/${junit5.version}/${junit-platform-engine}-${junit5.version}.jar"
-             dest="${junit5.dir}/${junit-platform-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
-		<get src="${junit5.site}/platform/${junit-platform-launcher}/${junit5.version}/${junit-platform-launcher}-${junit5.version}.jar"
-             dest="${junit5.dir}/${junit-platform-launcher}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="${junit5.site}/platform/${junit-platform-engine}/${junit5.version}/${junit-platform-engine}-${junit5.version}.jar"
+                     dest="${junit5.dir}/${junit-platform-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="${junit5.site}/platform/${junit-platform-launcher}/${junit5.version}/${junit-platform-launcher}-${junit5.version}.jar"
+                     dest="${junit5.dir}/${junit-platform-launcher}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
 		
-		<get src="http://central.maven.org/maven2/org/${opentest4j}/${opentest4j}/${opentest4j.version}/${opentest4j}-${opentest4j.version}.jar"
-	     dest="${junit5.dir}/${opentest4j}-${opentest4j.version}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="http://central.maven.org/maven2/org/${opentest4j}/${opentest4j}/${opentest4j.version}/${opentest4j}-${opentest4j.version}.jar"
+                     dest="${junit5.dir}/${opentest4j}-${opentest4j.version}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
 		
-		<!--  example http://central.maven.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0.jar
-		redirect from https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-api.jar -->
-	    <!-- note that these go into the jupiter subdirectory -->
-		<get src="${junit5.site}/jupiter/${junit-jupiter-api}/${jupiter.version}/${junit-jupiter-api}-${jupiter.version}.jar"
-             dest="${junit5.dir}/jupiter/${junit-jupiter-api}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <!--  example http://central.maven.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0.jar
+        redirect from https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-api.jar -->
+        <!-- note that these go into the jupiter subdirectory -->
+        <get src="${junit5.site}/jupiter/${junit-jupiter-api}/${jupiter.version}/${junit-jupiter-api}-${jupiter.version}.jar"
+                     dest="${junit5.dir}/jupiter/${junit-jupiter-api}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${junit5.site}/jupiter/${junit-jupiter-engine}/${jupiter.version}/${junit-jupiter-engine}-${jupiter.version}.jar"
              dest="${junit5.dir}/jupiter/${junit-jupiter-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
-	</target>
+        
+        <echo message="bugfix: silence junit5 package warnings"/>
+        <!-- https://github.com/junit-team/junit5/issues/1104 warning: unknown enum constant Status.STABLE while compiling org.junit.jupiter.api.Test -->
+        <!-- https://mvnrepository.com/artifact/org.apiguardian/apiguardian-api/1.0.0 -->
+        <!-- at   http://central.maven.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar -->
+        <get src="http://central.maven.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"
+             dest="${junit5.dir}/apiguardian-api-1.0.0.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+    </target>
 
     <target name="create.X3DJSAIL" depends="" description="Build API for X3D Java Scene Authoring Interface Library (X3DJSAIL) from X3D Object Model" >
         <echo message="Build API for X3D Java Scene Authoring Interface Library (X3DJSAIL) from X3D Object Model"/>
@@ -265,6 +290,7 @@ and
                 <!-- do not delete test cases! -->
                 <include name="**/*.bak"/>
                 <include name="**/*.$$$$$$"/>
+                <exclude name="**/*.java"/>
             </fileset>
             <fileset dir="${java.classes.dir}">
                 <include name="**/*"/>
@@ -287,29 +313,36 @@ and
             </fileset>
         </delete>
         <echo message="copy latest stylesheets:"/>
-        <mkdir dir="${java.lib.dir}"/>
         <mkdir dir="${java.lib.dir}/stylesheets"/>
-	<!-- copying of local/latest updates is optional since the following files are in version control -->
-        <copy file="${saxon.jar}"                        todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
-        <copy file="${exificient.dir}/${exificient.jar}" todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
-        <copy file=   "${openexi.dir}/${openexi.jar}"    todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dExtrusionToSvgViaXslt1.1.xslt"    todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dToJava.xslt"                      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dToJson.xslt"                      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dToX3dom.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dToXhtml.xslt"                     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dTidy.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dModelMetaToMarkdown.xslt"         todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <!-- copying of local/latest updates is optional since the following files are in version control -->
+        <copy file="${user.home}/.ant/lib/xercesImpl.jar"  todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${saxon.jar}"                          todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file=      "${c14n.dir}/${c14n.jar}"         todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${exificient.dir}/${exificient.jar}"   todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file=   "${openexi.dir}/${nagasena.jar}"     todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file=   "${openexi.dir}/${nagasena-rta.jar}" todir="${java.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dExtrusionToSvgViaXslt1.1.xslt"      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToJava.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToJson.xslt"                        todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToVrml97.xslt"                      todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToX3dvClassicVrmlEncoding.xslt"     todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToX3dom.xslt"                       todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToXhtml.xslt"                       todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dTidy.xslt"                          todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dModelMetaToMarkdown.xslt"           todir="${java.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <!-- requires local copy of specifications directory -->
         <copy todir="${java.lib.dir}/specifications" verbose="true" failonerror="false">
-                <fileset dir="../../specifications" defaultexcludes="yes">
-                        <include name="*.xsd"/>
-                        <include name="x3d-schema-changelog.txt"/>
-                        <exclude name="x3dObjectModel.xsd"/>
-                </fileset>
+            <fileset dir="../../specifications" defaultexcludes="yes">
+                <include name="*.xsd"/>
+                <include name="x3d-schema-changelog.txt"/>
+                <include name="X3dUnifiedObjectModel*.xml"/>
+            </fileset>
         </copy>
+	<echo message="$env.CLASSPATH=${env.CLASSPATH}"/>
+        <echo message="create autogenerated Java source code for X3DUOM using JAXB:"/>
+        <antcall target="create.X3DUOM.JAXB.schema"/>
         <echo message="create autogenerated Java source code:"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}" failonerror="true">
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:TempSaiJava.txt"/> <!-- output-doc -->
@@ -319,46 +352,88 @@ and
         </java>
         <copy file="${X3DJSAIL.relative.dir}/X3DJSAIL.html"  tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
         <!-- precise cleanup of directories occurred earlier -->
-		<!-- empty classpath to ensure internal consistency of package compilation -->
-        <echo message="Compiling org.web3d.x3d.sai interfaces"/>
-		<mkdir  dir="${java.classes.dir}"/>
+        <!-- empty classpath to ensure internal consistency of package compilation -->
+        <echo message="Compiling ${src.org.web3d.x3d.sai} interfaces"/>
+        <mkdir  dir="${java.classes.dir}"/>
         <javac  srcdir="${src.org.web3d.x3d.sai}"
-               classpath=""
-               destdir="${java.classes.dir}"
-               debug="on"
-               verbose="${javac.verbose}"
-               includeantruntime="false">
-        </javac>
-        <echo message="Compiling org.web3d.x3d.java concrete classes"/>
-        <echo message="classpath=${java.lib.dir}/${saxon.jar}"/>
-        <javac  srcdir="${src.org.web3d.x3d.jsail}"
-             classpath="${java.lib.dir}/${saxon.jar};${java.lib.dir}/${exificient.jar};${java.lib.dir}/${openexi.jar};"
-               destdir="${java.classes.dir}"
-                 debug="on"
-               verbose="${javac.verbose}"
-               includeantruntime="false">
+                classpath=""
+                destdir="${java.classes.dir}"
+                debug="on"
+                encoding="UTF-8"
+                verbose="${javac.verbose}"
+                includeantruntime="false">
+            <!-- -Xlint reports problems with no definition of serialVersionUID
             <compilerarg value="-Xlint"/>
+            -->
         </javac>
-        <echo message="Compiling org.web3d.x3d.java test classes"/>
-        
+        <!-- compiling interfaces must precede concrete classes -->
+        <echo message="Compiling org.web3d.x3d.jsail, .util.exi, and .util.x3duom concrete classes"/>
+        <javac  destdir="${java.classes.dir}"
+                debug="on"
+                encoding="UTF-8"
+                verbose="${javac.verbose}"
+                includeantruntime="false">
+            <src path="${src.org.web3d.x3d.jsail}"/>
+            <src path="${src.org.web3d.x3d.util.exi}"/>
+            <src path="${src.org.web3d.x3d.util.x3duom}"/>
+            <!-- -Xlint reports problems (mysteriously) with missing numbered versions of included lib/*.jar files
+            <compilerarg value="-Xlint"/>
+            -->
+            <classpath>
+                <fileset dir="${java.lib.dir}">
+                    <include name="*.jar"/>
+                    <include name="support/jaxb/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+        <echo message="Compiling org.web3d.x3d.java test classes, two different ways:"/>
         <antcall target="compile.X3DJSAIL.tests"/>
+        <ant dir="java" antfile="build.xml" target="compile.examples" inheritAll="false"/>
         <antcall target="create.X3DJSAIL.javadoc"/>
         <antcall target="create.X3DJSAIL.jars"/>
-	</target>
+    </target>
 	
-	<target name="compile.X3DJSAIL.tests">
-        <echo message="Compiling org.web3d.x3d.java test classes"/>
+    <target name="compile.examples.java">
+        <echo message="delete *.class bytecode..."/>
+        <delete verbose="true">
+            <fileset dir="${java.examples.dir}">
+                <include name="New3dModel.class"/>
+                <include name="HelloWorldProgram.class"/>
+            </fileset>
+        </delete>
+        <echo message="compile HelloWorldProgram.java source..."/>
+        <javac  srcdir="${java.examples.dir}"
+                classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="${java.examples.dir}"
+                debug="on"
+                encoding="UTF-8"
+                verbose="${javac.verbose}"
+                includeantruntime="false" fork="${fork}">
+            <include name="NewX3dModel.java"/>
+            <include name="HelloWorldProgram.java"/>
+            <exclude name="HelloWorldProgramOutput.java"/>
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
+        </javac>
+    </target>
+        
+    <target name="compile.X3DJSAIL.tests">
+        <echo message="Compiling ${src.org.web3d.x3d.tests} classes"/>
         <javac  srcdir="${src.org.web3d.x3d.tests}"
                destdir="${java.classes.dir}"
                  debug="on"
+              encoding="UTF-8"
+             classpath="${java.jars.dir}/${jsai.full.archive.jar.name}"
                verbose="${javac.verbose}"
-               includeantruntime="false">
-			<classpath refid="junit5.classpath"/>
+     includeantruntime="false"
+           failonerror="false"><!-- permit library recompilation to continue even if unit tests fail during development -->
+            <classpath refid="junit5.classpath"/><!-- includes jupiter subdirectory -->
             <compilerarg value="-Xlint"/>
         </javac>
-	</target>
+    </target>
 	
-	<target name="create.X3DJSAIL.javadoc">
+    <target name="create.X3DJSAIL.javadoc">
         <echo message="Preparing javadoc:"/>
         <delete dir="${javadoc.dir}" failonerror="false"/>
         <mkdir  dir="${javadoc.dir}"/>
@@ -368,39 +443,48 @@ and
                       author="${javadoc.author}"
                       bottom="${javadoc.copyright}"
                breakiterator="${javadoc.breakiterator}"
-                   classpath="${java.lib.dir}/${saxon.jar};${java.lib.dir}/${exificient.jar};${java.lib.dir}/${openexi.jar};"
+                   classpath="${java.jars.dir}/${jsai.full.archive.jar.name}"
                     doctitle="${javadoc.doctitle}"
                     encoding="${javadoc.encoding}"
                       header="${javadoc.doctitle}"
                      noindex="${javadoc.noindex}"
-                    nonavbar="${javadoc.nonavbar}"
-                      notree="${javadoc.notree}"
-                    overview="${src.org.web3d.x3d.sai}/overview.html"
+                     nonavbar="${javadoc.nonavbar}"
+                     notree="${javadoc.notree}"
+                     overview="${src.org.web3d.x3d.sai}/overview.html"
                      private="${javadoc.private}"
-                      source="${java.src.dir}"
-                  splitindex="${javadoc.splitindex}"
-			 use="${javadoc.use}" 
-             useexternalfile="true" 
-		     verbose="true"
+                     source="${javadoc.source}"
+                     splitindex="${javadoc.splitindex}"
+                     use="${javadoc.use}" 
+                     useexternalfile="true" 
+                     verbose="true"
                      version="${javadoc.version}"
-                 windowtitle="${javadoc.windowtitle}">
-            
-				<classpath refid="junit5.classpath"/>
-                <fileset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
-                        <include name="*.java"/>
-                        <include name="**/*.java"/>
-                        <exclude name="**/*.html"/>
+                     windowtitle="${javadoc.windowtitle}">
+            <classpath>
+                <fileset dir="${java.lib.dir}">
+                    <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="${src.org.web3d.x3d.jsail}" defaultexcludes="yes">
-                        <include name="*.java"/>
-                        <include name="**/*.java"/>
-                        <exclude name="**/*.html"/>
-                </fileset>
-                <fileset dir="${src.org.web3d.x3d.tests}" defaultexcludes="no">
-                        <include name="*.java"/>
-                        <include name="**/*.java"/>
-                        <exclude name="**/*.html"/>
-                </fileset>
+            </classpath>
+            <classpath refid="junit5.classpath"/><!-- includes jupiter subdirectory -->
+            <fileset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
+                <include name="*.java"/>
+                <include name="**/*.java"/>
+                <exclude name="**/*.html"/>
+            </fileset>
+            <fileset dir="${src.org.web3d.x3d.jsail}" defaultexcludes="yes">
+                <include name="*.java"/>
+                <include name="**/*.java"/>
+                <exclude name="**/*.html"/>
+            </fileset>
+            <fileset dir="${src.org.web3d.x3d.tests}" defaultexcludes="yes">
+                <include name="*.java"/>
+                <include name="**/*.java"/>
+                <exclude name="**/*.html"/>
+            </fileset>
+            <fileset dir="${src.org.web3d.x3d.util}" defaultexcludes="yes">
+                <include name="*.java"/>
+                <include name="**/*.java"/>
+                <exclude name="**/*.html"/>
+            </fileset>
 			
             <!-- previous switches
        maxmemory="4096m"
@@ -455,41 +539,41 @@ and
                             <include name="X3DException.java"/>
                     </fileset>
             -->
-    </javadoc>
-    <copy todir="${javadoc.dir}" verbose="true"><!-- -->
-        <fileset dir="." defaultexcludes="yes">
-            <include name="license.*"/>
-            <include name="README.txt"/>
-            <include name="images/*.gif"/>
-            <include name="images/*.png"/>
-        </fileset>
-    </copy>
+        </javadoc>
+        <copy todir="${javadoc.dir}" verbose="true"><!-- -->
+            <fileset dir="." defaultexcludes="yes">
+                <include name="license.*"/>
+                <include name="README.txt"/>
+                <include name="images/*.gif"/>
+                <include name="images/*.png"/>
+            </fileset>
+        </copy>
 		
-<!--
-					<include name="Matrix3.java"/>
-					<include name="Matrix4.java"/>
-					<include name="MFBool.java"/>
-					<include name="MFColor.java"/>
-					<include name="MFColorRGBA.java"/>
-					<include name="MFDouble.java"/>
-					<include name="MFFloat.java"/>
-					<include name="MField.java"/>
-					<include name="MFImage.java"/>
-					<include name="MFInt32.java"/>
-					<include name="MFMatrix3d.java"/>
-					<include name="MFMatrix3f.java"/>
-					<include name="MFMatrix4d.java"/>
-					<include name="MFMatrix4f.java"/>
-					<include name="MFRotation.java"/>
-					<include name="MFString.java"/>
-					<include name="MFTime.java"/>
-					<include name="MFVec2d.java"/>
-					<include name="MFVec2f.java"/>
-					<include name="MFVec3d.java"/>
-					<include name="MFVec3f.java"/>
-					<include name="MFVec4d.java"/>
-					<include name="MFVec4f.java"/>
-					
+        <!--
+                                        <include name="Matrix3.java"/>
+                                        <include name="Matrix4.java"/>
+                                        <include name="MFBool.java"/>
+                                        <include name="MFColor.java"/>
+                                        <include name="MFColorRGBA.java"/>
+                                        <include name="MFDouble.java"/>
+                                        <include name="MFFloat.java"/>
+                                        <include name="MField.java"/>
+                                        <include name="MFImage.java"/>
+                                        <include name="MFInt32.java"/>
+                                        <include name="MFMatrix3d.java"/>
+                                        <include name="MFMatrix3f.java"/>
+                                        <include name="MFMatrix4d.java"/>
+                                        <include name="MFMatrix4f.java"/>
+                                        <include name="MFRotation.java"/>
+                                        <include name="MFString.java"/>
+                                        <include name="MFTime.java"/>
+                                        <include name="MFVec2d.java"/>
+                                        <include name="MFVec2f.java"/>
+                                        <include name="MFVec3d.java"/>
+                                        <include name="MFVec3f.java"/>
+                                        <include name="MFVec4d.java"/>
+                                        <include name="MFVec4f.java"/>
+                                        
         <include name="SFBool.java"/>
         <include name="SFColor.java"/>
         <include name="SFColorRGBA.java"/>
@@ -525,25 +609,34 @@ and
         <antcall target="uploadX3DJSAIL"/> -->
     </target>
 
+    <target name="clean.X3DJSAIL.jars" depends="" description="Build X3DJSAIL jars" >
+        <echo message="cleaning X3DJSAIL jar files"/>
+        <delete dir="jars" verbose="true">
+            <fileset dir="${java.jars.dir}">
+                <include name="*"/>
+            </fileset>
+        </delete>
+    </target>
+
     <target name="create.X3DJSAIL.jars" depends="" description="Build X3DJSAIL jars" >
         <!-- TODO jar files for each X3D version -->
-	<!-- https://dzone.com/articles/what-is-jar-hell -->
+        <!-- https://dzone.com/articles/what-is-jar-hell -->
         <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/toc.html -->
         <echo message="preparing .jar files"/>
         <mkdir dir="${java.jars.dir}"/>
-	<!-- ===================================================================== -->
-	<echo message="${jsai.classes.archive.jar.name} contains only compiled .class files and dependency jars"/>
-	<jar destfile="${jsai.classes.archive.jar.name}">
+        <!-- ===================================================================== -->
+        <echo message="${jsai.classes.archive.jar.name} contains only compiled .class files and dependency jars"/>
+        <jar destfile="${jsai.classes.archive.jar.name}" duplicate="fail" strict="warn">
             <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/manifest.html -->
             <manifest id="ClassesJarManifest">
-              <!-- Who is building this jar? -->
-              <attribute name="Built-By" value="${user.name}"/>
-              <!-- Information about the program itself -->
-              <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
-              <attribute name="Implementation-Title" value="X3DJSAIL"/>
-              <attribute name="Implementation-Version" value="1.0"/>
-              <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
-              <attribute name="Sealed" value="true"/>
+                <!-- Who is building this jar? -->
+                <attribute name="Built-By" value="${user.name.build}"/>
+                <!-- Information about the program itself -->
+                <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+                <attribute name="Implementation-Title" value="X3DJSAIL X3D Java Scene Access Interface Library"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+                <!-- Sealing Packages within a JAR File https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <attribute name="Sealed" value="true"/>
             </manifest>
             <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="*.txt"/>
@@ -552,61 +645,45 @@ and
             </fileset>
             <fileset dir="${java.classes.dir}">
                 <include name="**/*.class"/>
-                <!-- avoid test cases to facilitate test debugging -->
-                <exclude name="**/tests/**/*.class"/>
-                <exclude name="javadoc.redirect.html"/>
-                <exclude name="jars"/>
-                <exclude name="jars/*.jar"/>
+                <include name="X3DJSAIL.properties"/>
+                <!-- might need to avoid test cases to facilitate test debugging -->
+                <exclude name="**/tests/**"/>
             </fileset>
             <!-- lib, stylesheets -->
             <fileset dir="${java.lib.dir}">
-                <include name="**/*"/>
-                <include name="**/*.xslt"/>
+                <include name="specifications/**"/>
+                <include name="stylesheets/**"/>
                 <!-- Note that no external-dependency jar files are included in this stripped-down jar -->
             </fileset>
+            <fileset dir="${java.src.dir}">
+                <!-- python scripts for blender -->
+                <include name="python/blenderScripts/*.py"/>
+            </fileset>
         </jar>
-		<!-- ===================================================================== -->
-        <echo>(ensure that destination ${jsai.classes.archive.jar.name} is not already in use) </echo>
+        <!-- ===================================================================== -->
+        <echo>(ensure that destination ${jsai.classes.archive.jar.name} is not already in use, for example a pending debugger session) </echo>
         <move file="${jsai.classes.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
         <length property="jsai.classes.archive.jar.length" file="${java.jars.dir}/${jsai.classes.archive.jar.name}"/>
         <echo>Build .jar complete: ${jsai.classes.archive.jar.name} for Java SAI .class interfaces only (${jsai.classes.archive.jar.length} bytes) </echo>
         <!-- ===================================================================== -->
         <echo message="${jsai.full.archive.jar.name} contains all compiled .class files, all source .java files, and javadoc documentation"/>
-        <echo message="${jsai.full.archive.jar.name} is a 'fat jar' that can be run independently on command line or elsewehere"/>
+        <echo message="${jsai.full.archive.jar.name} is a 'fat jar' that can be run independently on command line or elsewhere"/>
+        <echo message="First create intermediate jar..."/>
         <!-- https://stackoverflow.com/questions/19150811/what-is-a-fat-jar -->
-        <jar destfile="${jsai.full.archive.jar.name}.withSignatures">
-            <manifest id="FullJarManifest">
-              <!-- If this is an Applet or Web Start application, include
-                   the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
-              <attribute name="Permissions" value="sandbox"/>
-              <attribute name="Codebase" value="example.com"/> -->
-              <!-- Who is building this jar? -->
-              <attribute name="Built-By" value="${user.name}"/>
-              <!-- Information about the program itself -->
-              <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
-              <attribute name="Implementation-Title" value="X3DJSAIL Full"/>
-              <attribute name="Implementation-Version" value="1.0"/>
-              <attribute name="Sealed" value="true"/>
-              <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
-              <!-- https://dzone.com/articles/what-is-jar-hell
-                   http://docs.oracle.com/javase/tutorial/deployment/jar/downman.html
-                   "Note: The Class-Path header points to classes or JAR files on the local network, 
-                    not JAR files within the JAR file or classes accessible over Internet protocols.
-                    To load classes in JAR files within a JAR file into the class path, you must write custom code to load those classes."
-                    So one or more Class-Path entries won't provide general portability:
-              <attribute name="Class-Path" value="./${saxon.jar};./${openexi-nagasena.jar};./${exificient.jar}"/>
-               -->
-            </manifest>
-            <!-- everything -->
+        <jar destfile="${jsai.full.archive.jar.name}.withSignatures" duplicate="preserve" strict="warn">
+            <!-- no need for manifest here, this is an intermediate jar. proper manifest added later. -->
+            <!-- add mostly everything -->
             <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
+                <!-- not build -->
                 <include name="draftJavaLanguageBindingAnnexes/**/*"/>
                 <include name="examples/**/*"/>
                 <include name="images/**/*"/>
                 <include name="javadoc/**/*"/>
                 <include name="references/**/*"/>
                 <include name="src/**/*"/>
+                <exclude name="**/*.class"/>
                 <exclude name="**/~*"/>
                 <exclude name="**/*.bak"/>
                 <exclude name="**/private/**"/>
@@ -615,29 +692,47 @@ and
             </fileset>
             <fileset dir="${java.classes.dir}">
                 <include name="**/*.class"/>
-                <exclude name="**/tests/**/*.class"/>
-                <exclude name="javadoc.redirect.html"/>
-                <exclude name="jars"/>
-                <exclude name="jars/*.jar"/>
+                <include name="X3DJSAIL.properties"/> 
+                <exclude name="**/python/**"/>
+                <!-- might need to avoid test cases to facilitate test debugging
+                <exclude name="**/tests/**"/>  -->
+            </fileset>
+            <fileset dir="${java.src.dir}">
+                <!-- include sources so that javadoc is available when using full jar -->
+                <include name="**/*.java"/>
+                <exclude name="python/jacoco/*"/>
+                <exclude name="python/python.environment/*"/>
+                <exclude name="python/pythonapi/*"/>
+                <exclude name="python/pythonnet/*"/>
+                <!-- python scripts for blender -->
+                <include name="python/blenderScripts/*.py"/>
+                <include name="python/blenderScripts/*.*"/><!-- test model and build file -->
+                <!-- do not include python/blenderScripts/products/ subdirectory which is produced by build.xml examples -->
             </fileset>
             <!-- lib, stylesheets -->
             <fileset dir="${java.lib.dir}">
-                <include name="**/*"/>
-                <include name="**/*.xslt"/>
-                <exclude name="${saxon.jar}"/>
-                <exclude name="${openexi-nagasena.jar}"/>
-                <exclude name="${exificient.jar}"/>
+                <include name="specifications/**"/>
+                <include name="stylesheets/**"/>
             </fileset>
+            <!-- nashorn -->
             <fileset dir="${X3DJSAIL.relative.dir}">
                 <include name="${nashorn.dir}/**/*"/>
-                <exclude name="test.bat"/>
-                <exclude name="${nashorn.dir}/examples"/>
+                <exclude name="${nashorn.dir}/test.bat"/>
+                <exclude name="${nashorn.dir}/examples/**"/>
+                <exclude name="${nashorn.dir}/**/*.class"/>
             </fileset>
+            <!-- include all lib/*.jar dependencies for inclusion in sealed jar -->
             <zipgroupfileset dir="${java.lib.dir}">
-                <include name="${exificient.jar}"/>
-                <include name="${openexi-nagasena.jar}"/>
-                <include name="${saxon.jar}"/>
-                <!-- apparently unable to avoid inclusion, so removed later
+                <!-- https://stackoverflow.com/questions/24347301/class-classformaterror-absent-code-attribute-in-method-that-is-not-native -->
+                <include name="*.jar"/> <!-- beware of additional jar conflicts (typically duplicate classes) that can lead to sealing violation errors at run time -->
+                <include name="support/jaxb/istack-commons-runtime.jar"/> <!-- from jaxb-ri-2.3.1/jaxb-ri/mod -->
+                <include name="support/jaxb/jaxb-api.jar"/>               <!-- from jaxb-ri-2.3.1/jaxb-ri/mod -->
+                <include name="support/jaxb/jaxb-runtime.jar"/>           <!-- from jaxb-ri-2.3.1/jaxb-ri/mod -->
+                
+                <exclude name="javax.json-api-1.0.jar"/> <!-- already included in exificient, xerces -->
+                <exclude name="jdom.jar"/>
+                <exclude name="org/w3c/**/*"/> <!-- omit duplicated classes and interfaces already in exificient jar, further copies lead to run-time errors -->
+                <!-- apparently unable to avoid inclusion, and so removed later...
                     <exclude name="META-INF/SAXONICA.DSA"/>
                     <exclude name="META-INF/SAXONICA.RSA"/>
                     <exclude name="META-INF/SAXONICA.SF"/>
@@ -645,36 +740,72 @@ and
             </zipgroupfileset>
         </jar>
         <!-- now remove prior signatures, which are no longer valid since other code products have been integrated.
-			 to learn more about why removing signatures from integrated "fat" jar files is necessary:
-             https://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar -->
+                    to learn more about why removing signatures from integrated "fat" jar files is necessary:
+        https://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar -->
         <!-- remove signatures from external jars: see "Have you tried using the zipfileset task?"
-             https://stackoverflow.com/questions/2521231/ant-task-to-remove-files-from-a-jar -->
+        https://stackoverflow.com/questions/2521231/ant-task-to-remove-files-from-a-jar -->
         <!-- zipfileset: https://ant.apache.org/manual/Tasks/zip.html and https://ant.apache.org/manual/Types/zipfileset.html -->
-        <jar destfile="${jsai.full.archive.jar.name}">
+        <jar destfile="${jsai.full.archive.jar.name}" duplicate="preserve" strict="warn">
+            <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/manifest.html -->
+            <manifest id="FullJarManifest">
+                <!-- If this is an Applet or Web Start application, include
+                     the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
+                <attribute name="Permissions" value="sandbox"/>
+                <attribute name="Codebase" value="example.com"/> -->
+                <!-- Who is building this jar? -->
+                <attribute name="Built-By" value="${user.name.build}"/>
+                    <!-- Information about the program itself -->
+                    <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+                    <attribute name="Implementation-Title" value="X3DJSAIL X3D Java Scene Access Interface Library"/>
+                    <attribute name="Implementation-Version" value="1.0"/>
+                    <!-- Sealing Packages within a JAR File https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                    <!-- Sealing Packages in Extensions     https://docs.oracle.com/javase/tutorial/ext/security/sealing.html -->
+                    <!-- Ant manifest examples              https://ant.apache.org/manual/Tasks/manifest.html -->
+                    <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
+                <section name="common">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+                <section name="org/w3/**/*">
+                  <attribute name="Sealed" value="false"/>
+                </section>
+                <!-- https://dzone.com/articles/what-is-jar-hell -->
+                <!-- of interest but apparently not pertinent to "fat jar" constructions where no jars are internal:
+                     http://docs.oracle.com/javase/tutorial/deployment/jar/downman.html
+                    "Note: The Class-Path header points to classes or JAR files on the local network, 
+                     not JAR files within the JAR file or classes accessible over Internet protocols.
+                     To load classes in JAR files within a JAR file into the class path, you must write custom code to load those classes."
+                     So one or more Class-Path entries won't provide general portability:
+               <attribute name="Class-Path" value="./${saxon.jar};./${nagasena-rta.jar};./${exificient.jar}"/>
+                -->
+            </manifest>
             <zipfileset src="${jsai.full.archive.jar.name}.withSignatures">
+                <!-- https://stackoverflow.com/questions/2521231/ant-task-to-remove-files-from-a-jar -->
                 <exclude name="META-INF/*.DSA"/>
                 <exclude name="META-INF/*.RSA"/>
                 <exclude name="META-INF/*.SF"/>
+                <!-- <exclude name="org/w3c/**/*"/> duplicated classes and interfaces in exificient lead to run-time errors since DOM already part of JDK 1.8+ -->
+                <!-- <exclude name="org/w3c"/> eliminates stub directory -->
             </zipfileset>
         </jar>
         <delete file="${jsai.full.archive.jar.name}.withSignatures" verbose="true"/>
 
-		<!-- ===================================================================== -->
-        <echo>(ensure that destination ${jsai.full.archive.jar.name} is not already in use)</echo>
-		<move file="${jsai.full.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
+        <!-- ===================================================================== -->
+        <echo>(ensure that destination ${jsai.full.archive.jar.name} is not already in use, for example from a pending debugger session)</echo>
+        <move file="${jsai.full.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
         <length property="jsai.full.archive.jar.length" file="${java.jars.dir}/${jsai.full.archive.jar.name}"/>
         <echo>Build .jar complete: ${jsai.full.archive.jar.name} for all .class interfaces, .java sources (${jsai.full.archive.jar.length} bytes) </echo>
-		<!-- TODO also provide option in archive build file to download current version -->
-		<!-- TODO are exificient and nagasena/openexi needed? -->
-		<!-- ===================================================================== -->
-		<echo>Copy ${jsai.full.archive.jar.name} to lib/ subdirectories in X3D Example Archives:</echo>
-		<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Basic/lib"                  verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/ConformanceNist/lib"        verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Vrml2Sourcebook/lib"        verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Savage/lib"                 verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/SavageDefense/lib"          verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/X3dForAdvancedModeling/lib" verbose="true"/>
-    	<copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/X3dForWebAuthors/lib"       verbose="true"/>
+        <!-- TODO also provide option in archive build file to download current version -->
+        <!-- TODO are exificient and nagasena/openexi needed? -->
+        <!-- ===================================================================== -->
+        <echo>Copy ${jsai.full.archive.jar.name} to lib/ subdirectories in X3D Example Archives:</echo>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Basic/lib"                       verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/ConformanceNist/lib"             verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Vrml2Sourcebook/lib"             verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/Savage/lib"                      verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/SavageDefense/lib"               verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/X3dForAdvancedModeling/lib"      verbose="true"/>
+        <copy file="${java.jars.dir}/${jsai.full.archive.jar.name}" todir="../content/examples/X3dForWebAuthors/lib"            verbose="true"/>
+        <!-- ModelExchangeStagingArea pulls a copy to models\lib -->
     </target>
 
     <target name="BuildSpecificationLanguageBindingJava.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
@@ -698,23 +829,23 @@ and
         <copy file="images/cube.gif"   todir="../../specifications/JavaLanguageBinding/images" verbose="true"/>
         <copy file="images/x3dbar.png" todir="../../specifications/JavaLanguageBinding/images" verbose="true"/>
 		
-		<echo message="Update draft Java specification annexes"/>
+        <echo message="Update draft Java specification annexes"/>
         <echo message="==========================================="/>
-		<echo message="BuildSpecificationLanguageBindingJava.saxon"/>
+        <echo message="BuildSpecificationLanguageBindingJava.saxon"/>
         <echo message="==========================================="/>
         <echo message="Copy open-source license and draft Java specification annexes"/>
-		<copy file="license.txt"  todir="${src.org.web3d.x3d.jsail}"/>
-		<copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
-		<copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
-		<copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
+        <copy file="license.txt"  todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
         <copy todir="${X3DJSAIL.relative.dir}/draftJavaLanguageBindingAnnexes"><!-- verbose="true" -->
-			<fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
-				<include name="Part2/**/*"/>
-				<include name="Images/*.gif"/>
-				<include name="Images/*.png"/>
-			</fileset>
-		</copy>
-	</target>
+            <fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
+                <include name="Part2/**/*"/>
+                <include name="Images/*.gif"/>
+                <include name="Images/*.png"/>
+            </fileset>
+        </copy>
+    </target>
 
     <target name="view.BuildSpecificationLanguageBindingJava.local" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
         <property name="javadocPath" location="${X3DJSAIL.relative.dir}/javadoc/index.html"/>
@@ -732,8 +863,8 @@ and
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
-    <target name="BuildX3dUnifiedObjectModel.validate" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
-        <echo message="Check well-formed XML..."/>
+    <target name="BuildX3dUnifiedObjectModel.validate" depends="" description="Build  X3D Unified Object Model (X3DUOM) files in XML format, planned for use in API autogeneration">
+        <echo message="Check X3DUOM well-formed XML..."/>
         <xmlvalidate failonerror="false" warn="true" lenient="true">
             <fileset dir=".">
                 <include name="${X3dUnifiedObjectModel4.0}"/>
@@ -743,7 +874,7 @@ and
                 <include name="${X3dUnifiedObjectModel3.0}"/>
             </fileset>
         </xmlvalidate>
-        <echo message="Check schema validation..."/>
+        <echo message="Check X3DUOM schema validation..."/>
         <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
                         fullchecking="false" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
             <fileset dir=".">
@@ -754,7 +885,7 @@ and
                 <include name="${X3dUnifiedObjectModel3.0}"/>
             </fileset>
         </schemavalidate>
-        <echo message="Check schema validation, strict fullchecking..."/>
+        <echo message="Check X3DUOM schema validation, strict fullchecking..."/>
         <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
                         fullchecking="true" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
             <fileset dir=".">
@@ -768,11 +899,11 @@ and
     </target>
 
     <target name="BuildX3dUnifiedObjectModel.saxon.all" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
-		<echo message="==========================================="/>
-		<!-- make sure that primary version is up to date -->
-        <antcall target="BuildX3dUnifiedObjectModel.saxon.v3.3"/><!-- version 3.3 -->
+        <copy file="../../specifications/X3dUnifiedObjectModel.xsd" todir="java/lib/specifications/" verbose="true"/>
         <echo message="==========================================="/>
-		<antcall target="BuildX3dUnifiedObjectModel.saxon.v4.0"/><!-- version 4.0 -->
+        <antcall target="BuildX3dUnifiedObjectModel.saxon.v4.0"/><!-- version 4.0 -->
+        <echo message="==========================================="/>
+        <antcall target="BuildX3dUnifiedObjectModel.saxon.v3.3"/><!-- version 3.3 -->
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.2"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -782,7 +913,8 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.2}"/> <!-- source-doc -->
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-		<copy file="${X3dUnifiedObjectModel3.2}" todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.2}"    todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.2}" todir="java/lib/specifications/" verbose="true"/>
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.1"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -792,8 +924,16 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.1}"/> <!-- source-doc -->
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-		<copy file="${X3dUnifiedObjectModel3.1}" todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.1}"    todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.1}" todir="java/lib/specifications/" verbose="true"/>
         <echo message="==========================================="/>
+        <antcall target="BuildX3dUnifiedObjectModel.saxon.v3.0"/><!-- version 3.0 -->
+        <echo message="==========================================="/>
+        <antcall target="BuildX3dUnifiedObjectModel.validate"/>
+        <echo message="==========================================="/>
+    </target>
+
+    <target name="BuildX3dUnifiedObjectModel.saxon.v3.0" depends="" description="Build  X3D v3.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.0"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
@@ -802,10 +942,8 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource3.0}"/> <!-- source-doc -->
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-		<copy file="${X3dUnifiedObjectModel3.0}" todir="../../specifications/" verbose="true"/>
-        <echo message="==========================================="/>
-        <antcall target="BuildX3dUnifiedObjectModel.validate"/>
-        <echo message="==========================================="/>
+        <copy file="${X3dUnifiedObjectModel3.0}"    todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.0}" todir="java/lib/specifications/" verbose="true"/>
     </target>
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v3.3" depends="" description="Build  X3D v3.3 object model files in XML format, used in API autogeneration">
@@ -817,7 +955,8 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-	<copy file="${X3dUnifiedObjectModel3.3}"    todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.3}"    todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel3.3}" todir="java/lib/specifications/" verbose="true"/>
     </target>
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v4.0" depends="" description="Build  X3D v4.0 object model files in XML format, used in API autogeneration">
@@ -829,7 +968,25 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource4.0}"/> <!-- source-doc -->
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
-		<copy file="${X3dUnifiedObjectModel4.0}" todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel4.0}" todir="../../specifications/" verbose="true"/>
+        <copy file="${X3dUnifiedObjectModel4.0}" todir="java/lib/specifications/" verbose="true"/>
+    </target>
+
+    <target name="BuildX3dOntologyFromX3duom.saxon" depends="" description="Build X3D Ontology from X3D Unified Object Model (X3DUOM)" >
+        <echo message="Following output is for version 4.0, TODO other versions of X3D"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t"/>  <!-- timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-o:X3dOntology4.0.ttl"/> <!-- output-doc -->
+            <arg value="-s:${X3dDtdsSchemas.dir}/${X3dUnifiedObjectModel4.0}"/> <!-- source-doc -->
+            <arg value="-xsl:X3duomToX3dOntology.xslt"/> <!-- style-doc -->
+        </java>
+        <!-- copy to destination directory, where it is in version control -->
+        <copy file="X3dOntology4.0.ttl" todir="../../semantics/ontologies" verbose="true"/>
+        <!-- TODO automate validation -->
+        <echo message="OWL validation available at"/>
+        <echo message="  http://mowl-power.cs.man.ac.uk:8080/validator"/>
+        <echo message="  https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl"/>
     </target>
 
     <target name="BuildSpecificationXmlEncodingFromSchema.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes and clause 7, Encoding of statements" >
@@ -864,11 +1021,11 @@ and
         <copy file="images/cube.gif"           todir="../../specifications/XmlEncoding/images"  verbose="true"/>
         <copy file="images/x3dbar.png"         todir="../../specifications/XmlEncoding/images"  verbose="true"/>
         <antcall target="BuildAllX3dElementsAttributes.txt"/>
-     </target>
+    </target>
     
-     <target name="BuildAllX3dElementsAttributes.txt" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
+    <target name="BuildAllX3dElementsAttributes.txt" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
         <!-- TODO add other X3D versions -->
-		<!-- ========================================= -->
+        <!-- ========================================= -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
@@ -888,11 +1045,11 @@ and
         </java>
         <copy file="AllX3dElementsAttributes3.3.txt"         todir="../../specifications/"  verbose="true"/>
         <copy file="AllX3dElementsAttributes3.3.xml"         todir="../../specifications/"  verbose="true"/>
-		<!-- ========================================= -->
-     </target>
+        <!-- ========================================= -->
+    </target>
 
-     <target name="BuildSpecificationVrmlEncodingFromSchema.saxon" depends="" description="Build X3D specification Classic VRML encoding clause 6 Encoding of Nodes" >
-       <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+    <target name="BuildSpecificationVrmlEncodingFromSchema.saxon" depends="" description="Build X3D specification Classic VRML encoding clause 6 Encoding of Nodes" >
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:VrmlEncodingOfNodes.html"/> <!-- output-doc -->
@@ -910,7 +1067,7 @@ and
         <copy file="images/x3d.png"            todir="../../specifications/VrmlEncoding/Part02"  verbose="true"/>
         <copy file="images/cube.gif"           todir="../../specifications/VrmlEncoding/Part02"  verbose="true"/>
         <copy file="images/x3dbar.png"         todir="../../specifications/VrmlEncoding/Part02"  verbose="true"/>
-     </target>
+    </target>
 
     <target name="view.BuildSpecificationXmlEncodingFromSchema.local" description="view local BuildSpecificationXmlEncodingFromSchema in web browser (Netbeans only)">
         <property name="reportpath" location="../../specifications/XmlEncoding/Part01/EncodingOfNodes.html"/>
@@ -941,7 +1098,7 @@ and
         <echo message="Remove extraneous namespace attributes from result file:"/>
         <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
         <echo message="Produced new X3D XML Encoding Clause 6: EncodingOfNodes.html"/>
-     </target>
+    </target>
 
     <target name="html5.buildElementsAttributesTable" depends="" description="build element and attribute lower-case capitalization tables for HTML5 recommendation" >
 
@@ -959,9 +1116,11 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
             <arg value="-xsl:X3dElementsAttributesLowerCaseTableConstruction.xslt"/> <!-- style-doc -->
         </java>
-     </target>
+    </target>
 
     <target name="clean" depends="clean.results" description="clean all" >
+        <delete file="TempSaiJava.txt" verbose="true"/>
+        <delete dir="examples"/>
     </target>
 
     <target name="clean.results" description="Remove autogenerated files, directory" >
@@ -971,32 +1130,41 @@ and
         <delete file="JavaLanguageBinding/Part2/nodeTypeInterfaces.html" verbose="true"/>
         <delete file="JavaLanguageBinding/Part2/nodeInterfaces.html" verbose="true"/>
         <delete file="VRMLEncodingOfNodes.html" verbose="true"/>
-     </target>
+    </target>
 
-    <target name="clean.X3DJSAIL" description="Remove autogenerated files, directory" >
+    <target name="clean.X3DJSAIL" description="Remove autogenerated source files, jars" >
         <echo message="clean prior autogenerated component subdirectories, if any..."/>
-		<delete failonerror="false" includeemptydirs="true" verbose="true">
-			<fileset dir="${src.org.web3d.x3d.jsail}" excludes="fields/package.html"/>
-			<fileset dir="${src.org.web3d.x3d.sai}"/>
-			<fileset dir="${java.jars.dir}">
-                            <include name="*.jar"/>
-			</fileset>
-		</delete>
-		<!-- leave examples alone -->
-     </target>
+        <delete failonerror="false" includeemptydirs="true" verbose="true">
+            <!-- leave examples alone -->
+            <fileset dir="${src.org.web3d.x3d.jsail}" excludes="fields/package.html"/>
+            <fileset dir="${src.org.web3d.x3d.sai}"/>
+            <fileset dir="${src.org.web3d.x3d.util.exi}">
+                <exclude name="SerializeEXISchema.java"/>
+            </fileset>
+            <fileset dir="${src.org.web3d.x3d.util.x3duom}">
+                <exclude name="X3DUnifiedObjectModel40.java"/>
+            </fileset>
+            <fileset dir="${java.src.dir}">
+                <include name="${src.org.web3d.x3d.tests}"/>
+            </fileset>
+            <fileset dir="${java.jars.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </delete>
+    </target>
     
     <target name="test"
-        depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon,test.X3dModelMetaToMarkdown.saxon,test.X3dToJava.xslt" description="Perform stylesheet test tasks" >
+            depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon,test.X3dModelMetaToMarkdown.saxon,test.X3dToJava.xslt" description="Perform stylesheet test tasks" >
         <!-- TODO:  ,
-                 test.X3dToVrml97.xslt, test.X3dToX3dvClassicVrmlEncoding.xslt, test.X3dToXhtml.xslt -->
+        test.X3dToVrml97.xslt, test.X3dToX3dvClassicVrmlEncoding.xslt, test.X3dToXhtml.xslt -->
         <!-- TODO:  test.X3dExtrusionToSvgViaXslt1.1.xslt -->
         <!-- TODO:  XmlUnit tests on output files -->
         <echo message="all tests complete"/>
-     </target>
+    </target>
     
     <target name="test.mkdir" depends="" description="Make subdirectory for test results" >
         <mkdir dir="test"/>
-     </target>
+    </target>
 
     <target name="validate" depends="" description="validate .xslt stylesheets">
         <!-- XML schema validation of stylesheets is not possible, but Netbeans/X3D-Edit and XML Spy provide good pseudo-validation checks -->
@@ -1021,7 +1189,7 @@ and
     </target>
     
     <target name="test.X3dModelMetaToMarkdown.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
-	<echo message="==========================================="/>
+        <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.meta.md with default parameter includeSubdirectoryPaths=true"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
@@ -1030,7 +1198,7 @@ and
             <arg value="-s:test/HelloWorld.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dModelMetaToMarkdown.xslt"/> <!-- style-doc -->
         </java>
-	<echo message="==========================================="/>
+        <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.metaFlattened.md with parameter includeSubdirectoryPaths=false"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
@@ -1040,7 +1208,7 @@ and
             <arg value="-xsl:X3dModelMetaToMarkdown.xslt"/> <!-- style-doc -->
             <arg value="includeSubdirectoryPaths=false"/> <!-- stylesheet parameter -->
         </java>
-	<echo message="==========================================="/>
+        <echo message="==========================================="/>
     </target>
     
     <target name="test.X3dToVrml97.saxon" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using saxon" >
@@ -1071,69 +1239,280 @@ and
     
     <target name="test.X3DJSAIL.unitTests" depends="compile.X3DJSAIL.tests" description="Test X3DJSAIL unit tests" >
         <echo message="==========================================="/>
-		<echo message="ant antfile=java/build.xml target=test.junit5"/>
+        <echo message="ant antfile=java/build.xml target=test.junit5"/>
         <ant antfile="java/build.xml" target="test.junit5.directly"/>
         <!-- not yet working:
         <ant antfile="java/build.xml" target="test.junit5.ant"/>
         -->
     </target>
+        
+    <target name="test.Staircase">
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/Staircase.x3d -validate"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/Staircase.x3d"/>                 <!--  input model -->
+            <arg value="-validate"/> <!-- output model -->
+        </java>
+    </target>
+        
+    <target name="test.X3DJSAIL.help" description="Test X3DJSAIL -help message" >
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -version -help"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}">
+            <arg value="-version"/>
+            <arg value="-help"/>
+        </java>
+    </target>
+        
+    <target name="test.X3DJSAIL.clean" description="Test MeshlabLauncher capabilities" >
+        <echo message="==========================================="/>
+        <echo message="Preliminary cleanups"/>
+        <delete file="${java.examples.dir}/CleatClamp_MeshLabLauncher.MeshLab.log.txt" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp_MeshLabLauncher.stl" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp_MeshLabRoundTrip.log.txt" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp_RoundTrip.stl" verbose="true"/>
+        <delete file="${java.examples.dir}/CleatClamp_RoundTrip.MeshLab.log.txt" verbose="true"/>
+        <delete verbose="true">
+            <fileset dir="${java.examples.dir}">
+                <include name="*.java"/>
+                <exclude name="HelloWorldProgram.java"/><!-- really important! -->
+            </fileset>
+            <fileset dir="test">
+                <include name="*.java"/>
+            </fileset>
+        </delete>
+    </target>
     
-    <target name="test.X3DJSAIL" depends="test.X3DJSAIL.unitTests,test.X3dToJava.xslt" description="Test X3DJSAIL" >
+    <target name="test.X3DJSAIL.BlenderLauncher" description="Test BlenderLauncher capabilities" >
         <echo message="==========================================="/>
-		<echo message="Preliminary cleanups"/>
-        <delete file="${java.examples.dir}/CleatClamp.MeshLab.log.txt" verbose="true"/>
-        <delete file="${java.examples.dir}/CleatClamp.MeshLabLauncher.MeshLab.log.txt" verbose="true"/>
-        <delete file="${java.examples.dir}/CleatClamp.RoundTrip.MeshLab.log.txt" verbose="true"/>
-        <echo message="==========================================="/>
-		<echo message="ant antfile=java/nashorn/build.xml target=test.nashorn (direct invocation)"/>
-        <ant antfile="java/nashorn/build.xml" target="test.nashorn"/>
-        <echo message="==========================================="/>
-		<!-- fails bitterly
-        <echo message="ant antfile=java/build.xml target=test.nashorn (indirect invocation)"/>
-        <ant antfile="java/build.xml" target="test.nashorn"/>
-        <echo message="==========================================="/>
-		-->
-        <echo message="helpful invocations for CommandLine debugging"/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -help"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher -help"/>
+        <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="-help"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -properties ${java.examples.dir}/X3DJSAIL.properties"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher -properties ${java.examples.dir}/X3DJSAIL.properties"/>
+        <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="-properties"/>
             <arg value="${java.examples.dir}/X3DJSAIL.properties"/>
         </java>
         <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher -BLENDER_PATH ${env.BLENDER_PATH}"/>
+        <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-BLENDER_PATH"/>
+            <arg value="${env.BLENDER_PATH}"/>
+        </java>
+        <echo message="==========================================="/><!-- TODO -toFile ${java.examples.dir}/CleatClamp.stl.blender.png -->
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher ${java.examples.dir}/CleatClamp.x3d -toImage"/>
+        <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/CleatClamp.x3d"/>
+            <arg value="-toImage"/>
+            <!-- let python script determine output image file names
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/CleatClamp.x3d.blender.png"/> -->
+        </java>
+        <echo message="==========================================="/>
+        <echo message="now test .stl to image (not yet supported):"/><!-- TODO -toFile ${java.examples.dir}/CleatClamp.x3d.blender.png -->
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher ${java.examples.dir}/CleatClamp.stl -toImage"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/CleatClamp.stl"/>
+            <arg value="-toImage"/>
+            <!-- TODO fix; let python script determine output image file names
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/CleatClamp.stl.blender.png"/> -->
+        </java>
+    </target>
+
+    <target name="test.X3DJSAIL.pages" description="Test CommandLine page launching via Java Desktop" >
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -home -version"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-home"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -javadoc"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-javadoc"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -resources"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-resources"/>
+        </java>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -X3dResources Feedback"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-X3dResources"/>
+            <arg value="Feedback"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -hints"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-hints"/>
+        </java>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -SceneAuthoringHints Images"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-hints"/>
+            <arg value="Images"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -tooltips"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-tooltips"/>
+        </java>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -X3dTooltips accessType"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-X3dTooltips"/>
+            <arg value="accessType"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -regexes"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-regexes"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -X3DUOM"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-X3DUOM"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.BlenderLauncher -home"/>
+        <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-home"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher -home"/>
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-home"/>
+        </java>
+        <echo message="==========================================="/>
+    </target>
+
+    <target name="test.X3DJSAIL.MeshlabLauncher" description="Test MeshlabLauncher capabilities" >
+        <delete verbose="true">
+            <fileset dir="${java.examples.dir}">
+                <include name="*.MeshLab.log.txt"/>
+            </fileset>
+        </delete>
+        <echo message="==========================================="/>
         <echo   message="org.web3d.x3d.jsail.MeshLabLauncher -help"/>
-        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="-help"/>
         </java>
         <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher -properties ${java.examples.dir}/X3DJSAIL.properties"/>
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-properties"/>
+            <arg value="${java.examples.dir}/X3DJSAIL.properties"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher -MESHLAB_PATH ${env.MESHLAB_PATH}"/>
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-MESHLAB_PATH"/>
+            <arg value="${env.MESHLAB_PATH}"/>
+        </java>
+        <echo message="==========================================="/>
         <echo message="Convert CleatClamp.stl to .x3d version ..."/>
-        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp.MeshLabLauncher.x3d"/>
-        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d"/>
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/CleatClamp.stl"/>                 <!--  input model -->
-            <arg value="${java.examples.dir}/CleatClamp.MeshLabLauncher.x3d"/> <!-- output model -->
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d"/> <!-- output model -->
+        </java>
+        <echo message="and then canonicalize ..."/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d -canonicalize ${java.examples.dir}/CleatClamp_MeshLabLauncherCanonicalize.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d"/>  <!--  input model -->
+            <arg value="-canonicalize"/> <!-- output model has matching name if not defined -->
+            <arg value="-toFile"/> <!-- output model has matching name if not defined -->
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncherCanonicalize.x3d"/>  <!--  input model -->
+        </java>
+        <echo message="and then tidy ..."/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/CleatClamp.x3d ${java.examples.dir}/CleatClamp_MeshLabLauncherTidy.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d"/>  <!--  input model -->
+            <arg value="-tidy"/> <!-- output model has matching name if not defined -->
+            <arg value="-toFile"/> <!-- output model has matching name if not tdefined -->
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncherTidy.x3d"/>  <!--  input model -->
+        </java>
+        <echo message="and then .java version ..."/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/CleatClamp.x3d ${java.examples.dir}/CleatClamp_MeshLabLauncher.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/CleatClamp.x3d"/>  <!--  input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/CleatClamp.java"/> <!-- output model -->
         </java>
         <echo message="==========================================="/>
-        <echo message="... and then back to .stl"/>
-        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp.MeshLabLauncher.stl"/>
-        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo message="... and then back to .stl for visual comparison"/>
+        <echo   message="org.web3d.x3d.jsail.MeshLabLauncher ${java.examples.dir}/CleatClamp.stl ${java.examples.dir}/CleatClamp_MeshLabLauncher.stl"/>
+        <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/CleatClamp.stl"/>                 <!--  input model -->
-            <arg value="${java.examples.dir}/CleatClamp.MeshLabLauncher.stl"/> <!-- output model -->
+            <arg value="${java.examples.dir}/CleatClamp_MeshLabLauncher.stl"/> <!-- output model -->
+        </java>
+    </target>
+
+    <target name="test.examples.java" description="Test examples in java"
+         depends="compile.examples.java,test.NewX3dModel.java,test.HelloWorldProgram.java">
+    </target>
+
+    <target name="test.HelloWorldProgram.java" depends="compile.examples.java" description="Test HelloWorldProgram">
+        <java classname="HelloWorldProgram" 
+              dir="${java.examples.dir}"
+              classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+    </target>
+
+    <target name="test.NewX3dModel.java" depends="compile.examples.java" description="Test NewX3dModel">
+        <java classname="NewX3dModel" 
+              dir="${java.examples.dir}"
+              classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+    </target>
+
+    <target name="test.X3DUnifiedObjectModelJaxbTests" depends="compile.X3DJSAIL.tests" description="Test X3DUnifiedObjectModelJaxbTests">
+        <java classname="org.web3d.x3d.tests.X3DUnifiedObjectModelJaxbTests" fork="${fork}">
+            <classpath>
+                <pathelement path="${java.jars.dir}/${jsai.full.archive.jar.name}"/>
+            </classpath>
+            <classpath refid="junit5.classpath"/><!-- includes jupiter subdirectory -->
+        </java>
+    </target>
+    
+    <target name="test.X3DJSAIL" depends="test.X3DJSAIL.clean,test.mkdir,compile.examples.java" description="Test X3DJSAIL">
+        <echo message="==========================================="/>
+        <echo message="helpful invocations for CommandLine debugging"/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine -version -help"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-help"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.x3d -toZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -properties ${java.examples.dir}/X3DJSAIL.properties"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="-properties"/>
+            <arg value="${java.examples.dir}/X3DJSAIL.properties"/>
+        </java>
+        <echo message="==========================================="/>
+        <antcall target="compile.examples.java"/>
+        <echo message="==========================================="/>
+        <antcall target="test.X3DJSAIL.unitTests"/>
+        <echo message="==========================================="/>
+        <antcall target="test.EXI"/>
+        <echo message="==========================================="/>
+        <antcall target="test.X3dToJava.xslt"/>
+        <echo message="==========================================="/>
+        <antcall target="test.X3DJSAIL.BlenderLauncher"/>
+        <echo message="==========================================="/>
+        <antcall target="test.X3DJSAIL.MeshlabLauncher"/>
+        <echo message="==========================================="/>
+        <echo message="Continuing with individual tests"/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.x3d -toZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toZIP"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/flowers4.x3d -toJava -toFile ${java.examples.dir}/flowers4.java"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/flowers4.x3d -toJava -toFile ${java.examples.dir}/flowers4.java"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/flowers4.x3d"/><!-- input model -->
             <arg value="-toJava"/>
             <arg value="-toFile"/>
@@ -1141,167 +1520,203 @@ and
         </java>
         <echo message="compile flowers4.java source..."/>
         <javac  srcdir="${java.examples.dir}"
-			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-               destdir="${java.examples.dir}"
-                 debug="on"
-               verbose="false"
-               includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
+                classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="${java.examples.dir}"
+                debug="on"
+                encoding="UTF-8"
+                verbose="false"
+                includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
         </javac>
         <!-- self-validation test -->
         <echo message="test flowers4 execution and self-validation:"/>
         <java classname="flowers4" 
-                  dir="${java.examples.dir}"
-                  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+              dir="${java.examples.dir}"
+              classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/flowers4.x3d -toJSON -toFile ${java.examples.dir}/flowers4.json"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/flowers4.x3d -toJSON -toFile ${java.examples.dir}/flowers4.json"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/flowers4.x3d"/><!-- input model -->
             <arg value="-toJSON"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/flowers4.json"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toGZIP"/>
             <arg value="-toFile"/>
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toX3D"/>
             <arg value="-toFile"/>
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -toXML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.xml"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -toXML -toFile ${java.examples.dir}/HelloWorldProgramOutput_CommandLine.xml"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toXML"/>
             <arg value="-toFile"/>
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.xml"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.xml"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -toHTML -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.html (pretty print)"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -toHTML -toFile ${java.examples.dir}/HelloWorldProgramOutput_CommandLine.html (pretty print)"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-toHTML"/><!-- pretty print documentation -->
             <arg value="-toFile"/>
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.html"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.html"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -markdown -toFile ${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -markdown -toFile ${java.examples.dir}/HelloWorldProgramOutput_CommandLine.md"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-markdown"/>
             <arg value="-toFile"/>
-            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.md"/>
         </java>
         <concat>
-            <fileset file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.md"/>
+            <fileset file="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.md"/>
         </concat>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine -tidy -toFile ${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+        <echo   message="org.web3d.x3d.jsail.CommandLine -tidy -toFile ${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
             <arg value="-tidy"/><!-- cleaned-up version -->
             <arg value="-toFile"/>
-            <arg value="${java.examples.dir}/HelloWorldProgramOutputTidy.CommandLine.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutputTidy_CommandLine.x3d"/>
         </java>
-		<echo message="==========================================="/>
-		<echo message="compile HelloWorldProgram.java source..."/>
+        <echo message="==========================================="/>
+        <!-- self-validation test -->
+        <echo message="test execution and self-validation of HelloWorldProgram and other examples:"/>
+        <antcall target="test.examples.java"/>
+        <echo message="==========================================="/>
+        <echo message="compile HelloWorldProgramOutput.java source..."/>
+        <echo message="     (i.e. new source program which was just produced by HelloWorldProgram execution)"/>
         <javac  srcdir="${java.examples.dir}"
-			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-               destdir="${java.examples.dir}"
-                 debug="on"
-               verbose="${javac.verbose}"
-               includeantruntime="false" fork="${fork}">
-			 <include name="HelloWorldProgram.java"/>
-			 <exclude name="HelloWorldProgramOutput.java"/>
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
+                classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="${java.examples.dir}"
+                debug="on"
+                encoding="UTF-8"
+                verbose="${javac.verbose}"
+                includeantruntime="false" fork="${fork}">
+            <include name="HelloWorldProgramOutput.java"/>
+            <exclude name="HelloWorldProgram.java"/>
+            <compilerarg value="-Xlint"/>
         </javac>
-		<echo message="==========================================="/>
-		<!-- self-validation test -->
-		<echo message="test HelloWorldProgram execution and self-validation:"/>
-		<java classname="HelloWorldProgram" 
-			  dir="${java.examples.dir}"
-			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        <!-- self-validation test -->
+        <echo message="test HelloWorldProgramOutput execution and self-validation:"/>
+        <java classname="HelloWorldProgramOutput" 
+                      dir="${java.examples.dir}"
+                      classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
-		<echo message="compile HelloWorldProgramOutput.java source..."/>
-		<echo message="     (i.e. new source program which was just produced by HelloWorldProgram execution)"/>
-        <javac  srcdir="${java.examples.dir}"
-			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-               destdir="${java.examples.dir}"
-                 debug="on"
-               verbose="${javac.verbose}"
-               includeantruntime="false" fork="${fork}">
-			 <include name="HelloWorldProgramOutput.java"/>
-			 <exclude name="HelloWorldProgram.java"/>
-			<compilerarg value="-Xlint"/>
-        </javac>
-		<!-- self-validation test -->
-		<echo message="test HelloWorldProgramOutput execution and self-validation:"/>
-		<java classname="HelloWorldProgramOutput" 
-			  dir="${java.examples.dir}"
-			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        <delete file="${java.examples.dir}/HelloWorldProgramOutput.class" verbose="true"/>
+        <echo message="==========================================="/>
+        <!-- .json jslint and schema validation -->
+        <echo>Error checking with jslint: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
+        <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
         </java>
-		<delete file="${java.examples.dir}/HelloWorldProgramOutput.class" verbose="true"/>
-		<echo message="==========================================="/>
-                <!-- .json jslint and schema validation -->
-		<echo>Error checking with jslint: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
-		<java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
-			<arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
-		</java>
-		<echo>Error checking with json-schema-validator: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
-		<java jar="${json-schema-validator.jar}" fork="${fork}">
-			<arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
-			<arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
-		</java>
-		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.x3d"/>
-		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
-		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
-		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.CommandLine.x3d"/>
-		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
-		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
-		<!-- https://stackoverflow.com/questions/6282542/ant-how-to-compare-contents-of-two-files -->
-		<condition property="CommandLine.match" value="true">
-                    <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
-                                file2="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
-		</condition>
-		<!-- otherwise --><property name="CommandLine.match" value="false"/>
-		<echo message="matches HelloWorldProgramOutput.x3d: ${CommandLine.match}"/>
-		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.xml"/>
-		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
-		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
-		<condition property="X3DXML.match" value="true">
-                    <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
+        <echo>Error checking with json-schema-validator: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
+        <java jar="${json-schema-validator.jar}" fork="${fork}">
+            <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo message="HelloWorldProgramOutput.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+        <xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+        <echo message="==========================================="/>
+        <echo message="HelloWorldProgramOutput_CommandLine.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
+        <xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
+        <!-- https://stackoverflow.com/questions/6282542/ant-how-to-compare-contents-of-two-files -->
+        <condition property="CommandLine.match" value="true">
+            <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
+                                file2="${java.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
+        </condition>
+        <!-- otherwise -->
+        <property name="CommandLine.match" value="false"/>
+        <echo message="matches HelloWorldProgramOutput.x3d: ${CommandLine.match}"/>
+        <echo message="==========================================="/>
+        <echo message="HelloWorldProgramOutput.xml"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
+        <xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
+        <condition property="X3DXML.match" value="true">
+            <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
                                 file2="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
-		</condition>
-		<!-- otherwise --><property name="X3DXML.match" value="false"/>
-		<echo message="matches HelloWorldProgramOutput.x3d: ${X3DXML.match}"/>
-		<echo message="==========================================="/>
-		<echo message="HelloWorldProgramOutput.ReloadedDOM.x3d"/>
-		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
-		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
-		<condition property="ReloadedDOM.match" value="true">
-                    <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
-                                file2="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
-		</condition>
-		<!-- otherwise --><property name="ReloadedDOM.match" value="false"/>
-		<echo message="matches HelloWorldProgramOutput.x3d: ${ReloadedDOM.match}"/>
-		<echo message="==========================================="/>
+        </condition>
+        <!-- otherwise -->
+        <property name="X3DXML.match" value="false"/>
+        <echo message="matches HelloWorldProgramOutput.x3d: ${X3DXML.match}"/>
+        <echo message="==========================================="/>
+        <echo message="HelloWorldProgramOutput_ReloadedDOM.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput_ReloadedDOM.x3d"/>
+        <xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput_ReloadedDOM.x3d"/>
+        <condition property="ReloadedDOM.match" value="true">
+            <filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
+                                file2="${java.examples.dir}/HelloWorldProgramOutput_ReloadedDOM.x3d"/>
+        </condition>
+        <!-- otherwise -->
+        <property name="ReloadedDOM.match" value="false"/>
+        <echo message="matches HelloWorldProgramOutput.x3d: ${ReloadedDOM.match}"/>
+        <echo message="==========================================="/>
+        <echo message="ant antfile=java/nashorn/build.xml target=test.nashorn (direct invocation)"/>
+        <ant antfile="java/nashorn/build.xml" target="test.nashorn" inheritAll="false"/>
+        <!-- inheritAll="false" to ensure that properties do not interfere with each other -->
+        <echo message="==========================================="/>
+        <echo message="test X3DUnifiedObjectModel JAXB invocations"/>
+        <antcall target="test.X3DUnifiedObjectModelJaxbTests"/>
+        <echo message="==========================================="/>
+    </target>
+    
+    <target name="test.EXI" description="Test both Exificient and OpenEXI implementations">
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.x3d -EXIFICIENT -toEXI -toFile ${java.examples.dir}/HelloWorldProgramOutput.exificient.exi"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-EXIFICIENT"/>
+            <arg value="-toEXI"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.exificient.exi"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.exificient.exi -EXIFICIENT -fromEXI -toFile ${java.examples.dir}/HelloWorldProgramOutput.ExificientRoundTrip.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.exificient.exi"/><!-- input model -->
+            <arg value="-EXIFICIENT"/>
+            <arg value="-fromEXI"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.ExificientRoundTrip.x3d"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.x3d -OpenEXI -toEXI -toFile ${java.examples.dir}/HelloWorldProgramOutput.openexi.exi"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/><!-- input model -->
+            <arg value="-OpenEXI"/>
+            <arg value="-toEXI"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.openexi.exi"/>
+        </java>
+        <echo message="==========================================="/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${java.examples.dir}/HelloWorldProgramOutput.openexi.exi -OpenEXI -fromEXI -toFile ${java.examples.dir}/HelloWorldProgramOutput.OpenExiRoundTrip.x3d"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.openexi.exi"/><!-- input model -->
+            <arg value="-OpenEXI"/>
+            <arg value="-fromEXI"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.OpenExiRoundTrip.x3d"/>
+        </java>
+        <echo message="==========================================="/>
+        <!-- TODO cross-wise interoperability testing -->
     </target>
     
     <target name="test.X3dHAnimHumanoidReport" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
@@ -1365,32 +1780,32 @@ and
 	
     <macrodef name="JsonConversion" description="Invoke XSLT transformation on passed scene using passed stylesheet">
         <attribute name="pathScene"/>
-		<sequential>
-			<echo message="translation input: @{pathScene}.x3d"/>
-			<echo message="..expected output: @{pathScene}.fixed.json"/>
-			<java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-				<!-- <arg value="-t"/>  timing information -->
-				<arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-				<arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
-				<arg value="-o:@{pathScene}.fixed.json"/> <!-- output-doc -->
-				<arg value="-s:@{pathScene}.x3d"/>  <!-- source-doc -->
-				<arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
-			</java>
-			<echo>..error checking with jslint</echo>
-			<java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
-				<arg value="@{pathScene}.fixed.json"/>
-			</java>
-			<echo>..error checking with json-schema-validator</echo>
-			<java jar="${json-schema-validator.jar}" fork="${fork}">
-				<arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
-				<arg value="@{pathScene}.fixed.json"/>
-			</java>
-			<echo message="==========================================="/>
-		</sequential>
-	</macrodef>
+        <sequential>
+            <echo message="translation input: @{pathScene}.x3d"/>
+            <echo message="..expected output: @{pathScene}.fixed.json"/>
+            <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+                <!-- <arg value="-t"/>  timing information -->
+                <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+                <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
+                <arg value="-o:@{pathScene}.fixed.json"/> <!-- output-doc -->
+                <arg value="-s:@{pathScene}.x3d"/>  <!-- source-doc -->
+                <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
+            </java>
+            <echo>..error checking with jslint</echo>
+            <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
+                <arg value="@{pathScene}.fixed.json"/>
+            </java>
+            <echo>..error checking with json-schema-validator</echo>
+            <java jar="${json-schema-validator.jar}" fork="${fork}">
+                <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
+                <arg value="@{pathScene}.fixed.json"/>
+            </java>
+            <echo message="==========================================="/>
+        </sequential>
+    </macrodef>
 
-   <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >
-		<echo message="==========================================="/>
+    <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >
+        <echo message="==========================================="/>
         <echo message="translation input: test/text.x3d"/>
         <echo message="..expected output: test/text.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1414,114 +1829,63 @@ and
     
     <target name="test.X3dToJson.CobwebExamples.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
 		
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__2"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__2"/>
         <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Appartment/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/building"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/buero"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Chomp/canyonv"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/21.4.F1a"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/5.3.F4"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/6.3.F3"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Dolphin/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__4"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__5"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/level1"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Pong/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Schacht/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Terrain/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/TikiWorld/index"/>
-		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Vattenfall/index"/>
-		<!--
-		-->
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/building"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/buero"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Chomp/canyonv"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/21.4.F1a"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/5.3.F4"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/6.3.F3"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Dolphin/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__4"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__5"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/level1"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Pong/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Schacht/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Terrain/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/TikiWorld/index"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Vattenfall/index"/>
+        <!--
+        -->
     </target>
     
     <target name="test.X3dToJava.xslt.one" depends="test.mkdir" description="Test X3dToJava.xslt stylesheet using Saxon" >
+        <property name="oneFileName" value="Background2"/><!-- no file extension -->
         <delete verbose="true">
-			<fileset file="test/*.java"/>
-		</delete>
+            <fileset file="test/${oneFileName}.java"/>
+        </delete>
         <echo message="==========================================="/>
-		<echo message="org.web3d.x3d.jsail.CommandLine test/rgb_alpha.x3d -toJava -toFile test/rgb_alpha.java"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="test/rgb_alpha.x3d"/><!-- input model -->
+        <echo   message="org.web3d.x3d.jsail.CommandLine test/${oneFileName}.x3d -toJava -toFile test/${oneFileName}.java"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="test/${oneFileName}.x3d"/><!-- input model -->
             <arg value="-toJava"/>
             <arg value="-toFile"/>
-            <arg value="test/rgb_alpha.java"/>
+            <arg value="test/${oneFileName}.java"/>
         </java>
-		<echo message="compile rgb_alpha.java source..."/>
+        <echo message="compile ${oneFileName}.java source..."/>
         <javac  srcdir="test"
-			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-               destdir="test"
-                 debug="on"
-               verbose="false"
-               includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
+                classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="test"
+                debug="on"
+                encoding="UTF-8"
+                verbose="false"
+                includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
         </javac>
-		<!-- self-validation test -->
-		<echo message="test rgb_alpha.x3d execution and self-validation:"/>
-		<java classname="rgb_alpha.x3d" 
-			  dir="test"
-			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        <!-- self-validation test -->
+        <echo message="test ${oneFileName} execution and self-validation:"/>
+        <java classname="${oneFileName}" 
+                      dir="test"
+                      classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
         <echo message="==========================================="/>
     </target>
     
-    <target name="test.X3dToJava.xslt" depends="test.mkdir" description="Test X3dToJava.xslt stylesheet using Saxon" >
-		<echo message="org.web3d.x3d.jsail.CommandLine test/arc.x3d -toJava -toFile test/arc.java"/>
-        <delete file="test/arc.java" failonerror="false"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="test/arc.x3d"/><!-- input model -->
-            <arg value="-toJava"/>
-            <arg value="-toFile"/>
-            <arg value="test/arc.java"/>
-        </java>
-		<echo message="compile arc.java source..."/>
-        <javac  srcdir="test"
-			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-               destdir="test"
-                 debug="on"
-               verbose="false"
-               includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
-        </javac>
-		<!-- self-validation test -->
-		<echo message="test arc execution and self-validation:"/>
-		<java classname="arc" 
-			  dir="test"
-			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
-        </java>
-        <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine test/flowers4.x3d -toJava -toFile test/flowers4.java"/>
-        <delete file="test/flowers4.java" failonerror="false"/>
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="test/flowers4.x3d"/><!-- input model -->
-            <arg value="-toJava"/>
-            <arg value="-toFile"/>
-            <arg value="test/flowers4.java"/>
-        </java>
-		<echo message="compile..."/>
-        <javac includes="flowers4.java" 
-			     srcdir="test"
-			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-                destdir="test"
-                  debug="on"
-                verbose="false"
-                includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
-        </javac>
-		<!-- self-validation test -->
-		<echo message="test flowers4 execution and self-validation:"/>
-		<java classname="flowers4" 
-			  dir="test"
-			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
-        </java>
-        <echo message="==========================================="/>
+    <target name="test.X3dToJava.xslt" depends="test.mkdir" description="Test X3dToJava.xslt stylesheet using Saxon and then X3DJSAIL" >
         <echo message="translation input: test/CameraExamples.x3d"/>
         <echo message="..expected output: test/CameraExamples.java"/>
         <delete file="test/CameraExamples.java" failonerror="false"/>
@@ -1534,28 +1898,88 @@ and
             <arg value="-xsl:X3dToJava.xslt"/> <!-- style-doc -->
             <arg value="className=CameraExamples"/> <!-- parameter -->
         </java>
-		<echo message="compile..."/>
+        <echo message="compile..."/>
         <javac includes="CameraExamples.java" 
-			     srcdir="test"
-			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-                destdir="test"
-                  debug="on"
-                verbose="false"
-                includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
+               srcdir="test"
+               classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="test"
+               debug="on"
+               encoding="UTF-8"
+               verbose="false"
+               failonerror="false"
+               includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
         </javac>
-		<!-- self-validation test -->
-		<echo message="test CameraExamples execution and self-validation:"/>
-		<java classname="CameraExamples" 
-			  dir="test"
-			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        <!-- self-validation test -->
+        <echo message="test CameraExamples execution and self-validation:"/>
+        <java classname="CameraExamples" 
+                      dir="test"
+                      classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
+        <echo message="==========================================="/>
+        <echo message="org.web3d.x3d.jsail.CommandLine test/arc.x3d -toJava -toFile test/arc.java"/>
+        <delete file="test/arc.java" failonerror="false"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="test/arc.x3d"/><!-- input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="test/arc.java"/>
+        </java>
+        <echo message="compile arc.java source..."/>
+        <javac  srcdir="test"
+                classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+                destdir="test"
+                debug="on"
+                encoding="UTF-8"
+                verbose="false"
+                failonerror="false"
+                includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
+        </javac>
+        <!-- self-validation test -->
+        <echo message="test arc execution and self-validation:"/>
+        <java classname="arc" 
+                      dir="test"
+                      classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+        <echo message="==========================================="/>
+        <echo message="org.web3d.x3d.jsail.CommandLine test/flowers4.x3d -toJava -toFile test/flowers4.java"/>
+        <delete file="test/flowers4.java" failonerror="false"/>
+        <java jar="${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="test/flowers4.x3d"/><!-- input model -->
+            <arg value="-toJava"/>
+            <arg value="-toFile"/>
+            <arg value="test/flowers4.java"/>
+        </java>
+        <echo message="compile..."/>
+        <javac includes="flowers4.java" 
+               srcdir="test"
+               classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="test"
+               debug="on"
+               encoding="UTF-8"
+               verbose="false"
+               failonerror="false"
+               includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
+        </javac>
+        <!-- self-validation test -->
+        <echo message="test flowers4 execution and self-validation:"/>
+        <java classname="flowers4" 
+                      dir="test"
+                      classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        </java>
+        <echo message="==========================================="/>
     </target>
     
     <target name="test.TestSurface" >
-		<echo message="==========================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: test/TestSurface.x3d"/>
         <echo message="..expected output: test/TestSurface.java"/>
         <delete file="test/TestSurface.java" failonerror="false"/>
@@ -1568,25 +1992,26 @@ and
             <arg value="-xsl:X3dToJava.xslt"/> <!-- style-doc -->
             <arg value="className=TestSurface"/> <!-- parameter -->
         </java>
-		<echo message="compile..."/>
+        <echo message="compile..."/>
         <javac includes="TestSurface.java" 
-			     srcdir="test"
-			  classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
-                destdir="test"
-                  debug="on"
-                verbose="false"
-                includeantruntime="false" fork="${fork}">
-			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-			<compilerarg value="-Xlint"/>
-			-->
+               srcdir="test"
+               classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="test"
+               debug="on"
+               encoding="UTF-8"
+               verbose="false"
+               includeantruntime="false" fork="${fork}">
+            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+            <compilerarg value="-Xlint"/>
+            -->
         </javac>
-		<!-- self-validation test -->
-		<echo message="test TestSurface execution and self-validation:"/>
-		<java classname="TestSurface" 
-			  dir="test"
-			  classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
+        <!-- self-validation test -->
+        <echo message="test TestSurface execution and self-validation:"/>
+        <java classname="TestSurface" 
+                      dir="test"
+                      classpath="test;${java.jars.dir}/${jsai.full.archive.jar.name};" fork="${fork}">
         </java>
-		<echo message="==========================================="/>
+        <echo message="==========================================="/>
     </target>
     
     <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using Saxon" >
@@ -1849,7 +2274,7 @@ and
         <delete file="test/HelloWorldSimpleUrlTidy.x3d" failonerror="false"/>
         <!-- Ant xslt task:  http://ant.apache.org/manual/Tasks/style.html -->
         <xslt style="X3dTidy.xslt" in="test/HelloWorldSimpleUrl.x3d" out="test/HelloWorldSimpleUrlTidy.x3d" classpath="${saxon.dir}/${saxon.jar};." >
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <param name="title"                       expression="HelloWorldSimpleUrl.x3d"/>
             <param name="conversionRequired"          expression="true"/>
             <param name="fixMFStringQuotes"           expression="true"/>
@@ -1858,60 +2283,60 @@ and
             <param name="revisedX3dVersion"           expression="3.0"/>
             <param name="appendMissingMetaLicense"    expression="true"/>
             <param name="licenseLink"                 expression="../../license.html"/>
-        <!--<param name="defaultUrlAddress"           expression="http://X3dGraphics.com/examples/X3dForWebAuthors"/> -->
+            <!--<param name="defaultUrlAddress"           expression="http://X3dGraphics.com/examples/X3dForWebAuthors"/> -->
         </xslt>
         <echo message="expected output: test/HelloWorldSimpleUrlTidy.x3d"/>
         
         <delete file="test/TestScriptInitializationTidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/TestScriptInitialization.x3d" out="test/TestScriptInitializationTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/TestScriptInitialization.x3d"/>
 
         <delete file="test/arcTidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/arc.x3d" out="test/arcTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/arc.x3d"/>
 		
         <delete file="test/TextSpecialCharactersTidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/TextSpecialCharacters.x3d" out="test/TextSpecialCharactersTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/TextSpecialCharacters.x3d"/>
         
         <delete file="test/HelloWorldTidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/HelloWorld.x3d"              out="test/HelloWorldTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/HelloWorld.x3d"/>
         
         <delete file="test/HelloWorldSignedTidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/HelloWorldSigned.x3d"      out="test/HelloWorldSignedTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/HelloWorldSigned.x3d"/>
         
         <delete file="test/Background2Tidy.x3d" failonerror="false"/>
         <xslt style="X3dTidy.xslt"  in="test/Background2.x3d"      out="test/Background2Tidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
-			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
-		</xslt>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
         <echo message="expected output: test/Background2.x3d"/>
     </target>
     
     <target name="test.X3dToX3dom.xslt" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using default Ant xslt task" >
         <xslt style="X3dToX3dom.xslt" in="${examples.dir}/HelloWorld.x3d"                               out="test/HelloWorld.xhtml"/>
         <!-- HAnim -->
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"   out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
+        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"  out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
         <xslt style="X3dToX3dom.xslt" in="${examples.dir}/X3dForWebAuthors/Chapter15Metadata/MetadataExamples.x3d"        out="test/MetadataExamples.xhtml"/>
         
         <!-- CAD
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadTeapot.x3d"                      out="test/CadTeapot.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetExample.x3d"          out="test/IndexedQuadSetExample.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/QuadSetColor.x3d"                   out="test/QuadSetColor.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetTexture.x3d"          out="test/IndexedQuadSetTexture.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadDesignPatternExampleBushing.x3d" out="test/CadDesignPatternExampleBushing.xhtml"/>
-         -->
+       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadTeapot.x3d"                      out="test/CadTeapot.xhtml"/>
+       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetExample.x3d"          out="test/IndexedQuadSetExample.xhtml"/>
+       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/QuadSetColor.x3d"                   out="test/QuadSetColor.xhtml"/>
+       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetTexture.x3d"          out="test/IndexedQuadSetTexture.xhtml"/>
+       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadDesignPatternExampleBushing.x3d" out="test/CadDesignPatternExampleBushing.xhtml"/>
+        -->
     </target>
     
     <target name="test.X3dToVrml97.xslt" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using default Ant xslt task" >
@@ -1927,7 +2352,7 @@ and
     </target>
 
     <target name="scp.askUsernamePassword.web3d"
-        description="If needed, ask for username, password">
+            description="If needed, ask for username, password">
         <if>
             <not>
                 <and>
@@ -1938,9 +2363,9 @@ and
             <then>
                 <echo  message="username.web3d, password.web3d not obtained via file ${access.properties.filename}"/>
                 <input message="username.web3d:"
-                addproperty="username.web3d" />
+                       addproperty="username.web3d" />
                 <input message="password.web3d:"
-                addproperty="password.web3d" />
+                       addproperty="password.web3d" />
                 <echo  message="username.web3d=${username.web3d}"/>
                 <echo  message="password.web3d=################"/>
                 <!--<echo  message="password.web3d=${password.web3d}"/> debug -->
@@ -1959,14 +2384,14 @@ and
 
     <!-- ensure that you have already connected to this host via ssh and saved the server key -->
     <target name="scp.upload.stylesheets.web3d" depends="scp.askUsernamePassword.web3d"
-        description="scp sftp upload of updated X3D archive files">
+            description="scp sftp upload of updated X3D archive files">
         <echo  message="scp (sftp) upload stylesheets to ${sftpServer.web3d}${sftpDirectory.web3d.stylesheets}"/>
         <!-- upload stylesheets -->
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}" verbose="true">
             <fileset dir=".">
                 <include name="*.xml"/>
                 <include name="*.xslt"/>
-            <!--<include name="*.sxx"/> .sxx is saxon-compiled stylesheet, no longer used -->
+                <!--<include name="*.sxx"/> .sxx is saxon-compiled stylesheet, no longer used -->
                 <include name="*.bat"/>
                 <include name="*.html"/>
                 <include name="*.gif"/>
@@ -1990,7 +2415,7 @@ and
     </target>
 
     <target name="scp.upload.X3DJSAIL.web3d" depends="create.X3DJSAIL,scp.askUsernamePassword.web3d"
-        description="scp sftp upload of autogenerated X3D Java Scene Authoring Interface Library (X3DJSAIL)">
+            description="scp sftp upload of autogenerated X3D Java Scene Authoring Interface Library (X3DJSAIL)">
 
         <echo  message="scp (sftp) upload CreateX3dSceneAccessInterfaceJava.xslt stylesheets to ${sftpServer.web3d}${sftpDirectory.web3d.stylesheets}"/>
         <echo  message="  http://www.web3d.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt"/>
@@ -2011,25 +2436,25 @@ and
                 <include name="${X3DJSAIL.relative.dir}/examples/**/*.*"/>
                 <include name="${X3DJSAIL.relative.dir}/references/**/*"/>
                 <exclude name="**nbproject/*"/>
-			</fileset>
+            </fileset>
         </scp>
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.specifications}/java/jars" password="${password.web3d}" verbose="true">
             <fileset dir="${java.jars.dir}">
                 <include name="*.jar"/>
-			</fileset>
+            </fileset>
         </scp>
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.specifications}/" password="${password.web3d}" verbose="true">
             <fileset dir=".">
-                <include name="${nashorn.dir}/*"/>
                 <include name="test.bat"/>
                 <include name="${X3DJSAIL.relative.dir}/.htaccess"/>
                 <include name="${X3DJSAIL.relative.dir}/README.txt"/>
                 <include name="${X3DJSAIL.relative.dir}/javadoc/*"/>
+                <include name="${X3DJSAIL.relative.dir}/**/*"/>
                 <include name="${java.lib.dir}/*"/>
                 <include name="${java.src.dir}/*"/>
-                <include name="${X3DJSAIL.relative.dir}/**/*"/>
+                <include name="${X3DJSAIL.relative.dir}/${nashorn.dir}/*"/>
                 <exclude name="${java.jars.dir}/*.jar"/>
-			</fileset>
+            </fileset>
         </scp>
         <echo  message="results online at http://www.web3d.org/specifications/java"/>
 		
@@ -2037,7 +2462,7 @@ and
     </target>
 
     <target name="scp.upload.XmlEncodingSpecificationInterfaces.web3d" depends="scp.askUsernamePassword.web3d"
-        description="scp sftp upload of updated X3D archive files">
+            description="scp sftp upload of updated X3D archive files">
         <echo  message="copy stylesheets to local specifications/stylesheets directory"/>
         <mkdir  dir="../../specifications/JavaLanguageBinding"/>
         <copy todir="../../specifications/JavaLanguageBinding" verbose="true">
@@ -2100,68 +2525,68 @@ and
     <property name="x3d.sourceforge.site" value="http://svn.code.sf.net/p/x3d/code/www.web3d.org"/>
 
     <target name="hudson" description="nightly build" depends="hudson.prepare,build">
-    <!-- hudson project description
-<p>
-Build and test <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Stylesheets" target="_blank">X3D Stylesheets</a> that convert X3D scenes to produce corresponding encodings in ClassicVRML .x3dv, VRML97 .wrl, and also pretty-print documentation .html versions.
-</p>
-
-<p>
-  This project also builds
-  X3D specification XML encodings clause 6, 
-  <a href="ws/stylesheets/EncodingOfNodes.html">Encoding of Nodes</a>.
-</p>
-    -->
+        <!-- hudson project description
+    <p>
+    Build and test <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Stylesheets" target="_blank">X3D Stylesheets</a> that convert X3D scenes to produce corresponding encodings in ClassicVRML .x3dv, VRML97 .wrl, and also pretty-print documentation .html versions.
+    </p>
+    
+    <p>
+      This project also builds
+      X3D specification XML encodings clause 6, 
+      <a href="ws/stylesheets/EncodingOfNodes.html">Encoding of Nodes</a>.
+    </p>
+        -->
     </target>
 
     <target name="hudson.prepare" description="setup hudson server-side build" depends="">
         <!-- hudson configuration needs to reset Ant property values to match subdirectories below:
-             examples.dir=hudson/examples
-             saxon.dir=hudson/lib
-             X3dDtdsSchemas.dir=hudson/specifications
-             ignoreSetupDownloadErrors=true-->
+        examples.dir=hudson/examples
+        saxon.dir=hudson/lib
+        X3dDtdsSchemas.dir=hudson/specifications
+        ignoreSetupDownloadErrors=true-->
         <echo message="Build settings:        fork=${fork}"/>
         <echo message="  ignoreSetupDownloadErrors=${ignoreSetupDownloadErrors}"/>
         <echo message="get local copies of dependency files in order to independently prepare hudson server-side build"/>
         <mkdir dir="hudson/examples/Basic/course"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/HelloWorld.x3d"
-                                         dest="hudson/examples/HelloWorld.x3d" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/examples/HelloWorld.x3d" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"
-                                         dest="hudson/examples/Basic/course/ExtrusionHeart.x3d" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/examples/Basic/course/ExtrusionHeart.x3d" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <mkdir dir="hudson/specifications"/>
         <get src="${x3d.sourceforge.site}/specifications/OasisXmlCatalogX3D.xml"
-                             dest="hudson/specifications/OasisXmlCatalogX3D.xml" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/specifications/OasisXmlCatalogX3D.xml" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${x3d.sourceforge.site}/specifications/x3d-3.0.xsd"
-                             dest="hudson/specifications/x3d-3.0.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/specifications/x3d-3.0.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${x3d.sourceforge.site}/specifications/x3d-3.1.xsd"
-                             dest="hudson/specifications/x3d-3.1.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/specifications/x3d-3.1.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${x3d.sourceforge.site}/specifications/x3d-3.2.xsd"
-                             dest="hudson/specifications/x3d-3.2.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/specifications/x3d-3.2.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${x3d.sourceforge.site}/specifications/x3d-3.3.xsd"
-                             dest="hudson/specifications/x3d-3.3.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/specifications/x3d-3.3.xsd" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <!-- note destination is lib (vice bin) for consistency -->
         <mkdir dir="hudson/lib"/>
         <get src="${x3d.sourceforge.site}/x3d/tools/schematron/bin/${saxon.jar}"
-                                                  dest="hudson/lib/${saxon.jar}" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="hudson/lib/${saxon.jar}" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
 
     <target name="get-test-scenes" description="Retrieve test files, which are also maintained locally in subversion so that any test changes are noticed">
         <mkdir dir="test"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/HelloWorld.x3d"
-                                                                                         dest="test/HelloWorld.x3d"/>
+             dest="test/HelloWorld.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/development/SpinGroupInternalSubsetDeclaration.x3d"
-                                                                                         dest="test/SpinGroupInternalSubsetDeclaration.x3d"/>
+             dest="test/SpinGroupInternalSubsetDeclaration.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"
-                                                                                         dest="test/HAnimSpecificationLOA3Invisible.x3d"/>
+             dest="test/HAnimSpecificationLOA3Invisible.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"
-                                                                                         dest="test/HAnimSpecificationLOA3Illustrated.x3d"/>
+             dest="test/HAnimSpecificationLOA3Illustrated.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/Security/HelloWorldSigned.x3d"
-                                                                                         dest="test/HelloWorldSigned.x3d"/>
+             dest="test/HelloWorldSigned.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/Background2.x3d"
-                                                                                         dest="test/Background2.x3d"/>
+             dest="test/Background2.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"
-                                                                                         dest="test/TextSpecialCharacters.x3d"/>
+             dest="test/TextSpecialCharacters.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/X3dForWebAuthors/Chapter09EventUtilitiesScripting/TestScriptInitialization.x3d"
-                                                                                         dest="test/TestScriptInitialization.x3d"/>
+             dest="test/TestScriptInitialization.x3d"/>
     </target>
 
     <target name="get-test-scenes-local" description="developmental support">
@@ -2173,6 +2598,34 @@ Build and test <a href="http://www.web3d.org/x3d/content/examples/X3dResources.h
         <copy file="${examples.dir}/Vrml2.0Sourcebook/Siggraph98Course/Background2.x3d"                             todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"         todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/X3dForWebAuthors/Chapter09EventUtilitiesScripting/TestScriptInitialization.x3d" todir="test/" verbose="true" force="true"/>
+    </target>
+    
+    <!-- JAXB 2.3.1 (pre-Eclipse) https://javaee.github.io/jaxb-v2 -->
+    <!-- https://javaee.github.io/jaxb-v2 -->
+    <!-- https://dzone.com/articles/using-jaxb-for-xml-with-java -->
+    <property name="jaxb.dir" location="${java.lib.dir}/support" description="local path for JAXB directory"/>
+    <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+        <classpath>
+            <fileset dir="${jaxb.dir}/jaxb" includes="*.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="create.X3DUOM.JAXB.schema" description="build X3DUOM JAXB bindings">
+        <delete failonerror="false">
+            <fileset dir="${src.org.web3d.x3d.util.x3duom}"/><!-- includes JAXB-generated files -->
+        </delete>
+        <xjc schema="../../specifications/X3dUnifiedObjectModel.xsd" package="org.web3d.x3d.util.x3duom"
+             destdir="java/src" header="true" readonly="true">
+        </xjc>
+        <echo message="Compiling org.web3d.x3d.x3duom JAXB classes"/>
+        <javac srcdir="${src.org.web3d.x3d.util.x3duom}"
+               destdir="${java.classes.dir}"
+               debug="on"
+               encoding="UTF-8"
+               verbose="${javac.verbose}"
+               includeantruntime="false"
+               classpath="${jaxb.dir}/jaxb/jaxb-api.jar">
+        </javac>
     </target>
 
 </project>

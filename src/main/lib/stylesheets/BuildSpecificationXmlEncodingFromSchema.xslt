@@ -196,7 +196,7 @@ Invocation:
 		  <xsl:text>' has no type definition</xsl:text>
 		 </xsl:message>
 	</xsl:if>
-	<xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))
+	<xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not($elementName='SFNode') and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))
 					and not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name')">
 		<xsl:message>
 		  <xsl:text>*** [Warning] </xsl:text>

@@ -16,15 +16,15 @@ Recommended tools:
 
 X3DOM references
 
-- home          http://x3dom.org
-- browser check http://x3dom.org/check
-- documentation http://doc.x3dom.org
-- Download      http://doc.x3dom.org/gettingStarted
-- Node support  http://doc.x3dom.org/author/nodes.html
+- home          https://x3dom.org
+- browser check https://x3dom.org/check
+- documentation https://doc.x3dom.org
+- Download      https://doc.x3dom.org/gettingStarted
+- Node support  https://doc.x3dom.org/author/nodes.html
 
 --> 
 <!--
-Copyright (c) 2001-2018 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -64,13 +64,15 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- X3DOM parameters -->
     <xsl:param name="showStatistics"           >false</xsl:param>
     <xsl:param name="showDebugLog"             >true</xsl:param>
-    <xsl:param name="urlX3DOM"                 >http://www.x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
+    <xsl:param name="urlX3DOM"                 >https://x3dom.org/release</xsl:param> <!-- no trailing / -->
     <!-- X_ITE parameters -->
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
-    <xsl:param name="urlCobweb"                >http://code.create3000.de/x_ite</xsl:param> <!-- no trailing slash / -->
+    <!-- TODO update urlCobweb as urlX_ITE when X3D-Edit can be updated -->
+    <xsl:param name="urlCobweb"                >https://code.create3000.de/x_ite</xsl:param> <!-- no trailing slash / -->
     <xsl:param name="versionCobweb"            >latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 or latest/dist with no trailing slash / -->
+    <xsl:param name="urlWebsiteX_ITE"          >http://create3000.de/x_ite</xsl:param> <!-- redirection likely -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
@@ -78,7 +80,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="cobwebStyle"              >default</xsl:param><!-- simple or default -->
     
     <xsl:strip-space elements="*"/>
-    <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
+    <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
 
     <xsl:variable name="cobwebRootElement">
         <xsl:choose>
@@ -177,7 +179,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:if>
                     
         <!-- header -->
-        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</xsl:text>
+        <!-- https://stackoverflow.com/questions/4666523/xhtml-strict-1-0-target-blank-not-valid -->
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</xsl:text>
         <xsl:text>&#10;</xsl:text>
 
 <!-- special player customization in head -->
@@ -215,12 +218,20 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- TD <meta charset="utf-8"/> -->
                 <meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
 
-              <!--               Getting started with X3DOM: http://doc.x3dom.org/gettingStarted -->
-              <!--                     alternate stylesheet: http://www.x3dom.org/x3dom/example/x3dom.css -->
-              <xsl:text>&#10;</xsl:text>
-              <xsl:choose>
+              <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
+              <!--                     alternate stylesheet: https://doc.x3dom.org/x3dom/example/x3dom.css -->
+                <xsl:text>&#10;</xsl:text>
+                
+                <!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
+                <xsl:variable name="urlJquery">
+                    <xsl:text>https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</xsl:text>
+                </xsl:variable>
+                <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlJquery"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
+                <xsl:text>&#10;</xsl:text>
+              
+                <xsl:choose>
                   <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
-                    <xsl:comment> X_ITE developer site: http://create3000.de/x_ite </xsl:comment>
+                    <xsl:comment> X_ITE developer site: https://code.create3000.de/x_ite </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>      </xsl:text>
                     <link rel="stylesheet" type="text/css" href="{$urlCobweb}/{$versionCobweb}/x_ite.css" />
@@ -230,11 +241,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/{$versionCobweb}/x_ite.min.js"></script> -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/x_ite.min.js"></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
-					<!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
-					<xsl:variable name="urlJquery">
-						<xsl:text>https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</xsl:text>
-					</xsl:variable>
-					<xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlJquery"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
+					<xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/rigid-body-physics.min.js"></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
 					<xsl:choose>
 						<xsl:when test="($cobwebStyle = 'simple')">
@@ -326,59 +333,22 @@ POSSIBILITY OF SUCH DAMAGE.
          }
 </xsl:text>
       </style>
-      <script type="text/javascript">
-		<xsl:text>
-         var fullscreen = false;
-         
-         function toggleFullscreen ()
-         {
-           fullscreen = !fullscreen;
-           
-           if (fullscreen)
-           {
-             jQuery (".frame")
-               .css ("position", "fixed")
-               .css ("top", "0px")
-               .css ("left", "0px")
-               .css ("bottom", "0px")
-               .css ("right", "0px")
-               .css ("background", "#313131");
-                
-             jQuery (".maximize") .attr ("title", "Minimize Frame");
-         
-             jQuery (".browser") .css ("height", "100%");
-             jQuery ("X3DCanvas") .css ("height", "90%");
-           }
-           else
-           {
-             jQuery (".frame")
-               .css ("position", "inherit")
-               .css ("background", "none");
-               
-             jQuery (".maximize") .attr ("title", "Maximize Frame");
-         
-             jQuery (".browser") .css ("height", "initial");
-             jQuery ("X3DCanvas") .css ("height", "432px");
-           }
-         }
-</xsl:text>
-      </script>
-						</xsl:otherwise>
-					</xsl:choose>
-                  </xsl:when>
-                  <xsl:otherwise> <!-- default X3DOM head -->
+                    </xsl:otherwise>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:otherwise> <!-- default X3DOM head -->
 <!--
 On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 > Hi Don,
 > for your converter stylesheet I really think that linking to the latest dev version is best.
 > Only if someone wants to provide an x3dom-based Web app, he/she should use a local copy.
-> So, here is the link to all x3dom dev builds: http://www.x3dom.org/download/dev/
+> So, here is the link to all x3dom dev builds: https://doc.x3dom.org/download/dev/
 > For the extended Profile (i.e., CAD, Geometry2D etc.) you should use the "x3dom-full.js",
 > otherwise you can use standard x3dom.js
 -->
-                    <xsl:comment> Numbered X3DOM release versions: http://www.x3dom.org/download </xsl:comment>
+                    <xsl:comment> Numbered X3DOM release versions: https://doc.x3dom.org/download </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:comment> Developer X3DOM release version: http://www.x3dom.org/download/dev </xsl:comment>
+                    <xsl:comment> Developer X3DOM release version: https://doc.x3dom.org/download/dev </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                     <link rel="stylesheet" type="text/css" href="{$urlX3DOM}/x3dom.css" />
                     <xsl:text>&#10;</xsl:text>
@@ -420,7 +390,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     </xsl:if>
 
                     <!-- Text node support -->
-                    <meta name="warning" content="Webfonts must be loaded prior to using Text node in X3D scene... see http://x3dom.org/x3dom/example/x3dom_text.html" />
+                    <meta name="warning" content="Webfonts must be loaded prior to using Text node in X3D scene... see https://x3dom.org/x3dom/example/x3dom_text.html" />
                     <!-- setup fonts for Text node, in order -->
                     <xsl:call-template name="webFontCss"/>
                     <!-- show a font change, with family in middle to confirm that changes are not failing -->
@@ -430,63 +400,143 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     <xsl:call-template name="cssZoomButton"/>
     </xsl:otherwise>
 </xsl:choose>
+
+                <script type="text/javascript">
+		<xsl:text>
+         var fullscreen = false;
+         
+         function toggleFullscreen ()
+         {
+           fullscreen = !fullscreen;
+           
+           if (fullscreen)
+           {
+             jQuery (".frame")
+               .css ("position", "fixed")
+               .css ("top", "0px")
+               .css ("left", "0px")
+               .css ("bottom", "0px")
+               .css ("right", "0px")
+               .css ("background", "#313131");
+                
+             jQuery (".maximize") .attr ("title", "Reduce frame, show console");
+         
+             jQuery (".browser") .css ("height", "100%");
+             jQuery ("X3DCanvas") .css ("height", "90%");
+           }
+           else
+           {
+             jQuery (".frame")
+               .css ("position", "inherit")
+               .css ("background", "none");
+               
+             jQuery (".maximize") .attr ("title", "Full Frame");
+         
+             jQuery (".browser") .css ("height", "initial");
+             jQuery ("X3DCanvas") .css ("height", "432px");
+           }
+         }
+</xsl:text>
+                </script>
+      
             </head>
-            <body id="htmlBody">
+            <body id="htmlBody" onload="toggleFullscreen ();">
                 <xsl:text>&#10;</xsl:text>
                     
 <xsl:choose>
     <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
-						<div id="main" style="margin-left: 40px;">
-                            <h2>
-                                <xsl:choose>
-                                    <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
-                                        <xsl:value-of select="$fileName"/>
-                                    </xsl:when>
-                                    <xsl:when test="$fileName">
-                                        <xsl:value-of select="$fileName"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:text> X3dToX3dom.xslt stylesheet conversion to XHTML</xsl:text>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </h2>
-				
-                            <div class="frame">
-                                <div class="browser">
-                                            <!-- note that no . precedes class name webfont here! -->
-                                            <span class="webfont">
-                                                    <xsl:choose>
-                                                            <xsl:when test="X3D/head/meta[@name='description']">
-                                                                            <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
-                                                            </xsl:otherwise>
-                                                    </xsl:choose>
-                                            </span>
-                                            <div class="references">
-                                                    <p><a href='{$urlSceneUnquoted}'>Original X3D scene</a></p>
-                                            </div>
-                                            <xsl:text disable-output-escaping="yes">
+        <div id="main" style="margin-left: 40px;">
+            <h2>
+                <xsl:choose>
+                    <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
+                        <xsl:value-of select="$fileName"/>
+                    </xsl:when>
+                    <xsl:when test="$fileName">
+                        <xsl:value-of select="$fileName"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> X3dToX3dom.xslt stylesheet conversion to XHTML</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </h2>
+
+            <div class="frame">
+                <div class="browser">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="references">
+                                    <button title="Maximize Frame"
+                                            class="maximize"
+                                            onclick="toggleFullscreen ();">
+                                       <img alt="Maximize Frame"
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/>
+                                    </button>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>$urlWebsiteX_ITE={$urlWebsiteX_ITE} value-of=</xsl:text>
+                                        <xsl:value-of select="$urlWebsiteX_ITE"/>
+                                    </xsl:message> -->
+                                    <xsl:element name="a">
+                                        <xsl:attribute name="href">
+                                            <xsl:value-of select="$urlWebsiteX_ITE"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="target">
+                                            <xsl:value-of select="_blank"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="title">
+                                            <xsl:text>X_ITE website</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:text>X_ITE X3D Player</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                </span>
+                           </td>
+                           <td>
+                               <!-- note that no . precedes class name webfont here! -->
+                               <span class="webfont">
+                                   <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                   <xsl:choose>
+                                       <xsl:when test="X3D/head/meta[@name='description']">
+                                           <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                           <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                       </xsl:otherwise>
+                                   </xsl:choose>
+                               </span>
+                           </td>
+                       </tr>
+                   </table>
+                   <xsl:text disable-output-escaping="yes">
 &lt;</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text> url='</xsl:text><xsl:value-of select="$urlSceneQuoted"/><xsl:text disable-output-escaping="yes">'&gt;
 	&lt;p&gt;&lt;b&gt;Display error: X3D model not shown.&lt;/b&gt;&lt;/p&gt;
 	&lt;p&gt;Your HTML browser does not appear to support all features required by the
-	&lt;a href="http://create3000.de/x_ite" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
+	&lt;a href="{$urlWebsiteX_ITE}" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
 &lt;/</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text disable-output-escaping="yes">&gt;
 </xsl:text>
-                                            <div class="references" style="text-align: right;">
-                                             <p>
-                                                    <!-- 4-arrow "full screen" button -->
-                                                    <button title="Maximize Frame" class="maximize" onclick="toggleFullscreen ();"><img alt="Maximize Frame" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/></button>
-                                                    <a href="http://create3000.de/x_ite" target="_blank">X_ITE X3D Player</a>
-                                             </p>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div>
-                                   <p class="x_ite-console"></p>
-                                </div>
-                            </div>
+                    <div class="references">
+                        <xsl:text>Original X3D scene: </xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="$urlScene"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:value-of select="_blank"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="title">
+                                <xsl:value-of select="$urlScene"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$urlScene"/>
+                        </xsl:element>
+                    </div>
+                </div><!-- browser -->
+            </div><!-- frame -->
+            <div>
+               <h3>X_ITE Console</h3>
+               <p class="x_ite-console"></p>
+            </div>
+        </div><!-- main -->
     </xsl:when>
     <xsl:otherwise> <!-- default X3DOM -->
                 <table style="width:96%" id="htmlPageHeader">
@@ -571,7 +621,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text>info &amp; logs</xsl:text>
                             </span>
 							<xsl:text>, </xsl:text>
-							<a href="http://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
+							<a href="https://doc.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
                             <xsl:text>)</xsl:text>
                         </td>
                     </tr>
@@ -913,7 +963,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 									</xsl:element>
 									<br />
                                     <xsl:text>: for example use, see </xsl:text>
-                                    <a href="http://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text Example</a>
+                                    <a href="https://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text Example</a>
                                 </xsl:if>
                                 <xsl:text> </xsl:text>
                             </td>
@@ -923,13 +973,13 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
                                 <!-- anchor target attribute replaced as shown below -->
                                 <xsl:text>References: </xsl:text>
-                                <a href="http://www.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
-                                <a href="http://www.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
-                                <a href="http://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
-                                <a href="http://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                                <a href="https://doc.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
+                                <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
+                                <a href="https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
                                 <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
-                                <!-- apparently old but thorough: http://examples.x3dom.org/simpleExamples.html -->
+                                <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
                                 <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
                             </td>
                         </tr>
@@ -1791,7 +1841,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
             <!-- X3D node attributes -->
             <xsl:if test="local-name() = 'X3D'">
                 <xsl:text> id='rootX3dElement'</xsl:text>
-                <!-- http://x3dom.org/docs-old/configuration.html -->
+                <!-- https://x3dom.org/docs-old/configuration.html -->
                 <xsl:text> showStat='</xsl:text><xsl:value-of select="$showStatistics"/><xsl:text>'</xsl:text>
                 <xsl:text> showLog='</xsl:text><xsl:value-of select="$showDebugLog"/><xsl:text>'</xsl:text>
                 <xsl:text> showProgress='</xsl:text>bar<xsl:text>'</xsl:text>
@@ -1836,7 +1886,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
     <xsl:template name="webFontCss">
         <xsl:comment> X3DOM needs Web Fonts when an X3D Text node is included </xsl:comment>
         <xsl:text>&#10;</xsl:text>
-        <xsl:comment> adapted from http://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
+        <xsl:comment> adapted from https://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
         <xsl:text>&#10;</xsl:text>
 <style type="text/css"><xsl:text>
 /* ============================================================================= */
@@ -1883,7 +1933,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
     </xsl:template>
     
     <xsl:template name="cssZoomButton">
-        <xsl:comment> Button zoom adapted from http://x3dom.org/docs/dev/tutorial/styling.html </xsl:comment>
+        <xsl:comment> Button zoom adapted from https://x3dom.org/docs/dev/tutorial/styling.html </xsl:comment>
         <xsl:text>&#10;</xsl:text>
 <style type="text/css"><xsl:text>
 
@@ -1924,9 +1974,9 @@ body {margin:0;padding:10px;width:100%;height:100%;}
 }
 </xsl:text></style>
 
-<xsl:comment> http://x3dom.org/docs/dev/api.html and http://x3dom.org/docs/dev/configuration.html </xsl:comment>
+<xsl:comment> https://x3dom.org/docs/dev/api.html and https://x3dom.org/docs/dev/configuration.html </xsl:comment>
 <!-- Also     https://developer.mozilla.org/en-US/docs/Web/API/window.navigator?redirectlocale=en-US&redirectslug=DOM%2Fwindow.navigator -->
-<!--          http://www.x3dom.org/documentation/tutorials/css-integration-2 -->
+<!--          https://doc.x3dom.org/documentation/tutorials/css-integration-2 -->
 <xsl:text>&#10;</xsl:text>
 
 <script type="text/javascript"><xsl:text>
@@ -2011,7 +2061,7 @@ function toggleShowDebugLogs()
 </xsl:text></script>
     </xsl:template>
     
-    <!-- X3DOM nightly list of supported nodes http://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html -->
+    <!-- X3DOM nightly list of supported nodes https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html -->
     <!-- X3DOM spreadsheet inventory           http://www.web3d.org/specifications/X3dNodeInventoryComparison.pdf -->
     <xsl:template name="x3dom-supported-node">
         <xsl:param name="name"/>

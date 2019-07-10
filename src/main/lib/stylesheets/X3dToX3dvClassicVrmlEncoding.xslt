@@ -13,6 +13,7 @@
 -->
 
   <!-- use xsl:import rather than xsl:include so that variable definitions are overridden -->
+  <!-- requires special handling when used from inside a .jar -->
   <xsl:import href="X3dToVrml97.xslt"/>
 
   <xsl:variable name="fileEncoding"><xsl:text>ClassicVRML</xsl:text></xsl:variable>

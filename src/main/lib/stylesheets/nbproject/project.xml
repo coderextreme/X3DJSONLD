@@ -13,18 +13,18 @@
                 <source-folder>
                     <label>X3D stylesheets</label>
                     <location>.</location>
-                    <encoding>windows-1252</encoding>
+                    <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
                     <label>java\lib</label>
                     <type>java</type>
                     <location>java/lib</location>
-                    <encoding>windows-1252</encoding>
+                    <encoding>UTF-8</encoding>
                 </source-folder>
             </folders>
             <ide-actions>
                 <action name="build">
-                    <target>compile.Stylesheets</target>
+                    <target>create.X3DJSAIL.jars</target>
                 </action>
                 <action name="clean">
                     <target>clean</target>
@@ -37,7 +37,7 @@
                 </action>
                 <action name="rebuild">
                     <target>clean</target>
-                    <target>compile.Stylesheets</target>
+                    <target>create.X3DJSAIL.jars</target>
                 </action>
             </ide-actions>
             <view>
@@ -70,7 +70,7 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
             <compilation-unit>
                 <package-root>java/lib</package-root>
-                <classpath mode="compile">C:\apache-ant-1.10.4\lib\junit-platform-commons.jar;C:\apache-ant-1.10.4\lib\junit-platform-engine.jar;C:\apache-ant-1.10.4\lib\junit-platform-launcher.jar;C:\apache-ant-1.10.4\lib\opentest4j-1.1.0.jar;C:\apache-ant-1.10.4\lib\jupiter\junit-jupiter-api.jar;C:\apache-ant-1.10.4\lib\jupiter\junit-jupiter-engine.jar</classpath>
+                <classpath mode="compile">C:\apache-ant-1.10.5\lib\junit-platform-commons.jar;C:\apache-ant-1.10.5\lib\junit-platform-engine.jar;C:\apache-ant-1.10.5\lib\junit-platform-launcher.jar;C:\apache-ant-1.10.5\lib\opentest4j-1.1.0.jar;C:\apache-ant-1.10.5\lib\jupiter\junit-jupiter-api.jar;C:\apache-ant-1.10.5\lib\jupiter\junit-jupiter-engine.jar;C:\apache-ant-1.10.5\lib\apiguardian-api-1.0.0.jar</classpath>
                 <source-level>1.8</source-level>
             </compilation-unit>
         </java-data>
