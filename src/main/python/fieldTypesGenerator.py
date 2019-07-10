@@ -25,14 +25,14 @@ class ClassPrinter:
         str += '"'+self.node.get('name')+'" : {\n'
         fields = self.node.iter("field")
         for field in fields:
-            str += '\t"' + field.get("name") + '" : "'+field.get("type")+'",\n';
+            str += '\t"' + field.get("name") + '" : ["'+field.get("type")+'", "'+field.get("accessType")+'"],\n';
         str += '},\n'
         self.printed = True
         return str
 
 code = "var fieldTypes = {"
 
-soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-3.3.xml")).getroot()
+soup = xml.etree.ElementTree.parse(open("../../../../../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
 classes = {}
 
