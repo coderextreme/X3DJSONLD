@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
 <!--
-Copyright (c) 2004-2018 held by the author(s).  All rights reserved.
+Copyright (c) 2004-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -66,7 +66,7 @@ Recommended tool:
   -->
   
 <xsl:strip-space elements="*" />
-<xsl:output method="text" encoding="utf-8" media-type="text/html" indent="yes" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram"/>
+<xsl:output method="text" encoding="utf-8" media-type="text/html" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram"/>
 <!-- omit-xml-declaration="no" -->
 
 
@@ -901,7 +901,7 @@ Recommended tool:
     <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(.,'http://')) and not(contains(.,'https://')) and not(contains(.,'file:')) and contains(normalize-space(.),' ')">
       <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/></xsl:when>
     <!-- make single url reference into actual A HREF= link -->
-    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(.),' '))">
+    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or ../@name='source' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(.),' '))">
       <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when>
 <!-- <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(.),'&quot;') and not(contains(normalize-space(.),'&quot; &quot;')) and (contains(.,'.') or starts-with(normalize-space(.),'Makefile')) and not(substring(normalize-space(.),string-length(normalize-space(.))) = '.')">
       <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="substring-before(substring-after(normalize-space(.),'&quot;'),'&quot;')" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when> -->

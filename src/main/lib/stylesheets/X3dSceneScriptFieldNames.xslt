@@ -6,7 +6,7 @@
     creator     : Don Brutzman
     description : Extract Script field names to create sceneGlobalVariables.properties for ant/jslint processing.
                   See examples/buildExamplesTemplate.xml for example invocation and usage.
-    reference   : http://www.w3.org/TR/xslt
+    reference   : https://www.w3.org/TR/xslt
     reference   : http://www.web3d.org/x3d/content/examples/newStylesheet.xslt
     identifier  : http://www.web3d.org/x3d/content/examples/filename.xslt
     license     : license.html
@@ -15,7 +15,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:param name="sourceText"><xsl:text></xsl:text></xsl:param> <!-- TODO -->
     
-    <xsl:output method="text" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" omit-xml-declaration="no" />
+    <xsl:output method="text" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="no" />
     
     <xsl:template match="/"> <!-- process root of input document -->
     

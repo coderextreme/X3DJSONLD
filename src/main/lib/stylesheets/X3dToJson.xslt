@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2018 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -45,7 +45,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="reference"   content="http://www.freeformatter.com/xml-to-json-converter.html"/>
    <meta name="reference"   content="http://json.org"/>
    <meta name="reference"   content="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf"/>
-   <meta name="reference"   content="http://www.w3.org/TR/xslt"/>
+   <meta name="reference"   content="https://www.w3.org/TR/xslt"/>
    <meta name="reference"   content="XML Spy, http://www.xmlspy.com"/>
    <meta name="reference"   content="SAXON XML Toolkit, http://saxon.sourceforge.net"/>
    <meta name="generator"   content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"/>
@@ -3237,7 +3237,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:template name="attribute-type"> <!-- rule to determine attribute type -->
 	
-		<!-- Note:  these rules are adapted from X3dToVrml97.xslt so be sure to apply any updates in both stylesheets -->
+		<!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
 
 		<xsl:variable name="attributeName"       select="local-name()"/>
 		<xsl:variable name="parentElementName"   select="local-name(..)"/>
@@ -3265,6 +3265,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
 					      ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
+					      ($parentElementName='HAnimHumanoid'              and $attributeName='skeletalConfiguration') or
 					      ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
 					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
@@ -3282,10 +3283,13 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
 		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
+		  <!-- SFInt32 -->
 		  <xsl:when test="($localFieldType='SFInt32')           or 
+					      ($parentElementName='HAnimHumanoid'              and $attributeName='loa') or
                           (($parentElementName='component')                and $attributeName='level')">
 			  <xsl:text>SFInt32</xsl:text>
 		  </xsl:when>
+		  <!-- SFDouble -->
 		  <xsl:when test="($localFieldType='SFDouble')          or 
                           ($parentElementName='unit'      and $attributeName='conversionFactor')">
 			  <xsl:text>SFDouble</xsl:text>
@@ -3338,6 +3342,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
+					($parentElementName='BooleanToggle' and $attributeName='toggle') or
 					($parentElementName='Collision' and $attributeName='enabled') or
 					($parentElementName='CollisionSpace' and $attributeName='useGeometry') or
 					($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
@@ -3351,6 +3356,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='GeoOrigin' and $attributeName='rotateYUp') or
 					($parentElementName='GeoViewpoint' and $attributeName='headlight') or
 					($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+					(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
 					($parentElementName='Inline' and ($attributeName='load')) or
 					(ends-with($parentElementName,'Layer') and ($attributeName='isPickable')) or
 					($parentElementName='LineProperties' and ($attributeName='applied')) or
@@ -3374,7 +3380,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='TextureProperties' and $attributeName='generateMipMaps') or
 					($parentElementName='TimeSensor' and $attributeName='loop') or
 					($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
-					(ends-with($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets')) or
+					(contains($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets' or $attributeName='displayed')) or
 					($parentElementName='VolumeEmitter' and $attributeName='internal')">
 			  <xsl:text>SFBool</xsl:text>
 		  </xsl:when>
@@ -3383,6 +3389,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($localFieldType='MFBool')  or 
                     (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
 					($parentElementName='CADLayer'                   and $attributeName='visible') or
+					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
 					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
 					($parentElementName='XvlShell'                   and ($attributeName='faceEmpty' or $attributeName='faceHidden'))">
@@ -3411,8 +3418,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFColor -->
 		  <xsl:when test="
-					(($localFieldType='MFColor')  or 
-                    $parentElementName='Color' and $attributeName='color') or
+					($localFieldType='MFColor')  or 
+                    ($parentElementName='Color' and $attributeName='color') or
 					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
 			  <xsl:text>MFColor</xsl:text>
@@ -3478,14 +3485,14 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='HAnimDisplacer' and $attributeName='weight') or
 					($parentElementName='HAnimSegment' and $attributeName='mass') or
 					($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
-					($parentElementName='LineProperties'   and ($attributeName='linewidthScaleFactor')) or
-					($parentElementName='Material'         and ($attributeName='ambientIntensity'     or $attributeName='shininess'     or $attributeName='transparency')) or
-					($parentElementName='ParticleSystem'   and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
-					($parentElementName='TwoSidedMaterial' and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
-					($parentElementName='MotorJoint'       and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
-					($parentElementName='MovieTexture'     and ($attributeName='pitch' or $attributeName='speed')) or
-					($parentElementName='MultiTexture'     and $attributeName='alpha') or
-					($parentElementName='NavigationInfo'   and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
+					($parentElementName='LineProperties'       and ($attributeName='linewidthScaleFactor')) or
+					(ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity'     or $attributeName='shininess'     or $attributeName='transparency')) or
+					($parentElementName='ParticleSystem'       and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
+					($parentElementName='TwoSidedMaterial'     and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
+					($parentElementName='MotorJoint'           and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
+					($parentElementName='MovieTexture'         and ($attributeName='pitch' or $attributeName='speed')) or
+					($parentElementName='MultiTexture'         and $attributeName='alpha') or
+					($parentElementName='NavigationInfo'       and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
 					($parentElementName='NurbsSet' and $attributeName='tessellationScale') or
 					($parentElementName='PointLight' and $attributeName='radius') or
 					($parentElementName='ProjectionVolumeStyle' and $attributeName='intensityThreshold') or
@@ -3654,6 +3661,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
+                    ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingPositions') or
+                    ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingScales') or
 					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
 					($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
 					($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
@@ -3666,14 +3675,14 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFVec4f -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='SFVec4f')    or 
                     ($parentElementName='ClipPlane' and $attributeName='plane')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='SFRotation')    or 
                     ($attributeName='rotation') or
 					($attributeName='scaleOrientation') or
 					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
@@ -3689,32 +3698,39 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFRotation -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='MFRotation')    or 
                     ($parentElementName='Extrusion' and $attributeName='orientation') or
+					($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingRotations') or
 					(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
 			  <xsl:text>MFRotation</xsl:text>
 		  </xsl:when>
+		  <!-- SFMatrix3f -->
+		  <xsl:when test="
+					($localFieldType='SFMatrix3f')    or 
+                    ($parentElementName='RigidBody' and $attributeName='inertia')">
+			  <xsl:text>SFMatrix3f</xsl:text>
+		  </xsl:when>
 		  <!-- MFMatrix3f -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='MFMatrix3f')    or 
                     ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix3f</xsl:text>
 		  </xsl:when>
 		  <!-- SFMatrix4f -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='SFMatrix4f')    or 
                     ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
 			  <xsl:text>SFMatrix4f</xsl:text>
 		  </xsl:when>
 		  <!-- MFMatrix4f -->
 		  <xsl:when test="
-					(($localFieldType='MFVec3f')    or 
-                    $parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
+					($localFieldType='MFMatrix4f')    or 
+                    ($parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix4f</xsl:text>
 		  </xsl:when>
 		  <!-- MFInt32 --> <!-- must precede MFInt32 -->
 		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
+					($localFieldType='MFInt32')    or 
                     ($attributeName='colorIndex') or
 					($attributeName='coordIndex') or
 					($attributeName='normalIndex') or
@@ -3734,12 +3750,13 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='LayerSet' and ($attributeName='order')) or
 					($parentElementName='LineSet' and $attributeName='vertexCount') or
 					($parentElementName='MetadataInteger' and $attributeName='value') or
+					($parentElementName='PixelTexture3D'  and $attributeName='image') or
 					($parentElementName='SignalPdu' and $attributeName='data')">
 			  <xsl:text>MFInt32</xsl:text>
 		  </xsl:when>
 		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
 		  <xsl:when test="
-                    ($localFieldType='MFVec3f')    or 
+                    ($localFieldType='SFInt32')    or 
                      ends-with($attributeName,'ID')             or
                     ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
@@ -3784,6 +3801,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text></xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
+					<xsl:text></xsl:text>
 					<xsl:message>
 						  <xsl:text>Warning: X3dToJson.xslt attribute type not found for </xsl:text>
 						  <xsl:value-of select="$parentElementName"/>

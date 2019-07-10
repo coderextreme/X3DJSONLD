@@ -4253,7 +4253,7 @@ node.source {background-color:#f4f4f4;}
 
 <xsl:template name="schema-appinfo-warnings">
     <!-- check type OK for attributes -->
-    <xsl:for-each select="//xs:annotation/xs:appinfo/xs:attribute[(@type='SFNode') or (@type='MFNode')]">
+    <xsl:for-each select="//*[(local-name='xs:complexType') or (local-name='xs:element')]/xs:annotation/xs:appinfo/xs:attribute[(@type='SFNode') or (@type='MFNode')]">
         <xsl:message>
             <xsl:text>*** Schema annotation error: X3D node type with appinfo/attribute instead of appinfo/element. </xsl:text>
             <xsl:choose>

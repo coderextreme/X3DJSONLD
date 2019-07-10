@@ -38,13 +38,22 @@ Recommended tools:
 		<xsl:text>&#10;</xsl:text>
 		
 		<xsl:if test="(count(//head/meta) > 0) or true()">
-			<xsl:text>| attribute     | value       |</xsl:text>
+            <!-- text-justify markdown not allowed by drupal: |    attribute: | :value      | -->
+			<xsl:text>|    attribute | value      |</xsl:text>
 			<xsl:text>&#10;</xsl:text>
-			<xsl:text>| ------------: | :---------- |</xsl:text>
+			<xsl:text>| ------------ | ---------- |</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 
 		<xsl:apply-templates select="//head/meta"/>
+        
+		<xsl:text>&#10;</xsl:text>
+        <xsl:variable name="catalogName">
+            <xsl:value-of select="substring-before($title,'.')"/>
+            <xsl:text>.README.md</xsl:text>
+        </xsl:variable>
+		<xsl:text>[</xsl:text><xsl:value-of select="$catalogName"/><xsl:text>](</xsl:text><xsl:value-of select="$catalogName"/><xsl:text>) contains additional file links and information.
+</xsl:text>
 		
 	</xsl:template>
 	
@@ -77,24 +86,24 @@ Recommended tools:
 					ends-with($normalizedValue,'.3mf') or
 					ends-with($normalizedValue,'.txt')"/>
 
-                <xsl:variable name="isWebAddress"
-			select="starts-with($normalizedValue,'http') or
-                                starts-with($normalizedValue,'ftp')  or starts-with($normalizedValue,'ftp')"/>
+        <xsl:variable name="isWebAddress"
+            select="starts-with($normalizedValue,'http') or
+                    starts-with($normalizedValue,'ftp')  or starts-with($normalizedValue,'ftp')"/>
 
-                <xsl:variable name="omitSubdirectoryPath">
-                    <xsl:choose>
-                        <xsl:when test="$isUrl and not($includeSubdirectoryPaths = 'true') and contains($normalizedValue,'/')">
-                            <xsl:for-each select="tokenize($normalizedValue,'/')">
-                                <xsl:if test="(position() = last())">
-                                    <xsl:value-of select="."/>
-                                </xsl:if>
-                            </xsl:for-each>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="$normalizedValue"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+        <xsl:variable name="omitSubdirectoryPath">
+            <xsl:choose>
+                <xsl:when test="$isUrl and not($includeSubdirectoryPaths = 'true') and contains($normalizedValue,'/')">
+                    <xsl:for-each select="tokenize($normalizedValue,'/')">
+                        <xsl:if test="(position() = last())">
+                            <xsl:value-of select="."/>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$normalizedValue"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 		
 		<xsl:text>| </xsl:text>
 		<xsl:text>`</xsl:text>

@@ -1,7 +1,7 @@
-<!-- X3D Object Model X3dUnifiedObjectModel-4.0.xml-->
+<!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at http://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2018-07-28-07:00 21:43:56.921-07:00 -->
+<!-- Generated 2019-06-19-07:00 16:00:03.472495-07:00 -->
 <SimpleTypeEnumerations/>
 <FieldTypes/>
 <AbstractObjectTypes/>

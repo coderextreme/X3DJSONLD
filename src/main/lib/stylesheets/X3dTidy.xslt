@@ -24,7 +24,7 @@ Recommended tools:
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -255,8 +255,7 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <xsl:strip-space elements="*"/>
     <!-- TODO add flexibility to handle X3D embedded using X3DOM within HTML page, likely via an external stylesheet -->
-    <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script" omit-xml-declaration="yes" method="xml"/>
-    <!-- cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" -->
+    <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
     <!-- output document is empty unless conversion is performed -->
 
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1625,6 +1624,24 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:message>
 		-->
 		<xsl:choose>
+			<xsl:when test="contains(local-name(), 'otation') and ((. = '0 0 0 0') or (. = '0.0 0.0 0.0 0.0') or
+                               (. = '-0 0 0 0') or (. = '0 -0 0 0') or (. = '0 0 -0 0') or (. = '0 0 0 -0'))">
+				<!-- no attribute output -->
+				<!-- TODO regex checks for -0 in illegal value, above is a blender export error case -->
+				<xsl:message>
+					<xsl:text>*** revision: ignore, remove illegal </xsl:text>
+					<xsl:value-of select="local-name()"/>
+					<xsl:text>='</xsl:text>
+					<xsl:value-of select="."/>
+					<xsl:text>' from &lt;</xsl:text>
+					<xsl:value-of select="local-name(..)"/>
+					<xsl:text> DEF='</xsl:text>
+					<xsl:value-of select="../@USE"/>
+					<xsl:text>' containerField='</xsl:text>
+					<xsl:value-of select="../@containerField"/>
+					<xsl:text>'/&gt;</xsl:text>
+				</xsl:message>
+			</xsl:when>
 			<xsl:when test="(local-name(..)='ProtoInstance') and (local-name(.)='name') and (string-length(../@USE) > 0)">
 				<!-- no attribute output -->
 				<xsl:message>
@@ -2586,6 +2603,14 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='modified'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='creators')">
+                    <xsl:text>creator</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to name='creator'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='url')">
                     <xsl:text>identifier</xsl:text>
                     <xsl:message>
@@ -2594,12 +2619,20 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='identifier'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='image')">
+                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and ((.='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
                     <xsl:text>Image</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='Image'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (starts-with(.,'sound') or starts-with(.,'Sounds'))">
+                    <xsl:text>Sound</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to name='Sound'</xsl:text>
                     </xsl:message>
                 </xsl:when>
                 <xsl:when test="($reviseCurrentDate = 'true') and (local-name(..)='meta') and (local-name(.)='content') and (../@name='modified')">

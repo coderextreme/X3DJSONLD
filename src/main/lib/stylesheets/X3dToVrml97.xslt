@@ -7,7 +7,7 @@
 	<xsl:param name="disableIndent"><xsl:text>false</xsl:text></xsl:param>
 
 <!--
-Copyright (c) 2000-2018 held by the author(s).  All rights reserved.
+Copyright (c) 2000-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -79,7 +79,7 @@ Thanks to Andrew Grieve of Okino for CAD debugging and the disableIndent paramet
   -->
 
 <xsl:strip-space elements="*" />
-<xsl:output method="text" encoding="utf-8" media-type="model/vrml" indent="no" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram"/>
+<xsl:output method="text" encoding="utf-8" media-type="model/vrml" indent="no" cdata-section-elements="Script ShaderPart ShaderProgram"/>
 <!-- omit-xml-declaration="yes" -->
 <!-- indent handled as a passed parameter since output-tag indent ineffective -->
 
@@ -7046,6 +7046,7 @@ EXTERNPROTO TransmitterPdu [
       <xsl:text>$tupleCount=</xsl:text><xsl:value-of select="$tupleCount"/><xsl:text>, </xsl:text>
       <xsl:text>$normalizeSpaceValue=</xsl:text><xsl:value-of select="$normalizeSpaceValue"/>
     </xsl:message> -->
+	<!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
     <!-- begin logic to choose appropriately typed test -->
     <xsl:choose>
       <!-- SFBool -->
@@ -7059,6 +7060,7 @@ EXTERNPROTO TransmitterPdu [
 				($attributeName='loop') or
       			($attributeName='solid') or
       			($parentElementName='AudioClip' and $attributeName='loop') or
+				($parentElementName='BooleanToggle' and $attributeName='toggle') or
       			($parentElementName='Collision' and $attributeName='enabled') or
       			($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
       			($parentElementName='Cylinder' and ($attributeName='side' or $attributeName='bottom' or $attributeName='top')) or
@@ -7066,6 +7068,7 @@ EXTERNPROTO TransmitterPdu [
       			($parentElementName='Extrusion' and ($attributeName='beginCap' or $attributeName='endCap')) or
       			($parentElementName='FontStyle' and ($attributeName='horizontal' or $attributeName='leftToRight' or $attributeName='topToBottom')) or
       			($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+				(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
       			($parentElementName='LOD' and ($attributeName='forceTransitions')) or
       			($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
       			($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
@@ -7335,7 +7338,7 @@ EXTERNPROTO TransmitterPdu [
       <!-- SFColor -->
       <xsl:when test="	(contains($parentElementName,'Light') and $attributeName='color') or
       			($parentElementName='Fog' and $attributeName='color') or
-      			($parentElementName='Material' and contains($attributeName,'Color')) or
+      			(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
 				($parentElementName='MultiTexture' and $attributeName='color')">
         <xsl:call-template name="attribute-value-validation">
           <xsl:with-param name="name"><xsl:value-of select="$attributeName"/></xsl:with-param>
@@ -7462,6 +7465,7 @@ EXTERNPROTO TransmitterPdu [
       			($attributeName='index' and starts-with($parentElementName,'IndexedTriangle')) or
 				($attributeName='keyValue' and starts-with($parentElementName,'IntegerSequencer')) or
 				($attributeName='vertexCount' and starts-with($parentElementName,'LineSet')) or
+				($attributeName='image' and ($parentElementName='PixelTexture3D')) or
       			($attributeName='fanCount') or
       			($attributeName='stripCount') or
       			($attributeName='edgeEndCoordIndex')">
@@ -7500,7 +7504,7 @@ EXTERNPROTO TransmitterPdu [
       			(contains($parentElementName,'ElevationGrid') and ($attributeName='xSpacing' or $attributeName='zSpacing')) or
       			($parentElementName='Fog' and $attributeName='visibilityRange') or
       			($parentElementName='FontStyle' and ($attributeName='size' or $attributeName='spacing')) or
-      			($parentElementName='Material' and ($attributeName='ambientIntensity' or $attributeName='shininess' or $attributeName='transparency')) or
+      			(ends-with($parentElementName,'Material') and ($attributeName='ambientIntensity' or $attributeName='shininess' or $attributeName='transparency')) or
       			($parentElementName='MovieTexture' and $attributeName='speed') or
 				($parentElementName='MultiTexture' and $attributeName='alpha') or
       			($parentElementName='NavigationInfo' and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
@@ -7527,7 +7531,7 @@ EXTERNPROTO TransmitterPdu [
         <xsl:choose>
           <!-- value range [0 .. 1] -->
           <xsl:when test="(($attributeName='intensity') or contains($attributeName,'Intensity') or
-                           ($parentElementName='Material' and ($attributeName='shininess' or $attributeName='transparency')) or
+                           (ends-with($parentElementName,'Material') and ($attributeName='shininess' or $attributeName='transparency')) or
                            ($parentElementName='Sound' and $attributeName='priority')) and
           		((number(.) > 1) or (0 > number(.)))">
             <xsl:call-template name="output-error">
@@ -9477,7 +9481,7 @@ EXTERNPROTO TransmitterPdu [
           <xsl:text>SFBool</xsl:text>
         </xsl:when>
         <xsl:when test="($nodeName='HAnimHumanoid') and
-        	(($shortFieldName='name') or ($shortFieldName='version'))">
+        	(($shortFieldName='name') or ($shortFieldName='version') or ($shortFieldName='skeletalConfiguration'))">
           <xsl:text>SFString</xsl:text>
         </xsl:when>
         <xsl:when test="($nodeName='HAnimHumanoid') and
@@ -9491,6 +9495,22 @@ EXTERNPROTO TransmitterPdu [
         <xsl:when test="($nodeName='HAnimHumanoid') and
         	(($shortFieldName='rotation') or ($shortFieldName='scaleOrientation'))">
           <xsl:text>SFRotation</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='HAnimHumanoid') and
+        	($shortFieldName='motionsEnabled')">
+          <xsl:text>MFBool</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='HAnimHumanoid') and
+        	($shortFieldName='loa')">
+          <xsl:text>SFInt32</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='HAnimHumanoid') and
+        	(($shortFieldName='jointBindingPositions') or ($shortFieldName='jointBindingScales'))">
+          <xsl:text>MFVec3f</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='HAnimHumanoid') and
+        	($shortFieldName='jointBindingRotations')">
+          <xsl:text>MFRotation</xsl:text>
         </xsl:when>
         <xsl:when test="($nodeName='HAnimDisplacer') and
         	($shortFieldName='name')">
@@ -10297,7 +10317,6 @@ EXTERNPROTO TransmitterPdu [
   <xsl:if test="(@accessType='initializeOnly' or @accessType='inputOutput') and (@type='SFNode' or @type='MFNode') and not(*) and not(comment()) and not(../IS/connect[@nodeField=$fieldName]) and not(local-name(..)='ExternProtoDeclare')">
     <xsl:call-template name="output-info">
       <xsl:with-param name="infoString">
-        <xsl:text> </xsl:text>
         <xsl:value-of select="@type"/>
         <xsl:text> not provided for field '</xsl:text>
         <xsl:value-of select="@name"/>

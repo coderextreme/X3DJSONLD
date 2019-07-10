@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2018 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -67,7 +67,7 @@ Recommended tools:
     <xsl:param name="produceSVGfigures"><xsl:text>true</xsl:text></xsl:param>
 
     <xsl:strip-space elements="*"/>
-    <xsl:output encoding="UTF-8" media-type="text/html" indent="yes" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" omit-xml-declaration="no" method="xml"/>
+    <xsl:output encoding="UTF-8" media-type="text/html" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="no" method="xml"/>
         
     <!-- HAnimHumanoid visualization report parameters, matching BVH to X3D importer configuration in X3D-Edit -->
     <xsl:variable name="rootColor"              >0.8 0 0</xsl:variable>
@@ -136,9 +136,9 @@ span.value {color: teal}
 span.plain {color: black}
 span.gray  {color: gray}
 span.idName {color: maroon}
-span.addedDocumentation {background-color:#EEEEEE} // slightly darker for html page contrast
-span.behaviorNode       {background-color:#DDEEFF} // light blue for html page contrast
-span.extensibilityNode  {background-color:#FFEEFF} // light blue for html page contrast
+span.addedDocumentation {background-color:#EEEEEE} /* slightly darker for html page contrast */
+span.behaviorNode       {background-color:#DDEEFF} /*      light blue for html page contrast */
+span.extensibilityNode  {background-color:#FFEEFF} /*    lighter blue for html page contrast */
 a.idName {color: maroon}
 div.center {text-align: center}
 div.indent {margin-left: 25px}
@@ -164,9 +164,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 -->
 
                 <meta name="generator" content="XSLT processor {system-property('xsl:vendor')}"/>
-                <meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
+                <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
                 <meta name="generator" content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
-                <link rel="shortcut icon" href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png" title="X3D" />
+                <link rel="shortcut icon" href="https://www.web3d.org/x3d/content/icons/X3DtextIcon16.png" title="X3D" />
             </head>
             <body>
                 <xsl:choose>
@@ -1370,6 +1370,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:when test="(@name = 'accessRights')">
                                 <xsl:text>meta 'accessRights' defines permission required to access resource or security status</xsl:text>
                             </xsl:when>
+                            <xsl:when test="(@name = 'author')">
+                                <xsl:text>meta 'author' provides name of individual author</xsl:text>
+                            </xsl:when>
                             <xsl:when test="(@name = 'contributor')">
                                 <xsl:text>meta 'contributor' provides name of individual contributing to this resource</xsl:text>
                             </xsl:when>
@@ -1406,8 +1409,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:when test="(@name = 'info')">
                                 <xsl:text>meta 'info' provides additional information of interest</xsl:text>
                             </xsl:when>
+                            <xsl:when test="(@name = 'isVersionOf')">
+                                <xsl:text>meta 'isVersionOf' provides related resource of which the described resource is a version, edition, or adaptation</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@name = 'keywords')">
+                                <xsl:text>meta 'keywords' provides comma-separated tokens, each of which is a keyword of interest</xsl:text>
+                            </xsl:when>
                             <xsl:when test="(@name = 'license')">
                                 <xsl:text>meta 'license' provides software license link or information</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@name = 'mediator')">
+                                <xsl:text>meta 'license' provides entity that mediates access to resource and for whom resource is intended or useful</xsl:text>
                             </xsl:when>
                             <xsl:when test="(@name = 'modified')">
                                 <xsl:text>meta 'modified' provides date of modified version</xsl:text>
@@ -1416,7 +1428,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>meta 'MovingImage' provides </xsl:text>
                             </xsl:when>
                             <xsl:when test="(@name = 'photo')">
-                                <xsl:text>meta 'photo' provides name or reference link to a supporting photograph"</xsl:text>
+                                <xsl:text>meta 'photo' provides name or reference link to a supporting photograph</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@name = 'publisher')">
+                                <xsl:text>meta 'photo' provides name of entity responsible for making the resource available</xsl:text>
                             </xsl:when>
                             <xsl:when test="(@name = 'reference')">
                                 <xsl:text>meta 'reference' provides name or reference link to a supporting resource</xsl:text>

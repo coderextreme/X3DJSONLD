@@ -6,7 +6,7 @@
     creator     : Don Brutzman
     description : Example template stylesheet to process AllX3dElementsAttributes.xml and convert it to text
     reference   : AllX3dElementsAttributes.xml
-    reference   : http://www.w3.org/TR/xslt
+    reference   : https://www.w3.org/TR/xslt
     identifier  : http://www.web3d.org/x3d/stylesheets/AllX3dElementsAttributesTextTemplate.xslt
     license     : license.html
 -->
@@ -15,7 +15,7 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
-	        xmlns:fn ="http://www.w3.org/2005/xpath-functions">
+	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
 	<!--  extension-element-prefixes="xs" -->
     <xsl:output method="text"/> <!-- output methods:  xml html text -->
     
