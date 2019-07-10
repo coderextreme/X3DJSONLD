@@ -15,7 +15,7 @@ function generateObject(schemajson, n, node, force) {
 
 		if (typeof ref !== 'undefined') {
 			var definition = ref.replace(/.*\//, "");
-			var def = root.definitions[definition];
+			var def = root["$defs"][definition];
 			obj =  generateObject(def, n+1, node+" > ref "+ref, force);
 		} else if (typeof oneOf !== 'undefined') {
 			var index = Math.floor(oneOf.length * Math.random());

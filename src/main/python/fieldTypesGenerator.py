@@ -32,7 +32,7 @@ class ClassPrinter:
 
 code = "var fieldTypes = {"
 
-soup = xml.etree.ElementTree.parse(open("../../../../../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
 classes = {}
 
