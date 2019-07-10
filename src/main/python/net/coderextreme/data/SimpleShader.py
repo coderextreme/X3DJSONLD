@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
-from jnius import autoclass
-from X3Dautoclass import *
+from x3dpsail import *
 X3D0 = X3DObject()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.2")

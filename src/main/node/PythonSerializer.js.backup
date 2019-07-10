@@ -49,9 +49,8 @@ PythonSerializer.prototype = {
 		serializeToString : function(json, element, file, mapToMethod, fieldTypes) {
 		// console.error(file);
 		var str = "";
-		str += "from jnius import autoclass\n";
-		str += "from X3Dautoclass import *\n";
-		str += element.nodeName+0+" = "+element.nodeName+"Object()\n";
+		str += "from x3dpsail import *\n";
+		str += element.nodeName+0+" = "+element.nodeName+"()\n";
 		str += PythonSerializer.subSerializeToString(element, 0, mapToMethod, fieldTypes);
 		return str;
 	}
@@ -62,7 +61,7 @@ PythonSerializer.subSerializeToString = function(element, n, mapToMethod, fieldT
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += node.nodeName+n+'_'+cn+" = "+node.nodeName+"Object()\n";
+			str += node.nodeName+n+'_'+cn+" = "+node.nodeName+"()\n";
 			str += PythonSerializer.subSerializeToString(node, ""+n+'_'+cn, mapToMethod, fieldTypes, element, ""+n);
 			str += printParentChild(element, n, node, cn, mapToMethod);
 		}
