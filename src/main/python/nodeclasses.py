@@ -55,7 +55,7 @@ code += 'java.classpath.push("../../pythonSAI/X3DJSAIL.3.3.full.jar");\n'
 code += 'java.classpath.push("../../../pythonSAI/X3DJSAIL.3.3.full.jar");\n'
 code += 'java.classpath.push("../../../../pythonSAI/X3DJSAIL.3.3.full.jar");\n'
 
-soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-3.3.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-4.0.xml"), "xml")
 
 classes = {}
 
