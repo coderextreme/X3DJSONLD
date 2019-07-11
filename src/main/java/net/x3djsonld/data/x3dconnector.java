@@ -23,7 +23,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnector">x3dconnector</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -70,11 +70,11 @@ public class x3dconnector
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("x3dconnectorProto"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Lost, Doug Sanden I think"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("x3dconnector"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Lost, Doug Sanden I think"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
@@ -96,16 +96,16 @@ public class x3dconnector
       .addChild(new TransformObject("rotscaleC1")
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(0.2f,0.7f,0.7f)))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(.5f)))
           .setGeometry(new CylinderObject().setRadius(.05f)))))
-    .addChild(new ProtoDeclareObject().setName("x3dconnector")
+    .addChild(new ProtoDeclareObject("x3dconnector").setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+        .addField(new fieldObject().setName("startnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("endnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("transnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("rotscalenode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("set_startpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("set_endpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
@@ -147,12 +147,12 @@ public class x3dconnector
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
+          .addField(new fieldObject().setName("startnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new fieldObject().setName("endnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new fieldObject().setName("transnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new fieldObject().setName("rotscalenode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new fieldObject().setName("set_startpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("set_endpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
             .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
@@ -160,7 +160,7 @@ public class x3dconnector
             .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
             .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
             .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
-    .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
+    .addChild(new ProtoInstanceObject("x3dconnector", "connector1")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new TransformObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")

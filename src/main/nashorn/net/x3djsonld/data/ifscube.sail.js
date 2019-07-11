@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/template.json">template.json</a> </td>
+			<td> <a href="ifscube.json">ifscube.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -61,7 +61,7 @@ ifscube_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("template.json"))
+    .addMeta(new metaObject().setName("title").setContent("ifscube.json"))
     .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
     .addMeta(new metaObject().setName("description").setContent("Template for an Indexed Face Set"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))

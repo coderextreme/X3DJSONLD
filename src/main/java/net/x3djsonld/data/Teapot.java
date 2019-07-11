@@ -12,7 +12,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A mooring buoy used in Naval Harbors. </p>
- <p> Related links: <a href="../../../../HarborEquipment/Buoys/Teapot.java">Teapot.java</a> source, <a href="../../../../HarborEquipment/Buoys/MooringBuoyIndex.html" target="_top">MooringBuoy catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../..Teapot.java">Teapot.java</a> source, <a href="../../../..TeapotIndex.html" target="_top">Teapot catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -21,7 +21,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../../HarborEquipment/Buoys/MooringBuoy.x3d">MooringBuoy.x3d</a> </td>
+			<td> <a href="../../../..Teapot.x3d">Teapot.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -57,7 +57,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../../HarborEquipment/Buoys/../../license.html">../../license.html</a> </td>
+			<td> <a href="../../../..../../license.html">../../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -88,16 +88,16 @@ public class Teapot
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
   .setScene(new SceneObject()
     .addChild(new TransformObject().setScale(0.3f,0.3f,0.3f)
       .addChild(new GroupObject("MooringBuoyWithHook")
@@ -105,14 +105,14 @@ public class Teapot
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject("Black_mat").setDiffuseColor(0.0f,0.0f,0.0f)))
-            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.524f).setColorIndex(new int[] {}).setNormalIndex(new int[] {}).setTexCoordIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_14_coordIndex())
+            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.524f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_14_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(new int[] {})
               .setCoord(new CoordinateObject().setPoint(getCoordinate_8_14_point())))))
         .addChild(new TransformObject("MooringBuoy")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject("default_mat").setDiffuseColor(0.50196f,0.50196f,0.50196f).setAmbientIntensity(1.0f).setShininess(1.0f))
-              .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg\""))))
-            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(1.047f).setColorIndex(new int[] {}).setNormalIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_21_coordIndex()).setTexCoordIndex(getIndexedFaceSet_7_21_texCoordIndex())
+              .setMaterial(new MaterialObject("default_mat").setAmbientIntensity(1.0f).setDiffuseColor(0.50196f,0.50196f,0.50196f).setShininess(1.0f))
+              .setTexture(new ImageTextureObject().setUrl(new String[] {"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"})))
+            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(1.047f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_21_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(getIndexedFaceSet_7_21_texCoordIndex())
               .setCoord(new CoordinateObject().setPoint(getCoordinate_8_21_point()))
               .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_8_22_point()))))))));
     }

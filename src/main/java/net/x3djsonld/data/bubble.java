@@ -69,21 +69,21 @@ public class bubble
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("bubble.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Tour around a prismatic sphere"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("bubble.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Tour around a prismatic sphere"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
   .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Bubble in action").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
-    .addChild(new ProtoDeclareObject().setName("Bubble")
+    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE"}))
+    .addChild(new ViewpointObject().setDescription("Bubble in action").setOrientation(1.0f,0.0f,0.0f,0.0f).setPosition(0.0f,0.0f,4.0f))
+    .addChild(new ProtoDeclareObject("Bubble").setName("Bubble")
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject("transform")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject().setRadius(0.25f))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
           .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -130,16 +130,16 @@ public class bubble
 "		initialize();" + "\n" + 
 "	}" + "\n" + 
 "}" + "\n")
-            .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+            .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(1.0f,1.0f,1.0f)))
+            .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+            .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+            .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+            .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .addChild(new TimeSensorObject("bubbleClock").setCycleInterval(10).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
           .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
           .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-    .addChild(new ProtoInstanceObject("bubbleA", "Bubble").setDEF("bubbleA").setName("Bubble")));
+    .addChild(new ProtoInstanceObject("Bubble", "bubbleA")));
     }
 	// end of initialize() method
 

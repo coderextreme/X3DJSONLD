@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A mooring buoy used in Naval Harbors. </p>
- <p> Related links: <a href="../../../../HarborEquipment/Buoys/Teapot_sail.java">Teapot_sail.java</a> source, <a href="../../../../HarborEquipment/Buoys/MooringBuoyIndex.html" target="_top">MooringBuoy catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../..Teapot_sail.java">Teapot_sail.java</a> source, <a href="../../../..TeapotIndex.html" target="_top">Teapot catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../../HarborEquipment/Buoys/MooringBuoy.x3d">MooringBuoy.x3d</a> </td>
+			<td> <a href="../../../..Teapot.x3d">Teapot.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -48,7 +48,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../../HarborEquipment/Buoys/../../license.html">../../license.html</a> </td>
+			<td> <a href="../../../..../../license.html">../../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -177,7 +177,7 @@ Teapot_sail.prototype = {
 	.append(new MFVec2fObject(Java.to([0.437,0.987,0.469,0.987,0.5,0.987,0.531,0.987,0.563,0.987,0.594,0.987,0.625,0.987,0.656,0.987], Java.type("float[]"))));
   this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName("title").setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
     .addMeta(new metaObject().setName("description").setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
     .addMeta(new metaObject().setName("creator").setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
     .addMeta(new metaObject().setName("created").setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))

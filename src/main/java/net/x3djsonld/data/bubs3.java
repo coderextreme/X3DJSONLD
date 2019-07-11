@@ -23,7 +23,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/bubs.x3d">bubs.x3d</a> </td>
+			<td> <a href="bubs3.x3d">bubs3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -70,20 +70,20 @@ public class bubs3
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("bubs.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Tour around a prismatic sphere"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("bubs3.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Tour around a prismatic sphere"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
   .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
-    .addChild(new ViewpointObject().setDescription("Bubbles in action").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
-    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
+    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE"}))
+    .addChild(new ViewpointObject().setDescription("Bubbles in action").setOrientation(1.0f,0.0f,0.0f,0.0f).setPosition(0.0f,0.0f,4.0f))
+    .addChild(new BackgroundObject().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}))
     .addChild(new TransformObject("DECLBubble_bubbleA")
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
       .addChild(new ScriptObject("DECLBubble_bubbleA_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -125,11 +125,11 @@ public class bubs3
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+        .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(1.0f,1.0f,1.0f)))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .addChild(new TimeSensorObject("DECLBubble_bubbleA_bubbleClock").setCycleInterval(10).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
@@ -138,7 +138,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
       .addChild(new ScriptObject("DECLBubble_bubbleB_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -180,11 +180,11 @@ public class bubs3
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+        .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(1.0f,1.0f,1.0f)))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .addChild(new TimeSensorObject("DECLBubble_bubbleB_bubbleClock").setCycleInterval(10).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
@@ -193,7 +193,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
       .addChild(new ScriptObject("DECLBubble_bubbleC_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -235,11 +235,11 @@ public class bubs3
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+        .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(1.0f,1.0f,1.0f)))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .addChild(new TimeSensorObject("DECLBubble_bubbleC_bubbleClock").setCycleInterval(10).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
@@ -248,7 +248,7 @@ public class bubs3
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject().setRadius(0.25f))
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.2f).setDiffuseColor(1.0f,0.0f,0.0f))))
+          .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
       .addChild(new ScriptObject("DECLBubble_bubbleD_bounce").setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -290,11 +290,11 @@ public class bubs3
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+        .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(1.0f,1.0f,1.0f)))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .addChild(new TimeSensorObject("DECLBubble_bubbleD_bubbleClock").setCycleInterval(10).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild(new ROUTEObject().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))

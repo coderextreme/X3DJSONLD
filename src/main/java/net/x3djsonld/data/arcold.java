@@ -24,7 +24,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/arc.x3d">arc.x3d</a> </td>
+			<td> <a href="arcold.x3d">arcold.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -71,11 +71,11 @@ public class arcold
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("arc.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("an attempt to implement an arc in a graph")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("arcold.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("an attempt to implement an arc in a graph")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("a moving graph").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
@@ -97,9 +97,9 @@ public class arcold
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(0.2f,0.7f,0.7f)))
           .setGeometry(new CylinderObject().setRadius(0.1f)))))
-    .addChild(new ProtoDeclareObject().setName("point")
+    .addChild(new ProtoDeclareObject("point").setName("point")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0")))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject("node")
           .setIS(new ISObject()
@@ -108,7 +108,7 @@ public class arcold
             .setGeometry(new SphereObject().setRadius(0.1f))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-          .addChild(new PositionInterpolatorObject("PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
+          .addChild(new PositionInterpolatorObject("PI1").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
           .addChild(new ScriptObject("MB1").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -118,24 +118,24 @@ public class arcold
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(translation);" + "\n" + 
 "		}" + "\n")
-            .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
-            .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-            .addField(new fieldObject().setAccessType("outputOnly").setName("keyValue").setType("MFVec3f")))
+            .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(50.0f,50.0f,0.0f)))
+            .addField(new fieldObject().setName("old").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+            .addField(new fieldObject().setName("set_location").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setName("keyValue").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
           .addChild(new TimeSensorObject("CL1").setCycleInterval(3).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
           .addChild(new ROUTEObject().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
           .addChild(new ROUTEObject().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
     .addComments(" from doug sanden ")
-    .addChild(new ProtoDeclareObject().setName("x3dconnector")
+    .addChild(new ProtoDeclareObject("x3dconnector").setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscalenode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+        .addField(new fieldObject().setName("startnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+        .addField(new fieldObject().setName("endnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+        .addField(new fieldObject().setName("transnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+        .addField(new fieldObject().setName("rotscalenode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+        .addField(new fieldObject().setName("set_startpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("set_endpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
@@ -181,12 +181,12 @@ public class arcold
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val || endnode.translation);" + "\n" + 
 "        }" + "\n")
-          .addField(new fieldObject().setAccessType("inputOutput").setName("startnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("inputOutput").setName("endnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("inputOutput").setName("rotscalenode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
+          .addField(new fieldObject().setName("startnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setName("endnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setName("transnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setName("rotscalenode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setName("set_startpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("set_endpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
             .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
@@ -194,11 +194,11 @@ public class arcold
             .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
             .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
             .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
-    .addChild(new ProtoInstanceObject("G1", "point").setDEF("G1").setName("point"))
-    .addChild(new ProtoInstanceObject("G2", "point").setDEF("G2").setName("point"))
-    .addChild(new ProtoInstanceObject("G3", "point").setDEF("G3").setName("point"))
-    .addChild(new ProtoInstanceObject("G4", "point").setDEF("G4").setName("point"))
-    .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
+    .addChild(new ProtoInstanceObject("point", "G1"))
+    .addChild(new ProtoInstanceObject("point", "G2"))
+    .addChild(new ProtoInstanceObject("point", "G3"))
+    .addChild(new ProtoInstanceObject("point", "G4"))
+    .addChild(new ProtoInstanceObject("x3dconnector", "connector1")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
@@ -207,7 +207,7 @@ public class arcold
         .addChild(new TransformObject().setUSE("trans1")))
       .addFieldValue(new fieldValueObject().setName("rotscalenode")
         .addChild(new TransformObject().setUSE("rotscale1"))))
-    .addChild(new ProtoInstanceObject("connector2", "x3dconnector").setDEF("connector2").setName("x3dconnector")
+    .addChild(new ProtoInstanceObject("x3dconnector", "connector2")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
@@ -216,7 +216,7 @@ public class arcold
         .addChild(new TransformObject().setUSE("trans2")))
       .addFieldValue(new fieldValueObject().setName("rotscalenode")
         .addChild(new TransformObject().setUSE("rotscale2"))))
-    .addChild(new ProtoInstanceObject("connector3", "x3dconnector").setDEF("connector3").setName("x3dconnector")
+    .addChild(new ProtoInstanceObject("x3dconnector", "connector3")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")

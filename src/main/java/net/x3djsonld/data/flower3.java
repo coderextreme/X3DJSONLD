@@ -125,9 +125,9 @@ public class flower3
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
+      .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+      .addField(new fieldObject().setName("coordinates").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+      .addField(new fieldObject().setName("coordIndexes").setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
       .addComments(new String[] {"",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",

@@ -21,7 +21,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/template.json">template.json</a> </td>
+			<td> <a href="gears.x3d">gears.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
@@ -88,21 +88,21 @@ public class gears
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Template for an Indexed Face Set"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("4 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE      ).setContent("../license.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("30 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED   ).setContent("30 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("gears.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("4 April 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("30 April 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("30 April 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
   .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\"")))
+    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE","FLY","WALK","ANY"}))
     .addChild(new GroupObject()
       .addChild(new ShapeObject().setBboxCenter(-4.868185499999999f,25.359741f,0.0f).setBboxSize(77.23637099999999f,100.502162f,6.0f)
-        .setGeometry(new IndexedFaceSetObject("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setNormalIndex(getOpenSCAD_Model_5_13_normalIndex()).setColorIndex(getOpenSCAD_Model_5_13_colorIndex()).setCoordIndex(getOpenSCAD_Model_5_13_coordIndex())
+        .setGeometry(new IndexedFaceSetObject("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setColorIndex(getOpenSCAD_Model_5_13_colorIndex()).setCoordIndex(getOpenSCAD_Model_5_13_coordIndex()).setNormalIndex(getOpenSCAD_Model_5_13_normalIndex())
           .setCoord(new CoordinateObject().setPoint(getCoordinate_6_13_point()))
           .setNormal(new NormalObject().setVector(getNormal_6_14_vector()))
           .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.0f,1.0f,0.0f})))))));

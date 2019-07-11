@@ -19,7 +19,7 @@ import org.web3d.x3d.jsail.Navigation.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/sphereflowers.x3d">sphereflowers.x3d</a> </td>
+			<td> <a href="glflowers.x3d">glflowers.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -66,30 +66,30 @@ public class glflowers
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("sphereflowers.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("5 or more prismatic flowers"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("glflowers.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("5 or more prismatic flowers"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild(new BackgroundObject().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new GroupObject()
-      .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject("\"../data/flowerproto.x3d#FlowerProto\""))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("fragment").setType("MFString")))
-      .addChild(new ProtoDeclareObject().setName("flower")
+      .addChild(new ExternProtoDeclareObject("FlowerProto").setName("FlowerProto").setUrl(new String[] {"../data/flowerproto.x3d#FlowerProto"})
+        .addField(new fieldObject().setName("vertex").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+        .addField(new fieldObject().setName("fragment").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)))
+      .addChild(new ProtoDeclareObject("flower").setName("flower")
         .setProtoBody(new ProtoBodyObject()
           .addChild(new GroupObject()
-            .addChild(new ProtoInstanceObject().setName("FlowerProto")
-              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
-              .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"../shaders/common.fs\""))))))
-      .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))));
+            .addChild(new ProtoInstanceObject("FlowerProto")
+              .addFieldValue(new fieldValueObject().setName("vertex").setValue(new String[] {"../shaders/gl_flowers_chromatic.vs"}))
+              .addFieldValue(new fieldValueObject().setName("fragment").setValue(new String[] {"../shaders/common.fs"}))))))
+      .addChild(new ProtoInstanceObject("flower"))
+      .addChild(new ProtoInstanceObject("flower"))
+      .addChild(new ProtoInstanceObject("flower"))
+      .addChild(new ProtoInstanceObject("flower"))
+      .addChild(new ProtoInstanceObject("flower"))
+      .addChild(new ProtoInstanceObject("flower"))));
     }
 	// end of initialize() method
 

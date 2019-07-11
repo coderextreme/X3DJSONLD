@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/box.x3d">box.x3d</a> </td>
+			<td> <a href="Box.x3d">Box.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -61,7 +61,7 @@ Box_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("box.x3d"))
+    .addMeta(new metaObject().setName("title").setContent("Box.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))

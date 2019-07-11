@@ -83,24 +83,24 @@ public class pp3
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("pp3.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR   ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("5 May 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED     ).setContent("05 May 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("A process pipeline between three spheres (try typing on spheres and blue"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/x3d/pp3.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("pp3.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("5 May 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("05 May 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("A process pipeline between three spheres (try typing on spheres and blue"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/pp3.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual")))
   .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("Process")
+    .addChild(new ProtoDeclareObject("Process").setName("Process")
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
           .addComments("left")
           .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(0.7f,1.0f,0.0f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
+                .setMaterial(new MaterialObject().setDiffuseColor(0.7f,1.0f,0.0f).setTransparency(0.5f)))
+              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})).setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f}))))
             .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
           .addComments("right")
           .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
@@ -112,7 +112,7 @@ public class pp3
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(1.0f,1.0f,1.0f)))
-                .setGeometry(new TextObject("RightString").setString(new MFStringObject("\"r\"")))))
+                .setGeometry(new TextObject("RightString").setString(new String[] {"r"}))))
             .addChild(new StringSensorObject("RightSensor").setEnabled(false))
             .addChild(new TouchSensorObject("RightTouch").setDescription("touch to activate")))
           .addComments("up")
@@ -120,20 +120,20 @@ public class pp3
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.7f,1.0f).setTransparency(0.5f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,1.5f,0.0f,0.0f,2.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
+              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})).setSpine(new MFVec3fObject(new float[] {0.0f,1.5f,0.0f,0.0f,2.5f,0.0f}))))
             .addChild(new TransformObject().setTranslation(-0.5f,2.0f,0.0f)
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
-                .setGeometry(new TextObject("UpString").setString(new MFStringObject("\"u\"")))))
+                .setGeometry(new TextObject("UpString").setString(new String[] {"u"}))))
             .addChild(new StringSensorObject("UpSensor").setEnabled(false))
             .addChild(new TouchSensorObject("UpTouch").setDescription("touch to activate")))
           .addComments("down")
           .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5f).setDiffuseColor(0.7f,1.0f,0.0f)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new float[] {0.0f,-2.5f,0.0f,0.0f,-1.5f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f}))))
+                .setMaterial(new MaterialObject().setDiffuseColor(0.7f,1.0f,0.0f).setTransparency(0.5f)))
+              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})).setSpine(new MFVec3fObject(new float[] {0.0f,-2.5f,0.0f,0.0f,-1.5f,0.0f}))))
             .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
           .addComments("center")
           .addChild(new TransformObject()
@@ -141,7 +141,7 @@ public class pp3
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.7f)))
               .setGeometry(new SphereObject()))
-            .addChild(new TransformObject().setTranslation(-0.5f,0.0f,1.0f).setScale(0.5f,0.5f,0.5f)
+            .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f).setTranslation(-0.5f,0.0f,1.0f)
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
@@ -158,8 +158,8 @@ public class pp3
 "function set_rightstring(rightstr) {" + "\n" + 
 "	rightlines = new MFString(rightstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
+          .addField(new fieldObject().setName("set_rightstring").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("rightlines").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -170,8 +170,8 @@ public class pp3
 "function set_upstring(upstr) {" + "\n" + 
 "	uplines = new MFString(upstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("uplines").setType("MFString")))
+          .addField(new fieldObject().setName("set_upstring").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("uplines").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -182,8 +182,8 @@ public class pp3
 "function set_centerstring(centerstr) {" + "\n" + 
 "	centerlines = new MFString(centerstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
+          .addField(new fieldObject().setName("set_centerstring").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("centerlines").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ROUTEObject().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
         .addChild(new ROUTEObject().setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
         .addChild(new ROUTEObject().setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
@@ -194,13 +194,13 @@ public class pp3
         .addChild(new ROUTEObject().setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
         .addChild(new ROUTEObject().setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
     .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(0.0f,5.0f,12.0f).setOrientation(1.0f,0.0f,0.0f,-0.4f))
+    .addChild(new ViewpointObject().setDescription("Process pipes").setOrientation(1.0f,0.0f,0.0f,-0.4f).setPosition(0.0f,5.0f,12.0f))
     .addChild(new TransformObject().setTranslation(0.0f,-2.5f,0.0f)
-      .addChild(new ProtoInstanceObject().setName("Process")))
+      .addChild(new ProtoInstanceObject("Process")))
     .addChild(new TransformObject()
-      .addChild(new ProtoInstanceObject().setName("Process")))
+      .addChild(new ProtoInstanceObject("Process")))
     .addChild(new TransformObject().setTranslation(0.0f,2.5f,0.0f)
-      .addChild(new ProtoInstanceObject().setName("Process"))));
+      .addChild(new ProtoInstanceObject("Process"))));
     }
 	// end of initialize() method
 

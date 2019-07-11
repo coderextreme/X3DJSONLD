@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/template.json">template.json</a> </td>
+			<td> <a href="gears.x3d">gears.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -36,7 +36,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
@@ -367,7 +367,7 @@ gears_sail.prototype = {
 	.append(new MFVec3fObject(Java.to([0.663728,0.747974,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.882225,0.470828,0.0,0.882225,0.470828,0.0,-0.882225,0.470828,0.0], Java.type("float[]"))));
   this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("template.json"))
+    .addMeta(new metaObject().setName("title").setContent("gears.x3d"))
     .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
     .addMeta(new metaObject().setName("description").setContent("Template for an Indexed Face Set"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
