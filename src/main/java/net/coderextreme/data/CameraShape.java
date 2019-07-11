@@ -82,7 +82,7 @@ public class CameraShape {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interactive").setVersion("3.1")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("SimpleCamera.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("CameraShape.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Simple video camera shape"))
         .addMeta(new metaObject().setName("creator").setContent("Jeff Weekley and Don Brutzman"))
         .addMeta(new metaObject().setName("created").setContent("2 June 2009"))

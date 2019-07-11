@@ -1,6 +1,6 @@
       var X3D0 =  new X3D().setProfile("Interactive").setVersion("3.1")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("SimpleCamera.x3d"))
+        .addMeta(new meta().setName("title").setContent("CameraShape.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple video camera shape"))
         .addMeta(new meta().setName("creator").setContent("Jeff Weekley and Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("2 June 2009"))

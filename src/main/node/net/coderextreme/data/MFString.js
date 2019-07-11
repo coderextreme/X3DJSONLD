@@ -7,7 +7,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.0")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("F16.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("MFString.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Murat ONDER, LTJG, Turkish Navy"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))

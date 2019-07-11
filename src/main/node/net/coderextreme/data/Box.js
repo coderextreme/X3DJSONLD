@@ -11,7 +11,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("box.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("Box.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
         .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/box.x3d"))

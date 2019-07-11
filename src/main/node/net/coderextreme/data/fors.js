@@ -12,7 +12,7 @@ var ProtoInstance2 = null;
       .setHeadSync(new autoclass.head()
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John W Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("December 13 2015"))
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("force.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("fors.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/force.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("beginnings of a force directed graph in 3D"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))

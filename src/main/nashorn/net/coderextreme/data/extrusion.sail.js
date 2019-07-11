@@ -8,7 +8,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setHead(new headObject()
         .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-        .addMeta(new metaObject().setName("title").setContent("force.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("extrusion.x3d"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
         .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))

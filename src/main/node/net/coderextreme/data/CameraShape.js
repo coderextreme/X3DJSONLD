@@ -7,7 +7,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Interactive").setVersionSync("3.1")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("SimpleCamera.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("CameraShape.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("Simple video camera shape"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Jeff Weekley and Don Brutzman"))
         .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("2 June 2009"))

@@ -8,7 +8,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setHead(new headObject()
         .addComponent(new componentObject().setName("Shaders").setLevel(1))
         .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("mirro2.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("mirror2.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))

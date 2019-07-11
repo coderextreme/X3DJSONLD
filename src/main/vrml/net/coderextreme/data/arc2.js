@@ -1,6 +1,6 @@
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("arc1.x3d"))
+        .addMeta(new meta().setName("title").setContent("arc2.x3d"))
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))

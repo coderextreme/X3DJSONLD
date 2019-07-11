@@ -95,7 +95,7 @@ ProtoInstanceObject ProtoInstance11 = null;
 ProtoInstanceObject ProtoInstance12 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
+        .addMeta(new metaObject().setName("title").setContent("arc"))
         .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))

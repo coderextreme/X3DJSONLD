@@ -16,7 +16,7 @@ meta3.setContent("December 13 2015")
 head1.addMeta(meta3)
 meta4 = meta()
 meta4.setName("title")
-meta4.setContent("force.x3d")
+meta4.setContent("extrusion.x3d")
 
 head1.addMeta(meta4)
 meta5 = meta()

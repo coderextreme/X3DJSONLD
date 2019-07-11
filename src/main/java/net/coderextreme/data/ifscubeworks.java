@@ -82,7 +82,7 @@ public class ifscubeworks {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("template.json"))
+        .addMeta(new metaObject().setName("title").setContent("ifscubeworks.json"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
         .addMeta(new metaObject().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))

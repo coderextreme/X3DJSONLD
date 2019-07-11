@@ -6,7 +6,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("MooringBuoy.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("Teapot.x3d"))
         .addMeta(new metaObject().setName("description").setContent("A mooring buoy used in Naval Harbors"))
         .addMeta(new metaObject().setName("creator").setContent("LT Patrick Sullivan"))
         .addMeta(new metaObject().setName("created").setContent("28 July 2006"))

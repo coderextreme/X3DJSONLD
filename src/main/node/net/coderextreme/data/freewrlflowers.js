@@ -14,7 +14,7 @@ var ProtoInstance5 = null;
 var ProtoInstance6 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("sphereflowers.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("freewrlflowers.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("5 or more prismatic flowers"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("X3D-Edit, https://savage.nps.edu/X3D-Edit"))

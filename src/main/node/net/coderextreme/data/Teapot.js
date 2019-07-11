@@ -7,7 +7,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Interchange").setVersionSync("3.0")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("MooringBuoy.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("Teapot.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("A mooring buoy used in Naval Harbors"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("LT Patrick Sullivan"))
         .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("28 July 2006"))

@@ -9,7 +9,7 @@ ConfigurationProperties.setStripTrailingZeroesSync(true);
       .setHeadSync(new autoclass.head()
         .addComponentSync(new autoclass.component().setNameSync("Shaders").setLevelSync(1))
         .addComponentSync(new autoclass.component().setNameSync("CubeMapTexturing").setLevelSync(1))
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("mirro2.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("mirror2.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
         .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))

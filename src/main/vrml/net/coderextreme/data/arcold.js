@@ -13,7 +13,7 @@ var ProtoInstance11 = null;
 var ProtoInstance12 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("arc.x3d"))
+        .addMeta(new meta().setName("title").setContent("arcold.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
