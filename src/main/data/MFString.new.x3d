@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
   <head>
-    <meta content='F16.x3d' name='title'/>
+    <meta content='MFString.x3d' name='title'/>
     <meta content='F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey' name='description'/>
     <meta content='Murat ONDER, LTJG, Turkish Navy' name='creator'/>
     <meta content='The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission.' name='creator'/>

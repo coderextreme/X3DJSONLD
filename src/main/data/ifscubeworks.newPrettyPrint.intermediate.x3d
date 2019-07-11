@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='template.json' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='ifscubeworks.json' dir='' http_equiv='' lang='' name='title' scheme=''/>
     <meta content='http://coderextreme.net/X3DJSONLD/template.json' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
     <meta content='Template for an Indexed Face Set' dir='' http_equiv='' lang='' name='description' scheme=''/>
     <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>

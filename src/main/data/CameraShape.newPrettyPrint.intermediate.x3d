@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd">
 <X3D profile='Interactive' version='3.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'>
   <head>
-    <meta content='SimpleCamera.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='CameraShape.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
     <meta content='Simple video camera shape' dir='' http_equiv='' lang='' name='description' scheme=''/>
     <meta content='Jeff Weekley and Don Brutzman' dir='' http_equiv='' lang='' name='creator' scheme=''/>
     <meta content='2 June 2009' dir='' http_equiv='' lang='' name='created' scheme=''/>

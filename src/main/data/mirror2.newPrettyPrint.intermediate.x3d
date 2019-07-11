@@ -4,7 +4,7 @@
   <head>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <meta content='mirro2.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
+    <meta content='mirror2.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
     <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
     <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
