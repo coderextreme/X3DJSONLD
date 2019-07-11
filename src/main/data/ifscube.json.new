@@ -7,7 +7,7 @@
       "meta": [
         {
           "@name": "title",
-          "@content": "template.json"
+          "@content": "ifscube.json"
         },
         {
           "@name": "identifier",
