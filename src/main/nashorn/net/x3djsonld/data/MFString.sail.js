@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey. </p>
- <p> Related links: <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/MFString_sail.java">MFString_sail.java</a> source, <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/F16Index.html" target="_top">F16 catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../..MFString_sail.java">MFString_sail.java</a> source, <a href="../../../..MFStringIndex.html" target="_top">MFString catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d">F16.x3d</a> </td>
+			<td> <a href="../../../..MFString.x3d">MFString.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -68,7 +68,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/../../license.html">../../license.html</a> </td>
+			<td> <a href="../../../..../../license.html">../../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -176,7 +176,7 @@ MFString_sail.prototype = {
 	this.IndexedFaceSet_6_67_coordIndex = new MFInt32Object(Java.to([0,1,2,3,-1,4,5,1,0,-1,10,11,12,13,-1,14,15,5,4,-1,13,12,15,14,-1,16,17,11,10,-1,18,19,17,16,-1,3,2,19,18,-1], Java.type("int[]")));
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("F16.x3d"))
+    .addMeta(new metaObject().setName("title").setContent("MFString.x3d"))
     .addMeta(new metaObject().setName("description").setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
     .addMeta(new metaObject().setName("creator").setContent("Murat ONDER, LTJG, Turkish Navy"))
     .addMeta(new metaObject().setName("creator").setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))

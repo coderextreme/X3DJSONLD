@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d">arc1.x3d</a> </td>
+			<td> <a href="arc2.x3d">arc2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -61,7 +61,7 @@ arc2_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("arc1.x3d"))
+    .addMeta(new metaObject().setName("title").setContent("arc2.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))

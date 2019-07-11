@@ -64,11 +64,11 @@ public class browser
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("browser.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("browser.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
   .setScene(new SceneObject()
     .addChild(new ScriptObject("Browser").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 

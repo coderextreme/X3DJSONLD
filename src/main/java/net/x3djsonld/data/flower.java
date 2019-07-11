@@ -44,10 +44,10 @@ public class flower
     .addChild(new DirectionalLightObject().setDirection(0.0f,-0.8f,-0.2f).setIntensity(0.5f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {1.000f,1.000f,1.000f})))
     .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0f,0.0f,50.0f))
-    .addChild(new TransformObject().setTranslation(0.0f,-1.0f,1.0f).setRotation(0.0f,1.0f,0.0f,3.1415926f).setScale(1.5f,1.5f,1.5f)
+    .addChild(new TransformObject().setRotation(0.0f,1.0f,0.0f,3.1415926f).setScale(1.5f,1.5f,1.5f).setTranslation(0.0f,-1.0f,1.0f)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setDiffuseColor(0.9f,0.3f,0.3f)))
+          .setMaterial(new MaterialObject().setDiffuseColor(0.9f,0.3f,0.3f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setTransparency(0.1f)))
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
@@ -125,9 +125,9 @@ public class flower
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
+      .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+      .addField(new fieldObject().setName("coordinates").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+      .addField(new fieldObject().setName("coordIndexes").setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
       .addComments(new String[] {"",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",

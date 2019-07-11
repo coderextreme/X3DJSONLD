@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/template.json">template.json</a> </td>
+			<td> <a href="ifscube.json">ifscube.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -67,15 +67,15 @@ public class ifscube
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Template for an Indexed Face Set"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("4 April 2017")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("ifscube.json"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("4 April 2017")))
   .setScene(new SceneObject()
     .addChild(new GroupObject()
       .addChild(new ShapeObject()
-        .setGeometry(new IndexedFaceSetObject("IndexedFaceSet").setDEF("IndexedFaceSet").setCreaseAngle(1.57f).setNormalPerVertex(false).setNormalIndex(new int[] {0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1}).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1})
+        .setGeometry(new IndexedFaceSetObject("IndexedFaceSet").setDEF("IndexedFaceSet").setCreaseAngle(1.57f).setNormalPerVertex(false).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}).setNormalIndex(new int[] {0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1})
           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.0f,1.0f})))
           .setNormal(new NormalObject().setVector(new MFVec3fObject(new float[] {1.0f,0.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,0.0f,-1.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f})))
           .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.0f,1.0f,0.0f})))))));

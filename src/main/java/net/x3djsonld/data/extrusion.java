@@ -29,7 +29,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/force.x3d">force.x3d</a> </td>
+			<td> <a href="extrusion.x3d">extrusion.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -72,16 +72,16 @@ public class extrusion
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John W Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("December 13 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("force.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("beginnings of a force directed graph in 3D"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John W Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("December 13 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("extrusion.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("beginnings of a force directed graph in 3D"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new SceneObject()
     .addChild(new GroupObject()
       .addChild(new ShapeObject()
-        .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {-50.0f,-50.0f,0.0f,50.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})))
+        .setGeometry(new ExtrusionObject("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3fObject(new float[] {-50.0f,-50.0f,0.0f,50.0f,50.0f,0.0f})))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
       .addChild(new TimeSensorObject("TourTime").setLoop(true))
@@ -95,8 +95,8 @@ public class extrusion
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
 "		        spine = new MFVec3f([endA, endB]);" + "\n" + 
 "                }" + "\n")
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
+        .addField(new fieldObject().setName("set_cycle").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("spine").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3fObject(new MFVec3fObject(new float[] {-50.0f,-50.0f,0.0f,50.0f,50.0f,0.0f})))))
       .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
       .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))));
     }

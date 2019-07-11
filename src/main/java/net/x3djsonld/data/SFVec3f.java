@@ -65,16 +65,16 @@ public class SFVec3f
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("SFVec3f.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("3 prismatic spheres"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("SFVec3f.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("3 prismatic spheres"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
     .addChild(new TransformObject("transform")
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f)))
+          .setMaterial(new MaterialObject().setDiffuseColor(.7f,.7f,.7f).setSpecularColor(.5f,.5f,.5f)))
         .setGeometry(new SphereObject())))
     .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
@@ -108,11 +108,11 @@ public class SFVec3f
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			}" + "\n")
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
+      .addField(new fieldObject().setName("set_translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+      .addField(new fieldObject().setName("translation_changed").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+      .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+      .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+      .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
     .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));

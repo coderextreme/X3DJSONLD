@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnector">x3dconnector</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -61,7 +61,7 @@ x3dconnector_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
+    .addMeta(new metaObject().setName("title").setContent("x3dconnector"))
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))

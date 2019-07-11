@@ -71,33 +71,33 @@ public class text
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John W Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("December 13 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("text.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("test \\n text"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John W Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("December 13 2015"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("text.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("test \\n text"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new SceneObject()
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node\\\"\\\"\\\"\""))
+        .setGeometry(new TextObject().setString(new String[] {"Node\"\"\""})
           .setFontStyle(new FontStyleObject()))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
       .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node2\" \"\\\\\" \"\\\\\\\\\" \"Node2\""))
+        .setGeometry(new TextObject().setString(new String[] {"Node2","\\","\\\\","Node2"})
           .setFontStyle(new FontStyleObject()))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
       .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node3 \\\\\\\\ \\\\ \" \"Node3\\\"\\\"\\\"\""))
+        .setGeometry(new TextObject().setString(new String[] {"Node3 \\\\ \\ ","Node3\"\"\""})
           .setFontStyle(new FontStyleObject()))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
       .addChild(new ScriptObject().setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
 "			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
+        .addField(new fieldObject().setName("frontUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"rnl_front.png","uffizi_front.png"})))));
     }
 	// end of initialize() method
 

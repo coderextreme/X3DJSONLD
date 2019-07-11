@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Simple video camera shape. </p>
- <p> Related links: <a href="../../../development/CameraShape_sail.java">CameraShape_sail.java</a> source, <a href="../../../development/SimpleCameraIndex.html" target="_top">SimpleCamera catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../..CameraShape_sail.java">CameraShape_sail.java</a> source, <a href="../../..CameraShapeIndex.html" target="_top">CameraShape catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../development/SimpleCamera.x3d">SimpleCamera.x3d</a> </td>
+			<td> <a href="../../..CameraShape.x3d">CameraShape.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -36,7 +36,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../development/CameraExamples.x3d">CameraExamples.x3d</a> </td>
+			<td> <a href="../../..CameraExamples.x3d">CameraExamples.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -52,7 +52,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../development/../../license.html">../../license.html</a> </td>
+			<td> <a href="../../..../../license.html">../../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -158,7 +158,7 @@ CameraShape_sail.prototype = {
 	.append(new MFVec3fObject(Java.to([0.0,0.43,0.0], Java.type("float[]"))));
   this.x3dModel = new X3DObject().setProfile("Interactive").setVersion("3.1")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("SimpleCamera.x3d"))
+    .addMeta(new metaObject().setName("title").setContent("CameraShape.x3d"))
     .addMeta(new metaObject().setName("description").setContent("Simple video camera shape"))
     .addMeta(new metaObject().setName("creator").setContent("Jeff Weekley and Don Brutzman"))
     .addMeta(new metaObject().setName("created").setContent("2 June 2009"))

@@ -24,7 +24,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="arc4.x3d">arc4.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -71,11 +71,11 @@ public class arc4
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("x3dconnectorProto"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("Lost, Doug Sanden I think"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("arc4.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Lost, Doug Sanden I think"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.4f,0.4f,0.4f})))
@@ -84,7 +84,7 @@ public class arc4
         .setGeometry(new SphereObject().setRadius(0.1f))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G1_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
+      .addChild(new PositionInterpolatorObject("DECLpoint_G1_PI1").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
       .addChild(new ScriptObject("DECLpoint_G1_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
@@ -93,10 +93,10 @@ public class arc4
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(keyValue);" + "\n" + 
 "		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("old").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_location").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("keyValue").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3fObject(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))))
       .addChild(new TimeSensorObject("DECLpoint_G1_CL1").setCycleInterval(3).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("cycleTime").setToNode("DECLpoint_G1_MB1").setToField("set_location"))
       .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G1_PI1").setToField("set_fraction"))
@@ -107,7 +107,7 @@ public class arc4
         .setGeometry(new SphereObject().setRadius(0.1f))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-      .addChild(new PositionInterpolatorObject("DECLpoint_G2_PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
+      .addChild(new PositionInterpolatorObject("DECLpoint_G2_PI1").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
       .addChild(new ScriptObject("DECLpoint_G2_MB1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
@@ -116,10 +116,10 @@ public class arc4
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(keyValue);" + "\n" + 
 "		}" + "\n")
-        .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("old").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
+        .addField(new fieldObject().setName("set_location").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("keyValue").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3fObject(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))))
       .addChild(new TimeSensorObject("DECLpoint_G2_CL1").setCycleInterval(3).setLoop(true))
       .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("cycleTime").setToNode("DECLpoint_G2_MB1").setToField("set_location"))
       .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G2_PI1").setToField("set_fraction"))
@@ -194,14 +194,14 @@ public class arc4
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")
+        .addField(new fieldObject().setName("startnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("endnode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addField(new fieldObject().setName("position").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
           .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_trans")))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("rotscale").setType("SFNode")
+        .addField(new fieldObject().setName("rotscale").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
           .addChild(new TransformObject().setUSE("DECLx3dconnector_connector1_rotscale")))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))))
+        .addField(new fieldObject().setName("set_startpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+        .addField(new fieldObject().setName("set_endpoint").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))))
     .addChild(new ROUTEObject().setFromNode("DECLpoint_G1_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
     .addChild(new ROUTEObject().setFromNode("DECLpoint_G2_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
     }

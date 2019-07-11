@@ -66,22 +66,22 @@ public class asteroids
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("asteroids.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR    ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("asteroids")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("asteroids.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("asteroids")))
   .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("anyShape")
+    .addChild(new ProtoDeclareObject("anyShape").setName("anyShape")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode")
+        .addField(new fieldObject().setName("myShape").setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject()))))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject()
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
-    .addChild(new ProtoInstanceObject().setName("anyShape")));
+    .addChild(new ProtoInstanceObject("anyShape")));
     }
 	// end of initialize() method
 

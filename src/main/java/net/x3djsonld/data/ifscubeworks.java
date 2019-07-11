@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/template.json">template.json</a> </td>
+			<td> <a href="ifscubeworks.json">ifscubeworks.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -67,11 +67,11 @@ public class ifscubeworks
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE        ).setContent("template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER   ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION  ).setContent("Template for an Indexed Face Set"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR      ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED      ).setContent("4 April 2017")))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("ifscubeworks.json"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
+    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("4 April 2017")))
   .setScene(new SceneObject()
     .addChild(new GroupObject()
       .addChild(new ShapeObject()
