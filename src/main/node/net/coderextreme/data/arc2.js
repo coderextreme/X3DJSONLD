@@ -7,7 +7,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("arc1.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("arc2.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Lost, Doug Sanden I think"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
         .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))

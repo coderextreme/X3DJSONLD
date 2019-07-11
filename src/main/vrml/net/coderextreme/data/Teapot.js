@@ -1,6 +1,6 @@
       var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("MooringBuoy.x3d"))
+        .addMeta(new meta().setName("title").setContent("Teapot.x3d"))
         .addMeta(new meta().setName("description").setContent("A mooring buoy used in Naval Harbors"))
         .addMeta(new meta().setName("creator").setContent("LT Patrick Sullivan"))
         .addMeta(new meta().setName("created").setContent("28 July 2006"))

@@ -6,7 +6,7 @@ X3D0.setVersion("3.3")
 head1 = head()
 meta2 = meta()
 meta2.setName("title")
-meta2.setContent("x3dconnectorProto")
+meta2.setContent("arc")
 
 head1.addMeta(meta2)
 meta3 = meta()

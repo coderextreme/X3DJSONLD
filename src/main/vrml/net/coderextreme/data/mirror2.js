@@ -2,7 +2,7 @@
       .setHead(new head()
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("mirro2.x3d"))
+        .addMeta(new meta().setName("title").setContent("mirror2.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))

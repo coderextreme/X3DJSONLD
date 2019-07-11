@@ -6,7 +6,7 @@ X3D0.setVersion("3.1")
 head1 = head()
 meta2 = meta()
 meta2.setName("title")
-meta2.setContent("SimpleCamera.x3d")
+meta2.setContent("CameraShape.x3d")
 
 head1.addMeta(meta2)
 meta3 = meta()

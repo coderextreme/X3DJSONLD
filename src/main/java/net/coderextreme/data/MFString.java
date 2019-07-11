@@ -82,7 +82,7 @@ public class MFString {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("F16.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("MFString.x3d"))
         .addMeta(new metaObject().setName("description").setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
         .addMeta(new metaObject().setName("creator").setContent("Murat ONDER, LTJG, Turkish Navy"))
         .addMeta(new metaObject().setName("creator").setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))

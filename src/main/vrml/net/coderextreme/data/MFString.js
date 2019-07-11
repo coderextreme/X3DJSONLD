@@ -1,6 +1,6 @@
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("F16.x3d"))
+        .addMeta(new meta().setName("title").setContent("MFString.x3d"))
         .addMeta(new meta().setName("description").setContent("F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"))
         .addMeta(new meta().setName("creator").setContent("Murat ONDER, LTJG, Turkish Navy"))
         .addMeta(new meta().setName("creator").setContent("The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."))

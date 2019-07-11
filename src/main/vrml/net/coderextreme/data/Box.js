@@ -4,7 +4,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("box.x3d"))
+        .addMeta(new meta().setName("title").setContent("Box.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))

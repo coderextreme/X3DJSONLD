@@ -95,7 +95,7 @@ ProtoInstanceObject ProtoInstance11 = null;
 ProtoInstanceObject ProtoInstance12 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("arc.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("arcold.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))

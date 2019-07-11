@@ -1,6 +1,6 @@
       var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("template.json"))
+        .addMeta(new meta().setName("title").setContent("ifscube.json"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))

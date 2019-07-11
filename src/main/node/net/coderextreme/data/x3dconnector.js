@@ -8,7 +8,7 @@ ConfigurationProperties.setStripTrailingZeroesSync(true);
 var ProtoInstance0 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("x3dconnectorProto"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("x3dconnector"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Lost, Doug Sanden I think"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
         .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
