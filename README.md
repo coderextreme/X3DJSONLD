@@ -1,7 +1,9 @@
-# content
-X3D JSON loader and node.js express web server for serving files from localhost
+﻿# X3D JSON loader and node.js express web server for serving files from localhost
 
-* for using the API, read GettingStarted.rtf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
+
+* for using the API, read doc/GettingStarted.pdf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
+
+
 
 
 * Download and install git
@@ -10,7 +12,9 @@ git clone https://github.com/coderextreme/X3DJSONLD
 cd X3DJSONLD
 ```
 
+
 * If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+
 
 * Edit src/main/node/config.js for node.js, put maven in your path, install X3DJSAIL in your maven repository per the pom.xml (it's different than the X3DJSAIL distribution) and start a web server
 ```
@@ -20,28 +24,41 @@ node app.js
 Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
 the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
 
+
 * WARNING
+
 
 You should not put up index.html from the X3D JSON Loader found here https://github.com/coderextreme/X3DJSONLD/ and here http://coderextreme.net/X3DJSONLD/  without careful consideration of this:
 
+
 https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 
-In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML with limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know it’s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, it’s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure it’s valid.  We don’t currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
 
-It’s in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
+In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML with limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know itâ€™s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, itâ€™s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure itâ€™s valid.  We donâ€™t currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
+
+
+Itâ€™s in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
+
 
 If someone wants me to write a sanitizer for the X3D JSON Loader, I am willing to for $$$.  I will need to run it by some security researchers.
 
+
 * Converting JSON files to X3D XML, Python, Java and Nashorn JavaScript
+
 
 The script, serialize.sh provides the driving software for producing XML, Python and Java, JavaScript artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
 
-* Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a coupld of output zips for collecting output results.
+
+* Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a couple of output zips for collecting output results.
+
 
 * also you can run "sh local.sh" or converting, running and diffing local files found in src/main/data.
 
 
+
+
 * Summary of shell scripts
+
 
 These have been tested recently:
 ```
@@ -52,7 +69,9 @@ don.sh -- run several .x3d files through don's conversion and compiling and runn
 donlocal.sh -- run src/main/data/*.x3d through don.sh
 ```
 
-You will need to set up your classpath accordinly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running putting maven's bin folder in your path and running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
+
+You will need to set up your classpath accordingly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running putting maven's bin folder in your path and running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
+
 
 The following are legacy code, and may be updated.
 ```
