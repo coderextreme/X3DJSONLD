@@ -3,6 +3,7 @@ var ProtoInstance1 = null;
 var ProtoInstance2 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
         .addMeta(new meta().setName("title").setContent("flowers.x3d"))

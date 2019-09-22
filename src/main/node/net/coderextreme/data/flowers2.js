@@ -9,6 +9,7 @@ var ProtoInstance0 = null;
 var ProtoInstance1 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.0")
       .setHeadSync(new autoclass.head()
+        .addComponentSync(new autoclass.component().setNameSync("Scripting").setLevelSync(1))
         .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("flowers2.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("transcriber").setContentSync("John Carlson"))

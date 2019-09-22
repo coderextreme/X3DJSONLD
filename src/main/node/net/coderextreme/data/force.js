@@ -14,6 +14,7 @@ var ProtoInstance5 = null;
 var ProtoInstance6 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
+        .addComponentSync(new autoclass.component().setNameSync("Scripting").setLevelSync(1))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John W Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("December 13 2015"))
         .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("force.x3d"))

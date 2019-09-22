@@ -10,6 +10,7 @@ var ProtoInstance1 = null;
 var ProtoInstance2 = null;
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
+        .addComponentSync(new autoclass.component().setNameSync("Scripting").setLevelSync(1))
         .addComponentSync(new autoclass.component().setNameSync("Shaders").setLevelSync(1))
         .addComponentSync(new autoclass.component().setNameSync("CubeMapTexturing").setLevelSync(1))
         .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("flowers.x3d"))
