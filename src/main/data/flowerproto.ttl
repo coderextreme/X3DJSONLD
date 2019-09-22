@@ -1,0 +1,355 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
+	x3d:name "FlowerProto" .
+:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:name "vertex" ;
+	x3d:value "../shaders/gl_flowers_chromatic.vs" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:name "fragment" ;
+	x3d:value "../shaders/pc_flowers.fs" .
+:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
+:transform rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:transform x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor ".7 .7 .7" ;
+	x3d:specularColor ".5 .5 .5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:texture rdf:type owl:NamedIndividual , x3d:ComposedCubeMapTexture ;
+	x3d:containerField "texture" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
+	x3d:containerField "back" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
+	x3d:containerField "bottom" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
+	x3d:containerField "front" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
+	x3d:containerField "left" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
+	x3d:containerField "right" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:texture x3d:hasImageTexture :ImageTexture-anonymous .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
+	x3d:containerField "top" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" .
+:shader rdf:type owl:NamedIndividual , x3d:ComposedShader ;
+	x3d:language "GLSL" ;
+	x3d:containerField "shaders" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "cube" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "chromaticDispertion" ;
+	x3d:accessType "initializeOnly" ;
+	x3d:value "0.98 1.0 1.033" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "bias" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scale" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "power" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "2" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "a" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "10" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "b" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "1" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "c" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "20" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "d" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "20" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "tdelta" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0" .
+:shader x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "pdelta" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0" .
+:shader x3d:hasShaderPart :ShaderPart-anonymous .
+:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
+	x3d:containerField "parts" .
+
+					:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
+:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
+	x3d:nodeField "url" ;
+	x3d:protoField "vertex" .
+
+                                :shader x3d:hasShaderPart :ShaderPart-anonymous .
+:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
+	x3d:containerField "parts" .
+
+					:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
+:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
+	x3d:nodeField "url" ;
+	x3d:protoField "fragment" .
+
+                                :Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:radius "1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:transform x3d:hasScript :Animate .
+:Animate rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+                  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "translation" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+                  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "velocity" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+                  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_fraction" ;
+	x3d:accessType "inputOnly" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "a" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "b" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "c" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "3" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "d" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "3" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "tdelta" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+
+		  :Animate x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "pdelta" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.5" .
+
+
+  
+ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+
+
+            :transform x3d:hasTimeSensor :TourTime .
+:TourTime rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "5" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "TourTime" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "Animate" ;
+	x3d:toField "set_fraction" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "translation_changed" ;
+	x3d:toNode "transform" ;
+	x3d:toField "set_translation" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "a" ;
+	x3d:toNode "shader" ;
+	x3d:toField "a" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "b" ;
+	x3d:toNode "shader" ;
+	x3d:toField "b" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "c" ;
+	x3d:toNode "shader" ;
+	x3d:toField "c" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "d" ;
+	x3d:toNode "shader" ;
+	x3d:toField "d" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "tdelta" ;
+	x3d:toNode "shader" ;
+	x3d:toField "tdelta" .
+:transform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "Animate" ;
+	x3d:fromField "pdelta" ;
+	x3d:toNode "shader" ;
+	x3d:toField "pdelta" .

@@ -1,0 +1,79 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
+	x3d:avatarSize "0.25 1.6 0.75" ;
+	x3d:headlight "true" ;
+	x3d:speed "1" ;
+	x3d:transitionType "LINEAR" ;
+	x3d:transitionTime "1.0" ;
+	x3d:visibilityLimit "0" ;
+	x3d:containerField "children" .
+:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
+	x3d:backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
+	x3d:bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
+	x3d:frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
+	x3d:leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
+	x3d:rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
+	x3d:topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
+	x3d:skyColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "children" .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:name "FlowerProto" ;
+	x3d:url "../data/flowerproto.x3d#FlowerProto" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:name "vertex" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:name "fragment" .
+:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
+	x3d:name "flower" .
+:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "FlowerProto" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "vertex" ;
+	x3d:value "../shaders/freewrl_flowers_chromatic.vs" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "fragment" ;
+	x3d:value "../shaders/freewrl.fs" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "flower" ;
+	x3d:containerField "children" .
