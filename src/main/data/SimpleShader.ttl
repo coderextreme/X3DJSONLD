@@ -1,0 +1,169 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
+	x3d:name "myPrototype" .
+:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:name "myInputRange" ;
+	x3d:value "0.95 0.44 0.22" .
+:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
+:TR rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TR x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0.5 0.5 0.9" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Cobweb rdf:type owl:NamedIndividual , x3d:ComposedShader ;
+	x3d:language "GLSL" ;
+	x3d:containerField "shaders" .
+:Cobweb x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:name "decis" ;
+	x3d:value "0.95 0.77 0.44" .
+:Cobweb x3d:hasShaderPart :ShaderPart-anonymous .
+:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
+	x3d:containerField "parts" .
+
+                  data:text/plain;charset=utf-8,
+
+precision mediump float;
+
+uniform mat4 x3d_ProjectionMatrix;
+uniform mat4 x3d_ModelViewMatrix;
+uniform mat3 x3d_NormalMatrix;
+
+attribute vec4 x3d_Vertex;
+attribute vec3 x3d_Normal;
+
+varying vec3 normal;
+
+void main()
+{
+	normal = x3d_NormalMatrix * x3d_Normal;
+	
+	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
+}
+
+                :Cobweb x3d:hasShaderPart :_1 .
+:_1 rdf:type owl:NamedIndividual , x3d:ShaderPart ;
+	x3d:containerField "parts" .
+
+                  data:text/plain;charset=utf-8,
+
+precision mediump float;
+
+uniform vec3 x3d_LightDirection [x3d_MaxLights];
+
+varying vec3 normal;
+uniform vec3 decis;
+
+void main()
+{
+	float intensity;
+	vec4 color;
+	vec3 n = normalize (normal);
+
+	intensity = abs (dot (x3d_LightDirection [0], n));
+
+	if (intensity > decis[0])
+		color = vec4(0.0,0.5,0.5,1.0);
+	else if (intensity > decis[1])
+		color = vec4(0.6,0.3,0.3,1.0);
+	else if (intensity > decis[2])
+		color = vec4(1.0,0.2,0.2,1.0);
+	else
+		color = vec4(0.0,0.4,0.0,1.0);
+
+	gl_FragColor = color;
+} 
+
+                :Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:radius "1.75" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:WorldInfo-anonymous rdf:type owl:NamedIndividual , x3d:WorldInfo ;
+	x3d:title "SimpleShader" ;
+	x3d:containerField "children" .
+:Titania rdf:type owl:NamedIndividual , x3d:MetadataSet ;
+	x3d:name "Titania" ;
+	x3d:reference "http://titania.create3000.de" ;
+	x3d:containerField "metadata" .
+:Titania x3d:hasMetadataSet :Selection .
+:Selection rdf:type owl:NamedIndividual , x3d:MetadataSet ;
+	x3d:containerField "value" ;
+	x3d:name "Selection" ;
+	x3d:reference "http://titania.create3000.de" .
+:Selection x3d:hasMetadataSet :nodes .
+:nodes rdf:type owl:NamedIndividual , x3d:MetadataSet ;
+	x3d:containerField "value" ;
+	x3d:name "nodes" ;
+	x3d:reference "http://titania.create3000.de" .
+:Titania x3d:hasMetadataSet :NavigationInfo .
+:NavigationInfo rdf:type owl:NamedIndividual , x3d:MetadataSet ;
+	x3d:containerField "value" ;
+	x3d:name "NavigationInfo" ;
+	x3d:reference "http://titania.create3000.de" .
+:NavigationInfo x3d:hasMetadataString :type .
+:type rdf:type owl:NamedIndividual , x3d:MetadataString ;
+	x3d:containerField "value" ;
+	x3d:name "type" ;
+	x3d:reference "http://titania.create3000.de" ;
+	x3d:value "EXAMINE" .
+:Titania x3d:hasMetadataSet :Viewpoint .
+:Viewpoint rdf:type owl:NamedIndividual , x3d:MetadataSet ;
+	x3d:containerField "value" ;
+	x3d:name "Viewpoint" ;
+	x3d:reference "http://titania.create3000.de" .
+:Viewpoint x3d:hasMetadataDouble :position .
+:position rdf:type owl:NamedIndividual , x3d:MetadataDouble ;
+	x3d:containerField "value" ;
+	x3d:name "position" ;
+	x3d:reference "http://titania.create3000.de" ;
+	x3d:value "6.24067728185014 0.00250837343276661 2.92117542307615" .
+:Viewpoint x3d:hasMetadataDouble :orientation .
+:orientation rdf:type owl:NamedIndividual , x3d:MetadataDouble ;
+	x3d:containerField "value" ;
+	x3d:name "orientation" ;
+	x3d:reference "http://titania.create3000.de" ;
+	x3d:value "-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191" .
+:Viewpoint x3d:hasMetadataDouble :centerOfRotation .
+:centerOfRotation rdf:type owl:NamedIndividual , x3d:MetadataDouble ;
+	x3d:containerField "value" ;
+	x3d:name "centerOfRotation" ;
+	x3d:reference "http://titania.create3000.de" ;
+	x3d:value "-0.808320198626341 -0.358072370409949 0.22817191560906" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "myPrototype" ;
+	x3d:containerField "children" .

@@ -1,0 +1,36 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 1 1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:radius "1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .

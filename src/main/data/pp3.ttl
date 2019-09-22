@@ -1,0 +1,467 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
+	x3d:name "Process" .
+:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "0.5 0.5 0.5" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0.7 1 0" ;
+	x3d:transparency "0.5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
+	x3d:creaseAngle "0.785" ;
+	x3d:crossSection "1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" ;
+	x3d:spine "-2.5 0 0 -1.5 0 0" ;
+	x3d:beginCap "true" ;
+	x3d:ccw "true" ;
+	x3d:convex "true" ;
+	x3d:endCap "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:scale "1 1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "0.5 0.5 0.5" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0 0.7 1" ;
+	x3d:transparency "0.5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
+	x3d:creaseAngle "0.785" ;
+	x3d:crossSection "1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" ;
+	x3d:spine "1.5 0 0 2.5 0 0" ;
+	x3d:beginCap "true" ;
+	x3d:ccw "true" ;
+	x3d:convex "true" ;
+	x3d:endCap "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:scale "1 1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "2 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:MaterialLightBlue rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 1 1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:RightString rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "r" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:RightSensor rdf:type owl:NamedIndividual , x3d:StringSensor ;
+	x3d:enabled "false" ;
+	x3d:deletionAllowed "true" ;
+	x3d:containerField "children" .
+:RightTouch rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "touch to activate" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "0.5 0.5 0.5" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0 0.7 1" ;
+	x3d:transparency "0.5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
+	x3d:creaseAngle "0.785" ;
+	x3d:crossSection "1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" ;
+	x3d:spine "0 1.5 0 0 2.5 0" ;
+	x3d:beginCap "true" ;
+	x3d:ccw "true" ;
+	x3d:convex "true" ;
+	x3d:endCap "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:scale "1 1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-0.5 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:USE "MaterialLightBlue" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:UpString rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "u" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:UpSensor rdf:type owl:NamedIndividual , x3d:StringSensor ;
+	x3d:enabled "false" ;
+	x3d:deletionAllowed "true" ;
+	x3d:containerField "children" .
+:UpTouch rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "touch to activate" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "0.5 0.5 0.5" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0.7 1 0" ;
+	x3d:transparency "0.5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
+	x3d:creaseAngle "0.785" ;
+	x3d:crossSection "1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" ;
+	x3d:spine "0 -2.5 0 0 -1.5 0" ;
+	x3d:beginCap "true" ;
+	x3d:ccw "true" ;
+	x3d:convex "true" ;
+	x3d:endCap "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:scale "1 1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 0 0.7" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:radius "1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "0.5 0.5 0.5" ;
+	x3d:translation "-0.5 0 1" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:USE "MaterialLightBlue" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:CenterString rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:CenterSensor rdf:type owl:NamedIndividual , x3d:StringSensor ;
+	x3d:enabled "false" ;
+	x3d:deletionAllowed "true" ;
+	x3d:containerField "children" .
+:CenterTouch rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "touch to activate" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:RightSingleToMultiString rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+:RightSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_rightstring" ;
+	x3d:accessType "inputOnly" .
+
+:RightSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "rightlines" ;
+	x3d:accessType "outputOnly" .
+
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+:UpSingleToMultiString rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+:UpSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_upstring" ;
+	x3d:accessType "inputOnly" .
+
+:UpSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "uplines" ;
+	x3d:accessType "outputOnly" .
+
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+:CenterSingleToMultiString rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+:CenterSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_centerstring" ;
+	x3d:accessType "inputOnly" .
+
+:CenterSingleToMultiString x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "centerlines" ;
+	x3d:accessType "outputOnly" .
+
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "enteredText" ;
+	x3d:fromNode "CenterSensor" ;
+	x3d:toField "set_centerstring" ;
+	x3d:toNode "CenterSingleToMultiString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "centerlines" ;
+	x3d:fromNode "CenterSingleToMultiString" ;
+	x3d:toField "set_string" ;
+	x3d:toNode "CenterString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isOver" ;
+	x3d:fromNode "CenterTouch" ;
+	x3d:toField "set_enabled" ;
+	x3d:toNode "CenterSensor" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "enteredText" ;
+	x3d:fromNode "RightSensor" ;
+	x3d:toField "set_rightstring" ;
+	x3d:toNode "RightSingleToMultiString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "rightlines" ;
+	x3d:fromNode "RightSingleToMultiString" ;
+	x3d:toField "set_string" ;
+	x3d:toNode "RightString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isOver" ;
+	x3d:fromNode "RightTouch" ;
+	x3d:toField "set_enabled" ;
+	x3d:toNode "RightSensor" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "enteredText" ;
+	x3d:fromNode "UpSensor" ;
+	x3d:toField "set_upstring" ;
+	x3d:toNode "UpSingleToMultiString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "uplines" ;
+	x3d:fromNode "UpSingleToMultiString" ;
+	x3d:toField "set_string" ;
+	x3d:toNode "UpString" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isOver" ;
+	x3d:fromNode "UpTouch" ;
+	x3d:toField "set_enabled" ;
+	x3d:toNode "UpSensor" .
+:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
+	x3d:avatarSize "0.25 1.6 0.75" ;
+	x3d:headlight "true" ;
+	x3d:speed "1" ;
+	x3d:transitionType "LINEAR" ;
+	x3d:transitionTime "1.0" ;
+	x3d:visibilityLimit "0" ;
+	x3d:containerField "children" .
+:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "Process pipes" ;
+	x3d:orientation "1 0 0 -0.4" ;
+	x3d:position "0 5 12" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2.5 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "Process" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "Process" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2.5 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "Process" ;
+	x3d:containerField "children" .
