@@ -1,0 +1,505 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:View1 rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:centerOfRotation "-6 0 0" ;
+	x3d:description "Viewpoint 1" ;
+	x3d:position "-6 0 5" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:View2 rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:centerOfRotation "-2 0 0" ;
+	x3d:description "Viewpoint 2" ;
+	x3d:position "-2 0 5" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:View3 rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:centerOfRotation "2 0 0" ;
+	x3d:description "Viewpoint 3" ;
+	x3d:position "2 0 5" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:View4 rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:centerOfRotation "6 0 0" ;
+	x3d:description "Viewpoint 4" ;
+	x3d:position "6 0 5" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Text1 rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-6 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Text1 x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "View # 1" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:CenterJustify rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 0 0" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Text2 rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-2 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Text2 x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "View # 2" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0 1 0" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Text3 rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "2 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Text3 x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "View # 3" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0 0 1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Text4 rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "6 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Text4 x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "View # 4" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -3 8" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ClickToAnimateView rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "Select animation sequence" ;
+	x3d:position "0 0 7" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Click here to animate" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE BEGIN" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0.8 0.4 0" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "7 1 0.02" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:transparency "1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:TextTouchSensor rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "Click to begin animating viewpoint selections" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:Clock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:enabled "true" ;
+	x3d:loop "false" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "touchTime" ;
+	x3d:fromNode "TextTouchSensor" ;
+	x3d:toField "set_startTime" ;
+	x3d:toNode "Clock" .
+:TimingSequencer rdf:type owl:NamedIndividual , x3d:IntegerSequencer ;
+	x3d:key "0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1.0" ;
+	x3d:keyValue "0 1 2 3 4 5 6 7 8 10" ;
+	x3d:containerField "children" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "fraction_changed" ;
+	x3d:fromNode "Clock" ;
+	x3d:toField "set_fraction" ;
+	x3d:toNode "TimingSequencer" .
+:BindingSequencerEngine rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:name "set_timeEvent" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:name "bindView1" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:name "bindView2" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:name "bindView3" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:name "bindView4" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:name "bindView5" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:name "view1Bound" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:name "view2Bound" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:name "view3Bound" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:name "view4Bound" .
+
+        :BindingSequencerEngine x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:name "priorInputvalue" ;
+	x3d:value "-1" .
+
+        ecmascript:
+
+function initialize ()
+{
+    bindView5 = true;
+    Browser.print ('Timing script initialized and ready for activation');
+}
+function set_timeEvent (inputValue)
+{
+    if (inputValue == priorInputvalue)
+    {
+        return; // ignore repeated inputs
+    }
+    // new value provided
+    priorInputvalue = inputValue;
+    // Browser.print ('\ntimeEvent inputValue=' + inputValue);
+        
+    // mimics user execution of Figure 4.1 steps t_0 through t_8
+    if (inputValue == 0)
+    {
+        Browser.print ('\n===========\n time t0');
+        bindView1 = true;
+    }
+    else if (inputValue == 1)
+    {
+        Browser.print ('\n===========\n time t1');
+        bindView2 = true;
+    }
+    else if (inputValue == 2)
+    {
+        Browser.print ('\n===========\n time t2');
+        bindView3 = true;
+    }
+    else if (inputValue == 3)
+    {
+        Browser.print ('\n===========\n time t3');
+        bindView3 = false;
+    }
+    else if (inputValue == 4)
+    {
+        Browser.print ('\n===========\n time t4');
+        bindView1 = true;
+    }
+    else if (inputValue == 5)
+    {
+        Browser.print ('\n===========\n time t5');
+        bindView2 = false;
+    }
+    else if (inputValue == 6)
+    {
+        Browser.print ('\n===========\n time t6');
+        bindView1 = false;
+    }
+    else if (inputValue == 7)
+    {
+        Browser.print ('\n===========\n time t7');
+        bindView4 = true;
+
+    }
+    else if (inputValue == 8)
+    {
+        Browser.print ('\n===========\n time t8');
+        Browser.print (', no action, all done');
+        Browser.print ('\n\n');
+    }
+}
+
+function view1Bound (inputValue)
+{
+    Browser.print (', view1Bound ' + (inputValue));
+    if (priorInputvalue == -1) Browser.print ('\n');
+}
+function view2Bound (inputValue)
+{
+    Browser.print (', view2Bound ' + (inputValue));
+}
+function view3Bound (inputValue)
+{
+    Browser.print (', view3Bound ' + (inputValue));
+}
+function view4Bound (inputValue)
+{
+    Browser.print (', view4Bound ' + (inputValue));
+}
+function view5Bound (inputValue)
+{
+    Browser.print (', view5Bound ' + (inputValue));
+}
+
+      :ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "value_changed" ;
+	x3d:fromNode "TimingSequencer" ;
+	x3d:toField "set_timeEvent" ;
+	x3d:toNode "BindingSequencerEngine" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "bindView1" ;
+	x3d:fromNode "BindingSequencerEngine" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "View1" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "bindView2" ;
+	x3d:fromNode "BindingSequencerEngine" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "View2" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "bindView3" ;
+	x3d:fromNode "BindingSequencerEngine" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "View3" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "bindView4" ;
+	x3d:fromNode "BindingSequencerEngine" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "View4" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "bindView5" ;
+	x3d:fromNode "BindingSequencerEngine" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "ClickToAnimateView" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "View1" ;
+	x3d:toField "view1Bound" ;
+	x3d:toNode "BindingSequencerEngine" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "View2" ;
+	x3d:toField "view2Bound" ;
+	x3d:toNode "BindingSequencerEngine" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "View3" ;
+	x3d:toField "view3Bound" ;
+	x3d:toNode "BindingSequencerEngine" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "View4" ;
+	x3d:toField "view4Bound" ;
+	x3d:toNode "BindingSequencerEngine" .

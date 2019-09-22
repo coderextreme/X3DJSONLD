@@ -1,0 +1,338 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
+	x3d:skyColor "0.1 0.1 0.4" ;
+	x3d:transparency "0" ;
+	x3d:containerField "children" .
+:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "Table 5.18 SFImage component examples" ;
+	x3d:position "0 0 14" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-6 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:ZeroComponents rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "0 0 0" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "0" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:CenterJustify rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:TextMaterial rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:TextMaterial x3d:hasMaterial :Material-anonymous .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 1 1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-3 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:OneComponent rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "1 2 1 0xFF 0x00" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "1" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "TextMaterial" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:TwoComponents rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "2 1 2 0xCCFF 0x2277" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "2" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "TextMaterial" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "3 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:ThreeComponents rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "2 4 3 0xFF0000 0xFF00 0x000000 0 0 0 0xFFFFFF 0xFFFF00" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "3" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "TextMaterial" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "6 0 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:FourComponents rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "3 2 4 0xFF0000FF 0x00FF00FF 0x0000FFFF 0xFF00007F 0x00FF007F 0x0000FF7F" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "4" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "CenterJustify" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "TextMaterial" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 6 -2" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:PixelTexture-anonymous rdf:type owl:NamedIndividual , x3d:PixelTexture ;
+	x3d:image "8 8 1 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0x00 0xcc 0x00 0xcc 0x00 0xcc 0x00 0xcc" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "16 16 .1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .

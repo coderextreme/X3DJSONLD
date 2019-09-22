@@ -1,0 +1,139 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:Tour rdf:type owl:NamedIndividual , x3d:GeoViewpoint ;
+	x3d:position "0 0 4" ;
+	x3d:orientation "1 0 0 0" ;
+	x3d:description "Tour Views" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" ;
+	x3d:geoSystem "GD WE" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:speedFactor "1.0" .
+:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
+	x3d:backUrl "../resources/images/BK.png https://coderextreme.net/X3DJSONLD/images/BK.png" ;
+	x3d:bottomUrl "../resources/images/BT.png https://coderextreme.net/X3DJSONLD/images/BT.png" ;
+	x3d:frontUrl "../resources/images/FR.png https://coderextreme.net/X3DJSONLD/images/FR.png" ;
+	x3d:leftUrl "../resources/images/LF.png https://coderextreme.net/X3DJSONLD/images/LF.png" ;
+	x3d:rightUrl "../resources/images/RT.png https://coderextreme.net/X3DJSONLD/images/RT.png" ;
+	x3d:topUrl "../resources/images/TP.png https://coderextreme.net/X3DJSONLD/images/TP.png" ;
+	x3d:skyColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:radius "1" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "0.7 0.7 0.7" ;
+	x3d:specularColor "0.5 0.5 0.5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:TourTime rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "5" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:TourPosition rdf:type owl:NamedIndividual , x3d:GeoPositionInterpolator ;
+	x3d:key "0 1" ;
+	x3d:keyValue "0.0015708 0 4 0 0.0015708 4" ;
+	x3d:geoSystem "GD WE" ;
+	x3d:containerField "children" .
+:RandomTourTime rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+
+            :RandomTourTime x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_cycle" ;
+	x3d:accessType "inputOnly" .
+
+            :RandomTourTime x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "val" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0" .
+
+            :RandomTourTime x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "positions" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.0015708 0 4 0 0.0015708 4" .
+
+            :RandomTourTime x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "position" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0.0015708 0 4 0 0.0015708 4" .
+ecmascript:
+
+               function set_cycle(value) {
+                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
+                        var ov = val;
+			// Browser.print('old '+ov);
+                        do {
+                                val = Math.floor(Math.random()*2);
+                                var vc = val;
+                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
+                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
+			// Browser.println(positions[ov]);
+			// Browser.println(positions[vc]);
+                        position = new MFVec3d();
+                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
+                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
+               }:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "TourTime" ;
+	x3d:fromField "cycleTime" ;
+	x3d:toNode "RandomTourTime" ;
+	x3d:toField "set_cycle" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "RandomTourTime" ;
+	x3d:fromField "position" ;
+	x3d:toNode "TourPosition" ;
+	x3d:toField "keyValue" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "TourTime" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "TourPosition" ;
+	x3d:toField "set_fraction" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "TourPosition" ;
+	x3d:fromField "geovalue_changed" ;
+	x3d:toNode "Tour" ;
+	x3d:toField "set_position" .

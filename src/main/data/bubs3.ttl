@@ -1,0 +1,569 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
+	x3d:avatarSize "0.25 1.6 0.75" ;
+	x3d:headlight "true" ;
+	x3d:speed "1" ;
+	x3d:transitionType "LINEAR" ;
+	x3d:transitionTime "1.0" ;
+	x3d:visibilityLimit "0" ;
+	x3d:containerField "children" .
+:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:position "0 0 4" ;
+	x3d:orientation "1 0 0 0" ;
+	x3d:description "Bubbles in action" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
+	x3d:backUrl "../resources/images/BK.png https://coderextreme.net/X3DJSONLD/images/BK.png" ;
+	x3d:bottomUrl "../resources/images/BT.png https://coderextreme.net/X3DJSONLD/images/BT.png" ;
+	x3d:frontUrl "../resources/images/FR.png https://coderextreme.net/X3DJSONLD/images/FR.png" ;
+	x3d:leftUrl "../resources/images/LF.png https://coderextreme.net/X3DJSONLD/images/LF.png" ;
+	x3d:rightUrl "../resources/images/RT.png https://coderextreme.net/X3DJSONLD/images/RT.png" ;
+	x3d:topUrl "../resources/images/TP.png https://coderextreme.net/X3DJSONLD/images/TP.png" ;
+	x3d:skyColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleA rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleA x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:containerField "geometry" ;
+	x3d:radius "0.25" ;
+	x3d:solid "true" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:containerField "material" ;
+	x3d:diffuseColor "1 0 0" ;
+	x3d:transparency "0.2" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" .
+:DECLBubble_bubbleA x3d:hasScript :DECLBubble_bubbleA_bounce .
+:DECLBubble_bubbleA_bounce rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleA_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scale" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "1 1 1" .
+
+:DECLBubble_bubbleA_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "translation" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleA_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "velocity" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleA_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scalvel" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleA_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_fraction" ;
+	x3d:accessType "inputOnly" .
+
+ 
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+
+			
+ :DECLBubble_bubbleA x3d:hasTimeSensor :DECLBubble_bubbleA_bubbleClock .
+:DECLBubble_bubbleA_bubbleClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleA x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleA_bounce" ;
+	x3d:fromField "translation_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_translation" .
+:DECLBubble_bubbleA x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleA_bounce" ;
+	x3d:fromField "scale_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_scale" .
+:DECLBubble_bubbleA x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleA_bubbleClock" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "DECLBubble_bubbleA_bounce" ;
+	x3d:toField "set_fraction" .
+:DECLBubble_bubbleB rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleB x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:containerField "geometry" ;
+	x3d:radius "0.25" ;
+	x3d:solid "true" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:containerField "material" ;
+	x3d:diffuseColor "1 0 0" ;
+	x3d:transparency "0.2" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" .
+:DECLBubble_bubbleB x3d:hasScript :DECLBubble_bubbleB_bounce .
+:DECLBubble_bubbleB_bounce rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleB_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scale" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "1 1 1" .
+
+:DECLBubble_bubbleB_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "translation" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleB_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "velocity" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleB_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scalvel" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleB_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_fraction" ;
+	x3d:accessType "inputOnly" .
+
+ 
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+
+			
+ :DECLBubble_bubbleB x3d:hasTimeSensor :DECLBubble_bubbleB_bubbleClock .
+:DECLBubble_bubbleB_bubbleClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleB x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleB_bounce" ;
+	x3d:fromField "translation_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_translation" .
+:DECLBubble_bubbleB x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleB_bounce" ;
+	x3d:fromField "scale_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_scale" .
+:DECLBubble_bubbleB x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleB_bubbleClock" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "DECLBubble_bubbleB_bounce" ;
+	x3d:toField "set_fraction" .
+:DECLBubble_bubbleC rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleC x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:containerField "geometry" ;
+	x3d:radius "0.25" ;
+	x3d:solid "true" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:containerField "material" ;
+	x3d:diffuseColor "1 0 0" ;
+	x3d:transparency "0.2" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" .
+:DECLBubble_bubbleC x3d:hasScript :DECLBubble_bubbleC_bounce .
+:DECLBubble_bubbleC_bounce rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleC_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scale" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "1 1 1" .
+
+:DECLBubble_bubbleC_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "translation" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleC_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "velocity" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleC_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scalvel" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleC_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_fraction" ;
+	x3d:accessType "inputOnly" .
+
+ 
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+
+			
+ :DECLBubble_bubbleC x3d:hasTimeSensor :DECLBubble_bubbleC_bubbleClock .
+:DECLBubble_bubbleC_bubbleClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleC x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleC_bounce" ;
+	x3d:fromField "translation_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_translation" .
+:DECLBubble_bubbleC x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleC_bounce" ;
+	x3d:fromField "scale_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_scale" .
+:DECLBubble_bubbleC x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleC_bubbleClock" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "DECLBubble_bubbleC_bounce" ;
+	x3d:toField "set_fraction" .
+:DECLBubble_bubbleD rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleD x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
+	x3d:containerField "geometry" ;
+	x3d:radius "0.25" ;
+	x3d:solid "true" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:containerField "material" ;
+	x3d:diffuseColor "1 0 0" ;
+	x3d:transparency "0.2" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" .
+:DECLBubble_bubbleD x3d:hasScript :DECLBubble_bubbleD_bounce .
+:DECLBubble_bubbleD_bounce rdf:type owl:NamedIndividual , x3d:Script ;
+	x3d:directOutput "false" ;
+	x3d:mustEvaluate "false" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleD_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scale" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "1 1 1" .
+
+:DECLBubble_bubbleD_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "translation" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleD_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "velocity" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleD_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "scalvel" ;
+	x3d:accessType "inputOutput" ;
+	x3d:value "0 0 0" .
+
+:DECLBubble_bubbleD_bounce x3d:hasfield :field-anonymous .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:name "set_fraction" ;
+	x3d:accessType "inputOnly" .
+
+ 
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+
+			
+ :DECLBubble_bubbleD x3d:hasTimeSensor :DECLBubble_bubbleD_bubbleClock .
+:DECLBubble_bubbleD_bubbleClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:DECLBubble_bubbleD x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleD_bounce" ;
+	x3d:fromField "translation_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_translation" .
+:DECLBubble_bubbleD x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleD_bounce" ;
+	x3d:fromField "scale_changed" ;
+	x3d:toNode "DECLBubble_transform" ;
+	x3d:toField "set_scale" .
+:DECLBubble_bubbleD x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromNode "DECLBubble_bubbleD_bubbleClock" ;
+	x3d:fromField "fraction_changed" ;
+	x3d:toNode "DECLBubble_bubbleD_bounce" ;
+	x3d:toField "set_fraction" .

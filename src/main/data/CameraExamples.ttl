@@ -1,0 +1,1856 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images" ;
+	x3d:name "Camera" ;
+	x3d:url "CameraPrototypes.x3d#Camera http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera CameraPrototypes.wrl#Camera http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Text description to be displayed for this Camera" ;
+	x3d:name "description" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
+	x3d:name "position" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
+	x3d:name "orientation" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "pi/4" ;
+	x3d:name "fieldOfView" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:appinfo "input fraction drives interpolators" ;
+	x3d:name "set_fraction" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:appinfo "input event binds or unbinds this Camera" ;
+	x3d:name "set_bind" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "output event indicates when this Camera is bound" ;
+	x3d:name "bindTime" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "output event indicates whether this Camera is bound or unbound" ;
+	x3d:name "isBound" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]" ;
+	x3d:name "nearClipPlane" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit" ;
+	x3d:name "farClipPlane" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Array of CameraShot nodes which in turn contain CameraMovement nodes" ;
+	x3d:name "shots" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Whether camera headlight is on or off" ;
+	x3d:name "headlight" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera headlight color" ;
+	x3d:name "headlightColor" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera headlight intensity" ;
+	x3d:name "headlightIntensity" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera filter color that modifies virtual lens capture" ;
+	x3d:name "filterColor" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Camera filter transparency that modifies virtual lens capture" ;
+	x3d:name "filterTransparency" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "upVector changes modify camera orientation (and possibly vice versa)" ;
+	x3d:name "upVector" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+	x3d:name "fStop" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Distance to focal plane of sharpest focus" ;
+	x3d:name "focusDistance" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+	x3d:name "isActive" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations" ;
+	x3d:name "totalDuration" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "OfflineRender node" ;
+	x3d:name "offlineRender" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+	x3d:name "traceEnabled" .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "CameraShot collects a specific set of CameraMovement animations that make up an individual shot" ;
+	x3d:name "CameraShot" ;
+	x3d:url "CameraPrototypes.x3d#CameraShot http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot CameraPrototypes.wrl#CameraShot http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Text description to be displayed for this CameraShot" ;
+	x3d:name "description" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Whether this CameraShot can be activated" ;
+	x3d:name "enabled" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Set of CameraMovement nodes" ;
+	x3d:name "moves" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Setup to reinitialize camera position for this shot" ;
+	x3d:name "initialPosition" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Setup to reinitialize camera rotation for this shot" ;
+	x3d:name "initialOrientation" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot" ;
+	x3d:name "initialAimPoint" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "pi/4" ;
+	x3d:name "initialFieldOfView" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+	x3d:name "initialFStop" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Distance to focal plane of sharpest focus" ;
+	x3d:name "initialFocusDistance" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Subtotal duration of contained CameraMovement move durations" ;
+	x3d:name "shotDuration" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+	x3d:name "isActive" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+	x3d:name "traceEnabled" .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "CameraMovement defines a single camera movement animation" ;
+	x3d:name "CameraMovement" ;
+	x3d:url "CameraPrototypes.x3d#CameraMovement http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement CameraPrototypes.wrl#CameraMovement http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Text description to be displayed for this CameraMovement" ;
+	x3d:name "description" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Whether this CameraMovement can be activated" ;
+	x3d:name "enabled" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Duration in seconds for this move" ;
+	x3d:name "duration" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Goal camera position for this move" ;
+	x3d:name "goalPosition" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Goal camera rotation for this move" ;
+	x3d:name "goalOrientation" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Whether or not camera direction is tracking towards the aimPoint" ;
+	x3d:name "tracking" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Goal aimPoint for this move, ignored if tracking=false" ;
+	x3d:name "goalAimPoint" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Goal fieldOfView for this move" ;
+	x3d:name "goalFieldOfView" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+	x3d:name "goalFStop" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Distance to focal plane of sharpest focus" ;
+	x3d:name "goalFocusDistance" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+	x3d:name "isActive" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+	x3d:name "traceEnabled" .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)" ;
+	x3d:name "OfflineRender" ;
+	x3d:url "CameraPrototypes.x3d#OfflineRender http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender CameraPrototypes.wrl#OfflineRender http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Text description to be displayed for this OfflineRender" ;
+	x3d:name "description" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Whether this OfflineRender can be activated" ;
+	x3d:name "enabled" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Frames per second recorded for this rendering" ;
+	x3d:name "frameRate" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Size of frame in number of pixels width and height" ;
+	x3d:name "frameSize" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "Relative dimensions of pixel height/width typically 1.33 or 1" ;
+	x3d:name "pixelAspectRatio" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:appinfo "Begin render operation" ;
+	x3d:name "set_startTime" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Progress performing render operation (0..1)" ;
+	x3d:name "progress" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "outputOnly" ;
+	x3d:appinfo "Render operation complete" ;
+	x3d:name "renderCompleteTime" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "Format of rendered output movie (mpeg mp4 etc.), use first supported format" ;
+	x3d:name "movieFormat" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "Format of rendered output images (png jpeg gif tiff etc.) use first supported format" ;
+	x3d:name "imageFormat" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+	x3d:name "traceEnabled" .
+:DirectionalLight-anonymous rdf:type owl:NamedIndividual , x3d:DirectionalLight ;
+	x3d:direction "0 -1 0" ;
+	x3d:global "true" ;
+	x3d:intensity "0.8" ;
+	x3d:ambientIntensity "0" ;
+	x3d:color "1 1 1" ;
+	x3d:on "true" ;
+	x3d:containerField "children" .
+:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
+	x3d:avatarSize "0.25 1.6 0.75" ;
+	x3d:headlight "true" ;
+	x3d:speed "1" ;
+	x3d:transitionType "LINEAR" ;
+	x3d:transitionTime "1.0" ;
+	x3d:visibilityLimit "0" ;
+	x3d:containerField "children" .
+:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "Camera test scene entry view" ;
+	x3d:position "0 2 12" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "Camera test scene from above" ;
+	x3d:orientation "1 0 0 -1.57079" ;
+	x3d:position "0 150 0" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:Camera.SimpleShotsTest rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "Camera" ;
+	x3d:containerField "children" .
+:Camera.SimpleShotsTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt" .
+:Camera.SimpleShotsTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "headlight" ;
+	x3d:value "true" .
+:Camera.SimpleShotsTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "position" ;
+	x3d:value "-4 4 10" .
+:Camera.SimpleShotsTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "shots" .
+:Zoom rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:Zoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Simple shot of Camera Zoom" .
+:Zoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "-50 1 -10" .
+:Zoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 1 0 0" .
+:Zoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Zoom In" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-50 1 -15" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Zoom Out" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-50 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Pause" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-50 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:Dolly rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:Dolly x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Simple shot of Camera Dolly" .
+:Dolly x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "-40 1 -10" .
+:Dolly x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 1 0 0" .
+:Dolly x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:DollyMove1 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:DollyMove1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Dolly from Right to Left" .
+:DollyMove1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:DollyMove1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-45 1 -10" .
+:DollyMove1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Dolly from Left to Right" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-40 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Pause" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-40 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:Pan rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:Pan x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Simple shot of Camera Pan left right and back to center" .
+:Pan x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "-30 1 -10" .
+:Pan x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 1 0 0" .
+:Pan x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:PanLeft rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:PanLeft x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Pan Left" .
+:PanLeft x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "2" .
+:PanLeft x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-30 1 -10" .
+:PanLeft x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0.4" .
+:PanRight rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:PanRight x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Pan Right" .
+:PanRight x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:PanRight x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-30 1 -10" .
+:PanRight x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 -0.4" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Pan back to Center" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "2" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-30 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Pause" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "2" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-30 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:CameraBoom rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:CameraBoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Boom" .
+:CameraBoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "-20 1 -10" .
+:CameraBoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 1 0 0" .
+:CameraBoom x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:CameraBoomUp rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:CameraBoomUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Boom Up" .
+:CameraBoomUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:CameraBoomUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-20 5 -10" .
+:CameraBoomUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:BoomDown rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:BoomDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Boom Down" .
+:BoomDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:BoomDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-20 1 -10" .
+:BoomDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:BoomPause rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:BoomPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Pause" .
+:BoomPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "2" .
+:BoomPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-20 1 -10" .
+:BoomPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:CameraTilt rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:CameraTilt x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt" .
+:CameraTilt x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "-10 1 -10" .
+:CameraTilt x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 0 1 0" .
+:CameraTilt x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "traceEnabled" ;
+	x3d:value "true" .
+:CameraTilt x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Pause" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 0" .
+:TiltDown rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:TiltDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Left" .
+:TiltDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:TiltDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:TiltDown x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 0.785" .
+:TiltPause rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:TiltPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Pause" .
+:TiltPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:TiltPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:TiltPause x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 0.785" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Right" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 -0.785" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Pause" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 -0.785" .
+:TiltReset rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:TiltReset x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Camera Tilt Reset" .
+:TiltReset x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "1" .
+:TiltReset x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "-10 1 -10" .
+:TiltReset x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 0" .
+:TiltUp rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:TiltUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "Return to home" .
+:TiltUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "2" .
+:TiltUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "0 2 12" .
+:TiltUp x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 0 1 0" .
+:AnimationGroup.SimpleShots rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:AnimationGroup.SimpleShots x3d:hasTimeSensor :CameraTimer.SimpleShots .
+:CameraTimer.SimpleShots rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "1.0" ;
+	x3d:enabled "true" ;
+	x3d:loop "false" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:AnimationGroup.SimpleShots x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "totalDuration" ;
+	x3d:fromNode "Camera.SimpleShotsTest" ;
+	x3d:toField "cycleInterval" ;
+	x3d:toNode "CameraTimer.SimpleShots" .
+:AnimationGroup.SimpleShots x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "fraction_changed" ;
+	x3d:fromNode "CameraTimer.SimpleShots" ;
+	x3d:toField "set_fraction" ;
+	x3d:toNode "Camera.SimpleShotsTest" .
+:AnimationGroup.SimpleShots x3d:hasTransform :Trigger.SimpleShots .
+:Trigger.SimpleShots rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-4 4 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Trigger.SimpleShots x3d:hasBooleanFilter :TextTouchActive.SimpleShotsFilter .
+:TextTouchActive.SimpleShotsFilter rdf:type owl:NamedIndividual , x3d:BooleanFilter ;
+	x3d:containerField "children" .
+:Trigger.SimpleShots x3d:hasTouchSensor :TextTouch.SimpleShots .
+:TextTouch.SimpleShots rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "touch to animate Camera SimpleShotsTest" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:Trigger.SimpleShots x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "inputTrue" ;
+	x3d:fromNode "TextTouchActive.SimpleShotsFilter" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "Camera.SimpleShotsTest" .
+:Trigger.SimpleShots x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isActive" ;
+	x3d:fromNode "TextTouch.SimpleShots" ;
+	x3d:toField "set_boolean" ;
+	x3d:toNode "TextTouchActive.SimpleShotsFilter" .
+:Trigger.SimpleShots x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "touchTime" ;
+	x3d:fromNode "TextTouch.SimpleShots" ;
+	x3d:toField "startTime" ;
+	x3d:toNode "CameraTimer.SimpleShots" .
+:Trigger.SimpleShots x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Click to animate SimpleShotsTest" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:ArtDeco5 rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.24" ;
+	x3d:diffuseColor "0.945455 0.318988 0.321717" ;
+	x3d:shininess "0.01" ;
+	x3d:specularColor "0.072727 0.021705 0.010732" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Trigger.SimpleShots x3d:hasShape :TransparentBox .
+:TransparentBox rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:TransparentBox x3d:hasAppearance :Appearance-anonymous .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:transparency "1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:containerField "material" .
+:TransparentBox x3d:hasBox :Box-anonymous .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "6 2 0.0001" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:SimpleShotsTargets rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:SimpleShotsTargets x3d:hasTransform :TargetBoxZoom .
+:TargetBoxZoom rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-50 1 -20" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TargetBoxZoom x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "images/CameraMoveZoom.png http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:TargetBoxZoom x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Zoom in, out" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:SimpleShotsTargets x3d:hasTransform :TargetBoxDolly .
+:TargetBoxDolly rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-40 1 -20" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TargetBoxDolly x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "images/CameraMoveDolly.png http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:TargetBoxDolly x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Dolly left, right" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:SimpleShotsTargets x3d:hasTransform :TargetBoxPan .
+:TargetBoxPan rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-30 1 -20" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TargetBoxPan x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "images/CameraMovePan.png http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:TargetBoxPan x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Pan left, right" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:SimpleShotsTargets x3d:hasTransform :TargetBoxBoom .
+:TargetBoxBoom rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-20 1 -20" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TargetBoxBoom x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "images/CameraMoveBoom.png http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:TargetBoxBoom x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Boom up, down" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:SimpleShotsTargets x3d:hasTransform :TargetBoxTilt .
+:TargetBoxTilt rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "-10 1 -20" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:TargetBoxTilt x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "images/CameraMoveTilt.png http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:TargetBoxTilt x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 2 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Tilt left, right" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Camera.AimPointTest rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "Camera" ;
+	x3d:containerField "children" .
+:Camera.AimPointTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "AimPointTest for moving camera tracking moving target" .
+:Camera.AimPointTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "position" ;
+	x3d:value "4 4 10" .
+:Camera.AimPointTest x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "shots" .
+:Shot5 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraShot" ;
+	x3d:containerField "children" .
+:Shot5 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "#3 Tracking shot" .
+:Shot5 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialPosition" ;
+	x3d:value "6 6 10" .
+:Shot5 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "initialOrientation" ;
+	x3d:value "0 1 0 0" .
+:Shot5 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "moves" .
+:MoveAimPoint3.1 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:MoveAimPoint3.1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "AimPoint 3.1 moving BoxPath" .
+:MoveAimPoint3.1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "tracking" ;
+	x3d:value "true" .
+:MoveAimPoint3.1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "8" .
+:MoveAimPoint3.1 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "6 6 10" .
+:MoveAimPoint3.2 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:MoveAimPoint3.2 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "AimPoint 3.2 pan right while tracking" .
+:MoveAimPoint3.2 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "tracking" ;
+	x3d:value "true" .
+:MoveAimPoint3.2 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "8" .
+:MoveAimPoint3.2 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "40 6 12" .
+:MoveAimPoint3.3 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:MoveAimPoint3.3 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "AimPoint 3.3 boom up while tracking" .
+:MoveAimPoint3.3 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "tracking" ;
+	x3d:value "true" .
+:MoveAimPoint3.3 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "3" .
+:MoveAimPoint3.3 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "40 20 13" .
+:MoveAimPoint3.4 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CameraMovement" ;
+	x3d:containerField "children" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "description" ;
+	x3d:value "AimPoint 3.4 restore camera back to home" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "tracking" ;
+	x3d:value "true" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "duration" ;
+	x3d:value "5" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalPosition" ;
+	x3d:value "4 4 10" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalAimPoint" ;
+	x3d:value "4 4 0" .
+:MoveAimPoint3.4 x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "goalOrientation" ;
+	x3d:value "0 1 0 0" .
+:AnimationGroup.AimPointTest rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:AnimationGroup.AimPointTest x3d:hasTimeSensor :CameraTimer.AimPointTest .
+:CameraTimer.AimPointTest rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "1.0" ;
+	x3d:enabled "true" ;
+	x3d:loop "false" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:AnimationGroup.AimPointTest x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "totalDuration" ;
+	x3d:fromNode "Camera.AimPointTest" ;
+	x3d:toField "cycleInterval" ;
+	x3d:toNode "CameraTimer.AimPointTest" .
+:AnimationGroup.AimPointTest x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "fraction_changed" ;
+	x3d:fromNode "CameraTimer.AimPointTest" ;
+	x3d:toField "set_fraction" ;
+	x3d:toNode "Camera.AimPointTest" .
+:AnimationGroup.AimPointTest x3d:hasTransform :Trigger.AimPointTest .
+:Trigger.AimPointTest rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "4 4 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Trigger.AimPointTest x3d:hasBooleanFilter :TextTouchActive.AimPointFilter .
+:TextTouchActive.AimPointFilter rdf:type owl:NamedIndividual , x3d:BooleanFilter ;
+	x3d:containerField "children" .
+:Trigger.AimPointTest x3d:hasTouchSensor :TextTouch.AimPointTest .
+:TextTouch.AimPointTest rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:description "touch to animate Camera AimPointTest" ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:Trigger.AimPointTest x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "inputTrue" ;
+	x3d:fromNode "TextTouchActive.AimPointFilter" ;
+	x3d:toField "set_bind" ;
+	x3d:toNode "Camera.AimPointTest" .
+:Trigger.AimPointTest x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isActive" ;
+	x3d:fromNode "TextTouch.AimPointTest" ;
+	x3d:toField "set_boolean" ;
+	x3d:toNode "TextTouchActive.AimPointFilter" .
+:Trigger.AimPointTest x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "touchTime" ;
+	x3d:fromNode "TextTouch.AimPointTest" ;
+	x3d:toField "startTime" ;
+	x3d:toNode "CameraTimer.AimPointTest" .
+:Trigger.AimPointTest x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Click to animate AimPointTest" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:USE "ArtDeco5" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Trigger.AimPointTest x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:USE "TransparentBox" ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "OfflineRender" ;
+	x3d:containerField "children" .
+:CameraShapeTransform rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 0.5 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "position_changed" ;
+	x3d:fromNode "Camera.SimpleShotsTest" ;
+	x3d:toField "translation" ;
+	x3d:toNode "CameraShapeTransform" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "orientation_changed" ;
+	x3d:fromNode "Camera.SimpleShotsTest" ;
+	x3d:toField "rotation" ;
+	x3d:toNode "CameraShapeTransform" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "position" ;
+	x3d:fromNode "Camera.AimPointTest" ;
+	x3d:toField "translation" ;
+	x3d:toNode "CameraShapeTransform" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "orientation_changed" ;
+	x3d:fromNode "Camera.AimPointTest" ;
+	x3d:toField "rotation" ;
+	x3d:toNode "CameraShapeTransform" .
+:CameraShapeTransform x3d:hasTransform :CameraOffsetTransform .
+:CameraOffsetTransform rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 0 0.25" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:CameraOffsetTransform x3d:hasTouchSensor :CameraShapeTouched .
+:CameraShapeTouched rdf:type owl:NamedIndividual , x3d:TouchSensor ;
+	x3d:enabled "true" ;
+	x3d:containerField "children" .
+:CameraOffsetTransform x3d:hasInline :CameraShape .
+:CameraShape rdf:type owl:NamedIndividual , x3d:Inline ;
+	x3d:url "CameraShape.x3d http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d" ;
+	x3d:load "true" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:CameraOffsetTransform x3d:hasShape :SightLine .
+:SightLine rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:SightLine x3d:hasIndexedLineSet :IndexedLineSet-anonymous .
+:IndexedLineSet-anonymous rdf:type owl:NamedIndividual , x3d:IndexedLineSet ;
+	x3d:coordIndex "0 1" ;
+	x3d:colorPerVertex "true" ;
+	x3d:containerField "geometry" .
+:Coordinate-anonymous rdf:type owl:NamedIndividual , x3d:Coordinate ;
+	x3d:point "0 0 0 0 0 -100" ;
+	x3d:containerField "coord" .
+:SightLine x3d:hasAppearance :Appearance-anonymous .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:emissiveColor "0.8 0.8 0.4" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:CameraShapeTransform x3d:hasExternProtoDeclare :ExternProtoDeclare-anonymous .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes" ;
+	x3d:name "ViewFrustum" ;
+	x3d:url "../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum ../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "required: insert Viewpoint DEF or USE node for view of interest" ;
+	x3d:name "ViewpointNode" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "required: insert NavigationInfo DEF or USE node of interest" ;
+	x3d:name "NavigationInfoNode" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "whether or not frustum geometry is rendered" ;
+	x3d:name "visible" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9" ;
+	x3d:name "lineColor" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8" ;
+	x3d:name "frustumColor" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "transparency of ViewFrustum hull geometry, default value 0.5" ;
+	x3d:name "transparency" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "assumed ratio height/width, default value 0.75" ;
+	x3d:name "aspectRatio" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "debug support, default false" ;
+	x3d:name "trace" .
+:CameraShapeTransform x3d:hasProtoInstance :ViewFrustumNode .
+:ViewFrustumNode rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "ViewFrustum" ;
+	x3d:containerField "children" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "ViewpointNode" .
+:FrustumViewpoint rdf:type owl:NamedIndividual , x3d:Viewpoint ;
+	x3d:description "viewpoint for ViewFrustum" ;
+	x3d:position "0 0 0" ;
+	x3d:fieldOfView "0.7854" ;
+	x3d:jump "true" ;
+	x3d:orientation "0 0 1 0" ;
+	x3d:centerOfRotation "0 0 0" ;
+	x3d:retainUserOffsets "false" ;
+	x3d:containerField "children" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "NavigationInfoNode" .
+:TestNavigationInfo rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
+	x3d:transitionType "ANIMATE" ;
+	x3d:visibilityLimit "100" ;
+	x3d:avatarSize "0.25 1.6 0.75" ;
+	x3d:headlight "true" ;
+	x3d:speed "1" ;
+	x3d:transitionTime "1.0" ;
+	x3d:containerField "children" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "visible" ;
+	x3d:value "false" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "lineColor" ;
+	x3d:value "0.9 0.9 0.9" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "frustumColor" ;
+	x3d:value "0.8 0.8 0.8" .
+:ViewFrustumNode x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "transparency" ;
+	x3d:value "0.95" .
+:CameraShapeTransform x3d:hasBooleanToggle :ViewFrustumToggle .
+:ViewFrustumToggle rdf:type owl:NamedIndividual , x3d:BooleanToggle ;
+	x3d:toggle "false" ;
+	x3d:containerField "children" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isActive" ;
+	x3d:fromNode "CameraShapeTouched" ;
+	x3d:toField "set_boolean" ;
+	x3d:toNode "ViewFrustumToggle" .
+:CameraShapeTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "toggle" ;
+	x3d:fromNode "ViewFrustumToggle" ;
+	x3d:toField "set_visible" ;
+	x3d:toNode "ViewFrustumNode" .
+:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
+	x3d:skyColor "0.282353 0.380392 0.470588" ;
+	x3d:transparency "0" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:rotation "1 0 0 -1.57079" ;
+	x3d:scale "10 10 10" ;
+	x3d:center "0 0 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.01" ;
+	x3d:diffuseColor "1.0 1.0 1.0" ;
+	x3d:shininess "0.05" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:IndexedFaceSet-anonymous rdf:type owl:NamedIndividual , x3d:IndexedFaceSet ;
+	x3d:colorIndex "0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0" ;
+	x3d:colorPerVertex "false" ;
+	x3d:coordIndex "0 8 9 1 -1 1 9 10 2 -1 2 10 11 3 -1 3 11 12 4 -1 4 12 13 5 -1 5 13 14 6 -1 6 14 15 7 -1 8 16 17 9 -1 9 17 18 10 -1 10 18 19 11 -1 11 19 20 12 -1 12 20 21 13 -1 13 21 22 14 -1 14 22 23 15 -1 16 24 25 17 -1 17 25 26 18 -1 18 26 27 19 -1 19 27 28 20 -1 20 28 29 21 -1 21 29 30 22 -1 22 30 31 23 -1 24 32 33 25 -1 25 33 34 26 -1 26 34 35 27 -1 27 35 36 28 -1 28 36 37 29 -1 29 37 38 30 -1 30 38 39 31 -1 32 40 41 33 -1 33 41 42 34 -1 34 42 43 35 -1 35 43 44 36 -1 36 44 45 37 -1 37 45 46 38 -1 38 46 47 39 -1 40 48 49 41 -1 41 49 50 42 -1 42 50 51 43 -1 43 51 52 44 -1 44 52 53 45 -1 45 53 54 46 -1 46 54 55 47 -1 48 56 57 49 -1 49 57 58 50 -1 50 58 59 51 -1 51 59 60 52 -1 52 60 61 53 -1 53 61 62 54 -1 54 62 63 55 -1" ;
+	x3d:normalPerVertex "false" ;
+	x3d:solid "false" ;
+	x3d:ccw "true" ;
+	x3d:convex "true" ;
+	x3d:creaseAngle "0" ;
+	x3d:containerField "geometry" .
+:Coordinate-anonymous rdf:type owl:NamedIndividual , x3d:Coordinate ;
+	x3d:point "-5.25 5.25 0.0 -3.75 5.25 0.0 -2.25 5.25 0.0 -0.75 5.25 0.0 0.75 5.25 0.0 2.25 5.25 0.0 3.75 5.25 0.0 5.25 5.25 0.0 -5.25 3.75 0.0 -3.75 3.75 0.0 -2.25 3.75 0.0 -0.75 3.75 0.0 0.75 3.75 0.0 2.25 3.75 0.0 3.75 3.75 0.0 5.25 3.75 0.0 -5.25 2.25 0.0 -3.75 2.25 0.0 -2.25 2.25 0.0 -0.75 2.25 0.0 0.75 2.25 0.0 2.25 2.25 0.0 3.75 2.25 0.0 5.25 2.25 0.0 -5.25 0.75 0.0 -3.75 0.75 0.0 -2.25 0.75 0.0 -0.75 0.75 0.0 0.75 0.75 0.0 2.25 0.75 0.0 3.75 0.75 0.0 5.25 0.75 0.0 -5.25 -0.75 0.0 -3.75 -0.75 0.0 -2.25 -0.75 0.0 -0.75 -0.75 0.0 0.75 -0.75 0.0 2.25 -0.75 0.0 3.75 -0.75 0.0 5.25 -0.75 0.0 -5.25 -2.25 0.0 -3.75 -2.25 0.0 -2.25 -2.25 0.0 -0.75 -2.25 0.0 0.75 -2.25 0.0 2.25 -2.25 0.0 3.75 -2.25 0.0 5.25 -2.25 0.0 -5.25 -3.75 0.0 -3.75 -3.75 0.0 -2.25 -3.75 0.0 -0.75 -3.75 0.0 0.75 -3.75 0.0 2.25 -3.75 0.0 3.75 -3.75 0.0 5.25 -3.75 0.0 -5.25 -5.25 0.0 -3.75 -5.25 0.0 -2.25 -5.25 0.0 -0.75 -5.25 0.0 0.75 -5.25 0.0 2.25 -5.25 0.0 3.75 -5.25 0.0 5.25 -5.25 0.0" ;
+	x3d:containerField "coord" .
+:Color-anonymous rdf:type owl:NamedIndividual , x3d:Color ;
+	x3d:color "0.435294 0.741176 0 0 0.560784 0.580392" ;
+	x3d:containerField "color" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:scale "3 3 3" ;
+	x3d:translation "0 0.25 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:CoordinateAxes rdf:type owl:NamedIndividual , x3d:Inline ;
+	x3d:url "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d ../../Savage/Tools/Authoring/CoordinateAxes.x3d http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d ../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl ../../Savage/Tools/Authoring/CoordinateAxes.wrl http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl" ;
+	x3d:load "true" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:MovingBoxTransform rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:MovingBoxTransform x3d:hasPositionInterpolator :BoxPath .
+:BoxPath rdf:type owl:NamedIndividual , x3d:PositionInterpolator ;
+	x3d:key "0 0.25 0.5 0.75 1" ;
+	x3d:keyValue "-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5" ;
+	x3d:containerField "children" .
+:MovingBoxTransform x3d:hasTimeSensor :BoxTimer .
+:BoxTimer rdf:type owl:NamedIndividual , x3d:TimeSensor ;
+	x3d:cycleInterval "10" ;
+	x3d:loop "true" ;
+	x3d:enabled "true" ;
+	x3d:startTime "0" ;
+	x3d:stopTime "0" ;
+	x3d:pauseTime "0" ;
+	x3d:resumeTime "0" ;
+	x3d:containerField "children" .
+:MovingBoxTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "value_changed" ;
+	x3d:fromNode "BoxPath" ;
+	x3d:toField "translation" ;
+	x3d:toNode "MovingBoxTransform" .
+:MovingBoxTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "value_changed" ;
+	x3d:fromNode "BoxPath" ;
+	x3d:toField "goalAimPoint" ;
+	x3d:toNode "MoveAimPoint3.1" .
+:MovingBoxTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "value_changed" ;
+	x3d:fromNode "BoxPath" ;
+	x3d:toField "goalAimPoint" ;
+	x3d:toNode "MoveAimPoint3.2" .
+:MovingBoxTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "value_changed" ;
+	x3d:fromNode "BoxPath" ;
+	x3d:toField "goalAimPoint" ;
+	x3d:toNode "MoveAimPoint3.3" .
+:MovingBoxTransform x3d:hasROUTE :ROUTE-anonymous .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "fraction_changed" ;
+	x3d:fromNode "BoxTimer" ;
+	x3d:toField "set_fraction" ;
+	x3d:toNode "BoxPath" .
+:MovingBoxTransform x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
+	x3d:size "2 2 2" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:diffuseColor "0.8 0.8 0.8" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
+	x3d:url "../earth-topo.png http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" ;
+	x3d:repeatS "true" ;
+	x3d:repeatT "true" ;
+	x3d:containerField "texture" .
+:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
+	x3d:appinfo "CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point" ;
+	x3d:name "CrossHair" ;
+	x3d:url "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair ../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "initializeOnly" ;
+	x3d:appinfo "whether CrissHair orititype is enabled or not" ;
+	x3d:name "enabled" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOnly" ;
+	x3d:appinfo "control whether enabled/disabled" ;
+	x3d:name "set_enabled" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "color of CrossHair marker" ;
+	x3d:name "markerColor" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "size of CrossHair in meters" ;
+	x3d:name "scale" .
+:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
+	x3d:accessType "inputOutput" ;
+	x3d:appinfo "distance in front of HUD viewpoint" ;
+	x3d:name "positionOffsetFromCamera" .
+:CrossHairInstance rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
+	x3d:name "CrossHair" ;
+	x3d:containerField "children" .
+:CrossHairInstance x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "enabled" ;
+	x3d:value "true" .
+:CrossHairInstance x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "markerColor" ;
+	x3d:value "1 0.5 0" .
+:CrossHairInstance x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "scale" ;
+	x3d:value "1 1 1" .
+:CrossHairInstance x3d:hasfieldValue :fieldValue-anonymous .
+:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
+	x3d:name "positionOffsetFromCamera" ;
+	x3d:value "0 0 -6" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "Camera.SimpleShotsTest" ;
+	x3d:toField "set_enabled" ;
+	x3d:toNode "CrossHairInstance" .
+:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
+	x3d:fromField "isBound" ;
+	x3d:fromNode "Camera.AimPointTest" ;
+	x3d:toField "set_enabled" ;
+	x3d:toNode "CrossHairInstance" .
+:Anchor-anonymous rdf:type owl:NamedIndividual , x3d:Anchor ;
+	x3d:description "launch CameraExample scene" ;
+	x3d:parameter "target=_blank" ;
+	x3d:url "CameraExample.x3d http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d CameraExample.wrl http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 -3 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "CameraPrototype defines a prototype  Click on this text to see CameraExample scene" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:size "0.5" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 1 0.2" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:emissiveColor "0 0 0" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .

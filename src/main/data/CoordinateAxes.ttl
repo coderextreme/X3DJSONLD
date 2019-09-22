@@ -1,0 +1,330 @@
+@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+ ] .
+
+:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
+:DoNotCollideWithVisualizationWidget rdf:type owl:NamedIndividual , x3d:Collision ;
+	x3d:enabled "true" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:DoNotCollideWithVisualizationWidget x3d:hasGroup :Group-anonymous .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowGreen rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowGreen x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:ArrowCylinder rdf:type owl:NamedIndividual , x3d:Cylinder ;
+	x3d:radius ".025" ;
+	x3d:top "false" ;
+	x3d:bottom "true" ;
+	x3d:height "2" ;
+	x3d:side "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Green rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Green x3d:hasMaterial :Material-anonymous .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor ".1 .6 .1" ;
+	x3d:emissiveColor ".05 .2 .05" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ArrowGreen x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 1 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:ArrowCone rdf:type owl:NamedIndividual , x3d:Cone ;
+	x3d:bottomRadius ".05" ;
+	x3d:height ".1" ;
+	x3d:side "true" ;
+	x3d:bottom "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "Green" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 1.08 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Billboard-anonymous rdf:type owl:NamedIndividual , x3d:Billboard ;
+	x3d:axisOfRotation "0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:LABEL_APPEARANCE rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:LABEL_APPEARANCE x3d:hasMaterial :Material-anonymous .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor "1 1 .3" ;
+	x3d:emissiveColor ".33 .33 .1" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Y" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:LABEL_FONT rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:family "SANS" ;
+	x3d:justify "MIDDLE MIDDLE" ;
+	x3d:size ".2" ;
+	x3d:horizontal "true" ;
+	x3d:leftToRight "true" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:DoNotCollideWithVisualizationWidget x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:rotation "0 0 1 -1.57079" ;
+	x3d:center "0 0 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowRed rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowRed x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
+	x3d:USE "ArrowCylinder" ;
+	x3d:bottom "true" ;
+	x3d:height "2" ;
+	x3d:radius "1" ;
+	x3d:side "true" ;
+	x3d:top "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Red rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Red x3d:hasMaterial :Material-anonymous .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor ".7 .1 .1" ;
+	x3d:emissiveColor ".33 0 0" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ArrowRed x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 1 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Cone-anonymous rdf:type owl:NamedIndividual , x3d:Cone ;
+	x3d:USE "ArrowCone" ;
+	x3d:bottomRadius "1" ;
+	x3d:height "2" ;
+	x3d:side "true" ;
+	x3d:bottom "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "Red" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:rotation "0 0 1 1.57079" ;
+	x3d:translation ".072 1.1 0" ;
+	x3d:center "0 0 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Billboard-anonymous rdf:type owl:NamedIndividual , x3d:Billboard ;
+	x3d:axisOfRotation "0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "LABEL_APPEARANCE" ;
+	x3d:containerField "appearance" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "X" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "LABEL_FONT" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
+:DoNotCollideWithVisualizationWidget x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:rotation "1 0 0 1.57079" ;
+	x3d:center "0 0 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:translation "0 0 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowBlue rdf:type owl:NamedIndividual , x3d:Group ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:ArrowBlue x3d:hasShape :Shape-anonymous .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
+	x3d:USE "ArrowCylinder" ;
+	x3d:bottom "true" ;
+	x3d:height "2" ;
+	x3d:radius "1" ;
+	x3d:side "true" ;
+	x3d:top "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Blue rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:containerField "appearance" .
+:Blue x3d:hasMaterial :Material-anonymous .
+:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
+	x3d:diffuseColor ".3 .3 1" ;
+	x3d:emissiveColor ".1 .1 .33" ;
+	x3d:ambientIntensity "0.2" ;
+	x3d:shininess "0.2" ;
+	x3d:specularColor "0 0 0" ;
+	x3d:transparency "0" ;
+	x3d:containerField "material" .
+:ArrowBlue x3d:hasTransform :Transform-anonymous .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:translation "0 1 0" ;
+	x3d:center "0 0 0" ;
+	x3d:rotation "0 0 1 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Cone-anonymous rdf:type owl:NamedIndividual , x3d:Cone ;
+	x3d:USE "ArrowCone" ;
+	x3d:bottomRadius "1" ;
+	x3d:height "2" ;
+	x3d:side "true" ;
+	x3d:bottom "true" ;
+	x3d:solid "true" ;
+	x3d:containerField "geometry" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "Blue" ;
+	x3d:containerField "appearance" .
+:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
+	x3d:rotation "1 0 0 -1.57079" ;
+	x3d:translation "0 1.1 .072" ;
+	x3d:center "0 0 0" ;
+	x3d:scale "1 1 1" ;
+	x3d:scaleOrientation "0 0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Billboard-anonymous rdf:type owl:NamedIndividual , x3d:Billboard ;
+	x3d:axisOfRotation "0 1 0" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" ;
+	x3d:containerField "children" .
+:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
+	x3d:containerField "children" ;
+	x3d:bboxCenter "0 0 0" ;
+	x3d:bboxSize "-1 -1 -1" .
+:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
+	x3d:USE "LABEL_APPEARANCE" ;
+	x3d:containerField "appearance" .
+:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
+	x3d:string "Z" ;
+	x3d:maxExtent "0.0" ;
+	x3d:solid "false" ;
+	x3d:containerField "geometry" .
+:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
+	x3d:USE "LABEL_FONT" ;
+	x3d:family "SERIF" ;
+	x3d:horizontal "true" ;
+	x3d:justify "BEGIN" ;
+	x3d:leftToRight "true" ;
+	x3d:size "1.0" ;
+	x3d:spacing "1.0" ;
+	x3d:style "PLAIN" ;
+	x3d:topToBottom "true" ;
+	x3d:containerField "fontStyle" .
