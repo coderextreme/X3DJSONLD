@@ -5,6 +5,12 @@
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "component": [
+          {
+            "@name":"Scripting",
+            "@level":1
+          }
+        ],
         "meta": [
           {
             "@name":"title",
@@ -44,7 +50,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 August 2019"
+            "@content":"22 September 2019"
           },
           {
             "@name":"generator",

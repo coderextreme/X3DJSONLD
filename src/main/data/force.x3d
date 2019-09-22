@@ -2,6 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <head>
+    	<component level='1' name='Scripting'/>
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
         <meta name='title' content='force.x3d'/>

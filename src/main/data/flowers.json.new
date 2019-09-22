@@ -6,6 +6,10 @@
     "head": {
       "component": [
         {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
           "@name": "Shaders",
           "@level": 1
         },
@@ -37,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 August 2019"
+          "@content": "22 September 2019"
         },
         {
           "@name": "generator",
