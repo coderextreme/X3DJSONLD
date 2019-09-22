@@ -13,6 +13,7 @@ var ProtoInstance5 = null;
 var ProtoInstance6 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
+        .addComponent(new componentObject().setName("Scripting").setLevel(1))
         .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
         .addMeta(new metaObject().setName("title").setContent("force.x3d"))

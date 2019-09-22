@@ -2,6 +2,7 @@ var ProtoInstance0 = null;
 var ProtoInstance1 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("flowers2.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("transcriber").setContent("John Carlson"))
