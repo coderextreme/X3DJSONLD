@@ -51,10 +51,10 @@ var ProtoInstance1 = null;
                   .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("set_fraction").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
                   .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFVEC3F).setNameSync("coordinates").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY))
                   .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFINT32).setNameSync("coordIndexes").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("e").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("f").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("g").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("h").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValueSync("5"))
+                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("e").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
+                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("f").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
+                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("g").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
+                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("h").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
                   .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFINT32).setNameSync("resolution").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("50"))
                   .setSourceCodeSync("ecmascript:\n"+
 "\n"+

@@ -126,10 +126,10 @@ ProtoInstanceObject ProtoInstance1 = null;
                   .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                   .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
                   .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new fieldObject().setType("SFFloat").setName("e").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("f").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("g").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("h").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("5"))
+                  .addField(new fieldObject().setType("SFFloat").setName("e").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new fieldObject().setType("SFFloat").setName("f").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new fieldObject().setType("SFFloat").setName("g").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new fieldObject().setType("SFFloat").setName("h").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField(new fieldObject().setType("SFInt32").setName("resolution").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
                   .setSourceCode("ecmascript:\n"+
 "\n"+
