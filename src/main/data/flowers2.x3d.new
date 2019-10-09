@@ -36,10 +36,10 @@
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<field name="e" accessType="outputOnly" type="SFFloat" value="5"></field>
-<field name="f" accessType="outputOnly" type="SFFloat" value="5"></field>
-<field name="g" accessType="outputOnly" type="SFFloat" value="5"></field>
-<field name="h" accessType="outputOnly" type="SFFloat" value="5"></field>
+<field name="e" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="f" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="h" accessType="inputOutput" type="SFFloat" value="5"></field>
 <field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
 <![CDATA[ecmascript:
 

@@ -265,25 +265,25 @@
                                   },
                                   {
                                     "@name": "e",
-                                    "@accessType": "outputOnly",
+                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "f",
-                                    "@accessType": "outputOnly",
+                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "g",
-                                    "@accessType": "outputOnly",
+                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
                                     "@name": "h",
-                                    "@accessType": "outputOnly",
+                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
