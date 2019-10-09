@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,39 +7,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:IndexedFaceSet rdf:type owl:NamedIndividual , x3d:IndexedFaceSet ;
-	x3d:creaseAngle "1.57" ;
-	x3d:containerField "geometry" ;
-	x3d:coordIndex "0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1" ;
-	x3d:normalIndex "0 -1 0 -1 1 -1 2 -1 3 -1 4 -1 5 -1" ;
-	x3d:normalPerVertex "false" ;
-	x3d:colorIndex "0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1" ;
-	x3d:ccw "true" ;
-	x3d:colorPerVertex "true" ;
-	x3d:convex "true" ;
-	x3d:solid "true" .
-:IndexedFaceSet x3d:hasCoordinate :Coordinate-anonymous .
-:Coordinate-anonymous rdf:type owl:NamedIndividual , x3d:Coordinate ;
-	x3d:containerField "coord" ;
-	x3d:point "0 0 1 0 1 1 1 1 1 1 0 1" .
-:IndexedFaceSet x3d:hasNormal :Normal-anonymous .
-:Normal-anonymous rdf:type owl:NamedIndividual , x3d:Normal ;
-	x3d:containerField "normal" ;
-	x3d:vector "1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1" .
-:IndexedFaceSet x3d:hasColor :Color-anonymous .
-:Color-anonymous rdf:type owl:NamedIndividual , x3d:Color ;
-	x3d:containerField "color" ;
-	x3d:color "0 1 0" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
+:Shape_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:IndexedFaceSet rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
+  x3d:creaseAngle "1.57" ;
+  x3d:coordIndex "0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1" ;
+  x3d:normalIndex "0 -1 0 -1 1 -1 2 -1 3 -1 4 -1 5 -1" ;
+  x3d:normalPerVertex "false" ;
+  x3d:colorIndex "0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1" .
+:IndexedFaceSet x3d:hasCoordinate :Coordinate_2_1_1_1 .
+:Coordinate_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Coordinate ;
+  x3d:point "0 0 1 0 1 1 1 1 1 1 0 1" .
+:IndexedFaceSet x3d:hasNormal :Normal_2_1_1_1 .
+:Normal_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Normal ;
+  x3d:vector "1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1" .
+:IndexedFaceSet x3d:hasColor :Color_2_1_1_1 .
+:Color_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Color ;
+  x3d:color "0 1 0" .

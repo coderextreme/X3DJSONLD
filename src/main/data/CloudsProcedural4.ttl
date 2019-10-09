@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,190 +7,83 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Main" ;
-	x3d:jump "false" ;
-	x3d:orientation "0 1 0 1.57" ;
-	x3d:position "50000 1000 42000" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Light House Tower" ;
-	x3d:jump "false" ;
-	x3d:orientation "0 1 0 1.3" ;
-	x3d:position "45000 1290 44000" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "centerWest" ;
-	x3d:jump "false" ;
-	x3d:orientation "0 1 0 2.5" ;
-	x3d:position "48000 1000 20000" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:groundColor "0 0 1" ;
-	x3d:skyColor "0 0 1" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:DirectionalLight-anonymous rdf:type owl:NamedIndividual , x3d:DirectionalLight ;
-	x3d:ambientIntensity "1" ;
-	x3d:direction "-1 0 0" ;
-	x3d:global "true" ;
-	x3d:color "1 1 1" ;
-	x3d:intensity "1" ;
-	x3d:on "true" ;
-	x3d:containerField "children" .
-:Terrain rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Terrain x3d:hasTransform :Transform-anonymous .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "50 50 50" ;
-	x3d:translation "25000 0 25000" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Inline-anonymous rdf:type owl:NamedIndividual , x3d:Inline ;
-	x3d:url "MontereyBayLargeMesh.x3d https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d MontereyBayLargeMesh.wrl https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl" ;
-	x3d:load "true" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Terrain x3d:hasTransform :Transform-anonymous .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:rotation "1 0 0 1.57" ;
-	x3d:translation "25000 0 25000" ;
-	x3d:center "0 0 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Rectangle2D-anonymous rdf:type owl:NamedIndividual , x3d:Rectangle2D ;
-	x3d:size "77000 55000" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "ocean.png https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
-:Placemarks rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Placemarks x3d:hasTransform :Transform-anonymous .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "50 50 50" ;
-	x3d:translation "45000 30 44000" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Inline-anonymous rdf:type owl:NamedIndividual , x3d:Inline ;
-	x3d:url "Lighthouse.x3d https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d Lighthouse.wrl https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl" ;
-	x3d:load "true" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Clouds rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Main" ;
+  x3d:jump "false" ;
+  x3d:orientation "0 1 0 1.57" ;
+  x3d:position "50000 1000 42000" .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Light House Tower" ;
+  x3d:jump "false" ;
+  x3d:orientation "0 1 0 1.3" ;
+  x3d:position "45000 1290 44000" .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "centerWest" ;
+  x3d:jump "false" ;
+  x3d:orientation "0 1 0 2.5" ;
+  x3d:position "48000 1000 20000" .
+:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:groundColor "0 0 1" ;
+  x3d:skyColor "0 0 1" .
+:DirectionalLight_2 rdf:type owl:NamedIndividual, x3d:DirectionalLight ;
+  x3d:ambientIntensity "1" ;
+  x3d:direction "-1 0 0" ;
+  x3d:global "true" .
+:Terrain rdf:type owl:NamedIndividual, x3d:Group .
+:Terrain x3d:hasTransform :Transform_2_6 .
+:Transform_2_6 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "50 50 50" ;
+  x3d:translation "25000 0 25000" .
+:Inline_2_6_1 rdf:type owl:NamedIndividual, x3d:Inline ;
+  x3d:url "MontereyBayLargeMesh.x3d https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d MontereyBayLargeMesh.wrl https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl" .
+:Terrain x3d:hasTransform :Transform_2_6 .
+:Transform_2_6 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:rotation "1 0 0 1.57" ;
+  x3d:translation "25000 0 25000" .
+:Shape_2_6_2 rdf:type owl:NamedIndividual, x3d:Shape .
+:Rectangle2D_2_6_2_1 rdf:type owl:NamedIndividual, x3d:Rectangle2D ;
+  x3d:size "77000 55000" .
+:Appearance_2_6_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:ImageTexture_2_6_2_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "ocean.png https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png" .
+:Placemarks rdf:type owl:NamedIndividual, x3d:Group .
+:Placemarks x3d:hasTransform :Transform_2_7 .
+:Transform_2_7 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "50 50 50" ;
+  x3d:translation "45000 30 44000" .
+:Inline_2_7_1 rdf:type owl:NamedIndividual, x3d:Inline ;
+  x3d:url "Lighthouse.x3d https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d Lighthouse.wrl https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl" .
+:Clouds rdf:type owl:NamedIndividual, x3d:Group .
 :Clouds x3d:hasTransform :Cumulus .
-:Cumulus rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:Cumulus rdf:type owl:NamedIndividual, x3d:Transform .
 :Clouds x3d:hasTransform :Cirrus .
-:Cirrus rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:Cirrus rdf:type owl:NamedIndividual, x3d:Transform .
 :Clouds x3d:hasTransform :Fog .
-:Fog rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:Fog rdf:type owl:NamedIndividual, x3d:Transform .
 :Clouds x3d:hasScript :PixelScript .
-:PixelScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:PixelScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" .
 
-        :PixelScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "Cumulus" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "Cumulus" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+        :PixelScript x3d:hasfield :field_2_8_4 .
+:field_2_8_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "Cumulus" ;
+  x3d:type "SFNode" .
+:Cumulus-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
 
-        :PixelScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "Cirrus" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "Cirrus" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+        :PixelScript x3d:hasfield :field_2_8_4 .
+:field_2_8_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "Cirrus" ;
+  x3d:type "SFNode" .
+:Cirrus-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
 
-        :PixelScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "Fog" .
+        :PixelScript x3d:hasfield :field_2_8_4 .
+:field_2_8_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "Fog" ;
+  x3d:type "SFNode" .
 
         
 ecmascript:
@@ -575,12 +468,9 @@ cumulus();
 cirrus();
 }
 
-      :Clouds x3d:hasDirectionalLight :DirectionalLight-anonymous .
-:DirectionalLight-anonymous rdf:type owl:NamedIndividual , x3d:DirectionalLight ;
-	x3d:ambientIntensity "1" ;
-	x3d:color "1 0 0" ;
-	x3d:direction "-1 -1 0" ;
-	x3d:global "true" ;
-	x3d:intensity "1" ;
-	x3d:on "true" ;
-	x3d:containerField "children" .
+      :Clouds x3d:hasDirectionalLight :DirectionalLight_2_8 .
+:DirectionalLight_2_8 rdf:type owl:NamedIndividual, x3d:DirectionalLight ;
+  x3d:ambientIntensity "1" ;
+  x3d:color "1 0 0" ;
+  x3d:direction "-1 -1 0" ;
+  x3d:global "true" .

@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,504 +7,513 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:appinfo "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images." ;
-	x3d:name "Camera" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this Camera" ;
-	x3d:name "description" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
-	x3d:name "position" ;
-	x3d:value "0 0 10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
-	x3d:name "orientation" ;
-	x3d:value "0 0 1 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "pi/4" ;
-	x3d:name "fieldOfView" ;
-	x3d:value "0.7854" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "input fraction drives interpolators" ;
-	x3d:name "set_fraction" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "input event binds or unbinds this Camera" ;
-	x3d:name "set_bind" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "output event indicates when this Camera is bound" ;
-	x3d:name "bindTime" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "output event indicates whether this Camera is bound or unbound" ;
-	x3d:name "isBound" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]" ;
-	x3d:name "nearClipPlane" ;
-	x3d:value "0.25" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit" ;
-	x3d:name "farClipPlane" ;
-	x3d:value "0.0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Array of CameraShot nodes which in turn contain CameraMovement nodes" ;
-	x3d:name "shots" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether camera headlight is on or off" ;
-	x3d:name "headlight" ;
-	x3d:value "true" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera headlight color" ;
-	x3d:name "headlightColor" ;
-	x3d:value "1 1 1" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera headlight intensity" ;
-	x3d:name "headlightIntensity" ;
-	x3d:value "1" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera filter color that modifies virtual lens capture" ;
-	x3d:name "filterColor" ;
-	x3d:value "1 1 1" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera filter transparency that modifies virtual lens capture" ;
-	x3d:name "filterTransparency" ;
-	x3d:value "1" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "upVector changes modify camera orientation (and possibly vice versa)" ;
-	x3d:name "upVector" ;
-	x3d:value "0 1 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "fStop" ;
-	x3d:value "5.6" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "focusDistance" ;
-	x3d:value "10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations" ;
-	x3d:name "totalDuration" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "OfflineRender node" ;
-	x3d:name "offlineRender" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" ;
-	x3d:value "false" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:CameraViewpoint rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:position "0 0 10" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:CameraViewpoint x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "position" ;
-	x3d:protoField "position" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "orientation" ;
-	x3d:protoField "orientation" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "fieldOfView" ;
-	x3d:protoField "fieldOfView" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_bind" ;
-	x3d:protoField "set_bind" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "bindTime" ;
-	x3d:protoField "bindTime" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "isBound" ;
-	x3d:protoField "isBound" .
-:CameraNavInfo rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:CameraNavInfo x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_bind" ;
-	x3d:protoField "set_bind" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "headlight" ;
-	x3d:protoField "headlight" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "visibilityLimit" ;
-	x3d:protoField "farClipPlane" .
-:CameraDirectionalLight rdf:type owl:NamedIndividual , x3d:DirectionalLight ;
-	x3d:global "true" ;
-	x3d:ambientIntensity "0" ;
-	x3d:color "1 1 1" ;
-	x3d:direction "0 0 -1" ;
-	x3d:intensity "1" ;
-	x3d:on "true" ;
-	x3d:containerField "children" .
-:CameraDirectionalLight x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "on" ;
-	x3d:protoField "headlight" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "color" ;
-	x3d:protoField "headlightColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "intensity" ;
-	x3d:protoField "headlightIntensity" .
-:CameraPositionInterpolator rdf:type owl:NamedIndividual , x3d:PositionInterpolator ;
-	x3d:key "0 1" ;
-	x3d:keyValue "0 0 0 0 0 0" ;
-	x3d:containerField "children" .
-:CameraPositionInterpolator x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_fraction" ;
-	x3d:protoField "set_fraction" .
-:CameraOrientationInterpolator rdf:type owl:NamedIndividual , x3d:OrientationInterpolator ;
-	x3d:key "0 1" ;
-	x3d:keyValue "0 1 0 0 0 1 0 0" ;
-	x3d:containerField "children" .
-:CameraOrientationInterpolator x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_fraction" ;
-	x3d:protoField "set_fraction" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "value_changed" ;
-	x3d:fromNode "CameraPositionInterpolator" ;
-	x3d:toField "position" ;
-	x3d:toNode "CameraViewpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "value_changed" ;
-	x3d:fromNode "CameraOrientationInterpolator" ;
-	x3d:toField "orientation" ;
-	x3d:toNode "CameraViewpoint" .
-:CameraScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "true" ;
-	x3d:containerField "children" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:appinfo "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images." ;
+  x3d:name "Camera" .
+:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this Camera" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
+  x3d:name "position" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 0 10" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" ;
+  x3d:name "orientation" ;
+  x3d:type "SFRotation" ;
+  x3d:value "0 0 1 0" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "pi/4" ;
+  x3d:name "fieldOfView" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.7854" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "input fraction drives interpolators" ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "input event binds or unbinds this Camera" ;
+  x3d:name "set_bind" ;
+  x3d:type "SFBool" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "output event indicates when this Camera is bound" ;
+  x3d:name "bindTime" ;
+  x3d:type "SFTime" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "output event indicates whether this Camera is bound or unbound" ;
+  x3d:name "isBound" ;
+  x3d:type "SFBool" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]" ;
+  x3d:name "nearClipPlane" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.25" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit" ;
+  x3d:name "farClipPlane" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.0" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Array of CameraShot nodes which in turn contain CameraMovement nodes" ;
+  x3d:name "shots" ;
+  x3d:type "MFNode" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether camera headlight is on or off" ;
+  x3d:name "headlight" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera headlight color" ;
+  x3d:name "headlightColor" ;
+  x3d:type "SFColor" ;
+  x3d:value "1 1 1" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera headlight intensity" ;
+  x3d:name "headlightIntensity" ;
+  x3d:type "SFFloat" ;
+  x3d:value "1" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera filter color that modifies virtual lens capture" ;
+  x3d:name "filterColor" ;
+  x3d:type "SFColor" ;
+  x3d:value "1 1 1" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera filter transparency that modifies virtual lens capture" ;
+  x3d:name "filterTransparency" ;
+  x3d:type "SFFloat" ;
+  x3d:value "1" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "upVector changes modify camera orientation (and possibly vice versa)" ;
+  x3d:name "upVector" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 1 0" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "fStop" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5.6" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "focusDistance" ;
+  x3d:type "SFFloat" ;
+  x3d:value "10" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations" ;
+  x3d:name "totalDuration" ;
+  x3d:type "SFTime" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "OfflineRender node" ;
+  x3d:name "offlineRender" ;
+  x3d:type "SFNode" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:CameraViewpoint rdf:type owl:NamedIndividual, x3d:Viewpoint .
+:CameraViewpoint x3d:hasIS :IS_2_1_2_1 .
+:IS_2_1_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "position" ;
+  x3d:protoField "position" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "orientation" ;
+  x3d:protoField "orientation" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "fieldOfView" ;
+  x3d:protoField "fieldOfView" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_bind" ;
+  x3d:protoField "set_bind" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "bindTime" ;
+  x3d:protoField "bindTime" .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "isBound" ;
+  x3d:protoField "isBound" .
+:CameraNavInfo rdf:type owl:NamedIndividual, x3d:NavigationInfo ;
+  x3d:type "EXAMINE FLY ANY" .
+:CameraNavInfo x3d:hasIS :IS_2_1_2_2 .
+:IS_2_1_2_2 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_bind" ;
+  x3d:protoField "set_bind" .
+:connect_2_1_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "headlight" ;
+  x3d:protoField "headlight" .
+:connect_2_1_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "visibilityLimit" ;
+  x3d:protoField "farClipPlane" .
+:CameraDirectionalLight rdf:type owl:NamedIndividual, x3d:DirectionalLight ;
+  x3d:global "true" .
+:CameraDirectionalLight x3d:hasIS :IS_2_1_2_3 .
+:IS_2_1_2_3 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_3_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "on" ;
+  x3d:protoField "headlight" .
+:connect_2_1_2_3_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "color" ;
+  x3d:protoField "headlightColor" .
+:connect_2_1_2_3_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "intensity" ;
+  x3d:protoField "headlightIntensity" .
+:CameraPositionInterpolator rdf:type owl:NamedIndividual, x3d:PositionInterpolator ;
+  x3d:key "0 1" ;
+  x3d:keyValue "0 0 0 0 0 0" .
+:CameraPositionInterpolator x3d:hasIS :IS_2_1_2_4 .
+:IS_2_1_2_4 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_4_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_fraction" ;
+  x3d:protoField "set_fraction" .
+:CameraOrientationInterpolator rdf:type owl:NamedIndividual, x3d:OrientationInterpolator ;
+  x3d:key "0 1" ;
+  x3d:keyValue "0 1 0 0 0 1 0 0" .
+:CameraOrientationInterpolator x3d:hasIS :IS_2_1_2_5 .
+:IS_2_1_2_5 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_5_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_fraction" ;
+  x3d:protoField "set_fraction" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "value_changed" ;
+  x3d:fromNode "CameraPositionInterpolator" ;
+  x3d:toField "position" ;
+  x3d:toNode "CameraViewpoint" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "value_changed" ;
+  x3d:fromNode "CameraOrientationInterpolator" ;
+  x3d:toField "orientation" ;
+  x3d:toNode "CameraViewpoint" .
+:CameraScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" ;
+  x3d:mustEvaluate "true" .
 
           
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this Camera" ;
-	x3d:name "description" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this Camera" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera position in local transformation frame" ;
-	x3d:name "position" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera position in local transformation frame" ;
+  x3d:name "position" ;
+  x3d:type "SFVec3f" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera rotation in local transformation frame" ;
-	x3d:name "orientation" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera rotation in local transformation frame" ;
+  x3d:name "orientation" ;
+  x3d:type "SFRotation" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "input fraction drives interpolators" ;
-	x3d:name "set_fraction" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "input fraction drives interpolators" ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "input event binds or unbinds this Camera" ;
-	x3d:name "set_bind" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "input event binds or unbinds this Camera" ;
+  x3d:name "set_bind" ;
+  x3d:type "SFBool" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "pi/4" ;
-	x3d:name "fieldOfView" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "pi/4" ;
+  x3d:name "fieldOfView" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Vector distance to near clipping plane" ;
-	x3d:name "nearClipPlane" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Vector distance to near clipping plane" ;
+  x3d:name "nearClipPlane" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Vector distance to far clipping plane" ;
-	x3d:name "farClipPlane" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Vector distance to far clipping plane" ;
+  x3d:name "farClipPlane" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Array of CameraShot nodes which in turn contain CameraMovement nodes" ;
-	x3d:name "shots" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Array of CameraShot nodes which in turn contain CameraMovement nodes" ;
+  x3d:name "shots" ;
+  x3d:type "MFNode" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera filter color that modifies virtual lens capture" ;
-	x3d:name "filterColor" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera filter color that modifies virtual lens capture" ;
+  x3d:name "filterColor" ;
+  x3d:type "SFColor" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Camera filter transparency that modifies virtual lens capture" ;
-	x3d:name "filterTransparency" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Camera filter transparency that modifies virtual lens capture" ;
+  x3d:name "filterTransparency" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "upVector changes modify camera orientation (and possibly vice versa)" ;
-	x3d:name "upVector" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "upVector changes modify camera orientation (and possibly vice versa)" ;
+  x3d:name "upVector" ;
+  x3d:type "SFVec3f" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "fStop" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "fStop" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "focusDistance" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "focusDistance" ;
+  x3d:type "SFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations" ;
-	x3d:name "totalDuration" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations" ;
+  x3d:name "totalDuration" ;
+  x3d:type "SFTime" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "OfflineRender node" ;
-	x3d:name "offlineRender" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "OfflineRender node" ;
+  x3d:name "offlineRender" ;
+  x3d:type "SFNode" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "node reference to permit getting setting fields from within Script" ;
-	x3d:name "ViewpointNode" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:USE "CameraViewpoint" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:position "0 0 10" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "node reference to permit getting setting fields from within Script" ;
+  x3d:name "ViewpointNode" ;
+  x3d:type "SFNode" .
+:CameraViewpoint-USE-1 rdf:type owl:NamedIndividual, x3d:Viewpoint .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "node reference to permit getting setting fields from within Script" ;
-	x3d:name "NavInfoNode" .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:USE "CameraNavInfo" ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "node reference to permit getting setting fields from within Script" ;
+  x3d:name "NavInfoNode" ;
+  x3d:type "SFNode" .
+:CameraNavInfo-USE-1 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "node reference to permit getting setting fields from within Script" ;
-	x3d:name "CameraPI" .
-:PositionInterpolator-anonymous rdf:type owl:NamedIndividual , x3d:PositionInterpolator ;
-	x3d:USE "CameraPositionInterpolator" ;
-	x3d:containerField "children" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "node reference to permit getting setting fields from within Script" ;
+  x3d:name "CameraPI" ;
+  x3d:type "SFNode" .
+:CameraPositionInterpolator-USE-1 rdf:type owl:NamedIndividual, x3d:PositionInterpolator .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "node reference to permit getting setting fields from within Script" ;
-	x3d:name "CameraOI" .
-:OrientationInterpolator-anonymous rdf:type owl:NamedIndividual , x3d:OrientationInterpolator ;
-	x3d:USE "CameraOrientationInterpolator" ;
-	x3d:containerField "children" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "node reference to permit getting setting fields from within Script" ;
+  x3d:name "CameraOI" ;
+  x3d:type "SFNode" .
+:CameraOrientationInterpolator-USE-1 rdf:type owl:NamedIndividual, x3d:OrientationInterpolator .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "key array for interpolators" ;
-	x3d:name "key" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "key array for interpolators" ;
+  x3d:name "key" ;
+  x3d:type "MFFloat" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "keyValue array for PositionInterpolator" ;
-	x3d:name "keyValuePosition" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "keyValue array for PositionInterpolator" ;
+  x3d:name "keyValuePosition" ;
+  x3d:type "MFVec3f" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "keyValue array for OrientationInterpolator" ;
-	x3d:name "keyValueOrientation" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "keyValue array for OrientationInterpolator" ;
+  x3d:name "keyValueOrientation" ;
+  x3d:type "MFRotation" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events" ;
-	x3d:name "animated" ;
-	x3d:value "false" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events" ;
+  x3d:name "animated" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "perform checkShots() function once immediately after initialization" ;
-	x3d:name "initialized" ;
-	x3d:value "false" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "perform checkShots() function once immediately after initialization" ;
+  x3d:name "initialized" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "how many CameraShot nodes are contained in shots array" ;
-	x3d:name "shotCount" ;
-	x3d:value "0" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "how many CameraShot nodes are contained in shots array" ;
+  x3d:name "shotCount" ;
+  x3d:type "SFInt32" ;
+  x3d:value "0" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "how many CameraMove nodes are contained in moves array" ;
-	x3d:name "movesCount" ;
-	x3d:value "0" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "how many CameraMove nodes are contained in moves array" ;
+  x3d:name "movesCount" ;
+  x3d:type "SFInt32" ;
+  x3d:value "0" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "how many frames were created in current loop" ;
-	x3d:name "frameCount" ;
-	x3d:value "0" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "how many frames were created in current loop" ;
+  x3d:name "frameCount" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "holding variable" ;
-	x3d:name "startTime" ;
-	x3d:value "0" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "holding variable" ;
+  x3d:name "startTime" ;
+  x3d:type "SFTime" ;
+  x3d:value "0" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "holding variable" ;
-	x3d:name "priorTraceTime" ;
-	x3d:value "0" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "holding variable" ;
+  x3d:name "priorTraceTime" ;
+  x3d:type "SFTime" ;
+  x3d:value "0" .
 
-          :CameraScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" .
+          :CameraScript x3d:hasfield :field_2_1_2_8 .
+:field_2_1_2_8 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" .
 
-          :CameraScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "position" ;
-	x3d:protoField "position" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "orientation" ;
-	x3d:protoField "orientation" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_fraction" ;
-	x3d:protoField "set_fraction" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_bind" ;
-	x3d:protoField "set_bind" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "fieldOfView" ;
-	x3d:protoField "fieldOfView" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "nearClipPlane" ;
-	x3d:protoField "nearClipPlane" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "farClipPlane" ;
-	x3d:protoField "farClipPlane" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "shots" ;
-	x3d:protoField "shots" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "filterColor" ;
-	x3d:protoField "filterColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "filterTransparency" ;
-	x3d:protoField "filterTransparency" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "upVector" ;
-	x3d:protoField "upVector" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "fStop" ;
-	x3d:protoField "fStop" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "focusDistance" ;
-	x3d:protoField "focusDistance" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "isActive" ;
-	x3d:protoField "isActive" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "totalDuration" ;
-	x3d:protoField "totalDuration" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "offlineRender" ;
-	x3d:protoField "offlineRender" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "traceEnabled" ;
-	x3d:protoField "traceEnabled" .
+          :CameraScript x3d:hasIS :IS_2_1_2_8 .
+:IS_2_1_2_8 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "position" ;
+  x3d:protoField "position" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "orientation" ;
+  x3d:protoField "orientation" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_fraction" ;
+  x3d:protoField "set_fraction" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_bind" ;
+  x3d:protoField "set_bind" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "fieldOfView" ;
+  x3d:protoField "fieldOfView" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "nearClipPlane" ;
+  x3d:protoField "nearClipPlane" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "farClipPlane" ;
+  x3d:protoField "farClipPlane" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "shots" ;
+  x3d:protoField "shots" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "filterColor" ;
+  x3d:protoField "filterColor" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "filterTransparency" ;
+  x3d:protoField "filterTransparency" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "upVector" ;
+  x3d:protoField "upVector" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "fStop" ;
+  x3d:protoField "fStop" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "focusDistance" ;
+  x3d:protoField "focusDistance" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "isActive" ;
+  x3d:protoField "isActive" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "totalDuration" ;
+  x3d:protoField "totalDuration" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "offlineRender" ;
+  x3d:protoField "offlineRender" .
+:connect_2_1_2_8_33 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "traceEnabled" ;
+  x3d:protoField "traceEnabled" .
 
           
 ecmascript:
@@ -848,225 +857,251 @@ function alwaysPrint (outputValue)
          Browser.print ('[Camera] ' + outputString + '\n');
 }
 
-        :ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "position" ;
-	x3d:fromNode "CameraScript" ;
-	x3d:toField "position" ;
-	x3d:toNode "CameraViewpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "orientation" ;
-	x3d:fromNode "CameraScript" ;
-	x3d:toField "orientation" ;
-	x3d:toNode "CameraViewpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "isActive" ;
-	x3d:fromNode "CameraScript" ;
-	x3d:toField "set_bind" ;
-	x3d:toNode "CameraViewpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "isActive" ;
-	x3d:fromNode "CameraScript" ;
-	x3d:toField "set_bind" ;
-	x3d:toNode "CameraNavInfo" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "isActive" ;
-	x3d:fromNode "CameraScript" ;
-	x3d:toField "on" ;
-	x3d:toNode "CameraDirectionalLight" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:appinfo "CameraShot collects a specific set of CameraMovement animations that make up an individual shot." ;
-	x3d:name "CameraShot" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this CameraShot" ;
-	x3d:name "description" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this CameraShot can be activated" ;
-	x3d:name "enabled" ;
-	x3d:value "true" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Set of CameraMovement nodes" ;
-	x3d:name "moves" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize camera position for this shot" ;
-	x3d:name "initialPosition" ;
-	x3d:value "0 0 10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize camera rotation for this shot" ;
-	x3d:name "initialOrientation" ;
-	x3d:value "0 0 1 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot" ;
-	x3d:name "initialAimPoint" ;
-	x3d:value "0 0 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "pi/4" ;
-	x3d:name "initialFieldOfView" ;
-	x3d:value "0.7854" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "initialFStop" ;
-	x3d:value "5.6" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "initialFocusDistance" ;
-	x3d:value "10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Subtotal duration of contained CameraMovement move durations" ;
-	x3d:name "shotDuration" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" ;
-	x3d:value "false" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:CameraShotScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "true" ;
-	x3d:containerField "children" .
+        :ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "position" ;
+  x3d:fromNode "CameraScript" ;
+  x3d:toField "position" ;
+  x3d:toNode "CameraViewpoint" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "orientation" ;
+  x3d:fromNode "CameraScript" ;
+  x3d:toField "orientation" ;
+  x3d:toNode "CameraViewpoint" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "isActive" ;
+  x3d:fromNode "CameraScript" ;
+  x3d:toField "set_bind" ;
+  x3d:toNode "CameraViewpoint" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "isActive" ;
+  x3d:fromNode "CameraScript" ;
+  x3d:toField "set_bind" ;
+  x3d:toNode "CameraNavInfo" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "isActive" ;
+  x3d:fromNode "CameraScript" ;
+  x3d:toField "on" ;
+  x3d:toNode "CameraDirectionalLight" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:appinfo "CameraShot collects a specific set of CameraMovement animations that make up an individual shot." ;
+  x3d:name "CameraShot" .
+:ProtoInterface_2_2 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this CameraShot" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this CameraShot can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Set of CameraMovement nodes" ;
+  x3d:name "moves" ;
+  x3d:type "MFNode" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize camera position for this shot" ;
+  x3d:name "initialPosition" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 0 10" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize camera rotation for this shot" ;
+  x3d:name "initialOrientation" ;
+  x3d:type "SFRotation" ;
+  x3d:value "0 0 1 0" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot" ;
+  x3d:name "initialAimPoint" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 0 0" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "pi/4" ;
+  x3d:name "initialFieldOfView" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.7854" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "initialFStop" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5.6" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "initialFocusDistance" ;
+  x3d:type "SFFloat" ;
+  x3d:value "10" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Subtotal duration of contained CameraMovement move durations" ;
+  x3d:name "shotDuration" ;
+  x3d:type "SFTime" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:ProtoBody_2_2 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:CameraShotScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" ;
+  x3d:mustEvaluate "true" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this CameraShot" ;
-	x3d:name "description" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this CameraShot" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this CameraShot can be activated" ;
-	x3d:name "enabled" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this CameraShot can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Set of CameraMovement nodes" ;
-	x3d:name "moves" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Set of CameraMovement nodes" ;
+  x3d:name "moves" ;
+  x3d:type "MFNode" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize camera position for this shot" ;
-	x3d:name "initialPosition" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize camera position for this shot" ;
+  x3d:name "initialPosition" ;
+  x3d:type "SFVec3f" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize camera rotation for this shot" ;
-	x3d:name "initialOrientation" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize camera rotation for this shot" ;
+  x3d:name "initialOrientation" ;
+  x3d:type "SFRotation" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot" ;
-	x3d:name "initialAimPoint" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot" ;
+  x3d:name "initialAimPoint" ;
+  x3d:type "SFVec3f" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "pi/4" ;
-	x3d:name "initialFieldOfView" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "pi/4" ;
+  x3d:name "initialFieldOfView" ;
+  x3d:type "SFFloat" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "initialFStop" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "initialFStop" ;
+  x3d:type "SFFloat" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "initialFocusDistance" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "initialFocusDistance" ;
+  x3d:type "SFFloat" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Subtotal duration of contained CameraMovement move durations" ;
-	x3d:name "shotDuration" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Subtotal duration of contained CameraMovement move durations" ;
+  x3d:name "shotDuration" ;
+  x3d:type "SFTime" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "key array for interpolators" ;
-	x3d:name "key" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "key array for interpolators" ;
+  x3d:name "key" ;
+  x3d:type "MFFloat" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "keyValue array for PositionInterpolator" ;
-	x3d:name "keyValuePosition" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "keyValue array for PositionInterpolator" ;
+  x3d:name "keyValuePosition" ;
+  x3d:type "MFVec3f" .
 
-          :CameraShotScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "keyValue array for OrientationInterpolator" ;
-	x3d:name "keyValueOrientation" .
+          :CameraShotScript x3d:hasfield :field_2_2_2_1 .
+:field_2_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "keyValue array for OrientationInterpolator" ;
+  x3d:name "keyValueOrientation" ;
+  x3d:type "MFRotation" .
 
-          :CameraShotScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "enabled" ;
-	x3d:protoField "enabled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "moves" ;
-	x3d:protoField "moves" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialPosition" ;
-	x3d:protoField "initialPosition" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialOrientation" ;
-	x3d:protoField "initialOrientation" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialAimPoint" ;
-	x3d:protoField "initialAimPoint" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialFieldOfView" ;
-	x3d:protoField "initialFieldOfView" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialFStop" ;
-	x3d:protoField "initialFStop" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "initialFocusDistance" ;
-	x3d:protoField "initialFocusDistance" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "shotDuration" ;
-	x3d:protoField "shotDuration" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "isActive" ;
-	x3d:protoField "isActive" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "traceEnabled" ;
-	x3d:protoField "traceEnabled" .
+          :CameraShotScript x3d:hasIS :IS_2_2_2_1 .
+:IS_2_2_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "enabled" ;
+  x3d:protoField "enabled" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "moves" ;
+  x3d:protoField "moves" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialPosition" ;
+  x3d:protoField "initialPosition" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialOrientation" ;
+  x3d:protoField "initialOrientation" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialAimPoint" ;
+  x3d:protoField "initialAimPoint" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialFieldOfView" ;
+  x3d:protoField "initialFieldOfView" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialFStop" ;
+  x3d:protoField "initialFStop" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "initialFocusDistance" ;
+  x3d:protoField "initialFocusDistance" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "shotDuration" ;
+  x3d:protoField "shotDuration" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "isActive" ;
+  x3d:protoField "isActive" .
+:connect_2_2_2_1_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "traceEnabled" ;
+  x3d:protoField "traceEnabled" .
 
           
 ecmascript:
@@ -1163,184 +1198,207 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraShot] ' + outputString + '\n');
 }
 
-        :ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:appinfo "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView." ;
-	x3d:name "CameraMovement" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this CameraMovement" ;
-	x3d:name "description" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this CameraMovement can be activated" ;
-	x3d:name "enabled" ;
-	x3d:value "true" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Duration in seconds for this move" ;
-	x3d:name "duration" ;
-	x3d:value "0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal camera position for this move" ;
-	x3d:name "goalPosition" ;
-	x3d:value "0 0 10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal camera rotation for this move" ;
-	x3d:name "goalOrientation" ;
-	x3d:value "0 0 1 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether or not camera direction is tracking towards the aimPoint" ;
-	x3d:name "tracking" ;
-	x3d:value "false" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal aimPoint for this move, ignored if tracking=false" ;
-	x3d:name "goalAimPoint" ;
-	x3d:value "0 0 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal fieldOfView for this move" ;
-	x3d:name "goalFieldOfView" ;
-	x3d:value "0.7854" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "goalFStop" ;
-	x3d:value "5.6" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "goalFocusDistance" ;
-	x3d:value "10" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" ;
-	x3d:value "false" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:CameraMovementScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "true" ;
-	x3d:containerField "children" .
+        :ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:appinfo "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView." ;
+  x3d:name "CameraMovement" .
+:ProtoInterface_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this CameraMovement" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this CameraMovement can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Duration in seconds for this move" ;
+  x3d:name "duration" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal camera position for this move" ;
+  x3d:name "goalPosition" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 0 10" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal camera rotation for this move" ;
+  x3d:name "goalOrientation" ;
+  x3d:type "SFRotation" ;
+  x3d:value "0 0 1 0" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether or not camera direction is tracking towards the aimPoint" ;
+  x3d:name "tracking" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal aimPoint for this move, ignored if tracking=false" ;
+  x3d:name "goalAimPoint" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0 0 0" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal fieldOfView for this move" ;
+  x3d:name "goalFieldOfView" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.7854" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "goalFStop" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5.6" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "goalFocusDistance" ;
+  x3d:type "SFFloat" ;
+  x3d:value "10" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:ProtoBody_2_3 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:CameraMovementScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" ;
+  x3d:mustEvaluate "true" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this CameraMovement" ;
-	x3d:name "description" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this CameraMovement" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this CameraMovement can be activated" ;
-	x3d:name "enabled" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this CameraMovement can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Duration in seconds for this move" ;
-	x3d:name "duration" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Duration in seconds for this move" ;
+  x3d:name "duration" ;
+  x3d:type "SFFloat" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal camera position for this move" ;
-	x3d:name "goalPosition" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal camera position for this move" ;
+  x3d:name "goalPosition" ;
+  x3d:type "SFVec3f" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal camera rotation for this move" ;
-	x3d:name "goalOrientation" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal camera rotation for this move" ;
+  x3d:name "goalOrientation" ;
+  x3d:type "SFRotation" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether or not camera direction is tracking towards the aimPoint" ;
-	x3d:name "tracking" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether or not camera direction is tracking towards the aimPoint" ;
+  x3d:name "tracking" ;
+  x3d:type "SFBool" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal aimPoint for this move, ignored if tracking=false" ;
-	x3d:name "goalAimPoint" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal aimPoint for this move, ignored if tracking=false" ;
+  x3d:name "goalAimPoint" ;
+  x3d:type "SFVec3f" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Goal fieldOfView for this move" ;
-	x3d:name "goalFieldOfView" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Goal fieldOfView for this move" ;
+  x3d:name "goalFieldOfView" ;
+  x3d:type "SFFloat" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
-	x3d:name "goalFStop" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Focal length divided effective aperture diameter indicating width of focal plane" ;
+  x3d:name "goalFStop" ;
+  x3d:type "SFFloat" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Distance to focal plane of sharpest focus" ;
-	x3d:name "goalFocusDistance" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Distance to focal plane of sharpest focus" ;
+  x3d:name "goalFocusDistance" ;
+  x3d:type "SFFloat" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
-	x3d:name "isActive" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Mark start/stop with true/false output respectively useful to trigger external animations" ;
+  x3d:name "isActive" ;
+  x3d:type "SFBool" .
 
-          :CameraMovementScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" .
+          :CameraMovementScript x3d:hasfield :field_2_3_2_1 .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" .
 
-          :CameraMovementScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "enabled" ;
-	x3d:protoField "enabled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "duration" ;
-	x3d:protoField "duration" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalPosition" ;
-	x3d:protoField "goalPosition" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalOrientation" ;
-	x3d:protoField "goalOrientation" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "tracking" ;
-	x3d:protoField "tracking" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalAimPoint" ;
-	x3d:protoField "goalAimPoint" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalFieldOfView" ;
-	x3d:protoField "goalFieldOfView" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalFStop" ;
-	x3d:protoField "goalFStop" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "goalFocusDistance" ;
-	x3d:protoField "goalFocusDistance" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "isActive" ;
-	x3d:protoField "isActive" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "traceEnabled" ;
-	x3d:protoField "traceEnabled" .
+          :CameraMovementScript x3d:hasIS :IS_2_3_2_1 .
+:IS_2_3_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "enabled" ;
+  x3d:protoField "enabled" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "duration" ;
+  x3d:protoField "duration" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalPosition" ;
+  x3d:protoField "goalPosition" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalOrientation" ;
+  x3d:protoField "goalOrientation" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "tracking" ;
+  x3d:protoField "tracking" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalAimPoint" ;
+  x3d:protoField "goalAimPoint" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalFieldOfView" ;
+  x3d:protoField "goalFieldOfView" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalFStop" ;
+  x3d:protoField "goalFStop" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "goalFocusDistance" ;
+  x3d:protoField "goalFocusDistance" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "isActive" ;
+  x3d:protoField "isActive" .
+:connect_2_3_2_1_13 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "traceEnabled" ;
+  x3d:protoField "traceEnabled" .
 
           
 ecmascript:
@@ -1434,168 +1492,188 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraMovement] ' + outputString + '\n');
 }
 
-        :ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:appinfo "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)." ;
-	x3d:name "OfflineRender" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this OfflineRender" ;
-	x3d:name "description" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this OfflineRender can be activated" ;
-	x3d:name "enabled" ;
-	x3d:value "true" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Frames per second recorded for this rendering" ;
-	x3d:name "frameRate" ;
-	x3d:value "30" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Size of frame in number of pixels width and height" ;
-	x3d:name "frameSize" ;
-	x3d:value "640 480" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Relative dimensions of pixel height/width typically 1.33 or 1" ;
-	x3d:name "pixelAspectRatio" ;
-	x3d:value "1.33" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "Begin render operation" ;
-	x3d:name "set_startTime" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Progress performing render operation (0..1)" ;
-	x3d:name "progress" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Render operation complete" ;
-	x3d:name "renderCompleteTime" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "Format of rendered output movie (mpeg mp4 etc.), use first supported format" ;
-	x3d:name "movieFormat" ;
-	x3d:value "mpeg" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "Format of rendered output images (png jpeg gif tiff etc.) use first supported format" ;
-	x3d:name "imageFormat" ;
-	x3d:value "png" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" ;
-	x3d:value "false" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:OfflineRenderScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:mustEvaluate "true" ;
-	x3d:directOutput "false" ;
-	x3d:containerField "children" .
+        :ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:appinfo "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)." ;
+  x3d:name "OfflineRender" .
+:ProtoInterface_2_4 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this OfflineRender" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this OfflineRender can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Frames per second recorded for this rendering" ;
+  x3d:name "frameRate" ;
+  x3d:type "SFFloat" ;
+  x3d:value "30" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Size of frame in number of pixels width and height" ;
+  x3d:name "frameSize" ;
+  x3d:type "SFVec2f" ;
+  x3d:value "640 480" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Relative dimensions of pixel height/width typically 1.33 or 1" ;
+  x3d:name "pixelAspectRatio" ;
+  x3d:type "SFFloat" ;
+  x3d:value "1.33" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "Begin render operation" ;
+  x3d:name "set_startTime" ;
+  x3d:type "SFTime" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Progress performing render operation (0..1)" ;
+  x3d:name "progress" ;
+  x3d:type "SFFloat" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Render operation complete" ;
+  x3d:name "renderCompleteTime" ;
+  x3d:type "SFTime" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "Format of rendered output movie (mpeg mp4 etc.), use first supported format" ;
+  x3d:name "movieFormat" ;
+  x3d:type "MFString" ;
+  x3d:value "mpeg" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "Format of rendered output images (png jpeg gif tiff etc.) use first supported format" ;
+  x3d:name "imageFormat" ;
+  x3d:type "MFString" ;
+  x3d:value "png" .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:ProtoBody_2_4 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:OfflineRenderScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:mustEvaluate "true" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Text description to be displayed for this OfflineRender" ;
-	x3d:name "description" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Text description to be displayed for this OfflineRender" ;
+  x3d:name "description" ;
+  x3d:type "SFString" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Whether this OfflineRender can be activated" ;
-	x3d:name "enabled" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Whether this OfflineRender can be activated" ;
+  x3d:name "enabled" ;
+  x3d:type "SFBool" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Frames per second recorded for this rendering" ;
-	x3d:name "frameRate" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Frames per second recorded for this rendering" ;
+  x3d:name "frameRate" ;
+  x3d:type "SFFloat" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Size of frame in number of pixels width and height" ;
-	x3d:name "frameSize" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Size of frame in number of pixels width and height" ;
+  x3d:name "frameSize" ;
+  x3d:type "SFVec2f" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "Relative dimensions of pixel height/width typically 1.33 or 1" ;
-	x3d:name "pixelAspectRatio" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "Relative dimensions of pixel height/width typically 1.33 or 1" ;
+  x3d:name "pixelAspectRatio" ;
+  x3d:type "SFFloat" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:appinfo "Begin render operation" ;
-	x3d:name "set_startTime" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:appinfo "Begin render operation" ;
+  x3d:name "set_startTime" ;
+  x3d:type "SFTime" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Progress performing render operation (0..1)" ;
-	x3d:name "progress" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Progress performing render operation (0..1)" ;
+  x3d:name "progress" ;
+  x3d:type "SFFloat" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "Render operation complete" ;
-	x3d:name "renderCompleteTime" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "Render operation complete" ;
+  x3d:name "renderCompleteTime" ;
+  x3d:type "SFTime" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "Format of rendered output movie (mpeg mp4 etc.)" ;
-	x3d:name "movieFormat" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "Format of rendered output movie (mpeg mp4 etc.)" ;
+  x3d:name "movieFormat" ;
+  x3d:type "MFString" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "Format of rendered output images (png jpeg gif tiff etc.)" ;
-	x3d:name "imageFormat" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "Format of rendered output images (png jpeg gif tiff etc.)" ;
+  x3d:name "imageFormat" ;
+  x3d:type "MFString" .
 
-          :OfflineRenderScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "enable console output to trace script computations and prototype progress" ;
-	x3d:name "traceEnabled" .
+          :OfflineRenderScript x3d:hasfield :field_2_4_2_1 .
+:field_2_4_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "enable console output to trace script computations and prototype progress" ;
+  x3d:name "traceEnabled" ;
+  x3d:type "SFBool" .
 
-          :OfflineRenderScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "enabled" ;
-	x3d:protoField "enabled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "frameRate" ;
-	x3d:protoField "frameRate" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "frameSize" ;
-	x3d:protoField "frameSize" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "pixelAspectRatio" ;
-	x3d:protoField "pixelAspectRatio" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_startTime" ;
-	x3d:protoField "set_startTime" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "progress" ;
-	x3d:protoField "progress" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "renderCompleteTime" ;
-	x3d:protoField "renderCompleteTime" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "movieFormat" ;
-	x3d:protoField "movieFormat" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "imageFormat" ;
-	x3d:protoField "imageFormat" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "traceEnabled" ;
-	x3d:protoField "traceEnabled" .
+          :OfflineRenderScript x3d:hasIS :IS_2_4_2_1 .
+:IS_2_4_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "enabled" ;
+  x3d:protoField "enabled" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "frameRate" ;
+  x3d:protoField "frameRate" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "frameSize" ;
+  x3d:protoField "frameSize" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "pixelAspectRatio" ;
+  x3d:protoField "pixelAspectRatio" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_startTime" ;
+  x3d:protoField "set_startTime" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "progress" ;
+  x3d:protoField "progress" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "renderCompleteTime" ;
+  x3d:protoField "renderCompleteTime" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "movieFormat" ;
+  x3d:protoField "movieFormat" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "imageFormat" ;
+  x3d:protoField "imageFormat" .
+:connect_2_4_2_1_12 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "traceEnabled" ;
+  x3d:protoField "traceEnabled" .
 
           
 ecmascript:
@@ -1653,51 +1731,17 @@ function alwaysPrint (outputValue)
          Browser.print ('[OfflineRender] ' + outputString + '\n');
 }
 
-        :Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:skyColor "0.282353 0.380392 0.470588" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:Anchor-anonymous rdf:type owl:NamedIndividual , x3d:Anchor ;
-	x3d:description "launch CameraExample scene" ;
-	x3d:url "CameraExamples.x3d http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d CameraExamples.wrl http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "CameraPrototypes.x3d defines multiple prototype nodes  Click on this text to see CameraExamples.x3d scene" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
-	x3d:justify "MIDDLE MIDDLE" ;
-	x3d:family "SERIF" ;
-	x3d:horizontal "true" ;
-	x3d:leftToRight "true" ;
-	x3d:size "1.0" ;
-	x3d:spacing "1.0" ;
-	x3d:style "PLAIN" ;
-	x3d:topToBottom "true" ;
-	x3d:containerField "fontStyle" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "1 1 0.2" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
+        :Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:skyColor "0.282353 0.380392 0.470588" .
+:Anchor_2 rdf:type owl:NamedIndividual, x3d:Anchor ;
+  x3d:description "launch CameraExample scene" ;
+  x3d:url "CameraExamples.x3d http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d CameraExamples.wrl http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl" .
+:Transform_2_6 rdf:type owl:NamedIndividual, x3d:Transform .
+:Shape_2_6_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Text_2_6_1_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "CameraPrototypes.x3d defines multiple prototype nodes  Click on this text to see CameraExamples.x3d scene" .
+:FontStyle_2_6_1_1_1 rdf:type owl:NamedIndividual, x3d:FontStyle ;
+  x3d:justify "MIDDLE MIDDLE" .
+:Appearance_2_6_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_6_1_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "1 1 0.2" .

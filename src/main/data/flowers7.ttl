@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/flowers7.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,318 +7,301 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:background rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:backUrl "../resources/images/all_probes/beach_cross/beach_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png" ;
-	x3d:bottomUrl "../resources/images/all_probes/beach_cross/beach_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png" ;
-	x3d:frontUrl "../resources/images/all_probes/beach_cross/beach_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png" ;
-	x3d:leftUrl "../resources/images/all_probes/beach_cross/beach_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png" ;
-	x3d:rightUrl "../resources/images/all_probes/beach_cross/beach_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png" ;
-	x3d:topUrl "../resources/images/all_probes/beach_cross/beach_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png" ;
-	x3d:skyColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:position "0 0 40" ;
-	x3d:description "Transparent rose" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor ".7 .7 .7" ;
-	x3d:specularColor ".5 .5 .5" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:texture rdf:type owl:NamedIndividual , x3d:ComposedCubeMapTexture ;
-	x3d:containerField "texture" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
+:background rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:backUrl "../resources/images/all_probes/beach_cross/beach_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png" ;
+  x3d:bottomUrl "../resources/images/all_probes/beach_cross/beach_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png" ;
+  x3d:frontUrl "../resources/images/all_probes/beach_cross/beach_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png" ;
+  x3d:leftUrl "../resources/images/all_probes/beach_cross/beach_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png" ;
+  x3d:rightUrl "../resources/images/all_probes/beach_cross/beach_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png" ;
+  x3d:topUrl "../resources/images/all_probes/beach_cross/beach_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png" .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:position "0 0 40" ;
+  x3d:description "Transparent rose" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:Shape_2_4 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_4_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_4_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor ".7 .7 .7" ;
+  x3d:specularColor ".5 .5 .5" .
+:texture rdf:type owl:NamedIndividual, x3d:ComposedCubeMapTexture ;
+  x3d:containerField "texture" .
 :texture x3d:hasImageTexture :backShader .
-:backShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "back" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
+:backShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "back" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png" .
 :texture x3d:hasImageTexture :bottomShader .
-:bottomShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "bottom" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
+:bottomShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "bottom" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png" .
 :texture x3d:hasImageTexture :frontShader .
-:frontShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "front" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
+:frontShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "front" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png" .
 :texture x3d:hasImageTexture :leftShader .
-:leftShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "left" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
+:leftShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "left" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png" .
 :texture x3d:hasImageTexture :rightShader .
-:rightShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "right" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
+:rightShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "right" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png" .
 :texture x3d:hasImageTexture :topShader .
-:topShader rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:containerField "top" ;
-	x3d:url "../resources/images/all_probes/beach_cross/beach_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:x3dom rdf:type owl:NamedIndividual , x3d:ComposedShader ;
-	x3d:language "GLSL" ;
-	x3d:containerField "shaders" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "cube" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "chromaticDispertion" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "0.98 1.0 1.033" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "bias" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.5" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "scale" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.5" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "power" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "2" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "a" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "10" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "b" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "1" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "c" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "20" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "d" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "20" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "tdelta" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
-:x3dom x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "pdelta" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
-:x3dom x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/x3dom_flowers_chromatic.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" ;
-	x3d:containerField "parts" .
-:x3dom x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/common.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" ;
-	x3d:containerField "parts" .
-:x_ite rdf:type owl:NamedIndividual , x3d:ComposedShader ;
-	x3d:language "GLSL" ;
-	x3d:containerField "shaders" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "cube" ;
-	x3d:accessType "inputOutput" .
-:ComposedCubeMapTexture-anonymous rdf:type owl:NamedIndividual , x3d:ComposedCubeMapTexture ;
-	x3d:USE "texture" ;
-	x3d:containerField "texture" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "chromaticDispertion" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "0.98 1.0 1.033" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "bias" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "0.5" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "scale" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "0.5" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "power" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "2" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "a" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "10" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "b" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "1" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "c" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "20" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "d" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "20" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "tdelta" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "0" .
-:x_ite x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "pdelta" ;
-	x3d:accessType "inputOnly" ;
-	x3d:value "0" .
-:x_ite x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/x_ite_flowers_chromatic.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" ;
-	x3d:containerField "parts" .
-:x_ite x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/common.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" ;
-	x3d:containerField "parts" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius "1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:UrlSelector rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:topShader rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:containerField "top" ;
+  x3d:url "../resources/images/all_probes/beach_cross/beach_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png" .
+:x3dom rdf:type owl:NamedIndividual, x3d:ComposedShader ;
+  x3d:language "GLSL" ;
+  x3d:containerField "shaders" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "cube" ;
+  x3d:type "SFInt32" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "chromaticDispertion" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.98 1.0 1.033" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "bias" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0.5" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "scale" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0.5" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "power" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "2" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "a" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "10" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "b" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "1" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "c" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "20" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "d" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "20" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "tdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
+:x3dom x3d:hasfield :field_2_4_1_1_3 .
+:field_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "pdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
+:x3dom x3d:hasShaderPart :ShaderPart_2_4_1_1_3 .
+:ShaderPart_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/x3dom_flowers_chromatic.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" ;
+  x3d:containerField "parts" .
+:x3dom x3d:hasShaderPart :ShaderPart_2_4_1_1_3 .
+:ShaderPart_2_4_1_1_3 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/common.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" ;
+  x3d:containerField "parts" ;
+  x3d:type "FRAGMENT" .
+:x_ite rdf:type owl:NamedIndividual, x3d:ComposedShader ;
+  x3d:language "GLSL" ;
+  x3d:containerField "shaders" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "cube" ;
+  x3d:type "SFNode" ;
+  x3d:accessType "inputOutput" .
+:texture-USE-1 rdf:type owl:NamedIndividual, x3d:ComposedCubeMapTexture ;
+  x3d:containerField "texture" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "chromaticDispertion" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.98 1.0 1.033" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "bias" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "0.5" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "scale" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "0.5" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "power" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "2" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "a" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "10" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "b" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "1" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "c" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "20" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "d" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "20" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "tdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "0" .
+:x_ite x3d:hasfield :field_2_4_1_1_4 .
+:field_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "pdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" ;
+  x3d:value "0" .
+:x_ite x3d:hasShaderPart :ShaderPart_2_4_1_1_4 .
+:ShaderPart_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/x_ite_flowers_chromatic.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" ;
+  x3d:containerField "parts" .
+:x_ite x3d:hasShaderPart :ShaderPart_2_4_1_1_4 .
+:ShaderPart_2_4_1_1_4 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/common.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" ;
+  x3d:containerField "parts" ;
+  x3d:type "FRAGMENT" .
+:Sphere_2_4_1 rdf:type owl:NamedIndividual, x3d:Sphere .
+:UrlSelector rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "frontUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_front.png ../resources/images/all_probes/building_cross/building_front.png ../resources/images/all_probes/campus_cross/campus_front.png ../resources/images/all_probes/galileo_cross/galileo_front.png ../resources/images/all_probes/grace_cross/grace_front.png ../resources/images/all_probes/kitchen_cross/kitchen_front.png ../resources/images/all_probes/rnl_cross/rnl_front.png ../resources/images/all_probes/stpeters_cross/stpeters_front.png ../resources/images/all_probes/uffizi_cross/uffizi_front.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "frontUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_front.png ../resources/images/all_probes/building_cross/building_front.png ../resources/images/all_probes/campus_cross/campus_front.png ../resources/images/all_probes/galileo_cross/galileo_front.png ../resources/images/all_probes/grace_cross/grace_front.png ../resources/images/all_probes/kitchen_cross/kitchen_front.png ../resources/images/all_probes/rnl_cross/rnl_front.png ../resources/images/all_probes/stpeters_cross/stpeters_front.png ../resources/images/all_probes/uffizi_cross/uffizi_front.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "backUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_back.png ../resources/images/all_probes/building_cross/building_back.png ../resources/images/all_probes/campus_cross/campus_back.png ../resources/images/all_probes/galileo_cross/galileo_back.png ../resources/images/all_probes/grace_cross/grace_back.png ../resources/images/all_probes/kitchen_cross/kitchen_back.png ../resources/images/all_probes/rnl_cross/rnl_back.png ../resources/images/all_probes/stpeters_cross/stpeters_back.png ../resources/images/all_probes/uffizi_cross/uffizi_back.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "backUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_back.png ../resources/images/all_probes/building_cross/building_back.png ../resources/images/all_probes/campus_cross/campus_back.png ../resources/images/all_probes/galileo_cross/galileo_back.png ../resources/images/all_probes/grace_cross/grace_back.png ../resources/images/all_probes/kitchen_cross/kitchen_back.png ../resources/images/all_probes/rnl_cross/rnl_back.png ../resources/images/all_probes/stpeters_cross/stpeters_back.png ../resources/images/all_probes/uffizi_cross/uffizi_back.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "leftUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_left.png ../resources/images/all_probes/building_cross/building_left.png ../resources/images/all_probes/campus_cross/campus_left.png ../resources/images/all_probes/galileo_cross/galileo_left.png ../resources/images/all_probes/grace_cross/grace_left.png ../resources/images/all_probes/kitchen_cross/kitchen_left.png ../resources/images/all_probes/rnl_cross/rnl_left.png ../resources/images/all_probes/stpeters_cross/stpeters_left.png ../resources/images/all_probes/uffizi_cross/uffizi_left.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "leftUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_left.png ../resources/images/all_probes/building_cross/building_left.png ../resources/images/all_probes/campus_cross/campus_left.png ../resources/images/all_probes/galileo_cross/galileo_left.png ../resources/images/all_probes/grace_cross/grace_left.png ../resources/images/all_probes/kitchen_cross/kitchen_left.png ../resources/images/all_probes/rnl_cross/rnl_left.png ../resources/images/all_probes/stpeters_cross/stpeters_left.png ../resources/images/all_probes/uffizi_cross/uffizi_left.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "rightUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_right.png ../resources/images/all_probes/building_cross/building_right.png ../resources/images/all_probes/campus_cross/campus_right.png ../resources/images/all_probes/galileo_cross/galileo_right.png ../resources/images/all_probes/grace_cross/grace_right.png ../resources/images/all_probes/kitchen_cross/kitchen_right.png ../resources/images/all_probes/rnl_cross/rnl_right.png ../resources/images/all_probes/stpeters_cross/stpeters_right.png ../resources/images/all_probes/uffizi_cross/uffizi_right.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "rightUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_right.png ../resources/images/all_probes/building_cross/building_right.png ../resources/images/all_probes/campus_cross/campus_right.png ../resources/images/all_probes/galileo_cross/galileo_right.png ../resources/images/all_probes/grace_cross/grace_right.png ../resources/images/all_probes/kitchen_cross/kitchen_right.png ../resources/images/all_probes/rnl_cross/rnl_right.png ../resources/images/all_probes/stpeters_cross/stpeters_right.png ../resources/images/all_probes/uffizi_cross/uffizi_right.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "topUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_top.png ../resources/images/all_probes/building_cross/building_top.png ../resources/images/all_probes/campus_cross/campus_top.png ../resources/images/all_probes/galileo_cross/galileo_top.png ../resources/images/all_probes/grace_cross/grace_top.png ../resources/images/all_probes/kitchen_cross/kitchen_top.png ../resources/images/all_probes/rnl_cross/rnl_top.png ../resources/images/all_probes/stpeters_cross/stpeters_top.png ../resources/images/all_probes/uffizi_cross/uffizi_top.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "topUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_top.png ../resources/images/all_probes/building_cross/building_top.png ../resources/images/all_probes/campus_cross/campus_top.png ../resources/images/all_probes/galileo_cross/galileo_top.png ../resources/images/all_probes/grace_cross/grace_top.png ../resources/images/all_probes/kitchen_cross/kitchen_top.png ../resources/images/all_probes/rnl_cross/rnl_top.png ../resources/images/all_probes/stpeters_cross/stpeters_top.png ../resources/images/all_probes/uffizi_cross/uffizi_top.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "bottomUrls" ;
-	x3d:accessType "initializeOnly" ;
-	x3d:value "../resources/images/all_probes/beach_cross/beach_bottom.png ../resources/images/all_probes/building_cross/building_bottom.png ../resources/images/all_probes/campus_cross/campus_bottom.png ../resources/images/all_probes/galileo_cross/galileo_bottom.png ../resources/images/all_probes/grace_cross/grace_bottom.png ../resources/images/all_probes/kitchen_cross/kitchen_bottom.png ../resources/images/all_probes/rnl_cross/rnl_bottom.png ../resources/images/all_probes/stpeters_cross/stpeters_bottom.png ../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "bottomUrls" ;
+  x3d:type "MFString" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:value "../resources/images/all_probes/beach_cross/beach_bottom.png ../resources/images/all_probes/building_cross/building_bottom.png ../resources/images/all_probes/campus_cross/campus_bottom.png ../resources/images/all_probes/galileo_cross/galileo_bottom.png ../resources/images/all_probes/grace_cross/grace_bottom.png ../resources/images/all_probes/kitchen_cross/kitchen_bottom.png ../resources/images/all_probes/rnl_cross/rnl_bottom.png ../resources/images/all_probes/stpeters_cross/stpeters_bottom.png ../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "front" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "front" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "back" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "back" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
  
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "left" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "left" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
  
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "right" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "right" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "top" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "top" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "bottom" ;
-	x3d:accessType "inputOutput" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "bottom" ;
+  x3d:type "MFString" ;
+  x3d:accessType "inputOutput" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "set_fraction" ;
-	x3d:accessType "inputOnly" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" .
 
-            :UrlSelector x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "old" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "-1" .
+            :UrlSelector x3d:hasfield :field_2_5 .
+:field_2_5 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "old" ;
+  x3d:type "SFInt32" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "-1" .
 
 
 ecmascript:
@@ -338,52 +321,57 @@ ecmascript:
             }
         }
 
-:Animate rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "true" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:Animate rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:directOutput "true" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "set_fraction" ;
-	x3d:accessType "inputOnly" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOnly" .
 
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "a" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "10" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "a" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "10" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "b" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "1" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "b" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "1" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "c" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "20" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "c" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "20" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "d" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "20" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "d" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "20" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "tdelta" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "tdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
 
-                  :Animate x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "pdelta" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
+                  :Animate x3d:hasfield :field_2_6 .
+:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "pdelta" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
 
 
 ecmascript:
@@ -426,77 +414,71 @@ function set_fraction() {
 	}
 }
 
-:TourTime rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "5" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "TourTime" ;
-	x3d:fromField "fraction_changed" ;
-	x3d:toNode "Animate" ;
-	x3d:toField "set_fraction" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "a" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "a" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "b" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "b" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "c" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "c" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "d" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "d" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "pdelta" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "pdelta" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "tdelta" ;
-	x3d:toNode "x_ite" ;
-	x3d:toField "tdelta" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "a" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "a" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "b" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "b" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "c" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "c" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "d" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "d" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "pdelta" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "pdelta" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Animate" ;
-	x3d:fromField "tdelta" ;
-	x3d:toNode "x3dom" ;
-	x3d:toField "tdelta" .
+:TourTime rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "5" ;
+  x3d:loop "true" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "TourTime" ;
+  x3d:fromField "fraction_changed" ;
+  x3d:toNode "Animate" ;
+  x3d:toField "set_fraction" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "a" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "a" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "b" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "b" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "c" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "c" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "d" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "d" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "pdelta" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "pdelta" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "tdelta" ;
+  x3d:toNode "x_ite" ;
+  x3d:toField "tdelta" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "a" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "a" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "b" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "b" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "c" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "c" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "d" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "d" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "pdelta" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "pdelta" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Animate" ;
+  x3d:fromField "tdelta" ;
+  x3d:toNode "x3dom" ;
+  x3d:toField "tdelta" .

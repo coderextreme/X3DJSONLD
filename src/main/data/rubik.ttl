@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/rubik.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,187 +7,120 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Rubiks Cube" ;
-	x3d:position "0 0 12" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "sphere" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "xtranslation" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0 0.0 0.0" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "translation" ;
-	x3d:protoField "xtranslation" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius "1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "1 1 1" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "three" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "ytranslation" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0 0.0 0.0" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "translation" ;
-	x3d:protoField "ytranslation" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "sphere" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "xtranslation" ;
-	x3d:value "0 0 0" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "sphere" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "xtranslation" ;
-	x3d:value "2 0 0" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "sphere" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "xtranslation" ;
-	x3d:value "-2 0 0" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "nine" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "ztranslation" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0 0.0 0.0" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "translation" ;
-	x3d:protoField "ztranslation" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "three" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ytranslation" ;
-	x3d:value "0 0 0" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "three" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ytranslation" ;
-	x3d:value "0 2 0" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "three" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ytranslation" ;
-	x3d:value "0 -2 0" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "twentyseven" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "ttranslation" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0 0.0 0.0" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "translation" ;
-	x3d:protoField "ttranslation" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "nine" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ztranslation" ;
-	x3d:value "0 0 0" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "nine" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ztranslation" ;
-	x3d:value "0 0 2" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "nine" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ztranslation" ;
-	x3d:value "0 0 -2" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "twentyseven" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "ttranslation" ;
-	x3d:value "0 0 0" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo ;
+  x3d:type "EXAMINE" .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Rubiks Cube" ;
+  x3d:position "0 0 12" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "sphere" .
+:ProtoInterface_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "xtranslation" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.0 0.0 0.0" .
+:ProtoBody_2_3 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_3_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:IS_2_3_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_3_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "translation" ;
+  x3d:protoField "xtranslation" .
+:Shape_2_3_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Sphere_2_3_2_1_2 rdf:type owl:NamedIndividual, x3d:Sphere .
+:Appearance_2_3_2_1_2 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_3_2_1_2_2 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "1 1 1" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "three" .
+:ProtoInterface_2_4 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_4_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "ytranslation" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.0 0.0 0.0" .
+:ProtoBody_2_4 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_4_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:IS_2_4_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_4_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "translation" ;
+  x3d:protoField "ytranslation" .
+:ProtoInstance_2_4_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "sphere" .
+:fieldValue_2_4_2_1_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "xtranslation" ;
+  x3d:value "0 0 0" .
+:ProtoInstance_2_4_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "sphere" .
+:fieldValue_2_4_2_1_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "xtranslation" ;
+  x3d:value "2 0 0" .
+:ProtoInstance_2_4_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "sphere" .
+:fieldValue_2_4_2_1_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "xtranslation" ;
+  x3d:value "-2 0 0" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "nine" .
+:ProtoInterface_2_5 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_5_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "ztranslation" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.0 0.0 0.0" .
+:ProtoBody_2_5 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_5_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:IS_2_5_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_5_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "translation" ;
+  x3d:protoField "ztranslation" .
+:ProtoInstance_2_5_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "three" .
+:fieldValue_2_5_2_1_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ytranslation" ;
+  x3d:value "0 0 0" .
+:ProtoInstance_2_5_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "three" .
+:fieldValue_2_5_2_1_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ytranslation" ;
+  x3d:value "0 2 0" .
+:ProtoInstance_2_5_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "three" .
+:fieldValue_2_5_2_1_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ytranslation" ;
+  x3d:value "0 -2 0" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "twentyseven" .
+:ProtoInterface_2_6 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_6_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "ttranslation" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.0 0.0 0.0" .
+:ProtoBody_2_6 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_6_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:IS_2_6_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_6_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "translation" ;
+  x3d:protoField "ttranslation" .
+:ProtoInstance_2_6_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "nine" .
+:fieldValue_2_6_2_1_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ztranslation" ;
+  x3d:value "0 0 0" .
+:ProtoInstance_2_6_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "nine" .
+:fieldValue_2_6_2_1_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ztranslation" ;
+  x3d:value "0 0 2" .
+:ProtoInstance_2_6_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "nine" .
+:fieldValue_2_6_2_1_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ztranslation" ;
+  x3d:value "0 0 -2" .
+:ProtoInstance_2 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "twentyseven" .
+:fieldValue_2_7 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "ttranslation" ;
+  x3d:value "0 0 0" .
