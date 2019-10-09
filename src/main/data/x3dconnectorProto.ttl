@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/x3dconnectorProto.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,403 +7,205 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:position "0 0 5" ;
-	x3d:description "Only Viewpoint" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:skyColor "0.4 0.4 0.4" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:G1 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:G1 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.7 0.2 0.2" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius ".1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:position "0 0 5" ;
+  x3d:description "Only Viewpoint" .
+:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:skyColor "0.4 0.4 0.4" .
+:G1 rdf:type owl:NamedIndividual, x3d:Transform .
+:G1 x3d:hasShape :Shape_2_3 .
+:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_3_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.7 0.2 0.2" .
+:Sphere_2_3_1 rdf:type owl:NamedIndividual, x3d:Sphere ;
+  x3d:radius ".1" .
 :G1 x3d:hasPlaneSensor :PS1 .
-:PS1 rdf:type owl:NamedIndividual , x3d:PlaneSensor ;
-	x3d:description "Grab to move" ;
-	x3d:autoOffset "true" ;
-	x3d:axisRotation "0 1 0 0" ;
-	x3d:enabled "true" ;
-	x3d:maxPosition "-1 -1" ;
-	x3d:minPosition "0 0" ;
-	x3d:offset "0 0 0" ;
-	x3d:containerField "children" .
-:G1 x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "PS1" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "G1" ;
-	x3d:toField "set_translation" .
-:G2 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "1 -1 .01" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:G2 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.2" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius ".1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:PS1 rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
+  x3d:description "Grab to move" .
+:G1 x3d:hasROUTE :ROUTE_2_3 .
+:ROUTE_2_3 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "PS1" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "G1" ;
+  x3d:toField "set_translation" .
+:G2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "1 -1 .01" .
+:G2 x3d:hasShape :Shape_2_4 .
+:Shape_2_4 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_4_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_4_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.2" .
+:Sphere_2_4_1 rdf:type owl:NamedIndividual, x3d:Sphere ;
+  x3d:radius ".1" .
 :G2 x3d:hasPlaneSensor :PS2 .
-:PS2 rdf:type owl:NamedIndividual , x3d:PlaneSensor ;
-	x3d:description "Grab to move" ;
-	x3d:offset "1 -1 .01" ;
-	x3d:autoOffset "true" ;
-	x3d:axisRotation "0 1 0 0" ;
-	x3d:enabled "true" ;
-	x3d:maxPosition "-1 -1" ;
-	x3d:minPosition "0 0" ;
-	x3d:containerField "children" .
-:G2 x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "PS2" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "G2" ;
-	x3d:toField "set_translation" .
-:G3 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "1 1 .01" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:G3 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.2" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius ".1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:PS2 rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
+  x3d:description "Grab to move" ;
+  x3d:offset "1 -1 .01" .
+:G2 x3d:hasROUTE :ROUTE_2_4 .
+:ROUTE_2_4 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "PS2" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "G2" ;
+  x3d:toField "set_translation" .
+:G3 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "1 1 .01" .
+:G3 x3d:hasShape :Shape_2_5 .
+:Shape_2_5 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_5_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_5_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.2" .
+:Sphere_2_5_1 rdf:type owl:NamedIndividual, x3d:Sphere ;
+  x3d:radius ".1" .
 :G3 x3d:hasPlaneSensor :PS3 .
-:PS3 rdf:type owl:NamedIndividual , x3d:PlaneSensor ;
-	x3d:description "Grab to move" ;
-	x3d:offset "1 1 .01" ;
-	x3d:autoOffset "true" ;
-	x3d:axisRotation "0 1 0 0" ;
-	x3d:enabled "true" ;
-	x3d:maxPosition "-1 -1" ;
-	x3d:minPosition "0 0" ;
-	x3d:containerField "children" .
-:G3 x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "PS3" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "G3" ;
-	x3d:toField "set_translation" .
-:G4 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "-1 1 .01" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:G4 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.2" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius ".1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:PS3 rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
+  x3d:description "Grab to move" ;
+  x3d:offset "1 1 .01" .
+:G3 x3d:hasROUTE :ROUTE_2_5 .
+:ROUTE_2_5 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "PS3" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "G3" ;
+  x3d:toField "set_translation" .
+:G4 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "-1 1 .01" .
+:G4 x3d:hasShape :Shape_2_6 .
+:Shape_2_6 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_6_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_6_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.2" .
+:Sphere_2_6_1 rdf:type owl:NamedIndividual, x3d:Sphere ;
+  x3d:radius ".1" .
 :G4 x3d:hasPlaneSensor :PS4 .
-:PS4 rdf:type owl:NamedIndividual , x3d:PlaneSensor ;
-	x3d:description "Grab to move" ;
-	x3d:offset "-1 1 .01" ;
-	x3d:autoOffset "true" ;
-	x3d:axisRotation "0 1 0 0" ;
-	x3d:enabled "true" ;
-	x3d:maxPosition "-1 -1" ;
-	x3d:minPosition "0 0" ;
-	x3d:containerField "children" .
-:G4 x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "PS4" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "G4" ;
-	x3d:toField "set_translation" .
-:transC1 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:PS4 rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
+  x3d:description "Grab to move" ;
+  x3d:offset "-1 1 .01" .
+:G4 x3d:hasROUTE :ROUTE_2_6 .
+:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "PS4" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "G4" ;
+  x3d:toField "set_translation" .
+:transC1 rdf:type owl:NamedIndividual, x3d:Transform .
 :transC1 x3d:hasTransform :rotscaleC1 .
-:rotscaleC1 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:rotscaleC1 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.7" ;
-	x3d:transparency ".5" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:containerField "material" .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:radius ".05" ;
-	x3d:bottom "true" ;
-	x3d:height "2" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:transC2 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:rotscaleC1 rdf:type owl:NamedIndividual, x3d:Transform .
+:rotscaleC1 x3d:hasShape :Shape_2_7_1 .
+:Shape_2_7_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_7_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_7_1_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.7" ;
+  x3d:transparency ".5" .
+:Cylinder_2_7_1_1 rdf:type owl:NamedIndividual, x3d:Cylinder ;
+  x3d:radius ".05" .
+:transC2 rdf:type owl:NamedIndividual, x3d:Transform .
 :transC2 x3d:hasTransform :rotscaleC2 .
-:rotscaleC2 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:rotscaleC2 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.7" ;
-	x3d:transparency ".5" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:containerField "material" .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:radius ".05" ;
-	x3d:bottom "true" ;
-	x3d:height "2" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:transC3 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:rotscaleC2 rdf:type owl:NamedIndividual, x3d:Transform .
+:rotscaleC2 x3d:hasShape :Shape_2_8_1 .
+:Shape_2_8_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_8_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_8_1_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.7" ;
+  x3d:transparency ".5" .
+:Cylinder_2_8_1_1 rdf:type owl:NamedIndividual, x3d:Cylinder ;
+  x3d:radius ".05" .
+:transC3 rdf:type owl:NamedIndividual, x3d:Transform .
 :transC3 x3d:hasTransform :rotscaleC3 .
-:rotscaleC3 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:rotscaleC3 x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.2 0.7 0.7" ;
-	x3d:transparency ".5" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:containerField "material" .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:radius ".05" ;
-	x3d:bottom "true" ;
-	x3d:height "2" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "x3dconnector" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "startnode" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "endnode" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "transnode" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "rotscalenode" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_startpoint" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_endpoint" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:S1 rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:rotscaleC3 rdf:type owl:NamedIndividual, x3d:Transform .
+:rotscaleC3 x3d:hasShape :Shape_2_9_1 .
+:Shape_2_9_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_9_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_9_1_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.2 0.7 0.7" ;
+  x3d:transparency ".5" .
+:Cylinder_2_9_1_1 rdf:type owl:NamedIndividual, x3d:Cylinder ;
+  x3d:radius ".05" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "x3dconnector" .
+:ProtoInterface_2_10 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "startnode" ;
+  x3d:type "SFNode" .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "endnode" ;
+  x3d:type "SFNode" .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "transnode" ;
+  x3d:type "SFNode" .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "rotscalenode" ;
+  x3d:type "SFNode" .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_startpoint" ;
+  x3d:type "SFVec3f" .
+:field_2_10_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_endpoint" ;
+  x3d:type "SFVec3f" .
+:ProtoBody_2_10 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:S1 rdf:type owl:NamedIndividual, x3d:Script .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "startnode" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "startnode" ;
+  x3d:type "SFNode" .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "endnode" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "endnode" ;
+  x3d:type "SFNode" .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "transnode" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "transnode" ;
+  x3d:type "SFNode" .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:name "rotscalenode" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:name "rotscalenode" ;
+  x3d:type "SFNode" .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_startpoint" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_startpoint" ;
+  x3d:type "SFVec3f" .
 
-            :S1 x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_endpoint" .
+            :S1 x3d:hasfield :field_2_10_2_1 .
+:field_2_10_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_endpoint" ;
+  x3d:type "SFVec3f" .
 
-            :S1 x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "startnode" ;
-	x3d:protoField "startnode" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "endnode" ;
-	x3d:protoField "endnode" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "transnode" ;
-	x3d:protoField "transnode" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "rotscalenode" ;
-	x3d:protoField "rotscalenode" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_startpoint" ;
-	x3d:protoField "set_startpoint" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "set_endpoint" ;
-	x3d:protoField "set_endpoint" .
+            :S1 x3d:hasIS :IS_2_10_2_1 .
+:IS_2_10_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "startnode" ;
+  x3d:protoField "startnode" .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "endnode" ;
+  x3d:protoField "endnode" .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "transnode" ;
+  x3d:protoField "transnode" .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "rotscalenode" ;
+  x3d:protoField "rotscalenode" .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_startpoint" ;
+  x3d:protoField "set_startpoint" .
+:connect_2_10_2_1_7 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "set_endpoint" ;
+  x3d:protoField "set_endpoint" .
 
             ecmascript:
         function recompute(startpoint,endpoint){
@@ -445,216 +247,105 @@
             recompute_and_route(startnode.translation,val);
         }
             
-        :connector1 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "x3dconnector" ;
-	x3d:containerField "children" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "startnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "endnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G2" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "transnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "transC1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "rotscalenode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "rotscaleC1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_startpoint" .
-:connector1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_endpoint" .
-:connector2 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "x3dconnector" ;
-	x3d:containerField "children" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "startnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "endnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G3" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "transnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "transC2" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "rotscalenode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "rotscaleC2" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_startpoint" .
-:connector2 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_endpoint" .
-:connector3 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "x3dconnector" ;
-	x3d:containerField "children" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "startnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "endnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "G4" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "transnode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "transC3" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "rotscalenode" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:USE "rotscaleC3" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_startpoint" .
-:connector3 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "set_endpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G1" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector1" ;
-	x3d:toField "set_startpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G2" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector1" ;
-	x3d:toField "set_endpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G1" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector2" ;
-	x3d:toField "set_startpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G3" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector2" ;
-	x3d:toField "set_endpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G1" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector3" ;
-	x3d:toField "set_startpoint" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "G4" ;
-	x3d:fromField "translation_changed" ;
-	x3d:toNode "connector3" ;
-	x3d:toField "set_endpoint" .
+        :connector1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "x3dconnector" .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "startnode" .
+:G1-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "endnode" .
+:G2-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "transnode" .
+:transC1-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "rotscalenode" .
+:rotscaleC1-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_startpoint" .
+:connector1 x3d:hasfieldValue :fieldValue_2_11 .
+:fieldValue_2_11 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_endpoint" .
+:connector2 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "x3dconnector" .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "startnode" .
+:G1-USE-2 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "endnode" .
+:G3-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "transnode" .
+:transC2-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "rotscalenode" .
+:rotscaleC2-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_startpoint" .
+:connector2 x3d:hasfieldValue :fieldValue_2_12 .
+:fieldValue_2_12 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_endpoint" .
+:connector3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "x3dconnector" .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "startnode" .
+:G1-USE-3 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "endnode" .
+:G4-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "transnode" .
+:transC3-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "rotscalenode" .
+:rotscaleC3-USE-1 rdf:type owl:NamedIndividual, x3d:Transform .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_startpoint" .
+:connector3 x3d:hasfieldValue :fieldValue_2_13 .
+:fieldValue_2_13 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "set_endpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G1" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector1" ;
+  x3d:toField "set_startpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G2" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector1" ;
+  x3d:toField "set_endpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G1" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector2" ;
+  x3d:toField "set_startpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G3" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector2" ;
+  x3d:toField "set_endpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G1" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector3" ;
+  x3d:toField "set_startpoint" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "G4" ;
+  x3d:fromField "translation_changed" ;
+  x3d:toNode "connector3" ;
+  x3d:toField "set_endpoint" .

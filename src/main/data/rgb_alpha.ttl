@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,157 +7,36 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "6.14221 0.0694613 -0.000999451" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:RgbOpacityCheckerboard rdf:type owl:NamedIndividual , x3d:PixelTexture ;
-	x3d:image "2 2 4 0xFF0000FF 0xFFFF0000 0xFFFF0000 0xFF0000FF" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
-:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
-	x3d:size "2 2 2" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "-4.85443 0.0694381 -0.00149918" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:PixelTexture-anonymous rdf:type owl:NamedIndividual , x3d:PixelTexture ;
-	x3d:USE "RgbOpacityCheckerboard" ;
-	x3d:image "0 0 0" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius "1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "-1.47341 0.036672 -0.00175095" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:PixelTexture-anonymous rdf:type owl:NamedIndividual , x3d:PixelTexture ;
-	x3d:USE "RgbOpacityCheckerboard" ;
-	x3d:image "0 0 0" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
-:Cone-anonymous rdf:type owl:NamedIndividual , x3d:Cone ;
-	x3d:bottomRadius "1" ;
-	x3d:height "2" ;
-	x3d:side "true" ;
-	x3d:bottom "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "2.31094 0.0694206 -0.00187683" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:PixelTexture-anonymous rdf:type owl:NamedIndividual , x3d:PixelTexture ;
-	x3d:USE "RgbOpacityCheckerboard" ;
-	x3d:image "0 0 0" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:bottom "true" ;
-	x3d:height "2" ;
-	x3d:radius "1" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo ;
+  x3d:type "EXAMINE WALK FLY ANY" .
+:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
+:Transform_2_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "6.14221 0.0694613 -0.000999451" .
+:Shape_2_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_2_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Material .
+:RgbOpacityCheckerboard rdf:type owl:NamedIndividual, x3d:PixelTexture ;
+  x3d:image "2 2 4 0xFF0000FF 0xFFFF0000 0xFFFF0000 0xFF0000FF" .
+:Box_2_2_1_1 rdf:type owl:NamedIndividual, x3d:Box .
+:Transform_2_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "-4.85443 0.0694381 -0.00149918" .
+:Shape_2_2_2 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_2_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_2_2_1_1 rdf:type owl:NamedIndividual, x3d:Material .
+:RgbOpacityCheckerboard-USE-1 rdf:type owl:NamedIndividual, x3d:PixelTexture .
+:Sphere_2_2_2_1 rdf:type owl:NamedIndividual, x3d:Sphere .
+:Transform_2_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "-1.47341 0.036672 -0.00175095" .
+:Shape_2_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_2_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_2_3_1_1 rdf:type owl:NamedIndividual, x3d:Material .
+:RgbOpacityCheckerboard-USE-2 rdf:type owl:NamedIndividual, x3d:PixelTexture .
+:Cone_2_2_3_1 rdf:type owl:NamedIndividual, x3d:Cone .
+:Transform_2_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "2.31094 0.0694206 -0.00187683" .
+:Shape_2_2_4 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_2_4_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_2_4_1_1 rdf:type owl:NamedIndividual, x3d:Material .
+:RgbOpacityCheckerboard-USE-3 rdf:type owl:NamedIndividual, x3d:PixelTexture .
+:Cylinder_2_2_4_1 rdf:type owl:NamedIndividual, x3d:Cylinder .

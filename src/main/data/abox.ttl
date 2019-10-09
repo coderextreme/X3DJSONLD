@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/abox.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,84 +7,43 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "anyShape" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "myShape" ;
-	x3d:accessType "inputOutput" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:containerField "geometry" ;
-	x3d:radius "1" ;
-	x3d:solid "true" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "children" ;
-	x3d:protoField "myShape" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "one" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "myShape" ;
-	x3d:accessType "inputOutput" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:containerField "geometry" ;
-	x3d:bottom "true" ;
-	x3d:height "2" ;
-	x3d:radius "1" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "anyShape" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "myShape" ;
-	x3d:protoField "myShape" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "one" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "myShape" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Box-anonymous rdf:type owl:NamedIndividual , x3d:Box ;
-	x3d:containerField "geometry" ;
-	x3d:size "140 140 140" ;
-	x3d:solid "true" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "anyShape" .
+:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "myShape" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "MFNode" .
+:Shape_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Sphere_2_1_1_1_1 rdf:type owl:NamedIndividual, x3d:Sphere .
+:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_1_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:IS_2_1_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "children" ;
+  x3d:protoField "myShape" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "one" .
+:ProtoInterface_2_2 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "myShape" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "MFNode" .
+:Shape_2_2_1_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Cylinder_2_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Cylinder .
+:ProtoBody_2_2 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Transform_2_2_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:ProtoInstance_2_2_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "anyShape" .
+:IS_2_2_2_1_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_2_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "myShape" ;
+  x3d:protoField "myShape" .
+:ProtoInstance_2 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "one" .
+:fieldValue_2_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "myShape" .
+:Shape_2_3_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Box_2_3_1_1 rdf:type owl:NamedIndividual, x3d:Box ;
+  x3d:size "140 140 140" .

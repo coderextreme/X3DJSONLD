@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/sphereflowers.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,108 +7,63 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
-	x3d:bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
-	x3d:frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
-	x3d:leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
-	x3d:rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
-	x3d:topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
-	x3d:skyColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
-	x3d:name "FlowerProto" ;
-	x3d:url "../data/flowerproto.json#FlowerProto" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:name "vertex" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:name "fragment" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "flower" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "FlowerProto" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "vertex" ;
-	x3d:value "../shaders/x_ite_flowers_chromatic.vs" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "fragment" ;
-	x3d:value "../shaders/common.fs" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "flower" ;
-	x3d:containerField "children" .
-:SongTime rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:loop "true" ;
-	x3d:cycleInterval "1.0" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:Sound-anonymous rdf:type owl:NamedIndividual , x3d:Sound ;
-	x3d:maxBack "100" ;
-	x3d:maxFront "100" ;
-	x3d:minBack "20" ;
-	x3d:minFront "20" ;
-	x3d:direction "0 0 1" ;
-	x3d:intensity "1" ;
-	x3d:location "0 0 0" ;
-	x3d:priority "0" ;
-	x3d:spatialize "true" ;
-	x3d:containerField "children" .
-:AudioClip rdf:type owl:NamedIndividual , x3d:AudioClip ;
-	x3d:description "Chandubabamusic #1" ;
-	x3d:url "../resources/chandubabamusic1.wav" ;
-	x3d:loop "false" ;
-	x3d:pitch "1.0" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "source" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "cycleTime" ;
-	x3d:fromNode "SongTime" ;
-	x3d:toField "startTime" ;
-	x3d:toNode "AudioClip" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
+:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
+  x3d:bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
+  x3d:frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
+  x3d:leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
+  x3d:rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
+  x3d:topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" .
+:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
+:ExternProtoDeclare_2_3 rdf:type owl:NamedIndividual, x3d:ExternProtoDeclare ;
+  x3d:name "FlowerProto" ;
+  x3d:url "../data/flowerproto.json#FlowerProto" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "vertex" ;
+  x3d:type "MFString" .
+:field_2_3_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "fragment" ;
+  x3d:type "MFString" .
+:ProtoDeclare_2_3 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "flower" .
+:ProtoBody_2_3_2 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Group_2_3_2_1 rdf:type owl:NamedIndividual, x3d:Group .
+:ProtoInstance_2_3_2_1_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "FlowerProto" .
+:fieldValue_2_3_2_1_1_1 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "vertex" ;
+  x3d:value "../shaders/x_ite_flowers_chromatic.vs" .
+:fieldValue_2_3_2_1_1_1 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "fragment" ;
+  x3d:value "../shaders/common.fs" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "flower" .
+:SongTime rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:loop "true" .
+:Sound_2_3 rdf:type owl:NamedIndividual, x3d:Sound ;
+  x3d:maxBack "100" ;
+  x3d:maxFront "100" ;
+  x3d:minBack "20" ;
+  x3d:minFront "20" .
+:AudioClip rdf:type owl:NamedIndividual, x3d:AudioClip ;
+  x3d:description "Chandubabamusic #1" ;
+  x3d:url "../resources/chandubabamusic1.wav" .
+:ROUTE_2_3 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "cycleTime" ;
+  x3d:fromNode "SongTime" ;
+  x3d:toField "startTime" ;
+  x3d:toNode "AudioClip" .

@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,51 +7,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Extrusion Heart" ;
-	x3d:orientation "1 0 0 1.57" ;
-	x3d:position "0 -4 0" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 -0.5 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
-	x3d:creaseAngle "3.14159" ;
-	x3d:crossSection "0 0.8 0.2 1 0.7 0.95 1 0.5 0.8 0 0.5 -0.3 0 -0.7 -0.5 -0.3 -0.8 0 -1 0.5 -0.7 0.95 -0.2 1 0 0.8" ;
-	x3d:scale "0.01 0.01 0.8 0.8 1 1 0.8 0.8 0.01 0.01" ;
-	x3d:solid "false" ;
-	x3d:spine "0 0 0 0 0.1 0 0 0.5 0 0 0.9 0 0 1 0" ;
-	x3d:beginCap "true" ;
-	x3d:ccw "true" ;
-	x3d:convex "true" ;
-	x3d:endCap "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:containerField "geometry" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.8 0.3 0.3" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Extrusion Heart" ;
+  x3d:orientation "1 0 0 1.57" ;
+  x3d:position "0 -4 0" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 -0.5 0" .
+:Shape_2_2 rdf:type owl:NamedIndividual, x3d:Shape .
+:Extrusion_2_2_1 rdf:type owl:NamedIndividual, x3d:Extrusion ;
+  x3d:creaseAngle "3.14159" ;
+  x3d:crossSection "0 0.8 0.2 1 0.7 0.95 1 0.5 0.8 0 0.5 -0.3 0 -0.7 -0.5 -0.3 -0.8 0 -1 0.5 -0.7 0.95 -0.2 1 0 0.8" ;
+  x3d:scale "0.01 0.01 0.8 0.8 1 1 0.8 0.8 0.01 0.01" ;
+  x3d:solid "false" ;
+  x3d:spine "0 0 0 0 0.1 0 0 0.5 0 0 0.9 0 0 1 0" .
+:Appearance_2_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_2_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.8 0.3 0.3" .

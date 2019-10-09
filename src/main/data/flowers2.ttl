@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,175 +7,126 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Two mathematical orbitals" ;
-	x3d:position "0 0 50" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:containerField "children" .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:DirectionalLight-anonymous rdf:type owl:NamedIndividual , x3d:DirectionalLight ;
-	x3d:direction "1 1 1" ;
-	x3d:ambientIntensity "0" ;
-	x3d:color "1 1 1" ;
-	x3d:intensity "1" ;
-	x3d:on "true" ;
-	x3d:containerField "children" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "orbit" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "translation" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "-8 0 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "diffuseColor" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "1 0.5 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "specularColor" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "1 0.5 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "transparency" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.75" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Clock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "16" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:OrbitPath rdf:type owl:NamedIndividual , x3d:OrientationInterpolator ;
-	x3d:key "0.0 0.50 1.0" ;
-	x3d:keyValue "1.0 0.0 0.0 0.0 1.0 0.0 0.0 3.14 1.0 0.0 0.0 6.28" ;
-	x3d:containerField "children" .
-:OrbitTransform rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:OrbitTransform x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "translation" ;
-	x3d:protoField "translation" .
-:OrbitTransform x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "diffuseColor" ;
-	x3d:protoField "diffuseColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "specularColor" ;
-	x3d:protoField "specularColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "transparency" ;
-	x3d:protoField "transparency" .
-:Orbit rdf:type owl:NamedIndividual , x3d:IndexedFaceSet ;
-	x3d:ccw "false" ;
-	x3d:convex "false" ;
-	x3d:coordIndex "0 1 2 -1" ;
-	x3d:creaseAngle "0" ;
-	x3d:solid "true" ;
-	x3d:colorPerVertex "true" ;
-	x3d:normalPerVertex "true" ;
-	x3d:containerField "geometry" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Two mathematical orbitals" ;
+  x3d:position "0 0 50" .
+:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
+:DirectionalLight_2_3 rdf:type owl:NamedIndividual, x3d:DirectionalLight ;
+  x3d:direction "1 1 1" .
+:ProtoDeclare_2_3 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "orbit" .
+:ProtoInterface_2_3_2 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "translation" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "-8 0 0" .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "diffuseColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" ;
+  x3d:value "1 0.5 0" .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "specularColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" ;
+  x3d:value "1 0.5 0" .
+:field_2_3_2_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "transparency" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.75" .
+:ProtoBody_2_3_2 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Group_2_3_2_2 rdf:type owl:NamedIndividual, x3d:Group .
+:Clock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "16" ;
+  x3d:loop "true" .
+:OrbitPath rdf:type owl:NamedIndividual, x3d:OrientationInterpolator ;
+  x3d:key "0.0 0.50 1.0" ;
+  x3d:keyValue "1.0 0.0 0.0 0.0 1.0 0.0 0.0 3.14 1.0 0.0 0.0 6.28" .
+:OrbitTransform rdf:type owl:NamedIndividual, x3d:Transform .
+:OrbitTransform x3d:hasIS :IS_2_3_2_2_1_3 .
+:IS_2_3_2_2_1_3 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_3_2_2_1_3_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "translation" ;
+  x3d:protoField "translation" .
+:OrbitTransform x3d:hasShape :Shape_2_3_2_2_1_3 .
+:Shape_2_3_2_2_1_3 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_3_2_2_1_3_2 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_3_2_2_1_3_2_1 rdf:type owl:NamedIndividual, x3d:Material .
+:IS_2_3_2_2_1_3_2_1_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_3_2_2_1_3_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "diffuseColor" ;
+  x3d:protoField "diffuseColor" .
+:connect_2_3_2_2_1_3_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "specularColor" ;
+  x3d:protoField "specularColor" .
+:connect_2_3_2_2_1_3_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "transparency" ;
+  x3d:protoField "transparency" .
+:Orbit rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
+  x3d:ccw "false" ;
+  x3d:convex "false" ;
+  x3d:coordIndex "0 1 2 -1" .
 :Orbit x3d:hasCoordinate :OrbitCoordinates .
-:OrbitCoordinates rdf:type owl:NamedIndividual , x3d:Coordinate ;
-	x3d:point "0 0 1 0 1 0 1 0 0" ;
-	x3d:containerField "coord" .
-:OrbitScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:OrbitCoordinates rdf:type owl:NamedIndividual, x3d:Coordinate ;
+  x3d:point "0 0 1 0 1 0 1 0 0" .
+:OrbitScript rdf:type owl:NamedIndividual, x3d:Script .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_fraction" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "coordinates" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:name "coordinates" ;
+  x3d:type "MFVec3f" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "coordIndexes" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:name "coordIndexes" ;
+  x3d:type "MFInt32" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "e" ;
-	x3d:value "5" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "e" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "f" ;
-	x3d:value "5" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "f" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "g" ;
-	x3d:value "5" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "g" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "h" ;
-	x3d:value "5" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "h" ;
+  x3d:type "SFFloat" ;
+  x3d:value "5" .
 
-				:OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:name "resolution" ;
-	x3d:value "50" .
+				:OrbitScript x3d:hasfield :field_2_3_2_2_1_4 .
+:field_2_3_2_2_1_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "resolution" ;
+  x3d:type "SFInt32" ;
+  x3d:value "50" .
 
 			
 			ecmascript:
@@ -252,58 +203,56 @@
 				}
 				generateCoordinates();
 			}
-			      :ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "OrbitScript" ;
-	x3d:fromField "coordIndexes" ;
-	x3d:toNode "Orbit" ;
-	x3d:toField "coordIndex" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "OrbitScript" ;
-	x3d:fromField "coordinates" ;
-	x3d:toNode "OrbitCoordinates" ;
-	x3d:toField "point" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Clock" ;
-	x3d:fromField "fraction_changed" ;
-	x3d:toNode "OrbitScript" ;
-	x3d:toField "set_fraction" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "OrbitPath" ;
-	x3d:fromField "value_changed" ;
-	x3d:toNode "OrbitTransform" ;
-	x3d:toField "rotation" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromNode "Clock" ;
-	x3d:fromField "fraction_changed" ;
-	x3d:toNode "OrbitPath" ;
-	x3d:toField "set_fraction" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "orbit" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "translation" ;
-	x3d:value "-8 0 0" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "diffuseColor" ;
-	x3d:value "1 0.5 0" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "specularColor" ;
-	x3d:value "1 0.5 0" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "transparency" ;
-	x3d:value "0.75" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "orbit" ;
-	x3d:containerField "children" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "translation" ;
-	x3d:value "8 0 0" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "diffuseColor" ;
-	x3d:value "0 0.5 1" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "specularColor" ;
-	x3d:value "0 0.5 1" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "transparency" ;
-	x3d:value "0.5" .
+			      :ROUTE_2_3_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "OrbitScript" ;
+  x3d:fromField "coordIndexes" ;
+  x3d:toNode "Orbit" ;
+  x3d:toField "coordIndex" .
+:ROUTE_2_3_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "OrbitScript" ;
+  x3d:fromField "coordinates" ;
+  x3d:toNode "OrbitCoordinates" ;
+  x3d:toField "point" .
+:ROUTE_2_3_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Clock" ;
+  x3d:fromField "fraction_changed" ;
+  x3d:toNode "OrbitScript" ;
+  x3d:toField "set_fraction" .
+:ROUTE_2_3_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "OrbitPath" ;
+  x3d:fromField "value_changed" ;
+  x3d:toNode "OrbitTransform" ;
+  x3d:toField "rotation" .
+:ROUTE_2_3_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromNode "Clock" ;
+  x3d:fromField "fraction_changed" ;
+  x3d:toNode "OrbitPath" ;
+  x3d:toField "set_fraction" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "orbit" .
+:fieldValue_2_3_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "translation" ;
+  x3d:value "-8 0 0" .
+:fieldValue_2_3_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "diffuseColor" ;
+  x3d:value "1 0.5 0" .
+:fieldValue_2_3_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "specularColor" ;
+  x3d:value "1 0.5 0" .
+:fieldValue_2_3_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "transparency" ;
+  x3d:value "0.75" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "orbit" .
+:fieldValue_2_3_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "translation" ;
+  x3d:value "8 0 0" .
+:fieldValue_2_3_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "diffuseColor" ;
+  x3d:value "0 0.5 1" .
+:fieldValue_2_3_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "specularColor" ;
+  x3d:value "0 0.5 1" .
+:fieldValue_2_3_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "transparency" ;
+  x3d:value "0.5" .

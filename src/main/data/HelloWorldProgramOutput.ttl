@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,263 +7,133 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:ViewpointGroup-anonymous rdf:type owl:NamedIndividual , x3d:ViewpointGroup ;
-	x3d:description "Available viewpoints" ;
-	x3d:center "0 0 0" ;
-	x3d:displayed "true" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:size "0 0 0" ;
-	x3d:containerField "children" .
-:DefaultView rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Hello X3DJSAIL" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:position "0 0 10" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:TopDownView rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "top-down view from above" ;
-	x3d:orientation "1 0 0 -1.570796" ;
-	x3d:position "0 100 0" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:WorldInfoDEF rdf:type owl:NamedIndividual , x3d:WorldInfo ;
-	x3d:title "HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)" ;
-	x3d:containerField "children" .
-:WorldInfo-anonymous rdf:type owl:NamedIndividual , x3d:WorldInfo ;
-	x3d:USE "WorldInfoDEF" ;
-	x3d:containerField "children" .
-:WorldInfo-anonymous rdf:type owl:NamedIndividual , x3d:WorldInfo ;
-	x3d:USE "WorldInfoDEF" ;
-	x3d:containerField "children" .
-:scene.addChildMetadata rdf:type owl:NamedIndividual , x3d:MetadataString ;
-	x3d:name "test" ;
-	x3d:value "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding" ;
-	x3d:containerField "metadata" .
-:scene.addChildLayerSetTest rdf:type owl:NamedIndividual , x3d:LayerSet ;
-	x3d:order "0" ;
-	x3d:activeLayer "0" ;
-	x3d:containerField "children" .
-:LogoGeometryTransform rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 1.5 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:LogoGeometryTransform x3d:hasAnchor :Anchor-anonymous .
-:Anchor-anonymous rdf:type owl:NamedIndividual , x3d:Anchor ;
-	x3d:description "select for X3D Java SAI Library (X3DJSAIL) description" ;
-	x3d:url "../X3DJSAIL.html http://www.web3d.org/specifications/java/X3DJSAIL.html" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:BoxShape rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:BoxShape x3d:hasAppearance :Appearance-anonymous .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:GreenMaterial rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0 1 1" ;
-	x3d:emissiveColor "0.8 0 0" ;
-	x3d:transparency "0.1" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:containerField "material" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "images/X3dJavaSceneAccessInterfaceSaiLibrary.png http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:containerField "texture" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:ViewpointGroup_2 rdf:type owl:NamedIndividual, x3d:ViewpointGroup ;
+  x3d:description "Available viewpoints" ;
+  x3d:containerField "children" .
+:DefaultView rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Hello X3DJSAIL" .
+:TopDownView rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "top-down view from above" ;
+  x3d:orientation "1 0 0 -1.570796" ;
+  x3d:position "0 100 0" .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo ;
+  x3d:type "EXAMINE FLY ANY" .
+:WorldInfoDEF rdf:type owl:NamedIndividual, x3d:WorldInfo ;
+  x3d:title "HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)" .
+:WorldInfoDEF-USE-1 rdf:type owl:NamedIndividual, x3d:WorldInfo .
+:WorldInfoDEF-USE-2 rdf:type owl:NamedIndividual, x3d:WorldInfo .
+:scene.addChildMetadata rdf:type owl:NamedIndividual, x3d:MetadataString ;
+  x3d:name "test" ;
+  x3d:value "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding" ;
+  x3d:containerField "metadata" .
+:scene.addChildLayerSetTest rdf:type owl:NamedIndividual, x3d:LayerSet ;
+  x3d:containerField "children" .
+:LogoGeometryTransform rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 1.5 0" .
+:LogoGeometryTransform x3d:hasAnchor :Anchor_2_8 .
+:Anchor_2_8 rdf:type owl:NamedIndividual, x3d:Anchor ;
+  x3d:description "select for X3D Java SAI Library (X3DJSAIL) description" ;
+  x3d:url "../X3DJSAIL.html http://www.web3d.org/specifications/java/X3DJSAIL.html" .
+:BoxShape rdf:type owl:NamedIndividual, x3d:Shape .
+:BoxShape x3d:hasAppearance :Appearance_2_8_1_1 .
+:Appearance_2_8_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:GreenMaterial rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0 1 1" ;
+  x3d:emissiveColor "0.8 0 0" ;
+  x3d:transparency "0.1" .
+:ImageTexture_2_8_1_1_1 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "images/X3dJavaSceneAccessInterfaceSaiLibrary.png http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png" .
 :BoxShape x3d:hasBox :test-NMTOKEN_regex.0123456789 .
-:test-NMTOKEN_regex.0123456789 rdf:type owl:NamedIndividual , x3d:Box ;
-	x3d:class "untextured" ;
-	x3d:size "2 2 2" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:LineShape rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:LineShape x3d:hasAppearance :Appearance-anonymous .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:emissiveColor "0.6 0.19607843 0.8" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:LineShape x3d:hasIndexedLineSet :IndexedLineSet-anonymous .
-:IndexedLineSet-anonymous rdf:type owl:NamedIndividual , x3d:IndexedLineSet ;
-	x3d:coordIndex "0 1 2 3 4 0" ;
-	x3d:colorPerVertex "true" ;
-	x3d:containerField "geometry" .
-:Coordinate-anonymous rdf:type owl:NamedIndividual , x3d:Coordinate ;
-	x3d:point "0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0" ;
-	x3d:containerField "coord" .
-:BoxPathAnimator rdf:type owl:NamedIndividual , x3d:PositionInterpolator ;
-	x3d:key "0 0.125 0.375 0.625 0.875 1" ;
-	x3d:keyValue "0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0" ;
-	x3d:containerField "children" .
-:OrbitClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "8.0" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "fraction_changed" ;
-	x3d:fromNode "OrbitClock" ;
-	x3d:toField "set_fraction" ;
-	x3d:toNode "BoxPathAnimator" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "value_changed" ;
-	x3d:fromNode "BoxPathAnimator" ;
-	x3d:toField "set_translation" ;
-	x3d:toNode "LogoGeometryTransform" .
-:TextTransform rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 -1.5 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:TextTransform x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:USE "GreenMaterial" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "X3D Java SAI Library X3DJSAIL" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:MetadataSet-anonymous rdf:type owl:NamedIndividual , x3d:MetadataSet ;
-	x3d:name "EscapedQuotationMarksMetadataSet" ;
-	x3d:containerField "metadata" .
-:MetadataString-anonymous rdf:type owl:NamedIndividual , x3d:MetadataString ;
-	x3d:name "quotesTestC" ;
-	x3d:containerField "value" ;
-	x3d:value "MFString example C, backslash-escaped quotes: He said, \Immel did it!\" .
-:MetadataString-anonymous rdf:type owl:NamedIndividual , x3d:MetadataString ;
-	x3d:name "extraChildTest" ;
-	x3d:containerField "value" ;
-	x3d:value "checks MetadataSetObject addValue() method" .
-:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
-	x3d:family "SERIF" ;
-	x3d:justify "MIDDLE MIDDLE" ;
-	x3d:horizontal "true" ;
-	x3d:leftToRight "true" ;
-	x3d:size "1.0" ;
-	x3d:spacing "1.0" ;
-	x3d:style "PLAIN" ;
-	x3d:topToBottom "true" ;
-	x3d:containerField "fontStyle" .
-:TextTransform x3d:hasCollision :Collision-anonymous .
-:Collision-anonymous rdf:type owl:NamedIndividual , x3d:Collision ;
-	x3d:enabled "true" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProxyShape rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "proxy" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:ProxyShape x3d:hasText :Text-anonymous .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "One, Two, Text  He said, \Immel did it!\ \\" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:SpinInterpolator rdf:type owl:NamedIndividual , x3d:OrientationInterpolator ;
-	x3d:key "0 0.5 1" ;
-	x3d:keyValue "0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964" ;
-	x3d:containerField "children" .
-:SpinClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "5.0" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "fraction_changed" ;
-	x3d:fromNode "SpinClock" ;
-	x3d:toField "set_fraction" ;
-	x3d:toNode "SpinInterpolator" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "value_changed" ;
-	x3d:fromNode "SpinInterpolator" ;
-	x3d:toField "rotation" ;
-	x3d:toNode "TextTransform" .
-:BackgroundGroup rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:test-NMTOKEN_regex.0123456789 rdf:type owl:NamedIndividual, x3d:Box ;
+  x3d:class "untextured" .
+:LineShape rdf:type owl:NamedIndividual, x3d:Shape .
+:LineShape x3d:hasAppearance :Appearance_2_9 .
+:Appearance_2_9 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_9_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:emissiveColor "0.6 0.19607843 0.8" .
+:LineShape x3d:hasIndexedLineSet :IndexedLineSet_2_9 .
+:IndexedLineSet_2_9 rdf:type owl:NamedIndividual, x3d:IndexedLineSet ;
+  x3d:coordIndex "0 1 2 3 4 0" .
+:Coordinate_2_9_2 rdf:type owl:NamedIndividual, x3d:Coordinate ;
+  x3d:point "0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0" .
+:BoxPathAnimator rdf:type owl:NamedIndividual, x3d:PositionInterpolator ;
+  x3d:key "0 0.125 0.375 0.625 0.875 1" ;
+  x3d:keyValue "0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0" .
+:OrbitClock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "8.0" ;
+  x3d:loop "true" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "fraction_changed" ;
+  x3d:fromNode "OrbitClock" ;
+  x3d:toField "set_fraction" ;
+  x3d:toNode "BoxPathAnimator" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "value_changed" ;
+  x3d:fromNode "BoxPathAnimator" ;
+  x3d:toField "set_translation" ;
+  x3d:toNode "LogoGeometryTransform" .
+:TextTransform rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 -1.5 0" .
+:TextTransform x3d:hasShape :Shape_2_14 .
+:Shape_2_14 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_14_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:GreenMaterial-USE-1 rdf:type owl:NamedIndividual, x3d:Material .
+:Text_2_14_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "X3D Java SAI Library X3DJSAIL" .
+:MetadataSet_2_14_1_2 rdf:type owl:NamedIndividual, x3d:MetadataSet ;
+  x3d:name "EscapedQuotationMarksMetadataSet" ;
+  x3d:containerField "metadata" .
+:MetadataString_2_14_1_2_1 rdf:type owl:NamedIndividual, x3d:MetadataString ;
+  x3d:name "quotesTestC" ;
+  x3d:containerField "value" ;
+  x3d:value "MFString example C, backslash-escaped quotes: He said, \Immel did it!\" .
+:MetadataString_2_14_1_2_1 rdf:type owl:NamedIndividual, x3d:MetadataString ;
+  x3d:name "extraChildTest" ;
+  x3d:containerField "value" ;
+  x3d:value "checks MetadataSetObject addValue() method" .
+:FontStyle_2_14_1_2 rdf:type owl:NamedIndividual, x3d:FontStyle ;
+  x3d:justify "MIDDLE MIDDLE" .
+:TextTransform x3d:hasCollision :Collision_2_14 .
+:Collision_2_14 rdf:type owl:NamedIndividual, x3d:Collision .
+:ProxyShape rdf:type owl:NamedIndividual, x3d:Shape ;
+  x3d:containerField "proxy" .
+:ProxyShape x3d:hasText :Text_2_14_2_1 .
+:Text_2_14_2_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "One, Two, Text  He said, \Immel did it!\ \\" .
+:SpinInterpolator rdf:type owl:NamedIndividual, x3d:OrientationInterpolator ;
+  x3d:key "0 0.5 1" ;
+  x3d:keyValue "0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964" .
+:SpinClock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "5.0" ;
+  x3d:loop "true" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "fraction_changed" ;
+  x3d:fromNode "SpinClock" ;
+  x3d:toField "set_fraction" ;
+  x3d:toNode "SpinInterpolator" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "value_changed" ;
+  x3d:fromNode "SpinInterpolator" ;
+  x3d:toField "rotation" ;
+  x3d:toNode "TextTransform" .
+:BackgroundGroup rdf:type owl:NamedIndividual, x3d:Group .
 :BackgroundGroup x3d:hasBackground :GradualBackground .
-:GradualBackground rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:skyColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
+:GradualBackground rdf:type owl:NamedIndividual, x3d:Background .
 :BackgroundGroup x3d:hasScript :colorTypeConversionScript .
-:colorTypeConversionScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:colorTypeConversionScript rdf:type owl:NamedIndividual, x3d:Script .
 
-        :colorTypeConversionScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "colorInput" ;
-	x3d:accessType "inputOnly" .
+        :colorTypeConversionScript x3d:hasfield :field_2_19_2 .
+:field_2_19_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "colorInput" ;
+  x3d:accessType "inputOnly" ;
+  x3d:type "SFColor" .
 
-        :colorTypeConversionScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "colorsOutput" ;
-	x3d:accessType "outputOnly" .
+        :colorTypeConversionScript x3d:hasfield :field_2_19_2 .
+:field_2_19_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "colorsOutput" ;
+  x3d:accessType "outputOnly" ;
+  x3d:type "MFColor" .
 
 
 ecmascript:
@@ -275,249 +145,213 @@ function colorInput (eventValue) // Example source code
 }
 
       :BackgroundGroup x3d:hasColorInterpolator :ColorAnimator .
-:ColorAnimator rdf:type owl:NamedIndividual , x3d:ColorInterpolator ;
-	x3d:key "0 0.5 1" ;
-	x3d:keyValue "0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1" ;
-	x3d:containerField "children" .
+:ColorAnimator rdf:type owl:NamedIndividual, x3d:ColorInterpolator ;
+  x3d:key "0 0.5 1" ;
+  x3d:keyValue "0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1" .
 :BackgroundGroup x3d:hasTimeSensor :ColorClock .
-:ColorClock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "60.0" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:BackgroundGroup x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "colorsOutput" ;
-	x3d:fromNode "colorTypeConversionScript" ;
-	x3d:toField "skyColor" ;
-	x3d:toNode "GradualBackground" .
-:BackgroundGroup x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "value_changed" ;
-	x3d:fromNode "ColorAnimator" ;
-	x3d:toField "colorInput" ;
-	x3d:toNode "colorTypeConversionScript" .
-:BackgroundGroup x3d:hasROUTE :ROUTE-anonymous .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "fraction_changed" ;
-	x3d:fromNode "ColorClock" ;
-	x3d:toField "set_fraction" ;
-	x3d:toNode "ColorAnimator" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "ArtDeco01Material" ;
-	x3d:appinfo "tooltip: ArtDeco01Material prototype is a Material node" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "description" ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "tooltip for descriptionField" ;
-	x3d:value "ArtDeco01Material prototype is a Material node" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "enabled" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "true" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.25" ;
-	x3d:diffuseColor "0.282435 0.085159 0.134462" ;
-	x3d:shininess "0.127273" ;
-	x3d:specularColor "0.276305 0.11431 0.139857" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:TouchSensor-anonymous rdf:type owl:NamedIndividual , x3d:TouchSensor ;
-	x3d:description "within ProtoBody" ;
-	x3d:enabled "true" ;
-	x3d:containerField "children" .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "description" ;
-	x3d:protoField "description" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "enabled" ;
-	x3d:protoField "enabled" .
-:ExternProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ExternProtoDeclare ;
-	x3d:name "ArtDeco02Material" ;
-	x3d:appinfo "this is a different Material node" ;
-	x3d:url "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "description" ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "tooltip for descriptionField" .
-:TestShape1 rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
+:ColorClock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "60.0" ;
+  x3d:loop "true" .
+:BackgroundGroup x3d:hasROUTE :ROUTE_2_19 .
+:ROUTE_2_19 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "colorsOutput" ;
+  x3d:fromNode "colorTypeConversionScript" ;
+  x3d:toField "skyColor" ;
+  x3d:toNode "GradualBackground" .
+:BackgroundGroup x3d:hasROUTE :ROUTE_2_19 .
+:ROUTE_2_19 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "value_changed" ;
+  x3d:fromNode "ColorAnimator" ;
+  x3d:toField "colorInput" ;
+  x3d:toNode "colorTypeConversionScript" .
+:BackgroundGroup x3d:hasROUTE :ROUTE_2_19 .
+:ROUTE_2_19 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "fraction_changed" ;
+  x3d:fromNode "ColorClock" ;
+  x3d:toField "set_fraction" ;
+  x3d:toNode "ColorAnimator" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "ArtDeco01Material" ;
+  x3d:appinfo "tooltip: ArtDeco01Material prototype is a Material node" .
+:ProtoInterface_2_20 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_20_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "description" ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "tooltip for descriptionField" ;
+  x3d:type "SFString" ;
+  x3d:value "ArtDeco01Material prototype is a Material node" .
+:field_2_20_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "enabled" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:ProtoBody_2_20 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Material_2_20_2 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:ambientIntensity "0.25" ;
+  x3d:diffuseColor "0.282435 0.085159 0.134462" ;
+  x3d:shininess "0.127273" ;
+  x3d:specularColor "0.276305 0.11431 0.139857" .
+:TouchSensor_2_20_2 rdf:type owl:NamedIndividual, x3d:TouchSensor ;
+  x3d:description "within ProtoBody" .
+:IS_2_20_2_2 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_20_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "description" ;
+  x3d:protoField "description" .
+:connect_2_20_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "enabled" ;
+  x3d:protoField "enabled" .
+:ExternProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ExternProtoDeclare ;
+  x3d:name "ArtDeco02Material" ;
+  x3d:appinfo "this is a different Material node" ;
+  x3d:url "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material" .
+:field_2_21 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "description" ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "tooltip for descriptionField" ;
+  x3d:type "SFString" .
+:TestShape1 rdf:type owl:NamedIndividual, x3d:Shape .
 :TestShape1 x3d:hasAppearance :TestAppearance1 .
-:TestAppearance1 rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:TestAppearance1 x3d:hasProtoInstance :ProtoInstance-anonymous .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "ArtDeco01Material" ;
-	x3d:containerField "material" .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "description" ;
-	x3d:value "ArtDeco01Material can substitute for a Material node" .
-:TestShape1 x3d:hasSphere :Sphere-anonymous .
-:Sphere-anonymous rdf:type owl:NamedIndividual , x3d:Sphere ;
-	x3d:radius "0.001" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:TestShape2 rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
+:TestAppearance1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:TestAppearance1 x3d:hasProtoInstance :ProtoInstance_2_22_1 .
+:ProtoInstance_2_22_1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "ArtDeco01Material" ;
+  x3d:containerField "material" .
+:fieldValue_2_22_1_1 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "description" ;
+  x3d:value "ArtDeco01Material can substitute for a Material node" .
+:TestShape1 x3d:hasSphere :Sphere_2_22 .
+:Sphere_2_22 rdf:type owl:NamedIndividual, x3d:Sphere ;
+  x3d:radius "0.001" .
+:TestShape2 rdf:type owl:NamedIndividual, x3d:Shape .
 :TestShape2 x3d:hasAppearance :TestAppearance2 .
-:TestAppearance2 rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
+:TestAppearance2 rdf:type owl:NamedIndividual, x3d:Appearance .
 :TestAppearance2 x3d:hasProtoInstance :ArtDeco02MaterialDEF .
-:ArtDeco02MaterialDEF rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "ArtDeco02Material" ;
-	x3d:containerField "material" .
-:ArtDeco02MaterialDEF x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "description" ;
-	x3d:value "ArtDeco02Material can substitute for another Material node" .
-:TestShape2 x3d:hasCone :Cone-anonymous .
-:Cone-anonymous rdf:type owl:NamedIndividual , x3d:Cone ;
-	x3d:bottomRadius "0.001" ;
-	x3d:height "0.001" ;
-	x3d:side "true" ;
-	x3d:bottom "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:TestShape3 rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
+:ArtDeco02MaterialDEF rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "ArtDeco02Material" ;
+  x3d:containerField "material" .
+:ArtDeco02MaterialDEF x3d:hasfieldValue :fieldValue_2_23_1_1 .
+:fieldValue_2_23_1_1 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "description" ;
+  x3d:value "ArtDeco02Material can substitute for another Material node" .
+:TestShape2 x3d:hasCone :Cone_2_23 .
+:Cone_2_23 rdf:type owl:NamedIndividual, x3d:Cone ;
+  x3d:bottomRadius "0.001" ;
+  x3d:height "0.001" .
+:TestShape3 rdf:type owl:NamedIndividual, x3d:Shape .
 :TestShape3 x3d:hasAppearance :TestAppearance3 .
-:TestAppearance3 rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:TestAppearance3 x3d:hasProtoInstance :ProtoInstance-anonymous .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:USE "ArtDeco02MaterialDEF" ;
-	x3d:containerField "material" .
-:TestShape3 x3d:hasCylinder :Cylinder-anonymous .
-:Cylinder-anonymous rdf:type owl:NamedIndividual , x3d:Cylinder ;
-	x3d:height "0.001" ;
-	x3d:radius "0.001" ;
-	x3d:bottom "true" ;
-	x3d:side "true" ;
-	x3d:top "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:inlineSceneDef rdf:type owl:NamedIndividual , x3d:Inline ;
-	x3d:url "someOtherScene.x3d http://www.web3d.org/specifications/java/examples/someOtherScene.x3d" ;
-	x3d:load "true" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:IMPORT-anonymous rdf:type owl:NamedIndividual , x3d:IMPORT ;
-	x3d:AS "WorldInfoDEF2" ;
-	x3d:importedDEF "WorldInfoDEF" ;
-	x3d:inlineDEF "inlineSceneDef" .
-:EXPORT-anonymous rdf:type owl:NamedIndividual , x3d:EXPORT ;
-	x3d:AS "WorldInfoDEF3" ;
-	x3d:localDEF "WorldInfoDEF" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "MaterialModulator" ;
-	x3d:appinfo "mimic a Material node and modulate fields as an animation effect" ;
-	x3d:documentation "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "enabled" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "true" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "diffuseColor" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0 0 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "emissiveColor" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.05 0.05 0.5" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "specularColor" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0 0 0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "transparency" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "shininess" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "ambientIntensity" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.0" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:MaterialNode rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:MaterialNode x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "diffuseColor" ;
-	x3d:protoField "diffuseColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "emissiveColor" ;
-	x3d:protoField "emissiveColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "specularColor" ;
-	x3d:protoField "specularColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "transparency" ;
-	x3d:protoField "transparency" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "shininess" ;
-	x3d:protoField "shininess" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "ambientIntensity" ;
-	x3d:protoField "ambientIntensity" .
-:MaterialModulatorScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:TestAppearance3 rdf:type owl:NamedIndividual, x3d:Appearance .
+:TestAppearance3 x3d:hasProtoInstance :ArtDeco02MaterialDEF-USE-1 .
+:ArtDeco02MaterialDEF-USE-1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:containerField "material" .
+:TestShape3 x3d:hasCylinder :Cylinder_2_24 .
+:Cylinder_2_24 rdf:type owl:NamedIndividual, x3d:Cylinder ;
+  x3d:height "0.001" ;
+  x3d:radius "0.001" .
+:inlineSceneDef rdf:type owl:NamedIndividual, x3d:Inline ;
+  x3d:url "someOtherScene.x3d http://www.web3d.org/specifications/java/examples/someOtherScene.x3d" .
+:IMPORT_2 rdf:type owl:NamedIndividual, x3d:IMPORT ;
+  x3d:AS "WorldInfoDEF2" ;
+  x3d:importedDEF "WorldInfoDEF" ;
+  x3d:inlineDEF "inlineSceneDef" .
+:EXPORT_2 rdf:type owl:NamedIndividual, x3d:EXPORT ;
+  x3d:AS "WorldInfoDEF3" ;
+  x3d:localDEF "WorldInfoDEF" .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "MaterialModulator" ;
+  x3d:appinfo "mimic a Material node and modulate fields as an animation effect" ;
+  x3d:documentation "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" .
+:ProtoInterface_2_28 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "enabled" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFBool" ;
+  x3d:value "true" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "diffuseColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" ;
+  x3d:value "0 0 0" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "emissiveColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" ;
+  x3d:value "0.05 0.05 0.5" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "specularColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" ;
+  x3d:value "0 0 0" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "transparency" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.0" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "shininess" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.0" .
+:field_2_28_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "ambientIntensity" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.0" .
+:ProtoBody_2_28 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:MaterialNode rdf:type owl:NamedIndividual, x3d:Material .
+:MaterialNode x3d:hasIS :IS_2_28_2_1 .
+:IS_2_28_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "diffuseColor" ;
+  x3d:protoField "diffuseColor" .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "emissiveColor" ;
+  x3d:protoField "emissiveColor" .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "specularColor" ;
+  x3d:protoField "specularColor" .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "transparency" ;
+  x3d:protoField "transparency" .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "shininess" ;
+  x3d:protoField "shininess" .
+:connect_2_28_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "ambientIntensity" ;
+  x3d:protoField "ambientIntensity" .
+:MaterialModulatorScript rdf:type owl:NamedIndividual, x3d:Script .
 
-          :MaterialModulatorScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "enabled" ;
-	x3d:accessType "inputOutput" .
+          :MaterialModulatorScript x3d:hasfield :field_2_28_2_2 .
+:field_2_28_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "enabled" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFBool" .
 
-          :MaterialModulatorScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "diffuseColor" ;
-	x3d:accessType "inputOutput" .
+          :MaterialModulatorScript x3d:hasfield :field_2_28_2_2 .
+:field_2_28_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "diffuseColor" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFColor" .
 
-          :MaterialModulatorScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "newColor" ;
-	x3d:accessType "outputOnly" .
+          :MaterialModulatorScript x3d:hasfield :field_2_28_2_2 .
+:field_2_28_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "newColor" ;
+  x3d:accessType "outputOnly" ;
+  x3d:type "SFColor" .
 
-          :MaterialModulatorScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "clockTrigger" ;
-	x3d:accessType "inputOnly" .
+          :MaterialModulatorScript x3d:hasfield :field_2_28_2_2 .
+:field_2_28_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "clockTrigger" ;
+  x3d:accessType "inputOnly" ;
+  x3d:type "SFTime" .
 
-          :MaterialModulatorScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "enabled" ;
-	x3d:protoField "enabled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "diffuseColor" ;
-	x3d:protoField "diffuseColor" .
+          :MaterialModulatorScript x3d:hasIS :IS_2_28_2_2 .
+:IS_2_28_2_2 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_28_2_2_5 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "enabled" ;
+  x3d:protoField "enabled" .
+:connect_2_28_2_2_5 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "diffuseColor" ;
+  x3d:protoField "diffuseColor" .
 
 
 ecmascript:
@@ -544,374 +378,108 @@ function clockTrigger (timeValue)
 	}
 }
 
-        :DeclarativeGroupExample rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:DeclarativeGroupExample x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:FindableMetadataStringTest rdf:type owl:NamedIndividual , x3d:MetadataString ;
-	x3d:name "findThisNameValue" ;
-	x3d:value "test case" ;
-	x3d:containerField "metadata" .
-:DeclarativeAppearanceExample rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
+        :DeclarativeGroupExample rdf:type owl:NamedIndividual, x3d:Group .
+:DeclarativeGroupExample x3d:hasShape :Shape_2_29 .
+:Shape_2_29 rdf:type owl:NamedIndividual, x3d:Shape .
+:FindableMetadataStringTest rdf:type owl:NamedIndividual, x3d:MetadataString ;
+  x3d:name "findThisNameValue" ;
+  x3d:value "test case" ;
+  x3d:containerField "metadata" .
+:DeclarativeAppearanceExample rdf:type owl:NamedIndividual, x3d:Appearance .
 :DeclarativeAppearanceExample x3d:hasProtoInstance :MyMaterialModulator .
-:MyMaterialModulator rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "MaterialModulator" ;
-	x3d:containerField "material" .
-:Cone-anonymous rdf:type owl:NamedIndividual , x3d:Cone ;
-	x3d:bottom "false" ;
-	x3d:bottomRadius "0.05" ;
-	x3d:height "0.1" ;
-	x3d:side "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:TestFieldObjectsGroup rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Sound-anonymous rdf:type owl:NamedIndividual , x3d:Sound ;
-	x3d:location "0 1.6 0" ;
-	x3d:direction "0 0 1" ;
-	x3d:intensity "1" ;
-	x3d:maxBack "10" ;
-	x3d:maxFront "10" ;
-	x3d:minBack "1" ;
-	x3d:minFront "1" ;
-	x3d:priority "0" ;
-	x3d:spatialize "true" ;
-	x3d:containerField "children" .
-:AudioClip-anonymous rdf:type owl:NamedIndividual , x3d:AudioClip ;
-	x3d:description "chimes" ;
-	x3d:url "chimes.wav http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav" ;
-	x3d:loop "false" ;
-	x3d:pitch "1.0" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "source" .
-:Sound-anonymous rdf:type owl:NamedIndividual , x3d:Sound ;
-	x3d:location "0 1.6 0" ;
-	x3d:direction "0 0 1" ;
-	x3d:intensity "1" ;
-	x3d:maxBack "10" ;
-	x3d:maxFront "10" ;
-	x3d:minBack "1" ;
-	x3d:minFront "1" ;
-	x3d:priority "0" ;
-	x3d:spatialize "true" ;
-	x3d:containerField "children" .
-:MovieTexture-anonymous rdf:type owl:NamedIndividual , x3d:MovieTexture ;
-	x3d:containerField "source" ;
-	x3d:description "mpgsys.mpg from ConformanceNist suite" ;
-	x3d:url "mpgsys.mpg http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg" ;
-	x3d:loop "false" ;
-	x3d:speed "1.0" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" .
-:ExtrusionShape rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
+:MyMaterialModulator rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "MaterialModulator" ;
+  x3d:containerField "material" .
+:Cone_2_29_1 rdf:type owl:NamedIndividual, x3d:Cone ;
+  x3d:bottom "false" ;
+  x3d:bottomRadius "0.05" ;
+  x3d:height "0.1" .
+:TestFieldObjectsGroup rdf:type owl:NamedIndividual, x3d:Group .
+:Sound_2 rdf:type owl:NamedIndividual, x3d:Sound ;
+  x3d:location "0 1.6 0" .
+:AudioClip_2_31 rdf:type owl:NamedIndividual, x3d:AudioClip ;
+  x3d:description "chimes" ;
+  x3d:url "chimes.wav http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav" .
+:Sound_2 rdf:type owl:NamedIndividual, x3d:Sound ;
+  x3d:location "0 1.6 0" .
+:MovieTexture_2_32 rdf:type owl:NamedIndividual, x3d:MovieTexture ;
+  x3d:containerField "source" ;
+  x3d:description "mpgsys.mpg from ConformanceNist suite" ;
+  x3d:url "mpgsys.mpg http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg" .
+:ExtrusionShape rdf:type owl:NamedIndividual, x3d:Shape .
 :ExtrusionShape x3d:hasAppearance :TransparentAppearance .
-:TransparentAppearance rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:TransparentAppearance x3d:hasMaterial :Material-anonymous .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:transparency "1.0" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:containerField "material" .
+:TransparentAppearance rdf:type owl:NamedIndividual, x3d:Appearance .
+:TransparentAppearance x3d:hasMaterial :Material_2_33_1 .
+:Material_2_33_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:transparency "1.0" .
 :ExtrusionShape x3d:hasExtrusion :ExampleExtrusion .
-:ExampleExtrusion rdf:type owl:NamedIndividual , x3d:Extrusion ;
-	x3d:beginCap "true" ;
-	x3d:ccw "true" ;
-	x3d:convex "true" ;
-	x3d:creaseAngle "0.0" ;
-	x3d:crossSection "1 1 1 -1 -1 -1 -1 1 1 1" ;
-	x3d:endCap "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:scale "1 1" ;
-	x3d:solid "true" ;
-	x3d:spine "0 0 0 0 1 0" ;
-	x3d:containerField "geometry" .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "NewWorldInfo" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "description" ;
-	x3d:accessType "initializeOnly" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:WorldInfo-anonymous rdf:type owl:NamedIndividual , x3d:WorldInfo ;
-	x3d:containerField "children" .
-:Proto1 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "NewWorldInfo" ;
-	x3d:containerField "children" .
-:Proto1 x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "description" ;
-	x3d:value "testing 1 2 3" .
-:Node2 rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Proto3 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "NewWorldInfo" ;
-	x3d:containerField "children" .
-:Node4 rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "ShaderProto" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:ProgramShader-anonymous rdf:type owl:NamedIndividual , x3d:ProgramShader ;
-	x3d:containerField "shaders" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:TestShader1 rdf:type owl:NamedIndividual , x3d:ProgramShader ;
-	x3d:containerField "shaders" .
+:ExampleExtrusion rdf:type owl:NamedIndividual, x3d:Extrusion .
+:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
+:ProtoDeclare_2_34 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "NewWorldInfo" .
+:ProtoInterface_2_34_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_34_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "description" ;
+  x3d:accessType "initializeOnly" ;
+  x3d:type "SFString" .
+:ProtoBody_2_34_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:WorldInfo_2_34_1_2 rdf:type owl:NamedIndividual, x3d:WorldInfo .
+:Proto1 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "NewWorldInfo" .
+:Proto1 x3d:hasfieldValue :fieldValue_2_34_2 .
+:fieldValue_2_34_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "description" ;
+  x3d:value "testing 1 2 3" .
+:Node2 rdf:type owl:NamedIndividual, x3d:Group .
+:Proto3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "NewWorldInfo" .
+:Node4 rdf:type owl:NamedIndividual, x3d:Transform .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "ShaderProto" .
+:ProtoBody_2_35 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:ProgramShader_2_35_1 rdf:type owl:NamedIndividual, x3d:ProgramShader ;
+  x3d:containerField "shaders" .
+:Shape_2 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_36 rdf:type owl:NamedIndividual, x3d:Appearance .
+:TestShader1 rdf:type owl:NamedIndividual, x3d:ProgramShader ;
+  x3d:containerField "shaders" .
 :TestShader1 x3d:hasShaderProgram :TestShader2 .
-:TestShader2 rdf:type owl:NamedIndividual , x3d:ShaderProgram ;
-	x3d:containerField "programs" .
-:TestShader3 rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "ShaderProto" ;
-	x3d:containerField "shaders" .
-:TestShader4 rdf:type owl:NamedIndividual , x3d:ComposedShader ;
-	x3d:containerField "shaders" .
+:TestShader2 rdf:type owl:NamedIndividual, x3d:ShaderProgram ;
+  x3d:containerField "programs" .
+:TestShader3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "ShaderProto" ;
+  x3d:containerField "shaders" .
+:TestShader4 rdf:type owl:NamedIndividual, x3d:ComposedShader ;
+  x3d:containerField "shaders" .
 :TestShader4 x3d:hasShaderPart :TestShader5 .
-:TestShader5 rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:containerField "parts" .
-:SpecialtyNodes rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasCADLayer :CADLayer-anonymous .
-:CADLayer-anonymous rdf:type owl:NamedIndividual , x3d:CADLayer ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:CADAssembly-anonymous rdf:type owl:NamedIndividual , x3d:CADAssembly ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:CADPart-anonymous rdf:type owl:NamedIndividual , x3d:CADPart ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:containerField "children" .
-:CADFace-anonymous rdf:type owl:NamedIndividual , x3d:CADFace ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasEspduTransform :EspduTransform-anonymous .
-:EspduTransform-anonymous rdf:type owl:NamedIndividual , x3d:EspduTransform ;
-	x3d:geoSystem "GD WE" ;
-	x3d:enabled "true" ;
-	x3d:siteID "0" ;
-	x3d:applicationID "0" ;
-	x3d:entityID "0" ;
-	x3d:forceID "0" ;
-	x3d:entityKind "0" ;
-	x3d:entityDomain "0" ;
-	x3d:entityCountry "0" ;
-	x3d:entityCategory "0" ;
-	x3d:entitySubcategory "0" ;
-	x3d:entitySpecific "0" ;
-	x3d:entityExtra "0" ;
-	x3d:readInterval "0.1" ;
-	x3d:writeInterval "1.0" ;
-	x3d:networkMode "standAlone" ;
-	x3d:translation "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:center "0 0 0" ;
-	x3d:address "localhost" ;
-	x3d:port "0" ;
-	x3d:multicastRelayPort "0" ;
-	x3d:rtpHeaderExpected "false" ;
-	x3d:deadReckoning "0" ;
-	x3d:linearVelocity "0 0 0" ;
-	x3d:linearAcceleration "0 0 0" ;
-	x3d:fired1 "false" ;
-	x3d:fired2 "false" ;
-	x3d:collisionType "0" ;
-	x3d:detonationLocation "0 0 0" ;
-	x3d:detonationRelativeLocation "0 0 0" ;
-	x3d:detonationResult "0" ;
-	x3d:eventApplicationID "0" ;
-	x3d:eventEntityID "0" ;
-	x3d:eventNumber "0" ;
-	x3d:eventSiteID "0" ;
-	x3d:munitionStartPoint "0 0 0" ;
-	x3d:munitionEndPoint "0 0 0" ;
-	x3d:warhead "0" ;
-	x3d:fuse "0" ;
-	x3d:munitionQuantity "0" ;
-	x3d:firingRate "0" ;
-	x3d:firingRange "0" ;
-	x3d:munitionSiteID "0" ;
-	x3d:munitionApplicationID "0" ;
-	x3d:munitionEntityID "0" ;
-	x3d:fireMissionIndex "0" ;
-	x3d:articulationParameterCount "0" ;
-	x3d:geoCoords "0 0 0" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasReceiverPdu :ReceiverPdu-anonymous .
-:ReceiverPdu-anonymous rdf:type owl:NamedIndividual , x3d:ReceiverPdu ;
-	x3d:geoSystem "GD WE" ;
-	x3d:enabled "true" ;
-	x3d:whichGeometry "1" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:siteID "0" ;
-	x3d:applicationID "0" ;
-	x3d:entityID "0" ;
-	x3d:readInterval "0.1" ;
-	x3d:writeInterval "1.0" ;
-	x3d:networkMode "standAlone" ;
-	x3d:address "localhost" ;
-	x3d:port "0" ;
-	x3d:multicastRelayPort "0" ;
-	x3d:rtpHeaderExpected "false" ;
-	x3d:radioID "0" ;
-	x3d:receivedPower "0.0" ;
-	x3d:receiverState "0" ;
-	x3d:transmitterSiteID "0" ;
-	x3d:transmitterApplicationID "0" ;
-	x3d:transmitterEntityID "0" ;
-	x3d:transmitterRadioID "0" ;
-	x3d:geoCoords "0 0 0" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasSignalPdu :SignalPdu-anonymous .
-:SignalPdu-anonymous rdf:type owl:NamedIndividual , x3d:SignalPdu ;
-	x3d:geoSystem "GD WE" ;
-	x3d:enabled "true" ;
-	x3d:whichGeometry "1" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:siteID "0" ;
-	x3d:applicationID "0" ;
-	x3d:entityID "0" ;
-	x3d:readInterval "0.1" ;
-	x3d:writeInterval "1.0" ;
-	x3d:networkMode "standAlone" ;
-	x3d:address "localhost" ;
-	x3d:port "0" ;
-	x3d:multicastRelayPort "0" ;
-	x3d:rtpHeaderExpected "false" ;
-	x3d:radioID "0" ;
-	x3d:encodingScheme "0" ;
-	x3d:tdlType "0" ;
-	x3d:sampleRate "0" ;
-	x3d:samples "0" ;
-	x3d:dataLength "0" ;
-	x3d:geoCoords "0 0 0" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasTransmitterPdu :TransmitterPdu-anonymous .
-:TransmitterPdu-anonymous rdf:type owl:NamedIndividual , x3d:TransmitterPdu ;
-	x3d:geoSystem "GD WE" ;
-	x3d:enabled "true" ;
-	x3d:whichGeometry "1" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:siteID "0" ;
-	x3d:applicationID "0" ;
-	x3d:entityID "0" ;
-	x3d:readInterval "0.1" ;
-	x3d:writeInterval "1.0" ;
-	x3d:networkMode "standAlone" ;
-	x3d:address "localhost" ;
-	x3d:port "0" ;
-	x3d:multicastRelayPort "0" ;
-	x3d:rtpHeaderExpected "false" ;
-	x3d:radioID "0" ;
-	x3d:antennaLocation "0 0 0" ;
-	x3d:antennaPatternLength "0" ;
-	x3d:antennaPatternType "0" ;
-	x3d:cryptoKeyID "0" ;
-	x3d:cryptoSystem "0" ;
-	x3d:frequency "0" ;
-	x3d:inputSource "0" ;
-	x3d:lengthOfModulationParameters "0" ;
-	x3d:modulationTypeDetail "0" ;
-	x3d:modulationTypeMajor "0" ;
-	x3d:modulationTypeSpreadSpectrum "0" ;
-	x3d:modulationTypeSystem "0" ;
-	x3d:power "0.0" ;
-	x3d:radioEntityTypeCategory "0" ;
-	x3d:radioEntityTypeCountry "0" ;
-	x3d:radioEntityTypeDomain "0" ;
-	x3d:radioEntityTypeKind "0" ;
-	x3d:radioEntityTypeNomenclature "0" ;
-	x3d:radioEntityTypeNomenclatureVersion "0" ;
-	x3d:relativeAntennaLocation "0 0 0" ;
-	x3d:transmitFrequencyBandwidth "0.0" ;
-	x3d:transmitState "0" ;
-	x3d:geoCoords "0 0 0" ;
-	x3d:containerField "children" .
-:SpecialtyNodes x3d:hasDISEntityManager :DISEntityManager-anonymous .
-:DISEntityManager-anonymous rdf:type owl:NamedIndividual , x3d:DISEntityManager ;
-	x3d:siteID "0" ;
-	x3d:applicationID "0" ;
-	x3d:address "localhost" ;
-	x3d:port "0" ;
-	x3d:containerField "children" .
-:DISEntityTypeMapping-anonymous rdf:type owl:NamedIndividual , x3d:DISEntityTypeMapping ;
-	x3d:category "0" ;
-	x3d:country "0" ;
-	x3d:domain "0" ;
-	x3d:extra "0" ;
-	x3d:kind "0" ;
-	x3d:specific "0" ;
-	x3d:subcategory "0" ;
-	x3d:containerField "mapping" .
+:TestShader5 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:containerField "parts" .
+:SpecialtyNodes rdf:type owl:NamedIndividual, x3d:Transform .
+:SpecialtyNodes x3d:hasCADLayer :CADLayer_2_37 .
+:CADLayer_2_37 rdf:type owl:NamedIndividual, x3d:CADLayer .
+:CADAssembly_2_37_1 rdf:type owl:NamedIndividual, x3d:CADAssembly .
+:CADPart_2_37_1_1 rdf:type owl:NamedIndividual, x3d:CADPart .
+:CADFace_2_37_1_1_1 rdf:type owl:NamedIndividual, x3d:CADFace .
+:SpecialtyNodes x3d:hasEspduTransform :EspduTransform_2_37 .
+:EspduTransform_2_37 rdf:type owl:NamedIndividual, x3d:EspduTransform ;
+  x3d:containerField "children" .
+:SpecialtyNodes x3d:hasReceiverPdu :ReceiverPdu_2_37 .
+:ReceiverPdu_2_37 rdf:type owl:NamedIndividual, x3d:ReceiverPdu ;
+  x3d:receivedPower "0.0" ;
+  x3d:containerField "children" .
+:SpecialtyNodes x3d:hasSignalPdu :SignalPdu_2_37 .
+:SignalPdu_2_37 rdf:type owl:NamedIndividual, x3d:SignalPdu ;
+  x3d:containerField "children" .
+:SpecialtyNodes x3d:hasTransmitterPdu :TransmitterPdu_2_37 .
+:TransmitterPdu_2_37 rdf:type owl:NamedIndividual, x3d:TransmitterPdu ;
+  x3d:relativeAntennaLocation "0 0 0" ;
+  x3d:transmitFrequencyBandwidth "0.0" ;
+  x3d:containerField "children" .
+:SpecialtyNodes x3d:hasDISEntityManager :DISEntityManager_2_37 .
+:DISEntityManager_2_37 rdf:type owl:NamedIndividual, x3d:DISEntityManager ;
+  x3d:containerField "children" .
+:DISEntityTypeMapping_2_37_6 rdf:type owl:NamedIndividual, x3d:DISEntityTypeMapping .
 :SpecialtyNodes x3d:hasHAnimHumanoid :TestHumanoidDEF .
-:TestHumanoidDEF rdf:type owl:NamedIndividual , x3d:HAnimHumanoid ;
-	x3d:name "TestHumanoid" ;
-	x3d:version "2.0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:containerField "children" .
+:TestHumanoidDEF rdf:type owl:NamedIndividual, x3d:HAnimHumanoid ;
+  x3d:name "TestHumanoid" ;
+  x3d:version "2.0" .

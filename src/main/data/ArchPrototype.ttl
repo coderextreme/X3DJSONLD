@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,323 +7,315 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:appinfo "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js." ;
-	x3d:name "ArchPrototype" .
-:ProtoInterface-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInterface .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "color of arch" ;
-	x3d:name "diffuseColor" ;
-	x3d:value "0.2 0.8 0.8" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:appinfo "color of arch" ;
-	x3d:name "emissiveColor" ;
-	x3d:value "0.2 0.8 0.8" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference" ;
-	x3d:name "clearSpanWidth" ;
-	x3d:value "4" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference" ;
-	x3d:name "riseHeight" ;
-	x3d:value "2" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "depth" ;
-	x3d:name "depth" ;
-	x3d:value "3" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment" ;
-	x3d:name "topAbutmentHeight" ;
-	x3d:value "0.5" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "pierWidth:pierWidtht=0 means no pierWidth" ;
-	x3d:name "pierWidth" ;
-	x3d:value "0.5" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "pierHeight: pierHeight=0 means no pierHeight" ;
-	x3d:name "pierHeight" ;
-	x3d:value "1" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width" ;
-	x3d:name "archHalf" ;
-	x3d:value "false" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information." ;
-	x3d:name "archHalfExtensionWidth" ;
-	x3d:value "0" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true." ;
-	x3d:name "onlyIntrados" ;
-	x3d:value "false" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose." ;
-	x3d:name "archFilled" ;
-	x3d:value "false" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." ;
-	x3d:name "archHalfFilled" ;
-	x3d:value "false" .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." ;
-	x3d:name "lintel" ;
-	x3d:value "false" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:ArchTransform rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:appinfo "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js." ;
+  x3d:name "ArchPrototype" .
+:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "color of arch" ;
+  x3d:name "diffuseColor" ;
+  x3d:type "SFColor" ;
+  x3d:value "0.2 0.8 0.8" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:appinfo "color of arch" ;
+  x3d:name "emissiveColor" ;
+  x3d:type "SFColor" ;
+  x3d:value "0.2 0.8 0.8" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference" ;
+  x3d:name "clearSpanWidth" ;
+  x3d:type "SFFloat" ;
+  x3d:value "4" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference" ;
+  x3d:name "riseHeight" ;
+  x3d:type "SFFloat" ;
+  x3d:value "2" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "depth" ;
+  x3d:name "depth" ;
+  x3d:type "SFFloat" ;
+  x3d:value "3" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment" ;
+  x3d:name "topAbutmentHeight" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.5" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "pierWidth:pierWidtht=0 means no pierWidth" ;
+  x3d:name "pierWidth" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0.5" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "pierHeight: pierHeight=0 means no pierHeight" ;
+  x3d:name "pierHeight" ;
+  x3d:type "SFFloat" ;
+  x3d:value "1" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width" ;
+  x3d:name "archHalf" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information." ;
+  x3d:name "archHalfExtensionWidth" ;
+  x3d:type "SFFloat" ;
+  x3d:value "0" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true." ;
+  x3d:name "onlyIntrados" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose." ;
+  x3d:name "archFilled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." ;
+  x3d:name "archHalfFilled" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." ;
+  x3d:name "lintel" ;
+  x3d:type "SFBool" ;
+  x3d:value "false" .
+:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:ArchTransform rdf:type owl:NamedIndividual, x3d:Transform .
 :ArchTransform x3d:hasShape :Arch .
-:Arch rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
+:Arch rdf:type owl:NamedIndividual, x3d:Shape .
 :Arch x3d:hasIndexedFaceSet :ArchIndex .
-:ArchIndex rdf:type owl:NamedIndividual , x3d:IndexedFaceSet ;
-	x3d:convex "false" ;
-	x3d:creaseAngle "0" ;
-	x3d:solid "false" ;
-	x3d:ccw "true" ;
-	x3d:colorPerVertex "true" ;
-	x3d:normalPerVertex "true" ;
-	x3d:containerField "geometry" .
+:ArchIndex rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
+  x3d:convex "false" ;
+  x3d:solid "false" .
 :ArchIndex x3d:hasCoordinate :ArchChord .
-:ArchChord rdf:type owl:NamedIndividual , x3d:Coordinate ;
-	x3d:containerField "coord" .
-:Arch x3d:hasAppearance :Appearance-anonymous .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:MaterialNode rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:diffuseColor "0.8 0.8 0.8" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:MaterialNode x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "emissiveColor" ;
-	x3d:protoField "emissiveColor" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "diffuseColor" ;
-	x3d:protoField "diffuseColor" .
-:ArchPrototypeScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:url "../node/ArchPrototypeScript.js https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js" ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:ArchChord rdf:type owl:NamedIndividual, x3d:Coordinate .
+:Arch x3d:hasAppearance :Appearance_2_1_2_1_1 .
+:Appearance_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:MaterialNode rdf:type owl:NamedIndividual, x3d:Material .
+:MaterialNode x3d:hasIS :IS_2_1_2_1_1_2_1 .
+:IS_2_1_2_1_1_2_1 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_1_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "emissiveColor" ;
+  x3d:protoField "emissiveColor" .
+:connect_2_1_2_1_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "diffuseColor" ;
+  x3d:protoField "diffuseColor" .
+:ArchPrototypeScript rdf:type owl:NamedIndividual, x3d:Script ;
+  x3d:url "../node/ArchPrototypeScript.js https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js" .
 
           
           
           
           
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for clearSpanWidth parameter" ;
-	x3d:name "clearSpanWidth" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for clearSpanWidth parameter" ;
+  x3d:name "clearSpanWidth" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for riseHeight parameter" ;
-	x3d:name "riseHeight" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for riseHeight parameter" ;
+  x3d:name "riseHeight" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for depth parameter" ;
-	x3d:name "depth" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for depth parameter" ;
+  x3d:name "depth" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for topAbutmentHeight parameter" ;
-	x3d:name "topAbutmentHeight" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for topAbutmentHeight parameter" ;
+  x3d:name "topAbutmentHeight" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for pierWidth parameter" ;
-	x3d:name "pierWidth" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for pierWidth parameter" ;
+  x3d:name "pierWidth" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for pierHeight parameter" ;
-	x3d:name "pierHeight" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for pierHeight parameter" ;
+  x3d:name "pierHeight" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for archHalf parameter" ;
-	x3d:name "archHalf" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for archHalf parameter" ;
+  x3d:name "archHalf" ;
+  x3d:type "SFBool" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for archHalfExtensionWidth parameter" ;
-	x3d:name "archHalfExtensionWidth" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for archHalfExtensionWidth parameter" ;
+  x3d:name "archHalfExtensionWidth" ;
+  x3d:type "SFFloat" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for onlyIntrados parameter" ;
-	x3d:name "onlyIntrados" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for onlyIntrados parameter" ;
+  x3d:name "onlyIntrados" ;
+  x3d:type "SFBool" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for archFilled parameter" ;
-	x3d:name "archFilled" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for archFilled parameter" ;
+  x3d:name "archFilled" ;
+  x3d:type "SFBool" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for archHalfFilled parameter" ;
-	x3d:name "archHalfFilled" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for archHalfFilled parameter" ;
+  x3d:name "archHalfFilled" ;
+  x3d:type "SFBool" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "initializeOnly" ;
-	x3d:appinfo "user or default input for lintel parameter" ;
-	x3d:name "lintel" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "initializeOnly" ;
+  x3d:appinfo "user or default input for lintel parameter" ;
+  x3d:name "lintel" ;
+  x3d:type "SFBool" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth" ;
-	x3d:name "computedScale" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth" ;
+  x3d:name "computedScale" ;
+  x3d:type "SFVec3f" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "send computed points to the Coordinate node" ;
-	x3d:name "pointOut" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "send computed points to the Coordinate node" ;
+  x3d:name "pointOut" ;
+  x3d:type "MFVec3f" .
 
-          :ArchPrototypeScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:appinfo "send computed indices to the IndexedFaceSet node" ;
-	x3d:name "indexOut" .
+          :ArchPrototypeScript x3d:hasfield :field_2_1_2_2 .
+:field_2_1_2_2 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:appinfo "send computed indices to the IndexedFaceSet node" ;
+  x3d:name "indexOut" ;
+  x3d:type "MFInt32" .
 
-          :ArchPrototypeScript x3d:hasIS :IS-anonymous .
-:IS-anonymous rdf:type owl:NamedIndividual , x3d:IS .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "clearSpanWidth" ;
-	x3d:protoField "clearSpanWidth" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "riseHeight" ;
-	x3d:protoField "riseHeight" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "depth" ;
-	x3d:protoField "depth" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "pierWidth" ;
-	x3d:protoField "pierWidth" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "topAbutmentHeight" ;
-	x3d:protoField "topAbutmentHeight" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "pierHeight" ;
-	x3d:protoField "pierHeight" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "archHalf" ;
-	x3d:protoField "archHalf" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "archHalfExtensionWidth" ;
-	x3d:protoField "archHalfExtensionWidth" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "onlyIntrados" ;
-	x3d:protoField "onlyIntrados" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "archFilled" ;
-	x3d:protoField "archFilled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "archHalfFilled" ;
-	x3d:protoField "archHalfFilled" .
-:connect-anonymous rdf:type owl:NamedIndividual , x3d:connect ;
-	x3d:nodeField "lintel" ;
-	x3d:protoField "lintel" .
+          :ArchPrototypeScript x3d:hasIS :IS_2_1_2_2 .
+:IS_2_1_2_2 rdf:type owl:NamedIndividual, x3d:IS .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "clearSpanWidth" ;
+  x3d:protoField "clearSpanWidth" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "riseHeight" ;
+  x3d:protoField "riseHeight" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "depth" ;
+  x3d:protoField "depth" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "pierWidth" ;
+  x3d:protoField "pierWidth" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "topAbutmentHeight" ;
+  x3d:protoField "topAbutmentHeight" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "pierHeight" ;
+  x3d:protoField "pierHeight" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "archHalf" ;
+  x3d:protoField "archHalf" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "archHalfExtensionWidth" ;
+  x3d:protoField "archHalfExtensionWidth" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "onlyIntrados" ;
+  x3d:protoField "onlyIntrados" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "archFilled" ;
+  x3d:protoField "archFilled" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "archHalfFilled" ;
+  x3d:protoField "archHalfFilled" .
+:connect_2_1_2_2_16 rdf:type owl:NamedIndividual, x3d:connect ;
+  x3d:nodeField "lintel" ;
+  x3d:protoField "lintel" .
 
-        :ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "computedScale" ;
-	x3d:fromNode "ArchPrototypeScript" ;
-	x3d:toField "scale" ;
-	x3d:toNode "ArchTransform" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "pointOut" ;
-	x3d:fromNode "ArchPrototypeScript" ;
-	x3d:toField "point" ;
-	x3d:toNode "ArchChord" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "indexOut" ;
-	x3d:fromNode "ArchPrototypeScript" ;
-	x3d:toField "set_coordIndex" ;
-	x3d:toNode "ArchIndex" .
-:ArchInstance rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "ArchPrototype" ;
-	x3d:containerField "children" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "diffuseColor" ;
-	x3d:value "0.5 0.3 0.6" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "emissiveColor" ;
-	x3d:value "0.5 0.3 0.6" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "clearSpanWidth" ;
-	x3d:value "5" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "riseHeight" ;
-	x3d:value "2.5" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "depth" ;
-	x3d:value "2" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "topAbutmentHeight" ;
-	x3d:value "0.6" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "pierWidth" ;
-	x3d:value "1" .
-:ArchInstance x3d:hasfieldValue :fieldValue-anonymous .
-:fieldValue-anonymous rdf:type owl:NamedIndividual , x3d:fieldValue ;
-	x3d:name "pierHeight" ;
-	x3d:value "2" .
-:CoordinateAxes rdf:type owl:NamedIndividual , x3d:Inline ;
-	x3d:url "../data/CoordinateAxes.x3d" ;
-	x3d:load "true" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
+        :ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "computedScale" ;
+  x3d:fromNode "ArchPrototypeScript" ;
+  x3d:toField "scale" ;
+  x3d:toNode "ArchTransform" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "pointOut" ;
+  x3d:fromNode "ArchPrototypeScript" ;
+  x3d:toField "point" ;
+  x3d:toNode "ArchChord" .
+:ROUTE_2_1_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "indexOut" ;
+  x3d:fromNode "ArchPrototypeScript" ;
+  x3d:toField "set_coordIndex" ;
+  x3d:toNode "ArchIndex" .
+:ArchInstance rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "ArchPrototype" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "diffuseColor" ;
+  x3d:value "0.5 0.3 0.6" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "emissiveColor" ;
+  x3d:value "0.5 0.3 0.6" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "clearSpanWidth" ;
+  x3d:value "5" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "riseHeight" ;
+  x3d:value "2.5" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "depth" ;
+  x3d:value "2" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "topAbutmentHeight" ;
+  x3d:value "0.6" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "pierWidth" ;
+  x3d:value "1" .
+:ArchInstance x3d:hasfieldValue :fieldValue_2_2 .
+:fieldValue_2_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
+  x3d:name "pierHeight" ;
+  x3d:value "2" .
+:CoordinateAxes rdf:type owl:NamedIndividual, x3d:Inline ;
+  x3d:url "../data/CoordinateAxes.x3d" .

@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/x3d/qq3.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,162 +7,53 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:ProtoDeclare-anonymous rdf:type owl:NamedIndividual , x3d:ProtoDeclare ;
-	x3d:name "Process" .
-:ProtoBody-anonymous rdf:type owl:NamedIndividual , x3d:ProtoBody .
-:Group-anonymous rdf:type owl:NamedIndividual , x3d:Group ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "0.5 0.5 0.5" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ShapeLeftDown rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:ShapeLeftDown x3d:hasAppearance :Appearance-anonymous .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.7 1 0" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:ShapeLeftDown x3d:hasExtrusion :Extrusion-anonymous .
-:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
-	x3d:spine "-2.5 0 0 -1.5 0 0" ;
-	x3d:creaseAngle "0.785" ;
-	x3d:crossSection "1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" ;
-	x3d:beginCap "true" ;
-	x3d:ccw "true" ;
-	x3d:convex "true" ;
-	x3d:endCap "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:scale "1 1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "0.5 0.5 0.5" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ShapeUpRight rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:ShapeUpRight x3d:hasAppearance :Appearance-anonymous .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0 0.7 1" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:ShapeUpRight x3d:hasExtrusion :Extrusion-anonymous .
-:Extrusion-anonymous rdf:type owl:NamedIndividual , x3d:Extrusion ;
-	x3d:spine "1.5 0 0 2.5 0 0" ;
-	x3d:creaseAngle "0.785" ;
-	x3d:crossSection "1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" ;
-	x3d:beginCap "true" ;
-	x3d:ccw "true" ;
-	x3d:convex "true" ;
-	x3d:endCap "true" ;
-	x3d:orientation "0 0 1 0" ;
-	x3d:scale "1 1" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "0.5 0.5 0.5" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:USE "ShapeUpRight" ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:scale "0.5 0.5 0.5" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:USE "ShapeLeftDown" ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Viewpoint-anonymous rdf:type owl:NamedIndividual , x3d:Viewpoint ;
-	x3d:description "Process pipes" ;
-	x3d:orientation "1 0 0 -0.4" ;
-	x3d:position "0 5 12" ;
-	x3d:fieldOfView "0.7854" ;
-	x3d:jump "true" ;
-	x3d:centerOfRotation "0 0 0" ;
-	x3d:retainUserOffsets "false" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 -2.5 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "Process" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "Process" ;
-	x3d:containerField "children" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 2.5 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:ProtoInstance-anonymous rdf:type owl:NamedIndividual , x3d:ProtoInstance ;
-	x3d:name "Process" ;
-	x3d:containerField "children" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
+  x3d:name "Process" .
+:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
+:Group_2_1_1 rdf:type owl:NamedIndividual, x3d:Group .
+:Transform_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "0.5 0.5 0.5" .
+:ShapeLeftDown rdf:type owl:NamedIndividual, x3d:Shape .
+:ShapeLeftDown x3d:hasAppearance :Appearance_2_1_1_1_1_1 .
+:Appearance_2_1_1_1_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_1_1_1_1_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.7 1 0" .
+:ShapeLeftDown x3d:hasExtrusion :Extrusion_2_1_1_1_1_1 .
+:Extrusion_2_1_1_1_1_1 rdf:type owl:NamedIndividual, x3d:Extrusion ;
+  x3d:spine "-2.5 0 0 -1.5 0 0" ;
+  x3d:creaseAngle "0.785" ;
+  x3d:crossSection "1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" .
+:Transform_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "0.5 0.5 0.5" .
+:ShapeUpRight rdf:type owl:NamedIndividual, x3d:Shape .
+:ShapeUpRight x3d:hasAppearance :Appearance_2_1_1_1_2_1 .
+:Appearance_2_1_1_1_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_1_1_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0 0.7 1" .
+:ShapeUpRight x3d:hasExtrusion :Extrusion_2_1_1_1_2_1 .
+:Extrusion_2_1_1_1_2_1 rdf:type owl:NamedIndividual, x3d:Extrusion ;
+  x3d:spine "1.5 0 0 2.5 0 0" ;
+  x3d:creaseAngle "0.785" ;
+  x3d:crossSection "1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" .
+:Transform_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "0.5 0.5 0.5" .
+:ShapeUpRight-USE-1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Transform_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:scale "0.5 0.5 0.5" .
+:ShapeLeftDown-USE-1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
+  x3d:description "Process pipes" ;
+  x3d:orientation "1 0 0 -0.4" ;
+  x3d:position "0 5 12" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 -2.5 0" .
+:ProtoInstance_2_3 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "Process" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform .
+:ProtoInstance_2_4 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "Process" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 2.5 0" .
+:ProtoInstance_2_5 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
+  x3d:name "Process" .

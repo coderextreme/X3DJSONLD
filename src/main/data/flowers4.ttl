@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <https://coderextreme.net/X3DJSONLD/flowers4.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,151 +7,107 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:NavigationInfo-anonymous rdf:type owl:NamedIndividual , x3d:NavigationInfo ;
-	x3d:avatarSize "0.25 1.6 0.75" ;
-	x3d:headlight "true" ;
-	x3d:speed "1" ;
-	x3d:transitionType "LINEAR" ;
-	x3d:transitionTime "1.0" ;
-	x3d:visibilityLimit "0" ;
-	x3d:containerField "children" .
-:Background-anonymous rdf:type owl:NamedIndividual , x3d:Background ;
-	x3d:backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
-	x3d:bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
-	x3d:frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
-	x3d:leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
-	x3d:rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
-	x3d:topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
-	x3d:skyColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "children" .
-:transform rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:translation "0 0 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:transform x3d:hasShape :Shape-anonymous .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor ".7 .7 .7" ;
-	x3d:specularColor ".5 .5 .5" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:ComposedCubeMapTexture-anonymous rdf:type owl:NamedIndividual , x3d:ComposedCubeMapTexture ;
-	x3d:containerField "texture" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
-	x3d:containerField "back" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
-	x3d:containerField "bottom" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
-	x3d:containerField "front" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
-	x3d:containerField "left" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
-	x3d:containerField "right" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:ImageTexture-anonymous rdf:type owl:NamedIndividual , x3d:ImageTexture ;
-	x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
-	x3d:containerField "top" ;
-	x3d:repeatS "true" ;
-	x3d:repeatT "true" .
-:shader rdf:type owl:NamedIndividual , x3d:ComposedShader ;
-	x3d:language "GLSL" ;
-	x3d:containerField "shaders" .
-:shader x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "cube" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0" .
-:shader x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "chromaticDispertion" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.98 1.0 1.033" .
-:shader x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "bias" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.5" .
-:shader x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "scale" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "0.5" .
-:shader x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:name "power" ;
-	x3d:accessType "inputOutput" ;
-	x3d:value "2" .
-:shader x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/x3dom.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs" ;
-	x3d:containerField "parts" .
-:shader x3d:hasShaderPart :ShaderPart-anonymous .
-:ShaderPart-anonymous rdf:type owl:NamedIndividual , x3d:ShaderPart ;
-	x3d:url "../shaders/pc_bubbles.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs" ;
-	x3d:containerField "parts" .
-:Orbit rdf:type owl:NamedIndividual , x3d:IndexedFaceSet ;
-	x3d:convex "false" ;
-	x3d:creaseAngle "0" ;
-	x3d:ccw "true" ;
-	x3d:colorPerVertex "true" ;
-	x3d:normalPerVertex "true" ;
-	x3d:solid "true" ;
-	x3d:containerField "geometry" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
+:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
+  x3d:backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
+  x3d:bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
+  x3d:frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
+  x3d:leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
+  x3d:rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
+  x3d:topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" .
+:transform rdf:type owl:NamedIndividual, x3d:Transform .
+:transform x3d:hasShape :Shape_2_3 .
+:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
+:Appearance_2_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Material_2_3_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor ".7 .7 .7" ;
+  x3d:specularColor ".5 .5 .5" .
+:ComposedCubeMapTexture_2_3_1_1 rdf:type owl:NamedIndividual, x3d:ComposedCubeMapTexture ;
+  x3d:containerField "texture" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_back.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png" ;
+  x3d:containerField "back" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png" ;
+  x3d:containerField "bottom" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_front.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png" ;
+  x3d:containerField "front" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_left.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png" ;
+  x3d:containerField "left" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_right.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png" ;
+  x3d:containerField "right" .
+:ImageTexture_2_3_1_1_2 rdf:type owl:NamedIndividual, x3d:ImageTexture ;
+  x3d:url "../resources/images/all_probes/stpeters_cross/stpeters_top.png https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png" ;
+  x3d:containerField "top" .
+:shader rdf:type owl:NamedIndividual, x3d:ComposedShader ;
+  x3d:language "GLSL" ;
+  x3d:containerField "shaders" .
+:shader x3d:hasfield :field_2_3_1_1_3 .
+:field_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "cube" ;
+  x3d:type "SFInt32" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0" .
+:shader x3d:hasfield :field_2_3_1_1_3 .
+:field_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "chromaticDispertion" ;
+  x3d:accessType "inputOutput" ;
+  x3d:type "SFVec3f" ;
+  x3d:value "0.98 1.0 1.033" .
+:shader x3d:hasfield :field_2_3_1_1_3 .
+:field_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "bias" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0.5" .
+:shader x3d:hasfield :field_2_3_1_1_3 .
+:field_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "scale" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "0.5" .
+:shader x3d:hasfield :field_2_3_1_1_3 .
+:field_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:name "power" ;
+  x3d:type "SFFloat" ;
+  x3d:accessType "inputOutput" ;
+  x3d:value "2" .
+:shader x3d:hasShaderPart :ShaderPart_2_3_1_1_3 .
+:ShaderPart_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/x3dom.vs https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs" ;
+  x3d:containerField "parts" .
+:shader x3d:hasShaderPart :ShaderPart_2_3_1_1_3 .
+:ShaderPart_2_3_1_1_3 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
+  x3d:url "../shaders/pc_bubbles.fs https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs" ;
+  x3d:type "FRAGMENT" ;
+  x3d:containerField "parts" .
+:Orbit rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
+  x3d:convex "false" .
 :Orbit x3d:hasCoordinate :OrbitCoordinates .
-:OrbitCoordinates rdf:type owl:NamedIndividual , x3d:Coordinate ;
-	x3d:containerField "coord" .
-:OrbitScript rdf:type owl:NamedIndividual , x3d:Script ;
-	x3d:directOutput "false" ;
-	x3d:mustEvaluate "false" ;
-	x3d:containerField "children" .
+:OrbitCoordinates rdf:type owl:NamedIndividual, x3d:Coordinate .
+:OrbitScript rdf:type owl:NamedIndividual, x3d:Script .
 
-            :OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOnly" ;
-	x3d:name "set_fraction" .
+            :OrbitScript x3d:hasfield :field_2_4 .
+:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOnly" ;
+  x3d:name "set_fraction" ;
+  x3d:type "SFFloat" .
 
-            :OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "inputOutput" ;
-	x3d:name "coordinates" .
+            :OrbitScript x3d:hasfield :field_2_4 .
+:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "inputOutput" ;
+  x3d:name "coordinates" ;
+  x3d:type "MFVec3f" .
 
-            :OrbitScript x3d:hasfield :field-anonymous .
-:field-anonymous rdf:type owl:NamedIndividual , x3d:field ;
-	x3d:accessType "outputOnly" ;
-	x3d:name "coordIndexes" .
+            :OrbitScript x3d:hasfield :field_2_4 .
+:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
+  x3d:accessType "outputOnly" ;
+  x3d:name "coordIndexes" ;
+  x3d:type "MFInt32" .
 
 
 
@@ -226,27 +182,21 @@ function set_fraction(fraction, eventTime) {
 	var resolution = 100;
 	updateCoordinates(resolution);
 }
-      :Clock rdf:type owl:NamedIndividual , x3d:TimeSensor ;
-	x3d:cycleInterval "16" ;
-	x3d:loop "true" ;
-	x3d:enabled "true" ;
-	x3d:startTime "0" ;
-	x3d:stopTime "0" ;
-	x3d:pauseTime "0" ;
-	x3d:resumeTime "0" ;
-	x3d:containerField "children" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "coordIndexes" ;
-	x3d:fromNode "OrbitScript" ;
-	x3d:toField "set_coordIndex" ;
-	x3d:toNode "Orbit" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "coordinates" ;
-	x3d:fromNode "OrbitScript" ;
-	x3d:toField "set_point" ;
-	x3d:toNode "OrbitCoordinates" .
-:ROUTE-anonymous rdf:type owl:NamedIndividual , x3d:ROUTE ;
-	x3d:fromField "fraction_changed" ;
-	x3d:fromNode "Clock" ;
-	x3d:toField "set_fraction" ;
-	x3d:toNode "OrbitScript" .
+      :Clock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
+  x3d:cycleInterval "16" ;
+  x3d:loop "true" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "coordIndexes" ;
+  x3d:fromNode "OrbitScript" ;
+  x3d:toField "set_coordIndex" ;
+  x3d:toNode "Orbit" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "coordinates" ;
+  x3d:fromNode "OrbitScript" ;
+  x3d:toField "set_point" ;
+  x3d:toNode "OrbitCoordinates" .
+:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
+  x3d:fromField "fraction_changed" ;
+  x3d:fromNode "Clock" ;
+  x3d:toField "set_fraction" ;
+  x3d:toNode "OrbitScript" .

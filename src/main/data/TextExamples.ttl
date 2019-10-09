@@ -1,4 +1,4 @@
-@prefix : <https://www.web3d.org/semantics/scenes/X3dScene1#> .
+@prefix : <http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.ttl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,111 +7,30 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
- ] .
-
-:Scene-anonymous rdf:type owl:NamedIndividual , x3d:Scene .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "0 2 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "Compare special character escaping" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:testFontStyle rdf:type owl:NamedIndividual , x3d:FontStyle ;
-	x3d:justify "MIDDLE MIDDLE" ;
-	x3d:size "0.8" ;
-	x3d:family "SERIF" ;
-	x3d:horizontal "true" ;
-	x3d:leftToRight "true" ;
-	x3d:spacing "1.0" ;
-	x3d:style "PLAIN" ;
-	x3d:topToBottom "true" ;
-	x3d:containerField "fontStyle" .
-:LightBlueAppearance rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:containerField "appearance" .
-:LightBlueAppearance x3d:hasMaterial :Material-anonymous .
-:Material-anonymous rdf:type owl:NamedIndividual , x3d:Material ;
-	x3d:diffuseColor "0.1 0.7 0.7" ;
-	x3d:ambientIntensity "0.2" ;
-	x3d:emissiveColor "0 0 0" ;
-	x3d:shininess "0.2" ;
-	x3d:specularColor "0 0 0" ;
-	x3d:transparency "0" ;
-	x3d:containerField "material" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "-3 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "I don't think so  he said \Hi\" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
-	x3d:USE "testFontStyle" ;
-	x3d:family "SERIF" ;
-	x3d:horizontal "true" ;
-	x3d:justify "BEGIN" ;
-	x3d:leftToRight "true" ;
-	x3d:size "1.0" ;
-	x3d:spacing "1.0" ;
-	x3d:style "PLAIN" ;
-	x3d:topToBottom "true" ;
-	x3d:containerField "fontStyle" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:USE "LightBlueAppearance" ;
-	x3d:containerField "appearance" .
-:Transform-anonymous rdf:type owl:NamedIndividual , x3d:Transform ;
-	x3d:translation "3 0 0" ;
-	x3d:center "0 0 0" ;
-	x3d:rotation "0 0 1 0" ;
-	x3d:scale "1 1 1" ;
-	x3d:scaleOrientation "0 0 1 0" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" ;
-	x3d:containerField "children" .
-:Shape-anonymous rdf:type owl:NamedIndividual , x3d:Shape ;
-	x3d:containerField "children" ;
-	x3d:bboxCenter "0 0 0" ;
-	x3d:bboxSize "-1 -1 -1" .
-:Text-anonymous rdf:type owl:NamedIndividual , x3d:Text ;
-	x3d:string "I don't think so  he said \Hi\" ;
-	x3d:maxExtent "0.0" ;
-	x3d:solid "false" ;
-	x3d:containerField "geometry" .
-:FontStyle-anonymous rdf:type owl:NamedIndividual , x3d:FontStyle ;
-	x3d:USE "testFontStyle" ;
-	x3d:family "SERIF" ;
-	x3d:horizontal "true" ;
-	x3d:justify "BEGIN" ;
-	x3d:leftToRight "true" ;
-	x3d:size "1.0" ;
-	x3d:spacing "1.0" ;
-	x3d:style "PLAIN" ;
-	x3d:topToBottom "true" ;
-	x3d:containerField "fontStyle" .
-:Appearance-anonymous rdf:type owl:NamedIndividual , x3d:Appearance ;
-	x3d:USE "LightBlueAppearance" ;
-	x3d:containerField "appearance" .
+:Scene rdf:type owl:NamedIndividual, x3d:Scene .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "0 2 0" .
+:Shape_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
+:Text_2_1_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "Compare special character escaping" .
+:testFontStyle rdf:type owl:NamedIndividual, x3d:FontStyle ;
+  x3d:justify "MIDDLE MIDDLE" ;
+  x3d:size "0.8" .
+:LightBlueAppearance rdf:type owl:NamedIndividual, x3d:Appearance .
+:LightBlueAppearance x3d:hasMaterial :Material_2_1_1_2 .
+:Material_2_1_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
+  x3d:diffuseColor "0.1 0.7 0.7" .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "-3 0 0" .
+:Shape_2_2 rdf:type owl:NamedIndividual, x3d:Shape .
+:Text_2_2_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "I don't think so  he said \Hi\" .
+:testFontStyle-USE-1 rdf:type owl:NamedIndividual, x3d:FontStyle .
+:LightBlueAppearance-USE-1 rdf:type owl:NamedIndividual, x3d:Appearance .
+:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
+  x3d:translation "3 0 0" .
+:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
+:Text_2_3_1 rdf:type owl:NamedIndividual, x3d:Text ;
+  x3d:string "I don't think so  he said \Hi\" .
+:testFontStyle-USE-2 rdf:type owl:NamedIndividual, x3d:FontStyle .
+:LightBlueAppearance-USE-2 rdf:type owl:NamedIndividual, x3d:Appearance .
